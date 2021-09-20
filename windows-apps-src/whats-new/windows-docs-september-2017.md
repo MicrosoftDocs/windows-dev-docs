@@ -1,5 +1,5 @@
 ---
-title: What's New in Windows Docs in September 2017 - Develop UWP apps
+title: What's new in Windows Docs in September 2017?
 description: New features, videos, and developer guidance have been added to the Windows 10 developer documentation for September 2017
 keywords: what's new, update, features, developer guidance, Windows 10, 1709
 ms.date: 09/06/2017
@@ -20,30 +20,30 @@ Of course, the Fall Creators Update is right around the corner, so stay tuned fo
 
 ### Xbox Live Creators Program
 
-The Xbox Live Creators Program is now live, allowing you to easily build and publish UWP games that can run on both Windows 10 PCs and Xbox One consoles. For more information, see [Get started with the Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+The Xbox Live Creators Program is now live, allowing you to easily build and publish UWP games that can run on both Windows 10 PCs and Xbox One consoles. For more information, see [Get started with the Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## Developer Guidance
 
 ### XAML basics tutorials
 
-We've written four [XAML basics tutorials](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui) to accompany the new [PhotoLab sample](https://github.com/Microsoft/Windows-appsample-photo-lab), covering four core aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the PhotoLab Sample, and builds one missing component of the final app step-by-step. 
+We've written four [XAML basics tutorials](/windows/apps/design/basics/xaml-basics-ui) to accompany the new [PhotoLab sample](https://github.com/Microsoft/Windows-appsample-photo-lab), covering four core aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the PhotoLab Sample, and builds one missing component of the final app step-by-step. 
 
 ![Screenshot of PhotoLab sample showing photo gallery page](images/PhotoLab-gallery-page.png)  
 
 Here's a quick overview of the new articles:
 
-+ [**Create user interfaces**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui) shows how to create the basic photo gallery interface.
-+ [**Create data bindings**](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding) shows how to add data bindings to the photo gallery, populating it with real image data.
-+ [**Create custom styles**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style) shows how to add fancy custom styles to the photo editing menu.
-+ [**Create adaptive layouts**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout) shows how to make the gallery layout adaptive, so it looks good on every device and screen size.
++ [**Create user interfaces**](/windows/apps/design/basics/xaml-basics-ui) shows how to create the basic photo gallery interface.
++ [**Create data bindings**](../data-binding/xaml-basics-data-binding.md) shows how to add data bindings to the photo gallery, populating it with real image data.
++ [**Create custom styles**](/windows/uwp/design/controls-and-patterns/xaml-basics-style) shows how to add fancy custom styles to the photo editing menu.
++ [**Create adaptive layouts**](/windows/apps/design/basics/xaml-basics-adaptive-layout) shows how to make the gallery layout adaptive, so it looks good on every device and screen size.
 
 ### Get Started Tutorials
 
-The Get Started section of the UWP docs has been updated with a [new landing page for the tutorials section](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps). This section provides new and improved structure to the Get Started experience, helping users easily find and use the tutorials which are right for them - including the XAML basics tutorials mentioned above.
+The Get Started section of the UWP docs has been updated with a [new landing page for the tutorials section](../get-started/create-uwp-apps.md). This section provides new and improved structure to the Get Started experience, helping users easily find and use the tutorials which are right for them - including the XAML basics tutorials mentioned above.
 
 ### Voice and tone
 
-We've added new [guidance on voice in tone in UWP apps](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone) to provide you with advice for writing text in your app. Whatever you're creating, it's important that the language you use is approachable, friendly, and informative.
+We've added new [guidance on voice in tone in UWP apps](/windows/apps/design/style/writing-style) to provide you with advice for writing text in your app. Whatever you're creating, it's important that the language you use is approachable, friendly, and informative.
 
 ## Samples
 

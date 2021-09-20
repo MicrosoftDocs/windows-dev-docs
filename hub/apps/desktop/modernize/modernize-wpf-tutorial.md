@@ -64,7 +64,7 @@ Make sure you install the following workloads and optional features with Visual 
 
 Before you begin the tutorial, download the source code for the Contoso Expenses app and make sure you can build the code in Visual Studio.
 
-1. Download the app source code from the **Releases** tab of the [AppConsult WinAppsModernization workshop repository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). The direct link is [https://aka.ms/wamwc](https://aka.ms/wamwc).
+1. Download the app source code from the **Releases** tab of the [AppConsult WinAppsModernization workshop repository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). The direct link is [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
 2. Open the zip file and extract all the content to the root of your **C:\\** drive. It will create a folder named **C:\WinAppsModernizationWorkshop**.
 3. Open Visual Studio 2019 and double click on the **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** file to open the solution.
 4. Verify that you can build, run, and debug the Contoso Expenses WPF project by pressing the **Start** button or CTRL + F5.
@@ -93,7 +93,7 @@ Going forward, most new Windows 10 features are exposed via WinRT APIs, includin
 
 ### MSIX packaging
 
-[MSIX](http://aka.ms/msix) (formerly known as AppX) is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.
+[MSIX](/windows/msix/) is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.
 
 For more information, see these articles:
 
@@ -106,13 +106,13 @@ Starting in Windows 10, version 1903, you can host UWP controls in non-UWP deskt
 
 For more information, see [UWP controls in desktop applications (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). This tutorial guides you through the process of using two different types of XAML Island controls:
 
-* The [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) in the Windows Community Toolkit. These WPF controls wrap the interface and functionality of the corresponding UWP controls and can be used like any other WPF control in the Visual Studio designer.
+* The [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) in the Windows Community Toolkit. These WPF controls wrap the interface and functionality of the corresponding UWP controls and can be used like any other WPF control in the Visual Studio designer.
 
-* The UWP [Calendar view](/windows/uwp/design/controls-and-patterns/calendar-view) control. This is a standard UWP control that you will host by using the [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit.
+* The UWP [Calendar view](/windows/uwp/design/controls-and-patterns/calendar-view) control. This is a standard UWP control that you will host by using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit.
 
 ### .NET Core 3
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) is an open-source framework that implements a cross-platform, lightweight and easily extensible version of the full .NET Framework. Compared to the full .NET Framework, .NET Core startup time is much faster and many of the APIs have been optimized.
+[.NET Core](/dotnet/core/) is an open-source framework that implements a cross-platform, lightweight and easily extensible version of the full .NET Framework. Compared to the full .NET Framework, .NET Core startup time is much faster and many of the APIs have been optimized.
 
 Through its first several releases, the focus of .NET Core was for supporting web or back-end apps. With .NET Core, you can easily build scalable web apps or APIs that can be hosted on Windows, Linux, or in micro-service architectures like Docker containers.
 
@@ -121,4 +121,4 @@ Through its first several releases, the focus of .NET Core was for supporting we
 > [!NOTE]
 > WPF and Windows Forms are not becoming cross-platform, and you cannot run a WPF or Windows Forms on Linux and MacOS. The UI components of WPF and Windows Forms still have a dependency on the Windows rendering system.
 
-For more information, see [What's new in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+For more information, see [What's new in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).

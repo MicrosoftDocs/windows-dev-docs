@@ -104,9 +104,9 @@ public static class Program
 }
 ```
 
-`Main()` is the first thing that runs. It runs before [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) and [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). This allows you to determine whether to activate this, or another instance, before any other initialization code in your app runs.
+`Main()` is the first thing that runs. It runs before [**OnLaunched**](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) and [**OnActivated**](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). This allows you to determine whether to activate this, or another instance, before any other initialization code in your app runs.
 
-The code above determines whether an existing, or new, instance of your application is activated. A key is used to determine whether there is an existing instance that you want to activate. For example, if your app can be launched to [Handle file activation](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), you might use the file name as a key. Then you can check whether an instance of your app is already registered with that key and activate it instead of opening a new instance. This is the idea behind the code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+The code above determines whether an existing, or new, instance of your application is activated. A key is used to determine whether there is an existing instance that you want to activate. For example, if your app can be launched to [Handle file activation](./handle-file-activation.md), you might use the file name as a key. Then you can check whether an instance of your app is already registered with that key and activate it instead of opening a new instance. This is the idea behind the code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 If an instance registered with the key is found, then that instance is activated. If the key is not found, then the current instance (the instance that is currently running `Main`) creates its application object  and starts running.
 
@@ -124,7 +124,7 @@ If an instance registered with the key is found, then that instance is activated
 - To avoid race-conditions and contention issues, multi-instance apps need to take steps to partition/synchronize access to settings, app-local storage, and any other resource (such as user files, a data store, and so on) that can be shared among multiple instances. Standard synchronization mechanisms such as mutexes, semaphores, events, and so on, are available.
 - If the app has `SupportsMultipleInstances` in its Package.appxmanifest file, then its extensions do not need to declare `SupportsMultipleInstances`. 
 - If you add `SupportsMultipleInstances` to any other extension, apart from background tasks or app-services, and the app that hosts the extension doesn't also declare `SupportsMultipleInstances` in its Package.appxmanifest file, then a schema error is generated.
-- Apps can use the [**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) declaration in their manifest to group multiple background tasks into the same host. This conflicts with multi-instancing, where each activation goes into a separate host. Therefore an app cannot declare both `SupportsMultipleInstances` and `ResourceGroup` in their manifest.
+- Apps can use the [**ResourceGroup**](./declare-background-tasks-in-the-application-manifest.md) declaration in their manifest to group multiple background tasks into the same host. This conflicts with multi-instancing, where each activation goes into a separate host. Therefore an app cannot declare both `SupportsMultipleInstances` and `ResourceGroup` in their manifest.
 
 ## Sample
 
@@ -132,7 +132,7 @@ See [Multi-Instance sample](https://github.com/Microsoft/AppModelSamples/tree/ma
 
 ## See also
 
-[AppInstance.FindOrRegisterInstanceForKey](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
-[AppInstance.GetActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)
-[AppInstance.RedirectActivationTo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_RedirectActivationTo)
-[Handle app activation](https://docs.microsoft.com/windows/uwp/launch-resume/activate-an-app)
+[AppInstance.FindOrRegisterInstanceForKey](/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
+[AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)
+[AppInstance.RedirectActivationTo](/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_RedirectActivationTo)
+[Handle app activation](./activate-an-app.md)

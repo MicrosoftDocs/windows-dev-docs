@@ -1,5 +1,5 @@
-﻿---
-Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
+---
+description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Add-on acquisitions report
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.date: 10/31/2018
@@ -17,7 +17,7 @@ You can view this data in Partner Center, or [download the report](download-anal
 In this report, an add-on acquisition means a customer has purchased an add-on from you (or acquired it without paying, if you offered it for free). Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
 
 > [!IMPORTANT]
-> The **Add-on acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> The **Add-on acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](/partner-center/payout-statement). In the **Reserved** section, click the **Download reserved transactions** link.
 
 
 ## Apply filters

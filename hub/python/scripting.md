@@ -1,5 +1,5 @@
 ---
-title: Scripting and automation with Python on Windows
+title: Using Python for scripting and automation 
 description: How to get started using Python for scripting, automation, and systems administration on Windows.
 author: mattwojo 
 ms.author: mattwoj 
@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: python, windows 10, microsoft, python system administration, python file automation, python scripts on windows, set up python on windows, python developer environment on windows, python dev environment on windows, python with powershell, python scripts for file system tasks
 ms.localizationpriority: medium
-ms.date: 07/19/2019
+ms.date: 05/07/2021
 ---
 
 # Get started using Python on Windows for scripting and automation
@@ -19,7 +19,7 @@ The following is a step-by-step guide for setting up your developer environment 
 
 ## Set up your development environment
 
-When using Python to write scripts that perform file system operations, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates.
+When using Python to write scripts that perform file system operations, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates.
 
 If you are using Python for **web development**  on Windows, we recommend a different setup using the Windows Subsystem for Linux. Find a walkthrough in our guide: [Get started using Python for web development on Windows](./web-frameworks.md). If you're brand new to Python, try our guide: [Get started using Python on Windows for beginners](./beginners.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
@@ -29,7 +29,7 @@ To install Python using the Microsoft Store:
 
 1. Go to your **Start** menu (lower left Windows icon), type "Microsoft Store", select the link to open the store.
 
-2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Open "Python 3.7" from the results under Apps. Select **Get**.
+2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Select which version of Python you would like to use from the results under Apps. We recommend using the most recent unless you have a reason not to (such as aligning with the version used on a pre-existing project that you plan to work on). Once you've determined which version you would like to install, select **Get**.
 
 3. Once Python has completed the downloading and installation process, open Windows PowerShell using the **Start** menu (lower left Windows icon). Once PowerShell is open, enter `Python --version` to confirm that Python3 has been installed on your machine.
 
@@ -170,6 +170,9 @@ Let's begin with a simple script that walks a directory tree and displays the di
 11. Use Python to print that file system directory output to it's own text file by entering this command directly in your PowerShell terminal: `python3 list-directory-contents.py > food-directory.txt`
 
 Congratulations! You've just written an automated systems administration script that reads the directory and files you created and uses Python to display, and then print, the directory structure to it's own text file.
+
+> [!NOTE]
+> If you're unable to install Python 3 from the Microsoft Store, see this [issue](https://github.com/MicrosoftDocs/windows-uwp/issues/2901) for an example of how to handle the pathing for this sample script.
 
 ## Example script to modify all files in a directory
 

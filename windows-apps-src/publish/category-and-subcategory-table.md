@@ -1,5 +1,5 @@
 ---
-Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 title: Category and subcategory table
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 03/21/2019
@@ -14,7 +14,7 @@ Listing your app in the right category and subcategory helps customers find your
 
 You must choose the category that best describes your app. You can optionally choose a subcategory, if available. If you're not sure which category or subcategory to use, or you can't find one that seems to be an exact fit, choose the one that you think customers are most likely to look at when trying to find apps like yours.
 
-If you choose **Games** for your category, you are required to select at least one subcategory (called *genre* for games). You can choose as many genres as are appropriate for your game. Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or go through the [concept approval](../gaming/concept-approval.md) process). 
+If you choose **Games** for your category, you are required to select at least one subcategory (called *genre* for games). You can choose as many genres as are appropriate for your game. Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or go through the [concept approval](../gaming/concept-approval.md) process). 
 
 > [!IMPORTANT] 
 > If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission; it must be continue to be published in the **Games** category (although you can change the genre selections in a new submission). Likewise, you can't choose the **Games** category when updating an app that you previously published in a different category.
@@ -143,5 +143,4 @@ The Microsoft Store organizes apps into the following categories and subcategori
 </table>
 
 > [!NOTE] 
-> Some of the categories and subcategories used in the Store for customers on Windows 8.x and Windows Phone 8.x and earlier may appear differently than the categories listed above. 
-
+> Some of the categories and subcategories used in the Store for customers on Windows 8.x and Windows Phone 8.x and earlier may appear differently than the categories listed above.

@@ -1,14 +1,15 @@
 ---
-Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
+description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Device family availability
-ms.date: 03/21/2019
+ms.date: 02/26/2021
 ms.topic: article
 keywords: windows 10, uwp, packages, upload, device family availability
 ms.localizationpriority: medium
 ---
+
 # Device family availability
 
-After your packages have been successfully uploaded on the **Packages** page, the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 device families.
+After your packages have been [successfully uploaded on the **Packages** page](upload-app-packages.md), the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 device families.
 
 > [!NOTE]
 > If you haven't uploaded packages yet, the **Device family availability** section will show the Windows 10 device families with checkboxes that let you indicate whether or not the submission will be offered to customers on those device families. The table will appear after you upload one or more packages.
@@ -28,7 +29,7 @@ If your app supports them, we recommend keeping all of the boxes checked, unless
 
 <span id="xbox" />
 
-The only Windows 10 device family that is not checked by default for Windows.Universal packages is **Windows 10 Xbox**. If your app is not a game (or if it is a game and you have enabled the [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or gone through the [concept approval](../gaming/concept-approval.md) process), and your submission includes neutral and/or x64 UWP packages compiled using Windows 10 SDK version 14393 or later, you can check the **Windows 10 Xbox** box to offer the app to customers on Xbox One.
+The only Windows 10 device family that is not checked by default for Windows.Universal packages is **Windows 10 Xbox**. If your app is not a game (or if it is a game and you have enabled the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or gone through the [concept approval](../gaming/concept-approval.md) process), and your submission includes neutral and/or x64 UWP packages compiled using Windows 10 SDK version 14393 or later, you can check the **Windows 10 Xbox** box to offer the app to customers on Xbox One.
 
 > [!IMPORTANT]
 > In order for your app to launch on Xbox devices, you must include a neutral or x64 package that is compiled with Windows SDK version 14393 or higher. However, if you check **Windows 10 Xbox**, your highest-versioned package that’s applicable to Xbox (that is, a neutral or x64 package that targets the Xbox or Universal device family) will always be offered to customers on Xbox, even if it is compiled with an earlier SDK version. Because of this, it’s critical to ensure that the highest-versioned package applicable to Xbox is compiled with Windows SDK version 14393 or higher. If it is not, you will see an error message indicating that Xbox customers will not be able to launch your app. 
@@ -40,16 +41,16 @@ The only Windows 10 device family that is not checked by default for Windows.Uni
 > 	
 > If you are still unable to resolve the issue, contact support.
 
-If you're submitting a UWP app for Windows 10 IoT Core, you should not make changes to the default selections after uploading your packages; there is no separate checkbox for Windows 10 IoT. For more about publishing IoT Core UWP apps, see [Microsoft Store support for IoT Core UWP apps](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing).
+If you're submitting a UWP app for Windows 10 IoT Core, you should not make changes to the default selections after uploading your packages; there is no separate checkbox for Windows 10 IoT. For more about publishing IoT Core UWP apps, see [Microsoft Store support for IoT Core UWP apps](/windows/iot-core/commercialize-your-device/installingandservicing).
 
 If your submission for a previously published app includes packages that can run on **Windows 8/8.1** and **Windows Phone 8.x and earlier**, those packages will be made available to customers on those OS versions. To stop offering your app to these customers, remove the corresponding packages from your submission.
 
 > [!IMPORTANT]
-> To completely prevent a specific Windows 10 device family from getting your submission, update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your manifest to target only the device family that you want to support (i.e., Windows.Mobile or Windows.Desktop), rather than leaving it as the Windows.Universal value (for the universal device family) that Microsoft Visual Studio includes in the manifest by default.
+> To completely prevent a specific Windows 10 device family from getting your submission, update the [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your manifest to target only the device family that you want to support (i.e., Windows.Mobile or Windows.Desktop), rather than leaving it as the Windows.Universal value (for the universal device family) that Microsoft Visual Studio includes in the manifest by default.
 
 It's important to be aware that selections you make in the **Device family availability** section apply only to new acquisitions. Anyone who already has your app can continue to use it, and will get any updates you submit, even if you remove their device family here. This applies even to customers who acquired your app before upgrading to Windows 10. For example, if you have a published app with Windows Phone 8.1 packages, and you add a Windows 10 (UWP) package targeting the Windows.Universal device family, Windows 10 mobile customers who had your Windows Phone 8.1 package will be offered an update to this Windows 10 (UWP) package, even if you've unchecked the box for **Windows 10 Mobile**.
 
-For more info about device families, see [**Device families overview**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
+For more info about device families, see [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview).
 
 
 ## Understanding ranking
@@ -60,4 +61,3 @@ For example, say that you have two packages: Package_A.appxupload and Package_B.
 
 > [!NOTE]
 > The version numbers in .xap packages (for previously published apps) are not considered when determining which package to provide a given customer. Because of this, if you have more than one .xap package of equal rank, you will see an asterisk rather than a number, and customers may receive either package. To update customers from one .xap package to a newer one, make sure to remove the older .xap in the new submission.
-

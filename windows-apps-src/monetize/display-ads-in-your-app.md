@@ -2,12 +2,15 @@
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: The Microsoft Advertising SDK gives you several ways to monetize your app with ads.
 title: Display ads in your app with the Microsoft Advertising SDK
-ms.date: 06/20/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, banner, ad control, interstitial
 ms.localizationpriority: medium
 ---
 # Display ads in your app with the Microsoft Advertising SDK
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Increase your revenue opportunities by putting ads in your Universal Windows Platform (UWP) app for Windows 10 by using the Microsoft Advertising SDK. Our ad monetization platform offers a variety of ad formats that can be seamlessly integrated into your apps and supports mediation with many popular ad networks. Our platform is compliant with the OpenRTB, VAST 2.x, MRAID 2, and VPAID 3 standards and is compatible with MOAT and IAS. 
 
@@ -42,7 +45,7 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
     <br/>
     <a href="best-practices-for-ads-in-apps.md">Best practices</a>
     <br/>
-    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API reference</a>
+    <a href="/uwp/api/overview/advertising">API reference</a>
     </td>
 </tr>
 </tbody>
@@ -62,7 +65,7 @@ These are static display ads that utilize a rectangular portion of a page in you
 
 For instructions and code examples, see [this article](adcontrol-in-xaml-and--net.md).
 
-![addreferences](images/banner-ad.png)
+![An image depicting a banner advertisement on a tablet.](images/banner-ad.png)
 
 ### Interstitial video and interstitial banner ads
 
@@ -70,7 +73,7 @@ These are full-screen ads that typically require the user to watch a video or cl
 
 For instructions and code examples, see [this article](interstitial-ads.md).
 
-![addreferences](images/interstitial-ad.png)
+![An image depicting an interstitial advertisement in a game that is being played on a tablet.](images/interstitial-ad.png)
 
 ### Native ads
 
@@ -78,7 +81,7 @@ These are component-based ads. Each piece of the ad creative (such as the title,
 
 For instructions and code examples, see [this article](native-ads.md).
 
-![addreferences](images/native-ad.png)
+![An image depicting a native advertisement that can be displayed on various devices.](images/native-ad.png)
 
 <span id="ad-mediation"/>
 
@@ -92,9 +95,9 @@ To start using ad mediation in your UWP app, [configure ad mediation settings](.
 
 ## Step 4: Submit your app and review performance
 
-After you finish developing your app with ads, you can [submit your updated app](https://docs.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center to make it available in the Store. Apps that display ads must meet the additional requirements that are specified in [section 10.10 of the Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) and [Exhibit E of the App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+After you finish developing your app with ads, you can [submit your updated app](../publish/app-submissions.md) in Partner Center to make it available in the Store. Apps that display ads must meet the additional requirements that are specified in [section 10.10 of the Microsoft Store Policies](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) and [Exhibit E of the App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
 
-After your app is published and available in the Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center and continue to make changes to your mediation settings to optimize the performance of your ads. Your advertising revenue is included in your [payout summary](../publish/payout-summary.md).
+After your app is published and available in the Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center and continue to make changes to your mediation settings to optimize the performance of your ads. Your advertising revenue is included in your [payout summary](/partner-center/payout-statement).
 
 <span id="additional-help" />
 
@@ -104,14 +107,14 @@ For additional help using the Microsoft Advertising SDK, use the following resou
 
 |  Task    | Resource |               
 |----------|-------|
-| Report a bug or get assisted support for advertising     | Visit the [support page](https://developer.microsoft.com/en-us/windows/support) and choose **Ads-In-Apps**.        |
-| Get community support     | Visit the [forum](https://go.microsoft.com/fwlink/?LinkID=401264).       |
+| Report a bug or get assisted support for advertising     | Visit the [support page](https://developer.microsoft.com/windows/support) and choose **Ads-In-Apps**.        |
+| Get community support     | Visit the [forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).       |
 | Download sample projects that demonstrate how to add banner and interstitial ads to apps.     | See the [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
 | Learn about the latest monetization opportunities for Windows apps     | Visit [Monetize your apps](https://developer.microsoft.com/store/monetize).        |
 
 ## Windows 8.1 and Windows Phone 8.x apps
 
-For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x). For more information about using this SDK to show ads in Windows 8.1 and Windows Phone 8.x apps, see [this article](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
+For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x). For more information about using this SDK to show ads in Windows 8.1 and Windows Phone 8.x apps, see [this article](/previous-versions/windows/apps/dn792120(v=win.10)).
 
 ## Related topics
 

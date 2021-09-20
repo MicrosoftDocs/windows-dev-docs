@@ -1,15 +1,16 @@
 ---
 title: Use a SQL Server database in a UWP app
-description: Use a SQL Server database in a UWP app.
-ms.date: 03/28/2019
+description: Learn how to connect a UWP app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
-# Use a SQL Server database in a UWP app
-Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) namespace.
 
-In this guide, we'll show you one way to do that. If you install the [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
+# Use a SQL Server database in a UWP app
+Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace.
+
+In this guide, we'll show you one way to do that. If you install the [Northwind](/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
 
 ![Northwind products](images/products-northwind.png)
 
@@ -26,6 +27,9 @@ Open the **Package.appxmanifest** file of your UWP project in the manifest desig
 In the **Capabilities** tab, select the **Enterprise Authentication** checkbox if you are using Windows Authentication for authenticating your SQL Server.
 
 ![Enterprise Authentication Capability](images/enterprise-authentication.png)
+
+> [!IMPORTANT]
+> You will also need to select **Internet (Client & Server)**, **Internet (Client)**, and **Private Networks (Client & Server)**, regardless of whether or not you're using Windows Authentication.
 
 <a id="use-data" />
 
@@ -44,7 +48,7 @@ In this section,  we'll do these things:
 :five: Populate the UI with Products.
 
 >[!NOTE]
-> This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
+> This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
 
 ### Add a connection string
 
@@ -71,7 +75,7 @@ sealed partial class App : Application
 
 ### Create a class to hold product data
 
-We'll create a class that implements the [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) event so that we can bind attributes in our XAML UI to the properties in this class.
+We'll create a class that implements the [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) event so that we can bind attributes in our XAML UI to the properties in this class.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -89,10 +93,7 @@ public class Product : INotifyPropertyChanged
     public event PropertyChangedEventHandler PropertyChanged;
     private void NotifyPropertyChanged(string propertyName)
     {
-        if (PropertyChanged != null)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
 }
@@ -100,7 +101,7 @@ public class Product : INotifyPropertyChanged
 
 ### Retrieve products from the SQL Server database
 
-Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of ``Product`` instances.
+Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of ``Product`` instances.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -152,7 +153,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
  Add the following XAML to the **MainPage.xaml** file of the UWP project.
 
- This XAML creates a [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to show each product that you returned in the previous snippet, and binds the attributes of each row in the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the properties that we defined in the ``Product`` class.
+ This XAML creates a [ListView](/uwp/api/windows.ui.xaml.controls.listview) to show each product that you returned in the previous snippet, and binds the attributes of each row in the [ListView](/uwp/api/windows.ui.xaml.controls.listview) to the properties that we defined in the ``Product`` class.
 
 ```xml
 <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
@@ -202,7 +203,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### Show products in the ListView
 
-Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) of ``Product`` instances.
+Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) of ``Product`` instances.
 
 ```csharp
 public MainPage()
@@ -216,7 +217,7 @@ Start the project and see products from the Northwind sample database appear in 
 
 ![Northwind products](images/products-northwind.png)
 
-Explore the [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) namespace to see what other things you can do with data in your SQL Server database.
+Explore the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace to see what other things you can do with data in your SQL Server database.
 
 ## Trouble connecting to your database?
 
@@ -236,7 +237,7 @@ See [Use a SQLite database in a UWP app](sqlite-databases.md).
 
 **Share code between different apps across different platforms**
 
-See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+See [Share code between desktop and UWP](../porting/desktop-to-uwp-migrate.md).
 
 **Add master detail pages with Azure SQL back ends**
 

@@ -1,15 +1,15 @@
 ---
-description: More advanced scenarios with concurrency and asynchrony in C++/WinRT.
-title: More advanced concurrency and asynchrony with C++/WinRT
+description: Advanced scenarios with concurrency and asynchrony in C++/WinRT.
+title: Advanced concurrency and asynchrony with C++/WinRT
 ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
 ---
 
-# More advanced concurrency and asynchrony with C++/WinRT
+# Advanced concurrency and asynchrony with C++/WinRT
 
-This topic describes more advanced scenarios with concurrency and asynchrony in C++/WinRT.
+This topic describes advanced scenarios with concurrency and asynchrony in C++/WinRT.
 
 For an introduction to this subject, first read [Concurrency and asynchronous operations](concurrency.md).
 
@@ -19,7 +19,7 @@ A coroutine is a function like any other in that a caller is blocked until a fun
 
 So, before you do compute-bound work in a coroutine, you need to return execution to the caller (in other words, introduce a suspension point) so that the caller isn't blocked. If you're not already doing that by `co_await`-ing some other operation, then you can `co_await` the [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) function. That returns control to the caller, and then immediately resumes execution on a thread pool thread.
 
-The thread pool being used in the implementation is the low-level [Windows thread pool](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api), so it's optimially efficient.
+The thread pool being used in the implementation is the low-level [Windows thread pool](/windows/desktop/ProcThread/thread-pool-api), so it's optimally efficient.
 
 ```cppwinrt
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
@@ -76,11 +76,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+The **winrt::resume_foreground** function takes an optional priority parameter. If you're using that parameter, then the pattern shown above is appropriate. If not, then you can choose to simplify `co_await winrt::resume_foreground(someDispatcherObject);` into just `co_await someDispatcherObject;`.
 
 ## Execution contexts, resuming, and switching in a coroutine
 
@@ -533,7 +536,7 @@ int main()
 
 ## Reporting progress
 
-If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), then you can retrieve the object returned by the [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) function, and use it to report progress back to a progress handler. Here's a code example.
+If your coroutine returns either [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress-1), or [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2), then you can retrieve the object returned by the [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) function, and use it to report progress back to a progress handler. Here's a code example.
 
 ```cppwinrt
 // main.cpp
@@ -550,32 +553,39 @@ IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
 
     co_await 1s;
     double pi_so_far{ 3.1 };
+    progress.set_result(pi_so_far);
     progress(0.2);
 
     co_await 1s;
     pi_so_far += 4.e-2;
+    progress.set_result(pi_so_far);
     progress(0.4);
 
     co_await 1s;
     pi_so_far += 1.e-3;
+    progress.set_result(pi_so_far);
     progress(0.6);
 
     co_await 1s;
     pi_so_far += 5.e-4;
+    progress.set_result(pi_so_far);
     progress(0.8);
 
     co_await 1s;
     pi_so_far += 9.e-5;
+    progress.set_result(pi_so_far);
     progress(1.0);
+
     co_return pi_so_far;
 }
 
 IAsyncAction DoMath()
 {
     auto async_op_with_progress{ CalcPiTo5DPs() };
-    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    async_op_with_progress.Progress([](auto const& sender, double progress)
     {
-        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << L". "
+                   << L"Value so far: " << sender.GetResults() << std::endl;
     });
     double pi{ co_await async_op_with_progress };
     std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
@@ -588,6 +598,13 @@ int main()
     DoMath().get();
 }
 ```
+
+To report progress, invoke the progress token with the progress value as the argument. To set a provisional result, use the `set_result()` method on the progress token.
+
+> [!NOTE]
+> Reporting provisional results requires C++/WinRT version 2.0.210309.3 or later.
+
+The above example chooses to set a provisional result for every progress report. You can choose to report provisional results any time, if at all. It need not be coupled with a progress report.
 
 > [!NOTE]
 > It's not correct to implement more than one *completion handler* for an asynchronous action or operation. You can have either a single delegate for its completed event, or you can `co_await` it. If you have both, then the second will fail. Either one of the following two kinds of completion handlers is appropriate; not both for the same async object.
@@ -631,7 +648,7 @@ int main()
 }
 ```
 
-**winrt::fire_and_forget** is also useful as the return type of your event handler when you need to perform asynchronous operations in it. Here's an example (also see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
+**winrt::fire_and_forget** is also useful as the return type of your event handler when you need to perform asynchronous operations in it. Here's an example (also see [Strong and weak references in C++/WinRT](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
 
 ```cppwinrt
 winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
@@ -650,7 +667,7 @@ The first argument (the *sender*) is left unnamed, because we never use it. For 
 
 ## Awaiting a kernel handle
 
-C++/WinRT provides a **resume_on_signal** class, which you can use to suspend until a kernel event is signaled. You're responsible for ensuring that the handle remains valid until your `co_await resume_on_signal(h)` returns. **resume_on_signal** itself can't do that for you, because you may have lost the handle even before the **resume_on_signal** starts, as in this first example.
+C++/WinRT provides a [**winrt::resume_on_signal**](/uwp/cpp-ref-for-winrt/resume-on-signal) function, which you can use to suspend until a kernel event is signaled. You're responsible for ensuring that the handle remains valid until your `co_await resume_on_signal(h)` returns. **resume_on_signal** itself can't do that for you, because you may have lost the handle even before the **resume_on_signal** starts, as in this first example.
 
 ```cppwinrt
 IAsyncAction Async(HANDLE event)
@@ -668,7 +685,7 @@ Technically, our coroutine is receiving its parameters by value, as it should (s
 IAsyncAction Async(winrt::handle event)
 {
     co_await DoWorkAsync();
-    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+    co_await resume_on_signal(event); // The incoming handle *is* valid here.
 }
 ```
 
@@ -710,9 +727,24 @@ IAsyncAction SampleCaller()
 }
 ```
 
+You can pass a timeout value to **resume_on_signal**, as in this example.
+
+```cppwinrt
+winrt::handle event = ...
+
+if (co_await winrt::resume_on_signal(event.get(), std::literals::2s))
+{
+    puts("signaled");
+}
+else
+{
+    puts("timed out");
+}
+```
+
 ## Asynchronous timeouts made easy
 
-C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a **get** function, similar to that provided by **std::function**.
+C++/WinRT is invested heavily in C++ coroutines. Their effect on writing concurrency code is transformational. This section discusses cases where details of asynchrony are not important, and all you want is the result there and then. For that reason, C++/WinRT's implementation of the [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows Runtime asynchronous operation interface has a [**get**](/uwp/api/windows.foundation.iasyncaction#cwinrt-extension-functions) function, similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -726,7 +758,7 @@ int main()
 
 The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
 
-But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the **wait_for** function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::function**.
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the [**wait_for**](/uwp/api/windows.foundation.iasyncaction#cwinrt-extension-functions) function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -744,7 +776,10 @@ int main()
 > [!NOTE]
 > **wait_for** uses **std::chrono::duration** at the interface, but it is limited to some range smaller than what **std::chrono::duration** provides (roughly 49.7 days).
 
-The **wait_for** in this next example waits for around five seconds and then it checks completion. If the comparison is favorable, then you know that the async object completed successfully, and you're done. If you're waiting for some result, then you can simply follow that with a call to the **get** function to retrieve the result.
+The **wait_for** in this next example waits for around five seconds and then it checks completion. If the comparison is favorable, then you know that the async object completed successfully, and you're done. If you're waiting for some result, then you can simply follow that with a call to the [**GetResults**](/uwp/api/windows.foundation.iasyncoperation-1.getresults) method to retrieve the result.
+
+> [!NOTE]
+> **wait_for** and **get** are mutually exclusive (you can't call both of them). They each count as a *waiter*, and Windows Runtime asynchronous actions/operations support only a single waiter.
 
 ```cppwinrt
 int main()
@@ -753,18 +788,18 @@ int main()
  
     if (async.wait_for(5s) == AsyncStatus::Completed)
     {
-        printf("result %d\n", async.get());
+        printf("result %d\n", async.GetResults());
     }
 }
 ```
 
-Because the async object has completed by then, **get** returns the result immediately, without any further wait. As you can see, **wait_for** returns the state of the async object. So, you can use it for more fine-grained control, like this.
+Because the async object has completed by then, the **GetResults** method returns the result immediately, without any further wait. As you can see, **wait_for** returns the state of the async object. So, you can use it for more fine-grained control, like this.
 
 ```cppwinrt
 switch (async.wait_for(5s))
 {
 case AsyncStatus::Completed:
-    printf("result %d\n", async.get());
+    printf("result %d\n", async.GetResults());
     break;
 case AsyncStatus::Canceled:
     puts("canceled");
@@ -778,10 +813,24 @@ case AsyncStatus::Started:
 }
 ```
 
-- Remember that **AsyncStatus::Completed** means that the async object completed successfully, and you may call the **get** function to retrieve any result.
-- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded.
-- **AsyncStatus::Error** means that the async object has failed in some way. You can **get** to rethrow the exception if you wish.
-- **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling **get** to retrieve any result. But it's best just to discard the object at this point.
+- Remember that **AsyncStatus::Completed** means that the async object completed successfully, and you may call the **GetResults** method to retrieve any result.
+- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded. You can call the **GetResults** method to rethrow the cancellation exception if you wish.
+- **AsyncStatus::Error** means that the async object has failed in some way. You can call the **GetResults** method to rethrow the exception if you wish.
+- **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling the **GetResults** method to retrieve any result. But it's best just to discard the object at this point.
+
+An alternative pattern is to check only for [**Started**](/uwp/api/windows.foundation.asyncstatus), and let GetResults deal with the other cases.
+
+```cppwinrt
+if (async.wait_for(5s) == AsyncStatus::Started)
+{
+    puts("timed out");
+}
+else
+{
+    // will throw appropriate exception if in cancelled or error state
+    auto results = async.GetResults();
+}
+```
 
 ## Returning an array asynchronously
 
@@ -830,9 +879,9 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 
 ## Important APIs
 * [IAsyncAction interface](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
-* [IAsyncOperation&lt;TResult&gt; interface](/uwp/api/windows.foundation.iasyncoperation_tresult_)
-* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
+* [IAsyncActionWithProgress&lt;TProgress&gt; interface](/uwp/api/windows.foundation.iasyncactionwithprogress-1)
+* [IAsyncOperation&lt;TResult&gt; interface](/uwp/api/windows.foundation.iasyncoperation-1)
+* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 * [winrt::get_cancellation_token](/uwp/cpp-ref-for-winrt/get-cancellation-token)

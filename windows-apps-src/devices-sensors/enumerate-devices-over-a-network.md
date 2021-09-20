@@ -14,15 +14,15 @@ ms.custom: 19H1
 
 **Important APIs**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
 
-In addition to discovering locally connected devices, you can use the [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) APIs to enumerate devices over wireless and networked protocols.
+In addition to discovering locally connected devices, you can use the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs to enumerate devices over wireless and networked protocols.
 
 ## Enumerating devices over networked or wireless protocols
 
-Sometimes you need to enumerate devices that are not locally connected and can only be discovered over a wireless or networking protocols. In order to do so, the [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) APIs have three different kinds of device objects: the **AssociationEndpoint** (AEP), the **AssociationEndpointContainer** (AEP Container), and the **AssociationEndpointService** (AEP Service). As a group these are referred to as AEPs or AEP objects.
+Sometimes you need to enumerate devices that are not locally connected and can only be discovered over a wireless or networking protocols. In order to do so, the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs have three different kinds of device objects: the **AssociationEndpoint** (AEP), the **AssociationEndpointContainer** (AEP Container), and the **AssociationEndpointService** (AEP Service). As a group these are referred to as AEPs or AEP objects.
 
-Some device APIs provide a selector string that you can use to enumerate through the available AEP objects. This could include both devices that are paired and are not paired with the system. Some of the devices might not require pairing. Those device APIs may attempt to pair the device if pairing it is necessary before interacting with it. Wi-Fi Direct is an example of APIs that follow this pattern. If those device APIs do not automatically pair the device, you can pair it using the [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing) object available from [**DeviceInformation.Pairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing).
+Some device APIs provide a selector string that you can use to enumerate through the available AEP objects. This could include both devices that are paired and are not paired with the system. Some of the devices might not require pairing. Those device APIs may attempt to pair the device if pairing it is necessary before interacting with it. Wi-Fi Direct is an example of APIs that follow this pattern. If those device APIs do not automatically pair the device, you can pair it using the [**DeviceInformationPairing**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing) object available from [**DeviceInformation.Pairing**](/uwp/api/windows.devices.enumeration.deviceinformation.pairing).
 
 However, there may be cases where you want to manually discover devices on your own without using a pre-defined selector string. For example, you may just need to gather information about AEP devices without interacting with them or you may want to find more AEP objects than will be discovered with the pre-defined selector string. In this case, you will build your own selector string and use it following the instructions under [Build a device selector](build-a-device-selector.md).
 
@@ -49,26 +49,26 @@ When you build your own selector, it is strongly recommended that you limit your
 
 Each AEP kind has a property you can use to constrain your enumeration to a specific protocol. Keep in mind you can use the OR operator in an AQS filter to combine multiple protocols. Here are some examples of AQS filter strings that show how to query for AEP devices.
 
-This AQS queries for all UPnP **AssociationEndpoint** objects when the [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpoint**.
+This AQS queries for all UPnP **AssociationEndpoint** objects when the [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpoint**.
 
 ``` syntax
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-This AQS queries for all UPnP and WSD **AssociationEndpoint** objects when the [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpoint**.
+This AQS queries for all UPnP and WSD **AssociationEndpoint** objects when the [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpoint**.
 
 ``` syntax
 System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-This AQS queries for all UPnP **AssociationEndpointService** objects if the [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpointService**.
+This AQS queries for all UPnP **AssociationEndpointService** objects if the [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpointService**.
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-This AQS queries **AssociationEndpointContainer** objects when the [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AssociationEndpointContainer**, but only finds them by enumerating the UPnP protocol. Typically, it wouldn't be useful to enumerate containers that only come from one protocol. However, this might be useful by limiting your filter to protocols where you know your device can be discovered.
+This AQS queries **AssociationEndpointContainer** objects when the [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AssociationEndpointContainer**, but only finds them by enumerating the UPnP protocol. Typically, it wouldn't be useful to enumerate containers that only come from one protocol. However, this might be useful by limiting your filter to protocols where you know your device can be discovered.
 
 ``` syntax
 System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64}"

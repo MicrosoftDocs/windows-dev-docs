@@ -1,6 +1,6 @@
 ---
 title: Planning for UWP games
-description: Game planning for UWP games.
+description: See articles about planning for UWP games, including technologies, accessibility, monetization, and packaging.
 ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
 ms.date: 02/08/2017
 ms.topic: article

@@ -14,15 +14,15 @@ Each Microsoft Store transaction that results in a successful product purchase c
 Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made add-on (also called in-app product or IAP) purchases from the Microsoft Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
 
 > [!IMPORTANT]
-> This article shows how to use members of the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) namespace to get and validate a receipt for an in-app purchase. If you are using the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) namespace for in-app purchases (introduced in Windows 10, version 1607, and available to projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio), this namespace does not provide an API for getting purchase receipts for in-app purchases. However, you can use a REST method in the Microsoft Store collection API to get data for a purchase transaction. For more information, see [Receipts for in-app purchases](in-app-purchases-and-trials.md#receipts).
+> This article shows how to use members of the [Windows.ApplicationModel.Store](/uwp/api/Windows.ApplicationModel.Store) namespace to get and validate a receipt for an in-app purchase. If you are using the [Windows.Services.Store](/uwp/api/Windows.Services.Store) namespace for in-app purchases (introduced in Windows 10, version 1607, and available to projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio), this namespace does not provide an API for getting purchase receipts for in-app purchases. However, you can use a REST method in the Microsoft Store collection API to get data for a purchase transaction. For more information, see [Receipts for in-app purchases](in-app-purchases-and-trials.md#receipts).
 
 ## Requesting a receipt
 
 
 The **Windows.ApplicationModel.Store** namespace supports several ways to get a receipt:
 
-* When you make a purchase by using [CurrentApp.RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) or [CurrentApp.RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) (or one of the other overloads of this method), the return value contains the receipt.
-* You can call the [CurrentApp.GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) method to retrieve the current receipt info for your app and any add-ons in your app.
+* When you make a purchase by using [CurrentApp.RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) or [CurrentApp.RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) (or one of the other overloads of this method), the return value contains the receipt.
+* You can call the [CurrentApp.GetAppReceiptAsync](/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) method to retrieve the current receipt info for your app and any add-ons in your app.
 
 An app receipt looks something like this.
 
@@ -81,12 +81,12 @@ You can use either of these receipt examples to test your validation code. For m
 
 ## Validating a receipt
 
-To validate a receipt's authenticity, you need your back-end system (a web service or something similar) to check the receipt's signature using the public certificate. To get this certificate, use the URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, where ```CertificateId``` is the **CertificateId** value in the receipt.
+To validate a receipt's authenticity, you need your back-end system (a web service or something similar) to check the receipt's signature using the public certificate. To get this certificate, use the URL `https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60`, where `CertificateId` is the **CertificateId** value in the receipt.
 
 Here's an example of that validation process. This code runs in a .NET Framework console application that includes a reference to the **System.Security** assembly.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/ReceiptVerificationSample/cs/Program.cs" id="ReceiptVerificationSample":::
 
 <span id="receipt-descriptions" />
 
@@ -111,7 +111,7 @@ The root element of this file is the **Receipt** element, which contains informa
 |  **Version**  |    The version number of the receipt.            |
 |  **CertificateId**  |     The certificate thumbprint used to sign the receipt.          |
 |  **ReceiptDate**  |    Date the receipt was signed and downloaded.           |  
-|  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |  |
+|  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |
 
 <span id="appreceipt" />
 
@@ -126,7 +126,7 @@ This element contains purchase information for the current app.
 |  **Id**  |    Identifies the purchase.           |
 |  **AppId**  |     The Package Family Name value that the OS uses for the app.           |
 |  **LicenseType**  |    **Full**, if the user purchased the full version of the app. **Trial**, if the user downloaded a trial version of the app.           |  
-|  **PurchaseDate**  |    Date when the app was acquired.          |  |
+|  **PurchaseDate**  |    Date when the app was acquired.          |
 
 <span id="productreceipt" />
 
@@ -142,7 +142,7 @@ This element contains information about an in-app purchase for the current app.
 |  **AppId**  |     Identifies the app through which the user made the purchase.           |
 |  **ProductId**  |     Identifies the product purchased.           |
 |  **ProductType**  |    Determines the product type. Currently only supports a value of **Durable**.          |  
-|  **PurchaseDate**  |    Date when the purchase occurred.          |  |
+|  **PurchaseDate**  |    Date when the purchase occurred.          |
 
  
 

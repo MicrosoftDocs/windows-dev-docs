@@ -1,17 +1,17 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal core API reference
+title: Windows Device Portal core REST API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
 ms.custom: 19H1
-ms.date: 04/19/2019
+ms.date: 01/08/2021
 ms.topic: article
-keywords: windows 10, uwp, device portal
+keywords: windows 10, uwp, device portal, REST
 ms.localizationpriority: medium
 ---
 
-# Device Portal core API reference
+# Windows Device Portal core REST API reference
 
-All Device Portal functionality is built on REST APIs that developers can call directly to access resources and control their devices programmatically.
+All Windows Device Portal (WDP) functionality is built on REST APIs that developers can call directly to access resources and control their devices programmatically.
 
 ## App deployment
 
@@ -62,13 +62,14 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
-<hr>
+> [!NOTE]
+> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
 
 ### Install a related set
 
 **Request**
 
-You can install a [related set](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) by using the following request format.
+You can install a [related set](/windows/msix/) by using the following request format.
 
 | Method      | Request URI |
 | :------     | :------ |
@@ -169,7 +170,7 @@ This API has the following expected status codes.
 
 **Request**
 
-You can register a [related set](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) in loose folders by using the following request format.
+You can register a [related set](/windows/msix/) in loose folders by using the following request format.
 
 | Method      | Request URI |
 | :------     | :----- |
@@ -348,7 +349,7 @@ The response includes a list of installed packages with associated details. The 
         "Name": string,
         "PackageFamilyName": string,
         "PackageFullName": string,
-        "PackageOrigin": int, (https://msdn.microsoft.com/en-us/library/windows/desktop/dn313167(v=vs.85).aspx)
+        "PackageOrigin": int, (https://msdn.microsoft.com/library/windows/desktop/dn313167(v=vs.85).aspx)
         "PackageRelativeId": string,
         "Publisher": string,
         "Version": {
@@ -494,6 +495,7 @@ This API has the following expected status codes.
 * IoT
 
 ---
+
 ### Get a list of paired Bluetooth devices
 
 **Request**
@@ -1368,7 +1370,7 @@ You can specify the following additional parameters on the request URI:
 | URI parameter | Description |
 | :---          | :--- |
 | autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks. |
-| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100)).|
+| dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](/previous-versions/azure/reference/dn802457(v=azure.100)).|
 | maxdumpcount   | (**optional**) The maximum number of dumps to save. |
 | overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached. |
 
@@ -1998,7 +2000,7 @@ You can specify the following additional parameters on the request URI:
 
 | URI parameter | Description |
 | :------          | :------ |
-| name | (**required**) The new name for the machine. |
+| name | (**required**) The new name for the machine. This should be base64 encoded. |
 
 **Request headers**
 
@@ -4348,7 +4350,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is renamed
+| 200 | OK. The file is renamed|
 | 404 | File not found |
 | 5XX | Error codes |
 
@@ -4399,7 +4401,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is deleted |
+| 200 | OK. The file is deleted |
 | 404 | File not found |
 | 5XX | Error codes |
 
@@ -4447,7 +4449,7 @@ This API has the following expected status codes.
 
 | HTTP status code      | Description |
 | :------     | :----- |
-| 200 | OK |. The file is uploaded |
+| 200 | OK. The file is uploaded |
 | 4XX | Error codes |
 | 5XX | Error codes |
 

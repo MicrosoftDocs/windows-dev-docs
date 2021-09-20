@@ -1,6 +1,6 @@
 ---
 title: App development for Windows as a service
-description: Decouple app release and support from specific Windows builds.
+description: Learn about the Windows as a service (WaaS) approach to innovation, development, and delivery, and the community-centric Windows Insider testing program.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 -   Windows 10 Mobile
 -   Windows 10 IoT Core 
 
-In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
+In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](/windows/deployment/update/waas-overview). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
 
 Builds distributed as flights provide the Windows engineering team with significant data regarding how well builds are performing in actual use. Flighting with Windows Insiders also enables Microsoft to test builds in much more diverse hardware, application, and networking environments than in the past, and to identify issues far more quickly. As a result, Microsoft believes that community-focused flighting will enable both a faster pace of innovation delivery and better public release quality than ever.
 
@@ -36,7 +36,7 @@ The following table shows describes the various servicing channels and their key
 | Semi-Annual Channel | Approximately 4 months after first published by Microsoft | 18 months from when first published | Provides additional time to test new feature upgrades before deployment | Pro, Education, Enterprise, Mobile Enterprise, IoT Core Pro |
 | Long-Term Servicing Channel (LTSC) | Immediately after published by Microsoft | 10 Years | Enables long-term deployment of selected Windows 10 releases in low-change configurations | Enterprise LTSB |
 
-For more information, see [Windows 10 servicing options for updates and upgrades](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels).
+For more information, see [Windows 10 servicing options for updates and upgrades](/windows/deployment/update/waas-overview#servicing-channels).
 
 ## Supporting apps in Windows as a service
 
@@ -48,9 +48,9 @@ In view of this change, Microsoft recommends that our ISV partners decouple thei
 
 This approach will reduce the burden of maintaining an app schedule that aligns with Windows releases. ISV partners should be free to release features or updates at their own cadence. We feel that our partners can keep their customer base updated with the latest app updates independent of a Windows release. In addition, our customers do not have to seek an explicit support statement whenever a Windows build is released. Here is an example of a support statement that covers how an app may be supported across different versions of the OS:
 
-| Example of an application lifecycle support statement | |
-| --- | --- |
-| Contoso is a software development company and is the owner of the popular Mojave app which has a major share in the enterprise space. Contoso releases its next major release Mojave 14.0 and declares mainstream support for a period of three years from the release date. During mainstream support all updates and support are complimentary for the licensed product. Contoso also declares an additional two years of extended support where customers can purchase updates and support for a grace period. Beyond the extended support end date this product version is no longer supported. During the period of mainstream support Contoso will support Mojave 14.0 on all released builds of Windows. Contoso will also release updates to Mojave as necessary and independent of the Windows product releases. | |
+> **Example of an application lifecycle support statement**
+>
+> Contoso is a software development company and is the owner of the popular Mojave app which has a major share in the enterprise space. Contoso releases its next major release Mojave 14.0 and declares mainstream support for a period of three years from the release date. During mainstream support all updates and support are complimentary for the licensed product. Contoso also declares an additional two years of extended support where customers can purchase updates and support for a grace period. Beyond the extended support end date this product version is no longer supported. During the period of mainstream support Contoso will support Mojave 14.0 on all released builds of Windows. Contoso will also release updates to Mojave as necessary and independent of the Windows product releases.
 
 In the following sections, you will find additional information about the steps Microsoft takes to maintain the compatibility of the underlying OS. You will also find guidance on steps you can take to help maintain the compatibility of the combined OS and app ecosystem. There is a section on how to leverage Windows flighting builds to detect app regressions before a Windows build is released. Lastly, we describe how we use an instrumentation and telemetry-driven approach to increase the quality of Windows builds. We recommend ISVs adopt a similar approach with their app portfolio.
 
@@ -86,7 +86,7 @@ Some apps perform a version check and simply pass a warning to users. However, t
 -   If the app is dependent on specific API functionality, ensure you target the correct API version.
 -   Ensure you detect the change via APISet or another public API, and do not use the version as a proxy for some feature or fix. If there are breaking changes and a proper check is not exposed, then that is a bug.
 -   Ensure the app does NOT check for version in odd ways, such as via the registry, file versions, offsets, kernel mode, drivers, or other means. If the app absolutely needs to check the version, use the GetVersion APIs, which should return the major, minor, and build number.
--   If you are using the [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API, remember that the behavior of this API has changed since Windows 8.1.
+-   If you are using the [GetVersion](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion) API, remember that the behavior of this API has changed since Windows 8.1.
 
 If you own apps such as antimalware or firewall apps, you should work through your usual feedback channels and via the Windows Insider program.
 
@@ -153,8 +153,6 @@ If after investigation, the former is the case, be sure to use the Windows Insid
 
 Let us know how your app is performing against flighted builds. As you discover issues with your app during testing, please log bugs via the partner portal if you have access, or through your Microsoft representative. We encourage this information so that we can build a quality experience for our users together.
 
-### Step 4: Register on Ready For Windows
-The [Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) website is a directory of software that supports Windows 10. It’s intended for IT administrators at companies and organizations worldwide that are considering Windows 10 for their deployments. IT administrators can check the site to see whether software deployed in their enterprise is supported in Windows 10.
 
 ## Related topics
-[Windows 10 servicing options for updates and upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10 servicing options for updates and upgrades](/windows/manage/introduction-to-windows-10-servicing)

@@ -16,14 +16,14 @@ The Windows.UI.Composition APIs enable you to create real-time animations and ef
 Composition lighting lets you create interesting UI by allowing:
 
 - Transformation of a light independent of other objects in the scene to enable immersive scenarios like music playback scenes.
-- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](/windows/uwp/design/style/reveal) highlight.
+- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](/windows/apps/design/style/index) highlight.
 - Transformation of the light and entire scene as a group to create materials and depth.
 
 Composition lighting supports three key concepts: **Light**, **Targets**, and **SceneLightingEffect**.
 
 ## Light
 
-[CompositionLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlight) allows you to create various lights and place them in coordinate space. These lights target visuals that you wish to identify as lit by the light.
+[CompositionLight](/uwp/api/windows.ui.composition.compositionlight) allows you to create various lights and place them in coordinate space. These lights target visuals that you wish to identify as lit by the light.
 
 ### Light Types
 
@@ -68,7 +68,7 @@ Concept | Details
 **Ambient Light** | Adding a non-ambient light to your scene will turn off all existing light.  Items not targeted by a non-ambient light will appear black.  To illuminate surrounding visuals not targeted by the light in a natural way, use an ambient light in conjunction with other lights.
 **Number of Lights** | You may use any two non-ambient composition lights in any combination to target your UI. Ambient lights are not restricted; spot, point, and distant lights are.
 **Lifetime** | CompositionLight may experience lifetime conditions (example: the garbage collector may recycle the light object before it is used).  We recommended keeping a reference to your lights by adding lights as a member to help the application manage lifetime.
-**Transforms** | Lights must be placed in a node above UI that uses effects like [perspective transforms](/windows/uwp/design/layout/3-d-perspective-effects) in your visual structure to be drawn properly.
+**Transforms** | Lights must be placed in a node above UI that uses effects like [perspective transforms](/windows/apps/design/layout/3-d-perspective-effects) in your visual structure to be drawn properly.
 **Targets and Coordinate Space** | CoordinateSpace is the visual space in which all the lights properties must be set. CompositionLight.Targets must be within the CoordinateSpace tree.
 
 ## Lighting Properties
@@ -77,7 +77,7 @@ Depending on the type of light used, a light can have properties for attenuation
 
 Property | Description
 --- | ---
-**Color** | The [Color](/uwp/api/windows.ui.color) of the light. Lighting color values are defined by [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) Diffuse, Ambient, and Specular that defines the color being emitted. Lighting uses RGBA values for lights; the alpha color component is not used.
+**Color** | The [Color](/uwp/api/windows.ui.color) of the light. Lighting color values are defined by [D3D](../graphics-concepts/light-properties.md) Diffuse, Ambient, and Specular that defines the color being emitted. Lighting uses RGBA values for lights; the alpha color component is not used.
 **Direction** | The direction of light. The direction in which the light is pointing is specified relative to its [CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual.
 **Coordinate Space** | Every Visual has an implicit 3D coordinate space. X direction is from left to right. Y direction is from top to bottom. Z direction is a point out of the plane. The original point of this coordinate is the upper-left corner of the visual, and the unit is Device Independent Pixel (DIP). A light's offset defined in this coordinate.
 **Inner and Outer Cones** | Spotlights emit a cone of light that has two parts: a bright inner cone and an outer cone. Composition allows you control over inner and outer cone angles and color.
@@ -117,7 +117,7 @@ Property | Description
 **Ambient** | Ambient properties are mostly used to control the overall color reflection.
 **Specular** | Specular reflection creates highlights on objects, making them appear shiny. You can control the level of specular reflection as well as the level of shine.  These properties are manipulated to create material effects like shinny metals or glossy paper.
 **Diffuse** | Diffused reflection scatters the light in all directions.
-**Reflectance Model** | [Reflectance Model](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel) allows you to choose between [Blinn Phong](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader) and Physically Based Blinn Phong.  You would choose Physically Based Blinn Phong when you want to have condensed specular highlights.
+**Reflectance Model** | [Reflectance Model](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel) allows you to choose between [Blinn Phong](/visualstudio/designers/how-to-create-a-basic-phong-shader) and Physically Based Blinn Phong.  You would choose Physically Based Blinn Phong when you want to have condensed specular highlights.
 
 ### Sample (SceneLightingEffect)
 
@@ -157,8 +157,8 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 ## Related articles
 
 - [Creating Materials and Lights in the Visual Layer](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
-- [Lighting Overview](https://docs.microsoft.com/windows/uwp/graphics-concepts/lighting-overview)
-- [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
-- [Mathematics of Lighting](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
-- [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
+- [Lighting Overview](../graphics-concepts/lighting-overview.md)
+- [CompositionCapabilities API](/uwp/api/windows.ui.composition.compositioncapabilities)
+- [Mathematics of Lighting](../graphics-concepts/mathematics-of-lighting.md)
+- [SceneLightingEffect](/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 - [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

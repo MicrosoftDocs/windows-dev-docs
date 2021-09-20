@@ -1,6 +1,6 @@
 ---
-Description: Attract customers and promote your apps
 title: Attract customers and promote your apps
+description: Learn about features in Partner Center like ad campaigns, promo codes, and sale pricing that help you promote your apps and attract customers.
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -21,7 +21,7 @@ Once your app is in the Microsoft Store, it's time to get it in front of as many
 
 These campaigns will run ads in any other app that matches your app’s device and category. You can also choose a universal campaign, where the ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties.
 
-[EXPLORE MORE >](create-an-ad-campaign-for-your-app.md)
+[EXPLORE MORE >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -34,7 +34,7 @@ These campaigns will run ads in any other app that matches your app’s device a
 
 These campaigns will run ads only in your other apps, free of charge.
 
-[EXPLORE MORE >](about-house-ads.md)
+[EXPLORE MORE >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -48,7 +48,7 @@ These campaigns will run ads only in your other apps, free of charge.
 
 These campaigns will run ads in apps published by other developers who also participate in community ad campaigns, free of charge.
 
-[EXPLORE MORE >](create-an-ad-campaign-for-your-app.md)
+[EXPLORE MORE >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -97,23 +97,23 @@ Native ads enable you to send all the individual components of your ad (such as 
 
 ![Learn more about app promotion campaigns](images/app-promotion-campaigns.png)
 
-[Create an ad campaign in the dashboard](create-an-ad-campaign-for-your-app.md)
+[Create an ad campaign in the dashboard](../monetize/index.md)
 
-[Create an ad campaign using our REST API](https://docs.microsoft.com/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+[Create an ad campaign using our REST API](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[Review campaign performance data in the dashboard](promote-your-app-report.md)
+[Review campaign performance data in the dashboard](/windows/uwp/publish/ad-campaign-report)
 
-[Get campaign performance data using our REST API](https://docs.microsoft.com/windows/uwp/monetize/)
+[Get campaign performance data using our REST API](../monetize/index.md)
 
 ## Promotion analytics
 
 ![Promotion analytics](images/ads-promotion-analytics.png)
 
-[Ad campaign report](promote-your-app-report.md)
+[Ad campaign report](/windows/uwp/publish/ad-campaign-report)
 
 [Acquisitions report](acquisitions-report.md)
 
-[Get analytics data using our REST API](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[Get analytics data using our REST API](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## Other ways to promote your app
 

@@ -33,7 +33,7 @@ Company accounts are a little more expensive, mostly because we take some additi
 
 After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, our verification partner Dun & Bradstreet will confirm that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md) continue building and testing apps, and work on getting your submissions ready.
 
-You can check your verification status on the **Account settings** page. 
+You can check your verification status on the **Account settings** page.
 
 ## Developer account and app-submission markets
 
@@ -87,10 +87,10 @@ In the following table, the **Registration fee** is the current cost to register
 | Côte d'Ivoire                     | 19 USD              | 99 USD           |  
 | Croatia                           | 107 HRK             | 500 HRK          |  
 | Cyprus                            | 14 EUR              | 75 EUR           |  
-| Czech Republic                    | 365 CZK             | 1720 CZK         |  
+| Czechia                           | 365 CZK             | 1720 CZK         |  
 | Denmark                           | 106 DKK             | 530 DKK          |  
-| Djibouti                          | 19 USD              | 99 USD           | 
-| Dominica                          | 19 USD              | 99 USD           | 
+| Djibouti                          | 19 USD              | 99 USD           |
+| Dominica                          | 19 USD              | 99 USD           |
 | Dominican Republic                | 19 USD              | 99 USD           |  
 | Ecuador                           | 19 USD              | 99 USD           |  
 | Egypt                             | 133 EGP             | 600 EGP          |  
@@ -145,7 +145,6 @@ In the following table, the **Registration fee** is the current cost to register
 | Lithuania                         | 14 EUR              | 75 EUR           |  
 | Luxembourg                        | 14 EUR              | 75 EUR           |  
 | Macao SAR                         | 19 USD              | 99 USD           |  
-| Macedonia (FYROM)                 | 19 USD              | 99 USD           |  
 | Madagascar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaysia                          | 62 MYR              | 300 MYR          |  
@@ -170,7 +169,8 @@ In the following table, the **Registration fee** is the current cost to register
 | New Zealand                       | 24 NZD              | 140 NZD          |  
 | Nicaragua                         | 19 USD              | 99 USD           |  
 | Niger                             | 19 USD              | 99 USD           |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        |  
+| Nigeria                           | 3700 NGN            | 19500 NGN        |
+| North Macedonia                   | 19 USD              | 99 USD           |    
 | Norway                            | 113 NOK             | 580 NOK          |  
 | Oman                              | 7 OMR               | 40 OMR           |  
 | Pakistan                          | 1959 PKR            | 9000 PKR         |  

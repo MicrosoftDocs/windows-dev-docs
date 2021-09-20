@@ -7,9 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, games, depth, effects, primitives, directx
 ms.localizationpriority: medium
 ---
+
 # Use depth and effects on primitives
-
-
 
 Here, we show you how to use depth, perspective, color, and other effects on primitives.
 
@@ -17,18 +16,17 @@ Here, we show you how to use depth, perspective, color, and other effects on pri
 
 ## Prerequisites
 
-
 We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
 
 We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md) and [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).
 
 **Time to complete:** 20 minutes.
 
-Instructions
-------------
+## Instructions
+
 ### 1. Defining cube variables
 
-First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube. These structures specify the vertex positions and colors for the cube and how the cube will be viewed. We declare [**ID3D11DepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) and [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) with [**ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) and declare an instance of **ConstantBuffer**.
+First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube. These structures specify the vertex positions and colors for the cube and how the cube will be viewed. We declare [**ID3D11DepthStencilView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) and [**ID3D11Buffer**](/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) with [**ComPtr**](/cpp/windows/comptr-class) and declare an instance of **ConstantBuffer**.
 
 ```cpp
 struct SimpleCubeVertex
@@ -60,7 +58,7 @@ private:
 
 ### 2. Creating a depth stencil view
 
-In addition to creating the render-target view, we also create a depth-stencil view. The depth-stencil view enables Direct3D to efficiently render objects closer to the camera in front of objects further from the camera. Before we can create a view to a depth-stencil buffer, we must create the depth-stencil buffer. We populate a [**D3D11\_TEXTURE2D\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) to describe the depth-stencil buffer and then call [**ID3D11Device::CreateTexture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) to create the depth-stencil buffer. To create the depth-stencil view, we populate a [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_view_desc) to describe the depth-stencil view and pass the depth-stencil view description and the depth-stencil buffer to [**ID3D11Device::CreateDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview).
+In addition to creating the render-target view, we also create a depth-stencil view. The depth-stencil view enables Direct3D to efficiently render objects closer to the camera in front of objects further from the camera. Before we can create a view to a depth-stencil buffer, we must create the depth-stencil buffer. We populate a [**D3D11\_TEXTURE2D\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) to describe the depth-stencil buffer and then call [**ID3D11Device::CreateTexture2D**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) to create the depth-stencil buffer. To create the depth-stencil view, we populate a [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_view_desc) to describe the depth-stencil view and pass the depth-stencil view description and the depth-stencil buffer to [**ID3D11Device::CreateDepthStencilView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview).
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -142,15 +140,15 @@ We update the perspective projection parameters for the constant buffer dependin
 
 In this app, we create more complex vertex and pixel shaders than what we described in the previous tutorial, [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md). The app's vertex shader transforms each vertex position into projection space and passes the vertex color through to the pixel shader.
 
-The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structures that describe the layout of the vertex shader code has two layout elements: one element defines the vertex position and the other element defines the color.
+The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structures that describe the layout of the vertex shader code has two layout elements: one element defines the vertex position and the other element defines the color.
 
 We create vertex, index, and constant buffers to define an orbiting cube.
 
 **To define an orbiting cube**
 
 1.  First, we define the cube. We assign each vertex a color in addition to a position. This allows the pixel shader to color each face differently so the face can be distinguished.
-2.  Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) and [**D3D11\_SUBRESOURCE\_DATA**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) using the cube definition. We call [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) once for each buffer.
-3.  Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) for passing model, view, and projection matrices to the vertex shader. We can later use the constant buffer to rotate the cube and apply a perspective projection to it. We call [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) to create the constant buffer.
+2.  Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) and [**D3D11\_SUBRESOURCE\_DATA**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) using the cube definition. We call [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) once for each buffer.
+3.  Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) for passing model, view, and projection matrices to the vertex shader. We can later use the constant buffer to rotate the cube and apply a perspective projection to it. We call [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) to create the constant buffer.
 4.  Next, we specify the view transform that corresponds to a camera position of X = 0, Y = 1, Z = 2.
 5.  Finally, we declare a *degree* variable that we will use to animate the cube by rotating it every frame.
 
@@ -330,20 +328,20 @@ We create vertex, index, and constant buffers to define an orbiting cube.
 
 ### 5. Rotating and drawing the cube and presenting the rendered image
 
-We enter an endless loop to continually render and display the scene. We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis. We then call [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) to update the constant buffer and rotate the cube model. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) to specify the render target as the output target. In this **OMSetRenderTargets** call, we pass the depth-stencil view. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) to clear the depth buffer.
+We enter an endless loop to continually render and display the scene. We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis. We then call [**ID3D11DeviceContext::UpdateSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) to update the constant buffer and rotate the cube model. We call [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) to specify the render target as the output target. In this **OMSetRenderTargets** call, we pass the depth-stencil view. We call [**ID3D11DeviceContext::ClearRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) to clear the depth buffer.
 
 In the endless loop, we also draw the cube on the blue surface.
 
 **To draw the cube**
 
-1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) to describe how vertex buffer data is streamed into the input-assembler stage.
-2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) to bind the vertex and index buffers to the input-assembler stage.
-3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
-4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) to initialize the pixel shader stage with the pixel shader code.
-5.  Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) to set the constant buffer that is used by the vertex shader pipeline stage.
-6.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) to draw the cube and submit it to the rendering pipeline.
+1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) to describe how vertex buffer data is streamed into the input-assembler stage.
+2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) and [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) to bind the vertex and index buffers to the input-assembler stage.
+3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
+4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) to initialize the pixel shader stage with the pixel shader code.
+5.  Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) to set the constant buffer that is used by the vertex shader pipeline stage.
+6.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) to draw the cube and submit it to the rendering pipeline.
 
-We call [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) to present the rendered image to the window.
+We call [**IDXGISwapChain::Present**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) to present the rendered image to the window.
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -447,7 +445,3 @@ Next, we apply textures to primitives.
  
 
  
-
-
-
-

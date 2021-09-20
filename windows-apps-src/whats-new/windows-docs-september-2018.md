@@ -18,9 +18,9 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows Machine Learning
 
-[The Windows Machine Learning docs](https://docs.microsoft.com/windows/ai/) now reside on their own site, and are updated for the latest Windows Insider SDK. There are desktop and UWP tutorials in C++ and C# to help you get started adding WinML to your application.
+[The Windows Machine Learning docs](/windows/ai/) now reside on their own site, and are updated for the latest Windows Insider SDK. There are desktop and UWP tutorials in C++ and C# to help you get started adding WinML to your application.
 
-[The Windows.AI.MachineLearning API reference](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) has been updated for the latest Windows Insider SDK.
+[The Windows.AI.MachineLearning API reference](/uwp/api/windows.ai.machinelearning) has been updated for the latest Windows Insider SDK.
 
 [The Windows-Machine-Learning GitHub repo](https://github.com/Microsoft/Windows-Machine-Learning) has been updated with new samples that work with the latest SDK.
 
@@ -28,9 +28,9 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows UI Library
 
-[The Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interface elements for UWP apps. These packages are also compatible with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
+[The Windows UI Library](/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interface elements for UWP apps. These packages are also compatible with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
-For more information on the Windows UI Library, see [this list of API namespaces included in the NuGet package.](https://docs.microsoft.com/uwp/api/overview/winui/)
+For more information on the Windows UI Library, see [this list of API namespaces included in the NuGet package.](/windows/winui/api/)
 
 ## Developer Guidance
 

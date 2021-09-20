@@ -32,7 +32,7 @@ These examples use the following libraries:
 
 The following example shows the imports statements used by all of the code examples and implements a command line program that calls the other example methods.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/MainExample.java#L1-L64)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/MainExample.java" range="1-64":::
 
 <span id="token" />
 
@@ -40,7 +40,7 @@ The following example shows the imports statements used by all of the code examp
 
 The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) that you can use to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L65-L95)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="65-95":::
 
 <span id="create-add-on" />
 
@@ -48,7 +48,7 @@ The following example demonstrates how to [obtain an Azure AD access token](crea
 
 The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="310-345":::
 
 <span id="create-package-flight" />
 
@@ -56,7 +56,7 @@ The following example demonstrates how to [create](create-an-add-on.md) and then
 
 The following example demonstrates how to [create](create-a-flight.md) and then [delete](delete-a-flight.md) a package flight.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L185-L221)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="185-221":::
 
 <span id="create-app-submission" />
 
@@ -67,11 +67,11 @@ The following example shows how to use several methods in the Microsoft Store su
 1. To begin, the method [gets data for the specified app](get-an-app.md).
 2. Next, it [deletes the pending submission for the app](delete-an-app-submission.md), if one exists.
 3. It then [creates a new submission for the app](create-an-app-submission.md) (the new submission is a copy of the last published submission).
-4. It changes some details for the new submission and upload a new package for the submission to Azure Blob storage.
+4. It changes some details for the new submission and upload a new package for the submission to Azure Blob Storage.
 5. Next, it [updates](update-an-app-submission.md) and then [commits](commit-an-app-submission.md) the new submission to Partner Center.
 6. Finally, it periodically [checks the status of the new submission](get-status-for-an-app-submission.md) until the submission is successfully committed.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="97-183":::
 
 <span id="create-add-on-submission" />
 
@@ -82,11 +82,11 @@ The following example shows how to use several methods in the Microsoft Store su
 1. To begin, the method [gets data for the specified add-on](get-an-add-on.md).
 2. Next, it [deletes the pending submission for the add-on](delete-an-add-on-submission.md), if one exists.
 3. It then [creates a new submission for the add-on](create-an-add-on-submission.md) (the new submission is a copy of the last published submission).
-4. It uploads a ZIP archive that contains icons for the submission to Azure Blob storage.
+4. It uploads a ZIP archive that contains icons for the submission to Azure Blob Storage.
 5. Next, it [updates](update-an-add-on-submission.md) and then [commits](commit-an-add-on-submission.md) the new submission to Partner Center.
 6. Finally, it periodically [checks the status of the new submission](get-status-for-an-add-on-submission.md) until the submission is successfully committed.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="347-431":::
 
 <span id="create-flight-submission" />
 
@@ -97,11 +97,11 @@ The following example shows how to use several methods in the Microsoft Store su
 1. To begin, the method [gets data for the specified package flight](get-a-flight.md).
 2. Next, it [deletes the pending submission for the package flight](delete-a-flight-submission.md), if one exists.
 3. It then [creates a new submission for the package flight](create-a-flight-submission.md) (the new submission is a copy of the last published submission).
-4. It uploads a new package for the submission to Azure Blob storage.
+4. It uploads a new package for the submission to Azure Blob Storage.
 5. Next, it [updates](update-a-flight-submission.md) and then [commits](commit-a-flight-submission.md) the new submission to PartnerCenter.
 6. Finally, it periodically [checks the status of the new submission](get-status-for-a-flight-submission.md) until the submission is successfully committed.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="223-308":::
 
 <span id="utilities" />
 
@@ -109,10 +109,10 @@ The following example shows how to use several methods in the Microsoft Store su
 
 The following utility methods demonstrate these tasks:
 
-* How to upload a ZIP archive containing new assets for an app or add-on submission to Azure Blob storage. For more information about uploading a ZIP archive to Azure Blob storage for app and add-on submissions, see the relevant instructions in [Create an app submission](manage-app-submissions.md#create-an-app-submission), [Create an add-on submission](manage-add-on-submissions.md#create-an-add-on-submission), and [Create a package flight submission](manage-flight-submissions.md#create-a-package-flight-submission).
+* How to upload a ZIP archive containing new assets for an app or add-on submission to Azure Blob Storage. For more information about uploading a ZIP archive to Azure Blob Storage for app and add-on submissions, see the relevant instructions in [Create an app submission](manage-app-submissions.md#create-an-app-submission), [Create an add-on submission](manage-add-on-submissions.md#create-an-add-on-submission), and [Create a package flight submission](manage-flight-submissions.md#create-a-package-flight-submission).
 * How to handle request responses.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L433-L490)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="433-490":::
 
 <span id="code-listing" />
 
@@ -120,7 +120,7 @@ The following utility methods demonstrate these tasks:
 
 The following code listing contains all of the previous examples organized into one source file.
 
-[!code-java[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L1-L491)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="1-491":::
 
 ## Related topics
 

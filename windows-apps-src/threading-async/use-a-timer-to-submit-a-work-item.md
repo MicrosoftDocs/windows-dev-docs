@@ -1,7 +1,7 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Use a timer to submit a work item
-description: Learn how to create a work item that runs after a timer elapses.
+description: Learn how to create a timer that submits a work item when the timer elapses in a Universal Windows Platform (UWP) app by using the ThreadPoolTimer API.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, timer, threads
@@ -12,16 +12,16 @@ ms.localizationpriority: medium
 
 <b>Important APIs</b>
 
--   [**Windows.UI.Core namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows.System.Threading namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Windows.UI.Core namespace**](/uwp/api/Windows.UI.Core)
+-   [**Windows.System.Threading namespace**](/uwp/api/Windows.System.Threading)
 
 Learn how to create a work item that runs after a timer elapses.
 
 ## Create a single-shot timer
 
-Use the [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) method to create a timer for the work item. Supply a lambda that accomplishes the work, and use the *delay* parameter to specify how long the thread pool waits before it can assign the work item to an available thread. The delay is specified using a [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) structure.
+Use the [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) method to create a timer for the work item. Supply a lambda that accomplishes the work, and use the *delay* parameter to specify how long the thread pool waits before it can assign the work item to an available thread. The delay is specified using a [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) structure.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
+> **Note**  You can use [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
 
 The following example creates a work item that runs in three minutes:
 
@@ -81,7 +81,7 @@ The following example creates a work item that runs in three minutes:
 
 ## Provide a completion handler
 
-If needed, handle cancellation and completion of the work item with a [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler). Use the [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) overload to supply an additional lambda. This runs when the timer is cancelled or when the work item completes.
+If needed, handle cancellation and completion of the work item with a [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler). Use the [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) overload to supply an additional lambda. This runs when the timer is cancelled or when the work item completes.
 
 The following example creates a timer that submits the work item, and calls a method when the work item finishes or the timer is cancelled:
 
@@ -201,7 +201,7 @@ The following example creates a timer that submits the work item, and calls a me
 
 ## Cancel the timer
 
-If the timer is still counting down, but the work item is no longer needed, call [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel). The timer is cancelled and the work item won't be submitted to the thread pool.
+If the timer is still counting down, but the work item is no longer needed, call [**Cancel**](/uwp/api/windows.system.threading.threadpooltimer.cancel). The timer is cancelled and the work item won't be submitted to the thread pool.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -213,9 +213,9 @@ If the timer is still counting down, but the work item is no longer needed, call
 
 ## Remarks
 
-Universal Windows Platform (UWP) apps can't use **Thread.Sleep** because it can block the UI thread. You can use a [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
+Universal Windows Platform (UWP) apps can't use **Thread.Sleep** because it can block the UI thread. You can use a [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
 
-See the [thread pool sample](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
+See the [thread pool sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
 
 For information about repeating timers, see [Create a periodic work item](create-a-periodic-work-item.md).
 

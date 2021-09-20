@@ -1,5 +1,5 @@
-﻿---
-Description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
+---
+description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
 title: Product declarations
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
@@ -15,7 +15,7 @@ The following sections describe some of the declarations and what you need to co
 
 ## This app allows users to make purchases, but does not use the Microsoft Store commerce system.
 
-For nearly every submission, you should leave this box unchecked, since apps which offer opportunities to purchase items which are or can be consumed or used within your app must use the Microsoft Store in-app purchase API to create and submit the add-ons. Per the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), apps that were created and submitted prior to June 29, 2015, could continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Microsoft Store Policies](store-policies.md#108-financial-transactions). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
+For nearly every submission, you should leave this box unchecked, since apps which offer opportunities to purchase items which are or can be consumed or used within your app must use the Microsoft Store in-app purchase API to create and submit the add-ons. Per the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), apps that were created and submitted prior to June 29, 2015, could continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Microsoft Store Policies](store-policies.md#108-financial-transactions). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
 
 ## This app has been tested to meet accessibility guidelines.
 
@@ -31,7 +31,7 @@ You should only check this box if you have done all of the following items:
 
 When you declare your app as accessible, you agree that your app is accessible to all customers, including those with disabilities. For example, this means you have tested the app with high-contrast mode and with a screen reader. You've also verified that the user interface functions correctly with a keyboard, the Magnifier, and other accessibility tools.
 
-For more info, see [Accessibility](../design/accessibility/accessibility.md), [Accessibility testing](../design/accessibility/accessibility-testing.md), and [Accessibility in the Store](../design/accessibility/accessibility-in-the-store.md).
+For more info, see [Accessibility](/windows/apps/design/accessibility/accessibility), [Accessibility testing](/windows/apps/design/accessibility/accessibility-testing), and [Accessibility in the Store](/windows/apps/design/accessibility/accessibility-in-the-store).
 
 > [!IMPORTANT]
 > Don't list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it doesn’t actually support accessibility, you'll probably receive negative feedback from the community.
@@ -61,7 +61,3 @@ If your app uses Kinect data and sends it to any external service, you must chec
  
 
  
-
-
-
-

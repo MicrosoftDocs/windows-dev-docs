@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
--   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **Samples**
 
@@ -23,11 +23,11 @@ ms.localizationpriority: medium
 
 Learn how to use the orientation sensors to determine the device orientation.
 
-There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) namespace: [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) and [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
+There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors) namespace: [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) and [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
 
-The [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) API is used for 3-D apps two obtain a quaternion and a rotation matrix. A quaternion can be most easily understood as a rotation of a point \[x,y,z\] about an arbitrary axis (contrasted with a rotation matrix, which represents rotations around three axes). The mathematics behind quaternions is fairly exotic in that it involves the geometric properties of complex numbers and mathematical properties of imaginary numbers, but working with them is simple, and frameworks like DirectX support them. A complex 3-D app can use the Orientation sensor to adjust the user's perspective. This sensor combines input from the accelerometer, gyrometer, and compass.
+The [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) API is used for 3-D apps two obtain a quaternion and a rotation matrix. A quaternion can be most easily understood as a rotation of a point \[x,y,z\] about an arbitrary axis (contrasted with a rotation matrix, which represents rotations around three axes). The mathematics behind quaternions is fairly exotic in that it involves the geometric properties of complex numbers and mathematical properties of imaginary numbers, but working with them is simple, and frameworks like DirectX support them. A complex 3-D app can use the Orientation sensor to adjust the user's perspective. This sensor combines input from the accelerometer, gyrometer, and compass.
 
-The [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) API is used to determine the current device orientation in terms of definitions like portrait up, portrait down, landscape left, and landscape right. It can also detect if a device is face-up or face-down. Rather than returning properties like "portrait up" or "landscape left", this sensor returns a rotation value: "Not rotated", "Rotated90DegreesCounterclockwise", and so on. The following table maps common orientation properties to the corresponding sensor reading.
+The [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation) API is used to determine the current device orientation in terms of definitions like portrait up, portrait down, landscape left, and landscape right. It can also detect if a device is face-up or face-down. Rather than returning properties like "portrait up" or "landscape left", this sensor returns a rotation value: "Not rotated", "Rotated90DegreesCounterclockwise", and so on. The following table maps common orientation properties to the corresponding sensor reading.
 
 | Orientation     | Corresponding sensor reading      |
 |-----------------|-----------------------------------|

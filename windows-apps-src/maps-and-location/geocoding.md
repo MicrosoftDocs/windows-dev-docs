@@ -2,24 +2,27 @@
 title: Perform geocoding and reverse geocoding
 description: This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the MapLocationFinder class in the Windows.Services.Maps namespace.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.date: 07/02/2018
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, geocoding, map, location
 ms.localizationpriority: medium
 ---
 # Perform geocoding and reverse geocoding
 
-This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) class in the [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) namespace.
+> [!NOTE]
+> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
+
+This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class in the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace.
 
 > [!TIP]
-> To learn more about using maps in your app, download the [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) sample from the [Windows universal samples repo](hhttps://github.com/Microsoft/Windows-universal-samples) on GitHub.
+> To learn more about using maps in your app, download the [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) sample from the [Windows universal samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
 
 The classes involved in geocoding and reverse geocoding are organized as follows.
 
--   The [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) class contains methods that handle geocoding ([**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) and reverse geocoding ([**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)).
--   These methods both return a [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) instance.
--   The [**Locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) property of the [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) exposes a collection of [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects. 
--   [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects have both an [**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) property, which exposes a [**MapAddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) object representing a street address, and a [**Point**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point) property, which exposes a [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) object representing a geographic location.
+-   The [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class contains methods that handle geocoding ([**FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) and reverse geocoding ([**FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)).
+-   These methods both return a [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) instance.
+-   The [**Locations**](/uwp/api/windows.services.maps.maplocationfinderresult.locations) property of the [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) exposes a collection of [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects. 
+-   [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects have both an [**Address**](/uwp/api/windows.services.maps.maplocation.address) property, which exposes a [**MapAddress**](/uwp/api/Windows.Services.Maps.MapAddress) object representing a street address, and a [**Point**](/uwp/api/windows.services.maps.maplocation.point) property, which exposes a [**Geopoint**](/uwp/api/windows.devices.geolocation.geopoint) object representing a geographic location.
 
 > [!IMPORTANT]
 > You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
@@ -28,9 +31,9 @@ The classes involved in geocoding and reverse geocoding are organized as follows
 
 This section shows how to convert a street address or a place name to a geographic location (geocoding).
 
-1.  Call one of the overloads of the [**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) method of the [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) class with a place name or street address.
-2.  The [**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) method returns a [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) object.
-3.  Use the [**Locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) property of the [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) to expose a collection [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects. There may be multiple [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects because the system may find multiple locations that correspond to the given input.
+1.  Call one of the overloads of the [**FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) method of the [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class with a place name or street address.
+2.  The [**FindLocationsAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) method returns a [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) object.
+3.  Use the [**Locations**](/uwp/api/windows.services.maps.maplocationfinderresult.locations) property of the [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) to expose a collection [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects. There may be multiple [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects because the system may find multiple locations that correspond to the given input.
 
 ```csharp
 using Windows.Services.Maps;
@@ -76,10 +79,10 @@ result = (47.6406099647284,-122.129339994863)
 
 This section shows how to convert a geographic location to an address (reverse geocoding).
 
-1.  Call the [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) method of the [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) class.
-2.  The [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) method returns a [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) object that contains a collection of matching [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects.
-3.  Use the [**Locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) property of the [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) to expose a collection [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects. There may be multiple [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) objects because the system may find multiple locations that correspond to the given input.
-4.  Access [**MapAddress**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) objects through the [**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) property of each [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation).
+1.  Call the [**FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) method of the [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class.
+2.  The [**FindLocationsAtAsync**](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) method returns a [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) object that contains a collection of matching [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects.
+3.  Use the [**Locations**](/uwp/api/windows.services.maps.maplocationfinderresult.locations) property of the [**MapLocationFinderResult**](/uwp/api/Windows.Services.Maps.MapLocationFinderResult) to expose a collection [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects. There may be multiple [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation) objects because the system may find multiple locations that correspond to the given input.
+4.  Access [**MapAddress**](/uwp/api/Windows.Services.Maps.MapAddress) objects through the [**Address**](/uwp/api/windows.services.maps.maplocation.address) property of each [**MapLocation**](/uwp/api/Windows.Services.Maps.MapLocation).
 
 ```csharp
 using Windows.Services.Maps;
@@ -117,9 +120,9 @@ town = Redmond
 
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
-* [Design guidelines for maps](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
+* [Design guidelines for maps](./display-maps.md)
 * [Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [**MapLocationFinder** class](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)
-* [**FindLocationsAsync** method](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
-* [**FindLocationsAtAsync** method](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)
+* [**MapLocationFinder** class](/uwp/api/Windows.Services.Maps.MapLocationFinder)
+* [**FindLocationsAsync** method](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
+* [**FindLocationsAtAsync** method](/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)

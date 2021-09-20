@@ -1,5 +1,5 @@
-﻿---
-Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
+---
+description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Create customer groups
 ms.date: 10/31/2018
 ms.topic: article

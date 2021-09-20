@@ -75,17 +75,17 @@ Using OAuth, IT departments can effectively "outsource" the complexity of mainta
 
 Users have complete control over their identity on these platforms, but apps can request a token from the provider, after the user is authenticated and with their consent, which can be used to authorize authenticated users.
 
-The web authentication broker in Windows 10 provides a set of APIs and infrastructure for apps to use authentication and authorization protocols like OAuth and OpenID. Apps can initiate authentication operations through the [**WebAuthenticationBroker**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) API, resulting in the return of a [**WebAuthenticationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). An overview of the communication flow is illustrated in the following figure.
+The web authentication broker in Windows 10 provides a set of APIs and infrastructure for apps to use authentication and authorization protocols like OAuth and OpenID. Apps can initiate authentication operations through the [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) API, resulting in the return of a [**WebAuthenticationResult**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). An overview of the communication flow is illustrated in the following figure.
 
 ![wab workflow](images/secure-wab.png)
 
-The app acts as the broker, initiating the authentication with the identity provider through a [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) in the app. When the identity provider has authenticated the user, it returns a token to the app that can be used to request information about the user from the identity provider. As a security measure, the app must be registered with the identity provider before it can broker the authentication processes with the identity provider. This registration steps differ for each provider.
+The app acts as the broker, initiating the authentication with the identity provider through a [**WebView**](/uwp/api/Windows.UI.Xaml.Controls.WebView) in the app. When the identity provider has authenticated the user, it returns a token to the app that can be used to request information about the user from the identity provider. As a security measure, the app must be registered with the identity provider before it can broker the authentication processes with the identity provider. This registration steps differ for each provider.
 
-Here’s the general workflow for calling the [**WebAuthenticationBroker**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) API to communicate with the provider.
+Here’s the general workflow for calling the [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) API to communicate with the provider.
 
 -   Construct the request strings to be sent to the identity provider. The number of strings, and the information in each string, is different for each web service but it usually includes two URI strings each containing a URL: one to which the authentication request is sent, and one to which the user is redirected after authorization is complete.
--   Call [**WebAuthenticationBroker.AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), passing in the request strings, and wait for the response from the identity provider.
--   Call [**WebAuthenticationResult.ResponseStatus**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationresult.responsestatus) to get the status when the response is received.
+-   Call [**WebAuthenticationBroker.AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), passing in the request strings, and wait for the response from the identity provider.
+-   Call [**WebAuthenticationResult.ResponseStatus**](/uwp/api/windows.security.authentication.web.webauthenticationresult.responsestatus) to get the status when the response is received.
 -   If the communication is successful, process the response string returned by the identity provider. If unsuccessful, process the error.
 
 If the communication is successful, process the response string returned by the identity provider. If unsuccessful, process the error.
@@ -169,7 +169,7 @@ The registration workflow of an app might look like the following:
 
 The registration information you collect may include a lot more identifying information than it does in this simple scenario. For example, if your app accesses a secured service such as one for banking, you’d need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the back-end and used to validate the next time the user uses the service.
 
-For more information on Windows Hello, see the [Windows Hello guide](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide) and the [Windows Hello developer guide](microsoft-passport.md).
+For more information on Windows Hello, see the [Windows Hello guide](/windows/keep-secure/microsoft-passport-guide) and the [Windows Hello developer guide](microsoft-passport.md).
 
 ## 3 Data-in-flight security methods
 
@@ -208,7 +208,7 @@ There are a few different ways to implement SSL pinning in apps, each with their
 
 For more control over the validation logic, APIs are available to validate the certificate(s) returned by the server in response to an HTTPS request. Note that this method requires sending a request and inspecting the response, so be sure to add this as a validation before actually sending sensitive information in a request.
 
-The following C# code illustrates this method of SSL pinning. The **ValidateSSLRoot** method uses the [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) class to execute an HTTP request. After the client sends the response, it uses the [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](https://docs.microsoft.com/uwp/api/windows.web.http.httptransportinformation.serverintermediatecertificates) collection to inspect the certificates returned by the server. The client can then validate the entire certificate chain with the thumbprints it has included. This method does require the certificate thumbprints to be updated in the app when the server certificate expires and is renewed.
+The following C# code illustrates this method of SSL pinning. The **ValidateSSLRoot** method uses the [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) class to execute an HTTP request. After the client sends the response, it uses the [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](/uwp/api/windows.web.http.httptransportinformation.serverintermediatecertificates) collection to inspect the certificates returned by the server. The client can then validate the entire certificate chain with the thumbprints it has included. This method does require the certificate thumbprints to be updated in the app when the server certificate expires and is renewed.
 
 ```cs
 private async Task ValidateSSLRoot()
@@ -280,7 +280,7 @@ When data arrives on a device, we refer to it as "data-at-rest." This data needs
 
 Traditionally, Windows has never had a definition of an app. It was most commonly referred to as an executable (.exe), and this never included installation, storage of state, execution length, versioning, OS integration, or app-to-app communication. The Universal Windows Platform model defines an app model that covers installation, runtime environment, resource management, updates, data model, and uninstallation.
 
-Windows 10 apps run in a container, which means that they have limited privileges by default (additional privileges can be requested and granted by the user). For example, if an app wants to access files on the system, a file picker from the [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) namespace has to be used to let the user pick a file (no direct access to files is enabled). Another example is if an app wants to access the user’s location data, it needs to enable the location device capability needs to be declared, prompting the user at download time that this app will request access to the user’s location. On top of that, the first time the app wants to access the user’s location, an additional consent prompt is shown to the user, requesting permission to access the data.
+Windows 10 apps run in a container, which means that they have limited privileges by default (additional privileges can be requested and granted by the user). For example, if an app wants to access files on the system, a file picker from the [**Windows.Storage.Pickers**](/uwp/api/Windows.Storage.Pickers) namespace has to be used to let the user pick a file (no direct access to files is enabled). Another example is if an app wants to access the user’s location data, it needs to enable the location device capability needs to be declared, prompting the user at download time that this app will request access to the user’s location. On top of that, the first time the app wants to access the user’s location, an additional consent prompt is shown to the user, requesting permission to access the data.
 
 Note that this app model acts as a "jail" for apps, meaning that they can’t reach out, but it is not a “castle” that cannot be reached from the outside (applications with administrator privileges can of course still reach in). Device Guard in Windows 10, which enables organizations/IT to specify which (Win32) apps are allowed to execute, can further help limit this access.
 
@@ -295,14 +295,14 @@ For more information, see [It's Universal: Understanding the Lifecycle of a Wind
 
 Windows apps that access authenticated services often provide the users the option of storing their credentials on the local device. This is a convenience for the users; when they provide their username and password, the app automatically uses them in subsequent launches of the app. Because this can be a security issue if an attacker gains access to this stored data, Windows 10 provides the ability for Windows apps to store user credentials in a secure credential locker. The app calls the Credential Locker API to store and retrieve the credentials from the locker instead of storing them in the app’s storage container. The credential locker is managed by the operating system, but access is limited to the app that stores them, providing a securely managed solution for credential storage.
 
-When a user supplies the credentials to be stored, the app gets a reference to the credential locker using the [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) object in the [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials) namespace. It then creates a [**PasswordCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordCredential) object containing an identifier for the Windows app and the username and password. This is passed to the [**PasswordVault.Add**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.add) method to store the credentials in the locker. The following C# code example shows how this is done.
+When a user supplies the credentials to be stored, the app gets a reference to the credential locker using the [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) object in the [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials) namespace. It then creates a [**PasswordCredential**](/uwp/api/Windows.Security.Credentials.PasswordCredential) object containing an identifier for the Windows app and the username and password. This is passed to the [**PasswordVault.Add**](/uwp/api/windows.security.credentials.passwordvault.add) method to store the credentials in the locker. The following C# code example shows how this is done.
 
 ```cs
 var vault = new PasswordVault();
 vault.Add(new PasswordCredential("My App", username, password));
 ```
 
-In the following C# code example, the app requests all of the credentials corresponding to the app by calling the [**FindAllByResource**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyresource) method of the [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) object. If more than one is returned, it prompts the user to enter their username. If the credentials are not in the locker, the app prompts the user for them. The user is then logged into the server using the credentials.
+In the following C# code example, the app requests all of the credentials corresponding to the app by calling the [**FindAllByResource**](/uwp/api/windows.security.credentials.passwordvault.findallbyresource) method of the [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) object. If more than one is returned, it prompts the user to enter their username. If the credentials are not in the locker, the app prompts the user for them. The user is then logged into the server using the credentials.
 
 ```cs
 private string resourceName = "My App";
@@ -334,7 +334,17 @@ private PasswordCredential GetCredentialFromLocker()
     PasswordCredential credential = null;
 
     var vault = new PasswordVault();
-    var credentialList = vault.FindAllByResource(resourceName);
+
+    IReadOnlyList<PasswordCredential> credentialList = null;
+
+    try
+    {
+        credentialList = vault.FindAllByResource(resourceName);
+    }
+    catch(Exception)
+    {
+        return null;
+    }
 
     if (credentialList.Count == 1)
     {
@@ -368,7 +378,7 @@ With symmetric encryption, both the sender and recipient have the same key and u
 
 One answer to this is asymmetric encryption, in which a public/private key pair is used. The public key is shared freely with anyone who wants to encrypt a message. The private key is always kept secret so that only you can use it to decrypt the data. A common technique to allow for discovery of the public key is by using digital certificates, also simply referred to as certificates. The certificate holds information about the public key, in addition to information about the user or server such as the name, issuer, email address and country.
 
-Windows app developers can use the [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) and [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) classes to implement symmetric and asymmetric encryption in their UWP apps. Additionally, the [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class can be used to encrypt and decrypt data, sign content and verify digital signatures. Apps can also use the [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) class in the [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) namespace to encrypt and decrypt stored local data.
+Windows app developers can use the [**SymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) and [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) classes to implement symmetric and asymmetric encryption in their UWP apps. Additionally, the [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class can be used to encrypt and decrypt data, sign content and verify digital signatures. Apps can also use the [**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) class in the [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection) namespace to encrypt and decrypt stored local data.
 
 ## 4.3.2 Detecting message tampering (MACs, hashes, and signatures)
 
@@ -384,14 +394,14 @@ MACs verify messages like this.
 
 ![mac verification](images/secure-macs.png)
 
-Windows apps can implement MAC message verification by calling the [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) class to generate the key and [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class to perform the MAC encryption algorithm.
+Windows apps can implement MAC message verification by calling the [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) class to generate the key and [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class to perform the MAC encryption algorithm.
 
 ## 4.3.3 Using hashes
 
 
 A hash function is a cryptographic algorithm that takes an arbitrarily long block of data and returns a fixed-size bit string called a hash value. There is an entire family of hash functions that can do this.
 
-A hash value can be used in place of a MAC in the message-transfer scenario above. The sender sends a hash value and a message, and the receiver derives their own hash value from the sender's hash value and message and compares the two hash values. Apps running on Windows 10 can call the [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) class to enumerate the hash algorithms that are available and run one of them. The [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) class represents the hash value. The [**CryptographicHash.GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method can be used to repeatedly hash different data without having to re-create the object for each use. The Append method of the **CryptographicHash** class adds new data to a buffer to be hashed. This entire process is shown in the following C# code example.
+A hash value can be used in place of a MAC in the message-transfer scenario above. The sender sends a hash value and a message, and the receiver derives their own hash value from the sender's hash value and message and compares the two hash values. Apps running on Windows 10 can call the [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) class to enumerate the hash algorithms that are available and run one of them. The [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) class represents the hash value. The [**CryptographicHash.GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method can be used to repeatedly hash different data without having to re-create the object for each use. The Append method of the **CryptographicHash** class adds new data to a buffer to be hashed. This entire process is shown in the following C# code example.
 
 ```cs
 public void SampleReusableHash()
@@ -439,7 +449,7 @@ The data integrity of a digitally signed stored message is verified in a similar
 
 Hashing algorithms are very fast, so hash values can be derived quickly from even large messages. The resulting hash value is an arbitrary length and can be shorter than the full message, so using public and private keys to encrypt and decrypt only the digest rather than the full message is an optimization.
 
-For more information, take a look articles on [Digital signatures](https://docs.microsoft.com/windows/desktop/SecCrypto/digital-signatures), [MACs, hashes, and signatures](macs-hashes-and-signatures.md), and [Cryptography.](cryptography.md)
+For more information, take a look articles on [Digital signatures](/windows/desktop/SecCrypto/digital-signatures), [MACs, hashes, and signatures](macs-hashes-and-signatures.md), and [Cryptography.](cryptography.md)
 
 ## 5 Summary
 
@@ -483,16 +493,16 @@ When the data arrives on the device, the Windows app model provides more control
 
 ### 6.3 API reference
 
--   [**Windows.Security.Authentication.OnlineId**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
--   [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
--   [**Windows.Security.Authentication.Web.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
--   [**Windows.Security.Authentication.Web.Provider**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
--   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials.UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
--   [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
--   [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
--   [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
--   [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
--   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
--   [**Windows.Security.EnterpriseData**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)
+-   [**Windows.Security.Authentication.OnlineId**](/uwp/api/Windows.Security.Authentication.OnlineId)
+-   [**Windows.Security.Authentication.Web**](/uwp/api/Windows.Security.Authentication.Web)
+-   [**Windows.Security.Authentication.Web.Core**](/uwp/api/Windows.Security.Authentication.Web.Core)
+-   [**Windows.Security.Authentication.Web.Provider**](/uwp/api/Windows.Security.Authentication.Web.Provider)
+-   [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials)
+-   [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials)
+-   [**Windows.Security.Credentials.UI**](/uwp/api/Windows.Security.Credentials.UI)
+-   [**Windows.Security.Cryptography**](/uwp/api/Windows.Security.Cryptography)
+-   [**Windows.Security.Cryptography.Certificates**](/uwp/api/Windows.Security.Cryptography.Certificates)
+-   [**Windows.Security.Cryptography.Core**](/uwp/api/Windows.Security.Cryptography.Core)
+-   [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection)
+-   [**Windows.Security.ExchangeActiveSyncProvisioning**](/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
+-   [**Windows.Security.EnterpriseData**](/uwp/api/Windows.Security.EnterpriseData)

@@ -12,14 +12,14 @@ ms.localizationpriority: medium
 
 
 
-In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output. If the contents of the array are for input, the method reads from the array but doesn't write to it. If the contents of the array are for output, the method writes to the array but doesn't read from it. This presents a problem for array parameters, because arrays in .NET are reference types, and the contents of an array are mutable even when the array reference is passed by value (**ByVal** in Visual Basic). The [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) requires you to specify the intended usage of the array if it is not clear from context, by applying the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute to the parameter. Array usage is determined as follows:
+In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output. If the contents of the array are for input, the method reads from the array but doesn't write to it. If the contents of the array are for output, the method writes to the array but doesn't read from it. This presents a problem for array parameters, because arrays in .NET are reference types, and the contents of an array are mutable even when the array reference is passed by value (**ByVal** in Visual Basic). The [Windows Runtime Metadata Export Tool (Winmdexp.exe)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) requires you to specify the intended usage of the array if it is not clear from context, by applying the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute to the parameter. Array usage is determined as follows:
 
--   For the return value or for an out parameter (a **ByRef** parameter with the [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute) attribute in Visual Basic) the array is always for output only. Do not apply the ReadOnlyArrayAttribute attribute. The WriteOnlyArrayAttribute attribute is allowed on output parameters, but it's redundant.
+-   For the return value or for an out parameter (a **ByRef** parameter with the [OutAttribute](/dotnet/api/system.runtime.interopservices.outattribute) attribute in Visual Basic) the array is always for output only. Do not apply the ReadOnlyArrayAttribute attribute. The WriteOnlyArrayAttribute attribute is allowed on output parameters, but it's redundant.
 
     > **Caution**  The Visual Basic compiler does not enforce output-only rules. You should never read from an output parameter; it may contain **Nothing**. Always assign a new array.
  
 -   Parameters that have the **ref** modifier (**ByRef** in Visual Basic) are not allowed. Winmdexp.exe generates an error.
--   For a parameter that is passed by value, you must specify whether the array contents are for input or output by applying either the [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute) attribute or the [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute) attribute. Specifying both attributes is an error.
+-   For a parameter that is passed by value, you must specify whether the array contents are for input or output by applying either the [ReadOnlyArrayAttribute](/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute) attribute or the [WriteOnlyArrayAttribute](/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute) attribute. Specifying both attributes is an error.
 
 If a method must accept an array for input, modify the array contents, and return the array to the caller, use a read-only parameter for the input and a write-only parameter (or the return value) for the output. The following code shows one way to implement this pattern:
 
@@ -56,6 +56,6 @@ If the caller is managed code, the original array is available to the called met
 
 ## Related topics
 
-* [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute)
-* [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute)
+* [ReadOnlyArrayAttribute](/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute)
+* [WriteOnlyArrayAttribute](/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute)
 * [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

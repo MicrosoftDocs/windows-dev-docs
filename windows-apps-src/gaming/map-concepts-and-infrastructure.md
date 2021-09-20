@@ -9,10 +9,8 @@ ms.localizationpriority: medium
 ---
 # Map OpenGL ES 2.0 to Direct3D 11
 
-
-
 When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.
-## 
+
 <table>
 <colgroup>
 <col width="50%" />
@@ -39,7 +37,7 @@ When starting the process of porting your graphics architecture from OpenGL ES 2
 </tr>
 <tr class="even">
 <td align="left"><p><a href="change-your-shader-loading-code.md">Compare the OpenGL ES 2.0 shader pipeline to Direct3D</a></p></td>
-<td align="left"><p>Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, <a href="https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1"><strong>ID3D11Device1</strong></a> and <a href="https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1"><strong>ID3D11DeviceContext1</strong></a>. This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.</p></td>
+<td align="left"><p>Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, <a href="/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1"><strong>ID3D11Device1</strong></a> and <a href="/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1"><strong>ID3D11DeviceContext1</strong></a>. This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.</p></td>
 </tr>
 </tbody>
 </table>
@@ -54,7 +52,3 @@ These topics use the Khronos OpenGL ES 2.0 specification with platform-agnostic 
  
 
  
-
-
-
-

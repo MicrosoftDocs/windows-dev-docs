@@ -1,6 +1,6 @@
 ---
 title: Using MRT for Converted Desktop Apps and Games
-description: By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
+description: By packaging your .NET or Win32 app or game as an .msix or .appx package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
@@ -8,11 +8,11 @@ ms.localizationpriority: medium
 ---
 # Use the Windows 10 Resource Management System in a legacy app or game
 
-.NET and Win32 apps and games are often localized into different languages to expand their total addressable market. For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md). By packaging your .NET or Win32 app or game as an MSIX or AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
+.NET and Win32 apps and games are often localized into different languages to expand their total addressable market. For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal). By packaging your .NET or Win32 app or game as an .msix or .appx package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 
-There are many ways to localize a traditional Win32 application, but Windows 8 introduced a [new resource-management system](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
+There are many ways to localize a traditional Win32 application, but Windows 8 introduced a [new resource-management system](/previous-versions/windows/apps/jj552947(v=win.10)) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
 
-Combined with MSIX-based or AppX-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
+Combined with MSIX-based or .appx-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
 localized listings in the Windows Shell and the Microsoft Store, automatic fallback logic when a user's preferred language doesn't match your available resources.
 
@@ -62,12 +62,12 @@ Thus the primary purpose of any resource-management technology is to translate, 
 
 Here's a simple example of an application that has text labels on two buttons (`openButton` and `saveButton`) and a PNG file used for a logo (`logoImage`). The text labels are localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and high-resolution phones (300% scale factor). Note that this diagram presents a high-level, conceptual view of the model; it does not map exactly to implementation.
 
-<p><img src="images\conceptual-resource-model.png"/></p>
+:::image type="content" source="images\conceptual-resource-model.png" alt-text="Screenshot of a Source code label, a Lookup table label, and a Files on disk label.":::
 
 In the graphic, the application code references the three logical resource names. At runtime, the `GetResource` pseudo-function uses MRT to look those resource names up in the resource table (known as PRI file) and find the most appropriate candidate based on the ambient conditions (the user's language and the display's scale-factor). In the case of the labels, the strings are used directly. In the case of the logo image, the strings are interpreted as filenames and the files are read off disk. 
 
 If the user speaks a language other than English or
-German, or has a display scale-factor other than 100% or 300%, MRT picks the "closest" matching candidate based on a set of fallback rules (see [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) for more background).
+German, or has a display scale-factor other than 100% or 300%, MRT picks the "closest" matching candidate based on a set of fallback rules (see [Resource Management System](/previous-versions/windows/apps/jj552947(v=win.10)) for more background).
 
 Note that MRT supports resources that are tailored to more than one qualifier - for example, if the logo image contained embedded text that also needed to be localized, the logo would have four candidates: EN/Scale-100, DE/Scale-100, EN/Scale-300 and DE/Scale-300.
 
@@ -107,7 +107,7 @@ Before you make any changes to your application's resources, you must first repl
 * If you have a smaller desktop application with relatively few files or a simple installer and no extensibility hooks, you can create the file layout and manifest information manually.
 * If you're rebuilding from source and want to update your app to be a pure UWP application, you can create a new project in Visual Studio and rely on the IDE to do much of the work for you.
 
-If you want to use the [Desktop App Converter](https://www.microsoft.com/store/p/desktopappconverter/9nblggh4skzw), see [Package a desktop application using the Desktop App Converter](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-run-desktop-app-converter) for more information on the conversion process. A complete set of Desktop Converter samples can be found on [the Desktop Bridge to UWP samples GitHub repo](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
+If you want to use the [Desktop App Converter](https://www.microsoft.com/store/p/desktopappconverter/9nblggh4skzw), see [Package a desktop application using the Desktop App Converter](/windows/msix/desktop/desktop-to-uwp-run-desktop-app-converter) for more information on the conversion process. A complete set of Desktop Converter samples can be found on [the Desktop Bridge to UWP samples GitHub repo](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
 
 If you want to manually create the package, you will need to create a directory structure that includes all your application's files (executables and content, but not source code) and a package manifest file (.appxmanifest). An example can be found in [the Hello, World GitHub sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml), 
 but a basic package manifest file that runs the desktop executable named `ContosoDemo.exe` is as follows, where the <span style="background-color: yellow">highlighted text</span> would be replaced by your own values.
@@ -150,9 +150,9 @@ but a basic package manifest file that runs the desktop executable named `Contos
 </Package>
 ```
 
-For more information about the package manifest file and package layout, see [App package manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
+For more information about the package manifest file and package layout, see [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest).
 
-Finally, if you're using Visual Studio to create a new project and migrate your existing code across, see [Create a "Hello, world" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a pure UWP app. These changes are outside the scope of this document.
+Finally, if you're using Visual Studio to create a new project and migrate your existing code across, see [Create a "Hello, world" app](../get-started/create-a-hello-world-app-xaml-universal.md). You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a pure UWP app. These changes are outside the scope of this document.
 
 ## Phase 1: Localize the manifest
 
@@ -201,7 +201,7 @@ If you want to use the designer in Visual Studio:
 1. Create the `Strings\en-us` folder (or other language as appropriate) in your project and add a **New Item** to the root folder of your project, using the default name of `resources.resw`. Be sure to choose **Resources File (.resw)** and not **Resource Dictionary** - a Resource Dictionary is a file used by XAML applications.
 2. Using the designer, enter the following strings (use the same `Names` but replace the `Values` with the appropriate text for your application):
 
-<img src="images\editing-resources-resw.png"/>
+:::image type="content" source="images\editing-resources-resw.png" alt-text="Screenshot showing the Resources.resw file showing the Name and Value columns. for the resources." :::
 
 > [!NOTE]
 > If you start with the Visual Studio designer, you can always edit the XML directly by pressing `F7`. But if you start with a minimal XML file, *the designer will not recognize the file* because it's missing a lot of additional metadata; you can fix this by copying the boilerplate XSD information from a designer-generated file into your hand-edited XML file.
@@ -239,8 +239,9 @@ If you are editing XML directly, open the `AppxManifest.xml` file and make the f
 
 If you are using the Visual Studio manifest designer, open the .appxmanifest file and change the <span style="background-color: lightgreen">highlighted values</span> values in the **Application* tab and the *Packaging* tab:
 
-<img src="images\editing-application-info.png"/>
-<img src="images\editing-packaging-info.png"/>
+:::image type="content" source="images\editing-application-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Application tab with the Display name and Description text boxes called out." :::
+
+:::image type="content" source="images\editing-packaging-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Packaging tab with the Package display name and Publisher display name text boxes called out." :::
 
 ### Step 1.2: Build PRI file, make an MSIX package, and verify it's working
 
@@ -296,7 +297,7 @@ You can open the mapping file `..\resources.map.txt` to verify it contains the f
 
 Now the PRI file is built, you can build and sign the package:
 
-1. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the MSIX/AppX file you want to create and making sure to choose a different directory for the file (this sample uses the parent directory; it can be anywhere but should **not** be the project directory).
+1. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the .msix/.appx file you want to create and making sure to choose a different directory for the file (this sample uses the parent directory; it can be anywhere but should **not** be the project directory).
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
@@ -308,7 +309,7 @@ Now the PRI file is built, you can build and sign the package:
       * `/p` sets the output Package name
       * `/o` sets it to Overwrite the output file if it exists
 
-2. After the package is created, it must be signed. The easiest way to get a signing certificate is by creating an empty Universal Windows project in Visual Studio and copying the `.pfx` file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in [How to create an app package signing certificate](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate).
+2. After the package is created, it must be signed. The easiest way to get a signing certificate is by creating an empty Universal Windows project in Visual Studio and copying the `.pfx` file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in [How to create an app package signing certificate](/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate).
 
     > [!IMPORTANT]
     > If you manually create a signing certificate, make sure you place the files in a different directory than your source project or your package source, otherwise it might get included as part of the package, including the private key!
@@ -321,7 +322,7 @@ including the private signing key!):
     ```
 
     You can type `signtool sign /?` to see what each parameter does, but in a nutshell:
-      * `/fd` sets the File Digest algorithm (SHA256 is the default for AppX)
+      * `/fd` sets the File Digest algorithm (SHA256 is the default for .appx)
       * `/a` will Automatically select the best certificate
       * `/f` specifies the input File that contains the signing certificate
 
@@ -477,7 +478,7 @@ Other sections of the package manifest can be localized. For example, if your ap
 You can also add this information using the Visual Studio Manifest Designer, using the `Declarations` tab, taking note of the
 <span style="background-color: lightgreen">highlighted values</span>:
 
-<p><img src="images\editing-declarations-info.png"/></p>
+:::image type="content" source="images\editing-declarations-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Declarations tab with the Display name and Info tip text boxes called out." :::
 
 Now add the corresponding resource names to each of your `.resw` files, replacing the <span style="background-color: yellow">highlighted text</span> with the appropriate text for your app (remember to do this for *each supported language!*):
 
@@ -493,7 +494,7 @@ Now add the corresponding resource names to each of your `.resw` files, replacin
 
 This will then show up in parts of the Windows shell, such as File Explorer:
 
-<p><img src="images\file-type-tool-tip.png"/></p>
+:::image type="content" source="images\file-type-tool-tip.png" alt-text="Screenshot of File Explorer showing a tooltip that says Files used by Contoso Demo App.":::
 
 Build and test the package as before, exercising any new scenarios that should show the new UI strings.
 
@@ -566,14 +567,14 @@ handle resources once they have been located).
 
 Switching your code to use MRT for locating resources is not difficult. It requires using a handful of WinRT types and a few lines of code. The main types that you will use are as follows:
 
-* [ResourceContext](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), which encapsulates the currently active set of qualifier values 
+* [ResourceContext](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), which encapsulates the currently active set of qualifier values 
 (language, scale factor, etc.)
-* [ResourceManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemanager) (the WinRT version, not the .NET version), which enables access to 
+* [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager) (the WinRT version, not the .NET version), which enables access to 
 all the resources from the PRI file
-* [ResourceMap](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemap), which represents a specific subset of the resources in the PRI file (in 
+* [ResourceMap](/uwp/api/windows.applicationmodel.resources.core.resourcemap), which represents a specific subset of the resources in the PRI file (in 
 this example, the file-based resources vs. the string resources)
-* [NamedResource](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), which represents a logical resource and all its possible candidates
-* [ResourceCandidate](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), which represents a single concrete candidate resource 
+* [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), which represents a logical resource and all its possible candidates
+* [ResourceCandidate](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), which represents a single concrete candidate resource 
 
 In pseudo-code, the way you would resolve a given resource file name (like `UICommands\ui.txt` in the sample above) is as follows:
 
@@ -611,7 +612,7 @@ the same - see the section on **Loading Win32 MUI resources**, below.
 #### Loading .NET resources
 
 Because .NET has a built-in mechanism for locating and loading resources (known as "Satellite Assemblies"), there is no explicit code to replace as in the synthetic example above - in 
-.NET you just need your resource DLLs in the appropriate directories and they are automatically located for you. When an app is packaged as an MSIX or AppX using resource packs, the directory 
+.NET you just need your resource DLLs in the appropriate directories and they are automatically located for you. When an app is packaged as an MSIX or .appx using resource packs, the directory 
 structure is somewhat different - rather than having the resource directories be subdirectories of the main application directory, they are peers of it (or not present at all if the 
 user doesn't have the language listed in their preferences). 
 
@@ -630,7 +631,7 @@ For example, imagine a .NET application with the following layout, where all the
 </pre>
 </blockquote>
 
-After conversion to AppX, the layout will look something like this, assuming `en-US` was the default language and the user has both German and French listed in their language list:
+After conversion to .appx, the layout will look something like this, assuming `en-US` was the default language and the user has both German and French listed in their language list:
 
 <blockquote>
 <pre>
@@ -669,7 +670,7 @@ static class PriResourceResolver
 
     var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
 
-    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
+    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with .appx, but
     // in general is discouraged. The full sample provides a safer wrapper of this method
     return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
   }
@@ -768,7 +769,7 @@ sizes:
 
 In order to use the Bundle Generator tool, the PRI config file created for the package needs to be manually updated to remove the `<packaging>` section.
 
-If you're using Visual Studio, refer to [Ensure that resources are installed on a device regardless of whether a device requires them](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) for information on 
+If you're using Visual Studio, refer to [Ensure that resources are installed on a device regardless of whether a device requires them](/previous-versions/dn482043(v=vs.140)) for information on 
 how to build all languages into the main package by creating the files `priconfig.packaging.xml` and `priconfig.default.xml`.
 
 If you're manually editing files, follow these steps: 

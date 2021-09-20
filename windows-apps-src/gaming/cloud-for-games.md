@@ -1,6 +1,6 @@
 ---
 title: Using cloud services for UWP games
-description: Learn more about implementing cloud as a backend for your UWP games.
+description: When developing UWP games across platforms and devices, use a cloud backend to help scale your games according to demand.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
 ms.topic: article
@@ -124,7 +124,7 @@ Learn how other developers have implemented cloud solutions in their games.
     </tr>
     <tr>
         <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
-        <td>Pixel Squad developed <b>Crime Coast</b> using Unity game engine and Azure. <b>Crime Coast</b> is a social strategy game available on the Android, iOS and Windows platform. Azure Blob storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
+        <td>Pixel Squad developed <b>Crime Coast</b> using Unity game engine and Azure. <b>Crime Coast</b> is a social strategy game available on the Android, iOS and Windows platform. Azure Blob Storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
         </td>
         <td>
             <ul>
@@ -167,7 +167,7 @@ First, you need to think about the level of service that is best suited for your
 
 * [Software as a Service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
 
-    Software as a service (SaaS) allows users to connect to and use cloud-based apps over the Internet. It provides a complete software solution that you purchase on a pay-as-you-go basis from a cloud service provider.  Common examples are email, calendaring, and office tools (such as Microsoft Office 365). You rent the use of an app for your organization, and your users connect to it over the Internet, usually with a web browser. All of the underlying infrastructure, middleware, app software, and app data are located in the service provider’s data center. The service provider manages the hardware and software, and with the appropriate service agreement, will ensure the availability and the security of the game and your data as well. SaaS allows your organization to get quickly up and running with an app at minimal upfront cost.
+    Software as a service (SaaS) allows users to connect to and use cloud-based apps over the Internet. It provides a complete software solution that you purchase on a pay-as-you-go basis from a cloud service provider.  Common examples are email, calendaring, and office tools (such as Microsoft 365 Office apps). You rent the use of an app for your organization, and your users connect to it over the Internet, usually with a web browser. All of the underlying infrastructure, middleware, app software, and app data are located in the service provider’s data center. The service provider manages the hardware and software, and with the appropriate service agreement, will ensure the availability and the security of the game and your data as well. SaaS allows your organization to get quickly up and running with an app at minimal upfront cost.
 
 
 ### Design your game infrastructure using Azure
@@ -181,11 +181,11 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 | Game using infrastructure as a service model (IaaS)      | Game is hosted on virtual machines in the cloud       | [Azure VMs](https://azure.microsoft.com/services/virtual-machines/) | Scale from 1 to thousands of virtual machine instances as game servers with built-in virtual networking and load balancing; hybrid consistency with on-premises systems           |
 | Web or mobile games using platform as a service model (PaaS)            | Game is hosted on a managed platform	            | [Azure App Service](https://azure.microsoft.com/services/app-service/) | PaaS for websites or mobile games (which means Azure VMs with middleware/development tools/BI/DB management)   |
 | Highly available, scalable n-tier cloud game with more control of the OS  (PaaS)        | Game is hosted on a managed platform	            | [Azure Cloud Service](https://azure.microsoft.com/services/app-service/) | PaaS designed to support applications that are scalable, reliable, and cheap to operate   |
-| Load balancing across regions for better performance and availability | Routes incoming game requests. Can act as first level of load balancing.       | [Azure Traffic Manager](https://azure.microsoft.com/en-us/services/traffic-manager/) | Offers multiple automatic failover options and ability to distribute your traffic equally or with weighted values. Can seamlessly combine on-premises and cloud systems. |
+| Load balancing across regions for better performance and availability | Routes incoming game requests. Can act as first level of load balancing.       | [Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager/) | Offers multiple automatic failover options and ability to distribute your traffic equally or with weighted values. Can seamlessly combine on-premises and cloud systems. |
 | Cloud storage for game data       | Latest game data is stored in the cloud and sent to client devices | [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)| No restriction on the kinds of file that can be stored; object storage for large amounts of unstructured data like images, audio, video, and more.  |
 | Temporary data storage tables| Game transactions (changes in game states) are stored in tables temporarily | [Azure Table Storage](https://azure.microsoft.com/services/storage/tables/)| Game data can be stored in a flexible schema according to the needs of the game |
 | Queue game transactions/requests| Game transactions are processed in the form of a queue | [Azure Queue Storage](https://azure.microsoft.com/services/storage/queues/)| Queues absorb unexpected traffic bursts and can prevent servers from being overwhelmed by a sudden flood of requests during the game   |
-| Scalable relational game database| Structured storage of relational data like in-game transactions to database | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL database as a service ([Compare with SQL on a VM](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
+| Scalable relational game database| Structured storage of relational data like in-game transactions to database | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL database as a service ([Compare with SQL on a VM](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview))  |
 | Scalable distributed low-latency game database| Fast read, write, and query of game and player data with schema flexibility | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| Low latency NoSQL document database as a service   |
 | Use own datacenter with Azure services | Game is retrieved from your own datacenter and sent to the client devices | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Enables your organization to deliver Azure services from your own datacenter to help you achieve more  |
 | Large data chunks transfer| Large files such as game images, audio, and videos can be sent to users from the nearest Content Delivery Network (CDN) pop location with Azure CDN	 | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Built on a modern network topology of large centralized nodes, Azure CDN handles sudden traffic spikes and heavy loads to dramatically increase speed and availability, resulting in significant user experience improvements  |
@@ -236,7 +236,7 @@ We are constantly innovating and adding new features. For more information, see 
 
 ## Related links
 
-* [Windows 10 game development guide](https://docs.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 game development guide](./e2e.md)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

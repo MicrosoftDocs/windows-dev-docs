@@ -2,7 +2,7 @@
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
 description: Here's an overview of how to register for a Windows developer account for Microsoft Store and other Microsoft programs in Partner Center.
-ms.date: 10/31/2018
+ms.date: 3/30/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -19,6 +19,9 @@ This article describes how to register for a Windows developer account in [Partn
 > [!NOTE]
 > In some cases, the screens and fields you see when you register for a developer account may vary slightly from what's outlined in the following steps. But the basic information and process will match what these steps describe.
 
+> [!NOTE]
+> There is a known issue where users in some locales might be unable to finish completing their registration. Until we can confirm that it is resolved, we recommend that you manually change your browser's locale tag to **en-us** once you begin the sign-up process on partner.microsoft.com.
+
 1.  Go to the [registration page](https://developer.microsoft.com/store/register) and select **Sign up**.
 2.  If you're not already signed in with a Microsoft account, sign in now, or create a new Microsoft account. The Microsoft account you use here is what you'll use to sign in to your developer account.
 3.  Select the [country/region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) where you live or where your business is located. You won't be able to change this later.
@@ -26,7 +29,7 @@ This article describes how to register for a Windows developer account in [Partn
 5.  Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. For company accounts, be sure to use your organization's registered business name or trade name. If you enter a name that someone else has already selected, or if someone else has the rights to use that name, we won't permit you to use it.
 
     > [!NOTE]
-    > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
+    > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
 
 6.  Enter the contact info you want to use for your developer account.
 
@@ -39,7 +42,7 @@ This article describes how to register for a Windows developer account in [Partn
 
 8.  Enter your payment info for the one-time registration fee. If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal info in supported markets). Note that prepaid credit cards can't be used for this purchase. When you're finished, select **Next** to move on to the **Review** screen.
 
-9.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Check the box to indicate you've read these terms and accept them.
+9.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement). Check the box to indicate you've read these terms and accept them.
 
 10.  Select **Finish** to confirm your registration. Your payment will be processed and we'll send a confirmation message to your email address.
 
@@ -53,7 +56,7 @@ After you've signed up, your account will go through verification. For individua
 
 If you want to let multiple people access the company account by signing in with the Microsoft account that opened it (instead of as individual users added to the account), see the following guidelines:
 
--   Create the Microsoft account by using an email address that doesn't already belong to you or another individual, such as MyCompany_PartnerCenter@outlook.com. Don't use an email address at your company's domain, particularly if your company already uses Azure AD. As noted earlier, you can add additional users from your company's Azure AD service later.
+-   Email ownership verifies that the primary contact (primary email) address is valid. The primary contact email address must be a work account that is monitored and can send/receive email. Partners should **not** use: (1) a personal email address not associated with the company domain, or (2) a tenant user sign-in not associated to email (for example, jsmith@testcompany.onmicrosoft.com).
 -   Limit access to this Microsoft account to the least number of users possible.
 -   Set up a corporate email distribution list that includes everyone who needs to access the developer account. Add this email address to the [security info associated with the Microsoft account](https://account.microsoft.com/security). This approach allows all the employees on the list to receive security codes that are sent to this alias. If setting up a distribution list isn't feasible, you can add an individual's email address to your security info. But, the owner of that email address will be the only person who can access and share the security code when prompted (such as when new security info is added to the account or when the account is accessed from a new device).
 -   Add a company phone number to the Microsoft account's security info. Try to use a number that doesn't require an extension and that's accessible to key team members.

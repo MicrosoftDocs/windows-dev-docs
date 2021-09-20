@@ -1,5 +1,5 @@
 ---
-title: Multisampling in Universal Windows Platform (UWP) apps
+title: Multisampling in UWP apps
 description: Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D.
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.date: 02/08/2017
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 
 
-Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D. Multisampling, also known as multi-sample antialiasing, is a graphics technique used to reduce the appearance of aliased edges. It works by drawing more pixels than are actually in the final render target, then averaging values to maintain the appearance of a "partial" edge in certain pixels. For a detailed description of how multisampling actually works in Direct3D, see [Multisample Anti-Aliasing Rasterization Rules](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules).
+Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D. Multisampling, also known as multi-sample antialiasing, is a graphics technique used to reduce the appearance of aliased edges. It works by drawing more pixels than are actually in the final render target, then averaging values to maintain the appearance of a "partial" edge in certain pixels. For a detailed description of how multisampling actually works in Direct3D, see [Multisample Anti-Aliasing Rasterization Rules](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules).
 
 ## Multisampling and the flip model swap chain
 
@@ -22,9 +22,9 @@ UWP apps that use DirectX must use flip model swap chains. Flip model swap chain
 
 Direct3D feature levels guarantee support for specific, minimum sample count capabilities, and guarantee certain buffer formats will be available that support multisampling. Graphics devices often support a wider range of formats and sample counts than the minimum required. Multisampling support can be determined at run-time by checking feature support for multisampling with specific DXGI formats, and then checking the sample counts you can use with each supported format.
 
-1.  Call [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) to find out which DXGI formats can be used with multisampling. Supply the render target formats your game can use. Both the render target and resolve target must use the same format, so check for both [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) and **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
+1.  Call [**ID3D11Device::CheckFeatureSupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) to find out which DXGI formats can be used with multisampling. Supply the render target formats your game can use. Both the render target and resolve target must use the same format, so check for both [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) and **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85)), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
+    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](/previous-versions/ff471324(v=vs.85)), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
 
     The following code checks multisampling support for all the DXGI\_FORMAT values:
 
@@ -49,7 +49,7 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     }
     ```
 
-2.  For each supported format, query for sample count support by calling [**ID3D11Device::CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels).
+2.  For each supported format, query for sample count support by calling [**ID3D11Device::CheckMultisampleQualityLevels**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels).
 
     The following code checks sample size support for supported DXGI formats:
 
@@ -76,7 +76,7 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     }
     ```
 
-    > **Note**   Use [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) instead if you need to check multisample support for tiled resource buffers.
+    > **Note**   Use [**ID3D11Device2::CheckMultisampleQualityLevels1**](/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-checkmultisamplequalitylevels1) instead if you need to check multisample support for tiled resource buffers.
 
      
 
@@ -173,7 +173,7 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) before presenting the frame. This instructs Direct3D to peform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
+6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-resolvesubresource) before presenting the frame. This instructs Direct3D to peform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
 
     The following code resolves the subresource before presenting the frame:
 
@@ -200,7 +200,3 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
  
 
  
-
-
-
-

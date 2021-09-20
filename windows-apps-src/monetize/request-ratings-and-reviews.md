@@ -1,5 +1,5 @@
 ---
-Description: Learn about several ways you can programmatically enable customers to rate and review your app.
+description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
 ms.date: 01/22/2019
 ms.topic: article
@@ -15,11 +15,11 @@ You can add code to your Universal Windows Platform (UWP) app to programmaticall
 When you are ready to analyze your ratings and reviews data, you can view the data in Partner Center or use the Microsoft Store analytics API to retrieve this data programmatically.
 
 > [!IMPORTANT]
-> When adding a rating function within your app, all reviews must send the user to the Store's rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> When adding a rating function within your app, all reviews must send the user to the Store's rating mechanisms, regardless of star rating chosen. If you collect feedback or comments from users, it must be clear that it is not related to the app rating or reviews in the Store but is sent directly to the app developer. See the Developer Code of Conduct for more information related to [Fraudulent or Dishonest Activities](/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## Show a rating and review dialog in your app
 
-To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. 
+To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [RequestRateAndReviewAppAsync](/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) method in the [Windows.Services.Store](/uwp/api/windows.services.store) namespace. 
 
 > [!IMPORTANT]
 > The request to show the rating and review dialog must be called on the UI thread in your app.
@@ -99,7 +99,7 @@ The **RequestRateAndReviewAppAsync** method was introduced in Windows 10, versio
 
 ### Response data for the rating and review request
 
-After you submit the request to display the rating and review dialog, the [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) property of the [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) class contains a JSON-formatted string that indicates whether the request was successful.
+After you submit the request to display the rating and review dialog, the [ExtendedJsonData](/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) property of the [StoreRateAndReviewResult](/uwp/api/windows.services.store.storerateandreviewresult) class contains a JSON-formatted string that indicates whether the request was successful.
 
 The following example demonstrates the return value for this request after the customer successfully submits a rating or review.
 
@@ -132,7 +132,7 @@ The following table describes the fields in the JSON-formatted data string.
 
 ## Launch the rating and review page for your app in the Store
 
-If you want to programmatically open the rating and review page for your app in the Store, you can use the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method with the ```ms-windows-store://review``` URI scheme as demonstrated in this code example.
+If you want to programmatically open the rating and review page for your app in the Store, you can use the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method with the ```ms-windows-store://review``` URI scheme as demonstrated in this code example.
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));

@@ -1,5 +1,5 @@
 ---
-Description: Add-ons (or in-app products) are published through Partner Center.
+description: Learn how to submit add-ons, also called in-app products, as supplementary items for your app that customers can purchase.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.date: 10/31/2018

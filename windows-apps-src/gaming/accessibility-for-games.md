@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, accessibility, games
 ms.localizationpriority: medium
 ---
+
 #  Making games accessible
 
 Accessibility can empower every person and every organization on the planet to achieve more, and this applies to making games more accessible too. This article is written for game developers, game designers, and producers. It provides an overview of game accessibility guidelines derived from various organizations (listed in the reference section below), and introduces the inclusive game design principle for creating more accessible games.
@@ -29,7 +30,7 @@ Number of users who can play your game x Awesomeness of game = Game sales
 
 If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [estimated 14% of adults in the US have difficulty reading](https://nces.ed.gov/naal/estimates/overview.aspx), and [estimated 10% of males have some form of color vision deficiency](https://www.aao.org/eye-health/diseases/color-blindness-risk), this can potentially have a large impact on your title’s revenue. 
 
-For more business justifications, see [Making Video Games Accessible](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices).
+For more business justifications, see [Making Video Games Accessible](/windows/desktop/DxTechArts/accessibility-best-practices).
 
 ### Better games
 
@@ -109,7 +110,7 @@ Nearly every accessibility solution comes down to one of two principles. The fir
 
 ### Reinforce: Communicate information in more than one way
 
-The second principle is where the concept of universal design comes in, a single approach that not only brings in more players but also improves the experience for all. For example an image as well as text, a symbol as well as colour. A map that is based on a range of different coloured markers is not only impossible for colorblind gamers to use, it is also frustrating for everyone else who must remember what everything equates to. Adding symbols makes it a better experience for everyone.
+The second principle is where the concept of universal design comes in, a single approach that not only brings in more players but also improves the experience for all. For example an image as well as text, a symbol as well as colour. A map that is based on a range of different coloured markers is not only impossible for color blind gamers to use, it is also frustrating for everyone else who must remember what everything equates to. Adding symbols makes it a better experience for everyone.
 
 ### Innovate: Be creative
 
@@ -134,10 +135,10 @@ During development, you can introduce a review process to make sure that at ever
 | Checklist                                         | Accessibility features                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | In-game cinematics                                | Has subtitles and captions, photosensitivity tested                                                                           |
-| Overall artwork (2D and 3D graphics)              | Colorblind friendly colors and options, not dependent entirely on color for identification but use shapes and patterns as well|
+| Overall artwork (2D and 3D graphics)              | Color blind friendly colors and options, not dependent entirely on color for identification but use shapes and patterns as well|
 | Start screen, settings menu and other menus       | Ability to read options aloud, ability to remember settings, alternate command control input method, adjustable UI font size  |
 | Gameplay                                          | Wide adjustable difficulty levels, subtitles and captions, good visual and audio feedback for gamer                           |
-| HUD display                                       | Adjustable screen position, adjustable font size, colorblind friendly option                                                  |        
+| HUD display                                       | Adjustable screen position, adjustable font size, color blind friendly option                                                  |        
 | Control input                                     | Mappable controls to input device, custom controller support, simplified input for game allowed                               |        
 
 ### Playtest and iterate: Get gamers' feedback
@@ -152,24 +153,24 @@ Consumers will want to know if your game can be played by gamers with disabiliti
 
 ## Game accessibility features
 
-This section outlines some features that can make your game more accessible. These features are derived from guidelines taken from the [Game accessibility guidelines](https://gameaccessibilityguidelines.com/), which represent the findings of a collaborative group of studios, specialists, and academics. For more information, see [Game accessibility guidelines](https://gameaccessibilityguidelines.com/). 
+This section outlines some features that can make your game more accessible. These features are derived from guidelines taken from the [Game accessibility guidelines](http://gameaccessibilityguidelines.com/) website. That resource represent the findings of a collaborative group of studios, specialists, and academics.
 
-### Colorblind friendly graphics and user interface
+### Color blind friendly graphics and user interface
 
 The retina of the eye has two types of light-sensitive cells: the cones for seeing where there is light, and the rods for seeing in low light conditions. 
 
-There are three types of cones (red, green, and blue) to enable us to view colors correctly. Colorblindness occurs when one or more of these three types light cones is not functioning as expected. The degree of colorblindness can range from almost normal color perception with reduced sensitivity towards red, green, or blue light, to a complete inability to perceive any color at all. 
+There are three types of cones (red, green, and blue) to enable us to view colors correctly. Color blindness occurs when one or more of these three types light cones is not functioning as expected. The degree of color blindness can range from almost normal color perception with reduced sensitivity towards red, green, or blue light, to a complete inability to perceive any color at all. 
 
-Since it’s less common to have reduced sensitivity to blue light, when designing for the colorblind, the selection of colors are geared towards people who are red or green colorblind:
+Since it’s less common to have reduced sensitivity to blue light, when designing for the color blind, the selection of colors are geared towards people who are red or green color blind:
  
-  + Use color combinations that can be differentiated by people with red/green colorblindness:
+  + Use color combinations that can be differentiated by people with red/green color blindness:
   
     * Colors that appear similar: All shades of red and green including brown and orange
     * Colors that stand out: Blue and yellow
     
   + Do not rely solely on color to communicate or distinguish game objects. Use shapes and patterns as well.
   + If you have to rely on colors alone, combine presets with a free selection of colors, so that it can be fully customizable by the players who need them and not creating extra work for players who do not need them.
-  + Use a colorblind simulator to test your designs so that you can view your designs through colorblind eyes. This can help you avoid common contrast issues. [Color Oracle](https://www.colororacle.org) is a free colorblind simulator that can simulate the three most common types of color vision deficiency – deuteranopia, protanopia, and tritanopia.
+  + Use a color blind simulator to test your designs so that you can view your designs through color blind eyes. This can help you avoid common contrast issues. [Color Oracle](https://www.colororacle.org) is a free color blind simulator that can simulate the three most common types of color vision deficiency – deuteranopia, protanopia, and tritanopia.
   
 ### Closed captioning and subtitles
 
@@ -179,7 +180,7 @@ Here are some basic guidelines to consider when designing closed captions and su
 
 *	Select simple readable font.
 *	Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
-*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
+*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](/windows/apps/design/accessibility/accessible-text-requirements).)
 * Display short sentences on screen, maximum 38 characters per line and maximum 2-3 lines at any one time. (Remember not to give the game away by displaying the text before event occurs.)
 *	Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
 *	Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
@@ -190,7 +191,7 @@ If your title allows gamers to communicate using voice and send text messages to
 
 People who do not have microphones attached to their gaming device can still have a voice conversation with someone who is speaking. They are able to type text into the chat window and have those messages converted into voice. It also allows someone who can't hear very well to read the transcribed text messages from the person they're having a voice chat with.
 
-For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
+For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### Sound feedback
 
@@ -246,24 +247,22 @@ Design for breaks between game levels, encouraging players to take a break from 
 Here are some external sites that provide additional information about game accessibility.
 
 ### Game accessibility guidelines
-* [Game accessibility guidelines](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation guidelines](https://accessible.games/accessible-player-experiences/)
+* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/) (used as a reference in this topic)
+* [AbleGamers Foundation guidelines](https://accessible.games/accessible-player-experiences/) (used as a reference in this topic)
 * [Design Universally Accessible (UA) games](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### Custom input controllers
 * [Special effect](https://www.specialeffect.org.uk/)
 * [War fighter engaged](https://www.warfighterengaged.org/)
 
-## References used
-* [Game accessibility guidelines](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation guidelines](https://accessible.games/accessible-player-experiences/)
+### Other references used
 * [Color Blind Awareness, a Community Interest Company](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [How to do subtitles well- a blog article on Gamasutra by Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [How to do subtitles well&mdash;a blog article on Gamasutra by Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [Innovation for All Programme](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [Epilepsy foundation](https://www.epilepsy.com/)
 
-## Related links
+### Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive/)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Developing accessible UWP apps](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
+* [Developing accessible UWP apps](/windows/apps/design/accessibility/accessibility)
 * [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)

@@ -1,6 +1,6 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Supported languages
+description: View a table of the languages and corresponding language codes that are supported for submitting apps to the Microsoft Store.
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 03/07/2019
 ms.topic: article
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 You can submit apps to the Microsoft Store in over 100 languages.
 
-To learn more about configuring languages in your apps, see [Globalization and localization](../design/globalizing/globalizing-portal.md) and [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md). We also have a [Multilingual App Toolkit](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) to help you write apps that support multiple languages.
+To learn more about configuring languages in your apps, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal) and [Understand user profile languages and app manifest languages](/windows/apps/design/globalizing/manage-language-and-region). We also have a [Multilingual App Toolkit](/windows/apps/design/globalizing/use-mat) to help you write apps that support multiple languages.
 
 ## Supported languages
 
@@ -132,7 +132,3 @@ Language codes that are not included here are not supported by the Store. We rec
  
 
  
-
-
-
-

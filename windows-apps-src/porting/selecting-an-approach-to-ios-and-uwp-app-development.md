@@ -1,5 +1,5 @@
 ---
-description: What are the choices when developing cross-platform apps?.
+description: Learn about tools and techniques that can help you write apps that support Windows, iOS, and Android.
 title: Selecting an approach to iOS and UWP app development
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
@@ -42,7 +42,7 @@ With an existing iOS app, your options are a little more limited. However, all i
 
 -   [Windows Bridge for iOS](https://github.com/Microsoft/WinObjC)
 
-    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
+    This is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
 
 -   Repurpose your C++ code.
 
@@ -58,7 +58,7 @@ With an existing iOS app, your options are a little more limited. However, all i
 
     A game authoring environment.
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://www.scirra.com/)
 
     A game authoring environment.
 

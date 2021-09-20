@@ -21,7 +21,7 @@ Making this metadata searchable instantly allows for users to be exponentially m
 For decades, the solution for fast searching on Windows has been the indexer, and in the Creators Update it has been updated to support these new scenarios. Apps are now able to tag files with additional properties beyond those which are extracted by the system. These properties are treated as first class citizens  
 
 ## Windows Properties 
-The [Windows Property system](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) has been a key part of interacting with files for years. It allows apps to read properties from files without having to understand the internals of all the different file formats or languages a file could be in. All that is abstracted away for you as a developer, all you have to do is ask for a list and specify ascending or descending.  
+The [Windows Property system](/windows/desktop/properties/windows-properties-system) has been a key part of interacting with files for years. It allows apps to read properties from files without having to understand the internals of all the different file formats or languages a file could be in. All that is abstracted away for you as a developer, all you have to do is ask for a list and specify ascending or descending.  
 
 The property system is intertwined with the Windows Indexer – it reads all the properties from files within its scope and stores them. Later when an app asks for a list of all the .docx in a folder to be sorted by date modified, excluding those authored by John Smith the indexer can return the list instantly.  
 
@@ -152,4 +152,4 @@ Although this is potentially an interesting feature for some of the early adopte
 ## Conclusions 
 That’s it, supplemental properties are an easy way to store more file properties in the system. Using them is of course optional, but it can give your app an edge over other apps which aren’t able to sort and search their data as quickly. 
 
-We’re looking forward to seeing apps start to use these properties. If you have any questions about how using the header please let us know in the comments below 
+We’re looking forward to seeing apps start to use these properties. If you have any questions about how using the header please let us know in the comments below

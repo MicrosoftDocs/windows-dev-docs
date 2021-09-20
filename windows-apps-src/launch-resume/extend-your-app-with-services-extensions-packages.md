@@ -76,11 +76,11 @@ Asset packages are a common, centralized source of executable, or non-executable
 Optional packages are used to either supplement or extend the original functionality of an app package. It's possible to publish an app, followed by publishing optional packages at a later time, or to publish both the app and optional packages simultaneously. By extending your app via an optional package, you have the advantages of distributing and monetizing content as a separate app package. Optional packages are typically intended to be developed by the original app developer, since they run with the identity of the main app (unlike app extensions). Depending on how you define your optional package, you can load code, assets, or code and assets from your optional package to your main app. If you need to enhance your app with content that can be monetized, licensed, and distributed separately, then optional packages might be the right choice for you. For implementation details, see [Optional packages and related set authoring](/windows/msix/package/optional-packages).
 
 **Flat bundle**
-[Flat bundle app packages](/windows/msix/package/flat-bundles.md) are similar to regular app bundles, except that instead of including all of the app packages within the folder, the flat bundle only contains *references* to those app packages. By containing references to app packages instead of the files themselves, a flat bundle will reduce the amount of time it takes to package and download an app.
+[Flat bundle app packages](/windows/msix/package/flat-bundles) are similar to regular app bundles, except that instead of including all of the app packages within the folder, the flat bundle only contains *references* to those app packages. By containing references to app packages instead of the files themselves, a flat bundle will reduce the amount of time it takes to package and download an app.
 
 **App Extension**
 
-[App extensions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) enable your UWP app to host content provided by other UWP apps. Discover, enumerate, and access read-only content from those apps.
+[App extensions](/uwp/api/windows.applicationmodel.appextensions) enable your UWP app to host content provided by other UWP apps. Discover, enumerate, and access read-only content from those apps.
 
 If an app supports extensions, any developer can submit an extension for the app. Thus, the host app needs to be robust when it loads an extension that it hasn't been pre-tested with. Extensions should be considered untrusted.
 
@@ -88,7 +88,7 @@ Applications cannot load code from extensions. If you need code execution, consi
 
 **App Service**
 
-Windows app services enable app-to-app communication by allowing your UWP app to provide services to another Universal Windows app. App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details.
+Windows app services enable app-to-app communication by allowing your UWP app to provide services to another Universal Windows app. App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. See [Create and consume an app service](./how-to-create-and-consume-an-app-service.md) for details.
 
 App services are UWP apps that provide services to other UWP apps. They are analogous to web services on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.
 
@@ -98,12 +98,12 @@ Streaming Install is a way to optimize how your app is delivered to users. Rathe
 
 ## See Also
 
-[Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
+[Create and consume an app service](./how-to-create-and-consume-an-app-service.md)  
 [Introduction to asset packages](/windows/msix/package/asset-packages)  
 [Package creation with the packaging layout](/windows/msix/package/packaging-layout)  
 [Optional packages and related set authoring](/windows/msix/package/optional-packages)  
 [Developing with asset packages and package folding](/windows/msix/package/package-folding)  
 [UWP App Streaming Install](/windows/msix/package/streaming-install)  
 [Flat bundle app packages](/windows/msix/package/flat-bundles)  
-[Windows.ApplicationModel.AppService namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
-[Windows.ApplicationModel.Extensions namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  
+[Windows.ApplicationModel.AppService namespace](/uwp/api/Windows.ApplicationModel.AppService)  
+[Windows.ApplicationModel.Extensions namespace](/uwp/api/windows.applicationmodel.appextensions)

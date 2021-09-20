@@ -1,8 +1,8 @@
 ---
-Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
+description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 03/07/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
 ms.localizationpriority: medium
@@ -15,7 +15,7 @@ You can provide [screenshots](#screenshots), [logos](#store-logos), [trailers](#
 
 During the [app submission process](app-submissions.md), you provide these art assets in the [Store listings](create-app-store-listings.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
 
-The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../design/style/app-icons-and-logos.md).
+The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](/windows/apps/design/style/app-icons-and-logos).
 
 ## Screenshots
 
@@ -26,7 +26,7 @@ You have the option to provide screenshots for the different device families tha
 Only one screenshot (for any device family) is required for your submission, though you can provide several; up to 9 desktop screenshots and up to 8 screenshots for the other device families. We suggest providing at least four screenshots for each device family that your app supports so that people can see how the app will look on their device type. (Do not include screenshots for device families that your app does not support.) Note that **Desktop** screenshots will also be shown to customers on Surface Hub devices.
 
 > [!NOTE]
-> Microsoft Visual Studio provides a [tool to help you capture screenshots](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
+> Microsoft Visual Studio provides a [tool to help you capture screenshots](/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
 
 Each screenshot must be a .png file in either landscape or portrait orientation, and the file size can't be larger than 50 MB.
 
@@ -55,7 +55,7 @@ You can upload Store logos to create a more customized display in the Store. We 
 
 You can provide these images as .png files (no greater than 50 MB), each of which should follow the guidelines below.
 
-### 9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)
+### 2:3 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
 This is used as the main logo image for customers on Windows 10 and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially-curated collections.
 
@@ -66,7 +66,7 @@ This image should include your app’s name, and any text on the image should me
 
 ### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
 
-This image may appear in various Store pages for Windows 10 (including Xbox), and if you don't provide the **9:16 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
+This image may appear in various Store pages for Windows 10 (including Xbox), and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
 
 > [!NOTE]
 > If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
@@ -138,11 +138,10 @@ To remove a trailer from a listing, click the **X** next to its file name. You c
 
 When providing your trailers, be sure to follow these requirements:
 
-- The video format must be MOV or MP4. If you're uploading 4K video, only MP4 is supported.
-- The video duration shouldn't exceed 60 seconds.
+- The video format must be MOV or MP4.
 - The file size of the trailer shouldn't exceed 2 GB.
-- The video resolution must be either 1920 x 1080 pixels or 3840 x 2160 pixels.
-- The thumbnail must be a PNG file with a resolution of either 1920 x 1080 pixels or 3840 x 2160 pixels.
+- The video resolution must be 1920 x 1080 pixels.
+- The thumbnail must be a PNG file with a resolution of 1920 x 1080 pixels.
 - The title can’t exceed 255 characters.
 - Do not include age ratings in your trailers.
 
@@ -164,7 +163,7 @@ There are additional requirements depending on the type of file.
 
 | Video | Audio |
 | --- | --- |
-| <ul><li>Codec: [H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
+| <ul><li>Codec: [H.264](/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressive scan (no interlacing)</li><li>High Profile</li><li>2 consecutive B frames</li><li>Closed GOP. GOP of half the frame rate</li><li>CABAC</li><li>50 MB/s </li><li>Color Space: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Channels: Stereo or surround sound</li><li>Sample rate: 48 KHz</li><li>Audio Bitrate: 384 KB/s for Stereo, 512 KB/s for surround sound</li></ul> |
 
 > [!WARNING]
 > Customers may not hear audio for MP4 files encoded with codecs other than AVC1.
@@ -226,7 +225,3 @@ If your previously-submitted app supports earlier OS versions (Windows 8.x and/o
 > Be sure to provide a 300 x 300 app tile icon image in the [Store logos](#store-logos) section for any submission that supports Windows Phone 8.1 or earlier. This will ensure that your app does not appear in the Store with a blank icon.  
 
 **For Windows 8.1 and earlier**, some promotional layouts may use an image in the **414 x 180** pixel size. If your app runs on Windows 8.1 or earlier, we recommend providing an image in this size.
-
-
-
-

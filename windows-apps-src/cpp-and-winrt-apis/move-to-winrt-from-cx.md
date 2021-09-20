@@ -1,5 +1,5 @@
 ---
-description: This topic shows how to port C++/CX code to its equivalent in C++/WinRT.
+description: This topic describes the technical details involved in porting the source code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 title: Move to C++/WinRT from C++/CX
 ms.date: 01/17/2019
 ms.topic: article
@@ -9,58 +9,75 @@ ms.localizationpriority: medium
 
 # Move to C++/WinRT from C++/CX
 
-This topic shows how to port the code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+This topic is the first in a series describing how you can port the source code in your [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
-## Porting strategies
+If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) types, then see [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md).
 
-If you want to gradually port your C++/CX code to C++/WinRT, then you can. C++/CX and C++/WinRT code can coexist in the same project, with the exceptions of XAML compiler support and Windows Runtime components. For those two exceptions, you'll need to target either C++/CX or C++/WinRT within the same project.
+## Strategies for porting
 
-> [!IMPORTANT]
-> If your project builds a XAML application, then one workflow that we recommend is to first create a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Then, start copying source code and markup over from the C++/CX project. You can add new XAML pages with **Project** \> **Add New Item...** \> **Visual C++** > **Blank Page (C++/WinRT)**.
->
-> Alternatively, you can use a Windows Runtime component to factor code out of the XAML C++/CX project as you port it. Either move as much C++/CX code as you can into a component, and then change the XAML project to C++/WinRT. Or else leave the XAML project as C++/CX, create a new C++/WinRT component, and begin porting C++/CX code out of the XAML project and into the component. You could also have a C++/CX component project alongside a C++/WinRT component project within the same solution, reference both of them from your application project, and gradually port from one to the other. See [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md) for more details on using the two language projections in the same project.
+It's worth knowing that porting from C++/CX to C++/WinRT is generally straightforward, with the one exception of moving from [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) tasks to coroutines. The models are different. There isn't a natural one-to-one mapping from PPL tasks to coroutines, and there's no simple way to mechanically port the code that works for all cases. For help with this specific aspect of porting, and your options for interoperating between the two models, see [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md).
+
+Development teams routinely report that once they're over the hurdle of porting their asynchronous code, the remainder of the porting work is largely mechanical.
+
+### Porting in one pass
+
+If you're in a position to be able to port your entire project in one pass, then you'll need only this topic for the info you need (and you won't need the *interop* topics that follow this one). We recommend that you begin by creating a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Then move your source code files over into that new project, and port all of the C++/CX source code to C++/WinRT as you do so.
+
+Alternatively, if you'd prefer to do the porting work in your existing C++/CX project, then you'll need to add C++/WinRT support to it. The steps that you follow to do that are described in [Taking a C++/CX project and adding C++/WinRT support](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support). By the time you're done porting, you'll have turned what was a pure C++/CX project into a pure C++/WinRT project.
+
+> [!NOTE]
+> If you have a Windows Runtime component project, then porting in one pass is your only option. A Windows Runtime component project written in C++ must contain either all C++/CX source code, or all C++/WinRT source code. They can't coexist in this project type.
+
+### Porting a project gradually
+
+With the exception of Windows Runtime component projects, as mentioned in the previous section, if the size or complexity of your codebase makes it necessary to port your project gradually, then you'll need a porting process in which for a time C++/CX and C++/WinRT code exists side by side in the same project. In addition to reading this topic, also see [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md) and [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md). Those topics provide info and code examples showing how to interoperate between the two language projections.
+
+To get a project ready for a gradual porting process, one option is to add C++/WinRT support to your C++/CX project. The steps that you follow to do that are described in [Taking a C++/CX project and adding C++/WinRT support](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support). You can then port gradually from there.
+
+Another option is to create a new project in Visual Studio using one of the C++/WinRT project templates (see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). And then add C++/CX support to that project. The steps that you follow to do that are described in [Taking a C++/WinRT project and adding C++/CX support](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support). You can then start moving your source code over into that, and porting *some* of the C++/CX source code to C++/WinRT as you do so.
+
+In either case, you'll interoperate (both ways) between your C++/WinRT code and any C++/CX code that you haven't yet ported.
 
 > [!NOTE]
 > Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. A Windows type projected into C++/WinRT has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. These distinct namespaces let you port from C++/CX to C++/WinRT at your own pace.
 
-Bearing in mind the exceptions mentioned above, the first step in porting a C++/CX project to C++/WinRT is to manually add C++/WinRT support to it (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). To do that, install the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) into your project. Open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. One effect of that change is that support for C++/CX is turned off in the project. It's a good idea to leave support turned off so that build messages help you find (and port) all of your dependencies on C++/CX, or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and port gradually.
+#### Porting a XAML project gradually
 
-Alternatively, manually add the following property to your `.vcxproj` file using the C++/WinRT project property page in Visual Studio. For a list of similar customization options (which fine-tune the behavior of the `cppwinrt.exe` tool), see the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing).
+> [!IMPORTANT]
+> For a project that uses XAML, at any given time all of your XAML page types need to be either entirely C++/CX or entirely C++/WinRT. You can still mix C++/CX and C++/WinRT *outside* of XAML page types within the same project (in your models and viewmodels, and elsewhere).
 
-```xml
-<syntaxhighlight lang="xml">
-  <PropertyGroup Label="Globals">
-    <CppWinRTProjectLanguage>C++/CX</CppWinRTProjectLanguage>
-  </PropertyGroup>
-</syntaxhighlight>
-```
+For this scenario, the workflow that we recommend is to create a new C++/WinRT project and copy source code and markup over from the C++/CX project. As long as all of your XAML page types are C++/WinRT, then you can add new XAML pages with **Project** \> **Add New Item...** \> **Visual C++** > **Blank Page (C++/WinRT)**.
 
-Next, ensure that project property **General** \> **Target Platform Version** is set to 10.0.17134.0 (Windows 10, version 1803) or greater.
+Alternatively, you can use a Windows Runtime component (WRC) to factor code out of the XAML C++/CX project as you port it.
 
-In your precompiled header file (usually `pch.h`), include `winrt/base.h`.
+- You could create a new C++/CX WRC project, move as much C++/CX code as you can into that project, and then change the XAML project to C++/WinRT.
+- Or you could create a new C++/WinRT WRC project, leave the XAML project as C++/CX, and begin porting C++/CX to C++/WinRT and moving the resulting code out of the XAML project and into the component project.
+- You could also have a C++/CX component project alongside a C++/WinRT component project within the same solution, reference both of them from your application project, and gradually port from one to the other. Again, see [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md) for more details on using the two language projections in the same project.
 
-```cppwinrt
-#include <winrt/base.h>
-```
+## First steps in porting a C++/CX project to C++/WinRT
 
-If you include any C++/WinRT projected Windows API headers (for example, `winrt/Windows.Foundation.h`), then you don't need to explicitly include `winrt/base.h` like this because it will be included automatically for you.
+No matter what your porting strategy will be (porting in one pass, or porting gradually), your first step is to prepare your project for porting. Here's a recap of what we described in [Strategies for porting](#strategies-for-porting) in terms of the kind of project you'll be starting with, and how to set it up.
 
-If your project is also using [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) types, then see [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md).
+- **Porting in one pass**. Create a new project in Visual Studio using one of the C++/WinRT project templates. Move the files from your C++/CX project into that new project, and port the C++/CX source code.
+- **Porting a non-XAML project gradually**. You can choose to add C++/WinRT support to your C++/CX project (see [Taking a C++/CX project and adding C++/WinRT support](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)), and port gradually. Or you can choose to create a new C++/WinRT project and add C++/CX support to that (see [Taking a C++/WinRT project and adding C++/CX support](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support)), move files over, and port gradually.
+- **Porting a XAML project gradually**. Create a new C++/WinRT project, move files over, and port gradually. At any given time your XAML page types must be *either* all C++/WinRT *or* all C++/CX.
+
+The rest of this topic applies no matter which porting strategy you choose. It contains a catalog of technical details involved in porting source code from C++/CX to C++/WinRT. If you're porting gradually, then you'll likely also want to see [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md) and [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md).
 
 ## File-naming conventions
 
 ### XAML markup files
 
-| | C++/CX | C++/WinRT |
+| File origin | C++/CX | C++/WinRT |
 | - | - | - |
 | **Developer XAML files** | MyPage.xaml<br/>MyPage.xaml.h<br/>MyPage.xaml.cpp | MyPage.xaml<br/>MyPage.h<br/>MyPage.cpp<br/>MyPage.idl (see below) |
 | **Generated XAML files** | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp | MyPage.xaml.g.h<br/>MyPage.xaml.g.hpp<br/>MyPage.g.h |
 
 Notice that C++/WinRT removes the `.xaml` from the `*.h` and `*.cpp` file names.
 
-C++/WinRT adds an additional developer file, the **Midl file (.idl)**. C++/CX autogenerates this file internally, adding to it every public and protected member. In C++/WinRT, you add and author the file yourself. For more details, code examples, and a walkthrough of authoring IDL, see [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property).
+C++/WinRT adds an additional developer file, the **Midl file (.idl)**. C++/CX autogenerates this file internally, adding to it every public and protected member. In C++/WinRT, you add and author the file yourself. For more details, code examples, and a walkthrough of authoring IDL, see [XAML controls; bind to a C++/WinRT property](./binding-property.md).
 
-Also see [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)
+Also see [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)
 
 ### Runtime classes
 
@@ -229,7 +246,7 @@ record.UserState(newValue);
 
 ## Creating an instance of a class
 
-You work with a C++/CX object via a handle to it, commonly known as a hat (\^) reference. You create a new object via the `ref new` keyword, which in turn calls [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate a new instance of the runtime class.
+You work with a C++/CX object via a handle to it, commonly known as a hat (\^) reference. You create a new object via the `ref new` keyword, which in turn calls [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate a new instance of the runtime class.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -304,7 +321,18 @@ C++ collection types use the default constructor, which can result in unintended
 | Array of empty references | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Pair | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-There's no shorthand for creating an array of empty references. You have to repeat `nullptr` for each element in the array. If you have too few, then the extras will be default-constructed.
+### More about collections of empty references
+
+Whenever you have a **Platform::Array\^** (see [Port **Platform::Array\^**](#port-platformarray)) in C++/CX, you have the choice to port that to a **std::vector** in C++/WinRT (in fact, any contiguous container) rather than leave it as an array. There are advantages to choosing **std::vector**.
+
+For example, while there is shorthand for creating a fixed-sized vector of empty references (see table above), there's no such shorthand for creating an *array* of empty references. You have to repeat `nullptr` for each element in an array. If you have too few, then the extras will be default-constructed.
+
+For a vector, you can fill it with empty references at initialization (as in the table above), or you can fill it with empty references post-initialization with code such as this.
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### More about the **std::map** example
 
@@ -317,7 +345,7 @@ In other words, the `[]` operator always creates an entry in the map. This is di
 
 ## Converting from a base runtime class to a derived one
 
-It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
+It's common to have a reference-to-base that you know refers to an object of a derived type. In C++/CX, you use `dynamic_cast` to *cast* the reference-to-base into a reference-to-derived. The `dynamic_cast` is really just a hidden call to [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Here's a typical example&mdash;you're handling a dependency property changed event, and you want to cast from **DependencyObject** back to the actual type that owns the dependency property.
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -428,7 +456,7 @@ For more info and options, see [Revoke a registered delegate](handle-events.md#r
 
 ## Boxing and unboxing
 
-C++/CX automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+C++/CX automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](./boxing.md).
 
 In the tables that follows, we'll use these definitions.
 
@@ -463,38 +491,37 @@ C++/CX represents a Windows Runtime string as a reference type; while C++/WinRT 
 
 Furthermore, C++/CX allows you to dereference a null **String^**, in which case it behaves like the string `""`.
 
-| Operation | C++/CX | C++/WinRT|
+| Behavior | C++/CX | C++/WinRT|
 |-|-|-|
+| Declarations | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | String type category | Reference type | Value type |
 | null **HSTRING** projects as | `(String^)nullptr` | `hstring{}` |
 | Are null and `""` identical? | Yes | Yes |
-| Validity of null | `s = nullptr;`<br>`s->Length == 0` (valid) | `s = nullptr;`<br>`s.size() == 0` (valid) |
-| Box a string | `o = s;` | `o = box_value(s);` |
-| If `s` is `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| If `s` is `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Box a string preserving null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Force-box a string | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| Unbox a known string | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| If `o` is null | `s == nullptr; // equivalent to ""` | Crash |
-| If `o` is not a boxed string | `Platform::InvalidCastException` | Crash |
-| Unbox string, use fallback if null; crash if anything else | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Unbox string if possible; use fallback for anything else | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| Validity of null | `s = nullptr;`<br>`s->Length == 0` (valid) | `s = hstring{};`<br>`s.size() == 0` (valid) |
+| If you assign null string to object | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| If you assign `""` to object | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-In the two *unbox with fallback* cases above, it's possible that a null string was force-boxed, in which case the fallback won't be used. The resulting value will be an empty string because that is what was in the box.
+Basic boxing and unboxing.
+
+| Operation | C++/CX | C++/WinRT|
+|-|-|-|
+| Box a string | `o = s;`<br>Empty string becomes nullptr. | `o = box_value(s);`<br>Empty string becomes non-null object. |
+| Unbox a known string | `s = (String^)o;`<br>Null object becomes empty string.<br>InvalidCastException if not a string. | `s = unbox_value<hstring>(o);`<br>Null object crashes.<br>Crash if not a string. |
+| Unbox a possible string | `s = dynamic_cast<String^>(o);`<br>Null object or non-string becomes empty string. | `s = unbox_value_or<hstring>(o, fallback);`<br>Null or non-string becomes fallback.<br>Empty string preserved. |
 
 ## Concurrency and asynchronous operations
 
 The Parallel Patterns Library (PPL) ([**concurrency::task**](/cpp/parallel/concrt/reference/task-class), for example) was updated to support C++/CX hat references.
 
-For C++/WinRT, you should use coroutines and `co_await` instead. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+For C++/WinRT, you should use coroutines and `co_await` instead. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
 ## Consuming objects from XAML markup
 
-In a C++/CX project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL.
+In a C++/CX project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](../xaml-platform/x-bind-markup-extension.md) must be exposed publicly in IDL.
 
 Also, binding to a Boolean displays `true` or `false` in C++/CX, but it shows **Windows.Foundation.IReference`1\<Boolean\>** in C++/WinRT.
 
-For more info, and code examples, see [Consuming objects from markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
+For more info, and code examples, see [Consuming objects from markup](./binding-property.md#consuming-objects-from-xaml-markup).
 
 ## Mapping C++/CX **Platform** types to C++/WinRT types
 
@@ -527,7 +554,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### Port **Platform::Array\^**
 
-Your options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) and [Standard arrays and vectors](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+In cases where C++/CX requires you to use an array, C++/WinRT allows you to use any contiguous container. See [How the default constructor affects collections](#how-the-default-constructor-affects-collections) for a reason why **std::vector** is a good choice.
+
+So, whenever you have a **Platform::Array\^** in C++/CX, your porting options include using an initializer list, a **std::array**, or a **std::vector**. For more info, and code examples, see [Standard initializer lists](./std-cpp-data-types.md#standard-initializer-lists) and [Standard arrays and vectors](./std-cpp-data-types.md#standard-arrays-and-vectors).
 
 ### Port **Platform::Exception\^** to **winrt::hresult_error**
 
@@ -591,7 +620,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 **Platform::String\^** is equivalent to the Windows Runtime HSTRING ABI type. For C++/WinRT, the equivalent is [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). But with C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring**, and/or wide string literals. For more details, and code examples, see [String handling in C++/WinRT](strings.md).
 
-With C++/CX, you can access the [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
+With C++/CX, you can access the [**Platform::String::Data**](/cpp/cppcx/platform-string-class#data) property to retrieve the string as a C-style **const wchar_t\*** array (for example, to pass it to **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };
@@ -682,7 +711,7 @@ These bindings will perform **winrt::to_hstring** of the bound property. In the 
 
 C++/CX and C++/WinRT defer to the standard **std::wstringstream** for string building.
 
-| | C++/CX | C++/WinRT |
+| Operation | C++/CX | C++/WinRT |
 |-|-|-|
 | Append string, preserving nulls | `stream.print(s->Data(), s->Length);` | `stream << std::wstring_view{ s };` |
 | Append string, stop on first null | `stream << s->Data();` | `stream << s.c_str();` |
@@ -703,18 +732,21 @@ In the examples below, *ws* is a variable of type **std::wstring**. Also, while 
 | Pass **std::wstring** to method | `Method(ref new String(ws.c_str(),`<br>&nbsp;&nbsp;`(uint32_t)ws.size()); // Stops on first null` | `Method(ws);`<br>`// param::winrt::hstring accepts std::wstring_view` |
 
 ## Important APIs
+
 * [winrt::delegate struct template](/uwp/cpp-ref-for-winrt/delegate)
 * [winrt::hresult_error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
 
 ## Related topics
+
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Author events in C++/WinRT](author-events.md)
-* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
-* [Consume APIs with C++/WinRT](consume-apis.md)
-* [Handle events by using delegates in C++/WinRT](handle-events.md)
-* [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md)
+* [Author events in C++/WinRT](./author-events.md)
+* [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md)
+* [Consume APIs with C++/WinRT](./consume-apis.md)
+* [Handle events by using delegates in C++/WinRT](./handle-events.md)
+* [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md)
+* [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md)
 * [Microsoft Interface Definition Language 3.0 reference](/uwp/midl-3)
-* [Move to C++/WinRT from WRL](move-to-winrt-from-wrl.md)
-* [String handling in C++/WinRT](strings.md)
+* [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md)
+* [String handling in C++/WinRT](./strings.md)

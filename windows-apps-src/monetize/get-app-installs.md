@@ -83,7 +83,7 @@ Elements in the *Value* array contain the following values.
 | date                | string | The first date in the date range for the install data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | applicationId       | string | The Store ID of the app for which you are retrieving install data.     |
 | applicationName     | string | The display name of the app.     |
-| deviceType          | string | One of the following strings that specifies the type of device that completed the install:<p/><ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
+| deviceType          | string | One of the following strings that specifies the type of device that completed the install:<p/><ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | packageVersion           | string | The version of the package that was installed.  |
 | osVersion           | string | One of the following strings that specifies the OS version on which the install occurred:<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>   |
 | market              | string | The ISO 3166 country code of the market where the install occurred.    |
@@ -115,5 +115,5 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Installs report](../publish/installs-report.md)
+* [Installs report](../publish/acquisitions-report.md)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

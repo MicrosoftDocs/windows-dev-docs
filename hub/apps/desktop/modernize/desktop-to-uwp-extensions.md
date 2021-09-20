@@ -1,7 +1,7 @@
 ---
-Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
-title: Integrate your packaged desktop application with Windows 10 and UWP (Desktop Bridge)
-ms.date: 04/18/2018
+description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
+title: Integrate your desktop app with Windows using packaging extensions
+ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
@@ -10,28 +10,110 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
-# Integrate your desktop app with Windows 10 and UWP
+# Integrate your desktop app with Windows using packaging extensions
 
-If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 by using predefined extensions in the [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 and later releases by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
 
 For example, use an extension to create a firewall exception, make your app the default application for a file type, or point start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
 This article describes these extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
+> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
 
 ## Transition users to your app
 
 Help users transition to your packaged app.
 
+* [Redirect your existing desktop app to your packaged app](#redirect)
 * [Point existing Start tiles and taskbar buttons to your packaged app](#point)
-* [Make your packaged application open files instead of your desktop app](#make)
-* [Associate your packaged application with a set of file types](#associate)
+* [Make your packaged app open files instead of your desktop app](#make)
+* [Associate your packaged app with a set of file types](#associate)
 * [Add options to the context menus of files that have a certain file type](#add)
 * [Open certain types of files directly by using a URL](#open)
 
-<a id="point" />
+<a id="redirect"></a>
+
+### Redirect your existing desktop app to your packaged app
+
+When users start your existing unpackaged desktop app, you can configure your MSIX-packaged app to be opened instead. 
+
+> [!NOTE]
+> This feature is supported in Windows Insider Preview Build 21313 and later versions.
+
+To enable this behavior:
+
+1. Add registry entries to redirect your unpackaged desktop app executable to your packaged app.
+2. Register your packaged app to be launched when your unpackaged desktop app executable is launched.
+
+#### Add registry entries to redirect your unpackaged desktop app executable
+
+1. In the registry, create a subkey with the name of your desktop app executable file under the **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options** key.
+2. Under this subkey, add the following values:
+    * **AppExecutionAliasRedirect** (DWORD): If set to 1, the system will check for an [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) package extension with the same name as the executable. If the **AppExecutionAlias** extension is enabled, the packaged app will be activated using that value.
+    * **AppExecutionAliasRedirectPackages** (REG_SZ): The system will redirect only to the listed packages. Packages are listed by their package family name, separated by semicolons. If the special value * is used, the system will redirect to an **AppExecutionAlias** from any package.
+
+For example:
+
+```Ini
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\contosoapp.exe 
+    AppExecutionAliasRedirect = 1
+    AppExecutionAliasRedirectPackages = "Microsoft.WindowsNotepad_8weky8webbe" 
+```
+
+#### Register your packaged app to be launched
+
+In your package manifest, add an [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) extension that registers the name of your unpackaged desktop app executable. For example:
+
+```XML
+<Package
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap3">
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="contosoapp.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+#### Disable the redirection
+
+Users can turn off the redirection and launch your unpackaged app executable via these options:
+
+* They can uninstall the MSIX-packaged version of your app.
+* The user can disable the **AppExecutionAlias** entry for your MSIX-packaged app in the **App execution aliases** page in **Settings**.
+
+#### XML namespaces
+
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
+
+#### Elements and attributes of this extension
+
+```XML
+<uap3:Extension
+    Category="windows.appExecutionAlias"
+    EntryPoint="Windows.FullTrustApplication">
+    <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
+```
+
+|Name |Description |
+|-------|-------------|
+|Category |Always ``windows.appExecutionAlias``. |
+|Executable |The relative path to the executable to start when the alias is invoked. |
+|Alias |The short name for your app. It must always end with the ".exe" extension. |
+
+<a id="point"></a>
 
 ### Point existing Start tiles and taskbar buttons to your packaged app
 
@@ -50,10 +132,9 @@ Your users might have pinned your desktop application to the taskbar or the Star
         <DesktopApp ShortcutPath="[path]" />
     </DesktopAppMigration>
 </Extension>
-
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
 
 |Name | Description |
 |-------|-------------|
@@ -88,13 +169,13 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="make" />
+<a id="make"></a>
 
 ### Make your packaged application open files instead of your desktop app
 
 You can make sure that users open your new packaged application by default for specific types of files instead of opening the desktop version of your app.
 
-To do that, you'll specify the [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) of each application from which you want to inherit file associations.
+To do that, you'll specify the [programmatic identifier (ProgID)](/windows/desktop/shell/fa-progids) of each application from which you want to inherit file associations.
 
 #### XML namespaces
 
@@ -113,13 +194,13 @@ To do that, you'll specify the [programmatic identifier (ProgID)](https://docs.m
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
-|MigrationProgId |The [programmatic identifier (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) that describes the application, component, and version of the desktop application from which you want to inherit file associations.|
+|MigrationProgId |The [programmatic identifier (ProgID)](/windows/desktop/shell/fa-progids) that describes the application, component, and version of the desktop application from which you want to inherit file associations.|
 
 #### Example
 
@@ -149,11 +230,11 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="associate" />
+<a id="associate"></a>
 
 ### Associate your packaged application with a set of file types
 
-You can associated your packaged application with file type extensions. If a user right-clicks a file and then selects the **Open with** option, your application appears in the list of suggestions.
+You can associate your packaged application with file type extensions. If a user right-clicks a file in File Explorer and then selects the **Open with** option, your application appears in the list of suggestions. For more information about using this extension, see [Integrate a packaged desktop app with File Explorer](integrate-packaged-app-with-file-explorer.md).
 
 #### XML namespaces
 
@@ -172,7 +253,7 @@ You can associated your packaged application with file type extensions. If a use
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -207,13 +288,11 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="add" />
+<a id="add"></a>
 
 ### Add options to the context menus of files that have a certain file type
 
-In most cases, users double-click files to open them. If users, right click a file, various options appear.
-
-You can add options to that menu. These options give users other ways to interact with your file such as print, edit, or preview the file.
+This extension enables you to add options to the context menu that displays when users right-click a file in File Explorer.These options give users other ways to interact with your file such as print, edit, or preview the file. For more information about using this extension, see [Integrate a packaged desktop app with File Explorer](integrate-packaged-app-with-file-explorer.md).
 
 #### XML namespaces
 
@@ -233,7 +312,7 @@ You can add options to that menu. These options give users other ways to interac
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -274,7 +353,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="open" />
+<a id="open"></a>
 
 ### Open certain types of files directly by using a URL
 
@@ -297,7 +376,7 @@ You can make sure that users open your new packaged application by default for s
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -336,7 +415,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 * [Create firewall exception for your app](#rules)
 * [Place your DLL files into any folder of the package](#load-paths)
 
-<a id="rules" />
+<a id="rules"></a>
 
 ### Create firewall exception for your app
 
@@ -363,7 +442,7 @@ If your application requires communication through a port, you can add your appl
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
 
 |Name |Description |
 |-------|-------------|
@@ -398,15 +477,19 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="load-paths" />
+<a id="load-paths"></a>
 
 ### Place your DLL files into any folder of the package
 
-Use an extension to identify those folders. That way, the system can find and load the files that you place in them. Think of this extension as a replacement of the _%PATH%_ environment variable.
+Use the [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) extension to declare up to five folder paths in the app package, relative to the app package root path, to be used in the loader search path for the app's processes.
 
-If you don't use this extension, the system searches the package dependency graph of the process, the package root folder, and then the system directory (_%SystemRoot%\system32_) in that order. To learn more, see [Search order of Windows apps](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
+The [DLL search order](/windows/win32/dlls/dynamic-link-library-search-order) for Windows apps includes packages in the package dependency graph if the packages have execution rights. By default, this includes main, optional and framework packages, although this can be overwritten by the [uap6:AllowExecution](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) element in the package manifest.
 
-Each package can contain only one of these extensions. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](/windows/msix/package/optional-packages).
+A package that is included in the DLL search order will, by default, include its *effective path*. For more information about effective paths, see the [EffectivePath](/uwp/api/windows.applicationmodel.package.effectivepath) property (WinRT) and the [PackagePathType](/windows/win32/api/appmodel/ne-appmodel-packagepathtype) enumeration (Win32).
+
+If a package specifies [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride), then this information is used instead of the package's effective path.
+
+Each package can contain only one [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) extension. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](/windows/msix/package/optional-packages).
 
 #### XML namespace
 
@@ -428,7 +511,7 @@ Declare this extension at the package-level of your app manifest.
 |Name | Description |
 |-------|-------------|
 |Category |Always ``windows.loaderSearchPathOverride``.
-|FolderPath | The path of the folder that contains your dll files. Specify a path that is relative to the root folder of the package. You can specify up to five paths in one extension. If you want the system to search for files in the root folder of the package, use an empty string for one of these paths. Don't included duplicate paths and make sure that your paths don't contain leading and trailing slashes or backslashes. <br><br> The system won't search subfolders, so make sure to explicitly list each folder that contains DLL files that you want the system to load.|
+|FolderPath | The path of the folder that contains your DLL files. Specify a path that is relative to the root folder of the package. You can specify up to five paths in one extension. If you want the system to search for files in the root folder of the package, use an empty string for one of these paths. Don't include duplicate paths, and make sure that your paths don't contain leading and trailing slashes or backslashes. <br><br> The system won't search subfolders, so make sure to explicitly list each folder that contains DLL files that you want the system to load.|
 
 #### Example
 
@@ -462,7 +545,7 @@ Help users organize your files and interact with them in familiar ways.
 * [Specify a context menu handler for a file type](#context-menu)
 * [Make files from your cloud service appear in File Explorer](#cloud-files)
 
-<a id="define" />
+<a id="define"></a>
 
 ### Define how your application behaves when users select and open multiple files at the same time
 
@@ -488,7 +571,7 @@ Specify how your application behaves when a user opens multiple files simultaneo
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -536,7 +619,7 @@ packaged desktop apps have the same three options as regular desktop apps.
 
 If the user opens 15 or fewer files, the default choice for the **MultiSelectModel** attribute is *Player*. Otherwise, the default is *Document*. UWP apps are always started as *Player*.
 
-<a id="show" />
+<a id="show"></a>
 
 ### Show file contents in a thumbnail image within File Explorer
 
@@ -563,7 +646,7 @@ Enable users to view a thumbnail image of the file's contents when the icon of t
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -599,7 +682,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="preview" />
+<a id="preview"></a>
 
 ### Show file contents in the Preview pane of File Explorer
 
@@ -625,7 +708,7 @@ Enable users to preview a file's contents in the Preview pane of File Explorer.
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -660,7 +743,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="enable" />
+<a id="enable"></a>
 
 ### Enable users to group files by using the Kind column in File Explorer
 
@@ -668,7 +751,7 @@ You can associate one or more predefined values for your file types with the **K
 
 In File Explorer, users can group those files by using that field. System components also use this field for various purposes such as indexing.
 
-For more information about the **Kind** field and the values that you can use for this field, see [Using Kind Names](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
+For more information about the **Kind** field and the values that you can use for this field, see [Using Kind Names](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
 
 #### XML namespaces
 
@@ -690,14 +773,14 @@ For more information about the **Kind** field and the values that you can use fo
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces. |
 |FileType |The relevant file extensions. |
-|value |A valid [Kind value](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|value |A valid [Kind value](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### Example
 
@@ -728,7 +811,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="make-file-properties" />
+<a id="make-file-properties"></a>
 
 ### Make file properties available to search, index, property dialogs, and the details pane
 
@@ -751,7 +834,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </uap:Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
 |-------|-------------|
@@ -785,11 +868,11 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="context-menu" />
+<a id="context-menu"></a>
 
 ### Specify a context menu handler for a file type
 
-If your desktop application defines a [context menu handler](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers), use this extension to register the menu handler.
+If your desktop application defines a [context menu handler](/windows/desktop/shell/context-menu-handlers), use this extension to register the menu handler.
 
 #### XML namespaces
 
@@ -817,19 +900,19 @@ If your desktop application defines a [context menu handler](https://docs.micros
 </Extensions>
 ```
 
-Find the complete schema reference here: [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) and [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus).
+Find the complete schema reference here: [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) and [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus).
 
 #### Instructions
 
 To register your context menu handler, follow these instructions.
 
-1. In your desktop application, implement a [context menu handler](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
+1. In your desktop application, implement a [context menu handler](/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
 
     ```cpp
     class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
     ```
 
-2. In your package manifest, specify a [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) application extension that registers a COM surrogate server with the class ID of your context menu handler implementation.
+2. In your package manifest, specify a [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) application extension that registers a COM surrogate server with the class ID of your context menu handler implementation.
 
     ```xml
     <com:Extension Category="windows.comServer">
@@ -841,7 +924,7 @@ To register your context menu handler, follow these instructions.
     </com:Extension>
     ```
 
-2. In your package manifest, specify a [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) application extension that registers your context menu handler implementation.
+2. In your package manifest, specify a [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) application extension that registers your context menu handler implementation.
 
     ```xml
     <desktop4:Extension Category="windows.fileExplorerContextMenus">
@@ -866,7 +949,7 @@ To register your context menu handler, follow these instructions.
         <com:Extension Category="windows.comServer">
           <com:ComServer>
             <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
-              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+              <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>
         </com:Extension>
@@ -883,7 +966,7 @@ To register your context menu handler, follow these instructions.
 </Package>
 ```
 
-<a id="cloud-files" />
+<a id="cloud-files"></a>
 
 ### Make files from your cloud service appear in File Explorer
 
@@ -946,7 +1029,7 @@ Register the handlers that you implement in your application. You can also add c
 </Package>
 ```
 
-<a id="start" />
+<a id="start"></a>
 
 ## Start your application in different ways
 
@@ -956,7 +1039,7 @@ Register the handlers that you implement in your application. You can also add c
 * [Enable users to start your application when they connect a device to their PC](#autoplay)
 * [Restart automatically after receiving an update from the Microsoft Store](#updates)
 
-<a id="protocol" />
+<a id="protocol"></a>
 
 ### Start your application by using a protocol
 
@@ -977,7 +1060,7 @@ Protocol associations can enable other programs and system components to interop
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
 |Name |Description |
 |-------|-------------|
@@ -1007,7 +1090,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<a id="alias" />
+<a id="alias"></a>
 
 ### Start your application by using an alias
 
@@ -1021,14 +1104,14 @@ Users and other processes can use an alias to start your application without hav
 #### Elements and attributes of this extension
 
 ```XML
-<Extension
+<uap3:Extension
     Category="windows.appExecutionAlias"
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
-    <AppExecutionAlias>
+    <uap3:AppExecutionAlias>
         <desktop:ExecutionAlias Alias="[AliasName]" />
-    </AppExecutionAlias>
-</Extension>
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
 ```
 
 |Name |Description |
@@ -1061,9 +1144,9 @@ Users and other processes can use an alias to start your application without hav
 </Package>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-<a id="executable" />
+<a id="executable"></a>
 
 ### Start an executable file when users log into Windows
 
@@ -1098,7 +1181,7 @@ Users can manually disable your app's startup task by using Task Manager. If a u
 |-------|-------------|
 |Category |Always ``windows.startupTask``.|
 |Executable |The relative path to the executable file to start. |
-|TaskId |A unique identifier for your task. Using this identifier, your application can call the APIs in the [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task. |
+|TaskId |A unique identifier for your task. Using this identifier, your application can call the APIs in the [Windows.ApplicationModel.StartupTask](/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task. |
 |Enabled |Indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). |
 |DisplayName |The name of the task that appears in Task Manager. You can localize this string by using ```ms-resource```. |
 
@@ -1126,7 +1209,7 @@ Users can manually disable your app's startup task by using Task Manager. If a u
  </Package>
 ```
 
-<a id="autoplay" />
+<a id="autoplay"></a>
 
 ### Enable users to start your application when they connect a device to their PC
 
@@ -1154,13 +1237,13 @@ AutoPlay can present your application as an option when a user connects a device
 |Category |Always ``windows.autoPlayHandler``.
 |ActionDisplayName |A string that represents the action that users can take with a device that they connect to a PC (For example: "Import files", or "Play video"). |
 |ProviderDisplayName | A string that represents your application or service (For example: "Contoso video player"). |
-|ContentEvent |The name of a content event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A content event is raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. You can find the full list of those events [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
+|ContentEvent |The name of a content event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A content event is raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. You can find the full list of those events [here](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |The Verb setting identifies a value that is passed to your application for the selected option. You can specify multiple launch actions for an AutoPlay event and use the Verb setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the verb property of the startup event arguments passed to your app. You can use any value for the Verb setting except, open, which is reserved. |
-|DropTargetHandler |The class ID of the application that implements the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Files from the removable media are passed to the [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) implementation.  |
-|Parameters |You don't have to implement the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
-|DeviceEvent |The name of a device event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A device event is raised when a device is connected to the PC. Device events begin with the string ``WPD`` and you can find them listed [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
-|HWEventHandler |The Class ID of the application that implements the [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
-|InitCmdLine |The string parameter that you want to pass into the [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) method of the [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
+|DropTargetHandler |The class ID of the application that implements the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) interface. Files from the removable media are passed to the [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) implementation.  |
+|Parameters |You don't have to implement the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
+|DeviceEvent |The name of a device event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A device event is raised when a device is connected to the PC. Device events begin with the string ``WPD`` and you can find them listed [here](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
+|HWEventHandler |The Class ID of the application that implements the [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
+|InitCmdLine |The string parameter that you want to pass into the [Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) method of the [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
 
 ### Example
 
@@ -1185,20 +1268,20 @@ AutoPlay can present your application as an option when a user connects a device
 </Package>
 ```
 
-<a id="updates" />
+<a id="updates"></a>
 
 ### Restart automatically after receiving an update from the Microsoft Store
 
 If your application is open when users install an update to it, the application closes.
 
-If you want that application to restart after the update completes, call the  [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) function in every process that you want to restart.
+If you want that application to restart after the update completes, call the  [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) function in every process that you want to restart.
 
-Each active window in your application receives a [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) message. At this point, your application can call the [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) function again to update the command line if necessary.
+Each active window in your application receives a [WM_QUERYENDSESSION](/windows/desktop/Shutdown/wm-queryendsession) message. At this point, your application can call the [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) function again to update the command line if necessary.
 
-When each active window in your application receives the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message, your application should save data and shut down.
+When each active window in your application receives the [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) message, your application should save data and shut down.
 
 >[!NOTE]
-Your active windows also receive the [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) message in case the application doesn't handle the [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message.
+> Your active windows also receive the [WM_CLOSE](/windows/desktop/winmsg/wm-close) message in case the application doesn't handle the [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) message.
 
 At this point, your application has 30 seconds to close it's own processes or the platform terminates them forcefully.
 
@@ -1212,7 +1295,7 @@ Integrate with other apps, start other processes or share information.
 * [Share fonts with other Windows applications](#fonts)
 * [Start a Win32 process from a Universal Windows Platform (UWP) app](#win32-process)
 
-<a id="printing" />
+<a id="printing"></a>
 
 ### Make your application appear as the print target in applications that support printing
 
@@ -1234,7 +1317,7 @@ You'll have to modify your application so that it receives print data in XML Pap
 </Extension>
 ```
 
-Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter).
+Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter).
 
 |Name |Description |
 |-------|-------------|
@@ -1264,11 +1347,14 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 Find a sample that uses this extension [Here](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
-<a id="fonts" />
+<a id="fonts"></a>
 
 ### Share fonts with other Windows applications
 
 Share your custom fonts with other Windows applications.
+
+> [!NOTE]
+> Before you can submit an app that uses this extension to the Store, you must first obtain approval from the Store team. To obtain approval, go to [https://aka.ms/storesupport](https://aka.ms/storesupport), click **Contact us**, and choose options relevant to submitting apps to the dashboard. This approval process helps to ensure that there are no conflicts between fonts installed by your app and fonts that are installed with the OS. If you do not obtain approval, you will receive an error similar to the following when you submit your app: "Package acceptance validation error: You can't use extension windows.sharedFonts with this account. Contact our support team if you'd like to request permissions to use this extension."
 
 #### XML namespaces
 
@@ -1312,7 +1398,7 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
 </Package>
 ```
 
-<a id="win32-process" />
+<a id="win32-process"></a>
 
 ### Start a Win32 process from a Universal Windows Platform (UWP) app
 
@@ -1367,14 +1453,8 @@ Start a Win32 process that runs in full-trust.
 
 This extension might be useful if you want to create a Universal Windows Platform User interface that runs on all devices, but you want components of your Win32 application to continue running in full-trust.
 
-Just create a Windows app package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the Windows app package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](/windows/uwp/launch-resume/app-services.md) to do that. You can read more about this scenario [here](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
+Just create a Windows app package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the Windows app package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](/windows/uwp/launch-resume/app-services) to do that. You can read more about this scenario [here](/archive/blogs/appconsult/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app).
 
 ## Next steps
 
-**Find answers to your questions**
-
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

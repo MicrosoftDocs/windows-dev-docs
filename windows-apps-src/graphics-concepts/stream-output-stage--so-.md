@@ -27,7 +27,7 @@ Data streamed out to memory can be read back into the pipeline in a subsequent r
 There are two ways to feed stream-output data into the pipeline:
 
 -   Stream-output data can be fed back into the Input Assembler (IA) stage.
--   Stream-output data can be read by programmable shaders using [Load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) functions.
+-   Stream-output data can be read by programmable shaders using [Load](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) functions.
 
 ## <span id="Input"></span><span id="input"></span><span id="INPUT"></span>Input
 
@@ -54,7 +54,3 @@ The stream-output stage supports up to 4 buffers simultaneously.
  
 
  
-
-
-
-

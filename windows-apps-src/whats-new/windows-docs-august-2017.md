@@ -28,7 +28,7 @@ You can now preview [conditional XAML](../debug-test-perf/conditional-xaml.md) t
 
 ### Game Mode
 
-The [Game Mode](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
+The [Game Mode](/previous-versions/windows/desktop/gamemode/game-mode-portal) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
 
 ![Game Mode](images/game-mode.png)
 
@@ -41,35 +41,35 @@ The [Microsoft Store submission API](../monetize/create-and-manage-submissions-u
 
 ### Data schemas for Store products
 
-We've added the [Data schemas for Store products](../monetize/data-schemas-for-store-products.md) article. This article provides schemas for the Store-related data available for several objects in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace, including [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) and [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+We've added the [Data schemas for Store products](../monetize/data-schemas-for-store-products.md) article. This article provides schemas for the Store-related data available for several objects in the [Windows.Services.Store](/uwp/api/windows.services.store) namespace, including [StoreProduct](/uwp/api/windows.services.store.storeproduct) and [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense).
 
 ### Desktop Bridge
 
 We've added two guides that help you to add modern experiences that light up for Windows 10 users.
 
-See [Enhance your desktop application for Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance) to find and reference the correct files, and then write code to light up UWP experiences for Windows 10 users.  
+See [Enhance your desktop application for Windows 10](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to find and reference the correct files, and then write code to light up UWP experiences for Windows 10 users.  
 
-See [Extend your desktop application with modern UWP components](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend) to incorporate modern XAML UIs and other UWP experiences that must run in a UWP app container.
+See [Extend your desktop application with modern UWP components](/windows/apps/desktop/modernize/desktop-to-uwp-extend) to incorporate modern XAML UIs and other UWP experiences that must run in a UWP app container.
 
 ### Getting started with point of service
 
-We've added a new guide to help you [get started with point of service devices](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started). It covers topics like device enumeration, checking device capabilities, claiming devices, and device sharing. 
+We've added a new guide to help you [get started with point of service devices](../devices-sensors/pos-get-started.md). It covers topics like device enumeration, checking device capabilities, claiming devices, and device sharing. 
 
 ### Xbox Live
 
 We've added docs for Xbox Live developers, for both UWP and Xbox Developer Kit (XDK) games.
 
-See the [Xbox Live developer guide](https://docs.microsoft.com//gaming/xbox-live/index) to learn how to use the Xbox Live APIs to connect your game to the Xbox Live social gaming network.
+See the [Xbox Live developer guide](//gaming/xbox-live/index) to learn how to use the Xbox Live APIs to connect your game to the Xbox Live social gaming network.
 
-With the [Xbox Live Creators Program](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators), any UWP game developer can develop and publish an Xbox Live-enabled game on both the PC and Xbox One.
+With the [Xbox Live Creators Program](//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators), any UWP game developer can develop and publish an Xbox Live-enabled game on both the PC and Xbox One.
 
-See the [Xbox Live developer program overview](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview) for information about the programs and features available to Xbox Live developers.
+See the [Xbox Live developer program overview](//gaming/xbox-live/developer-program-overview) for information about the programs and features available to Xbox Live developers.
 
 ## Videos
 
 ### Mixed Reality
 
-A series of new tutorial videos have been released for [Microsoft HoloLens Course 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250). If you've already installed the tools and are famiilar with the basics of development for Mixed Reality, check out these video courses for information upon creating shared experiences across Mixed Reality devices.
+A series of new tutorial videos have been released for [Microsoft HoloLens Course 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250). If you've already installed the tools and are famiilar with the basics of development for Mixed Reality, check out these video courses for information upon creating shared experiences across Mixed Reality devices.
 
 ### Narrator and Dev Mode
 

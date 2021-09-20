@@ -1,17 +1,18 @@
 ---
 title: Input practices for games
-description: Learn patterns and techniques for using input devices effectively.
+description: Learn patterns and techniques for effectively using input devices in Universal Windows Platform (UWP) games.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, games, input
 ms.localizationpriority: medium
 ---
+
 # Input practices for games
 
-This page describes patterns and techniques for effectively using input devices in Universal Windows Platform (UWP) games.
+This topic describes patterns and techniques for effectively using input devices in Universal Windows Platform (UWP) games.
 
-By reading this page, you'll learn:
+By reading this topic, you'll learn:
 
 * how to track players and which input and navigation devices they're currently using
 * how to detect button transitions (pressed-to-released, released-to-pressed)
@@ -19,23 +20,23 @@ By reading this page, you'll learn:
 
 ## Choosing an input device class
 
-There are many different types of input APIs available to you, such as [ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), and [Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad). How do you decide which API to use for your game?
+There are many different types of input APIs available to you, such as [ArcadeStick](/uwp/api/windows.gaming.input.arcadestick), [FlightStick](/uwp/api/windows.gaming.input.flightstick), and [Gamepad](/uwp/api/windows.gaming.input.gamepad). How do you decide which API to use for your game?
 
 You should choose whichever API gives you the most appropriate input for your game. For example, if you're making a 2D platform game, you can probably just use the **Gamepad** class and not bother with the extra functionality available via other classes. This would restrict the game to supporting gamepads only and provide a consistent interface that will work across many different gamepads with no need for additional code.
 
-On the other hand, for complex flight and racing simulations, you might want to enumerate all of the [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) objects as a baseline to make sure they support any niche device that enthusiast players might have, including devices such as separate pedals or throttle that are still used by a single player. 
+On the other hand, for complex flight and racing simulations, you might want to enumerate all of the [RawGameController](/uwp/api/windows.gaming.input.rawgamecontroller) objects as a baseline to make sure they support any niche device that enthusiast players might have, including devices such as separate pedals or throttle that are still used by a single player. 
 
-From there, you can use an input class's **FromGameController** method, such as [Gamepad.FromGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.fromgamecontroller), to see if each device has a more curated view. For example, if the device is also a **Gamepad**, then you might want to adjust the button mapping UI to reflect that, and provide some sensible default button mappings to choose from. (This is in contrast to requiring the player to manually configure the gamepad inputs if you're only using **RawGameController**.) 
+From there, you can use an input class's **FromGameController** method, such as [Gamepad.FromGameController](/uwp/api/windows.gaming.input.gamepad.fromgamecontroller), to see if each device has a more curated view. For example, if the device is also a **Gamepad**, then you might want to adjust the button mapping UI to reflect that, and provide some sensible default button mappings to choose from. (This is in contrast to requiring the player to manually configure the gamepad inputs if you're only using **RawGameController**.) 
 
-Alternatively, you can look at the vendor ID (VID) and product ID (PID) of a **RawGameController** (using [HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId) and [HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId), respectively) and provide suggested button mappings for popular devices while still remaining compatible with unknown devices that come out in the future via manual mappings by the player.
+Alternatively, you can look at the vendor ID (VID) and product ID (PID) of a **RawGameController** (using [HardwareVendorId](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId) and [HardwareProductId](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId), respectively) and provide suggested button mappings for popular devices while still remaining compatible with unknown devices that come out in the future via manual mappings by the player.
 
 ## Keeping track of connected controllers
 
-While each controller type includes a list of connected controllers (such as [Gamepad.Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.Gamepads)), it is a good idea to maintain your own list of controllers. See [The gamepads list](gamepad-and-vibration.md#the-gamepads-list) for more information (each controller type has a similarly named section on its own topic).
+While each controller type includes a list of connected controllers (such as [Gamepad.Gamepads](/uwp/api/windows.gaming.input.gamepad.Gamepads)), it is a good idea to maintain your own list of controllers. See [The gamepads list](gamepad-and-vibration.md#the-gamepads-list) for more information (each controller type has a similarly named section on its own topic).
 
 However, what happens when the player unplugs their controller, or plugs in a new one? You need to handle these events, and update your list accordingly. See [Adding and removing gamepads](gamepad-and-vibration.md#adding-and-removing-gamepads) for more information (again, each controller type has a similarly named section on its own topic).
 
-Because the added and removed events are raised asynchronously, you could get incorrect results when dealing with your list of controllers. Therefore, anytime you access your list of controllers, you should put a lock around it so that only one thread can access it at a time. This can be done with the [Concurrency Runtime](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), specifically the [critical_section class](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), in **&lt;ppl.h&gt;**.
+Because the added and removed events are raised asynchronously, you could get incorrect results when dealing with your list of controllers. Therefore, anytime you access your list of controllers, you should put a lock around it so that only one thread can access it at a time. This can be done with the [Concurrency Runtime](/cpp/parallel/concrt/concurrency-runtime), specifically the [critical_section class](/cpp/parallel/concrt/reference/critical-section-class), in **&lt;ppl.h&gt;**.
 
 Another thing to think about is that the list of connected controllers will initially be empty, and takes a second or two to populate. So if you only assign the current gamepad in the start method, it will be **null**!
 
@@ -160,14 +161,13 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## Tracking users and their devices
 
-All input devices are associated with a [User](https://docs.microsoft.com/uwp/api/windows.system.user) so that their identity can be linked to their gameplay, achievements, settings changes, and other activities. Users can sign in or sign out at will, and it's common for a different user to sign in on an input device that remains connected to the system after the previous user has signed out. When a user signs in or out, the [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) event is raised. You can register an event handler for this event to keep track of players and the devices they're using.
+All input devices are associated with a [User](/uwp/api/windows.system.user) so that their identity can be linked to their gameplay, achievements, settings changes, and other activities. Users can sign in or sign out at will, and it's common for a different user to sign in on an input device that remains connected to the system after the previous user has signed out. When a user signs in or out, the [IGameController.UserChanged](/uwp/api/windows.gaming.input.igamecontroller.UserChanged) event is raised. You can register an event handler for this event to keep track of players and the devices they're using.
 
 User identity is also the way that an input device is associated with its corresponding [UI navigation controller](ui-navigation-controller.md).
 
-For these reasons, player input should be tracked and correlated with the [User](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.User) property of the device class (inherited from the [IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller) interface).
+For these reasons, player input should be tracked and correlated with the [User](/uwp/api/windows.gaming.input.igamecontroller.User) property of the device class (inherited from the [IGameController](/uwp/api/windows.gaming.input.igamecontroller) interface).
 
-The [UserGamepadPairingUWP (GitHub)](
-https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/UserGamepadPairingUWP) sample demonstrates how you can keep track of users and the devices they're using.
+The [UserGamepadPairingUWP](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/) sample demonstrates how you can keep track of users and the devices they're using.
 
 ## Detecting button transitions
 
@@ -225,7 +225,7 @@ These two functions first derive the Boolean state of the button selection from 
 
 ## Detecting complex button arrangements
 
-Each button of an input device provides a digital reading that indicates whether it's pressed (down) or released (up). For efficiency, button readings aren't represented as individual boolean values; instead, they're all packed into bitfields represented by device-specific enumerations such as [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons). To read specific buttons, bitwise masking is used to isolate the values that you're interested in. A button is pressed (down) when its corresponding bit is set; otherwise, it's released (up).
+Each button of an input device provides a digital reading that indicates whether it's pressed (down) or released (up). For efficiency, button readings aren't represented as individual boolean values; instead, they're all packed into bitfields represented by device-specific enumerations such as [GamepadButtons](/uwp/api/windows.gaming.input.gamepadbuttons). To read specific buttons, bitwise masking is used to isolate the values that you're interested in. A button is pressed (down) when its corresponding bit is set; otherwise, it's released (up).
 
 Recall how single buttons are determined to be pressed or released; gamepads are shown here, but the principles are the same for arcade stick, racing wheel, and the other input device types.
 
@@ -292,13 +292,13 @@ This formula can be applied to test any number of buttons in any arrangement of 
 
 ## Get the state of the battery
 
-For any game controller that implements the [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) interface, you can call [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) on the controller instance to get a [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) object that provides information about the battery in the controller. You can get properties like the rate that the battery is charging ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), the estimated energy capacity of a new battery ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)), and the fully-charged energy capacity of the current battery ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
+For any game controller that implements the [IGameControllerBatteryInfo](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) interface, you can call [TryGetBatteryReport](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) on the controller instance to get a [BatteryReport](/uwp/api/windows.devices.power.batteryreport) object that provides information about the battery in the controller. You can get properties like the rate that the battery is charging ([ChargeRateInMilliwatts](/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), the estimated energy capacity of a new battery ([DesignCapacityInMilliwattHours](/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)), and the fully-charged energy capacity of the current battery ([FullChargeCapacityInMilliwattHours](/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
 
 For game controllers that support detailed battery reporting, you can get this and more information about the battery, as detailed in [Get battery information](../devices-sensors/get-battery-info.md). However, most game controllers don't support that level of battery reporting, and instead use low-cost hardware. For these controllers, you'll need to keep the following considerations in mind:
 
 * **ChargeRateInMilliwatts** and **DesignCapacityInMilliwattHours** will always be **NULL**.
 
-* You can get the battery percentage by calculating [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. You should ignore the values of these properties and only deal with the calculated percentage.
+* You can get the battery percentage by calculating [RemainingCapacityInMilliwattHours](/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. You should ignore the values of these properties and only deal with the calculated percentage.
 
 * The percentage from the previous bullet point will always be one of the following:
 
@@ -311,6 +311,7 @@ If your code performs some action (like drawing UI) based on the percentage of b
 
 ## See also
 
-* [Windows.System.User class](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows.Gaming.Input.IGameController interface](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons enum](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows.System.User class](/uwp/api/windows.system.user)
+* [Windows.Gaming.Input.IGameController interface](/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows.Gaming.Input.GamepadButtons enum](/uwp/api/windows.gaming.input.gamepadbuttons)
+* [UserGamepadPairingUWP sample](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)

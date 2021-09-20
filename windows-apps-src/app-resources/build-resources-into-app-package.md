@@ -1,7 +1,7 @@
 ---
 
-Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
-title: Build resources into your app package, instead of into a resource pack
+description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
+title: Build resources into your app package
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
@@ -93,6 +93,6 @@ There is one final step that you need to do. **But only if you deleted the `Lang
 
 ## Related topics
 
-* [Package a UWP app with Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps)
 * [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Specify the default resources that your app uses](specify-default-resources-installed.md)

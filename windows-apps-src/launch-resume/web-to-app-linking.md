@@ -55,8 +55,8 @@ Create a JSON file (without the .json file extension) named **windows-app-web-li
 
 ``` JSON
 [{
-  "packageFamilyName": "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
-  "paths": [ "*" ],
+  "packageFamilyName" : "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
+  "paths" : [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
@@ -176,7 +176,7 @@ Close your application to verify that the app is activated when you click a link
 
 Verify that your app is closed. Press **Windows Key + R** to open the **Run** dialog box and paste the link in the window. Your app should launch instead of the web browser.
 
-Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) API. You can use this API to test on phones as well.
+Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) API. You can use this API to test on phones as well.
 
 If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
 
@@ -188,11 +188,11 @@ If you would like to follow the protocol activation logic, set a breakpoint in t
 - Your JSON file must be uploaded to an https server.
 - If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
 - All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
-- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
+- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
 ## See also
 
 [Web-to-App example project](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[windows.protocol registration](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
-[Handle URI Activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[windows.protocol registration](/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
+[Handle URI Activation](./handle-uri-activation.md)
 [Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.

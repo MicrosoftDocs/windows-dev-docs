@@ -11,13 +11,13 @@ ms.localizationpriority: medium
 
 # Using the Visual layer in desktop apps
 
-You can now use UWP APIs in non-UWP desktop applications to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 applications, and take advantage of the latest Windows 10 UI features that are only available via UWP.
+You can now use Windows Runtime APIs in non-UWP desktop applications to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 applications, and take advantage of the latest Windows 10 UI features that are only available via UWP.
 
 For many scenarios, you can use [XAML islands](xaml-islands.md) to add modern XAML controls to your app. However, when you need to create custom experiences that go beyond the built-in controls, you can access the Visual layer APIs.
 
 The Visual layer provides a high performance, retained-mode API for graphics, effects, and animations. It's the foundation for UI across Windows 10 devices. UWP XAML controls are built on the Visual layer, and it enables many aspects of the [Fluent Design System](/windows/uwp/design/fluent-design-system/index), such as Light, Depth, Motion, Material, and Scale.
 
-![User interface created with the visual layer](images/visual-layer-interop/pull-to-animate.gif)
+![Short video showing a user interface created with the visual layer.](images/visual-layer-interop/pull-to-animate.gif)
 
 > _User interface created with the visual layer_
 
@@ -49,7 +49,7 @@ You can use the Visual layer to give your application a unique look and feel, an
 
 [Composition animations](/windows/uwp/composition/composition-animation) run directly in the compositor process, independent of the UI thread. This ensures smoothness and scale, so you can run large numbers of concurrent, explicit animations. In addition to familiar KeyFrame animations to drive property changes over time, you can use expressions to set up mathematical relationships between different properties, including user input. Input driven animations let you create UI that dynamically and fluidly responds to user input, which can result in higher user engagement.
 
-![User interface created with the visual layer](images/visual-layer-interop/swipe-scroller.gif)
+![Short video of another user interface created with the visual layer.](images/visual-layer-interop/swipe-scroller.gif)
 
 > _Motion demonstrated in the [Windows UI Composition sample gallery](https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery)._
 

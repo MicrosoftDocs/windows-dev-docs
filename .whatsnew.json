@@ -1,0 +1,154 @@
+{
+  "$schema": "https://whatsnewapi.azurewebsites.net/schema",
+  "docSetProductName": "UWP",
+  "rootDirectory": "windows-apps-src/",
+  "docLinkSettings": {
+      "linkFormat": "relative",
+      "relativeLinkPrefix": "/windows/"
+  },
+  "inclusionCriteria": {
+    "minAdditionsToFile": 1
+  },
+  "areas": [
+      {
+          "names": ["app-resources"],
+          "heading": "App resources"
+      },
+      {
+          "names": ["app-to-app"],
+          "heading": "App to app"
+      },
+      {
+          "names": ["apps-for-education"],
+          "heading": "Apps for education"
+      },
+      {
+          "names": ["audio-video-camera"],
+          "heading": "Audio, video, camera"
+      },
+      {
+          "names": ["breadcrumbs"],
+          "heading": "Breadcrumbs"
+      },
+      {
+          "names": ["communication"],
+          "heading": "communication"
+      },
+      {
+          "names": ["composition"],
+          "heading": "composition"
+      },
+      {
+          "names": ["contacts-and-calendar"],
+          "heading": "contacts-and-calendar"
+      },
+      {
+          "names": ["cpp-and-winrt-apis"],
+          "heading": "cpp-and-winrt-apis"
+      },
+      {
+          "names": ["csharp-winrt"],
+          "heading": "csharp-winrt"
+      },
+      {
+          "names": ["data-access"],
+          "heading": "data-access"
+      },
+      {
+          "names": ["data-binding"],
+          "heading": "data-binding"
+      },
+      {
+          "names": ["debug-test-perf"],
+          "heading": "debug-test-perf"
+      },
+      {
+          "names": ["design"],
+          "heading": "design"
+      },
+      {
+          "names": ["develop"],
+          "heading": "Develop"
+      },
+      {
+          "names": ["devices-sensors"],
+          "heading": "devices-sensors"
+      },
+      {
+          "names": ["enterprise"],
+          "heading": "enterprise"
+      },
+      {
+          "names": ["files"],
+          "heading": "files"
+      },
+      {
+          "names": ["gaming"],
+          "heading": "gaming"
+      },
+      {
+          "names": ["get-started"],
+          "heading": "get-started"
+      },
+      {
+          "names": ["graphics-concepts"],
+          "heading": "graphics-concepts"
+      },
+      {
+          "names": ["launch-resume"],
+          "heading": "launch-resume"
+      },
+      {
+          "names": ["maps-and-location"],
+          "heading": "maps-and-location"
+      },
+      {
+          "names": ["monetize"],
+          "heading": "monetize"
+      },
+      {
+          "names": ["networking"],
+          "heading": "networking"
+      },
+      {
+          "names": ["packaging"],
+          "heading": "packaging"
+      },
+      {
+          "names": ["porting"],
+          "heading": "porting"
+      },
+      {
+          "names": ["publish"],
+          "heading": "publish"
+      },
+      {
+          "names": ["security"],
+          "heading": "security"
+      },
+      {
+          "names": ["threading-async"],
+          "heading": "threading-async"
+      },
+      {
+          "names": ["updates-and-versions"],
+          "heading": "updates-and-versions"
+      },
+      {
+          "names": ["whats-new"],
+          "heading": "whats-new"
+      },
+      {
+          "names": ["winrt-components"],
+          "heading": "winrt-components"
+      },
+      {
+          "names": ["xaml-platform"],
+          "heading": "xaml-platform"
+      },
+      {
+          "names": ["xbox-apps"],
+          "heading": "xbox-apps"
+      }
+  ]
+}

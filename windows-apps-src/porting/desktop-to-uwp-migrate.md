@@ -1,6 +1,6 @@
 ---
-Description: Share code between a desktop application and a UWP app
 title: Share code between a desktop application and a UWP app
+description: Learn how to move a desktop application from .NET Framework (with WPF and Windows Forms) or C++ Win32 APIs to Universal Windows Platform (UWP) and Windows 10.
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -15,13 +15,13 @@ If you have an existing desktop application that was built using the .NET Framew
 
 You can package your desktop application in an MSIX package to get access to many more Windows 10 features. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. Packaging your desktop Windows apps in MSIX packages gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. You can package your application whether you have the source code or if you only have an existing installer file (such as an MSI or App-V installer). After you package your application, you can integrate UWP features such as package extensions and other UWP components.
 
-For more information, see [Package desktop applications (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) and [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+For more information, see [Build an MSIX package from your code](/windows/msix/desktop/desktop-to-uwp-root) and [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
-## Use UWP APIs
+## Use Windows Runtime APIs
 
-You can call many UWP APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call UWP APIs to add toast notifications to your desktop app.
+You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ Win32 desktop app to integrate modern experiences that light up for Windows 10 users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.
 
-For more information, see [Use UWP APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+For more information, see [Use Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## Migrate a .NET Framework app to a UWP app
 
@@ -51,7 +51,7 @@ You can find this setting in the property pages of the class library project.
 
 From your desktop application project, add a reference to the class library project.
 
-![Class library reference](images/desktop-to-uwp/class-library-reference.png)
+![Screenshot of the Solution Explorer pane that calls out the Class library reference for the dot NET project.](images/desktop-to-uwp/class-library-reference.png)
 
 Next, use tools to determine how much of your code conforms to the standard. That way, before you move code into the library, you can decide which parts you can reuse, which parts require minimal modification, and which parts will remain application-specific.
 
@@ -65,7 +65,7 @@ Use these same tools to analyze your code. Download the tools here ([dotnet-apip
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
+If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](/dotnet/api/?view=netstandard-2.0&preserve-view=true). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
 
 ![dot net option](images/desktop-to-uwp/dot-net-option.png)
 
@@ -107,7 +107,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-We can use the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) to find an alternative though. The ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes are all available in the .NET Standard 2.0 so we can use them instead.  
+We can use the [.NET API Browser](/dotnet/api/?view=netstandard-2.0&preserve-view=true) to find an alternative though. The ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes are all available in the .NET Standard 2.0 so we can use them instead.  
 
 This revised version uses those classes to get a list of customers, but to create a ``DbConnection`` class, we'll need to pass in a factory object that we create in the client application.
 
@@ -181,7 +181,7 @@ First, add a UWP project to your solution.
 
 Then, from your UWP project, add a reference the .NET Standard 2.0 library project.
 
-![Class library reference](images/desktop-to-uwp/class-library-reference2.png)
+![Screenshot of the UWP Solution Explorer pane that calls out the reference to the Class library reference for the dot NET project.](images/desktop-to-uwp/class-library-reference2.png)
 
 #### Build your pages
 
@@ -211,13 +211,13 @@ public sealed partial class MainPage : Page
 }
 ```
 
-To get started with UWP, see [What's a UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+To get started with UWP, see [What's a UWP app](../get-started/universal-application-platform-guide.md).
 
 ### Reach iOS and Android devices
 
 You can reach Android and iOS devices by adding Xamarin projects.  
 
-![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
+![An image that shows an Android device and a i O S device displaying Xamarin apps.](images/desktop-to-uwp/xamarin-apps.png)
 
 These projects let you use C# to build Android and iOS apps with full access to platform-specific and device-specific APIs. These apps leverage platform-specific hardware acceleration, and are compiled for native performance.
 
@@ -231,14 +231,14 @@ First, add an **Android**, **iOS**, or **Cross-Platform** project to your soluti
 
 You can find these templates in the **Add New Project** dialog box under the **Visual C#** group.
 
-![Xamarin apps](images/desktop-to-uwp/xamarin-projects.png)
+![Screenshot of the Add New Project dialog box showing Installed > Visual C sharp selected and Android, Cross Platform, and i O S options called out.](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://docs.microsoft.com/xamarin/xamarin-forms/).
+>Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](/xamarin/xamarin-forms/).
 
 Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
 
-![Class library reference](images/desktop-to-uwp/class-library-reference3.png)
+![Screenshot of the Solution Explorer pane that calls out the reference to the Class library reference for the  Android, i O S, or cross-platform project.](images/desktop-to-uwp/class-library-reference3.png)
 
 #### Build your pages
 
@@ -273,7 +273,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://docs.microsoft.com/xamarin).
+To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](/xamarin).
 
 ## Next steps
 

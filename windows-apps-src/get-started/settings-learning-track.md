@@ -19,14 +19,14 @@ We’ll look at code to save and load app settings, including local and roaming 
 
 Use app settings to store configuration data such as user preferences and app state.  Settings that are specific to the device are stored locally. Settings that apply on whichever device your app is installed on are stored in the roaming data store. Settings are roamed between devices on which the user is signed in with the same Microsoft Account and have the same version of the app installed.
 
-The following data types can be used with settings: integers, doubles, floats, chars, strings, Points, DateTimes, and more. You can also store instances of the [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) class which is useful when there are multiple settings that should be treated as a unit. For example, a font name and point size for displaying text in the reading pane of your app should be saved/restored as a single unit. This prevents one setting from getting out of sync with the other due to delays in roaming one setting before the other.
+The following data types can be used with settings: integers, doubles, floats, chars, strings, Points, DateTimes, and more. You can also store instances of the [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) class which is useful when there are multiple settings that should be treated as a unit. For example, a font name and point size for displaying text in the reading pane of your app should be saved/restored as a single unit. This prevents one setting from getting out of sync with the other due to delays in roaming one setting before the other.
 
 Here are the main APIs you need to know about to save or load app settings:
 
-- [Windows.Storage.ApplicationData.Current.LocalSettings](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) gets the application settings container from the local app data store. Store settings here that are not appropriate to roam between devices because they represent state specific to this device, or are too big.
-- [Windows.Storage.ApplicationData.Current.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) gets the application settings container from the roaming app data store. This data roams between devices.
-- [Windows.Storage.ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) is a container that represents app settings as key/value pairs. Use this class to create and retrieve setting values.
-- [Windows.Storage.ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) represents multiple app settings that should be serialized as a unit. This is useful when one setting shouldn't be updated independently of another.
+- [Windows.Storage.ApplicationData.Current.LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) gets the application settings container from the local app data store. Store settings here that are not appropriate to roam between devices because they represent state specific to this device, or are too big.
+- [Windows.Storage.ApplicationData.Current.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) gets the application settings container from the roaming app data store. This data roams between devices.
+- [Windows.Storage.ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) is a container that represents app settings as key/value pairs. Use this class to create and retrieve setting values.
+- [Windows.Storage.ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) represents multiple app settings that should be serialized as a unit. This is useful when one setting shouldn't be updated independently of another.
 
 ## Save app settings
 
@@ -80,17 +80,17 @@ Here is a quick summary of APIs, and other useful documentation, to help get you
 
 | API | Description |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | Gets the application settings container from the local app data store. |
-| [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Gets the application settings container from the roaming app data store. |
-| [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | A container for app settings that supports creating, deleting, enumerating, and traversing the container hierarchy. |
-| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Provides classes that you'll use to define the app settings that appear in the settings pane of the Windows shell. |
+| [ApplicationData.LocalSettings](/uwp/api/windows.storage.applicationdata.temporaryfolder) | Gets the application settings container from the local app data store. |
+| [ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings) | Gets the application settings container from the roaming app data store. |
+| [ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) | A container for app settings that supports creating, deleting, enumerating, and traversing the container hierarchy. |
+| [Windows.UI.ApplicationSettings Namespace](/uwp/api/windows.ui.applicationsettings) | Provides classes that you'll use to define the app settings that appear in the settings pane of the Windows shell. |
 
 ### Useful docs
 
 | Topic | Description |
 |-------|----------------|
-| [Guidelines for app settings](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Describes best practices for creating and displaying app settings. |
-| [Store and retrieve settings and other app data](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Walk-through for saving and retrieving settings, including roaming settings. |
+| [Guidelines for app settings](/windows/apps/design/app-settings/guidelines-for-app-settings) | Describes best practices for creating and displaying app settings. |
+| [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Walk-through for saving and retrieving settings, including roaming settings. |
 
 ## Useful code samples
 

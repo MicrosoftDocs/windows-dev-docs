@@ -1,5 +1,5 @@
-﻿---
-Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
+---
+description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.
 
-For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../design/globalizing/prepare-your-app-for-localization.md).
+For info to help make your app suitable for customers around the world, see [Guidelines for globalization](/windows/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app) and [Make your app localizable](/windows/apps/design/globalizing/prepare-your-app-for-localization).
 
 > [!NOTE]
 > Although this topic refers to apps, market selection for add-on submissions uses the same process.
@@ -44,7 +44,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 
 
 <table>
-  
+
   <tr>
     <td>Afghanistan</td>
     <td>Åland Islands</td>
@@ -133,7 +133,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Croatia</td>
     <td>Curaçao</td>
     <td>Cyprus</td>
-    <td>Czech Republic *</td>
+    <td>Czechia *</td>
   </tr>
   <tr>
     <td>Denmark *</td>
@@ -238,7 +238,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Macao SAR</td>
   </tr>
   <tr>
-    <td>Macedonia, FYRO</td>
+    <td>North Macedonia</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
@@ -402,12 +402,12 @@ You can choose to list your app (or add-on) in one or more of the following mark
   <tr>
     <td>Vietnam</td>
     <td>Wallis and Futuna</td>
-    <td>Western Sahara (Disputed)</td>
     <td>Yemen</td>
+    <td>Zambia</td>
   </tr>
   <tr>
-    <td>Zambia</td>
     <td>Zimbabwe</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -416,7 +416,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 
 ## Price considerations for specific markets
 
-Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement).
 
 The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date. This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.
 
@@ -433,7 +433,7 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 | Chile                | Gift card       | 2.24%                         | March 2016     |
 | China                | Gift card       | 2.24%                         | March 2016     |
 | Colombia             | Gift card       | 2.24%                         | March 2016     |
-| Czech Republic       | Gift card       | 2.24%                         | March 2016     |
+| Czechia              | Gift card       | 2.24%                         | March 2016     |
 | Denmark              | Gift card       | 2.24%                         | March 2016     |
 | Finland              | Gift card       | 2.24%                         | March 2016     |
 | France               | Gift card       | 2.24%                         | March 2016     |
@@ -607,7 +607,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macao SAR</td>
-    <td>Macedonia, FYRO</td>
+    <td>North Macedonia</td>
   </tr>
   <tr>
     <td>Madagascar</td>

@@ -1,5 +1,5 @@
-﻿---
-Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
+---
+description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.date: 10/31/2018
@@ -17,7 +17,7 @@ You can view this data in Partner Center, or [download the report](download-anal
 In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 device.
 
 > [!IMPORTANT]
-> The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](/partner-center/payout-statement). In the **Reserved** section, click the **Download reserved transactions** link.
 >
 > Except for page view data (as described below), this report does not include data related to customers who acquire an app without being signed in to a Microsoft account.
 

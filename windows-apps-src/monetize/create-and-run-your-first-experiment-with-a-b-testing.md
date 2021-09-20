@@ -1,5 +1,5 @@
 ---
-Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
+description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
 title: Create and run your first experiment
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.date: 02/08/2017
@@ -46,7 +46,7 @@ To follow this walkthrough, you must have a Partner Center account and you must 
 6. Drag a **Button** from **Toolbox** to the page.
 7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
 8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from Partner Center in the previous section.
-    [!code-csharp[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentPage.xaml.cs" id="SampleExperiment":::
 
 9. Save the code file and build the project.
 

@@ -21,7 +21,7 @@ Shows how to launch the compose email dialog to allow the user to send an email 
 
 ## Launch the compose email dialog
 
-Create a new [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) to show the dialog.
+Create a new [**EmailMessage**](/uwp/api/Windows.ApplicationModel.Email.EmailMessage) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) to show the dialog.
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -43,16 +43,13 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Attachments that you add to an email by using the [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) class will appear only in the Mail app. If users have any other mail program configured as their default mail program, the compose window will appear without the attachment. This is a known issue.
+> Attachments that you add to an email by using the [EmailAttachment](/uwp/api/windows.applicationmodel.email.emailattachment) class will appear only in the Mail app. If users have any other mail program configured as their default mail program, the compose window will appear without the attachment. This is a known issue.
 
 ## Summary and next steps
 
-This topic has shown you how to launch the compose email dialog. For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md). See [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) to select a file to use as an email attachment.
+This topic has shown you how to launch the compose email dialog. For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md). See [**PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) to select a file to use as an email attachment.
 
 ## Related topics
 
 * [Selecting contacts](selecting-contacts.md)
-* [How to continue your Windows Phone app after calling a file picker](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
- 
-
  

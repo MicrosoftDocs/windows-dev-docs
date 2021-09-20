@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 # Sockets
 Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 
-This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2) in a UWP app.
+This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2) in a UWP app.
 
 > [!NOTE]
-> As a consequence of [network isolation](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address. For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](/windows/uwp/app-to-app/index).
+> As a consequence of [network isolation](/previous-versions/windows/apps/hh770532(v=win.10)), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address. For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](../app-to-app/index.md).
 
 ## Build a basic TCP socket client and server
 A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) sending and receiving data over TCP to form an echo client and server.
@@ -497,7 +497,7 @@ private:
 
 ## References to StreamSockets in C++ PPL continuations (applies to C++/CX, primarily)
 > [!NOTE]
-> If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply. For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
+> If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply. For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md#parameter-passing).
 
 A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the **Completed** event handler (if any) of the **LoadAsync** is done executing.
 
@@ -1271,7 +1271,7 @@ There are some important limitations imposed by using batched sends in your code
 -   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
 -   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
 -   The **FlushAsync** pattern only works in Windows 10 and onward.
--   In other cases, use [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.
+-   In other cases, use [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0&preserve-view=true#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.
 
 ## Port sharing for DatagramSocket
 You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) to coexist with other Win32 or UWP multicast sockets bound to the same address/port. You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) to `true` before binding or connecting the socket. You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) property.
@@ -1372,10 +1372,10 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName) constructor can throw a
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## Related topics
-* [App-to-app communication](/windows/uwp/app-to-app/index)
-* [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [How to set network capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
+* [App-to-app communication](../app-to-app/index.md)
+* [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md)
+* [How to set network capabilities](/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## Samples
 * [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

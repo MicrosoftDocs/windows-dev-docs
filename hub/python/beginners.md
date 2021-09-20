@@ -1,5 +1,5 @@
 ---
-title: Get started with using Python on Windows for beginners
+title: Python on Windows 10 for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 author: mattwojo 
 ms.author: mattwoj 
@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: python, windows 10, microsoft, learning python, python on windows for beginners, install python with microsoft store, python with vs code, pygame on windows
 ms.localizationpriority: medium
-ms.date: 07/19/2019
+ms.date: 05/05/2021
 ---
 
 # Get started using Python on Windows for beginners
@@ -16,7 +16,7 @@ The following is a step-by-step guide for beginners interested in learning Pytho
 
 ## Set up your development environment
 
-For beginners who are new to Python, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. This is especially helpful if you are in an educational environment or a part of an organization that restricts permissions or administrative access on your machine.
+For beginners who are new to Python, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. This is especially helpful if you are in an educational environment or a part of an organization that restricts permissions or administrative access on your machine.
 
 If you are using Python on Windows for **web development**, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux. For help, see: [Get started using Python for web development on Windows](./web-frameworks.md). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](./scripting.md). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
@@ -26,7 +26,7 @@ To install Python using the Microsoft Store:
 
 1. Go to your **Start** menu (lower left Windows icon), type "Microsoft Store", select the link to open the store.
 
-2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Open "Python 3.7" from the results under Apps. Select **Get**.
+2. Once the store is open, select **Search** from the upper-right menu and enter "Python". Select which version of Python you would like to use from the results under Apps. We recommend using the most recent unless you have a reason not to (such as aligning with the version used on a pre-existing project that you plan to work on). Once you've determined which version you would like to install, select **Get**.
 
 3. Once Python has completed the downloading and installation process, open Windows PowerShell using the **Start** menu (lower left Windows icon). Once PowerShell is open, enter `Python --version` to confirm that Python3 has installed on your machine.
 
@@ -40,15 +40,17 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 1. To install VS Code, download VS Code for Windows: [https://code.visualstudio.com](https://code.visualstudio.com).
 
-2. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend sticking with Python 3.7 unless you have a specific reason for choosing something different. Select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
+2. Once VS Code has been installed, you must also install the Python extension. To install the Python extension, you can select the [VS Code Marketplace link](https://marketplace.visualstudio.com/items?itemName=ms-python.python) or open VS Code and search for **Python** in the extensions menu (Ctrl+Shift+X).
+
+3. Python is an interpreted language, and in order to run Python code, you must tell VS Code which interpreter to use. We recommend using the most recent version of Python unless you have a specific reason for choosing something different. Once you've installed the Python extension, select a Python 3 interpreter by opening the **Command Palette** (Ctrl+Shift+P), start typing the command **Python: Select Interpreter** to search, then select the command. You can also use the **Select Python Environment** option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters that VS Code can find automatically, including virtual environments. If you don't see the desired interpreter, see [Configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
     ![Select Python interpreter in VS Code](../images/interpreterselection.gif)
 
-3. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default terminal is PowerShell.
+4. To open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character). The default terminal is PowerShell.
 
-4. Inside your VS Code terminal, open Python by simply entering the command: `python`
+5. Inside your VS Code terminal, open Python by simply entering the command: `python`
 
-5. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
+6. Try the Python interpreter out by entering: `print("Hello World")`. Python will return your statement "Hello World".
 
     ![Python command line in VS Code](../images/python-in-vscode.png)
 
@@ -183,7 +185,7 @@ We recommend the following resources to support you in continuing to learn about
 
 ### Online courses for learning Python
 
-- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python on Microsoft Learn](/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
 - [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 
@@ -195,10 +197,10 @@ We recommend the following resources to support you in continuing to learn about
 
 ### Working with Python in VS Code
 
-- [Editing Python in VS Code](https://code.visualstudio.com/docs/python/editing): Learn more about how to take advantage of VS Code's autocomplete and IntelliSense support for Python, including how to customize their behvior... or just turn them off.
+- [Editing Python in VS Code](https://code.visualstudio.com/docs/python/editing): Learn more about how to take advantage of VS Code's autocomplete and IntelliSense support for Python, including how to customize their behavior... or just turn them off.
 
 - [Linting Python](https://code.visualstudio.com/docs/python/linting): Linting is the process of running a program that will analyse code for potential errors. Learn about the different forms of linting support VS Code provides for Python and how to set it up.
 
 - [Debugging Python](https://code.visualstudio.com/docs/python/debugging): Debugging is the process of identifying and removing errors from a computer program. This article covers how to initialize and configure debugging for Python with VS Code, how to set and validate breakpoints, attach a local script, perform debugging for different app types or on a remote computer, and some basic troubleshooting.
 
-- [Unit testing Python](https://code.visualstudio.com/docs/python/unit-testing): Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings. 
+- [Unit testing Python](https://code.visualstudio.com/docs/python/unit-testing): Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings.

@@ -1,6 +1,6 @@
 ---
 title: Xbox Dev Mode Companion
-description: Provides information about the Xbox Dev Mode Companion app.
+description: Learn about the Xbox Dev Mode Companion app that allows you to remotely connect to an Xbox One console and control it.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp

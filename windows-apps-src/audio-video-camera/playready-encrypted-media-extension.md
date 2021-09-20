@@ -28,7 +28,7 @@ The following list describes the new features and changes made to PlayReady Encr
 -   Provides proactive acquisition of non-persistent licenses.
 -   Provides acquisition of multiple licenses in one message.
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) with multiple KeyIDs.
+    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](/previous-versions/windows/apps/dn457361(v=ieb.10)) with multiple KeyIDs.
 
     > [!NOTE]
     > In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
@@ -66,7 +66,7 @@ To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSu
 Occasionally, some content is not supported in hardware DRM. Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM. Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.
 
 > [!NOTE]
-> To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) method.
+> To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) method.
 
 ## Add secure stop to your web app
 
@@ -290,11 +290,7 @@ function foo() {
 }
 ```
 
-For more information, see the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
+For more information, see the [sample applications](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/PlayReady).
 
 ## See also
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-

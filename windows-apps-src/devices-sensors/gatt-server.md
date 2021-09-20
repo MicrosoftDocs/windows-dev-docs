@@ -1,40 +1,45 @@
 ---
 title: Bluetooth GATT Server
 description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) Server for Universal Windows Platform (UWP) apps, along with sample code for common use cases.
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Bluetooth GATT Server
 
+This article demonstrates Bluetooth Generic Attribute (GATT) Server APIs for Universal Windows Platform (UWP) apps, along with sample code for common GATT server tasks:
 
-**Important APIs**
-- [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
-
-
-This article demonstrates Bluetooth Generic Attribute (GATT) Server APIs for Universal Windows Platform (UWP) apps, along with sample code for common GATT server tasks: 
 - Define the supported services
 - Publish server so it can be discovered by remote clients
 - Advertise support for service
 - Respond to read and write requests
 - Send notifications to subscribed clients
 
+> [!Important]
+> You must declare the "bluetooth" capability in *Package.appxmanifest*.
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
+
+**Important APIs**
+
+- [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+
 ## Overview
+
 Windows usually operates in the client role. Nevertheless, many scenarios arise which require Windows to act as a Bluetooth LE GATT Server as well. Almost all the scenarios for IoT devices, along with most cross-platform BLE communication will require Windows to be a GATT Server. Additionally, sending notifications to nearby wearable devices has become a popular scenario that requires this technology as well.  
-> Make sure all the concepts in the [GATT Client docs](gatt-client.md) are clear before proceeding.  
 
 Server operations will revolve around the Service Provider and the GattLocalCharacteristic. These two classes will provide the functionality needed to declare, implement and expose a hierarchy of data to a remote device.
 
 ## Define the supported services
-Your app may declare one or more services that will be published by Windows. Each service is uniquely identified by a UUID. 
+Your app may declare one or more services that will be published by Windows. Each service is uniquely identified by a UUID.
 
 ### Attributes and UUIDs
 Each service, characteristic and descriptor is defined by it's own unique 128-bit UUID.
 > The Windows APIs all use the term GUID, but the Bluetooth standard defines these as UUIDs. For our purposes, these two terms are interchangeable so we'll continue to use the term UUID. 
 
-If the attribute is standard and defined by the Bluetooth SIG-defined, it will also have a corresponding 16-bit short ID (for example, Battery Level UUID  is 0000**2A19**-0000-1000-8000-00805F9B34FB and the short ID is 0x2A19). These standard UUIDs can be seen in [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) and [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
+If the attribute is standard and defined by the Bluetooth SIG-defined, it will also have a corresponding 16-bit short ID (for example, Battery Level UUID  is 0000**2A19**-0000-1000-8000-00805F9B34FB and the short ID is 0x2A19). These standard UUIDs can be seen in [GattServiceUuids](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) and [GattCharacteristicUuids](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
 
 If your app is implementing it's own custom service, a custom UUID will have to be generated. This is easily done in Visual Studio through Tools -> CreateGuid (use option 5 to get it in the "xxxxxxxx-xxxx-...xxxx" format). This uuid can now be used to declare new local services, characteristics or descriptors.
 

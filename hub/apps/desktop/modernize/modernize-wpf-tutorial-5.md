@@ -1,8 +1,8 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to package and deploy the app using MSIX.
 title: Package and deploy with MSIX
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 01/23/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
@@ -14,7 +14,7 @@ ms.custom: RS5, 19H1
 
 This is the final part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md). This article assumes you have already completed [part 4](modernize-wpf-tutorial-4.md).
 
-In [part 4](modernize-wpf-tutorial-4.md) you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using [MSIX](https://docs.microsoft.com/windows/msix), the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages for developers and IT Pros, including:
+In [part 4](modernize-wpf-tutorial-4.md) you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using [MSIX](/windows/msix), the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages for developers and IT Pros, including:
 
 - Optimized network usage and storage space.
 - Complete clean uninstall, thanks to a lightweight container where the app is executed. No registry keys and temporary files are left on the system.
@@ -39,7 +39,7 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 5. Select **Windows 10, version 1903 (10.0; Build 18362)** for both the **Target version** and **Minimum version** and click **OK**.
 
-    The **ContosoExpenses.Package** project is added to the **ContosoExpenses** solution. This project includes a [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root), which describes the application, and some default assets that are used for items such as the icon in the Programs menu and the tile in the Start screen. However, unlike a UWP project, the packaging project doesn't contain code. Its purpose is to package an existing desktop app.
+    The **ContosoExpenses.Package** project is added to the **ContosoExpenses** solution. This project includes a [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root), which describes the application, and some default assets that are used for items such as the icon in the Programs menu and the tile in the Start screen. However, unlike a UWP project, the packaging project doesn't contain code. Its purpose is to package an existing desktop app.
 
 6. In the **ContosoExpenses.Package** project, right-click the **Applications** node and choose **Add reference**. This node specifies which applications in your solution will be included in the package.
 
@@ -49,37 +49,7 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 8. Right-click the **ContosoExpenses.Package** project and choose **Set As Startup Project**.
 
-9. In Solution Explorer, right-click the **ContosoExpenses.Package** project node and select **Edit Project File**.
-
-10. Locate the `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` element in the file.
-
-11. Replace this element with the following XML.
-
-    ``` xml
-    <ItemGroup>
-        <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-        <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-        <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-        <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-        <Implicit>true</Implicit>
-        </SDKReference>
-    </ItemGroup>
-    <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-    <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-        <ItemGroup>
-        <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-        <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-        <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-            <SourceProject></SourceProject>
-            <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-        </_FilteredNonWapProjProjectOutput>
-        </ItemGroup>
-    </Target>
-    ```
-
-12. Save the project file and close it.
-
-13. Press **F5** to start the packaged app in the debugger.
+9. Press **F5** to start the packaged app in the debugger.
 
 At this point, you can notice some changes that indicate the app is now running as packaged:
 
@@ -94,7 +64,7 @@ At this point, you can notice some changes that indicate the app is now running 
 
 Now that you have packaged the Contoso Expenses app with MSIX, you can test the notification scenario which wasn't working at the end of [part 4](modernize-wpf-tutorial-4.md).
 
-1. In the Contoso Expenses app, choose an employee from the list and then click the **Add new expense** button. 
+1. In the Contoso Expenses app, choose an employee from the list and then click the **Add new expense** button.
 2. Complete all fields in the form and press **Save**.
 3. Confirm that you see an OS notification.
 

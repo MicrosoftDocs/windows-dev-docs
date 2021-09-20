@@ -1,5 +1,5 @@
 ---
-Description: If you encounter errors after submitting your app to the Store, you must resolve them in order to continue the certification process.
+description: If you encounter errors after submitting your app to the Store, you must resolve them in order to continue the certification process.
 title: Resolve submission errors
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.date: 10/31/2018
@@ -19,7 +19,7 @@ If a compilation error is displayed, make sure that you are able to build your a
 
 ## Desktop application
 
-If you plan to submit a package that contains both Win32 and UWP binaries, make sure that you create that package by using the Windows Packaging Project that is available in Visual Studio 2017 Update 4 and later versions. If you create the package by using a UWP project template, you might not be able to submit that package to the Store or sideload it onto other PCs. Even if the package publishes successfully, it might behave in unexpected ways on the user's PC. For more info, see [Package an app by using Visual Studio (Desktop Bridge)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+If you plan to submit a package that contains both Win32 and UWP binaries, make sure that you create that package by using the Windows Packaging Project that is available in Visual Studio 2017 Update 4 and later versions. If you create the package by using a UWP project template, you might not be able to submit that package to the Store or sideload it onto other PCs. Even if the package publishes successfully, it might behave in unexpected ways on the user's PC. For more info, see [Package an app by using Visual Studio (Desktop Bridge)]( /windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 ## Windows Phone 8.x and earlier
 
@@ -51,7 +51,3 @@ If you see an error that says **The name found in the package is not one of your
  
 
  
-
-
-
-

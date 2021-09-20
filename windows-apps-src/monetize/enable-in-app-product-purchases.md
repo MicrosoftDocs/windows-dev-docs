@@ -1,5 +1,5 @@
 ---
-Description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
+description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 title: Enable in-app product purchases
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: uwp, add-ons, in-app purchases, IAPs, Windows.ApplicationModel.Store
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 
 > [!IMPORTANT]
-> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) namespace to enable in-app product purchases. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Partner Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about enabling in-app product purchases using the **Windows.Services.Store** namespace, see [this article](enable-in-app-purchases-of-apps-and-add-ons.md).
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) namespace to enable in-app product purchases. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](/uwp/api/windows.services.store) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Partner Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about enabling in-app product purchases using the **Windows.Services.Store** namespace, see [this article](enable-in-app-purchases-of-apps-and-add-ons.md).
 
 > [!NOTE]
 > In-app products cannot be offered from a trial version of an app. Customers using a trial version of your app can only buy an in-app product if they purchase a full version of your app.
@@ -22,15 +22,15 @@ Whether your app is free or not, you can sell content, other apps, or new app fu
 ## Prerequisites
 
 -   A Windows app in which to add features for customers to buy.
--   When you code and test new in-app products for the first time, you must use the [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) object instead of the [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named WindowsStoreProxy.xml in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
+-   When you code and test new in-app products for the first time, you must use the [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) object instead of the [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named WindowsStoreProxy.xml in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
 -   This topic also references code examples provided in the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). This sample is a great way to get hands-on experience with the different monetization options provided for Universal Windows Platform (UWP) apps.
 
 ## Step 1: Initialize the license info for your app
 
-When your app is initializing, get the [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) object for your app by initializing the [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) or [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) to enable purchases of an in-app product.
+When your app is initializing, get the [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) object for your app by initializing the [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) or [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) to enable purchases of an in-app product.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="InitializeLicenseTest":::
 
 ## Step 2: Add the in-app offers to your app
 
@@ -57,7 +57,7 @@ For each feature that you want to make available through an in-app product, crea
     Here's an example that shows how you can code a product feature named **featureName** in a license-specific conditional block. The string, **featureName**,is the token that uniquely identifies this product within the app and is also used to identify it in the Store.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="CodeFeature":::
 
 3.  **Add the purchase UI for this feature**
 
@@ -66,11 +66,11 @@ For each feature that you want to make available through an in-app product, crea
     Here's how to test to see if your customer already owns an in-app product and, if they don't, displays the purchase dialog so they can buy it. Replace the comment "show the purchase dialog" with your custom code for the purchase dialog (such as a page with a friendly "Buy this app!" button).
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="BuyFeature":::
 
 ## Step 3: Change the test code to the final calls
 
-This is an easy step: change every reference to [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) to [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) in your app's code. You don't need to provide the WindowsStoreProxy.xml file any longer, so remove it from your app's path (although you may want to save it for reference when you configure the in-app offer in the next step).
+This is an easy step: change every reference to [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) to [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) in your app's code. You don't need to provide the WindowsStoreProxy.xml file any longer, so remove it from your app's path (although you may want to save it for reference when you configure the in-app offer in the next step).
 
 ## Step 4: Configure the in-app product offer in the Store
 

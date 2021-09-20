@@ -1,5 +1,5 @@
 ---
-Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
 title: Log custom events for Partner Center
 ms.date: 06/01/2018
 ms.topic: article
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ---
 # Log custom events for Partner Center
 
-The [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report) in Partner Center lets you get info about custom events that you've defined in your Universal Windows Platform (UWP) app. A custom event is an arbitrary string that represents an event or activity in your app. For example, a game might define custom events named *firstLevelPassed*, *secondLevelPassed*, and so on, which are logged when the user passes each level in the game.
+The [Usage report](../publish/usage-report.md) in Partner Center lets you get info about custom events that you've defined in your Universal Windows Platform (UWP) app. A custom event is an arbitrary string that represents an event or activity in your app. For example, a game might define custom events named *firstLevelPassed*, *secondLevelPassed*, and so on, which are logged when the user passes each level in the game.
 
-To log a custom event from your app, pass the custom event string to the [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method provided by the Microsoft Store Services SDK. You can review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report) in Partner Center.
+To log a custom event from your app, pass the custom event string to the [Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method provided by the Microsoft Store Services SDK. You can review the total occurrences for your custom events in the **Custom events** section of the [Usage report](../publish/usage-report.md) in Partner Center.
 
 > [!NOTE]
-> Custom events that you log to Partner Center are unrelated to [Windows events](https://docs.microsoft.com/windows/desktop/Events/windows-events), and they do not appear in **Event Viewer**.
+> Custom events that you log to Partner Center are unrelated to [Windows events](/windows/desktop/Events/windows-events), and they do not appear in **Event Viewer**.
 
 ## Prerequisites
 
@@ -33,16 +33,16 @@ Before you can review custom logging events in the **Usage report** for your app
 5. In the list of SDKs, click the check box next to **Microsoft Engagement Framework** and click **OK**.
 
 6. Add the following statement to the top of each code file where you want to log custom events.
-    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/LogEvents.cs" id="EngagementNamespace":::
 
-7. In each section of your code where you want to log a custom event, get a [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) object and then call the [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method. Pass your custom event string to the method.
-    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+7. In each section of your code where you want to log a custom event, get a [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) object and then call the [Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method. Pass your custom event string to the method.
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/LogEvents.cs" id="Log":::
 
     > [!NOTE]
-    > The [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report) may take a long time to load if your app logs many custom events with long names. We recommend that you use brief names for your custom events. 
+    > The [Usage report](../publish/usage-report.md) may take a long time to load if your app logs many custom events with long names. We recommend that you use brief names for your custom events. 
 
 ## Related topics
 
-* [Usage report](https://docs.microsoft.com/windows/uwp/publish/usage-report)
-* [Log method](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
-* [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
+* [Usage report](../publish/usage-report.md)
+* [Log method](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
+* [Microsoft Store Services SDK](./microsoft-store-services-sdk.md)

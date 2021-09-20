@@ -1,5 +1,5 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
 title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
 ms.date: 10/10/2017
@@ -11,9 +11,9 @@ ms.localizationpriority: medium
 
 This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) for a reference table of all the possible qualifier values.
 
-Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources’ folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
+Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources’ folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
 
 ## Qualifier name, qualifier value, and qualifier
 
@@ -108,7 +108,7 @@ Depending on the tools and workflow you use for asset-creation, or on what you f
 
 ## AlternateForm
 
-The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))).
+The `alternateform` qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value `msft-phonetic` is reserved (see the section “Support Furigana for Japanese strings that can be sorted” in [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))).
 
 Either your target system or your app must provide a value against which `alternateform` qualifiers are matched. Do not use the `msft-` prefix for your own custom `alternateform` qualifier values.
 
@@ -148,7 +148,7 @@ In this scenario, you would then give your resources names that include the qual
 
 ## DeviceFamily
 
-It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Version adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Version adaptive code](../debug-test-perf/version-adaptive-code.md).
 
 But as a last resort it is possible to use devicefamily qualifiers to name folders that contain your XAML views (a XAML view is a XAML file that contains UI layout and controls).
 
@@ -218,11 +218,11 @@ See [Localize your UI strings](localize-strings-ui-manifest.md) for more informa
 
 ## LayoutDirection
 
-A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property (see [Adjust layout and fonts, and support RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
+A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property (see [Adjust layout and fonts, and support RTL](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
 
 ## Scale
 
-Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), or the next-largest-scaled resource.
+Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), or the next-largest-scaled resource.
 
 Here’s an example of setting the qualifier at the folder level.
 
@@ -244,7 +244,7 @@ For info about qualifying a resource for both `scale` and `targetsize`, see [Qua
 
 ## TargetSize
 
-The `targetsize` qualifier is primarily used to specify [file type association icons](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) or [protocol icons](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions) to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.
+The `targetsize` qualifier is primarily used to specify [file type association icons](/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) or [protocol icons](/windows/desktop/search/-search-3x-wds-ph-ui-extensions) to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.
 
 You can define assets that represent several sizes of `targetsize` qualifier value for the App Icon (`/Assets/Square44x44Logo.png`) in the Visual Assets tab of the app package manifest designer.
 
@@ -276,13 +276,13 @@ For backwards compatibility, Windows includes logic to detect a monochromatic ic
 
 ## Related topics
 
-* [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Effective pixels and scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor)
 * [Resource Management System](resource-management-system.md)
-* [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)
 * [Localize your UI strings](localize-strings-ui-manifest.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
 * [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
 * [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
-* [Adjust layout and fonts, and support RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)
+* [Adjust layout and fonts, and support RTL](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl)

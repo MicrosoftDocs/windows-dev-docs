@@ -50,7 +50,7 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
         > [!IMPORTANT]
         > By default, when you create any add-on the price is initially set to **Free**. Because you cannot raise the price of a subscription add-on after you complete the add-on submission, be sure to choose the price of your subscription here.
 
-2. In your app, use APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to determine whether the current user has already acquired your subscription add-on and then offer it for sale to the user as an in-app purchase. See the [code examples](#code-examples) in this article for more details.
+2. In your app, use APIs in the [**Windows.Services.Store**](/uwp/api/windows.services.store) namespace to determine whether the current user has already acquired your subscription add-on and then offer it for sale to the user as an in-app purchase. See the [code examples](#code-examples) in this article for more details.
 
 3. Test the in-app purchase implementation of your subscription in your app. You'll need to download your app once from the Store to your development device to use its license for testing. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing) for in-app purchases.  
 
@@ -60,11 +60,11 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 
 ## Code examples
 
-The code examples in this section demonstrate how to use the APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to get info about subscription add-ons for the current app and request the purchase a subscription add-on on behalf of the current user.
+The code examples in this section demonstrate how to use the APIs in the [**Windows.Services.Store**](/uwp/api/windows.services.store) namespace to get info about subscription add-ons for the current app and request the purchase a subscription add-on on behalf of the current user.
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](https://docs.microsoft.com/windows/uwp/publish/app-submissions) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have [created an app submission](../publish/app-submissions.md) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
 * You have [created a subscription add-on for the app](../publish/add-on-submissions.md) in Partner Center.
 
 The code in these examples assumes:
@@ -72,26 +72,26 @@ The code in these examples assumes:
 * The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
 
 > [!NOTE]
-> If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in these examples to configure the [**StoreContext**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
+> If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in these examples to configure the [**StoreContext**](/uwp/api/Windows.Services.Store.StoreContext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
 ### Purchase a subscription add-on
 
 This example demonstrates how to request the purchase of a known subscription add-on for your app on behalf of the current customer. This example also shows how to handle the case where the subscription has a trial period.
 
 1. The code first determines whether the customer already has an active license for the subscription. If the customer already has an active license, your code should unlock the subscription features as necessary (because this is proprietary to your app, this is identified with a comment in the example).
-2. Next, the code gets the [**StoreProduct**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) object that represents the subscription you want to purchase on behalf of the customer. The code assumes that you already know the [Store ID](in-app-purchases-and-trials.md#store-ids) of the subscription add-on you want to purchase, and that you have assigned this value to the *subscriptionStoreId* variable.
+2. Next, the code gets the [**StoreProduct**](/uwp/api/windows.services.store.storeproduct) object that represents the subscription you want to purchase on behalf of the customer. The code assumes that you already know the [Store ID](in-app-purchases-and-trials.md#store-ids) of the subscription add-on you want to purchase, and that you have assigned this value to the *subscriptionStoreId* variable.
 3. The code then determines whether a trial is available for the subscription. Optionally, your app can use this information to display details about the available trial or full subscription to the customer.
-4. Finally, the code calls [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) method to request the purchase of the subscription. If a trial is available for the subscription, the trial will be offered to the customer for purchase. Otherwise, the full subscription will be offered for purchase.
+4. Finally, the code calls [**RequestPurchaseAsync**](/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) method to request the purchase of the subscription. If a trial is available for the subscription, the trial will be offered to the customer for purchase. Otherwise, the full subscription will be offered for purchase.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs" id="PurchaseTrialSubscription":::
 
 ### Get info about subscription add-ons for the current app
 
-This code example demonstrates how to get info for all the subscription add-ons that are available in your app. To get this info, first use the [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) method to get the collection of [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) objects that represent each of the available add-ons for the app. Then, get the [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) for each product and use the [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) and [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) properties to access the subscription info.
+This code example demonstrates how to get info for all the subscription add-ons that are available in your app. To get this info, first use the [**GetAssociatedStoreProductsAsync**](/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) method to get the collection of [**StoreProduct**](/uwp/api/Windows.Services.Store.StoreProduct) objects that represent each of the available add-ons for the app. Then, get the [**StoreSku**](/uwp/api/windows.services.store.storesku) for each product and use the [**IsSubscription**](/uwp/api/windows.services.store.storesku.IsSubscription) and [**SubscriptionInfo**](/uwp/api/windows.services.store.storesku.SubscriptionInfo) properties to access the subscription info.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs" id="GetSubscriptions":::
 
 <span id="manage-subscriptions" />
 
@@ -123,7 +123,7 @@ The following scenarios are not currently supported for subscription add-ons.
 * Customers cannot switch subscription periods using the [https://account.microsoft.com/services](https://account.microsoft.com/services) page for their Microsoft account. To switch to a different subscription period, customers must cancel their current subscription and then purchase a subscription with a different subscription period from your app.
 * Tier switching is currently not supported for subscription add-ons (for example, switching a customer from a basic subscription to a premium subscription with more features).
 * [Sales](../publish/put-apps-and-add-ons-on-sale.md) and [promotional codes](../publish/generate-promotional-codes.md) are currently not supported for subscription add-ons.
-
+* Renewing existing subscriptions after setting the visibility of your subscription add-on to **Stop acquisition**. See [Set add-on pricing and availability](../publish/set-add-on-pricing-and-availability.md) for more details.
 
 ## Related topics
 

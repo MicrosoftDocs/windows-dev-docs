@@ -1,12 +1,15 @@
 ---
 description: The Windows premium ads publishers program consists of a curated collection of ad-enabled apps that partner ad networks can target with premium, high-yield ads. Apps in this program are best in class in terms of usage, engagement and experience.
 title: Windows Premium Ads Publishers Program
-ms.date: 09/08/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising
 ms.localizationpriority: medium
 ---
 # Windows Premium Ads Publishers Program
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 As part of our continuous efforts to help Windows developers monetize their apps through ads, we offer the [Windows Premium Ads Publishers Program](https://www.windowspremiumapps.com). This is a curated collection of ad-enabled apps and games that are best in class in terms of usage, engagement and experience. These apps and games are viewability certified and have a globally distributed audience of identifiable users that are highly engaged​.
 
@@ -35,7 +38,7 @@ Apps in this program must satisfy the following criteria:
 
 ## Can apps get removed from the program?
 
-Apps in the program are monitored on a frequent basis to ensure they continue to meet the qualifying criteria. To sustain a minimum daily ad request volume, make sure your app usage does not drop significantly over time. A great way to do this is by [running regular promotion campaigns](https://developer.microsoft.com/en-us/store/promote-your-apps).
+Apps in the program are monitored on a frequent basis to ensure they continue to meet the qualifying criteria. To sustain a minimum daily ad request volume, make sure your app usage does not drop significantly over time. A great way to do this is by [running regular promotion campaigns](https://developer.microsoft.com/store/promote-your-apps).
 
 ## Can I provide additional marketing material to showcase my app in the program? 
 

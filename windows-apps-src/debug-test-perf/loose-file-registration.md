@@ -25,17 +25,17 @@ Loose file layout is simply the act of placing app contents in a folder instead 
 
 ## How to register a loose file layout
 
-Windows provides multiple developer tools to register loose file layouts on local and remote devices. You can choose from `WinDeployAppCmd` (Windows SDK Tool), Windows Device Portal, PowerShell, and [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network). Below we will go over how to register loose files using these tools. But first, ensure that you have following setup:
+Windows provides multiple developer tools to register loose file layouts on local and remote devices. You can choose from `WinAppDeployCmd` (Windows SDK Tool), Windows Device Portal, PowerShell, and [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network). Below we will go over how to register loose files using these tools. But first, ensure that you have following setup:
 
 - Your devices must be on the Windows 10 Creators Update (Build 14965) or later.
-- You will need to enable [developer mode](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) and [device discovery](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery) on all devices.
+- You will need to enable [developer mode](/windows/apps/get-started/enable-your-device-for-development) and [device discovery](/windows/apps/get-started/enable-your-device-for-development#device-discovery) on all devices.
 
 > [!IMPORTANT]
 > Loose file registration is only available on devices that support the Network Share (SMB) Protocol: Desktop and Xbox. 
 
-### Register with WinDeployAppCmd
+### Register with WinAppDeployCmd
 
-If you are using the SDK tools corresponding to the Windows 10 Creators Update (Build 14965) or later, you can use the `WinDeployAppCmd` command in a Command Prompt.
+If you are using the SDK tools corresponding to the Windows 10 Creators Update (Build 14965) or later, you can use the `WinAppDeployCmd` command in a Command Prompt.
 
 ```cmd
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>
@@ -45,7 +45,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 **IP Address** – the IP Address of the target machine.
 
-**target machine PIN** – A PIN, if required, to establish a connection with the target device. You will be prompted to retry with the `-pin` option if authentication is required. See [Device Discovery](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) to learn how to get a PIN.
+**target machine PIN** – A PIN, if required, to establish a connection with the target device. You will be prompted to retry with the `-pin` option if authentication is required. See [Device Discovery](/windows/apps/get-started/enable-your-device-for-development#device-discovery) to learn how to get a PIN.
 
 ### Windows Device Portal
 

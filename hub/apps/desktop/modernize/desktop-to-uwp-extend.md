@@ -1,6 +1,6 @@
 ---
-Description: Extend your desktop application with Windows UIs and components
-title: Extend your desktop application with Windows UIs and components
+title: Extend your app with Windows UI and components
+description: Extend your desktop application with UWP projects and Windows Runtime components to add modern Windows 10 experiences.
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -16,11 +16,11 @@ Some Windows 10 experiences (For example: a touch-enabled UI page) must run insi
 In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
+> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
 
 If you're ready, let's start.
 
-<a id="setup" />
+<a id="setup"></a>
 
 ## First, setup your Solution
 
@@ -32,13 +32,13 @@ This image shows an example solution.
 
 ![Extend start project](images/desktop-to-uwp/extend-start-project.png)
 
-If your solution doesn't contain a packaging project, see [Package your desktop application by using Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+If your solution doesn't contain a packaging project, see [Package your desktop application by using Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 ### Configure the desktop application
 
 Make sure that your desktop application has references to the files that you need to call Windows Runtime APIs.
 
-To do this, see the [Set up your project](desktop-to-uwp-enhance.md#set-up-your-project) section.
+To do this, see [Call Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md).
 
 ### Add a UWP project
 
@@ -46,15 +46,15 @@ Add a **Blank App (Universal Windows)** to your solution.
 
 This is where you'll build a modern XAML UI or use APIs that run only within a UWP process.
 
-![UWP project](images/desktop-to-uwp/add-uwp-project-to-solution.png)
+![Add new project](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
 In your packaging project, right-click the **Applications** node, and then click **Add Reference**.
 
-![Reference UWP Project](images/desktop-to-uwp/add-uwp-project-reference.png)
+![Add reference](images/desktop-to-uwp/add-uwp-project-reference.png)
 
 Then, add a reference the UWP project.
 
-![Reference UWP Project](images/desktop-to-uwp/choose-uwp-project.png)
+![Select UWP project](images/desktop-to-uwp/choose-uwp-project.png)
 
 Your solution will look something like this:
 
@@ -105,7 +105,7 @@ To show a XAML-based UI, do these things:
 
 :five: [In the UWP project, show the page that you want](#parse)
 
-<a id="solution-setup" />
+<a id="solution-setup"></a>
 
 ### Setup your Solution
 
@@ -117,7 +117,7 @@ Your solution would look something like this:
 
 In this example, the Windows Forms project is named **Landmarks** and the UWP project that contains the XAML UI is named **MapUI**.
 
-<a id="xaml-UI" />
+<a id="xaml-UI"></a>
 
 ### Create a XAML UI
 
@@ -166,11 +166,11 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 > [!NOTE]
 > Map controls download data from the internet so if you use one, you'll have to add the "internet client" capability to your manifest as well.
 
-<a id="start" />
+<a id="start"></a>
 
 ### Start the UWP app
 
-First, from your desktop application, create a [Uri](https://docs.microsoft.com/dotnet/api/system.uri) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
+First, from your desktop application, create a [Uri](/dotnet/api/system.uri) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method.
 
 ```csharp
 
@@ -191,7 +191,7 @@ private async void ShowMap(double lat, double lon)
 }
 ```
 
-<a id="parse" />
+<a id="parse"></a>
 
 ### Parse parameters and show a page
 
@@ -266,7 +266,7 @@ To make your application a share target, do these things:
 
 :five: [Modify the desktop application to get the shared file](#modify-desktop)
 
-<a id="share-extension" />
+<a id="share-extension"></a>
 
 The following steps  
 
@@ -294,7 +294,7 @@ Provide the name of the executable produced by the UWP project, and the name of 
 
 You'll also have to specify what types of files can be shared with your app. In this example, we are making the [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop application a share target for bitmap images so we specify `Bitmap` for the supported file type.
 
-<a id="override" />
+<a id="override"></a>
 
 ### Override the OnShareTargetActivated event handler
 
@@ -327,7 +327,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 In this code, we save the image that is being shared by the user into a apps local storage folder. Later, we'll modify the desktop application to pull images from that same folder. The desktop application can do that because it is included in the same package as the UWP app.
 
-<a id="desktop-extensions" />
+<a id="desktop-extensions"></a>
 
 ### Add desktop extensions to the UWP project
 
@@ -335,7 +335,7 @@ Add the **Windows Desktop Extensions for the UWP** extension to the UWP app proj
 
 ![desktop extension](images/desktop-to-uwp/desktop-extensions.png)
 
-<a id="full-trust" />
+<a id="full-trust"></a>
 
 ### Add the full trust process extension
 
@@ -351,7 +351,7 @@ In **Solution Explorer**, open the **package.appxmanifest** file of the Packagin
 
 This extension will enable the UWP app to start the desktop application to which you would like the share a file. In example, we refer to the executable of the [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) desktop application.
 
-<a id="modify-desktop" />
+<a id="modify-desktop"></a>
 
 ### Modify the desktop application to get the shared file
 
@@ -361,7 +361,7 @@ Modify your desktop application to find and process the shared file. In this exa
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
+For instances of the desktop application that are already open by the user, we might also handle the [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) event and pass in the path to the file location. That way any open instances of the desktop application will show the shared photo.
 
 ```csharp
 ...
@@ -409,7 +409,7 @@ To create a background service, do these things:
 
 :three: [Register the background task](#register-background-task)
 
-<a id="implement-task" />
+<a id="implement-task"></a>
 
 ### Implement the background task
 
@@ -450,7 +450,7 @@ public sealed class SiteVerifier : IBackgroundTask
     }
 ```
 
-<a id="configure-background-task" />
+<a id="configure-background-task"></a>
 
 ### Configure the background task
 
@@ -466,9 +466,9 @@ Then, choose the desired properties. Our sample uses the **Timer** property.
 
 Provide the fully qualified name of the class in your Windows Runtime component that implements the background task.
 
-![Timer property](images/desktop-to-uwp/background-task-entry-point.png)
+![Specify entry point](images/desktop-to-uwp/background-task-entry-point.png)
 
-<a id="register-background-task" />
+<a id="register-background-task"></a>
 
 ### Register the background task
 
@@ -496,12 +496,6 @@ public void RegisterBackgroundTask(String triggerName)
 }
 ```
 
-## Support and feedback
-
-**Find answers to your questions**
+## Find answers to your questions
 
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

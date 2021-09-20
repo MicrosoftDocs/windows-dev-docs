@@ -8,153 +8,102 @@ metadata:
    author: mcleanbyron
    ms.author: mcleans
    ms.topic: hub-page
-   ms.date: 11/08/2019
+   ms.date: 06/16/2021
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-WinDevCenter"
    
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Get Visual Studio and the Windows SDK
+   - title: Download Visual Studio and the Windows SDK
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
-   - title: User Interface and design guidelines
-     itemType: overview
-     # Update following link!!!
-     url: /windows/apps/fluent-design-system
-   - title: Join the Insider Program
-     itemType: overview
-     url: https://docs.microsoft.com/windows-insider
+   - title: Download the Windows App SDK
+     itemType: download
+     url: https://aka.ms/projectreunion/vsixdownload
    - title: Online training for Windows app developers
      itemType: learn
-     url: https://docs.microsoft.com/learn/browse/?products=windows
+     url: /learn/browse/?products=windows
+   - title: Windows Subsystem for Linux and other tools
+     itemType: overview
+     url: ../dev-environment/index.md
 
-conceptualContent:
-  # title: Get started
+productDirectory:
+  title: Develop desktop apps for Windows
   items:
-    - title: Device platforms
-      links:
-        - text: Windows PCs
-          url: /windows/apps/desktop/
-          itemType: get-started
-        - text: Mixed Reality and HoloLens
-          url: https://docs.microsoft.com/windows/mixed-reality/
-          itemType: get-started
-        - text: IoT Core
-          url: https://docs.microsoft.com/windows/iot-core/windows-iot-core
-          itemType: get-started
-        - text: Xbox One
-          url: https://www.xbox.com/developers
-          itemType: get-started
-        - text: Mobile application development
-          url: https://docs.microsoft.com/azure/mobile-apps/
-          itemType: overview
-    - title: Develop your first desktop app
-      links:
-        - text: UWP
-          url: /windows/uwp/get-started/
-          itemType: get-started
-        - text: Win32
-          url: https://docs.microsoft.com/windows/win32/desktop-programming/
-          itemType: get-started
-        - text: WPF (.NET Core)
-          url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json&view=vs-2019
-          itemType: get-started
-        - text: WPF (.NET Framework)
-          url: https://docs.microsoft.com/dotnet/framework/wpf/getting-started/
-          itemType: get-started
-        - text: Windows Forms
-          url: https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms 
-          itemType: get-started
-    - title: API reference
-      links:
-        - text: UWP
-          url: https://docs.microsoft.com/uwp/
-          itemType: reference
-        - text: Win32 (by header)
-          url: https://docs.microsoft.com/windows/win32/api/
-          itemType: reference
-        - text: Win32 (by feature)
-          url: https://docs.microsoft.com/windows/win32/apiindex/windows-api-list
-          itemType: reference
-        - text: .NET Core
-          url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.0
-          itemType: reference
-        - text: .NET Framework
-          url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
-          itemType: reference
+  - title: Get started
+    imageSrc: https://docs.microsoft.com/media/common/i_get-started.svg
+    links:
+      - url: ./windows-app-sdk/set-up-your-development-environment.md
+        text: Set up your development environment
+      - url: ./get-started/index.md
+        text: Get started developing apps
+      - url: ./windows-app-sdk/index.md
+        text: Build apps with the Windows App SDK 
+      - url: ./get-started/build-apps-for-windows.md
+        text: Build an app for Windows 11 
+  - title: Design
+    imageSrc: https://docs.microsoft.com/media/common/i_design.svg
+    links:
+      - url: ./design/index.md
+        text: Design and code your app UI
+      - url: ./design/basics/index.md
+        text: Design basics for Windows apps
+      - url: ./design/signature-experiences/design-principles.md
+        text: Windows 11 design principles
+      - url: ./design/downloads/index.md
+        text: Design toolkits
+  - title: Develop
+    imageSrc: https://docs.microsoft.com/media/common/i_code-samples.svg
+    links:
+      - url: ./develop/features-and-technologies.md
+        text: Windows development features
+      - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
+        text: Windows App SDK features
+      - url: ./winui/index.md
+        text: Windows UI Library (WinUI)
+      - url: ./get-started/make-apps-great-for-windows.md
+        text: Make your apps great on Windows 11
+  - title: Deploy
+    imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
+    links:
+      - url: ./package-and-deploy/index.md
+        text: Package and deploy apps
+      - url: /windows/msix
+        text: Package apps using MSIX
+      - url: /windows/msix/desktop/managing-your-msix-deployment-overview
+        text: Manage your MSIX deployment
+      - url: ./windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
+        text: Deploy apps that use the Windows App SDK
 
 tools:
-  title: App platforms and frameworks
+  title: Develop for other Windows device platforms
   items:
-    - title: UWP
-      imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: /windows/uwp/
-    - title: Win32
-      imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: https://docs.microsoft.com/windows/win32/
-    - title: WPF
-      imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
-      url: https://docs.microsoft.com/dotnet/framework/wpf/
-    - title: Windows Forms
-      imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
-      url: https://docs.microsoft.com/dotnet/framework/winforms/
+    - title: Mixed Reality and HoloLens
+      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-5.svg
+      url: /windows/mixed-reality/
+    - title: Windows for IoT
+      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-4.svg
+      url: /windows/iot-core/
+    - title: Xbox One
+      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-3.svg
+      url: https://www.xbox.com/developers
 
 additionalContent:
   sections:
     # Section
-    - title: Tasks
+    - title: Contribute to Windows Open Source projects
       items:
-        - title: Build a desktop app
-          summary: Build UWP, Win32, WPF, and Windows Forms desktop apps for PCs running Windows.
-          url: /windows/apps/desktop/
-        - title: Modernize your desktop app
-          summary: Enhance your existing desktop app to use the latest features in Windows 10.
-          url: /windows/apps/desktop/modernize
-        - title: Develop for Windows features
-          summary: Learn how Windows features are supported in different app platforms.
-          url: /windows/apps/features-and-technologies/
-        - title: Find code samples
-          summary: Learn how to build great apps by experimenting with our samples.
-          url: https://developer.microsoft.com/windows/samples
-        - title: Develop for mobile
-          summary: Explore Microsoft services that enable you to build secure and reliable cloud-based mobile applications.
-          url: https://docs.microsoft.com/azure/mobile-apps/
-        - title: Develop with Python, Node.js, and more
-          summary: Set up your Windows computer to work with cross-platform technologies such as Python, Node.js, and more.
-          url: /windows/dev-environment/
-        - title: Publish to the Microsoft Store
-          summary: Use Partner Center to publish Windows apps and games to the Microsoft Store.
-          url: /windows/uwp/publish/
-        - title: Make your app accessible
-          summary: Build accessibility into your applications to empower people of all abilities.
-          url: /windows/apps/accessibility/
-    # Section
-    - title: Technologies
-      items:
-        - title: What's new for developers
-          summary: Learn about the latest developer features in Windows 10.
-          # Update following link when we have an all-up page!!!
-          url: https://developer.microsoft.com/windows/windows-10-for-developers
-        - title: Windows AI
-          summary: Use Windows AI to build intelligent solutions for complex problems in your apps.
-          url: https://docs.microsoft.com/windows/ai/
-        - title: Windows for IoT
-          summary: Build solutions for the Windows for IoT platform.
-          url: https://docs.microsoft.com/windows/iot-core/
-        - title: MSIX
-          summary: Package and deploy any Windows app in a modern and universal packaging format.
-          url: https://docs.microsoft.com/windows/msix/
-        - title: Containers on Windows
-          summary: Package your applications with their dependencies in fast, fully isolated Windows environments. 
-          url: https://docs.microsoft.com/virtualization/windowscontainers/
-        - title: Mixed Reality
-          summary: Build collaborative mixed reality solutions for HoloLens and more.
-          url: https://docs.microsoft.com/windows/mixed-reality/
-        - title: Project Rome
-          summary: Build cross-device experiences for your apps.
-          url: https://docs.microsoft.com/windows/project-rome/
-        - title: Microsoft Graph
-          summary: Leverage a unified programmability model to build apps that interact with the data of millions of users. 
-          url: https://docs.microsoft.com/graph/
+        - title: Windows App SDK
+          summary: A set of developer tools and APIs that represent the next evolution in the Windows app platform.
+          url: https://github.com/microsoft/ProjectReunion
+        - title: Windows UI Library (WinUI)
+          summary: The native user interface layer for building Windows apps including modern controls and styles.
+          url: https://github.com/microsoft/microsoft-ui-xaml
+        - title: MSIX SDK
+          summary: Enables developers to pack and unpack app packages on a variety of platforms.
+          url: https://github.com/Microsoft/msix-packaging
+        - title: .NET
+          summary: Engage with .NET open source projects including .NET Core, WPF, Windows Forms, and much more.
+          url: https://github.com/microsoft/dotnet
   footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](https://aka.ms/OneDevMinute) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

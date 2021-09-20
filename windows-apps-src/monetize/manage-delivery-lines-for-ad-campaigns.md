@@ -13,7 +13,7 @@ Use these methods in the Microsoft Store promotions API to create one or more *d
 
 For more information about the relationship between delivery lines and ad campaigns, targeting profiles, and creatives, see [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
->**Note**&nbsp;&nbsp;Before you can successfully create delivery lines for ad campaigns using this API, you must first [create one paid ad campaign using the **Ad campaigns** page in Partner Center](../publish/create-an-ad-campaign-for-your-app.md), and you must add at least one payment instrument on this page. After you do this, you will be able to successfully create billable delivery lines for ad campaigns using this API. Ad campaigns you create using the API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
+>**Note**&nbsp;&nbsp;Before you can successfully create delivery lines for ad campaigns using this API, you must first [create one paid ad campaign using the **Ad campaigns** page in Partner Center](./index.md), and you must add at least one payment instrument on this page. After you do this, you will be able to successfully create billable delivery lines for ad campaigns using this API. Ad campaigns you create using the API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ To use these methods, you need to first do the following:
 * If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Microsoft Store promotions API.
 
   > [!NOTE]
-  > As part of the prerequisites, be sure that you [create at least one paid ad campaign in Partner Center](../publish/create-an-ad-campaign-for-your-app.md) and that you add at least one payment instrument for the ad campaign in Partner Center. Delivery lines you create using this API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
+  > As part of the prerequisites, be sure that you [create at least one paid ad campaign in Partner Center](./index.md) and that you add at least one payment instrument for the ad campaign in Partner Center. Delivery lines you create using this API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
 
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
@@ -148,7 +148,7 @@ The request and response bodies for these methods contain the following fields. 
 |  campaignId   |  integer   |  The ID of the parent ad campaign.      |    No   |      |   No     |  
 |  minMinutesPerImp   |  integer   |  Specifies the minimum time interval (in minutes) between two impressions shown to the same user from this delivery line.      |    No   |  4000    |  No      |  
 |  pacingType   |  string   |  One of the following values that specify the pacing type: <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    No   |  SpendEvenly    |  No      |
-|  currencyId   |  integer   |  The ID of the currency of the campaign.      |    Yes   |  The currency of the developer account (you do not need to specify this field in POST or PUT calls)    |   No     |      |
+|  currencyId   |  integer   |  The ID of the currency of the campaign.      |    Yes   |  The currency of the developer account (you do not need to specify this field in POST or PUT calls)    |   No     |
 
 
 ## Related topics

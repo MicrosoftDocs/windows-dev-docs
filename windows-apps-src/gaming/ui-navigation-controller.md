@@ -29,7 +29,7 @@ Because the number and variety of controls supported by each kind of input devic
 
 Navigation devices must support all navigation commands in the _required set_; these are the directional (up, down, left, and right), view, menu, accept, and cancel commands.
 
-The directional commands are intended for primary [XY-focus navigation](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) between single UI elements. The view and menu commands are intended for displaying gameplay information (often momentary, sometimes modally) and for switching between gameplay and menu contexts, respectively. The accept and cancel commands are intended for affirmative (yes) and negative (no) responses, respectively.
+The directional commands are intended for primary [XY-focus navigation](/windows/apps/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction) between single UI elements. The view and menu commands are intended for displaying gameplay information (often momentary, sometimes modally) and for switching between gameplay and menu contexts, respectively. The accept and cancel commands are intended for affirmative (yes) and negative (no) responses, respectively.
 
 The following table summarizes these commands and their intended uses, with examples.
 | Command | Intended use
@@ -215,16 +215,16 @@ The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 [Windows.Gaming.Input.IGameController][]
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
-[Windows.Gaming.Input.Arcadestick]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestick.aspx
-[Windows.Gaming.Input.Racingwheel]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.aspx
-[Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[uinavigationcontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[uinavigationcontrollers]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrollers.aspx
-[uinavigationcontrolleradded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrolleradded.aspx
-[uinavigationcontrollerremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.uinavigationcontrollerremoved.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.getcurrentreading.aspx
-[uinavigationreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading.aspx
-[requireduinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons.aspx
-[optionaluinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons.aspx
+[Windows.Gaming.Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.Gamepad]: /uwp/api/Windows.Gaming.Input.Gamepad
+[Windows.Gaming.Input.Arcadestick]: /uwp/api/Windows.Gaming.Input.ArcadeStick
+[Windows.Gaming.Input.Racingwheel]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[uinavigationcontroller]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrollers]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrolleradded]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationcontrollerremoved]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[uinavigationreading]: /uwp/api/Windows.Gaming.Input.UINavigationReading
+[requireduinavigationbuttons]: /uwp/api/Windows.Gaming.Input.RequiredUINavigationButtons
+[optionaluinavigationbuttons]: /uwp/api/Windows.Gaming.Input.OptionalUINavigationButtons

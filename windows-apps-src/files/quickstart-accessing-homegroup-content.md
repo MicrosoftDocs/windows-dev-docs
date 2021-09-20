@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Storage.KnownFolders class**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)
+-   [**Windows.Storage.KnownFolders class**](/uwp/api/Windows.Storage.KnownFolders)
 
 Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
 
@@ -21,7 +21,7 @@ Access content stored in the user's HomeGroup folder, including pictures, music,
 
 -   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 -   **App capabilty declarations**
 
@@ -44,7 +44,7 @@ Follow these steps to open an instance of the file picker that lets the user pic
 
 1.  **Create and customize the file picker**
 
-    Use [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) to [**PickerLocationId.HomeGroup**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers)
+    Use [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) to create the file picker, and then set the picker's [**SuggestedStartLocation**](/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) to [**PickerLocationId.HomeGroup**](/uwp/api/Windows.Storage.Pickers.PickerLocationId). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](./quickstart-using-file-and-folder-pickers.md)
 
     This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:
     ```cs
@@ -57,7 +57,7 @@ Follow these steps to open an instance of the file picker that lets the user pic
 
 2.  **Show the file picker and process the picked file.**
 
-    After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync).
+    After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync).
 
     This example displays the file picker to let the user pick one file:
     ```cs
@@ -79,7 +79,7 @@ This section shows how to find HomeGroup items that match a query term provided 
 
 1.  **Get the query term from the user.**
 
-    Here we get a query term that the user has entered into a [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) control called `searchQueryTextBox`:
+    Here we get a query term that the user has entered into a [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) control called `searchQueryTextBox`:
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -122,7 +122,7 @@ This section shows you how to find HomeGroup files that are shared by a particul
 
 1.  **Get a collection of HomeGroup users.**
 
-    Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) retrieve the top-level HomeGroup folders.
+    Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) retrieve the top-level HomeGroup folders.
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
@@ -167,7 +167,7 @@ Follow these steps to stream video content from the HomeGroup:
 
 1.  **Include a MediaElement in your app.**
 
-    A [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) and [Audio, video, and camera](https://docs.microsoft.com/windows/uwp/audio-video-camera/index).
+    A [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](/windows/apps/design/controls/custom-transport-controls) and [Audio, video, and camera](../audio-video-camera/index.md).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -187,7 +187,7 @@ Follow these steps to stream video content from the HomeGroup:
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Open the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement), and then play the file.
+3.  **Open the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement), and then play the file.
     ```cs
     if (file != null)
     {

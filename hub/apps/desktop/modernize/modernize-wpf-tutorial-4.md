@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to add Activity and Notification features to the app.
 title: Add Windows 10 user activities and notifications
 ms.topic: article
 ms.date: 06/27/2019
@@ -28,11 +28,11 @@ User activities are tracked using [Microsoft Graph](https://developer.microsoft.
 
 ### Introduction to Adaptive Cards
 
-This section provides a brief overview of [Adaptive Cards](https://docs.microsoft.com/adaptive-cards/). If you don't need this information, you can skip this and go right to the [add an Adaptive Card](#add-an-adaptive-card) instructions.
+This section provides a brief overview of [Adaptive Cards](/adaptive-cards/). If you don't need this information, you can skip this and go right to the [add an Adaptive Card](#add-an-adaptive-card) instructions.
 
 Adaptive Cards enable developers to exchange card content in a common and consistent way. An Adaptive Card is described by a JSON payload that defines its content, which can include text, images, actions, and more.
 
-An Adaptive Card defines just the content and not the visual appearance of the content. The platform where the Adaptive Card is received can render the content using the most appropriate styling. The way Adaptive Cards are designed is through [a renderer](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started), which is able to take the JSON payload and to convert it into native UI. For example, the UI could be XAML for a WPF or UWP app, AXML for an Android app, or HTML for a website or a bot chat.
+An Adaptive Card defines just the content and not the visual appearance of the content. The platform where the Adaptive Card is received can render the content using the most appropriate styling. The way Adaptive Cards are designed is through [a renderer](/adaptive-cards/rendering-cards/getting-started), which is able to take the JSON payload and to convert it into native UI. For example, the UI could be XAML for a WPF or UWP app, AXML for an Android app, or HTML for a website or a bot chat.
 
 Here is an example of a simple Adaptive Card payload.
 
@@ -386,7 +386,7 @@ To add a notification to the app:
     }
     ```
 
-    Toast notifications are represented by an XML payload, which can include text, images, actions, and more. You can find all the supported elements [here](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema). This code uses a very simple schema with two lines of text: the title and the body. After the code defines the XML payload and loads it in a **XmlDocument** object, it wraps the XML in a **ToastNotification** object and shows it by using a the **ToastNotificationManager** class.
+    Toast notifications are represented by an XML payload, which can include text, images, actions, and more. You can find all the supported elements [here](/windows/uwp/design/shell/tiles-and-notifications/toast-schema). This code uses a very simple schema with two lines of text: the title and the body. After the code defines the XML payload and loads it in a **XmlDocument** object, it wraps the XML in a **ToastNotification** object and shows it by using a the **ToastNotificationManager** class.
 
 5. In the **ContosoExpenses.Core** project, expand the **ViewModels** folder and open the **AddNewExpenseViewModel.cs** file. 
 

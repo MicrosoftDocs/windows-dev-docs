@@ -9,17 +9,17 @@ ms.localizationpriority: medium
 ---
 # Set up automated builds for your UWP app
 
-You can use Azure Pipelines to create automated builds for UWP projects. In this article, we’ll look at different ways to do this. We’ll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.
+You can use Azure Pipelines to create automated builds for UWP projects. In this article, we'll look at different ways to do this. We'll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.
 
 ## Create a new Azure Pipeline
 
-Begin by [signing up for Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) if you haven't done so already.
+Begin by [signing up for Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up) if you haven't done so already.
 
-Next, create a pipeline that you can use to build your source code. For a tutorial about building a pipeline to build a GitHub repository, see [Create your first pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Azure Pipelines supports the repository types listed [in this article](https://docs.microsoft.com/azure/devops/pipelines/repos).
+Next, create a pipeline that you can use to build your source code. For a tutorial about building a pipeline to build a GitHub repository, see [Create your first pipeline](/azure/devops/pipelines/get-started-yaml). Azure Pipelines supports the repository types listed [in this article](/azure/devops/pipelines/repos).
 
 ## Set up an automated build
 
-We’ll start with the default UWP build definition that’s available in Azure Dev Ops and then show you how to configure the pipeline.
+We'll start with the default UWP build definition that's available in Azure Dev Ops and then show you how to configure the pipeline.
 
 In the list of build definition templates, choose the **Universal Windows Platform** template.
 
@@ -41,7 +41,7 @@ variables:
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
 
 steps:
-- task: NuGetToolInstaller@0
+- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
@@ -60,28 +60,28 @@ The default template tries to sign the package with the certificate specified in
 
 ## Add your project certificate to the Secure files library
 
-You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops) feature.
+You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](/azure/devops/pipelines/library/secure-files?view=azure-devops&preserve-view=true) feature.
 
 To upload a certificate for your automated build:
 
 1. In Azure Pipelines, expand **Pipelines** in the navigation pane and click **Library**.
 2. Click the **Secure files** tab and then click **+ Secure file**.
 
-    ![how to upload a secure file](images/secure-file1.png)
+    ![Screenshot of Azure with the Library option highlighted showing the Secure files page.](images/secure-file1.png)
 
 3. Browse to the certificate file and click **OK**.
 4. After you upload the certificate, select it to view its properties. Under **Pipeline permissions**, enable the **Authorize for use in all pipelines** toggle.
 
-    ![how to upload a secure file](images/secure-file2.png)
+    ![Screenshot of the Pipeline permissions section with the Authorize for use in all pipelines option selected.](images/secure-file2.png)
 
-5. If the private key in the certificate has a password, we recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline. Note that a password is only supported for the private key; using a certificate file that is itself password-protected is not currently supported.
+5. If the private key in the certificate has a password, we recommend that you store your password in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) and then link the password to a [variable group](/azure/devops/pipelines/library/variable-groups). You can use the variable to access the password from the pipeline. Note that a password is only supported for the private key; using a certificate file that is itself password-protected is not currently supported.
 
 > [!NOTE]
 > Starting in Visual Studio 2019, a temporary certificate is no longer generated in UWP projects. To create or export certificates, use the PowerShell cmdlets described in [this article](/windows/msix/package/create-certificate-package-signing).
 
 ## Configure the Build solution build task
 
-This task compiles any solution that’s in the working folder to binaries and produces the output app package file. This task uses MSBuild arguments. You’ll have to specify the value of those arguments. Use the following table as a guide.
+This task compiles any solution that's in the working folder to binaries and produces the output app package file. This task uses MSBuild arguments. You'll have to specify the value of those arguments. Use the following table as a guide.
 
 |**MSBuild argument**|**Value**|**Description**|
 |--------------------|---------|---------------|
@@ -94,7 +94,7 @@ This task compiles any solution that’s in the working folder to binaries and p
 | AppxPackageSigningEnabled | true | Enables package signing. |
 | PackageCertificateThumbprint | Certificate Thumbprint | This value **must** match the thumbprint in the signing certificate, or be an empty string. |
 | PackageCertificateKeyFile | Path | The path to the certificate to use. This is retrieved from the secure file metadata. |
-| PackageCertificatePassword | Password | The password for the private key in the certificate. We recommend that you store your password in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) and link the password to [variable group](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). You can pass the variable to this argument. |
+| PackageCertificatePassword | Password | The password for the private key in the certificate. We recommend that you store your password in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) and link the password to [variable group](/azure/devops/pipelines/library/variable-groups). You can pass the variable to this argument. |
 
 ### Configure the build
 
@@ -109,7 +109,7 @@ If you want to build your solution by using the command line, or by using any ot
 
 ### Configure package signing
 
-To sign the MSIX (or APPX) package the pipeline needs to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
+To sign the MSIX (or .appx) package the pipeline needs to retrieve the signing certificate. To do this, add a DownloadSecureFile task prior to the VSBuild task.
 This will give you access to the signing certificate via ```signingCert```.
 
 ```yml
@@ -146,7 +146,7 @@ The parameters defined with the `$()` syntax are variables defined in the build 
 
 ![default variables](images/building-screen5.png)
 
-To view all predefined variables, see [Predefined build variables](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+To view all predefined variables, see [Predefined build variables](/azure/devops/pipelines/build/variables).
 
 ## Configure the Publish Build Artifacts task
 
@@ -170,7 +170,7 @@ You can see the generated artifacts in the **Artifacts** option of the build res
 
 ![artifacts](images/building-screen6.png)
 
-Because we’ve set the `UapAppxPackageBuildMode` argument to `StoreUpload`, the artifacts folder includes the package for submission to the Store (.msixupload/.appxupload). Note that you can also submit a regular app package (.msix/.appx) or an app bundle (.msixbundle/.appxbundle/) to the Store. For the purposes of this article, we'll use the .appxupload file.
+Because we've set the `UapAppxPackageBuildMode` argument to `StoreUpload`, the artifacts folder includes the package for submission to the Store (.msixupload/.appxupload). Note that you can also submit a regular app package (.msix/.appx) or an app bundle (.msixbundle/.appxbundle/) to the Store. For the purposes of this article, we'll use the .appxupload file.
 
 ## Address bundle errors
 
@@ -178,7 +178,7 @@ If you add more than one UWP project to your solution and then try to create a b
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-This error appears because at the solution level, it’s not clear which app should appear in the bundle. To resolve this issue, open each project file and add the following properties at the end of the first `<PropertyGroup>` element.
+This error appears because at the solution level, it's not clear which app should appear in the bundle. To resolve this issue, open each project file and add the following properties at the end of the first `<PropertyGroup>` element.
 
 |**Project**|**Properties**|
 |-------|----------|
@@ -189,7 +189,7 @@ Then, remove the `AppxBundle` MSBuild argument from the build step.
 
 ## Related topics
 
-- [Build your .NET app for Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [Build your .NET app for Windows](/vsts/build-release/get-started/dot-net)
 - [Packaging UWP apps](/windows/msix/package/packaging-uwp-apps)
-- [Sideload LOB apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [Sideload LOB apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10)
 - [Create a certificate for package signing](/windows/msix/package/create-certificate-package-signing)

@@ -60,7 +60,7 @@
           href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
           items:
             - name: Process audio frames with MediaFrameReader
-              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+              href: ../audio-video-camera/process-audio-frames-with-mediaframereader.md
             - name: Use OpenCV with MediaFrameReader
               href: ../audio-video-camera/use-opencv-with-mediaframereader.md
         - name: Capture from multiple sources using MediaFrameSourceGroup
@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: Media casting
           href: ../audio-video-camera/media-casting.md
+        - name: Enable audio playback from remote Bluetooth-connected devices
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: PlayReady DRM
           href: ../audio-video-camera/playready-client-sdk.md
           items:
@@ -149,6 +151,8 @@
       href: ../audio-video-camera/codec-query.md
     - name: Screen capture
       href: ../audio-video-camera/screen-capture.md
+    - name: Screen capture to video
+      href: ../audio-video-camera/screen-capture-video.md
 - name: Communication
   items:
     - name: App-to-app communication
@@ -160,6 +164,8 @@
           href: ../app-to-app/receive-data.md
         - name: Copy and paste
           href: ../app-to-app/copy-and-paste.md
+    - name: Interprocess communication (IPC)
+      href: ../communication/interprocess-communication.md
     - name: Networking and web services
       href: ../networking/index.md
       items:
@@ -179,6 +185,8 @@
           href: ../networking/web-feeds.md
         - name: Background transfers
           href: ../networking/background-transfers.md
+    - name: Sharing named objects
+      href: ../communication/sharing-named-objects.md
 - name: Data and files
   items:
     - name: App resources
@@ -279,7 +287,7 @@
         - name: Fast access to file properties in UWP
           href: ../files/fast-file-properties.md
     - name: Machine Learning
-      href: https://docs.microsoft.com/windows/ai/
+      href: /windows/ai/
 - name: Deployment
   items:
     - name: Choose a UWP version
@@ -302,17 +310,15 @@
         - name: Windows Device Portal
           href: ../debug-test-perf/device-portal.md
           items:
-            - name: Device Portal for Desktop
+            - name: Windows Device Portal for Desktop
               href: ../debug-test-perf/device-portal-desktop.md
-            - name: Device Portal for Mobile
+            - name: Windows Device Portal for Mobile
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: Device Portal for Hololens
-              href: ../debug-test-perf/device-portal-hololens.md
-            - name: Device Portal core APIs
+            - name: Windows Device Portal core REST APIs
               href: ../debug-test-perf/device-portal-api-core.md
-            - name: Write a custom plugin for Device Portal
+            - name: Write a custom plugin for Windows Device Portal
               href: ../debug-test-perf/device-portal-plugin.md
-            - name: Provision Device Portal with a custom SSL certificate
+            - name: Provision Windows Device Portal with a custom SSL certificate
               href: ../debug-test-perf/device-portal-ssl.md
         - name: Windows App Certification Kit
           href: ../debug-test-perf/windows-app-certification-kit.md
@@ -553,19 +559,6 @@
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
                 - name: Xbox One games and Xbox Live
                   items:
-                    - name: Get Xbox One game acquisitions
-                      href: ../monetize/get-xbox-one-game-acquisitions.md
-                    - name: Get Xbox One add-on acquisitions
-                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
-                    - name: Get error reporting data for your Xbox One game
-                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-                      items:
-                        - name: Get details for an error in your Xbox One game
-                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-                        - name: Get the stack trace for an error in your Xbox One game
-                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-                        - name: Download the CAB file for an error in your Xbox One game
-                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
                     - name: Get Xbox Live analytics data
                       href: ../monetize/get-xbox-live-analytics.md
                       items:
@@ -729,14 +722,12 @@
                   href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
                 - name: Renew a Microsoft Store ID key
                   href: ../monetize/renew-a-windows-store-id-key.md
-            - name: App metadata API for advertising networks
-              href: ../monetize/app-metadata-api-for-advertising-networks.md
         - name: Send requests to the Store
           href: ../monetize/send-requests-to-the-store.md
         - name: Add retail demo (RDX) features
           href: ../monetize/retail-demo-experience.md
         - name: Simplify payments with the Payment Request API
-          href: ../monetize/payment-request.md
+          href: ../monetize/index.md
     - name: Packaging apps
       items:
         - name: Overview
@@ -761,7 +752,7 @@
         - name: What's new
           href: ../cpp-and-winrt-apis/news.md
         - name: Frequently-asked questions
-          href: ../cpp-and-winrt-apis/faq.md
+          href: ../cpp-and-winrt-apis/faq.yml
         - name: Troubleshooting
           href: ../cpp-and-winrt-apis/troubleshooting.md
         - name: Photo Editor sample application
@@ -770,7 +761,7 @@
           href: ../cpp-and-winrt-apis/strings.md
         - name: Standard C++ data types
           href: ../cpp-and-winrt-apis/std-cpp-data-types.md
-        - name: Boxing and unboxing scalar values to IInspectable
+        - name: Boxing and unboxing values to IInspectable
           href: ../cpp-and-winrt-apis/boxing.md
         - name: Consume APIs
           href: ../cpp-and-winrt-apis/consume-apis.md
@@ -786,8 +777,10 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: Concurrency and asynchronous operations
           href: ../cpp-and-winrt-apis/concurrency.md
-        - name: More advanced concurrency and asynchrony
+        - name: Advanced concurrency and asynchrony
           href: ../cpp-and-winrt-apis/concurrency-2.md
+        - name: A completion source sample
+          href: ../cpp-and-winrt-apis/concurrency-3.md
         - name: XAML controls; bind to a property
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML items controls; bind to a collection
@@ -804,8 +797,12 @@
           href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
         - name: Interop with C++/CX
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: Asynchrony, and interop with C++/CX
+          href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
         - name: Move to C++/WinRT from WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: Porting a sample app from C#
+          href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: Move to C++/WinRT from C#
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interop with the ABI
@@ -824,6 +821,106 @@
           items:
             - name: Value categories, and references
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
+        - name: Use a C# component in a C++/WinRT app
+          href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
+        - name: Native debug visualization
+          href: ../cpp-and-winrt-apis/natvis.md
+    - name: C#/WinRT
+      items:
+        - name: Overview
+          href: ../csharp-winrt/index.md
+        - name: .NET mappings of WinRT types in C#/WinRT
+          href: ../csharp-winrt/net-mappings-of-winrt-types.md
+        - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+          href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
+        - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
+          href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
+        - name: "Diagnose component errors"
+          href: ../csharp-winrt/authoring-diagnostics.md
+        - name: "Agile objects"
+          href: ../csharp-winrt/agile-objects.md
+    - name: .NET Native
+      items:
+        - name: Overview
+          href: ../dotnet-native/index.md
+        - name: .NET Native and compilation
+          href: ../dotnet-native/net-native-and-compilation.md
+        - name: Get started
+          href: ../dotnet-native/getting-started-with-net-native.md
+          items:
+            - name: "Example: Troubleshoot dynamic programming"
+              href: ../dotnet-native/example-troubleshooting-dynamic-programming.md
+            - name: "Example: Handle exceptions when binding data"
+              href: ../dotnet-native/example-handling-exceptions-when-binding-data.md
+            - name: Runtime exceptions
+              href: ../dotnet-native/runtime-exceptions-in-net-native-apps.md
+        - name: Measure startup improvement
+          href: ../dotnet-native/measuring-startup-improvement-with-net-native.md
+        - name: Reflection
+          items:
+            - name: Overview
+              href: ../dotnet-native/reflection-and-net-native.md
+            - name: APIs that rely on reflection
+              href: ../dotnet-native/apis-that-rely-on-reflection.md
+            - name: Reflection API reference
+              href: ../dotnet-native/net-native-reflection-api-reference.md
+              items:
+                - name: MissingInteropDataException class
+                  href: ../dotnet-native/missinginteropdataexception-class-net-native.md
+                - name: MissingMetadataException class
+                  href: ../dotnet-native/missingmetadataexception-class-net-native.md
+                - name: MissingRuntimeArtifactException class
+                  href: ../dotnet-native/missingruntimeartifactexception-class-net-native.md
+            - name: Runtime directives config file reference
+              href: ../dotnet-native/runtime-directives-rd-xml-configuration-file-reference.md
+              items:
+                - name: Runtime directive elements
+                  href: ../dotnet-native/runtime-directive-elements.md
+                  items:
+                    - name: Application element
+                      href: ../dotnet-native/application-element-net-native.md
+                    - name: Assembly element
+                      href: ../dotnet-native/assembly-element-net-native.md
+                    - name: AttributeImplies element
+                      href: ../dotnet-native/attributeimplies-element-net-native.md
+                    - name: Directives element
+                      href: ../dotnet-native/directives-element-net-native.md
+                    - name: Event element
+                      href: ../dotnet-native/event-element-net-native.md
+                    - name: Field element
+                      href: ../dotnet-native/field-element-net-native.md
+                    - name: GenericParameter element
+                      href: ../dotnet-native/genericparameter-element-net-native.md
+                    - name: ImpliesType element
+                      href: ../dotnet-native/impliestype-element-net-native.md
+                    - name: Library element
+                      href: ../dotnet-native/library-element-net-native.md
+                    - name: Method element
+                      href: ../dotnet-native/method-element-net-native.md
+                    - name: MethodInstantiation element
+                      href: ../dotnet-native/methodinstantiation-element-net-native.md
+                    - name: Namespace element
+                      href: ../dotnet-native/namespace-element-net-native.md
+                    - name: Parameter element
+                      href: ../dotnet-native/parameter-element-net-native.md
+                    - name: Property element
+                      href: ../dotnet-native/property-element-net-native.md
+                    - name: Subtypes element
+                      href: ../dotnet-native/subtypes-element-net-native.md
+                    - name: Type element
+                      href: ../dotnet-native/type-element-net-native.md
+                    - name: TypeInstantiation element
+                      href: ../dotnet-native/typeinstantiation-element-net-native.md
+                    - name: TypeParameter element
+                      href: ../dotnet-native/typeparameter-element-net-native.md
+                - name: Policy settings
+                  href: ../dotnet-native/runtime-directive-policy-settings.md
+        - name: Serialization and metadata
+          href: ../dotnet-native/serialization-and-metadata.md
+        - name: Migrate a Windows 8.x App to .NET Native
+          href: ../dotnet-native/migrating-your-windows-store-app-to-net-native.md
+        - name: Troubleshoot
+          href: ../dotnet-native/net-native-general-troubleshooting.md
     - name: Security
       href: ../security/index.md
       items:
@@ -933,6 +1030,8 @@
     - name: Windows Runtime components
       href: ../winrt-components/index.md
       items:
+        - name: Windows Runtime components with C++/WinRT
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: Windows Runtime components with C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
         - name: Walkthrough of a C++/CX Windows Runtime component
@@ -1180,7 +1279,7 @@
             - name: Advertisements
               href: ../devices-sensors/ble-beacon.md
         - name: Bluetooth developer FAQ
-          href: ../devices-sensors/bluetooth-dev-faq.md
+          href: ../devices-sensors/bluetooth-dev-faq.yml
     - name: Printing and scanning
       href: ../devices-sensors/printing-and-scanning.md
       items:
@@ -1277,7 +1376,7 @@
         - name: "Case study: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: Convert your web app to a PWA on Windows 10
-      href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
+      href: /microsoft-edge/progressive-web-apps
       items:
         - name: Package Windows 7 app as a PWA
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
@@ -1287,9 +1386,11 @@
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
         - name: Package MacOS app as a PWA
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-    - name: Windows 10 on ARM
+    - name: Windows on ARM
       href: ../porting/apps-on-arm.md
       items:
+        - name: ARM64EC for Windows 11 apps on ARM
+          href: ../porting/arm64ec.md
         - name: How x86 emulation works on ARM
           href: ../porting/apps-on-arm-x86-emulation.md
         - name: Troubleshooting desktop x86 apps
@@ -1367,6 +1468,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: Create and host an app extension
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: Create hosted apps
+              href: ../launch-resume/hosted-apps.md
         - name: Support your app with background tasks
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:
@@ -1378,6 +1481,8 @@
               href: ../launch-resume/create-and-register-an-inproc-background-task.md
             - name: Create and register an out-of-process background task
               href: ../launch-resume/create-and-register-a-background-task.md
+            - name: Create and register a winmain COM background task
+              href: ../launch-resume/create-and-register-a-winmain-background-task.md
             - name: Port an out-of-process background task to an in-process background task
               href: ../launch-resume/convert-out-of-process-background-task.md
             - name: Debug a background task

@@ -1,25 +1,25 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Device Portal for Mobile
+title: Windows Device Portal for Mobile
 description: Learn how the Windows Device Portal lets you remotely configure and manage your mobile device.
-ms.date: 02/08/2017
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
-# Device Portal for Mobile
+# Windows Device Portal for Mobile
 
 Starting in Windows 10, Version 1511, additional developer features are available for the mobile device family. These features are available only when Developer mode is enabled on the device.
 
-For info about how to enable Developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+For info about how to enable Developer mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
 
-![Device Portal settings](images/device-portal/mob-dev-mode-options.png)
+![Screenshot of the Device discovery and Device Portal settings.](images/device-portal/mob-dev-mode-options.png)
 
-## Set up Device Portal on Windows Phone
+## Set up Windows Device Portal on Windows Phone
 
 ### Turn on device discovery and pairing
 
-To connect to Device Portal, you must enable Device discovery and Device Portal in your phone's settings. This lets you pair your phone with a PC or other Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB.
+To connect to Windows Device Portal (WDP), you must enable Device discovery and Device Portal in your phone's settings. This lets you pair your phone with a PC or other Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB.
 
 The first time you connect to Device Portal, you are asked for a case-sensitive, 6 character security code. This ensures that you have access to the phone, and keeps you safe from attackers. Press the Pair button on your phone to generate and display the code, then enter the 6 characters into the text box in the browser.
 
@@ -53,7 +53,7 @@ You can choose from 3 ways to connect to Device Portal: USB, local host, and ove
 
 Here's the Device Portal section of the developer settings page on Windows Phone.
 
-![Device Portal settings](images/device-portal/mob-dev-mode-portal.png)
+![Screenshot of the Device Portal settings page from a Windows Phone.](images/device-portal/mob-dev-mode-portal.png)
 
 If you are using Device Portal in a protected environment, like a test lab, where you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable authentication. This enables unencrypted communication, and allows anyone with the IP address of your phone to control it.
 
@@ -78,4 +78,4 @@ Device Portal on mobile devices provides the standard set of pages. For detailed
 ## See also
 
 * [Windows Device Portal overview](device-portal.md)
-* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Device Portal core API reference](./device-portal-api-core.md)

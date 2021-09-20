@@ -1,15 +1,15 @@
-﻿---
-Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+---
+description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 title: Package version numbering
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Package version numbering
 
-Each package you provide must have a version number (provided as a value in the **Version** attribute of the [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in the app manifest). The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+Each package you provide must have a version number (provided as a value in the **Version** attribute of the [Package/Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in the app manifest). The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 
 > [!NOTE]
 > This topic refers to "packages", but unless noted, the same rules apply to version numbers for both .msix/.appx and .msixbundle/.appxbundle files.
@@ -22,7 +22,7 @@ Each package you provide must have a version number (provided as a value in the 
 
 When choosing a UWP package from your published submission, the Microsoft Store will always use the highest-versioned package that is applicable to the customer’s Windows 10 device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.
 
-You can provide multiple UWP packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
+You can provide multiple UWP packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
 
 When you provide multiple UWP packages that use the same version number, the architecture (in the order x64, x86, ARM, neutral) will be used to decide which one is of higher rank (when the Store determines which package to provide to a customer's device). When ranking app bundles that use the same version number, the highest architecture rank within the bundle is considered: an app bundle that contains an x64 package will have a higher rank than one that only contains an x86 package.
 
@@ -40,8 +40,8 @@ You can use the package versioning rules to gradually move your customers to a s
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0     | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other device families will not be able to purchase and install the app |
 | 2          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other (non-desktop, non-mobile) device families when they are introduced will get 1.0.0.0 <br> -   Desktop and mobile devices that already have the app installed will not see any update (because they already have the best available version—1.1.10.0 and 1.1.0.0 are both higher than 1.0.0.0) |
-| 3          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.5.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10250.0 and above will get 1.1.5.0 <br> -   Devices on Windows 10 Mobile build >=10.0.10240.0 and < 10.010250.0 will get 1.1.0.0 
-| 4          | -   Package version: 2.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0   | -   All customers on all device families on Windows 10 build v10.0.10240.0 and above will get package 2.0.0.0 | 
+| 3          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.5.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10250.0 and above will get 1.1.5.0 <br> -   Devices on Windows 10 Mobile build >=10.0.10240.0 and < 10.010250.0 will get 1.1.0.0|
+| 4          | -   Package version: 2.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0   | -   All customers on all device families on Windows 10 build v10.0.10240.0 and above will get package 2.0.0.0 |
 
 > [!NOTE]
 >  In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or higher and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.
@@ -58,7 +58,7 @@ To fix the issue for the customers who have already received the problematic pac
 ## Version numbering for Windows 8.1 (and earlier) and Windows Phone 8.1 packages
 
 > [!IMPORTANT]
-> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 For .appx packages that target Windows Phone 8.1, the version number of the package in a new submission must always be greater than that of the package included in the last submission (or any previous submission).
 

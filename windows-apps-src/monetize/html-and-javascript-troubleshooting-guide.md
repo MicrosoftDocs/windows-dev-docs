@@ -2,12 +2,15 @@
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, AdControl, troubleshooting, HTML, javascript
 ms.localizationpriority: medium
 ---
 # HTML and JavaScript troubleshooting guide
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 
@@ -64,7 +67,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-5.  Check the element positioning. The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.
+5.  Check the element positioning. The [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.
 
 6.  Check the **visibility** property. This property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
 
@@ -130,7 +133,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 11. Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
 
-12. Live values for [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
+12. Live values for [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="html-blackboxblinksdisappears"/>
 
@@ -332,9 +335,9 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 ### Ads not refreshing
 
-1.  Check whether the [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
+1.  Check whether the [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
 
-2.  Check calls to the [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Check calls to the [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
 
     This example demonstrates how to create the **div** for the **AdControl**.
 

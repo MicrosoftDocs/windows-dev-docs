@@ -1,7 +1,7 @@
 ﻿---
-Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
-title: Use UWP APIs in desktop apps
-ms.date: 08/20/2019
+description: Enhance your desktop application for Windows 10 users by using Windows Runtime APIs.
+title: Call Windows Runtime APIs in desktop apps
+ms.date: 04/02/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
@@ -10,28 +10,74 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Call UWP APIs in desktop apps
+# Call Windows Runtime APIs in desktop apps
 
-You can use Universal Windows Platform (UWP) APIs to add modern experiences to your desktop apps that light up for Windows 10 users.
+This article describes how to set up your desktop app projects to use Windows Runtime (WinRT) APIs provided by the Windows OS and add modern Windows 11 and Windows 10 experiences to your desktop apps. 
 
-First, set up your project with the required references. Then, call UWP APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
+Some WinRT APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
 
-Some UWP APIs are supported only in desktop apps that have [package identity](modernize-packaged-apps.md). For more information, see [Available UWP APIs](desktop-to-uwp-supported-api.md).
+## Modify a .NET project to use Windows Runtime APIs
 
-## Set up your project
+There are several options for .NET projects:
 
-You'll have to make a few changes to your project to use UWP APIs.
+* Starting in .NET 5, you can add a Target Framework Moniker (TFM) to your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
+* For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
+* If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
-### Modify a .NET project to use Windows Runtime APIs
+### .NET 5 and later: Use the Target Framework Moniker option
 
-There are two options for .NET projects:
+This option is only supported in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
-* If your app targets Windows 10 version 1803 or later, you can install a NuGet package that provides all the necessary references.
-* Alternatively, you can add the references manually.
+1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
 
-#### To use the NuGet option
+    ```xml
+    <Project Sdk="Microsoft.NET.Sdk">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+      </PropertyGroup>
+    </Project>
+    ```
 
-1. Make sure [package references](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) are enabled:
+2. Replace the value of the **TargetFramework** element with one of the following strings:
+
+    * **net5.0-windows10.0.17763.0**: Use this value if your app targets Windows 10, version 1809.
+    * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
+    * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
+
+    For example, the following element is for a project that targets Windows 10, version 2004.
+
+    ```xml
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    ```
+    
+    In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
+
+3. Save your changes and close the project file.
+
+#### Supporting multiple Windows OS versions 
+
+The Windows OS version-specific **TargetFramework** property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both **TargetPlatformVersion** and **TargetPlatformMinVersion** (if not explicitly set). The **TargetPlatformVersion** property does not need to be explicitly defined in the project file, since it is automatically set by the **TargetFramework** OS version.
+
+The **TargetPlatformMinVersion** can be overridden to be less than the **TargetPlatformVersion** (determined by the version in the **TargetFramework** property). This permits an app to run on earlier OS versions. For example, you can set the following in your project file to support your app downlevel to Windows 10, version 1809. 
+
+ ```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+  </PropertyGroup>
+</Project>
+```
+
+Note that setting the **TargetPlatformMinVersion** to a version below the **TargetPlatformVersion** creates the potential for calling unavailable APIs. When calling WinRT APIs that are not available on all supported OS versions, we recommend guarding these calls with **ApiInformation** checks. For more information, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+
+### Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package
+
+Use this option if your app uses .NET Core 3.x or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or a later OS release.
+
+1. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
     1. In Visual Studio, click **Tools -> NuGet Package Manager -> Package Manager Settings**.
     2. Make sure **PackageReference** is selected for **Default package management format**.
@@ -42,43 +88,83 @@ There are two options for .NET projects:
 
 4. After the `Microsoft.Windows.SDK.Contracts` package is found, in the right pane of the **NuGet Package Manager** window select the **Version** of the package you want to install based on the version of Windows 10 you want to target:
 
+    * **10.0.19041.xxxx**: Choose this for Windows 10, version 2004.
     * **10.0.18362.xxxx**: Choose this for Windows 10, version 1903.
     * **10.0.17763.xxxx**: Choose this for Windows 10, version 1809.
     * **10.0.17134.xxxx**: Choose this for Windows 10, version 1803.
 
 5. Click **Install**.
 
-#### To add the required references manually
+### Configure projects that multi-target different versions of .NET
 
-1. Open the **Reference Manager** dialog box, choose the **Browse** button, and then select  **All Files**.
+If your project multi-targets .NET 5 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
 
-    ![add reference dialog box](images/desktop-to-uwp/browse-references.png)
+1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. The following example demonstrates a project file for an app that uses .NET Core 3.1.
 
-2. Add a reference to these files.
+    ```xml
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
 
-    |File|Location|
-    |--|--|
-    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+2. Replace the **TargetFramework** element in the file with a **TargetFrameworks** element (note the plural). In this element, specify the Target Framework Monikers for all the versions of .NET you want to target, separated by semi-colons. 
 
-3. In the **Properties** window, set the **Copy Local** field of each *.winmd* file to **False**.
+    * For .NET 5 or later, use one of the following Target Framework Monikers:
+        * **net5.0-windows10.0.17763.0**: Use this value if your app targets Windows 10, version 1809.
+        * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
+        * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
+    * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
+    * For .NET Framework, use **net46**.
 
-    ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
+    The following example demonstrates how to multi-target .NET Core 3.1 and .NET 5 (for Windows 10, version 2004).
 
-### Modify a C++ Win32 project to use Windows Runtime APIs
+    ```xml
+    <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+    ```
 
-Use [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
+3. After the **PropertyGroup** element, add a **PackageReference** element that includes a conditional statement that installs the `Microsoft.Windows.SDK.Contracts` NuGet package for any versions of .NET Core 3.x or .NET Framework that your app targets. The **PackageReference** element must be a child of an **ItemGroup** element. The following example demonstrates how to do this for .NET Core 3.1.
+
+    ```xml
+    <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                        Include="Microsoft.Windows.SDK.Contracts"
+                        Version="10.0.19041.0" />
+    </ItemGroup>
+    ```
+
+    When you're done, your project file should look similar to this.
+
+    ```xml
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+      </PropertyGroup>
+      <ItemGroup>
+        <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                         Include="Microsoft.Windows.SDK.Contracts"
+                         Version="10.0.19041.0" />
+      </ItemGroup>
+    </Project>
+    ```
+
+4. Save your changes and close the project file.
+
+## Modify a C++ desktop (Win32) project to use Windows Runtime APIs
+
+Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume WinRT APIs. C++/WinRT is an entirely standard modern C++17 language projection for WinRT APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 To configure your project for C++/WinRT:
 
 * For new projects, you can install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the C++/WinRT project templates included in that extension.
 * For existing projects, you can install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package in the project.
 
-For more details about these options, see [this article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For more details about these options, see [Visual Studio support for C++/WinRT, and the VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Add Windows 10 experiences
 
@@ -88,7 +174,7 @@ Now you're ready to add modern experiences that light up when users run your app
 
 There's lots to choose from. For example, you can simplify your purchase order flow by using [monetization APIs](/windows/uwp/monetize), or [direct attention to your application](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) when you have something interesting to share, such as a new picture that another user has posted.
 
-![Toast](images/desktop-to-uwp/toast.png)
+![Toast notification](images/desktop-to-uwp/toast.png)
 
 Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your application and has the added bonus of making your application appear deeply integrated with the operating system. We'll show you the code for that experience a bit later in this article.
 
@@ -98,7 +184,7 @@ Visit the [UWP documentation](/windows/uwp/get-started/) for more ideas.
 
 You'll often hear us use the terms *enhance* and *extend*, so we'll take a moment to explain exactly what each of these terms mean.
 
-We use the term *enhance* to describe Windows Runtime APIs that you can call directly from your desktop app (whether or not you have chosen to package your application in an MSIX package). When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in [this list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop app. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that render UWP XAML such as a UWP map control or a Windows Hello security prompt.
+We use the term *enhance* to describe WinRT APIs that you can call directly from your desktop app (whether or not you have chosen to package your application in an MSIX package). When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in [this list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop app. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that render UWP XAML such as a UWP map control or a Windows Hello security prompt.
 
 > [!NOTE]
 > Although APIs that render UWP XAML typically cannot be called directly from your desktop, you might be able to use alternative approaches. If you want to host UWP XAML controls or other custom visual experiences, you can use [XAML Islands](xaml-islands.md) (starting in Windows 10, version 1903) and the [Visual layer](visual-layer-in-desktop-apps.md) (starting in Windows 10, version 1803). These features can be used in packaged or unpackaged desktop apps.
@@ -151,7 +237,41 @@ private void ShowToast()
 }
 ```
 
-```C++
+```cppwinrt
+#include <sstream>
+#include <winrt/Windows.Data.Xml.Dom.h>
+#include <winrt/Windows.UI.Notifications.h>
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::UI::Notifications;
+using namespace winrt::Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    std::wstring const title = L"featured picture of the day";
+    std::wstring const content = L"beautiful scenery";
+    std::wstring const image = L"https://picsum.photos/360/180?image=104";
+    std::wstring const logo = L"https://picsum.photos/64?image=883";
+
+    std::wostringstream xmlString;
+    xmlString << L"<toast><visual><binding template='ToastGeneric'>" <<
+        L"<text>" << title << L"</text>" <<
+        L"<text>" << content << L"</text>" <<
+        L"<image src='" << image << L"'/>" <<
+        L"<image src='" << logo << L"'" <<
+        L" placement='appLogoOverride' hint-crop='circle'/>" <<
+        L"</binding></visual></toast>";
+
+    XmlDocument toastXml;
+
+    toastXml.LoadXml(xmlString.str().c_str());
+
+    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
+}
+```
+
+```cppcx
 using namespace Windows::Foundation;
 using namespace Windows::System;
 using namespace Windows::UI::Notifications;
@@ -181,7 +301,7 @@ void UWP::ShowToast()
 }
 ```
 
-To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+To learn more about notifications, see [Adaptive and Interactive toast notifications](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 
@@ -199,46 +319,42 @@ First, add a new build configuration to your project.
 
 ![Build Configuration](images/desktop-to-uwp/build-config.png)
 
-For that build configuration, create a constant that to identify code that calls Windows Runtime APIs.  
+For that build configuration, create a constant that to identify code that calls WinRT APIs.  
 
 For .NET-based projects, the constant is called a **Conditional Compilation Constant**.
 
-![pre-processor](images/desktop-to-uwp/compilation-constants.png)
+![Conditional Compilation constant](images/desktop-to-uwp/compilation-constants.png)
 
 For C++-based projects, the constant is called a **Preprocessor Definition**.
 
-![pre-processor](images/desktop-to-uwp/pre-processor.png)
+![Preprocessor Definition constant](images/desktop-to-uwp/pre-processor.png)
 
 Add that constant before any block of UWP code.
 
 ```csharp
-
 [System.Diagnostics.Conditional("_UWP")]
 private void ShowToast()
 {
  ...
 }
-
 ```
 
 ```C++
-
 #if _UWP
 void UWP::ShowToast()
 {
  ...
 }
 #endif
-
 ```
 
 The compiler builds that code only if that constant is defined in your active build configuration.
 
 ### Runtime checks
 
-You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
+You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls WinRT APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. see this blog post for more details: [Desktop Bridge - Identify the application's context](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls WinRT APIs. See this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## Related Samples
 
@@ -248,12 +364,6 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 * [WinForms application that implements a UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
-## Support and feedback
-
-**Find answers to your questions**
+## Find answers to your questions
 
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

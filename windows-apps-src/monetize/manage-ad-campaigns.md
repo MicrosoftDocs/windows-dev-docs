@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Use these methods in the [Microsoft Store promotions API](run-ad-campaigns-using-windows-store-services.md) to create, edit and get promotional ad campaigns for your app. Each campaign you create using this method can be associated with only one app.
 
->**Note**&nbsp;&nbsp;You can also create and manage ad campaigns using Partner Center, and campaigns that you create programmatically can be accessed in Partner Center. For more information about managing ad campaigns in Partner Center, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
+>**Note**&nbsp;&nbsp;You can also create and manage ad campaigns using Partner Center, and campaigns that you create programmatically can be accessed in Partner Center. For more information about managing ad campaigns in Partner Center, see [Create an ad campaign for your app](./index.md).
 
 When you use these methods to create or update a campaign, you typically also call one or more of the following methods to manage the *delivery lines*, *targeting profiles*, and *creatives* that are associated with the campaign. For more information about the relationship between campaigns, delivery lines, targeting profiles, and creatives, see [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
@@ -25,7 +25,7 @@ To use these methods, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Microsoft Store promotions API.
 
-  >**Note**&nbsp;&nbsp;As part of the prerequisites, be sure that you [create at least one paid ad campaign in Partner Center](../publish/create-an-ad-campaign-for-your-app.md) and that you add at least one payment instrument for the ad campaign in Partner Center. Delivery lines for ad campaigns you create using this API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
+  >**Note**&nbsp;&nbsp;As part of the prerequisites, be sure that you [create at least one paid ad campaign in Partner Center](./index.md) and that you add at least one payment instrument for the ad campaign in Partner Center. Delivery lines for ad campaigns you create using this API will automatically bill the default payment instrument chosen on the **Ad campaigns** page in Partner Center.
 
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
@@ -57,13 +57,13 @@ These methods have the following URIs.
 The GET method to query for ad campaigns supports the following optional query parameters.
 
 | Name        | Type   |  Description      |    
-|-------------|--------|---------------|------|
+|-------------|--------|---------------|
 | skip  |  int   | The number of rows to skip in the query. Use this parameter to page through data sets. For example, fetch=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on.    |       
 | fetch  |  int   | The number of rows of data to return in the request.    |       
 | campaignSetSortColumn  |  string   | Orders the [Campaign](#campaign) objects in the response body by the specified field. The syntax is <em>CampaignSetSortColumn=field</em>, where the <em>field</em> parameter can be one of the following strings:</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>The default is **createdDateTime**.     |     
 | isDescending  |  Boolean   | Sorts the [Campaign](#campaign) objects in the response body in descending or ascending order.   |         
 | storeProductId  |  string   | Use this value to return only the ad campaigns that are associated with the app with the specified [Store ID](in-app-purchases-and-trials.md#store-ids). An example Store ID for a product is 9nblggh42cfd.   |         
-| label  |  string   | Use this value to return only the ad campaigns that include the specified *label* in the [Campaign](#campaign) object.    |       |    
+| label  |  string   | Use this value to return only the ad campaigns that include the specified *label* in the [Campaign](#campaign) object.    |
 
 
 ### Request body
@@ -151,7 +151,7 @@ The request and response bodies for these methods contain the following fields. 
 |  type   | string    |  One of the following values that specifies the campaign type: <ul><li>**Paid**</li><li>**House**</li><li>**Community**</li></ul>      |   Yes    |      |   Yes    |       
 |  objective   |  string   |  One of the following values that specifies the objective of the campaign: <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   No    |  DriveInstall    |   Yes    |       
 |  lines   |  array   |   One or more objects that identify the [delivery lines](manage-delivery-lines-for-ad-campaigns.md#line) that are associated with the ad campaign. Each object in this field consists of an *id* and *name* field that specifies the ID and name of the delivery line.     |   No    |      |    No     |       
-|  createdDate   |  string   |  The date and time the ad campaign was created, in ISO 8601 format.     |  Yes     |      |     No    |       |
+|  createdDate   |  string   |  The date and time the ad campaign was created, in ISO 8601 format.     |  Yes     |      |     No    |
 
 
 ## Related topics

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Passing parameters into the ABI boundary
 
-With the types in the **winrt::param** namespace, C++/WinRT simplifies passing parameters into the ABI boundary by providing automatic conversions for common cases. You can see more details, and code examples, in [String handling](/windows/uwp/cpp-and-winrt-apis/strings) and [Standard C++ data types and C++/WinRT](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types).
+With the types in the **winrt::param** namespace, C++/WinRT simplifies passing parameters into the ABI boundary by providing automatic conversions for common cases. You can see more details, and code examples, in [String handling](./strings.md) and [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md).
 
 > [!IMPORTANT]
 > You shouldn't use the types in the **winrt::param** namespace yourself. They're for the benefit of the projection.
@@ -52,7 +52,7 @@ Windows Runtime collections are already **IIterable**.
 
 Note that **IIterable\<U\>** and **std::vector\<U\>** are not permitted, even if **U** is convertible to **T**. For **std::vector\<U\>**, you can use the double-iterator version (more details below).
 
-In some cases, the object that you have may actually implement the **IIterable** that you want. For example, the **IVectorView\<StorageFile\>** produced by [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) implements **IIterable<StorageFile>**. But it also implements **IIterable<IStorageItem>**; you just have to ask for it explicitly.
+In some cases, the object that you have may actually implement the **IIterable** that you want. For example, the **IVectorView\<StorageFile\>** produced by [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) implements **IIterable\<StorageFile\>**. But it also implements **IIterable\<IStorageItem\>**; you just have to ask for it explicitly.
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };
@@ -159,3 +159,5 @@ The **winrt::array_view\<T\>** is not in the **winrt::param** namespace, but it 
 | **std::vector<C>** | A C++ **std::vector** of **C**, where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
 | `{ T*, T* }` | A pair of pointers represent the range [begin, end).|
 | **std::initializer_list\<T\>** ||
+
+Also see the blog post [The various patterns for passing C-style arrays across the Windows Runtime ABI boundary](https://devblogs.microsoft.com/oldnewthing/20200205-00/?p=103398).

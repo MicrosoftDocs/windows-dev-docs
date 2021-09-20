@@ -7,18 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, games, sample, directx, structure
 ms.localizationpriority: medium
 ---
+
 # Marble Maze application structure
 
-
-
-
-The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application. Instead of working with handle types such as [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types) and functions such as [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), the Windows Runtime provides interfaces such as [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow) so that you can develop UWP apps in a more modern, object-oriented manner. This section of the documentation shows how the Marble Maze app code is structured.
+The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application. Instead of working with handle types such as [HWND](/windows/desktop/WinProg/windows-data-types) and functions such as [CreateWindow](/windows/desktop/api/winuser/nf-winuser-createwindowa), the Windows Runtime provides interfaces such as [Windows::UI::Core::ICoreWindow](/uwp/api/Windows.UI.Core.ICoreWindow) so that you can develop UWP apps in a more modern, object-oriented manner. This section of the documentation shows how the Marble Maze app code is structured.
 
 > [!NOTE]
 > The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://github.com/microsoft/Windows-appsample-marble-maze).
 
- 
-## 
 Here are some of the key points that this document discusses for when you structure your game code:
 
 -   In the initialization phase, set up the runtime and library components that your game uses, and load game-specific resources.
@@ -39,7 +35,7 @@ Some of the components in Marble Maze can be reused with any game with little or
 | BasicLoader.h, BasicLoader.cpp             | Defines the **BasicLoader** class, which provides utility methods that help you load textures, meshes, and shaders.                                                                  |
 | BasicMath.h                                | Defines structures and functions that help you work with vector and matrix data and computations. Many of these functions are compatible with HLSL shader types.                     |
 | BasicReaderWriter.h, BasicReaderWriter.cpp | Defines the **BasicReaderWriter** class, which uses the Windows Runtime to read and write file data in a UWP app.                                                                    |
-| BasicShapes.h, BasicShapes.cpp             | Defines the **BasicShapes** class, which provides utility methods for creating basic shapes such as cubes and spheres. (These files are not used by the Marble Maze implementation). |                                                                                  |
+| BasicShapes.h, BasicShapes.cpp             | Defines the **BasicShapes** class, which provides utility methods for creating basic shapes such as cubes and spheres. (These files are not used by the Marble Maze implementation). |
 | Camera.h, Camera.cpp                       | Defines the **Camera** class, which provides the position and orientation of a camera.                                                                                               |
 | Collision.h, Collision.cpp                 | Manages collision info between the marble and other objects, such as the maze.                                                                                                       |
 | DDSTextureLoader.h, DDSTextureLoader.cpp   | Defines the **CreateDDSTextureFromMemory** function, which loads textures that are in .dds format from a memory buffer.                                                              |
@@ -73,7 +69,7 @@ For instructional reasons, the Marble Maze project includes both the design-time
 ##  Application life cycle
 
 
-Marble Maze follows the life cycle of a typical UWP app. For more info about the life cycle of a UWP app, see [App lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
+Marble Maze follows the life cycle of a typical UWP app. For more info about the life cycle of a UWP app, see [App lifecycle](../launch-resume/app-lifecycle.md).
 
 When a UWP game initializes, it typically initializes runtime components such as Direct3D, Direct2D, and any input, audio, or physics libraries that it uses. It also loads game-specific resources that are required before the game begins. This initialization occurs one time during a game session.
 
@@ -94,7 +90,7 @@ The following example shows where the **App::SetWindow** method creates the **Ma
 
 The **App** class also starts loading the deferred resources for the game. See the next section for more detail.
 
-Additionally, the **App** class sets up the event handlers for the [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) events. When the handlers for these events are called, they pass the input to the **MarbleMazeMain** class.
+Additionally, the **App** class sets up the event handlers for the [CoreWindow](/uwp/api/windows.ui.core.corewindow) events. When the handlers for these events are called, they pass the input to the **MarbleMazeMain** class.
 
 ## Loading game assets in the background
 
@@ -108,7 +104,7 @@ To ensure that your game can respond to window events within 5 seconds after it 
 
 Even if your game contains relatively few game assets, it is good practice to load them asynchronously for two reasons. One reason is that it is difficult to guarantee that all of your resources will load quickly on all devices and all configurations. Also, by incorporating asynchronous loading early, your code is ready to scale as you add functionality.
 
-Asynchronous asset loading begins with the **App::Load** method. This method uses the [task](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class) class to load game assets in the background.
+Asynchronous asset loading begins with the **App::Load** method. This method uses the [task](/cpp/parallel/concrt/reference/task-class) class to load game assets in the background.
 
 ```cpp
     task<void>([=]()
@@ -119,10 +115,10 @@ Asynchronous asset loading begins with the **App::Load** method. This method use
 
 The **MarbleMazeMain** class defines the *m\_deferredResourcesReady* flag to indicate that asynchronous loading is complete. The **MarbleMazeMain::LoadDeferredResources** method loads the game resources and then sets this flag. The update (**MarbleMazeMain::Update**) and render (**MarbleMazeMain::Render**) phases of the app check this flag. When this flag is set, the game continues as normal. If the flag is not yet set, the game shows the loading screen.
 
-For more information about asynchronous programming for UWP apps, see [Asynchronous programming in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+For more information about asynchronous programming for UWP apps, see [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 > [!TIP]
-> If you’re writing game code that is part of a Windows Runtime C++ Library (in other words, a DLL), consider whether to read [Creating Asynchronous Operations in C++ for UWP apps](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) to learn how to create asynchronous operations that can be consumed by apps and other libraries.
+> If you’re writing game code that is part of a Windows Runtime C++ Library (in other words, a DLL), consider whether to read [Creating Asynchronous Operations in C++ for UWP apps](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) to learn how to create asynchronous operations that can be consumed by apps and other libraries.
 
  
 
@@ -234,7 +230,7 @@ Marble Maze performs the following tasks to support suspend and resume:
 -   It responds to suspend notifications by saving its state to persistent storage.
 -   It responds to resume notifications by loading its state from persistent storage. It also loads the previous state during startup.
 
-To support suspend and resume, Marble Maze defines the **PersistentState** class. (See **PersistentState.h** and **PersistentState.cpp**). This class uses the [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) interface to read and write properties. The **PersistentState** class provides methods that read and write primitive data types (such as **bool**, **int**, **float**, [XMFLOAT3](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3), and [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)), from and to a backing store.
+To support suspend and resume, Marble Maze defines the **PersistentState** class. (See **PersistentState.h** and **PersistentState.cpp**). This class uses the [Windows::Foundation::Collections::IPropertySet](/uwp/api/Windows.Foundation.Collections.IPropertySet) interface to read and write properties. The **PersistentState** class provides methods that read and write primitive data types (such as **bool**, **int**, **float**, [XMFLOAT3](/windows/desktop/api/directxmath/ns-directxmath-xmfloat3), and [Platform::String](/cpp/cppcx/platform-string-class)), from and to a backing store.
 
 ```cpp
 ref class PersistentState
@@ -408,7 +404,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze doesn't distinguish between cold starting—that is, starting for the first time without a prior suspend event—and resuming from a suspended state. This is recommended design for all UWP apps.
 
-For more info about application data, see [Store and retrieve settings and other app data](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
+For more info about application data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 
 ##  Next steps
 
@@ -424,7 +420,3 @@ Read [Adding visual content to the Marble Maze sample](adding-visual-content-to-
  
 
  
-
-
-
-

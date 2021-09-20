@@ -16,7 +16,7 @@ UI tailoring is a broad category encompassing work for performant, beautiful UI 
 - Accommodating user settings for animations
 - Optimizing UI for the given hardware capabilities
 
-Here, we'll cover how to tailor your effects and animations with the Visual Layer in the areas above, but there are many other means to tailor your application to ensure a great end user experience. Guidance docs are available on how to [tailor your UI](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) for various devices and [create responsive UI](/windows/uwp/design/layout/responsive-design).
+Here, we'll cover how to tailor your effects and animations with the Visual Layer in the areas above, but there are many other means to tailor your application to ensure a great end user experience. Guidance docs are available on how to [tailor your UI](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design) for various devices and [create responsive UI](/windows/apps/design/layout/responsive-design).
 
 ## User effects settings
 
@@ -35,7 +35,7 @@ When turned off, acrylic material will automatically fall back to a solid color 
 ![Calculator with Acrylic](images/tailoring-acrylic.png)
 ![Calculator with Acrylic Responding to Transparency Settings](images/tailoring-acrylic-fallback.png)
 
-However, for any custom effects the application needs to respond to the [UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) property or [AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) event and switch out the effect/effect graph to use an effect that has no transparency. An example of this is below:
+However, for any custom effects the application needs to respond to the [UISettings.AdvancedEffectsEnabled](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) property or [AdvancedEffectsEnabledChanged](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) event and switch out the effect/effect graph to use an effect that has no transparency. An example of this is below:
 
 ```cs
 public MainPage()
@@ -53,7 +53,7 @@ private void Uisettings_AdvancedEffectsEnabledChanged(UISettings sender, object 
 
 ## Animations settings
 
-Similarly, applications should listen and respond to the [UISettings.AnimationsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) property to ensure animations are turned on or off based on user settings in Settings > Ease of Access > Display.
+Similarly, applications should listen and respond to the [UISettings.AnimationsEnabled](/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) property to ensure animations are turned on or off based on user settings in Settings > Ease of Access > Display.
 
 ![Animations Option in Settings](images/tailoring-animations-setting.png)
 
@@ -112,11 +112,11 @@ Full example code can be found on the [Windows UI Github repo](https://github.co
 
 Based on feedback from the provided [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) and [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) methods in the CompositionCapabilities API, the application can decide to swap expensive or unsupported effects for other effects of their choice that are optimized for the device. Some effects are known to consistently be more resource intensive than others and should be used sparingly, and other effects can be used more freely. For all effects, however, care should be used when chaining and animating as some scenarios or combinations may change the performance characteristics of the effect graph. Below are some rule of thumb performance characteristics for individual effects:
 
-- Effects that are known to have high performance impact are as follows – Gaussian Blur, Shadow Mask, BackDropBrush, HostBackDropBrush, and Layer Visual. These are not recommended for low end devices [(feature level 9.1-9.3)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro), and should be used judiciously on high end devices.
+- Effects that are known to have high performance impact are as follows – Gaussian Blur, Shadow Mask, BackDropBrush, HostBackDropBrush, and Layer Visual. These are not recommended for low end devices [(feature level 9.1-9.3)](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro), and should be used judiciously on high end devices.
 - Effects with medium performance impact include Color Matrix, certain Blend Effect BlendModes (Luminosity, Color, Saturation, and Hue), SpotLight, SceneLightingEffect, and (depending on scenario) BorderEffect. These effects may work with certain scenarios on low end devices, but care should be used when chaining and animating. Recommend restricting use to two or less and animating on transitions only.
 - All other effects have low performance impact and work in all reasonable scenarios when animating and chaining.
 
 ## Related articles
 
-- [UWP Responsive Design Techniques](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
-- [UWP Device Tailoring](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+- [UWP Responsive Design Techniques](/windows/apps/design/layout/responsive-design)
+- [UWP Device Tailoring](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

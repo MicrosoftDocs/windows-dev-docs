@@ -1,5 +1,5 @@
-﻿---
-Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
+---
+description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: Set add-on pricing and availability
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.date: 10/31/2018
@@ -17,7 +17,7 @@ By default, your add-on will be listed in all possible markets, including any fu
 
 However, just as with an app, you have the option to choose the markets in which you'd like to offer your add-on. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. 
 
-For more info and a full list of the available markets, see [Define market selection](define-pricing-and-market-selection.md).
+For more info and a full list of the available markets, see [Define market selection](./define-market-selection.md).
 
 ## Visibility
 
@@ -31,7 +31,7 @@ For add-ons that you don't want to make broadly available, select **Hidden in th
 -   **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device. This add-on is not displayed in the parent product's listing**: Choosing this option means that the add-on won't be displayed in your app's listing, and no new customers may purchase the add-on. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your previously-published app is available on Windows 8.1 or earlier, the add-on will still be available for purchase to those customers. To stop offering the add-on to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the add-on, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an add-on that you've opted to make unavailable.
     
  > [!NOTE] 
- > Choosing the **Stop acquisition** option, and/or submitting an app update that removes the add-on from your app's code, does not affect customers who have already purchased the add-on, regardless of their operating system.
+ > Choosing the **Stop acquisition** option and/or submitting an app update that removes the add-on from your app will not prevent customers from using the add-on if they have already purchased it. Existing subscriptions will fail to renew and subsequently be canceled after the current term ends.
 
 
 ## Schedule
@@ -56,6 +56,3 @@ For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.m
 ## Sale pricing
 
 If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
-
-
-

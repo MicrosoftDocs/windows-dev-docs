@@ -1,5 +1,5 @@
 ---
-Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
+description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
 title: Resource Management System
 template: detail.hbs
 ms.date: 10/20/2017
@@ -20,7 +20,6 @@ Every app package should contain a binary index of the resources in the app. Thi
 - For typical app development you won't need MakePRI.exe because it's already integrated into the Visual Studio compile workflow. And Visual Studio supports editing PRI files in a dedicated UI. However, your localizers and the tools they use might rely upon MakePRI.exe.
 - Each PRI file contains a named collection of resources, referred to as a resource map. When a PRI file from a package is loaded, the resource map name is verified to match the package identity name.
 - PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only as the resource format for Windows. They replace resources contained within DLLs in the Win32 app model.
-- The size limit on a PRI file is 64 kilobytes.
 
 ## UWP API access to app resources
 

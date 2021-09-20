@@ -1,5 +1,5 @@
 ---
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in Partner Center.
+description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in Partner Center.
 title: Create an experiment project in Partner Center
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.date: 02/08/2017

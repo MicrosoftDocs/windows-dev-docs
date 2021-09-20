@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 
 # Packaging apps
 
-This section contains or links to articles about packaging Universal Windows Platform (UWP) apps in MSIX and AppX app packages for deployment and installation. Some of these links go to relevant articles in the [MSIX documentation](https://docs.microsoft.com/windows/msix/).
+This section contains or links to articles about packaging Universal Windows Platform (UWP) apps in MSIX and .appx app packages for deployment and installation. Some of these links go to relevant articles in the [MSIX documentation](/windows/msix/).
 
 > [!NOTE]
-> The original app packaging format for UWP apps in Windows 10 was named AppX. Starting in Windows 10, version 1809, this packaging format was renamed to MSIX and extended to support all types of Windows apps, including .NET and C++/Win32 desktop apps. Support for MSIX is also being extended to earlier Windows versions. For more information, see the [MSIX documentation](https://docs.microsoft.com/windows/msix/).
+> The original app packaging format for UWP apps in Windows 10 was .appx. Starting in Windows 10, version 1809, this packaging format was renamed to .msix and extended to support all types of Windows apps, including .NET and C++ desktop (Win32) apps. Support for MSIX is also being extended to earlier Windows versions. For more information, see the [MSIX documentation](/windows/msix/).
 
 | Topic | Description |
 |-------|-------------|
@@ -26,5 +26,5 @@ This section contains or links to articles about packaging Universal Windows Pla
 | [Install Windows 10 apps with App Installer](/windows/msix/app-installer/app-installer-root) | App Installer allows for Windows 10 apps to be installed by double clicking the app package. |
 | [Install apps with the WinAppDeployCmd.exe tool](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a UWP app from a Windows 10 machine to any Windows 10 Mobile device. You can use this tool to deploy an app package when the Windows 10 Mobile device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. This article describes how to install UWP apps using this tool. |
 | [Set up automated builds for your UWP app](auto-build-package-uwp-apps.md) | If you want to package your app as part of an automated build process, this topic shows you how to use Visual Studio Team Services (VSTS) to do it. |
-| [App capability declarations](app-capability-declarations.md) | Capabilities must be declared in your app's [package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) to access certain API or resources like pictures, music, or devices like the camera or the microphone. |
+| [App capability declarations](app-capability-declarations.md) | Capabilities must be declared in your app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) to access certain API or resources like pictures, music, or devices like the camera or the microphone. |
 | [Download and install package updates from the Store](self-install-package-updates.md) | Your UWP app can programmatically check for package updates and install the updates. Your app can also query for packages that have been marked as mandatory in Partner Center and disable functionality until the mandatory update is installed.  |

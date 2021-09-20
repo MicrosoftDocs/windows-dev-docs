@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 This article describes the new Windows Hello technology that ships as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
 
-Note that this article focuses on app development. For information on the architecture and implementation details of Windows Hello, see the [Windows Hello Guide on TechNet](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide).
+Note that this article focuses on app development. For information on the architecture and implementation details of Windows Hello, see the [Windows Hello Guide on TechNet](/windows/keep-secure/microsoft-passport-guide).
 
 For a complete code sample, see the [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport).
 
@@ -57,7 +57,7 @@ Windows Hello is not just a replacement for traditional 2FA systems, though. It 
 
 ### 2.2 How Windows Hello works
 
-When the user sets up Windows Hello on his or her machine, it generates a new public–private key pair on the device. The [trusted platform module](https://docs.microsoft.com/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
+When the user sets up Windows Hello on his or her machine, it generates a new public–private key pair on the device. The [trusted platform module](/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
 
 To enable Windows Hello on a device, the user must have either their Azure Active Directory account or Microsoft Account connected in Windows settings.
 
@@ -78,8 +78,6 @@ An application can never use the keys from another application, nor can someone 
 Now that we have a basic understanding of how Windows Hello works, let us take a look at how to implement them in our own applications.
 
 There are different scenarios we can implement using Windows Hello. For example, just logging on to your app on a device. The other common scenario would be to authenticate against a service. Instead of using a logon name and password, you will be using Windows Hello. In the following chapters, we will discuss implementing a couple of different scenarios, including how to authenticate against your services with Windows Hello, and how to convert from an existing username/password system to a Windows Hello system.
-
-Finally, be aware that the Windows Hello APIs require the use of the Windows 10 SDK that matches the operating system the app will be used on. In other words, the 10.0.10240 Windows SDK must be used for apps that will be deployed to Windows 10 and the 10.0.10586 must be used for apps that will be deployed to Windows 10, version 1511.
 
 ## 3 Implementing Windows Hello
 
@@ -110,16 +108,16 @@ The next step is to ask the user for information to sign up with your service. Y
 
 In this scenario, we use the email address as the unique identifier for the user. Once the user signs up, you should consider sending a validation email to ensure the address is valid. This gives you a mechanism to reset the account if necessary.
 
-If the user has set up his or her PIN, the app creates the user’s [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential). The app also gets the optional key attestation information to acquire cryptographic proof that the key is generated on the TPM. The generated public key, and optionally the attestation, is sent to the backend server to register the device being used. Every key pair generated on every device will be unique.
+If the user has set up his or her PIN, the app creates the user’s [**KeyCredential**](/uwp/api/Windows.Security.Credentials.KeyCredential). The app also gets the optional key attestation information to acquire cryptographic proof that the key is generated on the TPM. The generated public key, and optionally the attestation, is sent to the backend server to register the device being used. Every key pair generated on every device will be unique.
 
-The code to create the [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) looks like this:
+The code to create the [**KeyCredential**](/uwp/api/Windows.Security.Credentials.KeyCredential) looks like this:
 
 ```csharp
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-The [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) is the part that creates the public and private key. If the device has the right TPM chip, the APIs will request the TPM chip to create the private and public key and store the result; if there is no TPM chip available, the OS will create the key pair in code. There is no way for the app to access the created private keys directly. Part of the creation of the key pairs is also the resulting Attestation information. (See the next section for more information about attestation.)
+The [**RequestCreateAsync**](/previous-versions/windows/dn973048(v=win.10)) is the part that creates the public and private key. If the device has the right TPM chip, the APIs will request the TPM chip to create the private and public key and store the result; if there is no TPM chip available, the OS will create the key pair in code. There is no way for the app to access the created private keys directly. Part of the creation of the key pairs is also the resulting Attestation information. (See the next section for more information about attestation.)
 
 After the key pair and attestation information are created on the device, the public key, the optional attestation information, and the unique identifier (such as the email address) need to be sent to the backend registration service and stored in the backend.
 
@@ -203,8 +201,8 @@ When it receives the generated RSA key, the attestation statement, and the AIK c
 - The AIK certificate is time valid.
 - All issuing CA certificates in the chain are time-valid and not revoked.
 - The attestation statement is formed correctly.
-- The signature on [**KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob uses an AIK public key.
-- The public key included in the [**KeyAttestation**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob matches the public RSA key that client sent alongside the attestation statement.
+- The signature on [**KeyAttestation**](/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob uses an AIK public key.
+- The public key included in the [**KeyAttestation**](/uwp/api/Windows.Security.Cryptography.Certificates.KeyAttestationHelper) blob matches the public RSA key that client sent alongside the attestation statement.
 
 Your app might assign the user a different authorization level, depending on these conditions. For instance, if one of these checks fail, it might not enroll the user or it might limit what the user can do.
 
@@ -214,7 +212,7 @@ Once the user is enrolled in your system, he or she can use the app. Depending o
 
 ### 3.3 Force the user to sign in again
 
-For some scenarios, you may want the user to prove he or she is the person who is currently signed in, before accessing the app or sometimes before performing a certain action inside of your app. For example, before a banking app sends the transfer money command to the server, you want to make sure it is the user, rather than someone who found a logged-in device, attempting to perform a transaction. You can force the user to sign in again in your app by using the [**UserConsentVerifier**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) class. The following line of code will force the user to enter their credentials.
+For some scenarios, you may want the user to prove he or she is the person who is currently signed in, before accessing the app or sometimes before performing a certain action inside of your app. For example, before a banking app sends the transfer money command to the server, you want to make sure it is the user, rather than someone who found a logged-in device, attempting to perform a transaction. You can force the user to sign in again in your app by using the [**UserConsentVerifier**](/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier) class. The following line of code will force the user to enter their credentials.
 
 The following line of code will force the user to enter their credentials.
 
@@ -262,7 +260,7 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-The first line, [**KeyCredentialManager.OpenAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredentialmanager.openasync), will ask the OS to open the key handle. If that is done successfully, you can sign the challenge message with the [**KeyCredential.RequestSignAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.keycredential.requestsignasync) method will trigger the OS to request the user’s PIN or biometrics through Windows Hello. At no time will the developer have access to the private key of the user. This is all kept secure through the APIs.
+The first line, [**KeyCredentialManager.OpenAsync**](/uwp/api/windows.security.credentials.keycredentialmanager.openasync), will ask the OS to open the key handle. If that is done successfully, you can sign the challenge message with the [**KeyCredential.RequestSignAsync**](/uwp/api/windows.security.credentials.keycredential.requestsignasync) method will trigger the OS to request the user’s PIN or biometrics through Windows Hello. At no time will the developer have access to the private key of the user. This is all kept secure through the APIs.
 
 The APIs request the OS to sign the challenge with the private key. The system then asks the user for a PIN code or a configured biometric logon. When the correct information is entered, the system can ask the TPM chip to perform the cryptographic functions and sign the challenge. (Or use the fallback software solution, if no TPM is available). The client must send the signed challenge back to the server.
 
@@ -382,9 +380,9 @@ The UI might look something like this:
 
 ![Windows Hello ui](images/passport-ui.png)
 
-If the user elects to start using Windows Hello, you create the [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential) described before. The backend registration server adds the public key and optional attestation statement to the database. Because the user is already authenticated with username and password, the server can link the new credentials to the current user information in the database. The database model could be the same as the example described earlier.
+If the user elects to start using Windows Hello, you create the [**KeyCredential**](/uwp/api/Windows.Security.Credentials.KeyCredential) described before. The backend registration server adds the public key and optional attestation statement to the database. Because the user is already authenticated with username and password, the server can link the new credentials to the current user information in the database. The database model could be the same as the example described earlier.
 
-If the app was able to create the users [**KeyCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredential), it stores the user ID in isolated storage so the user can pick this account from the list once the app is started again. From this point on, the flow exactly follows the examples described in earlier chapters.
+If the app was able to create the users [**KeyCredential**](/uwp/api/Windows.Security.Credentials.KeyCredential), it stores the user ID in isolated storage so the user can pick this account from the list once the app is started again. From this point on, the flow exactly follows the examples described in earlier chapters.
 
 The final step in migrating to a full Windows Hello scenario is disabling the logon name and password option in the app and removing the stored hashed passwords from your database.
 
@@ -403,13 +401,13 @@ Mission accomplished! You just made the Internet a safer place!
 ### 6.1 Articles and sample code
 
 - [Windows Hello overview](https://support.microsoft.com/help/17215)
-- [Implementation details for Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
+- [Implementation details for Windows Hello](/windows/keep-secure/microsoft-passport-guide)
 - [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)
 
 ### 6.2 Terminology
 
-| | |
-|-|-|
+| Term | Definition |
+| ---- | ---------- |
 | AIK | An attestation identity key is used to provide such a cryptographic proof (TPM key attestation) by signing the properties of the non-migratable key and providing the properties and signature to the relying party for verification. The resulting signature is called an “attestation statement.” Since the signature is created using the AIK private key—which can only be used in the TPM that created it—the relying party can trust that the attested key is truly non-migratable and cannot be used outside that TPM. |
 | AIK Certificate | An AIK certificate is used to attest to the presence of an AIK within a TPM. It is also used to attest that other keys certified by the AIK originated from that particular TPM. |
 | IDP | An IDP is an identity provider. An example is the IDP build by Microsoft for Microsoft Accounts. Every time an application needs to authenticate with an MSA, it can call the MSA IDP. |

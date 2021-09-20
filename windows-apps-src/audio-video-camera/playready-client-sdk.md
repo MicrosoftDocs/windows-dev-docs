@@ -28,7 +28,7 @@ The following list describes the new features and changes made to PlayReady DRM 
 
     Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security. When Hardware DRM is being used, neither unknown enabler (play to unknown / play to unknown with downres) has meaning as the HWDRM pipeline always knows the output being used. For more information, see [Hardware DRM](hardware-drm.md).
 
--   PlayReady is no longer an appX framework component, but instead is an in-box operating system component. The namespace was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady).
+-   PlayReady is no longer an appX framework component, but instead is an in-box operating system component. The namespace was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](/uwp/api/Windows.Media.Protection.PlayReady).
 -   The following headers defining the PlayReady error codes are now part of the Windows Software Development Kit (SDK): Windows.Media.Protection.PlayReadyErrors.h and Windows.Media.Protection.PlayReadyResults.h.
 -   Provides proactive acquisition of non-persistent licenses.
 
@@ -63,15 +63,15 @@ The following list describes the new features and changes made to PlayReady DRM 
 
 The following new interfaces, classes, and enumerations were added to PlayReady DRM:
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest) interface
--   [**IPlayReadyLicenseSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession) interface
--   [**IPlayReadySecureStopServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest) interface
--   [**PlayReadyLicenseSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseSession) class
--   [**PlayReadySecureStopIterable**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable) class
--   [**PlayReadySecureStopIterator**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) class
--   [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) enumerator
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest) interface
+-   [**IPlayReadyLicenseSession**](/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession) interface
+-   [**IPlayReadySecureStopServiceRequest**](/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest) interface
+-   [**PlayReadyLicenseSession**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseSession) class
+-   [**PlayReadySecureStopIterable**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable) class
+-   [**PlayReadySecureStopIterator**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) class
+-   [**PlayReadyHardwareDRMFeatures**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) enumerator
 
-A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples&clcid=0x409](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples).
+A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from the [Code Samples Browser](/samples/microsoft/windows-universal-samples/playready/).
 
 ## Things to consider
 
@@ -401,7 +401,7 @@ Before you begin creating your PlayReady-protected UWP app, the following softwa
 
 This section includes information on how to migrate your existing PlayReady Windows 8.x Store apps to Windows 10.
 
-The namespace for PlayReady UWP apps on Windows 10 was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady). This means that you will need to search and replace the old namespace with the new one in your code. You will still be referencing a winmd file. It is part of windows.media.winmd on the Windows 10 operating system. It is in windows.winmd as part of the TH’s Windows SDK. For UWP, it’s referenced in windows.foundation.univeralappcontract.winmd.
+The namespace for PlayReady UWP apps on Windows 10 was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](/uwp/api/Windows.Media.Protection.PlayReady). This means that you will need to search and replace the old namespace with the new one in your code. You will still be referencing a winmd file. It is part of windows.media.winmd on the Windows 10 operating system. It is in windows.winmd as part of the TH’s Windows SDK. For UWP, it’s referenced in windows.foundation.univeralappcontract.winmd.
 
 To play back PlayReady-protected high definition (HD) content (1080p) and ultra-high definition (UHD) content, you will need to implement PlayReady hardware DRM. For information on how to implement PlayReady hardware DRM, see [Hardware DRM](hardware-drm.md).
 
@@ -464,32 +464,32 @@ In previous versions of PlayReady DRM, non-persistent licenses could only be acq
     ```
     
 ## Query for protection capabilities
-Starting with Windows 10, version 1703, you can query HW DRM capabilities, such as decode codecs, resolution, and output protections (HDCP). Queries are performed with the [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) method which takes a string representing the capabilities for which support is queried and a string specifying the key system to which the query applies. For a list of supported string values, see the API reference page for [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities.istypesupported). The following code example illustrates the usage of this method.  
+Starting with Windows 10, version 1703, you can query HW DRM capabilities, such as decode codecs, resolution, and output protections (HDCP). Queries are performed with the [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) method which takes a string representing the capabilities for which support is queried and a string specifying the key system to which the query applies. For a list of supported string values, see the API reference page for [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported). The following code example illustrates the usage of this method.  
 
-    ```cs
-    using namespace Windows::Media::Protection;
+```cs
+using namespace Windows::Media::Protection;
 
-    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
 
-    ProtectionCapabilityResult result = sr->IsTypeSupported(
-	L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
-	L"com.microsoft.playready");
+ProtectionCapabilityResult result = sr->IsTypeSupported(
+L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+L"com.microsoft.playready");
 
-    switch (result)
-    {
-        case ProtectionCapabilityResult::Probably:
-	    // Queue up UHD HW DRM video
-	    break;
+switch (result)
+{
+    case ProtectionCapabilityResult::Probably:
+    // Queue up UHD HW DRM video
+    break;
 
-        case ProtectionCapabilityResult::Maybe:
-	    // Check again after UI or poll for more info.
-	    break;
+    case ProtectionCapabilityResult::Maybe:
+    // Check again after UI or poll for more info.
+    break;
 
-        case ProtectionCapabilityResult::NotSupported:
-	    // Do not queue up UHD HW DRM video.
-	    break;
-    }
-    ```
+    case ProtectionCapabilityResult::NotSupported:
+    // Do not queue up UHD HW DRM video.
+    break;
+}
+```
 ## Add secure stop
 
 This section describes how to add secure stop to your UWP app.
@@ -501,7 +501,7 @@ There are two primary scenarios for sending a secure stop challenge:
 -   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
 -   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples&clcid=0x409](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples).
+For a sample implementation of secure stop, see the **securestop.cs** file in the PlayReady sample located at the [Code Sample Browser](/samples/microsoft/windows-universal-samples/playready/).
 
 ## Use PlayReady DRM on Xbox One
 
@@ -532,7 +532,3 @@ Use the approach that makes the most sense for your company and your product.
 
 ## See also
 - [Media playback](media-playback.md)
-
-
-
-

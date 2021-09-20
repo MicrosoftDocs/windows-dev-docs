@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Handle events by using delegates in C++/WinRT
 
-This topic shows how to register and revoke event-handling delegates using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). You can handle an event using any standard C++ function-like object.
+This topic shows how to register and revoke event-handling delegates using [C++/WinRT](./intro-to-using-cpp-with-winrt.md). You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -29,16 +29,28 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 
 ```xaml
 // MainPage.xaml
-<Button x:Name="Button" Click="ClickHandler">Click Me</Button>
+<Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
 ```
 
 ```cppwinrt
+// MainPage.h
+void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
 // MainPage.cpp
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */)
 {
-    Button().Content(box_value(L"Clicked"));
+    myButton().Content(box_value(L"Clicked"));
 }
 ```
+
+The code above is taken from the **Blank App (C++/WinRT)** project in Visual Studio. The code `myButton()` calls a generated accessor function, which returns the **Button** that we named *myButton*. If you change the `x:Name` of that **Button** element, then the name of the generated accessor function changes, too.
+
+> [!NOTE]
+> In this case, the event source (the object that raises the event) is the **Button** named *myButton*. And the event recipient (the object handling the event) is an instance of **MainPage**. There's more info later in this topic about managing the lifetime of event sources and event recipients.
 
 Instead of doing it declaratively in markup, you can imperatively register a member function to handle an event. It may not be obvious from the code example below, but the argument to the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) call is an instance of the [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) delegate. In this case, we're using the **RoutedEventHandler** constructor overload that takes an object and a pointer-to-member-function.
 
@@ -48,12 +60,32 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click({ this, &MainPage::ClickHandler });
+    myButton().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
 > [!IMPORTANT]
 > When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see [If you use a member function as a delegate](weak-references.md#if-you-use-a-member-function-as-a-delegate).
+
+Here's an example that uses a static member function; note the simpler syntax.
+
+```cppwinrt
+// MainPage.h
+static void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
+// MainPage.cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    myButton().Click( MainPage::ClickHandler );
+}
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */) { ... }
+```
 
 There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
 
@@ -80,10 +112,12 @@ The syntax of the function call operator is also helpful to see. It tells you wh
 > ```
 >
 > That info tells us that the **UIElement.KeyDown** event (the topic we're on) has a delegate type of **KeyEventHandler**, since that's the type that you pass when you register a delegate with this event type. So, now follow the link on the topic to that [KeyEventHandler delegate](/uwp/api/windows.ui.xaml.input.keyeventhandler) type. Here, the syntax block contains a function call operator. And, as mentioned above, that tells you what your delegate's parameters need to be.
-> 
-> ```cppwinrt
-> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
-> ```
+>
+>```cppwinrt
+>void operator()(
+>   winrt::Windows::Foundation::IInspectable const& sender,
+>   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>```
 >
 >  As you can see, the delegate needs to be declared to take an **IInspectable** as the sender, and an instance of the [KeyRoutedEventArgs class](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) as the args.
 >
@@ -96,9 +130,9 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    myButton().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
     {
-        Button().Content(box_value(L"Clicked"));
+        myButton().Content(box_value(L"Clicked"));
     });
 }
 ```
@@ -114,7 +148,7 @@ MainPage::MainPage()
     {
         sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
-    Button().Click(click_handler);
+    myButton().Click(click_handler);
     AnotherButton().Click(click_handler);
 }
 ```
@@ -158,7 +192,10 @@ struct Example : ExampleT<Example>
 {
     Example(winrt::Windows::UI::Xaml::Controls::Button button)
     {
-        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+        m_event_revoker = button.Click(
+            winrt::auto_revoke,
+            [this](IInspectable const& /* sender */,
+            RoutedEventArgs const& /* args */)
         {
             // ...
         });
@@ -169,7 +206,7 @@ private:
 };
 ```
 
-Below is the syntax block taken from the documentation topic for the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. It shows the three different registration and revoking functions. You can see exactly what type of event revoker you need to declare from the third overload.
+Below is the syntax block taken from the documentation topic for the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. It shows the three different registration and revoking functions. You can see exactly what type of event revoker you need to declare from the third overload. And you can pass the same kinds of delegates to both the *register* and the *revoke with event_revoker* overloads.
 
 ```cppwinrt
 // Register
@@ -194,7 +231,7 @@ If you try to specify [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revok
 
 ## Delegate types for asynchronous actions and operations
 
-The examples above use the **RoutedEventHandler** delegate type, but there are of course many other delegate types. For example, asynchronous actions and operations (with and without progress) have completed and/or progress events that expect delegates of the corresponding type. For example, the progress event of an asynchronous operation with progress (which is anything that implements [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)) requires a delegate of type [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Here's a code example of authoring a delegate of that type using a lambda function. The example also shows how to author an [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) delegate.
+The examples above use the **RoutedEventHandler** delegate type, but there are of course many other delegate types. For example, asynchronous actions and operations (with and without progress) have completed and/or progress events that expect delegates of the corresponding type. For example, the progress event of an asynchronous operation with progress (which is anything that implements [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)) requires a delegate of type [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler-2). Here's a code example of authoring a delegate of that type using a lambda function. The example also shows how to author an [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler-2) delegate.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -212,14 +249,20 @@ void ProcessFeedAsync()
     auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
     async_op_with_progress.Progress(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& /* sender */,
+            RetrievalProgress const& args)
         {
             uint32_t bytes_retrieved = args.BytesRetrieved;
             // use bytes_retrieved;
         });
 
     async_op_with_progress.Completed(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& sender,
+            AsyncStatus const /* asyncStatus */)
         {
             SyndicationFeed syndicationFeed = sender.GetResults();
             // use syndicationFeed;
@@ -271,6 +314,6 @@ If you handle an event with an object's member function, or from within a lambda
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## Related topics
-* [Author events in C++/WinRT](author-events.md)
-* [Concurrency and asynchronous operations with C++/WinRT](concurrency.md)
-* [Strong and weak references in C++/WinRT](weak-references.md)
+* [Author events in C++/WinRT](./author-events.md)
+* [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md)
+* [Strong and weak references in C++/WinRT](./weak-references.md)

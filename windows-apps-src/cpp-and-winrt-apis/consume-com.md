@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Consume COM components with C++/WinRT
 
-You can use the facilities of the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
+You can use the facilities of the [C++/WinRT](./intro-to-using-cpp-with-winrt.md) library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
 
 At the end of this topic, you'll find a full source code listing of a minimal Direct2D application. We'll lift excerpts from that code and use them to illustrate how to consume COM components using C++/WinRT using various facilities of the C++/WinRT library.
 
@@ -122,14 +122,13 @@ You can call the [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fu
 
 ## COM functions that take an **IUnknown** interface pointer
 
-You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.
+You can use [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function) to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.
 
-```cppwinrt
-winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
-    ...
-    winrt::get_unknown(CoreWindow::GetForCurrentThread()),
-    ...));
-```
+You can use the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) free function to return the address of (in other words, a pointer to) the underlying raw [IUnknown interface](/windows/win32/api/unknwn/nn-unknwn-iunknown) of an object of a projected type. You can then pass that address to a function that takes an **IUnknown** interface pointer.
+
+For info about *projected types*, see [Consume APIs with C++/WinRT](./consume-apis.md).
+
+For a code example of **get_unknown**, see [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), or the [Full source code listing of a minimal Direct2D application](#full-source-code-listing-of-a-minimal-direct2d-application) in this topic.
 
 ## Passing and returning COM smart pointers
 
@@ -164,7 +163,21 @@ Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrt
 
 ## Full source code listing of a minimal Direct2D application
 
-If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Open `App.cpp`, delete its entire contents, and paste in the listing below.
+> [!NOTE]
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+If you want to build and run this source code example then first install (or update to) the latest version of the C++/WinRT Visual Studio Extension (VSIX); see the note above. Then, in Visual Studio, create a new **Core App (C++/WinRT)**. `Direct2D` is a reasonable name for the project, but you can name it anything you like. Target the latest generally-available (that is, not preview) version of the Windows SDK.
+
+### Step 1. Edit `pch.h`
+
+Open `pch.h`, and add `#include <unknwn.h>` immediately after including `windows.h`. This is because we're using [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown). It's a good idea to `#include <unknwn.h>` explicity whenever you use **winrt::get_unknown**, even if that header has been included by another header.
+
+> [!NOTE]
+> If you omit this step then you'll see the build error *'get_unknown': identifier not found*.
+
+### Step 2. Edit `App.cpp`
+
+Open `App.cpp`, delete its entire contents, and paste in the listing below.
 
 The code below uses the [winrt::com_ptr::capture function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) where possible. `WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 

@@ -1,5 +1,5 @@
 ---
-title: Windows Unlock with Windows Hello companion (IoT) devices
+title: Windows Hello and unlocking with companion devices
 description: A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (for example, if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,11 @@ ms.localizationpriority: medium
 
 A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (for example, if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 
-> **Note** Microsoft will be deprecating the API for the Windows Hello companion device framework in the first half of 2020.
+> [!NOTE]
+> The API for the Windows Hello companion device framework is deprecated in Windows 10, version 2004.
 
-> **Note** The Windows Hello companion device framework is a specialized feature not available to all app developers. To use this framework, your app must be specifically provisioned by Microsoft and list the restricted *secondaryAuthenticationFactor* capability in its manifest. To obtain approval, contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
+> [!NOTE]
+> The Windows Hello companion device framework is a specialized feature that's not available to all app developers. To use this framework, your app must be specifically provisioned by Microsoft and list the restricted *secondaryAuthenticationFactor* capability in its manifest. To obtain approval, contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
 ## Introduction
 
@@ -32,7 +34,7 @@ There are numerous ways one can use the Windows Hello companion device framework
 
 ### Biometric enabled Windows Hello companion devices
 
-If the companion device supports biometrics, in some cases the [Windows Biometric framework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
+If the companion device supports biometrics, in some cases the [Windows Biometric framework](/windows-hardware/design/device-experiences/windows-hello) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
 
 ### Components of the solution
 
@@ -44,7 +46,7 @@ The Windows Hello companion device framework is implemented as a service running
 
 Integration with the Windows Hello Companion Device Framework requires:
 
-- A [Universal Windows Platform (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello companion device app for the companion device, downloaded from the Windows app store. 
+- A [Universal Windows Platform (UWP)](../get-started/universal-application-platform-guide.md) Windows Hello companion device app for the companion device, downloaded from the Windows app store. 
 - The ability to create two 256 bit HMAC keys on the Windows Hello companion device and generate HMAC with it (using SHA-256).
 - Security settings on the Windows 10 desktop properly configured. The Companion Authentication Service will require this PIN to be set up before any Windows Hello companion device can be plugged into it. The users must set up a PIN via Settings > Accounts > Sign-in options.
 
@@ -94,7 +96,7 @@ Notes:
 
 The following diagram illustrates how the Windows Hello companion device interacts with Companion Authentication Service during registration.  
 
-![registration flow](images/companion-device-2.png)
+![Diagram of the registration flow.](images/companion-device-2.png)
 
 There are two keys used in our protocol:
 
@@ -137,7 +139,7 @@ Once the background task associated with a Windows Hello companion device app is
 
 The second computed value is used by the service to authenticate the device and also prevent replay attack in transport channel.
 
-![registration flow](images/companion-device-3.png)
+![Diagram of the updated registration flow.](images/companion-device-3.png)
 
 ## Lifecycle management
 
@@ -158,7 +160,7 @@ Users can remove a Windows Hello companion device from a Windows 10 desktops by 
 Enterprises have two options for controlling the Windows Hello companion device framework:
 
 - Turn the feature on or off
-- Define the whitelist of Windows Hello companion devices allowed using Windows app locker
+- Define the allowlist of Windows Hello companion devices allowed using Windows app locker
 
 The Windows Hello companion device framework does not support any centralized way to keep inventory of available companion devices, or a method to further filter which instances of a Windows Hello companion device type is allowed (for example, only a companion device with a serial number between X and Y are allowed). Apps developers can, however, build a service to provide such functionality. For more details, see the Roaming, Revocation, and Filter Service section.
 

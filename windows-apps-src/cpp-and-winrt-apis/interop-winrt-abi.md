@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Interop between C++/WinRT and the ABI
 
-This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
+This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](./intro-to-using-cpp-with-winrt.md) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
 
 In general, C++/WinRT exposes ABI types as **void\***, so that you don't need to include platform header files.
 
@@ -101,7 +101,10 @@ int main()
 }
 ```
 
-The implementations of the **as** functions call [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
+The implementations of the **as** functions call [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
+
+> [!IMPORTANT]
+> When interoperating with ABI types it's critical that the ABI type used corresponds to the default interface of the C++/WinRT object. Otherwise, invocations of methods on the ABI type will actually end up calling methods in the same vtable slot on the default interface with very unexpected results. Note that [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) does not protect against this at compile time since it uses **void\*** for all ABI types and assumes that the caller has been careful not to mis-match the types. This is to avoid requiring C++/WinRT headers to reference ABI headers when ABI types may never be used.
 
 ```cppwinrt
 int main()
@@ -112,11 +115,11 @@ int main()
 
     // Convert to an ABI type.
     ptr = nullptr;
-    winrt::copy_to_abi(uri, *ptr.put_void());
+    winrt::copy_to_abi(uriAsIStringable, *ptr.put_void());
 
     // Convert from an ABI type.
     uri = nullptr;
-    winrt::copy_from_abi(uri, ptr.get());
+    winrt::copy_from_abi(uriAsIStringable, ptr.get());
     ptr = nullptr;
 }
 ```
@@ -128,11 +131,11 @@ Here are other similarly low-level conversions techniques but using raw pointers
 
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning{ nullptr };
-    winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
+    winrt::copy_to_abi(uriAsIStringable, *reinterpret_cast<void**>(&owning));
 
     // Copy from a raw ABI pointer.
     uri = nullptr;
-    winrt::copy_from_abi(uri, owning);
+    winrt::copy_from_abi(uriAsIStringable, owning);
     owning->Release();
 ```
 
@@ -146,14 +149,14 @@ For the lowest-level conversions, which only copy addresses, you can use the [**
     // Lowest-level conversions that only copy addresses
 
     // Convert to a non-owning ABI object with get_abi.
-    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uri)) };
+    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
     WINRT_ASSERT(non_owning);
 
     // Avoid interlocks this way.
-    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
-    WINRT_ASSERT(!uri);
-    winrt::attach_abi(uri, owning);
-    WINRT_ASSERT(uri);
+    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
+    WINRT_ASSERT(!uriAsIStringable);
+    winrt::attach_abi(uriAsIStringable, owning);
+    WINRT_ASSERT(uriAsIStringable);
 ```
 
 ## convert_from_abi function
@@ -172,7 +175,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-The function simply calls [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) to query for the default interface of the requested C++/WinRT type.
+The function simply calls [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) to query for the default interface of the requested C++/WinRT type.
 
 As we've seen, a helper function is not required to convert from a C++/WinRT object to the equivalent ABI interface pointer. Simply use the [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) member function to query for the requested interface. The **as** and **try_as** functions return a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) object wrapping the requested ABI type.
 
@@ -278,7 +281,7 @@ To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
 }
 ```
 
-Also see [Consume COM components with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
+Also see [Consume COM components with C++/WinRT](./consume-com.md).
 
 ### Unsafe interop with ABI COM interface pointers
 
@@ -326,6 +329,14 @@ GUID abiguid;
 | From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
 
+You can construct a **winrt::guid** like this.
+
+```cppwinrt
+winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };
+```
+
+For a gist showing how to construct a **winrt::guid** from a string, see [make_guid.cpp](https://gist.github.com/kennykerr/6c948882de395c25b3218ad8d4daf362).
+
 ## Interoperating with the ABI's HSTRING
 
 The table that follows shows conversions between **winrt::hstring** and [**HSTRING**](/windows/win32/winrt/hstring), and other operations. For the code in the table, assume these declarations.
@@ -347,9 +358,19 @@ void GetString(_Out_ HSTRING* value);
 | Copy **HSTRING** to **hstring** | `copy_from_abi(s, h);` | *s* makes a private copy of the string. The string previously owned by *s* is freed. |
 | Copy **hstring** to **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* receives a copy of the string. Any string previously owned by *h* is leaked. |
 
+In addition, the Windows Implementation Libraries (WIL) [string helpers](https://github.com/microsoft/wil/wiki/String-helpers) perform basic string manipulations. To use the WIL string helpers, include [<wil/resource.h>](https://github.com/microsoft/wil/blob/master/include/wil/resource.h), and refer to the table below. Follow the links in the table for full details.
+
+| Operation | WIL string helper for more info |
+|-|-|
+| Provide a raw Unicode or ANSI string pointer and an optional length; obtain a suitably-specialized **unique_any** wrapper | [wil::make_something_string](https://github.com/microsoft/wil/wiki/String-helpers#wilmake_something_string) |
+| Unwrap a smart object until a raw null-terminated Unicode string pointer is found | [wil::str_raw_ptr](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_raw_ptr) |
+| Obtain the string wrapped by a smart pointer object; or the empty string `L""` if the smart pointer is empty | [wil::string_get_not_null](https://github.com/microsoft/wil/wiki/String-helpers#wilstring_get_not_null) |
+| Concatenate any number of strings | [wil::str_concat](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_concat) |
+| Obtain a string from a printf-style format string and a corresponding parameter list | [wil::str_printf](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_printf) |
+
 ## Important APIs
-* [AddRef function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
-* [QueryInterface function](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [AddRef function](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface function](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)

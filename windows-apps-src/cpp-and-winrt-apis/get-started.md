@@ -9,15 +9,15 @@ ms.localizationpriority: medium
 
 # Get started with C++/WinRT
 
-To get you up to speed with using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), this topic walks through a simple code example based on a new **Windows Console Application (C++/WinRT)** project. This topic also shows how to [add C++/WinRT support to a Windows Desktop application project](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+> [!IMPORTANT]
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+To get you up to speed with using [C++/WinRT](./intro-to-using-cpp-with-winrt.md), this topic walks through a simple code example based on a new **Windows Console Application (C++/WinRT)** project. This topic also shows how to [add C++/WinRT support to a Windows Desktop application project](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 > [!NOTE]
 > While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Language** > **Command Line** under **Additional Options**, then delete it).
 
 ## A C++/WinRT quick-start
-
-> [!NOTE]
-> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Create a new **Windows Console Application (C++/WinRT)** project.
 
@@ -66,7 +66,9 @@ With the default project settings, the included headers come from the Windows SD
 The headers contain Windows APIs projected into C++/WinRT. In other words, for each Windows type, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace. Putting these includes in your precompiled header reduces incremental build times.
 
 > [!IMPORTANT]
-> Whenever you want to use a type from a Windows namespaces, include the corresponding C++/WinRT Windows namespace header file, as shown above. The *corresponding* header is the one with the same name as the type's namespace. For example, to use the C++/WinRT projection for the [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) runtime class, `#include <winrt/Windows.Foundation.Collections.h>`. If you include `winrt/Windows.Foundation.Collections.h`, then you don't *also* need to include `winrt/Windows.Foundation.h`. Each C++/WinRT projection header automatically includes its parent namespace header file; so you don't *need* to explicitly include it. Although, if you do, there will be no error.
+> Whenever you want to use a type from a Windows namespaces, you must `#include` the corresponding C++/WinRT Windows namespace header file, as shown above. The *corresponding* header is the one with the same name as the type's namespace. For example, to use the C++/WinRT projection for the [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) runtime class, include the `winrt/Windows.Foundation.Collections.h` header.
+> 
+> It's usual for a C++/WinRT projection header to automatically include its parent namespace header file. So, for example, `winrt/Windows.Foundation.Collections.h` includes `winrt/Windows.Foundation.h`. But you shouldn't rely on this behavior, since it's an implementation detail that changes over time. You must explicitly include any headers that you need.
 
 ```cppwinrt
 using namespace winrt;
@@ -122,7 +124,7 @@ You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https:
 
 Go to project property **General** \> **Windows SDK Version**, and select **All Configurations** and **All Platforms**. Ensure that **Windows SDK Version** is set to 10.0.17134.0 (Windows 10, version 1803) or greater.
 
-Confirm that you're not affected by [Why won't my new project compile?](/windows/uwp/cpp-and-winrt-apis/faq).
+Confirm that you're not affected by [Why won't my new project compile?](./faq.yml).
 
 Because C++/WinRT uses features from the C++17 standard, set project property **C/C++** > **Language** > **C++ Language Standard** to *ISO C++17 Standard (/std:c++17)*.
 
@@ -160,19 +162,23 @@ As you use and become familiar with C++/WinRT, and work through the rest of the 
 
 ### Consuming Windows Runtime APIs and types
 
-In other words, *using*, or *calling* APIs. For example, making API calls to communicate using Bluetooth; to stream and present video; to integrate with the Windows shell; and so on. C++/WinRT fully and uncompromisingly supports this category of scenario. For more info, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+In other words, *using*, or *calling* APIs. For example, making API calls to communicate using Bluetooth; to stream and present video; to integrate with the Windows shell; and so on. C++/WinRT fully and uncompromisingly supports this category of scenario. For more info, see [Consume APIs with C++/WinRT](./consume-apis.md).
 
 ### Authoring Windows Runtime APIs and types
 
-In other words, *producing* APIs and types. For example, producing the kinds of APIs described in the section above; or the graphics APIs; the storage and file system APIs; the networking APIs, and so on. For more info, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+In other words, *producing* APIs and types. For example, producing the kinds of APIs described in the section above; or the graphics APIs; the storage and file system APIs; the networking APIs, and so on. For more info, see [Author APIs with C++/WinRT](./author-apis.md).
 
-Authoring APIs with C++/WinRT is a little more involved than consuming them, because you must use IDL to define the shape of the API before you can implement it. There's a walkthrough of doing that in [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Authoring APIs with C++/WinRT is a little more involved than consuming them, because you must use IDL to define the shape of the API before you can implement it. There's a walkthrough of doing that in [XAML controls; bind to a C++/WinRT property](./binding-property.md).
 
 ### XAML applications
 
 This scenario is about building applications and controls on the XAML UI framework. Working in a XAML application amounts to a combination of consuming and authoring. But since XAML is the dominant UI framework on Windows today, and its influence over the Windows Runtime is proportionate to that, it deserves its own category of scenario.
 
-Be aware that XAML works best with programming languages that offer reflection. In C++/WinRT, you sometimes have to do a little extra work in order to interoperate with the XAML framework. All of those cases are covered in the documentation. Good places to start are [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property) and [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
+Be aware that XAML works best with programming languages that offer reflection. In C++/WinRT, you sometimes have to do a little extra work in order to interoperate with the XAML framework. All of those cases are covered in the documentation. Good places to start are [XAML controls; bind to a C++/WinRT property](./binding-property.md) and [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md).
+
+## Sample apps written in C++/WinRT
+
+See [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
 
 ## Important APIs
 * [SyndicationClient::RetrieveFeedAsync method](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

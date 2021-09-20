@@ -1,5 +1,5 @@
-﻿---
-Description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
+---
+description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
 title: Gradual package rollout
 ms.date: 10/31/2018
 ms.topic: article

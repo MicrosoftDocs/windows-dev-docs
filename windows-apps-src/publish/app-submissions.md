@@ -1,9 +1,9 @@
 ---
-Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
+description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist, windows, uwp, submission, submit, game, app, submitting
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 
 
@@ -25,7 +25,7 @@ After your app is published, you can publish an updated version by creating anot
 > This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.
 
 > [!IMPORTANT]
-> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 ## App submission checklist
 
@@ -36,7 +36,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 ### Pricing and availability page
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Markets**                   | Default: All possible markets  | [Define pricing and market selection](define-pricing-and-market-selection.md)         |
+| **Markets**                   | Default: All possible markets  | [Define pricing and market selection](./define-market-selection.md)         |
 | **Audience**                | Default: Public audience | [Audience](choose-visibility-options.md#audience) |
 | **Discoverability**                | Default: Make this app available and discoverable in the Store | [Discoverability](choose-visibility-options.md#discoverability) |
 | **Schedule**                  | Default: Release as soon as possible        | [Configure precise release scheduling](configure-precise-release-scheduling.md) |
@@ -52,12 +52,12 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Category and subcategory**  | Required                                    | [Category and subcategory table](category-and-subcategory-table.md)       |
-| **Privacy policy URL**            | Required for many apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](store-policies.md#105-personal-information) | [Privacy policy URL](enter-app-properties.md#privacy-policy-url)        |
+| **Privacy policy URL**            | Required for many apps. See the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](store-policies.md#105-personal-information) | [Privacy policy URL](enter-app-properties.md#privacy-policy-url)        |
 | **Website**                   | Optional                                    | [Website](enter-app-properties.md#website)                   |
 | **Support contact info**      | Required if your product is available on Xbox; otherwise optional (but recommended)                                   | [Support contact info](enter-app-properties.md#support-contact-info)              |
 | **Game settings**             | Optional (only applicable to games)         | [Game settings](enter-app-properties.md#game-settings) |
 | **Display mode**             | Optional                   | [Display mode](enter-app-properties.md#display-mode) |
-| **Product declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [Product declarations](app-declarations.md) |
+| **Product declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [Product declarations](./product-declarations.md) |
 | **System requirements**      | Optional                                    | [System requirements](enter-app-properties.md#system-requirements)      |
 
 <span/>

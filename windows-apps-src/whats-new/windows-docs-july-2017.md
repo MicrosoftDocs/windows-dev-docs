@@ -20,41 +20,41 @@ The Windows Developer Documentation is constantly being updated with information
 
 Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, these new effects use depth, perspective, and movement to help users focus on important UI elements.
 
-[Acrylic material](../design/style/acrylic.md) is a type of brush that creates transparent textures. 
+[Acrylic material](/windows/apps/design/style/acrylic) is a type of brush that creates transparent textures. 
 
-![Acrylic in light theme](../design/style/images/Acrylic_DarkTheme_Base.png)
+![Acrylic in light theme](images/Acrylic_DarkTheme_Base.png)
 
-The [Parallax effect](../design/motion/parallax.md) adds three-dimensional depth and perspective to your app.
+The [Parallax effect](/windows/apps/design/motion/parallax) adds three-dimensional depth and perspective to your app.
 
-![An example of parallax with a list and background image](../design/style/images/_Parallax_v2.gif)
+![An example of parallax with a list and background image](images/_Parallax_v2.gif)
 
-[Reveal](../design/style/reveal.md) highlights important elements of your app. 
+[Reveal](/windows/apps/design/style/index) highlights important elements of your app. 
 
-![Reveal Visual](../design/style/images/Nav_Reveal_Animation.gif)
+![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
 ### UI Controls
 
 Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, these new controls make it easier to quickly build a great looking UI.
 
-The [color picker control](../design/controls-and-patterns/color-picker.md) enables users to browse through and select colors.  
+The [color picker control](/windows/apps/design/controls/color-picker) enables users to browse through and select colors.  
 
-![A default color picker](../design/controls-and-patterns/images/color-picker-default.png)
+![A default color picker](images/color-picker-default.png)
 
-The [navigation view control](../design/controls-and-patterns/navigationview.md) makes it easy to add top-level navigation to your app.
+The [navigation view control](/windows/apps/design/controls/navigationview) makes it easy to add top-level navigation to your app.
 
-![NavigationView sections](../design/controls-and-patterns/images/navview_sections.png)
+![NavigationView sections](images/navview_sections.png)
 
-The [person picture control](../design/controls-and-patterns/person-picture.md) displays the avatar image for a person.
+The [person picture control](/windows/apps/design/controls/person-picture) displays the avatar image for a person.
 
-![The person picture control](../design/controls-and-patterns/images/person-picture/person-picture_hero.png)
+![The person picture control](images/person-picture_hero.png)
 
-The [rating control](../design/controls-and-patterns/rating.md) enables users to easily view and set ratings that reflect degrees of satisfaction with content and services.
+The [rating control](/windows/apps/design/controls/rating) enables users to easily view and set ratings that reflect degrees of satisfaction with content and services.
 
-![Example of Ratings Control](../design/controls-and-patterns/images/rating_rs2_doc_ratings_intro.png)
+![Example of Ratings Control](images/rating_rs2_doc_ratings_intro.png)
 
 ### Design Toolkits
 
-The [design toolkits and resources for UWP apps](../design/downloads/index.md) have been expanded with the addition of the Sketch and Adobe XD toolkits. The previously-existing toolkits have also been updated and revamped, providing more robust controls and layout templates for your UWP apps.
+The [design toolkits and resources for UWP apps](/windows/apps/design/downloads/index) have been expanded with the addition of the Sketch and Adobe XD toolkits. The previously-existing toolkits have also been updated and revamped, providing more robust controls and layout templates for your UWP apps.
 
 ### Dashboard, monetization and Store services
 
@@ -88,27 +88,27 @@ Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Bui
 
 ### Pin to Taskbar
 
-Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, the new TaskbarManager class allows you to ask your user to [pin your app to the taskbar](../design/shell/pin-to-taskbar.md).
+Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, the new TaskbarManager class allows you to ask your user to [pin your app to the taskbar](/windows/apps/design/shell/pin-to-taskbar).
 
 ## Developer Guidance
 
 ### Media Playback
 
-New sections have been added to the basic media playback article, [Play audio and video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). The section [Play spherical video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) shows you how to playback spherically encodeded video, including adjusting the field of view and view orientation for supported formats. The section [Use MediaPlayer in frame server mode](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) shows you how to copy frames from media played back with [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) to a Direct3D surface. This enables scenarios such as applying real-time effects with pixel shaders. The example code shows a quick implementation of a blur effect for video playback using Win2D.
+New sections have been added to the basic media playback article, [Play audio and video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). The section [Play spherical video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) shows you how to playback spherically encodeded video, including adjusting the field of view and view orientation for supported formats. The section [Use MediaPlayer in frame server mode](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) shows you how to copy frames from media played back with [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) to a Direct3D surface. This enables scenarios such as applying real-time effects with pixel shaders. The example code shows a quick implementation of a blur effect for video playback using Win2D.
 
 ### Media Capture
 
-The article [Process media frames with MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) has been updated to show the usage of the new [Multi​Source​Media​Frame​Reader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) class, which allows you to obtain time-correlated frames from multiple media sources. This is useful if you need to process frames from different sources, such as a depth camera and an color camera, and you need to make sure that the frames from each source were captured close to each other in time. For more information, see [Use MultiSourceMediaFrameReader to get time-corellated frames from multiple sources](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
+The article [Process media frames with MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) has been updated to show the usage of the new [Multi​Source​Media​Frame​Reader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) class, which allows you to obtain time-correlated frames from multiple media sources. This is useful if you need to process frames from different sources, such as a depth camera and an color camera, and you need to make sure that the frames from each source were captured close to each other in time. For more information, see [Use MultiSourceMediaFrameReader to get time-corellated frames from multiple sources](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
 
 ### Scoped Search
 
-A "UWP" scope has been added to the [UWP conceptual](../get-started/universal-application-platform-guide.md) and [API reference](https://docs.microsoft.com/en-us/uwp/api/) documentation on docs.microsoft.com. Unless this scope is deactivated, searches made from within these areas will return UWP docs only.
+A "UWP" scope has been added to the [UWP conceptual](../get-started/universal-application-platform-guide.md) and [API reference](/uwp/api/) documentation on docs.microsoft.com. Unless this scope is deactivated, searches made from within these areas will return UWP docs only.
 
 ![Scoped Search](images/scoped-search.png)
 
 ### Test your Windows app for Windows 10 S
 
-Test your Windows app to ensure that it will operate correctly on devices that run Windows S. Use [this new guide](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) to learn how.
+Test your Windows app to ensure that it will operate correctly on devices that run Windows S. Use [this new guide](/windows/msix/desktop/desktop-to-uwp-test-windows-s) to learn how.
 
 ## Samples
 
@@ -120,7 +120,7 @@ Test your Windows app to ensure that it will operate correctly on devices that r
 
 ### Shopping app sample
 
-[A mini-app that presents a basic shopping experience where a user can buy emoji](https://github.com/Microsoft/Windows-appsample-shopping). This app shows how to use the [Payment Request APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) to implement the checkout experience.
+[A mini-app that presents a basic shopping experience where a user can buy emoji](https://github.com/Microsoft/Windows-appsample-shopping). This app shows how to use the [Payment Request APIs](/uwp/api/windows.applicationmodel.payments) to implement the checkout experience.
 
 ![Screenshot of shopping app sample](images/shoppingcart.png)  
 
@@ -128,7 +128,7 @@ Test your Windows app to ensure that it will operate correctly on devices that r
 
 ### Accessibility
 
-Building accessibility into your apps opens them up to a much wider audience. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), then learn more about [developing apps for accessibility](https://developer.microsoft.com/en-us/windows/accessible-apps).
+Building accessibility into your apps opens them up to a much wider audience. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), then learn more about [developing apps for accessibility](https://developer.microsoft.com/windows/accessible-apps).
 
 ### Payments Request API
 
@@ -136,4 +136,4 @@ The Payment Request API helps custoemrs and sellers seamlessly complete the onli
 
 ### Windows 10 IoT Core
 
-With Windows 10 IoT Core and the Universal Windows Platform, you can quickly protoype and build projects with vision and component connections, such as this Pet Recognition Door. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core), then learn more about how to [get started with Windows 10 IoT Core](https://developer.microsoft.com/en-us/windows/iot).
+With Windows 10 IoT Core and the Universal Windows Platform, you can quickly protoype and build projects with vision and component connections, such as this Pet Recognition Door. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core), then learn more about how to [get started with Windows 10 IoT Core](https://developer.microsoft.com/windows/iot).

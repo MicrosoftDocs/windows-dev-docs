@@ -1,6 +1,6 @@
 ---
-Description: Distribute a packaged desktop application (Desktop Bridge)
 title: Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
+description: Learn how to use Desktop Bridge to distribute a packaged desktop application to the Microsoft Store or sideload it onto one or more devices.
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -30,7 +30,7 @@ You don't have to sign your application before you submit it to the Store.
 >[!IMPORTANT]
 > If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
-<a id="side-load" />
+<a id="side-load"></a>
 
 ## Distribute your application without placing it onto the Microsoft Store
 
@@ -53,7 +53,7 @@ To sign your application by using a certificate, see [Sign an application packag
 
 To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
-<a id="transition-users" />
+<a id="transition-users"></a>
 
 ## Transition users to your packaged app
 
@@ -121,7 +121,7 @@ To view the complete context of this snippet, see the **MainWindow.cs** file of 
 
 ```csharp
 private void RemoveDesktopApp()
-{              
+{
     //Typically, you can find your uninstall string at this location.
     String uninstallString = (String)Microsoft.Win32.Registry.GetValue
         (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +
@@ -159,12 +159,6 @@ private void RemoveDesktopApp()
 
 ## Next steps
 
-**Find answers to your questions**
-
 Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-If you encounter issues publishing your application to the Store, this [blog post](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) contains some useful tips.
-
-**Give feedback or make feature suggestions**
-
-See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
+If you encounter issues publishing your application to the Store, this [blog post](/archive/blogs/appconsult/preparing-a-desktop-bridge-application-for-the-store-submission) contains some useful tips.

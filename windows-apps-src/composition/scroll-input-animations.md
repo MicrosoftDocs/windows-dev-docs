@@ -37,27 +37,27 @@ In general, by referencing the position of a ScrollViewer with an ExpressionAnim
 
 ![A shy header](images/animation/shy-header.gif)
 
-## Using ScrollManipulationPropertySet
+## Using ScrollViewerManipulationPropertySet
 
-To create these dynamic experiences using a XAML ScrollViewer, you must be able to reference the scroll position in an animation. This is done by accessing a CompositionPropertySet off of the XAML ScrollViewer called the ScrollManipulationPropertySet.
-The ScrollManipulationPropertySet contains a single Vector3 property called Translation that provides access to the scroll position of the ScrollViewer. You can then reference this like any other CompositionPropertySet in your ExpressionAnimation.
+To create these dynamic experiences using a XAML ScrollViewer, you must be able to reference the scroll position in an animation. This is done by accessing a CompositionPropertySet off of the XAML ScrollViewer called the ScrollViewerManipulationPropertySet.
+The ScrollViewerManipulationPropertySet contains a single Vector3 property called Translation that provides access to the scroll position of the ScrollViewer. You can then reference this like any other CompositionPropertySet in your ExpressionAnimation.
 
 General Steps to getting started:
 
-1. Access the ScrollManipulationPropertySet via ElementCompositionPreview.
-    - `ElementCompositionPreview.GetScrollManipulationPropertySet(ScrollViewer scroller)`
+1. Access the ScrollViewerManipulationPropertySet via ElementCompositionPreview.
+    - `ElementCompositionPreview.GetScrollViewerManipulationPropertySet(ScrollViewer scroller)`
 1. Create an ExpressionAnimation that references the Translation property from the PropertySet.
     - Don’t forget to set the Reference Parameter!
 1. Target a CompositionObject’s property with the ExpressionAnimation.
 
 > [!NOTE]
-> It is recommended that you assign the PropertySet returned from the GetScrollManipulationPropertySet method to a class variable. This ensures that the property set does not get cleaned up by Garbage Collection and thus does not have any effect on the ExpressionAnimation it is referenced in. ExpressionAnimations do not maintain a strong reference to any of the objects used in the equation.
+> It is recommended that you assign the PropertySet returned from the GetScrollViewerManipulationPropertySet method to a class variable. This ensures that the property set does not get cleaned up by Garbage Collection and thus does not have any effect on the ExpressionAnimation it is referenced in. ExpressionAnimations do not maintain a strong reference to any of the objects used in the equation.
 
 ## Example
 
 Let's take a look at how the Parallax sample shown above is put together. For reference, all the source code for the app is found in the [Window UI Dev Labs repo on GitHub](https://github.com/microsoft/WindowsCompositionSamples).
 
-The first thing is to get a reference to the ScrollManipulationPropertySet.
+The first thing is to get a reference to the ScrollViewerManipulationPropertySet.
 
 ```csharp
 _scrollProperties =

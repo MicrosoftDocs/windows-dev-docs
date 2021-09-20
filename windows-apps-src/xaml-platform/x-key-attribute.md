@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # x:Key attribute
 
 
-Uniquely identifies elements that are created and referenced as resources, and which exist within a [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary).
+Uniquely identifies elements that are created and referenced as resources, and which exist within a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary).
 
 ## XAML attribute usage
 
@@ -32,8 +32,8 @@ Uniquely identifies elements that are created and referenced as resources, and w
 
 | Term | Description |
 |------|-------------|
-| object | Any object that is shareable. See [ResourceDictionary and XAML resource references](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references). |
-| stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. | 
+| object | Any object that is shareable. See [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary). |
+| stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. |
 
 ##  XamlName grammar
 
@@ -54,13 +54,12 @@ CombiningCharacter::= none
 
 ## Remarks
 
-Child elements of a [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) generally include an **x:Key** attribute that specifies a unique key value within that dictionary. Key uniqueness is enforced at load time by the XAML processor. Non-unique **x:Key** values will result in XAML parse exceptions. If requested by [{StaticResource} markup extension](staticresource-markup-extension.md), a non-resolved key will also result in XAML parse exceptions.
+Child elements of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) generally include an **x:Key** attribute that specifies a unique key value within that dictionary. Key uniqueness is enforced at load time by the XAML processor. Non-unique **x:Key** values will result in XAML parse exceptions. If requested by [{StaticResource} markup extension](staticresource-markup-extension.md), a non-resolved key will also result in XAML parse exceptions.
 
-**x:Key** and [x:Name](x-name-attribute.md) are not identical concepts. **x:Key** is used exclusively in resource dictionaries. x:Name is used for all areas of XAML. A [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname) call using a key value will not retrieve a keyed resource. Objects defined in a resource dictionary may have an **x:Key**, an **x:Name** or both. The key and name are not required to match.
+**x:Key** and [x:Name](x-name-attribute.md) are not identical concepts. **x:Key** is used exclusively in resource dictionaries. x:Name is used for all areas of XAML. A [**FindName**](/uwp/api/windows.ui.xaml.frameworkelement.findname) call using a key value will not retrieve a keyed resource. Objects defined in a resource dictionary may have an **x:Key**, an **x:Name** or both. The key and name are not required to match.
 
-Note that in the implicit syntax shown, the [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) object is implicit in how the XAML processor produces a new object to populate a [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) collection.
+Note that in the implicit syntax shown, the [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) object is implicit in how the XAML processor produces a new object to populate a [**Resources**](/uwp/api/windows.ui.xaml.frameworkelement.resources) collection.
 
-The code equivalent of specifying **x:Key** is any operation that uses a key with the underlying [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary). For example, an **x:Key** applied in markup for a resource is equivalent to the value of the *key* parameter of **Insert** when you add the resource to a **ResourceDictionary**.
+The code equivalent of specifying **x:Key** is any operation that uses a key with the underlying [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). For example, an **x:Key** applied in markup for a resource is equivalent to the value of the *key* parameter of **Insert** when you add the resource to a **ResourceDictionary**.
 
-An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) or [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string. For more info, see [Quickstart: styling controls](https://docs.microsoft.com/previous-versions/windows/apps/hh465498(v=win.10)) and [ResourceDictionary and XAML resource references](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
-
+An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](/uwp/api/Windows.UI.Xaml.Style) or [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string. For more info, see [Quickstart: styling controls](/previous-versions/windows/apps/hh465498(v=win.10)) and [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary).

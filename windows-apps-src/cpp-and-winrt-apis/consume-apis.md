@@ -9,7 +9,14 @@ ms.localizationpriority: medium
 
 # Consume APIs with C++/WinRT
 
-This topic shows how to consume [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
+This topic shows how to consume [C++/WinRT](./intro-to-using-cpp-with-winrt.md) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
+
+> [!IMPORTANT]
+> So that the code examples in this topic are short, and easy for you to try out, you can reproduce them by creating a new **Windows Console Application (C++/WinRT)** project, and copy-pasting code. However, you can't consume arbitrary custom (third-party) Windows Runtime types from an unpackaged app like that. You can consume only Windows types that way.
+>
+> To consume custom (third-party) Windows Runtime types from a console app, you'll need to give the app a *package identity* so that it can resolve the consumed custom types' registration. For more info, see [Windows Application Packaging Project](/windows/msix/desktop/source-code-overview).
+>
+> Alternatively, create a new project from the **Blank App (C++/WinRT)**, **Core App (C++/WinRT)**, or **Windows Runtime Component (C++/WinRT)** project templates. Those app types already have a *package identity*.
 
 ## If the API is in a Windows namespace
 This is the most common case in which you'll consume a Windows Runtime API. For every type in a Windows namespace defined in metadata, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace using C++ syntax. For example, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is projected into C++/WinRT as **winrt::Windows::Foundation::Uri**.
@@ -38,7 +45,7 @@ The included header `winrt/Windows.Foundation.h` is part of the SDK, found insid
 
 In the code example above, after initializing C++/WinRT, we stack-allocate a value of the **winrt::Windows::Foundation::Uri** projected type via one of its publicly documented constructors ([**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_), in this example). For this, the most common use case, that's typically all you have to do. Once you have a C++/WinRT projected type value, you can treat it as if it were an instance of the actual Windows Runtime type, since it has all the same members.
 
-In fact, that projected value is a proxy; it's essentially just a smart pointer to a backing object. The projected value's constructor(s) call [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to create an instance of the backing Windows Runtime class (**Windows.Foundation.Uri**, in this case), and store that object's default interface inside the new projected value. As illustrated below, your calls to the projected value's members actually delegate, via the smart pointer, to the backing object; which is where state changes occur.
+In fact, that projected value is a proxy; it's essentially just a smart pointer to a backing object. The projected value's constructor(s) call [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to create an instance of the backing Windows Runtime class (**Windows.Foundation.Uri**, in this case), and store that object's default interface inside the new projected value. As illustrated below, your calls to the projected value's members actually delegate, via the smart pointer, to the backing object; which is where state changes occur.
 
 ![The projected Windows::Foundation::Uri type](images/uri.png)
 
@@ -161,7 +168,7 @@ std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
 
-Also see [How the default constructor affects collections](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections).
+Also see [How the default constructor affects collections](./move-to-winrt-from-cx.md#how-the-default-constructor-affects-collections).
 
 ### Don't delay-initialize by mistake
 
@@ -181,7 +188,7 @@ runtimeclass Gift
 }
 ```
 
-Let's say that we want to construct a **Gift** that isn't inside a box (a **Gift** that's constructed with an uninitialized **GiftBox**). First, let's look at the *wrong* way to do that. We know that there'a **Gift** constructor that takes a **GiftBox**. But if we're tempted to pass a null **GiftBox** (invoking the **Gift** constructor via uniform initialization as we do below), then we *won't* get the result we want.
+Let's say that we want to construct a **Gift** that isn't inside a box (a **Gift** that's constructed with an uninitialized **GiftBox**). First, let's look at the *wrong* way to do that. We know that there'a **Gift** constructor that takes a **GiftBox**. But if we're tempted to pass a null **GiftBox** (invoking the **Gift** constructor via uniform initialization, as we do below), then we *won't* get the result we want.
 
 ```cppwinrt
 // These are *not* what you intended. Doing it in one of these two ways
@@ -263,28 +270,41 @@ This section applies whether you authored the component yourself, or it came fro
 
 In your application project, reference the Windows Runtime component's Windows Runtime metadata (`.winmd`) file, and build. During the build, the `cppwinrt.exe` tool generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface for the component. In other words, the generated library contains the projected types for the component.
 
-Then, just as for a Windows namespace type, you include a header and construct the projected type via one of its constructors. Your application project's startup code registers the runtime class, and the projected type's constructor calls [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate the runtime class from the referenced component.
+Then, just as for a Windows namespace type, you include a header and construct the projected type via one of its constructors. Your application project's startup code registers the runtime class, and the projected type's constructor calls [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) to activate the runtime class from the referenced component.
 
 ```cppwinrt
-#include <winrt/BankAccountWRC.h>
+#include <winrt/ThermometerWRC.h>
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount bankAccount;
+    ThermometerWRC::Thermometer thermometer;
     ...
 };
 ```
 
-For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
+For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) and [Author events in C++/WinRT](./author-events.md).
 
 ## If the API is implemented in the consuming project
-A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
+The code example in this section is taken from the topic [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). See that topic for more details, code, and a walkthrough of consuming a runtime class that's implemented in the same project that consumes it.
 
-For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but this time you construct the projected type via its **std::nullptr_t** constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML. For this scenario, you generate a projected type from the runtime class's Windows Runtime metadata (`.winmd`). Again, you include a header, but then you have a choice between the C++/WinRT version 1.0 or version 2.0 ways of constructing the instance of the runtime class. The version 1.0 method uses [**winrt::make**](/uwp/cpp-ref-for-winrt/make); the version 2.0 method is known as *uniform construction*. Let's look at each in turn.
 
-You'll need a **Blank App (C++/WinRT)** project for this code example.
+### Constructing by using **winrt::make**
+Let's start with the default (C++/WinRT version 1.0) method, because it's a good idea to be at least familiar with that pattern. You construct the projected type via its **std::nullptr_t** constructor. That constructor doesn't perform any initialization, so you must next assign a value to the instance via the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) helper function, passing any necessary constructor arguments. A runtime class implemented in the same project as the consuming code doesn't need to be registered, nor instantiated via Windows Runtime/COM activation.
+
+See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) for a full walkthrough. This section shows extracts from that walkthrough.
 
 ```cppwinrt
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+
 // MainPage.h
 ...
 struct MainPage : MainPageT<MainPage>
@@ -292,10 +312,9 @@ struct MainPage : MainPageT<MainPage>
     ...
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-        ...
-    };
-}
+};
 ...
+
 // MainPage.cpp
 ...
 #include "BookstoreViewModel.h"
@@ -307,7 +326,45 @@ MainPage::MainPage()
 }
 ```
 
-For more details, code, and a walkthrough of consuming a runtime class implemented in the consuming project, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+### Uniform construction
+With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)).
+
+See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) for a full walkthrough. This section shows extracts from that walkthrough.
+
+To use uniform construction instead of [**winrt::make**](/uwp/cpp-ref-for-winrt/make), you'll need an activation factory. A good way to generate one is to add a constructor to your IDL.
+
+```idl
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+```
+
+Then, in `MainPage.h` declare and initialize *m_mainViewModel* in just one step, as shown below.
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel;
+        ...
+    };
+}
+...
+```
+
+And then, in the **MainPage** constructor in `MainPage.cpp`, there's no need for the code `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();`.
+
+For more info about uniform construction, and code examples, see [Opt in to uniform construction, and direct implementation access](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ## Instantiating and returning projected types and interfaces
 Here's an example of what projected types and interfaces might look like in your consuming project. Remember that a projected type (such as the one in this example), is tool-generated, and is not something that you'd author yourself.
@@ -331,7 +388,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - You can access the members of all of the interfaces of a projected type.
 - You can return a projected type to a caller.
-- Projected types and interfaces derive from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on a projected type or interface to query for other projected interfaces, which you can also either use or return to a caller. The **as** member function works like [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)).
+- Projected types and interfaces derive from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on a projected type or interface to query for other projected interfaces, which you can also either use or return to a caller. The **as** member function works like [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)).
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
@@ -365,14 +422,14 @@ CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
 using namespace winrt::Windows::Foundation;
 ...
 auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
-Uri account = factory.CreateUri(L"http://www.contoso.com");
+Uri uri = factory.CreateUri(L"http://www.contoso.com");
 ```
 
-The classes in the two examples above are types from a Windows namespace. In this next example, **BankAccountWRC::BankAccount** is a custom type implemented in a Windows Runtime component.
+The classes in the two examples above are types from a Windows namespace. In this next example, **ThermometerWRC::Thermometer** is a custom type implemented in a Windows Runtime component.
 
 ```cppwinrt
-auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
-BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+auto factory = winrt::get_activation_factory<ThermometerWRC::Thermometer>();
+ThermometerWRC::Thermometer thermometer = factory.ActivateInstance<ThermometerWRC::Thermometer>();
 ```
 
 ## Member/Type ambiguities
@@ -436,15 +493,16 @@ struct MyPage : Page
 The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) member function name. But the parameter `Visibility::Collapsed` follows the word `Visibility` with `::`, and so the method name is ignored, and the compiler finds the enum class.
 
 ## Important APIs
-* [QueryInterface interface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
-* [RoActivateInstance function](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
+* [QueryInterface interface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [RoActivateInstance function](/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
 * [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
 * [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## Related topics
-* [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [Interop between C++/WinRT and the ABI](interop-winrt-abi.md)
-* [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md)
-* [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Author events in C++/WinRT](./author-events.md)
+* [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md)
+* [Introduction to C++/WinRT](./intro-to-using-cpp-with-winrt.md)
+* [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [XAML controls; bind to a C++/WinRT property](./binding-property.md)

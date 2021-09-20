@@ -1,5 +1,5 @@
-﻿---
-Description: Partner Center gives you several options to let testers try out your app before you offer it to the public. 
+---
+description: Partner Center gives you several options to let testers try out your app before you offer it to the public.
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.date: 10/31/2018

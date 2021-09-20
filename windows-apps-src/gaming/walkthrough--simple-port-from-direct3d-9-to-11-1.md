@@ -7,12 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, port, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ---
+
 # Walkthrough: Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
 
-
-
 This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
-## 
+
 <table>
 <colgroup>
 <col width="50%" />
@@ -35,7 +34,7 @@ This porting exercise shows how to bring a simple rendering framework from Direc
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Port the game loop</a></p></td>
-<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> to control a full-screen <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>.</p></td>
+<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an <a href="/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> to control a full-screen <a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -55,9 +54,9 @@ Upon completing this walkthrough, you should be familiar with the following basi
 -   The separation of device, device context, and graphics infrastructure.
 -   The process of compiling shaders, and loading shader bytecode at runtime.
 -   How to configure per-vertex data for the Input Assembler (IA) stage.
--   How to use an [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) to create a CoreWindow view.
+-   How to use an [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) to create a CoreWindow view.
 
-Note that this walkthrough uses [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) for simplicity, and does not cover XAML interop.
+Note that this walkthrough uses [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) for simplicity, and does not cover XAML interop.
 
 ## Prerequisites
 
@@ -70,11 +69,10 @@ Visit [Porting concepts and considerations](porting-considerations.md) to gain a
 
 **Direct3D**
 
-* [Writing HLSL Shaders in Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
+* [Writing HLSL Shaders in Direct3D 9](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [DirectX game project templates](user-interface.md)
 
 **Microsoft Store**
 
-* [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)
-* [**Handle to Object Operator (^)**](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)
-
+* [**Microsoft::WRL::ComPtr**](/cpp/windows/comptr-class)
+* [**Handle to Object Operator (^)**](/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Use the accelerometer
-description: Learn how to use the accelerometer to respond to user movement.
+description: Learn how to create a basic app that relies on a single sensor, the accelerometer, to respond to user movements.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Accelerometer**](/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **Sample**
 

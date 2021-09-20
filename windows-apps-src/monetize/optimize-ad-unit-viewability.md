@@ -1,12 +1,15 @@
 ---
-description: Learn about ways to improve the viewability of your ad units.
+description: Learn about the guidelines for optimizing the viewability of your ad units and how to measure your viewability metrics with the Advertising performance report. 
 title: Optimize the viewability of your ad units
-ms.date: 05/07/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability
 ms.localizationpriority: medium
 ---
 # Optimize the viewability of your ad units
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 The [Advertising performance report](../publish/advertising-performance-report.md) includes viewability metrics for your ad units. Viewability is an important metric because the advertising industry is moving towards valuing viewable impressions rather than just delivered impressions. Advertisers tend to bid for viewable impressions because they have an increased chance of their ads being seen by users.  
 

@@ -30,6 +30,7 @@ using Windows.UI.Core;
 
 using AudioEffectComponent;
 using Windows.Media.Effects;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -149,7 +150,7 @@ namespace MediaEditingSnippets
                         try
                         {
                             var results = info.GetResults();
-                            if (results != TranscodeFailureReason.None || status != AsyncStatus.Completed)
+                            if (results != TranscodeFailureReason.None || status != AsyncStatus.Completed)   
                             {
                                 ShowErrorMessage("Saving was unsuccessful");
                             }
@@ -394,6 +395,31 @@ namespace MediaEditingSnippets
         public void ShowErrorMessage(string message)
         {
             MessageTextBlock.Text = message;
+        }
+
+        private async void ThumbnailButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(composition is null))
+            {
+                var thumbnailTimes = new List<TimeSpan>();
+
+                for (int i = 0; i < 10; i++)
+                {
+                    thumbnailTimes.Add(TimeSpan.FromSeconds(i + .5));
+                }
+                var thumbnails = await composition.GetThumbnailsAsync(thumbnailTimes, 320, 240, VideoFramePrecision.NearestFrame);
+
+                foreach (var thumb in thumbnails)
+                {
+                    var image = new Image();
+                    var bitmapImage = new BitmapImage();
+                    bitmapImage.SetSource(thumb);
+
+                    image.Source = bitmapImage;
+                    ThumbnailStackPanel.Children.Add(image);
+                }
+            }
+
         }
     }
 }

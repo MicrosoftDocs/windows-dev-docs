@@ -464,15 +464,15 @@ The [GamepadVibrationUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 * [Windows.Gaming.Input.IGameController][]
 * [Input practices for games](input-practices-for-games.md)
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
-[gamepads]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepads.aspx
-[gamepadadded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadadded.aspx
-[gamepadremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadremoved.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.getcurrentreading.aspx
-[vibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.vibration.aspx
-[gamepadreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadreading.aspx
-[gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
-[gamepadvibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadvibration.aspx
+[Windows.Gaming.Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.UINavigationController]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[gamepad]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepads]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadadded]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadremoved]: /uwp/api/Windows.Gaming.Input.Gamepad
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.Gamepad
+[vibration]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadreading]: /uwp/api/Windows.Gaming.Input.GamepadReading
+[gamepadbuttons]: /uwp/api/Windows.Gaming.Input.GamepadButtons
+[gamepadvibration]: /uwp/api/Windows.Gaming.Input.GamepadVibration

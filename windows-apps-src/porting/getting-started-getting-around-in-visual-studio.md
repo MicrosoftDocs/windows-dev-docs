@@ -1,6 +1,6 @@
 ---
 description: Getting around in Visual Studio
-title: Getting around in Visual Studio
+title: Learn how to get started in a Microsoft Visual Studio project by adding controls, setting their properties, and responding to events.
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
@@ -38,7 +38,7 @@ Do the same with the **TextBlock** control, so it looks like this:
 
 ![designing ui in visual studio](images/ios-to-uwp/vs-add-button-label.png)
 
-Unlike Xcode, which hides the layout and binding information inside a .xib or Storyboard file, Visual Studio encourages you to edit the XAML files used to store these details it its rich, editable, declarative, XML-like language. For more info about Extensible Application Markup Language (XAML), see [XAML overview](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview). For now, know that everything displayed in the **Design** pane is defined in the **XAML** pane. The **XAML** pane allows for fine control where necessary, and as you learn more about it, you can quickly develop user interface code manually. For now, however, let's focus on just the **Design** and **Properties** panes.
+Unlike Xcode, which hides the layout and binding information inside a .xib or Storyboard file, Visual Studio encourages you to edit the XAML files used to store these details it its rich, editable, declarative, XML-like language. For more info about Extensible Application Markup Language (XAML), see [XAML overview](../xaml-platform/xaml-overview.md). For now, know that everything displayed in the **Design** pane is defined in the **XAML** pane. The **XAML** pane allows for fine control where necessary, and as you learn more about it, you can quickly develop user interface code manually. For now, however, let's focus on just the **Design** and **Properties** panes.
 
 Let's change the button's details. As you will know, to change the button's name in Xcode, you would change the value of the **Title** field in its properties panel.
 
@@ -119,4 +119,3 @@ To quit the app, return to Visual Studio, tap the **Debug** menu, and then tap *
 ## Next step
 
 [Getting started: Common Controls](getting-started-common-controls.md)
-

@@ -2,7 +2,7 @@
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Use this method in the Microsoft Store purchase API to get the subscriptions that a given user has entitlements to use.
 title: Get subscriptions for a user
-ms.date: 07/10/2018
+ms.date: 04/22/2021
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ms.localizationpriority: medium
@@ -13,6 +13,8 @@ Use this method in the Microsoft Store purchase API to get the subscription add-
 
 > [!NOTE]
 > This method can only be used by developer accounts that have been provisioned by Microsoft to be able to create subscription add-ons for Universal Windows Platform (UWP) apps. Subscription add-ons are currently not available to most developer accounts.
+
+The [Microsoft.StoreServices library](https://github.com/microsoft/Microsoft-Store-Services) provides the functionality of this method through the StoreServicesClient.RecurrenceQueryAsync API.
 
 ## Prerequisites
 
@@ -60,7 +62,7 @@ The following example demonstrates how to use this method to get the subscriptio
 POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query HTTP/1.1
 Authorization: Bearer <your access token>
 Content-Type: application/json
-Host: https://purchase.mp.microsoft.com
+Host: purchase.mp.microsoft.com
 
 {
   "b2bKey":  "eyJ0eXAiOiJ..."
@@ -127,3 +129,4 @@ Each object in the *items* array contains the following values.
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 

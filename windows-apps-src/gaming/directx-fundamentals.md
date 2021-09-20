@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of DirectX programming
-description: Basics of DirectX programming.
+description: See articles about the fundamentals of DirectX programming, including the Direct2D and Direct3D libraries and usage.
 ms.assetid: 05a1bc59-f32e-44a0-8902-94cf1e099b1b
 ms.date: 02/08/2017
 ms.topic: article
@@ -36,7 +36,7 @@ Load resources in your DirectX game topic guides you through the basic steps for
 <td align="left"><p>Create 2D graphics using DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D graphics learning guide</a></p></td>
+<td align="left"><p><a href="/windows/uwp/graphics-concepts/index">Direct3D graphics learning guide</a></p></td>
 <td align="left"><p>Understand Direct3D graphics concepts.</p></td>
 </tr>
 <tr class="odd">

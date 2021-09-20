@@ -1,12 +1,13 @@
 ---
 title: Game input for DirectX games
-description: Game input for your DirectX game.
+description: View links to topics about adding input to your DirectX games from move-look controls, relative mouse movement, and basic touch controls.
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, game, directx, input, mouse, touch, control
 ms.localizationpriority: medium
 ---
+
 # Game input for DirectX games
 
 This section provides information about adding various types of inputs for your DirectX games.

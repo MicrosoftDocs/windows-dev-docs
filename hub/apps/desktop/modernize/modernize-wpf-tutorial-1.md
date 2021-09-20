@@ -1,5 +1,5 @@
 ---
-description: This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.
+description: This tutorial demonstrates how to migrate the entire Contoso Expenses app from the .NET Framework 4.7.2 to .NET Core 3.
 title: Migrate the Contoso Expenses app to .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
@@ -129,7 +129,7 @@ To configure NuGet packages for the **ContosoExpenses.Data** project:
     ```
 
     > [!NOTE]
-    > You may also notice that you're installing the same packages for this .NET Core 3 project as the ones used by .NET Framework 4.7.2 projects. NuGet packages supports multi-targeting. Library authors can include different versions of a library in the same package, compiled for different architectures and platforms. These packages support the full .NET Framework as well as .NET Standard 2.0, which is compatible with .NET Core 3 projects. For more info about the differences .NET Framework, .NET Core and .NET Standard, see [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
+    > You may also notice that you're installing the same packages for this .NET Core 3 project as the ones used by .NET Framework 4.7.2 projects. NuGet packages supports multi-targeting. Library authors can include different versions of a library in the same package, compiled for different architectures and platforms. These packages support the full .NET Framework as well as .NET Standard 2.0, which is compatible with .NET Core 3 projects. For more info about the differences .NET Framework, .NET Core and .NET Standard, see [.NET Standard](/dotnet/standard/net-standard).
 
 To configure NuGet packages for the **ContosoExpenses.Core** project:
 
@@ -229,7 +229,7 @@ To resolve these errors, install the [Windows Compatibility](https://www.nuget.o
 2. Choose **Manage NuGet Packages**.
 3. In the **NuGet Package Manager** window, click **Browse**. Search for the `Microsoft.Windows.Compatibility` package and install the latest stable version.
 
-    ![](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
+    ![Install NuGet package](images/wpf-modernize-tutorial/WindowsCompatibilityPack.png)
 
 4. Now try again to compile the project, by right clicking on the **ContosoExpenses.Data** project and choosing **Build**.
 

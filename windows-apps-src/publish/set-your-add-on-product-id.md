@@ -1,5 +1,5 @@
-﻿---
-Description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
+---
+description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
 title: Set your add-on product type and product ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.date: 10/31/2018
@@ -56,7 +56,7 @@ Here are a few things to keep in mind when choosing a product ID:
 -   You can’t change or delete an add-on's product ID after it's been published.
 -   A product ID can't be more than 100 characters in length.
 -   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   Customers won't see the product ID. (Later, you can enter a [title and description](create-add-on-descriptions.md) to be displayed to customers.)
+-   Customers won't see the product ID. (Later, you can enter a [title and description](./create-app-store-listings.md) to be displayed to customers.)
 -   If your previously-published app supports Windows Phone 8.1 or earlier, you must only use alphanumeric characters, periods, and/or underscores in your product ID. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
 
  

@@ -18,15 +18,15 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Progressive Web Apps on Windows
 
-[Progressive Web Apps (PWAs)](https://developer.microsoft.com/windows/pwa) are simply web apps that are [progressively enhanced](https://www.wikipedia.org/wiki/Progressive_enhancement) with native app-like features on supporting platforms and browser engines, such as launch-from-homescreen installation, offline support, and push notifications. On Windows 10 with the Microsoft Edge (EdgeHTML) engine, PWAs enjoy the added advantage of running [independently of the browser window as UWP apps.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[Progressive Web Apps (PWAs)](https://developer.microsoft.com/windows/pwa) are simply web apps that are [progressively enhanced](https://www.wikipedia.org/wiki/Progressive_enhancement) with native app-like features on supporting platforms and browser engines, such as launch-from-homescreen installation, offline support, and push notifications. On Windows 10 with the Microsoft Edge (EdgeHTML) engine, PWAs enjoy the added advantage of running [independently of the browser window as UWP apps.](/microsoft-edge/progressive-web-apps/windows-features)
 
 ![An image of PWAs in action](images/progressive-web-apps.jpg)
 
 Check out our PWA guides to:
 
-* [Build a simple web app as a PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
-* [Enhance your PWA with the Windows Runtime](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
-* [Publish your PWA to the Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
+* [Build a simple web app as a PWA](/microsoft-edge/progressive-web-apps/get-started)
+* [Enhance your PWA with the Windows Runtime](/microsoft-edge/progressive-web-apps/windows-features)
+* [Publish your PWA to the Microsoft Store](/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### Notepad
 
@@ -40,33 +40,33 @@ Check out the [updated Design landing page](https://developer.microsoft.com/wind
 
 ### Design toolkits
 
-The Adobe XD and Adobe Illustrator toolkits have been updated with new features. These design toolkits provide controls and layout templates for designing UWP apps. [Check them out here.](../design/downloads/index.md)
+The Adobe XD and Adobe Illustrator toolkits have been updated with new features. These design toolkits provide controls and layout templates for designing UWP apps. [Check them out here.](/windows/apps/design/downloads/index)
 
 ### WebVR
 
-We've added several new topics to the [WebVR documentation](https://docs.microsoft.com/microsoft-edge/webvr/):
+We've added several new topics to the [WebVR documentation](/microsoft-edge/webvr/):
 
-* [What is WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) Explains what WebVR is, why you should use it, and how to get started developing for it.
+* [What is WebVR?](/microsoft-edge/webvr/what-is-webvr) Explains what WebVR is, why you should use it, and how to get started developing for it.
 
-* [WebVR in Progressive Web Apps](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas): Learn how to add WebVR to a Progressive Web App (PWA).
+* [WebVR in Progressive Web Apps](/microsoft-edge/webvr/webvr-in-pwas): Learn how to add WebVR to a Progressive Web App (PWA).
 
-* [WebVR in WebView](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview): Learn how to add WebVR to a WebView control in a Windows 10 application.
+* [WebVR in WebView](/microsoft-edge/webvr/webvr-in-webview): Learn how to add WebVR to a WebView control in a Windows 10 application.
 
-* [WebVR demos](https://docs.microsoft.com/microsoft-edge/webvr/demos): Check out some WebVR demos using Microsoft Edge and a Windows Mixed Reality immersive headset.
+* [WebVR demos](/microsoft-edge/webvr/demos): Check out some WebVR demos using Microsoft Edge and a Windows Mixed Reality immersive headset.
 
 In addition, we've made some updates to existing pages:
 
 * The table of contents is now better organized into four distinct top-level buckets: **Fundamentals**, **Development**, **Resources**, and **Demos**.
 
-* [WebVR Developer's Guide (landing page)](https://docs.microsoft.com/microsoft-edge/webvr/): Refreshed look and feel, with larger images and icons and new demo.
+* [WebVR Developer's Guide (landing page)](/microsoft-edge/webvr/): Refreshed look and feel, with larger images and icons and new demo.
 
-* [Using WebVR with Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge): Updated to include information about the Windows 10 April 2018 Update.
+* [Using WebVR with Microsoft Edge](/microsoft-edge/webvr/webvr-with-edge): Updated to include information about the Windows 10 April 2018 Update.
 
 ## Videos
 
 ### Get Started for Devs: Create and customize a form on Windows 10
 
-Our [Get Started docs](../get-started/index.md) for Windows developers now provide hands-on experience with basic app development task. This video walks you through one of those topics, and covers the basics of creating a form UI in your app. [Watch the video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) to see the code in action, then [check out the topic yourself.](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track)
+Our [Get Started docs](../get-started/index.md) for Windows developers now provide hands-on experience with basic app development task. This video walks you through one of those topics, and covers the basics of creating a form UI in your app. [Watch the video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) to see the code in action, then [check out the topic yourself.](../get-started/construct-form-learning-track.md)
 
 ### Enhance your Bot with Project Personality chat
 

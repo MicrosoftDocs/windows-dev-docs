@@ -1,8 +1,8 @@
-﻿---
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
+---
+description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
 title: Create platform-specific Store listings
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, customize, listing, description, earlier
 ms.localizationpriority: medium
@@ -15,7 +15,7 @@ If your previously-published app has packages that target different operating sy
 Customers on Windows 10 (including Xbox) will always see the default [Store listing](create-app-store-listings.md). You won't see the option to create platform-specific Store listings unless you have already published your app with packages that support one or more earlier OS versions. 
 
 > [!IMPORTANT]
-> As of October 31, 2018, newly-created products cannot include packages targeting Windows 8.x/Windows Phone 8.x or earlier. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Platform-specific Store listings can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type).
 

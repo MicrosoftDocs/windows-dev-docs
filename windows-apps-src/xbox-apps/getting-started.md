@@ -1,6 +1,6 @@
 ---
 title: Getting started with UWP app development on Xbox One
-description: How to set up your PC and Xbox One for UWP development.
+description: Learn how to set up your development PC and Xbox One console to get started with Universal Windows Platform (UWP) app development on Xbox One.
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -77,6 +77,6 @@ For more detailed information, see [Set up your UWP on Xbox development environm
 ![Hello World](images/getting-started-hello-world.png)
 
 ## See also  
-- [Frequently asked questions](frequently-asked-questions.md)  
+- [Frequently asked questions](frequently-asked-questions.yml)  
 - [Known issues with UWP on Xbox Developer Program](known-issues.md)
 - [UWP on Xbox One](index.md) 

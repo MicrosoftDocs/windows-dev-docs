@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the schema of the MakePri.exe XML configuration file.
+description: This topic describes the schema of the MakePri.exe XML configuration file.
 title: MakePri.exe configuration file
 template: detail.hbs
 ms.date: 10/18/2017

@@ -1,7 +1,7 @@
 ---
 title: Relation based animations
-description: Create motion based on a property on another object.
-ms.date: 10/10/2017
+description: Learn how to use ExpressionAnimations to create relation-based animations when motion depends on a property of another object.
+ms.date: 10/16/2020
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
@@ -40,16 +40,16 @@ When building the mathematical relationship of an Expression, there are several 
 
 - Parameters – values representing constant values or references to other Composition objects.
 - Mathematical Operators – the typical mathematical operators plus(+), minus(-), multiply(*), divide(/) that join together parameters to form an equation. Also included are conditional operators such as greater than(>), equal(==), ternary operator (condition ? ifTrue : ifFalse), etc.
-- Mathematical Functions – mathematical functions/shortcuts based on System.Numerics. For a full list of supported functions, see [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+- Mathematical Functions – mathematical functions/shortcuts based on System.Numerics. For a full list of supported functions, see [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation).
 
-Expressions also support a set of keywords – special phrases that have distinct meaning only within the ExpressionAnimation system. These are listed (along with the full list of math functions) in the [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) documentation.
+Expressions also support a set of keywords – special phrases that have distinct meaning only within the ExpressionAnimation system. These are listed (along with the full list of math functions) in the [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation) documentation.
 
 ### Creating Expressions with ExpressionBuilder
 
-There are two options for building Expressions in their UWP app:
+There are two options for building Expressions in your UWP app:
 
-1. Building the equation as a string via the official, public API.
-1. Building the equation in a type-safe object model via the open source ExpressionBuilder tool. See the [Github source and documentation](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
+1. Build the equation as a string via the official, public API.
+1. Build the equation in a type-safe object model via the ExpressionBuilder tool included with the [Windows Community Toolkit](/windows/communitytoolkit/animations/expressions).
 
 For the sake of this document, we will define our Expressions using ExpressionBuilder.
 
@@ -89,7 +89,7 @@ We’ll be focusing on the ExpressionAnimation defined in #3. We will also be us
 
 In this equation, there are two properties you need to reference from the PropertySet; one is a centerpoint offset and the other is the rotation.
 
-```
+```csharp
 var propSetCenterPoint =
 _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 
@@ -99,18 +99,20 @@ var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 
 Next, you need to define the Vector3 component that accounts for the actual orbiting rotation.
 
-```
+```csharp
 var orbitRotation = EF.Vector3(
     EF.Cos(EF.ToRadians(propSetRotation)) * 150,
     EF.Sin(EF.ToRadians(propSetRotation)) * 75, 0);
 ```
 
 > [!NOTE]
-> `EF` is a shorthand “using” notation to define ExpressionBuilder.ExpressionFunctions.
+> `EF` is a shorthand "using" notation to define ExpressionFunctions.
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 Finally, combine these components together and reference the position of the Red Ball to define the mathematical relationship.
 
-```
+```csharp
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
@@ -119,7 +121,7 @@ In a hypothetical situation, what if you wanted to use this same Expression but 
 
 In this case, you modify the Expression you built earlier. Rather than "getting" a reference to the CompositionObject, you create a reference with a name and then assign different values:
 
-```
+```csharp
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
 orbitExpression.SetReferenceParameter("orbitRoundVisual", redSprite);
 blueSprite.StartAnimation("Offset", orbitExpression);
@@ -130,13 +132,13 @@ greenSprite.StartAnimation("Offset", orbitExpression);
 
 Here is the code if you defined your Expression with Strings via the public API.
 
-```
-ExpressionAnimation expressionAnimation =
-compositor.CreateExpressionAnimation("visual.Offset + " +
-"propertySet.CenterPointOffset + " +
-"Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
- var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
- var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
+```csharp
+ExpressionAnimation expressionAnimation = compositor.CreateExpressionAnimation("visual.Offset + " +
+    "propertySet.CenterPointOffset + " +
+    "Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
+    
+var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
+var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 expressionAnimation.SetReferenceParameter("propertySet", _propertySet);
 expressionAnimation.SetReferenceParameter("visual", redSprite);
 ```

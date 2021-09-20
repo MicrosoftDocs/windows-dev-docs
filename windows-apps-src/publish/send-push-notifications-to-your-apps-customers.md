@@ -1,5 +1,5 @@
 ---
-Description: Learn how to send notifications from Partner Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
+description: Learn how to send notifications from Partner Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.date: 10/31/2018
 ms.topic: article
@@ -17,7 +17,7 @@ Engaging with your customers at the right time and with the right message is key
 > These notifications can only be used with UWP apps.
 
 When considering the content of your notifications, keep in mind:
-- The content in your notifications must comply with the Store [Content Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#content_policies).
+- The content in your notifications must comply with the Store [Content Policies](/legal/windows/agreements/store-policies#content_policies).
 - Your notification content should not include confidential or potentially sensitive info.
 - While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).
@@ -39,7 +39,7 @@ At a high-level, you need to do three things to use notifications to engage with
 Follow these steps to create a notification in Partner Center and send it to a particular customer segment.
 
 > [!NOTE]
-> Before an app can receive notifications from Partner Center, you must first call the [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK). For more information about how to call this method, including a code example, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> Before an app can receive notifications from Partner Center, you must first call the [RegisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK). For more information about how to call this method, including a code example, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 1. In [Partner Center](https://partner.microsoft.com/dashboard), expand the **Engage** section, and then select **Notifications**.
 2. On the **Notifications** page, select **New notification**.
@@ -60,11 +60,11 @@ Follow these steps to create a notification in Partner Center and send it to a p
     * **Track app launch rate** (interactive toast type). If you want to measure how well you’re engaging with your customers through each notification, select this checkbox. For more details, see [Measure notification performance](#measure-notification-performance).
     * **Duration** (interactive toast type). You can choose **Short** or **Long**.
     * **Scenario** (interactive toast type). You can choose **Default**, **Alarm**, **Reminder**, or **Incoming call**.
-    * **Base URI** (interactive toast type). For more details, see [BaseUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri).
-    * **Add image query** (interactive toast type). For more details, see [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
-    * **Visual**. An image, video, or sound. For more details, see [visual](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
-    * **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
-    * **Binding** (interactive tile type). The toast template. For more details, see [binding](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding).
+    * **Base URI** (interactive toast type). For more details, see [BaseUri](/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri).
+    * **Add image query** (interactive toast type). For more details, see [addImageQuery](/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
+    * **Visual**. An image, video, or sound. For more details, see [visual](/uwp/schemas/tiles/toastschema/element-visual).
+    * **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+    * **Binding** (interactive tile type). The toast template. For more details, see [binding](/uwp/schemas/tiles/toastschema/element-binding).
 
     > [!TIP]
     > Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
@@ -103,7 +103,7 @@ You can measure how well you’re engaging with your customers through each noti
 ### To measure notification performance
 
 1.	When you create a notification, in the **Notification content** section, select the **Track app launch rate** checkbox.
-2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) method to notify Partner Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see [Configure your app to receive Partner Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) method to notify Partner Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see [Configure your app to receive Partner Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 
 ### To view notification performance
@@ -145,7 +145,7 @@ Things to keep in mind about translation:
  - If you change the English text after the notification has been translated, we’ll automatically update the translated notifications to match the change. However, this won’t happen if you previously chose to override the initial translation.
 
 ## Related topics
-- [Tiles for UWP apps](../design/shell/tiles-and-notifications/creating-tiles.md)
-- [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
+- [Tiles for UWP apps](/windows/apps/design/shell/tiles-and-notifications/creating-tiles)
+- [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 - [Notifications Visualizer app](https://www.microsoft.com/store/apps/9nblggh5xsl1)
-- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)
+- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)

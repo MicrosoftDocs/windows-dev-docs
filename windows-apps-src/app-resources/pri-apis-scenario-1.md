@@ -1,5 +1,5 @@
 ---
-Description: In this scenario, we'll make a new app to represent our custom build system. We'll create a resource indexer and add strings and other kinds of resources to it. Then we'll generate and dump a PRI file.
+description: In this scenario, we'll make a new app to represent our custom build system. We'll create a resource indexer and add strings and other kinds of resources to it. Then we'll generate and dump a PRI file.
 title: Scenario 1 Generate a PRI file from string resources and asset files
 template: detail.hbs
 ms.date: 05/07/2018
@@ -8,7 +8,7 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
 # Scenario 1: Generate a PRI file from string resources and asset files
-In this scenario, we'll use the [package resource indexing (PRI) APIs](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) to make a new app to represent our custom build system. The purpose of this custom build system, remember, is to create PRI files for a target UWP app. So, as part of this walkthrough, we'll create some sample resource files (containing strings, and other kinds of resources) to represent that target UWP app's resources.
+In this scenario, we'll use the [package resource indexing (PRI) APIs](/windows/desktop/menurc/pri-indexing-reference) to make a new app to represent our custom build system. The purpose of this custom build system, remember, is to create PRI files for a target UWP app. So, as part of this walkthrough, we'll create some sample resource files (containing strings, and other kinds of resources) to represent that target UWP app's resources.
 
 ## New project
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Windows Console Application** project, and name it *CBSConsoleApp* (for "custom build system console app").
@@ -222,10 +222,10 @@ The info begins with a resource map, which is named with the package family name
 The first string resource is *EnOnlyString* from `en-US\resources.resw`, and it has just one candidate (which matches the *language-en-US* qualifier). Next comes *LocalizedString1* from both `resources.resw` and `en-US\resources.resw`. Consequently, it has two candidates: one matching *language-en-US*, and a fallback neutral candidate that matches any context. Similarly, *LocalizedString2* has two candidates: *language-de-DE*, and neutral. And, finally, *NeutralOnlyString* only exists in neutral form. I gave it that name to make it clear that it's not meant to be localized.
 
 ## Summary
-In this scenario, we showed how to use the [package resource indexing (PRI) APIs](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) to create a resource indexer. We added string resources and asset files to the resource indexer. Then, we used the resource indexer to generated a binary PRI file. And finally we dumped the binary PRI file in the form of XML so that we could confirm that it contains the info we expected.
+In this scenario, we showed how to use the [package resource indexing (PRI) APIs](/windows/desktop/menurc/pri-indexing-reference) to create a resource indexer. We added string resources and asset files to the resource indexer. Then, we used the resource indexer to generated a binary PRI file. And finally we dumped the binary PRI file in the form of XML so that we could confirm that it contains the info we expected.
 
 ## Important APIs
-* [Package resource indexing (PRI) reference](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
+* [Package resource indexing (PRI) reference](/windows/desktop/menurc/pri-indexing-reference)
 
 ## Related topics
 * [Package resource indexing (PRI) APIs and custom build systems](pri-apis-custom-build-systems.md)

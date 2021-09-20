@@ -1,6 +1,6 @@
 ---
 description: The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references.
-title: Weak references in C++/WinRT
+title: Strong and weak references in C++/WinRT
 ms.date: 05/16/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference
@@ -10,11 +10,16 @@ ms.custom: RS5
 
 # Strong and weak references in C++/WinRT
 
-The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) meets you halfway in your work of building more complex systems simply and correctly.
+The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) meets you halfway in your work of building more complex systems simply and correctly.
+
+> [!NOTE]
+> With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in [C++/WinRT](./index.md). **Windows.UI.Composition** and **Windows.Devices.Input.PenDevice** are examples of exceptions&mdash;that is, namespaces where weak reference support is *not* on for those types. Also see [If your auto-revoke delegate fails to register](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register).
+> 
+> If you're authoring types, then see the [Weak references in C++/WinRT](#weak-references-in-cwinrt) section in this topic.
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
-For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
 The code listing below shows a typical example of a coroutine that's a member function of a class. You can copy-paste this example into the specified files in a new **Windows Console Application (C++/WinRT)** project.
 
@@ -100,10 +105,10 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
+A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
 
 > [!IMPORTANT]
-> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](./author-apis.md).
 
 This resolves the problem that we previously had when we got to step 4. Even if all other references to the class instance disappear, the coroutine has taken the precaution of guaranteeing that its dependencies are stable.
 
@@ -248,10 +253,10 @@ In both cases, we're just capturing the raw *this* pointer. And that has no effe
 
 ### The solution
 
-The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
+The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
 
 > [!IMPORTANT]
-> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](./author-apis.md).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -322,6 +327,43 @@ event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 
 If the delegate *does* call your member function, then C++/WinRT will keep your object alive until your handler returns. However, if your handler is asynchronous, then it returns at suspension points, and so you'll have to give your coroutine a strong reference to the class instance before the first suspension point. Again, for more info, see [Safely accessing the *this* pointer in a class-member coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) section earlier in this topic.
 
+#### If the member function doesn't belong to a Windows Runtime type
+
+When the [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) method isn't available to you (your type isn't a Windows Runtime type), you can use the technique shown in the code example below. Here, a regular C++ class (named **ConsoleNetworkWatcher**) is shown handling the [**NetworkInformation.NetworkStatusChanged**](/uwp/api/windows.networking.connectivity.networkinformation.networkstatuschanged) event.
+
+```cppwinrt
+#include <winrt/Windows.Networking.Connectivity.h>
+using namespace winrt;
+using namespace Windows::Networking::Connectivity;
+
+class ConsoleNetworkWatcher
+{
+    /* any constructor, and instance methods, here*/
+
+    static void Initialize(std::shared_ptr<ConsoleNetworkWatcher> instance)
+    {
+        auto weakPointer{ std::weak_ptr{ instance } };
+
+        instance->m_statusChangedRevoker =
+            NetworkInformation::NetworkStatusChanged(winrt::auto_revoke,
+                [weakPointer](winrt::Windows::Foundation::IInspectable const& sender)
+                {
+                    auto sharedPointer{ weakPointer.lock() };
+
+                    if (sharedPointer)
+                    {
+                        sharedPointer->NetworkStatusChanged(sender);
+                    }
+                });
+    }
+
+    void NetworkStatusChanged(winrt::Windows::Foundation::IInspectable const& sender){/* handle event here */};
+
+private:
+    NetworkInformation::NetworkStatusChanged_revoker m_statusChangedRevoker;
+};
+```
+
 ### A weak reference example using **SwapChainPanel::CompositionScaleChanged**
 
 In this code example, we use the [**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) event by way of another illustration of weak references. The code registers an event handler using a lambda that captures a weak reference to the recipient.
@@ -354,7 +396,7 @@ In the lamba capture clause, a temporary variable is created, representing a wea
 
 ## Weak references in C++/WinRT
 
-Above, we saw weak references being used. In general, they're good for breaking cyclic references. For example, for the native implementation of the XAML-based UI framework&mdash;because of the historic design of the framework&mdash;the weak reference mechanism in C++/WinRT is necessary to handle cyclic references. Outside of XAML, though, you likely won't need to use weak references (not that there's anything inherently XAML-specific about them). Rather you should, more often than not, be able to design your own C++/WinRT APIs in such a way as to avoid the need for cyclic references and weak references. 
+Above, we saw weak references being used. In general, they're good for breaking cyclic references. For example, for the native implementation of the XAML-based UI framework&mdash;because of the historical design of the framework&mdash;the weak reference mechanism in C++/WinRT is necessary to handle cyclic references. Outside of XAML, though, you likely won't need to use weak references (not that there's anything inherently XAML-specific about them). Rather you should, more often than not, be able to design your own C++/WinRT APIs in such a way as to avoid the need for cyclic references and weak references. 
 
 For any given type that you declare, it's not immediately obvious to C++/WinRT whether or when weak references are needed. So, C++/WinRT provides weak reference support automatically on the struct template [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), from which your own C++/WinRT types directly or indirectly derive. It's pay-for-play, in that it doesn't cost you anything unless your object is actually queried for [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource). And you can choose explicitly to [opt out of that support](#opting-out-of-weak-reference-support).
 

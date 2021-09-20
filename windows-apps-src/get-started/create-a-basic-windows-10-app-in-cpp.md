@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Create a "Hello world" app in C++/CX
+# Create a "Hello, World!" app in C++/CX
 
 > [!IMPORTANT]
-> This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
+> This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](../cpp-and-winrt-apis/index.md).
 
 With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
@@ -20,7 +20,7 @@ With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on 
 ## Before you start
 
 -   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows 10. To download, see [Get the tools](https://visualstudio.microsoft.com/downloads/).
--   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
+-   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](../xaml-platform/xaml-overview.md).
 -   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
 ## Comparing C++ desktop apps to Windows apps
@@ -47,7 +47,7 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 -   You're primarily programming against a new, easy-to-navigate, object-oriented API, the Windows Runtime, although on Windows devices Win32 is still available for some functionality.
 
--   You use C++/CX to consume and create Windows Runtime objects. C++/CX enables C++ exception handling, delegates, events, and automatic reference counting of dynamically created objects. When you use C++/CX, the details of the underlying COM and Windows architecture are hidden from your app code. For more information, see [C++/CX Language Reference](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+-   You use C++/CX to consume and create Windows Runtime objects. C++/CX enables C++ exception handling, delegates, events, and automatic reference counting of dynamically created objects. When you use C++/CX, the details of the underlying COM and Windows architecture are hidden from your app code. For more information, see [C++/CX Language Reference](/cpp/cppcx/visual-c-language-reference-c-cx).
 
 -   Your app is compiled into a package that also contains metadata about the types that your app contains, the resources that it uses, and the capabilities that it requires (file access, internet access, camera access, and so forth).
 
@@ -69,7 +69,7 @@ We'll start with the basics:
 
 1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project...**.
 
-2.  In the **Create a new project** dialog box, select **Blank App (Universal Windows - C++/CX)**.  If you don't see this option, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more information.
+2.  In the **Create a new project** dialog box, select **Blank App (Universal Windows - C++/CX)**.  If you don't see this option, make sure you have the Universal Windows App Development Tools installed. See [Get set up](/windows/apps/get-started/get-set-up) for more information.
 
 ![C++/CX project templates in the Create a new project dialog box ](images/vs2019-uwp-01.png)
 
@@ -78,11 +78,11 @@ We'll start with the basics:
 4.  Choose the **Create** button.
 
 > [!NOTE]
-> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
 
    Your project files are created.
 
-Before we go on, let’s look at what's in the solution.
+Before we go on, let's look at what's in the solution.
 
 ![Universal app solution with nodes collapsed](images/vs2017-uwp-02.png)
 
@@ -93,10 +93,10 @@ Every .xaml file in a project folder has a corresponding .xaml.h file and .xaml.
 Let's look first at the project files.
 
 -   **App.xaml, App.xaml.h, App.xaml.cpp:** Represent the Application object, which is an app's entry point. App.xaml contains no page-specific UI markup, but you can add UI styles and other elements that you want to be accessible from any page. The code-behind files contain handlers for the **OnLaunched** and **OnSuspending** events. Typically, you add custom code here to initialize your app when it starts and perform cleanup when it's suspended or terminated.
--   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp:**Contain the XAML markup and code-behind for the default "start" page in an app. It has no navigation support or built-in controls.
+-   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp:** Contain the XAML markup and code-behind for the default "start" page in an app. It has no navigation support or built-in controls.
 -   **pch.h, pch.cpp:** A precompiled header file and the file that includes it in your project. In pch.h, you can include any headers that do not change often and are included in other files in the solution.
 -   **Package.appxmanifest:** An XML file that describes the device capabilities that your app requires, and the app version info and other metadata. To open this file in the **Manifest Designer**, just double-click it.
--   **HelloWorld\_TemporaryKey.pfx:**A key that enables deployment of the app on this machine, from Visual Studio.
+-   **HelloWorld\_TemporaryKey.pfx:** A key that enables deployment of the app on this machine, from Visual Studio.
 
 ## A first look at the code
 
@@ -199,7 +199,7 @@ Let's add some content to the app.
 **Step 1: Modify your start page**
 
 1.  In **Solution Explorer**, open MainPage.xaml.
-2.  Create controls for the UI by adding the following XAML to the root [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), immediately before its closing tag. It contains a [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) that has a [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that asks the user's name, a [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) element that accepts the user's name, a [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), and another **TextBlock** element.
+2.  Create controls for the UI by adding the following XAML to the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid), immediately before its closing tag. It contains a [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) that has a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that asks the user's name, a [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) element that accepts the user's name, a [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button), and another **TextBlock** element.
 
     ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -215,7 +215,7 @@ Let's add some content to the app.
 
 3.  At this point, you have created a very basic Universal Windows app. To see what the UWP app looks like, press F5 to build, deploy, and run the app in debugging mode.
 
-The default splash screen appears first. It has an image—Assets\\SplashScreen.scale-100.png—and a background color that are specified in the app's manifest file. To learn how to customize the splash screen, see [Adding a splash screen](https://docs.microsoft.com/previous-versions/windows/apps/hh465332(v=win.10)).
+The default splash screen appears first. It has an image—Assets\\SplashScreen.scale-100.png—and a background color that are specified in the app's manifest file. To learn how to customize the splash screen, see [Adding a splash screen](/previous-versions/windows/apps/hh465332(v=win.10)).
 
 When the splash screen disappears, your app appears. It displays the main page of the App.
 
@@ -225,38 +225,38 @@ It doesn't do much—yet—but congratulations, you've built your first Universa
 
 To stop debugging and close the app, return to Visual Studio and press Shift+F5.
 
-For more information, see [Run a Store app from Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx).
+For more information, see [Run a Store app from Visual Studio](/visualstudio/debugger/run-store-apps-from-visual-studio).
 
-In the app, you can type in the [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), but clicking the [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event, which displays a personalized greeting.
+In the app, you can type in the [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox), but clicking the [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event, which displays a personalized greeting.
 
 ## Step 2: Create an event handler
 
-1.  In MainPage.xaml, in either XAML or design view, select the "Say Hello" [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) in the [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) you added earlier.
+1.  In MainPage.xaml, in either XAML or design view, select the "Say Hello" [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) in the [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) you added earlier.
 2.  Open the **Properties Window** by pressing F4, and then choose the Events button (![Events button](images/eventsbutton.png)).
-3.  Find the [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. In its text box, type the name of the function that handles the **Click** event. For this example, type "Button\_Click".
+3.  Find the [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. In its text box, type the name of the function that handles the **Click** event. For this example, type "Button\_Click".
 
     ![Properties window, Events view](images/xaml-hw-event.png)
 
 4.  Press Enter. The event handler method is created in MainPage.xaml.cpp and opened so that you can add the code that's executed when the event occurs.
 
-   At the same time, in MainPage.xaml, the XAML for the [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) is updated to declare the [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event handler, like this:
+   At the same time, in MainPage.xaml, the XAML for the [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) is updated to declare the [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event handler, like this:
 
-    ```xaml
-    <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-    ```
+```xaml
+<Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
+```
 
    You could also have simply added this to the xaml code manually, which can be helpful if the designer doesn't load. If you enter this manually, type "Click" and then let IntelliSense pop up the option to add a new event handler. That way, Visual Studio creates the necessary method declaration and stub.
 
    The designer fails to load if an unhandled exception occurs during rendering. Rendering in the designer involves running a design-time version of the page. It can be helpful to disable running user code. You can do this by changing the setting in the **Tools, Options** dialog box. Under **XAML Designer**, uncheck **Run project code in XAML designer (if supported)**.
 
-5.  In MainPage.xaml.cpp, add the following code to the **Button\_Click** event handler that you just created. This code retrieves the user's name from the `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) control and uses it to create a greeting. The `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) displays the result.
+5.  In MainPage.xaml.cpp, add the following code to the **Button\_Click** event handler that you just created. This code retrieves the user's name from the `nameInput` [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) control and uses it to create a greeting. The `greetingOutput` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) displays the result.
 
-    ```cpp
-    void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-    {
-        greetingOutput->Text = "Hello, " + nameInput->Text + "!";
-    }
-    ```
+```cpp
+void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    greetingOutput->Text = "Hello, " + nameInput->Text + "!";
+}
+```
 
 6.  Set the project as the startup, and then press F5 to build and run the app. When you type a name in the text box and click the button, the app displays a personalized greeting.
 
@@ -271,26 +271,26 @@ It's easy to customize the look and feel of your app. By default, your app uses 
 **To switch to the dark theme**
 
 1.  Open App.xaml.
-2.  In the opening [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag, edit the [**RequestedTheme**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
+2.  In the opening [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag, edit the [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
 
     ```xaml
     RequestedTheme="Dark"
     ```
 
-    Here's the full [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
+    Here's the full [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
 
     ```xaml
-        <Application
-        x:Class="HelloWorld.App"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:HelloWorld"
-        RequestedTheme="Dark">
+    <Application
+    x:Class="HelloWorld.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloWorld"
+    RequestedTheme="Dark">
     ```
 
 3.  Press F5 to build and run it. Notice that it uses the dark theme.
 
-![App screen with dark theme](images/xaml-hw-app3.png)
+    ![App screen with dark theme](images/xaml-hw-app3.png)
 
 Which theme should you use? Whichever one you want. Here's our take: for apps that mostly display images or video, we recommend the dark theme; for apps that contain a lot of text, we recommend the light theme. If you're using a custom color scheme, use the theme that goes best with your app's look and feel. In the rest of this tutorial, we use the Light theme in screenshots.
 
@@ -303,38 +303,38 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
 **To change the style of an element**
 
 1.  In the Windows project, open MainPage.xaml.
-2.  In either XAML or design view, select the "What's your name?"[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that you added earlier.
+2.  In either XAML or design view, select the "What's your name?"[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that you added earlier.
 3.  In the **Properties** window (**F4**), choose the Properties button (![Properties button](images/propertiesbutton.png)) in the upper right.
 4.  Expand the **Text** group and set the font size to 18 px.
 5.  Expand the **Miscellaneous** group and find the **Style** property.
 6.  Click the property marker (the green box to the right of the **Style** property), and then, on the menu, choose **System Resource** > **BaseTextBlockStyle**.
 
-     **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) in <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
+     **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) in <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
     ![Properties window, Properties view](images/xaml-hw-style-cpp.png)
 
-     On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is updated:
+     On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) is updated:
 
-    ```xaml
-    <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
-    ```
+```xaml
+<TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
+```
 
-7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
+7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
 
-    **Tip**  Although there's no text in this [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), when you move the pointer over the XAML design surface, a blue outline shows where it is so that you can select it.  
+    **Tip**  Although there's no text in this [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), when you move the pointer over the XAML design surface, a blue outline shows where it is so that you can select it.  
 
     Your XAML now looks like this:
 
-    ```xaml
-    <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
-        <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
-            <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-        </StackPanel>
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
+```xaml
+<StackPanel x:Name="contentPanel" Margin="120,30,0,0">
+    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
+    <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
+        <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
+        <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
     </StackPanel>
-    ```
+    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
+</StackPanel>
+```
 
 8.  Press F5 to build and run the app. It now looks like this:
 
@@ -342,47 +342,47 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
 
 ### Step 4: Adapt the UI to different window sizes
 
-Now we'll make the UI adapt to different screen sizes so it looks good on mobile devices. To do this, you add a [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) and set properties that are applied for different visual states.
+Now we'll make the UI adapt to different screen sizes so it looks good on mobile devices. To do this, you add a [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) and set properties that are applied for different visual states.
 
 **To adjust the UI layout**
 
-1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) element.
+1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) element.
 
-    ```xaml
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualState x:Name="wideState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="641" />
-                </VisualState.StateTriggers>
-            </VisualState>
-            <VisualState x:Name="narrowState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="0" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter Target="contentPanel.Margin" Value="20,30,0,0"/>
-                    <Setter Target="inputPanel.Orientation" Value="Vertical"/>
-                    <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-    ```
+```xaml
+<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState x:Name="wideState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="641" />
+            </VisualState.StateTriggers>
+        </VisualState>
+        <VisualState x:Name="narrowState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="0" />
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="contentPanel.Margin" Value="20,30,0,0"/>
+                <Setter Target="inputPanel.Orientation" Value="Vertical"/>
+                <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>
+```
 
 2.  Debug the app on the local machine. Notice that the UI looks the same as before unless the window gets narrower than 641 device-independent pixels (DIPs).
 3.  Debug the app on the mobile device emulator. Notice that the UI uses the properties you defined in the `narrowState` and appears correctly on the small screen.
 
 ![Mobile app screen with styled text](images/hw10-screen2-mob.png)
 
-If you've used a [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) in previous versions of XAML, you might notice that the XAML here uses a simplified syntax.
+If you've used a [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) in previous versions of XAML, you might notice that the XAML here uses a simplified syntax.
 
-The [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) named `wideState` has an [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) with its [**MinWindowWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 641. This means that the state is to be applied only when the window width is not less than the minimum of 641 DIPs. You don't define any [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) objects for this state, so it uses the layout properties you defined in the XAML for the page content.
+The [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) named `wideState` has an [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) with its [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 641. This means that the state is to be applied only when the window width is not less than the minimum of 641 DIPs. You don't define any [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) objects for this state, so it uses the layout properties you defined in the XAML for the page content.
 
-The second [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState), `narrowState`, has an [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) with its [**MinWindowWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 0. This state is applied when the window width is greater than 0, but less than 641 DIPs. (At 641 DIPs, the `wideState` is applied.) In this state, you do define some [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) objects to change the layout properties of controls in the UI:
+The second [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState), `narrowState`, has an [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) with its [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 0. This state is applied when the window width is greater than 0, but less than 641 DIPs. (At 641 DIPs, the `wideState` is applied.) In this state, you do define some [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) objects to change the layout properties of controls in the UI:
 
 -   You reduce the left margin of the `contentPanel` element from 120 to 20.
--   You change the [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) of the `inputPanel` element from **Horizontal** to **Vertical**.
+-   You change the [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) of the `inputPanel` element from **Horizontal** to **Vertical**.
 -   You add a top margin of 4 DIPs to the `inputButton` element.
 
 ### Summary
@@ -391,6 +391,6 @@ Congratulations, you've completed the first tutorial! It taught how to add conte
 
 ## Next steps
 
-If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) and [Porting to the Universal Windows Platform (C++)](https://msdn.microsoft.com/library/mt186164.aspx).
+If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) and [Porting to the Universal Windows Platform (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
 
-If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](https://msdn.microsoft.com/library/mt186162.aspx).
+If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app).

@@ -10,16 +10,16 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
-* [**FileIO class**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
-* [**PathIO class**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
+* [**FileIO class**](/uwp/api/Windows.Storage.FileIO)
+* [**PathIO class**](/uwp/api/windows.storage.pathio)
 
-Developers sometimes run into a set of common problems when using the **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) and [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes to perform file system I/O operations. For example, common problems include:
+Developers sometimes run into a set of common problems when using the **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [**PathIO**](/uwp/api/windows.storage.pathio) classes to perform file system I/O operations. For example, common problems include:
 
 * A file is partially written.
 * The app receives an exception when calling one of the methods.
 * The operations leave behind .TMP files  with a file name similar to the target file name.
 
-The **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) and [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes include the following:
+The **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [**PathIO**](/uwp/api/windows.storage.pathio) classes include the following:
 
 * **WriteBufferAsync**
 * **WriteBytesAsync**
@@ -33,31 +33,31 @@ The **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Win
 
 ## Convenience vs. control
 
-A [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) object is not a file handle like the native Win32 programming model. Instead, a [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) is a representation of a file with methods to manipulate its contents.
+A [**StorageFile**](/uwp/api/windows.storage.storagefile) object is not a file handle like the native Win32 programming model. Instead, a [**StorageFile**](/uwp/api/windows.storage.storagefile) is a representation of a file with methods to manipulate its contents.
 
 Understanding this concept is useful when performing I/O with a **StorageFile**. For example, the [Writing to a file](quickstart-reading-and-writing-files.md#writing-to-a-file) section presents three ways to write to a file:
 
-* Using the [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) method.
-* By creating a buffer and then calling the [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) method.
+* Using the [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) method.
+* By creating a buffer and then calling the [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) method.
 * The four-step model using a stream:
-  1. [Open](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) the file to get a stream.
-  2. [Get](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) an output stream.
-  3. Create a [**DataWriter**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) object and call the corresponding **Write** method.
-  4. [Commit](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync) the data in the data writer and [flush](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync) the output stream.
+  1. [Open](/uwp/api/windows.storage.storagefile.openasync) the file to get a stream.
+  2. [Get](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) an output stream.
+  3. Create a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) object and call the corresponding **Write** method.
+  4. [Commit](/uwp/api/windows.storage.streams.datawriter.storeasync) the data in the data writer and [flush](/uwp/api/windows.storage.streams.ioutputstream.flushasync) the output stream.
 
 The first two scenarios are the ones most commonly used by apps. Writing to the file in a single operation is easier to code and maintain, and it also removes the responsibility of the app from dealing with many of the complexities of file I/O. However, this convenience comes at a cost: the loss of control over the entire operation and the ability to catch errors at specific points.
 
 ## The transactional model
 
-The **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) and [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes wrap the steps on the third write model described above, with an added layer. This layer is encapsulated in a storage transaction.
+The **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [**PathIO**](/uwp/api/windows.storage.pathio) classes wrap the steps on the third write model described above, with an added layer. This layer is encapsulated in a storage transaction.
 
-To protect the integrity of the original file in case something goes wrong while writing the data, the **Write** methods use a transactional model by opening the file using [**OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync). This process creates a [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) object. After this transaction object is created, the APIs write the data following a similar fashion to the [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) sample or the code example in the [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) article.
+To protect the integrity of the original file in case something goes wrong while writing the data, the **Write** methods use a transactional model by opening the file using [**OpenTransactedWriteAsync**](/uwp/api/windows.storage.storagefile.opentransactedwriteasync). This process creates a [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction) object. After this transaction object is created, the APIs write the data following a similar fashion to the [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) sample or the code example in the [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction) article.
 
 The following diagram illustrates the underlying tasks performed by the the **WriteTextAsync** method in a successful write operation. This illustration provides a simplified view of the operation. For example, it skips steps such as text encoding and async completion on different threads.
 
 ![UWP API call sequence diagram for writing to a file](images/file-write-call-sequence.svg)
 
-The advantages of using the **Write** methods of the [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) and [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes instead of the more complex four-step model using a stream are:
+The advantages of using the **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [**PathIO**](/uwp/api/windows.storage.pathio) classes instead of the more complex four-step model using a stream are:
 
 * One API call to handle all the intermediate steps, including errors.
 * The original file is kept if something goes wrong.
@@ -88,11 +88,11 @@ Your app should not make any assumption about data in the file while a write ope
 
 ### Readers
 
-If the file that being written to is also being used by a polite reader (that is, opened with [**FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode), subsequent reads will fail with an error ERROR_OPLOCK_HANDLE_CLOSED (0x80070323). Sometimes apps retry opening the file for read again while the **Write** operation is ongoing. This might result in a race condition on which the **Write** ultimately fails when trying to overwrite the original file because it cannot be replaced.
+If the file that being written to is also being used by a polite reader (that is, opened with [**FileAccessMode.Read**](/uwp/api/Windows.Storage.FileAccessMode), subsequent reads will fail with an error ERROR_OPLOCK_HANDLE_CLOSED (0x80070323). Sometimes apps retry opening the file for read again while the **Write** operation is ongoing. This might result in a race condition on which the **Write** ultimately fails when trying to overwrite the original file because it cannot be replaced.
 
 ### Files from KnownFolders
 
-Your app might not be the only app that is trying to access a file that resides on any of the [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders). There’s no guarantee that if the operation is successful, the contents an app wrote to the file will remain constant the next time it tries to read the file. Also, sharing or access denied errors become more common under this scenario.
+Your app might not be the only app that is trying to access a file that resides on any of the [**KnownFolders**](/uwp/api/Windows.Storage.KnownFolders). There’s no guarantee that if the operation is successful, the contents an app wrote to the file will remain constant the next time it tries to read the file. Also, sharing or access denied errors become more common under this scenario.
 
 ### Conflicting I/O
 
@@ -108,7 +108,7 @@ Some errors can become more prevalent depending on the type of files, the freque
 
 * Files created and edited by the user in your app's local data folder. These are created and edited only while using your app, and they exist only within the app.
 * App metadata. Your app uses these files to keep track of its own state.
-* Other files in locations of the file system where your app has declared capabilities to access. These are most commonly located in one of the [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders).
+* Other files in locations of the file system where your app has declared capabilities to access. These are most commonly located in one of the [**KnownFolders**](/uwp/api/Windows.Storage.KnownFolders).
 
 Your app has full control on the first two categories of files, because they’re part of your app's package files and are accessed by your app exclusively. For files in the last category, your app must be aware that other apps and OS services may be accessing the files concurrently.
 

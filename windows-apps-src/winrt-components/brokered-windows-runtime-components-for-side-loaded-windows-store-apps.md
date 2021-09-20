@@ -85,7 +85,7 @@ The contract between the side-loaded application and the desktop
 component is described in terms of the UWP type system. This involves
 declaring one or more C\# classes that can represent a UWP. See MSDN
 topic [Creating Windows Runtime components in C\# and Visual
-Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) for
+Basic](/previous-versions/windows/apps/br230301(v=vs.140)) for
 specific requirement of creating Windows Runtime Class using C\#.
 
 >**Note**  Enums are not supported in the Windows Runtime components contract
@@ -554,7 +554,7 @@ Once the references are properly configured, the next task is to
 implement the server's functionality. See the topic [Best practices
 for interoperability with Windows Runtime components (UWP apps
 using C\#/VB/C++ and
-XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
+XAML)](/previous-versions/windows/apps/hh750311(v=win.10)).
 The task is to create a Windows Runtime component dll that is able to
 call desktop code as part of its implementation. The accompanying sample
 includes the major patterns used in Windows Runtime:
@@ -672,7 +672,7 @@ stub must be used.
 The process for creating and registering proxies and stubs for use
 inside a regular UWP app package are described in the
 topic [Raising Events in Windows Runtime
-Components](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140)).
+Components](/previous-versions/windows/apps/dn169426(v=vs.140)).
 The steps described in this article are more complicated than the
 process described below because it involves registering the proxy/stub
 inside the application package (as opposed to registering it globally).
@@ -841,17 +841,13 @@ list of loaded modules.
 
 -   [Brokered WinRT Component Project Templates for Windows 10 and VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
--   [NorthwindRT Brokered WinRT Component
-    Sample](https://code.msdn.microsoft.com/Northwind-Brokered-WinRTC-5143a67c)
-
 -   [Delivering reliable and trustworthy Microsoft Store
     apps](https://blogs.msdn.com/b/b8/archive/2012/05/17/delivering-reliable-and-trustworthy-metro-style-apps.aspx)
 
 -   [App contracts and extensions (Windows
-    Store apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
+    Store apps)](/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [How to sideload apps on Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+-   [How to sideload apps on Windows 10](/windows/apps/get-started/enable-your-device-for-development)
 
 -   [Deploying UWP apps to
     businesses](https://blogs.msdn.com/b/windowsstore/archive/2012/04/25/deploying-metro-style-apps-to-businesses.aspx)
-

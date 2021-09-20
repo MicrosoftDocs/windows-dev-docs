@@ -2,14 +2,17 @@
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: Learn how to use the AdControl class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP).
 title: AdControl in HTML 5 and JavaScript
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, AdControl, ad control, javascript, HTML
 ms.localizationpriority: medium
 ---
 # AdControl in HTML 5 and JavaScript
 
-This walkthrough shows how to use the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class to display banner ads in a Universal Windows Platform (UWP) JavaScript/HTML app for Windows 10.
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
+
+This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class to display banner ads in a Universal Windows Platform (UWP) JavaScript/HTML app for Windows 10.
 
 For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
@@ -94,7 +97,7 @@ The following example shows the complete index.html for a simple app.
 The previous steps show how to declare an **AdControl** in your HTML markup. Alternatively, you can programmatically create an **AdControl** using JavaScript. This example assumes that you are using an existing **div** in your HTML with the ID **myAd**.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/js/main.js" id="DeclareAdControl":::
 
 This example assumes that you have already declared event handler methods named **myAdError**, **myAdRefreshed**, and **myAdEngagedChanged**.
 

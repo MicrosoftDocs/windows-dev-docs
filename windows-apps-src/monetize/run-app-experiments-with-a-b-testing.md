@@ -1,5 +1,5 @@
 ---
-Description: You can use Partner Center to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
+description: You can use Partner Center to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
 title: Run app experiments with A/B testing
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.date: 02/08/2017
@@ -30,7 +30,7 @@ A/B testing in Partner Center is supported only for UWP apps.
 
 Before you can run experiments with A/B testing, you must set up your development computer:
 
-* Follow the instructions [here](../get-started/get-set-up.md) to set up your development computer for UWP development.
+* Follow the instructions [here](/windows/apps/get-started/get-set-up) to set up your development computer for UWP development.
 * [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). In addition to the API for experiments, this SDK also provides APIs for other features such as displaying ads and directing your customers to Feedback Hub to collect feedback on your app.
 
 ## Best practices

@@ -1,5 +1,5 @@
 ---
-Description: The Ratings report in Partner Center lets you see how customers rated your app in the Store.
+description: The Ratings report in Partner Center lets you see how customers rated your app in the Store.
 title: Ratings report
 ms.date: 10/31/2018
 ms.topic: article

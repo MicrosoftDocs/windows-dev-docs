@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Welcome to the [UWP platform](universal-application-platform-guide.md)! On this page, we'll point you at the right information you need to start coding the Windows 10 apps you want to create.
 
-Before you begin development, you should be sure to [get set up.](get-set-up.md)
+Before you begin development, you should be sure to [get set up.](/windows/apps/get-started/get-set-up)
 
 ## Learning tracks
 
@@ -37,13 +37,13 @@ If you want a more detailed walkthrough on the basics of coding, the C# language
 
 **Docs:**
 
-* [Get started with C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C# Quickstarts](https://docs.microsoft.com/dotnet/csharp/quick-starts/)
-* [Get started with Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
+* [Get started with C#](/dotnet/csharp/getting-started/)
+* [C# Quickstarts](/dotnet/csharp/quick-starts/)
+* [Get started with Visual Studio](/visualstudio/ide/)
 
 **Tutorials:**
 
-* [Windows on Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)
+* [Windows on Microsoft Learn](/learn/browse/?products=windows&resource_type=module)
 
 ## Using the docs
 
@@ -51,9 +51,9 @@ If you've already explored our learning tracks, or if you're interested in somet
 
 | Area | Description |
 | --- | --- |
-| **What's New?** | Each major update of Windows 10 sees our docs expanded with new guidance. These docs have information about the feature into and developer guidance we've added for every release, as well as lists of new APIs: </br>   [What's new for devs in the latest Windows 10 release](../whats-new/windows-10-version-latest.md) </br> Major releases aren't the only time we update our docs, though. There's always new information being added for you to explore, and we'll keep you up to date on the latest: </br>   [What's new in the docs](../whats-new/windows-docs-latest.md) |
-| **Design and UI** | All information on the visual presentation and UI of your app is contained in this area of the docs. If you're interested on the specifics of the XAML markup language or just want to create a unique look for your docs, start here: </br>   [Design basics for UWP apps](../design/basics/index.md) |
-| **Develop apps** | If you want detailed information on a specific Windows 10 feature, or are just interested in seeing what you can do with UWP development, check out this area of our docs: </br>   [UWP app features](../develop/index.md). </br> API reference for Windows 10 apps is hosted in a related set of docs, which you can find here: </br>   [Windows UWP namespaces](https://docs.microsoft.com/en-us/uwp/api/) </br>   [File and XML schemas](https://docs.microsoft.com/uwp/schemas/) |
+| **What's New?** | Each major update of Windows 10 sees our docs expanded with new guidance. These docs have information about the feature into and developer guidance we've added for every release, as well as lists of new APIs: </br>   [What's new for devs in the latest Windows 10 release](../whats-new/windows-10-build-19041.md) |
+| **Design and UI** | All information on the visual presentation and UI of your app is contained in this area of the docs. If you're interested on the specifics of the XAML markup language or just want to create a unique look for your docs, start here: </br>   [Design basics for UWP apps](/windows/apps/design/basics/index) |
+| **Develop apps** | If you want detailed information on a specific Windows 10 feature, or are just interested in seeing what you can do with UWP development, check out this area of our docs: </br>   [UWP app features](../develop/index.md). </br> API reference for Windows 10 apps is hosted in a related set of docs, which you can find here: </br>   [Windows UWP namespaces](/uwp/api/) </br>   [File and XML schemas](/uwp/schemas/) |
 | **Develop games** | These docs contain information on how to develop games on Windows or Xbox. This includes setup instructions, developer programs, and instructions for programming with DirectX or Xbox features. </br>   [Getting started with game development](../gaming/getting-started.md) |
 | **Publish** | These docs contain information on how to publish your app to the Windows Store, from app submission to pricing to promotion and customer engagement: </br>   [Publish your app to the Windows Store](../publish/index.md) |
 
@@ -63,6 +63,6 @@ Some specialized Windows 10 platforms, like web development or Mixed Reality, ha
 
 | Docs | Description |
 | --- | --- |
-| **Microsoft Azure** | Information on cloud development and Microsoft Azure can be found in the [Microsoft Azure developer documentation.](https://docs.microsoft.com/azure/) |
-| **Web development** | Information on Microsoft Edge, WebVR, and other Windows web development features can be found in the [Microsoft Edge developer documentation.](https://docs.microsoft.com/microsoft-edge/) |
-| **Windows Mixed Reality** | Mixed reality blends real-world and virtual content into experiences where physical and digital objects coexists. Information on building apps for the Microsoft HoloLens and other immersive headsets can be found in the [Windows Mixed Reality documentation.](https://docs.microsoft.com/en-us/windows/mixed-reality/)|
+| **Microsoft Azure** | Information on cloud development and Microsoft Azure can be found in the [Microsoft Azure developer documentation.](/azure/) |
+| **Web development** | Information on Microsoft Edge, WebVR, and other Windows web development features can be found in the [Microsoft Edge developer documentation.](/microsoft-edge/) |
+| **Windows Mixed Reality** | Mixed reality blends real-world and virtual content into experiences where physical and digital objects coexists. Information on building apps for the Microsoft HoloLens and other immersive headsets can be found in the [Windows Mixed Reality documentation.](/windows/mixed-reality/)|

@@ -25,9 +25,9 @@ Layout animations, shadows, and blur effects are covered in the Recipes section 
 
 **XamlCompositionBrush** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
 
-See the [**Brushes**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
+See the [**Brushes**](/windows/apps/design/style/brushes#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
 
-For code examples, see the reference page for [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+For code examples, see the reference page for [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## The XamlLight class
 
@@ -35,16 +35,16 @@ For code examples, see the reference page for [**XamlCompositionBrushBase**](htt
 
 See the [**Lighting**](xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
 
-For code examples, see the reference page for [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight).
+For code examples, see the reference page for [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
 
 ## The ElementCompositionPreview class
 
-[**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). The **ElementCompositionPreview** class provides the following methods:
+[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](./visual-layer.md). The **ElementCompositionPreview** class provides the following methods:
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get a "handout" Visual that is used to render this element
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Retrieve the Visual set using **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
+-   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get a "handout" Visual that is used to render this element
+-   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
+-   [**GetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Retrieve the Visual set using **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
 
 ## Remarks on ElementCompositionPreview.GetElementVisual
 
@@ -90,7 +90,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## **GetAlphaMask** methods
 
-[**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), and [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
+[**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image), [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), and [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
 
 ## Recipes
 
@@ -193,7 +193,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-The following two listings show the [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) and [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
+The following two listings show the [C++/WinRT](../cpp-and-winrt-apis/index.md) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -356,8 +356,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## Additional Resources
 
-- [Visual Layer overview](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview** class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [Visual Layer overview](./visual-layer.md)
+- [**ElementCompositionPreview** class](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 - [BasicXamlInterop sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

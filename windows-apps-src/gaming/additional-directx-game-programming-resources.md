@@ -17,7 +17,7 @@ For more info about game programming on Windows, check out the following resourc
 ## Game programming reference
 
 
--   [Graphics and Gaming](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
+-   [Graphics and Gaming](/windows/desktop/graphics-and-multimedia)
 -   [OpenGL reference](https://www.opengl.org/sdk/docs/man4/)
 
 ## Game design guidance
@@ -28,16 +28,16 @@ For more info about game programming on Windows, check out the following resourc
 ## Blogs
 
 
--   [Games for Windows and the DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX Developer Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA game info).
+-   [Games for Windows and the DirectX SDK]( https://blogs.msdn.com/b/chuckw/)
+-   [DirectX Developer Blog]( https://blogs.msdn.com/b/directx/)
+-   [Shawn Hargreaves Blog]( https://blogs.msdn.com/b/shawnhar/) (XNA game info).
 
 ## Toolkits
 
 
--   [DirectX Tool Kit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex texture processing library](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
--   Microsoft Visual Studio[Graphics Diagnostics](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
+-   [DirectX Tool Kit](  https://github.com/Microsoft/DirectXTK)
+-   [DirectXTex texture processing library](  https://github.com/Microsoft/DirectXTex)
+-   Microsoft Visual Studio[Graphics Diagnostics](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015&preserve-view=true)
 -   [Win2D](https://github.com/Microsoft/Win2D) - An easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
 -   [ANGLE for Microsoft Store](https://github.com/microsoft/angle/wiki) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
@@ -75,7 +75,3 @@ For more info about game programming on Windows, check out the following resourc
  
 
  
-
-
-
-

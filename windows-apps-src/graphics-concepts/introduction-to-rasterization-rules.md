@@ -38,11 +38,11 @@ The top-left filling convention determines the action taken by Direct3D when a t
 
 If you define a rectangle with its upper-left corner at (0.5, 0.5) and its lower-right corner at (2.5, 4.5), the center point of this rectangle is at (1.5, 2.5). When the Direct3D rasterizer tessellates this rectangle, the center of each pixel is unambiguously inside each of the four triangles, and the top-left filling convention is not needed. The following illustration shows this. The pixels in the rectangle are labeled according to the triangle in which Direct3D includes them.
 
-![a numbered square that contains a rectangle that is divided into four triangles](images/noambig.png)
+![Screenshot of a numbered square that contains a rectangle that is divided into four triangles.](images/noambig.png)
 
 If you move the rectangle in the preceding illustration so that its upper-left corner is at (1.0, 1.0), its lower-right corner at (3.0, 5.0), and its center point at (2.0, 3.0), Direct3D applies the top-left filling convention. Most pixels in this rectangle straddle the border between two or more triangles, as the following illustration shows.
 
-![a numbered square that contains a rectangle that is divided into four triangles](images/fillrule.png)
+![Screenshot of the numbered square with the rectangle moved down and to the right.](images/fillrule.png)
 
 For both rectangles, the same pixels are affected, as shown in the following illustration.
 
@@ -53,7 +53,7 @@ For both rectangles, the same pixels are affected, as shown in the following ill
 
 Points are rendered the same as point sprites, which are both rendered as screen-aligned quadrilaterals and thus adhere to the same rules as polygon rendering.
 
-Non-antialiased line rendering rules are exactly the same as those for [GDI lines](https://docs.microsoft.com/windows/desktop/gdi/lines).
+Non-antialiased line rendering rules are exactly the same as those for [GDI lines](/windows/desktop/gdi/lines).
 
 ## <span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Point Sprite Rules
 
@@ -72,7 +72,3 @@ Point sprites and patch primitives are rasterized as if the primitives were firs
  
 
  
-
-
-
-

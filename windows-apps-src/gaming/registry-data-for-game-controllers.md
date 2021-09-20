@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This topic is meant for manufacturers of Windows 10-compatible game controllers, and doesn't apply to the majority of developers.
 
-The [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) allows independent hardware vendors (IHVs) to add data to the PC's registry, enabling their devices to appear as [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick), and [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) as appropriate. All IHVs should add this data for their compatible controllers. By doing this, all UWP games (and any desktop games that use the WinRT API) will be able to support your game controller.
+The [Windows.Gaming.Input namespace](/uwp/api/windows.gaming.input) allows independent hardware vendors (IHVs) to add data to the PC's registry, enabling their devices to appear as [Gamepads](/uwp/api/windows.gaming.input.gamepad), [RacingWheels](/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](/uwp/api/windows.gaming.input.flightstick), and [UINavigationControllers](/uwp/api/windows.gaming.input.uinavigationcontroller) as appropriate. All IHVs should add this data for their compatible controllers. By doing this, all UWP games (and any desktop games that use the WinRT API) will be able to support your game controller.
 
 ## Mapping scheme
 
@@ -50,7 +50,7 @@ The table below explains the expected values under the device root location:
     </tr>
 </table>
 
-Your device installer should add this data to the registry (either via setup or an [INF file](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)).
+Your device installer should add this data to the registry (either via setup or an [INF file](/windows-hardware/drivers/install/inf-files)).
 
 Subkeys under the device root location are detailed in the following sections.
 
@@ -539,7 +539,7 @@ The table below lists the required and optional subkeys under **UINavigation** s
     </tr>
 </table>
 
-For more information about UI navigation controllers and the above commands, see [UI navigation controller](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller).
+For more information about UI navigation controllers and the above commands, see [UI navigation controller](./ui-navigation-controller.md).
 
 ## Keys
 
@@ -1047,7 +1047,7 @@ Labels should be present under the **Labels** key under the device root. **Label
 
 ### Button labels
 
-The **Buttons** key maps each of the button positions in the **RawGameController**'s buttons array to a string. Each string is mapped internally to the corresponding [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) enum value. For example, if a gamepad has ten buttons and the order in which the **RawGameController** parses out the buttons and presents them in the buttons report is like this:
+The **Buttons** key maps each of the button positions in the **RawGameController**'s buttons array to a string. Each string is mapped internally to the corresponding [GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) enum value. For example, if a gamepad has ten buttons and the order in which the **RawGameController** parses out the buttons and presents them in the buttons report is like this:
 
 ```cpp
 Menu,               // Index 0
@@ -1113,7 +1113,7 @@ The labels should appear in this order under the **Buttons** key:
 
 ### Axis labels
 
-The **Axes** key will map each of the axis positions in the **RawGameController**'s axis array to one of the labels listed in [GameControllerButtonLabel Enum](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) just like the button labels. See the example in [Button labels](#button-labels).
+The **Axes** key will map each of the axis positions in the **RawGameController**'s axis array to one of the labels listed in [GameControllerButtonLabel Enum](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) just like the button labels. See the example in [Button labels](#button-labels).
 
 ### Switch labels
 
@@ -1343,6 +1343,6 @@ Windows Registry Editor Version 5.00
 
 ## See also
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
-* [INF Files](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
+* [Windows.Gaming.Input Namespace](/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](/uwp/api/windows.gaming.input.custom)
+* [INF Files](/windows-hardware/drivers/install/inf-files)

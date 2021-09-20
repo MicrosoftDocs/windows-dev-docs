@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Use the compass
-description: Learn how to use the compass to determine the current heading.
+description: Learn how to use the Universal Windows Platform (UWP) Compass API to determine the current heading in a navigation app.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,8 +12,8 @@ ms.localizationpriority: medium
 
 **Important APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Sample**
 
@@ -100,14 +100,14 @@ This section is divided into two subsections. The first subsection will take you
             }
         }
     }
-    ```
+```
 
 You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
 
 -   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
-        <Page
+    <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

@@ -6,14 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, stack trace, error, desktop application
 ms.localizationpriority: medium
 ---
+
 # Get the stack trace for an error in your desktop application
 
-Use this method in the Microsoft Store analytics API to get the stack trace for an error in a desktop application that you have added to the [Windows Desktop Application program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). This method can only download the stack trace for an error that occurred in the last 30 days. Stack traces are also available in the [Health report](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) for desktop applications in Partner Center.
+Use this method in the Microsoft Store analytics API to get the stack trace for an error in a desktop application that you have added to the [Windows Desktop Application program](/windows/desktop/appxpkg/windows-desktop-application-program). This method can only download the stack trace for an error that occurred in the last 30 days. Stack traces are also available in the [Health report](/windows/desktop/appxpkg/windows-desktop-application-program) for desktop applications in Partner Center.
 
 Before you can use this method, you must first use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve the ID hash of the CAB file that is associated with the error for which you want to retrieve the stack trace.
 
 ## Prerequisites
-
 
 To use this method, you need to first do the following:
 
@@ -23,29 +23,25 @@ To use this method, you need to first do the following:
 
 ## Request
 
-
 ### Request syntax
 
-| Method | Request URI                                                          |
-|--------|----------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace``` |
-
+| Method | Request URI                                                                   |
+|--------|-------------------------------------------------------------------------------|
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace` |
 
 ### Request header
 
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
- 
 
 ### Request parameters
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The product ID of the desktop application for which you want to get a stack trace. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
+| applicationId | string | The product ID of the desktop application for which you want to get a stack trace. To get the product ID of a desktop application, open any [analytics report for your desktop application in Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
 | cabIdHash | string | The unique ID hash of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this value, use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve details for a specific error in your application, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
- 
 ### Request example
 
 The following example demonstrates how to get a stack trace using this method. Replace the *applicationId* and *cabIdHash* parameters with the appropriate values for your desktop application.
@@ -57,7 +53,6 @@ Authorization: Bearer <your access token>
 
 ## Response
 
-
 ### Response body
 
 | Value      | Type    | Description                  |
@@ -65,7 +60,6 @@ Authorization: Bearer <your access token>
 | Value      | array   | An array of objects that each contain one frame of stack trace data. For more information about the data in each object, see the [stack trace values](#stack-trace-values) section below. |
 | @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
 | TotalCount | integer | The total number of rows in the data result for the query.          |
-
 
 ### Stack trace values
 
@@ -77,7 +71,6 @@ Elements in the *Value* array contain the following values.
 | image   | string  |   The name of the executable or library image that contains the function that is called in this stack frame.           |
 | function | string  |  The name of the function that is called in this stack frame. This is available only if your app includes symbols for the executable or library.              |
 | offset     | string  |  The byte offset of the current instruction relative to the start of the function.      |
-
 
 ### Response example
 

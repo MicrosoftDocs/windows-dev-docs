@@ -26,7 +26,7 @@ This code calls other example classes and functions to use the Microsoft Store s
 * Assign the `application_id` variable to the [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to create a submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py#L1-L74)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py" range="1-74":::
 
 <span id="token" />
 
@@ -38,7 +38,7 @@ The following example defines the following classes:
 * The `DevCenterClient` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py#L1-L126)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py" range="1-126":::
 
 <span id="token" />
 
@@ -47,7 +47,7 @@ The following example defines the following classes:
 The following example defines helper functions that return JSON-formatted listing data for a new sample app submission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-python[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/submissiondatasamples.py#L1-L170)]
+:::code language="python" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/python/submissiondatasamples.py" range="1-170":::
 
 ## Related topics
 
