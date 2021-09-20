@@ -314,7 +314,7 @@ The following instructions show you how to package the all the components in the
 
 6. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
 
-## Resolve "Cannot find a Resource" error when hosting WinUI control
+## Resolve "Cannot find a Resource" error when hosting a WinUI control
 
 If you're hosting a custom control that contains a control from the WinUI library, you may encounter a problem where the control cannot be loaded in a packaged app and debugging the code shows the following error.
 
