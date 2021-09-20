@@ -41,7 +41,7 @@ Set the default terminal emulator in Windows for all command line applications t
 **Default value:** Windows Console Host
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview) when running Windows 10 Insider Program Dev Channel or Windows 11.
 
 <br />
 
