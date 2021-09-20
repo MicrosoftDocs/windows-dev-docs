@@ -267,14 +267,8 @@
             items: 
               - name: WinRT APIs for WinUI
                 href: /windows/winui/api/
-              - name: COM APIs for WinUI
-                items:
-                  - name: IWindowNative
-                    items:
-                      - name: IWindowNative
-                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative
-                      - name: IWindowNative.WindowHandle
-                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle
+              - name: COM interop APIs for WinUI
+                href: /windows/windows-app-sdk/api/win32/_winuicominterop/
       - name: .NET API reference
         href: /dotnet/api/
       - name: Schema reference for Windows apps
