@@ -314,22 +314,15 @@ The following instructions show you how to package the all the components in the
 
 6. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
 
-    > [!NOTE]
-    > If the custom control cannot be loaded in the packaged app with above steps when hosts `WinUI library control`, and debugging shows this error:
-    > 
-    > ![Failed to host WinUI library control](images/xaml-islands/host-custom-control-error.png)
-    >
-    > Please copy the `App.xbf` file from the WPFApp output bin folder to the Packaged App output folder APPX\WPFApp to solve this problem.
-    >
-    > For example, the WPF project name is WPFXamlIslandsApp, and targets x86 platform, then you can copy `App.xbf`
-    >
-    > from 
-    >
-    > `\WPFXamlIslandsApp\bin\x86\Release\netcoreapp3.1`
-    >
-    > to
-    >
-    > `\WPFXamlIslandsApp.Pack\bin\x86\Release\AppX\WPFXamlIslandsAPP`
+## Resolve "Cannot find a Resource" error when hosting WinUI control
+
+If you're hosting a custom control that contains a control from the WinUI library, you may encounter a problem where the control cannot be loaded in a packaged app and debugging the code shows the following error.
+
+![Failed to host WinUI library control](images/xaml-islands/host-custom-control-error.png)
+
+To resolve this error, copy the **App.xbf** file from the build output folder of the WPF project to the **\AppX\\<WPF project\>** build output folder of the packaging project. 
+
+For example, if the WPF project is named **WPFXamlIslandsApp** and targets x86 platform, copy **App.xbf** from **\WPFXamlIslandsApp\bin\x86\Release\netcoreapp3.1** to **\WPFXamlIslandsApp.Pack\bin\x86\Release\AppX\WPFXamlIslandsAPP**.
     
 
 ## Related topics
