@@ -2,31 +2,25 @@
 description: Learn about how to use the dynamic dependency API.
 title: Use the dynamic dependency API to reference framework packages at run time
 ms.topic: article
-ms.date: 07/30/2021
+ms.date: 09/18/2021
 ms.localizationpriority: medium
 ---
 
 # Use the dynamic dependency API to reference framework packages at run time
 
-The *dynamic dependency API* enables unpackaged apps (that is, apps that do not use MSIX for their deployment technology) to reference and use framework packages other than the Windows App SDK framework package. For example, you might use the dynamic dependency API to reference and use the framework package for [WinUI2](../../../winui/winui2/index.md) or the DirectX Runtime in your unpackaged app.
+The *dynamic dependency API* enables unpackaged apps (that is, apps that do not use MSIX for their deployment technology) to reference and use framework packages such as [WinUI2](../../../winui/winui2/index.md) and the DirectX Runtime. For more information about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
 
-For background information about this scenario, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
+Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for framework packages. For more information about these types of references, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages). 
 
 > [!NOTE]
-> If you only want to reference the [Windows App SDK](../../../windows-app-sdk/index.md) framework package in your unpackaged app, use the *bootstrapper API* provided by the Windows App SDK instead of the dynamic dependency API. The bootstrapper API is a specialized form of the dynamic dependency API that is designed to take dependencies on the Windows App SDK framework package. After your unpackaged app uses the bootstrapper API to take a dependency on the Windows App SDK framework package, your app can then use APIs provided by the Windows App SDK (including using the dynamic dependency API implementation in the Windows App SDK to take dependencies on other framework packages). For more information about the bootstrapper API, see [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md).
+> Unlike other framework packages, you cannot use the dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-packages-for-packaged-and-unpackaged-apps) in your unpackaged app. Instead, you must use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that is designed to take dependencies on the Windows App SDK framework package. For more information, see [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md).
 
-## Overview
-
-The dynamic dependency API provides ways to manage the install-time references and run-time references for a framework package. For more information about these types of references, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages).
+## Use the dynamic dependency API
 
 There are two implementations of the dynamic dependency API that you can choose from, depending on your target platform and scenario:
 
 - The Windows App SDK provides both C/C++ functions (in [msixdynamicdependency.h](/windows/windows-app-sdk/api/win32/msixdynamicdependency)) and WinRT types (in the [Microsoft.Windows.ApplicationModel.DynamicDependency namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency)) that implement the dynamic dependency API. This implementation of the API can be used by apps that target Windows 10 version 1809 and later as well as Windows 11, but it has [some limitations](#dynamic-dependency-api-limitations-in-the-windows-app-sdk).
 - Windows 11 also provides C/C++ functions that implement the dynamic dependency API (in [appmodel.h](/windows/win32/api/appmodel)). This implementation of the API can be used only by apps that target Windows 11.
-
-For more details about the dynamic dependency API, see the [dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) on GitHub.
-
-## How to use the dynamic dependency API
 
 To use the dynamic dependency API in your unpackaged app to take a dependency on a framework package, follow this general pattern in your code.
 

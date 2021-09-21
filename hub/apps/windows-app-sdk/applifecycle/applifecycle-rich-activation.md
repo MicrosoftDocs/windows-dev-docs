@@ -1,17 +1,17 @@
 ---
-description: How to use AppLifecycle's rich activation features in unpackaged apps (Windows App SDK)
-title: Rich activation for unpackaged apps in AppLifecycle (Windows App SDK)
+description: Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).
+title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 05/25/2021
+ms.date: 09/18/2021
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
 ---
 
-# Rich activation in AppLifecycle
+# Rich activation with the app lifecycle API
 
-In the Windows App SDK, AppLifecycle brings support for UWP-style rich activation behavior to all apps, packaged and unpackaged alike. This first release focuses on bringing the most commonly-used activation kinds to unpackaged apps, and future releases aim to support more of UWP's [44 activation kinds](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
+In the Windows App SDK, the app lifecycle API brings support for UWP-style rich activation behavior to all apps, packaged and unpackaged alike. This first release focuses on bringing the most commonly-used activation kinds to unpackaged apps, and future releases aim to support more of UWP's [44 activation kinds](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
 
 Supporting rich activations requires two steps:
 
@@ -21,25 +21,25 @@ Supporting rich activations requires two steps:
 ## Prerequisites
 
 > [!IMPORTANT]
-> AppLifecycle APIs are currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
+> The app lifecycle API is currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
 
-To use the AppLifecycle APIs in the Windows App SDK:
+To use the app lifecycle API in the Windows App SDK:
 
 1. Download and install the latest preview or experimental release of the Windows App SDK. For more information, see [Install developer tools](../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
 2. Follow the instructions to [create a new project that uses the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Activation details for unpackaged apps
 
-The current version of the Windows App SDK supports the four most common activation kinds to unpackaged apps:
+The current version of the Windows App SDK supports the four most common activation kinds to unpackaged apps. These activation kinds are defined by the [ExtendedActivationKind](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind) enum.
 
 | Activation kind | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| Launch          | Activate the app from the command line, when the user double-clicks the app's icon, or programmatically via ShellExecute/CreateProcess. |
-| File            | Activate an app that has registered for a file type when a file of tht type is opened via ShellExecute, LaunchFileAsync, or the command line. |
-| Protocol        | Activate an app that has registered for a protocol when a string of that protocol is executed via ShellExecute, LaunchUriAsync, or the command-line. |
-| StartupTask     | Activate the app when the user logs into Windows, either because of a registry key, or because of a shortcut in a well-known startup folder. |
+| `Launch`          | Activate the app from the command line, when the user double-clicks the app's icon, or programmatically via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw) or [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). |
+| `File`            | Activate an app that has registered for a file type when a file of the type is opened via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchFileAsync](/uwp/api/windows.system.launcher.launchfileasync), or the command line. |
+| `Protocol`        | Activate an app that has registered for a protocol when a string of that protocol is executed via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync), or the command-line. |
+| `StartupTask`     | Activate the app when the user logs into Windows, either because of a registry key, or because of a shortcut in a well-known startup folder. |
 
-Each type of unpackaged app retrieves its command line arguments in different ways. For example, **Win32** apps expect to receive activation arguments to be passed into WinMain in the form of a string (though they also have the option to call [GetCommandLineW](/windows/win32/api/processenv/nf-processenv-getcommandlinew)). **Windows Forms** apps, however, *must* call [Environment.GetCommandLineArgs](/dotnet/api/system.environment.getcommandlineargs), as arguments will not be automatically passed to them.
+Each type of unpackaged app retrieves its command line arguments in different ways. For example, C++ Win32 apps expect to receive activation arguments to be passed into `WinMain` in the form of a string (though they also have the option to call [GetCommandLineW](/windows/win32/api/processenv/nf-processenv-getcommandlinew)). Windows Forms apps, however, *must* call [Environment.GetCommandLineArgs](/dotnet/api/system.environment.getcommandlineargs), because arguments will not be automatically passed to them.
 
 ## Activation details for packaged apps
 
@@ -49,9 +49,9 @@ Packaged apps will always receive activation event arguments in their [AppInstan
 
 ### Activation registration
 
-All apps support the Launch activation kind by default. Unlike UWP, the Windows App SDK Launch activation kind includes command line launches. Apps can register for additional activation kinds in several ways.
+All apps support the `Launch` activation kind by default. Unlike UWP, the Windows App SDK `Launch` activation kind includes command line launches. Apps can register for additional activation kinds in several ways.
 
-- Unpackaged apps that use the Windows App SDK can register (and unregister) for additional activation kinds via APIs in the Windows App SDK version of AppLifecycle.
+- Unpackaged apps that use the Windows App SDK can register (and unregister) for additional activation kinds via the app lifecycle API in the Windows App SDK.
 - Unpackaged apps can continue to register for additional activation kinds using the traditional method of writing registry keys.
 - Packaged apps can register for additional activation kinds via entries in their application manifest.
 
@@ -61,9 +61,15 @@ Activation registrations are per-user. If your app is installed for multiple use
 
 ### Register for rich activation
 
-Though apps can call the registration APIs at any time, the most common scenario is checking registrations on app startup.
+Although apps can call the registration APIs at any time, the most common scenario is checking registrations on app startup.
 
-This example shows how an unpackaged app can use the registration APIs to register for several activation kinds when the app is launched. Note that an unpackaged app must use the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function to initialize the Windows App SDK framework package. For more information, see [Reference the Windows App SDK framework package at run time](../reference-framework-package-run-time.md).
+This example shows how an unpackaged app can use the following static methods of the [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) class to register for several activation kinds when the app is launched:
+
+- [RegisterForFileTypeActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforfiletypeactivation)
+- [RegisterForProtocolActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforprotocolactivation)
+- [RegisterForStartupActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforstartupactivation)
+
+This example also demonstrates how to use the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions to initialize and clean up references to the Windows App SDK framework package. All unpackaged app must do this to use APIs provided by the Windows App SDK. For more information, see [Reference the Windows App SDK framework package at run time](../reference-framework-package-run-time.md).
 
 > [!NOTE]
 > This example registers associations with three image file types at once. This is convenient, but the outcome is the same as registering each file type individually; registering new image types does not overwrite previous registrations. However, if an app re-registers an already registered file type with a different set of verbs, the previous set of verbs will be overwritten for that file type.
@@ -165,7 +171,7 @@ void RegisterForActivation()
 
 ### Get rich activation event arguments
 
-Once activated, an app must retrieve its activation event arguments. In this example, an unpackaged app calls an AppLifecycle API to get the event args for the activation event.
+Once activated, an app must retrieve its activation event arguments. In this example, an unpackaged app calls the [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) method to get the event args for the activation event and then uses the [AppActivationArguments.Kind](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.kind) property to retrieve the event args for different types of activations.
 
 > [!NOTE]
 > Win32 apps typically get command-line arguments very early their `WinMain` method. Similarly, these apps should call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) in the same place where they previously would have used the supplied the `lpCmdLine` parameter or called `GetCommandLineW`.
@@ -227,7 +233,11 @@ void GetActivationInfo()
 
 ### Unregister
 
-This example demonstrates how an unpackaged app can unregister for specific activation kinds dynamically, using the AppLifecycle APIs.
+This example demonstrates how an unpackaged app can unregister for specific activation kinds dynamically, using the following static methods of the [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) class:
+
+- [UnregisterForFileTypeActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.unregisterforfiletypeactivation)
+- [UnregisterForProtocolActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.unregisterforprotocolactivation)
+- [UnregisterForStartupActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.unregisterforstartupactivation)
 
 > [!NOTE]
 > When unregistering for startup activation, the app must use the same taskId that it used when it originally registered.

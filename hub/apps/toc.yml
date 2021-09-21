@@ -71,7 +71,7 @@
             href: windows-app-sdk/mrtcore/mrtcore-overview.md
           - name: "Render text"
             href: windows-app-sdk/dwritecore.md
-          - name: Control app activation
+          - name: Manage app lifecycle
             items:
               - name: App instancing
                 href: windows-app-sdk/applifecycle/applifecycle-instancing.md

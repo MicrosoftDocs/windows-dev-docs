@@ -1,24 +1,24 @@
 ---
-description: Instancing models available in Windows.ApplicationModel and how to use them (Windows App SDK)
-title: App instancing in AppLifecycle (Windows App SDK)
+description: Describes how to use app instancing features with the app lifecycle API (Windows App SDK).
+title: App instancing with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 05/25/2021
+ms.date: 09/18/2021
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
 ---
 
-# App instancing in AppLifecycle
+# App instancing with the app lifecycle API
 
 An app's instancing model determines whether multiple instances of your app's process can run at the same time.
 
 ## Prerequisites
 
 > [!IMPORTANT]
-> AppLifecycle APIs are currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
+> The app lifecycle API is currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
 
-To use the AppLifecycle APIs in the Windows App SDK:
+To use the app lifecycle API in the Windows App SDK:
 
 1. Download and install the latest preview or experimental release of the Windows App SDK. For more information, see [Install developer tools](../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
 2. Follow the instructions to [create a new project that uses the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
@@ -179,7 +179,7 @@ For most types of activations, the app continues with its regular initialization
 
 This app uses key registration to determine which files are open in which instances. When an instance opens a file, it registers a key that includes that filename. Other instances can then examine the registered keys and look for particular filenames, and register themselves as that file's instance if no other instance already has.
 
-Note that, though key registration itself is part of the Windows App SDK's AppLifecycle API, the contents of the key are specified only within the app itself. An app does not need to register a file name, or any other meaningful data. This app, however, has decided to track open files via keys based on its particular needs and supported workflows.
+Note that, though key registration itself is part of the app lifecycle API in the Windows App SDK's, the contents of the key are specified only within the app itself. An app does not need to register a file name, or any other meaningful data. This app, however, has decided to track open files via keys based on its particular needs and supported workflows.
 
 ```cpp
 bool DecideRedirection()
@@ -242,7 +242,7 @@ bool DecideRedirection()
 
 This example expands on the previous example by adding more sophisticated redirection rules. The app still performs the open file check from the previous example. However, where the previous example would always create a new instance if it did not redirect based on the open file check, this example adds the concept of a "reusable" instance. If a reusable instance is found, the current instance redirects to the reusable instance and exits. Otherwise, it registers itself as reusable and continues with its normal initialization.
 
-Again, note that the concept of a "reusable" instance does not exist in the AppLifecycle API; it is created and used only within the app itself.
+Again, note that the concept of a "reusable" instance does not exist in the app lifecycle API; it is created and used only within the app itself.
 
 ```cpp
 int APIENTRY wWinMain(

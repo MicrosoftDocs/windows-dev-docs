@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Windows App SDK's release channels.
 ms.topic: article
-ms.date: 05/21/2021
+ms.date: 09/18/2021
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.author: zafaraj
 author: zaryaf
@@ -36,7 +36,9 @@ The following table shows which features are currently available in each release
 | [WinUI 3](../winui/winui3/index.md) |  :heavy_check_mark: Available for MSIX desktop<br>❌ Not available for UWP and unpackaged desktop | :heavy_check_mark: Available for MSIX desktop <br> ❌ Not available for UWP and unpackaged desktop | :heavy_check_mark: Available for MSIX desktop and UWP<br>❌ Not available for unpackaged desktop |
 | [Text rendering](dwritecore.md) | :heavy_check_mark: Available| :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
-| [App lifecycle](applifecycle/applifecycle-rich-activation.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
+| [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
+| [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
+| [App lifecycle: Power management](applifecycle/applifecycle-power.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [Manage app windows](windowing/windowing-overview.md) | :x: Not available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [Push notifications](notifications/push/index.md) | :x: Not available | :x: Not available  | :heavy_check_mark: Available |
 

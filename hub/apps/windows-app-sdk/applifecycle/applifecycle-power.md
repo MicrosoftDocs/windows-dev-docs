@@ -1,24 +1,26 @@
 ---
-description: Use PowerManager to respond to changes in the device's power state
-title:  Power management in AppLifecycle (Windows App SDK)
+description: Describes how to use power management and notification features with the app lifecycle API (Windows App SDK).
+title: Power management with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 09/13/2021
+ms.date: 09/18/2021
 keywords: AppLifecycle, Windows, ApplicationModel, power, battery,
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
 ---
 
-# Power management in AppLifecycle
+# Power management with the app lifecycle API
 
-The **AppLifecycle** power management API provides visibility into how an app affects the device's power state; it allows the app to make intelligent decisions about resource usage. An example of its functionality is postponing resource-intensive background tasks while the device is running on battery power. The **AppLifecycle** power management APIs use a callback-based model similar to the existing [PowerSettingRegisterNotification](/windows/win32/api/powersetting/nf-powersetting-powersettingregisternotification). Using a callback model extends the reach of the API to all apps, including background apps, headless apps, and others.
+The app lifecycle API in the Windows App SDK provides a set of power management APIs in the [Microsoft.Windows.System.Power](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power) namespace. These APIs provide visibility into how an app affects the device's power state, and they enable the app to make intelligent decisions about resource usage. For example, an app might use this API to postpone resource-intensive background tasks while the device is running on battery power.
+
+The power management APIs use a callback-based model similar to the existing [PowerSettingRegisterNotification](/windows/win32/api/powersetting/nf-powersetting-powersettingregisternotification) function. Using a callback model extends the reach of the API to all apps, including background apps, headless apps, and others.
 
 ## Prerequisites
 
 > [!IMPORTANT]
-> AppLifecycle APIs are currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
+> The app lifecycle API is currently supported in the [preview release channel](../preview-channel.md) and [experimental release channel](../experimental-channel.md) of the Windows App SDK. This feature is not currently supported for use by apps in production environments.
 
-To use the AppLifecycle APIs in the Windows App SDK:
+To use the app lifecycle API in the Windows App SDK:
 
 1. Download and install the latest preview or experimental release of the Windows App SDK. For more information, see [Install developer tools](../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
 2. Follow the instructions to [create a new project that uses the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
@@ -28,7 +30,7 @@ To use the AppLifecycle APIs in the Windows App SDK:
 The following example demonstrates how to subscribe and respond to [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) events. This code subscribes to the [BatteryStatusChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.batterystatuschanged) event during startup. The app then responds to changes by checking the current power level and adjusting its resource usage appropriately. For example, if the battery discharges at a low power state, the app might defer any non-critical background work.
 
 > [!NOTE]
-> Apps can register and unregister for these events at any time, but most apps will want to set callbacks in WinMain that persist as long as the app continues to run.
+> Apps can register and unregister for these events at any time, but most apps will want to set callbacks in `WinMain` that persist as long as the app continues to run.
 
 ```cpp
 BOOL bWorkInProgress;

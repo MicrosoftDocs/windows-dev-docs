@@ -2,7 +2,7 @@
 title: Experimental release channel for the Windows App SDK
 description: Learn about the latest experimental releases of the Windows App SDK.
 ms.topic: article
-ms.date: 05/21/2021
+ms.date: 09/18/2021
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.author: zafaraj
 author: zaryaf
@@ -108,7 +108,7 @@ The following sections describe new and updated features, limitations, and known
 
 This release introduces critical bug fixes (including those fixed in 0.5 servicing releases) and other changes for WinUI. For a complete list, see the [WinUI 3 - Windows App SDK 0.8 release notes](../winui/winui3/release-notes/release-notes-08-preview.md).
 
-### AppLifecycle (experimental feature)
+### App lifecycle (experimental feature)
 
 This release introduces new experimental features related to managing the app lifecycle of your app.
 
@@ -117,7 +117,7 @@ This release introduces new experimental features related to managing the app li
 - Packaged desktop apps can use app lifecycle instancing.
 - UWP apps cannot use app lifecycle features in the current release.
 
-For more information, see [App instancing in AppLifecycle](applifecycle/applifecycle-instancing.md) and [Rich activation in AppLifecycle](applifecycle/applifecycle-rich-activation.md).
+For more information, see [App instancing](applifecycle/applifecycle-instancing.md) and [Rich activation](applifecycle/applifecycle-rich-activation.md).
 
 ### Deployment for unpackaged apps (experimental feature)
 
