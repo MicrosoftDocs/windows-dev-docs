@@ -62,6 +62,10 @@ This test checks if your app is attempting to install any additional third-party
 
 This test will check to see if your app has a dependency on any type of non-Microsoft drivers or NT services. You are required to disclose such dependency in Partner Center during app submission.
 
+### Digital Signatures
+Digital signatures are an integral part of ensuring a verified and trusted ecosystem of apps and updates on Windows.
+It is highly recommended that your EXE/MSI app and the Portable Executable (PE) files inside of it are digitally signed with a certificate that chains upto a certificate of a Certificate Authority (CA) that is part of the [Microsoft Trusted Root Program] (https://docs.microsoft.com/security/trusted-root/participants-list)
+
 ### Privacy policy
 
 Include a valid privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies#105-personal-information).
