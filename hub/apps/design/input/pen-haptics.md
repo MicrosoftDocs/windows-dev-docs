@@ -16,7 +16,7 @@ Windows has long supported digital pens that let users interact with their devic
 With Windows 11, a new capability is being introduced that makes the digital pen experience even more natural and compelling: When using a pen that supports "haptic feedback", users can actually feel their pen interacting in a tactile manner with the user interface (UI) of an app.
 
 > [!NOTE]
-> When referring to this new feature, "haptic" is used throughout the developer APIs, while "tactile" is the friendly name presented to users for setting feedback preferences in Windows Settings.
+> When referring to this new feature, "haptic" is used throughout the developer APIs and related documentation, while "tactile" is the friendly name presented to users for setting feedback preferences in Windows Settings.
 
 Haptic feedback experiences supported in Windows 11 include *inking feedback* and *interaction feedback*:
 
@@ -59,9 +59,9 @@ Not all pens and digitizers support haptic feedback, and the pens that do won't 
 
 In a continuation of the preceding example, we show how to check whether the active pen supports haptic feedback.
 
-We first attempt to retrieve a [PenDevice](/uwp/api/windows.devices.input.pendevice) object from the current [PointerId](/uwp/api/windows.ui.input.pointerpoint.pointerid). If a PenDevice cannot be obtained, we simply return from the event handler.
+We first attempt to retrieve a [PenDevice](/uwp/api/windows.devices.input.pendevice) object from the current [PointerId](/uwp/api/windows.ui.input.pointerpoint.pointerid). If a [PenDevice](/uwp/api/windows.devices.input.pendevice) cannot be obtained, we simply return from the event handler.
 
-If a PenDevice was obtained, we test if it supports a [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) property. If not, we again simply return from the event handler.
+If a [PenDevice](/uwp/api/windows.devices.input.pendevice) was obtained, we test if it supports a [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) property. If not, we again simply return from the event handler.
 
 ```csharp
 // Attempt to retrieve the PenDevice from the current PointerId.
@@ -83,10 +83,10 @@ if (hapticsController == null)
 }
 ```
 
-The SimpleHapticsController retrieved in the preceding example is used in subsequent examples to query haptic capabilities and to send/stop haptic feedback.
+The [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) retrieved in the preceding example is used in subsequent examples to query haptic capabilities and to send/stop haptic feedback.
 
 > [!NOTE]
-> If you are building apps with the [Windows App SDK Preview 1.0](../../windows-app-sdk/index.md), you can use [PenDevice interop](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop) ([PenDeviceInterop.FromPointerPoint(PointerPoint)](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint)) to access the system PenDevice.
+> If you are building apps with the [Windows App SDK Preview 1.0](../../windows-app-sdk/index.md), you can use [PenDevice interop](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop) ([PenDeviceInterop.FromPointerPoint(PointerPoint)](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint)) to access the system [PenDevice](/uwp/api/windows.devices.input.pendevice).
 >
 > ```csharp
 > private void InputObserver_PointerEntered(PointerInputObserver sender, PointerEventArgs args)
@@ -150,9 +150,9 @@ To check for Intensity, Play Count, Replay Pause Interval, and Play Duration sup
 
 Use the [SendHapticFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback) method of the [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) object to pass inking waveforms to the user's pen. This method supports passing in either a waveform or both a waveform with a customized intensity value (see [Customize haptic feedback](#customize-haptic-feedback)).
 
-Call SendHapticFeedback and pass in an [inking waveform](#inking-waveforms) to configure the pen to start playing that waveform as soon as the tip of the pen touches anywhere on the screen. The waveform will continue playing until the pen is lifted or [StopHapticFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) is called, whichever happens first. We recommend doing this in the [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered) event handler for the element in which you want haptics to be played. For example, an app with a custom inking implementation would do this in the PointerEntered method of its inking canvas.
+Call SendHapticFeedback and pass in an [inking waveform](#inking-waveforms) to configure the pen to start playing that waveform as soon as the tip of the pen touches anywhere on the screen. The waveform will continue playing until the pen is lifted or [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) is called, whichever happens first. We recommend doing this in the [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered) event handler for the element in which you want haptics to be played. For example, an app with a custom inking implementation would do this in the PointerEntered method of its inking canvas.
 
-To retrieve the desired [inking waveform](#inking-waveforms), you must iterate through the [SupportedFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback) collection of the SimpleHapticsController, ensuring it is supported by the active pen.
+To retrieve the desired [inking waveform](#inking-waveforms), you must iterate through the [SupportedFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback) collection of the [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller), ensuring it is supported by the active pen.
 
 If it is not supported, you can either choose to not play anything at all or fall back to the [InkContinuous](#inking-waveforms) waveform, as that is guaranteed to be supported.
 
@@ -206,12 +206,12 @@ Use the [SendHapticFeedback](/uwp/api/windows.devices.haptics.simplehapticscontr
 
 Call SendHapticFeedback and pass in an [inking waveform](#inking-waveforms) to configure the pen to start playing that waveform immediately based on some interaction within your app (instead of when the tip of the pen touches the screen for inking feedback).
 
-When using any of the non-continuous Interaction waveforms, it is not necessary to make a corresponding [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) call. You do still need to call StopFeedback for the continuous Interaction waveforms.
+When using any of the non-continuous Interaction waveforms, it is not necessary to make a corresponding [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) call. You do still need to call [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) for the continuous Interaction waveforms.
 
 > [!NOTE]
 > Sending an interaction waveform when an inking waveform is being played will temporarily interrupt the inking waveform. The inking waveform will resume when the interaction waveform stops.
 
-To retrieve the desired [interaction waveform](#inking-waveforms), you must iterate through the [SupportedFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback) collection of the SimpleHapticsController, ensuring it is supported by the active pen.
+To retrieve the desired [interaction waveform](#inking-waveforms), you must iterate through the [SupportedFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback) collection of the [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller), ensuring it is supported by the active pen.
 
 If it is not supported, you can either choose to not play anything at all or fall back to the [Click](#interaction-waveforms) waveform, as that is guaranteed to be supported.
 
@@ -306,3 +306,12 @@ There are three ways to customize haptic feedback. The first is supported by bot
         }
     }
     ```
+
+## Examples
+
+See the [Pen haptics sample](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FWindows-universal-samples%2Ftree%2Fdev%2FSamples%2FPenHaptics&data=04%7C01%7Ckbridge%40microsoft.com%7C2f06b98f321a40a2f94908d97e08126d%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637679395422669594%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=EKfcBhnsRiy1nRG1U5As7QbjK81rZwjz3ihsz0rxV70%3D&reserved=0) for working examples of the following functionality:
+
+- Get a [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) from pen input: Go from [PointerId](/uwp/api/windows.ui.input.pointerpoint.pointerid) to [PenDevice](/uwp/api/windows.devices.input.pendevice) to [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) (requires both a haptic-capable pen and a device that supports the pen).
+- Check pen haptics capabilities: A [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) exposes properties for pen hardware capabilities, including [IsIntensitySupported](/uwp/api/windows.devices.haptics.simplehapticscontroller.isintensitysupported), [IsPlayCountSupported](/uwp/api/windows.devices.haptics.simplehapticscontroller.isplaycountsupported), [SupportedFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback), and so on.
+- Start and stop haptic feedback: Use the [SendHapticFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback) and [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) methods appropriately.
+- Trigger haptic feedback: Feedback for both *inking feedback* and *interaction feedback*.
