@@ -458,6 +458,8 @@
     - name: Pen and Windows Ink
       href: input/pen-and-stylus-interactions.md
       items:
+        - name: "Pen interactions and haptic (tactile) feedback"
+          href: input/pen-haptics.md
         - name: "Tutorial: Add Inking support to your app"
           href: input/ink-walkthrough.md
         - name: Recognize ink strokes
