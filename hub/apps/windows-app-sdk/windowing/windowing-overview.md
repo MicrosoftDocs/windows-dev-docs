@@ -82,9 +82,6 @@ The following code examples demonstrate how to retrieve an [AppWindow](/windows/
 ### C++ Sample for getting an AppWindow for a WinUI 3 window
 
 ```cpp
-#using namespace winrt;
-#using namespace Microsoft::UI::Xaml;
-
 // The include- and using-statements below are in addition to the ones you need for WinUI 3
 // You can add these to your pch.cpp file in order to not have to include them in each xaml.cpp file
 // where you need to access windowing APIs.
