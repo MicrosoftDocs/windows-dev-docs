@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Update your MSI or EXE app on the Store
 
-We recommend you submit updates for your EXE or MSI apps through the Store. The Store does not provide these updates automatically to existing users but allows them to install app updates through the Store if your installer supports it.
+We recommend you submit updates for your EXE or MSI apps through the Store. The Store allows existing users to install app updates through the Store, if your installer supports it. The Store does not provide these updates automatically to existing users. 
 
 You can make changes to a published app at any time. To submit updates, go to the application's page in Partner Center and click **Update** on the right-hand side for your app submission that’s live on the Store. This will create a new submission for the application, using the info from your previous submission as a starting point. Make the changes you'd like, and then click **Publish** on Manage Store listings page. 
 
