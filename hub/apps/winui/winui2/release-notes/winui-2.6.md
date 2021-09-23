@@ -136,4 +136,5 @@ You can also view, clone, and build the XAML Controls Gallery source code from [
 
 ## Other updates
 
-See our [Notable Changes](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/v2.5.0) list for many of the GitHub issues addressed in this release.
+- See our [Notable Changes](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/v2.6.0) list for many of the GitHub issues addressed in this release.
+- Check out the [Figma design toolkit](https://aka.ms/winui/2.6-figma-toolkit) for the WinUI 2.6 control and layout templates.
