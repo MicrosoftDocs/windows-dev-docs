@@ -58,5 +58,5 @@ When you're ready to try something a little more fun than "Hello, World!", try o
 
 * [Start coding](create-uwp-apps.md)
 * [What's a UWP app?](universal-application-platform-guide.md)
-* [Get set up](/windows/apps/get-started/get-set-up.md)
-* [Sign up for Windows account](/windows/apps/get-started/sign-up.md)
+* [Get set up](/windows/apps/get-started/get-set-up)
+* [Sign up for Windows account](/windows/apps/get-started/sign-up)
