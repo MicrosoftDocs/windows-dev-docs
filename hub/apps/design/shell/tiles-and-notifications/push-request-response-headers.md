@@ -647,10 +647,19 @@ This header describes how WNS handled the notification request. This can be used
 </tbody>
 </table>
 
-### MS-CV
-This header provides a Correlation Vector related to the request which is primarily used for debugging.  This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
+### X-WNS-CONTINUE-AFTER
+This header is sent as part of the response header when a WNS channel is being throttled. The value returned is an integer representing the number of seconds to wait until sending another notification without being throttled.
 
-    MS-CV: jUGi5vPefkufD4S7UyFaLQ.0
+    X-WNS-CONTINUE-AFTER: <integer value>
+
+| Value | Description|
+|-------|------------|
+|Integer value | Number of seconds to wait until sending another notification without being throttled.
+
+### MS-CV
+This header provides a Correlation Vector related to the request which is primarily used for debugging. If a CV is provided as part of the request then WNS will use this value, else WNS will generate and respond back with a CV. This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
+
+    MS-CV: <string value>
 
 | Value | Description|
 |-------|------------|
@@ -734,8 +743,6 @@ For detailed troubleshooting information concerning specific response codes, see
 ### Unsupported HTTP features
 
 The WNS Web Interface supports HTTP 1.1 but does not support the following features:
-
   - Chunking
   - Pipelining (POST is not idempotent)
   - Although supported, developers should disable Expect-100 as that introduces latency when sending a notification.
-

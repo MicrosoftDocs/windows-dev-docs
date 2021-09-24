@@ -18,8 +18,6 @@ You should request a new channel each time that your app is launched, and update
 
 **Important**  Notification channels automatically expire after 30 days.
 
- 
-
 ## What you need to know
 
 ### Technologies
