@@ -523,6 +523,8 @@ Test your app with all supported input devices to ensure UI elements can be navi
 
 Software keyboard is a keyboard that is displayed on screen that user can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). On touch screen, these keyboards can be touched directly to enter text as well. On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys using gamepad or remote control.
 
+#### Touch keyboard
+
 ![Windows 10 touch keyboard](images/keyboard/default.png)
 
 ***Windows 10 Touch Keyboard***
@@ -531,7 +533,7 @@ Software keyboard is a keyboard that is displayed on screen that user can use in
 
 ***Xbox One Onscreen Keyboard***
 
-Depending on the device, the software keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:
+Depending on the device, the touch keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:
 
 ![touch keyboard icon in the notification center](images/keyboard/touch-keyboard-notificationcenter.png)
 
@@ -554,7 +556,7 @@ The following is a list of non-edit controls that can receive focus during a tex
 -   List
 -   List item
 
-Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the thumb layout (which might not be available in all languages).
+Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the expanded layout (which might not be available in all languages).
 
 ![the touch keyboard in default layout mode](images/keyboard/default.png)
 
@@ -566,10 +568,8 @@ Here are examples of different modes for the touch keyboard. The first image is 
 
 Successful keyboard interactions enable users to accomplish basic app scenarios using only the keyboard; that is, users can reach all interactive elements and activate default functionality. A number of factors can affect the degree of success, including keyboard navigation, access keys for accessibility, and accelerator (or shortcut) keys for advanced users.
 
-**NOTE**  The touch keyboard does not support toggle and most system commands.
-
 #### On-Screen Keyboard
-Like software keyboard, the On-Screen Keyboard is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The On-Screen Keyboard is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The On-Screen Keyboard emulates most, if not all, the functionality of a hardware keyboard.
+Like touch keyboard, the On-Screen Keyboard is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The On-Screen Keyboard is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The On-Screen Keyboard emulates most, if not all, the functionality of a hardware keyboard.
 
 The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; Ease of access.
 
