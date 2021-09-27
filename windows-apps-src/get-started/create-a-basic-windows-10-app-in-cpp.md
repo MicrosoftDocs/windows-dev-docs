@@ -23,7 +23,7 @@ With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on 
 -   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](../xaml-platform/xaml-overview.md).
 -   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
-## Comparing C++ desktop apps to Windows apps
+## Comparing C++ desktop apps to Universal Windows apps
 
 If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of writing apps for the UWP are familiar, but other aspects require some learning.
 
