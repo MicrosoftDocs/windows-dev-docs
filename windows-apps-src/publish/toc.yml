@@ -112,7 +112,7 @@
     - name: The MSI or EXE app certification process
       href: msiexe/the-app-certification-process.md
     - name: Publish update for your EXE or MSI app on the Store
-      href: update-your-app.md
+      href: msiexe/update-your-app.md
 - name: Publish your PWA app to the Microsoft Store
   href: pwa/overview.md
   items:
