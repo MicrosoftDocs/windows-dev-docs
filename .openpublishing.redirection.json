@@ -12,9 +12,9 @@
     },
     {
       "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
-      "redirect_url": "/windows/uwp/get-started/get-app-samples",
-      "redirect_document_id": true
-    },
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },  
     {
       "source_path": "windows-apps-src/home.md",
       "redirect_url": "/windows/uwp/",
@@ -6683,6 +6683,16 @@
     {
       "source_path": "hub/apps/design/windows-template-studio/index.md",
       "redirect_url": "/windows/apps/design/downloads/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-app-samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": " hub/apps/windows-app-sdk/samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
     },
     {

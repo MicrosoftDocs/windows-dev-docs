@@ -29,8 +29,6 @@
               href: windows-app-sdk/single-project-msix.md
             - name: "Downloads"
               href: windows-app-sdk/downloads.md
-            - name: "Samples"
-              href: windows-app-sdk/samples.md
             - name: "Releases"
               items:
                 - name: "Release channels"
@@ -59,6 +57,8 @@
               href: desktop/visual-studio-templates.md
             - name: "WinUI templates"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
+        - name: Samples 
+          href: get-started/samples.md
   - name: Design and UI
     href: design/toc.yml
   - name: Develop
