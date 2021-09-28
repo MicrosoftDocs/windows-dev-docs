@@ -222,7 +222,12 @@
     },
     {
       "source_path": "windows-apps-src/maps-and-location/controls-map.md",
-      "redirect_url": "/windows/uwp/maps-and-location/display-maps#map-control",
+      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/maps-and-location/display-maps#map-control",
+      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
       "redirect_document_id": false
     },
     {
