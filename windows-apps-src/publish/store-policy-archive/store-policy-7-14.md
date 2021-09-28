@@ -7,7 +7,7 @@ keywords: store policies agreement archive
 ms.localizationpriority: high
 ---
 
-# Microsoft Store Policies
+# Microsoft Store Policies (7.14)
 
 **Document version: 7.14**
 
@@ -496,6 +496,6 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 ### See also
 
-- [Change history for Microsoft Store Policies](store-policies-change-history.md)
-- [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
+- [Change history for Microsoft Store Policies](../store-policies-change-history.md)
+- [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
 - [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
