@@ -75,7 +75,7 @@ For more info, see [App screenshots and images](app-screenshots-and-images.md#sc
 
 ## Store logos
 
-Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for customers on Windows 10 (including Xbox), rather than allowing the Store to use logo images from your app’s packages.
+Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for customers on Windows 10/11 (including Xbox), rather than allowing the Store to use logo images from your app’s packages.
 
 > [!IMPORTANT]
 > If your app supports Xbox, or if it supports Windows Phone 8.1 or earlier, you must provide certain images here in order for the listing to appear properly in the Store.
