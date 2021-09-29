@@ -2,7 +2,7 @@
 description: Learn how to get started building new apps for Windows desktop and modernizing existing apps.
 title: Overview of app development options
 ms.topic: article
-ms.date: 06/24/2021
+ms.date: 09/29/2021
 keywords: windows win32, desktop development
 ms.author: mcleans
 author: mcleanbyron
@@ -11,13 +11,15 @@ ms.localizationpriority: medium
 
 # Overview of app development options
 
-This article provides the info you need to get started building apps for the Windows desktop environment or updating existing apps to adopt the latest experiences in the Windows OS.
+This article contains all the information you need to get started building apps for the Windows desktop environment or updating existing apps to take advantage of the latest Windows OS experiences.
+
+![Alt Person typing at a computer.](images/person-using-computer.png)
 
 ## Create new apps
 
 When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths.
 
-Each app type includes an app model that defines the lifecycle of the app, a default UI framework that lets you create apps like Word and Excel that run in the Windows desktop environment, and access to a comprehensive set of managed and native APIs for using Windows features. Some of these platforms share certain traits and are better suited for specific application types.
+Each app type includes an *app model* that defines the lifecycle of the app, a default UI framework that lets you create apps like Word and Excel that run in the Windows desktop environment, and access to a comprehensive set of managed and native APIs for using Windows features. Some of these platforms share certain traits and are better suited for specific application types.
 
 No matter which app type you choose to start with, you have access to most Windows platform features to deliver a modern experience in your app. For example, even if you build a WPF, Windows Forms, or classic Win32 desktop app, you can still use MSIX package deployment, Windows Runtime (WinRT) APIs provided by the Windows OS and the Windows SDK, and APIs provided by the [Windows App SDK](../windows-app-sdk/index.md). For more information, see [Update existing apps](#update-existing-apps) later in this article.
 
@@ -96,7 +98,7 @@ For more information about Windows Forms apps, see the following articles:
 #### [React Native for Windows](#tab/rnw)
 
 [React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
-[React Native for Windows](https://aka.ms/reactnative) brings React Native support for the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11, including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. 
+[React Native for Windows](https://aka.ms/reactnative) brings React Native support for the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11, including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
 
