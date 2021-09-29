@@ -32,6 +32,13 @@ All glyphs in **Segoe Fluent Icons** have the same fixed width with a consistent
 
 ![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
 
+```xaml
+<Grid>
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" Foreground="#C72335" />
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;" />
+</Grid>
+```
+
 Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
 
 ## Using the icons
