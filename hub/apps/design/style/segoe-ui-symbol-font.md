@@ -4770,10 +4770,6 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
     <td>f1d9</td>
     <td>StatusCheckmarkLeft</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-mdl-2/f1db.png" width="32" height="32" alt="UniversalCaptions" /></td>
-    <td>f1db</td>
-    <td>UniversalCaptions</td>
-  </tr>
    <tr><td><img src="images/glyphs/segoe-mdl-2/f20c.png" width="32" height="32" alt="KeyboardLeftAligned" /></td>
     <td>f20c</td>
     <td>KeyboardLeftAligned</td>
