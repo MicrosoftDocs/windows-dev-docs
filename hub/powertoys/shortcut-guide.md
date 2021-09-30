@@ -37,10 +37,10 @@ These configurations can be edited from the PowerToys Settings:
 | Setting | Description |
 | :--- | :--- |
 | Activation method | Choose your own schortcut or use the <kbd>⊞ Win</kbd> key |
-| Activation shortcut | The custom shortcut used to launch the shortcut guide. |
+| Activation shortcut | The custom shortcut used to launch the shortcut guide |
 | Press duration | Time (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open Shortcut Guide |
 | App theme | Light, dark or Windows theme |
-| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay. |
-| Exclude apps | Ignores Shortcut Guide when these apps are in focus. |
+| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay |
+| Exclude apps | Ignores Shortcut Guide when these apps are in focus |
 
 ![Image of the Options](../images/pt-shortcut-guide-settings.png)
