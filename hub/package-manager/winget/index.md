@@ -102,6 +102,11 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 > [!NOTE]
 > When scripted, **winget** will launch the applications in the specified order. When an installer returns success or failure, **winget** will launch the next installer. If an installer launches another process, it is possible that it will return to **winget** prematurely. This will cause **winget** to install the next installer before the previous installer has completed.
 
+## Debugging and troubleshooting
+
+**winget** provides logging to help diagnose issues. For troubleshooting and details on logging, see [Debugging and troubleshooting](troubleshooting.md).
+
+
 ## Missing tools
 
 If the [community repository](../package/repository.md) does not include your tool or application, please submit a package to our [repository](https://github.com/microsoft/winget-pkgs). By adding your favorite tool, it will be available to you and everyone else.

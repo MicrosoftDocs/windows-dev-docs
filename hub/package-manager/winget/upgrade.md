@@ -27,6 +27,9 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are upgrading.
+
 ## Options
 
 The options allow you to customize the upgrade experience to meet your needs.
@@ -46,6 +49,9 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to upgrade to (if supported). |
 | **--force** | When a hash mismatch is discovered will ignore the error and attempt to install the package.    |
+| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--all** | Updates all available packages to the latest application. |
 ### Example queries
 
