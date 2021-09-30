@@ -68,11 +68,17 @@ This release brings some new features to the Input API. The noteworthy changes a
 - [PenDeviceInterop](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop) enables you to acquire a reference to the [Windows.Devices.Input.PenDevice](/uwp/api/windows.devices.input.pendevice) by using the [FromPointerPoint](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint) method.
 - [InputCursor](/windows/winui/api/microsoft.ui.input.inputcursor) provides an explicit distinction between preset system cursor types and custom cursor types by removing the "Custom" type present in `CoreCursor`, and splitting the `CoreCursor` object into separate objects.
 - Updates to [InputCursor](/windows/winui/api/microsoft.ui.input.inputcursor) APIs.
+- [GestureRecognizer](/windows/winui/api/microsoft.ui.input.gesturerecognizer) moved out of experimental to Microsoft.UI.Input.
+- [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint) moved out of experimental to Microsoft.UI.Input.
+- Mouse, touch, and pen input fully supported for WinUI drag and drop.
 
 **Important limitations**:
 
 - This release of Input APIs has known issues with Windows version 1809.  
 - MRT Core is not yet supported by any subtype of [InputCursor](/windows/winui/api/microsoft.ui.input.inputcursor).
+- Direct use of the platform SDK API [Windows.UI.Core.CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation) will not work with WinUI applications.
+- PointerPoint properties RawPosition and ContactRectRaw removed. Use [Position](/windows/winui/api/microsoft.ui.input.pointerpoint.position) and [ContactRect](/windows/winui/api/microsoft.ui.input.pointerpointproperties.contactrect) instead.
+
 
 <!-- This section coming for next preview...
 ### Deployment for unpackaged apps
