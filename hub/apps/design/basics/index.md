@@ -18,7 +18,7 @@ Windows design guidance is a resource to help you design and build beautiful, po
 
 An introduction to Windows app features combined with best practices for creating apps that scale beautifully on all types of Windows-powered devices.
 
-[**Fluent Design System**](/windows/apps/fluent-design-system)
+[**Fluent Design System**](../index.md)
 
 The Fluent Design System presents our goals and principles for creating adaptive, empathetic, and beautiful user interfaces.
 

@@ -9,25 +9,23 @@ no-loc: [PowerToys, Windows, File Explorer]
 
 # Windows key shortcut guide
 
-This guide uses PowerToys to display common keyboard shortcuts that use the Windows ⊞ key.
+This guide uses PowerToys to display common keyboard shortcuts that use the Windows key.
 
 ## Usage
 
-Press and hold the Windows ⊞ key for about 1 second, an overlay will appear showing keyboard shortcuts that use the Windows ⊞ key, including:
+Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + <kbd>?</kbd> *(this may require using the Shift key)*. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
 
-- common Windows shortcuts,
-- shortcuts for changing the position of the active window,
-- taskbar shortcuts.
-
-Alternatively, open the shortcut guide with the shortcut key combination: `⊞ Win + ?` *(this may require using the Shift key)*
+- common Windows shortcuts
+- shortcuts for changing the position of the active window
+- taskbar shortcuts
 
 ![Screenshot of shortcut overlay](../images/pt-shortcut-guide-large.png)
 
-Windows key keyboard shortcuts can be used while the guide is being shown and the result of those shortcuts (active window moved, arrow shortcut behavior changes, etc) will be displayed in the guide.
+Keyboard shortcuts using the Windows key <kbd>⊞ Win</kbd> can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes, etc) will be displayed in the guide.
 
-Releasing the Windows ⊞ key will make the overlay disappear.
+Pressing the shortcut key combination again will dismiss the overlay.
 
-Tapping the Windows ⊞ key will display the Windows Start menu.
+Tapping the Windows key will display the Windows Start menu.
 
 > [!IMPORTANT]
 > The PowerToys app must be running and Shortcut Guide must be enabled in the PowerToys settings for this feature to be used.
@@ -36,7 +34,10 @@ Tapping the Windows ⊞ key will display the Windows Start menu.
 
 These configurations can be edited from the PowerToys Settings:
 
-- **Press duration before showing (ms)**: Number of milliseconds that the Windows ⊞ key must be pressed before the Shortcut Guide is displayed.
-- **Opacity of background**: This slider bar controls the opacity of the Shortcut Guide overlay. *(The degree to which you can see through it).*
+| Setting | Description |
+| :--- | :--- |
+| Open Shortcut Guide | The shortcut used to launch the shortcut guide. |
+| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay. |
+| Exclude apps | Ignores Shortcut Guide when these apps are in focus. |
 
 ![Image of the Options](../images/pt-shortcut-guide-settings.png)

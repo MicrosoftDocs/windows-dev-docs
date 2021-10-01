@@ -82,7 +82,7 @@ Use Microsoft Graph to integrate with the chat-based Microsoft Teams workspace. 
 - **[Personalizer APIs](/azure/cognitive-services/personalizer/)**<br>
 Enable your application to choose the best experience to show to your users, learning from their real-time behavior.
 
-- **[Power BI Embedded](https://azure.microsoft.com/en-us/services/power-bi-embedded/)**<br>
+- **[Power BI Embedded](https://azure.microsoft.com/services/power-bi-embedded/)**<br>
 With Power BI Embedded, you can integrate Power BI reports right into your web or mobile applications.
 
 - **[QnA Maker](/azure/cognitive-services/QnAMaker/)**<br>

@@ -238,7 +238,7 @@ To add a data template to a grid view:
 
 1. Open **MainPage.xaml**.
 
-2. To show the rating, use the [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) from the [Windows UI Library](/windows/apps/winui/) (WinUI) NuGet package. Add a XAML namespace reference that specifies the namespace for the WinUI controls. Put this in the opening `Page` tag, right after the other `xmlns:` entries.
+2. To show the rating, use the [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) from the [Windows UI Library](../../winui/index.md) (WinUI) NuGet package. Add a XAML namespace reference that specifies the namespace for the WinUI controls. Put this in the opening `Page` tag, right after the other `xmlns:` entries.
 
     **Add this XAML**
 

@@ -1,6 +1,7 @@
 ---
 title: Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes
 description: Release notes for the Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 03/19/2021
 ms.topic: article
 ---
@@ -37,10 +38,10 @@ Once you've set up your development environment, see [Create WinUI 3 projects](.
 
 For more information about getting started with the WinUI project templates, see the following articles:
 
-- [Get started with WinUI 3 for desktop apps](../get-started-winui3-for-desktop.md)
-- [Get started with WinUI 3 for UWP apps (Preview)](../get-started-winui3-for-uwp.md)
+- [Get started with WinUI 3 for desktop apps](../create-your-first-winui3-app.md)
+- [Get started with WinUI 3 for UWP apps (Preview)](../create-your-first-winui3-app.md)
 
-Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2.x. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
+Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
@@ -241,3 +242,9 @@ After cloning, ensure that you switch to the **winui3preview** branch in your lo
 ```
 git checkout winui3preview
 ```
+
+## See also
+
+- [Windows App SDK](../../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

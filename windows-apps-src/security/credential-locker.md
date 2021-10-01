@@ -79,7 +79,18 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
     Windows.Security.Credentials.PasswordCredential credential = null;
 
     var vault = new Windows.Security.Credentials.PasswordVault();
-    var credentialList = vault.FindAllByResource(resourceName);
+
+    IReadOnlyList<PasswordCredential> credentialList = null;
+
+    try
+    {
+        credentialList = vault.FindAllByResource(resourceName);
+    }
+    catch(Exception)
+    {
+        return null;
+    }
+
     if (credentialList.Count > 0)
     {
         if (credentialList.Count == 1)

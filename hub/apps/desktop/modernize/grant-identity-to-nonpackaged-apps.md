@@ -40,7 +40,7 @@ A *sparse package* contains a package manifest but no other app binaries and con
 
 To support sparse packages, the package manifest schema now supports an optional [**uap10:AllowExternalContent**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) element under the [**Properties**](/uwp/schemas/appxpackage/uapmanifestschema/element-properties) element. This allows your package manifest to reference content outside the package, in a specific location on disk.
 
-For example, if you have your existing non-packaged desktop app that installs the app executable and other content in C:\Program Files\MyDesktopApp\, you can create a sparse package that includes the **uap10:AllowExternalContent** element in the manifest. During the install process for your app or the first time your apps, you can install the sparse package and declare C:\Program Files\MyDesktopApp\ as the external location your app will use.
+For example, if you have your existing non-packaged desktop app that installs the app executable and other content in C:\Program Files\MyDesktopApp\, you can create a sparse package that includes the **uap10:AllowExternalContent** element in the manifest. During the install process for your app, or the first time your app runs, you can install the sparse package and declare C:\Program Files\MyDesktopApp\ as the external location your app will use.
 
 ## Create a package manifest for the sparse package
 

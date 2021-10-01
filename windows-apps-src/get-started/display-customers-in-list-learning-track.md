@@ -44,7 +44,7 @@ public class Customer
 
 ## Create a list
 
-Before you can display any customers, you need to create the list to hold them. The [List View](../design/controls-and-patterns/listview-and-gridview.md) is a basic XAML control which is ideal for this task. Your ListView currently requires a position on the page, and will shortly need a value for its **ItemSource** property.
+Before you can display any customers, you need to create the list to hold them. The [List View](/windows/apps/design/controls/listview-and-gridview) is a basic XAML control which is ideal for this task. Your ListView currently requires a position on the page, and will shortly need a value for its **ItemSource** property.
 
 ```xaml
 <ListView ItemsSource=""
@@ -92,7 +92,7 @@ The [Data Binding overview](../data-binding/data-binding-quickstart.md#binding-t
 * Bind your ListView's **ItemSource** to that property.
 * Provide a basic **ItemTemplate** for the ListView, which will configure how each item in the list is displayed.
 
-Feel free to look back at the [List View](../design/controls-and-patterns/listview-and-gridview.md) docs if you want to customize layout, add item selection, or tweak the **DataTemplate** you just made. But what if you want to edit your Customers?
+Feel free to look back at the [List View](/windows/apps/design/controls/listview-and-gridview) docs if you want to customize layout, add item selection, or tweak the **DataTemplate** you just made. But what if you want to edit your Customers?
 
 ## Edit your Customers through the UI
 
@@ -145,11 +145,11 @@ Then make the text in your ListView editable by using a **TextBox** instead of a
 A quick way to ensure that this works is to add a second ListView with TextBox controls and OneWay bindings. The values in the second list will automatically change as you edit the first one.
 
 > [!NOTE]
-> Editing directly inside a ListView is a simple way to show Two-Way binding in action, but can lead to usability complications. If you're looking to take your app further, consider using [other XAML controls](../design/controls-and-patterns/controls-and-events-intro.md) to edit your data, and keep your ListView as display-only.
+> Editing directly inside a ListView is a simple way to show Two-Way binding in action, but can lead to usability complications. If you're looking to take your app further, consider using [other XAML controls](/windows/apps/design/controls/controls-and-events-intro) to edit your data, and keep your ListView as display-only.
 
 ## Going Further
 
-Now that you've created a list of customers with two-way binding, feel free to go back through the docs we've linked you to and experiment. You can also check out our [data binding tutorial](../data-binding/xaml-basics-data-binding.md) if you want a step-by-step walkthrough of basic and advanced bindings, or investigate controls like the [list/details pattern](../design/controls-and-patterns/list-details.md) to make a more robust UI.
+Now that you've created a list of customers with two-way binding, feel free to go back through the docs we've linked you to and experiment. You can also check out our [data binding tutorial](../data-binding/xaml-basics-data-binding.md) if you want a step-by-step walkthrough of basic and advanced bindings, or investigate controls like the [list/details pattern](/windows/apps/design/controls/list-details) to make a more robust UI.
 
 ## Useful APIs and docs
 
@@ -173,7 +173,7 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 |-------|----------------|
 | [Data binding in depth](../data-binding/data-binding-in-depth.md) | A basic overview of data binding principles |
 | [Data Binding overview](../data-binding/data-binding-quickstart.md) | Detailed conceptual information on data binding. |
-| [List View](../design/controls-and-patterns/listview-and-gridview.md) | Information on creating and configuring a ListView, including implementation of a **DataTemplate** |
+| [List View](/windows/apps/design/controls/listview-and-gridview) | Information on creating and configuring a ListView, including implementation of a **DataTemplate** |
 
 ## Useful code samples
 

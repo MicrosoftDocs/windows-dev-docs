@@ -1,6 +1,7 @@
 ---
 title: WinUI 3 Project Reunion 0.8 Preview (April 2021)
 description: Overview of WinUI 3 Project Reunion 0.8 Preview.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 05/25/2021
 ms.topic: article
 ---
@@ -36,11 +37,11 @@ Once you've set up your development environment, see [WinUI 3 project templates 
 
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
-- [Get started with WinUI 3 for desktop apps](../get-started-winui3-for-desktop.md)
+- [Get started with WinUI 3 for desktop apps](../create-your-first-winui3-app.md)
 - [Build a basic WinUI 3 app for desktop](../desktop-build-basic-winui3-app.md)
-- [Build a basic WinUI 3 app for UWP](../get-started-winui3-for-uwp.md)
+- [Build a basic WinUI 3 app for UWP](../create-your-first-winui3-app.md)
 
-Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2.x. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
+Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
@@ -66,7 +67,7 @@ The table below shows the compatibility of Visual Studio 2019 versions with WinU
 
 ## Updating your existing WinUI 3 app
 
-If you created an app with an earlier preview or stable version of WinUI 3, you can update the project to use WinUI 3 - Project Reunion 0.8 Preview. For instructions, see [Update existing projects to the latest release of Project Reunion](../../../project-reunion/update-existing-projects-to-the-latest-release.md).
+If you created an app with an earlier preview or stable version of WinUI 3, you can update the project to use WinUI 3 - Project Reunion 0.8 Preview. For instructions, see [Update existing projects to the latest release of Project Reunion](../../../windows-app-sdk/update-existing-projects-to-the-latest-release.md).
 
 
 ## Major changes introduced in this release
@@ -267,3 +268,9 @@ After cloning, ensure that you switch to the **winui3** branch in your local Git
 ```
 git checkout winui3
 ```
+
+## See also
+
+- [Windows App SDK](../../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

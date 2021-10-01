@@ -54,7 +54,7 @@ AnimatedIcon is an [IconElement](/windows/winui/api/microsoft.ui.xaml.controls.i
    :::column-end:::
 :::row-end:::
 
-> **Windows UI Library APIs:** [AnimatedIcon class](/uwp/api/microsoft.ui.xaml.controls.animated-icon)
+> **Windows UI Library APIs:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
 
 > [!TIP]
 > Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`

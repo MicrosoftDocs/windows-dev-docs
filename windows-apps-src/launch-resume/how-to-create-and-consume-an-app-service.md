@@ -10,11 +10,12 @@ ms.localizationpriority: medium
 
 # Create and consume an app service
 
+> [!IMPORTANT]
+> The code listings in this topic are C# only. For an app service sample app in **C++/WinRT** as well as C#, see [App service sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+
 App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.  App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.
 
 Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app. This article focuses on creating and consuming an app service that runs in a separate background process. See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about running an app service in the same process as the provider.
-
-For an app service code sample, see [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 ## Create a new app service provider project
 
@@ -40,6 +41,9 @@ In the **AppServiceProvider** project, open the **Package.appxmanifest** file in
 Add the following `AppService` extension inside the `<Application>` element. This example advertises the `com.microsoft.inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service project exposes the service to other apps. We recommend using a reverse domain name style for the service name.
 
 Note that the `xmlns:uap4` namespace prefix and the `uap4:SupportsMultipleInstances` attribute are only valid if you are targeting Windows SDK version 10.0.15063 or higher. You can safely remove them if you are targeting older SDK versions.
+
+> [!NOTE]
+> For an app service sample app in **C++/WinRT** as well as C#, see [App service sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 ``` xml
 <Package
@@ -456,4 +460,4 @@ namespace MyAppService
 
 * [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [App service code sample (C#, C++, and VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)
+* [App service sample app (C# and C++/WinRT)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

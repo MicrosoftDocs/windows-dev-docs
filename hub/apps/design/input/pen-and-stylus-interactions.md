@@ -5,12 +5,11 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Pen interactions and Windows Ink in Windows apps
 
 ![Hero image of the Surface Pen.](images/ink/hero-small.png)  
@@ -490,6 +489,7 @@ For a full example of this functionality, see the [Complex ink sample](https://g
 - [Get started: Support ink in your Windows app](./ink-walkthrough.md)
 - [Handle pointer input](handle-pointer-input.md)
 - [Identify input devices](identify-input-devices.md)
+- [Ink Serialized Format (ISF) Specification](https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf).
 
 ### APIs
 

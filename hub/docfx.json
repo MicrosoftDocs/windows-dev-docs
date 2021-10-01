@@ -16,6 +16,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "recommendations": true,
       "ROBOTS": "INDEX, FOLLOW",
       "author": "GrantMeStrength",
       "ms.author": "jken",
@@ -32,7 +33,7 @@
           "depot_name": "MSDN.hub",
           "folder_relative_path_in_docset": "./"
           }
-        }		  
+        }        	  
       },
     "fileMetadata": {
       "ms.prod":
@@ -73,12 +74,17 @@
         "apps/windows-app-sdk/remove-windows-app-sdk-versions.md": "deployment",
         "apps/winui/**.md": "winui-conceptual", 
         "apps/trace-processing/**.md": "",
-        "apps/winui/**.md": "winui-conceptual", 
+        "apps/design/**.md": "design", 
         "dev-environment/javascript/**.md": "windows-javascript",
         "dev-environment/rust/**.md": "windows-rust",
         "package-manager/**.md": "package-manager",
         "powertoys/**.md": "powertoys",
         "python/**.md": "windows-python"
+      },
+      "ms.collection":
+      {
+        "apps/design/controls/**.md": "windows11",
+        "apps/design/signature-experiences/**.md": "windows11"
       },	 
       "feedback_product_url": 
       {
@@ -87,14 +93,46 @@
         "dev-environment/**.md": "https://github.com/Microsoft/windev/issues",
         "package-manager/**.md": "https://github.com/microsoft/winget-cli/issues",
         "powertoys/**.md": "https://github.com/microsoft/PowerToys/issues",
-        "web/**.md": "https://github.com/Microsoft/windev"
+        "web/**.md": "https://github.com/Microsoft/windev",
+        "apps/design/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/accessibility/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/app-settings/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/basics/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/controls-and-patterns/**.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/devices/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/downloads/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/globalizing/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/in-app-help/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/input/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/layout/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/motion/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/shell/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/shell/tiles-and-notifications/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/style/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose",
+        "apps/design/usability/*.md": "https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose"
       },
       "author":
       {
         "android/*.md": "mattwojo",
         "apps/10x/*.md": "QuinnRadich",
         "apps/accessibility.md": "Karl-Bridge-Microsoft",
-        "apps/design/**.md": "hickeys",
+        "apps/design/*.md": "Karl-Bridge-Microsoft",
+        "apps/design/accessibility/*.md": "Karl-Bridge-Microsoft",
+        "apps/design/app-settings/*.md": "jwmsft",
+        "apps/design/basics/*.md": "jwmsft",
+        "apps/design/controls/**.md": "jwmsft",
+        "apps/design/devices/*.md": "hickeys",
+        "apps/design/downloads/*.md": "Karl-Bridge-Microsoft",
+        "apps/design/globalizing/*.md": "Karl-Bridge-Microsoft",
+        "apps/design/in-app-help/*.md": "QuinnRadich",
+        "apps/design/input/*.md": "Karl-Bridge-Microsoft",
+        "apps/design/layout/*.md": "jwmsft",
+        "apps/design/motion/*.md": "jwmsft",
+        "apps/design/shell/*.md": "hickeys",
+        "apps/design/shell/tiles-and-notifications/*.md": "hickeys",
+        "apps/design/signature-experiences/*.md": "hickeys",
+        "apps/design/style/*.md": "hickeys",
+        "apps/design/usability/*.md": "Karl-Bridge-Microsoft",
         "apps/desktop/**.md": "mcleanbyron",
         "apps/features-and-technologies.md": "mcleanbyron",
         "apps/project-reunion/**.md": "mcleanbyron",
@@ -117,7 +155,23 @@
       {
         "android/*.md": "mattwoj",
         "apps/10x/*.md": "quradic",
-        "apps/design/**.md": "hickeys",
+        "apps/design/*.md": "kbridge",
+        "apps/design/accessibility/*.md": "kbridge",
+        "apps/design/app-settings/*.md": "jimwalk",
+        "apps/design/basics/*.md": "jimwalk",
+        "apps/design/controls/**.md": "jimwalk",
+        "apps/design/devices/*.md": "hickeys",
+        "apps/design/downloads/*.md": "kbridge",
+        "apps/design/globalizing/*.md": "kbridge",
+        "apps/design/in-app-help/*.md": "quradic",
+        "apps/design/input/*.md": "kbridge",
+        "apps/design/layout/*.md": "jimwalk",
+        "apps/design/motion/*.md": "jimwalk",
+        "apps/design/shell/*.md": "hickeys",
+        "apps/design/shell/tiles-and-notifications/*.md": "hickeys",
+        "apps/design/signature-experiences/*.md": "hickeys",
+        "apps/design/style/*.md": "hickeys",
+        "apps/design/usability/*.md": "kbridge",
         "apps/desktop/**.md": "mcleans",
         "apps/project-reunion/**.md": "mcleans",
         "apps/trace-processing/*.md": "maiak",
@@ -136,6 +190,10 @@
         "powertoys/*.md": "mattwoj",
         "python/*.md": "mattwoj",
         "rust/*.md": "stwhi"
+      },
+      "ms.reviewer":
+      {
+        "powertoys/*.md": "dedavis"
       },
       "titleSuffix":
       {

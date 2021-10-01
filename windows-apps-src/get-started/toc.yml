@@ -24,5 +24,3 @@
           href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
     - name: Building a complex app
       href: ../get-started/plan-your-app.md
-- name: Get Windows app samples
-  href: ../get-started/get-app-samples.md

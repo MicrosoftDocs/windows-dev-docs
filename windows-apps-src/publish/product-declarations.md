@@ -31,7 +31,7 @@ You should only check this box if you have done all of the following items:
 
 When you declare your app as accessible, you agree that your app is accessible to all customers, including those with disabilities. For example, this means you have tested the app with high-contrast mode and with a screen reader. You've also verified that the user interface functions correctly with a keyboard, the Magnifier, and other accessibility tools.
 
-For more info, see [Accessibility](../design/accessibility/accessibility.md), [Accessibility testing](../design/accessibility/accessibility-testing.md), and [Accessibility in the Store](../design/accessibility/accessibility-in-the-store.md).
+For more info, see [Accessibility](/windows/apps/design/accessibility/accessibility), [Accessibility testing](/windows/apps/design/accessibility/accessibility-testing), and [Accessibility in the Store](/windows/apps/design/accessibility/accessibility-in-the-store).
 
 > [!IMPORTANT]
 > Don't list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it doesn’t actually support accessibility, you'll probably receive negative feedback from the community.

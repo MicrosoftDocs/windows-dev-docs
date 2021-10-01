@@ -14,7 +14,7 @@ Create Universal Windows Platform (UWP) apps with smooth animations, high frame 
 
 ## Make animations smooth
 
-A key aspect of UWP apps is smooth interactions. This includes touch manipulations that "stick to your finger," smooth transitions and animations, and small motions that provide input feedback. In the XAML framework there is a thread called the composition thread that is dedicated to the composition and animation of an app’s visual elements. Because the composition thread is separate from UI thread (the thread that runs framework and developer code), apps can achieve a consistent frame rate and smooth animations regardless of complicated layout passes or extended calculations. This section shows how to use the composition thread to keep an app’s animations buttery smooth. For more info about animations, see [Animations overview](../design/motion/xaml-animation.md). To learn about increasing an app’s responsiveness while performing intensive computations, see [Keep the UI thread responsive](keep-the-ui-thread-responsive.md).
+A key aspect of UWP apps is smooth interactions. This includes touch manipulations that "stick to your finger," smooth transitions and animations, and small motions that provide input feedback. In the XAML framework there is a thread called the composition thread that is dedicated to the composition and animation of an app’s visual elements. Because the composition thread is separate from UI thread (the thread that runs framework and developer code), apps can achieve a consistent frame rate and smooth animations regardless of complicated layout passes or extended calculations. This section shows how to use the composition thread to keep an app’s animations buttery smooth. For more info about animations, see [Animations overview](/windows/apps/design/motion/xaml-animation). To learn about increasing an app’s responsiveness while performing intensive computations, see [Keep the UI thread responsive](keep-the-ui-thread-responsive.md).
 
 ### Use independent instead of dependent animations
 
@@ -58,14 +58,14 @@ Adding a handler for [**CompositionTarget.Rendering**](/uwp/api/windows.ui.xaml.
 
 ### Use the animation library
 
-The [**Windows.UI.Xaml.Media.Animation**](/uwp/api/Windows.UI.Xaml.Media.Animation) namespace includes a library of high-performance, smooth animations that have a look and feel consistent with other Windows animations. The relevant classes have "Theme" in their name, and are described in [Animations overview](../design/motion/xaml-animation.md). This library supports many common animation scenarios, such as animating the first view of the app and creating state and content transitions. We recommend using this animation library whenever possible to increase performance and consistency for UWP UI.
+The [**Windows.UI.Xaml.Media.Animation**](/uwp/api/Windows.UI.Xaml.Media.Animation) namespace includes a library of high-performance, smooth animations that have a look and feel consistent with other Windows animations. The relevant classes have "Theme" in their name, and are described in [Animations overview](/windows/apps/design/motion/xaml-animation). This library supports many common animation scenarios, such as animating the first view of the app and creating state and content transitions. We recommend using this animation library whenever possible to increase performance and consistency for UWP UI.
 
-> **Note**   The animation library can't animate all possible properties. For XAML scenarios where the animation library doesn't apply, see [Storyboarded animations](../design/motion/storyboarded-animations.md).
+> **Note**   The animation library can't animate all possible properties. For XAML scenarios where the animation library doesn't apply, see [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations).
 
 
 ### Animate CompositeTransform3D properties independently
 
-You can animate each property of a [**CompositeTransform3D**](/uwp/api/Windows.UI.Xaml.Media.Media3D.CompositeTransform3D) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](/uwp/api/windows.ui.xaml.uielement.transform3d). For more info about animating transforms, see [Storyboarded animations](../design/motion/storyboarded-animations.md) and [Key-frame and easing function animations](../design/motion/key-frame-and-easing-function-animations.md).
+You can animate each property of a [**CompositeTransform3D**](/uwp/api/Windows.UI.Xaml.Media.Media3D.CompositeTransform3D) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](/uwp/api/windows.ui.xaml.uielement.transform3d). For more info about animating transforms, see [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations) and [Key-frame and easing function animations](/windows/apps/design/motion/key-frame-and-easing-function-animations).
 
 ## Optimize media resources
 

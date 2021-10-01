@@ -88,7 +88,7 @@ The handler you write for the event can access two values that are available as 
 
 The second value is event data, which generally appears in syntax definitions as the *e* parameter. You can discover which properties for event data are available by looking at the *e* parameter of the delegate that is assigned for the specific event you are handling, and then using IntelliSense or Object Browser in Visual Studio. Or you can use the Windows Runtime reference documentation.
 
-For some events, the event data's specific property values are as important as knowing that the event occurred. This is especially true of the input events. For pointer events, the position of the pointer when the event occurred might be important. For keyboard events, all possible key presses fire a [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) event. To determine which key a user pressed, you must access the [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) that is available to the event handler. For more info about handling input events, see [Keyboard interactions](../design/input/keyboard-interactions.md) and [Handle pointer input](../design/input/handle-pointer-input.md). Input events and input scenarios often have additional considerations that are not covered in this topic, such as pointer capture for pointer events, and modifier keys and platform key codes for keyboard events.
+For some events, the event data's specific property values are as important as knowing that the event occurred. This is especially true of the input events. For pointer events, the position of the pointer when the event occurred might be important. For keyboard events, all possible key presses fire a [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) event. To determine which key a user pressed, you must access the [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) that is available to the event handler. For more info about handling input events, see [Keyboard interactions](/windows/apps/design/input/keyboard-interactions) and [Handle pointer input](/windows/apps/design/input/handle-pointer-input). Input events and input scenarios often have additional considerations that are not covered in this topic, such as pointer capture for pointer events, and modifier keys and platform key codes for keyboard events.
 
 ### Event handlers that use the **async** pattern
 
@@ -306,7 +306,7 @@ Defining a custom event is usually done as part of the exercise of defining a cu
 
 * [XAML overview](xaml-overview.md)
 * [Quickstart: Touch input](/previous-versions/windows/apps/hh465387(v=win.10))
-* [Keyboard interactions](../design/input/keyboard-interactions.md)
+* [Keyboard interactions](/windows/apps/design/input/keyboard-interactions)
 * [.NET events and delegates](/previous-versions/17sde2xt(v=vs.110))
 * [Creating Windows Runtime components](/previous-versions/windows/apps/hh441572(v=vs.140))
 * [**AddHandler**](/uwp/api/windows.ui.xaml.uielement.addhandler)

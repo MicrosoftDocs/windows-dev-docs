@@ -4,7 +4,7 @@ title: Interaction primer
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 08/03/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -125,7 +125,7 @@ As command and control is critical to a successful user experience, a single inp
 
 The most basic speech input method. Each utterance is converted to text.
 
-Dictation is typically used when an app doesn’t need to understand meaning or intent.
+Dictation is typically used when an app doesn't need to understand meaning or intent.
 
 ### More info
 
@@ -227,8 +227,6 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 ## Keyboard
 
 A keyboard is the primary input device for text, and is often indispensable to people with certain disabilities or users who consider it a faster and more efficient way to interact with an app.
-
-With [Continuum for Phone](/windows-hardware/design/device-experiences/continuum-phone), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a mouse and keyboard to make their phones work like a laptop.
 
 ### Device support
 

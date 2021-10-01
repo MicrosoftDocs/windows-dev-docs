@@ -148,7 +148,7 @@ Also see [Consume COM components with C++/WinRT](consume-com.md).
 
 The remainder of this topic walks through creating a minimal console application project that uses C++/WinRT to implement a basic coclass (COM component, or COM class) and class factory. The example application shows how to deliver a toast notification with a callback button on it, and the coclass (which implements the **INotificationActivationCallback** COM interface) allows the application to be launched and called back when the user clicks that button on the toast.
 
-More background about the toast notification feature area can be found at [Send a local toast notification](../design/shell/tiles-and-notifications/send-local-toast.md). None of the code examples in that section of the documentation use C++/WinRT, though, so we recommend that you prefer the code shown in this topic.
+More background about the toast notification feature area can be found at [Send a local toast notification](/windows/apps/design/shell/tiles-and-notifications/send-local-toast). None of the code examples in that section of the documentation use C++/WinRT, though, so we recommend that you prefer the code shown in this topic.
 
 ### Create a Windows Console Application project (ToastAndCallback)
 
@@ -688,4 +688,4 @@ The specialization of **winrt::is_guid_of** must be identical across all files i
 ## Related topics
 * [Author APIs with C++/WinRT](./author-apis.md)
 * [Consume COM components with C++/WinRT](consume-com.md)
-* [Send a local toast notification](../design/shell/tiles-and-notifications/send-local-toast.md)
+* [Send a local toast notification](/windows/apps/design/shell/tiles-and-notifications/send-local-toast)

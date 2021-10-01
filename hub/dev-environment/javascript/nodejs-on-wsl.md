@@ -1,5 +1,5 @@
 ---
-title: Set up NodeJS on WSL 2
+title: Set up Node.js on WSL 2
 description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
 author: mattwojo 
 ms.author: mattwoj 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ms.date: 03/30/2021
 ---
 
-# Install NodeJS on Windows Subsystem for Linux (WSL2)
+# Install Node.js on Windows Subsystem for Linux (WSL2)
 
 If you are using Node.js professionally, find performance speed and system call compatibility important, want to run [Docker containers](/windows/wsl/tutorials/wsl-containers) that leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts, or just prefer using a Bash command line, then you want to install Node.js on the Windows Subsystem for Linux (more specifically, WSL 2).
 
@@ -42,11 +42,11 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
 
 1. Open your Ubuntu 18.04 command line.
 2. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
-3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash`
 
     > [!NOTE]
-    > At the time of publication, NVM v0.35.3 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
-    Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
+    > At the time of publication, NVM v0.38.0 was the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
+    Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
 
 4. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
 5. List which versions of Node are currently installed (should be none at this point): `nvm ls`
@@ -125,4 +125,4 @@ A few additional extensions you may want to consider include:
 
 ## Set up Git (optional)
 
-To set up Git for a NodeJS project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](/windows/wsl/tutorials/wsl-git) in the WSL documentation.
+To set up Git for a Node.js project on WSL, see the article [Get started using Git on Windows Subsystem for Linux](/windows/wsl/tutorials/wsl-git) in the WSL documentation.

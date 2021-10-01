@@ -13,6 +13,7 @@ File Explorer add-ons currently include:
 
 - Preview Pane rendering of SVG icons (.svg)
 - Preview Pane rendering of Markdown files (.md)
+- Icon thumb preview for SVG icons
 
 ## Preview Pane
 
@@ -20,10 +21,10 @@ Preview Pane is an existing feature in the Windows File Explorer which shows a l
 
 ## Enabling Preview Pane
 
-To enable, first ensure that "Enable SVG preview", "Enable SVG thumbnails", and "Enable Markdown preview" are all set to On in the PowerToys Settings.
+To enable, first ensure that in the PowerToys Settings "Enable SVG preview", "Enable SVG thumbnails", and "Enable Markdown preview" are all set to **On**.
 
 ![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
 
-Next, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, then select `Preview Pane`.
+Next, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, then select **Preview Pane**.
 
 ![PowerToys Preview Pane Demo](../images/powertoys-fileexplorer.gif)

@@ -26,16 +26,16 @@ The Xbox Live Creators Program is now live, allowing you to easily build and pub
 
 ### XAML basics tutorials
 
-We've written four [XAML basics tutorials](../design/basics/xaml-basics-ui.md) to accompany the new [PhotoLab sample](https://github.com/Microsoft/Windows-appsample-photo-lab), covering four core aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the PhotoLab Sample, and builds one missing component of the final app step-by-step. 
+We've written four [XAML basics tutorials](/windows/apps/design/basics/xaml-basics-ui) to accompany the new [PhotoLab sample](https://github.com/Microsoft/Windows-appsample-photo-lab), covering four core aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the PhotoLab Sample, and builds one missing component of the final app step-by-step. 
 
 ![Screenshot of PhotoLab sample showing photo gallery page](images/PhotoLab-gallery-page.png)  
 
 Here's a quick overview of the new articles:
 
-+ [**Create user interfaces**](../design/basics/xaml-basics-ui.md) shows how to create the basic photo gallery interface.
++ [**Create user interfaces**](/windows/apps/design/basics/xaml-basics-ui) shows how to create the basic photo gallery interface.
 + [**Create data bindings**](../data-binding/xaml-basics-data-binding.md) shows how to add data bindings to the photo gallery, populating it with real image data.
-+ [**Create custom styles**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style) shows how to add fancy custom styles to the photo editing menu.
-+ [**Create adaptive layouts**](../design/basics/xaml-basics-adaptive-layout.md) shows how to make the gallery layout adaptive, so it looks good on every device and screen size.
++ [**Create custom styles**](/windows/uwp/design/controls-and-patterns/xaml-basics-style) shows how to add fancy custom styles to the photo editing menu.
++ [**Create adaptive layouts**](/windows/apps/design/basics/xaml-basics-adaptive-layout) shows how to make the gallery layout adaptive, so it looks good on every device and screen size.
 
 ### Get Started Tutorials
 
@@ -43,7 +43,7 @@ The Get Started section of the UWP docs has been updated with a [new landing pag
 
 ### Voice and tone
 
-We've added new [guidance on voice in tone in UWP apps](../design/style/writing-style.md) to provide you with advice for writing text in your app. Whatever you're creating, it's important that the language you use is approachable, friendly, and informative.
+We've added new [guidance on voice in tone in UWP apps](/windows/apps/design/style/writing-style) to provide you with advice for writing text in your app. Whatever you're creating, it's important that the language you use is approachable, friendly, and informative.
 
 ## Samples
 

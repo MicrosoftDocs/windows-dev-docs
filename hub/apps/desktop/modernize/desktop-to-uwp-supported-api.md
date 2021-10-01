@@ -1,7 +1,7 @@
 ---
 description: This article describes the WinRT APIs that are not supported for use in desktop apps.
 title: Windows Runtime APIs not supported in desktop apps
-ms.date: 04/23/2021
+ms.date: 08/16/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
@@ -18,7 +18,10 @@ Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop a
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/winui3/index.md) or via COM interfaces that are available in the Windows SDK.
+This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/winui3/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
+
+> [!NOTE]
+> Starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, .NET 5 apps can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
 
 This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API and and provide details about what you are trying to achieve by using it.
 
@@ -42,6 +45,8 @@ The following WinRT classes are not supported in desktop apps.
 ### Classes with GetForCurrentView methods
 
 Many WinRT classes have a static `GetForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `GetForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `GetForCurrentView` methods are supported either. Note that some unsupported `GetForCurrentView` methods will not only return **null**, but will also throw exceptions.
+
+For those classes below that have a COM interface alternative API listed, C# developers on .NET 5 or later can [consume these WinRT COM interfaces](winrt-com-interop-csharp.md) starting in the July 2021 .NET 5 SDK update.
 
 > [!NOTE]
 > One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
@@ -86,6 +91,32 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [UserActivityRequestManager](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [IUserActivityRequestManagerInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface insead (in useractivityinterop.h). |
 | [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
 | [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
+
+### Classes that use IInitializeWithWindow
+
+Some WinRT classes require a [CoreWindow](/uwp/api/windows.ui.core.corewindow) object on which to call certain methods, typically to display a UI. Because the [CoreWindow](/uwp/api/windows.ui.core.corewindow) class is [not supported in desktop apps](#core-unsupported-classes), these WinRT classes cannot be used in desktop apps by default.
+
+However, some of these classes implement the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface, which provides a way to use them in desktop apps. This interface enables you to specify the owner window for the operations that will be performed using the class. Examples of these classes include [PopupMenu](/uwp/api/Windows.UI.Popups.PopupMenu) and [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker). For more details, including a list of more WinRT classes that implement this interface, see [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
+
+The following example demonstrates how to use the **IInitializeWithWindow** interface to specify the owner window for the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class.
+
+```cpp
+#include <shobjidl.h>
+#include <winrt/windows.storage.pickers.h>
+
+winrt::Windows::Foundation::IAsyncAction
+ShowFilePickerAsync(HWND hwnd)
+{
+    auto picker = winrt::Windows::Storage::Pickers::FileOpenPicker();
+    picker.as<IInitializeWithWindow>()->Initialize(hwnd);
+    picker.FileTypeFilter().Append(L".jpg");
+    auto file = co_await picker.PickSingleFileAsync();
+}
+```
+
+> [!NOTE]
+> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
+
 
 ### Unsupported members
 
@@ -188,10 +219,10 @@ The following WinRT classes require require [package identity](modernize-package
 * [Windows.Devices.SmartCards.SmartCardConnection](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection)
 * [Windows.Devices.SmartCards.SmartCardReader](/uwp/api/Windows.Devices.SmartCards.SmartCardReader)
 * [Windows.Foundation.AsyncActionCompletedHandler](/uwp/api/windows.foundation.asyncactioncompletedhandler)
-* [Windows.Foundation.AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
-* [Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
-* [Windows.Foundation.AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
+* [Windows.Foundation.AsyncActionProgressHandler\<TProgress\>](/uwp/api/windows.foundation.asyncactionprogresshandler-1)
+* [Windows.Foundation.AsyncActionWithProgressCompletedHandler\<TProgress\>](/uwp/api/windows.foundation.asyncactionwithprogresscompletedhandler-1)
+* [Windows.Foundation.AsyncOperationCompletedHandler\<TProgress\>](/uwp/api/windows.foundation.asyncoperationcompletedhandler-1)
+* [Windows.Foundation.Collections.VectorChangedEventHandler\<T\>](/uwp/api/windows.foundation.collections.vectorchangedeventhandler-1)
 * [Windows.Foundation.DeferralCompletedHandler](/uwp/api/windows.foundation.deferralcompletedhandler)
 * [Windows.Foundation.Diagnostics.FileLoggingSession](/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs](/uwp/api/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -201,7 +232,7 @@ The following WinRT classes require require [package identity](modernize-package
 * [Windows.Foundation.Diagnostics.LoggingFields](/uwp/api/Windows.Foundation.Diagnostics.LoggingFields)
 * [Windows.Foundation.Diagnostics.LoggingOptions](/uwp/api/Windows.Foundation.Diagnostics.LoggingOptions)
 * [Windows.Foundation.Diagnostics.LoggingSession](/uwp/api/Windows.Foundation.Diagnostics.LoggingSession)
-* [Windows.Foundation.EventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.EventHandler<T>)
+* [Windows.Foundation.EventHandler\<T\>](/uwp/api/windows.foundation.eventhandler-1)
 * [Windows.Foundation.MemoryBuffer](/uwp/api/Windows.Foundation.MemoryBuffer)
 * [Windows.Globalization.ApplicationLanguages](/uwp/api/Windows.Globalization.ApplicationLanguages)
 * [Windows.Globalization.JapanesePhoneme](/uwp/api/Windows.Globalization.JapanesePhoneme)

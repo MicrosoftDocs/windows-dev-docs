@@ -1,17 +1,17 @@
 ---
 title: Windows UI library
-description: Provides info for WinUI 2.x and Windows app development. 
+description: Provides info for WinUI 2 and Windows app development. 
 ms.topic: article
 ms.date: 06/24/2021
-keywords: windows 10, uwp, toolkit sdk, winui, Windows UI Library
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.custom: RS5
 ---
 
-# Windows UI Library 2.x
+# Windows UI Library 2
 
 ![WinUI controls](images/winui-hero1.png)
 
-The Windows UI Library provides official native Windows UI controls and other user interface elements for for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+The Windows UI Library provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 It maintains down-level compatibility with earlier versions of Windows 10, so your app works even if users don't have the latest OS.
 
@@ -60,4 +60,4 @@ The Windows UI Library contains multiple NuGet packages: [Windows UI Library NuG
 
 ## See also
 
-[Windows UI Library 2.x Release Notes](release-notes/index.md)
+[Windows UI Library 2 Release Notes](release-notes/index.md)

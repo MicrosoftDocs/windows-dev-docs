@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Toast notifications from desktop apps
 
-Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) to obtain package identity, and classic non-packaged desktop apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for desktop apps due to the different activation schemes.
+Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) to obtain package identity, and classic non-packaged desktop apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for desktop apps due to the different activation schemes.
 
 In this article, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...
 
@@ -68,7 +68,7 @@ With this option, if you support classic desktop, you are much more limited in t
 | ToastGeneric Protocol | ✔️ | ✔️ |
 | Legacy templates | ✔️ | ❌ |
 
-For packaged [MSIX](/windows/msix/desktop/source-code-overview) apps and apps that use [sparse packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps), just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command line launched with the launch args that you specified in the toast.
+For packaged [MSIX](/windows/msix/desktop/source-code-overview) apps and apps that use [sparse packages](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md), just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command line launched with the launch args that you specified in the toast.
 
 For classic desktop apps, set up the AUMID so that you can send toasts, and then also specify a CLSID on your shortcut. This can be any random GUID. Don't add the COM server/activator. You're adding a "stub" COM CLSID, which will cause Action Center to persist the notification. Note that you can only use protocol activation toasts, as the stub CLSID will break activation of any other toast activations. Therefore, you have to update your app to support protocol activation, and have the toasts protocol activate your own app.
 

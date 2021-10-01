@@ -11,7 +11,8 @@ ms.date: 01/06/2021
 
 # Web development on Windows 10
 
-Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/apis.md). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/index.md).
+Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/windows/web/apis). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/index.md).
+
 
 ## WebView, DevTools, PWAs
 
@@ -43,7 +44,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
 
 :::row:::
     :::column:::
-       [![Microsoft Edge icon](../images/microsoftedge.png)](https://www.microsoft.com/en-us/edge)<br>
+       [![Microsoft Edge icon](../images/microsoftedge.png)](https://www.microsoft.com/edge)<br>
         **[Microsoft Edge for Developers](https://developer.microsoft.com/microsoft-edge/)**<br>
         The new Microsoft Edge  is based on Chromium to create better web compatibility and less fragmentation of underlying web platforms. Released January 15, 2020, it is supported on Windows, macOS, iOS, and Android. <br>
         [Install the new Microsoft Edge](https://www.microsoft.com/edge)
@@ -221,7 +222,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
        [![Azure cognitive services icon](../images/azure-cognitive-services.png)](/azure/cognitive-services/what-are-cognitive-services)<br>
         **[Azure Cognitive Services](/azure/cognitive-services/what-are-cognitive-services)**<br>
         Cloud-based services with REST APIs and client library SDKs available to help you build cognitive intelligence into your applications.<br>
-        [Try Cognitive Service](https://azure.microsoft.com/en-us/services/cognitive-services/)
+        [Try Cognitive Service](https://azure.microsoft.com/services/cognitive-services/)
     :::column-end:::
     :::column:::
        [![Azure dev guide icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>

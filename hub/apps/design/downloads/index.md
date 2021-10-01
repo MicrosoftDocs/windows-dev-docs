@@ -2,7 +2,7 @@
 description: Get the latest downloads and tools for Windows apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools, windows app layout, windows ui tools
 title: Design toolkits and samples for Windows apps
-ms.date: 06/24/2021
+ms.date: 06/30/2021
 ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
@@ -58,8 +58,9 @@ Helper functions, custom controls, and app services.<br />
 ## Fonts
 
 - [Segoe UI Variable](https://aka.ms/SegoeUIVariable)
-- [Segoe Fluent Icon](https://aka.ms/SegoeFluentIcon)
-- [Segoe UI and MDL2 fonts](https://aka.ms/SegoeFonts)
+- [Segoe Fluent Icons](https://aka.ms/SegoeFluentIcons)
+- [Segoe UI](https://aka.ms/segoeuifont)
+- [Segoe MDL2](https://aka.ms/segoemdl2)
 - [Hololens icon font (Windows only)](https://aka.ms/hololensiconfont)
 
 ## Tools
@@ -84,7 +85,7 @@ The Fluent XAML Theme Editor is a tool that helps demonstrate the flexibility of
 
 ![VanArsdel image](images/van-arsdel-screenshot.png)
 **VanArsdel**<br>
-The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the next wave of the Microsoft Fluent Design System. It makes extensive use of the improved density and new controls in the <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI Library</a> as well as powerful underlying features of the ux framework and composition. The sample shows how you can build a rich, productive experience for managing and purchasing IoT devices (in this case, lamps).<br>
+The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the next wave of the Microsoft Fluent Design System. It makes extensive use of the improved density and new controls in the <a href="/windows/apps/winui/">Windows UI Library</a> as well as powerful underlying features of the UX framework and composition. The sample shows how you can build a rich, productive experience for managing and purchasing IoT devices (in this case, lamps).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Download the VanArsdel sample</a> <br><a href="https://github.com/microsoft/vanarsdel">Check out the VanArsdel sample on GitHub</a>
 
 ![build cast image](images/buildcast.png)
@@ -98,7 +99,7 @@ A Windows app sample that schedules lunches with your friends and coworkers. You
 
 ![Xaml controls gallery](images/xaml-controls-gallery.png)
 **XAML Controls Gallery**<br>
-This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
+This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project.<br/><a href="https://github.com/microsoft/Xaml-Controls-Gallery/archive/refs/heads/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
 
 ## Want more code?
 

@@ -12,13 +12,13 @@ ms.custom: 19H1
 
 # Host a custom WinRT XAML control in a C++ desktop (Win32) app
 
-This article demonstrates how to use the [UWP XAML hosting API](using-the-xaml-hosting-api.md) to host a custom UWP XAML control in a new C++ desktop app. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.
+This article demonstrates how to use the [WinRT XAML hosting API](using-the-xaml-hosting-api.md) to host a custom WinRT XAML control in a new C++ desktop app. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.
 
-To host a custom UWP XAML control, you'll create the following projects and components as part of this walkthrough:
+To host a custom WinRT XAML control, you'll create the following projects and components as part of this walkthrough:
 
-* **Windows Desktop Application project**. This project implements a native C++ desktop app. You'll add code to this project that uses the UWP XAML hosting API to host a custom UWP XAML control.
+* **Windows Desktop Application project**. This project implements a native C++ desktop app. You'll add code to this project that uses the WinRT XAML hosting API to host a custom WinRT XAML control.
 
-* **UWP app project (C++/WinRT)**. This project implements a custom UWP XAML control. It also implements a root metadata provider for loading metadata for custom UWP XAML types in the project.
+* **UWP app project (C++/WinRT)**. This project implements a custom WinRT XAML control. It also implements a root metadata provider for loading metadata for custom WinRT XAML types in the project.
 
 ## Requirements
 
@@ -53,7 +53,7 @@ To host a custom UWP XAML control, you'll create the following projects and comp
 
 ## Create a UWP app project
 
-Next, add a **UWP (C++/WinRT)** app project to your solution and make some configuration changes to this project. Later in this walkthrough, you'll add code to this project to implement a custom UWP XAML control and define an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class. 
+Next, add a **UWP (C++/WinRT)** app project to your solution and make some configuration changes to this project. Later in this walkthrough, you'll add code to this project to implement a custom WinRT XAML control and define an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class. 
 
 1. In **Solution Explorer**, right-click the solution node and select **Add** -> **New Project**.
 
@@ -145,10 +145,10 @@ In this section, you'll update the solution that contains both projects to confi
 
 You're now ready to add code to the **MyUWPApp** project to perform these tasks:
 
-* Implement a custom UWP XAML control. Later in this walkthrough, you'll add code that hosts this control in the **MyDesktopWin32App** project.
+* Implement a custom WinRT XAML control. Later in this walkthrough, you'll add code that hosts this control in the **MyDesktopWin32App** project.
 * Define a type that derives from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class in the Windows Community Toolkit.
 
-### Define a custom UWP XAML control
+### Define a custom WinRT XAML control
 
 1. In **Solution Explorer**, right-click **MyUWPApp** and select **Add** -> **New Item**. Select the **Visual C++** node in the left pane, select **Blank User Control (C++/WinRT)**, name it **MyUserControl**, and click **Add**.
 2. In the XAML editor, replace the contents of the **MyUserControl.xaml** file with the following XAML and then save the file.
@@ -177,10 +177,10 @@ You're now ready to add code to the **MyUWPApp** project to perform these tasks:
 
 ### Define a XamlApplication class
 
-Next, revise the default **App** class in the **MyUWPApp** project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread. Later in this walkthrough you'll update the desktop project to create an instance of this class.
+Next, revise the default **App** class in the **MyUWPApp** project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom WinRT XAML controls in assemblies in the current directory of your application at run time. This class also initializes the WinRT XAML framework for the current thread. Later in this walkthrough you'll update the desktop project to create an instance of this class.
 
   > [!NOTE]
-  > Each solution that uses XAML Islands can contain only one project that defines a `XamlApplication` object. All custom UWP XAML controls in your app share the same `XamlApplication` object. 
+  > Each solution that uses XAML Islands can contain only one project that defines a `XamlApplication` object. All custom WinRT XAML controls in your app share the same `XamlApplication` object. 
 
 1. In **Solution Explorer**, right-click the **MainPage.xaml** file in the **MyUWPApp** project. Click **Remove** and then **Delete** to delete this file permamently from the project.
 2. In the **MyUWPApp** project, expand **App.xaml** file.
@@ -304,7 +304,7 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
 
 ## Configure the desktop project to consume custom control types
 
-Before the **MyDesktopWin32App** app can host a custom UWP XAML control in a XAML Island, it must be configured to consume custom control types from the **MyUWPApp** project. There are two ways to do this, and you can choose either option as you complete this walkthrough.
+Before the **MyDesktopWin32App** app can host a custom WinRT XAML control in a XAML Island, it must be configured to consume custom control types from the **MyUWPApp** project. There are two ways to do this, and you can choose either option as you complete this walkthrough.
 
 ### Option 1: Package the app using MSIX
 
@@ -382,9 +382,9 @@ Next, update the **MyDesktopWin32App** project to define a macro for additional 
 
 6. Click **OK** to close the **Property Pages** dialog.
 
-## Host the custom UWP XAML control in the desktop project
+## Host the custom WinRT XAML control in the desktop project
 
-Finally, you're ready to add code to the **MyDesktopWin32App** project to host the custom UWP XAML control you defined earlier in the **MyUWPApp** project.
+Finally, you're ready to add code to the **MyDesktopWin32App** project to host the custom WinRT XAML control you defined earlier in the **MyUWPApp** project.
 
 1. In the **MyDesktopWin32App** project, open the **framework.h** file and comment out the following line of code. Save the file when you're done.
 
@@ -511,14 +511,14 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 9. Save the file.
 10. Build the solution and confirm that it builds successfully.
 
-## Add a control from the WinUI 2.x library to the custom control
+## Add a control from the WinUI 2 library to the custom control
 
 Traditionally, WinRT XAML controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
-This section demonstrates how to add a WinRT XAML control from the WinUI 2.x library to your user control.
+This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.
 
 > [!NOTE]
-> Currently, XAML Islands only supports hosting controls from the WinUI 2.x library. Support for hosting controls from the WinUI 3 library is coming in a later release.
+> Currently, XAML Islands only supports hosting controls from the WinUI 2 library. Support for hosting controls from the WinUI 3 library is coming in a later release.
 
 1. In the **MyUWPApp** project, install the latest prerelease or release version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
@@ -594,8 +594,8 @@ For more information about handling these scenarios and pointers to related code
 
 ## Related topics
 
-* [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
-* [Using the UWP XAML hosting API in a desktop Win32 app](using-the-xaml-hosting-api.md)
+* [Host WinRT XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
+* [Using the WinRT XAML hosting API in a desktop Win32 app](using-the-xaml-hosting-api.md)
 * [Host a standard WinRT XAML control in a desktop Win32 app](host-standard-control-with-xaml-islands-cpp.md)
 * [Advanced scenarios for XAML Islands in desktop Win32 apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)

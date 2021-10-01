@@ -59,7 +59,7 @@ Our [frequently asked questions](/windows/communitytoolkit/controls/wpf-winforms
 
 ### Japanese era change
 
-[Prepare your application for the Japanese era change](../design/globalizing/japanese-era-change.md) shows you how to ensure your Windows application is ready for the Japanese era change set to take place on May 1, 2019. [This page is also available in Japanese](../design/globalizing/japanese-era-change.md).
+[Prepare your application for the Japanese era change](/windows/apps/design/globalizing/japanese-era-change) shows you how to ensure your Windows application is ready for the Japanese era change set to take place on May 1, 2019. [This page is also available in Japanese](/windows/apps/design/globalizing/japanese-era-change).
 
 ## Videos
 

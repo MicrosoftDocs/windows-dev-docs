@@ -57,7 +57,8 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Author events](./author-events.md) | This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
 | [Collections with C++/WinRT](./collections.md) | C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections. |
 | [Concurrency and asynchronous operations](./concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
-| [More advanced concurrency and asynchrony](./concurrency-2.md) | More advanced scenarios with concurrency and asynchrony in C++/WinRT. |
+| [Advanced concurrency and asynchrony](./concurrency-2.md) | Advanced scenarios with concurrency and asynchrony in C++/WinRT. |
+| [A completion source sample](./concurrency-3.md) | Shows how you can author and consume your own completion source class. |
 | [XAML controls; bind to a C++/WinRT property](./binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md) | This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls. |

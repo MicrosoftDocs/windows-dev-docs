@@ -19,7 +19,7 @@ For more detailed information on the different Universal Windows app features ut
 
 -   [Transcode media files](transcode-media-files.md)
 -   [Launching resuming and background tasks](../launch-resume/index.md)
--   [Tiles badges and notifications](../design/shell/tiles-and-notifications/index.md)
+-   [Tiles badges and notifications](/windows/apps/design/shell/tiles-and-notifications/index)
 
 ## Create a media processing background task
 

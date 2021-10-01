@@ -290,7 +290,7 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 > [!NOTE]
-> For more info on how panels work, see [XAML custom panels overview](../design/layout/custom-panels-overview.md).
+> For more info on how panels work, see [XAML custom panels overview](/windows/apps/design/layout/custom-panels-overview).
 
 ## Related topics
 

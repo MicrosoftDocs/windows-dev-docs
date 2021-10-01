@@ -259,7 +259,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Once you have a **WebAccount** instance, you can easily store it. In the following example, we use LocalSettings. For more information on using LocalSettings and other methods to store user data, see [Store and retrieve app settings and data](../design/app-settings/store-and-retrieve-app-data.md).
+Once you have a **WebAccount** instance, you can easily store it. In the following example, we use LocalSettings. For more information on using LocalSettings and other methods to store user data, see [Store and retrieve app settings and data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 
 ```csharp
 private async void StoreWebAccount(WebAccount account)

@@ -1,6 +1,6 @@
 ---
-title: Set up your development environment
-description: This article provides instructions for installing the Windows App SDK extension for Visual Studio 2019 on your development computer.
+title: Install tools for Windows app development
+description: This article provides instructions for setting up your development computer for Windows app development.
 ms.topic: article
 ms.date: 05/21/2021
 keywords: windows win32, windows app development, Windows App SDK 
@@ -9,65 +9,23 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Set up your development environment
+# Install tools for Windows app development
 
-Follow these instructions to set up your development environment so you can start creating apps for Windows 11 and Windows 10.
+To develop apps for Windows 11 and Windows 10, you'll need to configure your development computer with the required development tools.
 
-## System requirements
+## 1. Check system requirements
 
-To develop Windows apps, you'll need to install and set up Visual Studio, the Windows 10 SDK, and the Windows App SDK on a development computer. These tools have the following system requirements.
+To develop apps, you'll need Visual Studio, the Windows SDK, and the Windows App SDK. For a list of the minimum system requirements for each of these tools, see [System requirements for Windows app development](system-requirements.md).
 
-#### [Visual Studio 2019](#tab/visual-studio-2019)
+## 2. Install Visual Studio
 
-Visual Studio is a comprehensive integrated development environment (IDE) that you can use to edit, debug, and build code, and then publish your app.
-
-See [this page](/visualstudio/releases/2019/system-requirements) for Visual Studio system requirements.
-
-#### [Windows SDK](#tab/windows-sdk)
-
-The Windows SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows SDK is installed with Visual Studio 2019 by default.
-
-See [this page](https://developer.microsoft.com/windows/downloads/windows-10-sdk/#sysreq) for Windows SDK system requirements.
-
-#### [Windows App SDK](#tab/windows-app-sdk)
-
-The [Windows App SDK](index.md) is a set of developer tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
-
-> [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
-
-The Windows App SDK has these system requirements:
-
-- Windows 10, version 1809 (build 17763) or later.
-
-- Visual Studio 2019 version 16.9 or later with the following workloads and components:
-  - **Universal Windows Platform development**
-  - **.NET Desktop Development** (needed even if you're only building C++ Win32 apps)
-  - **Desktop development with C++** (needed even if you're only building .NET apps)
-
-- Windows SDK version 2004 (build 19041) or later. This is installed with Visual Studio 2019 by default.
-
-- Building .NET apps also requires:
-  - .NET 5 SDK version 5.0.300 or later if you're using Visual Studio 2019 version 16.10
-  - .NET 5 SDK version 5.0.204 if you're using Visual Studio 2019 version 16.9
-
-##### Visual Studio support for WinUI 3 tools
-
-You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
-
-|   | Visual Studio 2019 16.9  |Visual Studio 2019 16.10  |  Visual Studio 2019 16.11 Previews |
-|---|---|---|---|
-| **Windows App SDK 0.5** | Tools unavailable | Tools available   |  Tools unavailable   |
-| **Windows App SDK 0.8** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3  |
-
----
-
-## 1. Install Visual Studio
-
-Use the following link to install Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed by default.
+Use the following links to install Visual Studio 2019 or Visual Studio 2022 (Preview). You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed by default.
 
 > [!div class="button"]
-> [Download Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
+> [Download Visual Studio 2019](/visualstudio/releases/2019/release-notes)
+
+> [!div class="button"]
+> [Download Visual Studio 2022 (Preview)](/visualstudio/releases/2022/release-notes-preview)
 
 ### Required workloads and components
 
@@ -80,60 +38,99 @@ Make sure these workloads and components are installed with Visual Studio. These
 
 - On the **Individual components** tab of the installation dialog, **Windows 10 SDK (10.0.19041.0)** is required in the **SDKs, libraries, and frameworks** section.
 
-- In the **Installation details** pane of the installation dialog, **C++ (v142) Universal Windows Platform tools** is required in the **Universal Windows Platform development** section.
+- In the **Installation details** pane of the installation dialog, make sure the following items are selected in the **Universal Windows Platform development** section:
+  - For Visual Studio 2019: **C++ (v142) Universal Windows Platform tools**
+  - For Visual Studio 2022 (Preview): **C++ (v143) Universal Windows Platform tools**
 
-## 2. Enable NuGet Package source
+## 3. Enable NuGet Package source
 
-Make sure your system has a NuGet package source enabled for the official NuGet service index at `https://api.nuget.org/v3/index.json`. 
+Make sure your system has a NuGet package source enabled for the official NuGet service index at `https://api.nuget.org/v3/index.json`.
 
  1. In Visual Studio, select **Tools** -> **NuGet Package Manager** -> **Package Manager Settings** to open the **Options** dialog.
  2. In the left pane of the **Options** dialog, select the **Package Sources** tab, and make sure there is a package source for **nuget.org** that points to `https://api.nuget.org/v3/index.json` as the source URL. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
-## 3. Install the Windows App SDK Extension for Visual Studio
+## 4. Install the Windows App SDK extension for Visual Studio
 
-There are currently two [release channels](release-channels.md) of the the Windows App SDK you can choose from: the stable channel and experimental channel.
+The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
-> If you previously installed the [WinUI 3 Preview extension for Visual Studio](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates), uninstall the extension. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
+> If you have already installed any [previous version](downloads.md) of the Windows App SDK extension for Visual Studio, uninstall the previous extension before installing a new version. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-### Install the stable release
+For installation instructions, see the following tabs.
 
-To develop desktop (C#/.NET 5 or C++/WinRT) apps that can be used in production environments, install the latest extension from the [stable release channel](stable-channel.md). Choose one of these options to install:
+### [Stable release](#tab/stable)
 
-- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension.
+To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about the stable channel and the features available in it, see [Stable release channel](stable-channel.md).
+
+Choose one of these options to install the latest stable release (0.8.2):
+
+- In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension.
+    > [!NOTE]
+    > In the latest available stable release, the Windows App SDK extension for Visual Studio is named **Project Reunion**. In later releases, it has been renamed to **Windows App SDK**.
+
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
-    > [Download latest stable release](https://aka.ms/projectreunion/vsixdownload)
+    > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
 
-    ![Screenshot of the Windows App SDK extension being installed](images/reunion-extension-install.png)
+### [Preview release](#tab/preview)
 
-### Install the experimental release
+To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](stable-channel.md). This release channel cannot be used by apps in production environments.
 
-To develop desktop (C#/.NET 5 or C++/WinRT) apps or UWP apps that use the latest experimental features, install the latest extension from the [experimental release channel](experimental-channel.md). This version of the Windows App SDK cannot be used by apps in production environments. Choose one of these options to install:
+Choose one or more of the following extensions for the latest preview release (1.0 Preview 1), based on the version of Visual Studio you have installed and the programming language you want to use.
 
-- In Visual Studio 2019, click **Extensions** > **Manage Extensions**, search for **Project Reunion (Preview)**, and install the latest extension.
+- **Visual Studio 2019**:
+
+   > [!div class="button"]
+    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2019/cpp)
+
+    > [!div class="button"]
+    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2019/csharp)
+
+- **Visual Studio 2022**:
+
+    > [!div class="button"]
+    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2022/cpp)
+
+    > [!div class="button"]
+    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2022/csharp)
+
+> [!NOTE]
+> The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace and the **Manage Extensions** dialog box in Visual Studio.
+
+### [Experimental release](#tab/experimental)
+
+To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about the latest release and the features available in it, see [latest experimental extension](experimental-channel.md). This release channel cannot be used by apps in production environments.
+
+Choose one of these options to install the latest experimental release (1.0 Experimental):
+
+- In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
 
     > [!div class="button"]
-    > [Download latest experimental release](https://aka.ms/projectreunion/previewdownload)
+    > [Download latest experimental release](https://aka.ms/windowsappsdk/experimental-vsix)
 
-## 4. Enable your device for development
+---
 
-Before you can deploy apps to your development computer, you have to enable it for development. For detailed instructions, see [this article](../get-started/enable-your-device-for-development.md).
+## 5. Enable your device for development
 
-## 5. Register as an app developer
+Before you can deploy apps to your development computer, you have to enable it for development. For detailed instructions, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-You can start developing apps now, but you need a developer account to submit your apps to the Microsoft Store. To get a developer account, see [this article](../get-started/sign-up.md) page.
+## 6. Register as an app developer
+
+You can start developing apps now, but you need a developer account to submit your apps to the Microsoft Store. For more information, see [Create a developer account](../get-started/sign-up.md).
 
 ## Other tools and downloads
 
+- To enhance the developer experience for MSIX-packaged desktop applications, you can optionally install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged desktop application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](single-project-msix.md).
 - If you want to customize your device and install other features or packages, check out the [developer setup scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts).
-- For more tools and downloads related to Windows app development, see [this page](https://developer.microsoft.com/windows/downloads).
+- For more tools and downloads, see [Downloads and tools for Windows development](https://developer.microsoft.com/windows/downloads).
 
 ## Related topics
 
-- [Build desktop Windows apps with the Windows App SDK](index.md)
-- [Release channels](release-channels.md)
-- [Get started developing apps with the Windows App SDK](get-started.md)
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
+- [System requirements for Windows app development](system-requirements.md)
+- [Get started developing apps for Windows desktop](../get-started/index.md)
+- [Visual Studio project and item templates for Windows apps](../desktop/visual-studio-templates.md)
+- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
+- [Enable your device for development](../get-started/enable-your-device-for-development.md)

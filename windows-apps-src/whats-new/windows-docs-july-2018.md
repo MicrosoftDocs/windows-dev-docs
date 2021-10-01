@@ -40,7 +40,7 @@ Check out the [updated Design landing page](https://developer.microsoft.com/wind
 
 ### Design toolkits
 
-The Adobe XD and Adobe Illustrator toolkits have been updated with new features. These design toolkits provide controls and layout templates for designing UWP apps. [Check them out here.](../design/downloads/index.md)
+The Adobe XD and Adobe Illustrator toolkits have been updated with new features. These design toolkits provide controls and layout templates for designing UWP apps. [Check them out here.](/windows/apps/design/downloads/index)
 
 ### WebVR
 

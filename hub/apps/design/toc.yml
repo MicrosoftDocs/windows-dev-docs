@@ -18,6 +18,8 @@
       href: signature-experiences/iconography.md
     - name: Typography
       href: signature-experiences/typography.md
+    - name: Motion
+      href: signature-experiences/motion.md
 - name: Design basics
   items:
     - name: Overview
@@ -244,6 +246,8 @@
           href: controls/tooltips.md
         - name: Info bar
           href: controls/infobar.md
+        - name: Info badge
+          href: controls/info-badge.md
     - name: Text
       items:
         - name: Overview
@@ -284,6 +288,8 @@
           href: style/app-icons-and-logos.md
         - name: Segoe MDL2 icons
           href: style/segoe-ui-symbol-font.md
+        - name: Segoe Fluent Icons
+          href: style/segoe-fluent-icons-font.md
     - name: Acrylic
       href: style/acrylic.md
     - name: Mica
@@ -452,6 +458,8 @@
     - name: Pen and Windows Ink
       href: input/pen-and-stylus-interactions.md
       items:
+        - name: "Pen interactions and haptic (tactile) feedback"
+          href: input/pen-haptics.md
         - name: "Tutorial: Add Inking support to your app"
           href: input/ink-walkthrough.md
         - name: Recognize ink strokes
@@ -471,12 +479,12 @@
           href: input/access-keys.md
         - name: Keyboard Accelerators
           href: input/keyboard-accelerators.md
+        - name: Keyboard events
+          href: input/keyboard-events.md
         - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
           href: input/focus-navigation.md
         - name: Programmatic focus navigation
           href: input/focus-navigation-programmatic.md
-        - name: Keyboard events
-          href: input/keyboard-events.md
         - name: Respond to the presence of the touch keyboard
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: Use input scope to change the touch keyboard

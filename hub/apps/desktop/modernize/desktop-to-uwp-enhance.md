@@ -12,11 +12,9 @@ ms.custom: 19H1
 
 # Call Windows Runtime APIs in desktop apps
 
-You can use Windows Runtime (WinRT) APIs to add modern experiences to your desktop apps that light up for Windows 10 users.
+This article describes how to set up your desktop app projects to use Windows Runtime (WinRT) APIs provided by the Windows OS and add modern Windows 11 and Windows 10 experiences to your desktop apps. 
 
-First, set up your project with the required references. Then, call Windows Runtime APIs from your code to add Windows 10 experiences to your desktop app. You can build separately for Windows 10 users or distribute the same binaries to all users regardless of which version of Windows they run.
-
-Some Windows Runtime APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
+Some WinRT APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
 
 ## Modify a .NET project to use Windows Runtime APIs
 
@@ -26,18 +24,17 @@ There are several options for .NET projects:
 * For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
 * If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
-### .NET 5: Use the Target Framework Moniker option
+### .NET 5 and later: Use the Target Framework Moniker option
 
 This option is only supported in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
 
     ```xml
-    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <Project Sdk="Microsoft.NET.Sdk">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
-        <UseWindowsForms>true</UseWindowsForms>
       </PropertyGroup>
     </Project>
     ```
@@ -53,8 +50,28 @@ This option is only supported in projects that use .NET 5 (or a later release) a
     ```xml
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     ```
+    
+    In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
 
 3. Save your changes and close the project file.
+
+#### Supporting multiple Windows OS versions 
+
+The Windows OS version-specific **TargetFramework** property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both **TargetPlatformVersion** and **TargetPlatformMinVersion** (if not explicitly set). The **TargetPlatformVersion** property does not need to be explicitly defined in the project file, since it is automatically set by the **TargetFramework** OS version.
+
+The **TargetPlatformMinVersion** can be overridden to be less than the **TargetPlatformVersion** (determined by the version in the **TargetFramework** property). This permits an app to run on earlier OS versions. For example, you can set the following in your project file to support your app downlevel to Windows 10, version 1809. 
+
+ ```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+  </PropertyGroup>
+</Project>
+```
+
+Note that setting the **TargetPlatformMinVersion** to a version below the **TargetPlatformVersion** creates the potential for calling unavailable APIs. When calling WinRT APIs that are not available on all supported OS versions, we recommend guarding these calls with **ApiInformation** checks. For more information, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 ### Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package
 
@@ -140,7 +157,7 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
 
 ## Modify a C++ desktop (Win32) project to use Windows Runtime APIs
 
-Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume Windows Runtime APIs. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
+Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume WinRT APIs. C++/WinRT is an entirely standard modern C++17 language projection for WinRT APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 To configure your project for C++/WinRT:
 
@@ -167,7 +184,7 @@ Visit the [UWP documentation](/windows/uwp/get-started/) for more ideas.
 
 You'll often hear us use the terms *enhance* and *extend*, so we'll take a moment to explain exactly what each of these terms mean.
 
-We use the term *enhance* to describe Windows Runtime APIs that you can call directly from your desktop app (whether or not you have chosen to package your application in an MSIX package). When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in [this list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop app. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that render UWP XAML such as a UWP map control or a Windows Hello security prompt.
+We use the term *enhance* to describe WinRT APIs that you can call directly from your desktop app (whether or not you have chosen to package your application in an MSIX package). When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in [this list](desktop-to-uwp-supported-api.md). This is a list of APIs that you can call directly from your desktop app. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that render UWP XAML such as a UWP map control or a Windows Hello security prompt.
 
 > [!NOTE]
 > Although APIs that render UWP XAML typically cannot be called directly from your desktop, you might be able to use alternative approaches. If you want to host UWP XAML controls or other custom visual experiences, you can use [XAML Islands](xaml-islands.md) (starting in Windows 10, version 1903) and the [Visual layer](visual-layer-in-desktop-apps.md) (starting in Windows 10, version 1803). These features can be used in packaged or unpackaged desktop apps.
@@ -302,7 +319,7 @@ First, add a new build configuration to your project.
 
 ![Build Configuration](images/desktop-to-uwp/build-config.png)
 
-For that build configuration, create a constant that to identify code that calls Windows Runtime APIs.  
+For that build configuration, create a constant that to identify code that calls WinRT APIs.  
 
 For .NET-based projects, the constant is called a **Conditional Compilation Constant**.
 
@@ -335,9 +352,9 @@ The compiler builds that code only if that constant is defined in your active bu
 
 ### Runtime checks
 
-You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls Windows Runtime APIs only if the user is runs your application as a packaged application on Windows 10.
+You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls WinRT APIs only if the user is runs your application as a packaged application on Windows 10.
 
-The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls Windows Runtime APIs. See this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
+The easiest way to add runtime checks to your code is to install this Nuget package: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) and then use the ``IsRunningAsUWP()`` method to gate off all code that calls WinRT APIs. See this blog post for more details: [Desktop Bridge - Identify the application's context](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## Related Samples
 

@@ -24,7 +24,7 @@ Because your app can run on a potentially wide range of devices—each with its 
 
 ## Back button handling
 
-For Universal 8.1 apps, Windows Runtime 8.x apps and Windows Phone Store apps have different approaches to the UI you show and the events you handle for the back button. But, for Windows 10 apps, you can use a single approach in your app. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for Tablet mode. The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) event.
+For Universal 8.1 apps, Windows Runtime 8.x apps and Windows Phone Store apps have different approaches to the UI you show and the events you handle for the back button. But, for Windows 10 apps, you can use a single approach in your app. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for [Tablet mode (Windows 10 only)](/windows-hardware/design/device-experiences/continuum). The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) event.
 
 The example below works for all device families and it is good for cases where the same processing applies to all pages, and where you do not need to confirm navigation (for example, to warn about unsaved changes).
 
@@ -102,7 +102,7 @@ Here are some more specific examples of changes to controls.
 | [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | In a Universal 8.1 app, the [**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) property causes the section header—and a chevron glyph rendered next to it—to become interactive. In a Windows 10 app, there is an interactive "See more" affordance beside the header, but the header itself is not interactive. **IsHeaderInteractive** still determines whether interaction raises the [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick) event. |
 | **MessageDialog** | If you're using **MessageDialog**, then consider instead using the more flexible [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). Also, see the [XAML UI Basics](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) sample. |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** and **PickerFlyout** are deprecated for a Windows 10 app. For a single selection fly-out, use [**MenuFlyout**](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout); for more complex experiences, use [**Flyout**](/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
-| [**PasswordBox**](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | The [**PasswordBox.IsPasswordRevealButtonEnabled**](/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) property is deprecated in a Windows 10 app, and setting it has no effect. Use [**PasswordBox.PasswordRevealMode**](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) instead, which defaults to **Peek** (in which an eye glyph is displayed, like in a Windows Runtime 8.x app). Also, see [Guidelines for password boxes](../design/controls-and-patterns/password-box.md). |
+| [**PasswordBox**](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | The [**PasswordBox.IsPasswordRevealButtonEnabled**](/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) property is deprecated in a Windows 10 app, and setting it has no effect. Use [**PasswordBox.PasswordRevealMode**](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) instead, which defaults to **Peek** (in which an eye glyph is displayed, like in a Windows Runtime 8.x app). Also, see [Guidelines for password boxes](/windows/apps/design/controls/password-box). |
 | [**Pivot**](/uwp/api/Windows.UI.Xaml.Controls.Pivot) | The [**Pivot**](/uwp/api/Windows.UI.Xaml.Controls.Pivot) control is now universal, it is no longer limited to use on mobile devices. |
 | [**SearchBox**](/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Although [**SearchBox**](/uwp/api/windows.ui.xaml.controls.searchbox) is implemented in the Universal device family, it is not fully functional on mobile devices. See [SearchBox deprecated in favor of AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
 | **SemanticZoom** | For **SemanticZoom**, see [SemanticZoom changes](#semanticzoom-changes). |
@@ -112,7 +112,7 @@ Here are some more specific examples of changes to controls.
 | [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | The default value of [**TextBox.TextReadingOrder**](/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) has changed from **Default** to **DetectFromContent**. If that's undesirable, then use **UseFlowDirection**. **Default** is deprecated. |
 | Various | Accent color applies to a Windows Phone Store apps, and to Windows 10 apps, but not to Windows Runtime 8.x apps.  |
 
-For more info on UWP app controls, see [Controls by function](../design/controls-and-patterns/index.md), [Controls list](../design/controls-and-patterns/index.md), and [Guidelines for controls](../design/controls-and-patterns/index.md).
+For more info on UWP app controls, see [Controls by function](/windows/apps/design/controls/index), [Controls list](/windows/apps/design/controls/index), and [Guidelines for controls](/windows/apps/design/controls/index).
 
 ##  Design language in Windows 10
 
@@ -134,7 +134,7 @@ If you have intricate artwork, then you may want to provide your assets in even 
 
 We don't recommend that you try to support all of the scale factors, but the full list of scale factors for Windows 10 apps is 100%, 125%, 150%, 200%, 250%, 300%, and 400%. If you provide them, the Store will pick the correct-sized asset(s) for each device, and only those assets will be downloaded. The Store selects the assets to download based on the DPI of the device. You can re-use assets from your Windows Runtime 8.x app at scale factors such as 140% and 220%, but your app will run at one of the new scale factors and so some bitmap scaling will be unavoidable. Test your app on a range of devices to see whether you're happy with the results in your case.
 
-You may be re-using XAML markup from a Windows Runtime 8.x app where literal dimension values are used in the markup (perhaps to size shapes or other elements, perhaps for typography). But, in some cases, a larger scale factor is used on a device for a Windows 10 app than for a Universal 8.1 app (for example, 150% is used where 140% was before, and 200% is used where 180% was). So, if you find that these literal values are now too big on Windows 10, then try multiplying them by 0.8. For more info, see [Responsive design 101 for UWP apps](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+You may be re-using XAML markup from a Windows Runtime 8.x app where literal dimension values are used in the markup (perhaps to size shapes or other elements, perhaps for typography). But, in some cases, a larger scale factor is used on a device for a Windows 10 app than for a Universal 8.1 app (for example, 150% is used where 140% was before, and 200% is used where 180% was). So, if you find that these literal values are now too big on Windows 10, then try multiplying them by 0.8. For more info, see [Responsive design 101 for UWP apps](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## GridView and ListView changes
 
@@ -241,7 +241,7 @@ The design language has evolved for Windows 10 and consequently certain system 
 
 In other cases, resource keys are no longer supported. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `ListViewItemTextBlockStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
 
-For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Runtime 8.x app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
+For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Runtime 8.x app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
 
 This is a full list of the keys that are no longer supported.
 
@@ -442,7 +442,7 @@ The Windows Runtime 8.x **SettingsPane** class is not appropriate for Windows 1
 
 It's also not recommended to bury Settings within a master-detail pane.
 
-Your Settings page should fill the whole of your app's window, and your Settings page is also where About and Feedback should be. For guidance on the design of your Settings page, see [Guidelines for app settings](../design/app-settings/guidelines-for-app-settings.md).
+Your Settings page should fill the whole of your app's window, and your Settings page is also where About and Feedback should be. For guidance on the design of your Settings page, see [Guidelines for app settings](/windows/apps/design/app-settings/guidelines-for-app-settings).
 
 ## Text
 
@@ -454,7 +454,7 @@ In Windows Runtime 8.x apps and Windows Phone Store apps, the default font famil
 
 In Windows Runtime 8.x apps and Windows Phone Store apps, the default language for text is set to the language of the build, or to en-us. In a Windows 10 app, the default language is set to the top app language (font fallback). You can set [**FrameworkElement.Language**](/uwp/api/windows.ui.xaml.frameworkelement.language) explicitly, but you will enjoy better font fallback behavior if you do not set a value for that property.
 
-For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/). Also, see the [Controls](#controls-and-control-styles-and-templates) section above for changes to text controls.
+For more info, see [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/). Also, see the [Controls](#controls-and-control-styles-and-templates) section above for changes to text controls.
 
 ## Theme changes
 
@@ -462,7 +462,7 @@ For a Universal 8.1 app, the default theme is dark by default. For Windows 10 d
 
 ## Tiles and toasts
 
-For tiles and toasts, the templates you're currently using will continue to work in your Windows 10 app. But, there are new, adaptive templates available for you to use, and these are described in [Notifications, tiles, toasts, and badges](../design/shell/tiles-and-notifications/index.md).
+For tiles and toasts, the templates you're currently using will continue to work in your Windows 10 app. But, there are new, adaptive templates available for you to use, and these are described in [Notifications, tiles, toasts, and badges](/windows/apps/design/shell/tiles-and-notifications/index).
 
 Previously, on desktop computers, a toast notification was a transitory message. It would disappear, and no longer be retrievable, once it was missed or ignored. On Windows Phone, if a toast notification is ignored or temporarily dismissed, it would go into the Action Center. Now, Action Center is no longer limited to the Mobile device family.
 

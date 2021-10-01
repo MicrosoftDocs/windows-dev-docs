@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 ![Several words rendered in Segoe UI Variable](images/typography_QuickBrownFox.svg)
 
-Iconography is a set of visual images and symbols that help users understand and navigate your app. The Windows 11 type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.
+As the visual representation of language, typography's main task is to communicate information. The Windows 11 type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.
 
 [Segoe UI Variable](..\downloads\index.md#fonts) is the new system font for Windows. It is a refreshed take on the classic Segoe and uses variable font technology to dynamically provide great legibility at very small sizes, and improved outlines at display sizes.
 

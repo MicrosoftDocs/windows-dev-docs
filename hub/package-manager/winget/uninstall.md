@@ -27,6 +27,9 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are uninstalling.
+
 ## Options
 
 The options allow you to customize the uninstall experience to meet your needs.
@@ -43,6 +46,8 @@ The options allow you to customize the uninstall experience to meet your needs.
 | **-i, --interactive** |  Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. |  
 | **-h, --silent** |  Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. |  
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 
 After you have successfully identified the application intended to uninstall, winget will execute the uninstall command. In the example below, the **name** 'orca' and the **id** was passed in.
 

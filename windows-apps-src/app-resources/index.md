@@ -17,7 +17,7 @@ There are two types of app resource.
 - A file resource is a resource stored as a file on disk. A file resource can contain a bitmap image, XAML, XML, HTML, or any other kind of data.
 - An embedded resource is a resource that is embedded within some containing resource file. The most common example is a string resource embedded within a Resources File (.resw or .resjson).
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
 
 | Article | Description |
 |---------|-------------|
@@ -34,4 +34,4 @@ For more info about the value proposition of localizing your app, see [Globaliza
 | [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md) | MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system. |
 | [Use the Windows 10 Resource Management System in a legacy app or game](using-mrt-for-converted-desktop-apps-and-games.md) | By packaging your .NET or Win32 app or game as an .msix or .appx package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques. |
 
-Also see [Tile and toast notification support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
+Also see [Tile and toast notification support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast).

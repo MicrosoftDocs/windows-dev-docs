@@ -99,7 +99,7 @@ The Product must not contain or enable malware as defined by the Microsoft crite
 
 The Product may contain fully integrated middleware (such as third-party cross-platform engines and third-party analytics services).
 
-The Product may depend on non-integrated software (such as another Product, module, or service) to deliver its primary functionality, subject to the following requirements:
+The Product may depend on non-integrated software (such as another Product, module, or service) to deliver its primary functionality.
 
 ### 1.3 Product is Testable
 

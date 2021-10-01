@@ -28,7 +28,7 @@ See [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNam
 
 We've released new UWP XAML controls that fill the gap between a traditional desktop application UI and a UWP UI.
 
-For example, the new [MenuBar](../design/controls-and-patterns/menus.md), [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [CommandBarFlyout](../design/controls-and-patterns/command-bar-flyout.md) controls give you more flexible ways to expose commands, and the [EditableComboBox](../design/controls-and-patterns/combo-box.md#make-a-combo-box-editable) let's the user enter values that aren't listed in a pre-defined list of options.
+For example, the new [MenuBar](/windows/apps/design/controls/menus), [DropDownButton](/windows/apps/design/controls/buttons#create-a-drop-down-button), [SplitButton](/windows/apps/design/controls/buttons#create-a-split-button), and [CommandBarFlyout](/windows/apps/design/controls/command-bar-flyout) controls give you more flexible ways to expose commands, and the [EditableComboBox](/windows/apps/design/controls/combo-box#make-a-combo-box-editable) let's the user enter values that aren't listed in a pre-defined list of options.
 
 ![MenuBar](images/menu-bar.png)
 
@@ -37,7 +37,7 @@ For example, the new [MenuBar](../design/controls-and-patterns/menus.md), [DropD
 
 The [DataGridView](/windows/communitytoolkit/controls/datagrid) provides a flexible way to display a collection of data in rows and columns.
 
-The [TreeView](../design/controls-and-patterns/tree-view.md) enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
+The [TreeView](/windows/apps/design/controls/tree-view) enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
 ![DataGrid control](images/DataGrid.gif)
 
