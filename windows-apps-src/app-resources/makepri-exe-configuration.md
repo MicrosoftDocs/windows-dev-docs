@@ -277,13 +277,13 @@ Here are some example error conditions, and the corresponding error message.
 | A targetOsVersion other than one of the supported values is specified. | Error | Invalid Configuration: Invalid targetOsVersion specified. |
 | A targetOsVersion of "6.2.1" is specified and a `packaging` element is present. | Error | Invalid Configuration: 'Packaging' node is not supported with this targetOsVersion. |
 | More than one mode found in the configuration. For example, Manual and AutoResourcePackage specified. | Error | Invalid Configuration: 'packaging' node cannot have more than one mode of operation. |
-| A default qualifier is listed under resource package. | Error | Invalid Configuration: <Qualifiername>=<QualifierValue> is a default qualifier and its candidates cannot be added to a resource package. |
+| A default qualifier is listed under resource package. | Error | Invalid Configuration: \<Qualifiername>=\<QualifierValue> is a default qualifier and its candidates cannot be added to a resource package. |
 | AutoResourcePackage qualifier contains multiple qualifiers. For example, language_scale. | Error | Invalid Configuration : AutoResourcePackage with multiple qualifiers is not supported. |
 | ResourcePackage QualifierSet contains multiple qualifiers. For example, language-en-us_scale-100 | Error | Invalid Configuration : QualifierSet with multiple qualifiers is not supported. |
-| Duplicate resourcepack name found. | Error | Invalid Configuration : Duplicate resource pack name <rpname>. |
-| Same qualifier set defined in two resource packages. | Error | Invalid Configuration: Multiple instances of QualifierSet "<qualifier tags>" found. |
-| No candidates are found for the QualifierSet listed for 'ResourcePackage' node. | Warning | Invalid Configuration: No candidates found for <Resource Package Name>. |
-| No candidates found for qualifier listed under ‘AutoResourcePackage’ node. | Warning | Invalid Configuration: No candidates found for qualifier <qualifier name>. Resource Package not generated. |
+| Duplicate resourcepack name found. | Error | Invalid Configuration : Duplicate resource pack name \<rpname>. |
+| Same qualifier set defined in two resource packages. | Error | Invalid Configuration: Multiple instances of QualifierSet "\<qualifier tags>" found. |
+| No candidates are found for the QualifierSet listed for 'ResourcePackage' node. | Warning | Invalid Configuration: No candidates found for \<Resource Package Name>. |
+| No candidates found for qualifier listed under ‘AutoResourcePackage’ node. | Warning | Invalid Configuration: No candidates found for qualifier \<qualifier name>. Resource Package not generated. |
 | None of the modes are found. That is, empty 'packaging' node found. | Warning | Invalid Configuration: No packaging mode specified. |
 
 ## Related topics

@@ -309,7 +309,7 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
 5.  Expand the **Miscellaneous** group and find the **Style** property.
 6.  Click the property marker (the green box to the right of the **Style** property), and then, on the menu, choose **System Resource** > **BaseTextBlockStyle**.
 
-     **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) in <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
+     **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) in \<root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
     ![Properties window, Properties view](images/xaml-hw-style-cpp.png)
 
