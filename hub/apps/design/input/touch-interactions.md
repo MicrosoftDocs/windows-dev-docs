@@ -11,15 +11,14 @@ ms.topic: article
 
 ms.localizationpriority: medium
 ---
-# Touch interactions
 
+# Touch interactions
 
 Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.
 
 However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch, touchpad, pen/stylus, mouse, and keyboard input.
 
 > **Important APIs**: [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
-
 
 Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
 
@@ -71,14 +70,11 @@ The following table shows some of the differences between input devices that you
 > [!NOTE]
 > Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
 
- 
-
 ## Use touch feedback
 
 Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and the Windows platform. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
 
 Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
-
 
 ## Targeting
 
@@ -151,9 +147,7 @@ In addition, the following are strongly recommended:
 
 - Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
 
-
 ## App views
-
 
 Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.
 
@@ -167,8 +161,24 @@ For more info about app views, see [Controls, layouts, and text](../basics/index
 
 ## Custom touch interactions
 
-
 If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the platform control libraries to keep things consistent and discoverable. The controls in these libraries provide the full user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.
+
+> [!Important]
+> **Windows 11 and newer**
+>
+> *Some three- and four-finger touch interactions will no longer work in Windows apps by default.*
+>
+> By default, three- and four-finger touch interactions are now consumed by the system for operations such as switching or minimizing windows and changing virtual desktops. As these interactions are now handled at the system level, your app's functionality could be affected by this change.
+>
+> To support three- or four-finger interactions within an application, a new user setting has been introduced that specifies whether or not the system handles these interactions:
+>
+> **Bluetooth & devices > Touch > "Three- and four-finger touch gestures"**
+>
+> When set to "On" (default), the system will handle all three- and four-finger interactions (apps will not be able to support them).
+>
+> When set to "Off", three- and four-finger interactions can be supported by apps (they will not be handled by the system).
+>
+> If your application must support these interactions, we recommend that you inform users of this setting and provide a link that launches the Settings app to the relevant page (ms-settings:devices-touch). For more details, see [Launch the Windows Settings app](/windows/uwp/launch-resume/launch-settings-app).
 
 To provide customized touch support, you can handle various [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) events. These events are grouped into three levels of abstraction.
 
@@ -196,19 +206,11 @@ Here is the basic set of touch gestures supported by the UWP.
 | Pinch          | Manipulation gesture | Two or more fingers touch the screen and move closer together.                         |
 | Stretch        | Manipulation gesture | Two or more fingers touch the screen and move farther apart.                           |
 
- 
-
-<!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
-For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
--->
-
 ## Gesture events
-
 
 For details about individual controls, see [Controls list](../controls/index.md).
 
 ## Pointer events
-
 
 Pointer events are raised by a variety of active input sources, including touch, touchpad, pen, and mouse (they replace traditional mouse events.)
 
@@ -228,8 +230,6 @@ Here is a list of pointer events and their related event argument.
 | [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | Occurs when the delta value of a mouse wheel changes and when the touchpad is pinched.         |
 | [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | Provides data for all pointer events.                         |
 
- 
-
 The following example shows how to use the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased), and [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) events to handle a tap interaction on a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
 First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
@@ -240,6 +240,7 @@ First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touch
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
+
 Next, listeners for the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased), and [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) events are specified.
 
 ```cpp
@@ -403,7 +404,6 @@ End Sub
 
 ## Manipulation events
 
-
 Use manipulation events if you need to support multiple finger interactions in your app, or interactions that require velocity data.
 
 You can use manipulation events to detect interactions such as drag, zoom, and hold.
@@ -427,16 +427,12 @@ Here is a list of manipulation events and related event arguments.
 | [**ManipulationVelocities**](/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | Describes the speed at which manipulations occur.                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | Provides data for the [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) event.                                       |
 
- 
-
 A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) event, such as when a user touches the screen.
 
 Next, one or more [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) event is raised when the interaction finishes.
 
 > [!NOTE]
 > If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
-
- 
 
 The following example shows how to use the [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) events to handle a slide interaction on a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) and move it across the screen.
 
