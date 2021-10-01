@@ -110,7 +110,7 @@ Before you make any changes to your application's resources, you must first repl
 If you want to use the [Desktop App Converter](https://www.microsoft.com/store/p/desktopappconverter/9nblggh4skzw), see [Package a desktop application using the Desktop App Converter](/windows/msix/desktop/desktop-to-uwp-run-desktop-app-converter) for more information on the conversion process. A complete set of Desktop Converter samples can be found on [the Desktop Bridge to UWP samples GitHub repo](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
 
 If you want to manually create the package, you will need to create a directory structure that includes all your application's files (executables and content, but not source code) and a package manifest file (.appxmanifest). An example can be found in [the Hello, World GitHub sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml), 
-but a basic package manifest file that runs the desktop executable named `ContosoDemo.exe` is as follows, where the <span style="background-color: yellow">highlighted text</span> would be replaced by your own values.
+but a basic package manifest file that runs the desktop executable named `ContosoDemo.exe` is as follows, where the <span>highlighted text</span> would be replaced by your own values.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -170,7 +170,7 @@ Studio.
 If you want to create the resources manually:
 
 1. Create an XML file named `resources.resw` and place it in a `Strings\en-us` subfolder of your project. Use the appropriate BCP-47 code if your default language is not US English.
-2. In the XML file, add the following content, where the <span style="background-color: yellow">highlighted text</span> is replaced with the appropriate text for your app, in your default language.
+2. In the XML file, add the following content, where the <span>highlighted text</span> is replaced with the appropriate text for your app, in your default language.
 
 > [!NOTE]
 > There are restrictions on the lengths of some of these strings. For more info, see [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
@@ -210,7 +210,7 @@ If you want to use the designer in Visual Studio:
 
 After you have the values defined in the `.resw` file, the next step is to update the manifest to reference the resource strings. Again, you can edit an XML file directly, or rely on the Visual Studio Manifest Designer.
 
-If you are editing XML directly, open the `AppxManifest.xml` file and make the following changes to the <span style="background-color: lightgreen">highlighted values</span> - use this *exact* text, not text specific to your application. There is no requirement to use these exact resource names&mdash;you can choose your own&mdash;but whatever you choose must exactly match whatever is in the `.resw` file. These names should match the `Names` you created in the `.resw` file, prefixed with the `ms-resource:` scheme and the `Resources/` namespace. 
+If you are editing XML directly, open the `AppxManifest.xml` file and make the following changes to the <span>highlighted values</span> - use this *exact* text, not text specific to your application. There is no requirement to use these exact resource names&mdash;you can choose your own&mdash;but whatever you choose must exactly match whatever is in the `.resw` file. These names should match the `Names` you created in the `.resw` file, prefixed with the `ms-resource:` scheme and the `Resources/` namespace. 
 
 > [!NOTE]
 > Many elements of the manifest have been omitted from this snippet - do not delete anything!
@@ -237,7 +237,7 @@ If you are editing XML directly, open the `AppxManifest.xml` file and make the f
 </Package>
 ```
 
-If you are using the Visual Studio manifest designer, open the .appxmanifest file and change the <span style="background-color: lightgreen">highlighted values</span> values in the **Application* tab and the *Packaging* tab:
+If you are using the Visual Studio manifest designer, open the .appxmanifest file and change the <span>highlighted values</span> values in the **Application* tab and the *Packaging* tab:
 
 :::image type="content" source="images\editing-application-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Application tab with the Display name and Description text boxes called out." :::
 
@@ -376,7 +376,7 @@ Within the `Strings` folder, create additional folders for each language you sup
 create a `resources.resw` file (using either an XML editor or the Visual Studio designer) that includes the translated resource values. It is assumed you already have the localized 
 strings available somewhere, and you just need to copy them into the `.resw` file; this document does not cover the translation step itself. 
 
-For example, the `Strings\de-DE\resources.resw` file might look like this, with the <span style="background-color: yellow">highlighted text</span> changed from `en-US`:
+For example, the `Strings\de-DE\resources.resw` file might look like this, with the <span>highlighted text</span> changed from `en-US`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -403,7 +403,7 @@ The following steps assume you added resources for both `de-DE` and `fr-FR`, but
 
 #### Update the package manifest to list supported languages
 
-The package manifest must be updated to list the languages supported by the app. The Desktop App Converter adds the default language, but the others must be added explicitly. If you're editing the `AppxManifest.xml` file directly, update the `Resources` node as follows, adding as many elements as you need, and substituting the <span style="background-color: yellow">appropriate languages you support</span> and making sure the first entry in the list is the default (fallback) language. 
+The package manifest must be updated to list the languages supported by the app. The Desktop App Converter adds the default language, but the others must be added explicitly. If you're editing the `AppxManifest.xml` file directly, update the `Resources` node as follows, adding as many elements as you need, and substituting the <span>appropriate languages you support</span> and making sure the first entry in the list is the default (fallback) language. 
 In this example, the default is English (US) with additional support for both German (Germany) and French (France):
 
 ```xml
@@ -414,7 +414,7 @@ In this example, the default is English (US) with additional support for both Ge
 </Resources>
 ```
 
-If you are using Visual Studio, you shouldn't need to do anything; if you look at `Package.appxmanifest` you should see the special <span style="background-color: yellow">x-generate</span> value, which causes the build process to insert the languages it finds in your project (based on the folders named with BCP-47 codes). Note that this is not a valid value for a real package manifest; it only works for Visual 
+If you are using Visual Studio, you shouldn't need to do anything; if you look at `Package.appxmanifest` you should see the special <span>x-generate</span> value, which causes the build process to insert the languages it finds in your project (based on the folders named with BCP-47 codes). Note that this is not a valid value for a real package manifest; it only works for Visual 
 Studio projects:
 
 ```xml
@@ -457,8 +457,8 @@ Now open the Start menu and search for your application, and you should see the 
 
 ### Step 1.4: Localizing more parts of the package manifest (optional)
 
-Other sections of the package manifest can be localized. For example, if your application handles file-extensions then it should have a `windows.fileTypeAssociation` extension in the manifest, using the <span style="background-color: lightgreen">green highlighted text</span> exactly as shown (since it will refer to resources), and replacing the
-<span style="background-color: yellow">yellow highlighted text</span> with information specific to your application:
+Other sections of the package manifest can be localized. For example, if your application handles file-extensions then it should have a `windows.fileTypeAssociation` extension in the manifest, using the <span>green highlighted text</span> exactly as shown (since it will refer to resources), and replacing the
+<span>yellow highlighted text</span> with information specific to your application:
 
 ```xml
 <Extensions>
@@ -476,11 +476,11 @@ Other sections of the package manifest can be localized. For example, if your ap
 ```
 
 You can also add this information using the Visual Studio Manifest Designer, using the `Declarations` tab, taking note of the
-<span style="background-color: lightgreen">highlighted values</span>:
+<span>highlighted values</span>:
 
 :::image type="content" source="images\editing-declarations-info.png" alt-text="Screenshot of the Visual Studio Manifest Designer showing the Declarations tab with the Display name and Info tip text boxes called out." :::
 
-Now add the corresponding resource names to each of your `.resw` files, replacing the <span style="background-color: yellow">highlighted text</span> with the appropriate text for your app (remember to do this for *each supported language!*):
+Now add the corresponding resource names to each of your `.resw` files, replacing the <span>highlighted text</span> with the appropriate text for your app (remember to do this for *each supported language!*):
 
 ```xml
 ... existing content...
@@ -520,8 +520,8 @@ would not map well to MRT. A better structure would be a `Resources` directory w
 >[!NOTE]
 > It is still possible to use MRT and the benefits of packaging even if you can't follow this file naming convention; it just requires more work.
 
-For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span style="background-color: yellow">ui.txt</span>, 
-laid out under a <span style="background-color: yellow">UICommands</span> folder:
+For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span>ui.txt</span>, 
+laid out under a <span>UICommands</span> folder:
 
 <blockquote>
 <pre>
@@ -531,11 +531,11 @@ laid out under a <span style="background-color: yellow">UICommands</span> folder
 |  |  \--- resources.resw
 |  \--+ de-DE
 |     \--- resources.resw
-|--+ <span style="background-color: yellow">UICommands</span>
+|--+ <span>UICommands</span>
 |  |--+ en-US
-|  |  \--- <span style="background-color: yellow">ui.txt</span>
+|  |  \--- <span>ui.txt</span>
 |  \--+ de-DE
-|     \--- <span style="background-color: yellow">ui.txt</span>
+|     \--- <span>ui.txt</span>
 |--- AppxManifest.xml
 |--- ...rest of project...
 </pre>
@@ -638,14 +638,14 @@ After conversion to .appx, the layout will look something like this, assuming `e
 + WindowsAppsRoot
 |--+ MainApp_neutral
 |  |--+ en-us
-|  |  \--- <span style="background-color: yellow">MainApp.resources.dll</span>
+|  |  \--- <span>MainApp.resources.dll</span>
 |  \--- MainApp.exe
 |--+ MainApp_neutral_resources.language_de
 |  \--+ de-de
-|     \--- <span style="background-color: yellow">MainApp.resources.dll</span>
+|     \--- <span>MainApp.resources.dll</span>
 \--+ MainApp_neutral_resources.language_fr
    \--+ fr-fr
-      \--- <span style="background-color: yellow">MainApp.resources.dll</span>
+      \--- <span>MainApp.resources.dll</span>
 </pre>
 </blockquote>
 
