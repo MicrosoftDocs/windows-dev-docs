@@ -47,7 +47,7 @@ To create a back button, use the [Button](../controls/buttons.md) control with t
 </Page>
 ```
 
-If your app has a top [CommandBar](../controls/command-bar.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
+If your app has a top [CommandBar](../controls/command-bar.md), the Button control that is 44epx in height will not align with 48epx AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48epx bounds.
 
 ![Back button on top command bar](images/back-nav/command-bar.png)
 

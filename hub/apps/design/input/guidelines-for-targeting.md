@@ -27,7 +27,7 @@ In this topic, we describe these default behaviors so you can design your app fo
 *Fluent Standard sizing* was created to provide a balance between information density and user comfort. Effectively, all items on the screen align to a 40x40 effective pixels (epx) target, which lets UI elements align to a grid and scale appropriately based on system level scaling.
 
 > [!NOTE]
-> For more info on effective pixels and scaling, see [Introduction to Windows app design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+> For more info on effective pixels and scaling, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 >
 > For more info on system level scaling, see [Alignment, margin, padding](../layout/alignment-margin-padding.md).
 
@@ -72,7 +72,8 @@ These target size recommendations can be adjusted as required by your particular
 
 ## Related articles
 
-- [Introduction to Windows app design](../basics/design-and-ui-intro.md)
+- [Design basics for Windows apps](../basics/index.md)
+- [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Control size and density](../style/spacing.md)
 - [Alignment, margin, padding](../layout/alignment-margin-padding.md)
 

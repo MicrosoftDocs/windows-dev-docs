@@ -24,8 +24,12 @@
   items:
     - name: Overview
       href: basics/index.md
-    - name: Intro to app design
-      href: basics/design-and-ui-intro.md
+    - name: App Silhouette
+      href: basics/app-silhouette.md  
+    - name: Content basics
+      href: basics/content-basics.md
+    - name: Commanding Basics
+      href: basics/commanding-basics.md
     - name: Navigation basics
       items:
         - name: Overview
@@ -34,24 +38,11 @@
           href: basics/navigate-between-two-pages.md
         - name: Navigation history and backwards navigation
           href: basics/navigation-history-and-backwards-navigation.md
-    - name: Command basics
-      href: basics/commanding-basics.md
-    - name: Content basics
-      href: basics/content-basics.md
-    - name: Tutorials
-      items:
-        - name: Create a user interface
-          href: basics/xaml-basics-ui.md
-        - name: Create an adaptive layout
-          href: basics/xaml-basics-adaptive-layout.md
-        - name: Style a control
-          href: basics/xaml-basics-style.md
+
 - name: Layout
   items:
     - name: Overview
       href: layout/index.md
-    - name: Page layout
-      href: layout/page-layout.md
     - name: Screen sizes and breakpoints
       href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
     - name: Responsive design techniques
@@ -96,7 +87,7 @@
       href: controls/index.md
     - name: Intro to controls and events
       href: controls/controls-and-events-intro.md
-    - name: Intro to commanding
+    - name: Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
       href: controls/commanding.md
     - name: Basic input
       items:
@@ -342,6 +333,8 @@
           href: motion/key-frame-and-easing-function-animations.md
 - name: Shell
   items:
+    - name: Overview
+      href: shell/index.md
     - name: Toast notifications
       items:
         - name: UX guidance
