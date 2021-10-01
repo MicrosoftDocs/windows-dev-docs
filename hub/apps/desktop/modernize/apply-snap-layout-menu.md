@@ -2,7 +2,7 @@
 description: Support the snap layouts menu in your desktop application.
 title: Support snap layouts for desktop apps on Windows 11
 ms.topic: article
-ms.date: 09/21/2021
+ms.date: 10/01/2021
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
@@ -26,6 +26,30 @@ If you have a custom title bar, you can:​
 
 - Use the [Windows App SDK windowing APIs](../../windows-app-sdk/windowing/windowing-overview.md) and have the platform draw and implement the caption buttons for you​.
 - For Win32 apps, make sure you are responding appropriately to [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) (with a return value of `HTMAXBUTTON` for the maximize/restore button)​.
+
+    ```cpp
+    LRESULT CALLBACK TestWndProc(HWND window, UINT msg, WPARAM wParam, LPARAM lParam)
+    {
+        switch (msg)
+        {
+            case WM_NCHITTEST:
+            {
+                // Get the point in screen coordinates.
+                // GET_X_LPARAM and GET_Y_LPARAM are defined in windowsx.h
+                POINT point = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
+                // Map the point to client coordinates.
+                ::MapWindowPoints(nullptr, window, &point, 1);
+                // If the point is in your maximize button then return HTMAXBUTTON
+                if (::PtInRect(&m_maximizeButtonRect, point))
+                {
+                    return HTMAXBUTTON;
+                }
+            }
+            break;
+        }
+        return ::DefWindowProcW(window, msg, wParam, lParam);
+    }
+    ```
 - If your app uses [Electron](https://www.electronjs.org/), update to the v13 stable release of Electron to enable snap layouts.
 
 ## What if my app's window shows snap layouts but isn't snapping properly?  
