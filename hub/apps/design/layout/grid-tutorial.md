@@ -114,6 +114,7 @@ And that's it! You've successfully created the layout for a simple weather appli
 If you like, try experimenting with the layout above, and explore different ways you might represent weather data.
 
 ## Related articles
-For an introduction to designing Windows app layouts, see [Introduction to Windows app design](../basics/design-and-ui-intro.md)
 
-To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](./layouts-with-xaml.md)
+- For an introduction to designing Windows app layouts, see [Windows app silhouettes](../basics/app-silhouette.md)
+- To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](./layouts-with-xaml.md)
+- 

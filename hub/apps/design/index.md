@@ -11,9 +11,7 @@ ms.custom: RS5
 
 # Design and code Windows apps
 
-![hero image](images/ficon-1x.png)
-
-Fluent Design guidelines and UI code examples for creating app experiences on Windows 10.
+Design guidelines and UI code examples for creating Windows app experiences.
 
 :::row:::
     :::column:::
@@ -55,7 +53,7 @@ Fluent Design guidelines and UI code examples for creating app experiences on Wi
             <img src="images/style-1x.png" alt="Style" />
         </a><br/>
         <h3><a href="style/index.md">Style</a></h3>
-        <p>Make your app stand out with color, typography, acrylic, and reveal.</p>
+        <p>Make your app stand out with color, typography, and acrylic.</p>
     :::column-end:::
     :::column:::
         <a href="motion/index.md">
@@ -68,11 +66,11 @@ Fluent Design guidelines and UI code examples for creating app experiences on Wi
 
 :::row:::
     :::column:::
-        <a href="shell/tiles-and-notifications/creating-tiles.md">
+        <a href="shell/index.md">
             <img src="images/shell-1x.png" alt="Shell" />
         </a><br/>
         <h3><a href="shell/tiles-and-notifications/creating-tiles.md">Shell</a></h3>
-        <p>Create tiles for launching your app and displaying notifications.</p>
+        <p>Use Windows shell features to launch your app and display notifications.</p>
     :::column-end:::
     :::column:::
         <a href="input/index.md">
@@ -89,7 +87,7 @@ Fluent Design guidelines and UI code examples for creating app experiences on Wi
             <img src="images/devices-1x.png" alt="Devices" />
         </a><br />
         <h3><a href="devices/index.md">Devices</a></h3>
-        <p>Learn about the spectrum of Windows 10 devices and how to optimize for them.</p>
+        <p>Learn about the spectrum of Windows 10 and Windows 11 devices and how to optimize for them.</p>
     :::column-end:::
     :::column:::
         <a href="usability/index.md">

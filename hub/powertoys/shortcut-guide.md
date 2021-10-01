@@ -13,7 +13,7 @@ This guide uses PowerToys to display common keyboard shortcuts that use the Wind
 
 ## Usage
 
-Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + <kbd>?</kbd> *(this may require using the Shift key)*. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
+Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + <kbd>?</kbd> *(this may require using the Shift key)* or hold down the <kbd>⊞ Win</kbd> for the time as set in the Settings. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
 
 - common Windows shortcuts
 - shortcuts for changing the position of the active window
@@ -36,8 +36,11 @@ These configurations can be edited from the PowerToys Settings:
 
 | Setting | Description |
 | :--- | :--- |
-| Open Shortcut Guide | The shortcut used to launch the shortcut guide. |
-| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay. |
-| Exclude apps | Ignores Shortcut Guide when these apps are in focus. |
+| Activation method | Choose your own schortcut or use the <kbd>⊞ Win</kbd> key |
+| Activation shortcut | The custom shortcut used to launch the shortcut guide |
+| Press duration | Time (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open Shortcut Guide |
+| App theme | Light, dark or Windows theme |
+| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay |
+| Exclude apps | Ignores Shortcut Guide when these apps are in focus |
 
 ![Image of the Options](../images/pt-shortcut-guide-settings.png)

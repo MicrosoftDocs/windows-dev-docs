@@ -6691,6 +6691,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/design/layout/page-layout.md",
+      "redirect_url": "/windows/apps/design/basics/app-silhouette",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/get-started/get-app-samples.md",
       "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
