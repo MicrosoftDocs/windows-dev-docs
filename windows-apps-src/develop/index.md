@@ -138,7 +138,7 @@ How-to articles and code for creating UWP apps for Windows 10.
         <h3>Data and files</h3>
         <a href="/windows/uwp/audio-video-camera/">Audio, video, and camera</a><br/>
         <a href="/windows/uwp/data-access/" >Data access</a><br/>
-        <a href="/windows/uwp/data-binding/"style="display:block" >Data binding</a><br/>
+        <a href="/windows/uwp/data-binding/" >Data binding</a><br/>
         <a href="/windows/uwp/files/" >Files, folders, and libraries</a><br/>
         <a href="/windows/uwp/machine-learning/">Machine learning</a><br/>
     :::column-end:::
