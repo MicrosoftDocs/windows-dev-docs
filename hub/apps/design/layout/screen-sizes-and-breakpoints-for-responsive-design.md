@@ -34,25 +34,25 @@ This table describes the different size classes and breakpoints.
 </thead>
 <tbody>
 <tr class="even">
-<td style="vertical-align:top;">Small</td>
-<td style="vertical-align:top;">640px or less</td>
-<td style="vertical-align:top;">4&quot; to 6&quot;; 20&quot; to 65&quot;</td>
-<td style="vertical-align:top;">Phones, TVs</td>
-<td style="vertical-align:top;">320x569, 360x640, 480x854</td>
+<td>Small</td>
+<td>640px or less</td>
+<td>4&quot; to 6&quot;; 20&quot; to 65&quot;</td>
+<td>Phones, TVs</td>
+<td>320x569, 360x640, 480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">Medium</td>
-<td style="vertical-align:top;">641px to 1007px</td>
-<td style="vertical-align:top;">7&quot; to 12&quot;</td>
-<td style="vertical-align:top;">Phablets, tablets</td>
-<td style="vertical-align:top;">960x540</td>
+<td>Medium</td>
+<td>641px to 1007px</td>
+<td>7&quot; to 12&quot;</td>
+<td>Phablets, tablets</td>
+<td>960x540</td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;">Large</td>
-<td style="vertical-align:top;">1008px or greater</td>
-<td style="vertical-align:top;">13&quot; and larger</td>
-<td style="vertical-align:top;">PCs, laptops, Surface Hubs</td>
-<td style="vertical-align:top;">1024x640, 1366x768, 1920x1080</td>
+<td>Large</td>
+<td>1008px or greater</td>
+<td>13&quot; and larger</td>
+<td>PCs, laptops, Surface Hubs</td>
+<td>1024x640, 1366x768, 1920x1080</td>
 </tr>
 </tbody>
 </table>

@@ -16,7 +16,7 @@ Learn how to use tiles, badges, toasts, and notifications to provide entry point
 
 > **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
+<p><img src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 A tile is an app's representation on the Start menu. Every Windows app has a tile. You can enable different tile sizes (small, medium, wide, and large).</p>
 
 <p>You can use a <em>tile notification</em> to update the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.</p>

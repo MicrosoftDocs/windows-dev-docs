@@ -293,7 +293,7 @@ The code below walks through what a custom virtualizing UI for the activity feed
 
 <table>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action with this sample layout.</p>
+    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action with this sample layout.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
