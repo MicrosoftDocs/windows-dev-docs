@@ -14,6 +14,8 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
 
+<script type="module" src="https://getbadgecdn.azureedge.net/ms-store-badge.bundled.js"></script><ms-store-badge productid="9wzdncrfhvjl" size="large"></ms-store-badge>
+
 ## Processor support
 
 - **x64**: Supported
