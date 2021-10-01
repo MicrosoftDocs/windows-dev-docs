@@ -5,7 +5,7 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 keywords: touch, pointer, input, user interaction
-ms.date: 09/24/2020
+ms.date: 10/01/2021
 ms.topic: article
 
 
