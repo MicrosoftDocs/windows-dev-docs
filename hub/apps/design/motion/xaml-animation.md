@@ -162,7 +162,7 @@ You can also define transition animation themes in the style resources of your a
 </UserControl.Resources>
       
 <StackPanel x:Name="LayoutRoot">
-    <Button  Style="{StaticResource DefaultButtonStyle}" Content="Transitioning Button"/>
+    <Button Style="{StaticResource DefaultButtonStyle}" Content="Transitioning Button"/>
 </StackPanel>
 ```
 
