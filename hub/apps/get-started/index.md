@@ -145,7 +145,7 @@ If you have an existing WPF, Windows Forms, or native Win32 desktop app, the Win
 
 Here are just a few of the features available to enhance your existing desktop apps:
 
-- [Install the Windows App SDK NuGet package](/windows-app-sdk/get-started.md#use-the-windows-app-sdk-in-an-existing-project) in your existing project to call Windows App SDK APIs for localizing resources, rendering text, and more in your app.
+- [Install the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) in your existing project to call Windows App SDK APIs for localizing resources, rendering text, and more in your app.
 - [Call Windows Runtime (WinRT) APIs](../desktop/modernize/desktop-to-uwp-enhance.md) to enhance your desktop app with the latest Windows features.
 - Use [package extensions](../desktop/modernize/desktop-to-uwp-extensions.md) to integrate your desktop app with modern Windows experiences. For example, point Start tiles to your app, make your app a share target, or send toast notifications from your app.
 - Use [XAML Islands](../desktop/modernize/xaml-islands.md) to host WinRT XAML controls in your desktop app. Many of the latest Windows UI features are only available to WinRT XAML controls.
