@@ -335,7 +335,7 @@ This closes the tabs following the tab at an index. If no index is provided, use
 
 ### Duplicate tab
 
-This makes a copy of the current tab and opens it.
+This makes a copy of the current tab's profile and directory and opens it. This does not include modified/added ENV VARIABLES.
 
 **Command name:** `duplicateTab`
 
