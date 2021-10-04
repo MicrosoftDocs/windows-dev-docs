@@ -18,12 +18,12 @@ The design and coding instructions in this section help you customize your UWP a
 
 :::row:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input-primer.md">Input primer</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.</p>
+        <h3><a href="input-primer.md">Input primer</a></h3>
+        <p>Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.</p>
     :::column-end:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="gaze-interactions.md">Gaze input</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Track a user's gaze based on the location and movement of their eyes and head.</p>
+        <h3><a href="gaze-interactions.md">Gaze input</a></h3>
+        <p>Track a user's gaze based on the location and movement of their eyes and head.</p>
     :::column-end:::
 :::row-end:::
 
@@ -34,7 +34,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
 
 :::row:::
     :::column:::
-        <h2 style="margin-top: 10px; margin-bottom: 0px">Input</h2>
+        <h2>Input</h2>
         <a href="/windows/uwp/design/input/identify-input-devices">Identify input devices</a><br/>
         <a href="/windows/uwp/design/input/handle-pointer-input">Pointer</a><br/>
         <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Pen and Windows Ink</a><br/>
@@ -49,7 +49,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
         <a href="/windows/uwp/design/input/custom-text-input">Custom text input</a><br/>
     :::column-end:::
     :::column:::
-        <h2 style="margin-top: 10px; margin-bottom: 0px">Interactions</h2>
+        <h2>Interactions</h2>
         <a href="/windows/uwp/design/input/drag-and-drop">Drag and drop</a><br/>
         <a href="/windows/uwp/design/input/guidelines-for-panning">Panning</a><br/>
         <a href="/windows/uwp/design/input/guidelines-for-rotation">Rotation</a><br/>
@@ -58,7 +58,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
         <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visual feedback</a><br/>
     :::column-end:::
     :::column:::
-        <h2 style="margin-top: 10px; margin-bottom: 0px">Speech and AI</h2>
+        <h2>Speech and AI</h2>
         <a href="/windows/uwp/design/input/speech-interactions">Speech</a><br/>
         <a href="/windows/uwp/design/input/cortana-interactions">Cortana</a><br/>
     :::column-end:::

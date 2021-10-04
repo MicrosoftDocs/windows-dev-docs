@@ -53,7 +53,7 @@ You can create a Windows desktop app using React Native for Windows by following
   - Workloads: Universal Windows Platform development & Desktop development with C++.
   - Individual Components: Development activities & Node.js development support.
 
-- Open the solution file in the application folder in Visual Studio (e.g., AwesomeProject/windows/AwesomeProject.sln if you used AwesomeProject as <projectName>).
+- Open the solution file in the application folder in Visual Studio (e.g., AwesomeProject/windows/AwesomeProject.sln if you used AwesomeProject as \<projectName>).
 
 - Select the Debug configuration and the x64 platform from the combo box controls to the left of the Run button and underneath the Team and Tools menu item.
 

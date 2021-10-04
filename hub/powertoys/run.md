@@ -67,7 +67,7 @@ These default activation phrases will force PowerToys Run into only targeted plu
 | `!` | Windows services only | `!alg` to search for the Application Layer Gateway service to be started or stopped |
 | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. This plugin is off by default. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths |
 | `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet |
-| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. | `$ Device:` to view all available Device settings |
+| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. `$ Device:` to view all available Device settings |
 
 ## System commands
 

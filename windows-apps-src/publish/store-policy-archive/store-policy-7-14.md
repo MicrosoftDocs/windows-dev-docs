@@ -484,7 +484,7 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 ### Microsoft Store appeal statistics for FY2021
 
-|                                              | Count    |
+|   Statistic                                           | Count    |
 |----------------------------------------------|----------|
 | Main Complaint Type 1: Certification Results |      145 |
 | Main Complaint Type 2: Account Terminations  |       74 |

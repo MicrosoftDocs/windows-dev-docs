@@ -90,7 +90,7 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -2433,7 +2433,7 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -3644,7 +3644,7 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -4199,7 +4199,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -4858,7 +4858,7 @@ The following table of glyphs displays unicode points prefixed from F3- to F5-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -5381,7 +5381,7 @@ The following table of glyphs displays unicode points prefixed from F6- to F8-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>

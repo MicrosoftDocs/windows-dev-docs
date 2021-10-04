@@ -66,7 +66,7 @@ So the return type of an asynchronous C++/CX method can be a PPL task, or an **I
 In either case, the method itself uses the `return` keyword to return an asynchronous object which, when it completes, produces the value that the caller actually wants (perhaps a file, an array of bytes, or a Boolean).
 
 > [!NOTE]
-> If an asynchronous C++/CX method returns an **IAsyncXxx**\^, then the **TResult** (if any) is limited to being a Windows Runtime type. A Boolean value, for example, is a Windows Runtime type; but a C++/CX projected type (for example, **Platform::Array<byte>**^) is not.
+> If an asynchronous C++/CX method returns an **IAsyncXxx**\^, then the **TResult** (if any) is limited to being a Windows Runtime type. A Boolean value, for example, is a Windows Runtime type; but a C++/CX projected type (for example, **Platform::Array\<byte>**^) is not.
 
 ### C++/WinRT async
 
