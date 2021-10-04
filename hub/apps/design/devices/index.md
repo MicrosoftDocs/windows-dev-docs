@@ -7,13 +7,10 @@ template: detail.hbs
 keywords: device, input, interaction
 ms.date: 09/24/2020
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
-#  UI considerations for Windows devices
 
-![Devices](../images/devices-2x.png)
+#  UI considerations for Windows devices
 
 Getting to know the devices that support Windows apps will help you offer the best user experience for each form factor.
 

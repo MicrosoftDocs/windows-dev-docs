@@ -341,7 +341,6 @@ In this simplified XAML from the State triggers sample, a Style resource is appl
 
 ## Related topics
 
-- [Tutorial: Create adaptive layouts](../basics/xaml-basics-adaptive-layout.md)
 - [Responsiveness techniques sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [State triggers sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
 - [Tailored multiple views sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)

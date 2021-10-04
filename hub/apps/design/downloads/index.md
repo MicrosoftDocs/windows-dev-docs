@@ -9,11 +9,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-
-
 # Design toolkits and samples for Windows apps
-
-![Design basics](../images/downloads-2x.png)
 
 Design and UI-related downloads for Fluent Design/Windows apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>.
 

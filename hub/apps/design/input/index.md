@@ -12,13 +12,6 @@ ms.localizationpriority: medium
 
 # Input and interactions
 
-![Inputs icon](../images/inputs-2x.png)
-
-<!-- <div>
-  <img src="images/keyboard/keyboard-hero.jpg" alt="" />
-  <img src="images/input-interactions/icons-inputdevices03.png" />
-</div> -->
-
 UWP apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input, for example. But there are times when you might want to optimize your app for certain types of input or devices. For example, if you’re creating a painting app, you might want to customize the way you handle pen input.
 
 The design and coding instructions in this section help you customize your UWP app for specific types of inputs.
