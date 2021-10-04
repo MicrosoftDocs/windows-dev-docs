@@ -783,38 +783,38 @@ If you choose to provide your own back stack navigation, the experience should b
 </thead>
 <tbody>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>Page to page, different peer groups</strong></td>
-<td style="vertical-align:top;"><strong>Yes</strong>
+<td><strong>Page to page, different peer groups</strong></td>
+<td><strong>Yes</strong>
 <p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two and the back to group one." /></p>
 <p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two then on to group three and back to group two." /></p></td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>
+<td><strong>Page to page, same peer group, no on-screen navigation element</strong>
 <p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as <a href="/windows/apps/design/controls/navigationview">NavigationView</a>) that provides direct navigation to both pages.</p></td>
-<td style="vertical-align:top;"><strong>Yes</strong>
+<td><strong>Yes</strong>
 <p>In the following illustration, the user navigates between two pages in the same peer group, and the navigation should be added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>Page to page, same peer group, with an on-screen navigation element</strong>
+<td><strong>Page to page, same peer group, with an on-screen navigation element</strong>
 <p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as <a href="/windows/apps/design/controls/navigationview">NavigationView</a>.</p></td>
-<td style="vertical-align:top;"><strong>It depends</strong>
+<td><strong>It depends</strong>
 <p>Yes, add to the navigation history, with two notable exceptions. If you expect users of your app to switch between pages in the peer group frequently, or if you wish to preserve the navigational hierarchy, then do not add to the navigation history. In this case, when the user presses back, go back to the last page before the user navigated to the current peer group. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;"><strong>Show a transient UI</strong>
+<td><strong>Show a transient UI</strong>
 <p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
-<td style="vertical-align:top;"><strong>No</strong>
+<td><strong>No</strong>
 <p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
 <p><img src="images/back-nav/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>Enumerate items</strong>
+<td><strong>Enumerate items</strong>
 <p>The app displays content for an on-screen item, such as the details for the selected item in list/details list.</p></td>
-<td style="vertical-align:top;"><strong>No</strong>
+<td><strong>No</strong>
 <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>
 </tr>
