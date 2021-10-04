@@ -25,7 +25,7 @@ You can launch the Store App to a specific page or section using the following o
 | URI Scheme                                       | Description                                     | Notes |
 |--------------------------------------------------|-------------------------------------------------|-------|
 | ms-windows-store://home                          | Launches the home page of the Store.            |       |
-| ms-windows-store://navigatetopage/?Id=<vertical> | Launches a top-level vertical page of the store | Verticals include: `Home`, `Gaming`, `Entertainment`, `Productivity`, and `LOB`, but note that available verticals can vary by region. |
+| ms-windows-store://navigatetopage/?Id=[vertical] | Launches a top-level vertical page of the store | Verticals include: `Home`, `Gaming`, `Entertainment`, `Productivity`, and `LOB`, but note that available verticals can vary by region. |
 | ms-windows-store://downloadsandupdates           | Launches the downloads and updates page.        | Starting with the October 2021 update to the Store app, this will launch the Library page. |
 | ms-windows-store://settings                      | Launches the Store settings page.               |       |
 
