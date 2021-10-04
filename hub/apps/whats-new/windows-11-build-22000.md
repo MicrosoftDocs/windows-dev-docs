@@ -20,7 +20,7 @@ Feature | Description
 Windows Apps SDK | [The Windows App SDK](https://docs.microsoft.com/windows/apps/windows-app-sdk/) is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and downlevel to Windows 10, version 1809).
 Create a new app with the Windows App SDK | The Windows App SDK includes WinUI 3 project templates that enable you to create desktop and UWP apps with an entirely WinUI-based user interface. [When you create apps using these project templates](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app), the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3.
 Use the Windows App SDK in an existing project | If you have an existing project in which you want to use the Windows App SDK, [you can install the latest version of the Windows App SDK NuGet package in your project](https://docs.microsoft.com/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project). Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
-Download the Windows App SDK | There are several packages and release channels for the Windows App SDK. The [Download the Windows App SDK page](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads) provides guidance on which ones you need, download links, and installation instructions.
+Download the Windows App SDK | There are several packages and release channels for the Windows App SDK. The [Download the Windows App SDK page](https://docs.microsoft.com/windows/apps/windows-app-sdk/downloads) provides guidance on which ones you need, download links, and installation instructions.
 
 ## Windows UI Library (WinUI)
 
@@ -58,4 +58,4 @@ VPN foreground activation | New APIs have been added to VPN foreground activatio
 * Start and stop haptic feedback: start and stop feedback using variations of SendHapticFeedback and StopFeedback API
 * Trigger both inking and interaction haptic feedback: the code shows how to trigger inking feedback for inking scenarios and interaction feedback for user interactions
 
-[The XAML Controls Gallery](https://docs.microsoft.com/en-us/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/) has been updated to showcase the latest additions to the Windows UI Library in WinUI 2.7.
+[The XAML Controls Gallery](https://docs.microsoft.com/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/) has been updated to showcase the latest additions to the Windows UI Library in WinUI 2.7.
