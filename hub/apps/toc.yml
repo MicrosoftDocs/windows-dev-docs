@@ -273,5 +273,7 @@
         href: /dotnet/api/
       - name: Schema reference for Windows apps
         href: /uwp/schemas/
+  - name: What's new for developers in Windows 11
+    href: whats-new/windows-11-build-22000.md
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md
