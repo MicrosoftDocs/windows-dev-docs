@@ -1,11 +1,5 @@
 - name: Overview
   href: ../publish/index.md
-- name: Mini-PDP docs for review
-  items:
-    - name: Link to your app
-      href: mini-pdp-link-to-your-app.md
-    - name: Launch the Microsoft Store with a URI
-      href: mini-pdp-launch-store.md
 - name: Opening a developer account
   href: ../publish/opening-a-developer-account.md
   items:
