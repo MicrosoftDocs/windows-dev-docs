@@ -631,6 +631,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/whats-new/windows-11-build-22000-apis.md",
+      "redirect_url": "/windows/apps/whats-new/windows-11-build-22000",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/accessibility/accessibility-checklist.md",
       "redirect_url": "/windows/uwp/design/accessibility/accessibility-checklist",
       "redirect_document_id": true
