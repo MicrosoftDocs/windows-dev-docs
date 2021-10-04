@@ -59,7 +59,6 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
          #include <windows.h> 
          #include <MddBootstrap.h>   
         ```
-
     2. Next, add this code at the beginning of your `main` method to call the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function to initialize the Bootstrapper and handle any errors. This code defines what version of the Windows App SDK the app is dependent upon when initializing the Bootstrapper.
 
         ```cpp
@@ -139,7 +138,6 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
         ```xml
         <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
         ```
-
     4. Save and close the project file.
 
 3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
@@ -303,3 +301,4 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
 - [Deploy unpackaged apps that use the Windows App SDK](deploy-unpackaged-apps.md)
 - [Runtime architecture and deployment scenarios](deployment-architecture.md)
+- [Get started with the Windows App SDK](get-started.md)

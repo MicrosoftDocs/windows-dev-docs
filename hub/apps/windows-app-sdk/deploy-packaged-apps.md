@@ -27,17 +27,15 @@ When you install a [preview release channel](preview-channel.md) version of the 
 
 ## Stable versions of the Windows App SDK
 
-When you install a [stable release channel](stable-channel.md) version of the Windows App SDK extension or NuGet package on your development computer and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package. 
+When you install a [stable release channel](stable-channel.md) version of the Windows App SDK extension or NuGet package on your development computer and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
 
-However, if you build your app package manually, you must declare **PackageReference** in your Application (package).wapproj. For version specific instructions, see [Update existing projects to the latest release of the Windows AppSDK](update-existing-projects-to-the-latest-release.md).
-
- ```xml
-    <ItemGroup>
-        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.0]">
-        <IncludeAssets>build</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
+```xml
+<Dependencies>
+    <PackageDependency Name="Microsoft.ProjectReunion.0.8-preview" MinVersion="8000.144.525.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+</Dependencies>
 ```
+
+However, if you build your app package manually, you must add this **PackageDependency** element to your package manifest yourself to declare a dependency on the Windows App SDK framework package.
 
 ## Related topics
 

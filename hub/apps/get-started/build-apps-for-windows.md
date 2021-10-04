@@ -40,6 +40,7 @@ To take advantage of the new look and feel of Windows 11, you will need to use t
 1. From the package list, select **Microsoft.UI.Xaml**.
 1. In the details pane, confirm that the selected version is "2.6.1" or later and click **Install**.
 
+
 ## Update your app code
 
 In the next steps, we'll modify the app source code to use the updated Windows 11 controls.

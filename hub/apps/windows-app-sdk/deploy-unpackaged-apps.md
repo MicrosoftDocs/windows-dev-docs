@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 This article provides guidance about deploying non-[MSIX](/windows/msix) packaged apps that use the Windows App SDK to other computers.
 
 > [!IMPORTANT]
-> Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
+> Unpackaged app deployment is an experimental feature that is currently supported only in the [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
 
 ## Overview
 
@@ -26,31 +26,37 @@ Alternatively, you can directly install the MSIX packages for the Windows App SD
 
 ## Prerequisites
 
-1. Download the 1.0 Preview 1 Windows App SDK [Installer and MSIX packages](https://aka.ms/windowsappsdk/1.0-preview1/msix-installer) to your development computer. For older versions, see [Downloads](downloads.md). 
-
-2. If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
+- [Download the Windows App SDK runtime Installer or MSIX packages](https://aka.ms/projectreunion/0.8preview) to your development computer.
+- If your development computer or the deployment computer is running Windows 10 version 1909 or an earlier version, make sure sideloading is enabled. Sideloading is automatically enabled on Windows 10 version 2004 and later.
 
     > [!NOTE]
-    > Experimental and Preview versions of the Windows App SDK require that sideloading is enabled to install the runtime.  
+    > The Windows App SDK runtime for the version 0.8 Preview requires that sideloading is enabled to install.
 
-    To confirm whether sideloading is enabled on Windows 10 version 1909 and earlier versions:
+To confirm whether sideloading is enabled on Windows 10 version 1909 and earlier versions:
 
-    1. Open **Settings**.
-    2. Click **Update & Security** > **For developers**.
-    3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
+1. Open **Settings**.
+2. Click **Update & Security** > **For developers**.
+3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
 
-        > [!NOTE]
-        > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**. 
+    > [!NOTE]
+    > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**. 
 
 ## Run the Windows App SDK installer in your development environment
 
-You can test deployment in your development environment by running the Windows App SDK Installer: 
+You can test deployment in your development environment by running the Windows App SDK Installer with this command.
 
-- **WindowsAppRuntimeInstall.exe** if you are using version 1.0 Preview 1 
-- **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental 
-- **ProjectReunionInstall.exe** if you are using version 0.8 Preview 
+```console
+ProjectReunionInstall.exe
+```
 
-You can also run the installer with no user interaction and suppress all text output with `WindowsAppRuntimeInstall.exe --quiet` or `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`, depending on the Windows App SDK version. 
+You can also run the installer with no user interaction and suppress all text output.
+
+```console
+ProjectReunionInstall.exe --quiet
+```
+
+> [!NOTE]
+> The installer still uses the **Project Reunion** code name, but the installer will be renamed to use the official **Windows App SDK** product name in a future release.
 
 After the installation is complete, you can run your unpackaged app. For an example of how to build and run an unpackaged app that uses the Windows App SDK, see [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
@@ -58,25 +64,20 @@ After the installation is complete, you can run your unpackaged app. For an exam
 
 To test deployment of your unpackaged app to end users, you can launch the .exe installer from your setup program or MSI by using [ShellExecute](/windows/win32/shell/launch). This is very similar to other runtime installers you may have used, like .NET, Visual C++, or DirectX.
 
-For a code example that demonstrates how to run the Windows App SDK Installer from your setup program, see the **RunInstaller** function in the [installer functional test](https://aka.ms/testruninstaller) for the Windows App SDK.
+For a code example that demonstrates how to run the Windows App SDK Installer from your setup program, see the **RunInstaller** function in [this example](https://aka.ms/testruninstaller).
 
 ## Directly deploy the MSIX packages from your setup program
 
 As an alternative to using the Windows App SDK installer for deployment to end users, you can manually deploy the MSIX packages through your app's program or MSI. This option can be best for developers who want more control or need offline installations.
 
-For an example that demonstrates how your setup program can install the MSIX packages, see [install.cpp](https://aka.ms/testinstallpackages) in the Windows App SDK installer code.
+For an example that demonstrates how your setup program can install the MSIX packages, see [this example](https://aka.ms/testinstallpackages).
 
 ## Using the Windows App SDK features at run time
 
-Unpackaged apps must use the *bootstrapper API* before they can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore. This feature enables unpackaged apps to dynamically take a dependency on the Windows App SDK framework package at run time.
+Unpackaged apps must use the [dynamic dependencies API](https://github.com/microsoft/ProjectReunion/blob/main/specs/dynamicdependencies/DynamicDependencies.md) to use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore. This feature enables unpackaged apps to dynamically take a dependency on the Windows App SDK framework package and any other MSIX framework packages. For more information, see [Additional requirements for unpackaged apps](deployment-architecture.md#additional-requirements-for-unpackaged-apps).
 
-For more information, see [Reference the Windows App SDK framework package at run time](reference-framework-package-run-time.md) and [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+For more information about using the dynamic dependencies API in your unpackaged app, see [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
-## Using features in other framework packages at run time
-
-In addition to the bootstrapper API, the Windows App SDK also provides a broader set of C/C++ functions and WinRT classes that implement the *dynamic dependency API*. This API is designed to be used to reference any framework package dynamically at run time. You only need to use the dynamic dependency API if you want to dynamically reference framework packages other than the Windows App SDK framework package.
-
-For more information, see the [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/index.md).
 
 ## Related topics
 

@@ -58,5 +58,9 @@ On the **Apps & features** page, search for **reunion** to filter and show insta
 - [Runtime architecture and deployment scenarios](deployment-architecture.md)
 - [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 - [Set up your development environment](set-up-your-development-environment.md)
+<<<<<<< HEAD:hub/apps/windows-app-sdk/remove-windows-app-sdk-versions.md
+- [Get started developing apps with the Windows App SDK](get-started.md)
+=======
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
+>>>>>>> master:hub/apps/windows-app-sdk/remove-windows-app-sdk-versions.md

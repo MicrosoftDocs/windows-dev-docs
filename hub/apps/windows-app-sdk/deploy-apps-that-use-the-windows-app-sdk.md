@@ -23,3 +23,6 @@ For instructions about deploying an app that uses the Windows App SDK, see these
 - [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
 - [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
+- [Release channels](release-channels.md)
+- [Set up your development environment](set-up-your-development-environment.md)
+- [Get started developing apps with the Windows App SDK](get-started.md)

@@ -42,6 +42,7 @@ For more information about WinUI 3 apps, see see the following articles:
 - [API reference](/windows/winui/api)
 - [Samples](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
+
 #### [Native Win32](#tab/cpp-win32)
 
 Native Win32 desktop apps (also sometimes called *classic desktop apps*) are the original app type for native Windows applications that require direct access to Windows and hardware. This makes this the app type of choice for applications that need the highest level of performance and direct access to system hardware.
@@ -67,6 +68,7 @@ For more information about C++ Win32 apps, see the following articles:
 - [Technologies and features provided by the Win32 API](/windows/win32/desktop-app-technologies)
 - [Win32 API reference](/windows/win32/apiindex/windows-api-list/)
 - [Samples](https://github.com/Microsoft/Windows-classic-samples)
+
 
 #### [WPF](#tab/wpf)
 
@@ -145,7 +147,7 @@ If you have an existing WPF, Windows Forms, or native Win32 desktop app, the Win
 
 Here are just a few of the features available to enhance your existing desktop apps:
 
-- [Install the Windows App SDK NuGet package](/windows-app-sdk/get-started.md#use-the-windows-app-sdk-in-an-existing-project) in your existing project to call Windows App SDK APIs for localizing resources, rendering text, and more in your app.
+- [Install the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) in your existing project to call Windows App SDK APIs for localizing resources, rendering text, and more in your app.
 - [Call Windows Runtime (WinRT) APIs](../desktop/modernize/desktop-to-uwp-enhance.md) to enhance your desktop app with the latest Windows features.
 - Use [package extensions](../desktop/modernize/desktop-to-uwp-extensions.md) to integrate your desktop app with modern Windows experiences. For example, point Start tiles to your app, make your app a share target, or send toast notifications from your app.
 - Use [XAML Islands](../desktop/modernize/xaml-islands.md) to host WinRT XAML controls in your desktop app. Many of the latest Windows UI features are only available to WinRT XAML controls.

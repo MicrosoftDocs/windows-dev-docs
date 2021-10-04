@@ -27,6 +27,7 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 The latest available release of the stable channel is the servicing release 0.8.2.
 
+
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
 
