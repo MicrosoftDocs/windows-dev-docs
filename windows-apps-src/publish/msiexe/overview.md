@@ -24,4 +24,4 @@ Follow these steps to submit your MSI or EXE  app to the Microsoft Store
 | [Provide package details for your MSI or EXE app](provide-package-details.md)                | When a customer downloads your app, the Store will automatically provide each customer with the package that works best for their device based on the package details you provide. |
 | [Create app Store listings for your MSI or EXE app](create-app-store-listings.md)            | Provide the text and images that customers will see when they view your app's listing in the Microsoft Store. |
 | [Manage your MSI or EXE app's store listing](manage-submission-options.md)                   | How to find, link to, and promote your app's page in the Microsoft Store. |
-| [The MSI or EXE app certification process](the-app-certification-process.md)                 s| Before publishing, apps are subject to two categories of tests: security tests and content compliance. |
+| [The MSI or EXE app certification process](the-app-certification-process.md)                 | Before publishing, apps are subject to two categories of tests: security tests and content compliance. |
