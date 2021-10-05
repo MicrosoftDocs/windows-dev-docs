@@ -1,18 +1,17 @@
 ﻿---
-title: Push notification service request and response headers (Windows Runtime apps) (Windows)
-description: WNS Request and response Headers
+Title: Push notification service request and response headers (Windows Runtime apps) (Windows)
+description: This topic describes the service-to-service web APIs and protocols required to send a push notification.
+author: hickeys
 ms.topic: article
-ms:assetid: 721585B5-A500-4dcc-9216-33785C4BACDC
-ms:contentKeyID: 45725048
-ms.date: 08/31/2015
-mtps_version: v=Win.10
+ms.author: hickeys
+ms.date: 09/03/2021
 ---
 
 # Push notification service request and response headers (Windows Runtime apps)
 
 This topic describes the service-to-service web APIs and protocols required to send a push notification.
 
-See the [Windows Push Notification Services (WNS) overview](.\windows-push-notification-services--wns--overview.md) for a conceptual discussion of push notification and WNS concepts, requirements, and operation.
+See the [Windows Push Notification Services (WNS) overview](windows-push-notification-services--wns--overview.md) for a conceptual discussion of push notification and WNS concepts, requirements, and operation.
 
 ## Requesting and receiving an access token
 
@@ -20,56 +19,18 @@ This section describes the request and response parameters involved when you aut
 
 ### Access token request
 
-An HTTP request is sent to WNS to authenticate the cloud service and retrieve an access token in return. The request is issued to the following fully qualified domain name (FQDN) by using Secure Sockets Layer (SSL).
-
-    https://login.live.com/accesstoken.srf
+An HTTP request is sent to WNS to authenticate the cloud service and retrieve an access token in return. The request is issued to `https://login.live.com/accesstoken.srf` using Secure Sockets Layer (SSL).
 
 ### Access token request parameters
 
 The cloud service submits these required parameters in the HTTP request body, using the "application/x-www-form-urlencoded" format. You must ensure that all parameters are URL encoded.
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Required/Optional</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>grant_type</td>
-<td>Required</td>
-<td>Must be set to &quot;client_credentials&quot;.</td>
-</tr>
-<tr class="even">
-<td>client_id</td>
-<td>Required</td>
-<td>Package security identifier (SID) for your cloud service as assigned when you <a href="hh868206(v=win.10).md">registered your app</a> with the Windows Store.</td>
-</tr>
-<tr class="odd">
-<td>client_secret</td>
-<td>Required</td>
-<td>Secret key for your cloud service as assigned when you <a href="hh868206(v=win.10).md">registered your app</a> with the Windows Store.</td>
-</tr>
-<tr class="even">
-<td>scope</td>
-<td>Required</td>
-<td>Must be set to:
-<ul>
-<li><strong>Windows</strong>: &quot;notify.windows.com&quot;</li>
-<li><strong>Windows Phone</strong>: &quot;notify.windows.com&quot; or &quot;s.notify.live.net&quot;</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
- 
+| Parameter     | Required | Description |
+|---------------|----------|-------------|
+| grant_type    | TRUE     | Must be set to `client_credentials`. |
+| client_id     | TRUE     | Package security identifier (SID) for your cloud service as assigned when you registered your app with the Microsoft Store. |
+| client_secret | TRUE     | Secret key for your cloud service as assigned when you registered your app with the Microsoft Store. |
+| scope         | TRUE     | Must be set to `notify.windows.com` |
 
 ### Access token response
 
@@ -79,58 +40,23 @@ WNS authenticates the cloud service and, if successful, responds with a "200 OK"
 
 An access token is returned in the HTTP response if the cloud service successfully authenticated. This access token can be used in notification requests until it expires. The HTTP response uses the "application/json" media type.
 
-<table>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Required/Optional</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>access_token</td>
-<td>Required</td>
-<td>The access token that the cloud service will use when it sends a notification.</td>
-</tr>
-<tr class="even">
-<td>token_type</td>
-<td>Optional</td>
-<td>Always returned as &quot;bearer&quot;.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Parameter    | Required | Description |
+|--------------|----------|-------------|
+| access_token | TRUE     | The access token that the cloud service will use when it sends a notification. |
+| token_type   | FALSE    | Always returned as `bearer`.
 
 ### Response code
 
-<table>
-<thead>
-<tr class="header">
-<th>HTTP response code</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200 OK</td>
-<td>The request was successful.</td>
-</tr>
-<tr class="even">
-<td>400 Bad Request</td>
-<td>The authentication failed. See the <a href="https://go.microsoft.com/fwlink/p/?linkid=226787">OAuth</a> draft Request for Comments (RFC) for the response parameters.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| HTTP response code | Description                 |
+|--------------------|-----------------------------|
+| 200 OK             | The request was successful. |
+| 400 Bad Request    | The authentication failed. See the [OAuth draft](https://go.microsoft.com/fwlink/p/?linkid=226787) Request for Comments (RFC) for response parameters. |
 
 ### Example
 
 The following shows an example of a successful authentication response:
 
-``` 
+``` json
  HTTP/1.1 200 OK   
  Cache-Control: no-store
  Content-Length: 422
@@ -147,9 +73,9 @@ The following shows an example of a successful authentication response:
 
 This section describes the headers involved in an HTTP request to WNS to deliver a notification and those involved in the reply.
 
-  - Send notification request
-  - Send notification response
-  - Unsupported HTTP features
+- Send notification request
+- Send notification response
+- Unsupported HTTP features
 
 ### Send notification request
 
@@ -159,63 +85,21 @@ In addition, the custom request headers listed here can be used in the notificat
 
 ### Request parameters
 
-<table>
-<thead>
-<tr class="header">
-<th>Header name</th>
-<th>Required/Optional</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Authorization</td>
-<td>Required</td>
-<td>Standard HTTP authorization header used to authenticate your notification request. Your cloud service provides its access token in this header.</td>
-</tr>
-<tr class="even">
-<td>Content-Type</td>
-<td>Required</td>
-<td>Standard HTTP authorization header. For toast, tile, and badge notifications, this header must be set to &quot;text/xml&quot;. For raw notifications, this header must be set to &quot;application/octet-stream&quot;.</td>
-</tr>
-<tr class="odd">
-<td>Content-Length</td>
-<td>Required</td>
-<td>Standard HTTP authorization header to denote the size of the request payload.</td>
-</tr>
-<tr class="even">
-<td>X-WNS-Type</td>
-<td>Required</td>
-<td>Defines the notification type in the payload: tile, toast, badge, or raw.</td>
-</tr>
-<tr class="odd">
-<td>X-WNS-Cache-Policy</td>
-<td>Optional</td>
-<td>Enables or disables notification caching. This header applies only to tile, badge, and raw notifications.</td>
-</tr>
-<tr class="even">
-<td>X-WNS-RequestForStatus</td>
-<td>Optional</td>
-<td>Requests device status and WNS connection status in the notification response.</td>
-</tr>
-<tr class="odd">
-<td>X-WNS-Tag</td>
-<td>Optional</td>
-<td>String used to provide a notification with an identifying label, used for tiles that support the notification queue. This header applies only to tile notifications.</td>
-</tr>
-<tr class="even">
-<td>X-WNS-TTL</td>
-<td>Optional</td>
-<td>Integer value, expressed in seconds, that specifies the time to live (TTL).</td>
-</tr>
-</table>
-
- 
+| Header name            | Required | Description |
+|------------------------|----------|-------------|
+| Authorization          | TRUE     | Standard HTTP authorization header used to authenticate your notification request. Your cloud service provides its access token in this header. |
+| Content-Type           | TRUE     | Standard HTTP authorization header. For toast, tile, and badge notifications, this header must be set to `text/xml`. For raw notifications, this header must be set to `application/octet-stream`. |
+| Content-Length         | TRUE     | Standard HTTP authorization header to denote the size of the request payload. |
+| X-WNS-Type             | TRUE     | Defines the notification type in the payload: tile, toast, badge, or raw. |
+| X-WNS-Cache-Policy     | FALSE    | Enables or disables notification caching. This header applies only to tile, badge, and raw notifications. |
+| X-WNS-RequestForStatus | FALSE    | Requests device status and WNS connection status in the notification response. |
+| X-WNS-Tag              | FALSE    | String used to provide a notification with an identifying label, used for tiles that support the notification queue. This header applies only to tile notifications. |
+| X-WNS-TTL              | FALSE    | Integer value, expressed in seconds, that specifies the time to live (TTL). |
 
 ### Important notes
 
-  - Content-Length and Content-Type are the only standard HTTP headers that are included in the notification delivered to the client, regardless of whether other standard headers were included in the request.
-  - All other standard HTTP headers are either ignored or return an error if the functionality is not supported.
+- Content-Length and Content-Type are the only standard HTTP headers that are included in the notification delivered to the client, regardless of whether other standard headers were included in the request.
+- All other standard HTTP headers are either ignored or return an error if the functionality is not supported.
 
 ### Authorization
 
@@ -225,42 +109,24 @@ The syntax consists of a string literal "Bearer", followed by a space, followed 
 
 This header is required.
 
-    Authorization: Bearer <access-token>
+```json
+Authorization: Bearer <access-token>
+```
 
 ### X-WNS-Type
 
 These are the notification types supported by WNS. This header indicates the type of notification and how WNS should handle it. After the notification reaches the client, the actual payload is validated against this specified type. This header is required.
 
-    X-WNS-Type: wns/toast | wns/badge | wns/tile | wns/raw
+```json
+X-WNS-Type: wns/toast | wns/badge | wns/tile | wns/raw
+```
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>wns/badge</td>
-<td>A notification to create a badge overlay on the tile. The Content-Type header included in the notification request must be set to &quot;text/xml&quot;.</td>
-</tr>
-<tr class="even">
-<td>wns/tile</td>
-<td>A notification to update the tile content. The Content-Type header included in the notification request must be set to &quot;text/xml&quot;.</td>
-</tr>
-<tr class="odd">
-<td>wns/toast</td>
-<td>A notification to raise a toast on the client. The Content-Type header included in the notification request must be set to &quot;text/xml&quot;.</td>
-</tr>
-<tr class="even">
-<td>wns/raw</td>
-<td>A notification which can contain a custom payload and is delivered directly to the app. The Content-Type header included in the notification request must be set to &quot;application/octet-stream&quot;.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value     | Description |
+|-----------|-------------|
+| wns/badge | A notification to create a badge overlay on the tile. The Content-Type header included in the notification request must be set to `text/xml`. |
+| wns/tile  | A notification to update the tile content. The Content-Type header included in the notification request must be set to `text/xml`. |
+| wns/toast | A notification to raise a toast on the client. The Content-Type header included in the notification request must be set to `text/xml`. |
+| wns/raw   | A notification which can contain a custom payload and is delivered directly to the app. The Content-Type header included in the notification request must be set to `application/octet-stream`. |
 
 ### X-WNS-Cache-Policy
 
@@ -268,82 +134,42 @@ When the notification target device is offline, WNS will cache one badge and one
 
 This header is optional and should be used only in cases where the cloud service wants to override the default caching behavior.
 
-    X-WNS-Cache-Policy: cache | no-cache
+```json
+X-WNS-Cache-Policy: cache | no-cache
+```
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>cache</td>
-<td><strong>Default</strong>. Notifications will be cached if the user is offline. This is the default setting for tile and badge notifications.</td>
-</tr>
-<tr class="even">
-<td>no-cache</td>
-<td>The notification will not be cached if the user is offline. This is the default setting for raw notifications.</td>
-</tr>
-</tbody>
-</table>
+| Value    | Description |
+|----------|-------------|
+| cache    |Default. Notifications will be cached if the user is offline. This is the default setting for tile and badge notifications. |
+| no-cache |The notification will not be cached if the user is offline. This is the default setting for raw notifications. |
 
 ### X-WNS-RequestForStatus
 
 Specifies whether the response should include the device status and WNS connection status. This header is optional.
 
+```json
     X-WNS-RequestForStatus: true | false
+```
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>true</td>
-<td>Return the device status and notification status in the response.</td>
-</tr>
-<tr class="even">
-<td>false</td>
-<td><strong>Default</strong>. Do not return the device status and notification status.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value | Description                                                       |
+|-------|-------------------------------------------------------------------|
+| true  | Return the device status and notification status in the response. |
+| false | Default. Do not return the device status and notification status. |
 
 ### X-WNS-Tag
 
-Assigns a label to a notification. The tag is used in the replacement policy of the tile in the notification queue when the app has opted for notification cycling. If a notification with this tag already exists in the queue, a new notification with the same tag takes its place.
+Assigns a [**tag**](https://msdn.microsoft.com/library/BR208619) label to a notification. The tag is used in the replacement policy of the tile in the notification queue when the app has opted for notification cycling. If a notification with this tag already exists in the queue, a new notification with the same tag takes its place.
 
-**Note**  This header is optional and used only when sending tile notifications.
+> [!NOTE]
+> This header is optional and used only when sending tile notifications.
 
- 
-
-**Note**  For Windows Phone Store apps, the X-WNS-Tag header can be used with the X-WNS-Group header to allow multiple notifications with the same tag to be shown in the action center.
-
+```json
     X-WNS-Tag: <string value>
+```
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>string value</td>
-<td>An alphanumeric string of no more than 16 characters.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value        | Description                                           |
+|--------------|-------------------------------------------------------|
+| string value | An alphanumeric string of no more than 16 characters. |
 
 ### X-WNS-TTL
 
@@ -351,109 +177,45 @@ Specifies the TTL (expiration time) for a notification. This is not typically ne
 
 This header is optional. If no value is specified, the notification does not expire and will be replaced under the normal notification replacement scheme.
 
-    X-WNS-TTL: <integer value>
+X-WNS-TTL: `<integer value>`
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>integer value</td>
-<td>The life span of the notification, in seconds, after WNS receives the request.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value         | Description                                                                    |
+|---------------|--------------------------------------------------------------------------------|
+| integer value | The life span of the notification, in seconds, after WNS receives the request. |
 
 ### X-WNS-SuppressPopup
 
 **Note**  For Windows Phone Store apps, you have the option to suppress a toast notification's UI, instead sending the notification directly to the action center. This lets your notification be delivered silently, a potentially superior option for less urgent notifications. This header is optional and only used on Windows Phone channels. If you include this header on a Windows channel, your notification will be dropped and you will receive an error response from WNS.
 
-    X-WNS-SuppressPopup: true | false
+X-WNS-SuppressPopup: true | false
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>true</td>
-<td>Send the toast notification directly to the action center; do not raise the toast UI.</td>
-</tr>
-<tr class="even">
-<td>false</td>
-<td><strong>Default</strong>. Raise the toast UI as well as adding the notification to the action center.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value | Description                                                                           |
+|-------|---------------------------------------------------------------------------------------|
+| true  | Send the toast notification directly to the action center; do not raise the toast UI. |
+| false | Default. Raise the toast UI as well as adding the notification to the action center.  |
 
 ### X-WNS-Group
 
 **Note**  The action center for Windows Phone Store apps can display multiple toast notifications with the same tag only if they are labelled as belonging to different groups. For example, consider a recipe book app. Each recipe would be identified by a tag. A toast that contains a comment on that recipe would have the recipe's tag, but a comment group label. A toast that contains a rating for that recipe would again have that recipe's tag, but would have a rating group label. Those different group labels would allow both toast notifications to be shown at once in the action center. This header is optional.
 
-    X-WNS-Group: <string value>
+X-WNS-Group: `<string value>`
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>string value</td>
-<td>An alphanumeric string of no more than 16 characters.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value        | Description                                           |
+|--------------|-------------------------------------------------------|
+| string value | An alphanumeric string of no more than 16 characters. |
 
 ### X-WNS-Match
 
 **Note**  Used with the HTTP DELETE method to remove a specific toast, a set of toasts (by either tag or group), or all toasts from the action center for Windows Phone Store apps. This header can specify a group, a tag, or both. This header is required in an HTTP DELETE notification request. Any payload included with this notification request is ignored.
 
-    X-WNS-Match: type:wns/toast;group=<string value>;tag=<string value> | type:wns/toast;group=<string value> | type:wns/toast;tag=<string value> | type:wns/toast;all
+X-WNS-Match: type:wns/toast;group=`<string value>`;tag=`<string value>` | type:wns/toast;group=`<string value>` | type:wns/toast;tag=`<string value>` | type:wns/toast;all
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>type:wns/toast;group=&lt;string value&gt;;tag=&lt;string value&gt;</td>
-<td>Remove a single notification labelled with both the specified tag and group.</td>
-</tr>
-<tr class="even">
-<td>type:wns/toast;group=&lt;string value&gt;</td>
-<td>Remove all notifications labelled with the specified group.</td>
-</tr>
-<tr class="odd">
-<td>type:wns/toast;tag=&lt;string value&gt;</td>
-<td>Remove all notifications labelled with the specified tag.</td>
-</tr>
-<tr class="even">
-<td>type:wns/toast;all</td>
-<td>Clear all of your app's notifications from the action center.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value                                                      | Description |
+|------------------------------------------------------------|-------------|
+| type:wns/toast;group=`<string value>`;tag=`<string value>` | Remove a single notification labelled with both the specified tag and group. |
+| type:wns/toast;group=`<string value>`                      | Remove all notifications labelled with the specified group. |
+| type:wns/toast;tag=`<string value>`                        | Remove all notifications labelled with the specified tag. |
+| type:wns/toast;all                                         | Clear all of your app's notifications from the action center. |
 
 ### Send notification response
 
@@ -461,189 +223,68 @@ After WNS processes the notification request, it sends an HTTP message in respon
 
 ### Response parameters
 
-<table>
-<thead>
-<tr class="header">
-<th>Header name</th>
-<th>Required/Optional</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>X-WNS-Debug-Trace</td>
-<td>Optional</td>
-<td>Debugging information that should be logged to help troubleshoot issues when reporting a problem.</td>
-</tr>
-<tr class="even">
-<td>X-WNS-DeviceConnectionStatus</td>
-<td>Optional</td>
-<td>The device status, returned only if requested in the notification request through the X-WNS-RequestForStatus header.</td>
-</tr>
-<tr class="odd">
-<td>X-WNS-Error-Description</td>
-<td>Optional</td>
-<td>A human-readable error string that should be logged to help with debugging.</td>
-</tr>
-<tr class="even">
-<td>X-WNS-Msg-ID</td>
-<td>Optional</td>
-<td>A unique identifier for the notification, used for debugging purposes. When reporting a problem, this information should be logged to help in troubleshooting.</td>
-</tr>
-<tr class="odd">
-<td>X-WNS-Status</td>
-<td>Optional</td>
-<td>Indicates whether WNS successfully received and processed the notification. When reporting a problem, this information should be logged to help in troubleshooting.</td>
-</tr>
-<tr class="odd">
-<td>MS-CV</td>
-<td>Optional</td>
-<td>Debugging information that should be logged to help troubleshoot issues when reporting a problem.</td>
-</tr>
-
-</tbody>
-</table>
-
- 
+| Header name                  | Required | Description |
+|------------------------------|----------|-------------|
+| X-WNS-Debug-Trace            | FALSE    | Debugging information that should be logged to help troubleshoot issues when reporting a problem. |
+| X-WNS-DeviceConnectionStatus | FALSE    | The device status, returned only if requested in the notification request through the X-WNS-RequestForStatus header. |
+| X-WNS-Error-Description      | FALSE    | A human-readable error string that should be logged to help with debugging. |
+| X-WNS-Msg-ID                 | FALSE    | A unique identifier for the notification, used for debugging purposes. When reporting a problem, this information should be logged to help in troubleshooting. |
+| X-WNS-Status                 | FALSE    | Indicates whether WNS successfully received and processed the notification. When reporting a problem, this information should be logged to help in troubleshooting. |
+| MS-CV                        | FALSE    | Debugging information that should be logged to help troubleshoot issues when reporting a problem. |
 
 ### X-WNS-Debug-Trace
 
 This header returns useful debugging information as a string. We recommend that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header and MS-CV, are required when reporting an issue to WNS.
 
-    X-WNS-Debug-Trace: <string value>
+X-WNS-Debug-Trace: `<string value>`
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>string value</td>
-<td>An alphanumeric string.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value        | Description             |
+|--------------|-------------------------|
+| string value | An alphanumeric string. |
 
 ### X-WNS-DeviceConnectionStatus
 
 This header returns the device status to the calling application, if requested in the X-WNS-RequestForStatus header of the notification request.
 
-    X-WNS-DeviceConnectionStatus: connected | disconnected | tempdisconnected
+X-WNS-DeviceConnectionStatus: connected | disconnected | tempdisconnected
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>connected</td>
-<td>The device is online and connected to WNS.</td>
-</tr>
-<tr class="even">
-<td>disconnected</td>
-<td>The device is offline and not connected to WNS.</td>
-</tr>
-<tr class="odd">
-<td>tempconnected</td>
-<td>The device temporarily lost connection to WNS, for instance when a 3G connection is dropped or the wireless switch on a laptop is thrown. It is seen by the Notification Client Platform as a temporary interruption rather than an intentional disconnection.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value         | Description |
+|---------------|-------------|
+| connected     | The device is online and connected to WNS. |
+| disconnected  | The device is offline and not connected to WNS. |
+| tempconnected | The device temporarily lost connection to WNS, for instance when a 3G connection is dropped or the wireless switch on a laptop is thrown. It is seen by the Notification Client Platform as a temporary interruption rather than an intentional disconnection. |
 
 ### X-WNS-Error-Description
 
 This header provides a human-readable error string that should be logged to help with debugging.
 
-    X-WNS-Error-Description: <string value>
+X-WNS-Error-Description: `<string value>`
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>string value</td>
-<td>An alphanumeric string.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value        | Description             |
+|--------------|-------------------------|
+| string value | An alphanumeric string. |
 
 ### X-WNS-Msg-ID
 
 This header is used to provide the caller with an identifier for the notification. We recommended that this header be logged to help debug issues. This header, together with the X-WNS-Debug-Trace and MS-CV, are required when reporting an issue to WNS.
 
-    X-WNS-Msg-ID: <string value>
+X-WNS-Msg-ID: `<string value>`
 
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>string value</td>
-<td>An alphanumeric string of no more than 16 characters.</td>
-</tr>
-</tbody>
-</table>
-
- 
+| Value        | Description                                           |
+|--------------|-------------------------------------------------------|
+| string value | An alphanumeric string of no more than 16 characters. |
 
 ### X-WNS-Status
 
 This header describes how WNS handled the notification request. This can be used rather than interpreting response codes as success or failure.
 
-    X-WNS-Status: received | dropped | channelthrottled
+X-WNS-Status: received | dropped | channelthrottled
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>received</td>
-<td>The notification was received and processed by WNS.
-<div class="alert">
-<strong>Note</strong>  This does not guarantee that the device received the notification.
-</div>
-<div>
- 
-</div></td>
-</tr>
-<tr class="even">
-<td>dropped</td>
-<td>The notification was explicitly dropped because of an error or because the client has explicitly rejected these notifications. Toast notifications will also be dropped if the device is offline.</td>
-</tr>
-<tr class="odd">
-<td>channelthrottled</td>
-<td>The notification was dropped because the app server exceeded the rate limit for this specific channel.</td>
-</tr>
-</tbody>
-</table>
+| Value            | Description |
+|------------------|-------------|
+| received         | The notification was received and processed by WNS. **Note**: This does not guarantee that the device received the notification. |
+| dropped          | The notification was explicitly dropped because of an error or because the client has explicitly rejected these notifications. Toast notifications will also be dropped if the device is offline. |
+| channelthrottled | The notification was dropped because the app server exceeded the rate limit for this specific channel. |
 
 ### MS-CV
 This header provides a Correlation Vector related to the request which is primarily used for debugging. If a CV is provided as part of the request then WNS will use this value, else WNS will generate and respond back with a CV. This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
@@ -652,84 +293,29 @@ This header provides a Correlation Vector related to the request which is primar
 
     MS-CV: <string value>
 
-| Value | Description|
-|-------|------------|
-|string value | Follows the [Correlation Vector standard](https://github.com/microsoft/CorrelationVector/blob/master/cV%20-%202.1.md)|
+| Value        | Description |
+|--------------|-------------|
+| string value | Follows the [Correlation Vector standard](https://github.com/microsoft/CorrelationVector/blob/master/cV%20-%202.1.md) |
 
 ### Response codes
 
 Each HTTP message contains one of these response codes. WNS recommends that developers log the response code for use in debugging. When developers report an issue to WNS, they are required to provide response codes and header information.
 
-<table>
-<thead>
-<tr class="header">
-<th>HTTP response code</th>
-<th>Description</th>
-<th>Recommended action</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200 OK</td>
-<td>The notification was accepted by WNS.</td>
-<td>None required.</td>
-</tr>
-<tr class="even">
-<td>400 Bad Request</td>
-<td>One or more headers were specified incorrectly or conflict with another header.</td>
-<td>Log the details of your request. Inspect your request and compare against this documentation.</td>
-</tr>
-<tr class="odd">
-<td>401 Unauthorized</td>
-<td>The cloud service did not present a valid authentication ticket. The OAuth ticket may be invalid.</td>
-<td>Request a valid access token by authenticating your cloud service using the access token request.</td>
-</tr>
-<tr class="even">
-<td>403 Forbidden</td>
-<td>The cloud service is not authorized to send a notification to this URI even though they are authenticated.</td>
-<td>The access token provided in the request does not match the credentials of the app that requested the channel URI. Ensure that your package name in your app's manifest matches the cloud service credentials given to your app in the Dashboard.</td>
-</tr>
-<tr class="odd">
-<td>404 Not Found</td>
-<td>The channel URI is not valid or is not recognized by WNS.</td>
-<td>Log the details of your request. Do not send further notifications to this channel; notifications to this address will fail.</td>
-</tr>
-<tr class="even">
-<td>405 Method Not Allowed</td>
-<td>Invalid method (GET, CREATE); only POST (Windows or Windows Phone) or DELETE (Windows Phone only) is allowed.</td>
-<td>Log the details of your request. Switch to using HTTP POST.</td>
-</tr>
-<tr class="odd">
-<td>406 Not Acceptable</td>
-<td>The cloud service exceeded its throttle limit.</td>
-<td>Log the details of your request. Reduce the rate at which you are sending notifications.</td>
-</tr>
-<tr class="even">
-<td>410 Gone</td>
-<td>The channel expired.</td>
-<td>Log the details of your request. Do not send further notifications to this channel. Have your app <a href="hh868221(v=win.10).md">request a new channel URI</a>.</td>
-</tr>
-<tr class="odd">
-<td>413 Request Entity Too Large</td>
-<td>The notification payload exceeds the 5000 byte size limit.</td>
-<td>Log the details of your request. Inspect the payload to ensure it is within the size limitations.</td>
-</tr>
-<tr class="even">
-<td>500 Internal Server Error</td>
-<td>An internal failure caused notification delivery to fail.</td>
-<td>Log the details of your request. Report this issue through the <a href="https://go.microsoft.com/fwlink/p/?linkid=241434">developer forums</a>.</td>
-</tr>
-<tr class="odd">
-<td>503 Service Unavailable</td>
-<td>The server is currently unavailable.</td>
-<td>Log the details of your request. Report this issue through the <a href="https://go.microsoft.com/fwlink/p/?linkid=241434">developer forums</a>.</td>
-</tr>
-</tbody>
-</table>
+| HTTP response code           | Description | Recommended action |
+|------------------------------|-------------|--------------------|
+| 200 OK                       | The notification was accepted by WNS. | None required. |
+| 400 Bad Request              | One or more headers were specified incorrectly or conflict with another header. | Log the details of your request. Inspect your request and compare against this documentation. |
+| 401 Unauthorized             | The cloud service did not present a valid authentication ticket. The OAuth ticket may be invalid. | Request a valid access token by authenticating your cloud service using the access token request. |
+| 403 Forbidden                | The cloud service is not authorized to send a notification to this URI even though they are authenticated. | The access token provided in the request does not match the credentials of the app that requested the channel URI. Ensure that your package name in your app's manifest matches the cloud service credentials given to your app in the Dashboard. |
+| 404 Not Found                | The channel URI is not valid or is not recognized by WNS. | Log the details of your request. Do not send further notifications to this channel; notifications to this address will fail. |
+| 405 Method Not Allowed       | Invalid method (GET, CREATE); only POST (Windows or Windows Phone) or DELETE (Windows Phone only) is allowed. | Log the details of your request. Switch to using HTTP POST. |
+| 406 Not Acceptable           | The cloud service exceeded its throttle limit. | Log the details of your request. Reduce the rate at which you are sending notifications. |
+| 410 Gone                     | The channel expired. | Log the details of your request. Do not send further notifications to this channel. Have your app request a new channel URI. |
+| 413 Request Entity Too Large | The notification payload exceeds the 5000 byte size limit. | Log the details of your request. Inspect the payload to ensure it is within the size limitations. |
+| 500 Internal Server Error    | An internal failure caused notification delivery to fail. | Log the details of your request. Report this issue through the developer forums. |
+| 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. |
 
- 
-
-For detailed troubleshooting information concerning specific response codes, see [Troubleshooting tile, toast, and badge notifications](dn457491\(v=win.10\).md). Also see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/en-us/library/Hh404142).
+For detailed troubleshooting information concerning specific response codes, see [Troubleshooting tile, toast, and badge notifications](dn457491\(v=win.10\).md). Also see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
 
 ### Unsupported HTTP features
 
