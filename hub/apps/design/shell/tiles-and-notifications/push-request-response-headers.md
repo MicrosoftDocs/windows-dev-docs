@@ -1,8 +1,8 @@
 ﻿---
-Title: Push notification service request and response headers (Windows Runtime apps) (Windows)
-TOCTitle: Push notification service request and response headers (Windows Runtime apps)
+title: Push notification service request and response headers (Windows Runtime apps) (Windows)
+description: WNS Request and response Headers
+ms.topic: article
 ms:assetid: 721585B5-A500-4dcc-9216-33785C4BACDC
-ms:mtpsurl: https://msdn.microsoft.com/en-us/library/Hh868245(v=Win.10)
 ms:contentKeyID: 45725048
 ms.date: 08/31/2015
 mtps_version: v=Win.10
@@ -289,8 +289,6 @@ This header is optional and should be used only in cases where the cloud service
 </tbody>
 </table>
 
- 
-
 ### X-WNS-RequestForStatus
 
 Specifies whether the response should include the device status and WNS connection status. This header is optional.
@@ -320,7 +318,7 @@ Specifies whether the response should include the device status and WNS connecti
 
 ### X-WNS-Tag
 
-Assigns a [**tag**](https://msdn.microsoft.com/en-us/library/BR208619) label to a notification. The tag is used in the replacement policy of the tile in the notification queue when the app has opted for notification cycling. If a notification with this tag already exists in the queue, a new notification with the same tag takes its place.
+Assigns a label to a notification. The tag is used in the replacement policy of the tile in the notification queue when the app has opted for notification cycling. If a notification with this tag already exists in the queue, a new notification with the same tag takes its place.
 
 **Note**  This header is optional and used only when sending tile notifications.
 
@@ -510,7 +508,7 @@ After WNS processes the notification request, it sends an HTTP message in respon
 
 ### X-WNS-Debug-Trace
 
-This header returns useful debugging information as a string. We recommended that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header and MS-CV, are required when reporting an issue to WNS.
+This header returns useful debugging information as a string. We recommend that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header and MS-CV, are required when reporting an issue to WNS.
 
     X-WNS-Debug-Trace: <string value>
 
@@ -647,17 +645,10 @@ This header describes how WNS handled the notification request. This can be used
 </tbody>
 </table>
 
-### X-WNS-CONTINUE-AFTER
-This header is sent as part of the response header when a WNS channel is being throttled. The value returned is an integer representing the number of seconds to wait until sending another notification without being throttled.
-
-    X-WNS-CONTINUE-AFTER: <integer value>
-
-| Value | Description|
-|-------|------------|
-|Integer value | Number of seconds to wait until sending another notification without being throttled.
-
 ### MS-CV
 This header provides a Correlation Vector related to the request which is primarily used for debugging. If a CV is provided as part of the request then WNS will use this value, else WNS will generate and respond back with a CV. This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
+> [!IMPORTANT]
+> Please generate a new CV for each push notification request if you are providing your own CV.
 
     MS-CV: <string value>
 
