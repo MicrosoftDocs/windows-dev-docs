@@ -1,5 +1,5 @@
 ﻿---
-Title: Push notification service request and response headers (Windows Runtime apps) (Windows)
+title: Push notification service request and response headers (Windows Runtime apps) (Windows)
 description: This topic describes the service-to-service web APIs and protocols required to send a push notification.
 author: hickeys
 ms.topic: article
@@ -291,7 +291,7 @@ This header provides a Correlation Vector related to the request which is primar
 > [!IMPORTANT]
 > Please generate a new CV for each push notification request if you are providing your own CV.
 
-    MS-CV: <string value>
+MS-CV: `<string value>`
 
 | Value        | Description |
 |--------------|-------------|
@@ -315,7 +315,7 @@ Each HTTP message contains one of these response codes. WNS recommends that deve
 | 500 Internal Server Error    | An internal failure caused notification delivery to fail. | Log the details of your request. Report this issue through the developer forums. |
 | 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. |
 
-For detailed troubleshooting information concerning specific response codes, see [Troubleshooting tile, toast, and badge notifications](dn457491\(v=win.10\).md). Also see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
+Also see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
 
 ### Unsupported HTTP features
 
