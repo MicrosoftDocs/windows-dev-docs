@@ -14,14 +14,14 @@ The **Schedule** section on the [Pricing and availability](set-app-pricing-and-a
 > [!NOTE]
 > Although this topic refers to apps, release scheduling for add-on submissions uses the same process.
 
-You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 device.
+You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10/11 device.
 
 By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](choose-visibility-options.md#discoverability) section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
 Note that you won't be able to configure dates in the **Schedule** section if you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](choose-visibility-options.md#discoverability) section, because your app won't be released to customers, so there is no release date to configure.
 
 > [!IMPORTANT]
-> The dates you specify in the Schedule section only apply to customers on Windows 10.
+> The dates you specify in the Schedule section only apply to customers on Windows 10 and Windows 11.
 >
 >If your previously-published app supports earlier OS versions, any **Stop acquisition** date you select will not apply to those customers; they will still be able to acquire the app (unless you submit an update with a new selection in the [Visibility](choose-visibility-options.md#discoverability) section, or if you select **Make app unavailable** from the **App overview** page).
 
@@ -51,7 +51,7 @@ In the **Stop acquisition** dropdown, you can set a date and time when you want 
 
 By default, **Stop acquisition** is set to never. To change this, select **at** in the drop-down and specify a date and time, as described above. At the date and time you select, customers will no longer be able to acquire the app.
 
-It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](choose-visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](choose-visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10/11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
 > If you select a date to **Stop acquisition**, and later decide you'd like to make the app available again, you can create a new submission and change **Stop acquisition** back to **Never**. The app will become available again after your updated submission is published.
