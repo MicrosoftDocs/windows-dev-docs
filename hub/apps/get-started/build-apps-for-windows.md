@@ -15,7 +15,7 @@ ms.collection: windows11
 This article will walk you through the steps of creating a simple Windows 11 app so you can get started using the new visuals and features of Windows 11. The app we will build here is just a basic showcase of some of the controls that have been updated with new styles and animations.
 
 > [!NOTE]
-> To follow the instructions in this article to build a Windows 11 app, you need Windows Insider build 22000 (or later). Windows Insider build 22000 is an early preview release and therefore is subject to change between now and the official release. For more information, see [Getting started with the Windows Insider Program](https://insider.windows.com/getting-started).
+> This tutorial was originally written to support a Windows Insider build of Windows 11. It will be updated shortly to support the official release of Windows 11.
 
 ## Set up your development environment
 
