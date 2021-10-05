@@ -78,7 +78,9 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Extension points for your implementation types](./details-about-destructors.md) | These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods. |
 | [A simple C++/WinRT Windows UI Library example](./simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
 | [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) | This topic shows how to use C++/WinRT to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language. |
+| [Authoring a C# Windows Runtime component for use from a C++/WinRT app](../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md) | This topic walks you through the process of adding a simple C# component to your C++/WinRT project. |
 | [Visual Studio native debug visualization (natvis) for C++/WinRT](./natvis.md) | The [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types. This provides you an experience similar to C# debugging. |
+| [C++/WinRT naming conventions](./naming.md) | This topic explains naming conventions that C++/WinRT has established. |
 
 ### Topics about the C++ language
 
