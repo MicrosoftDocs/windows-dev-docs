@@ -5,7 +5,7 @@ ms.topic: article
 ms:assetid: 6C35026D-B162-45a6-8CCB-C2D999E95CEE
 ms:mtpsurl: https://msdn.microsoft.com/library/Hh868221(v=Win.10)
 ms:contentKeyID: 45725025
-ms.date: 09/1/2021
+ms.date: 10/06/2021
 mtps_version: v=Win.10
 dev_langs:
 - csharp
@@ -23,11 +23,11 @@ You should request a new channel each time that your app is launched, and update
 
 ### Technologies
 
-  - Windows Runtime
+- Windows Runtime
 
 ### Prerequisites
 
-  - Familiarity with push notification and Windows Push Notification Services (WNS) concepts, requirements, and operation. These are discussed in the [Windows Push Notification Services (WNS) overview](.\windows-push-notification-services--wns--overview.md).
+- Familiarity with push notification and Windows Push Notification Services (WNS) concepts, requirements, and operation. These are discussed in the [Windows Push Notification Services (WNS) overview](.\windows-push-notification-services--wns--overview.md).
 
 ## Instructions
 
@@ -65,8 +65,6 @@ The channel URI is packaged in an HTTP POST request and sent to the server.
 
 **Important**  You should send this information to your server in a secure manner. You should require the app to authenticate itself with the server when it transmits the channel URI. Encrypt the information and use a secure protocol such as HTTPS.
 
- 
-
 ``` csharp
 String serverUrl = "http://www.contoso.com";
 
@@ -100,9 +98,9 @@ catch (Exception ex)
 
 You should request a new channel each time your app is invoked, by using the following logic:
 
-1.  Request a channel.
-2.  Compare the new channel with your previous channel. If the channel is the same, you don't need to take any further action. Note that this requires your app to store the channel locally each time the app successfully sends it to your service, so that you have the channel to compare against later.
-3.  If the channel has changed, send the new channel to your web service. Include error handling logic that always sends a new channel in the following cases:
+1. Request a channel.
+2. Compare the new channel with your previous channel. If the channel is the same, you don't need to take any further action. Note that this requires your app to store the channel locally each time the app successfully sends it to your service, so that you have the channel to compare against later.
+3. If the channel has changed, send the new channel to your web service. Include error handling logic that always sends a new channel in the following cases:
       - Your app has never sent a channel to the web service before.
       - Your app's last attempt to send the channel to the web service was not successful.
 
@@ -118,5 +116,5 @@ The call to the [**CreatePushNotificationChannelForApplicationAsync**](https://m
 
 Your app can immediately stop the delivery of notifications on all channels by calling the [**PushNotificationChannel.Close**](https://msdn.microsoft.com/library/BR241289) method. While it will not be common for your app to do so, there might be certain scenarios in which you want to stop all notification delivery to your app. For instance, if your app has the concept of user accounts and a user logs out of that app, it is reasonable to expect that the tile no longer shows that user's personal information. To successfully clear the tile of content and stop the delivery of notifications, you should do the following:
 
-1.  Stop all tile updates by calling the [**PushNotificationChannel.Close**](https://msdn.microsoft.com/library/BR241289) method on any of your notification channels that are delivering tile, toast, badge or raw notifications to a user. Calling the **Close** method ensures that no further notifications for that user can be delivered to the client.
-2.  Clear the contents of the tile by calling the [**TileUpdater.Clear**](https://msdn.microsoft.com/library/BR208629) method to remove the previous user's data from the tile.
+1. Stop all tile updates by calling the [**PushNotificationChannel.Close**](https://msdn.microsoft.com/library/BR241289) method on any of your notification channels that are delivering tile, toast, badge or raw notifications to a user. Calling the **Close** method ensures that no further notifications for that user can be delivered to the client.
+2. Clear the contents of the tile by calling the [**TileUpdater.Clear**](https://msdn.microsoft.com/library/BR208629) method to remove the previous user's data from the tile.

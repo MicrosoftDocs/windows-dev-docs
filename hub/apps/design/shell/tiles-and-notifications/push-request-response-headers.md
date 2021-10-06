@@ -4,7 +4,7 @@ description: This topic describes the service-to-service web APIs and protocols 
 author: hickeys
 ms.topic: article
 ms.author: hickeys
-ms.date: 09/03/2021
+ms.date: 10/06/2021
 ---
 
 # Push notification service request and response headers (Windows Runtime apps)
@@ -313,11 +313,12 @@ Each HTTP message contains one of these response codes. WNS recommends that deve
 | 410 Gone                     | The channel expired. | Log the details of your request. Do not send further notifications to this channel. Have your app request a new channel URI. |
 | 413 Request Entity Too Large | The notification payload exceeds the 5000 byte size limit. | Log the details of your request. Inspect the payload to ensure it is within the size limitations. |
 | 500 Internal Server Error    | An internal failure caused notification delivery to fail. | Log the details of your request. Report this issue through the developer forums. |
-| 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. If the Retry-After header is observed then please send your request after the Retry-After header value in the response. | 
+| 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. If the Retry-After header is observed then please send your request after the Retry-After header value in the response. |
 
 ### Unsupported HTTP features
 
 The WNS Web Interface supports HTTP 1.1 but does not support the following features:
-  - Chunking
-  - Pipelining (POST is not idempotent)
-  - Although supported, developers should disable Expect-100 as that introduces latency when sending a notification.
+
+- Chunking
+- Pipelining (POST is not idempotent)
+- Although supported, developers should disable Expect-100 as that introduces latency when sending a notification.

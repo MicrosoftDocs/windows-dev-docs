@@ -1,10 +1,10 @@
 ﻿---
-Title: 'Quickstart: Sending a push notification (XAML)'
-TOCTitle: 'Quickstart: Sending a push notification (XAML)'
+title: 'Quickstart: Sending a push notification (XAML)'
 ms:assetid: ADA6A0B8-9085-421f-B409-86806EA6BD75
 ms:mtpsurl: https://msdn.microsoft.com/en-us/library/Hh868252(v=Win.10)
 ms:contentKeyID: 45725055
-ms.date: 08/31/2015
+ms.date: 10/06/2021
+ms.topic: article
 mtps_version: v=Win.10
 dev_langs:
 - csharp
@@ -21,11 +21,11 @@ Your cloud server can send a push notification to your app through the Windows P
 To understand this topic or to use the code it provides, you will need:
 
 - A familiarity with HTTP communications.
-- An authenticated cloud server. For more information, see [How to authenticate with the Windows Push Notification Service (WNS)](hh868206\(v=win.10\).md).
-- A registered channel over which your cloud server can communicate with your app. For more information, see [How to request, create, and save a notification channel](hh868221\(v=win.10\).md).
-- An existing tile for your app, defined in your app's manifest, to receive the notification (unless you're sending a raw notification). For more information, see [Quickstart: Creating a default tile using the Microsoft Visual Studio manifest editor](hh868247\(v=win.10\).md).
+- An authenticated cloud server. For more information, see [How to authenticate with the Windows Push Notification Service (WNS)](/previous-versions/windows/apps/hh868206(v=win.10)).
+- A registered channel over which your cloud server can communicate with your app. For more information, see [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh868221(v=win.10)).
+- An existing tile for your app, defined in your app's manifest, to receive the notification (unless you're sending a raw notification). For more information, see [Quickstart: Creating a default tile using the Microsoft Visual Studio manifest editor](/previous-versions/windows/apps/hh868247(v=win.10)).
 - A familiarity with XML and its manipulation through Document Object Model (DOM) APIs.
-- In the case of raw notifications, your app must be configured to receive raw notifications. For more information, see [Quickstart: Intercepting push notifications for running apps](jj709907\(v=win.10\).md) and [Quickstart: Creating and registering a raw notification background task](jj709906\(v=win.10\).md).
+- In the case of raw notifications, your app must be configured to receive raw notifications. For more information, see [Quickstart: Intercepting push notifications for running apps](/previous-versions/windows/apps/jj709907(v=win.10)) and [Quickstart: Creating and registering a raw notification background task](/previous-versions/windows/apps/jj709906(v=win.10)).
 
 ## Instructions
 
@@ -44,7 +44,7 @@ using System.Text;
 
 ### 2. Create an HTTP POST request
 
-The `uri` parameter is the channel Uniform Resource Identifier (URI) requested by the app and passed to the cloud server. For more information, see [How to request, create, and save a notification channel](hh868221\(v=win.10\).md).
+The `uri` parameter is the channel Uniform Resource Identifier (URI) requested by the app and passed to the cloud server. For more information, see [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh868221(v=win.10)).
 
 ``` csharp
 HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
@@ -53,16 +53,16 @@ request.Method = "POST";
 
 ### 3. Add the required headers
 
-There are four required headers that must be included in all push notifications: [X-WNS-Type](hh868245\(v=win.10\).md), Content-Type, Content-Length, and [Authorization](hh868245\(v=win.10\).md).
+There are four required headers that must be included in all push notifications: [X-WNS-Type](/previous-versions/windows/apps/hh868245(v=win.10)), Content-Type, Content-Length, and [Authorization](/previous-versions/windows/apps/hh868245(v=win.10)).
 
-- The [X-WNS-Type](hh868245\(v=win.10\).md) header specifies whether this is a tile, toast, badge, or raw notification.
-- The Content-Type is set depending on the value of the [X-WNS-Type](hh868245\(v=win.10\).md).
+- The [X-WNS-Type](/previous-versions/windows/apps/hh868245(v=win.10)) header specifies whether this is a tile, toast, badge, or raw notification.
+- The Content-Type is set depending on the value of the [X-WNS-Type](/previous-versions/windows/apps/hh868245(v=win.10)).
 - The Content-Length gives the size of the included notification payload.
-- The [Authorization](hh868245\(v=win.10\).md) header specifies the authentication credential that allows you to send a push notification to this user over this channel.
+- The [Authorization](/previous-versions/windows/apps/hh868245(v=win.10)) header specifies the authentication credential that allows you to send a push notification to this user over this channel.
 
-The *accessToken* parameter of the [Authorization](hh868245\(v=win.10\).md) header specifies the access token, stored on the server, that was received from WNS when the cloud server requested authentication. Without the access token, your notification will be rejected.
+The *accessToken* parameter of the [Authorization](/previous-versions/windows/apps/hh868245(v=win.10)) header specifies the access token, stored on the server, that was received from WNS when the cloud server requested authentication. Without the access token, your notification will be rejected.
 
-For a complete list of possible headers, see [Push notification service request and response headers](hh868245\(v=win.10\).md).
+For a complete list of possible headers, see [Push notification service request and response headers](/previous-versions/windows/apps/hh868245(v=win.10)).
 
 ``` csharp
 request.Headers.Add("X-WNS-Type", notificationType);
@@ -110,7 +110,7 @@ catch (WebException webException)
     }
 ```
 
-**HttpStatusCode.Gone / HttpStatusCode.NotFound**: The channel URI is no longer valid. Remove this channel from your database to prevent further attempts to send notification to it. The next time this user launches your app, request a new WNS channel. Your app should detect that its channel has changed, which should trigger the app to send the new channel URI to your app server. For more information, see [How to request, create, and save a notification channel](hh868221\(v=win.10\).md).
+**HttpStatusCode.Gone / HttpStatusCode.NotFound**: The channel URI is no longer valid. Remove this channel from your database to prevent further attempts to send notification to it. The next time this user launches your app, request a new WNS channel. Your app should detect that its channel has changed, which should trigger the app to send the new channel URI to your app server. For more information, see [How to request, create, and save a notification channel](hh868221(v=win.10)).
 
 ``` csharp
     else if (status == HttpStatusCode.Gone || status == HttpStatusCode.NotFound)
@@ -128,7 +128,7 @@ catch (WebException webException)
     }
 ```
 
-**Other response codes**: WNS responded with a less common response code. Log this code to assist in debugging. See [Push notification service request and response headers](hh868245\(v=win.10\).md) for a full list of WNS response codes.
+**Other response codes**: WNS responded with a less common response code. Log this code to assist in debugging. See [Push notification service request and response headers](/previous-versions/windows/apps/hh868245(v=win.10)) for a full list of WNS response codes.
 
 ``` csharp
     else
@@ -222,7 +222,7 @@ public string PostToWns(string secret, string sid, string uri, string xml, strin
             // WNS responded with a less common error. Log this error to assist in debugging.
 
             // You can see a full list of WNS response codes here:
-            // https://msdn.microsoft.com/en-us/library/windows/apps/hh868245.aspx#wnsresponsecodes
+            // https://msdn.microsoft.com/library/windows/apps/hh868245.aspx#wnsresponsecodes
 
             string[] debugOutput = {
                                        status.ToString(),
@@ -318,8 +318,8 @@ In this Quickstart, you composed an HTTP POST request to send to WNS. WNS, in tu
 
 ## Related topics
 
-- [How to request, create, and save a notification channel](hh868221\(v=win.10\).md)
-- [Push notification service request and response headers](hh868245\(v=win.10\).md)
-- [Windows Push Notification Services (WNS) overview](hh913756\(v=win.10\).md)
+- [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh868221(v=win.10))
+- [Push notification service request and response headers](/previous-versions/windows/apps/hh868245(v=win.10))
+- [Windows Push Notification Services (WNS) overview](/previous-versions/windows/apps/hh913756(v=win.10))
 - [Get started with Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=256501)
 - [Push and periodic notifications sample](https://go.microsoft.com/fwlink/p/?linkid=231476)
