@@ -1,7 +1,8 @@
 ﻿---
-Title: Push notification service request and response headers (Windows Runtime apps) (Windows)
+title: Push notification service request and response headers (Windows Runtime apps) (Windows)
 description: This topic describes the service-to-service web APIs and protocols required to send a push notification.
 author: hickeys
+ms.topic: article
 ms.author: hickeys
 ms.date: 09/03/2021
 ---
@@ -233,7 +234,7 @@ After WNS processes the notification request, it sends an HTTP message in respon
 
 ### X-WNS-Debug-Trace
 
-This header returns useful debugging information as a string. We recommended that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header and MS-CV, are required when reporting an issue to WNS.
+This header returns useful debugging information as a string. We recommend that this header be logged to help developers debug issues. This header, together with the X-WNS-Msg-ID header and MS-CV, are required when reporting an issue to WNS.
 
 X-WNS-Debug-Trace: `<string value>`
 
@@ -286,10 +287,11 @@ X-WNS-Status: received | dropped | channelthrottled
 | channelthrottled | The notification was dropped because the app server exceeded the rate limit for this specific channel. |
 
 ### MS-CV
+This header provides a Correlation Vector related to the request which is primarily used for debugging. If a CV is provided as part of the request then WNS will use this value, else WNS will generate and respond back with a CV. This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
+> [!IMPORTANT]
+> Please generate a new CV for each push notification request if you are providing your own CV.
 
-This header provides a Correlation Vector related to the request which is primarily used for debugging.  This header, together with the X-WNS-Debug-Trace and X-WNS-Msg-ID header, are required when reporting an issue to WNS.
-
-MS-CV: jUGi5vPefkufD4S7UyFaLQ.0
+MS-CV: `<string value>`
 
 | Value        | Description |
 |--------------|-------------|
@@ -307,18 +309,15 @@ Each HTTP message contains one of these response codes. WNS recommends that deve
 | 403 Forbidden                | The cloud service is not authorized to send a notification to this URI even though they are authenticated. | The access token provided in the request does not match the credentials of the app that requested the channel URI. Ensure that your package name in your app's manifest matches the cloud service credentials given to your app in the Dashboard. |
 | 404 Not Found                | The channel URI is not valid or is not recognized by WNS. | Log the details of your request. Do not send further notifications to this channel; notifications to this address will fail. |
 | 405 Method Not Allowed       | Invalid method (GET, CREATE); only POST (Windows or Windows Phone) or DELETE (Windows Phone only) is allowed. | Log the details of your request. Switch to using HTTP POST. |
-| 406 Not Acceptable           | The cloud service exceeded its throttle limit. | Log the details of your request. Reduce the rate at which you are sending notifications. |
+| 406 Not Acceptable           | The cloud service exceeded its throttle limit. | Please send your request after the Retry-After header value in the response |
 | 410 Gone                     | The channel expired. | Log the details of your request. Do not send further notifications to this channel. Have your app request a new channel URI. |
 | 413 Request Entity Too Large | The notification payload exceeds the 5000 byte size limit. | Log the details of your request. Inspect the payload to ensure it is within the size limitations. |
 | 500 Internal Server Error    | An internal failure caused notification delivery to fail. | Log the details of your request. Report this issue through the developer forums. |
-| 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. |
-
-For detailed troubleshooting information concerning specific response codes, see [Troubleshooting tile, toast, and badge notifications](dn457491\(v=win.10\).md). Also see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
+| 503 Service Unavailable      | The server is currently unavailable. | Log the details of your request. Report this issue through the developer forums. If the Retry-After header is observed then please send your request after the Retry-After header value in the response. | 
 
 ### Unsupported HTTP features
 
 The WNS Web Interface supports HTTP 1.1 but does not support the following features:
-
-- Chunking
-- Pipelining (POST is not idempotent)
-- Although supported, developers should disable Expect-100 as that introduces latency when sending a notification.
+  - Chunking
+  - Pipelining (POST is not idempotent)
+  - Although supported, developers should disable Expect-100 as that introduces latency when sending a notification.
