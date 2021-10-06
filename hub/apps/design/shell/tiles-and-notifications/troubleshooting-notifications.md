@@ -1,5 +1,6 @@
 ﻿---
 title: Troubleshooting WNS push notifications 
+description: How to troubleshoot common errors with push notifications
 ms:assetid: F0F0791E-D887-43B0-8E7D-3CB762E68361
 ms:mtpsurl: https://msdn.microsoft.com/en-us/library/Dn457491(v=Win.10)
 ms:contentKeyID: 58982757
@@ -143,4 +144,4 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 
 If you have tried the solutions suggested in this topic and have not resolved your issue, post a message on the [Microsoft forums](https://go.microsoft.com/fwlink/p/?linkid=250953) to discuss it with both Microsoft developers and other interested parties.
 
-For push notifications, in addition to a description of the problem, you might be asked to provide your channel URL and an example of the response you received from WNS, including both the HTTP error codes and HTTP headers. There are specific headers that your app server should be logging when reporting an issue. For more information, see [Push notification service request and response headers](hh868245(v=win.10)).
+For push notifications, in addition to a description of the problem, you might be asked to provide your channel URL and an example of the response you received from WNS, including both the HTTP error codes and HTTP headers. There are specific headers that your app server should be logging when reporting an issue. For more information, see [Push notification service request and response headers](/previous-versions/windows/apps/hh868245(v=win.10)).
