@@ -7,10 +7,10 @@
           href: get-started/index.md
         - name: Set up your development environment
           items:
-              - name: System requirements
-                href: windows-app-sdk/system-requirements.md
               - name: Install developer tools
                 href: windows-app-sdk/set-up-your-development-environment.md
+              - name: System requirements
+                href: windows-app-sdk/system-requirements.md
               - name: Enable your device for development
                 href: get-started/enable-your-device-for-development.md
               - name: Developer mode features and debugging
@@ -229,26 +229,24 @@
     items:
       - name: Overview
         href: package-and-deploy/index.md
-      - name: Deploy apps that use the Windows App SDK
+      - name: Windows App SDK deployment guide
         items:
-          - name: "Overview"
-            href: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md 
-          - name: "Run time architecture and deployment scenarios"
+          - name: "Runtime architecture"
             href: windows-app-sdk/deployment-architecture.md
-          - name: "Deploy packaged apps"
-            href: windows-app-sdk/deploy-packaged-apps.md 
-          - name: "Deploy unpackaged apps"
+          - name: "Deployment guide for packaged apps"
+            href: windows-app-sdk/deploy-packaged-apps.md
+          - name: "Deployment guide for unpackaged apps"
             items:
-              - name: "Overview"
+              - name: Overview
                 href: windows-app-sdk/deploy-unpackaged-apps.md
               - name: Reference the Windows App SDK framework package at run time
                 href: windows-app-sdk/reference-framework-package-run-time.md
               - name: "Tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
-              - name: "Check for installed versions of the Windows App SDK runtime"
-                href: windows-app-sdk/check-windows-app-sdk-versions.md
-              - name: "Remove outdated Windows App SDK runtime versions"
-                href: windows-app-sdk/remove-windows-app-sdk-versions.md
+          - name: "Check for installed versions of the Windows App SDK runtime"
+            href: windows-app-sdk/check-windows-app-sdk-versions.md
+          - name: "Remove outdated Windows App SDK runtime versions"
+            href: windows-app-sdk/remove-windows-app-sdk-versions.md
   - name: Reference
     items:
       - name: Windows SDK API reference

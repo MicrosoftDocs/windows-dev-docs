@@ -33,20 +33,20 @@ The function removes changes to the current process made by [MddBootstrapInitial
 
 This function also shuts down the [Dynamic Dependency Lifetime Manager (DDLM)](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm) so that Windows can service the framework package as necessary.
 
-<!--
-### .NET wrapper library
+## .NET wrapper for the bootstrapper API
 
-Although you can call the C/C++ bootstrapper API directly from .NET apps, this requires the use of [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions) to call the functions. For an example that demonstrates how to do this, see the C# instructions in [Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md?tabs=csharp-dotnet#instructions).
+Although you can call the C/C++ bootstrapper API directly from .NET apps, this requires the use of [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions) to call the functions. For an example that demonstrates how to do this, see the C# instructions for 1.0 Preview 1 and earlier releases in [Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md?tabs=csharp-dotnet-preview1#instructions).
 
-In Windows App SDK 1.0 Preview 1 and later releases, you can simplify this process by using the .NET wrapper for the bootstrapper API available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll library. This library provides a `Bootstrap` helper class with static `Initialize`, `TryInitialize`, and `Shutdown` functions that wrap calls to the unmanaged [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions for most common scenarios. For more information, see these resources:
+In Windows App SDK 1.0 Preview 2 and later releases, you can simplify this process by using the .NET wrapper for the bootstrapper API available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll assembly. This assembly provides an easier and more natural API for .NET developers to access the bootstrapper's functionality. The `Bootstrap` class provides static `Initialize`, `TryInitialize`, and `Shutdown` functions that wrap calls to the unmanaged [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions for most common scenarios. For an example that demonstrates how to use the .NET wrapper for the bootstrapper API, see the C# instructions for 1.0 Preview 2 and later releases in [Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md?tabs=csharp-dotnet-preview2#instructions).
+
+For more information about the .NET wrapper for the bootstrapper API, see these resources:
 
 - [Section 6.1.4](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md#614-microsoftwindowsapplicationmodeldynamicdependency-c) of the dynamic dependencies specification.
 - [Bootstrap.cs](https://github.com/microsoft/WindowsAppSDK/blob/main/dev/Bootstrap/CS/Microsoft.WindowsAppRuntime.Bootstrap.Net/Bootstrap.cs): The open source implementation of the .NET wrapper for the bootstrapper API.
--->
 
 ## Related topics
 
-- [Deploy unpackaged apps that use the Windows App SDK](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
 - [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
-- [Runtime architecture and deployment scenarios for the Windows App SDK](deployment-architecture.md)
+- [Runtime architecture for the Windows App SDK](deployment-architecture.md)
 - [Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)

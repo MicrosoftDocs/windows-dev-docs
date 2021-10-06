@@ -2,17 +2,17 @@
 title: Package your app using single-project MSIX
 description: This article provides instructions for how to generate a MSIX desktop app via a single project in Visual Studio.
 ms.topic: article
-ms.date: 08/12/2021
+ms.date: 10/05/2021
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium
 ---
 
 # Package your app using single-project MSIX
 
-> [!IMPORTANT]
-> Single-project MSIX is an experimental feature. This feature is not supported for use by apps in production environments.
+Single-project MSIX is a feature that enables you to build MSIX-packaged desktop apps with the Windows App SDK without using a separate packaging project. This feature is currently available as a standalone Visual Studio extension that you can use for these scenarios:
 
-Single-project MSIX is a new feature that enables you to build desktop MSIX-packaged desktop apps without using a separate packaging project. This feature is currently available as a standalone Visual Studio extension that you can use to modify existing projects that have a separate packaging project. In a future release, new project templates will be available that can be used to build an MSIX-packaged desktop app without using a separate packaging project.
+- Create new desktop projects using the **Blank App, Packaged (WinUI 3 in Desktop)** templates in the Windows App SDK. These projects are configured to build your app into an MSIX package without the use of a separate packaging project.
+- Modify existing desktop WinUI 3 projects created using the Windows App SDK so that the separate packaging project is no longer needed.
 
 ![Comparing packaging project to single project](images/single-project-overview.png)
 
@@ -32,15 +32,32 @@ The current release of the single-project MSIX feature supports [WinUI 3 in Desk
 
 Single-project MSIX only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, you must continue using a Windows Application Packaging Project in your solution.
 
-## Step 1: Install the Visual Studio extension
+## Install the single-project MSIX packaging tools
 
-Install the extension for the version of Visual Studio you have installed.
+The installation process for the single-project MSIX packaging tools depends on the version of the Windows App SDK that you're using.
 
-* **Visual Studio 2019:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2019 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools). The extension requires Visual Studio 2019 version 16.10.x or later.
+- **Windows App SDK 1.0 Preview 2 and later:** The single-project MSIX packaging tools are included with the Windows App SDK extension for Visual Studio. For these releases, the tools include project templates you can use to create new MSIX-packaged WinUI 3 apps. For installation instructions for the SDK, see [Install the Windows App SDK extension for Visual Studio](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio).
 
-* **Visual Studio 2022:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
+    > [!NOTE]
+    > If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019, you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue does not affect other versions of the Windows App SDK 1.0 Preview 2 extension.
 
-## Step 2: Create or open an existing packaging project
+- **Windows App SDK 1.0 Preview 1 and earlier:** You must install the single-project MSIX packaging tools extension separately. For these releases, the tools do not include project templates; however, you can still use the tools to modify an existing desktop WinUI 3 project so that the separate packaging project is no longer needed.
+
+  To install the single-project MSIX packaging tools extension:
+
+  - **Visual Studio 2019:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2019 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools). The extension requires Visual Studio 2019 version 16.10.x or later.
+
+  - **Visual Studio 2022:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
+
+## Create a new project
+
+If you're using Windows App SDK 1.0 Preview 2 or later, you can create a new WinUI 3-based project that includes single-project MSIX support by using the **Blank App, Packaged (WinUI 3 in Desktop)** template. For more information, see [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md#instructions-for-winui-3-desktop-apps).
+
+## Modify an existing project
+
+Follow these steps to modify an existing desktop WinUI 3 project created using the Windows App SDK so that the package manifest and other support needed to build an MSIX package are in the application project, not the packaging project.
+
+### Step 1: Create or open an existing packaging project
 
 If you already have a solution for a [WinUI 3 in Desktop](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3) app that includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), open that solution in Visual Studio now.
 
@@ -48,11 +65,11 @@ Otherwise, create a new WinUI 3 in Desktop project in Visual Studio by following
 
 ![A project using the packaging project](images/single-project-packaging-project.png)
 
-## Step 3: Edit the application project settings
+### Step 2: Edit the application project settings
 
 Next, edit some configuration settings to use the single-project MSIX feature. There are different instructions depending on your project type and Visual Studio version.
 
-### [C#](#tab/csharp)
+#### [C#](#tab/csharp)
 
 1. In **Solution Explorer**, double-click the project node for your application to open the **.csproj** file in the XML editor. Add the following XML to the main **\<PropertyGroup\>** element.
 
@@ -117,7 +134,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
     4. Save and close the **launchSettings.json** file.
 
-### [C++](#tab/cpp)
+#### [C++](#tab/cpp)
 
 1. In **Solution Explorer**, right-click the project node for your application and select **Unload Project**.
 
@@ -154,18 +171,18 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
 ---
 
-## Step 4: Move files to the application project
+### Step 3: Move files to the application project
 
 Next, move several important files to the application project. There are different instructions depending on your project type and Visual Studio version.
 
-### [C#](#tab/csharp)
+#### [C#](#tab/csharp)
 
 1. In **File Explorer**, move the **Package.appxmanifest** file and the **Images** folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.
 2. Remove the packaging project from your solution.
 
 ![Illustration of moving files to main app](images/single-project-move-to-one.png)
 
-### [C++](#tab/cpp)
+#### [C++](#tab/cpp)
 
 1. In **File Explorer**, move the **Package.appxmanifest** file and the **Images** folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.
 2. In Visual Studio, select the application project in **Solution Explorer** and click **Show all files**.
@@ -174,7 +191,7 @@ Next, move several important files to the application project. There are differe
 
 ---
 
-## Step 5: Enable deploying in Configuration Manager
+### Step 4: Enable deploying in Configuration Manager
 
 1. Select **Build** -> **Configuration Manager**.
 2. In **Configuration Manager**, click the **Deploy** check box for every combination of configuration and platform (for example, **Debug** and **x86**, **Debug** and **arm64**, **Release** and **x64**, and more).
@@ -183,7 +200,7 @@ Next, move several important files to the application project. There are differe
 
 ![Enabling Deploy in Configuration Manager](images/single-project-configmanager.png)
 
-## Step 6: Deploy your app
+### Step 5: Deploy your app
 
 Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application.
 

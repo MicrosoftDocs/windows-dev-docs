@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
-Before completing this tutorial, we recommend that you review [Runtime architecture and deployment scenarios](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
+Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
@@ -25,8 +25,8 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 1. [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
-3. C# projects using the **1.0 Preview version 1** of the Windows App SDK must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
-4. C# projects using the **1.0 Experimental version** of the Windows App SDK must use one of the following .NET SDKs: 
+3. C# projects using the **1.0 Preview version 1** of the Windows App SDK (or later) must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
+4. C# projects using the **1.0 Experimental version** of the Windows App SDK must use one of the following .NET SDKs:
     - .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
     - .NET 5 SDK version 5.0.302 or later if you're using Visual Studio 2019 version 16.10
     - .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
@@ -36,6 +36,8 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
 
 ### [C++](#tab/cpp)
+
+Follow these instructions to configure a C++ project.
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -59,6 +61,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
          #include <windows.h> 
          #include <MddBootstrap.h>   
         ```
+
     2. Next, add this code at the beginning of your `main` method to call the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function to initialize the Bootstrapper and handle any errors. This code defines what version of the Windows App SDK the app is dependent upon when initializing the Bootstrapper.
 
         ```cpp
@@ -126,7 +129,9 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
 4. Press F5 to build and run your app.
 
-### [C#](#tab/csharp-dotnet)
+### [C# with 1.0 Preview 2 and later](#tab/csharp-dotnet-preview2)
+
+Follow these instructions to configure a C# project that uses [1.0 Preview 2](preview-channel.md#version-10-preview-2-100-preview2) or a later release of the Windows App SDK.
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -138,7 +143,92 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
         ```xml
         <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
         ```
-    4. Save and close the project file.
+
+    3. Save and close the project file.
+
+3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
+
+    1. Select **Build** > **Configuration Manager**.
+    2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
+    3. In the drop-down under **Type or select the new platform**, select **x64**.
+    4. Click **OK** to close the **New Solution Platform** dialog box.
+    5. In **Configuration Manager**, click **Close**.
+
+4. Install the Windows App SDK NuGet package in your project.
+
+    1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
+    2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
+
+5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
+
+    Open the **Program.cs** code file and replace the default code with the following code.
+
+    ```csharp
+    using System;
+    using Microsoft.Windows.ApplicationModel.DynamicDependency;
+    
+    namespace DynamicDependenciesTest
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Bootstrap.Initialize(0x00010000, "");
+                Console.WriteLine("Hello World!");
+    
+                // Release the DDLM and clean up.
+                Bootstrap.Shutdown();
+            }
+        }
+    }
+    ```
+
+    The bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. In .NET apps that use the Windows App SDK 1.0 Preview 2 or a later release, you can use the [.NET wrapper](reference-framework-package-run-time.md#net-wrapper-for-the-bootstrapper-api) for the bootstrapper API. This wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static `Initialize` and `Shutdown` methods of the `Bootstrap` class in the .NET wrapper for the bootstrapper API.
+
+6. To demonstrate that the Windows App SDK runtime components were loaded properly, add some code that uses the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager) class in the Windows App SDK to load a string resource.
+
+    1. Add a new **Resources File (.resw)** to your project.
+
+    2. With the resources file open in the editor, create a new string resource with the following properties.
+        - Name: **Message**
+        - Value: **Hello World!**
+
+    3. Save the resources file.
+
+    4. Open the **Program.cs** code file and add the following statement to the top of the file:
+
+        ```csharp
+        using Microsoft.Windows.ApplicationModel.Resources;
+        ```
+
+    5. Replace the `Console.WriteLine("Hello World!");` line with the following code.
+
+        ```csharp
+        // Create a resource manager using the resource index generated during build.
+        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+
+        // Lookup a string in the RESW file using its name.
+        Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);
+        ```
+
+7. Press F5 to build and run your app. You should see the string `Hello World!` successfully displayed.
+
+### [C# with 1.0 Preview 1 and earlier](#tab/csharp-dotnet-preview1)
+
+Follow these instructions to configure a C# project that uses the [1.0 Preview 1](preview-channel.md#version-10-preview-1-100-preview1) or [1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1) releases of the Windows App SDK.
+
+1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
+
+2. Next, configure your project.
+
+    1. In **Solution Explorer**, right-click your project and choose **Edit Project File**.
+    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
+
+        ```xml
+        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+        ```
+
+    3. Save and close the project file.
 
 3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
 
@@ -155,7 +245,7 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
         - To install 1.0 Preview 1 or 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
         - To install 0.8 Preview, search for **Microsoft.ProjectReunion**.
 
-5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app. 
+5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
 
     1. Add a new code file named **MddBootstrap.cs** to your project and add the following code to it. The [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions shown in this code example are available via the Windows App SDK NuGet package.
 
@@ -299,6 +389,5 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 
 ## Related topics
 
-- [Deploy unpackaged apps that use the Windows App SDK](deploy-unpackaged-apps.md)
-- [Runtime architecture and deployment scenarios](deployment-architecture.md)
-- [Get started with the Windows App SDK](get-started.md)
+- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+- [Runtime architecture](deployment-architecture.md)

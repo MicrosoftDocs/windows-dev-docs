@@ -6696,6 +6696,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/package-and-deploy/deploy-apps-that-use-the-windows-app-sdk.md",
+      "redirect_url": "/windows/apps/package-and-deploy/index",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/layout/page-layout.md",
       "redirect_url": "/windows/apps/design/basics/app-silhouette",
       "redirect_document_id": false
