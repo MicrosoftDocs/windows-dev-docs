@@ -391,7 +391,7 @@
         - name: Overview
           href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
         - name: Quickstart Sending a push notification (XAML)
-          href: shell/tiles-and-notifications/quickstart-send-push-notifications.md
+          href: shell/tiles-and-notifications/quickstart-send-push-notification.md
         - name: WNS Priorities
           href: shell/tiles-and-notifications/wns-notification-priorities.md
         - name: Allowlisting WNS Traffic

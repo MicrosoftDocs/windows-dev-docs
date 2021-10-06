@@ -110,7 +110,7 @@ catch (WebException webException)
     }
 ```
 
-**HttpStatusCode.Gone / HttpStatusCode.NotFound**: The channel URI is no longer valid. Remove this channel from your database to prevent further attempts to send notification to it. The next time this user launches your app, request a new WNS channel. Your app should detect that its channel has changed, which should trigger the app to send the new channel URI to your app server. For more information, see [How to request, create, and save a notification channel](hh868221(v=win.10)).
+**HttpStatusCode.Gone / HttpStatusCode.NotFound**: The channel URI is no longer valid. Remove this channel from your database to prevent further attempts to send notification to it. The next time this user launches your app, request a new WNS channel. Your app should detect that its channel has changed, which should trigger the app to send the new channel URI to your app server. For more information, see [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh868221(v=win.10)).
 
 ``` csharp
     else if (status == HttpStatusCode.Gone || status == HttpStatusCode.NotFound)

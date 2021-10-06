@@ -1,5 +1,5 @@
 ﻿---
-title: Troubleshooting push notifications 
+title: Troubleshooting WNS push notifications 
 ms:assetid: F0F0791E-D887-43B0-8E7D-3CB762E68361
 ms:mtpsurl: https://msdn.microsoft.com/en-us/library/Dn457491(v=Win.10)
 ms:contentKeyID: 58982757
@@ -8,7 +8,7 @@ ms.topic: article
 mtps_version: v=Win.10
 ---
 
-# Troubleshooting push notifications 
+# Troubleshooting WNS push notifications 
 
 This topic discusses initial troubleshooting steps you should take when you encounter problems with tile, toast, and badge notifications, including the various notification methods: local, push, periodic, and scheduled notifications.
 
