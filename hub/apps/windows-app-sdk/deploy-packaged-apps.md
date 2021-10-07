@@ -15,11 +15,11 @@ This article provides guidance about deploying [MSIX](/windows/msix)-packaged ap
 
 By default, when you create a project using one of the [WinUI project templates](..\winui\winui3\winui-project-templates-in-visual-studio.md) that are provided with the Windows App SDK extension for Visual Studio, your project includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an MSIX package. For more information about configuring this project to build an MSIX package for your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options for deploying it to other computers. For more information, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
-Before configuring your apps for deployment, review [the Windows App SDK deployment architecture](deployment-architecture.md) to learn more about the dependencies your packaged app takes when it uses the Windows App SDK. These dependencies include the **framework**, **main**, and **singleton** packages, which are all signed and published by Microsoft. In order to have the Windows App SDK fully present and functional, all of these packages must be deployed to the system.
+Before configuring your apps for deployment, review [the Windows App SDK deployment architecture](deployment-architecture.md) to learn more about the dependencies your packaged app takes when it uses the Windows App SDK. These dependencies include the **framework**, **main**, and **singleton** packages, which are all signed and published by Microsoft. 
 
 ## Deploy the Windows App SDK framework package
 
-The Windows App SDK framework has different deployment requirements for different versions of the Windows App SDK.
+The Windows App SDK framework package contains the Windows App SDK binaries used at run time, and it is installed with the application. The framework has different deployment requirements for different versions of the Windows App SDK.
 
 ### Preview version
 
@@ -43,13 +43,15 @@ As a result of that declared dependency, the framework package is installed when
 
 ## Deploy the Windows App SDK main and singleton package
 
+The main package contains out-of-process services that are brokered between apps, such as push notifications, and it is also needed for the framework to be serviced by the Microsoft Store. The singleton package supports a single long-running process that is brokered between apps for features like push notifications. 
+
+If developers want to use features not included in the framework and prefer to have the framework automatically updated by the Store without needing to redistribute their packaged app, then the main and singleton packages are also required to be installed on the system. 
+
 While the Windows application model supports framework dependencies, it does not support a packaged app (a main package) declaring a dependency on other main packages (the Windows App SDK main and singleton packages). The framework package that is installed with your app will have the main and singleton package embedded within it, but your packaged app must use the API in the [Microsoft.Windows.ApplicationModel.WindowsAppRuntime](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime) namespace to get those packages installed on the machine. The API in this namespace is also called the *deployment API*.
 
 ### Use the deployment API
 
 The deployment API is provided by the Windows App SDK framework package. You should call the API after your app's process is initialized but before your app uses Windows App SDK runtime content in the main and singleton packages. 
-
-For more information on the main and singleton packages, review [the Windows App SDK deployment architecture](deployment-architecture.md).
 
 > [!IMPORTANT]
 > In Windows App SDK version 1.0, only MSIX packaged apps that are full trust or have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the deployment API to install the main and singleton package dependencies. Support for partial trust packaged apps will be coming in later releases. 
