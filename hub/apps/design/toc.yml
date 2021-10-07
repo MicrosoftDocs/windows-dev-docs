@@ -403,7 +403,7 @@
         - name: Push notification service request and response headers
           href: shell/tiles-and-notifications/push-request-response-headers.md
         - name: Troubleshooting tile, toast, and badge notifications
-          href: shell/tiles-and-notifications/troubleshooting-notifications.md
+          href: shell/tiles-and-notifications/troubleshoot-notifications.md
     - name: Taskbar
       items:
         - name: Pin your app to the taskbar

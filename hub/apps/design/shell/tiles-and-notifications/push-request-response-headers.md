@@ -185,7 +185,8 @@ X-WNS-TTL: `<integer value>`
 
 ### X-WNS-SuppressPopup
 
-**Note**  For Windows Phone Store apps, you have the option to suppress a toast notification's UI, instead sending the notification directly to the action center. This lets your notification be delivered silently, a potentially superior option for less urgent notifications. This header is optional and only used on Windows Phone channels. If you include this header on a Windows channel, your notification will be dropped and you will receive an error response from WNS.
+> [!NOTE]
+> For Windows Phone Store apps, you have the option to suppress a toast notification's UI, instead sending the notification directly to the action center. This lets your notification be delivered silently, a potentially superior option for less urgent notifications. This header is optional and only used on Windows Phone channels. If you include this header on a Windows channel, your notification will be dropped and you will receive an error response from WNS.
 
 X-WNS-SuppressPopup: true | false
 
@@ -196,7 +197,8 @@ X-WNS-SuppressPopup: true | false
 
 ### X-WNS-Group
 
-**Note**  The action center for Windows Phone Store apps can display multiple toast notifications with the same tag only if they are labelled as belonging to different groups. For example, consider a recipe book app. Each recipe would be identified by a tag. A toast that contains a comment on that recipe would have the recipe's tag, but a comment group label. A toast that contains a rating for that recipe would again have that recipe's tag, but would have a rating group label. Those different group labels would allow both toast notifications to be shown at once in the action center. This header is optional.
+> [!NOTE]
+> The action center for Windows Phone Store apps can display multiple toast notifications with the same tag only if they are labelled as belonging to different groups. For example, consider a recipe book app. Each recipe would be identified by a tag. A toast that contains a comment on that recipe would have the recipe's tag, but a comment group label. A toast that contains a rating for that recipe would again have that recipe's tag, but would have a rating group label. Those different group labels would allow both toast notifications to be shown at once in the action center. This header is optional.
 
 X-WNS-Group: `<string value>`
 
@@ -206,7 +208,8 @@ X-WNS-Group: `<string value>`
 
 ### X-WNS-Match
 
-**Note**  Used with the HTTP DELETE method to remove a specific toast, a set of toasts (by either tag or group), or all toasts from the action center for Windows Phone Store apps. This header can specify a group, a tag, or both. This header is required in an HTTP DELETE notification request. Any payload included with this notification request is ignored.
+> [!NOTE]
+> Used with the HTTP DELETE method to remove a specific toast, a set of toasts (by either tag or group), or all toasts from the action center for Windows Phone Store apps. This header can specify a group, a tag, or both. This header is required in an HTTP DELETE notification request. Any payload included with this notification request is ignored.
 
 X-WNS-Match: type:wns/toast;group=`<string value>`;tag=`<string value>` | type:wns/toast;group=`<string value>` | type:wns/toast;tag=`<string value>` | type:wns/toast;all
 

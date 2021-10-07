@@ -17,7 +17,8 @@ You can open a channel Uniform Resource Identifier (URI) over which your app can
 
 You should request a new channel each time that your app is launched, and update the cloud server when the URI changes. For more details, see Remarks.
 
-**Important**  Notification channels automatically expire after 30 days.
+> [!IMPORTANT]
+> Notification channels automatically expire after 30 days.
 
 ## What you need to know
 
@@ -63,7 +64,8 @@ catch (Exception ex)
 
 The channel URI is packaged in an HTTP POST request and sent to the server.
 
-**Important**  You should send this information to your server in a secure manner. You should require the app to authenticate itself with the server when it transmits the channel URI. Encrypt the information and use a secure protocol such as HTTPS.
+> [!IMPORTANT]
+> You should send this information to your server in a secure manner. You should require the app to authenticate itself with the server when it transmits the channel URI. Encrypt the information and use a secure protocol such as HTTPS.
 
 ``` csharp
 String serverUrl = "http://www.contoso.com";

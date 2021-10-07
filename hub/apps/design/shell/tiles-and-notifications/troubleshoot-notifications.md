@@ -62,7 +62,8 @@ If you still do not see your notification displayed after addressing the items i
 
 If WNS doesn't return "200 OK", your notification will not be delivered to the client. If the return code is in the 400s, then you, as a developer, should be able to fix the issue.
 
-**Note**  For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
+> [!NOTE]
+> For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
 
 - Notification request returns "400 Bad Request"
 - Notification request returns "401 Unauthorized"
@@ -120,7 +121,8 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 - Creating a notification channel results in an WPN\_E\_CLOUD\_INCAPABLE error
 - Creating a notification channel results in an WPN\_E\_INVALID\_APP error
 
-**Note**  For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
+> [!NOTE]
+> For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
 
 ### Creating a notification channel results in an ERROR\_NO\_NETWORK error
 

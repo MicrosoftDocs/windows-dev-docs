@@ -84,7 +84,8 @@ using (Stream requestStream = request.GetRequestStream())
 
 ### 5. Listen for a response from WNS that acknowledges receipt of the notification
 
-**Note**  You will never receive a delivery confirmation for a notification, just an acknowledgment that it was received by WNS.
+> [!NOTE]
+> You will never receive a delivery confirmation for a notification, just an acknowledgment that it was received by WNS.
 
 ``` csharp
 using (HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse())
