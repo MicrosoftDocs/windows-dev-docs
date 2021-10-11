@@ -30,6 +30,41 @@ The latest available release of the stable channel is the servicing release 0.8.
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
 
+### Version 0.8.5
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+- Fixed issue that was causing WinUI apps using [pointer input](/windows/winui/api/microsoft.ui.xaml.input.pointer) to crash. 
+- Fixed issue causing the title bar buttons (min, max, close) to not have rounded corners on Windows 11. 
+- Fixed issue causing the resizing layout options to not appear when hovering over maximize/restore button on Windows 11. 
+- Fixed issue causing a crashing exception where creating a [PointCollection](/windows/winui/api/microsoft.ui.xaml.media.pointcollection) object. For more information, see [issue 971](https://github.com/microsoft/CsWinRT/issues/971) on Github. 
+
+The limitations and known issues for version 0.8 also apply to version 0.8.5, unless marked otherwise in the [section below](#limitations).
+
+### Version 0.8.4
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+- Fixes for custom title bars so that [ContentDialog](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog) doesn't cover it up, and the title bar buttons are rounded.
+- Fix for a crash in image processing when the display scale is changed.
+- Fixes clipping bugs where UI disappear or clipped incorrectly
+
+The limitations and known issues for version 0.8 also apply to version 0.8.4, unless marked otherwise in the [section below](#limitations).
+
+### Version 0.8.3
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+Keyboard focus was being lost when a window was minimized and then restored, requiring a mouse click to restore focus.
+
+The limitations and known issues for version 0.8 also apply to version 0.8.3, unless marked otherwise in the [section below](#limitations).
+
 ### Version 0.8.2
 
 This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
