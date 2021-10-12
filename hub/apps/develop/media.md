@@ -192,24 +192,40 @@ Lorem ipsum
 [Custom video effects](/windows/uwp/audio-video-camera/custom-video-effects) 
 
 
-## Debugging
+## Editing and transcoding
+
+Anton suggested putting the SourceReader and SinkWriter sections here as well as above. I think it should be one or the other.
+[Transcode media files](/windows/uwp/audio-video-camera/transcode-media-files)
+[Media compositions and editing](/windows/uwp/audio-video-camera/media-compositions-and-editing)
+
+
+## Other developer scenarios
 
 ### Debuggung with MXA tool
 
 I can't find much content. This page on the hardware site references it:
 [Performance tools](/windows-hardware/test/weg/performance-tools)
 
-## Content Protection
+### Content Protection
 
 
 [PlayReady DRM](/windows/uwp/audio-video-camera/audio-graphs) 
-
-
 [How to Play Protected Media Files](/windows/win32/medfound/how-to-play-protected-media-files)
+
+### Codec information
+
+[Query for installed codecs](/windows/uwp/audio-video-camera/codec-query)
+
+
+We’ve added extensions to the generic W3C behavior here.  E.g. with our APIs you can query for audio codec and audio endpoint type.
+
+[IMFMediaEngine::CanPlayType method (mfmediaengine.h)](/windows/win32/api/mfmediaengine/nf-mfmediaengine-imfmediaengine-canplaytype)
+[MediaElement.CanPlayType(String) Method](/uwp/api/windows.ui.xaml.controls.mediaelement.canplaytype)
+
 
 ### TBD
 
-- mention that EVR is deprecated. Other deprecated APIs?
+- mention that EVR is deprecated. Other deprecated APIs? Maybe section called "Legacy APIs"
 - Windows-classic-samples/Samples/CaptureEngineVideoCapture at main · microsoft/Windows-classic-samples · GitHub
 TopoEdit
 
