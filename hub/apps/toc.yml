@@ -225,8 +225,6 @@
             href: develop/accessibility.md
           - name: Speech
             href: develop/speech.md
-          - name: Media
-            href: develop/media.md
   - name: Package and deploy
     items:
       - name: Overview
