@@ -31,7 +31,7 @@ You can launch the Store App to a specific page or section using the following o
 
 ## Opening to a specific product
 
-You can launch the Store directly to the product detail page (PDP) for a specific product by using the Store ID for an App. While the Store app on Windows 10 and Windows 11 still supports Package Family Name (PFN) and Product IDs, these are deprecated and may not be supported in the future. These values can be found in Partner Center on the App identity page in the App management section for each app.
+You can launch the Store directly to the product detail page (PDP) for a specific product by using the Product ID for an App. While the Store app on Windows 10 and Windows 11 still supports Package Family Name (PFN) and App IDs, these are deprecated and may not be supported in the future. These values can be found in Partner Center on the App identity page in the Product management section for each app.
 
 Starting with the October 2021 update to the Store app, there are two modes available for displaying the PDP. By default the Store app is opened to the product detail page. You can also launch the store into with a popup experience that displays a smaller PDP dialog with that only displays the essential details for your app and a single action button for users. For the popup experience, you can optionally specify the location of a window that the dialog should be centered above.
 
@@ -39,8 +39,8 @@ Starting with the October 2021 update to the Store app, there are two modes avai
 |---------------------------------------------------------------------|-------------|-------|
 | ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL                      | Launches the full product details page (PDP) for a product | This is the recommended way to link to a specific product.
 | ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe | Launches the full product details page (PDP) for a product | Using the package family name is deprecated.
-| ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117  | Launches the full product details page (PDP) for a product | Using the productid is deprecated.
-| ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL&mode=mini            | Launches the popup Store dialog experience | The popup experience only supports Store ID |
+| ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117  | Launches the full product details page (PDP) for a product | Using the App ID is deprecated.
+| ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL&mode=mini            | Launches the popup Store dialog experience | The popup experience only supports Product ID |
 
 ## Launching the rating and review experience for a product
 
