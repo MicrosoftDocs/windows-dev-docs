@@ -127,6 +127,8 @@
               items:
                 - name: Overview
                   href: ../package-manager/winget/index.md
+                - name: Debugging and troubleshooting
+                  href: ../package-manager/winget/troubleshooting.md
                 - name: export command
                   href: ../package-manager/winget/export.md
                 - name: features command

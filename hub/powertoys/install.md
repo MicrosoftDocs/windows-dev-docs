@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 # Install PowerToys
 
 > [!WARNING]
-> PowerToys v0.37 and beyond will require Windows 10 v1903 or greater. The v1 settings, which supports older Windows versions, will be removed in v0.37.
+> PowerToys v0.37 and beyond will require Windows 10 v1903 or greater. The v1 settings, which supports older Windows versions, was removed in v0.37.
 
 We recommend installing PowerToys via GitHub, but alternative install methods are also listed if you prefer using a package manager.
 
@@ -33,7 +33,7 @@ To install PowerToys using a Windows executable file:
 - [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
 - x64 architecture currently supported. ARM and x86 support to become available at a later date.
 
-To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting <kbd>⊞ Win</kbd> + <kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings** menu.
+To ensure that your machine meets these requirements, check your Windows 10 version and build number by selecting <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings** menu.
 
 ## Alternative Install Methods
 

@@ -2,7 +2,7 @@
 description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
 title: Modernize your desktop apps for Windows
 ms.topic: article
-ms.date: 10/02/2020
+ms.date: 09/21/2021
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
@@ -19,7 +19,7 @@ This article describes the features that you can use in your desktop apps today.
 
 ## Apply Windows 11 features
 
-Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, the Snap Layout Menu, and the updated context menu in File Explorer.
+Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, snap layouts, and the updated context menu in File Explorer.
 
 For more information, see [Top 11 things you can do to make your app great on Windows 11](../../get-started/make-apps-great-for-windows.md).
 

@@ -34,10 +34,10 @@ productDirectory:
   - title: Get started
     imageSrc: https://docs.microsoft.com/media/common/i_get-started.svg
     links:
+      - url: ./get-started/index.md
+        text: Overview of app development options
       - url: ./windows-app-sdk/set-up-your-development-environment.md
         text: Set up your development environment
-      - url: ./get-started/index.md
-        text: Get started developing apps
       - url: ./windows-app-sdk/index.md
         text: Build apps with the Windows App SDK 
       - url: ./get-started/build-apps-for-windows.md
@@ -56,7 +56,7 @@ productDirectory:
   - title: Develop
     imageSrc: https://docs.microsoft.com/media/common/i_code-samples.svg
     links:
-      - url: features-and-technologies.md
+      - url: ./develop/features-and-technologies.md
         text: Windows development features
       - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
         text: Windows App SDK features
@@ -73,7 +73,7 @@ productDirectory:
         text: Package apps using MSIX
       - url: /windows/msix/desktop/managing-your-msix-deployment-overview
         text: Manage your MSIX deployment
-      - url: ./windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
+      - url: ./package-and-deploy/index.md#apps-that-use-the-windows-app-sdk
         text: Deploy apps that use the Windows App SDK
 
 tools:

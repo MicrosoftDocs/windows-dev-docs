@@ -391,6 +391,7 @@ The following WinRT classes require require [package identity](modernize-package
 * [Windows.Services.Store.StoreSendRequestResult](/uwp/api/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](/uwp/api/Windows.Services.Store.StoreSku)
 * [Windows.Services.Store.StoreVideo](/uwp/api/Windows.Services.Store.StoreVideo)
+* [Windows.Storage.ApplicationData](/uwp/api/windows.storage.applicationdata)
 * [Windows.Storage.ApplicationDataSetVersionHandler](/uwp/api/windows.storage.applicationdatasetversionhandler)
 * [Windows.Storage.CachedFileManager](/uwp/api/Windows.Storage.CachedFileManager)
 * [Windows.Storage.DownloadsFolder](/uwp/api/Windows.Storage.DownloadsFolder)

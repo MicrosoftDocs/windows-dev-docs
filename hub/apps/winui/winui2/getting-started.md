@@ -2,13 +2,13 @@
 title: Getting started with the Windows UI library
 description: How to install and use the Windows UI Library. 
 ms.topic: article
-ms.date: 06/24/2021
+ms.date: 09/14/2021
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
 # Getting started with the Windows UI 2 Library
 
-[Windows UI Library 2.6](winui-2.6.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+[Windows UI Library 2.7](release-notes/winui-2.7.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
@@ -22,7 +22,7 @@ The library is available as a NuGet package that can be added to any new or exis
 2. Open an existing project, or create a new project using the Blank App template under Visual C# -> Windows -> Universal, or the appropriate template for your language projection.  
 
     > [!IMPORTANT]
-    > To use WinUI 2.6, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
+    > To use WinUI 2.7, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
 
 3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. 
 

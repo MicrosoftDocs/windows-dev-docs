@@ -47,23 +47,21 @@ The fallback encoder is used when the file cannot be saved in its original forma
 
 The file name of the resized image can be modified with the following parameters:
 
-- `%1`: Original filename
-- `%2`: Size name (as configured in the PowerToys Image Resizer settings)
-- `%3`: Selected width
-- `%4`: Selected height
-- `%5`: Actual height
-- `%6`: Actual width
+| Parameter | Result |
+| :--- | :--- |
+| `%1` | Original filename |
+| `%2` | Size name (as configured in the PowerToys Image Resizer settings) |
+| `%3` | Selected width |
+| `%4` | Selected height |
+| `%5` | Actual height |
+| `%6` | Actual width |
 
-For example, setting the filename format to: `%1 (%2)` on the file `example.png` and selecting the `Small` file size setting, would result in the file name `example (Small).png`.
+For example, setting the filename format to: `%1 (%2)` on the file `example.png` and selecting the `Small` file size setting, would result in the file name `example (Small).png`. Setting the format to `%1_%4` on the file `example.jpg` and selecting the size setting `Medium 1366 x 768px` would result in the file name: `example_768.jpg`.
 
-Setting the format to `%1_%4` on the file `example.jpg` and selecting the size setting `Medium 1366 x 768px` would result in the file name: `example_768.jpg`.
+You can specify a directory in the filename format to group resized images into sub-directories. For example, a value of `%2\%1` would save the resized image(s) to `Small\example.jpg`
 
 You can also choose to retain the original *last modified* date on the resized image.
 
 ### Auto width/height
 
 You can leave the height or width empty. This will honor the specified dimension and "lock" the other dimension to a value proportional to the original image aspect ratio.
-
-### Sub-directories
-
-You can specify a directory in the filename format to group resized images into sub-directories. For example, a value of `%2\%1` would save the resized image to `Small\Sample.jpg`

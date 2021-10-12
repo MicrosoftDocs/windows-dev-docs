@@ -13,8 +13,16 @@ ms.localizationpriority: medium
 
 Push notifications in the Windows App SDK use [Windows Notification Push Service](https://aka.ms/wns) to send rich notifications to Windows apps using Azure App Registration identities.
 
+## Prerequisites
+
 > [!IMPORTANT]
-> Push notifications are currently experimental and supported only in the [experimental release channel](../../experimental-channel.md) of the Windows App SDK. The API surface is subject to change.
+> Push notifications are currently experimental and supported only in the [experimental release channel](../../experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments, and the API surface is subject to change.
+
+To use push notifications in the Windows App SDK:
+
+1. Download and install the latest experimental release of the Windows App SDK. For more information, see [Install developer tools](../../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+2. Follow the instructions to [create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../../use-windows-app-sdk-in-existing-project.md).
+
 
 ## Push notification types and usage scenarios
 

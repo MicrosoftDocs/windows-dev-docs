@@ -34,6 +34,8 @@ The options allow you to customize the import experience to meet your needs.
 |-------------|-------------|  
 | **--ignore-unavailable**  |  Suppresses errors if the app requested is unavailable.  |
 | **--ignore-versions** |  Ignores versions specified in the JSON file and installs the latest available version. |
+| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 
 ## JSON Schema
 

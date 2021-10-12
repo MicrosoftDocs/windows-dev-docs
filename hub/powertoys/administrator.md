@@ -26,7 +26,7 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 Most apps do not need to run with elevated permission. A common scenario, however, for requiring administrator permission would be to run certain PowerShell commands or edit the registry.
 
-If you see this prompt (User Access Control prompt), the application is requesting administrator level elevated permission:
+If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
 ![Windows elevated permission prompt screenshot](../images/pt-admin-prompt.png)
 

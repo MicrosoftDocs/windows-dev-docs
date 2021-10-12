@@ -16,30 +16,30 @@ Quickly mute your microphone (audio) and turn off your camera (video) with a sin
 
 ## Usage
 
-The default settings to use Video Conference Mute are:
+The default shortcuts to use Video Conference Mute are:
 
-- <kbd>⊞ Win</kbd> + <kbd>N</kbd> to toggle both Audio and Video at the same time
-- <kbd>⊞ Win</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> to toggle microphone
-- <kbd>⊞ Win</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> to toggle video
+- <kbd>⊞ Win</kbd>+<kbd>N</kbd> to toggle both Audio and Video at the same time
+- <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> to toggle microphone
+- <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> to toggle video
 
 ![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
 
-When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether the your Microphone and Camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
+When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether your Microphone and Camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
 
-> [!NOTE]
-> Remember that you must have the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) installed and running, with the Video Conference Mute feature enabled in PowerToys settings in order to use this utility.
 
 ## Settings
 
 The Video Conference Mute tab in PowerToys settings provides the following options:
 
-- **Shortcuts:** Change the shortcut key used to mute your microphone, camera, or both combined.
-- **Selected microphone:** Select the microphone on your machine that this utility will use.
-- **Selected camera:** Select the camera on your machine that this utility will use.
-- **Camera overlay image:** Select an image to that will be used as a placeholder when your camera is turned off. By default, a black screen will appear when your camera is turned off with this utility.
-- **Toolbar:** Set the position where the *Microphone On, Camera On* toolbar displays when toggled (default: top right corner).
-- **Show toolbar on:** Select whether you prefer the toolbar to be displayed on the main monitor only (default) or on all monitors.
-- **Hide toolbar when both camera and microphone are unmuted**: A checkbox is available to toggle this option.
+| Setting | Description |
+| :--- | :--- |
+| Shortcuts | Change the shortcut key used to mute your microphone, camera, or both combined |
+| Selected microphone | Select the microphone on your machine that this utility will use |
+| Selected camera | Select the camera on your machine that this utility will use |
+| Camera overlay image | Select an image to that will be used as a placeholder when your camera is turned off. By default, a black screen will appear when your camera is turned off with this utility. |
+| Toolbar | Set the position where the *Microphone On, Camera On* toolbar displays when toggled (default: top right corner) |
+| Show toolbar on | Select whether you prefer the toolbar to be displayed on the main monitor only (default) or on all monitors
+| Hide toolbar when both camera and microphone are unmuted | A checkbox is available to toggle this option
 
 ![Video Conference Mute options in PowerToys settings](../images/pt-video-conference-mute-settings.png)
 

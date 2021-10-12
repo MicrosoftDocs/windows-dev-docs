@@ -49,10 +49,10 @@ If your app is for drawing or similar tasks using pen, consider using [Inking co
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ColorPicker">open the app and see the ColorPicker in action</a>.</p>
+    <p>If you have the **XAML Controls Gallery** app installed and updated to the latest version, see the <a href="xamlcontrolsgallery:/item/ColorPicker">ColorPicker</a> in action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li>If you don't have the XAML Controls Gallery app installed, get it from the <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Microsoft Store</a></li>
+    <li>You can also view, clone, and build the XAML Controls Gallery source code from <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">GitHub</a></li>
     </ul>
 </td>
 </tr>
@@ -192,6 +192,20 @@ This example shows how to configure the color picker with a simple UI for "casua
 ```
 
 ![A simple color picker](images/color-picker-casual.png)
+
+#### Specify the layout direction
+
+Use the Orientation property to specify whether the ColorPicker should align vertically or horizontally. This affects the location of the editing controls relative to the color spectrum. By default, the orientation is Vertical.
+
+```xaml
+<ColorPicker IsAlphaEnabled="True" 
+             Orientation="Horizontal"/>
+```
+
+![A color picker in a horizontal orientation](images/color-picker-horizontal.png)
+
+> [!NOTE]
+> If the Orientation is set to Horizontal, the ColorPicker does **not** apply the [IsMoreButtonVisible](/windows/winui/api/microsoft.ui.xaml.controls.colorpicker.ismorebuttonvisible) property.
 
 #### Show or hide additional features
 

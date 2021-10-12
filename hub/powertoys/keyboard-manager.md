@@ -11,26 +11,26 @@ no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
 
 The PowerToys Keyboard Manager enables you to redefine keys on your keyboard.
 
-For example, you can exchange the letter <kbd>C</kbd> for the letter <kbd>D</kbd> on your keyboard. When you select the <kbd>C</kbd> key, a "D" will display.
+For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd> on your keyboard. When you press the <kbd>A</kbd> key, a `B` will display.
 
 ![PowerToys Keyboard Manger remap keys screenshot](../images/powertoys-keyboard-remap.png)
 
-You can also exchange shortcut key combinations. For example, the shortcut key, <kbd>Ctrl</kbd> + <kbd>C</kbd>, will copy text in Microsoft Word. With PowerToys Keyboard Manager utility, you can exchange that shortcut for <kbd>⊞ Win</kbd> + <kbd>C</kbd>. Now, <kbd>⊞ Win</kbd> + <kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
+You can also exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in Microsoft Word. With PowerToys Keyboard Manager utility, you can exchange that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
 > [!NOTE]
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
-> - <kbd>⊞ Win</kbd> + <kbd>L</kbd> and <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
+> - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
 > - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
-> - <kbd>Pause</kbd> will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing + holding will only delete a single character.
+> - <kbd>Pause</kbd> will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing and holding will only delete a single character.
 
 ## Settings
 
 To create mappings with Keyboard Manager, you will need to open the PowerToys Settings. Inside PowerToys Settings, on the Keyboard Manager tab, you will see options to:
 
-- Launch the Remap Keys settings window by selecting <kbd>Remap a key</kbd>
-- Launch the Remap Shortcuts settings window by selecting <kbd>Remap a shortcut</kbd>
+- Launch the Remap Keys settings window by pressing <kbd>Remap a key</kbd>
+- Launch the Remap Shortcuts settings window by pressing <kbd>Remap a shortcut</kbd>
 
 ## Remap Keys
 
@@ -38,15 +38,17 @@ To remap a key, changing it to a new value, launch the Remap Keyboard settings w
 
 Once a new remap row appears, select the input key whose output you want to *change* in the “Key” column. Select the new key value to assign in the “Mapped To” column.
 
-For example, if you want to press <kbd>A</kbd> and have "B" appear:
+For example, if you want to press <kbd>A</kbd> and have `B` appear:
 
-- Key: "A"
-- Mapped To: "B"
+| Key: | Mapped To: |
+| :--- | :--- |
+| `A` | `B` |
 
 To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add another remapping with:
 
-- Key: "B"
-- Mapped To: "A"
+| Key: | Mapped To: |
+| :--- | :--- |
+| `B` | `A` |
 
 ![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
 
@@ -54,26 +56,30 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 
 To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "Mapped To" column.
 
-For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in "⊞ Win" + "←" (left arrow):
+For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in `⊞ Win` + `←` (left arrow):
 
-- Key: "Ctrl"
-- Mapped To: "⊞ Win" + "←" (left arrow)
+| Key: | Mapped To: |
+| :--- | :--- |
+| `Ctrl` | `⊞ Win` + `←` |
+
 
 > [!NOTE]
-> Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd> + <kbd>C</kbd> would result as "⊞ Win" + "left arrow" + "C". Pressing the <kbd>Ctrl</kbd> key will first execute "⊞ Win" + "left arrow". Pressing the <kbd>C</kbd> key first will execute "C" + "⊞ Win" + "left arrow".
+> Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
 
 ## Remap Shortcuts
 
-To remap a shortcut key combination, like <kbd>Ctrl</kbd> + <kbd>C</kbd>, select <kbd>Remap a shortcut</kbd> to launch the Remap Shortcuts settings window.
+To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, press <kbd>Remap a shortcut</kbd> to launch the Remap Shortcuts settings window.
 
 When first launched, no predefined mappings will be displayed. You must select the <kbd>+</kbd> button to add a new remap.
 
 Once a new remap row appears, select the input keys whose output you want to *change* in the “Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
 
-For example, the shortcut <kbd>Ctrl</kbd> + <kbd>C</kbd> copies your selected text. To remap that shortcuts to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
+For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies your selected text. To remap that shortcuts to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
 
-- Shortcut: "Ctrl" + "C"
-- Mapped To: "Alt" + "C"
+| Shortcut: | Mapped To: |
+| :--- | :--- |
+| `Alt` + `C` | `Ctrl` + `C` |
+
 
 ![Keyboard Remap Shortcut screenshot](../images/powertoys-keyboard-remap-shortcut.png)
 
@@ -87,43 +93,44 @@ There are a few rules to follow when remapping shortcuts (these rules only apply
 
 It is possible to remap a shortcut (key combination) to a single key press by selecting the <kbd>Remap a shortcut</kbd> button in PowerToys Settings. 
 
-For example, to replace the shortcut <kbd>⊞ Win</kbd> + <kbd>←</kbd> (left arrow) with a single key press <kbd>Alt</kbd>:
+For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arrow) with a single key press <kbd>Alt</kbd>:
 
-- Shortcut: "⊞ Win" + "←"
-- Mapped To: "Alt"
+| Shortcut: | Mapped To: |
+| :--- | :--- |
+| `⊞ Win` + `←` | `Alt` |
 
 > [!NOTE]
-> Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd> + <kbd>←</kbd> + <kbd>Shift</kbd> would result in "Alt" + "Shift".
+> Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
 ## App-specific shortcuts
 
 Keyboard Manager enables you to remap shortcuts for only specific apps (rather than globally across Windows).
 
-For example, in the Outlook email app the shortcut <kbd>Ctrl</kbd> + <kbd>E</kbd> is set by default to search for an email. If you prefer instead to set <kbd>Ctrl</kbd> + <kbd>F</kbd> to search your email (rather than forward an email as set by default), you can remap the shortcut with "Outlook" set as your "Target app".
+For example, in the Outlook email app the shortcut <kbd>Ctrl</kbd>+<kbd>E</kbd> is set by default to search for an email. If you prefer instead to set <kbd>Ctrl</kbd>+<kbd>F</kbd> to search your email (rather than forward an email as set by default), you can remap the shortcut with "Outlook" set as your "Target app".
 
 Keyboard Manager uses the process-names (not application names) to target apps. For example, Microsoft Edge is set as "msedge" (process name), not "Microsoft Edge" (application name). To find an application's process name, open PowerShell and enter the command `get-process` or open Command Prompt and enter the command `tasklist`. This will result in a list of process names for all applications you currently have open. Below is a list of a few popular application process names.
 
-  | **Application**   | **Process name**|
-  | ------------------| --------------|
-  | Microsoft Edge    |  msedge.exe   |
-  | OneNote           |  onenote.exe  |
-  | Outlook           |  outlook.exe  |
-  | Teams             |  Teams.exe    |
-  | Adobe Photoshop   |  Photoshop.exe|
-  | File Explorer     |  explorer.exe |
-  | Spotify Music     |  spotify.exe  |
-  | Google Chrome     |  chrome.exe   |
-  | Excel             |  excel.exe    |
-  | Word              |  winword.exe  |
-  | Powerpoint        |  powerpnt.exe |
+| Application     | Process name  |
+| :---            | :---          |
+| Microsoft Edge  |  msedge.exe   |
+| OneNote         |  onenote.exe  |
+| Outlook         |  outlook.exe  |
+| Teams           |  Teams.exe    |
+| Adobe Photoshop |  Photoshop.exe|
+| File Explorer   |  explorer.exe |
+| Spotify Music   |  spotify.exe  |
+| Google Chrome   |  chrome.exe   |
+| Excel           |  excel.exe    |
+| Word            |  winword.exe  |
+| Powerpoint      |  powerpnt.exe |
 
 ### Keys that cannot be remapped
 
 There are certain shortcut keys that are not allowed for remapping. These include:
 
-- <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd> (interrupt command)
-- <kbd>⊞ Win</kbd> + <kbd>L</kbd> (locking your computer)
-- The function key <kbd>Fn</kbd> cannot be remapped (in most cases) but <kbd>F1</kbd> - <kbd>F12</kbd> can be mapped.
+- <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> (interrupt command)
+- <kbd>⊞ Win</kbd>+<kbd>L</kbd> (locking your computer)
+- The <kbd>Fn</kbd> function key cannot be remapped (in most cases) but <kbd>F1</kbd> ~ <kbd>F12</kbd> can be mapped.
 
 ## How to select a key
 
@@ -140,9 +147,7 @@ Using the drop-down menu, you can search with the key name and additional drop-d
 
 Orphaning a key means that you mapped it to another key and no longer have anything mapped to it.
 
-For example, if the key is remapped from "A" to "B", then a key no longer exists on your keyboard that results in "A".
-
-To fix this, use <kbd>+</kbd> to create another remapped key that is mapped to result in "A". To ensure this does not happen by accident, a warning will display for any orphaned keys.
+For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To ensure this does not happen by accident, a warning will display for any orphaned keys. To fix this, use <kbd>+</kbd> to create another remapped key that is mapped to result in `A`.
 
 ![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
 
@@ -158,7 +163,7 @@ No, Keyboard Manager is only available when PowerToys is running and doesn’t w
 
 ### Do I have to restart my computer or PowerToys for the remapping to take effect?
 
-No, remapping should occur immediately upon pressing <kbd>Apply</kbd>.
+No, remapping should occur immediately upon pressing <kbd>OK</kbd>.
 
 ### Where are the Mac/Linux profiles?
 
@@ -170,7 +175,7 @@ It depends on how the game accesses your keys. Certain keyboard APIs do not work
 
 ### Will remapping work if I change my input language?
 
-Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in "B", this is consistent with how Windows handles multilingual input.
+Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in `B`, this is consistent with how Windows handles multilingual input.
 
 ## Troubleshooting
 

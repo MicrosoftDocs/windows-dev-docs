@@ -8,9 +8,8 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Style for Windows apps
 
-![Style icon](../images/style-2x.png)
+# Style for Windows apps
 
 Style is what makes your app stand out. The style guidelines in this section help you create a Fluent Design through color, typography, and new features such as acrylic material and reveal highlight.
 

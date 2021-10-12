@@ -2359,7 +2359,7 @@ You can get the sub-value for a power scheme by using the following request form
  
 | Method      | Request URI |
 | :------     | :----- |
-| GET | /api/power/cfg/*<power scheme path>* |
+| GET | /api/power/cfg/*\<power scheme path>* |
 
 Options:
 - SCHEME_CURRENT
@@ -2497,7 +2497,7 @@ You can set the sub-value for a power scheme by using the following request form
  
 | Method      | Request URI |
 | :------     | :----- |
-| POST | /api/power/cfg/*<power scheme path>* |
+| POST | /api/power/cfg/*\<power scheme path>* |
 
 
 **URI parameters**

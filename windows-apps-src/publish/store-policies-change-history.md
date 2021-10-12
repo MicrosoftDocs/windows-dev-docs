@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 06/28/2021
+ms.date: 09/28/2021
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -26,8 +26,30 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <tbody>
 </tr>
 <tr class="odd">
+<td>September 28, 2021</td>
+<td><a href="/windows/uwp/publish/store-policies">7.15</a></td>
+<td>
+<p>Update to 10.1.3 requirements for product search terms.</p>
+<p>Update to 10.1.5, removing prohibition on products whose primary functionality is to enable acquisition of digital goods from outside the Store.</p>
+<p>New 10.1.6 policy allowing products that are standalone digital storefronts on PC devices.</p>
+<p>Update to 10.2.1 regarding web browser requirements on console. </p>
+<p>Update to 10.13.4, prohibiting products that enable general browsing of the operating system, file systems or attached physical media file structures</p>
+<p>Update to 10.13.10, added game platform.</p>
+<p>New 11.13, added Third Party Digital Storefronts content policy. </p>
+</td>
+</tr>
+<tr class="even">
+<td>July 30, 2021</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
+<td>
+<p><b>Note</b>: The below updates were added to version 7.14 of the Store Policies on July 30, 2021. </p>
+<p>Update to 10.2.4, updated to require exception for dependency on non-Microsoft drivers or NT services.  </p>
+<p>Update to 10.14 to include application name.  </p>
+</td>
+</tr>
+<tr class="odd">
 <td>June 28, 2021</td>
-<td><a href="/windows/uwp/publish/store-policies">7.14</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
 <td>
 <p>Update to 10.1.5 to allow specific additional products, adds-ons or extensions to be available from within your product.</p>
 <p>Update to 10.2, incorporating product safety testing and other product safety requirements previously included in policy 11.3.</p>

@@ -2,7 +2,7 @@
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
-ms.date: 08/12/2021
+ms.date: 09/21/2021
 keywords: windows win32, desktop development
 ms.author: jimwalk
 author: jwmsft
@@ -99,24 +99,24 @@ We are introducing a new material called _Mica_ that lets the user's desktop bac
 
 [Mica guidance](../design/style/mica.md), [Acrylic guidance](../design/style/acrylic.md)
 
-## 6. Make your Windows use rounded corners and Snap Layout Menu
+## 6. Use rounded corners for your windows and support snap layouts
 
-App windows have new features like rounded corners and the Snap Layout Menu that your app will get automatically in most cases. If you've customized you window or title bar, you might need to do some work to make sure these new features are used.
+App windows have new features like rounded corners and a menu with snap layouts that your app will automatically receive in most cases. If you've customized your window or title bar, you might need to do some work to make sure these new features are supported.
 
 We rounded the corners of window borders in Windows 11. Our user research team found that rounded geometry psychologically provides a feeling of safety and makes the app's UI much easier to scan. This makes users feel less intimidated and the app feel more engaging. The amount of rounding was also carefully chosen. We worked across the company and user research to balance between feeling professional and being softer and more inviting.
 
 ![An image of an app window with rounded corners.](images/great-apps/rounded-corners.png)
 
-The Snap Layout Menu is a key feature in Windows 11 to help introduce users to the power of window snapping. With the menu, users can quickly layout their windows to multitask on larger screens and create an entire layout with Guided Snap Assist by simply hovering the mouse over the maximize button or pressing Win + Z​.
+Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Snap layouts are easily accessible by hovering the mouse over a window's maximize button or pressing Win + Z. After invoking the menu that shows the available layouts, users can click on a zone in a layout to snap a window to that particular zone and then use Snap Assist to finish building an entire layout of windows. Snap layouts are tailored to the current screen size and orientation, including support for three side-by-side windows on large landscape screens and top/bottom stacked windows on portrait screens.
 
-- Most apps will automatically receive rounded corners and the Snap Layout Menu, but in some cases you might need to do a little work to get them:
+- Most apps will automatically receive rounded corners and support for the menu with snap layouts, but in some cases you might need to do a little work to get them:
   - Allow the system to draw your border and shadow.
   -  If you need to draw your own border and shadow:
      - Call our rounding API to opt in. See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/apply-rounded-corners.md).
-     - Use our APIs to have the platform draw and implement the caption buttons. See [Apply the Snap Layout Menu in desktop apps for Windows 11](../desktop/modernize/apply-snap-layout-menu.md).
+     - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/apply-snap-layout-menu.md).
 - You will get these features automatically if you use UWP or you adopt Windows App SDK windowing to:
   - Configure the style of your window using the pre-defined templates.
-  - Customize the TitleBar of your windows.
+  - Customize the title bar of your windows.
 
 ## 7. Support Dark and Light themes
 

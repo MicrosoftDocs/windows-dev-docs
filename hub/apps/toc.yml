@@ -7,10 +7,10 @@
           href: get-started/index.md
         - name: Set up your development environment
           items:
-              - name: System requirements
-                href: windows-app-sdk/system-requirements.md
               - name: Install developer tools
                 href: windows-app-sdk/set-up-your-development-environment.md
+              - name: System requirements
+                href: windows-app-sdk/system-requirements.md
               - name: Enable your device for development
                 href: get-started/enable-your-device-for-development.md
               - name: Developer mode features and debugging
@@ -27,8 +27,8 @@
               href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
             - name: "Package your app using single-project MSIX"
               href: windows-app-sdk/single-project-msix.md
-            - name: "Samples"
-              href: windows-app-sdk/samples.md
+            - name: "Downloads"
+              href: windows-app-sdk/downloads.md
             - name: "Releases"
               items:
                 - name: "Release channels"
@@ -57,6 +57,8 @@
               href: desktop/visual-studio-templates.md
             - name: "WinUI templates"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
+        - name: Samples 
+          href: get-started/samples.md
   - name: Design and UI
     href: design/toc.yml
   - name: Develop
@@ -69,12 +71,14 @@
             href: windows-app-sdk/mrtcore/mrtcore-overview.md
           - name: "Render text"
             href: windows-app-sdk/dwritecore.md
-          - name: Control app activation
+          - name: Manage app lifecycle
             items:
               - name: App instancing
                 href: windows-app-sdk/applifecycle/applifecycle-instancing.md
               - name: Rich activation
                 href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+              - name: Power management
+                href: windows-app-sdk/applifecycle/applifecycle-power.md
           - name: "Manage app windows"
             href: windows-app-sdk/windowing/windowing-overview.md
           - name: "Push notifications"
@@ -109,6 +113,8 @@
                 items: 
                   - name: "Overview"
                     href:  winui/winui2/release-notes/index.md
+                  - name: "WinUI 2.7"
+                    href: winui/winui2/release-notes/winui-2.7.md
                   - name: "WinUI 2.6"
                     href: winui/winui2/release-notes/winui-2.6.md
                   - name: "WinUI 2.5"
@@ -133,7 +139,7 @@
                     href: get-started/make-apps-great-for-windows.md
                   - name: Apply rounded corners in Windows 11
                     href: desktop/modernize/apply-rounded-corners.md
-                  - name: Apply the Snap Layout Menu
+                  - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
             - name: Call Windows Runtime APIs
               items:
@@ -225,26 +231,24 @@
     items:
       - name: Overview
         href: package-and-deploy/index.md
-      - name: Deploy apps that use the Windows App SDK
+      - name: Windows App SDK deployment guide
         items:
-          - name: "Overview"
-            href: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md 
-          - name: "Run time architecture and deployment scenarios"
+          - name: "Runtime architecture"
             href: windows-app-sdk/deployment-architecture.md
-          - name: "Deploy packaged apps"
-            href: windows-app-sdk/deploy-packaged-apps.md 
-          - name: "Deploy unpackaged apps"
+          - name: "Deployment guide for packaged apps"
+            href: windows-app-sdk/deploy-packaged-apps.md
+          - name: "Deployment guide for unpackaged apps"
             items:
-              - name: "Overview"
+              - name: Overview
                 href: windows-app-sdk/deploy-unpackaged-apps.md
               - name: Reference the Windows App SDK framework package at run time
                 href: windows-app-sdk/reference-framework-package-run-time.md
               - name: "Tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
-              - name: "Check for installed versions of the Windows App SDK runtime"
-                href: windows-app-sdk/check-windows-app-sdk-versions.md
-              - name: "Remove outdated Windows App SDK runtime versions"
-                href: windows-app-sdk/remove-windows-app-sdk-versions.md
+          - name: "Check for installed versions of the Windows App SDK runtime"
+            href: windows-app-sdk/check-windows-app-sdk-versions.md
+          - name: "Remove outdated Windows App SDK runtime versions"
+            href: windows-app-sdk/remove-windows-app-sdk-versions.md
   - name: Reference
     items:
       - name: Windows SDK API reference
@@ -263,19 +267,13 @@
             items: 
               - name: WinRT APIs for WinUI
                 href: /windows/winui/api/
-              - name: COM APIs for WinUI
-                items:
-                  - name: IWindowNative
-                    items:
-                      - name: IWindowNative
-                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative
-                      - name: IWindowNative.WindowHandle
-                        href:  /windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle
+              - name: COM interop APIs for WinUI
+                href: /windows/windows-app-sdk/api/win32/_winuicominterop/
       - name: .NET API reference
         href: /dotnet/api/
       - name: Schema reference for Windows apps
         href: /uwp/schemas/
+  - name: What's new for developers in Windows 11
+    href: whats-new/windows-11-build-22000.md
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md
-  - name: Docs related to Microsoft Build 2021
-    href: whats-new/build2021-docs.md

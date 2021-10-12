@@ -89,7 +89,7 @@ landingContent:
           - text: Package and deploy Windows apps
             url: ../package-and-deploy/index.md
           - text: Deploy apps that use the Windows App SDK
-            url: ../windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
+            url: ../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk
           - text: MSIX documentation
             url: /windows/msix
 

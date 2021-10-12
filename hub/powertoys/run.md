@@ -33,56 +33,55 @@ PowerToys Run features include:
 
 The following Run options are available in the PowerToys settings menu.
 
-  | **Settings** |**Action** |
-  | --- | --- |
-  | Open PowerToys Run | Define the keyboard shortcut to open/hide PowerToys Run |
-  | Ignore shortcuts in Fullscreen mode | When in full-screen (F11), Run won't be engaged with the shortcut |
-  | Maximum number of results | Maximum number of results shown without scrolling |
-  | Clear the previous query on launch | When launched, previous searches will not be highlighted |
-  | Disable drive detection warning | The warning, if all of your drives aren't indexed, will no longer be visible |
+| Settings | Action |
+| :--- | :--- |
+| Open PowerToys Run | Define the keyboard shortcut to open/hide PowerToys Run |
+| Ignore shortcuts in Fullscreen mode | When in full-screen (F11), Run won't be engaged with the shortcut |
+| Maximum number of results | Maximum number of results shown without scrolling |
+| Clear the previous query on launch | When launched, previous searches will not be highlighted |
 
 ## Keyboard shortcuts
 
-  | **Shortcuts** | **Action** |
-  | --- | --- |
-  | Alt + Space | Open or hide PowerToys Run |
-  | Esc | Hide PowerToys Run |
-  | Ctrl + Shift + Enter | Open the selected application as administrator (only applicable to applications)  |
-  | Ctrl + Shift + E | Open containing folder in File Explorer (only applicable to applications and files) |
-  | Ctrl + C | Copy path location (only applicable to folders and files) |
-  | Tab | Navigate through the search result and context menu buttons |
+| Shortcuts | Action |
+| :--- | :--- |
+|<kbd>Alt</kbd>+<kbd>Space</kbd> | Open or hide PowerToys Run |
+|<kbd>Esc</kbd> | Hide PowerToys Run |
+|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
+|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
+|<kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
+|<kbd>Tab</kbd> | Navigate through the search result and context menu buttons |
 
 ## Action keys
 
-These default activation phrases will force PowerToys run into only targeted plugins.
+These default activation phrases will force PowerToys Run into only targeted plugins.
 
-  | **Action key** | **Action** | **Example** |
-  | --- | --- | --- |
-  | `=` | Calculator only | `=2+2` |
-  | `?` | File searching only | `?road` to find `roadmap.txt` |
-  | `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup |
-  | `//` | URLs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
-  | `<` | Running processes only | `<outlook` to find all processes that contain outlook |
-  | `>` | Shell command only | `>ping localhost` to do a ping query |
-  | `:` | Registry keys only | `:hkcu` to search for the HKEY_CURRENT_USER registry key |
-  | `!` | Windows services only | `!alg` to search for the Application Layer Gateway service to be started or stopped |
-  | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. This plugin is off by default. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths |
-  | `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet |
-  | `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. | `$ Device:` to view all available Device settings |
+| Action key | Action | Example |
+| :--- | :--- | :--- |
+| `=` | Calculator only | `=2+2` |
+| `?` | File searching only | `?road` to find `roadmap.txt` |
+| `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup |
+| `//` | URLs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
+| `<` | Running processes only | `<outlook` to find all processes that contain outlook |
+| `>` | Shell command only | `>ping localhost` to do a ping query |
+| `:` | Registry keys only | `:hkcu` to search for the HKEY_CURRENT_USER registry key |
+| `!` | Windows services only | `!alg` to search for the Application Layer Gateway service to be started or stopped |
+| `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. This plugin is off by default. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths |
+| `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet |
+| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. `$ Device:` to view all available Device settings |
 
 ## System commands
 
 PowerToys Run enables a set of system level actions that can be executed.
 
-  | **Action key** | **Action** |
-  | --- | --- |
-  | `Shutdown` | Shuts down the computer |
-  | `Restart` | Restarts the computer |
-  | `Sign Out` | Signs current user out |
-  | `Lock` | Locks the computer |
-  | `Sleep` | Sleeps the computer |
-  | `Hibernate` | Hibernates the computer |
-  | `Empty Recycle Bin` | Empties the recycle bin |
+| Action key | Action |
+| :--- | :--- |
+| `Shutdown` | Shuts down the computer |
+| `Restart` | Restarts the computer |
+| `Sign Out` | Signs current user out |
+| `Lock` | Locks the computer |
+| `Sleep` | Sleeps the computer |
+| `Hibernate` | Hibernates the computer |
+| `Empty Recycle Bin` | Empties the recycle bin |
 
 ## Plugin manager
 

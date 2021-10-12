@@ -191,6 +191,10 @@
         "python/*.md": "mattwoj",
         "rust/*.md": "stwhi"
       },
+      "ms.reviewer":
+      {
+        "powertoys/*.md": "dedavis"
+      },
       "titleSuffix":
       {
         "apps/**/*.md": "Windows apps"

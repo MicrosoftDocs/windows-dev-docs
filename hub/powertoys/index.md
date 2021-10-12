@@ -119,7 +119,7 @@ The currently available utilities include:
         [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd> + <kbd>?</kbd> and shows the available shortcuts for the current state of the desktop.
+        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>?</kbd> and shows the available shortcuts for the current state of the desktop.
     :::column-end:::
 :::row-end:::
 
@@ -134,13 +134,13 @@ Install the pre-release experimental version of PowerToys to try the latest expe
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd> + <kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 
 ## Languages
 
-Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Brazillian, Dutch, German, French, Hungarian, Italian, Japanese, Korean, Polish, Portugese, Russian, Spanish, Turkish.
+Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, German, French, Hungarian, Italian, Japanese, Korean, Polish, Portugese, Portugese (Brazil), Russian, Spanish, Turkish.
 
 *Note that new elements of the app will often not yet be translated in the first version release.*
 

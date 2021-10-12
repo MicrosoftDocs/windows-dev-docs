@@ -45,6 +45,7 @@ An input event handler implements a delegate that provides the following informa
 - Event data. For keyboard events, that data will be an instance of [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs). The delegate for handlers is [**KeyEventHandler**](/uwp/api/windows.ui.xaml.input.keyeventhandler). The most relevant properties of **KeyRoutedEventArgs** for most handler scenarios are [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) and possibly [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus).
 - [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource). Because the keyboard events are routed events, the event data provides **OriginalSource**. If you deliberately allow events to bubble up through an object tree, **OriginalSource** is sometimes the object of concern rather than sender. However, that depends on your design. For more information about how you might use **OriginalSource** rather than sender, see the "Keyboard Routed Events" section of this topic, or [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
+
 ### Attaching a keyboard event handler
 
 You can attach keyboard event-handler functions for any object that includes the event as a member. This includes any [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) derived class. The following XAML example shows how to attach handlers for the [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) event for a [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid).

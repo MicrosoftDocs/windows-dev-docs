@@ -22,13 +22,10 @@ The Windows App SDK does not replace the existing desktop Windows app types such
 
 The Windows App SDK provides an extension for Visual Studio 2019 that includes project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects. 
 
-For more information about getting started with the Windows App SDK, see these articles:
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](set-up-your-development-environment.md).
+2. Follow the instructions on how to [create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
-- [Release channels and release notes](release-channels.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
-- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
+For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).  
 
 ## Benefits of the Windows App SDK for Windows developers
 
@@ -52,11 +49,11 @@ New Windows APIs and features have typically been tied to OS releases that happe
 
 ## Developer roadmap
 
-For the latest Windows App SDK plans, see our [roadmap](https://github.com/microsoft/ProjectReunion/blob/main/docs/roadmap.md).
+For the latest Windows App SDK plans, see our [roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md).
 
 ## Give feedback and contribute
 
-We are building the Windows App SDK as an open source project. We have a lot more information on our [Github page](https://github.com/microsoft/ProjectReunion) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/ProjectReunion/blob/master/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.
+We are building the Windows App SDK as an open source project. We have a lot more information on our [Github page](https://github.com/microsoft/WindowsAppSDK) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.
 
 ## Related topics
 
@@ -64,4 +61,4 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 - [Set up your development environment](set-up-your-development-environment.md)
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
