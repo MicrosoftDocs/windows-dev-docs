@@ -72,7 +72,7 @@ WinUI 2 is tightly integrated with [Windows 10 and later SDKs](https://developer
 
 For details on the latest version, see the WinUI 2 [overview and release notes](winui2/index.md)
 
-For details on the work planned for the next release and to provide feedback, see the [WinUI 2.7 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/12).
+For details on the work planned for the next release and to provide feedback, see the [WinUI 2.8 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/14).
 
 ![WinUI 2 platform support](../images/platforms-winui2.png)
 
