@@ -48,7 +48,8 @@
         "package-manager/**.md": "dev-environment",
         "powertoys/**.md": "dev-environment",
         "python/**.md": "dev-environment",
-        "rust/**.md": "dev-environment"
+        "rust/**.md": "dev-environment",
+        "web/**.md": "windows"
       },
       "ms.technology":
       {
@@ -79,7 +80,8 @@
         "dev-environment/rust/**.md": "windows-rust",
         "package-manager/**.md": "package-manager",
         "powertoys/**.md": "powertoys",
-        "python/**.md": "windows-python"
+        "python/**.md": "windows-python",
+        "web/**.md": "web"
       },
       "ms.collection":
       {
