@@ -37,11 +37,11 @@ productDirectory:
       - url: ./get-started/index.md
         text: Overview of app development options
       - url: ./windows-app-sdk/set-up-your-development-environment.md
-        text: Set up your development environment
+        text: Install developer tools
       - url: ./windows-app-sdk/index.md
         text: Build apps with the Windows App SDK 
-      - url: ./get-started/build-apps-for-windows.md
-        text: Build an app for Windows 11 
+      - url: ./windows-app-sdk/release-channels.md
+        text: Release channels for the Windows App SDK
   - title: Design
     imageSrc: https://docs.microsoft.com/media/common/i_design.svg
     links:

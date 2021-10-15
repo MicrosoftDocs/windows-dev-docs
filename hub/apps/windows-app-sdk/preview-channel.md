@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Preview release channel for the Windows App SDK
+# Preview channel release notes for the Windows App SDK
 
 > [!IMPORTANT]
 > The preview channel is **not supported** for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store. There are currently no releases available from the preview channel, and we recommend using the [latest stable release](stable-channel.md).
@@ -20,12 +20,80 @@ There may be breaking API changes between a given preview channel release and th
 
 If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 
+## Important issue impacting 1.0 Preview 1 and Preview 2
+
+Version 1.0 Preview 1 and Preview 2 of the Windows App SDK includes a mechanism to clean up any environment variable changes made by a packaged app when that app is uninstalled. This feature is in an experimental state, and the first release includes a known bug which can corrupt the system PATH environment variable.
+
+Preview 1 and Preview 2 corrupts PATH environment variables with the expansion character '%' whenever any packaged app is uninstalled, regardless of whether that app uses the Windows App SDK. 
+
+**Details:**
+
+System PATH entry in registry:
+
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment\Path
+```
+
+The System PATH entry should be of type REG_EXPAND_SZ, but the DEH changes this to REG_SZ. This makes the PATH unusable if it contained the variable expansion character ‘%’.
+
+**Affected releases:**
+
+- 1.0.0-preview1
+- 1.0.0-preview2
+
+**Mitigation:**
+
+To get your machine back into a good state, take the following steps:
+
+1. Check if the PATH in the registry is corrupt, and if so, reset it.
+2. Uninstall all apps that use the Windows App SDK 1.0 Preview1 or Preview2.
+3. Uninstall the Windows App SDK 1.0 Preview1/Preview2 packages, including the package that contains the DEH.
+
+These steps can be accomplished with the following PowerShell script (must use the latest version of PowerShell, and run it elevated):
+
+```Powershell
+# This script must be run from an elevated PowerShell window (right-click PowerShell in the Start menu, and select Run as Administrator).
+
+# If the PATH in the registry has been set to REG_SZ, delete it and recreate it as REG_EXPAND_SZ.
+
+$EnvPath = 'Registry::HKLM\System\CurrentControlSet\Control\Session Manager\Environment'
+$Environment=Get-Item $EnvPath
+$PathKind = $Environment.GetValueKind('Path')
+
+if ($PathKind -ne 'ExpandString') {
+  $Path = $Environment.GetValue('Path')
+  Remove-ItemProperty $EnvPath -Name Path
+  New-ItemProperty $EnvPath -Name Path -PropertyType ExpandString -Value $Path
+}
+
+
+# Remove the Windows App SDK 1.0 Preview1/2, and all apps that use it.
+
+$winappsdk = "Microsoft.WindowsAppRuntime.1.0-preview*"
+Get-AppxPackage | Where-Object { $_.Dependencies -like $winappsdk } | Remove-AppxPackage
+Remove-AppxPackage $winappsdk
+```
+
+**Fix upcoming in 1.0 Preview 3**
+
+The feature causing the PATH environment variables to be corrupted will be removed in the upcoming 1.0 Preview 3 release. It may be reintroduced at a later date, when all bugs have been fixed and thoroughly tested.
+
+
 ## Version 1.0 Preview 2 (1.0.0-preview2)
 
 This is the latest release of the preview channel for version 1.0. It supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
-> [!div class="button"]
-> [Download](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio)
+### Downloads 
+
+The following table lists all the downloads for the 1.0 Preview 2 release. For older releases, see [Downloads](downloads.md). If you are new to using the Windows App SDK, start by configuring your development computer with the [required development tools](set-up-your-development-environment.md).
+
+| **1.0 Preview 2 Downloads** | **Description** |
+| ----------- | ----------- |
+| [Visual Studio 2019 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/cpp) |  Build apps with the Windows App SDK using the C++ extension for Visual Studio 2019 |
+| [Visual Studio 2019 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/csharp) | Build apps with the Windows App SDK using the C# extension for Visual Studio 2019 |
+| [Visual Studio 2022 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp) | Build apps with the Windows App SDK using the C++ extension for Visual Studio 2022 |
+| [Visual Studio 2022 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp) | Build apps with the Windows App SDK using the C# extension for Visual Studio 2022 |
+| [Installer and MSIX packages](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer) | Deploy Windows App SDK with your app using the .exe installer and MSIX packages |
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 
@@ -136,6 +204,8 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
 ### Other limitations and known issues
 
+- Version 1.0 Preview 1 and Preview 2 corrupts PATH environment variables with the expansion character '%' whenever any packaged app is uninstalled. See [issue details](#important-issue-impacting-10-preview-1-and-preview-2). 
+
 - This release introduces the **Blank App, Packaged (WinUI 3 in Desktop)** templates for C# and C++ projects. These templates enable you to [build your app into an MSIX package without the use of a separate packaging project](single-project-msix.md). These templates have some known issues in this release:
 
   - **C# template for Visual Studio 2019.** You will encounter the error when you try to build the project: "The project doesn't know how to run the profile *project name*". To resolve this issue, install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools).
@@ -224,6 +294,8 @@ This release brings some new features to the Input API. The noteworthy changes a
 Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.ApplicationModel.Resources](/windows/windows-app-sdk/api/winrt/microsoft.applicationmodel.resources) namespace to the [Microsoft.Windows.ApplicationModel.Resources](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources) namespace.
 
 ### Other limitations and known issues
+
+- Version 1.0 Preview 1 and Preview 2 corrupts PATH environment variables with the expansion character '%' whenever any packaged app is uninstalled. See [issue details](#important-issue-impacting-10-preview-1-and-preview-2). 
 
 - Projects created by using the C++ **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template encounter the following build error by default: `fatal error C1083: Cannot open include file: 'winrt/microsoft.ui.dispatching.co_await.h': No such file or directory`. To resolve this issue, remove the following line of code from the **pch.h** file. This issue will be fixed in the next release.
 

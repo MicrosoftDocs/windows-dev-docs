@@ -56,7 +56,7 @@ The [Windows App SDK](index.md) provides a unified set of APIs, project template
 > [!NOTE]
 > If you have already installed any [previous version](downloads.md) of the Windows App SDK extension for Visual Studio, uninstall the previous extension before installing a new version. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-For installation instructions, see the following tabs.
+To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in following tabs. For older versions, see [Downloads](downloads.md).
 
 ### [Stable release](#tab/stable)
 
@@ -114,11 +114,20 @@ Choose one of these options to install the latest experimental release ([version
 
 ---
 
-## 5. Enable your device for development
+## 5. Download Windows App SDK installer and MSIX packages
+
+Unpackaged apps can deploy the Windows App SDK package dependencies by using the Windows App SDK .exe installer or by deploying the MSIX packages directly from the app's setup program. For instructions, see the [deployment guide for unpackaged apps](deploy-unpackaged-apps.md). 
+
+> [!div class="button"]
+> [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer)
+
+For older versions, see [Downloads](downloads.md).
+
+## 6. Enable your device for development
 
 Before you can deploy apps to your development computer, you have to enable it for development. For detailed instructions, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-## 6. Register as an app developer
+## 7. Register as an app developer
 
 You can start developing apps now, but you need a developer account to submit your apps to the Microsoft Store. For more information, see [Create a developer account](../get-started/sign-up.md).
 

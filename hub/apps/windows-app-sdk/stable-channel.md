@@ -1,5 +1,5 @@
 ---
-title: Stable release channel for the Windows App SDK 
+title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: article
 ms.date: 05/21/2021
@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Stable release channel for the Windows App SDK
+# Stable channel release notes for the Windows App SDK
 
 The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.
 

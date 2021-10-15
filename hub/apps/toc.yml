@@ -33,11 +33,11 @@
               items:
                 - name: "Release channels"
                   href: windows-app-sdk/release-channels.md
-                - name: "Stable release channel"
+                - name: "Stable channel release notes"
                   href: windows-app-sdk/stable-channel.md
-                - name: "Preview release channel"
+                - name: "Preview channel release notes"
                   href: windows-app-sdk/preview-channel.md
-                - name: "Experimental release channel"
+                - name: "Experimental channel release notes"
                   href: windows-app-sdk/experimental-channel.md
                 - name: "Update existing projects to the latest release"
                   href: windows-app-sdk/update-existing-projects-to-the-latest-release.md

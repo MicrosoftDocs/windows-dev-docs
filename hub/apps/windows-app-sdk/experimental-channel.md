@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Experimental release channel for the Windows App SDK
+# Experimental channel release notes for the Windows App SDK
 
 > [!IMPORTANT]
 > The experimental channel is **not supported** for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.
