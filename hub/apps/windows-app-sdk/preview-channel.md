@@ -49,10 +49,17 @@ To get your machine back into a good state, take the following steps:
 2. Uninstall all apps that use the Windows App SDK 1.0 Preview1 or Preview2.
 3. Uninstall the Windows App SDK 1.0 Preview1/Preview2 packages, including the package that contains the DEH.
 
-These steps can be accomplished with the following PowerShell script (must use the latest version of PowerShell, and run it elevated):
+These steps can be accomplished with the following Windows PowerShell script (PowerShell Core will not work), and run it elevated:
 
 ```Powershell
-# This script must be run from an elevated PowerShell window (right-click PowerShell in the Start menu, and select Run as Administrator).
+# This script must be run from an elevated Windows PowerShell window (right-click PowerShell in the Start menu, and select Run as Administrator).
+
+# Remove the Windows App SDK 1.0 Preview1/2, and all apps that use it.
+
+$winappsdk = "Microsoft.WindowsAppRuntime.1.0-preview*"
+Get-AppxPackage | Where-Object { $_.Dependencies -like $winappsdk } | Remove-AppxPackage
+Remove-AppxPackage $winappsdk
+
 
 # If the PATH in the registry has been set to REG_SZ, delete it and recreate it as REG_EXPAND_SZ.
 
@@ -67,11 +74,6 @@ if ($PathKind -ne 'ExpandString') {
 }
 
 
-# Remove the Windows App SDK 1.0 Preview1/2, and all apps that use it.
-
-$winappsdk = "Microsoft.WindowsAppRuntime.1.0-preview*"
-Get-AppxPackage | Where-Object { $_.Dependencies -like $winappsdk } | Remove-AppxPackage
-Remove-AppxPackage $winappsdk
 ```
 
 **Fix upcoming in 1.0 Preview 3**
