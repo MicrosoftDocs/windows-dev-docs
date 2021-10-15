@@ -58,7 +58,7 @@ These steps can be accomplished with the following Windows PowerShell script (Po
 
 $winappsdk = "Microsoft.WindowsAppRuntime.1.0-preview*"
 Get-AppxPackage | Where-Object { $_.Dependencies -like $winappsdk } | Remove-AppxPackage
-Remove-AppxPackage $winappsdk
+Get-AppxPackage $winappsdk | Remove-AppxPackage
 
 
 # If the PATH in the registry has been set to REG_SZ, delete it and recreate it as REG_EXPAND_SZ.
