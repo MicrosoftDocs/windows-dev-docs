@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to add UWP XAML user interfaces, cre
 title: "Tutorial: Modernize a WPF app"
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1

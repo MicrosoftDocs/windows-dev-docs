@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to package and deploy the app using 
 title: Package and deploy with MSIX
 ms.topic: article
 ms.date: 01/23/2020
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1

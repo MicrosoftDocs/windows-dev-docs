@@ -3,8 +3,6 @@ description: Add modern XAML user interfaces, create MSIX packages, and incorpor
 title: Modernize your desktop apps for Windows
 ms.topic: article
 ms.date: 09/21/2021
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

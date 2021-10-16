@@ -4,8 +4,6 @@ title: Develop Windows desktop apps
 ms.topic: article
 ms.date: 08/17/2021
 ms.localizationpriority: medium
-ms.author: mcleans
-author: mcleanbyron
 ---
 
 # Develop Windows desktop apps

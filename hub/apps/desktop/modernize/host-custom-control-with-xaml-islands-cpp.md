@@ -4,8 +4,8 @@ title: Host a custom WinRT XAML control in a C++ desktop (Win32) app using the X
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

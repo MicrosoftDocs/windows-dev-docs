@@ -4,8 +4,6 @@ description: Learn about the Windows App SDK, benefits it provides to developers
 ms.topic: article
 ms.date: 05/21/2021
 keywords: windows win32, desktop development, Windows App SDK
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

@@ -4,8 +4,6 @@ title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
 ms.date: 8/10/2021
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

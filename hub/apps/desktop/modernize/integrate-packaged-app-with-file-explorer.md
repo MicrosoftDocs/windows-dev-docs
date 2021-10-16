@@ -4,8 +4,6 @@ title: Integrate a packaged desktop app with File Explorer
 ms.date: 02/08/2021
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

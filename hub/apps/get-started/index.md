@@ -4,8 +4,6 @@ title: Overview of app development options
 ms.topic: article
 ms.date: 09/29/2021
 keywords: windows win32, desktop development
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

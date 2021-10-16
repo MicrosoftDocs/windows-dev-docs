@@ -5,8 +5,8 @@ brand: windows
 metadata:
    title: Windows developer documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
-   author: mcleanbyron
-   ms.author: mcleans
+   ms.author: stwhi
+   author: stevewhims
    ms.topic: hub-page
    ms.date: 06/16/2021
    ms.localizationpriority: medium

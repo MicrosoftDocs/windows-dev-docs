@@ -4,8 +4,6 @@ title: Visual Studio project and item templates for Windows apps
 ms.date: 11/17/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: high
 ---
 

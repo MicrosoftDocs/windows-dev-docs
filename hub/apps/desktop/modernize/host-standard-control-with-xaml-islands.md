@@ -4,8 +4,8 @@ title: Host a standard WinRT XAML control in a WPF app using XAML Islands
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, wrapped controls, standard controls, InkCanvas, InkToolbar
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---

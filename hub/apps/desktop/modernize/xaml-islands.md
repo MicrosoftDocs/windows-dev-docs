@@ -4,8 +4,8 @@ title: Host WinRT XAML controls in desktop apps
 ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: high
 ms.custom: 19H1
 ---

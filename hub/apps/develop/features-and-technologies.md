@@ -4,8 +4,6 @@ title: Windows features and technologies
 ms.topic: article
 ms.date: 08/19/2021
 ms.localizationpriority: medium
-ms.author: mcleans
-author: mcleanbyron
 ---
 
 # Windows features and technologies

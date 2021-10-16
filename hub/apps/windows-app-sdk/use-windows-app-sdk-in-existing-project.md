@@ -4,8 +4,6 @@ description: This article provides instructions for using the Windows App SDK in
 ms.topic: article
 ms.date: 08/30/2021
 keywords: windows win32, desktop development, Windows App SDK
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

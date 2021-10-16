@@ -4,8 +4,6 @@ title: Package and deploy
 ms.topic: article
 ms.date: 06/17/2021
 ms.localizationpriority: medium
-ms.author: mcleans
-author: mcleanbyron
 ---
 
 # Package and deploy
