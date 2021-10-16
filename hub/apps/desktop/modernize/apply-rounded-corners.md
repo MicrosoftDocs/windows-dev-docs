@@ -107,7 +107,7 @@ public partial class MainWindow : Window
 }
 ```
 
-Next, in your MainWindow constructor, after the call to InitalizeComponent, create a new instance of the [WindowInteropHelper](/dotnet/api/system.windows.interop.windowinterophelper) class to acquire a pointer to the underlying HWND (window handle). Make sure to use the [EnsureHandle](/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle) method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.
+Next, in your MainWindow constructor, after the call to InitializeComponent, create a new instance of the [WindowInteropHelper](/dotnet/api/system.windows.interop.windowinterophelper) class to acquire a pointer to the underlying HWND (window handle). Make sure to use the [EnsureHandle](/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle) method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.
 
 ```CSharp
 public MainWindow()

@@ -182,7 +182,7 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
   > [!NOTE]
   > Each solution that uses XAML Islands can contain only one project that defines a `XamlApplication` object. All custom WinRT XAML controls in your app share the same `XamlApplication` object. 
 
-1. In **Solution Explorer**, right-click the **MainPage.xaml** file in the **MyUWPApp** project. Click **Remove** and then **Delete** to delete this file permamently from the project.
+1. In **Solution Explorer**, right-click the **MainPage.xaml** file in the **MyUWPApp** project. Click **Remove** and then **Delete** to delete this file permanently from the project.
 2. In the **MyUWPApp** project, expand **App.xaml** file.
 3. Replace the contents of the **App.xaml**, **App.cpp**, **App.h**, and **App.idl** files with the following code.
 
