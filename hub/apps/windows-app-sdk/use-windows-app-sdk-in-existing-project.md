@@ -4,6 +4,8 @@ description: This article provides instructions for using the Windows App SDK in
 ms.topic: article
 ms.date: 08/30/2021
 keywords: windows win32, desktop development, Windows App SDK
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -19,6 +21,9 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 - Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
 
 ## Instructions
+
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](set-up-your-development-environment.md?tabs=experimental#4-install-the-windows-app-sdk-extension-for-visual-studio) or being aware of this issue and how it might impact your work. 
 
 1. Open an existing project in Visual Studio.
 

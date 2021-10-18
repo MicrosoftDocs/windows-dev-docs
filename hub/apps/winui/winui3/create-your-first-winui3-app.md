@@ -23,6 +23,9 @@ To use the WinUI 3 project templates described in this article, configure your d
 
 Choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
 
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+
 ### [C# with 1.0 Preview 2](#tab/csharp)
 
 To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Preview 2:

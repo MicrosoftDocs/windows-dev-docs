@@ -75,6 +75,9 @@ Choose one of these options to install the latest stable release ([version 0.8.2
 
 ### [Preview release](#tab/preview)
 
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+
 To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](stable-channel.md). This release channel cannot be used by apps in production environments.
 
 Choose one or more of the following extensions for the latest preview release ([version 1.0 Preview 2](preview-channel.md#version-10-preview-2-100-preview2)), based on the version of Visual Studio you have installed and the programming language you want to use. 

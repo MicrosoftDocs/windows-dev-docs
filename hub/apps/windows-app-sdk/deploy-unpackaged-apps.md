@@ -27,9 +27,7 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
 
 ## Prerequisites
 
-- Download the Windows App SDK installer and MSIX packages. For older versions, see [Downloads](downloads.md).
-  > [!div class="button"]
-  > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer)
+- Download the [Windows App SDK installer and MSIX packages](downloads.md).
 
 - [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
   - Sideloading is automatically enabled on Windows 10 version 2004 and later.

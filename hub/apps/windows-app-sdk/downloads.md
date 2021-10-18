@@ -23,6 +23,9 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 
 ## Current releases
 
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+
 |   | Version | Release date | VSIX | Installer and MSIX packages |
 |---|---|---|---|---|
 | **❇️** | [1.0&nbsp;Preview 2&nbsp;](preview-channel.md#version-10-preview-2-100-preview2) | 10/5/2021 <br> [Release&nbsp;notes&nbsp;](preview-channel.md#version-10-preview-2-100-preview2)&nbsp; | [Download&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;C++&nbsp;VSIX](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/cpp)<br/>[Download Visual Studio 2019 C# VSIX](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/csharp)<br/>[Download Visual Studio 2022 C++ VSIX](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp)<br/>[Download Visual Studio 2022 C# VSIX](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp)<br/> | [Download Installer and MSIX packages](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer) |
