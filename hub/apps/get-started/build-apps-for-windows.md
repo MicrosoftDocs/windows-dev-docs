@@ -92,4 +92,4 @@ Press F5 to build and run the app.
 
 ![Screenshot of the simple Hello World app that shows the new look of controls in Windows 11.](images/w11-hello-world-screenshot.png)
 
-Notice how the controls on Windows 11 have a cleaner appearance. The [CheckBox](/windows/uwp/design/controls-and-patterns/checkbox) and [Slider](/windows/uwp/design/controls-and-patterns/slider) controls have new animations. For more information on building apps that look great on Windows 11, see [Top 10 things you can do to make your app great on Windows 11](make-apps-great-for-windows.md).
+Notice how the controls on Windows 11 have a cleaner appearance. The [CheckBox](/windows/uwp/design/controls-and-patterns/checkbox) and [Slider](/windows/uwp/design/controls-and-patterns/slider) controls have new animations. For more information on building apps that look great on Windows 11, see [Top 11 things you can do to make your app great on Windows 11](make-apps-great-for-windows.md).
