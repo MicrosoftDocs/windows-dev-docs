@@ -40,7 +40,7 @@ In the tutorial, you'll enhance Contoso Expenses with new Windows features:
 
 * Migrate an existing WPF app to .NET Core 3.0. This will open up new and important scenarios in the future.
 * Use XAML Islands to host the **InkCanvas** and **MapControl** wrapped controls provided by the Windows Community Toolkit.
-* Use XAML Islands to host any standard UWP XAML control (in this case, a **CalendardView**).
+* Use XAML Islands to host any standard UWP XAML control (in this case, a **CalendarView**).
 * Integrate Adaptive Cards and Windows 10 notifications into the app.
 * Package the app with MSIX and set up a CI/CD pipeline on Azure DevOps so that you can automatically deliver new versions of the app to testers and users as soon as it is available.
 
