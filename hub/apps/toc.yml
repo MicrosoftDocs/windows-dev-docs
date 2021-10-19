@@ -89,6 +89,42 @@
                 href: windows-app-sdk/notifications/push/push-quickstart.md
               - name: "Troubleshooting"
                 href: windows-app-sdk/notifications/push/troubleshooting.md
+      - name: Migrate to the Windows App SDK
+        items:
+          - name: "Index of migration topics"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
+          - name: "Overall migration strategy"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
+          - name: "Mapping UWP features to Windows App SDK"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
+          - name: "What's supported"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
+          - name: "Mapping UWP APIs to Windows App SDK"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
+          - name: "Feature area guides"
+            items:
+              - name: "Overview of feature area guides"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
+              - name: "Windows UI Library (WinUI) migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
+              - name: "Windowing functionality migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
+              - name: "Application lifecycle functionality migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
+              - name: "Notifications migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
+              - name: "DirectWrite to DWriteCore migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
+              - name: "MRT to MRTCore migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+              - name: "Threading functionality migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
+          - name: "Case study 1—PhotoLab (C#)"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
+          - name: "Case study 2—Photo Editor (C++/WinRT)"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
+          - name: "Additional migration guidance"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"
