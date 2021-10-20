@@ -76,6 +76,8 @@ items:
           items:
               - name: Overview
                 href: ../android/overview.md
+              - name: Windows Subsystem for Android™️
+                href: ../android/wsa/index.md
               - name: Native Android
                 href: ../android/native-android.md
               - name: Cross-platform
