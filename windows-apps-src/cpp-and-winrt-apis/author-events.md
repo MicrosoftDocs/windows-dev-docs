@@ -146,7 +146,7 @@ The type parameters for those two delegate types have to cross the ABI, so the t
 
 Below is an example in the form of code listings. Begin with the **ThermometerWRC** and **ThermometerCoreApp** projects that you created earlier in this topic, and edit the code in those projects to look like the code in these listings.
 
-This first listing is for the **ThermometerWRC** project. After editing `ThermometerWRC.idl` as shown below, build the project, and then copy `MyEventArgs.h` and `.cpp` into the project (from the `Generated Files` folder) just like you did earlier with `Thermometer.h` and `.cpp`.
+This first listing is for the **ThermometerWRC** project. After editing `ThermometerWRC.idl` as shown below, build the project, and then copy `MyEventArgs.h` and `.cpp` into the project (from the `Generated Files` folder) just like you did earlier with `Thermometer.h` and `.cpp`. Remember to delete the `static_assert` from both files.
 
 ```cppwinrt
 // ThermometerWRC.idl
@@ -373,6 +373,102 @@ logCallback(L"Hello, World!");
 ```
 
 If you're porting from a C++/CX codebase where events and delegates are used internally within a project, then **winrt::delegate** will help you to replicate that pattern in C++/WinRT.
+
+## Deferrable events
+
+A common pattern in the Windows Runtime is the deferrable event. An event handler *takes a deferral* by calling the event argument's **GetDeferral** method. Doing so indicates to the event source that post-event activities should be postponed until the deferral is completed. This allows an event handler to perform asynchronous actions in response to an event.
+
+The [**winrt::deferrable_event_args**](/uwp/cpp-ref-for-winrt/deferrable-event-args) struct template is a helper class for implementing (producing) the Windows Runtime deferral pattern. Here's an example.
+
+```cppwinrt
+// Widget.idl
+namespace Sample
+{
+    runtimeclass WidgetStartingEventArgs
+    {
+        Windows.Foundation.Deferral GetDeferral();
+        Boolean Cancel;
+    };
+
+    runtimeclass Widget
+    {
+        event Windows.Foundation.TypedEventHandler<
+            Widget, WidgetStartingEventArgs> Starting;
+    };
+}
+
+// Widget.h
+namespace winrt::Sample::implementation
+{
+    struct Widget : WidgetT<Widget>
+    {
+        Widget() = default;
+
+        event_token Starting(Windows::Foundation::TypedEventHandler<
+            Sample::Widget, Sample::WidgetStartingEventArgs> const& handler)
+        {
+            return m_starting.add(handler);
+        }
+        void Starting(event_token const& token) noexcept
+        {
+            m_starting.remove(token);
+        }
+
+    private:
+        event<Windows::Foundation::TypedEventHandler<
+            Sample::Widget, Sample::WidgetStartingEventArgs>> m_starting;
+    };
+
+    struct WidgetStartingEventArgs : WidgetStartingEventArgsT<WidgetStartingEventArgs>,
+                                     deferrable_event_args<WidgetStartingEventArgs>
+    //                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    {
+        bool Cancel() const noexcept { return m_cancel; }
+        void Cancel(bool value) noexcept { m_cancel = value; }
+        bool m_cancel = false;
+    };
+}
+```
+
+Here's how the event recipient consumes the deferrable event pattern.
+
+```cppwinrt
+// EventRecipient.h
+widget.Starting([](auto sender, auto args) -> fire_and_forget
+{
+    auto deferral = args.GetDeferral();
+    if (!co_await CanWidgetStartAsync(sender))
+    {
+        // Do not allow the widget to start.
+        args.Cancel(true);
+    }
+    deferral.Complete();
+});
+```
+
+As the implementor (producer) of the event source, you derive your event args class from [**winrt::deferrable_event_args**](/uwp/cpp-ref-for-winrt/deferrable-event-args). **deferrable_event_args\<T\>** implements **T::GetDeferral** for you. It also exposes a new helper method [**deferrable_event_args::wait_for_deferrals**](/uwp/cpp-ref-for-winrt/deferrable-event-args#deferrable_event_argswait_for_deferrals-function), which completes when all outstanding deferrals have completed (if no deferrals were taken, then it completes immediately).
+
+```cppwinrt
+// Widget.h
+IAsyncOperation<bool> TryStartWidget(Widget const& widget)
+{
+    auto args = make_self<WidgetStartingEventArgs>();
+    // Raise the event to let people know that the widget is starting
+    // and give them a chance to prevent it.
+    m_starting(widget, *args);
+    // Wait for deferrals to complete.
+    co_await args->wait_for_deferrals();
+    // Use the results.
+    bool started = false;
+    if (!args->Cancel())
+    {
+        widget.InsertBattery();
+        widget.FlipPowerSwitch();
+        started = true;
+    }
+    co_return started;
+}
+```
 
 ## Design guidelines
 

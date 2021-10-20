@@ -1,20 +1,23 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C#.
-title: Templated XAML controls for WinUI 3 apps with C#
+title: Build XAML controls with C#
 ms.date: 03/05/2021
 ms.topic: article
-keywords: windows 10, uwp, custom control, templated control, winui
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, custom control, templated control
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Templated XAML controls for WinUI 3 apps with C#
+# Build XAML controls with C#
 
 This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
-Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./get-started-winui3-for-desktop.md).
+## Prerequisites
+
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+2. Follow the instructions on how to [create a new project that uses the Windows App SDK](create-your-first-winui3-app.md).
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -53,7 +56,7 @@ DependencyProperty LabelProperty = DependencyProperty.Register(
     nameof(Label), 
     typeof(string),
     typeof(BgLabelControl), 
-    new PropertyMetadata(default(string)));
+    new PropertyMetadata(default(string), new PropertyChangedCallback(OnLabelChanged)));
 ```
 
 These two steps are all that's required to implement a dependency property, but for this example, we'll add an optional handler for the **OnLabelChanged** event. This event is raised by the system whenever the property value is updated. In this case we check to see if the new label text is an empty string or not and update a class variable accordingly.
@@ -63,17 +66,15 @@ public bool HasLabelValue { get; set; }
 
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 {
+    BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
+    String s = e.NewValue as String; //null checks omitted
+    if (s == String.Empty)
     {
-        BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
-        String s = e.NewValue as String; //null checks omitted
-        if (s == String.Empty)
-        {
-            labelControl.HasLabelValue = false;
-        }
-        else
-        {
-            labelControl.HasLabelValue = true;
-        }
+        labelControl.HasLabelValue = false;
+    }
+    else
+    {
+        labelControl.HasLabelValue = true;
     }
 }
 ```
@@ -123,4 +124,8 @@ Build and run the app and you will see the templated control, with the backgroun
 
 ![Templated control result](images/winui-templated-control-result.png)
 
+## See also
 
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

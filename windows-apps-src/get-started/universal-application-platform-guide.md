@@ -13,12 +13,12 @@ ms.localizationpriority: medium
 
 UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices.
 
-To download the tools you need to start creating UWP apps, see [Get set up](/windows/apps/get-set-up), and then [write your first app](your-first-app.md).
+To download the tools you need to start creating UWP apps, see [Get set up](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
 
 
 ## Where does UWP fit in the Microsoft development story?
 
-UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
+UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)).
 
 The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
 
@@ -51,7 +51,7 @@ A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are
 
 If you target the universal APIs, then your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device-specific APIs, then you can do that, too.
 
-Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overvieww#extension-sdks).
+Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview#extension-sdks).
 
 You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing code** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
@@ -95,7 +95,7 @@ You can choose how you'll monetize your app. There are a number of ways to make 
 There are a variety of ways to keep users engaged with your UWP app:
 
 - Live tiles and lock screen tiles that show contextually relevant and timely info from your app at a glance.
-- Push notifications that bring real-time alerts to your user’s attention.
+- Push notifications that bring real-time alerts to your user's attention.
 - User Activities allow users to pick up where they left off in your app, even across devices.
 - The Action Center organizes notifications from your app.
 - Background execution and triggers bring your app into action when the user needs it.
@@ -121,19 +121,19 @@ Check out [Get set up](/windows/apps/get-started/get-set-up) to download the too
 
 The Microsoft design system is named Fluent. The Fluent Design System is a set of UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. Fluent experiences adapt and feel natural on devices from tablets to laptops, from PCs to televisions, and on virtual reality devices. See [The Fluent Design System for UWP apps](/windows/uwp/design/fluent-design-system) for an introduction to Fluent Design.
 
-Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](../design/basics/design-and-ui-intro.md) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../design/devices/index.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
+Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](/windows/apps/design/basics/design-and-ui-intro) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](/windows/apps/design/devices/index) to help you think through the interaction experience of using your app on all the different form factors you want to target.
 
 In addition to interaction on different devices, [plan your app](./plan-your-app.md) to embrace the benefits of working across multiple devices. For example:
 
-- Design your workflow using [Navigation design basics for UWP apps](../design/basics/navigation-basics.md) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) to respond to different screen sizes and resolutions.
+- Design your workflow using [Navigation design basics for UWP apps](/windows/apps/design/basics/navigation-basics) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design) to respond to different screen sizes and resolutions.
 
-- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](../design/layout/index.md) to learn how users can interact with your app by using [Cortana](/cortana/skills/), [Speech](../design/input/speech-interactions.md), [Touch interactions](../design/input/touch-interactions.md), the [Touch keyboard](../design/input/keyboard-interactions.md) and more.  Or, see the [Guidelines for text and text input](../design/controls-and-patterns/text-controls.md) for more traditional interaction experiences.
+- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Cortana](/cortana/skills/), [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
 
 ### Add services
 
 - Use [cloud services](https://azure.microsoft.com/documentation/services/cloud-services) to sync across devices.
 - Learn how to [connect to web services](/previous-versions/windows/apps/hh761504(v=win.10)) to support your app experience.
-- Include [Push notifications](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md) and [in-app purchases](../monetize/enable-in-app-product-purchases.md) in your planning. These features should work across devices.
+- Include [Push notifications](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) and [in-app purchases](../monetize/enable-in-app-product-purchases.md) in your planning. These features should work across devices.
 
 ### Submit your app to the Store
 
@@ -146,10 +146,10 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 ### More advanced topics
 
 - Learn how to use [User Activities](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97) so that user activity in your app appear in Windows Timeline and Cortana's Pick Up Where I Left Off feature.
-- Learn how to use [Tiles, badges, and notifications for UWP apps](../design/shell/tiles-and-notifications/index.md).
+- Learn how to use [Tiles, badges, and notifications for UWP apps](/windows/apps/design/shell/tiles-and-notifications/index).
 - For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)) and [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)).
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
-- For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+- For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 - [Compiling apps with .NET Native](/dotnet/framework/net-native/)
 - Learn how to add modern experiences for Windows 10 users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
 

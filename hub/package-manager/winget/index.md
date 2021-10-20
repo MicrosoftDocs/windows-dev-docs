@@ -8,19 +8,19 @@ ms.localizationpriority: medium
 
 # Use the winget tool to install and manage applications
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
-
 The **winget** command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows 10 computers. This tool is the client interface to the Windows Package Manager service.
 
 The **winget** tool is currently a preview, so not all planned functionality is available at this time.
 
-## Installing the client
+## Prerequisites
 
-> The client requires Windows 10 1709 (build 16299) or later at this time.
+The **winget** tool requires running either Windows 11 or Windows 10, version 1809 (10.0.17763) or later.
+
+## Installing the client
 
 ### Microsoft Store [Recommended]
 
-The client is distributed within the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) package. While this package is pre-installed on Windows, the client will not be made generally available during the Preview period. In order to get automatic updates from the Microsoft Store that contain the client, one must do one of the following:
+The client is distributed within the [App Installer](https://www.microsoft.com/p/app-installer/9nblggh4nns1) package. While this package is pre-installed on Windows, the client will not be made generally available during the Preview period. In order to get automatic updates from the Microsoft Store that contain the client, one must do one of the following:
 
 * Install a [Windows 10 Insider](https://insider.windows.com/) build
 * Join the Preview flight ring by [signing up](http://aka.ms/winget-InsiderProgram)
@@ -29,15 +29,16 @@ Once you have received the updated App Installer you should be able to execute `
 
 ### Manually Update
 
-The same Microsoft Store package will be made available via our [Releases](https://github.com/microsoft/winget-cli/releases). Note that installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
+The same Microsoft Store package will be made available via the [Releases](https://github.com/microsoft/winget-cli/releases) page of the winget-cli repository. Installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
 
-> You may need to install the [VC++ v14 Desktop Framework Package](https://docs.microsoft.com/en-us/troubleshoot/cpp/c-runtime-packages-desktop-bridge#how-to-install-and-update-desktop-framework-packages).
+> [!NOTE]
+> You may need to install the [VC++ v14 Desktop Framework Package](/troubleshoot/cpp/c-runtime-packages-desktop-bridge#how-to-install-and-update-desktop-framework-packages).
 
 ## Administrator considerations
 
 Installer behavior can be different depending on whether you are running **winget** with administrator privileges.
 
-* When running **winget** without administrator privileges, some applications may [require elevation](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/) to install. When the installer runs, Windows will prompt you to [elevate](https://docs.microsoft.com/windows/security/identity-protection/user-account-control). If you choose not to elevate, the application will fail to install.  
+* When running **winget** without administrator privileges, some applications may [require elevation](/windows/security/identity-protection/user-account-control/user-account-control-overview) to install. When the installer runs, Windows will prompt you to [elevate](/windows/security/identity-protection/user-account-control/how-user-account-control-works). If you choose not to elevate, the application will fail to install.  
 
 * When running **winget** in an Administrator Command Prompt, you will not see [elevation prompts](/windows/security/identity-protection/user-account-control/how-user-account-control-works) if the application requires it. Always use caution when running your command prompt as an administrator, and only install applications you trust.
 
@@ -62,13 +63,19 @@ The current preview of the **winget** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
+| [export](export.md) | Exports a list of the installed packages. |
+| [features](features.md) | Shows the status of experimental features. |
 | [hash](hash.md) | Generates the SHA256 hash for the installer. |
-| [help](help.md) | Displays help for the **winget** tool commands. |
+| [import](import.md) | Installs all the packages in a file. |
 | [install](install.md) | Installs the specified application. |
+| [list](list.md) | Display installed packages. |
 | [search](search.md) | Searches for an application. |
+| [settings](settings.md) | Open settings. |
 | [show](show.md) | Displays details for the specified application. |
 | [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **winget** tool. |
 | [validate](validate.md) | Validates a manifest file for submission to the Windows Package Manager repository. |
+| [uninstall](uninstall.md) | Uninstalls the given package. |
+| [upgrade](upgrade.md) |  Upgrades the given package. | 
 
 ### Options
 
@@ -76,8 +83,8 @@ The current preview of the **winget** tool supports the following options.
 
 | Option | Description |
 |--------------|-------------|
-| **-v,--version** | Returns the current version of winget. |
-| **--info** |  Provides you with all detailed information on winget, including the links to the license and privacy statement. |
+| **-v, --version** | Returns the current version of winget. |
+| **--info** |  Provides you with all detailed information on winget, including the links to the license, privacy statement, and configured group policies. |
 | **-?, --help** |  Shows additional help for winget. |
 
 ## Supported installer formats
@@ -105,6 +112,11 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 
 > [!NOTE]
 > When scripted, **winget** will launch the applications in the specified order. When an installer returns success or failure, **winget** will launch the next installer. If an installer launches another process, it is possible that it will return to **winget** prematurely. This will cause **winget** to install the next installer before the previous installer has completed.
+
+## Debugging and troubleshooting
+
+**winget** provides logging to help diagnose issues. For troubleshooting and details on logging, see [Debugging and troubleshooting](troubleshooting.md).
+
 
 ## Missing tools
 

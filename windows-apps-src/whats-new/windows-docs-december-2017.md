@@ -32,11 +32,11 @@ In the guide you will find:
 
 ### Keyboard Interactions
 
-Design and optimize your UWP apps to provide both an accessible experience and features for power users with updated [Keyboard interactions](../design/input/keyboard-interactions.md). We've updated our recommendations and guidance to reflect the new improvements to these interactions added in the Fall Creators Update.
+Design and optimize your UWP apps to provide both an accessible experience and features for power users with updated [Keyboard interactions](/windows/apps/design/input/keyboard-interactions). We've updated our recommendations and guidance to reflect the new improvements to these interactions added in the Fall Creators Update.
 
-See [Keyboard accelerators](../design/input/keyboard-accelerators.md) and [Custom keyboard interactions](../design/input/focus-navigation.md) to expand the keyboard functionality of your apps.
+See [Keyboard accelerators](/windows/apps/design/input/keyboard-accelerators) and [Custom keyboard interactions](/windows/apps/design/input/focus-navigation) to expand the keyboard functionality of your apps.
 
-On devices that support touch interactions, add keyboard functionality with the [Respond to the presence of the touch keyboard](../design/input/respond-to-the-presence-of-the-touch-keyboard.md) and [Use input scope to change the touch keyboard](../design/input/use-input-scope-to-change-the-touch-keyboard.md) articles.
+On devices that support touch interactions, add keyboard functionality with the [Respond to the presence of the touch keyboard](/windows/apps/design/input/respond-to-the-presence-of-the-touch-keyboard) and [Use input scope to change the touch keyboard](/windows/apps/design/input/use-input-scope-to-change-the-touch-keyboard) articles.
 
 ### Microsoft Collaborate
 
@@ -60,9 +60,9 @@ All developers who have joined the Dev Center Insider program can now use subscr
 
 ### Color
 
-We've added some new guidance on how to use color in your apps for the best possible user experience. This includes API usage scenarios as well as general guidance about UI design and accessibility. We've also updated the list of user accent colors available on Xbox. [Check out the updated Color article here.](../design/style/color.md)
+We've added some new guidance on how to use color in your apps for the best possible user experience. This includes API usage scenarios as well as general guidance about UI design and accessibility. We've also updated the list of user accent colors available on Xbox. [Check out the updated Color article here.](/windows/apps/design/style/color)
 
-![universal windows color palette](../design/basics/images/colors.png)
+![universal windows color palette](/images/colors.png)
 
 ### Data access guides
 
@@ -72,11 +72,11 @@ Also, we've completely remodeled our [SQLite guide](../data-access/sqlite-databa
 
 ### Forms
 
-We've added a new article on [how to construct forms in your apps](../design/controls-and-patterns/forms.md), to collect and submit data from users. This includes specific information about implementing forms and general guidance for when and where to use them.
+We've added a new article on [how to construct forms in your apps](/windows/apps/design/controls/forms), to collect and submit data from users. This includes specific information about implementing forms and general guidance for when and where to use them.
 
 ### Intro to app design
 
-The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. [Our new introduction](../design/basics/design-and-ui-intro.md) provides an overview of the universal design features that are included in every UWP app, and how you can use the docs to build user interfaces (UI) that scale beautifully across a range of devices.
+The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. [Our new introduction](/windows/apps/design/basics/design-and-ui-intro) provides an overview of the universal design features that are included in every UWP app, and how you can use the docs to build user interfaces (UI) that scale beautifully across a range of devices.
 
 
 ### Request ratings and reviews

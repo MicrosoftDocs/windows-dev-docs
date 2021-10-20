@@ -495,7 +495,7 @@ Here is an example error condition and the corresponding error message.
 
 | Error condition | Error message |
 | --------------- | ------------- |
-| The output file name is the same as one of the resource pack names in the configuration. | Invalid Configuration: Resource Pack name <resource pack name> cannot be the same as the output file <outputfilename.pri>. |
+| The output file name is the same as one of the resource pack names in the configuration. | Invalid Configuration: Resource Pack name \<resource pack name> cannot be the same as the output file \<outputfilename.pri>. |
 
 ## /ReverseMap(rm) option
 

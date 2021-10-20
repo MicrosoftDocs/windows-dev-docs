@@ -73,7 +73,7 @@ Apps that become the default for a file type have their icons displayed in vario
 -   File picker
 -   Search results on the Start screen
 
-Include a 44x44 icon with your project so that your logo can appear in those locations. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. See [Guidelines for tile and icon assets](../design/style/app-icons-and-logos.md) for more details about icons.
+Include a 44x44 icon with your project so that your logo can appear in those locations. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. See [Guidelines for tile and icon assets](/windows/apps/design/style/app-icons-and-logos) for more details about icons.
 
 ## Step 3: Handle the activated event
 

@@ -167,7 +167,7 @@ Follow these steps to stream video content from the HomeGroup:
 
 1.  **Include a MediaElement in your app.**
 
-    A [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](../design/controls-and-patterns/custom-transport-controls.md) and [Audio, video, and camera](../audio-video-camera/index.md).
+    A [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](/windows/apps/design/controls/custom-transport-controls) and [Audio, video, and camera](../audio-video-camera/index.md).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>

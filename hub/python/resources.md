@@ -30,11 +30,11 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Books, websites, tutorials on python.org ](https://wiki.python.org/moin/BeginnersGuide/Programmers): Another list of resources for learning Python provided by the user community.
 
-- [FAQs from Python.org](https://docs.python.org/3/faq/): Covering everything from 'What is Python?' to ['Is there an equivalent of C’s “?:” ternary operator?'](https://docs.python.org/3/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator).
+- [FAQs from Python.org](https://docs.python.org/3/faq/): Covering everything from 'What is Python?' to ['Is there an equivalent of C's "?:" ternary operator?'](https://docs.python.org/3/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator).
 
 - [Python doc languages](https://wiki.python.org/moin/Languages): Links to the Python docs in languages other than English.
 
-- [Python API Browser](/python/api/?view=azure-python): Your one-stop shop for all Python-based APIs from Microsoft.
+- [Python API Browser](/python/api/): Your one-stop shop for all Python-based APIs from Microsoft.
 
 - [Azure Code Samples using Python](https://azure.microsoft.com/resources/samples/?platform=python&sort=0): Learn to interact with Azure services through using Python code.
 
@@ -74,4 +74,4 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Build Python Django apps with Microsoft Graph](/graph/tutorials/python): Build a Python Django web app that uses the Microsoft Graph API to retrieve calendar information for a user.
 
-- [Walkthrough: Bing Ads API Web Application in Python](/advertising/guides/walkthrough-web-application-python?view=bingads-13): Get started running a Microsoft Advertising web application using the Bing Ads Python SDK, the Visual Studio Code IDE, and the Django web framework.
+- [Walkthrough: Bing Ads API Web Application in Python](/advertising/guides/walkthrough-web-application-python): Get started running a Microsoft Advertising web application using the Bing Ads Python SDK, the Visual Studio Code IDE, and the Django web framework.

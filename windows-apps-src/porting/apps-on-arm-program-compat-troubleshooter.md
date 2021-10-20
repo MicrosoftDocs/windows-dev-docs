@@ -1,17 +1,19 @@
 ---
 title: Program Compatibility Troubleshooter on ARM
-
 description: Guidance for adjusting compatibility settings if your app isn't working correctly on ARM
-ms.date: 02/15/2018
+ms.date: 06/25/2021
 ms.topic: article
-keywords: windows 10 s, always connected, compatibility troubleshooter, windows on ARM
+keywords: windows, always connected, compatibility troubleshooter, windows on ARM
 ms.localizationpriority: medium
 ---
+
 # Program Compatibility Troubleshooter on ARM
-Emulation to support x86 apps is a new feature created for Windows 10 on ARM64. Sometimes the emulation performs optimizations that don't result in the best experience. You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.
+
+Emulation to support x86 apps is a new feature created for Windows on ARM64. Sometimes the emulation performs optimizations that don't result in the best experience. You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.
 
 ## Start the Program Compatibility Troubleshooter
-You start the [Program Compatibility Troubleshooter](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) manually in the same way on any Windows 10 PC: right-click an executable (.exe) file and select **Troubleshoot compatibility**. This screen appears.
+
+You start the [Program Compatibility Troubleshooter](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) manually in the same way on any Windows PC: right-click an executable (.exe) file and select **Troubleshoot compatibility**. This screen appears.
 
 ![Screenshot of the Troubleshoot compatibility options.](images/arm/Capture4.png)
 
@@ -19,9 +21,10 @@ If you click on **Troubleshoot program** you will be presented with the followin
 
 ![Screenshot of the What problems do you notice options.](images/arm/Capture5.png)
 
-All options enable the settings that are applicable and applied on all Windows 10 Desktop PCs. In addition, the first, second, and fourth options apply the [Disable application cache](#disable-app-cache) and [Disable hybrid execution mode](#disable-hybrid-exec-mode) emulation settings.
+All options enable the settings that are applicable and applied on Windows Desktop PCs. In addition, the first, second, and fourth options apply the [Disable application cache](#disable-app-cache) and [Disable hybrid execution mode](#disable-hybrid-exec-mode) emulation settings.
 
 ## Toggling emulation settings
+
 > [!WARNING]
 > Changing emulation settings may result in your application unexpectedly crashing or not launching at all.
 

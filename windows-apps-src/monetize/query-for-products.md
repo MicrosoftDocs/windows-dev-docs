@@ -2,7 +2,7 @@
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 title: Query for products
-ms.date: 03/26/2021
+ms.date: 04/22/2021
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, view products
 ms.localizationpriority: medium
@@ -13,6 +13,8 @@ ms.localizationpriority: medium
 Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 
 This method is designed to be called by your service in response to a message from your app. Your service should not regularly poll for all users on a schedule.
+
+The [Microsoft.StoreServices library](https://github.com/microsoft/Microsoft-Store-Services) provides the functionality of this method through the StoreServicesClient.CollectionsQueryAsync API.
 
 ## Prerequisites
 
@@ -71,7 +73,7 @@ The ProductSkuId object contains the following parameters.
 | Parameter | Type   | Description          | Required |
 |-----------|--------|----------------------|----------|
 | productId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
-| skuID     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
+| skuId     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
 
 
 ### Request example
@@ -125,7 +127,7 @@ The CollectionItemContractV6 object contains the following parameters.
 | campaignId           | string             | The campaign ID that was provided at purchase time for this item.                  | No       |
 | devOfferId           | string             | The offer ID from an in-app purchase.              | No       |
 | endDate              | datetime           | The end date of the item.              | Yes      |
-| fulfillmentData      | list<string>       | N/A         | No       |
+| fulfillmentData      | list\<string>       | N/A         | No       |
 | inAppOfferToken      | string             | The developer-specified product ID string that is assigned to the item in Partner Center. A example product ID is *product123*. | No       |
 | itemId               | string             | An ID that identifies this collection item from other items the user owns. This ID is unique per product.   | Yes      |
 | localTicketReference | string             | The ID of the previously supplied *localTicketReference* in the request body.                  | Yes      |
@@ -142,7 +144,7 @@ The CollectionItemContractV6 object contains the following parameters.
 | skuType              | string             | Type of the SKU. Possible values include **Trial**, **Full**, and **Rental**.        | Yes      |
 | startDate            | datetime           | The date that the item starts being valid.       | Yes      |
 | status               | string             | The status of the item. Possible values include **Active**, **Expired**, **Revoked**, and **Banned**.    | Yes      |
-| tags                 | list<string>       | N/A    | Yes      |
+| tags                 | list\<string>       | N/A    | Yes      |
 | transactionId        | guid               | The transaction ID as a result of the purchase of this item. Can be used for reporting an item as fulfilled.      | Yes      |
 
 
@@ -202,3 +204,4 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Grant free products](grant-free-products.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 

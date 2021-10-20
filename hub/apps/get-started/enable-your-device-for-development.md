@@ -1,11 +1,11 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
-description: Learn how to enable your Windows 10 device for development and debugging by activating Developer Mode in Visual Studio.
+description: Learn how to enable your Windows device for development and debugging by activating Developer Mode in Visual Studio.
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.date: 10/13/2020
 ms.topic: article
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ---
 
 # Enable your device for development
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 ![Enable your devices for development](images/developer-poster.png)
 
 > [!IMPORTANT]
-> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10). If you're developing for the first time, you'll also want to [get set up](get-set-up.md) by downloading the tools you need.
+> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10). If you're developing for the first time, you'll also want to [get set up](../windows-app-sdk/set-up-your-development-environment.md) by downloading the tools you need.
 
 If you are using your computer for ordinary day-to-day activities such as games, web browsing, email or Office apps, you do *not* need to activate Developer Mode and in fact, you shouldn't activate it. The rest of the information on this page won't matter to you, and you can safely get back to whatever it is you were doing. Thanks for stopping by!
 

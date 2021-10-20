@@ -34,14 +34,12 @@ In the **Choose your project** window, you will be able to choose between these 
 
 - **Empty Activity**: Creates an empty activity and a single layout file with sample text content.
 
-- **Bottom Navigation Activity**: Creates a standard bottom navigation bar for an activity. See the [Bottom Navigation Component](https://material.io/guidelines/components/bottom-navigation.html) in Google's material design guidelines.
+- **Bottom Navigation Activity**: Creates a standard bottom navigation bar for an activity. For more information on this, see the Bottom Navigation Component section of the [Material Design guidelines](https://material.io/guidelines/components/bottom-navigation.html) by Google.
 
-- Learn more about [selecting an activity template](https://developer.android.com/studio/projects/templates#SelectTemplate) in the Android Studio docs.
-
-Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app's users, add an activity with the [Login Activity template](https://developer.android.com/studio/projects/templates#LoginActivity).
+- Templates are commonly used to add activities to new and existing app modules. For example, to create a login screen for your app's users, add an activity with the Login Activity template. To learn more about selecting an activity and how to add code from a template, see [Android Developer guide](https://developer.android.com/studio/projects/templates#SelectTemplate) by Google.
 
 > [!NOTE]
-> The Android operating system is based on the idea of **components** and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused task that a user can do. An **activity** provides a window for building the user interface using classes based on the **View** class. There is a lifecycle for **activities** in the Android operating system, defined by a set of six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about [Activities](https://developer.android.com/reference/android/app/Activity), the [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle), and [Intents](https://developer.android.com/reference/android/content/Intent.html) in the Android docs.
+> The Android operating system is based on the idea of **components** and uses the terms **activity** and **intent** to define interactions. An **activity** represents a single, focused task that a user can do. An **activity** provides a window for building the user interface using classes based on the **View** class. There is a lifecycle for **activities** in the Android operating system, defined by six callbacks: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. The activity components interact with one another using **intent** objects. Intent either defines the activity to start or describes the type of action to perform (and the system selects the appropriate activity for you, which can even be from a different application). Learn more about Activities, the Activity Lifecycle, and Intents in the [Android Developer guide](https://developer.android.com/reference/android/app/Activity) by Google.
 
 ### Java or Kotlin
 
@@ -49,7 +47,7 @@ Templates are commonly used to add activities to new and existing app modules. F
 
 **Kotlin** was first announced as a new open-source language by JetBrains in 2011 and has been included as an alternative to Java in Android Studio since 2017. In May 2019, Google announced Kotlin as it's preferred language for Android app developers, so despite being a newer language, it also has a strong support community and has been identified as one of the fastest growing programming languages. Kotlin is cross-platform, statically typed, and designed to interoperate fully with Java.
 
-Java is more widely used for a broader range of applications and offers some features that Kotlin does not, such as checked exceptions, primitive types that are not classes, static members, non-private fields, wildcard-types, and ternary-operators. Kotlin is specifically designed for and recommended by Android. It also offers some features that Java does not, such as null references controlled by the type system, no raw types, invariant arrays, proper function types (as opposed to Java's SAM-conversions), use-site variance without wildcards, smart casts, and more. The Kotlin documentation offers [a more in-depth look at the comparison to Java](https://kotlinlang.org/docs/reference/comparison-to-java.html).
+Java is more widely used for a broader range of applications and offers some features that Kotlin does not, such as checked exceptions, primitive types that are not classes, static members, non-private fields, wildcard-types, and ternary-operators. Kotlin is specifically designed for and recommended by Android. It also offers some features that Java does not, such as null references controlled by the type system, no raw types, invariant arrays, proper function types (as opposed to Java's SAM-conversions), use-site variance without wildcards, smart casts, and more. Find a more in-depth look at the comparison to Java in the [Kotlin documentation](https://kotlinlang.org/docs/reference/comparison-to-java.html).
 
 ### Minimum API Level
 
@@ -65,7 +63,7 @@ Select the **Help me choose** link to open a comparison chart showing the device
 
 You may notice a checkbox to **Support instant apps** and another to **Use androidx artifacts** in your project creation options. The *instant apps support* is not checked and the *androidx* is checked as the recommended default.
 
-Google Play **Instant apps** provide a way for people to try an app or game without installing it first. These instant apps can be surfaced across the Play Store, Google Search, social networks, and anywhere you share a link. By checking the **Support instant apps** box, you are asking Android Studio to include the Google Play Instant Development SDK with your project. To learn more about [Google Play Instant apps](https://developer.android.com/topic/google-play-instant) and how to [create an instant-enabled app bundle](https://developer.android.com/topic/google-play-instant/getting-started/instant-enabled-app-bundle), see the Android documentation.
+Google Play **Instant apps** provide a way for people to try an app or game without installing it first. These instant apps can be surfaced across the Play Store, Google Search, social networks, and anywhere you share a link. By checking the **Support instant apps** box, you are asking Android Studio to include the Google Play Instant Development SDK with your project. Learn more about Google Play Instant apps in the [Android developer guide](https://developer.android.com/topic/google-play-instant).
 
 **AndroidX artifacts** represents the new version of the Android support library and provides backwards-compatibility across Android releases. AndroidX provides a consistent namespace starting with the string androidx for all available packages.
 
@@ -90,7 +88,7 @@ The manifest file describing the fundamental characteristics of the app and each
 
 **Gradle Scripts > build.gradle**
 
-There are two files with this name: "Project: My First App", for the entire project, and "Module: app", for each app module. A new project will initially only have one module. Use the module's build.file to control how the Gradle plugin builds your app. Learn more in the Android docs, [Configure your build](https://developer.android.com/studio/build/index) article.
+There are two files with this name: "Project: My First App", for the entire project, and "Module: app", for each app module. A new project will initially only have one module. Use the module's build.file to control how the Gradle plugin builds your app. Learn more about how to configure your build in the [Android developer guide](https://developer.android.com/studio/build/index).
 
 ## Use C or C++ for Android game development
 
@@ -102,9 +100,9 @@ To create a new project with C/C++ support:
 
 - In the **Customize C++ Support** section of the wizard, you can customize your project with the **C++ Standard** field. Use the drop-down list to select which standardization of C++ you want to use. Selecting **Toolchain Default** uses the default CMake setting. Select **Finish**.
 
-- Once Android Studio creates your new project, you can find a **cpp** folder in the **Project** pane that contains the native source files, headers, build scripts for CMake or ndk-build, and prebuilt libraries that are a part of your project. You can also find a sample C++ source file, `native-lib.cpp`, in the `src/main/cpp/` folder which provides a simple `stringFromJNI()` function returning the string "Hello from C++". Additionally, you will find a CMake build script, [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html), in your module's root directory required for building your native library.
+- Once Android Studio creates your new project, you can find a **cpp** folder in the **Project** pane that contains the native source files, headers, build scripts for CMake or ndk-build, and prebuilt libraries that are a part of your project. You can also find a sample C++ source file, `native-lib.cpp`, in the `src/main/cpp/` folder which provides a simple `stringFromJNI()` function returning the string "Hello from C++". Additionally, you should see a CMake build script, `CMakeLists.txt`, in your module's root directory required for building your native library.
 
-To learn more, see the Android docs topic: [Add C and C++ code to your project](https://developer.android.com/studio/projects/add-native-code). For samples, see the [Android NDK samples with Android Studio C++ integration repo](https://github.com/android/ndk-samples) on GitHub. To compile and run a C++ game on Android, use the [Google Play Game services API](https://developers.google.com/games/services/cpp/gettingStartedAndroid).
+To learn more, about adding C and C++ code to your project, see the [Android developer guide](https://developer.android.com/studio/projects/add-native-code). To find Android NDK samples with C++ integration, see the [Android NDK samples repo](https://github.com/android/ndk-samples) on GitHub. To compile and run a C++ game on Android, use the [Google Play Game services API](https://developers.google.com/games/services/cpp/gettingStartedAndroid).
 
 ## Design guidelines
 

@@ -32,7 +32,7 @@ Uniquely identifies elements that are created and referenced as resources, and w
 
 | Term | Description |
 |------|-------------|
-| object | Any object that is shareable. See [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). |
+| object | Any object that is shareable. See [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary). |
 | stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. |
 
 ##  XamlName grammar
@@ -62,4 +62,4 @@ Note that in the implicit syntax shown, the [**ResourceDictionary**](/uwp/api/Wi
 
 The code equivalent of specifying **x:Key** is any operation that uses a key with the underlying [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). For example, an **x:Key** applied in markup for a resource is equivalent to the value of the *key* parameter of **Insert** when you add the resource to a **ResourceDictionary**.
 
-An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](/uwp/api/Windows.UI.Xaml.Style) or [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string. For more info, see [Quickstart: styling controls](/previous-versions/windows/apps/hh465498(v=win.10)) and [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).
+An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](/uwp/api/Windows.UI.Xaml.Style) or [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string. For more info, see [Quickstart: styling controls](/previous-versions/windows/apps/hh465498(v=win.10)) and [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary).

@@ -110,7 +110,7 @@ For more info on using VS to debug a background task see [How to trigger suspend
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [How to trigger suspend, resume, and background events in UWP apps](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [Analyzing the code quality of UWP apps with Visual Studio code analysis](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
+* [Overview of code analysis for .NET in Visual Studio](/visualstudio/code-quality/code-analysis-for-managed-code-overview)
 
  
 

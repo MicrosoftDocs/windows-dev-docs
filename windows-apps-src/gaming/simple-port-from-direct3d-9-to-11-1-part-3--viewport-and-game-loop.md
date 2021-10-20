@@ -121,7 +121,7 @@ Now we have a UWP app that sets up the same basic graphics infrastructure, and r
 ## Where do I go from here?
 
 
-Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
+Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.yml).
 
 The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
 

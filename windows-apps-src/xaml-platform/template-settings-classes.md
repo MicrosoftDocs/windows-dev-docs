@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 ## Prerequisites
 
-We assume that you can add controls to your UI, set their properties, and attach event handlers. For instructions for adding controls to your app, see [Add controls and handle events](../design/controls-and-patterns/controls-and-events-intro.md). We also assume that you know the basics of how to define a custom template for a control by making a copy of the default template and editing it. For more info on this, see [Quickstart: Control templates](/previous-versions/windows/apps/hh465374(v=win.10)).
+We assume that you can add controls to your UI, set their properties, and attach event handlers. For instructions for adding controls to your app, see [Add controls and handle events](/windows/apps/design/controls/controls-and-events-intro). We also assume that you know the basics of how to define a custom template for a control by making a copy of the default template and editing it. For more info on this, see [Quickstart: Control templates](/previous-versions/windows/apps/hh465374(v=win.10)).
 
 ## The scenario for **TemplateSettings** classes
 

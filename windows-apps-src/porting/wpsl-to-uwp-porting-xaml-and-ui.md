@@ -2,7 +2,7 @@
 description: The practice of defining UI in the form of declarative XAML markup translates extremely well from Windows Phone Silverlight to Universal Windows Platform (UWP) apps.
 title: Porting Windows Phone Silverlight XAML and UI to UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.date: 02/08/2017
+ms.date: 08/03/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -88,7 +88,7 @@ If you do use keyframe animations or from/to animations in your UWP apps, then y
 
 ## Back button handling
 
-In a Windows 10 app, you can use a single approach to handling the back button and it will work on all devices. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for Tablet mode. The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) event.
+In a Windows 10 app, you can use a single approach to handling the back button and it will work on all devices. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for [Tablet mode (Windows 10 only)](/windows-hardware/design/device-experiences/continuum). The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) event.
 
 The example below works for all device families and it is good for cases where the same processing applies to all pages, and where you needn't confirm navigation (for example, to warn about unsaved changes).
 
@@ -188,14 +188,14 @@ Windows Phone Silverlight apps use controls defined in the **Microsoft.Phone.Co
 | ApplicationBarMenuItem | The UWP equivalent is the [AppBarButton.Label](/uwp/api/windows.ui.xaml.controls.appbarbutton.label) set to the menu item text. |
 | ContextMenu (in the Windows Phone Toolkit) | For a single selection fly-out, use [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | ControlTiltEffect.TiltEffect class | Animations from the UWP animation library are built into the default Styles of the common controls. See the [Animating pointer actions](/previous-versions/windows/apps/jj649432(v=win.10)). |
-| LongListSelector with grouped data | The Windows Phone Silverlight LongListSelector functions in two ways, which can be used in concert. First, it is able to display data that is grouped by a key, for example, a list of names grouped by initial letter. Second, it is able to "zoom" between two semantic views: the grouped list of items (for example, names), and a list of just the group keys themselves (for example, initial letters). With the UWP, you can display grouped data with the [Guidelines for list and grid view controls](../design/controls-and-patterns/lists.md). |
+| LongListSelector with grouped data | The Windows Phone Silverlight LongListSelector functions in two ways, which can be used in concert. First, it is able to display data that is grouped by a key, for example, a list of names grouped by initial letter. Second, it is able to "zoom" between two semantic views: the grouped list of items (for example, names), and a list of just the group keys themselves (for example, initial letters). With the UWP, you can display grouped data with the [Guidelines for list and grid view controls](/windows/apps/design/controls/lists). |
 | LongListSelector with flat data | For performance reasons, in the case of very long lists, we recommended LongListSelector instead of a Windows Phone Silverlight list box even for flat, non-grouped data. In a UWP app, [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView) are preferred for long lists of items whether or not the data are amenable to grouping. |
-| Panorama | The Windows Phone Silverlight Panorama control maps to the [Guidelines for hub controls in Windows Runtime 8.x apps](../design/basics/navigation-basics.md) and Guidelines for the hub control. <br/> Note that a Panorama control wraps around from the last section to the first, and its background image moves in parallax relative to the sections. [Hub](/uwp/api/Windows.UI.Xaml.Controls.Hub) sections do not wrap around, and parallax is not used. |
+| Panorama | The Windows Phone Silverlight Panorama control maps to the [Guidelines for hub controls in Windows Runtime 8.x apps](/windows/apps/design/basics/navigation-basics) and Guidelines for the hub control. <br/> Note that a Panorama control wraps around from the last section to the first, and its background image moves in parallax relative to the sections. [Hub](/uwp/api/Windows.UI.Xaml.Controls.Hub) sections do not wrap around, and parallax is not used. |
 | Pivot | The UWP equivalent of the Windows Phone Silverlight Pivot control is [Windows.UI.Xaml.Controls.Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot). It is available for all device families. |
 
 **Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps, but not in Windows Phone Silverlight apps. There are other reasons why your existing custom styles/templates may not be appropriate for Windows 10 apps, including system resource keys you are using, changes to the sets of visual states used, and performance improvements made to the Windows 10 default styles/templates. We recommend that you edit a fresh copy of a control's default template for Windows 10 and then re-apply your style and template customization to that.
 
-For more info on UWP controls, see [Controls by function](../design/controls-and-patterns/index.md), [Controls list](../design/controls-and-patterns/index.md), and [Guidelines for controls](../design/controls-and-patterns/index.md).
+For more info on UWP controls, see [Controls by function](/windows/apps/design/controls/index), [Controls list](/windows/apps/design/controls/index), and [Guidelines for controls](/windows/apps/design/controls/index).
 
 ##  Design language in Windows 10
 
@@ -205,7 +205,7 @@ There are some differences in design language between Windows Phone Silverlight
 
 For localized strings, you can re-use the .resx file from your Windows Phone Silverlight project in your UWP app project. Copy the file over, add it to the project, and rename it to Resources.resw so that the lookup mechanism will find it by default. Set **Build Action** to **PRIResource** and **Copy to Output Directory** to **Do not copy**. You can then use the strings in markup by specifying the **x:Uid** attribute on your XAML elements. See [Quickstart: Using string resources](/previous-versions/windows/apps/hh965329(v=win.10)).
 
-Windows Phone Silverlight apps use the **CultureInfo** class to help globalize an app. UWP apps use MRT (Modern Resource Technology), which enables the dynamic loading of app resources (localization, scale, and theme) both at runtime and in the Visual Studio design surface. For more information, see [Guidelines for files, data, and globalization](../design/usability/index.md).
+Windows Phone Silverlight apps use the **CultureInfo** class to help globalize an app. UWP apps use MRT (Modern Resource Technology), which enables the dynamic loading of app resources (localization, scale, and theme) both at runtime and in the Visual Studio design surface. For more information, see [Guidelines for files, data, and globalization](/windows/apps/design/usability/index).
 
 The [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) topic describes how to load device family-specific resources based on the device family resource selection factor.
 
@@ -287,7 +287,7 @@ In a UWP app, you use imperative code to define the startup page. Here's some co
 
 URI mapping and fragment navigation are URI navigation techniques, and so they are not applicable to UWP navigation, which is not based on URIs. URI mapping exists in response to the weakly-typed nature of identifying a target page with a URI string, which leads to fragility and maintainability issues should the page move to a different folder and hence to a different relative path. UWP apps use type-based navigation, which is strongly-typed and compiler-checked, and does not have the problem that URI mapping solves. The use case for fragment navigation is to pass along some context to the target page so that the page can cause a particular fragment of its content to be scrolled into view, or otherwise displayed. The same goal can be achieved by passing a navigation parameter when you call the [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate) method.
 
-For more info, see [Navigation](../design/basics/navigation-basics.md).
+For more info, see [Navigation](/windows/apps/design/basics/navigation-basics).
 
 ## Resource key reference
 
@@ -307,7 +307,7 @@ Text (or typography) is an important aspect of a UWP app and, while porting, you
 
 System TextBlock styles for Windows 10 apps
 
-In a Windows Phone Silverlight app, the default font family is Segoe WP. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your Windows Phone Silverlight text, you can set your own metrics using properties such as [**LineHeight**](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) and [**LineStackingStrategy**](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). For more info, see [Guidelines for fonts](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
+In a Windows Phone Silverlight app, the default font family is Segoe WP. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your Windows Phone Silverlight text, you can set your own metrics using properties such as [**LineHeight**](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) and [**LineStackingStrategy**](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). For more info, see [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
 
 ## Theme changes
 
@@ -374,7 +374,7 @@ If you have intricate artwork, then you may want to provide your assets in even 
 
 We don't recommend that you try to support all of the scale factors, but the full list of scale factors for Windows 10 apps is 100%, 125%, 150%, 200%, 250%, 300%, and 400%. If you provide them, the Store will pick the correct-sized asset(s) for each device, and only those assets will be downloaded. The Store selects the assets to download based on the DPI of the device.
 
-For more info, see [Responsive design 101 for UWP apps](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+For more info, see [Responsive design 101 for UWP apps](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## Window size
 

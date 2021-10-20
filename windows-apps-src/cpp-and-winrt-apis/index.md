@@ -49,7 +49,7 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Photo Editor C++/WinRT sample application](./photo-editor-sample.md) | Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. | 
 | [String handling](./strings.md) | With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
 | [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md) | With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types. |
-| [Boxing and unboxing scalar values to IInspectable](./boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
+| [Boxing and unboxing values to IInspectable](./boxing.md) | A scalar or array value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
 | [Consume APIs with C++/WinRT](./consume-apis.md) | This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself. |
 | [Author APIs with C++/WinRT](./author-apis.md) | This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly. |
 | [Error handling with C++/WinRT](./error-handling.md) | This topic discusses strategies for handling errors when programming with C++/WinRT. |
@@ -57,7 +57,8 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Author events](./author-events.md) | This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
 | [Collections with C++/WinRT](./collections.md) | C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections. |
 | [Concurrency and asynchronous operations](./concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
-| [More advanced concurrency and asynchrony](./concurrency-2.md) | More advanced scenarios with concurrency and asynchrony in C++/WinRT. |
+| [Advanced concurrency and asynchrony](./concurrency-2.md) | Advanced scenarios with concurrency and asynchrony in C++/WinRT. |
+| [A completion source sample](./concurrency-3.md) | Shows how you can author and consume your own completion source class. |
 | [XAML controls; bind to a C++/WinRT property](./binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md) | This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls. |
@@ -77,6 +78,9 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Extension points for your implementation types](./details-about-destructors.md) | These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods. |
 | [A simple C++/WinRT Windows UI Library example](./simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
 | [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) | This topic shows how to use C++/WinRT to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language. |
+| [Authoring a C# Windows Runtime component for use from a C++/WinRT app](../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md) | This topic walks you through the process of adding a simple C# component to your C++/WinRT project. |
+| [Visual Studio native debug visualization (natvis) for C++/WinRT](./natvis.md) | The [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types. This provides you an experience similar to C# debugging. |
+| [C++/WinRT naming conventions](./naming.md) | This topic explains naming conventions that C++/WinRT has established. |
 
 ### Topics about the C++ language
 

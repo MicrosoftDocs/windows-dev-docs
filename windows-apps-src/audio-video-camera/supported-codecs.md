@@ -2,7 +2,7 @@
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: This article lists the audio and video codec and format support for UWP apps.
 title: Supported codecs
-ms.date: 02/08/2017
+ms.date: 04/01/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -105,34 +105,20 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="even">
 <td align="left">AC3</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D/E</td>
@@ -149,8 +135,8 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">AMR-NB</td>
-<td align="left">D</td>
+<td align="left">AMR-NB<sup>*</sup></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -240,14 +226,14 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -331,7 +317,7 @@ The following tables show the audio codec and format support for each device fam
 </tbody>
 </table>
 
- 
+<sup>*</sup> Not available on Windows Server SKUs.
 
 ### Mobile
 
@@ -404,7 +390,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -429,21 +415,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D</td>
@@ -461,7 +433,7 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">AMR-NB</td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -551,13 +523,13 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -644,318 +616,7 @@ The following tables show the audio codec and format support for each device fam
 
  
 
-### IoT Core (x86)
-
-<table>
-<colgroup>
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Codec/Container</th>
-<th align="left">MPEG-4</th>
-<th align="left">MPEG-3</th>
-<th align="left">MPEG-2</th>
-<th align="left">ADTS</th>
-<th align="left">ASF</th>
-<th align="left">RIFF</th>
-<th align="left">AVI</th>
-<th align="left">AC-3</th>
-<th align="left">AMR</th>
-<th align="left">3GP</th>
-<th align="left">FLAC</th>
-<th align="left">WAV</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">AAC-LC</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">AC3</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">ALAC</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">AMR-NB</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">FLAC</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left">GSM 6.10</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="odd">
-<td align="left">IMA ADPCM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left">LPCM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D/E</td>
-</tr>
-<tr class="odd">
-<td align="left">MP3</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">MPEG-1/2</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">MS ADPCM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-</tr>
-<tr class="even">
-<td align="left">WMA 1/2/3</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">WMA Pro</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">WMA Voice</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-### IoT Core (ARM)
+### WIndows 10 IoT
 
 <table>
 <colgroup>
@@ -1051,21 +712,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D</td>
@@ -1083,7 +730,7 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">AMR-NB</td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1173,13 +820,13 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1222,7 +869,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1237,7 +884,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1252,7 +899,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1264,7 +911,7 @@ The following tables show the audio codec and format support for each device fam
 </tbody>
 </table>
 
- 
+
 
 ### Xbox
 
@@ -1353,30 +1000,16 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">EAC3 / EC3</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="even">
 <td align="left">ALAC</td>
 <td align="left">D</td>
@@ -1484,13 +1117,13 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">MP3</td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1583,7 +1216,6 @@ The following tables show the video codec and format support for each device fam
 
 > [!NOTE] 
 > Where H.265 support is indicated, it is not necessarily supported by all devices within the device family.
-> Where MPEG-2/MPEG-1 support is indicated, it is only supported with the installation of the optional Microsoft DVD Universal Windows app.
 
  
 
@@ -1609,7 +1241,6 @@ The following tables show the video codec and format support for each device fam
 <thead>
 <tr class="header">
 <th align="left">Codec/Container</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
@@ -1626,8 +1257,7 @@ The following tables show the video codec and format support for each device fam
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">MPEG-1</td>
-<td align="left"></td>
+<td align="left">MPEG-1<sup>*</sup></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
@@ -1642,8 +1272,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">MPEG-2</td>
-<td align="left"></td>
+<td align="left">MPEG-2<sup>*</sup></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
@@ -1660,7 +1289,6 @@ The following tables show the video codec and format support for each device fam
 <tr class="odd">
 <td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1674,8 +1302,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">H.265</td>
-<td align="left"></td>
+<td align="left">H.265<sup>**</sup></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -1691,7 +1318,6 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
@@ -1708,7 +1334,6 @@ The following tables show the video codec and format support for each device fam
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1723,7 +1348,6 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">VC-1</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -1740,7 +1364,6 @@ The following tables show the video codec and format support for each device fam
 <tr class="even">
 <td align="left">WMV7/8/9</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1755,7 +1378,6 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">WMV9 Screen</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -1772,7 +1394,6 @@ The following tables show the video codec and format support for each device fam
 <tr class="even">
 <td align="left">DV</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1785,9 +1406,57 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left">D</td>
 </tr>
+
+<tr class="even">
+<td align="left">VP8</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+
+<tr class="even">
+<td align="left">VP9</td>
+<td align="left">D</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+
+<tr class="even">
+<td align="left">AV1<sup>**</sup></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+
 <tr class="odd">
 <td align="left">Motion JPEG</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -1804,7 +1473,9 @@ The following tables show the video codec and format support for each device fam
 </tbody>
 </table>
 
- 
+<sup>*</sup> MPEG-2/MPEG-1 codec is available with install of optional Microsoft UWP DVD application.
+
+<sup>**</sup> H.265 and AV1 are avaliable with the install of the corresponding optional codec pack.
 
 ### Mobile
 
@@ -1828,73 +1499,33 @@ The following tables show the video codec and format support for each device fam
 <thead>
 <tr class="header">
 <th align="left">Codec/Container</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
 <th align="left">MPEG-2 TS</th>
-<th align="left">MPEG-1</th>
 <th align="left">3GPP</th>
-<th align="left">3GPP2</th>
 <th align="left">AVCHD</th>
 <th align="left">ASF</th>
 <th align="left">AVI</th>
 <th align="left">MKV</th>
-<th align="left">DV</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">MPEG-1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">MPEG-2</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="odd">
 <td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">H.265</td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -1903,50 +1534,36 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
 <td align="left">VC-1</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1954,70 +1571,18 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left">D</td>
-<td align="left"></td>
 </tr>
-<tr class="even">
-<td align="left">WMV7/8/9</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">WMV9 Screen</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">DV</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
+
 <tr class="odd">
 <td align="left">Motion JPEG</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -2025,7 +1590,7 @@ The following tables show the video codec and format support for each device fam
 
  
 
-### IoT Core (x86)
+### Windows 10 IoT
 
 <table>
 <colgroup>
@@ -2047,7 +1612,6 @@ The following tables show the video codec and format support for each device fam
 <thead>
 <tr class="header">
 <th align="left">Codec/Container</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
@@ -2067,38 +1631,35 @@ The following tables show the video codec and format support for each device fam
 <td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">MPEG-2</td>
+<td align="left">MPEG-2<sup>*</sup></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2112,8 +1673,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">H.265</td>
-<td align="left"></td>
+<td align="left">H.265<sup>**</sup></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -2129,7 +1689,6 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
@@ -2146,7 +1705,6 @@ The following tables show the video codec and format support for each device fam
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2161,7 +1719,6 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">VC-1</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2178,6 +1735,20 @@ The following tables show the video codec and format support for each device fam
 <tr class="even">
 <td align="left">WMV7/8/9</td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2192,9 +1763,38 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 Screen</td>
+<td align="left">VP8</td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">VP9</td>
+<td align="left">D</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">AV1<sup>**</sup></td>
+<td align="left">D</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2202,9 +1802,9 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
 <td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -2220,12 +1820,10 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
 <td align="left">Motion JPEG</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
@@ -2242,224 +1840,12 @@ The following tables show the video codec and format support for each device fam
 </tbody>
 </table>
 
+<sup>*</sup> MPEG-2/MPEG-1 codec is available with install of optional Microsoft UWP DVD application.
+
+<sup>**</sup> H.265 and AV1 are avaliable with the install of the corresponding optional codec pack.
  
 
-### IoT (ARM)
 
-<table>
-<colgroup>
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Codec/Container</th>
-<th align="left">FOURCC</th>
-<th align="left">fMP4</th>
-<th align="left">MPEG-4</th>
-<th align="left">MPEG-2 PS</th>
-<th align="left">MPEG-2 TS</th>
-<th align="left">MPEG-1</th>
-<th align="left">3GPP</th>
-<th align="left">3GPP2</th>
-<th align="left">AVCHD</th>
-<th align="left">ASF</th>
-<th align="left">AVI</th>
-<th align="left">MKV</th>
-<th align="left">DV</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">MPEG-1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">MPEG-2</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">MPEG-4 (Part 2)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">H.265</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">H.264</td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D/E</td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">H.263</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">VC-1</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">WMV7/8/9</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">WMV9 Screen</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">DV</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Motion JPEG</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">D</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
 
  
 
@@ -2485,14 +1871,12 @@ The following tables show the video codec and format support for each device fam
 <thead>
 <tr class="header">
 <th align="left">Codec/Container</th>
-<th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-2 PS</th>
 <th align="left">MPEG-2 TS</th>
 <th align="left">MPEG-1</th>
 <th align="left">3GPP</th>
-<th align="left">3GPP2</th>
 <th align="left">AVCHD</th>
 <th align="left">ASF</th>
 <th align="left">AVI</th>
@@ -2505,11 +1889,9 @@ The following tables show the video codec and format support for each device fam
 <td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
@@ -2521,10 +1903,8 @@ The following tables show the video codec and format support for each device fam
 <td align="left">MPEG-2</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
@@ -2536,13 +1916,11 @@ The following tables show the video codec and format support for each device fam
 <tr class="odd">
 <td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2551,10 +1929,8 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="even">
 <td align="left">H.265</td>
-<td align="left"></td>
 <td align="left">D</td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2567,14 +1943,12 @@ The following tables show the video codec and format support for each device fam
 </tr>
 <tr class="odd">
 <td align="left">H.264</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2584,13 +1958,11 @@ The following tables show the video codec and format support for each device fam
 <tr class="even">
 <td align="left">H.263</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D/E</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2600,9 +1972,7 @@ The following tables show the video codec and format support for each device fam
 <tr class="odd">
 <td align="left">VC-1</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2614,7 +1984,9 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMV7/8/9</td>
+<td align="left">VP8</td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2622,15 +1994,13 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">WMV9 Screen</td>
+<tr class="even">
+<td align="left">VP9</td>
+<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2638,11 +2008,21 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">AV1</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -2657,16 +2037,12 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
 <td align="left">Motion JPEG</td>
 <td align="left"></td>
-<td align="left"></td>
 <td align="left">D</td>
-<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>

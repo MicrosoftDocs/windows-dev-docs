@@ -1,95 +1,72 @@
 - name: Windows
   tocHref: /windows/
-  topicHref: /windows/
+  topicHref: /windows
   items:
     - name: Apps
       tocHref: /windows/apps/
-      topicHref: /windows/apps/
+      topicHref: /windows/apps
       items:
-        - name: Build desktop apps
+        - name: Desktop
           tocHref: /windows/apps/desktop/
-          topicHref: /windows/apps/desktop/
+          topicHref: /windows/apps/desktop
           items:
+            - name: Set up your development environment
+              # Topic in different folder
+              topicHref: /windows/apps/windows-app-sdk/set-up-your-development-environment
+              items:
+                - name: Enable your device for development
+                  # Topic in different folder
+                  topicHref: /windows/apps/get-started/enable-your-device-for-development
+                - name: Developer Mode features and debugging
+                  # Topic in different folder
+                  topicHref: /windows/apps/get-started/developer-mode-features-and-debugging
+                - name: Create a developer account
+                  # Topic in different folder
+                  topicHref: /windows/apps/get-started/sign-up
+            - name: Get started
+              tocHref: /windows/apps/get-started/
+              topicHref: /windows/apps/get-started
+              items:
+                - name: Visual Studio project and item templates for Windows apps
+                  # Topic in different folder
+                  topicHref: /windows/apps/desktop/visual-studio-templates
+            - name: Design and UI
+              tocHref: /windows/apps/design/
+              topicHref: /windows/apps/design
+            - name: Windows App SDK
+              tocHref: /windows/apps/windows-app-sdk/
+              topicHref: /windows/apps/windows-app-sdk
+            - name: Windows UI Library (WinUI)
+              tocHref: /windows/apps/winui/
+              topicHref: /windows/apps/winui
+              items:
+                - name: WinUI 3
+                  tocHref: /windows/apps/winui/winui3/
+                  topicHref: /windows/apps/winui/winui3
+                - name: WinUI 2
+                  tocHref: /windows/apps/winui/winui2/
+                  topicHref: /windows/apps/winui/winui2
+            - name: Develop
+              topicHref: /windows/apps/develop
+              # items:
+              #   - name: Accessibility
+              #     # Topic in different folder
+              #     topicHref: /windows/apps/accessibility
+              #   - name: Speech
+              #     # Topic in different folder
+              #     topicHref: /windows/apps/speech
             - name: Modernize desktop apps
               tocHref: /windows/apps/desktop/modernize/
-              topicHref: /windows/apps/desktop/modernize/
-              items:
-                - name: Call Windows Runtime APIs
-                  topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
-                  items:
-                    - name: Available Windows Runtime APIs
-                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-supported-api
-                - name: XAML Islands
-                  topicHref: /windows/apps/desktop/modernize/xaml-islands
-                  items:
-                    - name: Host a standard UWP control in a WPF app
-                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands
-                    - name: Host a custom UWP control in a WPF app
-                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands
-                    - name: Using the UWP XAML hosting API
-                      topicHref: /windows/apps/desktop/modernize/using-the-xaml-hosting-api
-                    - name: Host a standard UWP control in a C++ Win32 app
-                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp
-                    - name: Host a custom UWP control in a C++ Win32 app
-                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp
-                    - name: Advanced scenarios for XAML Islands in C++ Win32 apps
-                      topicHref: /windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp
-                - name: Visual layer
-                  topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
-                  items:
-                    - name: WPF
-                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-wpf
-                    - name: Windows Forms
-                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-windows-forms
-                    - name: Win32
-                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-win32
-                - name: Features that require package identity
-                  topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
-                  items:
-                    - name: Integrate with package extensions
-                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extensions
-                    - name: Extend with UWP components
-                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extend
-                    - name: Distribute your packaged desktop app
-                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-distribute
-                - name: "Tutorial: Modernize a WPF app"
-                  topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
-                  items:
-                    - name: Part 1
-                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-1
-                    - name: Part 2
-                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-2
-                    - name: Part 3
-                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-3
-                    - name: Part 4
-                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-4
-                    - name: Part 5
-                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-5
-        - name: Windows UI Library (WinUI)
-          tocHref: /windows/apps/winui/
-          topicHref: /windows/apps/winui/
-          items:
-            - name: WinUI 3
-              tocHref: /windows/apps/winui/winui3/
-              topicHref: /windows/apps/winui/winui3
-            - name: WinUI 2
-              tocHref: /windows/apps/winui/winui2/
-              topicHref: /windows/apps/winui/winui2
-        - name: .NET TraceProcessing
-          tocHref: /windows/apps/trace-processing/
-          topicHref: /windows/apps/trace-processing/overview
-        - name: Develop for Windows 10X
-          topicHref: /windows/apps/10x/faq
-        - name: Fluent Design System
-          topicHref: /windows/apps/fluent-design-system
-        - name: Accessibility
-          topicHref: /windows/apps/accessibility
-        - name: Speech
-          topicHref: /windows/apps/speech
-        - name: Features and technologies
-          topicHref: /windows/apps/features-and-technologies
-        - name: Latest doc updates
-          topicHref: /windows/apps/whats-new/latest-doc-updates
+              topicHref: /windows/apps/desktop/modernize
+            - name: Package and deploy
+              tocHref: /windows/apps/package-and-deploy/
+              topicHref: /windows/apps/package-and-deploy
+            - name: .NET TraceProcessing
+              tocHref: /windows/apps/trace-processing/
+              topicHref: /windows/apps/trace-processing/overview
+            - name: Latest doc updates
+              tocHref: /windows/apps/whats-new/latest-doc-updates
+              topicHref: /windows/apps/whats-new/latest-doc-updates
     - name: Development environment
       tocHref: /windows/dev-environment/
       topicHref: "/windows/dev-environment/"
@@ -103,9 +80,6 @@
         - name: Python
           tocHref: /windows/python/
           topicHref: "/windows/python"
-        - name: Node.js
-          tocHref: /windows/nodejs/
-          topicHref: "/windows/nodejs"
         - name: Android
           tocHref: /windows/android/
           topicHref: "/windows/android/overview"
@@ -120,3 +94,6 @@
         - name: Windows Subsystem for Linux
           tocHref: /windows/dev-environment/wsl
           topicHref: "/windows/wsl/about"
+        - name: JavaScript
+          tocHref: /windows/dev-environment/javascript/
+          topicHref: "/windows/dev-environment/javascript"

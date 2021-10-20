@@ -16,7 +16,7 @@ The Windows.UI.Composition APIs enable you to create real-time animations and ef
 Composition lighting lets you create interesting UI by allowing:
 
 - Transformation of a light independent of other objects in the scene to enable immersive scenarios like music playback scenes.
-- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](../design/style/reveal.md) highlight.
+- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](/windows/apps/design/style/index) highlight.
 - Transformation of the light and entire scene as a group to create materials and depth.
 
 Composition lighting supports three key concepts: **Light**, **Targets**, and **SceneLightingEffect**.
@@ -68,7 +68,7 @@ Concept | Details
 **Ambient Light** | Adding a non-ambient light to your scene will turn off all existing light.  Items not targeted by a non-ambient light will appear black.  To illuminate surrounding visuals not targeted by the light in a natural way, use an ambient light in conjunction with other lights.
 **Number of Lights** | You may use any two non-ambient composition lights in any combination to target your UI. Ambient lights are not restricted; spot, point, and distant lights are.
 **Lifetime** | CompositionLight may experience lifetime conditions (example: the garbage collector may recycle the light object before it is used).  We recommended keeping a reference to your lights by adding lights as a member to help the application manage lifetime.
-**Transforms** | Lights must be placed in a node above UI that uses effects like [perspective transforms](../design/layout/3-d-perspective-effects.md) in your visual structure to be drawn properly.
+**Transforms** | Lights must be placed in a node above UI that uses effects like [perspective transforms](/windows/apps/design/layout/3-d-perspective-effects) in your visual structure to be drawn properly.
 **Targets and Coordinate Space** | CoordinateSpace is the visual space in which all the lights properties must be set. CompositionLight.Targets must be within the CoordinateSpace tree.
 
 ## Lighting Properties

@@ -197,7 +197,7 @@ Within a project, the XAML is written as a .xaml file, and you use the language 
 
 ## Resource dictionaries
 
-Creating a <xref:Windows.UI.Xaml.ResourceDictionary> is a common task that is usually accomplished by authoring a resource dictionary as an area of a XAML page or a separate XAML file. Resource dictionaries and how to use them is a larger conceptual area that is outside the scope of this topic. For more info see [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).
+Creating a <xref:Windows.UI.Xaml.ResourceDictionary> is a common task that is usually accomplished by authoring a resource dictionary as an area of a XAML page or a separate XAML file. Resource dictionaries and how to use them is a larger conceptual area that is outside the scope of this topic. For more info see [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary).
 
 ## XAML and XML
 
@@ -227,7 +227,7 @@ Depending on your own role in the development process, you might not interact wi
 
 ## Optimize your XAML for load performance
 
-Here are some tips for defining UI elements in XAML using best practices for performance. Many of these tips relate to using XAML resources, but are listed here in the general XAML overview for convenience. For more info about XAML resources see [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). For some more tips on performance, including XAML that purposely demonstrates some of the poor performance practices that you should avoid in your XAML, see [Optimize your XAML markup](../debug-test-perf/optimize-xaml-loading.md).
+Here are some tips for defining UI elements in XAML using best practices for performance. Many of these tips relate to using XAML resources, but are listed here in the general XAML overview for convenience. For more info about XAML resources see [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary). For some more tips on performance, including XAML that purposely demonstrates some of the poor performance practices that you should avoid in your XAML, see [Optimize your XAML markup](../debug-test-perf/optimize-xaml-loading.md).
 
 - If you use the same color brush often in your XAML, define a <xref:Windows.UI.Xaml.Media.SolidColorBrush> as a resource rather than using a named color as an attribute value each time.
 - If you use the same resource on more than one UI page, consider defining it in <xref:Windows.UI.Xaml.Application.Resources%2A> rather than on each page. Conversely, if only one page uses a resource, don't define it in **Application.Resources** and instead define it only for the page that needs it. This is good both for XAML factoring while designing your app and for performance during XAML parsing.
@@ -245,9 +245,9 @@ When there are problems with a XAML file, the most typical result is that some s
 
 XAML is often edited within an IDE such as Visual Studio and one of its XAML design surfaces. Visual Studio can often provide design-time validation and error checking of a XAML source as you edit it. For example it might display "squiggles" in the XAML text editor as soon as you type a bad attribute value, and you won't even have to wait for a XAML compile pass to see that something's wrong with your UI definition.
 
-Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for Windows Runtime apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
+Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for Windows Runtime apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
 
 > [!NOTE]
-> Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
+> Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
 
 For more info on debugging a Windows Runtime app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).

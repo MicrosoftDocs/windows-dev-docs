@@ -19,7 +19,7 @@ If you are creating a component for use only in UWP apps that are written in Vis
 
 ## Declaring types in Windows Runtime components
 
-Internally, the Windows Runtime types in your component can use any .NET functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0).
+Internally, the Windows Runtime types in your component can use any .NET functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
 
 Externally, the members of your types can expose only Windows Runtime types for their parameters and return values. The following list describes the limitations on .NET types that are exposed from a Windows Runtime component.
 
@@ -175,11 +175,11 @@ Starting with Windows 8.1, the Windows Runtime includes an **IStringable** inter
 
 To implement an asynchronous method in your component, add "Async" to the end of the method name and return one of the Windows Runtime interfaces that represent asynchronous actions or operations: **IAsyncAction**, **IAsyncActionWithProgress&lt;TProgress&gt;**, **IAsyncOperation&lt;TResult&gt;**, or **IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**.
 
-You can use .NET tasks (the [**Task**](/dotnet/api/system.threading.tasks.task) class and generic [**Task&lt;TResult&gt;**](/dotnet/api/system.threading.tasks.task-1) class) to implement your asynchronous method. You must return a task that represents an ongoing operation, such as a task that is returned from an asynchronous method written in C# or Visual Basic, or a task that is returned from the [**Task.Run**](/dotnet/api/system.threading.tasks.task.run) method. If you use a constructor to create the task, you must call its [Task.Start](/dotnet/api/system.threading.tasks.task.start) method before returning it.
+You can use .NET tasks (the [**Task**](/dotnet/api/system.threading.tasks.task?view=dotnet-uwp-10.0&preserve-view=true) class and generic [**Task&lt;TResult&gt;**](/dotnet/api/system.threading.tasks.task-1?view=dotnet-uwp-10.0&preserve-view=true) class) to implement your asynchronous method. You must return a task that represents an ongoing operation, such as a task that is returned from an asynchronous method written in C# or Visual Basic, or a task that is returned from the [**Task.Run**](/dotnet/api/system.threading.tasks.task.run?view=dotnet-uwp-10.0&preserve-view=true) method. If you use a constructor to create the task, you must call its [Task.Start](/dotnet/api/system.threading.tasks.task.start?view=dotnet-uwp-10.0&preserve-view=true) method before returning it.
 
 A method that uses `await` (`Await` in Visual Basic) requires the `async` keyword (`Async` in Visual Basic). If you expose such a method from a Windows Runtime component, apply the `async` keyword to the delegate that you pass to the **Run** method.
 
-For asynchronous actions and operations that do not support cancellation or progress reporting, you can use the [WindowsRuntimeSystemExtensions.AsAsyncAction](/dotnet/api/system) or [AsAsyncOperation&lt;TResult&gt;](/dotnet/api/system) extension method to wrap the task in the appropriate interface. For example, the following code implements an asynchronous method by using the **Task.Run&lt;TResult&gt;** method to start a task. The **AsAsyncOperation&lt;TResult&gt;** extension method returns the task as a Windows Runtime asynchronous operation.
+For asynchronous actions and operations that do not support cancellation or progress reporting, you can use the [WindowsRuntimeSystemExtensions.AsAsyncAction](/dotnet/api/system?view=dotnet-uwp-10.0&preserve-view=true) or [AsAsyncOperation&lt;TResult&gt;](/dotnet/api/system?view=dotnet-uwp-10.0&preserve-view=true) extension method to wrap the task in the appropriate interface. For example, the following code implements an asynchronous method by using the **Task.Run&lt;TResult&gt;** method to start a task. The **AsAsyncOperation&lt;TResult&gt;** extension method returns the task as a Windows Runtime asynchronous operation.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -216,9 +216,9 @@ function asyncExample(id) {
 }
 ```
 
-For asynchronous actions and operations that support cancellation or progress reporting, use the [**AsyncInfo**](/dotnet/api/system.runtime.interopservices.windowsruntime) class to generate a started task and to hook up the cancellation and progress reporting features of the task with the cancellation and progress reporting features of the appropriate Windows Runtime interface. For an example that supports both cancellation and progress reporting, see [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+For asynchronous actions and operations that support cancellation or progress reporting, use the [**AsyncInfo**](/dotnet/api/system.runtime.interopservices.windowsruntime?view=dotnet-uwp-10.0&preserve-view=true) class to generate a started task and to hook up the cancellation and progress reporting features of the task with the cancellation and progress reporting features of the appropriate Windows Runtime interface. For an example that supports both cancellation and progress reporting, see [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Note that you can use the methods of the **AsyncInfo** class even if your asynchronous method doesn't support cancellation or progress reporting. If you use a Visual Basic lambda function or a C# anonymous method, don't supply parameters for the token and [**IProgress&lt;T&gt;**](/dotnet/api/system.iprogress-1) interface. If you use a C# lambda function, supply a token parameter but ignore it. The previous example, which used the AsAsyncOperation&lt;TResult&gt; method, looks like this when you use the [**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;**](/dotnet/api/system.runtime.interopservices.windowsruntime)) method overload instead.
+Note that you can use the methods of the **AsyncInfo** class even if your asynchronous method doesn't support cancellation or progress reporting. If you use a Visual Basic lambda function or a C# anonymous method, don't supply parameters for the token and [**IProgress&lt;T&gt;**](/dotnet/api/system.iprogress-1?view=dotnet-uwp-10.0&preserve-view=true) interface. If you use a C# lambda function, supply a token parameter but ignore it. The previous example, which used the AsAsyncOperation&lt;TResult&gt; method, looks like this when you use the [**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;**](/dotnet/api/system.runtime.interopservices.windowsruntime?view=dotnet-uwp-10.0&preserve-view=true)) method overload instead.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -265,7 +265,7 @@ When you throw an exception from your component, you can make it easier for a Ja
 
 ## Declaring and raising events
 
-When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [**EventHandler&lt;TEventArgs&gt;**](/dotnet/api/system.eventhandler-1) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET application.
+When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [**EventHandler&lt;TEventArgs&gt;**](/dotnet/api/system.eventhandler-1?view=dotnet-uwp-10.0&preserve-view=true) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET application.
 
 When your Windows Runtime component is used from JavaScript or C++, the event follows the Windows Runtime event pattern that those languages expect. When you use the component from C# or Visual Basic, the event appears as an ordinary .NET event. An example is provided in [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](./walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
@@ -273,9 +273,9 @@ If you implement custom event accessors (declare an event with the **Custom** ke
 
 ## Next steps
 
-After you’ve created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](/previous-versions/windows/apps/jj614475(v=vs.140)).
+After you've created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](/previous-versions/windows/apps/jj614475(v=vs.140)).
 
-For more information about Visual Basic and C# language features, and .NET support for the Windows Runtime, see [Visual Basic and C# language reference](/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
+For more information about Visual Basic and C# language features, and .NET support for the Windows Runtime, see [Visual Basic](/dotnet/visual-basic/) and [C#](/dotnet/csharp/) documentation.
 
 
 ## Troubleshooting
@@ -285,5 +285,5 @@ For more information about Visual Basic and C# language features, and .NET suppo
 |In a C++/WinRT app, when consuming a [C# Windows Runtime component]() that uses XAML, the compiler produces an error of the form "*'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'*"&mdash;where *MyNamespace* is the name of the Windows Runtime component's namespace. | In `pch.h` in the consuming C++/WinRT app, add `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;replacing *MyNamespace* as appropriate. |
 
 ## Related topics
-* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 * [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

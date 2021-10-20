@@ -3,20 +3,16 @@
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
 title: Sample data on the design surface, and for prototyping
 description: It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio.
-
 ms.date: 02/08/2017
 ms.topic: article
-
-
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-Sample data on the design surface, and for prototyping
-=============================================================================================
 
+# Sample data on the design surface, and for prototyping
 
-
-**Note**  The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](../xaml-platform/binding-markup-extension.md) or the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md). The techniques described in this topic are based on the use of a [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext), so they're only appropriate for **{Binding}**. But if you're using **{x:Bind}** then your bindings at least show placeholder values on the design surface (even for items controls), so you don't have quite the same need for sample data.
+> [!NOTE]
+> The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](../xaml-platform/binding-markup-extension.md) or the [{x:Bind} markup extension](../xaml-platform/x-bind-markup-extension.md). The techniques described in this topic are based on the use of a [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext), so they're only appropriate for **{Binding}**. But if you're using **{x:Bind}** then your bindings at least show placeholder values on the design surface (even for items controls), so you don't have quite the same need for sample data.
 
 It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio. In order to have your controls populated with data (so that you can work on your app's layout, templates, and other visual properties), there are various ways in which you can use design-time sample data. Sample data can also be really useful and time-saving if you're building a sketch (or prototype) app. You can use sample data in your sketch or prototype at run-time to illustrate your ideas without going as far as connecting to real, live data.
 
@@ -29,8 +25,7 @@ It may be impossible or undesirable (perhaps for reasons of privacy or performan
 > [!NOTE]
 > Screenshots in this article were taken from a previous version of Visual Studio. They might not precisely match your development experience if you are using Visual Studio 2019.
 
-Setting DataContext in markup
------------------------------
+## Setting DataContext in markup
 
 It's a fairly common developer practice to use imperative code (in code-behind) to set a page or user control's [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) to a view model instance.
 
@@ -78,8 +73,7 @@ else
 
 You could use a view model locator if you need to pass parameters to your initialization code. A view model locator is a class that you can put into app resources. It has a property that exposes the view model, and your page's **DataContext** binds to that property. Another pattern that the locator or the view model can use is dependency injection, which can construct a design-time or a run-time data provider (each of which implements a common interface), as applicable.
 
-"Sample data from class", and design-time attributes
----------------------------------------------------------------------------------------
+## "Sample data from class" and design-time attributes
 
 If for whatever reason none of the options in the previous section work for you then you still have plenty of design-time data options available via XAML tools features and design-time attributes. One good option is the **Create Sample Data from Class** feature in Blend for Visual Studio. You can find that command on one of the buttons at the top of the **Data** panel.
 
@@ -143,8 +137,7 @@ So far, we've been using **d:DesignData** to load design-time sample data from a
 
 The **IsDesignTimeCreatable** property indicates that the design tool should actually create an instance of the class, which implies that the class has a public default constructor, and that it populates itself with data (either real or sample). If you don't set **IsDesignTimeCreatable** (or if you set it to **False**) then you won't get sample data displayed on the design surface. All the design tool does in that case is to parse the class for its bindable properties and display these in the **Data** panel and in the **Create Data Binding** dialog.
 
-Sample data for prototyping
---------------------------------------------------------
+## Sample data for prototyping
 
 For prototyping, you want sample data at both design-time and at run-time. For that use case, Blend for Visual Studio has the **New Sample Data** feature. You can find that command on one of the buttons at the top of the **Data** panel.
 

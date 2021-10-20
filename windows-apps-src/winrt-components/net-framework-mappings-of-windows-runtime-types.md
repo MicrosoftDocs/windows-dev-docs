@@ -1,6 +1,6 @@
 ---
 title: .NET mappings of Windows Runtime types
-description: The following table lists the mappings that .NET makes between Universal Windows Platform (UWP) types and .NET types.
+description: The following table lists the mappings that .NET makes between Windows Runtime (WinRT) types and .NET types in Universal Windows Platform (UWP) apps.
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ms.date: 02/08/2017
 ms.topic: article
@@ -8,13 +8,16 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# .NET mappings of Windows Runtime types
+# .NET mappings of Windows Runtime types in UWP apps
 
-The following table lists the mappings that .NET makes between Universal Windows Platform (UWP) types and .NET types. In a Universal Windows app written with managed code, Visual Studio IntelliSense shows the .NET type instead of the UWP type. For example, if a Windows Runtime method takes a parameter of type IVector&lt;string&gt;, then IntelliSense shows a parameter of type IList&lt;string&gt;. Similarly, in a Windows Runtime component written with managed code, you use the .NET type in member signatures. When the [Windows Runtime Metadata Export Tool (Winmdexp.exe)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) generates your Windows Runtime Component, the .NET type is translated into the corresponding UWP type.
+This article lists the mappings that .NET makes between Windows Runtime (WinRT) types and .NET types in Universal Windows Platform (UWP) apps written with managed code. In these apps, Visual Studio IntelliSense shows the .NET type instead of the WinRT type. For example, if a WinRT method takes a parameter of type **IVector&lt;string&gt;**, then IntelliSense shows a parameter of type **IList&lt;string&gt;**. Similarly, in a Windows Runtime component written with managed code, you use the .NET type in member signatures. When the [Windows Runtime Metadata Export Tool (Winmdexp.exe)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) generates your Windows Runtime component, the .NET type is translated into the corresponding WinRT type.
 
-Most of the types that have the same namespace name and type name in both the UWP and .NET are structures (or types associated with structures, such as enumerations). In UWP, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types.
+Most of the types that have the same namespace name and type name in both WinRT and .NET are structures (or types associated with structures, such as enumerations). In WinRT, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types.
 
-## UWP types that map to .NET types with the same name and namespace
+> [!NOTE]
+> For a list of mappings between WinRT and .NET types in the context of desktop apps that target .NET 5 and use C#/WinRT, see [.NET mappings of WinRT types in C#/WinRT](../csharp-winrt/net-mappings-of-winrt-types.md).
+
+## WinRT types that map to .NET types with the same name and namespace
 
 ### In .NET assembly System.ObjectModel.dll
 
@@ -48,11 +51,11 @@ Most of the types that have the same namespace name and type name in both the UW
 | Windows.UI.Xaml.Media.Animation | RepeatBehaviorType |
 | Windows.UI.Xaml.Media.Media3D | Matrix3D |
 
-## UWP types that map to .NET types with a different name and/or namespace
+## WinRT types that map to .NET types with a different name and/or namespace
 
 ### In .NET assembly System.ObjectModel.dll
 
-| UWP type/namespace | .NET type/namespace |
+| WinRT type/namespace | .NET type/namespace |
 |-|-|
 | INotifyCollectionChanged (Windows.UI.Xaml.Interop) | INotifyCollectionChanged (System.Collections.Specialized) | 
 | NotifyCollectionChangedEventHandler (Windows.UI.Xaml.Interop) | NotifyCollectionChangedEventHandler (System.Collections.Specialized) | 
@@ -64,7 +67,7 @@ Most of the types that have the same namespace name and type name in both the UW
 
 ### In .NET assembly System.Runtime.dll
 
-| UWP type/namespace | .NET type/namespace |
+| WinRT type/namespace | .NET type/namespace |
 |-|-|
 | AttributeUsageAttribute (Windows.Foundation.Metadata) | AttributeUsageAttribute (System) |
 | AttributeTargets (Windows.Foundation.Metadata) | AttributeTargets (System) |
@@ -87,7 +90,7 @@ Most of the types that have the same namespace name and type name in both the UW
 
 ### In .NET assembly System.Runtime.InteropServices.WindowsRuntime.dll
 
-| UWP type/namespace | .NET type/namespace |
+| WinRT type/namespace | .NET type/namespace |
 |-|-|
 | EventRegistrationToken (Windows.Foundation) | EventRegistrationToken (System.Runtime.InteropServices.WindowsRuntime) |
 

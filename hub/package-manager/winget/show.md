@@ -8,8 +8,6 @@ ms.localizationpriority: medium
 
 # show command (winget)
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
-
 The **show** command of the [winget](index.md) tool displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
 
 The **show** command only shows metadata that was submitted with the application. If the submitted application excludes some metadata, then the data will not be displayed.
@@ -29,6 +27,9 @@ The following arguments are available.
 | **-q,--query** |  The query used to search for an application. |
 | **-?, --help** |  Gets additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.
+
 ## Options
 
 The following options are available.
@@ -43,6 +44,8 @@ The following options are available.
 | **-s,--source** |   Find the application using the specified [source](source.md). |
 | **-e,--exact**     | Find the application using exact match. |
 | **--versions**    | Show available versions of the application. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 
 ## Multiple selections
 
@@ -64,7 +67,7 @@ If a single application is detected, the following data will be displayed.
 | **AppMoniker** | AppMoniker of the application. |
 | **Description** | Description of the application. |
 | **License**  | License of the application. |
-| **LicenseUrl** | The URL to the license file of the applicatio. |
+| **LicenseUrl** | The URL to the license file of the application. |
 | **Homepage**  | Homepage of the application. |
 | **Tags** | The tags provided to assist in searching.  |
 | **Command** | The commands supported by the application. |
@@ -81,6 +84,7 @@ If a single application is detected, the following data will be displayed.
 | **Download Url** | The Url of the installer. |
 | **Hash** | The Sha-256 of the installer.  |
 | **Scope** | Displays whether the installer is per machine or per user. |
+
 
 ## Related topics
 

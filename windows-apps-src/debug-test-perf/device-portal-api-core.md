@@ -62,7 +62,8 @@ This API has the following expected status codes.
 * HoloLens
 * IoT
 
-<hr>
+> [!NOTE]
+> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
 
 ### Install a related set
 
@@ -494,6 +495,7 @@ This API has the following expected status codes.
 * IoT
 
 ---
+
 ### Get a list of paired Bluetooth devices
 
 **Request**
@@ -2357,7 +2359,7 @@ You can get the sub-value for a power scheme by using the following request form
  
 | Method      | Request URI |
 | :------     | :----- |
-| GET | /api/power/cfg/*<power scheme path>* |
+| GET | /api/power/cfg/*\<power scheme path>* |
 
 Options:
 - SCHEME_CURRENT
@@ -2495,7 +2497,7 @@ You can set the sub-value for a power scheme by using the following request form
  
 | Method      | Request URI |
 | :------     | :----- |
-| POST | /api/power/cfg/*<power scheme path>* |
+| POST | /api/power/cfg/*\<power scheme path>* |
 
 
 **URI parameters**

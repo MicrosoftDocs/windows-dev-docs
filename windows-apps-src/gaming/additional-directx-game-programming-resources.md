@@ -37,7 +37,7 @@ For more info about game programming on Windows, check out the following resourc
 
 -   [DirectX Tool Kit](  https://github.com/Microsoft/DirectXTK)
 -   [DirectXTex texture processing library](  https://github.com/Microsoft/DirectXTex)
--   Microsoft Visual Studio[Graphics Diagnostics](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
+-   Microsoft Visual Studio[Graphics Diagnostics](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015&preserve-view=true)
 -   [Win2D](https://github.com/Microsoft/Win2D) - An easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
 -   [ANGLE for Microsoft Store](https://github.com/microsoft/angle/wiki) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 

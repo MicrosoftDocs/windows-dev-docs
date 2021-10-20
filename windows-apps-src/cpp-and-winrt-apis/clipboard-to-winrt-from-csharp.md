@@ -451,7 +451,7 @@ From our earlier investigation, we know that this collection of **Scenario** obj
 - Either runtime classes, or
 - [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable).
 
-For the **IInspectable** case, if the elements are not themselves runtime classes, then those elements need to be of a kind that can be boxed and unboxed to and from [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And that means that they have to be Windows Runtime types (see [Boxing and unboxing scalar values to IInspectable](./boxing.md)).
+For the **IInspectable** case, if the elements are not themselves runtime classes, then those elements need to be of a kind that can be boxed and unboxed to and from [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And that means that they have to be Windows Runtime types (see [Boxing and unboxing values to IInspectable](./boxing.md)).
 
 For this case study, we didn't make **Scenario** a runtime class. That is still a reasonable option, though. And there'll be cases in your own porting work where a runtime class will definitely be the way to go. For example, if you need to make the element type *observable* (see [XAML controls; bind to a C++/WinRT property](./binding-property.md)), or if the element needs to have methods for any other reason, and it's more than just a set of data members.
 
@@ -1094,7 +1094,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 }
 ```
 
-As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing scalar values to IInspectable](./boxing.md).
+As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing values to IInspectable](./boxing.md).
 
 The last two lines repeat porting patterns we've seen before, and they pretty much echo the C# version.
 
@@ -1253,7 +1253,7 @@ fire_and_forget CopyFiles::CopyButton_Click(IInspectable const&, RoutedEventArgs
 
 Let's look at the other aspects of the ported code that are noteworthy.
 
-In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) object, and two lines later we access that object's [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) property. The return type of that property implements an **IVector** of strings. And on that **IVector**, we call the [IVector<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall) method. The interesting aspect is the value that we're passing to that method, where an array is expected. Here's the line of code.
+In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) object, and two lines later we access that object's [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) property. The return type of that property implements an **IVector** of strings. And on that **IVector**, we call the [IVector\<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall) method. The interesting aspect is the value that we're passing to that method, where an array is expected. Here's the line of code.
 
 ```cppwinrt
 filePicker.FileTypeFilter().ReplaceAll({ L"*" });
@@ -1273,7 +1273,7 @@ Next, consider this line of C# code.
 dataPackage.SetStorageItems(storageItems);
 ```
 
-C# is able to implicitly convert the **IReadOnlyList<StorageFile>** represented by *storageItems* into the **IEnumerable<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView<StorageFile>** to **IIterable<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
+C# is able to implicitly convert the **IReadOnlyList\<StorageFile>** represented by *storageItems* into the **IEnumerable\<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView\<StorageFile>** to **IIterable\<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
 
 ```cppwinrt
 dataPackage.SetStorageItems(storageItems.as<IVectorView<IStorageItem>>());

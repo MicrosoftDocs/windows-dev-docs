@@ -30,7 +30,7 @@ All of these APIs share an `LPSECURITY_ATTRIBUTES` parameter which enables the c
 Security identifiers (SIDs) represent identities within ACLs. Every packaged application has its own SID based on its package family name. You can generate the SID for a packaged application by passing its package family name to [DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername).
 
 > [!NOTE]
-> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
+> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?windowsserver2019-ps&preserve-view=true) PowerShell command for applications that are already installed.
 
 [This sample](/windows/win32/api/securityappcontainer/nf-securityappcontainer-getappcontainernamedobjectpath#examples) demonstrates the basic pattern needed to ACL a named object. To share named objects with packaged applications, build an [EXPLICIT_ACCESS](/windows/win32/api/accctrl/ns-accctrl-explicit_access_w) structure for each application:
 
@@ -64,7 +64,7 @@ Named objects created by a packaged application are created within the namespace
 [GetAppContainerNamedObjectPath](/windows/win32/api/securityappcontainer/nf-securityappcontainer-getappcontainernamedobjectpath) will return the named object path for a packaged application based on its SID. You can generate the SID for a packaged application by passing its package family name to [DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername).
 
 > [!NOTE]
-> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
+> The package family name can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?windowsserver2019-ps&preserve-view=true) PowerShell command for applications that are already installed.
 
 When opening named objects created by a packaged application, use the format `<PATH>\<NAME>`:
 

@@ -8,7 +8,6 @@ ms.localizationpriority: medium
 
 # search command (winget)
 
-[!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
 
 The **search** command of the [winget](index.md) tool queries the sources for available applications that can be installed.  
 
@@ -28,6 +27,9 @@ The following arguments are available.
  --------------|-------------|
 | **-q,--query** |  The query used to search for an app. |
 | **-?, --help** |  Gets additional help on this command. |
+
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.
 
 ## Show all
 
@@ -56,10 +58,16 @@ The string will be treated as a substring. The search by default is also case in
 The search commands supports a number of options or filters to help limit the results.
 
 | Option  | Description |
- --------------|-------------|
+|--------------|-------------|
 | **-e, --exact**  |     Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.  |  
 | **-n, --count**      |  Restricts the output of the display to the specified count. |
 | **-s, --source**     |  Restricts the search to the specified [source](source.md) name.  |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+
+## Searching across multiple sources
+
+If you want to narrow results down to a specific source, just pass the `--source` or `-s` parameter and specify what you want. For example, you might want to see if Visual Studio Code is in the store by running `winget search “Visual Studio Code” -s msstore`. This search uses "Visual Studio Code" as the query.
 
 ## Related topics
 

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Set up automated builds for your UWP app
 
-You can use Azure Pipelines to create automated builds for UWP projects. In this article, we’ll look at different ways to do this. We’ll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.
+You can use Azure Pipelines to create automated builds for UWP projects. In this article, we'll look at different ways to do this. We'll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.
 
 ## Create a new Azure Pipeline
 
@@ -19,7 +19,7 @@ Next, create a pipeline that you can use to build your source code. For a tutori
 
 ## Set up an automated build
 
-We’ll start with the default UWP build definition that’s available in Azure Dev Ops and then show you how to configure the pipeline.
+We'll start with the default UWP build definition that's available in Azure Dev Ops and then show you how to configure the pipeline.
 
 In the list of build definition templates, choose the **Universal Windows Platform** template.
 
@@ -60,7 +60,7 @@ The default template tries to sign the package with the certificate specified in
 
 ## Add your project certificate to the Secure files library
 
-You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](/azure/devops/pipelines/library/secure-files?view=azure-devops) feature.
+You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, Azure DevOps supports the [secure files](/azure/devops/pipelines/library/secure-files?view=azure-devops&preserve-view=true) feature.
 
 To upload a certificate for your automated build:
 
@@ -81,7 +81,7 @@ To upload a certificate for your automated build:
 
 ## Configure the Build solution build task
 
-This task compiles any solution that’s in the working folder to binaries and produces the output app package file. This task uses MSBuild arguments. You’ll have to specify the value of those arguments. Use the following table as a guide.
+This task compiles any solution that's in the working folder to binaries and produces the output app package file. This task uses MSBuild arguments. You'll have to specify the value of those arguments. Use the following table as a guide.
 
 |**MSBuild argument**|**Value**|**Description**|
 |--------------------|---------|---------------|
@@ -170,7 +170,7 @@ You can see the generated artifacts in the **Artifacts** option of the build res
 
 ![artifacts](images/building-screen6.png)
 
-Because we’ve set the `UapAppxPackageBuildMode` argument to `StoreUpload`, the artifacts folder includes the package for submission to the Store (.msixupload/.appxupload). Note that you can also submit a regular app package (.msix/.appx) or an app bundle (.msixbundle/.appxbundle/) to the Store. For the purposes of this article, we'll use the .appxupload file.
+Because we've set the `UapAppxPackageBuildMode` argument to `StoreUpload`, the artifacts folder includes the package for submission to the Store (.msixupload/.appxupload). Note that you can also submit a regular app package (.msix/.appx) or an app bundle (.msixbundle/.appxbundle/) to the Store. For the purposes of this article, we'll use the .appxupload file.
 
 ## Address bundle errors
 
@@ -178,7 +178,7 @@ If you add more than one UWP project to your solution and then try to create a b
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-This error appears because at the solution level, it’s not clear which app should appear in the bundle. To resolve this issue, open each project file and add the following properties at the end of the first `<PropertyGroup>` element.
+This error appears because at the solution level, it's not clear which app should appear in the bundle. To resolve this issue, open each project file and add the following properties at the end of the first `<PropertyGroup>` element.
 
 |**Project**|**Properties**|
 |-------|----------|

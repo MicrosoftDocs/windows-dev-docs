@@ -327,6 +327,43 @@ event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 
 If the delegate *does* call your member function, then C++/WinRT will keep your object alive until your handler returns. However, if your handler is asynchronous, then it returns at suspension points, and so you'll have to give your coroutine a strong reference to the class instance before the first suspension point. Again, for more info, see [Safely accessing the *this* pointer in a class-member coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) section earlier in this topic.
 
+#### If the member function doesn't belong to a Windows Runtime type
+
+When the [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) method isn't available to you (your type isn't a Windows Runtime type), you can use the technique shown in the code example below. Here, a regular C++ class (named **ConsoleNetworkWatcher**) is shown handling the [**NetworkInformation.NetworkStatusChanged**](/uwp/api/windows.networking.connectivity.networkinformation.networkstatuschanged) event.
+
+```cppwinrt
+#include <winrt/Windows.Networking.Connectivity.h>
+using namespace winrt;
+using namespace Windows::Networking::Connectivity;
+
+class ConsoleNetworkWatcher
+{
+    /* any constructor, and instance methods, here*/
+
+    static void Initialize(std::shared_ptr<ConsoleNetworkWatcher> instance)
+    {
+        auto weakPointer{ std::weak_ptr{ instance } };
+
+        instance->m_statusChangedRevoker =
+            NetworkInformation::NetworkStatusChanged(winrt::auto_revoke,
+                [weakPointer](winrt::Windows::Foundation::IInspectable const& sender)
+                {
+                    auto sharedPointer{ weakPointer.lock() };
+
+                    if (sharedPointer)
+                    {
+                        sharedPointer->NetworkStatusChanged(sender);
+                    }
+                });
+    }
+
+    void NetworkStatusChanged(winrt::Windows::Foundation::IInspectable const& sender){/* handle event here */};
+
+private:
+    NetworkInformation::NetworkStatusChanged_revoker m_statusChangedRevoker;
+};
+```
+
 ### A weak reference example using **SwapChainPanel::CompositionScaleChanged**
 
 In this code example, we use the [**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) event by way of another illustration of weak references. The code registers an event handler using a lambda that captures a weak reference to the recipient.

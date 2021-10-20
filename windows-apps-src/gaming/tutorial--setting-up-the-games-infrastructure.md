@@ -166,7 +166,7 @@ For more info about the **package.appxmanifest** file and packaging, see [Manife
 
 If you don't select the capabilities that your game uses, such as access to the **Internet** for global high score board, then you won't be able to access the corresponding resources nor features. When you create a new game, make sure that you select any capabilities needed by APIs that your game calls.
 
-Now let's look at the rest of the files that come with the **DirectX 11 App (Universal Windows)** template.
+Now let's look at the rest of the files that come with the **Simple3DGameDX** sample game.
 
 ## Review other important libraries and source code files
 

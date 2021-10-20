@@ -513,7 +513,7 @@
             - name: Support various hardware
               href: ../gaming/target-a-range-of-hardware.md
         - name: FAQ
-          href: ../gaming/directx-porting-faq.md
+          href: ../gaming/directx-porting-faq.yml
     - name: Port OpenGL to Direct3D
       href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
       items:
@@ -562,7 +562,7 @@
     - name: Known issues
       href: ../xbox-apps/known-issues.md
     - name: FAQ
-      href: ../xbox-apps/frequently-asked-questions.md
+      href: ../xbox-apps/frequently-asked-questions.yml
     - name: Tools
       href: ../xbox-apps/introduction-to-xbox-tools.md
       items:

@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to migrate the entire Contoso Expens
 title: Migrate the Contoso Expenses app to .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1

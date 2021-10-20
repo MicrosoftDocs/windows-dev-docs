@@ -9,4 +9,4 @@ ms.topic: reference
 
 # .NET TraceProcessing API reference
 
-See the [.NET API browser for TraceProcessing](/dotnet/api/?view=trace-processor-dotnet-1.0).
+See the [.NET API browser for TraceProcessing](/dotnet/api/?view=trace-processor-dotnet-1.0&preserve-view=true).

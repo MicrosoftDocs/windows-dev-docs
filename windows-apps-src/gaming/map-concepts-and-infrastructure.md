@@ -9,10 +9,8 @@ ms.localizationpriority: medium
 ---
 # Map OpenGL ES 2.0 to Direct3D 11
 
-
-
 When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.
-## 
+
 <table>
 <colgroup>
 <col width="50%" />

@@ -4,6 +4,7 @@ description: Microsoft PowerToys is a set of utilities for customizing Windows 1
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run]
 ---
 
 # Microsoft PowerToys: Utilities to customize Windows 10
@@ -23,6 +24,17 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
+### PowerToys Awake
+
+:::row:::
+    :::column:::
+        [![Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+    :::column-end:::
+    :::column span="2":::
+        [Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its screens.
+    :::column-end:::
+:::row-end:::
+
 ### Color Picker
 
 :::row:::
@@ -30,11 +42,11 @@ The currently available utilities include:
         [![ColorPicker screenshot](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a configurable format. Color Picker also contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
+        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a set format. Color Picker also contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
     :::column-end:::
 :::row-end:::
 
-### Fancy Zones
+### FancyZones
 
 :::row:::
     :::column:::
@@ -63,7 +75,7 @@ The currently available utilities include:
         [![Image Resizer screenshot](../images/pt-image-resizer.png)](image-resizer.md)
     :::column-end:::
     :::column span="2":::
-        [Image Resizer](image-resizer.md) is a Windows Shell Extension for quickly resizing images.  With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
+        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
     :::column-end:::
 :::row-end:::
 
@@ -107,23 +119,15 @@ The currently available utilities include:
         [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when a user holds the Windows key down for more than one second and shows the available shortcuts for the current state of the desktop.
+        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>?</kbd> and shows the available shortcuts for the current state of the desktop.
     :::column-end:::
 :::row-end:::
 
-## PowerToys video walk-through
-
-In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
-
-> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
-
 ## Future PowerToy utilities
-
-### Experimental PowerToys
 
 Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
 
-#### Video Conference Mute (Experimental)
+### Video Conference Mute (Experimental)
 
 :::row:::
     :::column:::
@@ -133,6 +137,18 @@ Install the pre-release experimental version of PowerToys to try the latest expe
         [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
+
+## Languages
+
+Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, German, French, Hungarian, Italian, Japanese, Korean, Polish, Portugese, Portugese (Brazil), Russian, Spanish, Turkish.
+
+*Note that new elements of the app will often not yet be translated in the first version release.*
+
+## PowerToys video walk-through
+
+In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
@@ -156,7 +172,7 @@ PowerToys [release notes](https://github.com/microsoft/PowerToys/releases/) are 
 
 ## PowerToys history
 
-Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows.  A great overview of the Windows 95 PowerToys can be found [here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
+Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found [here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
 
 ## PowerToys roadmap
 

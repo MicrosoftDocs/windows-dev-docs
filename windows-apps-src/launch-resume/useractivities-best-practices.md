@@ -2,15 +2,21 @@
 title: User Activities best practices
 description: This guide outlines the recommended practices for creating and updating User Activities.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-ms.date: 08/23/2018
+ms.date: 05/05/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # User Activities best practices
 
 This guide outlines the recommended practices for creating and updating User Activities. For an overview of the User Activities feature on Windows, see [Continue user activity, even across devices](./useractivities.md). Or, see the [User Activities section](/windows/project-rome/user-activities/) of Project Rome for the implementations of Activities on other development platforms.
+
+> [!NOTE]
+> Starting in July 2021, users who have activity history synced across their Windows devices
+> through their Microsoft Account (MSA) will no longer have the option to upload new activity
+> in Timeline. They'll still be able to use Timeline and see their activity history (information
+> about recent apps, websites and files) on their local PC. AAD-connected accounts won't be 
+> impacted. 
 
 ## When to create or update User Activities
 

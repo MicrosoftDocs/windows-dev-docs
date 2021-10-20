@@ -31,7 +31,7 @@ Furthermore, Microsoft is a founding member of the [Rust Foundation](https://fou
 
 We'll introduce some Rust tools and terms in this section. You can refer back here to refresh yourself on any of the descriptions.
 
-* A *crate* is a Rust unit of compilation and linking. A crate can exist in source code form, and from there it can be processed into a crate in the form of either a binary excutable (*binary* for short), or a binary library (*library* for short).
+* A *crate* is a Rust unit of compilation and linking. A crate can exist in source code form, and from there it can be processed into a crate in the form of either a binary executable (*binary* for short), or a binary library (*library* for short).
 * A Rust project is known as a *package*. A package contains one or more crates, together with a `Cargo.toml` file that describes how to build those crates.
 * `rustup` is the installer and updater for the Rust toolchain.
 * *Cargo* is the name of Rust's package management tool.

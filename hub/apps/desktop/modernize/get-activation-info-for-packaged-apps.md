@@ -1,11 +1,9 @@
 ﻿---
-description: Learn how to get certain kinds of activation info for packaged .NET and native C++/Win32 apps
+description: Learn how to get certain kinds of activation info for packaged .NET and C++ desktop (Win32) apps
 title: Get activation info for packaged apps
 ms.date: 09/17/2020
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

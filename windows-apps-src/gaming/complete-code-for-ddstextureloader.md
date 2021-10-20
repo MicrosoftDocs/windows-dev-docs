@@ -24,7 +24,7 @@ This topic contains these sections:
 ## Download location
 
 
-This sample is not available for download.
+The DDSTextureLoader can be found on GitHub in [DirectXTex](https://github.com/microsoft/DirectXTex) and *DirectX Tool Kit* for [DX11](https://github.com/microsoft/DirectXTK) / [DX12](https://github.com/microsoft/DirectXTK12).
 
 ## Technologies
 
@@ -54,12 +54,8 @@ This sample is not available for download.
 // a full-featured DDS file reader, writer, and texture processing pipeline, see
 // the 'Texconv' sample and the 'DirectXTex' library.
 //
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-// PARTICULAR PURPOSE.
-//
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 //--------------------------------------------------------------------------------------
 #pragma once
 
@@ -86,12 +82,8 @@ void CreateDDSTextureFromMemory(
 // a full-featured DDS file reader, writer, and texture processing pipeline, see
 // the 'Texconv' sample and the 'DirectXTex' library.
 //
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-// PARTICULAR PURPOSE.
-//
-// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 //--------------------------------------------------------------------------------------
 #include "pch.h"
 #include <dxgiformat.h>

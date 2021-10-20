@@ -2,9 +2,9 @@
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: If you have a catalog of apps and add-ons, you can use the Microsoft Store collection API and Microsoft Store purchase API to access ownership information for these products from your services.
 title: Manage product entitlements from a service
-ms.date: 01/21/2021
+ms.date: 04/22/2021
 ms.topic: article
-keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products
+keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products, Microsoft.StoreServices
 ms.localizationpriority: medium
 ---
 # Manage product entitlements from a service
@@ -18,6 +18,14 @@ These APIs consist of REST methods that are designed to be used by developers wi
 
 > [!NOTE]
 > The Microsoft Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory.
+
+## The Microsoft.StoreServices library
+
+To help streamline the authentication flow and calling the Microsoft Store Services, review the Microsoft.StoreServices project and sample on Github.  The Microsoft.StoreServices library will help manage the authentication keys and provides wrapper API's to call into the Microsoft Store Services for managing products.  The sample project highlights how a service can use the Microsoft.StoreServices library, example logic for managing consumable products, reconciling refunded purchases, renew expired credentials, and more.  A step-by-step configuration guide is included with the sample to setup the sample service on your PC or through Azure.  
+
+- [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 
+- [Microsoft.StoreServices Sample (GitHub)](https://github.com/microsoft/Microsoft-Store-Services-Sample) 
+
 
 ## Overview
 
@@ -78,7 +86,7 @@ Depending on which methods you want to call in the Microsoft Store collection AP
       > [!IMPORTANT]
       > Use the `https://onestore.microsoft.com` audience only with access tokens that are stored securely within your service. Exposing access tokens with this audience outside your service could make your service vulnerable to replay attacks.
 
-  * If you want to call a method in the Microsoft Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md), you must also create a token with the `https://onestore.microsoft.com` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Microsoft Store ID key that you can use with the Microsoft Store collection API.
+  * If you want to call a method in the Microsoft Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Microsoft Store ID key that you can use with the Microsoft Store collection API.
 
   * If you want to call a method in the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Microsoft Store ID key that you can use with the Microsoft Store purchase API.
 
@@ -211,3 +219,4 @@ Here is an example of a decoded Microsoft Store ID key claim set.
 * [Integrating Applications with Azure Active Directory](/azure/active-directory/develop/quickstart-register-app)
 * [Understanding the Azure Active Directory application manifest]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [Supported Token and Claim Types](/azure/active-directory/develop/id-tokens)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 

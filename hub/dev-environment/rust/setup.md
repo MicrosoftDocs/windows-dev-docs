@@ -22,6 +22,9 @@ On Windows, Rust requires certain C++ build tools.
 
 You can either download the [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/), or (recommended) you might prefer just to install [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
+> [!IMPORTANT]
+> Use of the Microsoft C++ Build Tools, or Visual Studio Build Tools, requires a valid Visual Studio license (either Community, Pro, or Enterprise).
+
 > [!NOTE]
 > We'll be using Visual Studio Code as our integrated development environment (IDE) for Rust, and not Visual Studio. But you can still install Visual Studio without expense. A Community edition is available&mdash;it's free for students, open-source contributors, and individuals.
 
@@ -38,7 +41,7 @@ Next, [install Rust from the Rust website](https://www.rust-lang.org/tools/insta
 > [!TIP]
 > Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the `rustup` installer for 64-bit Windows. You'll then be all set to write apps *for* Windows using Rust.
 
-When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section&mdash;[Install Visual Studio Code](#install-visual-studio-code)). And you're not yet set up to call Windows APIs. But you could launch a command prompt (the **x64 Native Tools Command Prompt for VS**, or any `cmd.exe`), and perhaps issue the command `cargo --version`. If you see a version number printed, then that confirms that Rust installed correctly.
+When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section&mdash;[Install Visual Studio Code](#install-visual-studio-code)). And you're not yet set up to call Windows APIs. But you could launch a command prompt (`cmd.exe`), and perhaps issue the command `cargo --version`. If you see a version number printed, then that confirms that Rust installed correctly.
 
 If you're curious about the use of the `cargo` keyword above, *Cargo* is the name of the tool in the Rust development environment that manages and builds your projects (more properly, *packages*) and their dependencies.
 
@@ -57,7 +60,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 3. For debugging support, install the **CodeLLDB** extension. You can either install the [CodeLLDB extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb), or you can open VS Code, and search for **CodeLLDB** in the extensions menu (Ctrl+Shift+X).
 
    > [!NOTE]
-   > An alternative to the **CodeLLDB** extension for debugging support is the Microsoft **C/C++** extenson. The **C/C++** extenson doesn't integrate as well with the IDE as **CodeLLDB** does. But the **C/C++** extension provides superior debugging information. So you might want to have that standing by in case you need it.
+   > An alternative to the **CodeLLDB** extension for debugging support is the Microsoft **C/C++** extenson. The **C/C++** extension doesn't integrate as well with the IDE as **CodeLLDB** does. But the **C/C++** extension provides superior debugging information. So you might want to have that standing by in case you need it.
    >
    > You can either install the [C/C++ extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), or you can open VS Code, and search for **C/C++** in the extensions menu (Ctrl+Shift+X).
 
@@ -67,7 +70,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 
 Let's take Rust for a spin with a simple "Hello, world!" app.
 
-1. First, launch a command prompt (the **x64 Native Tools Command Prompt for VS**, or any `cmd.exe`), and `cd` to a folder where you want to keep your Rust projects.
+1. First, launch a command prompt (`cmd.exe`), and `cd` to a folder where you want to keep your Rust projects.
 
 2. Then ask Cargo to create a new Rust project for you with the following command.
 

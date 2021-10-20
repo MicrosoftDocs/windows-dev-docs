@@ -1,13 +1,14 @@
 ---
 description: This topic shows how to port WRL code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from WRL
-ms.date: 05/30/2018
+ms.date: 05/07/2021
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, WRL
 ms.localizationpriority: medium
 ---
 
 # Move to C++/WinRT from WRL
+
 This topic shows how to port [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
 The first step in porting to C++/WinRT is to manually add C++/WinRT support to your project (see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). To do that, install the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) into your project. Open the project in Visual Studio, click **Project** \> **Manage NuGet Packages...** \> **Browse**, type or paste **Microsoft.Windows.CppWinRT** in the search box, select the item in search results, and then click **Install** to install the package for that project. One effect of that change is that support for [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) is turned off in the project. If you're using C++/CX in the project, then you can leave support turned off and update your C++/CX code to C++/WinRT as well (see [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md)). Or you can turn support back on (in project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**), and first focus on porting your WRL code. C++/CX and C++/WinRT code can coexist in the same project, with the exception of XAML compiler support, and Windows Runtime components (see [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md)).
@@ -22,8 +23,9 @@ In your precompiled header file (usually `pch.h`), include `winrt/base.h`.
 
 If you include any C++/WinRT projected Windows API headers (for example, `winrt/Windows.Foundation.h`), then you don't need to explicitly include `winrt/base.h` like this because it will be included automatically for you.
 
-## Porting WRL COM smart pointers ([Microsoft::WRL::ComPtr](/cpp/windows/comptr-class))
-Port any code that uses **Microsoft::WRL::ComPtr\<T\>** to use [**winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Here's a before-and-after code example. In the *after* version, the [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) member function retrieves the underlying raw pointer so that it can be set.
+## Porting WRL COM smart pointers (Microsoft::WRL::ComPtr)
+
+Port any code that uses [**Microsoft::WRL::ComPtr\<T\>**](/cpp/windows/comptr-class) to use [**winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Here's a before-and-after code example. In the *after* version, the [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) member function retrieves the underlying raw pointer so that it can be set.
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -112,6 +114,9 @@ winrt::check_hresult(
 ```
 
 ## Porting a WRL module (Microsoft::WRL::Module)
+
+This section relates to porting code that uses the [**Microsoft::WRL::Module**](/cpp/cppcx/wrl/module-class) type.
+
 You can gradually add C++/WinRT code to an existing project that uses WRL to implement a component, and your existing WRL classes will continue to be supported. This section shows how.
 
 If you create a new **Windows Runtime Component (C++/WinRT)** project type in Visual Studio, and build, then the file `Generated Files\module.g.cpp` is generated for you. That file contains the definitions of two useful C++/WinRT functions (listed out below), which you can copy and add to your project. Those function are **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** and, as you can see, they conditionally call WRL in order to support you whatever stage of porting you're at.
@@ -203,6 +208,24 @@ HRESULT __stdcall DllCanUnloadNow(void)
     return hr;
 }
 ```
+
+## Porting **Microsoft::WRL::Wrappers** wrappers
+
+This section relates to porting code that uses the [**Microsoft::WRL::Wrappers**](/cpp/cppcx/wrl/microsoft-wrl-wrappers-namespace) wrappers.
+
+As you can see in the table below, to replace the threading helpers we recommend that you use the Standard C++ [thread support library](https://en.cppreference.com/w/cpp/thread). A one-to-one mapping from the WRL wrappers could be misleading, since your choice depends on your needs. Also, some types that might seem obvious mappings are new to the C++20 standard, so those will be impractical if you haven't upgraded yet.
+
+| Type | Porting notes |
+| - | - |
+| [**CriticalSection class**](/cpp/cppcx/wrl/criticalsection-class) | Use the [thread support library](https://en.cppreference.com/w/cpp/thread) |
+| [**Event class (WRL)**](/cpp/cppcx/wrl/event-class-wrl) | Use the [**winrt::event struct template**](/uwp/cpp-ref-for-winrt/event) |
+| [**HandleT class**](/cpp/cppcx/wrl/handlet-class) | Use the [**winrt::handle struct**](/uwp/cpp-ref-for-winrt/handle) or the [**winrt::file_handle struct**](/uwp/cpp-ref-for-winrt/file-handle) |
+| [**HString class**](/cpp/cppcx/wrl/hstring-class) | Use the [**winrt::hstring struct**](/uwp/cpp-ref-for-winrt/hstring) |
+| [**HStringReference class**](/cpp/cppcx/wrl/hstringreference-class) | No replacement, because C++/WinRT handles this internally in a way that's just as efficient as **HStringReference** with the advantage that you don't have to think about it. |
+| [**Mutex class**](/cpp/cppcx/wrl/mutex-class) | Use the [thread support library](https://en.cppreference.com/w/cpp/thread) |
+| [**RoInitializeWrapper class**](/cpp/cppcx/wrl/roinitializewrapper-class) | Use **winrt::init_apartment** and **winrt::uninit_apartment**; or write your own trivial wrapper around [**CoInitializeEx**](/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex) and [**CoUninitialize**](/windows/win32/api/combaseapi/nf-combaseapi-couninitialize). |
+| [**Semaphore class**](/cpp/cppcx/wrl/semaphore-class) | Use the [thread support library](https://en.cppreference.com/w/cpp/thread) |
+| [**SRWLock class**](/cpp/cppcx/wrl/srwlock-class) | Use the [thread support library](https://en.cppreference.com/w/cpp/thread) |
 
 ## Important APIs
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)

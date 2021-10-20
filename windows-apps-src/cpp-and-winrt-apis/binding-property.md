@@ -403,11 +403,11 @@ You don't need to provide an implementation for the **UseCustomColorCheckBox** p
 
 You might do this in a diagnostic mode.
 
-<syntaxhighlight lang="xml">
-<TextBlock Text="{Binding CanPair}"/>
-</syntaxhighlight>
+\<syntaxhighlight lang="xml">
+\<TextBlock Text="{Binding CanPair}"/>
+\</syntaxhighlight>
 
-This shows `true` or `false` in C++/CX, but shows **Windows.Foundation.IReference`1<Boolean>** in C++/WinRT.
+This shows `true` or `false` in C++/CX, but shows **Windows.Foundation.IReference`1\<Boolean>** in C++/WinRT.
 
 Use `x:Bind` when binding to a Boolean.
 

@@ -63,7 +63,7 @@ To add Surface Hub resolutions to the simulator:
     ![Visual Studio simulator resolutions](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [Turn on Tablet mode](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) to better simulate the experience of a Surface Hub.
+   > [Turn on Tablet mode (Windows 10 only)](/windows-hardware/design/device-experiences/continuum) to better simulate the experience of a Surface Hub.
 
 ## Deploy apps to a Surface Hub device from Visual Studio
 Manually deploying an app to a Surface Hub is a simple process.

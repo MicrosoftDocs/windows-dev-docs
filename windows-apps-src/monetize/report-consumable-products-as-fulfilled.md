@@ -2,7 +2,7 @@
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Use this method in the Microsoft Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
 title: Report consumable products as fulfilled
-ms.date: 03/19/2018
+ms.date: 04/22/2021
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable
 ms.localizationpriority: medium
@@ -15,6 +15,8 @@ There are two ways you can use this method to report a consumable product as ful
 
 * Provide the item ID of the consumable (as returned in the **itemId** parameter of a [query for products](query-for-products.md)), and a unique tracking ID that you provide. If the same tracking ID is used for multiple tries, the same result will be returned even if the item is already consumed. If you aren't certain if a consume request was successful, your service should resubmit consume requests with the same tracking ID. The tracking ID will always be tied to that consume request and can be resubmitted indefinitely.
 * Provide the product ID (as returned in the **productId** parameter of a [query for products](query-for-products.md)) and a transaction ID that is obtained from one of the sources listed in the description for the **transactionId** parameter in the request body section below.
+
+The [Microsoft.StoreServices library](https://github.com/microsoft/Microsoft-Store-Services) provides the functionality of this method through the StoreServicesClient.CollectionsConsumeAsync API.
 
 ## Prerequisites
 
@@ -142,3 +144,4 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [Query for products](query-for-products.md)
 * [Grant free products](grant-free-products.md)
 * [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 

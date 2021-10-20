@@ -48,24 +48,6 @@ There are two popular distributions of Cordova:
 
 - [Ionic](https://ionicframework.com/)
 
-## Adobe PhoneGap
-
-Support was recently discontinued. For more, see this [blog post from Adobe](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c).
-
-### Install PhoneGap
-
-To get started building a PWA or hybrid web app with PhoneGap, you should first install the following tools:
-
-- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../nodejs/setup-on-wsl2.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
-
-Install PhoneGap by entering the following in your command line:
-
-```bash
-npm install -g phonegap
-```
-
-To create a new PhoneGap project, follow their steps to [Get started](https://phonegap.com/getstarted/). Visit the [PWA Features](http://stage.docs.phonegap.com/tutorials/stockpile/911-pwa-features/) section of the PhoneGap docs to learn how to move your app from being a hybrid to a PWA.  
-
 ## Ionic
 
 [Ionic](https://ionicframework.com/) is a framework that adjusts the user interface (UI) of your app to match the design language of each platform (Android, iOS, Windows). Ionic enables you to use either [Angular](https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro) or [React](https://ionicframework.com/react).
@@ -77,7 +59,7 @@ To create a new PhoneGap project, follow their steps to [Get started](https://ph
 
 To get started building a PWA or hybrid web app with Ionic, you should first install the following tools:
 
-- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../nodejs/setup-on-wsl2.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
+- Node.js for interacting with the Ionic ecosystem. [Download NodeJS for Windows](https://nodejs.org/en/) or follow the [NodeJS installation guide](../dev-environment/javascript/nodejs-on-wsl.md) using Windows Subsystem for Linux (WSL). You may want to consider using [Node Version Manager (nvm)](../dev-environment/javascript/nodejs-on-wsl.md#install-nvm-nodejs-and-npm) if you will be working with multiple projects and version of NodeJS.
 
 - VS Code for writing your code. [Download VS Code for Windows](https://code.visualstudio.com/). You may also want to install the [WSL Remote Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you prefer to build your app with a Linux command line.
 
@@ -196,7 +178,7 @@ To test your Ionic app on an Android device emulator, you must:
 
 1. [Install the required components -- Java Development Kit (JDK), Gradle, and the Android SDK](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#installing-the-requirements).
 
-2. [Create an Android Virtual Device (AVD)](https://developer.android.com/studio/run/managing-avds.html).
+2. Create an Android Virtual Device (AVD): See the [Android developer guide]](https://developer.android.com/studio/run/managing-avds.html).
 
 3. Enter the command for Ionic to build and deploy your app to the emulator: `ionic cordova emulate [<platform>] [options]`. In this case, the command should be:
 

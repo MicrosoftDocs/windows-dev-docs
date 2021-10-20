@@ -18,7 +18,7 @@ This article describes how to use the **[AccountsSettingsPane](/uwp/api/Windows.
 
 First, create a new, blank app in Visual Studio. 
 
-Second, in order to connect to identity providers, you'll need to associate your app with the Store. To do this, right click your project, choose **Store** > **Associate app with the store**, and follow the wizard's instructions. 
+Second, in order to connect to identity providers, you'll need to associate your app with the Store. To do this, right click your project, choose **Store/Publish** > **Associate app with the store**, and follow the wizard's instructions. 
 
 Third, create a very basic UI consisting of a simple XAML button and two text boxes.
 
@@ -259,7 +259,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Once you have a **WebAccount** instance, you can easily store it. In the following example, we use LocalSettings. For more information on using LocalSettings and other methods to store user data, see [Store and retrieve app settings and data](../design/app-settings/store-and-retrieve-app-data.md).
+Once you have a **WebAccount** instance, you can easily store it. In the following example, we use LocalSettings. For more information on using LocalSettings and other methods to store user data, see [Store and retrieve app settings and data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 
 ```csharp
 private async void StoreWebAccount(WebAccount account)

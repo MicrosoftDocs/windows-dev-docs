@@ -7,12 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d 11
 ms.localizationpriority: medium
 ---
+
 # OpenGL ES 2.0 to Direct3D 11 reference
 
-
-
 Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
-## 
+ 
 <table>
 <colgroup>
 <col width="50%" />
@@ -31,13 +30,3 @@ Use these reference topics to look up API mapping and short code samples when po
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

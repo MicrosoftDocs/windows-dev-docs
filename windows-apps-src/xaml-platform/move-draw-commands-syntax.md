@@ -227,7 +227,7 @@ There are exporters or plug-ins available for other commonly used vector-graphic
 
 ## Related topics
 
-* [Draw shapes](../design/controls-and-patterns/shapes.md)
-* [Use brushes](../design/style/brushes.md)
+* [Draw shapes](/windows/apps/design/controls/shapes)
+* [Use brushes](/windows/apps/design/style/brushes)
 * [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data)
 * [**PathIcon**](/uwp/api/Windows.UI.Xaml.Controls.PathIcon)

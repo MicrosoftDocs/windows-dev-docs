@@ -20,7 +20,7 @@ For important background info about ApiInformation and API contracts, see [Versi
 
 ## Conditional namespaces
 
-To use a conditional method in XAML, you must first declare a conditional [XAML namespace](../xaml-platform/xaml-namespaces-and-namespace-mapping.md) at the top of your page. Here's a psuedo-code example of a conditional namespace:
+To use a conditional method in XAML, you must first declare a conditional [XAML namespace](../xaml-platform/xaml-namespaces-and-namespace-mapping.md) at the top of your page. Here's a pseudo-code example of a conditional namespace:
 
 ```xaml
 xmlns:myNamespace="schema?conditionalMethod(parameter)"
@@ -54,7 +54,7 @@ We discuss these methods further in later sections of this article.
 
 In this example, you display, "Hello, Conditional XAML", as the content of a text block if the app runs on the Fall Creators Update or later, and default to no content if it's on a previous version.
 
-First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (https://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
+First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (`https://schemas.microsoft.com/winfx/2006/xaml/presentation`) as the schema containing the [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
 
 You then define a conditional that returns **true** on devices that are running the Fall Creators Update or later. You use the ApiInformation method **IsApiContractPresent** to check for the 5th version of the UniversalApiContract. Version 5 of the UniversalApiContract was released with the Fall Creators Update (SDK 16299).
 
@@ -142,7 +142,7 @@ With both namespaces defined, you can set the Text property twice as long as you
            contract5Present:Text="Hello, Fall Creators Update"/>
 ```
 
-Here's another example that sets the background of a button. The [Acrylic material](../design/style/acrylic.md) feature is available starting with the Fall Creators Update, so you’ll use Acrylic for the background when the app runs on the Fall Creators Update. It's not available on earlier versions, so in those cases, you set the background to red.
+Here's another example that sets the background of a button. The [Acrylic material](/windows/apps/design/style/acrylic) feature is available starting with the Fall Creators Update, so you’ll use Acrylic for the background when the app runs on the Fall Creators Update. It's not available on earlier versions, so in those cases, you set the background to red.
 
 ```xaml
 <Button Content="Button"

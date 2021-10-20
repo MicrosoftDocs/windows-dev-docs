@@ -89,9 +89,9 @@ The following code for the NumberChanged event shows the basic pattern for UWP e
 > End Event
 > ```
 
-The static (Shared in Visual Basic) GetOrCreateEventRegistrationTokenTable method creates the event’s instance of the EventRegistrationTokenTable&lt;T&gt; object lazily. Pass the class-level field that will hold the token table instance to this method. If the field is empty, the method creates the table, stores a reference to the table in the field, and returns a reference to the table. If the field already contains a token table reference, the method just returns that reference.
+The static (Shared in Visual Basic) GetOrCreateEventRegistrationTokenTable method creates the event's instance of the EventRegistrationTokenTable&lt;T&gt; object lazily. Pass the class-level field that will hold the token table instance to this method. If the field is empty, the method creates the table, stores a reference to the table in the field, and returns a reference to the table. If the field already contains a token table reference, the method just returns that reference.
 
-> **Important**  To ensure thread safety, the field that holds the event’s instance of EventRegistrationTokenTable&lt;T&gt; must be a class-level field. If it is a class-level field, the GetOrCreateEventRegistrationTokenTable method ensures that when multiple threads try to create the token table, all threads get the same instance of the table. For a given event, all calls to the GetOrCreateEventRegistrationTokenTable method must use the same class-level field.
+> **Important**  To ensure thread safety, the field that holds the event's instance of EventRegistrationTokenTable&lt;T&gt; must be a class-level field. If it is a class-level field, the GetOrCreateEventRegistrationTokenTable method ensures that when multiple threads try to create the token table, all threads get the same instance of the table. For a given event, all calls to the GetOrCreateEventRegistrationTokenTable method must use the same class-level field.
 
 Calling the GetOrCreateEventRegistrationTokenTable method in the remove accessor and in the [RaiseEvent](/dotnet/articles/visual-basic/language-reference/statements/raiseevent-statement) method (the OnRaiseEvent method in C#) ensures that no exceptions occur if these methods are called before any event handler delegates have been added.
 
@@ -117,5 +117,5 @@ Visual Basic users: In .NET, an event is just a multicast delegate that represen
 * [Events (Visual Basic)](/dotnet/articles/visual-basic/programming-guide/language-features/events/index)
 * [Events (C# Programming Guide)](/dotnet/articles/csharp/programming-guide/events/index)
 * [.NET for UWP apps Overview](/previous-versions/windows/apps/br230302(v=vs.140))
-* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0)
+* [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 * [Walkthrough of creating a C# or Visual Basic Windows Runtime component, and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

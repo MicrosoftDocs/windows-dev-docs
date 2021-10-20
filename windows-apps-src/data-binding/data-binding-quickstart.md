@@ -483,7 +483,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 ![Binding a list view 3](images/xaml-databinding3.png)
 
-For more information about XAML syntax, see [Create a UI with XAML](../design/basics/xaml-basics-ui.md). For more information about control layout, see [Define layouts with XAML](../design/layout/layouts-with-xaml.md).
+For more information about XAML syntax, see [Create a UI with XAML](/windows/apps/design/basics/xaml-basics-ui). For more information about control layout, see [Define layouts with XAML](/windows/apps/design/layout/layouts-with-xaml).
 
 ## Adding a details view
 
@@ -612,6 +612,10 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ```
 
 ```cppwinrt
+// pch.h
+...
+#include <winrt/Windows.Globalization.h>
+
 // StringFormatter.idl
 namespace Quickstart
 {

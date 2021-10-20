@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 You can submit apps to the Microsoft Store in over 100 languages.
 
-To learn more about configuring languages in your apps, see [Globalization and localization](../design/globalizing/globalizing-portal.md) and [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md). We also have a [Multilingual App Toolkit](../design/globalizing/use-mat.md) to help you write apps that support multiple languages.
+To learn more about configuring languages in your apps, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal) and [Understand user profile languages and app manifest languages](/windows/apps/design/globalizing/manage-language-and-region). We also have a [Multilingual App Toolkit](/windows/apps/design/globalizing/use-mat) to help you write apps that support multiple languages.
 
 ## Supported languages
 

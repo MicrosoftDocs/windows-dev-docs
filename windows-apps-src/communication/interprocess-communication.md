@@ -72,7 +72,7 @@ To maintain security and network isolation, loopback connections for IPC are blo
     * Each application must list the other in its [LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules). The client declares an "out" Rule for the server, and the server declares "in" Rules for its supported clients.
 
 > [!NOTE]
-> The package family name required to identify an application in these Rules can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
+> The package family name required to identify an application in these Rules can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?windowsserver2019-ps&preserve-view=true) PowerShell command for applications that are already installed.
 
 Unpackaged applications and services don't have package identity, so they can't be declared in [LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules). You can configure a packaged application to connect via loopback with unpackaged applications and services via [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)), however this is only possible for sideload or debugging scenarios where you have local access to the machine, and you have administrator privileges.
 
@@ -83,7 +83,7 @@ Unpackaged applications and services don't have package identity, so they can't 
     * The `-is` flag was introduced in Windows 10, version 1607 (10.0; Build 14393).
 
 > [!NOTE]
-> The package family name required for the `-n` flag of [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell command for applications that are already installed.
+> The package family name required for the `-n` flag of [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) can be found via the package manifest editor in Visual Studio during development time, via [Partner Center](../publish/view-app-identity-details.md) for applications published through the Microsoft Store, or via the [Get-AppxPackage](/powershell/module/appx/get-appxpackage?windowsserver2019-ps&preserve-view=true) PowerShell command for applications that are already installed.
 
 [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) is also useful for [debugging network isolation issues](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues).
 

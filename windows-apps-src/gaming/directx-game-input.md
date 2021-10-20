@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, game, directx, input, mouse, touch, control
 ms.localizationpriority: medium
 ---
+
 # Game input for DirectX games
 
 This section provides information about adding various types of inputs for your DirectX games.

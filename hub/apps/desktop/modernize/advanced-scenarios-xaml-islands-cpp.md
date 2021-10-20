@@ -1,24 +1,24 @@
 ---
-description: This article discusses advanced XAML Island hosting scenarios for C++ Win32 apps.
-title: Advanced scenarios for XAML Islands in C++ Win32 apps
+description: This article discusses advanced XAML Island hosting scenarios for C++ desktop (Win32) apps.
+title: Advanced scenarios for XAML Islands in C++ desktop (Win32) apps
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Advanced scenarios for XAML Islands in C++ Win32 apps
+# Advanced scenarios for XAML Islands in C++ desktop (Win32) apps
 
-The [host a standard UWP control](host-standard-control-with-xaml-islands-cpp.md) and [host a custom UWP control](host-custom-control-with-xaml-islands-cpp.md) articles provide instructions and examples for hosting XAML Islands in a C++ Win32 app. However, the code examples in these articles do not handle many advanced scenarios that desktop applications may need to handle to provide a smooth user experience. This article provides guidance for some of these scenarios and pointers to related code samples.
+The [host a standard UWP control](host-standard-control-with-xaml-islands-cpp.md) and [host a custom UWP control](host-custom-control-with-xaml-islands-cpp.md) articles provide instructions and examples for hosting XAML Islands in a C++ desktop (Win32) app. However, the code examples in these articles do not handle many advanced scenarios that desktop applications may need to handle to provide a smooth user experience. This article provides guidance for some of these scenarios and pointers to related code samples.
 
 ## Keyboard input
 
 To properly handle keyboard input for each XAML Island, your application must pass all Windows messages to the UWP XAML framework so that certain messages can be processed correctly. To do this, in some place in your application that can access the message loop, cast the **DesktopWindowXamlSource** object for each XAML Island to an **IDesktopWindowXamlSourceNative2** COM interface. Then, call the **PreTranslateMessage** method of this interface and pass in the current message.
 
-  * **C++ Win32:**: The app can call **PreTranslateMessage** directly in its main message loop. For an example, see the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) file.
+  * **C++ desktop (Win32):**: The app can call **PreTranslateMessage** directly in its main message loop. For an example, see the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) file.
 
   * **WPF:** The app can call **PreTranslateMessage** from the event handler for the [ComponentDispatcher.ThreadFilterMessage](/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) event. For an example, see the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) file in the Windows Community Toolkit.
 
@@ -36,7 +36,7 @@ The UWP XAML hosting API provides several types and members to help you accompli
 
 For examples that demonstrate how to do this in the context of a working sample application, see the following code files:
 
-  * **C++/Win32**: See the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) file.
+  * **C++ desktop (Win32)**: See the [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) file.
 
   * **WPF:** See the [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) file in the Windows Community Toolkit.  
 
@@ -46,7 +46,7 @@ For examples that demonstrate how to do this in the context of a working sample 
 
 When the user changes the size of the parent UI element, you'll need to handle any necessary layout changes to make sure your UWP controls display as you expect. Here are some important scenarios to consider.
 
-* In a C++ Win32 application, when your application handles the WM_SIZE message it can reposition the hosted XAML Island by using the [SetWindowPos](/windows/desktop/api/winuser/nf-winuser-setwindowpos) function. For an example, see the [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) code file.
+* In a C++ desktop application, when your application handles the WM_SIZE message it can reposition the hosted XAML Island by using the [SetWindowPos](/windows/desktop/api/winuser/nf-winuser-setwindowpos) function. For an example, see the [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) code file.
 
 * When the parent UI element needs to get the size of the rectangular area needed to fit the **Windows.UI.Xaml.UIElement** that you are hosting on the **DesktopWindowXamlSource**, call the [Measure](/uwp/api/windows.ui.xaml.uielement.measure) method of the **Windows.UI.Xaml.UIElement**. For example:
 
@@ -62,7 +62,7 @@ When the user changes the size of the parent UI element, you'll need to handle a
 
 ## Handle DPI changes
 
-The UWP XAML framework handles DPI changes for hosted UWP controls automatically (for example, when the user drags the window between monitors with different screen DPI). For the best experience, we recommend that your Windows Forms, WPF, or C++ Win32 application is configured to be per-monitor DPI aware.
+The UWP XAML framework handles DPI changes for hosted UWP controls automatically (for example, when the user drags the window between monitors with different screen DPI). For the best experience, we recommend that your Windows Forms, WPF, or C++ desktop application is configured to be per-monitor DPI aware.
 
 To configure your application to be per-monitor DPI aware, add a [side-by-side assembly manifest](/windows/desktop/SbsCs/application-manifests) to your project and set the **\<dpiAwareness\>** element to **PerMonitorV2**. For more information about this value, see the description for [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](/windows/desktop/hidpi/dpi-awareness-context).
 
@@ -80,8 +80,8 @@ To configure your application to be per-monitor DPI aware, add a [side-by-side a
 ## Related topics
 
 * [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
-* [Using the UWP XAML hosting API in a C++ Win32 app](using-the-xaml-hosting-api.md)
-* [Host a standard UWP control in a C++ Win32 app](host-standard-control-with-xaml-islands-cpp.md)
-* [Host a custom UWP control in a C++ Win32 app](host-custom-control-with-xaml-islands-cpp.md)
+* [Using the UWP XAML hosting API in a C++ desktop app](using-the-xaml-hosting-api.md)
+* [Host a standard UWP control in a C++ desktop app](host-standard-control-with-xaml-islands-cpp.md)
+* [Host a custom UWP control in a C++ desktop app](host-custom-control-with-xaml-islands-cpp.md)
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
-* [C++ Win32 XAML Islands sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)
+* [C++ desktop XAML Islands sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

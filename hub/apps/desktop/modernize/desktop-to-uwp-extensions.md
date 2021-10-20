@@ -1,18 +1,16 @@
 ---
-description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
-title: Modernize existing desktop apps using Desktop Bridge
+description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
+title: Integrate your desktop app with Windows using packaging extensions
 ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
-# Integrate your desktop app with Windows 10 and UWP
+# Integrate your desktop app with Windows using packaging extensions
 
-If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
+If your desktop app has [package identity](modernize-packaged-apps.md), you can use extensions to integrate your app with Windows 10 and later releases by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
 
 For example, use an extension to create a firewall exception, make your app the default application for a file type, or point start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
@@ -25,11 +23,93 @@ This article describes these extensions and the tasks that you can perform by us
 
 Help users transition to your packaged app.
 
+* [Redirect your existing desktop app to your packaged app](#redirect)
 * [Point existing Start tiles and taskbar buttons to your packaged app](#point)
-* [Make your packaged application open files instead of your desktop app](#make)
-* [Associate your packaged application with a set of file types](#associate)
+* [Make your packaged app open files instead of your desktop app](#make)
+* [Associate your packaged app with a set of file types](#associate)
 * [Add options to the context menus of files that have a certain file type](#add)
 * [Open certain types of files directly by using a URL](#open)
+
+<a id="redirect"></a>
+
+### Redirect your existing desktop app to your packaged app
+
+When users start your existing unpackaged desktop app, you can configure your MSIX-packaged app to be opened instead. 
+
+> [!NOTE]
+> This feature is supported in Windows Insider Preview Build 21313 and later versions.
+
+To enable this behavior:
+
+1. Add registry entries to redirect your unpackaged desktop app executable to your packaged app.
+2. Register your packaged app to be launched when your unpackaged desktop app executable is launched.
+
+#### Add registry entries to redirect your unpackaged desktop app executable
+
+1. In the registry, create a subkey with the name of your desktop app executable file under the **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options** key.
+2. Under this subkey, add the following values:
+    * **AppExecutionAliasRedirect** (DWORD): If set to 1, the system will check for an [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) package extension with the same name as the executable. If the **AppExecutionAlias** extension is enabled, the packaged app will be activated using that value.
+    * **AppExecutionAliasRedirectPackages** (REG_SZ): The system will redirect only to the listed packages. Packages are listed by their package family name, separated by semicolons. If the special value * is used, the system will redirect to an **AppExecutionAlias** from any package.
+
+For example:
+
+```Ini
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\contosoapp.exe 
+    AppExecutionAliasRedirect = 1
+    AppExecutionAliasRedirectPackages = "Microsoft.WindowsNotepad_8weky8webbe" 
+```
+
+#### Register your packaged app to be launched
+
+In your package manifest, add an [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) extension that registers the name of your unpackaged desktop app executable. For example:
+
+```XML
+<Package
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap3">
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="contosoapp.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+#### Disable the redirection
+
+Users can turn off the redirection and launch your unpackaged app executable via these options:
+
+* They can uninstall the MSIX-packaged version of your app.
+* The user can disable the **AppExecutionAlias** entry for your MSIX-packaged app in the **App execution aliases** page in **Settings**.
+
+#### XML namespaces
+
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
+
+#### Elements and attributes of this extension
+
+```XML
+<uap3:Extension
+    Category="windows.appExecutionAlias"
+    EntryPoint="Windows.FullTrustApplication">
+    <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
+```
+
+|Name |Description |
+|-------|-------------|
+|Category |Always ``windows.appExecutionAlias``. |
+|Executable |The relative path to the executable to start when the alias is invoked. |
+|Alias |The short name for your app. It must always end with the ".exe" extension. |
 
 <a id="point"></a>
 

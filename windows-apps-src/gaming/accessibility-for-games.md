@@ -180,7 +180,7 @@ Here are some basic guidelines to consider when designing closed captions and su
 
 *	Select simple readable font.
 *	Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
-*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](../design/accessibility/accessible-text-requirements.md).)
+*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](/windows/apps/design/accessibility/accessible-text-requirements).)
 * Display short sentences on screen, maximum 38 characters per line and maximum 2-3 lines at any one time. (Remember not to give the game away by displaying the text before event occurs.)
 *	Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
 *	Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
@@ -264,5 +264,5 @@ Here are some external sites that provide additional information about game acce
 ### Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive/)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Developing accessible UWP apps](../design/accessibility/accessibility.md)
+* [Developing accessible UWP apps](/windows/apps/design/accessibility/accessibility)
 * [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)

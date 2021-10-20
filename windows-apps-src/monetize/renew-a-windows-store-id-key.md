@@ -2,7 +2,7 @@
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Learn how to renew an expired Microsoft Store ID key using the renew method in the Microsoft Store collection and purchase APIs.
 title: Renew a Microsoft Store ID key
-ms.date: 03/19/2018
+ms.date: 04/22/2021
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew
 ms.localizationpriority: medium
@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 
 
 Use this method to renew a Microsoft Store key. When you [generate a Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4), the key is valid for 90 days. After the key expires, you can use the expired key to renegotiate a new key by using this method.
+
+The [Microsoft.StoreServices library](https://github.com/microsoft/Microsoft-Store-Services) provides the functionality of this method through the UserStoreId.RefreshStoreId API.
+
 
 ## Prerequisites
 
@@ -106,3 +109,4 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Grant free products](grant-free-products.md)
+* [Microsoft.StoreServices library (GitHub)](https://github.com/microsoft/Microsoft-Store-Services) 

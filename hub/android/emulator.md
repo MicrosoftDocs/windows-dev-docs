@@ -85,15 +85,15 @@ When building and testing a native Android app, we recommend [using Android Stud
 3. Select Run ▷. This will launch the [Android Emulator](https://developer.android.com/studio/run/emulator).
 
 > [!TIP]
-> Once your app is installed on the emulator device, you can use [Apply Changes](https://developer.android.com/studio/run#apply-changes) to deploy certain code and resource changes without building a new APK.
+> Once your app is installed on the emulator device, you can use `Apply Changes` to deploy certain code and resource changes without building a new APK. See the [Android developer guide](https://developer.android.com/studio/run#apply-changes) for more information.
 
 ### Emulator for cross-platform development with Visual Studio
 
-There are many [Android emulator options](https://www.androidauthority.com/best-android-emulators-for-pc-655308/) available for Windows PCs. We recommend using Google's [Android emulator](https://developer.android.com/studio/run/emulator), as it offers access to the latest Android OS images and Google Play services.
+There are many [Android emulator options](https://www.androidauthority.com/best-android-emulators-for-pc-655308/) available for Windows PCs. We recommend using the Google [Android emulator](https://developer.android.com/studio/run/emulator), as it offers access to the latest Android OS images and Google Play services.
 
 ### Install Android emulator with Visual Studio
 
-1. If you don't already have it installed, download [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) and ensure that you have the **Mobile development with .NET workload**.
+1. If you don't already have it installed, download [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Use the Visual Studio Installer to [Modify your workloads](/visualstudio/install/modify-visual-studio#modify-workloads) and ensure that you have the **Mobile development with .NET workload**.
 
 2. Create a new project. Once you've [set up the Android Emulator](/xamarin/android/get-started/installation/android-emulator/), you can use the [Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements) to create, duplicate, customize, and launch a variety of Android virtual devices. Launch the Android Device Manager from the Tools menu with: **Tools** > **Android** > **Android Device Manager**.
 
@@ -107,6 +107,6 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 
 ## Additional resources
 
-- [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
+* [Develop Dual-screen apps for Android and get the Surface Duo device SDK](/dual-screen/android/)
 
-- [Add Windows Defender exclusions to improve performance](defender-settings.md)
+* [Add Windows Defender exclusions to improve performance](defender-settings.md)

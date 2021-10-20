@@ -7,9 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, games, screen orientation, directx
 ms.localizationpriority: medium
 ---
+
 # Supporting screen orientation (DirectX and C++)
-
-
 
 Your Universal Windows Platform (UWP) app can support multiple screen orientations when you handle the [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) event. Here, we'll discuss best practices for handling screen rotation in your UWP DirectX app, so that the Windows 10 device's graphics hardware are used efficiently and effectively.
 

@@ -84,7 +84,7 @@ namespace winrt::ThermometerWRC::implementation
 }
 ```
 
-You'll also need to delete the `static_assert` from both files.
+You'll see a `static_assert` at the top of `Thermometer.h` and `Thermometer.cpp`, which you'll need to remove. Now the project will build.
 
 If any warnings prevent you from building, then either resolve them or set the project property **C/C++** > **General** > **Treat Warnings As Errors** to **No (/WX-)**, and build the project again.
 

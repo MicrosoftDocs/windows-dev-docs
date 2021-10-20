@@ -45,6 +45,9 @@ Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080 | [Device Port
 
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
 
+> [!NOTE]
+> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
+
 ## Features
 
 ### Toolbar and navigation

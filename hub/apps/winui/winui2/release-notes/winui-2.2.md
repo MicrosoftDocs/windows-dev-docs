@@ -1,6 +1,7 @@
 ---
 title: WinUI 2.2 Release Notes
 description: Release notes for WinUI 2.2 including new features and bugfixes.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 07/15/2020
 ms.topic: article
 ---
@@ -35,7 +36,7 @@ The TabView control is a collection of tabs that each represents a new page or d
 
 #### Documentation
 
-https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
+/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
 
 #### NavigationView Updates
 
@@ -57,7 +58,7 @@ App developers can now reclaim all pixels within their app window when they use 
 
 ##### Documentation
 
-https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview#top-whitespace
+/windows/uwp/design/controls-and-patterns/navigationview#top-whitespace
 
 #### Visual Style Updates
 

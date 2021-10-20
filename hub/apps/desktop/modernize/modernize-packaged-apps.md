@@ -4,8 +4,6 @@ title: Modernize packaged desktop apps
 ms.date: 04/22/2019
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -18,10 +16,6 @@ If you want to update your desktop app with [modern Windows 10 experiences](inde
 * If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to non-packaged desktop apps](grant-identity-to-nonpackaged-apps.md).
 
 If your desktop app has package identity, you can use the following features in your app.
-
-## Use Windows Runtime APIs that require package identity
-
-The following list of Windows Runtime APIs require package identity to be used in a desktop app: [list of APIs](desktop-to-uwp-supported-api.md#list-of-apis).
 
 ## Integrate with package extensions
 

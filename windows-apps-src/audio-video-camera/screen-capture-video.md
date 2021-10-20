@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Screen capture to video
 
-This article describes how to encode frames captured from the screen with the Windows.Graphics.Capture APIs to a video file. For information on screen capturing still images, see [Screeen capture](./screen-capture.md). For a simple end-to-end sample app that utilizes the concepts and techniques shown in this article, see [SimpleRecorder](https://github.com/MicrosoftDocs/SimpleRecorder/).
+This article describes how to encode frames captured from the screen with the Windows.Graphics.Capture APIs to a video file. For information on screen capturing still images, see [Screen capture](./screen-capture.md). For a simple end-to-end sample app that utilizes the concepts and techniques shown in this article, see [SimpleRecorder](https://github.com/MicrosoftDocs/SimpleRecorder/).
 
 ## Overview of the video capture process
 This article provides a walkthrough of an example app that records the contents of a window to a video file. While it may seem like there is a lot of code required to implement this scenario, the high-level structure of a screen recorder app is fairly simple. The screen capture process uses three primary UWP features:

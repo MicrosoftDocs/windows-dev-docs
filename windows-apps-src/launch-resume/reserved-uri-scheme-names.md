@@ -79,14 +79,16 @@ The following file types are reserved for the operating system
 ## Reserved URI scheme names
 
 <table>
-<tr><td>application.manifest</td><td>internetshortcut</td><td>ms-settings:network-mobilehotspot</td><td>shbfile</td></tr>
-<tr><td>application.reference</td><td>javascript</td><td>ms-settings:network-proxy</td><td>shcmdfile</td></tr>
-<tr><td>batfile</td><td>jscript</td><td>ms-settings:network-wifi</td><td>shsfile</td></tr>
-<tr><td>bing</td><td>jsefile</td><td>ms-settings:nfctransactions</td><td>smb</td></tr>
-<tr><td>blob</td><td>ldap</td><td>ms-settings:notifications</td><td>stickynotes</td></tr>
-<tr><td>callto</td><td>lnkfile</td><td>ms-settings:personalization</td><td>sysfile</td></tr>
-<tr><td>cerfile</td><td>mailto</td><td>ms-settings:privacy-calendar</td><td>tel</td></tr>
-<tr><td>chm.filecmdfilecomfile</td><td>maps</td><td>ms-settings:privacy-contacts</td><td>telnet</td></tr>
+<tr><td>application.manifest</td><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td></tr>
+<tr><td>application.reference</td><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td></tr>
+<tr><td>batfile</td><td>internetshortcut</td><td>ms-settings:network-mobilehotspot</td><td>shbfile</td></tr>
+<tr><td>bing</td><td>javascript</td><td>ms-settings:network-proxy</td><td>shcmdfile</td></tr>
+<tr><td>blob</td><td>jscript</td><td>ms-settings:network-wifi</td><td>shsfile</td></tr>
+<tr><td>callto</td><td>jsefile</td><td>ms-settings:nfctransactions</td><td>smb</td></tr>
+<tr><td>cerfile</td><td>ldap</td><td>ms-settings:notifications</td><td>stickynotes</td></tr>
+<tr><td>chm.file</td><td>lnkfile</td><td>ms-settings:personalization</td><td>sysfile</td></tr>
+<tr><td>cmdfile</td><td>mailto</td><td>ms-settings:privacy-calendar</td><td>tel</td></tr>
+<tr><td>comfile</td><td>maps</td><td>ms-settings:privacy-contacts</td><td>telnet</td></tr>
 <tr><td>cplfile</td><td>microsoft.powershellscript.1</td><td>ms-settings:privacy-customdevices</td><td>tn3270</td></tr>
 <tr><td>dllfile</td><td>ms-accountpictureprovider</td><td>ms-settings:privacy-feedback</td><td>ttffile</td></tr>
 <tr><td>drvfile</td><td>ms-appdata</td><td>ms-settings:privacy-location</td><td>unknown</td></tr>
@@ -110,6 +112,4 @@ The following file types are reserved for the operating system
 <tr><td>https</td><td>ms-settings:maps</td><td>regfile</td><td></td></tr>
 <tr><td>iehistory</td><td>ms-settings:network-airplanemode</td><td>res</td><td></td></tr>
 <tr><td>ierss</td><td>ms-settings:network-cellular</td><td>rlogin</td><td></td></tr>
-<tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
-<tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>

@@ -1,16 +1,16 @@
 ### YamlMime:Landing
 
-title: Windows 10 on ARM documentation # < 60 chars
-summary: Windows 10 runs on PCs powered by ARM processors. This page provides the information for you to learn more about the platform and get started developing apps. # < 160 chars
+title: Windows on ARM documentation
+summary: Windows runs on PCs powered by ARM processors. This page provides the information for you to learn more about the platform and get started developing apps. # < 160 chars
 
 metadata:
-  title: Windows 10 on ARM documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: This page provides the information for you to get started developing ARM64 win32 and UWP apps. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: guidance #Required; service per approved list. service slug assigned to your service by ACOM.
-  ms.topic: landing-page # Required
-  author: hickeys #Required; your GitHub user alias, with correct capitalization.
-  ms.author: hickeys #Required; microsoft alias of author; optional team alias.
-  ms.date: 05/08/2018 #Required; mm/dd/yyyy format.
+  title: Windows on ARM documentation
+  description: This page provides the information for you to get started developing ARM64 win32 and UWP apps.
+  ms.service: guidance 
+  ms.topic: landing-page
+  author: mattwojo
+  ms.author: mattwoj
+  ms.date: 06/25/2021
   ms.localizationpriority: medium
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -18,12 +18,11 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
-  # Card (optional)
-  - title: About Windows 10 on ARM
+  - title: About Windows on ARM
     linkLists:
       - linkListType: overview
         links:
-          - text: Windows 10 on ARM
+          - text: Windows on ARM
             url: /windows/uwp/porting/apps-on-arm
       - linkListType: learn
         links:        
@@ -35,27 +34,35 @@ landingContent:
             url: https://youtu.be/OZtVBDeVqCE
           - text: Build 2018 Windows 10 on ARM for developers
             url: https://channel9.msdn.com/Events/Build/2018/BRK2438
-          - text: Windows Community Standup with Kevin Gallo
-            url: https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018
 
   # Card
-  - title: Develop for Windows 10 on ARM
+  - title: Develop for Windows on ARM
     linkLists:
       - linkListType: how-to-guide
         links:
+          - text: ARM64EC for Windows 11 apps on ARM
+            url: /windows/uwp/porting/arm64ec 
           - text: Build ARM64 apps with the SDK
             url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
-          - text: UWP apps on ARM
+          - text: Build ARM64 Drivers with the WDK
+            url: /windows-hardware/drivers/develop/building-arm64-drivers
+          - text: Troubleshoot UWP apps on ARM
             url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
           - text: Debug on ARM
             url: /windows-hardware/drivers/debugger/debugging-arm64
-          - text: Build ARM64 Drivers with the WDK
-            url: /windows-hardware/drivers/develop/building-arm64-drivers
-          - text: Develop x86 apps on ARM
-            url: /windows/uwp/porting/apps-on-arm-troubleshooting-x86
+      - linkListType: reference
+        links:
+          - text: Developer resources at Qualcomm Developer Network
+            url: https://developer.qualcomm.com/hardware/windows-on-snapdragon/developer-resources
+          - text: Windows on ARM documentation at developer.arm.com
+            url: https://developer.arm.com/solutions/os/windows-on-arm
+      - linkListType: whats-new
+        links:
+          - text: Develop apps for ARM with Snapdragon Developer Kit
+            url: https://developer.qualcomm.com/hardware/windows-on-snapdragon/snapdragon-developer-kit        
 
   # Card
-  - title: Any feedback?
+  - title: Feedback
     linkLists:
       - linkListType: reference
         links:
@@ -63,5 +70,5 @@ landingContent:
             url: feedback-hub://?tabid=2&contextid=803
           - text: Report a bug
             url: mailto:woafeedback@microsoft.com
-          - text: Give doc feedback
-            url: https://github.com/MicrosoftDocs/windows-uwp/tree/docs/landing/arm-docs
+          - text: Provide documentation feedback
+            url: https://github.com/MicrosoftDocs/windows-uwp/issues

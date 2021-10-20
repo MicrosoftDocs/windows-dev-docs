@@ -1,5 +1,6 @@
+items:
 - name: Windows development environment
-  href: overview.md
+  href: ./index.md
   items:
   - name: Overview
     items:
@@ -15,6 +16,50 @@
           href: mac-to-windows.md#keyboard-shortcuts
   - name: Development paths
     items:
+        - name: Get started with JavaScript
+          items:
+              - name: Overview
+                href: ./javascript/index.md
+              - name: Get started with NodeJS
+                items:
+                  - name: Overview
+                    href: ./javascript/nodejs-overview.md
+                  - name: Install on WSL
+                    href: ./javascript/nodejs-on-wsl.md
+                  - name: Install on Windows
+                    href: ./javascript/nodejs-on-windows.md
+                  - name: Tutorial for beginners
+                    href: ./javascript/nodejs-beginners-tutorial.md
+              - name: Get started with React
+                items:
+                  - name: Overview
+                    href: ./javascript/react-overview.md
+                  - name: Install on WSL
+                    href: ./javascript/react-on-wsl.md
+                  - name: Install on Windows
+                    href: ./javascript/react-on-windows.md
+                  - name: Install React Native for Windows
+                    href: ./javascript/react-native-for-windows.md
+                  - name: Install React Native for Android
+                    href: ./javascript/react-native-for-android.md
+                  - name: Install NextJS
+                    href: ./javascript/nextjs-on-wsl.md
+                  - name: Install Gatsby
+                    href: ./javascript/gatsby-on-wsl.md
+                  - name: Tutorial for beginners
+                    href: ./javascript/react-beginners-tutorial.md
+              - name: Get started with Vue
+                items:
+                  - name: Overview
+                    href: ./javascript/vue-overview.md
+                  - name: Install on WSL
+                    href: ./javascript/vue-on-wsl.md
+                  - name: Install on Windows
+                    href: ./javascript/vue-on-windows.md
+                  - name: Install NuxtJS
+                    href: ./javascript/nuxtjs-on-wsl.md
+                  - name: Tutorial for beginners
+                    href: ./javascript/vue-beginners-tutorial.md
         - name: Get started with Python
           items:
               - name: Overview
@@ -27,18 +72,6 @@
                 href: ../python/scripting.md
               - name: FAQs
                 href: ../python/faqs.yml
-        - name: Get started with Node.js
-          items: 
-              - name: Overview
-                href: ../nodejs/index.yml
-              - name: Setup with WSL 2
-                href: ../nodejs/setup-on-wsl2.md
-              - name: Setup with Windows (Beginners)
-                href: ../nodejs/setup-on-windows.md
-              - name: Get started for beginners
-                href: ../nodejs/beginners.md
-              - name: Get started with web frameworks
-                href: ../nodejs/web-frameworks.md
         - name: Get started with Android
           items:
               - name: Overview
@@ -52,7 +85,7 @@
                   - name: Xamarin Forms
                     href: ../android/xamarin-forms.md
                   - name: React Native
-                    href: ../android/react-native.md
+                    href: ../dev-environment/javascript/react-native-for-android.md
                   - name: PWA (Ionic, PhoneGap, Cordova)
                     href: ../android/pwa.md
               - name: Defender settings to improve performance
@@ -95,18 +128,34 @@
               items:
                 - name: Overview
                   href: ../package-manager/winget/index.md
+                - name: Debugging and troubleshooting
+                  href: ../package-manager/winget/troubleshooting.md
+                - name: export command
+                  href: ../package-manager/winget/export.md
+                - name: features command
+                  href: ../package-manager/winget/features.md
                 - name: hash command
                   href: ../package-manager/winget/hash.md
                 - name: help command
                   href: ../package-manager/winget/help.md
+                - name: import command
+                  href: ../package-manager/winget/import.md
                 - name: install command
                   href: ../package-manager/winget/install.md
+                - name: list command
+                  href: ../package-manager/winget/list.md
                 - name: search command
                   href: ../package-manager/winget/search.md
+                - name: settings command
+                  href: ../package-manager/winget/settings.md
                 - name: show command
                   href: ../package-manager/winget/show.md
                 - name: source command
                   href: ../package-manager/winget/source.md
+                - name: uninstall command
+                  href: ../package-manager/winget/uninstall.md
+                - name: upgrade command
+                  href: ../package-manager/winget/upgrade.md
                 - name: validate command
                   href: ../package-manager/winget/validate.md
             - name: Submit packages
@@ -117,6 +166,16 @@
                   href: ../package-manager/package/manifest.md
                 - name: Submit your manifest to the repository
                   href: ../package-manager/package/repository.md
+                - name: Validation process
+                  href: ../package-manager/package/winget-validation.md
+                - name: Troubleshooting submissions
+                  href: ../package-manager/package/winget-validation-troubleshooter.md
+                - name: Binary validation errors
+                  href: ../package-manager/package/binary-validation-errors.md
+                - name: Repository policies
+                  href: ../package-manager/package/windows-package-manager-policies.md
+                - name: Repository policies change history
+                  href: ../package-manager/package/windows-package-manager-policies-change-history.md
         - name: PowerToys
           items:
             - name: Overview
@@ -127,11 +186,13 @@
                   href: ../powertoys/install.md
                 - name: Run in admin mode
                   href: ../powertoys/administrator.md
+            - name: Awake
+              href: ../powertoys/awake.md
             - name: Color Picker
               href: ../powertoys/color-picker.md
             - name: FancyZones
               href: ../powertoys/fancyzones.md
-            - name: File Explorer
+            - name: File Explorer add-ons
               href: ../powertoys/file-explorer.md
             - name: Image Resizer
               href: ../powertoys/image-resizer.md

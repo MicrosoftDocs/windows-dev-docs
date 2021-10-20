@@ -92,7 +92,7 @@ You'll need all the required info for at least one of the languages that your ap
 | **Screenshots**               | Required (at least one screenshot; four or more recommended)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
 | **Store logos**               | Recommended; required for some OS versions | [Store logos](app-screenshots-and-images.md#store-logos)             |
 | **Trailers**                  | Optional                                    | [Trailers](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 and Xbox image (16:9 Super hero art)**     | Recommended        | [Windows 10 and Xbox image (16:9 Super hero art)](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Windows 10/11 and Xbox image (16:9 Super hero art)**     | Recommended        | [Windows 10/11 and Xbox image (16:9 Super hero art)](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox images**     | Required for proper display if you publish to Xbox        | [Xbox images](app-screenshots-and-images.md#xbox-images) |
 | **Supplemental fields**  | Optional                                    | [Supplemental fields](create-app-store-listings.md#supplemental-fields) 
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |

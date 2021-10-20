@@ -13,7 +13,7 @@ ms.custom: RS5
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](./intro-to-using-cpp-with-winrt.md), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
-One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](../xaml-platform/custom-dependency-properties.md) and [attached properties](../xaml-platform/custom-attached-properties.md), and [control templates](../design/controls-and-patterns/control-templates.md), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
+One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](../xaml-platform/custom-dependency-properties.md) and [attached properties](../xaml-platform/custom-attached-properties.md), and [control templates](/windows/apps/design/style/xaml-control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -44,7 +44,7 @@ namespace BgLabelControlApp
 The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty). It has the name of your DP plus *Property*. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an *attached property* (rather than a DP), then see the code examples in [Custom attached properties](../xaml-platform/custom-attached-properties.md).
 
 > [!NOTE]
-> If you want a DP with a floating-point type, then make it `double` (`Double` in [MIDL 3.0](/uwp/midl-3/)). Declaring and implementing a DP of type `float` (`Single` in MIDL), and then setting a value for that DP in XAML markup, results in the error *Failed to create a 'Windows.Foundation.Single' from the text '<NUMBER>'*.
+> If you want a DP with a floating-point type, then make it `double` (`Double` in [MIDL 3.0](/uwp/midl-3/)). Declaring and implementing a DP of type `float` (`Single` in MIDL), and then setting a value for that DP in XAML markup, results in the error *Failed to create a 'Windows.Foundation.Single' from the text '\<NUMBER>'*.
 
 Save the file. The project won't build to completion at the moment, but building now is a useful thing to do because it generates the source code files in which you'll implement the **BgLabelControl** runtime class. So go ahead and build now (the build errors you can expect to see at this stage have to do with an "unresolved external symbol").
 
@@ -212,5 +212,5 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [UIElement class](/uwp/api/windows.ui.xaml.uielement)
 
 ## Related topics
-* [Control templates](../design/controls-and-patterns/control-templates.md)
+* [Control templates](/windows/apps/design/style/xaml-control-templates)
 * [Custom dependency properties](../xaml-platform/custom-dependency-properties.md)
