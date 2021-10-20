@@ -105,7 +105,7 @@ When this is set to `true`, the window will snap to the nearest character bounda
 
 ___
 
-## Minimize to notification area ([Preview](https://aka.ms/terminal-preview))
+## Minimize to notification area
 
 When this is set to `true`, minimizing a window will hide it from the taskbar, making it inaccessible from that area. It will instead be accessible from terminal's notification area icon. If either this global setting or the `minimizeToNotificationArea` global setting is set to true, terminal will place an icon in the notification area.
 
@@ -118,13 +118,13 @@ When this is set to `true`, minimizing a window will hide it from the taskbar, m
 **Default value:** `false`
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). This setting was also renamed from `"minimizeToTray"` to `"minimizeToNotificationArea"`.
+> This setting was renamed from `"minimizeToTray"` to `"minimizeToNotificationArea"`.
 
 <br />
 
 ___
 
-## Always show notification icon ([Preview](https://aka.ms/terminal-preview))
+## Always show notification icon
 
 When this is set to `true`, the terminal will place its icon in the notification area. If either this global setting or the `minimizeToNotificationArea` global setting is set to true, the terminal will place an icon in the notification area. The user will also be able to utilize the `minimizeToNotificationArea` _action_.
 
@@ -137,7 +137,7 @@ When this is set to `true`, the terminal will place its icon in the notification
 **Default value:** `false`
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview). This setting was also renamed from `"alwaysShowTrayIcon"` to `"alwaysShowNotificationIcon"`.
+> This setting was renamed from `"alwaysShowTrayIcon"` to `"alwaysShowNotificationIcon"`.
 
 <br />
 
