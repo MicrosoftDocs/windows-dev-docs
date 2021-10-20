@@ -3,7 +3,7 @@ title: Windows Terminal JSON Fragment Extensions
 description: Learn how to use JSON fragment extensions in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 10/04/2021
 ms.topic: how-to
 ---
 
@@ -85,9 +85,9 @@ There are some minimal restrictions on what can be added to user settings using 
 
 The location to place the JSON fragment files varies depending on the installation method of the application that wishes to place them.  
 
-### Microsoft Store applications 
+### Microsoft Store applications
 
-For applications installed through the Microsoft Store (or similar), the application must declare itself to be an app extension. More details on app extensions can be found in the [Microsoft Docs](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension) and the necessary section is replicated here. The appxmanifest file of the package must include: 
+For applications installed through the Microsoft Store (or similar), the application must declare itself to be an app extension. Learn more about how to [Create an host an app extenstion](/windows/uwp/launch-resume/how-to-create-an-extension). The necessary section is replicated here. The appxmanifest file of the package must include:
 
 ```xml
 <Package
@@ -113,23 +113,23 @@ For applications installed through the Microsoft Store (or similar), the applica
 </Package>
 ```
 
-Key things to note: 
+Key things to note:
 
 - The `"Name"` field must be `com.microsoft.windows.terminal.settings` for Windows Terminal to be able to detect the extension.
 - The `"Id"` field can be filled out as the developer wishes.
 - The `"PublicFolder"` field should have the name of the folder, relative to the package root, where the JSON files are stored (this folder is typically called "Public" but can be named something else if the developer wishes).
 - Inside the public folder, a subdirectory called "Fragments" should be created, and the JSON files should be stored in that subdirectory.
 
-### Applications installed from the web 
+### Applications installed from the web
 
 For applications installed from the web, there are 2 cases.
 
 The first is that the installation is for all the users on the system. In this case, the JSON files should be added to the folder:
 
-`C:\ProgramData\Microsoft\Windows Terminal\Fragments\{app-name}`
+`C:\ProgramData\Microsoft\Windows Terminal\Fragments\{app-name}\{file-name}.json`
 
 In the second case, the installation is only for the current user. In this case, the JSON files should be added to the folder:
 
-`C:\Users\<user>\AppData\Local\Microsoft\Windows Terminal\Fragments\{app-name}`
+`C:\Users\<user>\AppData\Local\Microsoft\Windows Terminal\Fragments\{file-name}.json`
 
-Note that both the `ProgramData` and `LocalAppData` folders are known folders that the installer should be able to access. If in either case, if the `Windows Terminal\Fragments` directory does not exist, the installer should create it.
+Note that both the `ProgramData` and `LocalAppData` folders are known folders that the installer should be able to access. If in either case, if the `Windows Terminal\Fragments` directory does not exist, the installer should create it. The `{app-name}` should be unique to your application and the `{file-name}.json` can be anything - the terminal will read all .json files in that directory.

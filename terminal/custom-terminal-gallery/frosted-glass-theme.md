@@ -3,16 +3,13 @@ title: Windows Terminal Frosted Glass Theme
 description: This is a sample configuration for a frosted glass theme.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 08/30/2021
 ms.topic: sample
 ---
 
 # Frosted Glass Theme in Windows Terminal
 
 The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
-
-> [!div class="nextstepaction"]
-> [Learn how to set up Powerline](./../tutorials/powerline-setup.md)
 
 ![Windows Terminal Frosted Glass Theme](./../images/frosted-glass-theme.png)
 

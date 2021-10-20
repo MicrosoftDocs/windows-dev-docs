@@ -3,14 +3,14 @@ title: Windows Terminal Interaction Settings
 description: Learn how to customize interaction settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/30/2021
+ms.date: 10/05/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
 # Interaction settings in Windows Terminal
 
-The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your [settings.json file](../get-started.md#settings-json-file).
+The properties listed below affect the entire terminal window, regardless of the profile settings. These should be placed at the root of your [settings.json file](../install.md#settings-json-file).
 
 ## Automatically copy selection to clipboard
 
@@ -71,7 +71,7 @@ This determines the word delimiters used in a double-click selection. Word delim
 **Accepts:** Characters as a string
 
 **Default value:** 
-<code>&nbsp;&#x2f;&#x5c;&#x5c;&#x28;&#x29;&#x5c;&#x22;&#x27;&#x2d;&#x3a;&#x2c;&#x2e;&#x3b;&#x3c;&#x3e;&#x7e;&#x21;&#x40;&#x23;&#x24;&#x25;&#x5e;&#x26;&#x2a;&#x7c;&#x2b;&#x3d;&#x5b;&#x5d;&#x7b;&#x7d;&#x7e;&#x3f;│</code>
+<code>&nbsp;&#x2f;&#x5c;&#x5c;&#x28;&#x29;&#x5c;&#x22;&#x27;&#x2d;&#x3a;&#x2c;&#x2e;&#x3b;&#x3c;&#x3e;&#x7e;&#x21;&#x40;&#x23;&#x24;&#x25;&#x5e;&#x26;&#x2a;&#x7c;&#x2b;&#x3d;&#x5b;&#x5d;&#x7b;&#x7d;&#x3f;│</code>
 <br>
 _(`│` is `U+2502 BOX DRAWINGS LIGHT VERTICAL`)_
 
@@ -105,11 +105,11 @@ When this is set to `true`, the window will snap to the nearest character bounda
 
 ___
 
-## Minimize to tray ([Preview](https://aka.ms/terminal-preview))
+## Minimize to notification area
 
-When this is set to `true`, minimizing a window will hide it from the taskbar, making it inaccessible from that area. It will instead be accessible from terminal's system tray icon. If either this global setting or the `minimizeToTray` global setting is set to true, terminal will place an icon in the system tray.
+When this is set to `true`, minimizing a window will hide it from the taskbar, making it inaccessible from that area. It will instead be accessible from terminal's notification area icon. If either this global setting or the `minimizeToNotificationArea` global setting is set to true, terminal will place an icon in the notification area.
 
-**Property name:** `minimizeToTray`
+**Property name:** `minimizeToNotificationArea`
 
 **Necessity:** Optional
 
@@ -118,17 +118,17 @@ When this is set to `true`, minimizing a window will hide it from the taskbar, m
 **Default value:** `false`
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> This setting was renamed from `"minimizeToTray"` to `"minimizeToNotificationArea"`.
 
 <br />
 
 ___
 
-## Always show tray icon ([Preview](https://aka.ms/terminal-preview))
+## Always show notification icon
 
-When this is set to `true`, the Terminal will place its icon in the system tray. If either this global setting or the `minimizeToTray` global setting is set to true, Terminal will place an icon in the system tray. The user will also be able to utilize the `minimizeToTray` _action_.
+When this is set to `true`, the terminal will place its icon in the notification area. If either this global setting or the `minimizeToNotificationArea` global setting is set to true, the terminal will place an icon in the notification area. The user will also be able to utilize the `minimizeToNotificationArea` _action_.
 
-**Property name:** `alwaysShowTrayIcon`
+**Property name:** `alwaysShowNotificationIcon`
 
 **Necessity:** Optional
 
@@ -137,7 +137,7 @@ When this is set to `true`, the Terminal will place its icon in the system tray.
 **Default value:** `false`
 
 > [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> This setting was renamed from `"alwaysShowTrayIcon"` to `"alwaysShowNotificationIcon"`.
 
 <br />
 

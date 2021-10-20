@@ -1,20 +1,20 @@
 ---
-title: Windows Terminal Powerline in PowerShell
-description: This is the configuration and theme for Powerline in PowerShell.
+title: Windows Terminal Oh-My-Posh in PowerShell
+description: This is the configuration and theme for Oh-My-Posh in PowerShell.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/19/2020
+ms.date: 08/30/2021
 ms.topic: sample
 ---
 
-# Powerline in PowerShell theme for Windows Terminal
+# Oh-My-Posh in PowerShell theme for Windows Terminal
 
-The prompt is styled using Powerline and is using the `Cascadia Code PL` font, which can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases).
+The prompt is styled using Oh-My-Posh and is using the `Caskaydia Cove Nerd Font`, which can be downloaded from [Nerd Fonts](https://www.nerdfonts.com/).
 
 > [!div class="nextstepaction"]
-> [Learn how to set up Powerline](./../tutorials/powerline-setup.md)
+> [Learn how to set up a custom prompt](./../tutorials/custom-prompt-setup.md)
 
-![Windows Terminal Powerline PowerShell](./../images/powerline-powershell.png)
+![Windows Terminal Custom Prompt](./../images/custom-prompt.png)
 
 ```json
     {
@@ -23,10 +23,13 @@ The prompt is styled using Powerline and is using the `Cascadia Code PL` font, w
             {
                 "name" : "Powershell",
                 "source" : "Windows.Terminal.PowershellCore",
-                "acrylicOpacity" : 0.7,
-                "colorScheme" : "Campbell",
-                "cursorColor" : "#FFFFFD",
-                "fontFace" : "Cascadia Code PL",
+                "acrylicOpacity" : 0.5,
+                "colorScheme" : "One Half Dark",
+                "cursorColor" : "#FFFFFF",
+                "font": 
+                {
+                    "face": "CaskaydiaCove Nerd Font"
+                },
                 "useAcrylic" : true
             }
         ]

@@ -22,7 +22,7 @@ Regardless of whether a new shell is installed before or after your terminal ins
 
 ## Hide a profile
 
-To hide a profile from your terminal dropdown menu, add the `hidden` property to the profile object in your [settings.json file](./get-started.md#settings-json-file) and set it to `true`.
+To hide a profile from your terminal dropdown menu, add the `hidden` property to the profile object in your [settings.json file](./install.md#settings-json-file) and set it to `true`.
 
 ```json
 "hidden": true
@@ -38,7 +38,7 @@ To prevent a dynamic profile from being generated, you can add the profile gener
 
 ## Add a third party profile
 
-If a 3rd party command line tool does not have a profile auto-generated into your [settings.json file](./get-started.md#settings-json-file), you can add it manually. Below are profiles for a few common 3rd party tools for your reference.
+If a 3rd party command line tool does not have a profile auto-generated into your [settings.json file](./install.md#settings-json-file), you can add it manually. Below are profiles for a few common 3rd party tools for your reference.
 
 ### Anaconda
 

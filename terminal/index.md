@@ -12,6 +12,11 @@ ms.localizationpriority: high
 
 Windows Terminal is a modern terminal application for users of command-line tools and shells like Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Its main features include multiple tabs, panes, Unicode and UTF-8 character support, a GPU accelerated text rendering engine, and the ability to create your own themes and customize text, colors, backgrounds, and shortcuts.
 
+> [!div class="nextstepaction"]
+> [Install Windows Terminal](https://aka.ms/terminal)
+
+<br>
+
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWHAdS]
 
 > [!NOTE]
@@ -43,7 +48,7 @@ Windows Terminal uses the GPU to render its text, thus providing improved perfor
 
 ## Background image support
 
-You can have background images and gifs inside your Windows Terminal window. Information on how to add background images to your profile can be found on the [Profile - Appearance page](./customize-settings/profile-appearance.md#background-image).
+You can have background images and gifs inside your Windows Terminal window. Information on how to add background images to your profile can be found on the [Profile - Appearance page](./customize-settings/profile-appearance.md#background-images-and-icons).
 
 ## Command line arguments
 

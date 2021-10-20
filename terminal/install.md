@@ -1,14 +1,14 @@
 ---
 title: Windows Terminal installation
-description: In this quickstart, you will learn how to install and set up Windows Terminal.
+description: Learn how to install and set up Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 01/28/2021
+ms.date: 10/04/2021
 ms.topic: quickstart
 ms.localizationpriority: high
 ---
 
-# Install and set up Windows Terminal
+# Install and get started setting up Windows Terminal
 
 ## Install
 

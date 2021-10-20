@@ -3,14 +3,14 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/30/2021
+ms.date: 10/08/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
 # Appearance profile settings in Windows Terminal
 
-The settings listed below affect the visual settings of each profile separately. If you'd like a setting to apply to all of your profiles, you can add it to the `defaults` section above the list of profiles in your [settings.json file](../get-started.md#settings-json-file).
+The settings listed below affect the visual settings of each profile separately. If you'd like a setting to apply to all of your profiles, you can add it to the `defaults` section above the list of profiles in your [settings.json file](../install.md#settings-json-file).
 
 ```json
 "defaults":
@@ -99,7 +99,7 @@ This sets the weight (lightness or heaviness of the strokes) for the profile's f
 > "fontWeight": "normal"
 > ```
 
-### Font features ([Preview](https://aka.ms/terminal-preview))
+### Font features
 
 This sets the [OpenType font features](/typography/opentype/spec/featurelist) for the given font.
 
@@ -122,10 +122,7 @@ This sets the [OpenType font features](/typography/opentype/spec/featurelist) fo
 }
 ```
 
-> [!IMPORTANT]
-> This feature only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
-
-### Font axes ([Preview](https://aka.ms/terminal-preview))
+### Font axes
 
 This sets the [OpenType font axes](/typography/opentype/spec/dvaraxisreg) for the given font.
 
@@ -220,7 +217,20 @@ This sets the percentage height of the cursor starting from the bottom. This wil
 
 ___
 
-## Background image
+## Background images and icons
+
+Windows Terminal enables you to specify custom background images and icons using the settings UI menu or settings.json file for each of your command line profiles, allowing you to configure/brand/style each of your profiles independently from one another. To do so, specify your preferred `backgroundImage`, position it using `backgroundImageAlignment`, set its opacity with `backgroundImageOpacity`, and/or specify how your image will fill the available space using `backgroundImageStretchMode`.
+
+For example:
+
+```json
+    "backgroundImage": "C:\\Users\\username\\OneDrive\\WindowsTerminal\\bg-ubuntu-256.png",
+    "backgroundImageAlignment": "bottomRight",
+    "backgroundImageOpacity": 0.1,
+    "backgroundImageStretchMode": "none"
+```
+
+You can easily roam your collection of images and icons across all your machines by storing your icons and images in OneDrive (as shown above).
 
 ### Background image path
 
@@ -231,6 +241,26 @@ This sets the file location of the image to draw over the window background. The
 **Necessity:** Optional
 
 **Accepts:** File location as a string or `"desktopWallpaper"`
+
+It is recommended that custom images and icons are stored in system-provided folders and referred to using the correct [URI schemes](/windows/uwp/app-resources/uri-schemes). URI schemes provide a way to reference files independent of their physical paths (which may change in the future). The most useful URI schemes to remember when customizing background images and icons are:
+
+| URI scheme | Corresponding physical path | Use / description |
+| --- | --- | --- |
+| `ms-appdata:///Local/` | `%localappdata%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\` | Per-machine files |
+| `ms-appdata:///Roaming/` | `%localappdata%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\` | Common files |
+
+> [!WARNING]
+> Do not rely on file references using the ms-appx URI scheme (i.e. icons). These files are considered an internal implementation detail and may change name/location or may be omitted in the future.
+
+### Icons
+
+Windows Terminal displays icons for each profile which the terminal generates for any built-in shells, for example: PowerShell Core, PowerShell, and any installed Linux/WSL distributions. Each profile refers to a stock icon via the ms-appx URI scheme. You can refer to you own custom icons by entering a path in your [settings.json file](../install.md#settings-json-file):
+
+```json
+    "icon" : "C:\\Users\\username\\OneDrive\\WindowsTerminal\\icon-ubuntu-32.png",
+```
+
+Icons should be sized to 32x32px in an appropriate raster image format (e.g. .PNG, .GIF, or .ICO) to avoid having to scale your icons during runtime (causing a noticeable delay and loss of quality).
 
 ### Background image stretch mode
 
@@ -297,7 +327,37 @@ This sets the transparency of the background image.
 
 ___
 
-## Acrylic
+## Transparency
+
+### Opacity ([Preview](https://aka.ms/terminal-preview))
+
+:::row:::
+:::column span="":::
+
+This sets the transparency of the window for the profile. This accepts an integer value from 0-100, representing a "percent opaque". `100` is "fully opaque", `50` is semi-transparent, and `0` is fully transparent.
+
+When `useAcrylic` is set to `true`, the window will use the acrylic material to create a blurred background for the terminal. When `useAcrylic` is set to false, the terminal will use a unblurred opacity.
+
+**Property name:** `opacity`
+
+**Necessity:** Optional
+
+**Accepts:** Number as a integer value from 0-100
+
+**Default value:** `100` when `useAcrylic` is false, `50` when `useAcrylic` is true.
+
+:::column-end:::
+:::column span="":::
+![Windows Terminal acrylic opacity](./../images/acrylic-opacity.gif)
+
+:::column-end:::
+:::row-end:::
+
+> [!IMPORTANT]
+> Prior to Windows Terminal version 1.12, this setting was `acrylicOpacity`, was a float that accepted 0.0-1.0 which defaulted to 0.5, and the opacity would only apply if `useAcrylic` was set to true. On 1.12+, `acrylicOpacity` will gracefully continue to work as the equivalent `opacity` value.
+
+> [!IMPORTANT]
+> Unblurred opacity (`"useAcrylic": false`) only works on Windows 11 or above with [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Enable acrylic
 
@@ -316,27 +376,6 @@ When this is set to `true`, the window will have an acrylic background. When it'
 :::column-end:::
 :::column span="":::
 ![Windows Terminal acrylic](./../images/acrylic.gif)
-
-:::column-end:::
-:::row-end:::
-
-### Acrylic opacity
-
-:::row:::
-:::column span="":::
-When `useAcrylic` is set to `true`, this sets the transparency of the window for the profile. This accepts floating point values from 0-1.
-
-**Property name:** `acrylicOpacity`
-
-**Necessity:** Optional
-
-**Accepts:** Number as a floating point value from 0-1
-
-**Default value:** `0.5`
-
-:::column-end:::
-:::column span="":::
-![Windows Terminal acrylic opacity](./../images/acrylic-opacity.gif)
 
 :::column-end:::
 :::row-end:::
@@ -423,6 +462,21 @@ This sets the background color of a selection within the profile. This will over
 **Necessity:** Optional
 
 **Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
+
+### Adjust indistinguishable colors ([Preview](https://aka.ms/terminal-preview))
+
+When set to true, this will (when necessary) adjust the foreground color to make it more visible, based on the background color.
+
+**Property name:** `adjustIndistinguishableColors`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+> [!IMPORTANT]
+> This feature only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Cursor color
 
