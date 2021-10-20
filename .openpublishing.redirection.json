@@ -5206,6 +5206,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/build-apps-for-windows.md",
+      "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/winui/winui3-winui2-comparison.md",
       "redirect_url": "/windows/apps/winui/",
       "redirect_document_id": false
