@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 07/14/2021
+ms.date: 10/15/2021
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -11,7 +11,7 @@ ms.localizationpriority: high
 # Custom actions in Windows Terminal
 
 > [!IMPORTANT]
-> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file. Support for the `keybindings` array still exists for backward compatibility, however the terminal will not automatically rename `keybindings` to `actions` inside your [settings.json file](../get-started.md#settings-json-file).
+> As of Windows Terminal version 1.4, the `keybindings` array has been renamed to `actions` inside the settings.json file. Support for the `keybindings` array still exists for backward compatibility, however the terminal will not automatically rename `keybindings` to `actions` inside your [settings.json file](../install.md#settings-json-file).
 
 You can create custom actions inside Windows Terminal that give you control of how you interact with the terminal. These actions will automatically be added to the command palette.
 
@@ -133,6 +133,21 @@ ___
 
 ## Application-level commands
 
+### Quit ([Preview](https://aka.ms/terminal-preview))
+
+This closes all open terminal windows. A confirmation dialog will appear in the current window to ensure you'd like to close all windows.
+
+**Command name:** `quit`
+
+**Default Binding:**
+
+```json
+{ "command": "quit" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Close window
 
 :::row:::
@@ -199,7 +214,7 @@ This opens the dropdown menu.
 
 ### Open settings files
 
-This opens either the settings UI, custom settings file ([`settings.json`](../get-started.md#settings-json-file)), or default settings file (`defaults.json`), depending on the `target` field.
+This opens either the settings UI, custom settings file ([`settings.json`](../install.md#settings-json-file)), or default settings file (`defaults.json`), depending on the `target` field.
 Without the `target` field, the custom settings file will be opened.
 
 **Command name:** `openSettings`
@@ -217,6 +232,18 @@ Without the `target` field, the custom settings file will be opened.
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `target` | Optional | `"settingsFile"`, `"defaultsFile"`, `"settingsUI"`, `"allFiles"` | The settings file to open. |
+
+### Open system menu
+
+Opens the system menu at the top left corner of the window.
+
+**Command name:** `openSystemMenu`
+
+**Default binding:**
+
+```json
+{ "command": "openSystemMenu", "keys": "alt+space" }
+```
 
 ### Toggle full screen
 
@@ -756,14 +783,18 @@ This halves the size of the active pane and opens another. Without any arguments
 
 // In defaults.json
 { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+-" },
-{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" }
+{ "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+shift+plus" },
+{ "command": { "action": "splitPane", "split": "up" } },
+{ "command": { "action": "splitPane", "split": "right" } },
+{ "command": { "action": "splitPane", "split": "down" } },
+{ "command": { "action": "splitPane", "split": "left" } }
 ```
 
 #### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `split` | Required | `"vertical"`, `"horizontal"`, `"auto"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
+| `split` | Required | `"vertical"`, `"horizontal"`, `"auto"`, `"up"`, `"right"`, `"down"`, `"left"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
 | `commandline` | Optional | Executable file name as a string | Executable run within the pane. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the pane will open. |
 | `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
@@ -774,6 +805,9 @@ This halves the size of the active pane and opens another. Without any arguments
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
 
+> [!IMPORTANT]
+> The `"up"`, `"right"`, `"down"`, and `"left"` options for `split` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 <br />
 
 ___
@@ -782,7 +816,7 @@ ___
 
 ### Copy
 
-This copies the selected terminal content to your clipboard.
+This copies the selected terminal content to your clipboard. If no selection exists, the key chord is sent directly to the terminal.
 
 **Command name:** `copy`
 
@@ -799,10 +833,50 @@ This copies the selected terminal content to your clipboard.
 
 #### Actions
 
+ | Name | Necessity | Accepts | Description |
+ | ---- | --------- | ------- | ----------- |
+ | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
+ | `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `"copyFormatting"` behavior is inherited. |
+
+### Keyboard Selection ([Preview](https://aka.ms/terminal-preview))
+
+This modifies an existing selection. If no selection exists, the key chord is sent directly to the terminal.
+
+**Command name:** `updateSelection`
+
+**Default bindings:**
+
+```json
+// Move by character
+{ "command": {"action": "updateSelection", "direction": "left", "mode": "char" }, "keys": "shift+left" },
+{ "command": {"action": "updateSelection", "direction": "right", "mode": "char" }, "keys": "shift+right" },
+{ "command": {"action": "updateSelection", "direction": "up", "mode": "char" }, "keys": "shift+up" },
+{ "command": {"action": "updateSelection", "direction": "down", "mode": "char" }, "keys": "shift+down" },
+
+// Move by word
+{ "command": {"action": "updateSelection", "direction": "left", "mode": "word" }, "keys": "ctrl+shift+left" },
+{ "command": {"action": "updateSelection", "direction": "right", "mode": "word" }, "keys": "ctrl+shift+right" },
+
+// Move by viewport
+{ "command": {"action": "updateSelection", "direction": "left", "mode": "view" }, "keys": "shift+home" },
+{ "command": {"action": "updateSelection", "direction": "right", "mode": "view" }, "keys": "shift+end" },
+{ "command": {"action": "updateSelection", "direction": "up", "mode": "view" }, "keys": "shift+pgup" },
+{ "command": {"action": "updateSelection", "direction": "down", "mode": "view" }, "keys": "shift+pgdn" },
+
+// Move by buffer
+{ "command": {"action": "updateSelection", "direction": "up", "mode": "buffer" }, "keys": "ctrl+shift+home" },
+{ "command": {"action": "updateSelection", "direction": "down", "mode": "buffer" }, "keys": "ctrl+shift+end" },
+```
+
+#### Actions
+
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
-| `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
-| `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `"copyFormatting"` behavior is inherited. |
+| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the selection endpoint will move. |
+| `mode` | Required | `"char"`, `"word"`, `"view"`, `"buffer"` | Controls how much the endpoint moves by. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Paste
 
@@ -929,7 +1003,7 @@ This changes the text size by a specified point amount.
 { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
 { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
 { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+numpad_plus" },
-{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+numpad_minus" },
+{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+numpad_minus" }
 ```
 
 #### Actions
@@ -944,10 +1018,11 @@ This resets the text size to the default value.
 
 **Command name:** `resetFontSize`
 
-**Default binding:**
+**Default bindings:**
 
 ```json
-{ "command": "resetFontSize", "keys": "ctrl+0" }
+{ "command": "resetFontSize", "keys": "ctrl+0" },
+{ "command": "resetFontSize", "keys": "ctrl+numpad_0" }
 ```
 
 ### Toggle pixel shader effects
@@ -1012,7 +1087,7 @@ _This command is not currently bound in the default settings_.
 { "keys": "", "command": { "action": "globalSummon" } }
 ```
 
-#### Arguments
+#### Actions
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -1113,8 +1188,76 @@ If you'd like to change the behavior of the `quakeMode` action, we recommended c
 
 ___
 
-## Unbind keys
+## Run multiple actions ([Preview](https://aka.ms/terminal-preview))
 
-This unbinds the associated keys from any command.
+This action allows the user to bind multiple sequential actions to one command. 
+
+**Command name:** `multipleActions`
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `actions` | Required | Array of Actions | The list of `action` to run. |
+
+#### Example
+
+```jsonc
+{ "name": "Create My Layout", "command": { 
+    "action": "multipleActions",
+    "actions": [
+        // Create a new tab with 3 panes
+        { "action": "newTab", "tabTitle": "Work", "colorScheme": "One Half Dark" },
+        { "action": "splitPane", "split": "vertical", "profile": "Windows PowerShell", "tabTitle": "Work", "colorScheme": "Campbell Powershell", },
+        { "action": "splitPane", "split": "horizontal", "profile": "Windows PowerShell", "tabTitle": "Work", "colorScheme": "Campbell Powershell", },
+
+        // Create a second tab
+        { "action": "newTab", "tabTitle": "Misc"},
+
+        // Go back to the first tab and zoom the first pane
+        { "action": "prevTab", "tabSwitcherMode": "disabled" },
+        { "action": "moveFocus", "direction": "first"},
+        "togglePaneZoom"
+        ]
+}}
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
+
+___
+
+## Unbind keys (disable keybindings)
+
+You can disable keybindings or "unbind" the associated keys from any command. This may be necessary when using underlying terminal applications (such as VIM). The unbound key will pass to the underlying terminal.
 
 **Command name:** `unbound`
+
+**Example using unbound:**
+
+For example, to unbind the shortcut keys <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd>" and <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd>", include these commands in the `actions` section of your [settings.json file](../install.md#settings-json-file).
+
+```json
+{
+    "actions": [
+        { "command": "unbound", "keys": "alt+shift+-" },
+        { "command": "unbound", "keys": "alt+shift+=" }
+    ]
+}
+```
+
+**Example using null:**
+
+You can also unbind a keystroke that is bound by default to an action by setting `"command"` to `null`. This will also allow the keystroke to associate with the command line application setting instead of performing the default action.
+
+```json
+{
+   "command" : null, "keys" : ["ctrl+v"]
+},
+```
+
+**Use-case scenario:**
+
+Windows Terminal uses the shortcut key binding <kbd>Ctrl</kbd>+<kbd>V</kbd> as the paste command. When working with a WSL command line, you may want to use a Linux application such as Vim to edit files. However, Vim relies on the <kbd>Ctrl</kbd>+<kbd>v</kbd> key binding to use [blockwise Visual mode](http://vimdoc.sourceforge.net/htmldoc/visual.html#CTRL-V). This key binding will be blocked, with the Windows Terminal paste command taking priority, unless the `unbound` setting is adjusted in your settings.json file so that the key binding will associate with the Vim command line app, rather than with the Windows Terminal binding.

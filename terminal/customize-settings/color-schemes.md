@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 # Color schemes in Windows Terminal
 
-Windows Terminal lets you define your own color schemes, either by using the built-in preset schemes, or by creating your own scheme from scratch. To change schemes, you'll need to edit the [settings.json file](../get-started.md#settings-json-file) in an editor such as [Visual Studio Code](https://code.visualstudio.com/).
+Windows Terminal lets you define your own color schemes, either by using the built-in preset schemes, or by creating your own scheme from scratch. To change schemes, you'll need to edit the [settings.json file](../install.md#settings-json-file) in an editor such as [Visual Studio Code](https://code.visualstudio.com/).
 
 ## Switching to a different color scheme
 
@@ -39,7 +39,7 @@ Notice the extra comma in the **hidden** line. Once you save this file, Windows 
 
 The "Tango Light" scheme is included as a default option, but you can create your own scheme from scratch or by copying an existing scheme.
 
-Color schemes can be defined in the `schemes` array of your [settings.json file](../get-started.md#settings-json-file). They are written in the following format:
+Color schemes can be defined in the `schemes` array of your [settings.json file](../install.md#settings-json-file). They are written in the following format:
 
 ```json
 {

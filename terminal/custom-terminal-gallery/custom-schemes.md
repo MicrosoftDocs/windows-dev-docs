@@ -13,7 +13,7 @@ Here are some color schemes for you to try or use as the basis of your own desig
 
 ## Installing schemes
 
-Copy the JSON from the **"schemes"** section into the correct section in [settings.json](../get-started.md#settings-json-file), for example:
+Copy the JSON from the **"schemes"** section into the correct section in [settings.json](../install.md#settings-json-file), for example:
 
 Before:
 

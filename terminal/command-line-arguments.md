@@ -3,7 +3,7 @@ title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/25/2021
+ms.date: 10/15/2021
 ms.topic: how-to
 ---
 
@@ -38,20 +38,46 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 | `--window`, `-w` `<window-id>` | Launches the terminal in a specific window. |
 
-| Command | Parameters | Description |
-| ------- | ---------- | ----------- |
-| `new-tab`, `nt` | `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `commandline`, `--title`, `--tabColor` | Creates a new tab. |
-| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical`, `--profile, -p profile-name`, `--startingDirectory, -d starting-directory`, `--title`, `--tabColor`, `--size, -s size`, `commandline`, `-D, --duplicate` | Splits a new pane. |
-| `focus-tab`, `ft` | `--target, -t tab-index` | Focuses on a specific tab. |
-| `move-focus`, `mf` | `direction` | Move focus between panes in the given direction. Accepts one of `up`, `down`, `left`, `right`. |
+### `New-tab` command
 
-If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/actions.md#actions-6) option by setting it to `true`.
+| Command | Parameter | Description | Values |
+| ------- | ---------- | ----------- | ------ |
+| `new-tab`, `nt` | `--profile, -p profile-name` | Creates a new tab based on the profile name assigned. | Profile name |
+| `new-tab`, `nt` | `--startingDirectory, -d starting-directory` | Creates a new tab based on the starting directory path assigned. | Directory path |
+| `new-tab`, `nt` | `commandline` | Creates a new tab based on the command line assigned. | Executable with optional commands |
+| `new-tab`, `nt` | `--title` | Creates a new tab with the title assigned. | Text to use as the tab title |
+| `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
+
+> [!TIP]
+> If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/actions.md#actions-6) option by setting it to `true`.
+
+### `Split-pane` command
+
+| Command | Parameter | Description | Values |
+| ------- | ---------- | ----------- | ------ |
+| `split-pane`, `sp` | `-H, --horizontal`, `-V, --vertical` | Creates a new split window pane either horizontally or vertically. | N/A. No additional values to assign. |
+| `split-pane`, `sp` | `--profile, -p profile-name` | Creates a new split window pane based on the assigned command line profile. If this parameter is not assigned, the default profile will be used. | Profile name |
+| `split-pane`, `sp` | `--startingDirectory, -d starting-directory` | Creates a new split window pane based on the assigned starting directory path. If this parameter is not assigned, the default starting directory will be used. | Directory path |
+| `split-pane`, `sp` | `--title` | Creates a new split window pane with the assigned title. | Text to use as the tab title |
+| `split-pane`, `sp` | `--tabColor` | Creates a new split window pane with the assigned tab color. | Hex color as #RGB or #RRGGBB |
+| `split-pane`, `sp` | `--size, -s size`| Creates a new split window pane with the assigned size. | Float that specifies the portion of the parent pane to use |
+| `split-pane`, `sp` | `commandline` | Creates a new split window pane based on the assigned command line. | Executable with optional commands  |
+| `split-pane`, `sp` | `--duplicate, -D` | Creates a new split window pane that is a duplicate of the current pane. | N/A. No additional values to assign. |
+
+### `Focus-tab` command
+
+| Command | Parameter | Description | Values |
+| ------- | ---------- | ----------- | ------ |
+| `focus-tab`, `ft` |  `--target, -t tab-index` | Focuses on a specific tab according to it's tab index number. | Tab index as an integer |
+
+### `Move-focus` command
+
+| Command | Parameter | Description | Values |
+| ------- | ---------- | ----------- | ------ |
+| `move-focus`, `mf` | `direction` |  Move focus between panes in the given direction. | `up`, `down`, `left`, or `right` values accepted. |
 
 > [!NOTE]
 > When opening Windows Terminal from cmd (Command Prompt), if you want to use your custom "cmd" profile settings, you will need to use the command `wt -p cmd`. Otherwise, to run your *default* profile settings, just use `wt cmd`.
-
-> [!IMPORTANT]
-> The `-D, --duplicate` parameter for `split-pane` is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ## Command line argument examples
 
