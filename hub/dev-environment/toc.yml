@@ -76,9 +76,11 @@ items:
           items:
               - name: Overview
                 href: ../android/overview.md
-              - name: Get started with Native Android
+              - name: Native Android
                 href: ../android/native-android.md
-              - name: Get started with Cross-platform
+              - name: Windows Subsystem for Android
+                href: ../android/wsa/index.md
+              - name: Cross-platform
                 items:
                   - name: Xamarin Native
                     href: ../android/xamarin-android.md
