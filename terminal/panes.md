@@ -114,6 +114,60 @@ After two panes on a tab have been created, the split orientation of those panes
 { "command": "toggleSplitOrientation" }
 ```
 
+> [!IMPORTANT]
+> The `previous`, `previousInOrder`, and `nextInOrder` directions are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+## Swapping panes ([Preview](https://aka.ms/terminal-preview))
+
+Once two panes have been created, you can swap their positions in the terminal.
+
+The `swapPane` command can be customized using the same navigation `direction`s as `moveFocus`. These commands will swap the positions of the currently focused pane and its neighbor according to `direction`.
+
+```json
+{ "command": { "action": "swapPane", "direction": "down" } },
+{ "command": { "action": "swapPane", "direction": "left" } },
+{ "command": { "action": "swapPane", "direction": "right" } },
+{ "command": { "action": "swapPane", "direction": "up" } },
+{ "command": { "action": "swapPane", "direction": "previous" } },
+{ "command": { "action": "swapPane", "direction": "previousInOrder" } },
+{ "command": { "action": "swapPane", "direction": "nextInOrder" } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+## Moving panes ([Preview](https://aka.ms/terminal-preview))
+
+Panes can also be moved between tabs, creating a new tab if one with the target index does not exist.
+
+The key bindings for the `movePane` command can be customized for moving panes to (zero-indexed) tabs according to their order.
+
+```json
+{ "command": { "action": "movePane", "index": 0 } },
+{ "command": { "action": "movePane", "index": 1 } },
+{ "command": { "action": "movePane", "index": 2 } },
+{ "command": { "action": "movePane", "index": 3 } },
+{ "command": { "action": "movePane", "index": 4 } },
+{ "command": { "action": "movePane", "index": 5 } },
+{ "command": { "action": "movePane", "index": 6 } },
+{ "command": { "action": "movePane", "index": 7 } },
+{ "command": { "action": "movePane", "index": 8 } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+## Changing split orientation ([Preview](https://aka.ms/terminal-preview))
+
+After two panes on a tab have been created, the split orientation of those panes can be switched between `vertical` and `horizontal` with the `toggleSplitOrientation` command.
+
+```json
+{ "command": "toggleSplitOrientation" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ## Resizing a pane
 
 You can adjust the size of your panes by holding <kbd>Alt</kbd>+<kbd>Shift</kbd> and using your arrow keys to resize the focused pane.
