@@ -137,26 +137,6 @@ Download and run full Windows samples that demonstrate various accessibility fea
    :::column-end:::
 :::row-end:::
 
-## Videos
-
-Various videos covering how to build Windows applications that incorporate speech interactions.
-
-:::row:::
-   :::column:::
-      **Cortana and Speech Platform In Depth**
-   :::column-end:::
-   :::column:::
-      **Cortana Extensibility in Universal Windows Apps**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/3-716/player]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/2-691/player]
-   :::column-end:::
-:::row-end:::
 
 ## Other resources
 

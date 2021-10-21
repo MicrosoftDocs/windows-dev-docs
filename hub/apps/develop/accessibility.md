@@ -166,9 +166,6 @@ Various videos covering how to build accessible Windows applications to general 
 
 :::row:::
    :::column:::
-      **How to get started with accessibility in Windows apps**
-   :::column-end:::
-   :::column:::
       **One Dev Minute: Developing apps for accessibility**
    :::column-end:::
    :::column:::
@@ -176,9 +173,7 @@ Various videos covering how to build accessible Windows applications to general 
    :::column-end:::
 :::row-end:::
 :::row:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2017/P4072/player]
-   :::column-end:::
+
    :::column:::
       > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
    :::column-end:::
@@ -186,27 +181,11 @@ Various videos covering how to build accessible Windows applications to general 
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
 :::row-end:::
+
 :::row:::
-   :::column:::
-      **From hack to product, eye control for Windows 10**
-   :::column-end:::
-   :::column:::
-      **Accessibility on Windows 10**
-   :::column-end:::
-   :::column:::
-      **Introduction to Building Accessible UWP Apps**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/AShNPfmAkvY]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P541/player]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2016/P497/player]
-   :::column-end:::
+
+
+
 :::row-end:::
 :::row:::
    :::column:::
