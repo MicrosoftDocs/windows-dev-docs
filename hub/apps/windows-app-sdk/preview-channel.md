@@ -93,6 +93,8 @@ To get your machine back into a good state, take the following steps:
 
 The feature causing the **PATH** environment variable to be corrupted will be removed in the upcoming Windows App SDK 1.0 Preview 3 release. It might be reintroduced at a later date, when all bugs have been fixed and thoroughly tested.
 
+Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix), or just being aware of this issue and how it might impact your work.
+
 ## Version 1.0 Preview 2 (1.0.0-preview2)
 
 > [!IMPORTANT]
