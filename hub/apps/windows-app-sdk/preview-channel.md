@@ -22,62 +22,76 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Important issue impacting 1.0 Preview 1 and Preview 2
 
-Version 1.0 Preview 1 and Preview 2 of the Windows App SDK includes a mechanism to clean up any environment variable changes made by a packaged app when that app is uninstalled. This feature is in an experimental state, and the first release includes a known bug which can corrupt the system PATH environment variable.
+Version 1.0 Preview 1 and Preview 2 of the Windows App SDK includes a mechanism to clean up any environment variable changes made by a packaged app when that app is uninstalled. This feature is in an experimental state, and the first release includes a known bug that can corrupt the system **PATH** environment variable.
 
-Preview 1 and Preview 2 corrupts PATH environment variables with the expansion character '%' whenever any packaged app is uninstalled, regardless of whether that app uses the Windows App SDK. 
+Preview 1 and Preview 2 corrupts any **PATH** environment variable that contains the expansion character `%`. This happens whenever any packaged app is uninstalled, regardless of whether that app uses the Windows App SDK.
 
-**Details:**
+Also see [PATH environment variable corruption issue](https://github.com/microsoft/WindowsAppSDK/issues/1599).
 
-System PATH entry in registry:
+### Details
+
+The system **PATH** entry is stored in the **Path** value in the following key in the Windows Registry:
 
 ```
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment\Path
+Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
 ```
 
-The System PATH entry should be of type REG_EXPAND_SZ, but the DEH changes this to REG_SZ. This makes the PATH unusable if it contained the variable expansion character ‘%’.
+If you launch the Registry Editor (`regedit.exe`), then you can copy and paste the path above into the breadcrumb bar (immediately below the menu bar), and press Enter to locate the key.
 
-**Affected releases:**
+The **Path** value of that key *should* be of type **REG_EXPAND_SZ**, but the bug changes it to **REG_SZ**. And that makes the system **PATH** environment variable unusable if it contains the variable expansion character `%`.
 
-- 1.0.0-preview1
-- 1.0.0-preview2
+### Affected releases
 
-**Mitigation:**
+* [Windows App SDK 1.0 Preview 1 (1.0.0-preview1)](#version-10-preview-1-100-preview1)
+* [Windows App SDK 1.0 Preview 2 (1.0.0-preview2)](#version-10-preview-2-100-preview2)
+
+### Mitigation
 
 To get your machine back into a good state, take the following steps:
 
-1. Check if the PATH in the registry is corrupt, and if so, reset it.
-2. Uninstall all apps that use the Windows App SDK 1.0 Preview1 or Preview2.
-3. Uninstall the Windows App SDK 1.0 Preview1/Preview2 packages, including the package that contains the DEH.
+1. Check whether the **PATH** in the Registry is corrupt and, if so, reset it by running the script below.
 
-These steps can be accomplished with the following Windows PowerShell script (PowerShell Core will not work), and run it elevated:
+   You can accomplish step 1 with the following Windows PowerShell script (PowerShell Core won't work). Run it elevated.
 
-```Powershell
-# This script must be run from an elevated Windows PowerShell window (right-click PowerShell in the Start menu, and select Run as Administrator).
+   ```Powershell
+   # This script must be run from an elevated Windows PowerShell
+   # window (right-click Windows PowerShell in the Start menu,
+   # and select Run as Administrator).
 
-# Remove the Windows App SDK 1.0 Preview1/2, and all apps that use it.
+   # If the PATH in the Registry has been set to REG_SZ, then delete
+   # it, and recreate it as REG_EXPAND_SZ.
+   
+   $EnvPath = 'Registry::HKLM\System\CurrentControlSet\Control\Session Manager\Environment'
+   $Environment=Get-Item $EnvPath
+   $PathKind = $Environment.GetValueKind('Path')
 
-$winappsdk = "Microsoft.WindowsAppRuntime.1.0-preview*"
-Get-AppxPackage | Where-Object { $_.Dependencies -like $winappsdk } | Remove-AppxPackage
-Get-AppxPackage $winappsdk | Remove-AppxPackage
+   if ($PathKind -ne 'ExpandString') {
+     $Path = $Environment.GetValue('Path')
+     Remove-ItemProperty $EnvPath -Name Path
+     New-ItemProperty $EnvPath -Name Path -PropertyType ExpandString -Value $Path
+   }
+   ```
 
-# If the PATH in the registry has been set to REG_SZ, delete it and recreate it as REG_EXPAND_SZ.
+2. Uninstall all apps that use the Windows App SDK 1.0 Preview1 or Preview2 (see the script below).
+3. Uninstall the Windows App SDK 1.0 Preview1/Preview2 packages, including the package that contains the bug (see the script below).
 
-$EnvPath = 'Registry::HKLM\System\CurrentControlSet\Control\Session Manager\Environment'
-$Environment=Get-Item $EnvPath
-$PathKind = $Environment.GetValueKind('Path')
+   You can accomplish steps 2 and 3 with the following Windows PowerShell script (PowerShell Core won't work). Run it elevated.
 
-if ($PathKind -ne 'ExpandString') {
-  $Path = $Environment.GetValue('Path')
-  Remove-ItemProperty $EnvPath -Name Path
-  New-ItemProperty $EnvPath -Name Path -PropertyType ExpandString -Value $Path
-}
+   ```Powershell
+   # This script must be run from an elevated Windows PowerShell
+   # window (right-click Windows PowerShell in the Start menu,
+   # and select Run as Administrator).
 
-```
+   # Remove the Windows App SDK 1.0 Preview1/2, and all apps that use it.
 
-**Fix upcoming in 1.0 Preview 3**
+   $winappsdk = "Microsoft.WindowsAppRuntime.1.0-preview*"
+   Get-AppxPackage | Where-Object { $_.Dependencies -like $winappsdk } | Remove-AppxPackage
+   Get-AppxPackage $winappsdk | Remove-AppxPackage
+   ```
 
-The feature causing the PATH environment variables to be corrupted will be removed in the upcoming 1.0 Preview 3 release. It may be reintroduced at a later date, when all bugs have been fixed and thoroughly tested.
+### A fix is upcoming in Windows App SDK 1.0 Preview 3
 
+The feature causing the **PATH** environment variable to be corrupted will be removed in the upcoming Windows App SDK 1.0 Preview 3 release. It might be reintroduced at a later date, when all bugs have been fixed and thoroughly tested.
 
 ## Version 1.0 Preview 2 (1.0.0-preview2)
 
@@ -203,7 +217,7 @@ All the constraints for packaged apps also apply to WinUI apps, which are packag
 
 **Known issue**:
 
-File Type associations incorrectly encode %1 to be %251 when setting the Verb handler's command line template, which crashes unpackaged Win32 apps. You can manually edit the registry value to be %1 instead as a partial workaround. If the target file path has a space in it, then it will still fail and there is no workaround for that scenario.
+File Type associations incorrectly encode %1 to be %251 when setting the Verb handler's command line template, which crashes unpackaged Win32 apps. You can manually edit the Registry value to be %1 instead as a partial workaround. If the target file path has a space in it, then it will still fail and there is no workaround for that scenario.
 
 ### Other limitations and known issues
 
