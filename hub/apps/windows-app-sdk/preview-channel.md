@@ -95,8 +95,8 @@ The feature causing the **PATH** environment variable to be corrupted will be re
 
 ## Version 1.0 Preview 2 (1.0.0-preview2)
 
-> [!WARNING]
-> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+> [!IMPORTANT]
+> Version 1.0 Preview 1 and Preview 2 contain a critical bug. For details see [Important issue impacting 1.0 Preview 1 and Preview 2](#important-issue-impacting-10-preview-1-and-preview-2).
 
 This is the latest release of the preview channel for version 1.0. It supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
@@ -221,7 +221,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
 ### Other limitations and known issues
 
-- Version 1.0 Preview 1 and Preview 2 corrupts PATH environment variables with the expansion character '%' whenever any packaged app is uninstalled. See [issue details](https://github.com/microsoft/WindowsAppSDK/issues/1599). 
+- Version 1.0 Preview 1 and Preview 2 contain a critical bug. For details see [Important issue impacting 1.0 Preview 1 and Preview 2](#important-issue-impacting-10-preview-1-and-preview-2).
 
 - This release introduces the **Blank App, Packaged (WinUI 3 in Desktop)** templates for C# and C++ projects. These templates enable you to [build your app into an MSIX package without the use of a separate packaging project](single-project-msix.md). These templates have some known issues in this release:
 
@@ -249,8 +249,8 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
 ## Version 1.0 Preview 1 (1.0.0-preview1)
 
-> [!WARNING]
-> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+> [!IMPORTANT]
+> Version 1.0 Preview 1 and Preview 2 contain a critical bug. For details see [Important issue impacting 1.0 Preview 1 and Preview 2](#important-issue-impacting-10-preview-1-and-preview-2).
 
 This is the first release of the preview channel for version 1.0. It supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
@@ -315,7 +315,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 
 ### Other limitations and known issues
 
-- Version 1.0 Preview 1 and Preview 2 corrupts PATH environment variables with the expansion character '%' whenever any packaged app is uninstalled. See [issue details](https://github.com/microsoft/WindowsAppSDK/issues/1599). 
+- Version 1.0 Preview 1 and Preview 2 contain a critical bug. For details see [Important issue impacting 1.0 Preview 1 and Preview 2](#important-issue-impacting-10-preview-1-and-preview-2).
 
 - Projects created by using the C++ **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template encounter the following build error by default: `fatal error C1083: Cannot open include file: 'winrt/microsoft.ui.dispatching.co_await.h': No such file or directory`. To resolve this issue, remove the following line of code from the **pch.h** file. This issue will be fixed in the next release.
 
