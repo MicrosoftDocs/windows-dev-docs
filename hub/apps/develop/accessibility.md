@@ -1,5 +1,5 @@
 ---
-title: Accessibility in Windows 10
+title: Accessibility in Windows 11 and Windows 10
 description: This page provides the information for you to get started developing accessible Windows apps.
 ms.topic: article
 ms.date: 09/12/2019
@@ -8,9 +8,9 @@ ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ---
 
-# Accessibility in Windows 10
+# Accessibility in Windows 11 and Windows 10
 
-![Accessibility hero image](../images/hero-accessibility-bar-smaller.png)
+![Accessibility hero image](images/hero-accessibility-bar-smaller.png)
 
 ## Build accessibility into your applications to empower people of all abilities
 
@@ -26,11 +26,11 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![Universal Windows Platform (UWP)](../images/platform-uwp.png)
+      ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
       **Universal Windows Platform (UWP)**
 
-      Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
       [Designing inclusive software](/windows/uwp/accessibility/designing-inclusive-software)
 
@@ -41,7 +41,7 @@ This page provides information on how the various Windows development frameworks
       [Accessibility in the Store](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
-      ![Win32 platform apps](../images/platform-win32.png)
+      ![Win32 platform apps](images/platform-win32.png)
 
       **Win32 platform**
 
@@ -66,7 +66,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      ![WPF platform](../images/platform-wpf2-small.png)
+      ![WPF platform](images/platform-wpf2-small.png)
 
       **Windows Presentation Foundation (WPF)**
 
@@ -89,7 +89,7 @@ This page provides information on how the various Windows development frameworks
       [UI Automation Specification and Community Promise](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
-      ![Windows Forms platform apps](../images/platform-winforms.png)
+      ![Windows Forms platform apps](images/platform-winforms.png)
 
       **Windows Forms (WinForms)**
 
@@ -149,7 +149,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
    :::column:::
       [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
 
-      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
+      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10 and later.
    :::column-end:::
 :::row-end:::
 :::row:::

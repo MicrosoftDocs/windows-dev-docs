@@ -56,7 +56,7 @@ productDirectory:
   - title: Develop
     imageSrc: https://docs.microsoft.com/media/common/i_code-samples.svg
     links:
-      - url: ./develop/features-and-technologies.md
+      - url: ./develop/index.md
         text: Windows development features
       - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
         text: Windows App SDK features

@@ -5092,8 +5092,13 @@
     },
     {
       "source_path": "hub/apps/features-and-technologies.md",
-      "redirect_url": "/windows/apps/develop/features-and-technologies",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/features-and-technologies.md",
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/speech.md",
