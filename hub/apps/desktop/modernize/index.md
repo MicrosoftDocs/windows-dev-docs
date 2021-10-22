@@ -33,7 +33,7 @@ The Windows UI Library (WinUI) is a native user experience framework for both Wi
 
 You can use WinUI in the following ways in desktop apps:
 
-* Use [WinUI 3](../../winui/winui3/index.md) to create [desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
+* Use [WinUI 3](/windows/apps/winui/) to create [desktop apps](/windows/apps/winui/winui3/create-your-first-winui3-app) with an entirely WinUI-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
 * You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2 controls.
 
 For more information, see [Windows UI (WinUI) Library](../../winui/index.md).

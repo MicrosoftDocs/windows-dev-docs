@@ -51,7 +51,7 @@ items:
                     - name: "WinUI 3 - Project Reunion 0.5 Preview"
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
         - name: Build an app for Windows 11
-          href: get-started/build-apps-for-windows.md
+          href: /windows/apps/winui/winui3/create-your-first-winui3-app
         - name: Visual Studio project templates
           items:
             - name: All templates for Windows apps
