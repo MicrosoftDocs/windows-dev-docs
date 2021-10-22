@@ -16,7 +16,7 @@ This topic contains migration guidance in the notifications feature area.
 > [!IMPORTANT]
 > Only raw push notifications are currently supported.
 
-## Summary of changes
+## Summary of API and/or feature differences
 
 Push notifications can be broken down into these four separate stages.
 

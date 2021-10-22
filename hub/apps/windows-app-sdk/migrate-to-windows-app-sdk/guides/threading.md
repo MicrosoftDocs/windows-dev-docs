@@ -16,6 +16,12 @@ dev_langs:
 
 This topic shows how to migrate your threading code.
 
+## Summary of API and/or feature differences
+
+The **CoreDispatcher** type migrates to **DispatcherQueue**. And the **CoreDispatcher.RunAsync** method migrates to **DispatcherQueue.TryEnqueue**.
+
+**C++/WinRT**. If you're using **winrt::resume_foreground** with **CoreDispatcher**, then migrate that to use **DispatcherQueue** instead.
+
 ## Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue
 
 This section applies if you're using the [**Windows.UI.Core.CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) class in your UWP app. That includes the use of any methods or properties that take or return a **CoreDispatcher**, such as the [**DependencyObject.Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) and [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) properties. For example, you'll be calling **DependencyObject.Dispatcher** when you retrieve the **CoreDispatcher** belonging to a [**Windows.UI.Xaml.Controls.Page**](/uwp/api/windows.ui.xaml.controls.page).

@@ -16,6 +16,18 @@ dev_langs:
 
 This topic shows how to migrate your user interface (UI) code to the [Windows UI Library (WinUI)](/windows/apps/winui/).
 
+## Summary of API and/or feature differences
+
+The **Window.Current** property migrates to **App.Window**. And the **CoreDispatcher.RunAsync** method migrates to **DispatcherQueue.TryEnqueue**.
+
+You need to set your window's *handle* (**HWND**) on a **MessageDialog**, and on **Picker**s.
+
+For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
+
+You may need to refactor your Visual State Manager and **Page.Resources** XAML markup.
+
+In the Windows App SDK, the [**AcrylicBrush**](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
+
 ## Change Windows.UI.Xaml.Window.Current to App.Window
 
 This section applies if you're using the [**Windows.UI.Xaml.Window.Current**](/uwp/api/windows.ui.xaml.window.current) property in your UWP app. That property isn't supported in the Windows App SDK, so this section describes how to port UWP code that uses **Window.Current**.

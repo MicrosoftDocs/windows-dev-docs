@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 DWriteCore is the [Windows App SDK](/windows/apps/windows-app-sdk/) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal). For more info, see [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview).
 
-## API differences between DirectWrite and DWriteCore
+## Summary of API and/or feature differences
 
 Nearly all DirectWrite APIs remain unchanged in DWriteCore. There are a few differences, as described in [APIs that are new, or different, for DWriteCore](/windows/win32/directwrite/dwritecore-overview#apis-that-are-new-or-different-for-dwritecore).
 
