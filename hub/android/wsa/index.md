@@ -142,7 +142,7 @@ You must first enable developer mode in Windows Settings. There are three ways t
 - Search for “Developer Settings” in Windows search.
 - Navigate to Settings > Privacy and Security > For developers > Developer mode.
 
-### Connect to the Windows Subsystem or Android for debugging
+### Connect to the Windows Subsystem for Android for debugging
 
 To connect to the Windows Subsystem for Android VM for debugging, you have two options:
 
