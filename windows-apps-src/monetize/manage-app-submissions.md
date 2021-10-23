@@ -139,7 +139,7 @@ To create a submission for an app, follow this process.
 
 ## Methods for managing a gradual package rollout
 
-You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
+You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10 and Windows 11. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
 
 To programmatically enable a gradual package rollout for an app submission, follow this process using methods in the Microsoft Store submission API:
 
@@ -352,8 +352,8 @@ This resource has the following values.
 | applicationPackages           |   array  | An array of [application package resources](#application-package-object) that provide details about each package in the submission. |    
 | packageDeliveryOptions    | object  | A [package delivery options resource](#package-delivery-options-object) that contains gradual package rollout and mandatory update settings for the submission.  |
 | enterpriseLicensing           |  string  |  One of the [enterprise licensing values](#enterprise-licensing) values that indicate the enterprise licensing behavior for the app.  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](../publish/set-app-pricing-and-availability.md).    |    
-| allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 device family](../publish/set-app-pricing-and-availability.md) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 and Windows 11 device families](../publish/set-app-pricing-and-availability.md).    |    
+| allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 and Windows 11 device family](../publish/set-app-pricing-and-availability.md) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
 | friendlyName           |   string  |  The friendly name of the submission, as shown in Partner Center. This value is generated for you when you create the submission.       |  
 | trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
 
@@ -492,7 +492,7 @@ This resource has the following values.
 |  localCooperativeMinPlayers               |   int      |   Specifies the minimum number of players the game supports for local co-op.  |     
 |  localCooperativeMaxPlayers               |   int      |   Specifies the maximum number of players the game supports for local co-op.  |     
 |  isBroadcastingPrivilegeGranted               |   boolean      |  Indicates whether the game supports broadcasting.   |     
-|  isCrossPlayEnabled               |   boolean      |   Indicates whether the game supports multiplayer sessions between players on Windows 10 PCs and Xbox.  |     
+|  isCrossPlayEnabled               |   boolean      |   Indicates whether the game supports multiplayer sessions between players on Windows 10 and Windows 11 PCs and Xbox.  |     
 |  kinectDataForExternal               |   string      |  One of the following string values that indicates whether the game can collect Kinect data and send it to external services: <ul><li>NotSet</li><li>Unknown</li><li>Enabled</li><li>Disabled</li></ul>   |
 
 > [!NOTE]
@@ -572,11 +572,11 @@ This resource has the following values.
 | capabilities    |  array   |  An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](../packaging/app-capability-declarations.md).   |     
 | minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x. For apps that target other OS versions, this value must be present when calling the [update an app submission](update-an-app-submission.md) method but the value you specify is ignored. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | string    |  The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x. For apps that target other OS versions, this value must be present when calling the [update an app submission](update-an-app-submission.md) method but the value you specify is ignored. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | array    |  An array of strings that represent the device families that the package targets. This value is used only for packages that target Windows 10; for packages that target earlier releases, this value has the value **None**. The following device family strings are currently supported for Windows 10 packages, where *{0}* is a Windows 10 version string such as 10.0.10240.0, 10.0.10586.0 or 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
+| targetDeviceFamilies    | array    |  An array of strings that represent the device families that the package targets. This value is used only for packages that target Windows 10; for packages that target earlier releases, this value has the value **None**. The following device family strings are currently supported for Windows 10 and Windows 11 packages, where *{0}* is a Windows 10 or Windows 11 version string such as 10.0.10240.0, 10.0.10586.0 or 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |
 
-<span/>
+</span>
 
-<span id="certification-report-object" />
+<span>id="certification-report-object"</span>
 
 ### Certification report resource
 

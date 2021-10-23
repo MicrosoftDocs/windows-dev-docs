@@ -68,8 +68,8 @@ The request body has the following parameters.
 | applicationPackages           |   array  | Contains objects that provide details about each package in the submission. For more information, see the [Application package](manage-app-submissions.md#application-package-object) section. When calling this method to update an app submission, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of these objects are required in the request body. The other values are populated by Partner Center.   |    
 | packageDeliveryOptions    | object  | Contains gradual package rollout and mandatory update settings for the submission. For more information, see [Package delivery options object](manage-app-submissions.md#package-delivery-options-object).  |
 | enterpriseLicensing           |  string  |  One of the [enterprise licensing values](manage-app-submissions.md#enterprise-licensing) values that indicate the enterprise licensing behavior for the app.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](../publish/set-app-pricing-and-availability.md).    |    
-| allowTargetFutureDeviceFamilies           | boolean   |  Indicates whether your app is allowed to [target future Windows 10 device families](../publish/set-app-pricing-and-availability.md).     |   
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 and Windows 11 device families](../publish/set-app-pricing-and-availability.md).    |    
+| allowTargetFutureDeviceFamilies           | boolean   |  Indicates whether your app is allowed to [target future Windows 10 and Windows 11 device families](../publish/set-app-pricing-and-availability.md).     |   
 | trailers           |  array |   An array that contains up to [trailer resources](manage-app-submissions.md#trailer-object) that represent video trailers for the app listing.   |   
 
 

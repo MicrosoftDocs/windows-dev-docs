@@ -1,5 +1,5 @@
 ---
-description: Learn how to port a Windows Runtime 8.x project to a Universal Windows Platform (UWP) project on Windows 10.
+description: Learn how to port a Windows Runtime 8.x project to a Universal Windows Platform (UWP) project on Windows 10 or Windows 11.
 title: Porting a Windows Runtime 8.x project to a UWP project'
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ms.date: 02/08/2017
@@ -156,7 +156,11 @@ Also, see [Detecting the platform your app is running on](w8x-to-uwp-input-and-s
 
 ## App package manifest
 
+<<<<<<< HEAD
 The [What's changed in Windows 10](/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10) topic lists changes to the package manifest schema reference for Windows 10, including elements that have been added, removed, and changed. For reference info on all elements, attributes, and types in the schema, see [Element Hierarchy](/uwp/schemas/appxpackage/uapmanifestschema/root-elements). If you're porting a Windows Phone Store app, or if your app is an update to an app from the Windows Phone Store, ensure that the **pm:PhoneIdentity** element matches what's in the app manifest of your previous app (use the same GUIDs that were assigned to the app by the Store). This will ensure that users of your app who are upgrading to Windows 10 will receive your new app as an update, not a duplicate. See the [**pm:PhoneIdentity**](/uwp/schemas/appxpackage/uapmanifestschema/element-mp-phoneidentity) reference topic for more details.
+=======
+The [What's changed in Windows 10](/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10) topic lists changes to the package manifest schema reference for Windows 10, including elements that have been added, removed, and changed. For reference info on all elements, attributes, and types in the schema, see [Element Hierarchy](/uwp/schemas/appxpackage/uapmanifestschema/root-elements). If you're porting a Windows Phone Store app, or if your app is an update to an app from the Windows Phone Store, ensure that the **pm:PhoneIdentity** element matches what's in the app manifest of your previous app (use the same GUIDs that were assigned to the app by the Store). This will ensure that users of your app who are upgrading to Windows 10 or Windows 11 will receive your new app as an update, not a duplicate. See the [**pm:PhoneIdentity**](/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity) reference topic for more details.
+>>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)
 
 The settings in your project (including any extension SDKs references) determine the API surface area that your app can call. But, your app package manifest is what determines the actual set of devices that your customers can install your app onto from the Store. For more info, see examples in [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 

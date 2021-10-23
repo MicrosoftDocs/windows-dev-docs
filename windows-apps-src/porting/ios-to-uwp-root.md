@@ -1,7 +1,7 @@
 ---
 Search.SourceType: Video
 title: Move from iOS to UWP
-description: Learn about the tools available to help an iOS developer expand their user base to include Windows 10 and the Universal Windows Platform (UWP).
+description: Learn about the tools available to help an iOS developer expand their user base to include Windows 10/11 and the Universal Windows Platform (UWP).
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Move from iOS to UWP
 
-If you are an iOS developer wondering how to expand your user base to include Windows 10 and the Universal Windows Platform (UWP), there are a growing number of tools to help you. The approaches you can take depend on the type of app you are working on (game, lifestyle, enterprise, and so on) and how far along you are in the development process. For example, a completed or nearly completed game that is heavily dependent on OpenGL or Cocos2D is an ideal candidate for the [Windows Bridge for iOS](https://github.com/microsoft/WinObjC), whereas if you are planning a cross-platform app for a small business, you should be considering using [Xamarin.Forms](/xamarin/xamarin-forms/). And if you have written your app in a cross-platform tool such as Unity, [publishing to Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) is quite straightforward.
+If you are an iOS developer wondering how to expand your user base to include Windows 10/11 and the Universal Windows Platform (UWP), there are a growing number of tools to help you. The approaches you can take depend on the type of app you are working on (game, lifestyle, enterprise, and so on) and how far along you are in the development process. For example, a completed or nearly completed game that is heavily dependent on OpenGL or Cocos2D is an ideal candidate for the [Windows Bridge for iOS](https://github.com/microsoft/WinObjC), whereas if you are planning a cross-platform app for a small business, you should be considering using [Xamarin.Forms](/xamarin/xamarin-forms/). And if you have written your app in a cross-platform tool such as Unity, [publishing to Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) is quite straightforward.
 
 ## Why Windows?
 
@@ -21,8 +21,8 @@ Today, Windows is running on a huge number of devices. The UWP provides develope
 | Topic | Description |
 |-------|-------------|
 | [Selecting an approach to iOS and UWP app development](selecting-an-approach-to-ios-and-uwp-app-development.md) | What are the choices when developing cross-platform apps? |
-| [Getting started with UWP for iOS developers](getting-started-with-uwp-for-ios-developers.md) | If you're an iOS developer considering developing for Windows 10, these docs are a great place to start. |
-| [Setting up your Mac with Windows 10](setting-up-your-mac-with-windows-10.md) | Use your current Mac computer to develop apps for Windows. |
+| [Getting started with UWP for iOS developers](getting-started-with-uwp-for-ios-developers.md) | If you're an iOS developer considering developing for Windows 10 and Windows 11, these docs are a great place to start. |
+| [Setting up your Mac with Windows 10 or Windows 11](setting-up-your-mac-with-windows-10.md) | Use your current Mac computer to develop apps for Windows. |
 
 ## Related topics
 

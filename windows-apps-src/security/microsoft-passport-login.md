@@ -1,6 +1,6 @@
 ---
 title: Create a Windows Hello login app
-description: This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Windows Hello as an alternative to traditional username and password authentication systems.
+description: This is Part 1 of a complete walkthrough on how to create a Windows 10/11 UWP (Universal Windows Platform) app that uses Windows Hello as an alternative to traditional username and password authentication systems.
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Create a Windows Hello login app
 
-This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Windows Hello as an alternative to traditional username and password authentication systems. The app uses a username for sign-in and create a Hello Key for each account. These accounts will be protected by the PIN that is setup in Windows Settings on configuration of Windows Hello.
+This is Part 1 of a complete walkthrough on how to create a Windows 10 and Windows 11 UWP (Universal Windows Platform) app that uses Windows Hello as an alternative to traditional username and password authentication systems. The app uses a username for sign-in and create a Hello Key for each account. These accounts will be protected by the PIN that is setup in Windows Settings on configuration of Windows Hello.
 
 This walkthrough is split into two parts: building the app and connecting the backend service. When you're finished with this article, continue on to Part 2: [Windows Hello login service](microsoft-passport-login-auth-service.md).
 
@@ -18,7 +18,7 @@ Before you begin, you should read the [Windows Hello](microsoft-passport.md) ove
 ## Get started
 
 
-In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater), or a later release of Visual Studio, on a Windows 10 machine. While Visual Studio 2015 is the minimum required version, we recommend that you use the latest version of Visual Studio for the latest developer and security updates.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater), or a later release of Visual Studio, on a Windows 10 or Windows 11 machine. While Visual Studio 2015 is the minimum required version, we recommend that you use the latest version of Visual Studio for the latest developer and security updates.
 
 -   Open Visual Studio and select File > New > Project.
 -   This will open a “New Project” window. Navigation to Templates > Visual C#.
@@ -959,9 +959,9 @@ In this exercise you will be creating a new page that will create a new account 
 
     ![Windows Hello register new user](images/passport-login-11.png)
 
-In this lab you have learned the essential skills you need to use the new Windows Hello API to authenticate existing users and create accounts for new users. With this new knowledge you can start removing the need for users to remember passwords for your application, yet remain confident that your applications remain protected by user authentication. Windows 10 uses Windows Hello's new authentication technology to support its biometrics login options.
+In this lab you have learned the essential skills you need to use the new Windows Hello API to authenticate existing users and create accounts for new users. With this new knowledge you can start removing the need for users to remember passwords for your application, yet remain confident that your applications remain protected by user authentication. Windows 10 and Windows 11 use Windows Hello's new authentication technology to support its biometrics login options.
 
 ## Related topics
 
-* [Windows Hello](microsoft-passport.md)
-* [Windows Hello login service](microsoft-passport-login-auth-service.md)
+- [Windows Hello](microsoft-passport.md)
+- [Windows Hello login service](microsoft-passport-login-auth-service.md)

@@ -1,6 +1,6 @@
 ---
 title: Getting started with Navigation
-description: Learn how to add page navigation to a Windows 10 app that has multiple views by using the Universal Windows Platform (UWP) Frame class.
+description: Learn how to add page navigation to a Windows 10/11 app that has multiple views by using the Universal Windows Platform (UWP) Frame class.
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article

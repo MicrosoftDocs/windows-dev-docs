@@ -1,14 +1,13 @@
 ---
 description: Learn how to use your Mac with third-party solutions like Apple Boot Camp, Oracle VirtualBox, VMware Fusion, and Parallels Desktop to develop UWP apps.
-title: Setting up your Mac with Windows 10
+title: Setting up your Mac with Windows 10 or Windows 11
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Setting up your Mac with Windows 10
-
+# Setting up your Mac with Windows 10 or Windows 11
 
 Use your current Mac computer to develop apps for Windows.
 
@@ -24,7 +23,7 @@ Once you have Windows running, you can then install the latest release of Visual
 
 ## Apple Boot Camp
 
-The Boot Camp Assistant app is pre-installed on every recent Mac, and launching it will walk you through the process of installing Windows 10. All you need is a copy of Windows (from the sources listed above) and at least 30 Gb of free disk space. Once installed, you can choose to boot into Mac OSX or Windows 10. For more info, see Apple's [Boot Camp instructions page](https://support.apple.com/HT201468).
+The Boot Camp Assistant app is pre-installed on every recent Mac, and launching it will walk you through the process of installing Windows 10. All you need is a copy of Windows (from the sources listed above) and at least 30 Gb of free disk space. Once installed, you can choose to boot into Mac OSX or Windows 10 or Windows 11. For more info, see Apple's [Boot Camp instructions page](https://support.apple.com/HT201468).
 
 ## Parallels Desktop
 

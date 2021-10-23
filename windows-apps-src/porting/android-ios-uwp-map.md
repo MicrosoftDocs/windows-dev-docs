@@ -1,6 +1,6 @@
 ---
-title: Compare platform features between iOS, Android, and Windows 10.
-description: View a detailed comparison of development concepts and platform features between iOS, Android, and the Universal Windows Platform (UWP) on Windows 10.
+title: Compare platform features between iOS, Android, and Windows 10/11.
+description: View a detailed comparison of development concepts and platform features between iOS, Android, and the Universal Windows Platform (UWP) on Windows 10/11.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Windows apps concept mapping for Android and iOS developers
 
-If you're a developer with Android or iOS skills and/or code, and you want to make the move to Windows 10 and the Universal Windows Platform (UWP), then this resource has all you need to map platform features—and your knowledge—between the three platforms.
+If you're a developer with Android or iOS skills and/or code, and you want to make the move to Windows 10 and Windows 11 and the Universal Windows Platform (UWP), then this resource has all you need to map platform features—and your knowledge—between the three platforms.
 
 Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This document is also available as a [download](https://www.microsoft.com/download/details.aspx?id=52041).
 
@@ -28,7 +28,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -36,7 +36,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <td align="left"><strong>Design language.</strong><br><br>A set of conventions that prescribe how apps on the platform should look and behave.</td>
 <td align="left"><strong>Android Material Design</strong> guidelines provide a visual language for Android designers and developers to follow.</td>
 <td align="left"><strong>Human Interface Guidelines</strong> provide advice for iOS designers and developers.</td>
-<td align="left"><a href="https://developer.microsoft.com/windows/apps/design"><strong>UWP Windows Apps Design</strong></a> shows you how to create an app that looks fantastic on all Windows 10 devices. You will find user-interface (UI) design fundamentals, responsive design techniques, and a full list of detailed guidelines.<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/apps/design"><strong>UWP Windows Apps Design</strong></a> shows you how to create an app that looks fantastic on all Windows 10 and Windows 11 devices. You will find user-interface (UI) design fundamentals, responsive design techniques, and a full list of detailed guidelines.<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>User interface markup language.</strong> <br><br>A markup language that renders and describes a UI and its components. Each platform provides an editor for both visual and markup editing.<br/></td>
@@ -107,7 +107,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -156,7 +156,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -187,7 +187,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -254,7 +254,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -262,7 +262,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <td align="left"><strong>IDE.</strong> <br><br>The toolset used to create your app.</td>
 <td align="left"><strong>Android Studio</strong> and <strong>Eclipse</strong>, with Google pushing developers toward the use of Android Studio.</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://visualstudio.microsoft.com/features/universal-windows-platform-vs">Visual Studio</a></strong> and <strong><a href="/visualstudio/xaml-tools/designing-xaml-in-visual-studio">Blend for Visual Studio</a></strong> has all the tools you need to code, design, connect, debug, analyze, optimize and test UWP apps. Visual Studio also provides you with <strong><a href="/windows/uwp/debug-test-perf/test-with-the-emulator">emulators</a></strong> for Windows 10 devices, so you can test your app across a range of emulated devices.<br/><br/><a href="https://developer.microsoft.com/windows/downloads">Downloads and tools for UWP</a></td>
+<td align="left"><strong><a href="https://visualstudio.microsoft.com/features/universal-windows-platform-vs">Visual Studio</a></strong> and <strong><a href="/visualstudio/xaml-tools/designing-xaml-in-visual-studio">Blend for Visual Studio</a></strong> has all the tools you need to code, design, connect, debug, analyze, optimize and test UWP apps. Visual Studio also provides you with <strong><a href="/windows/uwp/debug-test-perf/test-with-the-emulator">emulators</a></strong> for Windows 10 and Windows 11 devices, so you can test your app across a range of emulated devices.<br/><br/><a href="https://developer.microsoft.com/windows/downloads">Downloads and tools for UWP</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Code organization.</strong> <br><br>The basic folder structure of an app, often created from an initial template.</td>
@@ -285,7 +285,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -316,7 +316,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -365,7 +365,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -408,7 +408,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -457,7 +457,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -494,7 +494,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -531,7 +531,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -556,7 +556,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -605,7 +605,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -648,7 +648,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10/11 UWP</strong></th>
 </tr>
 </thead>
 <tbody>

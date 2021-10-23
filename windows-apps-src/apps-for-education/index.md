@@ -1,6 +1,10 @@
 ---
 title: Develop apps for education.
+<<<<<<< HEAD
 description: This section describes the Universal Window Apps resources that are available to you to write Education apps for the Windows platform.
+=======
+description: This section describes the Universal Windows Apps resources that are available to you to write Education apps for the Windows 10 and Windows 11 platforms.
+>>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, education
@@ -28,11 +32,19 @@ User input is a critical part of education apps; UI controls must be responsive 
 The Windows Ink platform can make education apps shine by fitting them with an input mode that students are accustomed to. See [Pen interactions and Windows Ink](/windows/apps/design/input/pen-and-stylus-interactions) and the topics below it for a comprehensive guide to implementing Windows Ink in your app. The following sample apps provide working examples of this API.
 - [Ink Analysis sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/InkAnalysis) demonstrates how to use ink functionality (such as capturing, manipulating, and interpreting ink strokes) in Universal Windows apps using JavaScript.
 - [Simple ink sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) demonstrates how to use ink functionality (such as capturing ink from user input and performing handwriting recognition on ink strokes) in Universal Windows apps using C#.
+<<<<<<< HEAD
 - [Complex ink sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) demonstrates how to use advanced InkPresenter functionality to interleave ink with other objects, select ink, copy/paste, and handle events. It is built upon the Universal Windows Platform in C++ and can run on Desktop and Mobile Windows SKUs.
+=======
+- [Complex ink sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) demonstrates how to use advanced InkPresenter functionality to interleave ink with other objects, select ink, copy/paste, and handle events. It is built upon the Universal Windows Platform in C++ and can run on Desktop and Mobile Windows 10 and Windows 11 SKUs.
+>>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)
 
 
 ### Microsoft Store
 Education apps are often released under special circumstances to a specific organization. See [Distribute line-of-business apps to enterprises](../publish/distribute-lob-apps-to-enterprises.md) for information on this.
 
 ## Related Topics
+<<<<<<< HEAD
 - [Windows for Education](/education/windows/index) on the Windows IT Center
+=======
+- [Windows 10/11 for Education](/education/windows/index) on the Windows IT Center
+>>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)

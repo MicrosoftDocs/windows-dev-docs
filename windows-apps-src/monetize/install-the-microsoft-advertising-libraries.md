@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 >[!WARNING]
 > As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). This SDK is an extension to Visual Studio 2015 and later versions.
+To display ads in your UWP apps for Windows 10 and Windows 11, install the [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). This SDK is an extension to Visual Studio 2015 and later versions.
 
 > [!NOTE]
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the [WinJS](https://github.com/winjs/winjs) library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately.

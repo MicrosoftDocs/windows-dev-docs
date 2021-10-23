@@ -70,7 +70,7 @@ The Windows Retail Store team may reach out to developers directly to set up a d
 ## RetailInfo API: Preparing your code for demo mode
 
 ### IsDemoModeEnabled
-The [**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) property in the [**RetailInfo**](/uwp/api/Windows.System.Profile.RetailInfo) utility class, which is part of the [Windows.System.Profile](/uwp/api/windows.system.profile) namespace in the Windows 10 SDK, is used as a Boolean indicator to specify which code path your app runs on - the _normal_ mode or the _retail_ mode.
+The [**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) property in the [**RetailInfo**](/uwp/api/Windows.System.Profile.RetailInfo) utility class, which is part of the [Windows.System.Profile](/uwp/api/windows.system.profile) namespace in the Windows 10 and Windows 11 SDK, is used as a Boolean indicator to specify which code path your app runs on - the _normal_ mode or the _retail_ mode.
 
 ``` csharp
 using Windows.Storage;

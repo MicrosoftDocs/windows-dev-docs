@@ -16,12 +16,16 @@ dev_langs:
 ---
 # Choose a UWP version
 
+<<<<<<< HEAD
 Each version of Windows has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Projects using [.NET Standard 2.0](/dotnet/standard/net-standard) must have a **Minimum Version** of Build 16299 or later.
+=======
+Each version of Windows 10 and Windows11 have brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Projects using [.NET Standard 2.0](/dotnet/standard/net-standard) must have a **Minimum Version** of Build 16299 or later.
+>>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)
 
 > [!WARNING]
 > UWP projects created in current versions of Visual Studio cannot be opened in Visual Studio 2015.
 
-The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](https://developer.microsoft.com/windows/downloads#_blank) in order to target that version.
+The following table describes the available versions of Windows 10 and Windows 11. Please note that this table only applies for building UWP apps, which are only supported on Windows 10 and Windows 11. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](https://developer.microsoft.com/windows/downloads#_blank) in order to target that version.
 
 | Version | Description |
 | --- | --- |
@@ -39,7 +43,7 @@ We highly recommend that new developers and developers writing code for a genera
 
 ## What's different in each UWP version?
 
-New and changed APIs for UWP are available in every successive version of Windows 10. For specific information about what features were added in which version, see [What's new for developers in Windows 10](../whats-new/windows-10-build-19041.md).
+New and changed APIs for UWP are available in every successive version of Windows 10 and Windows 11. For specific information about what features were added in which version, see [What's new for developers in Windows 10/11](../whats-new/windows-10-build-19041.md).
 
 For reference topics that enumerate all device families and their versions, and all API contracts and their versions, see [Device families](/uwp/extension-sdks/) and [API contracts](/uwp/extension-sdks/).
 
@@ -55,8 +59,8 @@ If you are developing a Desktop app, see instead [.NET Framework versions and de
 
 In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**. Additionally, you can change the **Target Version** and **Minimum Version** of your UWP app in the *application* section of the app's **Properties**.
 
-* **Target Version**. The version of Windows 10 that your app is intended to run on. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
-* **Minimum Version**. The earliest version of Windows 10 needed to support the basic functions of your app. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.
+* **Target Version**. The version of Windows 10 or Windows 11 that your app is intended to run on. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
+* **Minimum Version**. The earliest version of Windows 10 or Windows 11 needed to support the basic functions of your app. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.
 
 Be aware that you're declaring that your app works on any version of Windows in the range from **Minimum Version** to **Target Version**. If those two are the same version then you don't need to do anything special. If they're different then here are some things to be aware of.
 
