@@ -39,7 +39,7 @@ The following articles provide information about features available via Win32 (C
 | Article | Description |
 |---------|-------------|
 | [Menus and other resources](/windows/win32/menurc/resources) | Learn how to manage app resources including icons, cursors, menus, dialog boxes, bitmaps, and much more. |
-| [Data access and storage](/windows/desktop/data-access-and-storage) | Learn about data access and storage scenarios involving file and file system management, database accesss, and much more. |
+| [Data access and storage](/windows/desktop/data-access-and-storage) | Learn about data access and storage scenarios involving file and file system management, database access, and much more. |
 
 ## .NET features
 
