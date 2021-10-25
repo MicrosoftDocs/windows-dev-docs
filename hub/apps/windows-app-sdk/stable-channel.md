@@ -134,7 +134,7 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 

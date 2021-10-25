@@ -38,7 +38,7 @@ landingContent:
           - text: Build apps with the Windows App SDK
             url: ../windows-app-sdk/index.md
           - text: Build an app for Windows 11
-            url: ../get-started/build-apps-for-windows.md
+            url: /windows/apps/winui/winui3/create-your-first-winui3-app
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference

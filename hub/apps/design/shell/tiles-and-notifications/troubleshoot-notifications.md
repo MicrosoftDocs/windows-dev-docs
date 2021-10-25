@@ -38,15 +38,15 @@ If Windows Push Notification Services (WNS) returns a "200 OK" response, then it
   **Fix**: Verify the basic XML syntax and make sure that your XML is complete and correct. Some common points of failure in the XML content include the following:
 
   - Case sensitivity. Tag names, attribute names, and attribute values are all case sensitive. Be sure that your XML has the correct casing.
-  - A [**binding**](https://msdn.microsoft.com/library/BR212854) element must be provided for each supported tile format. You should provide a **binding** element for each of the tile sizes you support in each notification you send.
-  - Text strings should not contain reserved XML characters. For example, you cannot italicize tile or toast strings by including \<i\> and \</i\> tags. If you intend to show the literal characters "\<i\>", they should be properly escaped. For more information on escape characters in XML, see [XML Character Entities and XAML](https://go.microsoft.com/fwlink/p/?linkid=113597).
+  - A [**binding**](/uwp/schemas/tiles/tilesschema/element-binding) element must be provided for each supported tile format. You should provide a **binding** element for each of the tile sizes you support in each notification you send.
+  - Text strings should not contain reserved XML characters. For example, you cannot italicize tile or toast strings by including \<i\> and \</i\> tags. If you intend to show the literal characters "\<i\>", they should be properly escaped. For more information on escape characters in XML, see [XML Character Entities and XAML](/previous-versions/dotnet/netframework-3.5/ms748250(v=vs.90)).
   - The values supplied for the *lang* attributes must conform to the [ITEF BCP 47](https://go.microsoft.com/fwlink/p/?linkid=241419) specification.
   - XML strings sent through push notifications should use the UTF-8 encoding.
-  - If you include an [**image**](https://msdn.microsoft.com/library/BR212855) element in your XML payload with a non-empty src attribute, you must be sure to include a reference to a valid image or the notification will be dropped.
+  - If you include an [**image**](/uwp/schemas/tiles/tilesschema/element-image) element in your XML payload with a non-empty src attribute, you must be sure to include a reference to a valid image or the notification will be dropped.
 
 - **Cause**: Improper use of push notification API parameters
 
-  **Fix**: See the API documentation in the [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/BR241307) namespace for specifics.
+  **Fix**: See the API documentation in the [**Windows.Networking.PushNotifications**](/uwp/api/Windows.Networking.PushNotifications) namespace for specifics.
 
 - **Cause**: Header type does not match notification content. If the X-WNS-Type header is not set to a value—tile, badge, or toast—that corresponds to the notification template specified in the payload, the notification will not be displayed. This mismatch will cause an error on the client and the notification will be dropped.
   
@@ -63,7 +63,7 @@ If you still do not see your notification displayed after addressing the items i
 If WNS doesn't return "200 OK", your notification will not be delivered to the client. If the return code is in the 400s, then you, as a developer, should be able to fix the issue.
 
 > [!NOTE]
-> For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
+> For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](/windows/win32/com/com-error-codes-9).
 
 - Notification request returns "400 Bad Request"
 - Notification request returns "401 Unauthorized"
@@ -122,7 +122,7 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 - Creating a notification channel results in an WPN\_E\_INVALID\_APP error
 
 > [!NOTE]
-> For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](https://msdn.microsoft.com/library/Hh404142).
+> For errors not specifically listed here, see [**COM Error Codes (WPN, MBN, P2P, Bluetooth)**](/windows/win32/com/com-error-codes-9).
 
 ### Creating a notification channel results in an ERROR\_NO\_NETWORK error
 
@@ -134,7 +134,7 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 
 - **Cause**: Your app has not declared the Internet capability in its app manifest (package.appxmanifest).
 
-  **Fix**: Ensure that your app manifest has declared Internet capability. In the Visual Studio manifest editor, you will find this option under the Capabilities tab as **Internet (Client)**. For more information, see [**Capabilities**](https://msdn.microsoft.com/library/BR211422).
+  **Fix**: Ensure that your app manifest has declared Internet capability. In the Visual Studio manifest editor, you will find this option under the Capabilities tab as **Internet (Client)**. For more information, see [**Capabilities**](/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
 
 ### Creating a notification channel results in an WPN\_E\_INVALID\_APP error
 
