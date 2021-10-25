@@ -78,8 +78,8 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
 | [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
 | [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
-| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | None |
-| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | None |
+| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | See [MRT to MRT Core migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore) |
+| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | See [MRT to MRT Core migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore) |
 | [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
 | [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
 | [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in spatialinteractionmanagerinterop.h). |

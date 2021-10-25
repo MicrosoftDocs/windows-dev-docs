@@ -41,7 +41,7 @@ The following project fragment demonstrates a simple invocation of **cswinrt** t
 </PropertyGroup>
 ```
 
-An interop assembly is typically distributed as a NuGet package along with the implementation assembly for .NET 5 applications to reference. For more details on how to create and distribute an interop assembly, see [Walkthrough: Generate a C# projection from a C++/WinRT component and distribute as a NuGet package for .NET 5+ applications](net-projection-from-cppwinrt-component.md).
+An interop assembly is typically distributed as a NuGet package along with the implementation assembly for .NET 5 applications to reference. For more details on how to create and distribute an interop assembly, see [Make a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5+ apps](net-projection-from-cppwinrt-component.md).
 
 ## Reference an interop assembly
 

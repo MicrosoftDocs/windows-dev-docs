@@ -22,8 +22,6 @@ For ease of migration, MRT Core APIs are very similar to MRT APIs. For API refer
 > [!NOTE]
 > Not all of the MRT APIs exist in MRT Core. But all of the APIs necessary for the basic functionality of MRT are included.
 
-## Migration guidance
-
 ## Change namespace
 
 In UWP, the MRT APIs are in the [**Windows.ApplicationModel.Resources.Core**](/uwp/api/windows.applicationmodel.resources.core) namespace. In the Windows App SDK, the MRT Core APIs are in the [**Microsoft.Windows.ApplicationModel.Resources**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources) namespace. So you'll need to change that namespace name in your source code (add `Microsoft.` at the start, and remove the `.Core` at the end).
@@ -31,7 +29,7 @@ In UWP, the MRT APIs are in the [**Windows.ApplicationModel.Resources.Core**](/u
 > [!NOTE]
 > In Windows App SDK 1.0 Preview 1 and later releases, MRT Core APIs are in the [**Microsoft.Windows.ApplicationModel.Resources**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources) namespace. In releases earlier than that, they are in the **Microsoft.ApplicationModel.Resources** namespace.
 
-### ResourceManager class
+## ResourceManager class
 
 This section applies if you're using the [**Windows.ApplicationModel.Resources.Core.ResourceManager.Current**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.current) property in your UWP app.
 
@@ -67,7 +65,7 @@ using namespace winrt::Microsoft::Windows::ApplicationModel::Resources;
 ResourceManager currentResourceManager;
 ```
 
-### ResourceContext.GetForCurrentView, and ResourceContext.GetForViewIndependentUse
+## ResourceContext.GetForCurrentView, and ResourceContext.GetForViewIndependentUse
 
 UWP's MRT [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) class distinguishes between a **ResourceContext** for the current view, and one for view-independent use.
 
@@ -75,7 +73,7 @@ For the Windows App SDK's MRT Core [**ResourceContext**](/windows/windows-app-sd
 
 * So if you're using the **ResourceContext.GetForCurrentView** API or the **ResourceContext.GetForViewIndependentUse** API, then use [**ResourceManager.CreateResourceContext**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager.createresourcecontext) instead.
 
-### Resource qualifier values
+## Resource qualifier values
 
 In UWP's MRT, the resource context qualifier values are determined for the app. While in MRT Core, only the language value is populated. Your app needs to determine other values for itself. Here's an example, where it's assumed your XAML view contains an element named *layoutRoot*.
 
@@ -102,7 +100,7 @@ resourceContext.QualifierValues().Insert(L"Scale", std::to_wstring((int)scaleFac
 auto s{ resourceContext.QualifierValues().Lookup(L"Scale") };
 ```
 
-### Resource qualifier value change
+## Resource qualifier value change
 
 UWP's MRT provides the [**ResourceQualifierObservableMap.MapChanged**](/uwp/api/windows.applicationmodel.resources.core.resourcequalifierobservablemap.mapchanged) event. And this section applies if your UWP app is handling that event in order to listen to qualifier value changes.
 
