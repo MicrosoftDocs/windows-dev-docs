@@ -298,6 +298,60 @@ In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and de
 
 Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the next section we'll confirm that we've correctly followed the steps.
 
+## Known issues
+
+There is one issue that we need to work around by commenting out a few lines of code from the project. For background, see GitHub issue [StorageItemContentProperties.GetImagePropertiesAsync causes an access violation when the same code works fine in the UWP version](https://github.com/microsoft/WindowsAppSDK/issues/1141).
+
+The following listing identifies file names, methods, and lines of code that need to be commented out (or, in some cases shown below, added).
+
+```cppwinrt
+// MainPage.xaml.cpp:
+    IAsyncOperation<PhotoEditor::Photo> MainPage::LoadImageInfoAsync(StorageFile file)
+    {
+        //auto properties = co_await file.Properties().GetImagePropertiesAsync();
+        auto info = winrt::make<Photo>(nullptr, file, file.DisplayName(), file.DisplayType());
+        co_return info;
+    }
+
+// Photo.cpp:
+    hstring Photo::ImageDimensions() const
+    {
+        return L"Not implemented";
+
+        //wstringstream stringStream;
+        //stringStream << m_imageProperties.Width() << " x " << m_imageProperties.Height();
+        //wstring str = stringStream.str();
+        //return static_cast<hstring>(str);
+    }
+
+    void Photo::ImageTitle(hstring const& value)
+    {
+        //if (m_imageProperties.Title() != value)
+        //{
+        //    m_imageProperties.Title(value);
+        //    auto ignoreResult = m_imageProperties.SavePropertiesAsync();
+        //    RaisePropertyChanged(L"ImageTitle");
+        //}
+    }
+
+// Photo.h:
+    hstring ImageTitle() const
+    {
+        return m_imageName;
+        // return m_imageProperties.Title() == L"" ? m_imageName : m_imageProperties.Title();
+    }
+
+// DetailPage.xaml.cpp (and change return type in .idl and .h)
+    IAsyncAction DetailPage::FitToScreen()
+    {
+        auto properties = co_await Item().ImageFile().Properties().GetImagePropertiesAsync();
+        auto a = MainImageScroller().ActualWidth() / properties.Width();
+        auto b = MainImageScroller().ActualHeight() / properties.Height();
+        auto ZoomFactor = static_cast<float>(std::min(a, b));
+        MainImageScroller().ChangeView(nullptr, nullptr, ZoomFactor);
+    }
+```
+
 ## Test the migrated app
 
 Confirm that you can build the target solution. Now build and test the app. Select an image, set a zoom level, choose effects, and configure them.

@@ -158,7 +158,7 @@ Specifies whether the response should include the device status and WNS connecti
 
 ### X-WNS-Tag
 
-Assigns a [**tag**](https://msdn.microsoft.com/library/BR208619) label to a notification. The tag is used in the replacement policy of the tile in the notification queue when the app has opted for notification cycling. If a notification with this tag already exists in the queue, a new notification with the same tag takes its place.
+Assigns a [**tag**](/uwp/api/Windows.UI.Notifications.TileNotification#Windows_UI_Notifications_TileNotification_Tag) label to a notification. The tag is used in the replacement policy of the tile in the notification queue when the app has opted for notification cycling. If a notification with this tag already exists in the queue, a new notification with the same tag takes its place.
 
 > [!NOTE]
 > This header is optional and used only when sending tile notifications.

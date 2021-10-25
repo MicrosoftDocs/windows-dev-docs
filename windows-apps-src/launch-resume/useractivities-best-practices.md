@@ -105,5 +105,4 @@ In the following example, the content metadata JSON, following the standards of 
 * [Adaptive cards](/adaptive-cards/)
 * [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](./handle-uri-activation.md)
-* [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

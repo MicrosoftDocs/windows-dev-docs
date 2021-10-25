@@ -49,9 +49,6 @@ You should use swipe commanding when you have a potentially large group of items
 </tr>
 </table>
 
-## Video summary
-
-> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev015/player]
 
 ## How does Swipe work?
 

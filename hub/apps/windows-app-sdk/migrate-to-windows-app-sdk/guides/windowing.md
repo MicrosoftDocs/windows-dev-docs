@@ -19,7 +19,7 @@ This topic contains guidance related to window management, including migrating f
 * [**Windows.UI.Core.CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property
 * [**Microsoft.UI.Window.DispatcherQueue**](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) property
 
-## Overview
+## Summary of API and/or feature differences
 
 The Windows App SDK provides a [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class that's based on the Win32 HWND model. That **AppWindow** class is the Windows App SDK's version of UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) and [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow).
 
