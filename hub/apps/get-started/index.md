@@ -45,7 +45,7 @@ For more information about WinUI 3 apps, see see the following articles:
 
 Native Win32 desktop apps (also sometimes called *classic desktop apps*) are the original app type for native Windows applications that require direct access to Windows and hardware. This makes this the app type of choice for applications that need the highest level of performance and direct access to system hardware.
 
-Using the Win32 API with C++ makes it possible to achieve the highest levels of performance and efficiency by taking more control of the target platform with unmanaged code than is possible on a managed runtime environment like WinRT and .NET. However, exercising such a level of control over your application's execution requires greater care and attention to get right, and trades development productivity for runtime performance.
+Using the Win32 API with C++ makes it possible to achieve the highest levels of performance and efficiency by taking more control of the target platform with unmanaged code than is possible on a managed runtime environment like WinRT with .NET. However, exercising such a level of control over your application's execution requires greater care and attention to get right, and trades development productivity for runtime performance.
 
 Here are a few highlights of what the Win32 API and C++ offers to enable you to build high-performance applications.
 
@@ -125,7 +125,7 @@ For more information about React Native for Windows, see the following links:
 
 The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices that run Windows 10 and later versions. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform for Xbox, HoloLens, and Surface Hub applications. UWP apps can be native or managed.
 
-UWP is a highly customizable platform that uses XAML markup to separate UI (presentation) from code (business logic). UWP is suitable for desktop apps that require a sophisticated UI, styles customization, and graphics-intensive scenarios. UWP also has built-in support for the [Fluent Design System](/windows/uwp/design/fluent-design-system/) for the default UX experience and provides access to the [Windows Runtime (WinRT) APIs](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis).
+UWP is a highly customizable platform and can use XAML markup to separate UI (presentation) from code (business logic). UWP is suitable for desktop apps that require a sophisticated UI, styles customization, and graphics-intensive scenarios. UWP also has built-in support for the [Fluent Design System](/windows/uwp/design/fluent-design-system/) via XAML for the default UX experience and provides access to the [Windows Runtime (WinRT) APIs](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis).
 
 For more information about UWP apps, see the following articles:
 
