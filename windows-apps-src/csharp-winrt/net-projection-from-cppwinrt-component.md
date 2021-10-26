@@ -212,13 +212,17 @@ You might need to close and reopen the solution for the `.nupkg` to appear in Vi
 
 ## Reference the NuGet package in a C# .NET 5 console application
 
-To consume **SimpleMathComponent** from a .NET 5 project, you can simply add a reference to the newly created NuGet package in your application. The following steps demonstrate how to do this by creating a simple Console app in a separate solution.
+To consume **SimpleMathComponent** from a .NET 5 project, you can simply add to the .NET 5 project a reference to the **SimpleMathComponent0.1.0-prerelease.nupkg** NuGet package that we created in the previous section. The following steps demonstrate how to do that by creating a simple Console app in a separate solution.
 
-1. Use the steps below to create a new solution with a C# **Console Application** project.
+1. Use the steps below to create a new solution containing a C# **Console Application** project (creating this project in a new solution allows you to restore the **SimpleMathComponent** NuGet package independently).
 
-    1. In Visual Studio, select **File** > **New** > **Project**.
+    > [!IMPORTANT]
+    > We'll be creating this new **Console Application** project inside the `Net5ProjectionSample` folder, which you'll find in your downloaded or clone of the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample).
+
+    1. In a new instance of Visual Studio, select **File** > **New** > **Project**.
     2. In the **Create a new project** dialog box, search for the **Console Application** project template. Choose the C# project template that's called simply **Console Application** (with no prefixes nor suffixes), and click **Next**.
-    3. Name the new project **SampleConsoleApp**. On the **Additional information** page, select **.NET 5.0 (Current)**, and then choose **Create**. Creating this project in a new solution allows you to restore the **SimpleMathComponent** NuGet package separately.
+    3. Name the new project **SampleConsoleApp**, set its location to wherever the `Net5ProjectionSample` folder is on your file system, and click **Next**.
+    4. On the **Additional information** page, select **.NET 5.0 (Current)**, and then choose **Create**.
 
 2. In **Solution Explorer**, double-click the **SampleConsoleApp** node to open the **SampleConsoleApp.csproj** project file, and update the `TargetFramework` and `Platform` properties as shown in the following example.
 
@@ -230,13 +234,13 @@ To consume **SimpleMathComponent** from a .NET 5 project, you can simply add a r
     </PropertyGroup>
     ```
 
-3. In this step, with the **SampleConsoleApp.csproj** project file still open, we'll add the **SimpleMathComponent** NuGet package to the **SampleConsoleApp** project. To restore the **SimpleMathComponent** NuGet when building the project, you can use the `RestoreSources` property with the path to the **nuget** folder in your component solution. Copy the following configuration, and paste it into **SampleConsoleApp.csproj** (inside the `Project` element).
+3. With the **SampleConsoleApp.csproj** project file still open, we'll next add the **SimpleMathComponent** NuGet package to the **SampleConsoleApp** project. To restore the **SimpleMathComponent** NuGet when building the project, you can use the `RestoreSources` property with the path to the **nuget** folder in your component solution. Copy the following configuration, and paste it into **SampleConsoleApp.csproj** (inside the `Project` element).
 
     ```xml
     <PropertyGroup>
       <RestoreSources>
         https://api.nuget.org/v3/index.json;
-        ../../CppWinRTProjectionSample/SimpleMathProjection/nuget
+        ../SimpleMathProjection/nuget
       </RestoreSources>
     </PropertyGroup>
 
@@ -245,7 +249,8 @@ To consume **SimpleMathComponent** from a .NET 5 project, you can simply add a r
     </ItemGroup>
     ```
 
-    Note that for this walkthrough, the `RestoreSources` path for the **SimpleMathComponent** package assumes that both solution files are in the same directory. You might need to update the path accordingly. Alternatively, you can [add a local NuGet package feed](/nuget/consume-packages/install-use-packages-visual-studio#package-sources) to your solution.
+    > [!IMPORTANT]
+    > The `RestoreSources` path for the **SimpleMathComponent** package shown above is set to `../SimpleMathProjection/nuget`. That path is correct provided that you followed the steps in this walkthrough, so that the **SimpleMathComponent** and **SampleConsoleApp** projects are both in the same folder (the `Net5ProjectionSample` folder, in this case). If you've done something different, then you'll need to adjust that path accordingly. Alternatively, you can [add a local NuGet package feed](/nuget/consume-packages/install-use-packages-visual-studio#package-sources) to your solution.
 
 4. Edit the **Program.cs** file to use the functionality provided by **SimpleMathComponent**.
 
