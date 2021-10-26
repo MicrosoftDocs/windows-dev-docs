@@ -236,36 +236,3 @@ HWND CreateCustomMenu()
     return hWnd;
 }
 ```
-
-### Example 5 – Customizing window contents for rounding - C++
-
-When the corners of a window are rounded, a little bit of the window's client area is clipped. Some apps may want to adjust their contents to account for this.
-
-For example, the thumb of a vertical scrollbar may be placed right at the bottom-right corner of a window, so it may be clipped by rounding. If that is visually undesirable, you might position the scroll bar differently when the window is rounded. However, because the window is not always rounded – for example, it is never rounded when it is maximized – you should call [**DwmGetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmgetwindowattribute) to determine whether or not the UI needs to be adjusted, and by how much.
-
-```cpp
-LRESULT ExampleWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
-{
-    switch (message)
-    {
-    // ...
-    // Handle various window messages...
-    // ...
-
-    case WM_SIZE:
-        // Whenever an interesting size change takes place, there may be a corresponding rounding change.
-        int radius = 0;
-        if (SUCCEEDED(DwmGetWindowAttribute(hWnd, DWMWA_WINDOW_CORNER_RADIUS, &radius, sizeof(radius))))
-        {
-            AdjustScrollbarForCornerRadius(radius);
-        }
-        break;
-
-    // ...
-    // Handle various other window messages...
-    // ...
-    }
-
-    return 0;
-}
-```
