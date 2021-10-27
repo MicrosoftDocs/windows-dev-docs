@@ -19,7 +19,7 @@ You can also exchange shortcut key combinations. For example: The shortcut key <
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
-> [!NOTE]
+> [!IMPORTANT]
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
 > - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
 > - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
@@ -66,7 +66,7 @@ For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in
 | `Ctrl` | `⊞ Win` + `←` |
 
 
-> [!NOTE]
+> [!IMPORTANT]
 > Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
 
 ## Remap Shortcuts
@@ -102,7 +102,7 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 | :--- | :--- |
 | `⊞ Win` + `←` | `Alt` |
 
-> [!NOTE]
+> [!IMPORTANT]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
 ## App-specific shortcuts

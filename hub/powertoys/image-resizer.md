@@ -36,12 +36,12 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 - **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
 
 > [!NOTE]
-> If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations (like vacation photos) will still be the same size.
+> If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
 
 
 ### Fallback encoding
 
-The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Metafile (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. *This is not a file type conversion tool, but only works as a fallback for unsupported file formats.*
+The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Metafile (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. **This is not a file type conversion tool, but only works as a fallback for unsupported file formats.**
 
 ### File
 
@@ -64,7 +64,7 @@ You can specify a directory in the filename format to group resized images into 
 > [!IMPORTANT]
 > As mentioned above, you can use a backslash to create a new folder upon execution. Please be aware that, at this point - until a fix is committed, all special charaters are not filtered. For example: giving a preset a name with "1/4" in it, will also unintentionally create a folder. A colon `:` will result in corrupted files. For a complete list, see https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file#file-and-directory-names.
 
-You can also choose to retain the original *last modified* date on the resized image.
+You can also choose to retain the original _last modified_ date on the resized image.
 
 ### Auto width/height
 

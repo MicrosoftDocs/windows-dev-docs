@@ -74,7 +74,10 @@ With a custom layout, this layout can be configured to a user-defined hotkey to 
 
 In the demo below, we start with a default template applied to the screen and 2 custom layouts that we assign hotkeys for. We then use the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[number]</kbd> binding to apply the first custom layout and snap a window to it. Finally, we apply the second custom layout while dragging a window and snap the window to it.
 
-![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif) 
+![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif)
+
+> [!TIP]
+> The settings for the zones and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak layouts/zones.
 
 ## Snapping a window to two or more zones
 
@@ -88,9 +91,9 @@ To snap a window to multiple zone using only the keyboard, first check the two o
 
 ## Shortcut Keys
 
-| Shortcut      | Action |
-| ----------- | ----------- |
-| <kbd>⊞ Win</kbd>+<kbd>\`</kbd> | Launches the editor (this shortcut can be changed in the settings window) |
+| Shortcut | Action |
+| --- | --- |
+| <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>\`</kbd> | Launches the editor (this shortcut can be changed in the Settings window) |
 | <kbd>⊞ Win</kbd>+<kbd>left/right</kbd> | Move focused window between zones (only if **Override Windows Snap hotkeys** setting is turned on, in that case only the <kbd>⊞ Win</kbd>+<kbd>←</kbd> and <kbd>⊞ Win</kbd>+<kbd>→</kbd> are overridden, while the <kbd>⊞ Win</kbd>+<kbd>↑</kbd> and <kbd>⊞ Win</kbd>+<kbd>↓</kbd> keep working as usual) |
 
 FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to quickly move a window to an adjacent monitor.
@@ -98,7 +101,7 @@ FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd
 ## Settings
 
 | Setting | Description |
-| --------- | ------------- |
+| --- | --- |
 | Configure the zone editor hotkey | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard (it's not necessary to select or delete the text) |
 | Follow mouse cursor instead of focus when launching editor in a multi-monitor environment | When checked, the editor will launch on the monitor where the mouse cursor is. When unchecked, the editor will launch on the monitor where the current active window is |
 | Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the shift key during a drag enables snapping |

@@ -37,10 +37,10 @@ The copied color will be stored in your clipboard in the format that is configur
 
 ![Selecting a Color](../images/pt-colorpicker.gif)
 
-> [!NOTE]
-> To select the color of the non-mouse-over state of a element:
+> [!TIP]
+> To select the color of the non-hover state of a element:
 > - Move the mouse pointer close, but not over the element
-> - Zoom in by scrolling the mouse wheel (image will be frozen)
+> - Zoom in by scrolling the mouse wheel up (image will be frozen)
 > - In the enlarged area, you can pick the color of the element
 
 ## Editor usage

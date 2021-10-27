@@ -21,7 +21,7 @@ Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + 
 
 ![Screenshot of shortcut overlay](../images/pt-shortcut-guide-large.png)
 
-Keyboard shortcuts using the Windows key <kbd>⊞ Win</kbd> can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes et cetera) will be displayed in the guide.
+Keyboard shortcuts using the Windows key <kbd>⊞ Win</kbd> can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes etc.) will be displayed in the guide.
 
 Pressing the shortcut key combination again will dismiss the overlay.
 
