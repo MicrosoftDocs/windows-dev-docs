@@ -60,6 +60,10 @@ For example, setting the filename format to: `%1 (%2)` on the file `example.png`
 
 You can specify a directory in the filename format to group resized images into sub-directories. For example, a value of `%2\%1` would save the resized image(s) to `Small\example.jpg`
 
+<!-- [Jay] remove following warning if/when a solution is committed -->
+> [!IMPORTANT]
+> As mentioned above, you can use a backslash to create a new folder upon execution. Please be aware that, at this point - until a fix is committed, all special charaters are not filtered. For example: giving a preset a name with "1/4" in it, will also unintentionally create a folder. A colon `:` will result in corrupted files. For a complete list, see https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file#file-and-directory-names.
+
 You can also choose to retain the original *last modified* date on the resized image.
 
 ### Auto width/height
