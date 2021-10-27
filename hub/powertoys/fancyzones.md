@@ -1,5 +1,5 @@
 ---
-title: PowerToys FancyZones utility for Windows 10
+title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
 ms.date: 05/28/2021
 ms.topic: article
@@ -21,13 +21,13 @@ To get started using FancyZones, you need to enable the utility in PowerToys set
 
 ### Launch zones editor
 
-Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the settings dialog).  
+Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the settings dialog).
 
 ![FancyZones Settings UI](../images/pt-fancyzones-settings.png) 
 
 ### Elevated permission admin apps
 
-If you have applications that are elevated, run in administrator mode, read [PowerToys and running as administrator](administrator.md) for more information.
+If you have applications that are elevated, run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
 
 ## Choose your layout (Layout Editor)
 
@@ -41,7 +41,7 @@ If multiple displays are in use, the editor will detect the available monitors a
 
 ### Space around zones
 
-The **Show space around zones** check box enables you to determine what sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for the width of the margin. With the Zones Editor open, change the **Show space around zones** after changing the values to see the new value applied.
+The **Show space around zones** check box enables you to determine what sort of margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for the width of the margin. With the Zones Editor open, change the **Show space around zones** after changing the values to see the new value applied.
 
 The **Distance to highlight adjacent zones** enables you to set a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.
 
@@ -90,7 +90,7 @@ To snap a window to multiple zone using only the keyboard, first check the two o
 | <kbd>⊞ Win</kbd>+<kbd>\`</kbd> | Launches the editor (this shortcut can be changed in the settings window) |
 | <kbd>⊞ Win</kbd>+<kbd>left/right</kbd> | Move focused window between zones (only if **Override Windows Snap hotkeys** setting is turned on, in that case only the <kbd>⊞ Win</kbd>+<kbd>←</kbd> and <kbd>⊞ Win</kbd>+<kbd>→</kbd> are overridden, while the <kbd>⊞ Win</kbd>+<kbd>↑</kbd> and <kbd>⊞ Win</kbd>+<kbd>↓</kbd> keep working as usual) |
 
-FancyZones doesn't override the Windows 10 <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to quickly move a window to an adjacent monitor.
+FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to quickly move a window to an adjacent monitor.
 
 ## Settings
 
