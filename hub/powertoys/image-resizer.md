@@ -1,5 +1,5 @@
 ---
-title: PowerToys Image Resizer utility for Windows 10
+title: PowerToys Image Resizer utility for Windows
 description: A Windows shell extension for bulk image-resizing
 ms.date: 05/28/2021
 ms.topic: article
