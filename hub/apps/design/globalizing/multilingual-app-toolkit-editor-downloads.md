@@ -1,7 +1,7 @@
 ---
 title: Multilingual App Toolkit Editor - Windows app development
 description: Download the Multilingual App Toolkit Editor to help you localize your apps with localization file management, translation support, and editing tools.
-ms.topic: dev-center
+ms.topic: article
 author: karl-bridge-microsoft
 ms.author: kbridge
 ms.date: 10/18/2021
