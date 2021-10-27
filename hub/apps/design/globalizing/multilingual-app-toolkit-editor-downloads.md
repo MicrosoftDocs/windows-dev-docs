@@ -86,7 +86,7 @@ The Multilingual App Toolkit helps create simpler translation workflows by focus
 > Ensure you have the latest service pack and critical updates for your installed versions of Windows and Visual Studio.
 
 - **Supported operating systems**: Windows 10 or later (x86 and x64)
-- **Required software**: Visual Studio 2015 or later
+- **Required software**: Visual Studio 2013 or later
 - **Disk space requirements**: 0 MB (x86 and x64)
 
 ## Additional info
