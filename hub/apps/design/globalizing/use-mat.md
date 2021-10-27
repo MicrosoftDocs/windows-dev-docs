@@ -34,7 +34,7 @@ Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing
 There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
 
 - [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
-- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
+- [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
 
 If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
@@ -44,7 +44,7 @@ The MAT must be enabled for your project before you can begin to localize the ap
 
 - Open the project solution in Visual Studio.
 - Select the desired project in Solution Explorer.
-- On the **Tools** menu, select **Multilingual App Toolkit** > **Enable selection**. 
+- On the **Tools*- menu, select **Multilingual App Toolkit*- > **Enable selection**.
 
 In the Output window (showing output from Multilingual App Toolkit), watch for the message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`. If this message appears, then the MAT is ready to use.
 
@@ -53,7 +53,7 @@ In the Output window (showing output from Multilingual App Toolkit), watch for t
 Follow these steps to add languages to your project.
 
 1. Right-click the project node in Solution Explorer.
-2. Click **Multilingual App Toolkit** > **Add translation languages...**.
+2. Click **Multilingual App Toolkit*- > **Add translation languages...**.
 3. In the Translation Languages dialog, select the language(s) you want to support, and click OK.
 
 The toolkit does these things in response.
@@ -77,12 +77,12 @@ Pseudo language is an artificial modification of the software product intended t
 Follow these steps to pseudo-localize and test your project.
 
 1. Use the Translation Languages dialog to add Pseudo Language (Pseudo) [qps-ploc] to your project.
-2. Right-click the `<project-name>.qps-ploc.xlf` file in Solution Explorer and click **Multilingual App Toolkit** > **Generate machine translations**.
-3. In **Settings** > **Time & Language** > **Region & language** > **Languages**, click **Add a language**.
-5. In the search box, type `qps-ploc`.
-6. Click `English (qps-ploc)` to add it.
-7. From the language list, select `English (qps-ploc)` and click **Set as default**.
-8. Test your pseudo-localized app. For example, look for UI layout issues where not all of a string is displayed (the string is truncated), or strings that are not translated (but instead hard-coded).
+1. Right-click the `<project-name>.qps-ploc.xlf` file in Solution Explorer and click **Multilingual App Toolkit*- > **Generate machine translations**.
+1. In **Settings*- > **Time & Language*- > **Region & language*- > **Languages**, click **Add a language**.
+1. In the search box, type `qps-ploc`.
+1. Click `English (qps-ploc)` to add it.
+1. From the language list, select `English (qps-ploc)` and click **Set as default**.
+1. Test your pseudo-localized app. For example, look for UI layout issues where not all of a string is displayed (the string is truncated), or strings that are not translated (but instead hard-coded).
 
 In addition to character replacement and expansion, the pseudo engine provides a unique tracking identifier for each resource. This tracker is prepended to the start of every string and enclosed within brackets `[xxxxx]`. You can use these trackers during visual UI inspection testing. They can help track down specific resources in the product, especially if multiple resources have similar or duplicate text.
 
@@ -100,8 +100,8 @@ After you've tested your app by using Pseudo language, there are three options t
 You can use the Multilingual Editor to translate strings individually. As already mentioned, this is included in [The .msi installer](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit).
 
 - Right-click the .xlf file that you want to translate.
-- Click **Open With...** and select Multilingual Editor. You can optionally click **Set as Default**.
-- For each string, **Source** shows the original string in the default language. In **Translation**, type the string translated into the appropriate language for the .xlf file that you're editing.
+- Click **Open With...*- and select Multilingual Editor. You can optionally click **Set as Default**.
+- For each string, **Source*- shows the original string in the default language. In **Translation**, type the string translated into the appropriate language for the .xlf file that you're editing.
 - When you're done, save and close the file.
 
 Rebuild your project to cause the translated strings to be copied into the Resources File (.resw) that corresponds to the .xlf file you were just editing.
@@ -110,13 +110,13 @@ You can also launch the Multilingual Editor like this. Go to Start, show all app
 
 #### Option 2. Send the .xlf files to a third party for translation
 
-To outsource the translation and editing work to localizers, select the desired .xlf files in Solution Explorer, right-click them, and click **Multilingual App Toolkit** > **Export translations...**.
+To outsource the translation and editing work to localizers, select the desired .xlf files in Solution Explorer, right-click them, and click **Multilingual App Toolkit*- > **Export translations...**.
 
-Select **Output: Mail recipient** in the Export string resources dialog, and click OK, and your files will be zipped and attached to a new email. Select **Output: File folder location**, browser for a folder and click OK, optionally choose for the files to be zipped, click OK again, and your files will be (zipped and) saved at the location you chose, inside a new folder named for your project.
+Select **Output: Mail recipient*- in the Export string resources dialog, and click OK, and your files will be zipped and attached to a new email. Select **Output: File folder location**, browser for a folder and click OK, optionally choose for the files to be zipped, click OK again, and your files will be (zipped and) saved at the location you chose, inside a new folder named for your project.
 
-After your localizers complete the translation work and send you the translated .xlf files, you can import them into your project. Select the desired .xlf files in Solution Explorer, right-click them, and click **Multilingual App Toolkit** > **Import/recycle translations...**. Click **Add**, navigate to the .xlf or .zip files, and click **Import**.
+After your localizers complete the translation work and send you the translated .xlf files, you can import them into your project. Select the desired .xlf files in Solution Explorer, right-click them, and click **Multilingual App Toolkit*- > **Import/recycle translations...**. Click **Add**, navigate to the .xlf or .zip files, and click **Import**.
 
-**Note** The import process performs basic validation before importing. This ensures that the target culture information in the files being imported matches that in the existing .xlf files.
+**Note*- The import process performs basic validation before importing. This ensures that the target culture information in the files being imported matches that in the existing .xlf files.
 
 Rebuild your project to cause the translated strings to be copied into the Resources File(s) (.resw) that corresponds to the .xlf file(s) you just imported.
 
@@ -145,7 +145,7 @@ Two providers are shipped with the Multilingual App Toolkit.
 - The [Microsoft Language Portal](https://www.microsoft.com/Language/) provider enables translation-recycling and terminology-matching support based on translations of the user interface text for Microsoft products and services.
 - The [Microsoft Translator](https://www.microsofttranslator.com/) provider enables on-demand machine translation services.
 
-You and your translator(s) can manage the status of translations in the Multilingual Editor to review uncertain translations later. You can set the status of each string in the **Properties** tab. Status values are: **New**, **Needs review**, **Translated**, **Final**, and **Signed off**. The indicator at the left of the row shows the status. When all rows show green in the Multilingual Editor, then your translation work is done.
+You and your translator(s) can manage the status of translations in the Multilingual Editor to review uncertain translations later. You can set the status of each string in the **Properties*- tab. Status values are: **New**, **Needs review**, **Translated**, **Final**, and **Signed off**. The indicator at the left of the row shows the status. When all rows show green in the Multilingual Editor, then your translation work is done.
 
 Rebuild your project to cause the translated strings to be copied into the Resources File(s) (.resw) that corresponds to the .xlf file(s) you just edited.
 
@@ -155,18 +155,18 @@ Before you start the Microsoft Store Certification process, you must exclude the
 
 ## Related topics
 
-* [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
-* [Globalization and localization](globalizing-portal.md)
-* [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Make your app localizable](prepare-your-app-for-localization.md)
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
+- [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
+- [Globalization and localization](globalizing-portal.md)
+- [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
+- [Make your app localizable](prepare-your-app-for-localization.md)
+- [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 
 ## Downloads
 
-* [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Multilingual App Toolkit 4.0 .msi installer](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
+- [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+- [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md)
 
 ## Translation services
 
-* [Microsoft Language Portal](https://www.microsoft.com/Language/)
-* [Microsoft Translator](https://www.microsofttranslator.com/)
+- [Microsoft Language Portal](https://www.microsoft.com/Language/)
+- [Microsoft Translator](https://www.microsofttranslator.com/)
