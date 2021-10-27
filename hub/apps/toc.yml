@@ -232,6 +232,8 @@ items:
                         href: winui/winui2/release-notes/winui-2.1.md
                       - name: "WinUI 2.0"
                         href: winui/winui2/release-notes/winui-2.0.md
+          - name: Enhance UI with the Visual Layer
+            href: windows-app-sdk/composition.md
           - name: "Manage app windows"
             href: windows-app-sdk/windowing/windowing-overview.md
           - name: "Push notifications"
