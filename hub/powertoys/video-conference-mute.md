@@ -28,7 +28,7 @@ When using the microphone and/or camera toggle shortcut keys, you will see a sma
 
 To use this module, it must be selected as the _source_ in the apps that are using camera and/or microphone. Go to the settings and select Powertoys VCM.
 
-![VCM selected as source in Skype](https://user-images.githubusercontent.com/1828123/129184636-b761ab25-a02b-4690-8bd1-39c310edbb4c.png)
+![VCM selected as source in Skype](../images/pt-vcm-source-in-app.png)
 
 
 ## Settings
