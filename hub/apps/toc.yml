@@ -1,3 +1,4 @@
+items:
 - name: Build desktop apps
   href: desktop/index.yml
   items:
@@ -7,10 +8,10 @@
           href: get-started/index.md
         - name: Set up your development environment
           items:
-              - name: System requirements
-                href: windows-app-sdk/system-requirements.md
               - name: Install developer tools
                 href: windows-app-sdk/set-up-your-development-environment.md
+              - name: System requirements
+                href: windows-app-sdk/system-requirements.md
               - name: Enable your device for development
                 href: get-started/enable-your-device-for-development.md
               - name: Developer mode features and debugging
@@ -29,17 +30,15 @@
               href: windows-app-sdk/single-project-msix.md
             - name: "Downloads"
               href: windows-app-sdk/downloads.md
-            - name: "Samples"
-              href: windows-app-sdk/samples.md
             - name: "Releases"
               items:
                 - name: "Release channels"
                   href: windows-app-sdk/release-channels.md
-                - name: "Stable release channel"
+                - name: "Stable channel release notes"
                   href: windows-app-sdk/stable-channel.md
-                - name: "Preview release channel"
+                - name: "Preview channel release notes"
                   href: windows-app-sdk/preview-channel.md
-                - name: "Experimental release channel"
+                - name: "Experimental channel release notes"
                   href: windows-app-sdk/experimental-channel.md
                 - name: "Update existing projects to the latest release"
                   href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
@@ -51,84 +50,56 @@
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
                     - name: "WinUI 3 - Project Reunion 0.5 Preview"
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
-        - name: Build an app for Windows 11
-          href: get-started/build-apps-for-windows.md
         - name: Visual Studio project templates
           items:
             - name: All templates for Windows apps
               href: desktop/visual-studio-templates.md
             - name: "WinUI templates"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
-  - name: Design and UI
+        - name: Samples 
+          href: get-started/samples.md
+  - name: Design
     href: design/toc.yml
   - name: Develop
     items:
       - name: "Overview"
         href: develop/index.md
-      - name: "Windows App SDK features"
+      - name: Migrate to the Windows App SDK
         items:
-          - name: "Manage resources"
-            href: windows-app-sdk/mrtcore/mrtcore-overview.md
-          - name: "Render text"
-            href: windows-app-sdk/dwritecore.md
-          - name: Manage app lifecycle
+          - name: "Index of migration topics"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
+          - name: "Overall migration strategy"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
+          - name: "Mapping UWP features to Windows App SDK"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
+          - name: "What's supported"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
+          - name: "Mapping UWP APIs to Windows App SDK"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
+          - name: "Feature area guides"
             items:
-              - name: App instancing
-                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-              - name: Rich activation
-                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-              - name: Power management
-                href: windows-app-sdk/applifecycle/applifecycle-power.md
-          - name: "Manage app windows"
-            href: windows-app-sdk/windowing/windowing-overview.md
-          - name: "Push notifications"
-            items:
-              - name: "Overview"
-                href: windows-app-sdk/notifications/push/index.md
-              - name: "Quickstart"
-                href: windows-app-sdk/notifications/push/push-quickstart.md
-              - name: "Troubleshooting"
-                href: windows-app-sdk/notifications/push/troubleshooting.md
-      - name: Windows UI Library (WinUI)
-        items:
-          - name: "Overview"
-            href: winui/index.md
-          - name: "Windows UI Library 3"
-            items:
-              - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
-                href: winui/winui3/desktop-winui3-app-with-basic-interop.md
-              - name: "Build XAML controls with C++/WinRT"
-                href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
-              - name: "Build XAML controls with C#"
-                href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
-          - name: "Windows UI Library 2"
-            items: 
-              - name: "Overview"
-                href: winui/winui2/index.md
-              - name: "Get started with WinUI 2"
-                href: winui/winui2/getting-started.md
-              - name: "NuGet package list"
-                href: winui/winui2/nuget-packages.md
-              - name: "Release notes"
-                items: 
-                  - name: "Overview"
-                    href:  winui/winui2/release-notes/index.md
-                  - name: "WinUI 2.7"
-                    href: winui/winui2/release-notes/winui-2.7.md
-                  - name: "WinUI 2.6"
-                    href: winui/winui2/release-notes/winui-2.6.md
-                  - name: "WinUI 2.5"
-                    href: winui/winui2/release-notes/winui-2.5.md
-                  - name: "WinUI 2.4"
-                    href: winui/winui2/release-notes/winui-2.4.md
-                  - name: "WinUI 2.3"
-                    href: winui/winui2/release-notes/winui-2.3.md
-                  - name: "WinUI 2.2"
-                    href: winui/winui2/release-notes/winui-2.2.md
-                  - name: "WinUI 2.1"
-                    href: winui/winui2/release-notes/winui-2.1.md
-                  - name: "WinUI 2.0"
-                    href: winui/winui2/release-notes/winui-2.0.md
+              - name: "Overview of feature area guides"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
+              - name: "Windows UI Library (WinUI) migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
+              - name: "Windowing functionality migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
+              - name: "Application lifecycle functionality migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
+              - name: "Notifications migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
+              - name: "DirectWrite to DWriteCore migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
+              - name: "MRT to MRTCore migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+              - name: "Threading functionality migration"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
+          - name: "Case study 1—PhotoLab (C#)"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
+          - name: "Case study 2—Photo Editor (C++/WinRT)"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
+          - name: "Additional migration guidance"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
       - name: Modernize your desktop apps
         items:
             - name: Overview
@@ -217,38 +188,120 @@
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-      - name: Windows features and technologies
-        items:
+      - name: User interface and input
+        items: 
           - name: Overview
-            href: develop/features-and-technologies.md
-          - name: Accessibility
-            href: develop/accessibility.md
+            href: develop/user-interface.md
+          - name: Windows UI Library (WinUI)
+            items:
+              - name: "Overview"
+                href: winui/index.md
+              - name: "Windows UI Library 3"
+                items:
+                  - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
+                    href: winui/winui3/desktop-winui3-app-with-basic-interop.md
+                  - name: "Build XAML controls with C++/WinRT"
+                    href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
+                  - name: "Build XAML controls with C#"
+                    href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
+              - name: "Windows UI Library 2"
+                items: 
+                  - name: "Overview"
+                    href: winui/winui2/index.md
+                  - name: "Get started with WinUI 2"
+                    href: winui/winui2/getting-started.md
+                  - name: "NuGet package list"
+                    href: winui/winui2/nuget-packages.md
+                  - name: "Release notes"
+                    items: 
+                      - name: "Overview"
+                        href:  winui/winui2/release-notes/index.md
+                      - name: "WinUI 2.7"
+                        href: winui/winui2/release-notes/winui-2.7.md
+                      - name: "WinUI 2.6"
+                        href: winui/winui2/release-notes/winui-2.6.md
+                      - name: "WinUI 2.5"
+                        href: winui/winui2/release-notes/winui-2.5.md
+                      - name: "WinUI 2.4"
+                        href: winui/winui2/release-notes/winui-2.4.md
+                      - name: "WinUI 2.3"
+                        href: winui/winui2/release-notes/winui-2.3.md
+                      - name: "WinUI 2.2"
+                        href: winui/winui2/release-notes/winui-2.2.md
+                      - name: "WinUI 2.1"
+                        href: winui/winui2/release-notes/winui-2.1.md
+                      - name: "WinUI 2.0"
+                        href: winui/winui2/release-notes/winui-2.0.md
+          - name: "Manage app windows"
+            href: windows-app-sdk/windowing/windowing-overview.md
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push/troubleshooting.md
           - name: Speech
             href: develop/speech.md
+      - name: App lifecycle and system services
+        items: 
+          - name: Overview
+            href: develop/app-lifecycle-and-system-services.md
+          - name: Manage app lifecycle
+            items:
+              - name: App instancing
+                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+              - name: Rich activation
+                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+              - name: Power management
+                href: windows-app-sdk/applifecycle/applifecycle-power.md
+      - name: Communication
+        href: develop/communication.md
+      - name: Accessibility
+        href: develop/accessibility.md
+      - name: Audio, video, and camera
+        href: develop/audio-video-camera.md
+      - name: Graphics
+        items: 
+          - name: Overview
+            href: develop/graphics.md
+          - name: Render text with DWriteCore
+            href: windows-app-sdk/dwritecore.md
+      - name: Data and files
+        items: 
+          - name: Overview
+            href: develop/data-and-files.md
+          - name: Manage resources with MRT Core
+            href: windows-app-sdk/mrtcore/mrtcore-overview.md
+      - name: Windows AI and machine learning
+        href: /windows/ai/
+      - name: Devices and sensors
+        href: develop/devices-and-sensors.md
+      - name: Security and identity
+        href: develop/security-and-identity.md
   - name: Package and deploy
     items:
       - name: Overview
         href: package-and-deploy/index.md
-      - name: Deploy apps that use the Windows App SDK
+      - name: Windows App SDK deployment guide
         items:
-          - name: "Overview"
-            href: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md 
-          - name: "Run time architecture and deployment scenarios"
+          - name: "Runtime architecture"
             href: windows-app-sdk/deployment-architecture.md
-          - name: "Deploy packaged apps"
-            href: windows-app-sdk/deploy-packaged-apps.md 
-          - name: "Deploy unpackaged apps"
+          - name: "Deployment guide for packaged apps"
+            href: windows-app-sdk/deploy-packaged-apps.md
+          - name: "Deployment guide for unpackaged apps"
             items:
-              - name: "Overview"
+              - name: Overview
                 href: windows-app-sdk/deploy-unpackaged-apps.md
               - name: Reference the Windows App SDK framework package at run time
                 href: windows-app-sdk/reference-framework-package-run-time.md
               - name: "Tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
-              - name: "Check for installed versions of the Windows App SDK runtime"
-                href: windows-app-sdk/check-windows-app-sdk-versions.md
-              - name: "Remove outdated Windows App SDK runtime versions"
-                href: windows-app-sdk/remove-windows-app-sdk-versions.md
+          - name: "Check for installed versions of the Windows App SDK runtime"
+            href: windows-app-sdk/check-windows-app-sdk-versions.md
+          - name: "Remove outdated Windows App SDK runtime versions"
+            href: windows-app-sdk/remove-windows-app-sdk-versions.md
   - name: Reference
     items:
       - name: Windows SDK API reference
@@ -273,5 +326,7 @@
         href: /dotnet/api/
       - name: Schema reference for Windows apps
         href: /uwp/schemas/
+  - name: What's new for developers in Windows 11
+    href: whats-new/windows-11-build-22000.md
   - name: Latest doc updates
     href: whats-new/latest-doc-updates.md

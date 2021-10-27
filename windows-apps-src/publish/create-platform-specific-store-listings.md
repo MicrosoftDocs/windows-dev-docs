@@ -27,14 +27,14 @@ Platform-specific Store listings can be useful if you want to mention features t
 
 Near the top of your **Store listing** page, if your previously-published app includes packages that support earlier OS versions ((Windows 8.x or earlier and/or Windows Phone 8.x or earlier), you can select **create a platform-specific app Store listing**. After selecting this option, you'll be prompted to choose from the targeted OS versions that your submission supports. Once you've already created platform-specific Store listings for all of the earlier OS versions your app targets, you won't be able to make another selection.
 
-You can use your default (Windows 10) Store listing as a starting point, which will bring over the applicable text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
+You can use your default (Windows 10/11) Store listing as a starting point, which will bring over the applicable text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
 
 After you click **Continue**, your **Store listing** page will now include a section for the platform-specific Store listing you've just created. This section will include its own set of fields for **Description** (required), **What's new in this version**, **Screenshots**, **App tile icon**, **App features**, and **Additional system requirements**. Make sure to enter info into each field where you want to display info in the custom Store listing, even if it's the same info as in your default Store listing. If you leave any of these fields blank, no info will appear for that field in the custom Store listing.
 
 > [!IMPORTANT]
 > The fields in the [Additional information](create-app-store-listings.md#additional-information) section of the Store listing can't be customized for different OS versions.
 > 
-> Additionally, because some of the fields in the default [Store listing](create-app-store-listings.md) page only apply to customers on Windows 10, you won't see all of the same options when creating a platform-specific Store listing. For example, you can't add trailers to a platform-specific Store listing, because trailers are only shown to customers on Windows 10, version 1607 or later. 
+> Additionally, because some of the fields in the default [Store listing](create-app-store-listings.md) page only apply to customers on Windows 10/11, you won't see all of the same options when creating a platform-specific Store listing. For example, you can't add trailers to a platform-specific Store listing, because trailers are only shown to customers on Windows 10, version 1607 or later. 
 
 You can continue to edit platform-specific listings as needed to make changes for customers on a certain OS version.
 

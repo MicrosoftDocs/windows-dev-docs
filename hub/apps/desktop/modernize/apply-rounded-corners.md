@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Rounded corners are the most immediately noticeable feature of [Windows 11 Geometry](../../design/signature-experiences/geometry.md). On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps. However, some Win32 apps might not be rounded. This topic describes how to round your Win32 app's main window corners if the system does not round them automatically.
 
 > [!NOTE]
-> By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), or running on a Windows Virtual Desktop (WVD).
+> By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), running on a Windows Virtual Desktop (WVD), or running as a Windows Defender Application Guard (WDAG) window.
 
 :::image type="content" source="./images/apply-design/notepad-rounded.png" alt-text="The Notepad app on Windows 11 with rounded corners.":::
 
@@ -107,7 +107,7 @@ public partial class MainWindow : Window
 }
 ```
 
-Next, in your MainWindow constructor, after the call to InitalizeComponent, create a new instance of the [WindowInteropHelper](/dotnet/api/system.windows.interop.windowinterophelper) class to acquire a pointer to the underlying HWND (window handle). Make sure to use the [EnsureHandle](/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle) method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.
+Next, in your MainWindow constructor, after the call to InitializeComponent, create a new instance of the [WindowInteropHelper](/dotnet/api/system.windows.interop.windowinterophelper) class to acquire a pointer to the underlying HWND (window handle). Make sure to use the [EnsureHandle](/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle) method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.
 
 ```CSharp
 public MainWindow()

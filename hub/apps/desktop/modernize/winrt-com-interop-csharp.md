@@ -3,8 +3,6 @@ description: Enhance your desktop application for Windows 10 users by using proj
 title: Call WinRT COM interop interfaces from .NET 5+ apps
 ms.date: 07/07/2021
 ms.topic: article
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

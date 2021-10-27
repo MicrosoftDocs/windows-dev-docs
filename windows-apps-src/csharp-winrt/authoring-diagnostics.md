@@ -22,8 +22,8 @@ C#/WinRT components cannot implement certain Windows Runtime interfaces, such as
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -51,8 +51,8 @@ The attributes **System.Runtime.InteropServices.InAttribute** and **System.Runti
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -111,8 +111,8 @@ The file system can't distinguish between uppercase and lowercase, so namespaces
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -142,8 +142,8 @@ In general, the best choice is the interface that is closest to the type. For ex
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -166,8 +166,8 @@ In the Windows Runtime, arrays in member signatures must be one-dimensional with
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -193,8 +193,8 @@ In the Windows Runtime, a structure can contain only fields, and only structures
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -228,8 +228,8 @@ In the Windows Runtime, return values are considered to be output parameters, an
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -258,8 +258,8 @@ Other restrictions in a C#/WinRT authored component include:
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">
@@ -299,8 +299,8 @@ In the Windows Runtime, a class can have only one constructor with a given numbe
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col />
+<col />
 </colgroup>
 <thead>
 <tr class="header">

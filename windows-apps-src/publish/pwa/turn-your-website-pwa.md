@@ -86,7 +86,7 @@ Once PWA Builder has created your PWA, your browser will automatically download 
 
 The **msix** file is your PWA's main app package. This file will install your PWA on the user's machine.
 
-The **appx** file is a classic app package. It is used to install your PWA on older versions of Windows. See [Classic app pagkages](https://github.com/pwa-builder/pwabuilder-windows-chromium-docs/blob/master/classic-package.md) for more information.
+The **appx** file is a classic app package. It is used to install your PWA on older versions of Windows. See [Classic app packages](https://github.com/pwa-builder/pwabuilder-windows-chromium-docs/blob/master/classic-package.md) for more information.
 
 ## Step 5: Submit your app packages to the Microsoft Store
 

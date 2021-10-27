@@ -21,7 +21,10 @@ To get started using FancyZones, you need to enable the utility in PowerToys set
 
 ### Launch zones editor
 
-Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the settings dialog).
+Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the settings dialog).  
+
+> [!NOTE]
+> Previous to PowerToys v0.39, this shortcut was <kbd>Win</kbd>+<kbd>`</kbd> without Shift. This was updated so that it does not conflict with [Windows Terminal Quake mode](/windows/terminal/tips-and-tricks#quake-mode) shortcut.
 
 ![FancyZones Settings UI](../images/pt-fancyzones-settings.png) 
 

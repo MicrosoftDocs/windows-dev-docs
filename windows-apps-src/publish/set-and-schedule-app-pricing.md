@@ -36,7 +36,7 @@ Keep in mind that the price tier you select may include sales or value-added tax
 You can optionally schedule one or more price changes if you want the base price of your app to change at a specific date and time. 
 
 > [!IMPORTANT]
-> Price changes are only shown to customers on Windows 10 devices (including Xbox). If your previously-published app supports earlier OS versions, the price changes will not apply to those customers. For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the first price tier for the customer's market.
+> Price changes are only shown to customers on Windows 10/11 devices (including Xbox). If your previously-published app supports earlier OS versions, the price changes will not apply to those customers. For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the first price tier for the customer's market.
 
 Click **Schedule a price change** to see the price change options. Choose the price tier you’d like to use (or enter a free-form price for single-market base price overrides), then select the date, time, and time zone.
 
@@ -64,7 +64,7 @@ You can override the base price for one market at a time, or for a group of mark
 
 To change the price for one market only, select it and click **Create**. You’ll then see the same **Base price** and **Schedule a price change** options as described above, but the selections you make will be specific to that market. Because you are overriding the base  price for one market only, the price tiers will be shown in that market’s local currency. You can click **view conversion table** to see the corresponding prices in all currencies. 
 
-Overriding the base price for a single market also gives you the option to enter a free-form price of your choosing in the market’s local currency. You can enter any price you like (within a minimum and maximum range), even if it does not correspond to one of the standard price tiers. This price will be used only for customers on Windows 10 (including Xbox) in the selected market. 
+Overriding the base price for a single market also gives you the option to enter a free-form price of your choosing in the market’s local currency. You can enter any price you like (within a minimum and maximum range), even if it does not correspond to one of the standard price tiers. This price will be used only for customers on Windows 10/11 (including Xbox) in the selected market. 
 
 > [!IMPORTANT]
 > If you enter a free-form price, that price will not be adjusted (even if conversion rates change) unless you submit an update with a new price. 

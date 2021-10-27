@@ -18,19 +18,12 @@ While functionality and behavior has not changed and remains consistent across t
 
 ## Examples
 
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Compact Sizing">open the app and see compact sizing in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+### XAML Controls Gallery
+
+If you have the **XAML Controls Gallery** app installed, click here to [open the app and see compact sizing in action](xamlcontrolsgallery:/item/Compact Sizing).
+
+- [Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
+- [Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## Fluent Standard sizing
 
@@ -39,7 +32,7 @@ While functionality and behavior has not changed and remains consistent across t
 **Standard sizing is designed to accommodate both touch and pointer input.**
 
 > [!NOTE]
->For more info on effective pixels and scaling, see [Introduction to Windows app design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>For more info on effective pixels and scaling, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 >
 > For more info on system level scaling, see [Alignment, margin, padding](../layout/alignment-margin-padding.md).
 
@@ -49,7 +42,7 @@ The following image shows some of the control layout changes that were introduce
 
 ![Standard control layout example](images/standarddensity.png)
 
-*Standard control layout example*
+**Standard control layout example*
 
 This next image shows the changes made to control sizes for the Windows 10 October 2018 Update. Specifically, alignment to the 40epx grid.
 
@@ -65,7 +58,7 @@ Compact sizing enables dense, information-rich groups of controls and can help w
 
 **Compact sizing is designed primarily to accommodate pointer input.**
 
-### Examples
+### Examples ofcompact sizing
 
 Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](/uwp/toolkits/winui/) Nuget package.
 

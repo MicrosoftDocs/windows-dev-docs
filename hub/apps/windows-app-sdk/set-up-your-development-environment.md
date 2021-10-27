@@ -2,7 +2,7 @@
 title: Install tools for Windows app development
 description: This article provides instructions for setting up your development computer for Windows app development.
 ms.topic: article
-ms.date: 05/21/2021
+ms.date: 10/05/2021
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: zafaraj
 author: zaryaf
@@ -56,13 +56,13 @@ The [Windows App SDK](index.md) provides a unified set of APIs, project template
 > [!NOTE]
 > If you have already installed any [previous version](downloads.md) of the Windows App SDK extension for Visual Studio, uninstall the previous extension before installing a new version. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-For installation instructions, see the following tabs.
+To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in following tabs. For older versions, see [Downloads](downloads.md).
 
 ### [Stable release](#tab/stable)
 
-To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about the stable channel and the features available in it, see [Stable release channel](stable-channel.md).
+To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about this channel and the features available in it, see [Stable release channel](stable-channel.md).
 
-Choose one of these options to install the latest stable release (0.8.2):
+Choose one of these options to install the latest stable release ([version 0.8.2](stable-channel.md#version-08)):
 
 - In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension.
     > [!NOTE]
@@ -75,34 +75,39 @@ Choose one of these options to install the latest stable release (0.8.2):
 
 ### [Preview release](#tab/preview)
 
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+
 To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](stable-channel.md). This release channel cannot be used by apps in production environments.
 
-Choose one or more of the following extensions for the latest preview release (1.0 Preview 1), based on the version of Visual Studio you have installed and the programming language you want to use.
+Choose one or more of the following extensions for the latest preview release ([version 1.0 Preview 2](preview-channel.md#version-10-preview-2-100-preview2)), based on the version of Visual Studio you have installed and the programming language you want to use. 
 
 - **Visual Studio 2019**:
 
    > [!div class="button"]
-    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2019/cpp)
+    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/cpp)
 
     > [!div class="button"]
-    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2019/csharp)
+    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/csharp)
 
 - **Visual Studio 2022**:
 
     > [!div class="button"]
-    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2022/cpp)
+    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp)
 
     > [!div class="button"]
-    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview1/extension/VS2022/csharp)
+    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp)
+
+The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace or the **Manage Extensions** dialog box in Visual Studio.
 
 > [!NOTE]
-> The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace and the **Manage Extensions** dialog box in Visual Studio.
+> If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019 and want to use the [single-project MSIX project template](single-project-msix.md), you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue does not affect other versions of the Windows App SDK 1.0 Preview 2 extension.
 
 ### [Experimental release](#tab/experimental)
 
-To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about the latest release and the features available in it, see [latest experimental extension](experimental-channel.md). This release channel cannot be used by apps in production environments.
+To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel cannot be used by apps in production environments.
 
-Choose one of these options to install the latest experimental release (1.0 Experimental):
+Choose one of these options to install the latest experimental release ([version 1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1)):
 
 - In Visual Studio, click **Extensions** > **Manage Extensions**, search for **Windows App SDK (Experimental)**, and install the latest extension.
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace.
@@ -112,17 +117,26 @@ Choose one of these options to install the latest experimental release (1.0 Expe
 
 ---
 
-## 5. Enable your device for development
+## 5. Download Windows App SDK installer and MSIX packages
+
+Unpackaged apps can deploy the Windows App SDK package dependencies by using the Windows App SDK .exe installer or by deploying the MSIX packages directly from the app's setup program. For instructions, see the [deployment guide for unpackaged apps](deploy-unpackaged-apps.md). 
+
+> [!div class="button"]
+> [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer)
+
+For older versions, see [Downloads](downloads.md).
+
+## 6. Enable your device for development
 
 Before you can deploy apps to your development computer, you have to enable it for development. For detailed instructions, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-## 6. Register as an app developer
+## 7. Register as an app developer
 
 You can start developing apps now, but you need a developer account to submit your apps to the Microsoft Store. For more information, see [Create a developer account](../get-started/sign-up.md).
 
 ## Other tools and downloads
 
-- To enhance the developer experience for MSIX-packaged desktop applications, you can optionally install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged desktop application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](single-project-msix.md).
+- To enhance the developer experience for MSIX-packaged desktop applications, you can optionally install the single-project MSIX packaging tools extension for Visual Studio. This extension enables you to develop and build your MSIX-packaged desktop application without requiring a separate packaging project. This extension is installed by default with the Windows App SDK 1.0 Preview 2 and later versions, or it can be installed separately for previous versions of the Windows App SDK. For more information, see [Package your app using single-project MSIX](single-project-msix.md).
 - If you want to customize your device and install other features or packages, check out the [developer setup scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts).
 - For more tools and downloads, see [Downloads and tools for Windows development](https://developer.microsoft.com/windows/downloads).
 

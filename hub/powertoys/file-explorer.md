@@ -13,7 +13,7 @@ File Explorer add-ons currently include:
 
 - Preview Pane rendering of SVG icons (.svg)
 - Preview Pane rendering of Markdown files (.md)
-- Preview Pane rendering for PDF files
+- Preview Pane rendering of PDF files (.pdf)
 - Icon thumb preview for SVG icons
 - Icon thumb preview for PDF files
 

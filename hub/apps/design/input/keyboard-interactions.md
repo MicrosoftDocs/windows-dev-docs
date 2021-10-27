@@ -521,17 +521,15 @@ Test your app with all supported input devices to ensure UI elements can be navi
 
 ### Software keyboard
 
-Software keyboard is a keyboard that is displayed on screen that user can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). On touch screen, these keyboards can be touched directly to enter text as well. On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys using gamepad or remote control.
+A software keyboard is displayed on screen and used instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device. On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys on the gamepad or remote control.
+
+#### Touch keyboard
 
 ![Windows 10 touch keyboard](images/keyboard/default.png)
 
 ***Windows 10 Touch Keyboard***
 
-![Xbox one onscreen keyboard](images/keyboard/xbox-onscreen-keyboard.png)
-
-***Xbox One Onscreen Keyboard***
-
-Depending on the device, the software keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:
+Depending on the device, the touch keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:
 
 ![touch keyboard icon in the notification center](images/keyboard/touch-keyboard-notificationcenter.png)
 
@@ -554,7 +552,7 @@ The following is a list of non-edit controls that can receive focus during a tex
 -   List
 -   List item
 
-Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the thumb layout (which might not be available in all languages).
+Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the expanded layout (which might not be available in all languages).
 
 ![the touch keyboard in default layout mode](images/keyboard/default.png)
 
@@ -566,17 +564,20 @@ Here are examples of different modes for the touch keyboard. The first image is 
 
 Successful keyboard interactions enable users to accomplish basic app scenarios using only the keyboard; that is, users can reach all interactive elements and activate default functionality. A number of factors can affect the degree of success, including keyboard navigation, access keys for accessibility, and accelerator (or shortcut) keys for advanced users.
 
-**NOTE**  The touch keyboard does not support toggle and most system commands.
-
 #### On-Screen Keyboard
-Like software keyboard, the On-Screen Keyboard is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The On-Screen Keyboard is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The On-Screen Keyboard emulates most, if not all, the functionality of a hardware keyboard.
 
-The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; Ease of access.
+Like the touch keyboard, the On-Screen Keyboard (OSK) is a visual, software keyboard used instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The OSK is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The OSK emulates most, if not all, the functionality of a hardware keyboard.
 
-**NOTE** The On-Screen Keyboard has priority over the touch keyboard, which won't be shown if the On-Screen Keyboard is present.
+The OSK can be turned on from the Keyboard page in Settings > Ease of access.
+
+**NOTE** The OSK has priority over the touch keyboard, which won't be shown if the OSK is present.
 
 ![the on-screen keyboard](images/keyboard/osk.png)
 
 ***On-Screen Keyboard***
 
-Visit [On-Screen keyboard page](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) for more details about On-Screen Keyboard.
+![Xbox one onscreen keyboard](images/keyboard/xbox-onscreen-keyboard.png)
+
+***Xbox One Onscreen Keyboard***
+
+For more details, see [On-Screen keyboard](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard).

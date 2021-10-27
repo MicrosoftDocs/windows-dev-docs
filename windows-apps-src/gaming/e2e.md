@@ -335,26 +335,7 @@ If you've already decided on all the technologies you'll be using in your game, 
     </tr>
 </table>
 
-These three GDC 2015 videos give a good overview of Windows 10 game development and the Windows 10 gaming experience.
 
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Overview of Windows 10 game development (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">Developing Games for Windows 10</a></td>
-    </tr>
-    <tr>
-        <td>Windows 10 gaming experience (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10">Gaming Consumer Experience on Windows 10</a></td>
-    </tr>
-    <tr>
-        <td>Gaming across the Microsoft ecosystem (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">The Future of Gaming Across the Microsoft Ecosystem</a></td>
-    </tr>
-</table>
 
 ### Game planning
 

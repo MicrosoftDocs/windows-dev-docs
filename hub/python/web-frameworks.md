@@ -5,9 +5,8 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: python, windows 10, microsoft, python on windows, python web with wsl, python web app with windows subsystem for linux, python web development on windows, flask app on windows, django app on windows, python web, flask web dev on windows, django web dev on windows, windows web dev with python, vs code python web dev, remote wsl extension, ubuntu, wsl, venv, pip, microsoft python extension, run python on windows, use python on windows, build with python on windows
 ms.localizationpriority: medium
-ms.date: 07/19/2019
+ms.date: 10/08/2021
 ---
 
 # Get started using Python for web development on Windows
@@ -22,9 +21,9 @@ If you are using Python for something other than web development, we recommend y
 
 ## Install Windows Subsystem for Linux
 
-WSL lets you run a GNU/Linux command line environment integrated directly with Windows and your favorite tools, like Visual Studio Code, Outlook, etc.
+WSL lets you run a GNU/Linux command line environment integrated directly with Windows and your favorite tools, like Visual Studio Code, Outlook, etc. We generally recommend using WSL 2 for Python web development work.
 
-To enable and install WSL (or WSL 2 depending on your needs), follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
+To enable and install WSL 2, see the [WSL install documentation](/windows/wsl/install). These steps will include choosing a Linux distribution (for example, Ubuntu).
 
 Once you have installed WSL and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
@@ -59,7 +58,7 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 
 ## Install Python, pip, and venv
 
-Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments.  
+Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments. *Remember that you may need to update your Linux distribution so that it has the latest version using the command: `sudo apt update && sudo apt upgrade`.*
 
 1. Confirm that Python3 is already installed by opening your Ubuntu terminal and entering: `python3 --version`. This should return your Python version number. If you need to update your version of Python, first update your Ubuntu version by entering: `sudo apt update && sudo apt upgrade`, then update Python using `sudo apt upgrade python3`.
 

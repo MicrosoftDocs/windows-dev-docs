@@ -14,17 +14,17 @@ ms.localizationpriority: medium
 To check which versions of the Windows App SDK runtime are installed on your development computer, open a **PowerShell** window and run this command.
 
 ```Powershell
-# For 1.0 Preview 1
+# For 1.0 Preview 1 and later 
 get-appxpackage *appruntime*
 
 # For 1.0 Experimental
 get-appxpackage *WindowsAppSDK* 
 
-# For 0.8 versions and older 
+# For 0.8 versions and earlier 
 get-appxpackage *reunion*
 ```
 
-You should see output similar to the following, which may include the `x64` and `x86` architecture of the [Framework package](deployment-architecture.md#framework-packages-for-packaged-and-unpackaged-apps), [Dynamic Dependency Lifetime Manager (DDLM) package](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm), [Main package](deployment-architecture.md#main-package), and [Singleton package](deployment-architecture.md#singleton-package), depending on your computer and the Windows App SDK version.  
+You should see output similar to the following, which may include the `x64` and `x86` architecture of the [Framework package](deployment-architecture.md#framework-package), [Dynamic Dependency Lifetime Manager (DDLM) package](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm), [Main package](deployment-architecture.md#main-package), and [Singleton package](deployment-architecture.md#singleton-package), depending on your computer and the Windows App SDK version.  
 
 ```console
 Name              : Microsoft.WindowsAppRuntime.1.0-preview1
@@ -142,9 +142,7 @@ Status            : Ok
 
 ## Related topics
 
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
-- [Runtime architecture and deployment scenarios](deployment-architecture.md)
+- [Runtime architecture](deployment-architecture.md)
+- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
-- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)

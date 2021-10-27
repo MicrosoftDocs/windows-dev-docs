@@ -9,11 +9,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-
-
 # Design toolkits and samples for Windows apps
-
-![Design basics](../images/downloads-2x.png)
 
 Design and UI-related downloads for Fluent Design/Windows apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>.
 
@@ -26,7 +22,9 @@ These toolkits provide controls and layout templates for designing Windows apps.
         ![Figma Toolkit icon](images/figma.png)
     :::column-end:::
     :::column span="2":::
-        **Figma Toolkit**<br><br>[Download](https://aka.ms/figmatoolkit)
+        **Figma Toolkit**<br>
+        WinUI 2.6, June 2021<br>
+        [Download](https://aka.ms/figmatoolkit)
     :::column-end:::
 :::row-end:::
 

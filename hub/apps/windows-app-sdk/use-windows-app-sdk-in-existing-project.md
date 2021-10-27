@@ -22,6 +22,9 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 
 ## Instructions
 
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](set-up-your-development-environment.md?tabs=experimental#4-install-the-windows-app-sdk-extension-for-visual-studio) or being aware of this issue and how it might impact your work. 
+
 1. Open an existing project in Visual Studio.
 
     > [!NOTE]
@@ -55,4 +58,4 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
 - [Set up your development environment](set-up-your-development-environment.md)
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

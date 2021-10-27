@@ -261,5 +261,5 @@ Console.WriteLine(response.Content);
 
 ## Related topics
 
-- [Windows Notification Push Service](https://aka.ms/wns)
+- [Windows Notification Push Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 - [Push notifications sample code](https://github.com/microsoft/WindowsAppSDK/tree/main/test/TestApps/PushNotificationsDemoApp)

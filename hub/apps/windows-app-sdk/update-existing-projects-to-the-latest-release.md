@@ -4,8 +4,6 @@ title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
 ms.date: 8/10/2021
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +15,9 @@ If you created a project with an earlier version of the Windows App SDK (previou
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
 ## Update from 0.8 Stable or Preview to 1.0 Preview or Experimental 
+
+> [!WARNING]
+> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
 
 If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview or Experimental release.
 

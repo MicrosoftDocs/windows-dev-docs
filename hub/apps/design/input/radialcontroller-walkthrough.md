@@ -602,9 +602,6 @@ To see this in action (you'll need a Surface Studio):
 6. Run the app and place the Surface Dial in each of the two control regions, alternating between them.    
 ![On-screen RadialController](images/radialcontroller/wheel-app-step5-onscreen2.png) 
 
-    Here's a video of this sample in action:  
-
-    <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
 ## Summary
 

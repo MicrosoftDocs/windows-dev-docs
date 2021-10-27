@@ -171,7 +171,7 @@ In this example, we add a basic custom tool that passes the input data from both
    ![Screenshot of the Radial Controller Sample with the horizontal slider set to the left.](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *The sample app UI*
 
-    ```Xaml
+    ```XAML
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
@@ -477,203 +477,203 @@ In the following example, we’ve created a basic app with four different sectio
 
 1. First, we declare our UI (four sections, each with a slider and toggle button) in XAML.
 
-   ![Screenshot of the Radial Controller Sample with four horizontal sliders set to the left.](images/windows-wheel/surface-dial-snippet-customtool3.png)  
-   *The sample app UI*
+    ![Screenshot of the Radial Controller Sample with four horizontal sliders set to the left.](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+    *The sample app UI*
 
-   ```xaml 
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-  <Grid.RowDefinitions>
-    <RowDefinition Height="Auto"/>
-    <RowDefinition Height="*"/>
-  </Grid.RowDefinitions>
-  <StackPanel x:Name="HeaderPanel" 
-        Orientation="Horizontal" 
-        Grid.Row="0">
-    <TextBlock x:Name="Header"
-      Text="RadialController customization sample"
-      VerticalAlignment="Center"
-      Style="{ThemeResource HeaderTextBlockStyle}"
-      Margin="10,0,0,0" />
-  </StackPanel>
-  <Grid Grid.Row="1" x:Name="RootGrid">
-    <Grid.RowDefinitions>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
-    <Grid x:Name="Grid0"
-      Grid.Row="0"
-      Grid.Column="0">
-      <StackPanel Orientation="Vertical" 
-        VerticalAlignment="Center" 
-        HorizontalAlignment="Center">
-        <!-- Slider for rotational input -->
-        <Slider x:Name="RotationSlider0"
-          Width="300"
-          HorizontalAlignment="Left"/>
-        <!-- Switch for button input -->
-        <ToggleSwitch x:Name="ButtonToggle0"
-            HorizontalAlignment="Left"/>
+    ```XAML
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <StackPanel x:Name="HeaderPanel" 
+            Orientation="Horizontal" 
+            Grid.Row="0">
+        <TextBlock x:Name="Header"
+          Text="RadialController customization sample"
+          VerticalAlignment="Center"
+          Style="{ThemeResource HeaderTextBlockStyle}"
+          Margin="10,0,0,0" />
       </StackPanel>
+      <Grid Grid.Row="1" x:Name="RootGrid">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Grid0"
+          Grid.Row="0"
+          Grid.Column="0">
+          <StackPanel Orientation="Vertical" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center">
+            <!-- Slider for rotational input -->
+            <Slider x:Name="RotationSlider0"
+              Width="300"
+              HorizontalAlignment="Left"/>
+            <!-- Switch for button input -->
+            <ToggleSwitch x:Name="ButtonToggle0"
+                HorizontalAlignment="Left"/>
+          </StackPanel>
+        </Grid>
+        <Grid x:Name="Grid1"
+          Grid.Row="0"
+          Grid.Column="1">
+          <StackPanel Orientation="Vertical" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center">
+            <!-- Slider for rotational input -->
+            <Slider x:Name="RotationSlider1"
+              Width="300"
+              HorizontalAlignment="Left"/>
+            <!-- Switch for button input -->
+            <ToggleSwitch x:Name="ButtonToggle1"
+                HorizontalAlignment="Left"/>
+          </StackPanel>
+        </Grid>
+        <Grid x:Name="Grid2"
+          Grid.Row="1"
+          Grid.Column="0">
+          <StackPanel Orientation="Vertical" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center">
+            <!-- Slider for rotational input -->
+            <Slider x:Name="RotationSlider2"
+              Width="300"
+              HorizontalAlignment="Left"/>
+            <!-- Switch for button input -->
+            <ToggleSwitch x:Name="ButtonToggle2"
+                HorizontalAlignment="Left"/>
+          </StackPanel>
+        </Grid>
+        <Grid x:Name="Grid3"
+          Grid.Row="1"
+          Grid.Column="1">
+          <StackPanel Orientation="Vertical" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center">
+            <!-- Slider for rotational input -->
+            <Slider x:Name="RotationSlider3"
+              Width="300"
+              HorizontalAlignment="Left"/>
+            <!-- Switch for button input -->
+            <ToggleSwitch x:Name="ButtonToggle3"
+                HorizontalAlignment="Left"/>
+          </StackPanel>
+        </Grid>
+      </Grid>
     </Grid>
-    <Grid x:Name="Grid1"
-      Grid.Row="0"
-      Grid.Column="1">
-      <StackPanel Orientation="Vertical" 
-        VerticalAlignment="Center" 
-        HorizontalAlignment="Center">
-        <!-- Slider for rotational input -->
-        <Slider x:Name="RotationSlider1"
-          Width="300"
-          HorizontalAlignment="Left"/>
-        <!-- Switch for button input -->
-        <ToggleSwitch x:Name="ButtonToggle1"
-            HorizontalAlignment="Left"/>
-      </StackPanel>
-    </Grid>
-    <Grid x:Name="Grid2"
-      Grid.Row="1"
-      Grid.Column="0">
-      <StackPanel Orientation="Vertical" 
-        VerticalAlignment="Center" 
-        HorizontalAlignment="Center">
-        <!-- Slider for rotational input -->
-        <Slider x:Name="RotationSlider2"
-          Width="300"
-          HorizontalAlignment="Left"/>
-        <!-- Switch for button input -->
-        <ToggleSwitch x:Name="ButtonToggle2"
-            HorizontalAlignment="Left"/>
-      </StackPanel>
-    </Grid>
-    <Grid x:Name="Grid3"
-      Grid.Row="1"
-      Grid.Column="1">
-      <StackPanel Orientation="Vertical" 
-        VerticalAlignment="Center" 
-        HorizontalAlignment="Center">
-        <!-- Slider for rotational input -->
-        <Slider x:Name="RotationSlider3"
-          Width="300"
-          HorizontalAlignment="Left"/>
-        <!-- Switch for button input -->
-        <ToggleSwitch x:Name="ButtonToggle3"
-            HorizontalAlignment="Left"/>
-      </StackPanel>
-    </Grid>
-  </Grid>
-</Grid>
-   ```
+    ```
 
 2. Here's the code-behind with handlers defined for Surface Dial screen position.
 
-```csharp
-Slider ActiveSlider;
-ToggleSwitch ActiveSwitch;
-Grid ActiveGrid;
+    ```csharp
+    Slider ActiveSlider;
+    ToggleSwitch ActiveSwitch;
+    Grid ActiveGrid;
 
-public MainPage()
-{
-  ...
-
-  myController.ScreenContactStarted += 
-    MyController_ScreenContactStarted;
-  myController.ScreenContactContinued += 
-    MyController_ScreenContactContinued;
-  myController.ScreenContactEnded += 
-    MyController_ScreenContactEnded;
-  myController.ControlLost += MyController_ControlLost;
-
-  //Set initial grid for Surface Dial input.
-  ActiveGrid = Grid0;
-  ActiveSlider = RotationSlider0;
-  ActiveSwitch = ButtonToggle0;
-}
-
-private void MyController_ScreenContactStarted(RadialController sender, 
-  RadialControllerScreenContactStartedEventArgs args)
-{
-  //find grid at contact location, update visuals, selection
-  ActivateGridAtLocation(args.Contact.Position);
-}
-
-private void MyController_ScreenContactContinued(RadialController sender, 
-  RadialControllerScreenContactContinuedEventArgs args)
-{
-  //if a new grid is under contact location, update visuals, selection
-  if (!VisualTreeHelper.FindElementsInHostCoordinates(
-    args.Contact.Position, RootGrid).Contains(ActiveGrid))
-  {
-    ActiveGrid.Background = new 
-      SolidColorBrush(Windows.UI.Colors.White);
-    ActivateGridAtLocation(args.Contact.Position);
-  }
-}
-
-private void MyController_ScreenContactEnded(RadialController sender, object args)
-{
-  //return grid color to normal when contact leaves screen
-  ActiveGrid.Background = new 
-  SolidColorBrush(Windows.UI.Colors.White);
-}
-
-private void MyController_ControlLost(RadialController sender, object args)
-{
-  //return grid color to normal when focus lost
-  ActiveGrid.Background = new 
-    SolidColorBrush(Windows.UI.Colors.White);
-}
-
-private void ActivateGridAtLocation(Point Location)
-{
-  var elementsAtContactLocation = 
-    VisualTreeHelper.FindElementsInHostCoordinates(Location, 
-      RootGrid);
-
-  foreach (UIElement element in elementsAtContactLocation)
-  {
-    if (element as Grid == Grid0)
+    public MainPage()
     {
+      ...
+
+      myController.ScreenContactStarted += 
+        MyController_ScreenContactStarted;
+      myController.ScreenContactContinued += 
+        MyController_ScreenContactContinued;
+      myController.ScreenContactEnded += 
+        MyController_ScreenContactEnded;
+      myController.ControlLost += MyController_ControlLost;
+
+      //Set initial grid for Surface Dial input.
+      ActiveGrid = Grid0;
       ActiveSlider = RotationSlider0;
       ActiveSwitch = ButtonToggle0;
-      ActiveGrid = Grid0;
-      ActiveGrid.Background = new SolidColorBrush( 
-        Windows.UI.Colors.LightGoldenrodYellow);
-      return;
     }
-    else if (element as Grid == Grid1)
+
+    private void MyController_ScreenContactStarted(RadialController sender, 
+      RadialControllerScreenContactStartedEventArgs args)
     {
-      ActiveSlider = RotationSlider1;
-      ActiveSwitch = ButtonToggle1;
-      ActiveGrid = Grid1;
-      ActiveGrid.Background = new SolidColorBrush( 
-        Windows.UI.Colors.LightGoldenrodYellow);
-      return;
+      //find grid at contact location, update visuals, selection
+      ActivateGridAtLocation(args.Contact.Position);
     }
-    else if (element as Grid == Grid2)
+
+    private void MyController_ScreenContactContinued(RadialController sender, 
+      RadialControllerScreenContactContinuedEventArgs args)
     {
-      ActiveSlider = RotationSlider2;
-      ActiveSwitch = ButtonToggle2;
-      ActiveGrid = Grid2;
-      ActiveGrid.Background = new SolidColorBrush( 
-        Windows.UI.Colors.LightGoldenrodYellow);
-      return;
+      //if a new grid is under contact location, update visuals, selection
+      if (!VisualTreeHelper.FindElementsInHostCoordinates(
+        args.Contact.Position, RootGrid).Contains(ActiveGrid))
+      {
+        ActiveGrid.Background = new 
+          SolidColorBrush(Windows.UI.Colors.White);
+        ActivateGridAtLocation(args.Contact.Position);
+      }
     }
-    else if (element as Grid == Grid3)
+
+    private void MyController_ScreenContactEnded(RadialController sender, object args)
     {
-      ActiveSlider = RotationSlider3;
-      ActiveSwitch = ButtonToggle3;
-      ActiveGrid = Grid3;
-      ActiveGrid.Background = new SolidColorBrush( 
-        Windows.UI.Colors.LightGoldenrodYellow);
-      return;
+      //return grid color to normal when contact leaves screen
+      ActiveGrid.Background = new 
+      SolidColorBrush(Windows.UI.Colors.White);
     }
-  }
-}
-```
+
+    private void MyController_ControlLost(RadialController sender, object args)
+    {
+      //return grid color to normal when focus lost
+      ActiveGrid.Background = new 
+        SolidColorBrush(Windows.UI.Colors.White);
+    }
+
+    private void ActivateGridAtLocation(Point Location)
+    {
+      var elementsAtContactLocation = 
+        VisualTreeHelper.FindElementsInHostCoordinates(Location, 
+          RootGrid);
+
+      foreach (UIElement element in elementsAtContactLocation)
+      {
+        if (element as Grid == Grid0)
+        {
+          ActiveSlider = RotationSlider0;
+          ActiveSwitch = ButtonToggle0;
+          ActiveGrid = Grid0;
+          ActiveGrid.Background = new SolidColorBrush( 
+            Windows.UI.Colors.LightGoldenrodYellow);
+          return;
+        }
+        else if (element as Grid == Grid1)
+        {
+          ActiveSlider = RotationSlider1;
+          ActiveSwitch = ButtonToggle1;
+          ActiveGrid = Grid1;
+          ActiveGrid.Background = new SolidColorBrush( 
+            Windows.UI.Colors.LightGoldenrodYellow);
+          return;
+        }
+        else if (element as Grid == Grid2)
+        {
+          ActiveSlider = RotationSlider2;
+          ActiveSwitch = ButtonToggle2;
+          ActiveGrid = Grid2;
+          ActiveGrid.Background = new SolidColorBrush( 
+            Windows.UI.Colors.LightGoldenrodYellow);
+          return;
+        }
+        else if (element as Grid == Grid3)
+        {
+          ActiveSlider = RotationSlider3;
+          ActiveSwitch = ButtonToggle3;
+          ActiveGrid = Grid3;
+          ActiveGrid.Background = new SolidColorBrush( 
+            Windows.UI.Colors.LightGoldenrodYellow);
+          return;
+        }
+      }
+    }
+    ```
 
 When we run the app, we use the Surface Dial to interact with it. First, we place the device on the Surface Studio screen, which the app detects and associates with the lower right section (see image). We then press and hold the Surface Dial to open the menu and select our custom tool. Once the custom tool is activated, the slider control can be adjusted by rotating the Surface Dial and the switch can be toggled by clicking the Surface Dial.
 

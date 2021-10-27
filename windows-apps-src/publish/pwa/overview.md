@@ -14,6 +14,6 @@ Follow these steps to submit your PWA to the Microsoft Store
 
 | Topic | Description |
 |-------|-------------|
-| [Create your PWA by reserving a name](create-your-app-by-reserving-a-name.md) | Description |
-| [Turn your website into a high quality PWA](turn-your-website-pwa.md) | Description |
-| [Publish your PWA to the Microsoft Store](../app-submissions.md) | Description |
+| [Create your PWA by reserving a name](create-your-app-by-reserving-a-name.md) | Reserving your app's name is the first step toward distributing it via the Microsoft Store |
+| [Turn your website into a high quality PWA](turn-your-website-pwa.md)         | Turning your website into a fully functional high quality PWA (Progressive Web Application) can be done in a lunch break! |
+| [Publish your PWA to the Microsoft Store](../app-submissions.md)              | Create a submission that contains all the information necessary to publish your PWA in the Microsoft Store. |

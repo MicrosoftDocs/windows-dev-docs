@@ -42,8 +42,8 @@ The following table describes the **status labels** you might encounter.
 |--------------|-------------|
 | **Azure-Pipeline-Passed** | The manifest has completed the test pass. It is waiting for approval. If no issues are encountered during the test pass it will automatically be approved. If a test fails, it may be flagged for manual review. |
 | **Blocking-Issue** | This label indicates that the pull request cannot be approved because there is a blocking issue. You can often tell what the blocking issue is by the included error label. |
-| **Needs: Attention** | This label indicates that the pull request needs to be investigated by the Windows Package Manager development team. This is either due to a test failure that needs manual review, or a comment added to the pull request by the community. |
-| **Needs: author feedback** | Indicates there is a failure with the submission. We will reassign the pull request back to you. If you do not address the issue within 10 days, the bot will close the pull request. **Needs: author feedback** labels are typically added when there was a failure with the pull request that should be updated, or if the person reviewing the pull request has a question. |
+| **Needs-Attention** | This label indicates that the pull request needs to be investigated by the Windows Package Manager development team. This is either due to a test failure that needs manual review, or a comment added to the pull request by the community. |
+| **Needs-Author feedback** | Indicates there is a failure with the submission. We will reassign the pull request back to you. If you do not address the issue within 10 days, the bot will close the pull request. **Needs-Author-Feedback** labels are typically added when there was a failure with the pull request that should be updated, or if the person reviewing the pull request has a question. |
 | **Validation-Completed** | Indicates that the test pass has been completed successfully and your pull request will be merged.|
 
 ### Error labels
@@ -96,8 +96,7 @@ The following table lists **content policy labels**. If one of these labels is a
 
 ### Internal labels
 
-The following table lists internal error labels. When internal errors are encountered, your pull request will be assigned to the Windows Package
-Manager engineers to investigate.
+The following table lists internal error labels. When internal errors are encountered, your pull request will be assigned to the Windows Package Manager engineers to investigate.
 
 | **Label** | **Details** |
 |--------------|-------------|

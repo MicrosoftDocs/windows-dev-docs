@@ -12,9 +12,9 @@
     },
     {
       "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
-      "redirect_url": "/windows/uwp/get-started/get-app-samples",
-      "redirect_document_id": true
-    },
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },  
     {
       "source_path": "windows-apps-src/home.md",
       "redirect_url": "/windows/uwp/",
@@ -222,7 +222,12 @@
     },
     {
       "source_path": "windows-apps-src/maps-and-location/controls-map.md",
-      "redirect_url": "/windows/uwp/maps-and-location/display-maps#map-control",
+      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/maps-and-location/display-maps#map-control",
+      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
       "redirect_document_id": false
     },
     {
@@ -623,6 +628,11 @@
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-1709-api-diff.md",
       "redirect_url": "/windows/uwp/whats-new/windows-10-build-16299-api-diff",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/whats-new/windows-11-build-22000-apis.md",
+      "redirect_url": "/windows/apps/whats-new/windows-11-build-22000",
       "redirect_document_id": false
     },
     {
@@ -5082,8 +5092,13 @@
     },
     {
       "source_path": "hub/apps/features-and-technologies.md",
-      "redirect_url": "/windows/apps/develop/features-and-technologies",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/features-and-technologies.md",
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/speech.md",
@@ -5193,6 +5208,11 @@
     {
       "source_path": "hub/apps/project-reunion/remove-project-reunion-versions.md",
       "redirect_url": "/windows/apps/windows-app-sdk/remove-windows-app-sdk-versions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/build-apps-for-windows.md",
+      "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false
     },
     {
@@ -6683,6 +6703,26 @@
     {
       "source_path": "hub/apps/design/windows-template-studio/index.md",
       "redirect_url": "/windows/apps/design/downloads/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/package-and-deploy/deploy-apps-that-use-the-windows-app-sdk.md",
+      "redirect_url": "/windows/apps/package-and-deploy/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/page-layout.md",
+      "redirect_url": "/windows/apps/design/basics/app-silhouette",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-app-samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": " hub/apps/windows-app-sdk/samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
     },
     {

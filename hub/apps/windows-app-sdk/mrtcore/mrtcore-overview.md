@@ -28,7 +28,7 @@ To learn more about the availability of MRT Core in the Windows App SDK, see [re
 
 Every app package should contain a binary index of the resources in the app. This index is created at build time and it is contained in one or more PRI files. Each PRI file contains a named collection of resources, referred to as a resource map.
 
-A PRI file contains actual string resources. Embedded binary and file path resources are indexed directly from the project files. A package typically contains a single PRI file per language, named **resources.pri**. The **resources.pri** file at the root of each package is automatically loaded when the [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager) object is instantiated.
+A PRI file contains actual string resources. Embedded binary and file path resources are indexed directly from the project files. A package typically contains a single PRI file per language, named **resources.pri**. The **resources.pri** file at the root of each package is automatically loaded when the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager) object is instantiated.
 
 PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.
 

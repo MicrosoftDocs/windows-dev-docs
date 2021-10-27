@@ -1253,7 +1253,7 @@ fire_and_forget CopyFiles::CopyButton_Click(IInspectable const&, RoutedEventArgs
 
 Let's look at the other aspects of the ported code that are noteworthy.
 
-In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) object, and two lines later we access that object's [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) property. The return type of that property implements an **IVector** of strings. And on that **IVector**, we call the [IVector<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall) method. The interesting aspect is the value that we're passing to that method, where an array is expected. Here's the line of code.
+In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) object, and two lines later we access that object's [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) property. The return type of that property implements an **IVector** of strings. And on that **IVector**, we call the [IVector\<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall) method. The interesting aspect is the value that we're passing to that method, where an array is expected. Here's the line of code.
 
 ```cppwinrt
 filePicker.FileTypeFilter().ReplaceAll({ L"*" });
@@ -1273,7 +1273,7 @@ Next, consider this line of C# code.
 dataPackage.SetStorageItems(storageItems);
 ```
 
-C# is able to implicitly convert the **IReadOnlyList<StorageFile>** represented by *storageItems* into the **IEnumerable<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView<StorageFile>** to **IIterable<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
+C# is able to implicitly convert the **IReadOnlyList\<StorageFile>** represented by *storageItems* into the **IEnumerable\<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView\<StorageFile>** to **IIterable\<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
 
 ```cppwinrt
 dataPackage.SetStorageItems(storageItems.as<IVectorView<IStorageItem>>());

@@ -29,6 +29,9 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the installed package you are searching for.
+
 ## Options
 
 The options allow you to customize the list experience to meet your needs.
@@ -44,6 +47,8 @@ The options allow you to customize the list experience to meet your needs.
 | **-n, --count** | Limits the number of apps displayed in one query.   |
 | **-l, --location** |    Location to list to (if supported). |
 | **-e, --exact**   |   Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 
 ### Example queries
 

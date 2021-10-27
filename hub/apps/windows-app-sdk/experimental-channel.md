@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Experimental release channel for the Windows App SDK
+# Experimental channel release notes for the Windows App SDK
 
 > [!IMPORTANT]
 > The experimental channel is **not supported** for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.
@@ -45,7 +45,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 For more information or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Push notifications (experimental feature)
 
@@ -164,4 +164,4 @@ The [Windows App SDK samples](https://github.com/microsoft/Project-Reunion-Sampl
 - [Set up your development environment](set-up-your-development-environment.md)
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

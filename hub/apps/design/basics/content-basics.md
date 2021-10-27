@@ -12,103 +12,146 @@ ms.localizationpriority: medium
 ---
 # Content design basics for Windows apps
 
-The main purpose of any app is to provide access to content. Since apps exist for many different purposes, content comes in many forms: in a photo-editing app, the photo is the content; in a travel app, maps and information about travel destinations is the content; and so on. 
+This article provides some practical tips and examples to help you design the content of your app: Windows spacing rationale, using the type ramp to demonstrate hierarchy, lists and grids, and how to group controls.
 
-This article provides an overview of how you can present content in your app. We describe common page patterns and UI elements that you can use to display your content, whatever form it may be in.
+## Spacing and gutters
 
-## Common page patterns
+The use of consistently sized spacing and gutters semantically groups an experience into separate components. These values map to our rounded corner logic and together help create a cohesive and usable layout.
 
-Many apps use some, or all, of these common page patterns to display different types of content. Likewise, feel free to mix and match these patterns to optimize for your app's content.
+:::row:::
+    :::column:::
+        :::image type="content" source="images/geometry_spacing_buttons_626.png" alt-text="Two buttons separated by 8 pixels.":::
+    :::column-end:::
+    :::column span="1":::
+        **8epx** between buttons
+    :::column-end:::
+:::row-end:::
 
-### Landing
+:::row:::
+    :::column span="1":::
+        :::image type="content" source="images/geometry_spacing_flyout.svg" alt-text="A button and a flyout separated by 8 pixels.":::
+    :::column-end:::
+    :::column span="1":::
+        **8epx** between buttons and flyouts
+    :::column-end:::
+:::row-end:::
 
-![landing page](images/content-basics/hero-screen.png)
+:::row:::
+    :::column:::
+        :::image type="content" source="images/geometry_spacing_header.svg" alt-text="A control and a header separated by 8 pixels.":::
+    :::column-end:::
+    :::column span="1":::
+        **8epx** between control and header
+    :::column-end:::
+:::row-end:::
 
-Landing pages, also known as hero screens, often appear at the top level of an app experience. The large surface area serves as a stage for apps to highlight content that users may want to browse and consume.
+:::row:::
+    :::column:::
+        :::image type="content" source="images/geometry_spacing_label.svg" alt-text="A Control and a label separated by 12 pixels":::
+    :::column-end:::
+    :::column span="1":::
+        **12epx** between control and label
+    :::column-end:::
+:::row-end:::
 
-### Collections
+:::row:::
+    :::column:::
+        :::image type="content" source="images/geometry_spacing_cards.svg" alt-text="Two content areas separated by 12 pixels.":::
+    :::column-end:::
+    :::column span="1":::
+        **12epx** between content areas
+    :::column-end:::
+:::row-end:::
 
-![gallery](images/content-basics/gridview.png)
+:::row:::
+    :::column:::
+        :::image type="content" source="images/geometry_spacing_margins.svg" alt-text="A surface containing text with 12 pixel gutters on both sides.":::
+    :::column-end:::
+    :::column span="1":::
+        **16epx** between surface and edge text
+    :::column-end:::
+:::row-end:::
 
-Collections allow users to browse groups of content or data. [Grid view](../controls/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls/item-templates-listview.md) is a good option for text-heavy content or data.
+## Text + hierarchy
 
+Our type ramp (link) is designed to provide an array of sizes that can help communicate hierarchy within an app.  
 
-### List/detail
+:::row:::
+    :::column:::
+        :::image type="content" source="images/title-subtitle-body.png" alt-text="An example of text using title, subtitle, and body styles when there is adequate space.":::
+    :::column-end:::
+    :::column:::
+        Using Title, Subtitle and Body with 12epx spacing.
+    :::column-end:::
+:::row-end:::
 
-![list details](images/content-basics/list-detail.png)
+:::row:::
+    :::column:::
+        :::image type="content" source="images/body-strong-confined-space.png" alt-text="An example of using Body Strong instead of Title in a confined space.":::
+    :::column-end:::
+    :::column:::
+        When differentiating a title in a confined UI space, use Body Strong for the title without any additional spacing between text blocks.
+    :::column-end:::
+:::row-end:::
 
-The [list/details](../controls/list-details.md) model consists of a list view and a content view (detail). Both panes are fixed and have vertical scrolling. There is a clear relationship between the list item and the content view: the item in the list view is selected, and the detail view is correspondingly updated. In addition to providing detail view navigation, items in the list view can be added and removed.
+:::row:::
+    :::column:::
+        :::image type="content" source="images/confined-space-captions.png" alt-text="An example of using the Caption style in a confined space.":::
+    :::column-end:::
+    :::column:::
+        Use caption size for very confined spaces where text is needed, such as command buttons.
+    :::column-end:::
+:::row-end:::
 
-### Details
+## Lists and grids
 
-![multiple views](images/multi-view.png)
+There are a variety of list and grid styles that can be created. Below are a a variety of compositions used in Windows.
 
-When users find the content they are looking for, consider creating a dedicated content-viewing page so that users can view the page free of distractions. If possible, [create a full-screen view option](../layout/show-multiple-views.md) that expands the content to fill the entire screen and hides all other UI elements. 
+:::row:::
+    :::column:::
+        :::image type="content" source="images/multi-line-list.png" alt-text="An example list with multi-element list items.":::
+    :::column-end:::
+    :::column:::
+        For multi-line lists, use Body and Caption from the type ramp, and 32epx icons.<br><br>Use Body Strong for section headers.
+    :::column-end:::
+:::row-end:::
 
-To adjust for changes in screen size, also consider creating a [responsive design](design-and-ui-intro.md) that hides/shows UI elements as appropriate.
+:::row:::
+    :::column:::
+        :::image type="content" source="images/horizontal-lists.png" alt-text="An example of horizontal lists.":::
+    :::column-end:::
+    :::column:::
+        When using icons or person picture elements for grid items, use Caption text that is center-aligned.
+    :::column-end:::
+:::row-end:::
 
-### Forms
-![form](images/content-basics/forms.png)
+:::row:::
+    :::column:::
+        :::image type="content" source="images/album-list.png" alt-text="An example list containing large list items.":::
+    :::column-end:::
+    :::column:::
+         Use Body style for primary text and left-align to the image if your list contains large graphical elements with text.
+    :::column-end:::
+:::row-end:::
 
-A [form](../controls/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
+## Using controls
 
-## Common content elements
+Some examples of how controls can relate to each other in common configurations.
 
-To create these page patterns, you'll need to use a combination of individual content elements. Here are some UI elements that are commonly used to display content. (For a complete list of UI elements, see [controls and patterns](../controls/index.md).
+:::row:::
+    :::column:::
+        :::image type="content" source="images/expander-with-controls.png" alt-text="An example of an expander with child controls.":::
+    :::column-end:::
+    :::column:::
+        Examples showing how to use an expander control (link) with list styles and common controls. Controls should be right-aligned with 16epx between the control and expander button.
+    :::column-end:::
+:::row-end:::
 
-<div class="mx-responsive-img">
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Category</th>
-<th align="left">Elements</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Audio and video<br/><br/>
-    <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls/media-playback.md">Media playback and transport controls</a></td>
-<td align="left">Plays audio and video.</td>
-</tr>
-<tr class="even">
-<td align="left">Image viewers<br/><br/>
-    <img src="images/content-basics/flipview.jpg" alt="flip view" /></td>
-<td align="left"><a href="../controls/flipview.md">Flip view</a>, <a href="../controls/images-imagebrushes.md">image</a></td>
-<td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
-</tr>
-<tr class="odd">
-<td align="left">Collections <br/><br/>
-    <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls/lists.md">List view and grid view</a></td>
-<td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
-</tr>
-<tr class="even">
-<td align="left">Text and text input <br/><br/>
-    <img src="images/content-basics/textbox.png" alt="text box" /></td>
-<td align="left"><p><a href="../controls/text-block.md">Text block</a>, <a href="../controls/text-box.md">text box</a>, <a href="../controls/rich-edit-box.md">rich edit box</a></p>
-</td>
-<td align="left">Displays text. Some elements enable the user to edit text. For more info, see <a href="../controls/text-controls.md">Text controls</a>.
-<p>For guidelines on how to display text, see <a href="../style/typography.md">Typography</a>.</p>
-</td>
-</tr>
-<tr class="odd">
-<td align="left">Maps<br/><br/>
-    <img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
-<td align="left"><a href="/windows/uwp/maps-and-location/display-maps">MapControl</a></td>
-<td align="left">Displays a symbolic or photorealistic map of the Earth.</td>
-</tr>
-<tr class="even">
-<td align="left">WebView</td>
-<td align="left"><a href="../controls/web-view.md">WebView</a></td>
-<td align="left">Renders HTML content.</td>
-</tr>
-</tbody>
-</table>
-</div>
+:::row:::
+    :::column:::
+        :::image type="content" source="images/expander-content-alignment.png" alt-text="An example how controls inside an expander are aligned.":::
+    :::column-end:::
+    :::column:::
+        This example shows controls alignment when placed inside the expander. Indent the controls 48epx.
+    :::column-end:::
+:::row-end:::

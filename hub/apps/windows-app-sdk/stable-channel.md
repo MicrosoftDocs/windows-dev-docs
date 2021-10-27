@@ -1,5 +1,5 @@
 ---
-title: Stable release channel for the Windows App SDK 
+title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: article
 ms.date: 05/21/2021
@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Stable release channel for the Windows App SDK
+# Stable channel release notes for the Windows App SDK
 
 The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.
 
@@ -29,6 +29,41 @@ The latest available release of the stable channel is the servicing release 0.8.
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
+
+### Version 0.8.5
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+- Fixed issue that was causing WinUI apps using [pointer input](/windows/winui/api/microsoft.ui.xaml.input.pointer) to crash. 
+- Fixed issue causing the title bar buttons (min, max, close) to not have rounded corners on Windows 11. 
+- Fixed issue causing the resizing layout options to not appear when hovering over maximize/restore button on Windows 11. 
+- Fixed issue causing a crashing exception where creating a [PointCollection](/windows/winui/api/microsoft.ui.xaml.media.pointcollection) object. For more information, see [issue 971](https://github.com/microsoft/CsWinRT/issues/971) on Github. 
+
+The limitations and known issues for version 0.8 also apply to version 0.8.5, unless marked otherwise in the [section below](#limitations).
+
+### Version 0.8.4
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+- Fixes for custom title bars so that [ContentDialog](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog) doesn't cover it up, and the title bar buttons are rounded.
+- Fix for a crash in image processing when the display scale is changed.
+- Fixes clipping bugs where UI disappear or clipped incorrectly
+
+The limitations and known issues for version 0.8 also apply to version 0.8.4, unless marked otherwise in the [section below](#limitations).
+
+### Version 0.8.3
+
+This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
+
+#### Bug fixes
+
+Keyboard focus was being lost when a window was minimized and then restored, requiring a mouse click to restore focus.
+
+The limitations and known issues for version 0.8 also apply to version 0.8.3, unless marked otherwise in the [section below](#limitations).
 
 ### Version 0.8.2
 
@@ -99,7 +134,7 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
@@ -190,4 +225,4 @@ This release has the following limitations and known issues:
 - [Set up your development environment](set-up-your-development-environment.md)
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](deploy-apps-that-use-the-windows-app-sdk.md)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

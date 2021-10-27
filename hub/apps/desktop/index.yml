@@ -8,8 +8,8 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
   ms.topic: landing-page
   ms.collection: collection
-  ms.author: mcleans
-  author: mcleanbyron
+  ms.author: stwhi
+  author: stevewhims
   ms.date: 06/17/2021
   keywords: windows win32, desktop development
 
@@ -38,7 +38,7 @@ landingContent:
           - text: Build apps with the Windows App SDK
             url: ../windows-app-sdk/index.md
           - text: Build an app for Windows 11
-            url: ../get-started/build-apps-for-windows.md
+            url: /windows/apps/winui/winui3/create-your-first-winui3-app
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference
@@ -89,7 +89,7 @@ landingContent:
           - text: Package and deploy Windows apps
             url: ../package-and-deploy/index.md
           - text: Deploy apps that use the Windows App SDK
-            url: ../windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
+            url: ../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk
           - text: MSIX documentation
             url: /windows/msix
 
