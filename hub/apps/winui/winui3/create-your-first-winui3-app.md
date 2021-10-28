@@ -150,7 +150,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
     </Resources>
     ```
 
-### [C++ with 1.0 3](#tab/cpp)
+### [C++ with 1.0 Preview 3](#tab/cpp)
 
 To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 2:
 
