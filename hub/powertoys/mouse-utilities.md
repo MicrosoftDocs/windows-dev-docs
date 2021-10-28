@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows]
 
 # Mouse utilities
 
-Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows. Currently, the collection consists of:
+Mouse utilities are a collection of features that enhance mouse and cursor functionality on Windows. Currently, the collection consists of:
 
 - Find My Mouse
 
