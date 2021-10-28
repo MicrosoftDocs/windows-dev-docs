@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 10/19/2021
+ms.date: 10/28/2021
 ---
 
 # Windows Subsystem for Android™️
