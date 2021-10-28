@@ -19,12 +19,9 @@ To use the WinUI 3 project templates described in this article, configure your d
 > [!NOTE]
 > Certain fundamental WinRT types including [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow), [ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView), [CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher), and their dependencies are not available in desktop apps. These types were designed specifically for UI scenarios in UWP apps, and they do not behave properly in desktop apps due to threading models and other platform differences. For more information including recommended alternative APIs, see [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md).
 
-## Instructions for WinUI 3 desktop apps
+## Instructions for WinUI 3 packaged desktop apps
 
-Choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
-
-> [!WARNING]
-> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+To create a WinUI 3 application with MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
 
 ### [C# with 1.0 Preview 2](#tab/csharp)
 
@@ -276,6 +273,135 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
         <Resource Language="es-ES"/>
     </Resources>
     ```
+
+---
+
+## Instructions for WinUI 3 unpackaged desktop apps
+
+> [!NOTE]
+> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the [Windows App SDK Preview Extension for Visual Studio](../../windows-app-sdk/preview-channel.md) to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](../../windows-app-sdk/preview-channel.md).
+
+To create a WinUI 3 application without MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
+
+### [C# with 1.0 Preview 3](#tab/csharp-unpackaged)
+
+To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Preview 3:
+
+1. Install the [Single-project MSIX Packaging Tools](/windows/apps/windows-app-sdk/single-project-msix#install-the-single-project-msix-packaging-tools).
+
+2. Install the [Visual Studio 2019 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/csharp) or [Visual Studio 2022 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp), depending on your version of Visual Studio.
+
+3. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your app.
+
+4. Create a new app using the ["Blank App, Packaged (WinUI 3 in Desktop)"](#instructions-for-winui-3-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
+
+5. Add this property to the project file:
+
+   ```xml
+   <WindowsPackageType>None</WindowsPackageType>
+   ```
+
+    :::image type="content" source="images/winui-csharp-unpackaged-proj.png" alt-text="Visual Studio 2019 - C# Project file with WindowsPackageType set to None highlighted":::
+
+6. Delete package.appxmanifest from project. 
+
+    Otherwise, you will see this error: **Improper project configuration: WindowsPackageType is set to None, but AppxManifest is specified**.
+
+    > [!NOTE]
+    > You may need to close the Visual Studio solution to manually delete this file from the filesystem.
+    :::image type="content" source="images/winui-csharp-unpackaged-appxmanifest.png" alt-text="Visual Studio 2019 - Solution explorer open with appxmanifest file highlighted":::
+
+7. To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.
+   Otherwise, you'll see an error: "The project doesn't know how to run the profile …"
+
+    > [!NOTE]
+    > This isn't necessary if you execute the application (`.exe`) from the command line or Windows File explorer.
+
+    - In **Visual Studio 2022**: Open the launchSettings.json and change the profile with 'MsixPackage' to 'Project'.
+
+        ```json
+        {
+            "profiles": {
+                "Preview3": {
+                    "commandName": "Project"
+                }
+            }
+        }
+        ```
+
+    - In **Visual Studio 2019 and Visual Studio 2022**: You can use the Visual Studio UI to change the launch settings:
+  
+      Open the Debug Properties and change the launch profile to 'Project'
+  
+      :::image type="content" source="images/winui-csharp-vs-debug.png" alt-text="Visual Studio 2019 - Start drop down with C# application debug properties highlighted":::
+
+      :::image type="content" source="images/winui-csharp-vs-debugging-page.png" alt-text="Visual Studio 2019 - C# Application property page with debugger to launch property of Local Windows Debugger highlighted":::
+
+7. If you haven't already done so, **install the Windows App SDK runtime and MSIX packages, which are required to run and deploy your app.**
+    > [!div class="button"]
+    > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
+
+8. Build and run. See the Windows App SDK tutorial for [deploying unpackaged C# apps](../../windows-app-sdk/tutorial-unpackaged-deployment.md) for additional deployment information. This tutorial will guide you through using the [bootstrapper API](../../windows-app-sdk/reference-framework-package-run-time.md) to initialize the [Bootstrapper](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper) component so your app can use Windows App SDK and WinUI 3 APIs. 
+
+### [C++ with 1.0 Preview 3](#tab/cpp-unpackaged)
+
+To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:
+
+1. Install the [Single-project MSIX Packaging Tools](/windows/apps/windows-app-sdk/single-project-msix#install-the-single-project-msix-packaging-tools).
+
+2. Install the [Visual Studio 2019 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/cpp) or [Visual Studio 2022 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp), depending on your version of Visual Studio.
+
+3. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your app.
+
+4. Create a new app using the ["Blank App, Packaged (WinUI 3 in Desktop)"](#instructions-for-winui-3-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
+
+5. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) for the appropriate architecture
+
+    - The latest version of the redistributable is compatible with the latest Visual Studio GA release, as well as all versions of Visual Studio used to build Windows App SDK binaries.
+    - Insider builds of Visual Studio may have installed a later version of VCRedist, and running the public version will then fail with this error, which can be ignored:
+   **Error 0x80070666: Cannot install a product when a newer version is installed.**
+
+    > [!NOTE]
+    > If you do not have the VCRedist installed on a target device, then dynamic links to c:\windows\system32\vcruntime140.dll will fail, which can manifest to end users in many ways.
+
+6. [Create a new app](#instructions-for-winui-3-packaged-desktop-apps) using the "Blank App, Packaged (WinUI 3 in Desktop)" project template. Starting with a packaged app is required to use XAML diagnostics.
+
+7. Add this property to the project file:
+
+   ```xml
+   <WindowsPackageType>None</WindowsPackageType>
+   ```
+
+8. Change these two project properties to false:
+
+   ```xml
+    <AppxPackage>false</AppxPackage>
+    <AppContainerApplication>false</AppContainerApplication>
+   ```
+
+9. Delete package.appxmanifest from the project.
+
+    - Otherwise, you will see this error: **Improper project configuration: WindowsPackageType is set to None, but AppxPackage is set to true.**
+
+    > [!NOTE]
+    > You may need to close the Visual Studio solution to manually delete this file from the file system.
+
+10. To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.
+
+    > [!NOTE]
+    > This isn't necessary if you open the application with the executable (.exe).
+
+    - In **Visual Studio 2019 and Visual Studio 2022**: Open the Debug properties and change the Debugger to launch to 'Local Windows Debugger'
+
+      :::image type="content" source="images/winui-cpp-vs-debug.png" alt-text="Visual Studio 2019 - Start drop down with C++ application debug properties highlighted":::
+
+      :::image type="content" source="images/winui-cpp-vs-debugging-page.png" alt-text="Visual Studio 2019 - C++ application property page with debugger to launch property of Local Windows Debugger highlighted":::
+
+11. If you haven't already done so, **install the Windows App SDK runtime and MSIX packages, which are required to run and deploy your app.**
+    > [!div class="button"]
+    > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
+
+12. Build and run. See the Windows App SDK tutorial for [deploying unpackaged C++ apps](../../windows-app-sdk/tutorial-unpackaged-deployment.md) for additional deployment information. This tutorial will guide you through using the [bootstrapper API](../../windows-app-sdk/reference-framework-package-run-time.md) to initialize the [Bootstrapper](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper) component so your app can use Windows App SDK and WinUI 3 APIs.
 
 ---
 

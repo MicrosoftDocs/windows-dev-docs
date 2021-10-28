@@ -18,7 +18,7 @@ ms.custom: contperf-fy21q1
 
 Universal Windows Platform (UWP) apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 
-## Locations that all apps can access
+### Locations that UWP apps can access
 
 When you create a new app, you can access the following file system locations by default:
 
@@ -90,7 +90,7 @@ In addition, and unlike other locations, you can also access files in your app i
 
 The app's install directory is a read-only location. You can't gain access to the install directory through the file picker.
 
-### Application data locations
+### Access application data locations
 The folders where your app can store data. These folders (local, roaming and temporary) are created when your app is installed.
 
 There are two primary ways to access files and folders from your app's data locations:
@@ -162,7 +162,7 @@ In addition, and unlike other locations, you can also access files in your app d
 
 You can't access the local, roaming, or temporary folders through the file picker.
 
-### Removable devices
+### Access removable devices
 
 Additionally, your app can access some of the files on connected devices by default. This is an option if your app uses the [AutoPlay extension](/previous-versions/windows/apps/hh464906(v=win.10)) to launch automatically when users connect a device, like a camera or USB thumb drive, to their system. The files your app can access are limited to specific file types that are specified via File Type Association declarations in your app manifest.
 
@@ -170,8 +170,6 @@ Of course, you can also gain access to files and folders on a removable device b
 
 > [!NOTE]
 > For more info about accessing an SD card or other removable devices, see [Access the SD card](access-the-sd-card.md).
-
-## Locations that UWP apps can access
 
 ### User's Downloads folder
 
@@ -245,7 +243,7 @@ By default, your app can only access files and folders in the user's Downloads f
 
     [**DownloadsFolder**](/uwp/api/Windows.Storage.DownloadsFolder).[**CreateFolderAsync**](/uwp/api/windows.storage.downloadsfolder.createfolderasync) is overloaded so that you can specify what the system should do if there is already an existing subfolder in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFolder**](/uwp/api/Windows.Storage.StorageFolder) that represents the subfolder that was created. This file is called `newFolder` in the example.
 
-## Accessing additional locations
+### Accessing additional locations
 
 In addition to the default locations, an app can access additional files and folders by [declaring capabilities in the app manifest](../packaging/app-capability-declarations.md) or by [calling a file picker](quickstart-using-file-and-folder-pickers.md) to let the user pick files and folders for the app to access.
 
