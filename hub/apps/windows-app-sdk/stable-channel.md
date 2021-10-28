@@ -71,7 +71,7 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 #### Bug fixes
 
-- Windows App SDK and WinUI 3 are now supported in Visual Studio 2022 Preview 2 and above.
+- Windows App SDK and WinUI 3 are now supported in Visual Studio 2022 Preview 2 and later.
 - For .NET apps, you may receive the following error when passing in an array of enums: `Object contains non-primitive or non-blittable data.`
 - Writing using the HandWriting Panel inside a textbox causes a crash
 - Icons/images always load at their 100% scale value rather than based on the monitor scale value

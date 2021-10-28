@@ -54,7 +54,7 @@ The Windows App SDK has these system requirements:
 
 ### Visual Studio support for WinUI 3 tools
 
-You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. You can also use Visual Studio 2022 17.0 Preview 2 and above to build apps with the Windows App SDK v0.8.2 and above. However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
+You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. You can also use Visual Studio 2022 17.0 Preview 2 or later to build apps with the Windows App SDK v0.8.2 or later. However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
 
 |   | Visual Studio 2019 16.9  |Visual Studio 2019 16.10  |  Visual Studio 2019 16.11 Previews | Visual Studio 2022 17.0 Previews |
 |---|---|---|---|---|
