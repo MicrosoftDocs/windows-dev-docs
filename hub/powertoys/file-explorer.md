@@ -25,7 +25,6 @@ Preview Pane is an existing feature in the Windows File Explorer which shows a l
 
 To enable, first ensure that in the PowerToys Settings all are set to **On**.
 
-<!-- [Jay] image need to be updated to include PDF -->
 ![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
 
 > [!NOTE]
