@@ -97,7 +97,7 @@ The currently available utilities include:
         [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
     :::column-end:::
     :::column span="2":::
-        [Mouse utilities](mouse-utilities.md) enables you to perform bulk renaming, searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
     :::column-end:::
 :::row-end:::
 
