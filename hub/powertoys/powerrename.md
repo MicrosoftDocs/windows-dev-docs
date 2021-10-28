@@ -19,7 +19,7 @@ PowerRename is a bulk renaming tool that enables you to:
 
 ## Demo
 
-In this demo, all instances of the file name "Pampalona" are replaced with "Pamplona". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command enables the ability to undo the last change.
+In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the "Undo Rename" (Ctrl+Z) command enables the ability to undo the change.
 
 ![PowerRename Demo](../images/powerrename-demo.gif)
 
@@ -43,10 +43,6 @@ If checked, the Search value will be interpreted as a [regular expression](https
 
 For more information regarding the **Use Boost library** option in the settings menu for extended regex functionalities, see the [regular expressions section](#regular-expressions).
 
-### Options - Case Sensitive
-
-If checked, the text specified in the Search field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
-
 ### Options - Match All Occurrences
 
 If checked, all matches of text in the Search field will be replaced with the Replace text. Otherwise, only the first instance of the Search for text in the file name will be replaced (left to right).
@@ -61,33 +57,37 @@ The value of the renamed file would result in:
 - Match All Occurrences (unchecked): `supertoys-powerrename.txt`
 - Match All Occurrences (checked): `supertoys-superrename.txt`
 
-### Options - Exclude Files
+### Options - Case Sensitive
 
-Files will not be included in the operation.
+If checked, the text specified in the Search field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
 
-### Options - Exclude Folders
+### Options - Apply to
 
-Folders will not be included in the operation.
+Select whether to apply the operation to only the file name, extension, or both.
 
-### Options - Exclude Subfolder Items
+### Options - Include Files
 
-Items within folders will not be included in the operation. By default, all subfolder items are included.
+Deselecting causes files to not be included in the operation. Only folders will be included.
+
+### Options - Include Folders
+
+Deselecting causes folders to not be included in the operation. Only files will be included.
+
+### Options - Include Subfolders
+
+Deselecting causes files within folders to not be included in the operation. By default, all subfolder items are included.
+
+### Options - Text Formatting
+
+Select between four options to either convert items to be all lowercase, all uppercase, title case (first character of name is capitalized), or capitalize each word.
 
 ### Options - Enumerate Items
 
-Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` → `foo (1).jpg`
-
-### Options - Item Name Only
-
-Only the file name portion (not the file extension) is modified by the operation. For example: `txt.txt` →  `NewName.txt`
-
-### Options - Item Extension Only
-
-Only the file extension portion (not the file name) is modified by the operation. For example: `txt.txt` → `txt.NewExtension`
+Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` -> `foo (1).jpg`
 
 ## Replace using file creation date and time
 
-The creation date and time attributes of a file can be used in the *Replace with* text by entering a variable pattern according to the table below.
+The creation date and time attributes of a file can be used in the *Replace with* text by entering a variable pattern according to the table below. Selecting the tool-tip in the *Replace with* field allows you to view and select from the supported patterns.
 
 Variable pattern |Explanation
 |:---|:---|
@@ -184,6 +184,6 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
 
 - **Renamed**, the second column in the *Preview* window can be toggled.
   - The default preview will show all selected files, with only files matching the *Search for* criteria displaying the updated rename value.
-  - Selecting the *Renamed* header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
+  - Selecting the filter will allow users to toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
 ![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)

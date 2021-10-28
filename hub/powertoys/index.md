@@ -90,6 +90,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Mouse utilities
+
+:::row:::
+    :::column:::
+        [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
+    :::column-end:::
+    :::column span="2":::
+        [Mouse utilities](mouse-utilities.md) enables you to perform bulk renaming, searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
+    :::column-end:::
+:::row-end:::
+
 ### PowerRename
 
 :::row:::
@@ -127,14 +138,14 @@ The currently available utilities include:
 
 Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
 
-### Video Conference Mute (Experimental)
+#### Video Conference Mute
 
 :::row:::
     :::column:::
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 
