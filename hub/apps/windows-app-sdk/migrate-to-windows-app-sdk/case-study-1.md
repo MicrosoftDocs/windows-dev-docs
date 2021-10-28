@@ -20,11 +20,14 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 
 ## Install the Windows App SDK VSIX
 
-Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stable release channel for the Windows App SDK](/windows/apps/windows-app-sdk/stable-channel), and run to install it.
+Download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See from [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
+
+> [!IMPORTANT]
+> You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
 
 ## Create a new project
 
-In Visual Studio, create a new C# project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *PhotoLabWinUI*, uncheck **Place solution and project in the same directory**, and target the most recent release (not preview) of the client operating system.
+In Visual Studio, create a new C# project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *PhotoLabWinUI*, uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 > [!NOTE]
 > We'll be referring to the UWP version of the sample project (the one that you cloned from its [repo](https://github.com/microsoft/windows-appsample-photo-lab/tree/master/)) as the *source* solution/project. We'll be referring to the Windows App SDK version as the *target* solution/project.
@@ -48,7 +51,7 @@ In Visual Studio, create a new C# project from the **Blank App, Packaged (WinUI 
 
 3. Also in **File Explorer**, now locate the corresponding folder in the target project that you created. The path to that folder is **PhotoLabWinUI** > **PhotoLabWinUI** > **Assets**. Paste into that folder the asset files and the subfolder that you just copied, and accept the prompt to replace any files that already exist in the destination.
 
-4. In your target project in Visual Studio, in **Solution Explorer**, with the **Assets** folder expanded, add to the **Samples** folder the contents of the **Samples** subfolder on disk (which you just pasted). You can hover the mouse pointer over the asset files. A thumbnail preview will appear for each, confirming that you've replaced/added the asset files correctly.
+4. In your target project in Visual Studio, in **Solution Explorer**, with the **Assets** folder expanded, you'll see in the **Samples** folder the contents of the **Samples** subfolder (which you just pasted). You can hover the mouse pointer over the asset files. A thumbnail preview will appear for each, confirming that you've replaced/added the asset files correctly.
 
 ## Migrate the ImageFileInfo model
 
@@ -65,6 +68,7 @@ In Visual Studio, create a new C# project from the **Blank App, Packaged (WinUI 
 1. Make the following find/replacements (match case and whole word) in the `ImageFileInfo.cs` file that you just pasted.
 
 * `namespace PhotoLab` => `namespace PhotoLabWinUI`
+* `Windows.UI.Xaml` => `Microsoft.UI.Xaml`
 
 **Windows.UI.Xaml** is the namespace for UWP XAML; **Microsoft.UI.Xaml** is the namespace for WinUI XAML.
 
@@ -168,7 +172,7 @@ Copy `DetailPage.xaml` and `DetailPage.xaml.cs` from the source project to the t
 * `Windows.UI.Colors` => `Microsoft.UI.Colors`
 * `Windows.UI.Xaml` => `Microsoft.UI.Xaml`
 
-3. For the next step, we'll make the change that's explained in [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). So, still in `DetailPage.xaml.cs`, in the **ShowSaveDialog** method, immediately *before* the line `ContentDialogResult result = await saveDialog.ShowAsync();`, add this line of code.
+3. For the next step, we'll make the change that's explained in [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). So, still in `DetailPage.xaml.cs`, in the **ShowSaveDialog** method, immediately *before* the line `ContentDialogResult result = await saveDialog.ShowAsync();`, add this code.
 
 ```cppwinrt
 if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
@@ -177,7 +181,7 @@ if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Fou
 }
 ```
 
-4. Still in `DetailPage.xaml.cs`, in the **OnNavigatedTo** method, delete the following two lines of code.
+4. Still in `DetailPage.xaml.cs`, in the **OnNavigatedTo** method, delete the following two lines of code. Just those two lines; later in this case study, we'll reintroduce the back button functionality that we just removed.
 
 ```csharp
 ...
@@ -218,7 +222,7 @@ Copy `MainPage.xaml` and `MainPage.xaml.cs` from the source project to the targe
 * `namespace PhotoLab` => `namespace PhotoLabWinUI`
 * `Windows.UI.Xaml` => `Microsoft.UI.Xaml`
 
-4. For this step, we'll make the change that's explained in [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). So, still in `MainPage.xaml.cs`, in the **GetItemsAsync** method, immediately *before* the line `ContentDialogResult resultNotUsed = await unsupportedFilesDialog.ShowAsync();`, add this line of code.
+4. For this step, we'll make the change that's explained in [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). So, still in `MainPage.xaml.cs`, in the **GetItemsAsync** method, immediately *before* the line `ContentDialogResult resultNotUsed = await unsupportedFilesDialog.ShowAsync();`, add this code.
 
 ```cppwinrt
 if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
@@ -227,13 +231,7 @@ if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Fou
 }
 ```
 
-5. Make the following find/replacements (match case and whole word) in the contents of all of the source code in the files that you just copied and pasted.
-
-* `Windows.UI.Composition` => `Microsoft.UI.Composition`
-* `Windows.UI.Xaml` => `Microsoft.UI.Xaml`
-* `Window.Current` => `App.Window`
-
-6. So, still in `MainPage.xaml.cs`, in the **OnNavigatedTo** method, delete the following line of code.
+5. Still in `MainPage.xaml.cs`, in the **OnNavigatedTo** method, delete the following line of code.
 
 ```csharp
 SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
@@ -242,7 +240,7 @@ SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
 
 Later in this case study, we'll reintroduce the back button functionality that we just removed.
 
-7. Confirm that you can build the target solution (but don't run yet).
+6. Confirm that you can build the target solution (but don't run yet).
 
 ## Navigate to MainPage
 
@@ -250,7 +248,7 @@ The *PhotoLab* sample app uses navigation logic to navigate initially to **MainP
 
 So the changes we'll make next support that navigation.
 
-1. In `MainWindow.xaml`, delete the `<StackPanel>` element, and replace it with a `<Frame>` element. The result looks like this:
+1. In `MainWindow.xaml`, delete the `<StackPanel>` element, and replace it with just a named `<Frame>` element. The result looks like this:
 
 ```xaml
 <Window ...>
@@ -277,7 +275,7 @@ public sealed partial class MainWindow : Window
 
 ## Restoring back button functionality
 
-1. In `DetailPage.xaml`, add the following markup immediately after the existing **StackPanel** element.
+1. In `DetailPage.xaml`, the root element is a **RelativePanel**. Add the following markup inside that **RelativePanel**, immediately after the **StackPanel** element.
 
 ```xaml
 <AppBarButton x:Name="BackButton" Click="BackButton_Click" Margin="0,0,12,0">
@@ -285,7 +283,7 @@ public sealed partial class MainWindow : Window
 </AppBarButton>
 ```
 
-2. In `DetailPage.xaml.cs`, add the following code to the **OnNavigation** method.
+2. In `DetailPage.xaml.cs`, add the following two lines of code to the **OnNavigatedTo** method, in the place indicated.
 
 ```csharp
 if (this.Frame.CanGoBack)
@@ -309,4 +307,4 @@ private void BackButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e
 
 ## Test the migrated app
 
-Confirm that you can build the target solution. Now build and test the app. Select an image, set a zoom level, choose effects, and configure them.
+Now build the project, and run the app to test it. Select an image, set a zoom level, choose effects, and configure them.

@@ -20,7 +20,10 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 
 ## Install the Windows App SDK VSIX
 
-Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stable release channel for the Windows App SDK](/windows/apps/windows-app-sdk/stable-channel), and run to install it.
+Download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See from [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
+
+> [!IMPORTANT]
+> You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
 
 ## Create a new project
 
@@ -354,7 +357,7 @@ The following listing identifies file names, methods, and lines of code that nee
 
 ## Test the migrated app
 
-Confirm that you can build the target solution. Now build and test the app. Select an image, set a zoom level, choose effects, and configure them.
+Now build the project, and run the app to test it. Select an image, set a zoom level, choose effects, and configure them.
 
 ## Appendix: copying the contents of the **Photo** model's files
 
