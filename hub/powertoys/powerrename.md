@@ -19,7 +19,7 @@ PowerRename is a bulk renaming tool that enables you to:
 
 ## Demo
 
-In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the "Undo Rename" (Ctrl+Z) command enables the ability to undo the change.
+In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command enables the ability to undo the last change.
 
 ![PowerRename Demo](../images/powerrename-demo.gif)
 
@@ -61,9 +61,13 @@ The value of the renamed file would result in:
 
 If checked, the text specified in the Search field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
 
-### Options - Apply to
+### Options - Apply to: Filename only
 
-Select whether to apply the operation to only the file name, extension, or both.
+Only the file name portion (not the file extension) is modified by the operation. For example: `txt.txt` → `NewName.txt`
+
+### Options - Apply to: Extension only
+
+Only the file extension portion (not the file name) is modified by the operation. For example: `txt.txt` → `txt.NewExtension`
 
 ### Options - Include Files
 
