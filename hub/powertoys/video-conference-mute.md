@@ -7,10 +7,10 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
 ---
 
-# Video Conference Mute (Preview)
+# Video Conference Mute
 
 > [!IMPORTANT]
-> This is a preview feature and only included in the pre-release version of PowerToys. Running this pre-release requires Windows 10 version 1903 (build 18362) or later.
+> Running Video Conference Mute requires Windows 10 version 1903 (build 18362) or later.
 
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 
@@ -25,7 +25,6 @@ The default shortcuts to use Video Conference Mute are:
 ![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
 
 When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether your Microphone and Camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
-
 
 ## Settings
 
