@@ -26,6 +26,8 @@
       href: basics/index.md
     - name: App Silhouette
       href: basics/app-silhouette.md  
+    - name: App title bar
+      href: basics/app-titlebar.md
     - name: Content basics
       href: basics/content-basics.md
     - name: Commanding Basics
