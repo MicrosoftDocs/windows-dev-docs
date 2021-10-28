@@ -134,11 +134,7 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-## Future PowerToy utilities
-
-Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
-
-#### Video Conference Mute
+### Video Conference Mute
 
 :::row:::
     :::column:::
