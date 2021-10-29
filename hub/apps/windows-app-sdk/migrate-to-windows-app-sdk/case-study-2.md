@@ -20,14 +20,14 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 
 ## Install the Windows App SDK VSIX
 
-Download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See from [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
+If you haven't already, then download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See from [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
 
 ## Create a new project
 
-In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *PhotoEditor*, uncheck **Place solution and project in the same directory**, and target the most recent release (not preview) of the client operating system.
+In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *PhotoEditor*, uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 > [!NOTE]
 > We'll be referring to the UWP version of the sample project (the one that you cloned from its [repo](https://github.com/microsoft/windows-appsample-photo-editor/tree/master/)) as the *source* solution/project. We'll be referring to the Windows App SDK version as the *target* solution/project.
@@ -66,7 +66,7 @@ In Visual Studio, right-click the target project node, and click **Open Folder i
 
 Back in **Solution Explorer**, with the target project node selected, make sure that **Show All Files** is toggled on. Right-click the three files that you just pasted, and click **Include In Project**. Toggle **Show All Files** off.
 
-In the source project, in **Solution Explorer**, `Photo.h` and `.cpp` are nested under `Photo.idl` to indicate that they're generated from (dependent upon) it. If you like that arrangement, then you can do the same thing in the target project by manually editing `\PhotoEditor\PhotoEditor\PhotoEditor\PhotoEditor.vcxproj`. Find the following:
+In the source project, in **Solution Explorer**, `Photo.h` and `.cpp` are nested under `Photo.idl` to indicate that they're generated from (dependent upon) it. If you like that arrangement, then you can do the same thing in the target project by manually editing `\PhotoEditor\PhotoEditor\PhotoEditor\PhotoEditor.vcxproj` (you'll first need to **Save All** in Visual Studio). Find the following:
 
 ```xml
 <ClInclude Include="Photo.h" />
@@ -80,7 +80,7 @@ And replace it with this:
 </ClInclude>
 ```
 
-Repeat that for `Photo.cpp`.
+Repeat that for `Photo.cpp`, and save and close the project file. When you set focus back to Visual Studio, click **Reload**.
 
 ### Migrate Photo source code
 
@@ -108,7 +108,7 @@ Now confirm that you can build the target solution (but don't run yet).
 
 ## Migrate the App class
 
-No changes are necessary to `App.idl` and `App.xaml`. But we do need to edit `App.xaml.h` and `.xaml.cpp` to add some new members to the **App** class. We'll do so in a way that lets us build after each section.
+No changes are necessary to the target project's `App.idl` and `App.xaml`. But we do need to edit `App.xaml.h` and App`.xaml.cpp` to add some new members to the **App** class. We'll do so in a way that lets us build after each section.
 
 ### Making the main window object available
 
@@ -145,7 +145,7 @@ In the code you pasted, change `Windows::UI::Xaml` to `Microsoft::UI::Xaml`.
 
 ### App::CreateRootFrame
 
-The source project contains a helper function named **CreateRootFrame**. Copy the declaration and the definition of that helper function from the source project, and paste it into the target project (in `App.xaml.h` and `App.xaml.cpp`).
+The source project contains a helper function named **App::CreateRootFrame**. Copy the declaration and the definition of that helper function from the source project, and paste it into the target project (in `App.xaml.h` and `App.xaml.cpp`).
 
 In the code you pasted, change `Windows::UI::Xaml` to `Microsoft::UI::Xaml`. Also change the two occurrences of `Window::Current()` to `window` (which is the name of the data member of the **App** class that we saw earlier).
 
@@ -153,7 +153,7 @@ In the code you pasted, change `Windows::UI::Xaml` to `Microsoft::UI::Xaml`. Als
 
 The target project already contains an implementation of the **OnLaunched** event handler. Its parameter is a constant reference to a **Microsoft::UI::Xaml::LaunchActivatedEventArgs**, which is correct for the Windows App SDK (contrast that to the source project, which uses **Windows::ApplicationModel::Activation::LaunchActivatedEventArgs**, which is correct for UWP).
 
-We just need to merge the two definitions (source and target) of **OnLaunched** so that **App::OnLaunched** in `App.xaml.cpp` in the target project looks like the listing below. Note that it uses `window` instead of `Window::Current()` (like the UWP version does).
+We just need to merge the two definitions (source and target) of **OnLaunched** so that **App::OnLaunched** in `App.xaml.cpp` in the target project looks like the listing below. Note that it uses `window` (instead of `Window::Current()`, like the UWP version does).
 
 ```cppwinrt
 void App::OnLaunched(LaunchActivatedEventArgs const&)
@@ -169,6 +169,8 @@ void App::OnLaunched(LaunchActivatedEventArgs const&)
     window.Activate();
 }
 ```
+
+The code above gives **App** a dependency on **MainPage**, so we won't be able to build yet.
 
 ## Migrate the DetailPage view
 
@@ -187,11 +189,11 @@ In your clone of the source project, in **File Explorer**, locate the folder **W
 
 In Visual Studio, right-click the target project node, and click **Open Folder in File Explorer**. This opens the target project folder in **File Explorer**. Paste into that folder the four files that you just copied.
 
-In **File Explorer** change the names of `DetailPage.h` and `DetailPage.cpp` to `DetailPage.xaml.h` and `DetailPage.xaml.cpp`, respectively. This is one of the [Folder and file name differences (C++/WinRT)](overall-migration-strategy.md#folder-and-file-name-differences-cwinrt) to be aware of between UWP and Windows App SDK projects.
+Still in **File Explorer**, change the names of `DetailPage.h` and `DetailPage.cpp` to `DetailPage.xaml.h` and `DetailPage.xaml.cpp`, respectively. This is one of the [Folder and file name differences (C++/WinRT)](overall-migration-strategy.md#folder-and-file-name-differences-cwinrt) to be aware of between UWP and Windows App SDK projects.
 
 Back in **Solution Explorer**, with the target project node selected, make sure that **Show All Files** is toggled on. Right-click the four files that you just pasted (and renamed), and click **Include In Project**. Toggle **Show All Files** off.
 
-In the source project, in **Solution Explorer**, `DetailPage.idl` is nested under `DetailPage.xaml`. If you like that arrangement, then you can do the same thing in the target project by manually editing `\PhotoEditor\PhotoEditor\PhotoEditor\PhotoEditor.vcxproj`. Find the following:
+In the source project, in **Solution Explorer**, `DetailPage.idl` is nested under `DetailPage.xaml`. If you like that arrangement, then you can do the same thing in the target project by manually editing `\PhotoEditor\PhotoEditor\PhotoEditor\PhotoEditor.vcxproj` (you'll first need to **Save All** in Visual Studio). Find the following:
 
 ```xml
 <Midl Include="DetailPage.idl" />
@@ -205,13 +207,13 @@ And replace it with this:
 </Midl>
 ```
 
+Save and close the project file. When you set focus back to Visual Studio, click **Reload**.
+
 ### Migrate DetailPage source code
 
 In `DetailPage.idl`, search for `Windows.UI.Xaml`, and change that to `Microsoft.UI.Xaml`.
 
-In `DetailPage.xaml.cpp`, change `#include "DetailPage.h"` to `#include "DetailPage.xaml.h"`.
-
-Immediately below that, add `#include "DetailPage.g.cpp"`.
+In `DetailPage.xaml.cpp`, change `#include "DetailPage.h"` to `#include "DetailPage.xaml.h"`. Immediately below that, add `#include "DetailPage.g.cpp"`. And (for the call to the static **App::Window** method to compile), add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
 
 Make the following find/replacements (match case and whole word) in the contents of all of the source code in the files that you just copied and pasted.
 
@@ -219,13 +221,14 @@ Make the following find/replacements (match case and whole word) in the contents
 * `Windows::UI::Xaml` => `Microsoft::UI::Xaml`
 * `Window::Current()` => `App::Window()`
 
-For the call to the static **App::Window** method to compile, you'll need to edit `DetailPage.xaml.cpp`, and add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
-
 From `pch.h` in the source project, copy the following includes, and paste them into `pch.h` in the target project.
 
 ```cppwinrt
 #include <winrt/Microsoft.Graphics.Canvas.Effects.h>
 #include <winrt/Microsoft.UI.Composition.h>
+#include <winrt/Microsoft.UI.Xaml.Input.h>
+#include <winrt/Windows.Graphics.Imaging.h>
+#include <winrt/Windows.Storage.Pickers.h>
 ```
 
 Also, at the top of `pch.h`, immediately after `#pragma once`, add this:
@@ -236,7 +239,7 @@ Also, at the top of `pch.h`, immediately after `#pragma once`, add this:
 #define NOMINMAX
 ```
 
-Confirm that you can build the target solution (but don't run yet).
+We can't build yet, but we will be able to after migrating **MainPage** (which is next).
 
 ## Migrate the MainPage view
 
@@ -266,7 +269,7 @@ In `MainPage.idl`, search for `Windows.UI.Xaml`, and change both occurrences to 
 
 In `MainPage.xaml.cpp`, change `#include "MainPage.h"` to `#include "MainPage.xaml.h"`.
 
-Immediately below that, add `#include "MainPage.g.cpp"`.
+Immediately below that, add `#include "MainPage.g.cpp"`. And (for the call to the static **App::Window** method to compile) add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
 
 For the next step, we'll make the change that's explained in [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). So, still in `MainPage.xaml.cpp`, in the **MainPage::GetItemsAsync** method, immediately after the line `ContentDialog unsupportedFilesDialog{};`, add this line of code.
 
@@ -280,12 +283,11 @@ Make the following find/replacements (match case and whole word) in the contents
 * `Windows::UI::Xaml` => `Microsoft::UI::Xaml`
 * `Window::Current()` => `App::Window()`
 
-For the call to the static **App::Window** method to compile, you'll need to edit `MainPage.xaml.cpp`, and add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
-
 From `pch.h` in the source project, copy the following includes, and paste them into `pch.h` in the target project.
 
 ```cppwinrt
 #include <winrt/Microsoft.UI.Xaml.Hosting.h>
+#include <winrt/Microsoft.UI.Xaml.Media.Animation.h>
 #include <winrt/Windows.Storage.Search.h>
 ```
 
@@ -303,9 +305,11 @@ Those are the last of the changes we need to make to migrate the *Photo Editor* 
 
 ## Known issues
 
+### ImageProperties
+
 There is one issue that we need to work around by commenting out a few lines of code from the project. For background, see GitHub issue [StorageItemContentProperties.GetImagePropertiesAsync causes an access violation when the same code works fine in the UWP version](https://github.com/microsoft/WindowsAppSDK/issues/1141).
 
-The following listing identifies file names, methods, and lines of code that need to be commented out (or, in some cases shown below, added).
+The following listing identifies file names, methods, and lines of code that need to be commented out (or, in some cases shown below, added). We recommend that you copy-paste the snippets below to replace what's currently in the target project.
 
 ```cppwinrt
 // MainPage.xaml.cpp:
@@ -344,7 +348,8 @@ The following listing identifies file names, methods, and lines of code that nee
         // return m_imageProperties.Title() == L"" ? m_imageName : m_imageProperties.Title();
     }
 
-// DetailPage.xaml.cpp (and change return type in .idl and .h)
+// DetailPage.xaml.cpp
+// And be sure to change the return type in `.idl` and `.h`.
     IAsyncAction DetailPage::FitToScreen()
     {
         auto properties = co_await Item().ImageFile().Properties().GetImagePropertiesAsync();
@@ -354,6 +359,10 @@ The following listing identifies file names, methods, and lines of code that nee
         MainImageScroller().ChangeView(nullptr, nullptr, ZoomFactor);
     }
 ```
+
+### The Win2D NuGet package, and Preview 3
+
+The *Microsoft.Graphics.Win2D* NuGet package isn't compatible with the Windows App SDK [version 1.0 Preview 3 (1.0.0-preview3)](/windows/apps/windows-app-sdk/preview-channel). If you're using that version, then remove the reference to the NuGet package, and comment out the source code that depends on it (specifically, the use of **Microsoft::Graphics::Canvas::Effects** types in **DetailPage**).
 
 ## Test the migrated app
 
