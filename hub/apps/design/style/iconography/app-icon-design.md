@@ -56,13 +56,9 @@ When adding detail, care should be taken to maintain legibility at small sizes. 
 
 Pick colors carefully and avoid relying on color alone to convey meaning. Use shape and metaphor with color to communicate. To avoid complexity when scaling an icon across a range of sizes, treatments to colors should be minimized. Color gradients, overlays of varying opacity, and tints of color should be kept to a minimum.
 
-Gradients should be subtle for the most part. Try to limit your gradient ramps to only one or two steps in both the horizontal and vertical directions. If your icon needs to use additional steps, ((1))
+Gradients should be subtle for the most part. Try to limit your gradient ramps to only one or two steps in both the horizontal and vertical directions.
 
-> [!ALERT]
-> ((1)) List one or two considerations to watch out for when you're using additional steps!
-> ((2)) "gradients should be subtle" vs. "avoid very light transitions"
-
-The default angle for gradients is 120 degrees. Start and end points can be adjusted accordingly. The important thing is that it’s a smooth transition. Avoid very tight transitions ((2)) that would feel like reflections or dimension.
+The default angle for gradients is 120 degrees. Start and end points can be adjusted accordingly. The important thing is that it’s a smooth transition. Avoid very tight transitions that would feel like reflections or dimension.
 
 ### Monochrome palette
 
