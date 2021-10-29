@@ -23,9 +23,9 @@ To use the WinUI 3 project templates described in this article, configure your d
 
 To create a WinUI 3 application with MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
 
-### [C# with 1.0 Preview 2](#tab/csharp)
+### [C# with 1.0 Preview 3](#tab/csharp)
 
-To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Preview 2:
+To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Preview 3:
 
 1. In Visual Studio, select **File** -> **New** -> **Project**.
 
@@ -150,7 +150,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
     </Resources>
     ```
 
-### [C++ with 1.0 Preview 2](#tab/cpp)
+### [C++ with 1.0 Preview 3](#tab/cpp)
 
 To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 2:
 

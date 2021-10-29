@@ -20,9 +20,9 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | Toast notifications | ✅ Supported |
 | Live Tiles (on Windows 10) | ✅ Supported |
 | Distributing via Store | ✅ Supported |
-| MSAL library | ❇️ Supported in 1.0 Preview 1 |
-| [Visual Studio App Center](https://appcenter.ms/) | ❇️ Supported in 1.0 |
-| [Single-instancing](guides/applifecycle.md#single-instanced-apps) | ❇️ Supported in 1.0 Preview 2 |
+| MSAL library | ❇️ Supported in 1.0 Preview 1 and later |
+| [Visual Studio App Center](https://appcenter.ms/) | ❇️ Supported in 1.0 Preview 1 and later |
+| [Single-instancing](guides/applifecycle.md#single-instanced-apps) | ❇️ Supported in 1.0 Preview 2  and later|
 | CameraCaptureUI | ❌ Not supported in 1.0 |
 | CoreTextServicesManager | ⚠️ Supported only on Windows 11 |
 | InkCanvas | ❌ Not supported in 1.0 |
