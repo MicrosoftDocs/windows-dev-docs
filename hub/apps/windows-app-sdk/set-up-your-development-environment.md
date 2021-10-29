@@ -49,14 +49,14 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
  1. In Visual Studio, select **Tools** -> **NuGet Package Manager** -> **Package Manager Settings** to open the **Options** dialog.
  2. In the left pane of the **Options** dialog, select the **Package Sources** tab, and make sure there is a package source for **nuget.org** that points to `https://api.nuget.org/v3/index.json` as the source URL. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
-## 4. Install the Windows App SDK extension for Visual Studio
+## 4. Install the Windows App SDK extension for Visual Studio (VSIX)
 
 The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
-> If you have already installed any [previous version](downloads.md) of the Windows App SDK extension for Visual Studio, uninstall the previous extension before installing a new version. For more information about how to uninstall an extension, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
+> If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in following tabs. For older versions, see [Downloads](downloads.md).
+To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in the following tabs. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
 ### [Stable release](#tab/stable)
 
@@ -75,25 +75,25 @@ Choose one of these options to install the latest stable release ([version 0.8.2
 
 ### [Preview release](#tab/preview)
 
-To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](stable-channel.md). This release channel cannot be used by apps in production environments.
+To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](preview-channel.md). The preview release channel can't be used by apps in production environments.
 
-Choose one or more of the following extensions for the latest preview release ([version 1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3)), based on the version of Visual Studio you have installed and the programming language you want to use. 
+To download, choose one or more of the following extensions for the latest preview release. The extensions below are tailored for your programming language and version of Visual Studio.
 
 - **Visual Studio 2019**:
 
-   > [!div class="button"]
-    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2019/cpp)
+    > [!div class="button"]
+    > [C# Visual Studio 2019 extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2019/csharp)
 
     > [!div class="button"]
-    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2019/csharp)
+    > [C++ Visual Studio 2019 extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2019/cpp)
 
 - **Visual Studio 2022**:
 
     > [!div class="button"]
-    > [Download C++ extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/cpp)
+    > [C# Visual Studio 2022 extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/csharp)
 
     > [!div class="button"]
-    > [Download C# extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/csharp)
+    > [C++ Visual Studio 2022 extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/cpp)
 
 The extensions from the preview channel are available only from the download locations provided above. These extensions are not available via Visual Studio Marketplace or the **Manage Extensions** dialog box in Visual Studio.
 
@@ -121,7 +121,7 @@ Unpackaged apps can deploy the Windows App SDK package dependencies by using the
 > [!div class="button"]
 > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
 
-For older versions, see [Downloads](downloads.md).
+For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
 ## 6. Enable your device for development
 
