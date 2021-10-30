@@ -20,7 +20,7 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 
 ## Install the Windows App SDK VSIX
 
-If you haven't already, then download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See from [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
+If you haven't already, then download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
@@ -38,7 +38,7 @@ In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged 
 
 * We'll begin by copying over the asset files.
 * Then we'll migrate the **Photo** model.
-* Next we'll migrate the **App** class (since that needs some members adding to it that **DetailPage** and **MainPage** will depend on).
+* Next we'll migrate the **App** class (because that needs some members adding to it that **DetailPage** and **MainPage** will depend on).
 * Then we'll begin migrating the views, starting with **DetailPage** first.
 * And we'll finish up by migrating the **MainPage** view.
 
@@ -108,7 +108,7 @@ Now confirm that you can build the target solution (but don't run yet).
 
 ## Migrate the App class
 
-No changes are necessary to the target project's `App.idl` and `App.xaml`. But we do need to edit `App.xaml.h` and App`.xaml.cpp` to add some new members to the **App** class. We'll do so in a way that lets us build after each section.
+No changes are necessary to the target project's `App.idl` and `App.xaml`. But we do need to edit `App.xaml.h` and App`.xaml.cpp` to add some new members to the **App** class. We'll do so in a way that lets us build after each section (with the exception of the last section).
 
 ### Making the main window object available
 
@@ -170,7 +170,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const&)
 }
 ```
 
-The code above gives **App** a dependency on **MainPage**, so we won't be able to build yet.
+The code above gives **App** a dependency on **MainPage**, so we won't be able to build from this point until we've migrated **DetailPage** and then **MainPage**. When we're able to build again, we'll say so.
 
 ## Migrate the DetailPage view
 
@@ -178,10 +178,9 @@ The code above gives **App** a dependency on **MainPage**, so we won't be able t
 
 ### Reference the Win2D NuGet package
 
-To support code in **DetailPage**, the source project has a dependency on [Win2D](https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm). So we'll also need a dependency on Win2D in our target project. But Win2D itself has a dependency on [DWriteCore](/windows/win32/directwrite/dwritecore-overview). So let's add the NuGet packages in the following order.
+To support code in **DetailPage**, the source project has a dependency on [Win2D](https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm). So we'll also need a dependency on Win2D in our target project.
 
-* In the target solution in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Browse**, and type or paste *Microsoft.WindowsAppSDK.DWrite*. Select the correct item in search results, check the *PhotoEditor* project, and click **Install** to install the package into that project.
-* Repeat those steps for the *Microsoft.Graphics.Win2D* NuGet package.
+* In the target solution in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Browse**. Make sure that **Include prerelease** is unchecked, and type or paste *Microsoft.Graphics.Win2D* into the search box. Select the correct item in search results, check the *PhotoEditor* project, and click **Install** to install the package.
 
 ### Copy DetailPage source code files
 
@@ -213,7 +212,7 @@ Save and close the project file. When you set focus back to Visual Studio, click
 
 In `DetailPage.idl`, search for `Windows.UI.Xaml`, and change that to `Microsoft.UI.Xaml`.
 
-In `DetailPage.xaml.cpp`, change `#include "DetailPage.h"` to `#include "DetailPage.xaml.h"`. Immediately below that, add `#include "DetailPage.g.cpp"`. And (for the call to the static **App::Window** method to compile), add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
+In `DetailPage.xaml.cpp`, change `#include "DetailPage.h"` to `#include "DetailPage.xaml.h"`. Immediately below that, add `#include "DetailPage.g.cpp"`. And (for the call to the static **App::Window** method, which we're about to add, to compile), add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
 
 Make the following find/replacements (match case and whole word) in the contents of all of the source code in the files that you just copied and pasted.
 
@@ -224,7 +223,9 @@ Make the following find/replacements (match case and whole word) in the contents
 From `pch.h` in the source project, copy the following includes, and paste them into `pch.h` in the target project.
 
 ```cppwinrt
+#include <winrt/Windows.Graphics.Effects.h>
 #include <winrt/Microsoft.Graphics.Canvas.Effects.h>
+#include <winrt/Microsoft.Graphics.Canvas.UI.Xaml.h>
 #include <winrt/Microsoft.UI.Composition.h>
 #include <winrt/Microsoft.UI.Xaml.Input.h>
 #include <winrt/Windows.Graphics.Imaging.h>
@@ -247,7 +248,7 @@ The main page of the app represents the view that you see first when you run the
 
 ### Copy MainPage source code files
 
-Similar to what you did with **DetailPage**, now copy over `MainPage.idl`, `MainPage.xaml`, `MainPage.h`, and `MainPage.cpp`. Rename the `.h` and `.cpp` files to `.xaml.h` and `.xaml.cpp`, respectively. Include all four files in the target project.
+Similar to what you did with **DetailPage**, now copy over `MainPage.idl`, `MainPage.xaml`, `MainPage.h`, and `MainPage.cpp`. Rename the `.h` and `.cpp` files to `.xaml.h` and `.xaml.cpp`, respectively. Include all four files in the target project like before.
 
 In the source project, in **Solution Explorer**, `MainPage.idl` is nested under `MainPage.xaml`. If you like that arrangement, then you can do the same thing in the target project by manually editing `\PhotoEditor\PhotoEditor\PhotoEditor\PhotoEditor.vcxproj`. Find the following:
 
@@ -269,7 +270,7 @@ In `MainPage.idl`, search for `Windows.UI.Xaml`, and change both occurrences to 
 
 In `MainPage.xaml.cpp`, change `#include "MainPage.h"` to `#include "MainPage.xaml.h"`.
 
-Immediately below that, add `#include "MainPage.g.cpp"`. And (for the call to the static **App::Window** method to compile) add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
+Immediately below that, add `#include "MainPage.g.cpp"`. And (for the call to the static **App::Window** method, which we're about to add, to compile) add `#include "App.xaml.h"` immediately before `#include "Photo.h"`.
 
 For the next step, we'll make the change that's explained in [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). So, still in `MainPage.xaml.cpp`, in the **MainPage::GetItemsAsync** method, immediately after the line `ContentDialog unsupportedFilesDialog{};`, add this line of code.
 
@@ -301,7 +302,7 @@ In `MainWindow.idl`, delete the placeholder `Int32 MyProperty;`, leaving only th
 
 In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and definitions of the placeholder **MyProperty** and **myButton_Click**, leaving only the constructor.
 
-Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the next section we'll confirm that we've correctly followed the steps.
+Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
 
 ## Known issues
 
@@ -359,10 +360,6 @@ The following listing identifies file names, methods, and lines of code that nee
         MainImageScroller().ChangeView(nullptr, nullptr, ZoomFactor);
     }
 ```
-
-### The Win2D NuGet package, and Preview 3
-
-The *Microsoft.Graphics.Win2D* NuGet package isn't compatible with the Windows App SDK [version 1.0 Preview 3 (1.0.0-preview3)](/windows/apps/windows-app-sdk/preview-channel). If you're using that version, then remove the reference to the NuGet package, and comment out the source code that depends on it (specifically, the use of **Microsoft::Graphics::Canvas::Effects** types in **DetailPage**).
 
 ## Test the migrated app
 
