@@ -22,7 +22,7 @@ We recommend installing PowerToys via GitHub, but alternative install methods ar
 To install PowerToys using a Windows executable file:
 
 1. Visit the [Microsoft PowerToys GitHub releases page](https://github.com/microsoft/PowerToys/releases/).
-2. Browse the list of stable and experimental versions of PowerToys that are available.
+2. Browse the list of PowerToys that are available.
 3. Select the **Assets** drop-down menu to display the files for the release.
 4. Select the `PowerToysSetup-0.##.#-x64.exe` file to download the PowerToys executable installer.
 5. Once downloaded, open the executable file and follow the installation prompts.
@@ -31,15 +31,16 @@ To install PowerToys using a Windows executable file:
 
 - PowerToys (v0.37.0 and newer) requires Windows 10 v1903 (18362) or newer.
 - [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
+- Visual Studio [Runtime Redistributable packages 2015-2019](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-160). The PowerToys installer will handle this requirement.
 - x64 architecture currently supported. ARM and x86 support to become available at a later date.
 
-To ensure that your machine meets these requirements, check your Windows version and build number by selecting <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings** menu.
+To ensure that your machine meets these requirements, check your Windows version and build number by selecting <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
 ## Alternative Install Methods
 
-<!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** *(Recommended)* -->
-- [Windows Package Manager](#install-with-windows-package-manager-preview) *(Preview)*
-- [Community-driven install tools](#community-driven-install-tools) *(Not officially supported)*
+<!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** _(Recommended)_ -->
+- [Windows Package Manager](#install-with-windows-package-manager-preview) _(Preview)_
+- [Community-driven install tools](#community-driven-install-tools) _(Not officially supported)_
 
 ## Install with Windows Package Manager (Preview)
 
