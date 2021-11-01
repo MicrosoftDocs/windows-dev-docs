@@ -8,7 +8,7 @@ ms.topic: article
 ms.technology: windows-nodejs
 keywords: Set up windows, windows 11, windows 10, Dev Environment, Dev tools, development paths, Microsoft Developer, Tips, Performance, WSL, terminal, nodejs, python
 ms.localizationpriority: medium
-ms.date: 07/21/2021
+ms.date: 10/25/2021
 ---
 
 # Set up your development environment on Windows
@@ -96,7 +96,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
         Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
+        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-the-winget-client)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
