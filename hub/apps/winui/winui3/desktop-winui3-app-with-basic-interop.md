@@ -16,7 +16,7 @@ In this article, we step through how to build a basic **C# .NET 5** application 
 
 ## Prerequisites
 
-1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix).
 2. Test your configuration by [creating a new project that uses the Windows App SDK](create-your-first-winui3-app.md). 
 
 ## Basic managed C#/.NET 5 app

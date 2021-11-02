@@ -94,7 +94,7 @@ For more info, or to get started developing with WinUI, see:
 - If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, then use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
     1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt.h>` statement to your code file.
+    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
     3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
 
 ## Important issue impacting 1.0 Preview 1 and Preview 2
@@ -311,7 +311,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 - If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
     1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt.h>` statement to your code file.
+    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
     3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
 
 ## Version 1.0 Preview 1 (1.0.0-preview1)
@@ -322,7 +322,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 This is the first release of the preview channel for version 1.0. It supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
 > [!div class="button"]
-> [Download](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio)
+> [Download](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix)
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 
@@ -393,7 +393,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 - If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
     1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt.h>` statement to your code file.
+    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
     3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
 
 - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI project templates](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
