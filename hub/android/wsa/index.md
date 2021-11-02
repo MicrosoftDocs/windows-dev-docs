@@ -258,7 +258,7 @@ For further troubleshooting steps relating to the Windows Subsystem for Android 
 
 ### Building Universal APKs
 
-Windows Subsystem for Android includes a in-built solution to run ARM applications on x86 based processors. The emulation layer will induce a performance overhead – for optimal performance please submit your application for the x86-64 architecture.
+Windows Subsystem for Android utilizes Intel Bridge Technology to emulate ARM applications on x86 based processors. ARM applications will of course run on ARM based processors natively. The emulation layer will induce a performance overhead – for optimal performance, please submit your application for both the x86-64 and ARM64 architectures.
 
 <!-- ## Block Android apps
 
