@@ -85,7 +85,7 @@ var width = App.Window.Bounds.Width;
 ```cppwinrt
 // MainPage.xaml.cpp in a UWP app
 #include <App.xaml.h>
-auto width{ App.Window()::Bounds().Width };
+auto width{ App::Window().Bounds().Width };
 ```
 
 ## MessageDialog, and Pickers
