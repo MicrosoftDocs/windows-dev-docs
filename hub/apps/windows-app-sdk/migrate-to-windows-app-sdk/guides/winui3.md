@@ -22,6 +22,8 @@ The **Window.Current** property migrates to **App.Window**. And the **CoreDispat
 
 You need to set your window's *handle* (**HWND**) on a **MessageDialog**, and on **Picker**s.
 
+To use **DataTransferManager** APIs, you need to associate them with your window.
+
 For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
 
 You may need to refactor your Visual State Manager and **Page.Resources** XAML markup.
@@ -235,6 +237,71 @@ await showDialog.ShowAsync();
 auto showDialog{ Windows::UI::Popups::MessageDialog(L"Message here") };
 ParentDialogToWindow(showDialog);
 co_await showDialog.ShowAsync();
+```
+
+## DataTransferManager
+
+In your UWP app, if you call the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui#Windows_ApplicationModel_DataTransfer_DataTransferManager_ShowShareUI) method, then this section contains info to help you migrate that code.
+
+Here's some typical UWP code that calls **ShowShareUI**.
+
+```csharp
+// In a UWP app
+Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
+```
+
+```cppwinrt
+// In a UWP app
+Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
+```
+
+To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. Use the code shown below.
+
+```csharp
+// In MainWindow.xaml.cs in a Windows App SDK app
+...
+public sealed partial class MainWindow : Window
+{
+    ...
+    private void myButton_Click(object sender, RoutedEventArgs e)
+    {
+        IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+        IDataTransferManagerInterop interop = Windows.ApplicationModel.DataTransfer.DataTransferManager.As<IDataTransferManagerInterop>();
+        interop.ShowShareUIForWindow(windowHandle);
+    }
+
+    [System.Runtime.InteropServices.ComImport, System.Runtime.InteropServices.Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
+    [System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
+    interface IDataTransferManagerInterop
+    {
+        Windows.ApplicationModel.DataTransfer.DataTransferManager GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow, [System.Runtime.InteropServices.In] ref Guid riid);
+        void ShowShareUIForWindow(IntPtr appWindow);
+    }
+}
+...
+```
+
+```cppwinrt
+// pch.h in a Windows App SDK app
+...
+#include <shobjidl_core.h>
+#include <microsoft.ui.xaml.window.h>
+#include <winrt/Windows.ApplicationModel.DataTransfer.h>
+...
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
+{
+    winrt::Microsoft::UI::Xaml::Window window{ *this };
+    auto windowNative{ window.as<::IWindowNative>() };
+    HWND hWnd{ 0 };
+    windowNative->get_WindowHandle(&hWnd);
+
+    auto interop = winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager, IDataTransferManagerInterop>();
+    interop->ShowShareUIForWindow(hWnd);
+}
+...
 ```
 
 ## ContentDialog, and Popup

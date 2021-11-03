@@ -320,28 +320,6 @@ Confirm that you can build the target solution (but don't run yet).
 
 3. In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and definitions of the placeholder **MyProperty** and **myButton_Click**, leaving only the constructor.
 
-### Switch to the UI thread before updating UI elements
-
-A user interface (UI) element must be updated from the thread that created it (which is the UI thread). But in a coroutine, a `co_await` constitutes a *suspension point*, where control is returned to the caller, and resumption may or may not take place on the same thread.
-
-So we need to search the code for uses of the `co_await` operator. And then look for code that follows it that updates a UI element. If we find cases like that, then we need to switch to the UI thread before updating the UI.
-
-First add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-
-Then add the following include to `pch.h` in the target project.
-
-```cppwinrt
-#include <wil/cppwinrt_helpers.h>
-```
-
-The way you switch to the UI thread is to add the following line of code (before updating the UI).
-
-```cppwinrt
-co_await wil::resume_foreground(this->DispatcherQueue());
-```
-
-For more info, see [Programming with thread affinity in mind](/windows/uwp/cpp-and-winrt-apis/concurrency-2#programming-with-thread-affinity-in-mind).
-
 Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
 
 ## Known issues
@@ -399,6 +377,26 @@ The following listing identifies file names, methods, and lines of code that nee
         auto ZoomFactor = static_cast<float>(std::min(a, b));
         MainImageScroller().ChangeView(nullptr, nullptr, ZoomFactor);
     }
+```
+
+### Switch to the UI thread before updating UI elements
+
+A user interface (UI) element must be updated from the thread that created it (which is the UI thread). In a coroutine, a `co_await` constitutes a *suspension point*, where control is returned to the caller, and resumption *should* take place on the original thread.
+
+But with the Windows App SDK 1.0 Preview 3, that doesn't happen. So we need to search the code for uses of the `co_await` operator. And then look for code that follows it that updates a UI element. If we find cases like that, then we need to switch to the UI thread before updating the UI.
+
+First add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+
+Then add the following include to `pch.h` in the target project.
+
+```cppwinrt
+#include <wil/cppwinrt_helpers.h>
+```
+
+The way you switch to the UI thread is to add the following line of code (before updating the UI).
+
+```cppwinrt
+co_await wil::resume_foreground(this->DispatcherQueue());
 ```
 
 ## Test the migrated app
