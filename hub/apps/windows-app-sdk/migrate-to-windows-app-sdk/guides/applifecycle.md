@@ -46,6 +46,9 @@ In **OnLaunched**, use [**AppInstance.FindOrRegisterForKey**](/windows/windows-a
 
 For more info, see [App instancing in AppLifecycle](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing).
 
+> [!WARNING]
+> For Windows App SDK [Version 1.0 Preview 3 (1.0.0-preview3)](/windows/apps/windows-app-sdk/preview-channel#version-10-preview-3-100-preview3), the code shown below works as expected provided that you target the *x64* architecture. This applies to both C# and C++/WinRT.
+
 ```csharp
 // App.xaml.cs in a Windows App SDK (WinUI 3) app
 ...
