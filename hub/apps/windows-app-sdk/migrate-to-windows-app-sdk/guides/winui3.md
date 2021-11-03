@@ -1,6 +1,6 @@
 ---
-title: Windows UI Library (WinUI) migration
-description: This topic shows how to migrate your user interface (UI) code.
+title: User interface migration (including WinUI 3)
+description: This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 ms.topic: article
 ms.date: 09/16/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, Windows UI Library, WinUI
@@ -12,9 +12,9 @@ dev_langs:
   - cppwinrt
 ---
 
-# Windows UI Library (WinUI) migration
+# User interface migration (including WinUI 3)
 
-This topic shows how to migrate your user interface (UI) code to the [Windows UI Library (WinUI)](/windows/apps/winui/).
+This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 
 ## Summary of API and/or feature differences
 
@@ -265,8 +265,13 @@ public sealed partial class MainWindow : Window
     ...
     private void myButton_Click(object sender, RoutedEventArgs e)
     {
+        // `this` in `GetWindowHandle(this)` must be a reference to
+        // your current window
         IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
         IDataTransferManagerInterop interop = Windows.ApplicationModel.DataTransfer.DataTransferManager.As<IDataTransferManagerInterop>();
+
+        // Show the Share UI
         interop.ShowShareUIForWindow(windowHandle);
     }
 

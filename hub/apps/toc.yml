@@ -80,7 +80,7 @@ items:
             items:
               - name: "Overview of feature area guides"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-              - name: "Windows UI Library (WinUI) migration"
+              - name: "User interface migration (including WinUI 3)"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
               - name: "Windowing functionality migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
