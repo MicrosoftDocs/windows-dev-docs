@@ -146,7 +146,9 @@ void MainPage::NotifyUser(std::wstring strMessage)
 
 ## Migrate winrt::resume_foreground (C++/WinRT)
 
-This section applies if you're using the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function (in a coroutine in your C++/WinRT UWP app) to switch execution to the foreground thread associated with a [**Windows.UI.Core.CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher).
+This section applies if you use the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function in a coroutine in your C++/WinRT UWP app.
+
+In UWP, the use case for [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) is to switch execution to a foreground thread (that foreground thread is often the one that's associated with a [**Windows.UI.Core.CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)). Here's an example of that.
 
 ```
 // MainPage.cpp in a UWP app
@@ -157,12 +159,24 @@ winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventAr
 }
 ```
 
-In your Windows App SDK app, instead of **CoreDispatcher** you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) class, as described in [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
+In your Windows App SDK app:
+
+* Instead of **winrt::resume_foreground**, you'll need to use **wil::resume_foreground** (from the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil)).
+* And instead of **CoreDispatcher**, you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) class, as described in [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
+
+So first add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+
+Then add the following include to `pch.h` in the target project.
+
+```cppwinrt
+#include <wil/cppwinrt_helpers.h>
+```
+
+And then follow the pattern shown below.
 
 ```cppwinrt
 // MainPage.xaml.cpp in a Windows App SDK app
 #include <winrt/Microsoft.UI.Dispatching.h> // includes Microsoft.UI.Dispatching.DispatcherQueue
-#include <microsoft.ui.dispatching.co_await.h> // includes winrt::resume_foreground support for DispatcherQueue
 ...
 winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
