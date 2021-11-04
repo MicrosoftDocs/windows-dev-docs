@@ -71,7 +71,7 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 #### Bug fixes
 
-- Windows App SDK and WinUI 3 are now supported in Visual Studio 2022 Preview 2 and above.
+- Windows App SDK and WinUI 3 are now supported in Visual Studio 2022 Preview 2 and later.
 - For .NET apps, you may receive the following error when passing in an array of enums: `Object contains non-primitive or non-blittable data.`
 - Writing using the HandWriting Panel inside a textbox causes a crash
 - Icons/images always load at their 100% scale value rather than based on the monitor scale value
@@ -134,7 +134,7 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
@@ -167,7 +167,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 #### Known issues 
 
-- WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload in version 0.8 and later requires Visual Studio 2019 16.11 Preview 3 or later.
+- WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload in version 0.8 and later requires Visual Studio 2019 16.11 Preview 3 and later.
 
 - Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
 

@@ -79,7 +79,7 @@ It is common to use the [**list**](.\list.md) command to identify apps in need o
 
 In the example below you will see [**list**](.\list.md) identifies that an update is available for Microsoft.WindowsTerminalPreview, and then the user uses **upgrade** to update the application.
 
-![Animation demonstrating list and upgrade commands](images\upgrade.gif)
+![Animation demonstrating list and upgrade commands](./images/upgrade.gif)
 
 ## **upgrade** --all
 

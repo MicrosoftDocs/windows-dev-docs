@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 10/19/2021
+ms.date: 11/01/2021
 ---
 
 # Windows Subsystem for Android™️
@@ -26,7 +26,9 @@ To test your Android app in the Windows desktop environment, a bit of set up wil
 
 ### Prerequisites
 
-Windows Subsystem for Android is currently only available through **preview** in the [Windows Insiders Program](https://insider.windows.com/). Your device also must meet specific Windows 11 requirements. Check the "Windows Subsystem for Android" section under "Feature-specific requirements" on the page: [Find Windows 11 specs, features, and computer requirements](https://www.microsoft.com/windows/windows-11-specifications).
+Windows Subsystem for Android is currently only available through **preview** via the Beta Channel of the [Windows Insiders Program](https://insider.windows.com/) (Windows 11 Build 22000.xxx series) in the U.S. only.
+
+Your device also must meet specific Windows 11 requirements. Check the "Windows Subsystem for Android" section under "Feature-specific requirements" on the page: [Find Windows 11 specs, features, and computer requirements](https://www.microsoft.com/windows/windows-11-specifications).
 
 ### Install the Amazon Appstore
 
@@ -256,7 +258,7 @@ For further troubleshooting steps relating to the Windows Subsystem for Android 
 
 ### Building Universal APKs
 
-Windows Subsystem for Android includes a in-built solution to run ARM applications on x86 based processors. The emulation layer will induce a performance overhead – for optimal performance please submit your application for the x86-64 architecture.
+Windows Subsystem for Android utilizes Intel Bridge Technology to emulate ARM applications on x86 based processors. ARM applications will of course run on ARM based processors natively. The emulation layer will induce a performance overhead – for optimal performance, please submit your application for both the x86-64 and ARM64 architectures.
 
 <!-- ## Block Android apps
 

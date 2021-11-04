@@ -50,8 +50,6 @@ items:
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
                     - name: "WinUI 3 - Project Reunion 0.5 Preview"
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
-        - name: Build an app for Windows 11
-          href: get-started/build-apps-for-windows.md
         - name: Visual Studio project templates
           items:
             - name: All templates for Windows apps
@@ -82,7 +80,7 @@ items:
             items:
               - name: "Overview of feature area guides"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-              - name: "Windows UI Library (WinUI) migration"
+              - name: "User interface migration (including WinUI 3)"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
               - name: "Windowing functionality migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md

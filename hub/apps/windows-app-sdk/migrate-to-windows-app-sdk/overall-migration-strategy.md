@@ -22,7 +22,7 @@ Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK ap
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.
 
-For those APIs, we'll show your what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](/windows/apps/winui/), or via WinRT COM interfaces that are available in the Windows App SDK.
+For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](/windows/apps/winui/), or via WinRT COM interfaces that are available in the Windows App SDK.
 
 For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 

@@ -24,4 +24,4 @@ The following Windows App SDK samples are currently available for you to explore
 ## Related topics
 
 - [Set up your development environment](set-up-your-development-environment.md)
-- [Build desktop apps with the Windows App SDK](get-started.md)
+- [Build desktop apps with the Windows App SDK](/windows/apps/windows-app-sdk/)

@@ -15,7 +15,7 @@ For background information about framework packages, see [MSIX framework package
 > [!NOTE]
 > In addition to the bootstrapper API, the Windows App SDK also provides an implementation of the *dynamic dependency API*. This API enables your unpackaged apps to take a dependency on *any* framework package (not just the Windows App SDK framework package), and it is used internally by the bootstrapper API. For more information about the dynamic dependency API, see [Reference framework packages at run time](../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md).
 
-## Using the bootrapper API
+## Using the bootstrapper API
 
 The bootstrapper API consists of two C/C++ functions that are declared in the [mddbootstrap.h](/windows/windows-app-sdk/api/win32/mddbootstrap) header file in the Windows App SDK: [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown). These functions are provided by the [bootstrapper](deployment-architecture.md#bootstrapper) library in the Windows App SDK. This library is a small DLL that must be distributed with your app; it is not part of the framework package itself.
 

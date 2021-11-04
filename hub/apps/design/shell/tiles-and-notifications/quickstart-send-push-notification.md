@@ -323,5 +323,5 @@ In this Quickstart, you composed an HTTP POST request to send to WNS. WNS, in tu
 - [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh868221(v=win.10))
 - [Push notification service request and response headers](/previous-versions/windows/apps/hh868245(v=win.10))
 - [Windows Push Notification Services (WNS) overview](/previous-versions/windows/apps/hh913756(v=win.10))
-- [Get started with Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=256501)
-- [Push and periodic notifications sample](https://go.microsoft.com/fwlink/p/?linkid=231476)
+- [Get started with Mobile Services](/azure/)
+- [Push and periodic notifications sample](/samples/browse/)

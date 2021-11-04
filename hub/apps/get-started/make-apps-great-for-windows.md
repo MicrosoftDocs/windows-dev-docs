@@ -63,7 +63,7 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibly can reduce the cost of maintaining your app.
 
-[Accessibility in Windows](../accessibility.md)
+[Accessibility in Windows](/windows/apps/develop/accessibility)
 
 ## 4. Use the latest common controls
 
