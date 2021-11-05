@@ -138,7 +138,7 @@ Here are some reasons to choose React Native for Windows:
 - Large and growing community momentum, with lots of [community modules](https://reactnative.directory).
 
 > [!div class="button"]
-> [Get started with REact Native for Windows](https://aka.ms/ReactNativeGuideWindows)
+> [Get started with React Native for Windows](https://aka.ms/ReactNativeGuideWindows)
 
 For more information about React Native for Windows, see the following links:
 
