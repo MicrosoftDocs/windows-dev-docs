@@ -13,8 +13,8 @@
       ],
       "open_to_public_contributors": false,
       "type_mapping": {
-        "Conceptual": "Content",
         "ZonePivotGroups": "Toc",
+        "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
@@ -31,8 +31,8 @@
       ],
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content",
         "ZonePivotGroups": "Toc",
+        "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
@@ -52,8 +52,8 @@
       ],
       "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content",
         "ZonePivotGroups": "Toc",
+        "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
