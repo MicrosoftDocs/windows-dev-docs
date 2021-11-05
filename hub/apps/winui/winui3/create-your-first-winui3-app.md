@@ -97,6 +97,8 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 
 ::: zone-end
 
+::: zone pivot="winui3-unpackaged"
+
 <!-- To create a WinUI 3 application with MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed. -->
 
 <!-- ### [C# with 1.0 Preview 3](#tab/csharp)
@@ -351,8 +353,6 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
     ```
 
 --- -->
-
-::: zone pivot="winui3-unpackaged"
 
 ## Instructions for WinUI 3 unpackaged desktop apps
 
