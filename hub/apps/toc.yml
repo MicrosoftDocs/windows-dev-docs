@@ -188,6 +188,8 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+      - name: User interface and input
+        href: develop/user-interface.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"
@@ -228,7 +230,7 @@ items:
                     href: winui/winui2/release-notes/winui-2.1.md
                   - name: "WinUI 2.0"
                     href: winui/winui2/release-notes/winui-2.0.md
-      - name: App lifecycle 
+      - name: App lifecycle and system services 
         items: 
           - name: Overview
             href: develop/app-lifecycle-and-system-services.md
@@ -242,10 +244,6 @@ items:
                 href: windows-app-sdk/applifecycle/applifecycle-power.md
       - name: "Manage app windows"
         href: windows-app-sdk/windowing/windowing-overview.md
-      - name: Manage resources with MRT Core
-        href: windows-app-sdk/mrtcore/mrtcore-overview.md
-      - name: Render text with DWriteCore
-        href: windows-app-sdk/dwritecore.md
       - name: "Push notifications"
         items:
           - name: "Overview"
@@ -253,33 +251,33 @@ items:
           - name: "Quickstart"
             href: windows-app-sdk/notifications/push/push-quickstart.md
           - name: "Troubleshooting"
-            href: windows-app-sdk/notifications/push/troubleshooting.md      
-      - name: User interface and input
+            href: windows-app-sdk/notifications/push/troubleshooting.md  
+      - name: Graphics
         items: 
           - name: Overview
-            href: develop/user-interface.md
-          - name: Speech
-            href: develop/speech.md
+            href: develop/graphics.md
+          - name: Render text with DWriteCore
+            href: windows-app-sdk/dwritecore.md
+      - name: Data and files
+        items: 
+          - name: Overview
+            href: develop/data-and-files.md
+          - name: Manage resources with MRT Core
+            href: windows-app-sdk/mrtcore/mrtcore-overview.md
       - name: Communication
         href: develop/communication.md
       - name: Accessibility
         href: develop/accessibility.md
       - name: Audio, video, and camera
         href: develop/audio-video-camera.md
-      - name: Graphics
-        items: 
-          - name: Overview
-            href: develop/graphics.md
-      - name: Data and files
-        items: 
-          - name: Overview
-            href: develop/data-and-files.md
-      - name: Windows AI and machine learning
-        href: /windows/ai/
       - name: Devices and sensors
         href: develop/devices-and-sensors.md
       - name: Security and identity
         href: develop/security-and-identity.md
+      - name: Speech
+        href: develop/speech.md
+      - name: Windows AI and machine learning
+        href: /windows/ai/
   - name: Package and deploy
     items:
       - name: Overview

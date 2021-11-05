@@ -622,4 +622,4 @@ If you're migrating code from an existing UWP app to a new WinUI 3 project that 
 Congratulations, you've created your first WinUI 3 app with the Windows App SDK. You are now ready to start your development journey. 
 
 > [!div class="nextstepaction"]
-> [Create a WinUI 3 app](../../develop/index.md)
+> [Start development journey](../../develop/index.md)
