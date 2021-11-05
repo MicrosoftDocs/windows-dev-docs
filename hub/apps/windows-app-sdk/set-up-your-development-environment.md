@@ -67,11 +67,9 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
  1. In Visual Studio, select **Tools** -> **NuGet Package Manager** -> **Package Manager Settings** to open the **Options** dialog.
  2. In the left pane of the **Options** dialog, select the **Package Sources** tab, and make sure there is a package source for **nuget.org** that points to `https://api.nuget.org/v3/index.json` as the source URL. For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior).
 
-## 4. Install the Windows App SDK extension for Visual Studio (VSIX)
+## 4. Install the Windows App SDK project templates
 
-### [Visual Studio 2022 / 2019](#tab/vs)
-
-The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
+The Windows App SDK includes project and item templates for creating and developing WinUI 3 apps. These project templates are built into Visual Studio 2022 version 17.1 (Preview), and available as Visual Studio extensions (VSIX) for Visual Studio 2022 / 2019. There are three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
