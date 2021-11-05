@@ -46,7 +46,7 @@ While installing Visual Studio, select the following workloads and components...
 
 - In the **Installation details** pane of the installation dialog, make sure the following items are selected in the **Universal Windows Platform development** section:
   - For Visual Studio 2019: **C++ (v142) Universal Windows Platform tools**
-  - For Visual Studio 2022 (Preview): **C++ (v143) Universal Windows Platform tools**
+  - For Visual Studio 2022: **C++ (v143) Universal Windows Platform tools**
 
 #### [Visual Studio 2022 version 17.1 (Preview)](#tab/vs-preview)
 
