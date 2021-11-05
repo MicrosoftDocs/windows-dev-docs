@@ -51,8 +51,10 @@ While installing Visual Studio, select the following workloads and components...
 #### [Visual Studio 2022 version 17.1 (Preview)](#tab/vs-preview)
 
 - On the **Workloads** tab of the installation dialog, select one or both of:
+
   - **.NET Desktop Development** for C# app development
     - Then in the **Installation details** pane of the installation dialog, select **Windows App SDK C# Templates** (at the bottom of the list).
+    
   - **Desktop development with C++** for C++ app development
     - Then in the **Installation details** pane of the installation dialog,  select **Windows App SDK C++ Templates** (at the bottom of the list).
 
