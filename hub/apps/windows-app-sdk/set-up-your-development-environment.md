@@ -76,12 +76,6 @@ The Windows App SDK includes project and item templates for creating and develop
 
 To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in the following tabs. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
-### [Visual Studio 2022 version 17.1 (Preview)](#tab/vs-preview)
-
-Visual Studio 2022 version 17.1 (Preview) includes the Windows App SDK project templates as part of the optional individual components when installing Visual Studio. There is no need to install a separate VSIX in Visual Studio 2022 version 17.1 (Preview).
-
----
-
 ### [Stable release](#tab/stable/vs)
 
 To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about this channel and the features available in it, see [Stable release channel](stable-channel.md).
