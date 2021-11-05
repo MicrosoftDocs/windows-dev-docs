@@ -45,7 +45,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3
 
-We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions for WinUI 3 unpackaged desktop apps](../winui/winui3/create-your-first-winui3-app.md#instructions-for-winui-3-unpackaged-desktop-apps) to configure your WinUI 3 application to support unpackaged deployment.
+We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions for WinUI 3 unpackaged desktop apps](../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI 3 application to support unpackaged deployment.
 
 **Important limitations**
 
@@ -320,9 +320,6 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](#version-10-preview-3-100-preview3) instead. 
 
 This is the first release of the preview channel for version 1.0. It supports all [preview channel features](release-channels.md#features-available-by-release-channel).
-
-> [!div class="button"]
-> [Download](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix)
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 
