@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Install tools for Windows app development
+# Install developer tools
 
 To develop apps for Windows 11 and Windows 10, you'll need to configure your development computer with the required development tools.
 
@@ -69,7 +69,6 @@ In the next step, you will create your first WinUI 3 app that uses the Windows A
 > [!div class="nextstepaction"]
 > [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
 
-
 <!-- ### [Preview release](#tab/preview)
 
 To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](preview-channel.md). The preview release channel can't be used by apps in production environments.
@@ -108,8 +107,6 @@ Choose one of these options to install the latest experimental release ([version
 
     > [!div class="button"]
     > [Download latest experimental release](https://aka.ms/windowsappsdk/experimental-vsix) -->
-
----
 
 <!-- ## 5. Download Windows App SDK installer and MSIX packages
 
