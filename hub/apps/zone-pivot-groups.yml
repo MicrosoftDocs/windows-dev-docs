@@ -6,5 +6,5 @@ groups:
   pivots:
     - id: winui3-packaged
       title: Packaged
-    - id: winui3-packaged
+    - id: winui3-unpackaged
       title: Unpackaged
