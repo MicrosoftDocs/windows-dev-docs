@@ -67,8 +67,6 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
 
 ## 4. Install the Windows App SDK extension for Visual Studio (VSIX)
 
-### [Visual Studio 2022 / 2019](#tab/vs)
-
 The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
@@ -76,7 +74,7 @@ The [Windows App SDK](index.md) provides a unified set of APIs, project template
 
 To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in the following tabs. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
-#### [Stable release](#tab/stable)
+### [Stable release](#tab/stable/vs)
 
 To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about this channel and the features available in it, see [Stable release channel](stable-channel.md).
 
@@ -90,8 +88,12 @@ Choose one of these options to install the latest stable release ([version 0.8.2
 
     > [!div class="button"]
     > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
+    
+### [Stable release](#tab/stable/vs-preview)
 
-#### [Preview release](#tab/preview)
+Visual Studio 2022 version 17.1 (Preview) only supports the latest 1.0 Preview 3 release. To use the stable release, install Visual Studio 2022 version 17.0 or Visual Studio 2019.
+
+### [Preview release](#tab/preview/vs)
 
 To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](preview-channel.md). The preview release channel can't be used by apps in production environments.
 
@@ -118,7 +120,11 @@ The extensions from the preview channel are available only from the download loc
 > [!NOTE]
 > If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019 and want to use the [single-project MSIX project template](single-project-msix.md), you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue does not affect other versions of the Windows App SDK 1.0 Preview 2 extension.
 
-#### [Experimental release](#tab/experimental)
+### [Preview release](#tab/preview/vs-preview)
+
+Visual Studio 2022 version 17.1 (Preview) already includes the latest Preview release of the Windows App SDK project templates as part of the individual components when installing Visual Studio as described in step #2. If you didn't select the **Windows App SDK C# Templates** and/or the **Windows App SDK C++ Templates** when installing Visual Studio 2022 version 17.1 (Preview), modify your installation and follow step #2.
+
+### [Experimental release](#tab/experimental/vs)
 
 To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel cannot be used by apps in production environments.
 
@@ -130,11 +136,9 @@ Choose one of these options to install the latest experimental release ([version
     > [!div class="button"]
     > [Download latest experimental release](https://aka.ms/windowsappsdk/experimental-vsix)
 
----
+### [Experimental release](#tab/experimental/vs-preview)
 
-### [Visual Studio 2022 version 17.1 (Preview)](#tab/vs-preview)
-
-Visual Studio 2022 version 17.1 (Preview) already includes the Windows App SDK project templates as part of the individual components when installing Visual Studio as described in step #2. If you didn't select the **Windows App SDK C# Templates** and/or the **Windows App SDK C++ Templates** when installing Visual Studio 2022 version 17.1 (Preview), modify your installation and follow step #2.
+Visual Studio 2022 version 17.1 (Preview) only supports the latest 1.0 Preview 3 release. To use the experimental release, install Visual Studio 2022 version 17.0 or Visual Studio 2019.
 
 ---
 
