@@ -69,12 +69,20 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
 
 ## 4. Install the Windows App SDK extension for Visual Studio (VSIX)
 
+### [Visual Studio 2022 / 2019](#tab/vs)
+
 The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
 To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in the following tabs. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
+
+### [Visual Studio 2022 version 17.1 (Preview)](#tab/vs-preview)
+
+Visual Studio 2022 version 17.1 (Preview) includes the Windows App SDK project templates as part of the optional individual components when installing Visual Studio. There is no need to install a separate VSIX in Visual Studio 2022 version 17.1 (Preview).
+
+---
 
 ### [Stable release](#tab/stable/vs)
 
