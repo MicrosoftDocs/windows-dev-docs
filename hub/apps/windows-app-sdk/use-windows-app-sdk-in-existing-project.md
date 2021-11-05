@@ -18,7 +18,7 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 
 ## Prerequisites
 
-- Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
+- Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install Visual Studio](set-up-your-development-environment.md).
 
 ## Instructions
 

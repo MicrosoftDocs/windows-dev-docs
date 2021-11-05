@@ -74,7 +74,7 @@ To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Pre
 
 9. Build and run your solution on your development computer to confirm that the app runs without errors.
 
-### Localize your WinUI desktop app
+<!-- ### Localize your WinUI desktop app
 
 To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see [App resources and the Resource Management System](/windows/uwp/app-resources/)) and declare each supported language in the **package.appxmanifest** file of your project. When you build the project, the specified languages are added to the generated app manifest (**AppxManifest.xml**) and the corresponding resources are used.
 
@@ -93,7 +93,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
         <Resource Language="en-US"/>
         <Resource Language="es-ES"/>
     </Resources>
-    ```
+    ``` -->
 
 ::: zone-end
 
@@ -354,7 +354,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 
 --- -->
 
-## Instructions for WinUI 3 unpackaged desktop apps
+## Instructions for WinUI 3 unpackaged apps
 
 <!-- > [!NOTE]
 > WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the [Windows App SDK Preview Extension for Visual Studio](../../windows-app-sdk/preview-channel.md) to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](../../windows-app-sdk/preview-channel.md). -->
@@ -367,7 +367,7 @@ To create a WinUI 3 application without MSIX packaging, choose from one of the f
 
 3. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your app.
 
-4. Create a new app using the ["Blank App, Packaged (WinUI 3 in Desktop)"](#instructions-for-winui-3-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
+4. Create a new app using the ["Blank App, Packaged (WinUI 3 in Desktop)"](#instructions-for-winui-3-packaged-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
 
 5. Add this property to the project file:
 
@@ -616,3 +616,10 @@ If you're migrating code from an existing UWP app to a new WinUI 3 project that 
 - [Windows App SDK](../../windows-app-sdk/index.md)
 - [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples) -->
+
+## Next steps
+
+Congratulations, you've created your first WinUI 3 app with the Windows App SDK. You are now ready to start your development journey. 
+
+> [!div class="nextstepaction"]
+> [Create a WinUI 3 app](../../develop/index.md)

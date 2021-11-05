@@ -39,7 +39,7 @@ The installation process for the single-project MSIX packaging tools depends on 
 > [!IMPORTANT]
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
 
-- **Windows App SDK 1.0 Preview 2 and later:** The single-project MSIX packaging tools are included with the Windows App SDK extension for Visual Studio. For these releases, the tools include project templates you can use to create new MSIX-packaged WinUI 3 apps. For installation instructions for the SDK, see [Install the Windows App SDK extension for Visual Studio](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix).
+- **Windows App SDK 1.0 Preview 2 and later:** The single-project MSIX packaging tools are included with the Windows App SDK extension for Visual Studio. For these releases, the tools include project templates you can use to create new MSIX-packaged WinUI 3 apps. For installation instructions for the SDK, see [Install the Windows App SDK extension for Visual Studio](set-up-your-development-environment.md#install-the-windows-app-sdk-extension-for-visual-studio-vsix).
 
     > [!NOTE]
     > If you install the C# version of the Windows App SDK 1.0 Preview 3 extension for Visual Studio 2019, you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue does not affect other versions of the Windows App SDK 1.0 Preview 3 extension.
@@ -54,7 +54,7 @@ The installation process for the single-project MSIX packaging tools depends on 
 
 ## Create a new project
 
-If you're using Windows App SDK 1.0 Preview 2 or later, you can create a new WinUI 3-based project that includes single-project MSIX support by using the **Blank App, Packaged (WinUI 3 in Desktop)** template. For more information, see [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md#instructions-for-winui-3-packaged-desktop-apps).
+If you're using Windows App SDK 1.0 Preview 2 or later, you can create a new WinUI 3-based project that includes single-project MSIX support by using the **Blank App, Packaged (WinUI 3 in Desktop)** template. For more information, see [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
 
 ## Modify an existing project
 
