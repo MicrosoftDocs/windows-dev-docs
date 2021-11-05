@@ -20,9 +20,9 @@ The Windows UI Library (WinUI) 3 is the premiere user interface (UI) framework f
 WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index.md)**. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
 
 > [!div class="button"]
-> [Start by installing the developer tools](../windows-app-sdk/set-up-your-development-environment.md)
+> [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
 
-If you have already installed the developers, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
 
 <!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 - [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
@@ -32,7 +32,7 @@ If you have already installed the developers, you are ready to [create your firs
 - [Samples](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview) -->
 
 
-### Other app types
+## Other app types
 
 For more information about the app types you can choose from, see the following tabs. 
 
@@ -54,7 +54,7 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 > [!div class="button"]
 > [Get started with Win32](/windows/win32/desktop-programming/)
 
-You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Update existing apps](#update-existing-apps) later in this article.
+You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
 <!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 - [Get started with classic Win32 desktop apps](/windows/win32/desktop-programming/)
@@ -73,7 +73,7 @@ WPF is the established platform for managed Windows applications with access to 
 > [!div class="button"]
 > [Get started with WPF](/dotnet/framework/wpf/getting-started/)
 
-You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Update existing apps](#update-existing-apps) later in this article.
+You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
 <!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 - [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
@@ -89,7 +89,7 @@ Windows Forms is the original platform for managed Windows applications with a l
 > [!div class="button"]
 > [Get started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 
-You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Update existing apps](#update-existing-apps) later in this article.
+You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
 
 <!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
@@ -109,7 +109,7 @@ UWP is a highly customizable platform that uses XAML markup to separate UI (pres
 > [!div class="button"]
 > [Get started with UWP](/windows/uwp/get-started/)
 
-You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md) later in this article.
+You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md).
 
 <!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
 - [Get started](/windows/uwp/get-started/)
