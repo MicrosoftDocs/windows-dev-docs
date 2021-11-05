@@ -22,8 +22,8 @@ For a list of the minimum system requirements for Visual Studio, see [System req
 > [!div class="button"]
 > [Download Visual Studio 2019](/visualstudio/releases/2019/release-notes)
 
-> [!div class="button"]
-> [Download Visual Studio 2022 (Preview)](/visualstudio/releases/2022/release-notes-preview)
+<!-- > [!div class="button"]
+> [Download Visual Studio 2022 (Preview)](/visualstudio/releases/2022/release-notes-preview) -->
 
 ### Required workloads and components
 
