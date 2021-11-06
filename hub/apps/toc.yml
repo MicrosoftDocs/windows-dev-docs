@@ -36,7 +36,7 @@ items:
         href: develop/index.md
       - name: Build apps with the Windows App SDK
         items:
-          - name: "Overview"
+          - name: "Windows App SDK features and benefits"
             href: windows-app-sdk/index.md
           - name: "Use the Windows App SDK in an existing project"
             href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
