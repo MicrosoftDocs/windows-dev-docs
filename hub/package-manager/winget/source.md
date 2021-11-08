@@ -16,7 +16,7 @@ A source provides the data for you to discover and install applications. Only ad
 
 `winget source \<sub command> \<options>`
 
-![Source image](images\source.png)
+![Source image](./images/source.png)
 
 ## Arguments
 
@@ -157,7 +157,7 @@ Windows Package Manager specifies two default repositories. You can identify the
 
 Individual **Sources** may request that the user agree to terms before accessing the repository. Before adding or using the repository, the user must agree to the terms presented.
 
-![Source license image](images\source-license.png)
+![Source license image](./images/source-license.png)
 
 If the user does not agree to or acknowleged the agreements, they will not be able to access the source content.
 

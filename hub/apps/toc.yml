@@ -80,7 +80,7 @@ items:
             items:
               - name: "Overview of feature area guides"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-              - name: "Windows UI Library (WinUI) migration"
+              - name: "User interface migration (including WinUI 3)"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
               - name: "Windowing functionality migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
@@ -188,6 +188,14 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+      - name: Optimize your app performance
+        items:
+          - name: Overview
+            href: performance/index.md
+          - name: Introduction to performance
+            href: performance/introduction.md
+          - name: Choosing performance tools
+            href: performance/choose-between-tools.md
       - name: User interface and input
         items: 
           - name: Overview

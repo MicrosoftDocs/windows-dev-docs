@@ -4,7 +4,7 @@ description: Microsoft PowerToys is a set of utilities for customizing Windows. 
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run]
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake]
 ---
 
 <!-- [Jay] shortened description, old =
@@ -93,6 +93,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Mouse utilities
+
+:::row:::
+    :::column:::
+        [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
+    :::column-end:::
+    :::column span="2":::
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
+    :::column-end:::
+:::row-end:::
+
 ### PowerRename
 
 :::row:::
@@ -126,18 +137,14 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-## Future PowerToy utilities
-
-Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
-
-### Video Conference Mute (Experimental)
+### Video Conference Mute
 
 :::row:::
     :::column:::
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 

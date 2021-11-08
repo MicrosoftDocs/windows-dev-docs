@@ -27,7 +27,7 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
 
 ## Prerequisites
 
-- Download the latest Windows App SDK installer and MSIX packages. For older versions, see [Downloads](downloads.md).
+- Download the latest Windows App SDK installer and MSIX packages. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
   > [!div class="button"]
   > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)

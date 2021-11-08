@@ -7,10 +7,10 @@ ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
 ---
 
-# Video Conference Mute (Preview)
+# Video Conference Mute
 
 > [!IMPORTANT]
-> This is a preview feature and only included in the pre-release version of PowerToys. Running this pre-release requires Windows 10 version 1903 (build 18362) or later.
+> Running Video Conference Mute requires Windows 10 version 1903 (build 18362) or later.
 
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 
@@ -29,7 +29,6 @@ When using the microphone and/or camera toggle shortcut keys, you will see a sma
 To use this module, it must be selected as the _source_ in the apps that are using camera and/or microphone. Go to the settings and select Powertoys VCM.
 
 ![VCM selected as source in Skype](../images/pt-vcm-source-in-app.png)
-
 
 ## Settings
 

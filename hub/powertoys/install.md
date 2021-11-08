@@ -49,7 +49,7 @@ To install PowerToys using the Windows Package Manager (WinGet) preview:
 2. Run the following command from the command line / PowerShell:
 
 ```powershell
-WinGet install powertoys
+winget install Microsoft.PowerToys --source winget
 ```
 
 ## Community-driven install tools
