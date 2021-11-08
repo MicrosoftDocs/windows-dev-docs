@@ -19,28 +19,46 @@ To develop apps, you'll need Visual Studio, the Windows SDK, and the Windows App
 
 ## 2. Install Visual Studio
 
-Use the following links to install Visual Studio 2019 or Visual Studio 2022 (Preview). You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed by default.
+Use the following links to install Visual Studio 2022 version 17.0 (recommended), Visual Studio 2022 version 17.1 (Preview), or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed.
+
+> [!div class="button"]
+> [Download Visual Studio 2022 version 17.0](/visualstudio/releases/2022/release-notes)
+
+> [!div class="button"]
+> [Download Visual Studio 2022 version 17.1 (Preview)](/visualstudio/releases/2022/release-notes-preview)
 
 > [!div class="button"]
 > [Download Visual Studio 2019](/visualstudio/releases/2019/release-notes)
 
-> [!div class="button"]
-> [Download Visual Studio 2022 (Preview)](/visualstudio/releases/2022/release-notes-preview)
 
 ### Required workloads and components
 
-Make sure these workloads and components are installed with Visual Studio. These are all selected by default.
+While installing Visual Studio, select the following workloads and components...
 
-- On the **Workloads** tab of the installation dialog, these workloads are required:
+#### [Visual Studio 2022 / 2019](#tab/vs)
+
+- On the **Workloads** tab of the installation dialog, select:
   - **Universal Windows Platform development**
-  - **Desktop development with C++**
   - **.NET Desktop Development**
+  - **Desktop development with C++**
 
-- On the **Individual components** tab of the installation dialog, **Windows 10 SDK (10.0.19041.0)** is required in the **SDKs, libraries, and frameworks** section.
+- On the **Individual components** tab of the installation dialog, make sure **Windows 10 SDK (10.0.19041.0)** is selected in the **SDKs, libraries, and frameworks** section.
 
 - In the **Installation details** pane of the installation dialog, make sure the following items are selected in the **Universal Windows Platform development** section:
   - For Visual Studio 2019: **C++ (v142) Universal Windows Platform tools**
-  - For Visual Studio 2022 (Preview): **C++ (v143) Universal Windows Platform tools**
+  - For Visual Studio 2022: **C++ (v143) Universal Windows Platform tools**
+
+#### [Visual Studio 2022 version 17.1 (Preview)](#tab/vs-preview)
+
+On the **Workloads** tab of the installation dialog, select one or both of:
+
+- **.NET Desktop Development** for C# app development
+  - Then in the **Installation details** pane of the installation dialog, select **Windows App SDK C# Templates** (at the bottom of the list).
+
+- **Desktop development with C++** for C++ app development
+  - Then in the **Installation details** pane of the installation dialog,  select **Windows App SDK C++ Templates** (at the bottom of the list).
+
+---
 
 ## 3. Enable NuGet Package source
 
@@ -51,14 +69,14 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
 
 ## 4. Install the Windows App SDK extension for Visual Studio (VSIX)
 
-The [Windows App SDK](index.md) provides a unified set of APIs, project templates, and other tools for building Windows apps. This SDK is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
+The Windows App SDK includes project and item templates for creating and developing WinUI 3 apps. These project templates are built into Visual Studio 2022 version 17.1 (Preview), and available as Visual Studio extensions (VSIX) for Visual Studio 2022 / 2019. There are three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
 To download the latest Windows App SDK extensions for Visual Studio, see the installation instructions in the following tabs. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
-### [Stable release](#tab/stable)
+### [Stable release](#tab/stable/vs)
 
 To develop desktop (C#/.NET 5 or C++) apps that can be used in production environments, install the latest extension from the **stable** release channel. For more information about this channel and the features available in it, see [Stable release channel](stable-channel.md).
 
@@ -72,8 +90,12 @@ Choose one of these options to install the latest stable release ([version 0.8.2
 
     > [!div class="button"]
     > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
+    
+### [Stable release](#tab/stable/vs-preview)
 
-### [Preview release](#tab/preview)
+Visual Studio 2022 version 17.1 (Preview) only supports the latest 1.0 Preview 3 release. To use the stable release, install Visual Studio 2022 version 17.0 or Visual Studio 2019.
+
+### [Preview release](#tab/preview/vs)
 
 To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](preview-channel.md). The preview release channel can't be used by apps in production environments.
 
@@ -100,7 +122,11 @@ The extensions from the preview channel are available only from the download loc
 > [!NOTE]
 > If you install the C# version of the Windows App SDK 1.0 Preview 2 extension for Visual Studio 2019 and want to use the [single-project MSIX project template](single-project-msix.md), you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue does not affect other versions of the Windows App SDK 1.0 Preview 2 extension.
 
-### [Experimental release](#tab/experimental)
+### [Preview release](#tab/preview/vs-preview)
+
+Visual Studio 2022 version 17.1 (Preview) already includes the latest Preview release of the Windows App SDK project templates as part of the individual components when installing Visual Studio as described in step #2. If you didn't select the **Windows App SDK C# Templates** and/or the **Windows App SDK C++ Templates** when installing Visual Studio 2022 version 17.1 (Preview), modify your installation and follow step #2.
+
+### [Experimental release](#tab/experimental/vs)
 
 To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel cannot be used by apps in production environments.
 
@@ -111,6 +137,10 @@ Choose one of these options to install the latest experimental release ([version
 
     > [!div class="button"]
     > [Download latest experimental release](https://aka.ms/windowsappsdk/experimental-vsix)
+
+### [Experimental release](#tab/experimental/vs-preview)
+
+Visual Studio 2022 version 17.1 (Preview) only supports the latest 1.0 Preview 3 release. To use the experimental release, install Visual Studio 2022 version 17.0 or Visual Studio 2019.
 
 ---
 
