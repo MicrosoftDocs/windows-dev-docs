@@ -188,6 +188,14 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+      - name: Optimize your app performance
+        items:
+          - name: Overview
+            href: performance/index.md
+          - name: Introduction to performance
+            href: performance/introduction.md
+          - name: Choosing performance tools
+            href: performance/choose-between-tools.md
       - name: User interface and input
         items: 
           - name: Overview
