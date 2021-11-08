@@ -188,7 +188,7 @@ items:
                   href: ../powertoys/install.md
                 - name: Run in admin mode
                   href: ../powertoys/administrator.md
-            - name: Awake
+            - name: PowerToys Awake
               href: ../powertoys/awake.md
             - name: Color Picker
               href: ../powertoys/color-picker.md
