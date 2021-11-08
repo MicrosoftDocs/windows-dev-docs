@@ -14,7 +14,7 @@ ms.custom: 19H1
 Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET 5 and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
 
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
-* APIs that require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
+* APIs that require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
 
 This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
@@ -137,7 +137,7 @@ The full list of methods that follow the `Request` naming pattern is very long, 
 
 ## APIs that require package identity
 
-The following WinRT classes require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
+The following WinRT classes require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
