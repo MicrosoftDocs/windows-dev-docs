@@ -12,13 +12,13 @@ ms.localizationpriority: medium
 
 # Windows app performance overview
 
-High performance gives your application a feeling of polish and craftsmanship, while providing your customers with savings in time, money, power, and effort. Battery powered devices last longer. Apps run smoothly on less expensive hardware. Your customers' productivity increases.
+Improving your application's performance gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Battery-powered devices last longer. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
 This page provides an overview of the technologies and development tools for measuring, understanding, and refining the performance of your Windows application. If you are writing a UWP application, be sure to also consult the [UWP Performance](/windows/uwp/debug-test-perf/performance-and-xaml-ui) documentation.
 
 ## What is application performance and why is it important?
 
-Performance in the context of an application usually revolves around _cost_. How much time is it going to take to complete a particular task? How much of the system's resources will be used?
+Performance in the context of an application usually revolves around _cost_. How long is it going to take to complete a particular task? How much of the system's resources will be used?
 
 The answers to these questions play a fundamental role in the quality of a user's experience with an application (you can likely recall times where as a user, you have felt frustrated at an application for its poor performance!). As a developer, by keeping performance in mind, you will ensure that users of your applications don't experience that same frustration.
 
