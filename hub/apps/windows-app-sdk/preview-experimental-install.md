@@ -1,6 +1,6 @@
 ---
-title: Install tools for Windows app development
-description: This article provides instructions for setting up your development computer for Windows app development.
+title: Install tools for Preview and Experimental versions of Windows App SDK 
+description: This article provides instructions for setting up your development computer for Preview and Experimental versions of Windows App SDK
 ms.topic: article
 ms.date: 10/05/2021
 keywords: windows win32, windows app development, Windows App SDK 

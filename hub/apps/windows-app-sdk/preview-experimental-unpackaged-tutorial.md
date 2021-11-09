@@ -1,6 +1,6 @@
 ---
-title: Build and deploy an unpackaged app that uses the Windows App SDK 
-description: This article provides a walkthrough for building and deploying an unpackaged app that uses the Windows App SDK.
+title: Build and deploy an unpackaged app that uses the Preview and Experimental versions of the Windows App SDK 
+description: This article provides a walkthrough for building and deploying an unpackaged app that uses the Preview and Experimental versions of Windows App SDK.
 ms.topic: article
 ms.date: 05/24/2021
 keywords: windows win32, windows app development, Windows App SDK 
@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
+# Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK (Preview and Experimental)
 
 > [!IMPORTANT]
 > Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
@@ -23,7 +23,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 ## Prerequisites
 
-1. [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
+1. [Install Visual Studio](set-up-your-development-environment.md).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
 3. C# projects using the **1.0 Preview version 1** of the Windows App SDK (or later) must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 4. C# projects using the **1.0 Experimental version** of the Windows App SDK must use one of the following .NET SDKs:
