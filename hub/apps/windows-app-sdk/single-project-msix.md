@@ -197,7 +197,7 @@ Next, move several important files to the application project. There are differe
 
 ### Step 5: Deploy your app
 
-Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application.
+Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application. We also recommend using the "Package and Publish" command to create an MSIX package optimized for WinUI 3 applications.
 
 ## Provide feedback
 

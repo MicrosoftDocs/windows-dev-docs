@@ -100,26 +100,18 @@ To create a WinUI 3 application without MSIX packaging, choose from one of the f
 
     :::image type="content" source="images/winui-csharp-unpackaged-proj.png" alt-text="Visual Studio 2019 - C# Project file with WindowsPackageType set to None highlighted":::
 
-6. Delete package.appxmanifest from project. 
-
-    Otherwise, you will see this error: **Improper project configuration: WindowsPackageType is set to None, but AppxManifest is specified**.
-
-    > [!NOTE]
-    > You may need to close the Visual Studio solution to manually delete this file from the filesystem.
-    :::image type="content" source="images/winui-csharp-unpackaged-appxmanifest.png" alt-text="Visual Studio 2019 - Solution explorer open with appxmanifest file highlighted":::
-
-7. To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.
+6. To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.
    Otherwise, you'll see an error: "The project doesn't know how to run the profile …"
 
     > [!NOTE]
     > This isn't necessary if you execute the application (`.exe`) from the command line or Windows File explorer.
 
-    - In **Visual Studio 2022**: Open the launchSettings.json and change the profile with 'MsixPackage' to 'Project'.
+    - In **Visual Studio 2022**: Open the launchSettings.json and delete the 1.0-stable profile with 'MsixPackage' so that the remaining profile is 'Project'.
 
         ```json
         {
             "profiles": {
-                "Preview3": {
+                "1.0-stable": {
                     "commandName": "Project"
                 }
             }
