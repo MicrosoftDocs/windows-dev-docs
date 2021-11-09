@@ -11,18 +11,14 @@ ms.custom: 19H1
 
 # Create a WinUI 3 app
 
-Test
-
 ::: zone pivot="winui3-packaged"
 
-<!-- The [Windows App SDK](../../windows-app-sdk/index.md) includes WinUI 3 project templates that enable you to create desktop and UWP apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+### Key Concepts
 
-## Prerequisites
+<!-- intent is to put this content in an include, inject elsewhere -->
 
-To use the WinUI 3 project templates described in this article, configure your development computer and install the Windows App SDK extension for Visual Studio. For details, see [Set up your development environment](../../windows-app-sdk/set-up-your-development-environment.md).
-
-> [!NOTE]
-> Certain fundamental WinRT types including [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow), [ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView), [CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher), and their dependencies are not available in desktop apps. These types were designed specifically for UI scenarios in UWP apps, and they do not behave properly in desktop apps due to threading models and other platform differences. For more information including recommended alternative APIs, see [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md). -->
+ - **Packaged apps**: Packaged apps are packaged using MSIX. MSIX is a package format that gives end-users an easy way to install, uninstall, and update their Windows apps using a modern UI.
+ - **Unpackaged apps**: Unpackaged apps don't use MSIX. They're typically installed and updated using `.exe` or `.msi` files. Many of these applications walk users through installation wizards.
 
 ## Instructions for WinUI 3 packaged apps
 
