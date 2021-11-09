@@ -2,7 +2,7 @@
 groups:
 - id: winui3-version
   title: WinUI 3 application type
-  prompt: Choose the type of WinUI 3 application you want to build
+  prompt: "Choose the type of WinUI 3 application you want to build:"
   pivots:
     - id: winui3-packaged
       title: Packaged
