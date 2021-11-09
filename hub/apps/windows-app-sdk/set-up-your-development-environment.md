@@ -27,9 +27,7 @@ For a list of the minimum system requirements for Visual Studio, see [System req
 
 ### Required workloads and components
 
-While installing Visual Studio, select the following workloads and components.
-
-#### [Visual Studio 2022 / 2019](#tab/vs)
+While installing Visual Studio 2022 or 2019, select the following workloads and components.
 
 - On the **Workloads** tab of the installation dialog, select:
   - **Universal Windows Platform development**
@@ -51,7 +49,7 @@ Make sure your system has a NuGet package source enabled for the official NuGet 
 
 ## 2. Install the Windows App SDK extension for Visual Studio (VSIX)
 
-The [Windows App SDK](index.md) includes project and item templates for creating and developing WinUI 3 apps. These project templates are built into Visual Studio 2022 version 17.1 (Preview), and available as Visual Studio extensions (VSIX) for Visual Studio 2022 / 2019. There are three versions of the extension: **stable**, **preview**, and **experimental**. For more information about the differences between these versions, see [Release channels](release-channels.md).
+The [Windows App SDK](index.md) includes project and item templates for creating and developing WinUI 3 apps. These project templates are available as Visual Studio extensions (VSIX) for Visual Studio 2022 / 2019. 
 
 For a list of the minimum system requirements to use the Windows App SDK, see [System requirements for Windows app development](system-requirements.md).
 
@@ -62,7 +60,7 @@ For a list of the minimum system requirements to use the Windows App SDK, see [S
     > [!div class="button"]
     > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
 
-For all previous versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
+For all other versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md), [Install tools for Preview and Experimental versions of Windows App SDK](preview-experimental.install.md), and [Release channels](release-channels.md).
 
 ## Next steps
 

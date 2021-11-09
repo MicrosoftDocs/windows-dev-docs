@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Install tools for Preview and Experimental versions of Windows App SDK
+# Install tools for Preview and Experimental channels of the Windows App SDK
 
 To develop apps for Windows 11 and Windows 10, you'll need to configure your development computer with the required development tools.
 
