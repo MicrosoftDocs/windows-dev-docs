@@ -50,14 +50,14 @@ items:
                 href: windows-app-sdk/release-channels.md
               - name: "Stable channel release notes"
                 href: windows-app-sdk/stable-channel.md
-              - name: "Preview channel release notes"
-                href: windows-app-sdk/preview-channel.md
-              - name: "Experimental channel release notes"
-                href: windows-app-sdk/experimental-channel.md
               - name: "Update existing projects to the latest release"
                 href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
               - name: "Preview and Experimental guidance"
                 items:
+                  - name: "Preview channel release notes"
+                    href: windows-app-sdk/preview-channel.md
+                  - name: "Experimental channel release notes"
+                    href: windows-app-sdk/experimental-channel.md
                   - name: "Install Developer Tools"
                     href: windows-app-sdk/preview-experimental-install.md
                   - name: "Create a WinUI 3 app"
