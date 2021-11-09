@@ -63,7 +63,7 @@ items:
                   - name: "Create a WinUI 3 app"
                     href: windows-app-sdk/preview-experimental-create-winui3-app.md
                   - name: "Tutorial: Build and deploy an unpackaged app"
-                    href: windows-app-sdk/tutorial-unpackaged-deployment.md
+                    href: preview-experimental-unpackaged-tutorial.md
               - name: "Release notes archive"
                 items:
                   - name: "WinUI 3 - Project Reunion 0.8 Preview"

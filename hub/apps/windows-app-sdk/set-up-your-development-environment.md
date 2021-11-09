@@ -60,7 +60,7 @@ For a list of the minimum system requirements to use the Windows App SDK, see [S
     > [!div class="button"]
     > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
 
-For all other versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md), [Install tools for Preview and Experimental versions of Windows App SDK](preview-experimental.install.md), and [Release channels](release-channels.md).
+For all other versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md) and [Install tools for Preview and Experimental](preview-experimental-install.md).
 
 ## Next steps
 
@@ -69,7 +69,6 @@ In the next step, you will create your first WinUI 3 app that uses the Windows A
 > [!div class="nextstepaction"]
 > [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
 
----
 <!-- 
 ## 5. Download Windows App SDK installer and MSIX packages
 
@@ -97,10 +96,9 @@ You can start developing apps now, but you need a developer account to submit yo
 ## Related topics
 
 - [System requirements for Windows app development](system-requirements.md)
-- [Get started developing apps for Windows desktop](../get-started/index.md)
-- [Visual Studio project and item templates for Windows apps](../desktop/visual-studio-templates.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Overview of app development options](../get-started/index.md)
+- [Release channels](release-channels.md)
+- [Create a WinUI3 app](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Enable your device for development](../get-started/enable-your-device-for-development.md) -->
 
 
