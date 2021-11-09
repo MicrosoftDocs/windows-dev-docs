@@ -15,9 +15,9 @@ ms.custom: 19H1
 
 ### Key Concepts
 
-<!-- intent is to put this content in an include, inject elsewhere -->
+<!-- intent is to put this content in an include, inject elsewhere, lay a foundation for popovers -->
 
- - **Packaged apps**: Packaged apps are packaged using MSIX. MSIX is a package format that gives end-users an easy way to install, uninstall, and update their Windows apps using a modern UI.
+ - **Packaged apps**: Packaged apps are packaged using [MSIX](https://docs.microsoft.com/windows/msix/overview). MSIX is a package format that gives end-users an easy way to install, uninstall, and update their Windows apps using a modern UI.
  - **Unpackaged apps**: Unpackaged apps don't use MSIX. They're typically installed and updated using `.exe` or `.msi` files. Many of these applications walk users through installation wizards.
 
 ## Instructions for WinUI 3 packaged apps
