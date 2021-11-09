@@ -59,9 +59,9 @@ items:
               - name: "Preview and Experimental guidance"
                 items:
                   - name: "Install Developer Tools"
-                    href: preview-experimental-install.md
+                    href: windows-app-sdk/preview-experimental-install.md
                   - name: "Create a WinUI 3 app"
-                    href: preview-experimental-create-winui3-app.md
+                    href: windows-app-sdk/preview-experimental-create-winui3-app.md
                   - name: "Tutorial: Build and deploy an unpackaged app"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Release notes archive"
