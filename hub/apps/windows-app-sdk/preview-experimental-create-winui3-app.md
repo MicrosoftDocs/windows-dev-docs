@@ -1,6 +1,6 @@
 ---
-description: This guide shows you how to use the Preview and Experimental channel versions of Windows App SDK to create a .NET and C++ apps with WinUI 3 UI. 
-title: Create a new project that uses the Windows App SDK 
+description: This guide shows you how to use the Preview and Experimental channel of Windows App SDK to create a .NET and C++ apps with WinUI 3 UI. 
+title: Create a new project that uses the Preview and Experimental channel of the Windows App SDK 
 ms.date: 10/05/2021
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
@@ -54,7 +54,7 @@ To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Pre
 
         If you used the **Blank App, Packaged (WinUI 3 in Desktop)** project template, this project also includes the package manifest for building the app into an [MSIX package](/windows/msix/overview).
 
-        ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file for single project M S I X.](images/WinUI-csharp-appproject-1.0-later.png)
+        ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file for single project M S I X.](../winui/winui3/images/WinUI-csharp-appproject-1.0-later.png)
 
     - **_Project name_ (Package)**: This project is generated only if you use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. This project is a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). This project contains the [package manifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) for your app, and it is the startup project for your solution by default.
 
@@ -279,7 +279,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 ## Instructions for WinUI 3 unpackaged desktop apps
 
 > [!NOTE]
-> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the [Windows App SDK Preview Extension for Visual Studio](../../windows-app-sdk/preview-channel.md) to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](preview-channel.md).
+> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the [Windows App SDK Preview Extension for Visual Studio](preview-channel.md) to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](preview-channel.md).
 
 To create a WinUI 3 application without MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
 
