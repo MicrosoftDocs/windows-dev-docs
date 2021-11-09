@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This article provides a step-by-step tutorial for an **advanced scenario**, in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. 
 
-You can also choose the simple approach of auto-initializing the Windows App SDK through the `WindowsPackageType` project property. See [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app) for instructions.
+You can also choose the simple approach of auto-initializing the Windows App SDK through the `WindowsPackageType` project property. See [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) for instructions.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
