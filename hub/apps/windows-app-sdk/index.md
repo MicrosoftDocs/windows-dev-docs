@@ -21,7 +21,7 @@ The Windows App SDK does not replace the Windows SDK or existing desktop Windows
 The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio 2022. These extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
 1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](set-up-your-development-environment.md).
-2. Follow the instructions on how to [create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+2. Follow the instructions in [create a WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) to use Windows App SDK in a new project. You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
