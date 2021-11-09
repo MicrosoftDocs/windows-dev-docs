@@ -23,6 +23,151 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
 
+
+## Version 1.0 Stable
+
+Version 1.0 is the latest release of the stable channel for the Windows App SDK. 1.0 supports all stable channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
+
+### Download 1.0 Stable Visual Studio extensions (VSIX)
+
+> [!NOTE]
+> If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
+
+From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Stable release. For all versions, see [Downloads for the Windows App SDK](downloads.md). If you haven't done so already, start by configuring your development environment, using the steps in [Install tools for Windows app development](set-up-your-development-environment.md?tabs=preview).
+
+The extensions below are tailored for your programming language and version of Visual Studio.
+
+| **1.0 Stable downloads** | **Description** |
+| ----------- | ----------- |
+| [Extension for Visual Studio](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftProjectReunion) | Build production apps with the Windows App SDK Visual Studio extension. |
+| [The `.exe` installer, and MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer) | Deploy the Windows App SDK with your app using the `.exe` installer, and MSIX packages. |
+
+The following sections describe new and updated features, limitations, and known issues for 1.0 Stable.
+
+### WinUI 3
+
+Description
+
+**New Features**
+
+**Important limitations**
+
+- Unpackaged WinUI 3 applications are **supported only on Windows versions 1909 and later**.
+- Unpackaged WinUI 3 applications are **supported on x86 and x64**; arm64 support will be added in the next stable release.
+- **Single-project MSIX Packaging Tools** for [Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) or [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17) is required for unpackaged apps.
+- In an unpackaged app, you might receive a prompt to install .NET 3.5; if you do, then you can ignore it.
+- Some APIs are not currently supported in unpackaged apps. We're aiming to fix this in the next stable release. A few examples:
+  - [ApplicationData](/uwp/api/Windows.Storage.ApplicationData)
+  - [StorageFile.GetFileFromApplicationUriAsync](/uwp/api/Windows.Storage.StorageFile.GetFileFromApplicationUriAsync)
+  - [ApiInformation](/uwp/api/Windows.Foundation.Metadata.ApiInformation) (not supported on Windows 10)
+  - [Package.Current](/uwp/api/windows.applicationmodel.package.current)
+- ListView, CalendarView, and GridView controls are using the incorrect styles, and we're aiming to fix this in the next stable release.
+
+For more info, or to get started developing with WinUI, see:
+
+- [Windows UI 3 Library (WinUI)](../winui/index.md)
+- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+
+
+### Windowing
+
+Description
+
+**New Features**
+Description
+
+**Important limitations**
+Description
+
+
+### Input
+
+Description
+
+**New Features**
+Description
+
+**Important limitations**
+Description
+
+
+### App Lifecycle
+
+Description
+
+**New Features**
+Description
+
+**Important limitations**
+Description
+
+
+### DWriteCore
+
+Description
+
+**New Features**
+Description
+
+**Important limitations**
+Description
+
+
+### MRT Core
+
+Description
+
+**New Features**
+Description
+
+**Important limitations**
+Description
+
+
+### Deployment
+
+Description
+
+**New Features**
+Description
+
+**Important limitations**
+Description
+
+
+### Other limitations and known issues
+
+- **Unpackaged apps are not supported on Windows 10 version 1809**. We're aiming to fix this in the next release in the stable channel.
+
+- **C# Single-project MSIX app doesn't compile if C++ UWP Tools aren't installed**. If you have a C# Single-project MSIX project, then you'll need to install the **C++ (v14x) Universal Windows Platform Tools** optional component. 
+
+- This release introduces the **Blank App, Packaged (WinUI 3 in Desktop)** project templates for C# and C++. These templates enable you to build your app into an MSIX package without the use of a separate packaging project (see [Package your app using single-project MSIX](single-project-msix.md)). These templates have some known issues in this release:
+
+  - **Missing Publish menu item until you restart Visual Studio**. When creating a new app in both Visual Studio 2019 and Visual Studio 2022 using the **Blank App, Packaged (WinUI 3 in Desktop)** project template, the command to publish the project doesn't appear in the menu until you close and re-open Visual Studio.
+
+  - **Error when adding C++ static/dynamic library project references to C++ apps using Single-project MSIX Packaging**. Visual Studio displays an error that the project can't be added as a reference because the project types are not compatible.
+  
+  - **Error when referencing a custom user control in a class library project**. The application will crash with the error that the system can't find the path specified.
+
+  - **C# or C++ template for Visual Studio 2019**. When you try to build the project, you'll encounter the error "The project doesn't know how to run the profile *project name*". To resolve this issue, install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools).
+
+  - **C# template for Visual Studio 2019 and Visual Studio 2022**. In Visual Studio when you **Start Debugging** or **Start Without Debugging**, if your app doesn't deploy and run (and there's no feedback from Visual Studio), then click on the project node in **Solution Explorer** to select it, and try again.
+
+  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
+
+  - **C++ template for Visual Studio 2022 version 17.0 releases up to Preview 4**. You will encounter the following error the first time you try to run your project: "There were deployment errors". To resolve this issue, run or deploy your project a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 7.
+
+- **No support for Any CPU build configuration**: When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+
+- **C# projects using 1.0 Preview 3 must use the following .NET SDK**: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
+
+- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, then use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+
+    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
+    3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
+
+
 ## Version 0.8
 
 The latest available release of the stable channel is the servicing release 0.8.2.
@@ -96,7 +241,7 @@ This is a servicing release of the Windows App SDK that includes a few critical 
 
 The limitations and known issues for version 0.8 also apply to version 0.8.1, unless marked otherwise in the [section below](#limitations).
 
-### Version 0.8.0
+### Version 0.8.0 Stable 
 
 #### New features and updates
 

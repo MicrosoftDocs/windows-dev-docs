@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Build and deploy an unpackaged app that uses the Preview and Experimental channels of the Windows App SDK 
+# Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK 
 
 > [!IMPORTANT]
 > Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
