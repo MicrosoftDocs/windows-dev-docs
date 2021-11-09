@@ -57,35 +57,18 @@ For additional information about how to apply color in your Windows app, please 
 
 The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI 2, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/master/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
 
-### Windows system high-contrast colors
+### Windows system contrast theme colors
 
 In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Windows apps. However, many of the XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
 
-This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
-
-| Key                           | Ease of Access name            | Simple HighContrast name | Initial default |
-|-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **Button Text** (background)   | Background               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | **Button Text** (foreground)   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **Disabled Text**              | Disabled                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **Selected Text** (background) | Highlight                | \#FF3399FF      |
-| SystemColorHighlightTextColor | **Selected Text** (foreground) | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **Hyperlinks**                 | Hyperlink                | \#FF0066CC      |
-| SystemColorWindowColor        | **Background**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
-
-Windows provides different high-contrast themes, and enables the user to set the specific colors for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
-
-![The Windows high contrast settings UI](images/high-contrast-settings.png)
-
-For more information about supporting high-contrast themes, see [High-contrast themes](../accessibility/high-contrast-themes.md).
+For more information about supporting contrast themes, see [Contrast themes](../accessibility/high-contrast-themes.md).
 
 ### System accent color
 
-In addition to the system high-contrast theme colors, the system accent color is provided as a special color resource using the key `SystemAccentColor`. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.
+In addition to the system contrast theme colors, the system accent color is provided as a special color resource using the key `SystemAccentColor`. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.
 
 > [!NOTE]
-> While it's possible to override the system color resources, it's a best practice to respect the user's color choices, especially for high-contrast settings.
+> While it's possible to override the system color resources, it's a best practice to respect the user's color choices, especially for contrast theme settings.
 
 ### Theme-dependent brushes
 
@@ -295,4 +278,4 @@ To fix this problem, use the [{StaticResource} markup extension](/windows/uwp/xa
 </ResourceDictionary>
 ```
 
-Notice that the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with 'SystemColor' in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they've changed at the system level. This is why the {ThemeResource} markup extension is used here.
+Notice that the [{ThemeResource} markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with 'SystemColor' in the name). The system enables the user to set the specific colors that should be used for their contrast theme settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they've changed at the system level. This is why the {ThemeResource} markup extension is used here.

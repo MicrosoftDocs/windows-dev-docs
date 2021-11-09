@@ -42,6 +42,7 @@ This option is only supported in projects that use .NET 5 (or a later release) a
     * **net5.0-windows10.0.17763.0**: Use this value if your app targets Windows 10, version 1809.
     * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
     * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
+    * **net5.0-windows10.0.22000.0**: Use this value if your app targets Windows 11.
 
     For example, the following element is for a project that targets Windows 10, version 2004.
 

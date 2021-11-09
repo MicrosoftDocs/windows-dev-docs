@@ -137,7 +137,6 @@ In the following table, the **Registration fee** is the current cost to register
 | Kyrgyzstan                        | 19 USD              | 99 USD           |  
 | Laos                              | 19 USD              | 99 USD           |  
 | Latvia                            | 14 EUR              | 75 EUR           |  
-| Lebanon                           | 28690 LBP           | 149686 LBP       |  
 | Lesotho                           | 19 USD              | 99 USD           |  
 | Liberia                           | 19 USD              | 99 USD           |  
 | Libya                             | 19 USD              | 99 USD           |  
