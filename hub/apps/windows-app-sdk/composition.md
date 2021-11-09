@@ -1,5 +1,5 @@
 ---
-title: Composition (Windows App SDK)
+title: Enhance UI with the Visual layer
 description: The Windows App SDK implementation of the UWP Visual layer.
 ms.topic: article
 ms.date: 10/27/2021
