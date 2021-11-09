@@ -195,7 +195,6 @@ Below is a table that shows what specific time zones are used in each market, so
 | Kyrgyzstan  |  (UTC+06:00) Astana |
 | Laos  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
 | Latvia  |  (UTC+02:00) Chisinau |
-| Lebanon  |  (UTC+02:00) Chisinau |
 | Lesotho  |  (UTC+02:00) Harare, Pretoria |
 | Liberia  |  (UTC+00:00) Monrovia, Reykjavik |
 | Libya  |  (UTC+02:00) Chisinau |

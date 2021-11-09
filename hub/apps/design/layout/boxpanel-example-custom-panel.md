@@ -31,9 +31,9 @@ When you define a custom panel, you're defining a layout scenario.
 
 A layout scenario is expressed through:
 
--   What the panel will do when it has child elements
--   When the panel has constraints on its own space
--   How the logic of the panel determines all the measurements, placement, positions, and sizings that eventually result in a rendered UI layout of children
+- What the panel will do when it has child elements
+- When the panel has constraints on its own space
+- How the logic of the panel determines all the measurements, placement, positions, and sizings that eventually result in a rendered UI layout of children
 
 With that in mind, the `BoxPanel` shown here is for a particular scenario. In the interest of keeping the code foremost in this example, we won't explain the scenario in detail yet, and instead concentrate on the steps needed and the coding patterns. If you want to know more about the scenario first, skip ahead to ["The scenario for `BoxPanel`"](#the-scenario-for-boxpanel), and then come back to the code.
 
@@ -79,15 +79,13 @@ public class BoxPanel : Panel
 }
 ```
 
-From here on out, we'll be showing you one member definition at a time, be that a method override or something supporting such as a dependency property. You can add these to the skeleton above in any order, and we won't be showing the **using** statements or the definition of the class scope again in the snippets until we show the final code.
+From here on out, we'll be showing you one member definition at a time, be that a method override or something supporting such as a dependency property. You can add these to the skeleton above in any order.
 
 ## **MeasureOverride**
-
 
 ```CSharp
 protected override Size MeasureOverride(Size availableSize)
 {
-    Size returnSize;
     // Determine the square that can contain this number of items.
     maxrc = (int)Math.Ceiling(Math.Sqrt(Children.Count));
     // Get an aspect ratio from availableSize, decides whether to trim row or column.
@@ -133,13 +131,13 @@ It's possible for this panel to be used when the height component of *availableS
 However, the panel itself can't return a [**Size**](/uwp/api/Windows.Foundation.Size) with an infinite value from [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride); that throws an exception during layout. So, part of the logic is to find out the maximum height that any child requests, and use that height as the cell height in case that isn't coming from the panel's own size constraints already. Here's the helper function `LimitUnboundedSize` that was referenced in previous code, which then takes that maximum cell height and uses it to give the panel a finite height to return, as well as assuring that `cellheight` is a finite number before the arrange pass is initiated:
 
 ```CSharp
-// This method is called only if one of the availableSize dimensions of measure is infinite.
+// This method limits the panel height when no limit is imposed by the panel's parent.
 // That can happen to height if the panel is close to the root of main app window.
 // In this case, base the height of a cell on the max height from desired size
 // and base the height of the panel on that number times the #rows.
 
 Size LimitUnboundedSize(Size input)
-{
+
     if (Double.IsInfinity(input.Height))
     {
         input.Height = maxcellheight * colcount;
@@ -198,7 +196,7 @@ public bool UseSquareCells
 And here's how using `UseOppositeRCRatio` impacts the measure logic. Really all it's doing is changing how `rowcount` and `colcount` are derived from `maxrc` and the true aspect ratio, and there are corresponding size differences for each cell because of that. When `UseOppositeRCRatio` is **true**, it inverts the value of the true aspect ratio before using it for row and column counts.
 
 ```CSharp
-if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
+if (UseSquareCells) { aspectratio = 1 / aspectratio;}
 ```
 
 ## The scenario for BoxPanel
