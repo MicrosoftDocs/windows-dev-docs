@@ -267,7 +267,7 @@ If you purchase or create promotional ad campaigns to promote your apps through 
 
 Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
 
-If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), including the following requirements:
+If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
 
 **10.10.4**
 
@@ -433,4 +433,4 @@ If your app provides content (such as user-generated, retail or other web-based 
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)

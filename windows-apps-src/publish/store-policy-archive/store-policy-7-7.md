@@ -36,7 +36,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 - [10.1 Distinct Function & Value; Accurate Representation](#101-distinct-function--value-accurate-representation)
 - [10.2 Security](#102-security)
-- [10.3 App is Testable](#103-product-is-testable)
+- [10.3 App is Testable](#103-app-is-testable)
 - [10.4 Usability](#104-usability)
 - [10.5 Personal Information](#105-personal-information)
 - [10.6 Capabilities](#106-capabilities)
@@ -53,7 +53,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 - [11.1 General Content Requirements](#111-general-content-requirements)
 - [11.2 Content Including Names, Logos, Original and Third Party](#112-content-including-names-logos-original-and-third-party)
-- [11.3 Harm to Others](#113-risk-of-harm)
+- [11.3 Harm to Others](#113-harm-to-others)
 - [11.4 Defamatory, Libelous, Slanderous and Threatening](#114-defamatory-libelous-slanderous-and-threatening)
 - [11.5 Offensive Content](#115-offensive-content)
 - [11.6 Alcohol, Tobacco, Weapons and Drugs](#116-alcohol-tobacco-weapons-and-drugs)
@@ -268,7 +268,7 @@ If you purchase or create promotional ad campaigns to promote your apps through 
 
 Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
 
-If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), including the following requirements:
+If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
 
 **10.10.4**
 
@@ -438,4 +438,4 @@ If your app provides content (such as user-generated, retail or other web-based 
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
