@@ -36,7 +36,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 - [10.1 Distinct Function & Value; Accurate Representation](#101-distinct-function--value-accurate-representation)
 - [10.2 Security](#102-security)
-- [10.3 App is Testable](#103-product-is-testable)
+- [10.3 App is Testable](#103-app-is-testable)
 - [10.4 Usability](#104-usability)
 - [10.5 Personal Information](#105-personal-information)
 - [10.6 Capabilities](#106-capabilities)
@@ -52,7 +52,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 - [11.1 General Content Requirements](#111-general-content-requirements)
 - [11.2 Content Including Names, Logos, Original and Third Party](#112-content-including-names-logos-original-and-third-party)
-- [11.3 Harm to Others](#113-risk-of-harm)
+- [11.3 Harm to Others](#113-harm-to-others)
 - [11.4 Defamatory, Libelous, Slanderous and Threatening](#114-defamatory-libelous-slanderous-and-threatening)
 - [11.5 Offensive Content](#115-offensive-content)
 - [11.6 Alcohol, Tobacco, Weapons and Drugs](#116-alcohol-tobacco-weapons-and-drugs)
@@ -98,7 +98,7 @@ Your app must not attempt to change or extend the described functionality throug
 
 **10.2.3**
 
-Your app must not contain or enable malware as defined by the Microsoft criteria for [Unwanted and Malicious Software](http://go.microsoft.com/fwlink/?LinkId=821298).
+Your app must not contain or enable malware as defined by the Microsoft criteria for[Unwanted and Malicious Software](http://go.microsoft.com/fwlink/?LinkId=821298).
 
 **10.2.4**
 
@@ -223,6 +223,7 @@ Your app may promote or distribute software only through the Microsoft Store.
 **10.8.6**
 
 You must use the Microsoft recurring billing API to bill for subscriptions of digital goods or services, and the following guidelines apply:
+
 - You may add value to a subscription but may not remove value for users who have previously purchased it.
 - If you discontinue an active subscription, you must continue to provide purchased digital goods or services until the subscription expires.
 
