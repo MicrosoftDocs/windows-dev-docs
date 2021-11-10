@@ -1,4 +1,4 @@
----
+--- 
 description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
 title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
