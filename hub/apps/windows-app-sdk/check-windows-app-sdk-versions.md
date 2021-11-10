@@ -14,14 +14,8 @@ ms.localizationpriority: medium
 To check which versions of the Windows App SDK runtime are installed on your development computer, open a **PowerShell** window and run this command.
 
 ```Powershell
-# For 1.0 Preview 1 and later 
 get-appxpackage *appruntime*
 
-# For 1.0 Experimental
-get-appxpackage *WindowsAppSDK* 
-
-# For 0.8 versions and earlier 
-get-appxpackage *reunion*
 ```
 
 You should see output similar to the following, which may include the `x64` and `x86` architecture of the [Framework package](deployment-architecture.md#framework-package), [Dynamic Dependency Lifetime Manager (DDLM) package](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm), [Main package](deployment-architecture.md#main-package), and [Singleton package](deployment-architecture.md#singleton-package), depending on your computer and the Windows App SDK version.  
