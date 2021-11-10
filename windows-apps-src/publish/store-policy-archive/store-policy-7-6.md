@@ -7,7 +7,7 @@ keywords: store policies agreement archive
 ms.localizationpriority: high
 ---
 
-# Microsoft Store Policies
+# Microsoft Store Policies (7.6)
 
 **Document version: 7.6**
 
@@ -28,7 +28,7 @@ Adhering to these policies should help you make choices that enhance your app’
 
 Your apps are crucial to the experience of hundreds of millions of customers. We can’t wait to see what you create and are thrilled to help deliver your apps to the world.
 
-If you have feedback on the policies, please let us know by commenting in [our forum](http://go.microsoft.com/fwlink/p/?LinkId=224196). We will consider every comment.
+If you have feedback on the policies, please let us know by commenting in [our forum](https://go.microsoft.com/fwlink/p/?LinkId=224196). We will consider every comment.
 
 ## Table of Contents
 
@@ -98,7 +98,7 @@ Your app must not attempt to change or extend the described functionality throug
 
 **10.2.3**
 
-Your app must not contain or enable malware as defined by the Microsoft criteria for[Unwanted and Malicious Software](http://go.microsoft.com/fwlink/?LinkId=821298).
+Your app must not contain or enable malware as defined by the Microsoft criteria for[Unwanted and Malicious Software](https://go.microsoft.com/fwlink/?LinkId=821298).
 
 **10.2.4**
 
@@ -261,11 +261,11 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your apps through the “Promote Your App” capability in Dev Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](http://go.microsoft.com/fwlink/p/?LinkId=532593) and [Creative Acceptance Policy](http://go.microsoft.com/fwlink/p/?LinkId=532595).
+If you purchase or create promotional ad campaigns to promote your apps through the “Promote Your App” capability in Dev Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://go.microsoft.com/fwlink/p/?LinkId=532593) and [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
 
 **10.10.3**
 
-Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](http://go.microsoft.com/fwlink/p/?LinkId=532595).
+Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
 
 If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), including the following requirements:
 
@@ -279,7 +279,7 @@ Your privacy statement or terms of use must let users know you will send persona
 
 **10.10.6**
 
-If your app is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](http://go.microsoft.com/fwlink/p/?LinkID=623015)), you must notify Microsoft of this fact in Dev Center and ensure that all ad content displayed in your app is appropriate for children under the age of 13.
+If your app is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](https://go.microsoft.com/fwlink/p/?LinkID=623015)), you must notify Microsoft of this fact in Dev Center and ensure that all ad content displayed in your app is appropriate for children under the age of 13.
 
 ### 10.11 Mobile Voice Plans
 
@@ -300,11 +300,11 @@ For apps that are primarily gaming experiences or target Xbox One, the following
 
 **10.13.1**
 
-Games that target Xbox One must use Xbox Live services through either the [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) program.
+Games that target Xbox One must use Xbox Live services through either the [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](https://go.microsoft.com/fwlink/?LinkId=821742) program.
 
 **10.13.2**
 
-Games that allow cross-player communication or synchronous network play on Xbox One devices must use Xbox Live and be approved through the [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) program.
+Games that allow cross-player communication or synchronous network play on Xbox One devices must use Xbox Live and be approved through the [ID@Xbox](https://go.microsoft.com/fwlink/?LinkId=821742) program.
 
 **10.13.3**
 
@@ -431,6 +431,6 @@ If your app provides content (such as user-generated, retail or other web-based 
 
 ### See also
 
-- [Change history for Microsoft Store Policies](store-policies-change-history.md)
-- [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
+- [Change history for Microsoft Store Policies](../store-policies-change-history.md)
+- [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
 - [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
