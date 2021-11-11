@@ -30,7 +30,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 ## Instructions
 
-You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
+You can choose to follow this tutorial using a C++ project or a C# project.
 
 > [!IMPORTANT]
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
