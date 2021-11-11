@@ -173,7 +173,7 @@ Next, move several important files to the application project. There are differe
 1. In **File Explorer**, move the **Package.appxmanifest** file and the **Images** folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.
 2. Remove the packaging project from your solution.
 
-[![Illustration of moving files to main app](images/single-project-move-to-one.png.png) ](images/single-project-move-to-one.png#lightbox)
+[![Illustration of moving files to main app](images/single-project-move-to-one.png) ](images/single-project-move-to-one.png#lightbox)
 
 #### [C++](#tab/cpp)
 
