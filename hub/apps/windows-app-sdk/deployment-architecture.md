@@ -65,12 +65,12 @@ The bootstrapper is a library that must be included with your unpackaged app. It
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the bootstrapper API must be called in your unpackaged app's startup code so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you may [call the bootstrapper API directly in your app's startup code](tutorial-unpackaged-deployment.md) so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
 
-The bootstrapper library has different names depending on the Windows App SDK release:
+The bootstrapper library in the Windows App SDK 1.0 Stable release includes:
 
-- Windows App SDK 1.0 Experimental and later releases: **Microsoft.WindowsAppSDK.Bootstrap.dll**.
-- Windows App SDK 0.8 Preview: **Microsoft.ProjectReunion.Bootstrap.dll**.
+- **Microsoft.WindowsAppRuntime.Bootstrap.dll** (C++ and C#) 
+- **Microsoft.WindowsAppRuntime.Bootstrap.Net.dll** (C# wrapper)
 
 ### Dynamic Dependency Lifetime Manager (DDLM)
 
