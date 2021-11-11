@@ -47,7 +47,7 @@ This process consists of uninstalling existing Project Reunion package reference
     uninstall-package Microsoft.ProjectReunion 
     uninstall-package Microsoft.ProjectReunion.WinUI
     ```
-Now run the commands to install the stable WindowsAppSDK package.
+Now run the commands to install the stable `WindowsAppSDK` package.
 
 4. To add the WindowsAppSDK package reference to your .csproj/.vcxproj:
     
