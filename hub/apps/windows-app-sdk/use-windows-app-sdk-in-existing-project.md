@@ -13,6 +13,8 @@ ms.localizationpriority: medium
 
 If you have an existing project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project. Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
 
+<!--unsure-->
+
 > [!NOTE]
 > This procedure is supported in C# .NET 5, C++ desktop, and UWP projects. C# .NET 5 and C++ desktop projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md). UWP projects must use the NuGet package from the [experimental release channel](experimental-channel.md).
 
@@ -41,7 +43,7 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 
 5. After the appropriate Windows App SDK NuGet package is found, select the package and then click **Install** in the right pane of the **NuGet Package Manager** window.
 
-    ![Screenshot of the Windows App SDK NuGet package being installed](images/reunion-nuget-install.png)
+    [![Screenshot of the Windows App SDK NuGet package being installed](images/reunion-nuget-install.png) ](images/reunion-nuget-install.png#lightbox)
 
     > [!NOTE]
     > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and more) that contain the implementations for specific components in the Windows App SDK. You cannot install these sub-packages individually to reference only certain components in your project. You must install the main Windows App SDK NuGet package, which includes all of the components.
