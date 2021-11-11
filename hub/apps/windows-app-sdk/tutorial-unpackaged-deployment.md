@@ -38,6 +38,8 @@ You can choose to follow this tutorial using a C++ project or a C# project that 
 > [!IMPORTANT]
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
 
+Visual Studio should not be launched elevated. For more information, see [Dynamic dependencies doesn't support elevation](https://github.com/microsoft/WindowsAppSDK/issues/567).
+
 ### [C++](#tab/cpp)
 
 Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
@@ -377,7 +379,9 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+        // var manager = new ResourceManager("DynamicDependenciesTest.pri");
+	// fix ambiguous reference
+	var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);
