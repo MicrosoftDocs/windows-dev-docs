@@ -49,7 +49,7 @@ This process consists of uninstalling existing Project Reunion package reference
     ```
 Now run the commands to install the stable `WindowsAppSDK` package.
 
-4. To add the WindowsAppSDK package reference to your .csproj/.vcxproj:
+4. To add the `WindowsAppSDK` package reference to your `.csproj`/`.vcxproj`:
     
     ```Console
     install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0-stable
