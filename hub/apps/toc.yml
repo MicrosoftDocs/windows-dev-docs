@@ -300,15 +300,15 @@ items:
         href: package-and-deploy/index.md
       - name: Windows App SDK deployment guide
         items:
-          - name: "Runtime architecture"
+          - name: "Overview and runtime architecture"
             href: windows-app-sdk/deployment-architecture.md
           - name: "Deployment guide for packaged apps"
             href: windows-app-sdk/deploy-packaged-apps.md
           - name: "Deployment guide for unpackaged apps"
             items:
-              - name: Overview
+              - name: "Deployment instructions"
                 href: windows-app-sdk/deploy-unpackaged-apps.md
-              - name: Reference the Windows App SDK framework package at run time
+              - name: "Reference the Windows App SDK framework package at run time"
                 href: windows-app-sdk/reference-framework-package-run-time.md
               - name: "Tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
