@@ -32,7 +32,7 @@ Next, make these changes to your project:
 
 1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
 
-This process consists of uninstalling existing Project Reunion package references from  .csproj/.vcxproj and .wapproj files, and then installing the WindowsAppSDK package references to those files.
+This process consists of uninstalling existing Project Reunion package references from  `.csproj`/`.vcxproj` and `.wapproj` files, and then installing the `WindowsAppSDK` package references to those files.
 
 2. Enter the following commands to uninstall existing `ProjectReunion` packages from your `.csproj`/`.vcxproj`
 
