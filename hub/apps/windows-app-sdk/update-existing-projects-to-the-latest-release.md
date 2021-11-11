@@ -16,7 +16,7 @@ If you created a project with an earlier version of the Windows App SDK (previou
 
 ## Update from 0.8 Stable to 1.0 Stable
 
-If you created a project using version 0.8 Stable (for example, version 0.8.4), you can follow these instructions to update your project to the 1.0 stable release.
+If you created a project using version 0.8 Stable (for example, version 0.8.4), you can follow these instructions to update your project to the 1.0 Stable release.
 
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
