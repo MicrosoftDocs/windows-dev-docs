@@ -41,7 +41,7 @@ This process consists of uninstalling existing Project Reunion package reference
     uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
     uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
     ```
-3. Then, run the following to uninstall existing ProjectReunion packages from your .wapproj:
+3. Then, run the following to uninstall existing `ProjectReunion` packages from your `.wapproj`:
 
     ```Console
     uninstall-package Microsoft.ProjectReunion 
