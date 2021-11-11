@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to add Activity and Notification fea
 title: Add Windows 10 user activities and notifications
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
@@ -141,7 +139,7 @@ Adaptive cards play an important role in Timeline because it's the way Windows r
 
 1. Right click on the **ContosoExpenses.Core** project in Solution Explorer and choose **Manage NuGet packages**.
 
-2. In the **NuGet Package Manager** window, click **Browse**. Search for the `Newtonsoft.Json` package and install the latest available version. This is a popular JSON manipulation library that you will use to help mainipulate the JSON strings required by Adaptive Cards.
+2. In the **NuGet Package Manager** window, click **Browse**. Search for the `Newtonsoft.Json` package and install the latest available version. This is a popular JSON manipulation library that you will use to help manipulate the JSON strings required by Adaptive Cards.
 
     ![NewtonSoft.Json NuGet package](images/wpf-modernize-tutorial/JsonNetNuGet.png)
 

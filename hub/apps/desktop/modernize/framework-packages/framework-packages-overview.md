@@ -50,6 +50,6 @@ For MSIX-packaged apps that use the [PackageDependency](/uwp/schemas/appxpackage
 
 - [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md)
 - [Use the dynamic dependency API to reference framework packages at run time](use-the-dynamic-dependency-api.md)
-- [Deploy unpackaged apps that use the Windows App SDK](../../../windows-app-sdk/deploy-unpackaged-apps.md)
-- [Run time architecture and deployment scenarios for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
+- [Windows App SDK deployment guide for unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
 - [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)

@@ -32,6 +32,13 @@ All glyphs in **Segoe Fluent Icons** have the same fixed width with a consistent
 
 ![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
 
+```xaml
+<Grid>
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" Foreground="#C72335" />
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;" />
+</Grid>
+```
+
 Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
 
 ## Using the icons
@@ -83,7 +90,7 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -1001,9 +1008,9 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
     <td>e839</td>
     <td>Ethernet</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/e83a.png" width="32" height="32" alt="�ShareBroadband" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/e83a.png" width="32" height="32" alt="ShareBroadband" /></td>
     <td>e83a</td>
-    <td>�ShareBroadband</td>
+    <td>ShareBroadband</td>
   </tr>
    <tr><td><img src="images/glyphs/segoe-fluent-icons/e83b.png" width="32" height="32" alt="DirectAccess" /></td>
     <td>e83b</td>
@@ -2426,7 +2433,7 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -2976,137 +2983,137 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
     <td>eb9f</td>
     <td>Photo2</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba0.png" width="32" height="32" alt="�MobBattery0" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba0.png" width="32" height="32" alt="MobBattery0" /></td>
     <td>eba0</td>
-    <td>�MobBattery0</td>
+    <td>MobBattery0</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba1.png" width="32" height="32" alt="�MobBattery1" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba1.png" width="32" height="32" alt="MobBattery1" /></td>
     <td>eba1</td>
-    <td>�MobBattery1</td>
+    <td>MobBattery1</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba2.png" width="32" height="32" alt="�MobBattery2" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba2.png" width="32" height="32" alt="MobBattery2" /></td>
     <td>eba2</td>
-    <td>�MobBattery2</td>
+    <td>MobBattery2</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba3.png" width="32" height="32" alt="�MobBattery3" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba3.png" width="32" height="32" alt="MobBattery3" /></td>
     <td>eba3</td>
-    <td>�MobBattery3</td>
+    <td>MobBattery3</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba4.png" width="32" height="32" alt="�MobBattery4" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba4.png" width="32" height="32" alt="MobBattery4" /></td>
     <td>eba4</td>
-    <td>�MobBattery4</td>
+    <td>MobBattery4</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba5.png" width="32" height="32" alt="�MobBattery5" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba5.png" width="32" height="32" alt="MobBattery5" /></td>
     <td>eba5</td>
-    <td>�MobBattery5</td>
+    <td>MobBattery5</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba6.png" width="32" height="32" alt="�MobBattery6" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba6.png" width="32" height="32" alt="MobBattery6" /></td>
     <td>eba6</td>
-    <td>�MobBattery6</td>
+    <td>MobBattery6</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba7.png" width="32" height="32" alt="�MobBattery7" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba7.png" width="32" height="32" alt="MobBattery7" /></td>
     <td>eba7</td>
-    <td>�MobBattery7</td>
+    <td>MobBattery7</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba8.png" width="32" height="32" alt="�MobBattery8" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba8.png" width="32" height="32" alt="MobBattery8" /></td>
     <td>eba8</td>
-    <td>�MobBattery8</td>
+    <td>MobBattery8</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba9.png" width="32" height="32" alt="�MobBattery9" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eba9.png" width="32" height="32" alt="MobBattery9" /></td>
     <td>eba9</td>
-    <td>�MobBattery9</td>
+    <td>MobBattery9</td>
   </tr>
    <tr><td><img src="images/glyphs/segoe-fluent-icons/ebaa.png" width="32" height="32" alt="MobBattery10" /></td>
     <td>ebaa</td>
     <td>MobBattery10</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebab.png" width="32" height="32" alt="�MobBatteryCharging0" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebab.png" width="32" height="32" alt="MobBatteryCharging0" /></td>
     <td>ebab</td>
-    <td>�MobBatteryCharging0</td>
+    <td>MobBatteryCharging0</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebac.png" width="32" height="32" alt="�MobBatteryCharging1" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebac.png" width="32" height="32" alt="MobBatteryCharging1" /></td>
     <td>ebac</td>
-    <td>�MobBatteryCharging1</td>
+    <td>MobBatteryCharging1</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebad.png" width="32" height="32" alt="�MobBatteryCharging2" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebad.png" width="32" height="32" alt="MobBatteryCharging2" /></td>
     <td>ebad</td>
-    <td>�MobBatteryCharging2</td>
+    <td>MobBatteryCharging2</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebae.png" width="32" height="32" alt="�MobBatteryCharging3" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebae.png" width="32" height="32" alt="MobBatteryCharging3" /></td>
     <td>ebae</td>
-    <td>�MobBatteryCharging3</td>
+    <td>MobBatteryCharging3</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebaf.png" width="32" height="32" alt="�MobBatteryCharging4" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebaf.png" width="32" height="32" alt="MobBatteryCharging4" /></td>
     <td>ebaf</td>
-    <td>�MobBatteryCharging4</td>
+    <td>MobBatteryCharging4</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb0.png" width="32" height="32" alt="�MobBatteryCharging5" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb0.png" width="32" height="32" alt="MobBatteryCharging5" /></td>
     <td>ebb0</td>
-    <td>�MobBatteryCharging5</td>
+    <td>MobBatteryCharging5</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb1.png" width="32" height="32" alt="�MobBatteryCharging6" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb1.png" width="32" height="32" alt="MobBatteryCharging6" /></td>
     <td>ebb1</td>
-    <td>�MobBatteryCharging6</td>
+    <td>MobBatteryCharging6</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb2.png" width="32" height="32" alt="�MobBatteryCharging7" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb2.png" width="32" height="32" alt="MobBatteryCharging7" /></td>
     <td>ebb2</td>
-    <td>�MobBatteryCharging7</td>
+    <td>MobBatteryCharging7</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb3.png" width="32" height="32" alt="�MobBatteryCharging8" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb3.png" width="32" height="32" alt="MobBatteryCharging8" /></td>
     <td>ebb3</td>
-    <td>�MobBatteryCharging8</td>
+    <td>MobBatteryCharging8</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb4.png" width="32" height="32" alt="�MobBatteryCharging9" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb4.png" width="32" height="32" alt="MobBatteryCharging9" /></td>
     <td>ebb4</td>
-    <td>�MobBatteryCharging9</td>
+    <td>MobBatteryCharging9</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb5.png" width="32" height="32" alt="�MobBatteryCharging10" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb5.png" width="32" height="32" alt="MobBatteryCharging10" /></td>
     <td>ebb5</td>
-    <td>�MobBatteryCharging10</td>
+    <td>MobBatteryCharging10</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb6.png" width="32" height="32" alt="�MobBatterySaver0" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb6.png" width="32" height="32" alt="MobBatterySaver0" /></td>
     <td>ebb6</td>
-    <td>�MobBatterySaver0</td>
+    <td>MobBatterySaver0</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb7.png" width="32" height="32" alt="�MobBatterySaver1" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb7.png" width="32" height="32" alt="MobBatterySaver1" /></td>
     <td>ebb7</td>
-    <td>�MobBatterySaver1</td>
+    <td>MobBatterySaver1</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb8.png" width="32" height="32" alt="�MobBatterySaver2" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb8.png" width="32" height="32" alt="MobBatterySaver2" /></td>
     <td>ebb8</td>
-    <td>�MobBatterySaver2</td>
+    <td>MobBatterySaver2</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb9.png" width="32" height="32" alt="�MobBatterySaver3" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebb9.png" width="32" height="32" alt="MobBatterySaver3" /></td>
     <td>ebb9</td>
-    <td>�MobBatterySaver3</td>
+    <td>MobBatterySaver3</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebba.png" width="32" height="32" alt="�MobBatterySaver4" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebba.png" width="32" height="32" alt="MobBatterySaver4" /></td>
     <td>ebba</td>
-    <td>�MobBatterySaver4</td>
+    <td>MobBatterySaver4</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbb.png" width="32" height="32" alt="�MobBatterySaver5" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbb.png" width="32" height="32" alt="MobBatterySaver5" /></td>
     <td>ebbb</td>
-    <td>�MobBatterySaver5</td>
+    <td>MobBatterySaver5</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbc.png" width="32" height="32" alt="�MobBatterySaver6" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbc.png" width="32" height="32" alt="MobBatterySaver6" /></td>
     <td>ebbc</td>
-    <td>�MobBatterySaver6</td>
+    <td>MobBatterySaver6</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbd.png" width="32" height="32" alt="�MobBatterySaver7" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbd.png" width="32" height="32" alt="MobBatterySaver7" /></td>
     <td>ebbd</td>
-    <td>�MobBatterySaver7</td>
+    <td>MobBatterySaver7</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbe.png" width="32" height="32" alt="�MobBatterySaver8" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbe.png" width="32" height="32" alt="MobBatterySaver8" /></td>
     <td>ebbe</td>
-    <td>�MobBatterySaver8</td>
+    <td>MobBatterySaver8</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbf.png" width="32" height="32" alt="�MobBatterySaver9" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebbf.png" width="32" height="32" alt="MobBatterySaver9" /></td>
     <td>ebbf</td>
-    <td>�MobBatterySaver9</td>
+    <td>MobBatterySaver9</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebc0.png" width="32" height="32" alt="�MobBatterySaver10" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/ebc0.png" width="32" height="32" alt="MobBatterySaver10" /></td>
     <td>ebc0</td>
-    <td>�MobBatterySaver10</td>
+    <td>MobBatterySaver10</td>
   </tr>
    <tr><td><img src="images/glyphs/segoe-fluent-icons/ebc3.png" width="32" height="32" alt="DictionaryCloud" /></td>
     <td>ebc3</td>
@@ -3637,7 +3644,7 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -4192,7 +4199,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -4766,10 +4773,6 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
     <td>f1d9</td>
     <td>StatusCheckmarkLeft</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/f1db.png" width="32" height="32" alt="UniversalCaptions" /></td>
-    <td>f1db</td>
-    <td>UniversalCaptions</td>
-  </tr>
    <tr><td><img src="images/glyphs/segoe-fluent-icons/f20c.png" width="32" height="32" alt="KeyboardLeftAligned" /></td>
     <td>f20c</td>
     <td>KeyboardLeftAligned</td>
@@ -4855,7 +4858,7 @@ The following table of glyphs displays unicode points prefixed from F3- to F5-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -5378,7 +5381,7 @@ The following table of glyphs displays unicode points prefixed from F6- to F8-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>

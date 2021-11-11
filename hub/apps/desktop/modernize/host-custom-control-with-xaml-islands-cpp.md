@@ -4,8 +4,8 @@ title: Host a custom WinRT XAML control in a C++ desktop (Win32) app using the X
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, custom controls, user controls, host controls
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -182,7 +182,7 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
   > [!NOTE]
   > Each solution that uses XAML Islands can contain only one project that defines a `XamlApplication` object. All custom WinRT XAML controls in your app share the same `XamlApplication` object. 
 
-1. In **Solution Explorer**, right-click the **MainPage.xaml** file in the **MyUWPApp** project. Click **Remove** and then **Delete** to delete this file permamently from the project.
+1. In **Solution Explorer**, right-click the **MainPage.xaml** file in the **MyUWPApp** project. Click **Remove** and then **Delete** to delete this file permanently from the project.
 2. In the **MyUWPApp** project, expand **App.xaml** file.
 3. Replace the contents of the **App.xaml**, **App.cpp**, **App.h**, and **App.idl** files with the following code.
 
@@ -273,27 +273,19 @@ Next, revise the default **App** class in the **MyUWPApp** project to derive fro
             using IXamlType = ::winrt::Windows::UI::Xaml::Markup::IXamlType;
             IXamlType GetXamlType(::winrt::Windows::UI::Xaml::Interop::TypeName const& type)
             {
-                return AppProvider()->GetXamlType(type);
+                return _appProvider.GetXamlType(type);
             }
             IXamlType GetXamlType(::winrt::hstring const& fullName)
             {
-                return AppProvider()->GetXamlType(fullName);
+                return _appProvider.GetXamlType(fullName);
             }
             ::winrt::com_array<::winrt::Windows::UI::Xaml::Markup::XmlnsDefinition> GetXmlnsDefinitions()
             {
-                return AppProvider()->GetXmlnsDefinitions();
+                return _appProvider.GetXmlnsDefinitions();
             }
         private:
             bool _contentLoaded{ false };
-            winrt::com_ptr<XamlMetaDataProvider> _appProvider;
-            winrt::com_ptr<XamlMetaDataProvider> AppProvider()
-            {
-                if (!_appProvider)
-                {
-                    _appProvider = winrt::make_self<XamlMetaDataProvider>();
-                }
-                return _appProvider;
-            }
+            winrt::MyUWPApp::XamlMetaDataProvider _appProvider;
         };
         template <typename D, typename... I>
         using AppT2 = App_baseWithProvider<D, I...>;

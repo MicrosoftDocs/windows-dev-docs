@@ -6,20 +6,21 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Awake utility
+# PowerToys Awake utility
 
-Awake is a utility tool for Windows designed to keep a computer awake without having to manage its [power & sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+PowerToys Awake is a utility tool for Windows designed to keep a computer awake without having to manage its [power & sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
 
 ## Get started
 
-Awake can be used directly from PowerToys settings or as a standalone executable. When the tool is running from PowerToys, it can be managed from PowerToys settings or the system tray.
+PowerToys Awake can be used directly from PowerToys settings or as a standalone executable. When the tool is running from PowerToys, it can be managed from PowerToys settings or the system tray.
 
 > [!NOTE]
-> Awake does not modify any of the Windows power plan settings, and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine.
+> PowerToys Awake does not modify any of the Windows power plan settings, and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine.
 
 ## PowerToys settings
 
-In the PowerToys settings view, start Awake by using the **Enable Awake** toggle. Once enabled, the application will manage the awakeness state of the computer.
+<!-- [Jay] GUI text needs to be updated to "PowerToys Awake", then change following text and images accordingly -->
+In the PowerToys settings view, start PowerToys Awake by using the **Enable Awake** toggle. Once enabled, the application will manage the awakeness state of the computer.
 
 ![A screenshot of the Awake settings](../images/pt-awake-settings-menu.png)
 
@@ -34,17 +35,17 @@ The following Awake states can be selected:
 
 ## Keep screen on
 
-While Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off, even though the computer won't go to sleep. If you need the displays to be available, use the **Keep screen on** switch, which will ensure that all monitors remain on.
+While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off, even though the computer won't go to sleep. If you need the displays to be available, use the **Keep screen on** switch, which will ensure that all monitors remain on.
 
 ## System tray
 
-To manage the execution of the tool from the system tray, right-click on the Awake icon.
+To manage the execution of the tool from the system tray, right-click on the PowerToys Awake icon.
 
 ![Awake settings managed from the system tray on Windows](../images/pt-awake-tray.gif)
 
 ## Command Line Interface (CLI)
 
-Awake can also be executed as a standalone application, directly from the PowerToys folder. The following command line arguments can be used when running `PowerToys.Awake.exe` from the terminal:
+PowerToys Awake can also be executed as a standalone application, directly from the PowerToys folder. The following command line arguments can be used when running `PowerToys.Awake.exe` from the terminal or via a `.lnk` shortcut file:
 
 | Argument          | Description |
 |:------------------|:------------|
@@ -53,4 +54,4 @@ Awake can also be executed as a standalone application, directly from the PowerT
 | `--time-limit`    | Duration, in seconds, during which Awake keeps the computer awake. Can be used in combination with `--display-on`. |
 | `--pid`           | Attaches the execution of Awake to a Process ID (PID). When the process with a given PID terminates, Awake terminates as well. |
 
-In absence of command-line arguments, Awake will keep the computer awake indefinitely.
+In absence of command-line arguments, PowerToys Awake will keep the computer awake indefinitely.

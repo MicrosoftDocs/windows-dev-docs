@@ -1,18 +1,16 @@
 ---
-title: Web development on Windows 10
-description: A guide to web development on Windows 10 with links to tools, apis, and various resources from across Microsoft.
+title: Web development on Windows
+description: A guide to web development on Windows with links to tools, apis, and various resources from across Microsoft.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: web development, web dev, web on windows, apis, edge
-ms.date: 01/06/2021
+ms.date: 10/25/2021
 ---
 
-# Web development on Windows 10
+# Web development on Windows
 
-Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows 10. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/windows/web/apis). For more help with getting started, see [Set up your development environment on Windows 10](../dev-environment/index.md).
-
+Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/windows/web/apis). For more help with getting started, see [Set up your development environment on Windows](../dev-environment/index.md).
 
 ## WebView, DevTools, PWAs
 
@@ -44,7 +42,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
 
 :::row:::
     :::column:::
-       [![Microsoft Edge icon](../images/microsoftedge.png)](https://www.microsoft.com/en-us/edge)<br>
+       [![Microsoft Edge icon](../images/microsoftedge.png)](https://www.microsoft.com/edge)<br>
         **[Microsoft Edge for Developers](https://developer.microsoft.com/microsoft-edge/)**<br>
         The new Microsoft Edge  is based on Chromium to create better web compatibility and less fragmentation of underlying web platforms. Released January 15, 2020, it is supported on Windows, macOS, iOS, and Android. <br>
         [Install the new Microsoft Edge](https://www.microsoft.com/edge)
@@ -73,15 +71,15 @@ Microsoft offers a variety of resources for web developers, including new tools 
 
 :::row:::
     :::column:::
-       [![VS Marketplace Edge Debugger extension](../images/visualstudio-edge-debugger.png)](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)<br>
-        **[VS Code: Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge/)**<br>
-        Debug JavaScript code in the Microsoft Edge browser with this VS Code extension. Can also be used from ASP.NET Projects in Visual Studio.<br>
-        [Install VS Code- Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)
+       [![VS Marketplace Edge Debugger extension](../images/visualstudio-edge-debugger.png)](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)<br>
+        **[Microsoft Edge Tools for VS Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)**<br>
+        Without leaving Visual Studio Code, use Microsoft Edge DevTools to connect to an instance and view the runtime HTML structure, change layouts, styles (CSS), read console messages, and view network requests.<br>
+        [Install Microsoft Edge Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)
     :::column-end:::
     :::column:::
        [![Virtual Machines icon](../images/virtualmachine.png)](https://developer.microsoft.com/microsoft-edge/tools/vms/)<br>
         **[Virtual Machines for Testing](https://developer.microsoft.com/microsoft-edge/tools/vms/)**<br>
-        Test IE11 and Microsoft Edge Legacy using free Windows 10 virtual machines you download and manage locally.<br>
+        Test IE11 and Microsoft Edge Legacy using free Windows virtual machines you download and manage locally.<br>
         [Download a Virtual Machine](https://developer.microsoft.com/microsoft-edge/tools/vms/)
     :::column-end:::
     :::column:::
@@ -136,7 +134,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
        [![WSL icon](../images/windows-linux-dev-env.png)](/windows/wsl/)<br>
         **[Windows Subsystem for Linux](/windows/wsl/)**<br>
         Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
-        [Install WSL](/windows/wsl/install-win10)
+        [Install WSL](/windows/wsl/install)
     :::column-end:::
     :::column:::
        [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
@@ -148,8 +146,8 @@ Microsoft offers a variety of resources for web developers, including new tools 
     :::column:::
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
-        Use the winget.exe client with your command line to install apps on Windows 10.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
+        Use the winget.exe client with your command line to install apps on Windows or [submit your own packages to Windows Package Manager](../package-manager/package/index.md).<br>
+        [Install Windows Package Manager winget client](../package-manager/winget/index.md)
     :::column-end:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-icon.png)](../dev-environment/docker/overview.md)<br>
@@ -222,7 +220,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
        [![Azure cognitive services icon](../images/azure-cognitive-services.png)](/azure/cognitive-services/what-are-cognitive-services)<br>
         **[Azure Cognitive Services](/azure/cognitive-services/what-are-cognitive-services)**<br>
         Cloud-based services with REST APIs and client library SDKs available to help you build cognitive intelligence into your applications.<br>
-        [Try Cognitive Service](https://azure.microsoft.com/en-us/services/cognitive-services/)
+        [Try Cognitive Service](https://azure.microsoft.com/services/cognitive-services/)
     :::column-end:::
     :::column:::
        [![Azure dev guide icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
@@ -267,4 +265,3 @@ Check out our [guide to transitioning between between a Mac and Windows](../dev-
 - [Trackpad shortcuts](../dev-environment/mac-to-windows.md#trackpad-shortcuts)
 - [Terminal and shell tools](../dev-environment/mac-to-windows.md#command-line-shells-and-terminals)
 - [Apps and utilities](../dev-environment/mac-to-windows.md#apps-and-utilities)
-- [Stories from developers who have switched from Mac to Windows](../dev-environment/dev-stories.md)

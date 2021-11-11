@@ -1,6 +1,6 @@
 ---
 description: Build a C# .NET 5 and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
-title: WinUI 3 desktop apps and Win32-interop
+title: Build a C# .NET 5 app with WinUI 3 and Win32 interop
 ms.date: 08/02/2021
 ms.topic: article
 keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
@@ -10,14 +10,14 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# WinUI 3 desktop apps and basic Win32 interop
+# Build a C# .NET 5 app with WinUI 3 and Win32 interop
 
 In this article, we step through how to build a basic **C# .NET 5** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 
 ## Prerequisites
 
-- [Set up your development environment](../../windows-app-sdk/set-up-your-development-environment.md).
-- Test your configuration by [creating your first WinUI 3 project for C# and .NET 5](create-your-first-winui3-app.md).
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix).
+2. Test your configuration by [creating a new project that uses the Windows App SDK](create-your-first-winui3-app.md). 
 
 ## Basic managed C#/.NET 5 app
 
@@ -96,7 +96,8 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    :::code language="xaml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/MainWindow.xaml" range="10-19":::
 
-1. In the MainWindow.xaml.cs code-behind file, we replace the `MyButton_Click` event handler with the following code.
+1. In the MainWindow.xaml.cs code-behind file, add the `using static PInvoke.User32;` directive.
+1. We then replace the `MyButton_Click` event handler with the following code.
 
    Here, we get a reference to the current process by calling [GetCurrentProcess](/dotnet/api/system.diagnostics.process.getcurrentprocess). We then iterate through the collection of [Modules](/dotnet/api/system.diagnostics.process.modules) and append the filename of each [ProcessModule](/dotnet/api/system.diagnostics.processmodule) to our display string.
 

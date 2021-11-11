@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to add support for digital signature
 title: Add a UWP InkCanvas control using XAML Islands
 ms.topic: article
 ms.date: 01/24/2020
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1

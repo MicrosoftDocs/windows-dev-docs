@@ -11,12 +11,12 @@ ms.custom: RS5
 
 ![WinUI controls](images/winui-hero1.png)
 
-The Windows UI Library provides official native Windows UI controls and other user interface elements for for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+The Windows UI Library provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 It maintains down-level compatibility with earlier versions of Windows 10, so your app works even if users don't have the latest OS.
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../winui3/index.md).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
 
 ## Features
 

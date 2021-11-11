@@ -4,8 +4,6 @@ title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
 ms.date: 8/10/2021
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -16,9 +14,12 @@ If you created a project with an earlier version of the Windows App SDK (previou
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
-## Update from 0.8 Stable or Preview to 1.0 Experimental
+## Update from 0.8 Stable or Preview to 1.0 Experimental or Preview 3
 
-If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Experimental release.
+> [!IMPORTANT]
+> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
+
+If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview 3 or Experimental release.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
 
@@ -30,7 +31,16 @@ Next, make these changes to your project:
 
 1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
 
-2. Enter the following commands:
+2. Enter the following commands for 1.0 Preview 3:
+
+    ```Console
+    uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
+    uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
+    uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
+    install-package Microsoft.WindowsAppSDK -Version 1.0.0-preview3 -ProjectName {yourProjectName}
+    ```
+
+    Or the following commands for 1.0 Experimental:
 
     ```Console
     uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject}
@@ -54,7 +64,17 @@ Next, make these changes to your project:
         </ItemGroup>
         ```
 
-    2. Add this item group to replace it:
+    2. Add this item group to replace it with 1.0 Preview 3:
+
+        ```xml
+        <ItemGroup>
+            <PackageReference Include="Microsoft.WindowsAppSDK" Version="[1.0.0-preview3]">
+            <IncludeAssets>build</IncludeAssets>
+            </PackageReference>
+        </ItemGroup>
+        ```
+
+       Or this item group to replace it with 1.0 Experimental:
 
         ```xml
         <ItemGroup>
@@ -78,7 +98,16 @@ Next, make these changes to your project:
             <Manifest Include="$(ApplicationManifest)" />
         </ItemGroup>
         ```
-    2. Add this item group to replace it:
+
+    2. Add this item group to replace it with 1.0 Preview 3:
+        ```xml
+        <ItemGroup>
+            <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview3" />
+            <Manifest Include="$(ApplicationManifest)" />
+        </ItemGroup>
+        ```
+
+        Or this item group to replace it with 1.0 Experimental:
         ```xml
         <ItemGroup>
             <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />

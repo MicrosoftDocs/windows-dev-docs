@@ -155,8 +155,8 @@ The **winrt::array_view\<T\>** is not in the **winrt::param** namespace, but it 
 |-|-|
 | `{}` | An empty array.|
 | **array** | A conformant array of C (that is, `C array[N];`), where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
-| **std::array<C, N>** | A C++ **std::array** of **C**, where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
-| **std::vector<C>** | A C++ **std::vector** of **C**, where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
+| **std::array\<C, N>** | A C++ **std::array** of **C**, where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
+| **std::vector\<C>** | A C++ **std::vector** of **C**, where **C** is convertible to **T**, and `sizeof(C) == sizeof(T)`. |
 | `{ T*, T* }` | A pair of pointers represent the range [begin, end).|
 | **std::initializer_list\<T\>** ||
 

@@ -1,15 +1,18 @@
 ---
 title: Microsoft PowerToys
-description: Microsoft PowerToys is a set of utilities for customizing Windows 10. Utilities include ColorPicker (click anywhere to grab a color value), FancyZones (shortcuts to position windows into a grid layout), File Explorer Add-ons (preview SVGs or Markdown files), Image Resizer (resize one or many images with a simple right-click), Keyboard Manager (remap keys or create your own shortcuts), PowerRename (bulk rename using search and replace), PowerToys Run (Alt + Space to launch apps), a Shortcut Guide, and more to come.
+description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run]
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake]
 ---
 
-# Microsoft PowerToys: Utilities to customize Windows 10
+<!-- [Jay] shortened description, old =
+description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker (click anywhere to grab a color value), FancyZones (shortcuts to position windows into a grid layout), File Explorer Add-ons (preview SVGs or Markdown files), Image Resizer (resize one or many images with a simple right-click), Keyboard Manager (remap keys or create your own shortcuts), PowerRename (bulk rename using search and replace), PowerToys Run (Alt + Space to launch apps), a Shortcut Guide, and more to come. -->
 
-Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows 10 experience for greater productivity.
+# Microsoft PowerToys: Utilities to customize Windows
+
+Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
@@ -24,14 +27,14 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 
 The currently available utilities include:
 
-### Awake
+### PowerToys Awake
 
 :::row:::
     :::column:::
-        [![Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+        [![PowerToys Awake screenshot](../images/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
-        [Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its screens.
     :::column-end:::
 :::row-end:::
 
@@ -42,11 +45,11 @@ The currently available utilities include:
         [![ColorPicker screenshot](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
-        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a configurable format. Color Picker also contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
+        [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a set format. Color Picker also contains an editor that shows a history of previously picked colors, allows you to fine-tune the selected color and to copy different string representations. This code is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
     :::column-end:::
 :::row-end:::
 
-### Fancy Zones
+### FancyZones
 
 :::row:::
     :::column:::
@@ -64,7 +67,7 @@ The currently available utilities include:
         [![File Explorer screenshot](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer](file-explorer.md) add-ons  enable preview pane rendering in File Explorer to display SVG icons (.svg) and Markdown (.md) file previews. To enable the preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer](file-explorer.md) add-ons enable preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +78,7 @@ The currently available utilities include:
         [![Image Resizer screenshot](../images/pt-image-resizer.png)](image-resizer.md)
     :::column-end:::
     :::column span="2":::
-        [Image Resizer](image-resizer.md) is a Windows Shell Extension for quickly resizing images.  With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
+        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
     :::column-end:::
 :::row-end:::
 
@@ -87,6 +90,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Keyboard Manager](keyboard-manager.md) allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts. This PowerToy requires Windows 10 1903 (build 18362) or later.
+    :::column-end:::
+:::row-end:::
+
+### Mouse utilities
+
+:::row:::
+    :::column:::
+        [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
+    :::column-end:::
+    :::column span="2":::
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
     :::column-end:::
 :::row-end:::
 
@@ -108,7 +122,7 @@ The currently available utilities include:
         [![PowerToys Run screenshot](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly - just enter the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well. This PowerToy requires Windows 10 1903 (build 18362) or later.
+        [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well. This PowerToy requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 
@@ -119,32 +133,32 @@ The currently available utilities include:
         [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when a user holds the Windows key down for more than one second and shows the available shortcuts for the current state of the desktop.
+        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>?</kbd> and shows the available shortcuts for the current state of the desktop.
     :::column-end:::
 :::row-end:::
 
-## PowerToys video walk-through
-
-In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
-
-> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
-
-## Future PowerToy utilities
-
-### Experimental PowerToys
-
-Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
-
-#### Video Conference Mute (Experimental)
+### Video Conference Mute
 
 :::row:::
     :::column:::
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
+
+## Languages
+
+Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, German, French, Hungarian, Italian, Japanese, Korean, Polish, Portugese, Portugese (Brazil), Russian, Spanish, Turkish.
+
+*Note that new elements of the app will often not yet be translated in the first version release.*
+
+## PowerToys video walk-through
+
+In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
@@ -168,11 +182,11 @@ PowerToys [release notes](https://github.com/microsoft/PowerToys/releases/) are 
 
 ## PowerToys history
 
-Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows.  A great overview of the Windows 95 PowerToys can be found [here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
+Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found [here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
 
 ## PowerToys roadmap
 
-PowerToys is a rapid-incubation, open source team aimed at providing power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
+PowerToys is a rapid-incubation, open source team aimed at providing power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
 
 - [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
 - [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)

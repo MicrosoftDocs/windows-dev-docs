@@ -4,8 +4,6 @@ title: Modernize packaged desktop apps
 ms.date: 04/22/2019
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
 ---

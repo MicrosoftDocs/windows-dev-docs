@@ -100,7 +100,7 @@ using namespace Windows::UI::Core;
 ```
 
 ## To add the implementation for ComputeResult
-In Class1.cpp, add the following method implementation. This method executes synchronously on the calling thread, but it is very fast because it uses C++ AMP to parallelize the computation on the GPU. For more information, see C++ AMP Overview. The results are appended to a Platform::Collections::Vector<T> concrete type, which is implicitly converted to a Windows::Foundation::Collections::IVector<T> when it is returned.
+In Class1.cpp, add the following method implementation. This method executes synchronously on the calling thread, but it is very fast because it uses C++ AMP to parallelize the computation on the GPU. For more information, see C++ AMP Overview. The results are appended to a Platform::Collections::Vector\<T> concrete type, which is implicitly converted to a Windows::Foundation::Collections::IVector\<T> when it is returned.
 
 ```cpp
 //Public API
@@ -133,7 +133,7 @@ IVector<double>^ Class1::ComputeResult(double input)
 }
 ```
 ## To add the implementation for GetPrimesOrdered and its helper method
-In Class1.cpp, add the implementations for GetPrimesOrdered and the is_prime helper method. GetPrimesOrdered uses a concurrent_vector class and a parallel_for function loop to divide up the work and use the maximum resources of the computer on which the program is running to produce results. After the results are computed, stored, and sorted, they are added to a Platform::Collections::Vector<T> and returned as Windows::Foundation::Collections::IVector<T> to client code.
+In Class1.cpp, add the implementations for GetPrimesOrdered and the is_prime helper method. GetPrimesOrdered uses a concurrent_vector class and a parallel_for function loop to divide up the work and use the maximum resources of the computer on which the program is running to produce results. After the results are computed, stored, and sorted, they are added to a Platform::Collections::Vector\<T> and returned as Windows::Foundation::Collections::IVector\<T> to client code.
 
 Notice the code for the progress reporter, which enables the client to hook up a progress bar or other UI to show the user how much longer the operation is going to take. Progress reporting has a cost. An event must be fired on the component side and handled on the UI thread, and the progress value must be stored on each iteration. One way to minimize the cost is by limiting the frequency at which a progress event is fired. If the cost is still prohibitive, or if you can't estimate the length of the operation, then consider using a progress ring, which shows that an operation is in progress but doesn't show time remaining until completion.
 
@@ -287,7 +287,7 @@ If you want to create a C# client, then you can skip this section.
 8. In the center pane, select WinRT_CPP and then choose the **OK** button
 
 ## To add the HTML that invokes the JavaScript event handlers
-Paste this HTML into the <body> node of the default.html page:
+Paste this HTML into the \<body> node of the default.html page:
 
 ```HTML
 <div id="LogButtonDiv">

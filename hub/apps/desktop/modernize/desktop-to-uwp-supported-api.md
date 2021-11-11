@@ -5,8 +5,6 @@ ms.date: 08/16/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -16,9 +14,9 @@ ms.custom: 19H1
 Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET 5 and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
 
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
-* APIs that require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
+* APIs that require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/winui3/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
+This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
 > Starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, .NET 5 apps can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
@@ -80,8 +78,8 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
 | [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
 | [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
-| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | None |
-| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | None |
+| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | See [MRT to MRT Core migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore) |
+| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | See [MRT to MRT Core migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore) |
 | [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
 | [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
 | [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in spatialinteractionmanagerinterop.h). |
@@ -139,7 +137,7 @@ The full list of methods that follow the `Request` naming pattern is very long, 
 
 ## APIs that require package identity
 
-The following WinRT classes require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
+The following WinRT classes require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -391,6 +389,7 @@ The following WinRT classes require require [package identity](modernize-package
 * [Windows.Services.Store.StoreSendRequestResult](/uwp/api/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](/uwp/api/Windows.Services.Store.StoreSku)
 * [Windows.Services.Store.StoreVideo](/uwp/api/Windows.Services.Store.StoreVideo)
+* [Windows.Storage.ApplicationData](/uwp/api/windows.storage.applicationdata)
 * [Windows.Storage.ApplicationDataSetVersionHandler](/uwp/api/windows.storage.applicationdatasetversionhandler)
 * [Windows.Storage.CachedFileManager](/uwp/api/Windows.Storage.CachedFileManager)
 * [Windows.Storage.DownloadsFolder](/uwp/api/Windows.Storage.DownloadsFolder)

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Usage report
 
 
-The **Usage** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how customers on Windows 10 (including Xbox) are using your app, and shows info about custom events that you've defined. You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline.
+The **Usage** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how customers on Windows 10/11 (including Xbox) are using your app, and shows info about custom events that you've defined. You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline.
 
 
 ## Apply filters
@@ -26,7 +26,7 @@ You can also expand **Filters** to filter the data on this page by package versi
 The info in all of the charts listed below will reflect the date range and any filters you've selected (with the exception of **New users** in the **Usage** chart, which will not appear if any filters are selected). Some sections also allow you to apply additional filters.
 
 > [!IMPORTANT]
-> This report only includes usage data from customers on Windows 10 (including Xbox) who have not opted out of providing telemetry info. The usage data for Xbox games is included here regardless of whether the customer was signed into Xbox Live. 
+> This report only includes usage data from customers on Windows 10/11 (including Xbox) who have not opted out of providing telemetry info. The usage data for Xbox games is included here regardless of whether the customer was signed into Xbox Live. 
 
 
 ## Usage

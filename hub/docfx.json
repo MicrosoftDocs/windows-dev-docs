@@ -48,7 +48,8 @@
         "package-manager/**.md": "dev-environment",
         "powertoys/**.md": "dev-environment",
         "python/**.md": "dev-environment",
-        "rust/**.md": "dev-environment"
+        "rust/**.md": "dev-environment",
+        "web/**.md": "windows"
       },
       "ms.technology":
       {
@@ -75,11 +76,13 @@
         "apps/winui/**.md": "winui-conceptual", 
         "apps/trace-processing/**.md": "",
         "apps/design/**.md": "design", 
+        "apps/performance/**.md": "performance",
         "dev-environment/javascript/**.md": "windows-javascript",
         "dev-environment/rust/**.md": "windows-rust",
         "package-manager/**.md": "package-manager",
         "powertoys/**.md": "powertoys",
-        "python/**.md": "windows-python"
+        "python/**.md": "windows-python",
+        "web/**.md": "web"
       },
       "ms.collection":
       {
@@ -114,8 +117,6 @@
       "author":
       {
         "android/*.md": "mattwojo",
-        "apps/10x/*.md": "QuinnRadich",
-        "apps/accessibility.md": "Karl-Bridge-Microsoft",
         "apps/design/*.md": "Karl-Bridge-Microsoft",
         "apps/design/accessibility/*.md": "Karl-Bridge-Microsoft",
         "apps/design/app-settings/*.md": "jwmsft",
@@ -133,18 +134,17 @@
         "apps/design/signature-experiences/*.md": "hickeys",
         "apps/design/style/*.md": "hickeys",
         "apps/design/usability/*.md": "Karl-Bridge-Microsoft",
-        "apps/desktop/**.md": "mcleanbyron",
-        "apps/features-and-technologies.md": "mcleanbyron",
-        "apps/project-reunion/**.md": "mcleanbyron",
-        "apps/speech.md": "Karl-Bridge-Microsoft",
+        "apps/desktop/**.md": "stevewhims",
+        "apps/develop/**.md": "stevewhims",
+        "apps/get-started/**.md": "QuinnRadich",
+        "apps/package-and-deploy/**.md": "stevewhims",
         "apps/trace-processing/*.md": "maiak",
         "apps/whats-new/*.md": "QuinnRadich",
-        "apps/windows-app-sdk/**.md": "mcleanbyron",
-        "apps/winui/*.md": "Karl-Bridge-Microsoft",
-        "apps/winui/winui2/*.md": "Karl-Bridge-Microsoft",
-        "apps/winui/winui2/release-notes/*.md": "Karl-Bridge-Microsoft",
-        "apps/winui/winui3/*.md": "Karl-Bridge-Microsoft",
+        "apps/windows-app-sdk/**.md": "stevewhims",
+        "apps/winui/**.md": "Karl-Bridge-Microsoft",
+        "apps/performance/**.md": "mattwojo",
         "dev-environment/*.md": "mattwojo",
+        "javascript/**/*.md": "mattwojo",
         "nodejs/*.md": "mattwojo",
         "package-manager/**.md": "KevinLaMS",
         "powertoys/*.md": "mattwojo",
@@ -154,7 +154,6 @@
       "ms.author":
       {
         "android/*.md": "mattwoj",
-        "apps/10x/*.md": "quradic",
         "apps/design/*.md": "kbridge",
         "apps/design/accessibility/*.md": "kbridge",
         "apps/design/app-settings/*.md": "jimwalk",
@@ -172,24 +171,26 @@
         "apps/design/signature-experiences/*.md": "hickeys",
         "apps/design/style/*.md": "hickeys",
         "apps/design/usability/*.md": "kbridge",
-        "apps/desktop/**.md": "mcleans",
-        "apps/project-reunion/**.md": "mcleans",
+        "apps/desktop/**.md": "stwhi",
+        "apps/develop/**.md": "stwhi",
+        "apps/get-started/**.md": "quradic",
+        "apps/package-and-deploy/**.md": "stwhi",
         "apps/trace-processing/*.md": "maiak",
         "apps/whats-new/*.md": "quradic",
-        "apps/windows-app-sdk/**.md": "mcleans",
-        "apps/winui/*.md": "kbridge",
-        "apps/winui/winui2/*.md": "kbridge",
-        "apps/winui/winui2/release-notes/*.md": "kbridge",
-        "apps/winui/winui3/*.md": "kbridge",
-        "apps/accessibility.md": "kbridge",
-        "apps/features-and-technologies.md": "mcleans",
-        "apps/speech.md": "kbridge",
+        "apps/windows-app-sdk/**.md": "stwhi",
+        "apps/winui/**.md": "kbridge",
+        "apps/performance/**.md": "mattwoj",
         "dev-environment/*.md": "mattwoj",
         "javascript/**/*.md": "mattwoj",
+        "nodejs/*.md": "mattwoj",
         "package-manager/**.md": "kevinla",
         "powertoys/*.md": "mattwoj",
         "python/*.md": "mattwoj",
         "rust/*.md": "stwhi"
+      },
+      "ms.reviewer":
+      {
+        "powertoys/*.md": "dedavis"
       },
       "titleSuffix":
       {
