@@ -25,7 +25,7 @@ Before starting, make sure you have all the Windows App SDK prerequisites instal
 
 First, do the following:
 
-- In the .wapproj file, if your **TargetPlatformMinVersion** is older than 10.0.17763.0, change it to 10.0.17763.0.
+- In the `.wapproj` file, if your **TargetPlatformMinVersion** is older than `10.0.17763.0`, change it to `10.0.17763.0`.
 
 
 Next, make these changes to your project:
