@@ -13,6 +13,7 @@ ms.localizationpriority: medium
 
 This article provides guidance about deploying non-[MSIX](/windows/msix) packaged apps that use the Windows App SDK to other computers.
 
+
 ## Overview
 
 Unpackaged apps use the *dynamic dependencies* support in the Windows App SDK to dynamically take a dependency on the Windows App SDK framework package and any other MSIX framework packages. Dynamic dependencies enables unpackaged applications to keep their existing deployment mechanism, such as MSI or any installer, and be able to leverage the Windows App SDK in their application. Dynamic dependencies can be used by both packaged applications and unpackaged apps, although it is primarily intended to be used by unpackaged apps. To learn more about the dependencies your app takes when it uses the Windows App SDK, see [the Windows App SDK deployment architecture](deployment-architecture.md).
@@ -29,11 +30,23 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
   > [!div class="button"]
   > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
 
+- [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
+  - Sideloading is automatically enabled on Windows 10 version 2004 and later.
+  - If your development computer or the deployment computer is running **Windows 11**, confirm whether sideloading is enabled:
+    1. Open **Settings**.
+    2. Click **Privacy & security** > **For developers**.
+    3. Make sure the **Developer mode** setting is turned on (the **Developer mode** setting includes sideloading as well as other features).
+  - If your development computer or the deployment computer is running **Windows 10 version 1909 or an earlier version**, confirm whether sideloading is enabled:
+    1. Open **Settings**.
+    2. Click **Update & Security** > **For developers**.
+    3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
 
+    > [!NOTE]
+    > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**.
 
 ## Deploy Windows App SDK using the .exe installer
 
-You can deploy the Windows App SDK by running the Windows App SDK silent installer `WindowsAppRuntimeInstall.exe`.
+You can deploy the Windows App SDK by running the **WindowsAppRuntimeInstall.exe** Windows App SDK silent installer.
 
 You should see an output similar to the following:
 
