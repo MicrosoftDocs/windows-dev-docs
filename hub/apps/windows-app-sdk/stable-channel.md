@@ -45,23 +45,63 @@ The extensions below are tailored for your programming language and version of V
 The following sections describe new and updated features, limitations, and known issues for 1.0 Stable.
 
 ### WinUI 3
+WinUI 3 is the native user experience (UX) framework for Windows App SDK. In this release we've added multiple new features from Windows App SDK 0.8 and stabilized issues from 1.0 Preview releases.
 
-Description
+**New features and updates**:
+	- We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI 2.6](../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
+	- Single-project MSIX packaging is supported in WinUI by creating a new application using the “Blank App, Packaged…” template. 
+	- We now support deploying WinUI 3 apps without MSIX-packaging on Windows versions 1803 and above. Please view [Create a WinUI 3 unpackaged desktop app](../winui/winui3/create-your-first-winui3-app.md) for additional information.
+	- WinUI apps can now target 17763 or above.
+	- In-app toolbar, Hot Reload, & Live Visual Tree for WinUI apps are supported in Visual Studio 2022 Preview 5 and GA.
 
-**New Features**
+**Important limitations**:
+- Known issues for WinUI apps with Single-project MSIX (Blank App, Packaged template):
+  - *Missing Publish menu item until you restart Visual Studio:* When creating a new app with Single-project MSIX in 
+  both Visual Studio 2019 and Visual Studio 2022 using the Blank App, Packaged (WinUI 3 in Desktop) project template, 
+  the command to publish the project doesn't appear in the menu until you close and re-open Visual Studio.
+  - A C# app with Single-project MSIX will not compile without the "C++ (v14x) Universal Windows Platform Tools" 
+  optional component installed. View [Install developer tools](set-up-your-development-environment.md) for additional information.
+  - *Potential run-time error in an app with Single-project MSIX that consumes types defined in a referenced Windows 
+  Runtime Component:* To resolve, manually add [activatable class entries](/uwp/schemas/appxpackage/how-to-specify-extension-points-in-a-package-manifest) to the appxmanifest.xml.
+    - The expected error in C# applications is “COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG)). 
+    - The expected error in C++/WinRT applications is “winrt::hresult_class_not_registered”. 
+  - *Run-time error in C++ app with Single-project MSIX when referencing a C++ Windows Runtime Component:* To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj: 
+    ```xml
+    <Target Name="GetPriIndexName">
+    <PropertyGroup>
+        <!-- Winmd library targets use the default root namespace of the project for the App package name -->
+        <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
+        <!-- If RootNamespace is empty fall back to TargetName -->
+        <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
+    </PropertyGroup>
+    </Target>
+    ```
+- Known issues for WinUI apps without MSIX-packaging (unpackaged apps):
+  - *Run-time error in C++ app without MSIX-packaging when referencing a C++ Windows Runtime Component:* To resolve, 
+  add the below target to the end of the Windows Runtime Component's .vcxproj: 
+    ```xml
+    <Target Name="GetPriIndexName">
+    <PropertyGroup>
+        <!-- Winmd library targets use the default root namespace of the project for the App package name -->
+        <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
+        <!-- If RootNamespace is empty fall back to TargetName -->
+        <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
+    </PropertyGroup>
+    </Target>
+    ```
+  - Some APIs are not currently supported in apps without MSIX-packaging. A few examples:
+	- [ApplicationData](/uwp/api/Windows.Storage.ApplicationData)
+	- [StorageFile.GetFileFromApplicationUriAsync](/uwp/api/Windows.Storage.StorageFile.GetFileFromApplicationUriAsync)
+    - [StorageFile.CreateStreamedFileFromUriAsync](/uwp/api/windows.storage.storagefile.createstreamedfilefromuriasync)
+	- [ApiInformation](/uwp/api/Windows.Foundation.Metadata.ApiInformation) (not supported on Windows 10)
+	- [Package.Current](/uwp/api/windows.applicationmodel.package.current)
+	- Any API in the [Windows.ApplicationModel.Resources](/uwp/api/windows.applicationmodel.resources?view=winrt-22000) namespace
+	- Any API in the [Microsoft.Windows.ApplicationModel.Resources](/uwp/api/windows.applicationmodel.resources.core?view=winrt-22000) namespace 
+- Known issues for packaging and deploying WinUI applications:
+  - **Needs additional info**
+  - Can't create app packages with single-project template
+  - Can't create a NuGet package with Pack command, manual workaround by editing .nuspec
 
-**Important limitations**
-
-- Unpackaged WinUI 3 applications are **supported only on Windows versions 1909 and later**.
-- Unpackaged WinUI 3 applications are **supported on x86 and x64**; arm64 support will be added in the next stable release.
-- **Single-project MSIX Packaging Tools** for [Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) or [Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17) is required for unpackaged apps.
-- In an unpackaged app, you might receive a prompt to install .NET 3.5; if you do, then you can ignore it.
-- Some APIs are not currently supported in unpackaged apps. We're aiming to fix this in the next stable release. A few examples:
-  - [ApplicationData](/uwp/api/Windows.Storage.ApplicationData)
-  - [StorageFile.GetFileFromApplicationUriAsync](/uwp/api/Windows.Storage.StorageFile.GetFileFromApplicationUriAsync)
-  - [ApiInformation](/uwp/api/Windows.Foundation.Metadata.ApiInformation) (not supported on Windows 10)
-  - [Package.Current](/uwp/api/windows.applicationmodel.package.current)
-- ListView, CalendarView, and GridView controls are using the incorrect styles, and we're aiming to fix this in the next stable release.
 
 For more info, or to get started developing with WinUI, see:
 
