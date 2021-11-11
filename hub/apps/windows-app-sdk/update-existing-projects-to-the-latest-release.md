@@ -54,7 +54,7 @@ Now run the commands to install the stable `WindowsAppSDK` package.
     ```Console
     install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0-stable
     ```
-5. To add the WindowsAppSDK package reference to your .wapproj:
+5. To add the `WindowsAppSDK` package reference to your `.wapproj`:
     
     ```Console
         install-package Microsoft.WindowsAppSDK -Version 1.0.0-stable 
