@@ -16,7 +16,7 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 <!--unsure-->
 
 > [!NOTE]
-> This procedure is supported in C#, C++ desktop, and UWP projects. C# and C++ desktop projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md). UWP projects must use the NuGet package from the [experimental release channel](experimental-channel.md).
+> This procedure is supported in C# .NET 5 or later and C++ desktop projects. These projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md). UWP projects must use the NuGet package from the [experimental release channel](experimental-channel.md).
 
 ## Prerequisites
 
