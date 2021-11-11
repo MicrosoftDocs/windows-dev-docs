@@ -21,11 +21,11 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 1. [Install Visual Studio](set-up-your-development-environment.md#1-install-visual-studio).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
-3. C# projects must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
+3. If you're using Visual Studio 2019 version 16.11, C# projects must use .NET 5 SDK version 5.0.400 or later. Later versions of Visual Studio can use .NET 6.
 
 ## Instructions
 
-You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
+You can follow this tutorial using a C++ project or a C# project.
 
 > [!NOTE]
 >  The dynamic depednencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
@@ -135,7 +135,7 @@ Follow these instructions to configure a C# project that includes WinUI 3 unpack
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 does not support this platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
