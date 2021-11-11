@@ -15,7 +15,7 @@ Mouse utilities are a collection of features that enhance mouse and cursor funct
 
 ## Find My Mouse
 
-Double press the left <kbd>ctrl</kbd> key to activate a spotlight that focuses on the cursor's position. Click the mouse or press the <kbd>esc</kbd> key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
+Double press the left <kbd>ctrl</kbd> key to activate a spotlight that focuses on the cursor's position. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
 ![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
 
