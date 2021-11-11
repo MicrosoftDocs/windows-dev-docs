@@ -46,7 +46,11 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
 
 ## Deploy Windows App SDK using the .exe installer
 
-You can deploy the Windows App SDK by running the **WindowsAppRuntimeInstall.exe** Windows App SDK silent installer.
+You can deploy the Windows App SDK by running the Windows App SDK silent installer:
+
+- **WindowsAppRuntimeInstall.exe** if you are using version 1.0 Preview 1 and later.
+- **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental.
+- **ProjectReunionInstall.exe** if you are using version 0.8 Preview and earlier. 
 
 You should see an output similar to the following:
 
