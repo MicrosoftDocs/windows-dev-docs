@@ -50,7 +50,7 @@ Instancing behavior in the Windows App SDK is based on UWP's model, class, but w
 ### List of instances
 
 - **UWP**: [GetInstances](/uwp/api/windows.applicationmodel.appinstance.getinstances) returns only the instances that the app explicitly registered for potential redirection.
-- **Windows App SDK**: [GetInstances](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances) returns all running instances of the app, including the current instance. Separate lists are maintained for different versions of the same app, as well as instances of apps launched by different users.
+- **Windows App SDK**: [GetInstances](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances) returns all running instances of the app that are using the AppInstance API, whether or not they have registered a key. This can include the current instance. If you want the current instance to be included in the list, call `AppInstance.GetCurrent`. Separate lists are maintained for different versions of the same app, as well as instances of apps launched by different users.
 
 ### Registering keys
 
@@ -333,6 +333,70 @@ void OnActivated(const IInspectable&, const AppActivationArguments& args)
 ```
 
 Unlike the UWP version of `RedirectActivationTo`, the Windows App SDK's implementation of [RedirectActivationToAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) requires explicitly passing event arguments when redirecting activations. This is necessary because whereas UWP tightly controls activations and can ensure the correct activation arguments are passed to the correct instances, the Windows App SDK's version supports many platforms, and cannot rely on UWP-specific features. One benefit of this model is that apps that use the Windows App SDK have the chance to modify or replace the arguments that will be passed to the target instance.
+
+### Redirection without blocking
+
+Most apps will want to redirect as early as possible, before doing unnecessary initialization work. For some app types, initialization logic runs on an STA thread, which must not be blocked. AppInstance.RedirectActivationToAsync method is asynchronous, and the calling app must wait for the method to complete, otherwise the redirection will fail. However, waiting on an async call will block the STA. In these situations, call RedirectActivationToAsync in another thread, and set an event when the call completes. Then wait on that event using non-blocking APIs such as CoWaitForMultipleObjects. Here’s a C# sample for a WPF app.
+
+```csharp
+private static bool DecideRedirection()
+{
+    bool isRedirect = false;
+
+    // Find out what kind of activation this is.
+    AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
+    ExtendedActivationKind kind = args.Kind;
+    if (kind == ExtendedActivationKind.File)
+    {
+        try
+        {
+            // This is a file activation: here we'll get the file information,
+            // and register the file name as our instance key.
+            if (args.Data is IFileActivatedEventArgs fileArgs)
+            {
+                IStorageItem file = fileArgs.Files[0];
+                AppInstance keyInstance = AppInstance.FindOrRegisterForKey(file.Name);
+
+                // If we successfully registered the file name, we must be the
+                // only instance running that was activated for this file.
+                if (keyInstance.IsCurrent)
+                {
+                    // Hook up the Activated event, to allow for this instance of the app
+                    // getting reactivated as a result of multi-instance redirection.
+                    keyInstance.Activated += OnActivated;
+                }
+                else
+                {
+                    isRedirect = true;
+
+                    // Ensure we don't block the STA, by doing the redirect operation
+                    // in another thread, and using an event to signal when it has completed.
+                    redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
+                    if (redirectEventHandle != IntPtr.Zero)
+                    {
+                        Task.Run(() =>
+                        {
+                            keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
+                            SetEvent(redirectEventHandle);
+                        });
+                        uint CWMO_DEFAULT = 0;
+                        uint INFINITE = 0xFFFFFFFF;
+                        _ = CoWaitForMultipleObjects(
+                            CWMO_DEFAULT, INFINITE, 1, 
+                            new IntPtr[] { redirectEventHandle }, out uint handleIndex);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error getting instance information: {ex.Message}");
+        }
+    }
+
+    return isRedirect;
+}
+```
 
 ### Unregister for redirection
 
