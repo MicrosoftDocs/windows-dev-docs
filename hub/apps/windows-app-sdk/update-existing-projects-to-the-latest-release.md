@@ -14,6 +14,53 @@ If you created a project with an earlier version of the Windows App SDK (previou
 > [!NOTE]
 > These instructions may have issues due to the uniqueness of each app's individual scenario. Please carefully follow them and if you find issues, [file a bug on our GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose).
 
+## Update from 0.8 Stable to 1.0 Stable
+
+If you created a project using version 0.8 Stable (for example, version 0.8.4), you can follow these instructions to update your project to the 1.0 stable release.
+
+
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+
+
+
+First, do the following:
+
+- In the .wapproj file, if your **TargetPlatformMinVersion** is older than 10.0.17763.0, change it to 10.0.17763.0.
+
+
+Next, make these changes to your project:
+
+1. In Visual Studio, go to **Tools** -> **Nuget Package Manager** -> **Package Manager Console**.
+
+This process consists of uninstalling existing Project Reunion package references from  .csproj/.vcxproj and .wapproj files, and then installing the WindowsAppSDK package references to those files.
+
+2. Enter the following commands to uninstall existing ProjectReunion packages from your .csproj/vcxproj
+
+    ```Console
+    uninstall-package Microsoft.ProjectReunion -ProjectName {yourProject} 
+    uninstall-package Microsoft.ProjectReunion.Foundation -ProjectName {yourProject}
+    uninstall-package Microsoft.ProjectReunion.WinUI -ProjectName {yourProject}
+    ```
+3. Then, run the following to uninstall existing ProjectReunion packages from your .wapproj:
+
+    ```Console
+    uninstall-package Microsoft.ProjectReunion 
+    uninstall-package Microsoft.ProjectReunion.WinUI
+    ```
+Now run the commands to install the stable WindowsAppSDK package.
+
+4. To add the WindowsAppSDK package reference to your .csproj/.vcxproj:
+    
+    ```Console
+    install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0-stable
+    ```
+5. To add the WindowsAppSDK package reference to your .wapproj:
+    
+    ```Console
+        install-package Microsoft.WindowsAppSDK -Version 1.0.0-stable 
+    ```   
+
+
 ## Update from 0.8 Stable or Preview to 1.0 Experimental or Preview 3
 
 > [!IMPORTANT]
