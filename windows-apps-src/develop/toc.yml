@@ -835,7 +835,7 @@
           href: ../csharp-winrt/index.md
         - name: .NET mappings of WinRT types in C#/WinRT
           href: ../csharp-winrt/net-mappings-of-winrt-types.md
-        - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+        - name: "Walkthrough: Make a C# projection from a C++/WinRT component"
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
         - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md

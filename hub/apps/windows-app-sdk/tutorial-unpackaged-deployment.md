@@ -35,12 +35,14 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
 
-> [!WARNING]
-> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
+> [!IMPORTANT]
+> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
+
+Visual Studio should not be launched elevated. For more information, see [Dynamic dependencies doesn't support elevation](https://github.com/microsoft/WindowsAppSDK/issues/567).
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ project.
+Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -53,7 +55,7 @@ Follow these instructions to configure a C++ project.
 
     1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**.
     2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install one of the following packages:
-        - To install 1.0 Preview 1 or 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
+        - To install  1.0 Preview 3 or 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
         - To install 0.8 Preview, search for **Microsoft.ProjectReunion**.
 
 3. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
@@ -69,11 +71,11 @@ Follow these instructions to configure a C++ project.
 
         ```cpp
 
-        // The following code is for 1.0 Preview 1. If using 1.0 Experimental, 
+        // The following code is for 1.0 Preview 3. If using 1.0 Experimental,  
         // replace with versionTag{ L"experimental1" }. If using version 0.8 Preview,
         // replace with majorMinorVersion{ 0x00000008 } and versionTag{ L"preview" }. 
         const UINT32 majorMinorVersion{ 0x00010000 }; 
-        PCWSTR versionTag{ L"preview1" }; 
+        PCWSTR versionTag{ L"preview3" }; 
         const PACKAGE_VERSION minVersion{};
 
         const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -106,11 +108,11 @@ Follow these instructions to configure a C++ project.
         int main() 
         { 
 
-            // Take a dependency on Windows App SDK 1.0 Preview 1. If using 1.0 Experimental, 
+            // Take a dependency on Windows App SDK 1.0 Preview 3. If using 1.0 Experimental,
             // replace with versionTag{ L"experimental1" }. If using version 0.8 Preview, 
             // replace with majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }.
             const UINT32 majorMinorVersion{ 0x00010000 }; 
-            PCWSTR versionTag{ L"preview1" }; 
+            PCWSTR versionTag{ L"preview3" }; 
             const PACKAGE_VERSION minVersion{};
 
             const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -132,9 +134,9 @@ Follow these instructions to configure a C++ project.
 
 4. Press F5 to build and run your app.
 
-### [C# with 1.0 Preview 2 and later](#tab/csharp-dotnet-preview2)
+### [C# with 1.0 Preview 3 and later](#tab/csharp-dotnet-preview3)
 
-Follow these instructions to configure a C# project that uses [1.0 Preview 2](preview-channel.md#version-10-preview-2-100-preview2) or a later release of the Windows App SDK.
+Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI 3 unpackaged support.  
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -176,7 +178,7 @@ Follow these instructions to configure a C# project that uses [1.0 Preview 2](pr
         {
             static void Main(string[] args)
             {
-                Bootstrap.Initialize(0x00010000, "");
+                Bootstrap.Initialize(0x00010000, "preview3");
                 Console.WriteLine("Hello World!");
     
                 // Release the DDLM and clean up.
@@ -216,9 +218,9 @@ Follow these instructions to configure a C# project that uses [1.0 Preview 2](pr
 
 7. Press F5 to build and run your app. You should see the string `Hello World!` successfully displayed.
 
-### [C# with 1.0 Preview 1 and earlier](#tab/csharp-dotnet-preview1)
+### [C# with 1.0 Experimental and earlier](#tab/csharp-dotnet-experimental1)
 
-Follow these instructions to configure a C# project that uses the [1.0 Preview 1](preview-channel.md#version-10-preview-1-100-preview1) or [1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1) releases of the Windows App SDK.
+Follow these instructions to configure a C# project that uses the [1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1) or earlier release of the Windows App SDK.
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -245,7 +247,7 @@ Follow these instructions to configure a C# project that uses the [1.0 Preview 1
 
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
     2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install one of the following packages:
-        - To install 1.0 Preview 1 or 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
+        - To install 1.0 Experimental, search for **Microsoft.WindowsAppSDK**.
         - To install 0.8 Preview, search for **Microsoft.ProjectReunion**.
 
 5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
@@ -313,10 +315,9 @@ Follow these instructions to configure a C# project that uses the [1.0 Preview 1
                     return MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion);
                 }
         
-                // Import the bootstrapper library for Windows App SDK 1.0 Preview 1. 
-                // If using version 1.0 Experimental, replace with Microsoft.WindowsAppSDK.Bootstrap.dll.
+                // Import the bootstrapper library for Windows App SDK 1.0 Experimental.
                 // If using version 0.8 Preview, replace with Microsoft.ProjectReunion.Bootstrap.dll.
-                [DllImport("Microsoft.WindowsAppRuntime.Bootstrap.dll", CharSet = CharSet.Unicode)]
+                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll", CharSet = CharSet.Unicode)]
                 private static extern int MddBootstrapInitialize(uint majorMinorVersion, string versionTag, PackageVersion packageVersion);
         
                 public static void Shutdown()
@@ -324,10 +325,9 @@ Follow these instructions to configure a C# project that uses the [1.0 Preview 1
                     MddBootstrapShutdown();
                 }
         
-                // Import the bootstrapper library for Windows App SDK 1.0 Preview 1. 
-                // If using version 1.0 Experimental, replace with Microsoft.WindowsAppSDK.Bootstrap.dll.
+                // Import the bootstrapper library for Windows App SDK 1.0 Experimental. 
                 // If using version 0.8 Preview, replace with Microsoft.ProjectReunion.Bootstrap.dll.
-                [DllImport("Microsoft.WindowsAppRuntime.Bootstrap.dll")]
+                [DllImport("Microsoft.WindowsAppSDK.Bootstrap.dll")]
                 private static extern void MddBootstrapShutdown();
             }
         }
@@ -346,10 +346,9 @@ Follow these instructions to configure a C# project that uses the [1.0 Preview 1
                 static void Main(string[] args)
                 {
                 
-                    // Take a dependency on Windows App SDK 1.0 Preview 1.
-                    // If using version 1.0 Experimental, replace with MddBootstrap.Initialize(0x00010000, "experimental1").
+                    // Take a dependency on Windows App SDK 1.0 Experimental.
                     // If using version 0.8 Preview, replace with MddBootstrap.Initialize(8, "preview").
-                    MddBootstrap.Initialize(0x00010000, "preview1");
+                    MddBootstrap.Initialize(0x00010000, "experimental1");
         
                     Console.WriteLine("Hello World!");
         
@@ -380,7 +379,9 @@ Follow these instructions to configure a C# project that uses the [1.0 Preview 1
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+        // var manager = new ResourceManager("DynamicDependenciesTest.pri");
+	// fix ambiguous reference
+	var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);

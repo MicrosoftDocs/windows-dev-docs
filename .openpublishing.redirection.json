@@ -5092,8 +5092,13 @@
     },
     {
       "source_path": "hub/apps/features-and-technologies.md",
-      "redirect_url": "/windows/apps/develop/features-and-technologies",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/features-and-technologies.md",
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/speech.md",
@@ -5203,6 +5208,11 @@
     {
       "source_path": "hub/apps/project-reunion/remove-project-reunion-versions.md",
       "redirect_url": "/windows/apps/windows-app-sdk/remove-windows-app-sdk-versions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/build-apps-for-windows.md",
+      "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false
     },
     {
@@ -6711,7 +6721,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": " hub/apps/windows-app-sdk/samples.md",
+      "source_path": "hub/apps/windows-app-sdk/samples.md",
       "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
     },

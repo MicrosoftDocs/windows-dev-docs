@@ -15,13 +15,10 @@ The Windows App SDK provides the three release channels. When you [set up your d
 
 The following table provides an overview of the different release channels. For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
-> [!WARNING]
-> Versions 1.0 Preview 1 and 2 of the Windows App SDK contain a critical bug that corrupts your system’s PATH variable. We are fixing this in the upcoming 1.0 Preview 3 release. If you’ve already installed one of these previews, see this GitHub thread for [how to resolve the issue](https://github.com/microsoft/WindowsAppSDK/issues/1599). Until Preview 3 is available, we recommend using version [1.0 Experimental](https://aka.ms/windowsappsdk/experimental-vsix) or being aware of this issue and how it might impact your work. 
-
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |---|---|---|---|---|---|
 | **✅** | [Stable](stable-channel.md)  | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every four months<br>(+ servicing) | Yes | [0.8](stable-channel.md#version-08) (6/24/2021) |
-| **❇️** | [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview2](preview-channel.md#version-10-preview-2-100-preview2) (10/6/2021) |
+| **❇️** | [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
 | **🔄️** | [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | Targeting monthly | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
 
 > [!NOTE]
@@ -36,7 +33,7 @@ The following table shows which features are currently available in each release
 | [MSIX desktop app support](deploy-packaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  |  :heavy_check_mark: Available |
 | [Unpackaged desktop app support](deploy-unpackaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  |  :heavy_check_mark: Available |
 | [UWP app support](../winui/winui3/create-your-first-winui3-app.md) | :x: Not available |  :x: Not available  |  :heavy_check_mark: Available |
-| [WinUI 3](../winui/winui3/index.md) |  :heavy_check_mark: Available for MSIX desktop<br>❌ Not available for UWP and unpackaged desktop | :heavy_check_mark: Available for MSIX desktop <br> ❌ Not available for UWP and unpackaged desktop | :heavy_check_mark: Available for MSIX desktop and UWP<br>❌ Not available for unpackaged desktop |
+| [WinUI 3](../winui/winui3/index.md) |  :heavy_check_mark: Available for MSIX desktop<br>❌ Not available for UWP and unpackaged desktop | :heavy_check_mark: Available for MSIX and unpackaged desktop <br> ❌ Not available for UWP | :heavy_check_mark: Available for MSIX desktop and UWP<br>❌ Not available for unpackaged desktop |
 | [Text rendering](dwritecore.md) | :heavy_check_mark: Available| :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |

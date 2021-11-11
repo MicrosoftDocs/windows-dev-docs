@@ -85,8 +85,6 @@ The following sections describe different categories of ms-settings URIs used to
 * [Update and security](#update-and-security)
 * [User accounts](#user-accounts)
 
-
-
 > [!NOTE]
 > Whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
 
@@ -136,6 +134,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Searching Windows | ms-settings:cortana-windowssearch |
 | Talk to Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
 
+
 > [!NOTE] 
 > This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
 
@@ -150,7 +149,9 @@ The following sections describe different categories of ms-settings URIs used to
 | Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
 | Pen & Windows Ink | ms-settings:pen |
 | Printers & scanners | ms-settings:printers |
+| Touch | ms-settings:devices-touch |
 | Touchpad | ms-settings:devices-touchpad (only available if touchpad hardware is present) |
+| Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions)
 | Typing | ms-settings:typing |
 | USB | ms-settings:usb |
 | Wheel | ms-settings:wheel (only available if Dial is paired) |
@@ -162,8 +163,8 @@ The following sections describe different categories of ms-settings URIs used to
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
-| Color filters | ms-settings:easeofaccess-colorfilter |
-| Cursor & pointer size | ms-settings:easeofaccess-cursorandpointersize |
+| Color filters | ms-settings:easeofaccess-colorfilter </br> ms-settings:easeofaccess-colorfilter-adaptivecolorlink </br> ms-settings:easeofaccess-colorfilter-bluelightlink |
+| Cursor & pointer size | ms-settings:easeofaccess-mousepointer </br> ms-settings:easeofaccess-cursor|
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |
@@ -171,9 +172,9 @@ The following sections describe different categories of ms-settings URIs used to
 | Keyboard | ms-settings:easeofaccess-keyboard |
 | Magnifier | ms-settings:easeofaccess-magnifier |
 | Mouse | ms-settings:easeofaccess-mouse |
-| Narrator | ms-settings:easeofaccess-narrator |
-| Other options | ms-settings:easeofaccess-otheroptions (**Deprecated in Windows 10, version 1809 and later**) |
+| Narrator | ms-settings:easeofaccess-narrator </br> ms-settings:easeofaccess-narrator-isautostartenabled |
 | Speech | ms-settings:easeofaccess-speechrecognition |
+| Visual Effects | ms-settings:easeofaccess-visualeffects |
 
 ### Extras
 
@@ -185,19 +186,18 @@ The following sections describe different categories of ms-settings URIs used to
 
 |Settings page| URI |
 |-------------|-----|
-| Broadcasting | ms-settings:gaming-broadcasting |
 | Game bar | ms-settings:gaming-gamebar |
 | Game DVR | ms-settings:gaming-gamedvr |
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
-| Xbox Networking | ms-settings:gaming-xboxnetworking |
+
 
 ### Home page
 
 |Settings page| URI |
 |-------------|-----|
-| Settings home page | ms-settings: |
+| Default browser settings | ms-settings:defaultbrowsersettings |
 
 ### Mixed reality
 
@@ -210,25 +210,24 @@ The following sections describe different categories of ms-settings URIs used to
 | Environment | ms-settings:privacy-holographic-environment |
 | Headset display | ms-settings:holographic-headset |
 | Uninstall | ms-settings:holographic-management |
+| Startup and desktop | ms-settings:holographic-startupandesktop |
 
 ### Network and internet
 
 |Settings page| URI |
 |-------------|-----|
+| Advanced settings | ms-settings:network-advancedsettings |
 | Airplane mode | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Cellular & SIM | ms-settings:network-cellular |
-| Data usage | ms-settings:datausage |
 | Dial-up | ms-settings:network-dialup |
 | DirectAccess | ms-settings:network-directaccess (only available if DirectAccess is enabled) |
 | Ethernet | ms-settings:network-ethernet |
 | Manage known networks | ms-settings:network-wifisettings |
 | Mobile hotspot | ms-settings:network-mobilehotspot |
-| NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| Status | ms-settings:network-status<br/>ms-settings:network |
 | VPN | ms-settings:network-vpn |
-| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
-| Wi-Fi Calling | ms-settings:network-wificalling (only available if Wi-Fi calling is enabled) |
+| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) | 
+| Wi-Fi provisioning | ms-settings:wifi-provisioning |
 
 ### Personalization
 
@@ -243,6 +242,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Personalization (category) | ms-settings:personalization |
 | Start | ms-settings:personalization-start |
 | Taskbar | ms-settings:taskbar |
+| Touch Keyboard| ms-settings:personalization-touchkeyboard |
 | Themes | ms-settings:themes |
 
 ### Phone
@@ -250,6 +250,7 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Your phone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Your Phone** app) |
+| Device Usage | ms-settings:deviceusage |
 
 ### Privacy
 
@@ -262,21 +263,25 @@ The following sections describe different categories of ms-settings URIs used to
 | App diagnostics | ms-settings:privacy-appdiagnostics |
 | Automatic file downloads | ms-settings:privacy-automaticfiledownloads |
 | Background Apps | ms-settings:privacy-backgroundapps |
+| Background Spatial Perception | ms-settings:privacy-backgroundspatialperception |
 | Calendar | ms-settings:privacy-calendar |
 | Call history | ms-settings:privacy-callhistory |
 | Camera | ms-settings:privacy-webcam |
 | Contacts | ms-settings:privacy-contacts |
 | Documents | ms-settings:privacy-documents |
+| Downloads folder | ms-settings:privacy-downloadsfolder |
 | Email | ms-settings:privacy-email |
 | Eye tracker | ms-settings:privacy-eyetracker (requires eyetracker hardware) |
 | Feedback & diagnostics | ms-settings:privacy-feedback |
 | File system | ms-settings:privacy-broadfilesystemaccess |
 | General | ms-settings:privacy or ms-settings:privacy-general |
+| Graphics | ms-settings:privacy-graphicscaptureprogrammatic </br> ms-settings:privacy-graphicscapturewithoutborder|
 | Inking & typing |ms-settings:privacy-speechtyping |
 | Location | ms-settings:privacy-location |
 | Messaging | ms-settings:privacy-messaging |
 | Microphone | ms-settings:privacy-microphone |
 | Motion | ms-settings:privacy-motion |
+| Music Library | ms-settings:privacy-musiclibrary |
 | Notifications | ms-settings:privacy-notifications |
 | Other devices | ms-settings:privacy-customdevices |
 | Phone calls | ms-settings:privacy-phonecalls |
@@ -314,12 +319,11 @@ The following sections describe different categories of ms-settings URIs used to
 | Duplicating my display | ms-settings:quietmomentspresentation |
 | During these hours | ms-settings:quietmomentsscheduled |
 | Encryption | ms-settings:deviceencryption |
-| Focus assist | ms-settings:quiethours <br> ms-settings:quietmomentshome |
+| Focus assist | ms-settings:quiethours |
 | Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
-| Messaging | ms-settings:messaging |
-| Multitasking | ms-settings:multitasking |
+| Graphics Default Settings | ms-settings:display-advancedgraphics-default |
+| Multitasking | ms-settings:multitasking </br>ms-settings:multitasking-sgupdate|
 | Night light settings | ms-settings:nightlight |
-| Phone | ms-settings:phone-defaultapps |
 | Projecting to this PC | ms-settings:project |
 | Shared experiences | ms-settings:crossdevice |
 | Tablet mode | ms-settings:tabletmode (**Removed in Windows 11**) |
@@ -329,8 +333,10 @@ The following sections describe different categories of ms-settings URIs used to
 | Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
 | Power & sleep | ms-settings:powersleep |
 | Sound | ms-settings:sound |
+| Sound devices | ms-settings:sound-devices |
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
+| Storage recommendations | ms-settings:storagerecommendations |
 
 ### Time and language
 
@@ -339,10 +345,13 @@ The following sections describe different categories of ms-settings URIs used to
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
 | Region | ms-settings:regionformatting |
-| Language | ms-settings:keyboard<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
+| Language | ms-settings:keyboard<br/>ms-settings:keyboard-advanced</br>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin</br>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime <br/> ms-settings:regionlanguage-korime |
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
 | Speech | ms-settings:speech |
 | Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
+| Add display language | ms-settings:regionlanguage-adddisplaylanguage |
+| Language options | ms-settings:regionlanguage-languageoptions |
+| Set display language | ms-settings:regionlanguage-setdisplaylanguage |
 
 ### Update and security
 
@@ -350,16 +359,20 @@ The following sections describe different categories of ms-settings URIs used to
 |-------------|-----|
 | Activation | ms-settings:activation |
 | Backup | ms-settings:backup |
-| Delivery Optimization | ms-settings:delivery-optimization |
+| Delivery Optimization | ms-settings:delivery-optimization </br> ms-settings:delivery-optimization-activity </br> ms-settings:delivery-optimization-advanced|
 | Find My Device | ms-settings:findmydevice |
 | For developers | ms-settings:developers |
 | Recovery | ms-settings:recovery |
+| Launch Security Key Enrollment | ms-settings:signinoptions-launchsecuritykeyenrollment |
 | Troubleshoot | ms-settings:troubleshoot |
 | Windows Security | ms-settings:windowsdefender |
 | Windows Insider Program | ms-settings:windowsinsider (only present if user is enrolled in WIP)<br/>ms-settings:windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
+| Windows Update-Active hours| ms-settings:windowsupdate-activehours |
 | Windows Update-Advanced options | ms-settings:windowsupdate-options |
+| Windows Update-Optional updates| ms-settings:windowsupdate-optionalupdates |
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
+| Windows Update-Seeker on demand| ms-settings:windowsupdate-seekerondemand |
 | Windows Update-View update history | ms-settings:windowsupdate-history |
 
 ### User accounts
@@ -367,5 +380,33 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Provisioning | ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package) |
+|Repair token | ms-settings:workplace-repairtoken |
 | Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package) |
 | Windows Anywhere | ms-settings:windowsanywhere (device must be Windows Anywhere-capable) |
+
+### Control Center
+
+|Settings page| URI |
+|-------------|-----|
+| Control center | ms-settings:controlcenter |
+
+### Family Group
+
+|Settings page| URI |
+|-------------|-----|
+| Family Group | ms-settings:family-group |
+
+### Search
+
+|Settings page| URI |
+|-------------|-----|
+| Search | ms-settings:search |
+| Search more details | ms-settings:search-moredetails |
+| Search Permissions | ms-settings:search-permissions |
+
+### Samples
+
+|Settings page| URI |
+|-------------|-----|
+| Samples Entity Item | ms-settings:samples-entityitem |
+| Samples Entity Item List | ms-settings:samples-entityitemlist |

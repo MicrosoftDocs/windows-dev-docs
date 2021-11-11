@@ -1,3 +1,4 @@
+items:
 - name: Build desktop apps
   href: desktop/index.yml
   items:
@@ -49,8 +50,6 @@
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
                     - name: "WinUI 3 - Project Reunion 0.5 Preview"
                       href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
-        - name: Build an app for Windows 11
-          href: get-started/build-apps-for-windows.md
         - name: Visual Studio project templates
           items:
             - name: All templates for Windows apps
@@ -59,36 +58,12 @@
               href: winui/winui3/winui-project-templates-in-visual-studio.md
         - name: Samples 
           href: get-started/samples.md
-  - name: Design and UI
+  - name: Design
     href: design/toc.yml
   - name: Develop
     items:
       - name: "Overview"
         href: develop/index.md
-      - name: "Windows App SDK features"
-        items:
-          - name: "Manage resources"
-            href: windows-app-sdk/mrtcore/mrtcore-overview.md
-          - name: "Render text"
-            href: windows-app-sdk/dwritecore.md
-          - name: Manage app lifecycle
-            items:
-              - name: App instancing
-                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
-              - name: Rich activation
-                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
-              - name: Power management
-                href: windows-app-sdk/applifecycle/applifecycle-power.md
-          - name: "Manage app windows"
-            href: windows-app-sdk/windowing/windowing-overview.md
-          - name: "Push notifications"
-            items:
-              - name: "Overview"
-                href: windows-app-sdk/notifications/push/index.md
-              - name: "Quickstart"
-                href: windows-app-sdk/notifications/push/push-quickstart.md
-              - name: "Troubleshooting"
-                href: windows-app-sdk/notifications/push/troubleshooting.md
       - name: Migrate to the Windows App SDK
         items:
           - name: "Index of migration topics"
@@ -105,7 +80,7 @@
             items:
               - name: "Overview of feature area guides"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-              - name: "Windows UI Library (WinUI) migration"
+              - name: "User interface migration (including WinUI 3)"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
               - name: "Windowing functionality migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
@@ -125,46 +100,6 @@
             href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
           - name: "Additional migration guidance"
             href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
-      - name: Windows UI Library (WinUI)
-        items:
-          - name: "Overview"
-            href: winui/index.md
-          - name: "Windows UI Library 3"
-            items:
-              - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
-                href: winui/winui3/desktop-winui3-app-with-basic-interop.md
-              - name: "Build XAML controls with C++/WinRT"
-                href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
-              - name: "Build XAML controls with C#"
-                href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
-          - name: "Windows UI Library 2"
-            items: 
-              - name: "Overview"
-                href: winui/winui2/index.md
-              - name: "Get started with WinUI 2"
-                href: winui/winui2/getting-started.md
-              - name: "NuGet package list"
-                href: winui/winui2/nuget-packages.md
-              - name: "Release notes"
-                items: 
-                  - name: "Overview"
-                    href:  winui/winui2/release-notes/index.md
-                  - name: "WinUI 2.7"
-                    href: winui/winui2/release-notes/winui-2.7.md
-                  - name: "WinUI 2.6"
-                    href: winui/winui2/release-notes/winui-2.6.md
-                  - name: "WinUI 2.5"
-                    href: winui/winui2/release-notes/winui-2.5.md
-                  - name: "WinUI 2.4"
-                    href: winui/winui2/release-notes/winui-2.4.md
-                  - name: "WinUI 2.3"
-                    href: winui/winui2/release-notes/winui-2.3.md
-                  - name: "WinUI 2.2"
-                    href: winui/winui2/release-notes/winui-2.2.md
-                  - name: "WinUI 2.1"
-                    href: winui/winui2/release-notes/winui-2.1.md
-                  - name: "WinUI 2.0"
-                    href: winui/winui2/release-notes/winui-2.0.md
       - name: Modernize your desktop apps
         items:
             - name: Overview
@@ -253,14 +188,106 @@
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-      - name: Windows features and technologies
+      - name: Optimize your app performance
         items:
           - name: Overview
-            href: develop/features-and-technologies.md
-          - name: Accessibility
-            href: develop/accessibility.md
+            href: performance/index.md
+          - name: Introduction to performance
+            href: performance/introduction.md
+          - name: Choosing performance tools
+            href: performance/choose-between-tools.md
+      - name: User interface and input
+        items: 
+          - name: Overview
+            href: develop/user-interface.md
+          - name: Windows UI Library (WinUI)
+            items:
+              - name: "Overview"
+                href: winui/index.md
+              - name: "Windows UI Library 3"
+                items:
+                  - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
+                    href: winui/winui3/desktop-winui3-app-with-basic-interop.md
+                  - name: "Build XAML controls with C++/WinRT"
+                    href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
+                  - name: "Build XAML controls with C#"
+                    href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
+              - name: "Windows UI Library 2"
+                items: 
+                  - name: "Overview"
+                    href: winui/winui2/index.md
+                  - name: "Get started with WinUI 2"
+                    href: winui/winui2/getting-started.md
+                  - name: "NuGet package list"
+                    href: winui/winui2/nuget-packages.md
+                  - name: "Release notes"
+                    items: 
+                      - name: "Overview"
+                        href:  winui/winui2/release-notes/index.md
+                      - name: "WinUI 2.7"
+                        href: winui/winui2/release-notes/winui-2.7.md
+                      - name: "WinUI 2.6"
+                        href: winui/winui2/release-notes/winui-2.6.md
+                      - name: "WinUI 2.5"
+                        href: winui/winui2/release-notes/winui-2.5.md
+                      - name: "WinUI 2.4"
+                        href: winui/winui2/release-notes/winui-2.4.md
+                      - name: "WinUI 2.3"
+                        href: winui/winui2/release-notes/winui-2.3.md
+                      - name: "WinUI 2.2"
+                        href: winui/winui2/release-notes/winui-2.2.md
+                      - name: "WinUI 2.1"
+                        href: winui/winui2/release-notes/winui-2.1.md
+                      - name: "WinUI 2.0"
+                        href: winui/winui2/release-notes/winui-2.0.md
+          - name: "Manage app windows"
+            href: windows-app-sdk/windowing/windowing-overview.md
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push/troubleshooting.md
           - name: Speech
             href: develop/speech.md
+      - name: App lifecycle and system services
+        items: 
+          - name: Overview
+            href: develop/app-lifecycle-and-system-services.md
+          - name: Manage app lifecycle
+            items:
+              - name: App instancing
+                href: windows-app-sdk/applifecycle/applifecycle-instancing.md
+              - name: Rich activation
+                href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+              - name: Power management
+                href: windows-app-sdk/applifecycle/applifecycle-power.md
+      - name: Communication
+        href: develop/communication.md
+      - name: Accessibility
+        href: develop/accessibility.md
+      - name: Audio, video, and camera
+        href: develop/audio-video-camera.md
+      - name: Graphics
+        items: 
+          - name: Overview
+            href: develop/graphics.md
+          - name: Render text with DWriteCore
+            href: windows-app-sdk/dwritecore.md
+      - name: Data and files
+        items: 
+          - name: Overview
+            href: develop/data-and-files.md
+          - name: Manage resources with MRT Core
+            href: windows-app-sdk/mrtcore/mrtcore-overview.md
+      - name: Windows AI and machine learning
+        href: /windows/ai/
+      - name: Devices and sensors
+        href: develop/devices-and-sensors.md
+      - name: Security and identity
+        href: develop/security-and-identity.md
   - name: Package and deploy
     items:
       - name: Overview

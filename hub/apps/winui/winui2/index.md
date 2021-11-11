@@ -16,7 +16,7 @@ The Windows UI Library provides official native Windows UI controls and other us
 It maintains down-level compatibility with earlier versions of Windows 10, so your app works even if users don't have the latest OS.
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../winui3/index.md).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
 
 ## Features
 

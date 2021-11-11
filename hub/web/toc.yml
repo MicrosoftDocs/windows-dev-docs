@@ -1,6 +1,6 @@
-- name: Web development on Windows 10
+- name: Web development on Windows
   items:
-  - name: Web development on Windows 10
+  - name: Web development on Windows
     items:
     - name: Overview
       href: index.md

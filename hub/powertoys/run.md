@@ -1,5 +1,5 @@
 ---
-title: PowerToys Run utility for Windows 10
+title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
 ms.date: 05/28/2021
 ms.topic: article
@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, WindowWalker]
 
 PowerToys Run is a quick launcher for power users that contains some additional features without sacrificing performance. It is open source and modular for additional plugins.
 
-To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(note that this shortcut can be changed in the settings window)*
+To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(note that this shortcut can be changed in the settings window)_
 ![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
 
 ## Requirements
@@ -25,8 +25,8 @@ PowerToys Run features include:
 
 - Search for applications, folders, or files
 - Search for running processes (previously known as [WindowWalker](https://github.com/betsegaw/windowwalker/))
-- Clickable buttons with keyboard shortcuts (such as *Open as administrator* or *Open containing folder*)
-- Invoke Shell Plugin using `>`  (for example, `> Shell:startup` will open the Windows startup folder)
+- Clickable buttons with keyboard shortcuts (such as _Open as administrator_ or _Open containing folder_)
+- Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
 - Do a simple calculation using calculator
 
 ## Settings
@@ -36,7 +36,7 @@ The following Run options are available in the PowerToys settings menu.
 | Settings | Action |
 | :--- | :--- |
 | Open PowerToys Run | Define the keyboard shortcut to open/hide PowerToys Run |
-| Ignore shortcuts in Fullscreen mode | When in full-screen (F11), Run won't be engaged with the shortcut |
+| Ignore shortcuts in Fullscreen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
 
@@ -44,7 +44,7 @@ The following Run options are available in the PowerToys settings menu.
 
 | Shortcuts | Action |
 | :--- | :--- |
-|<kbd>Alt</kbd>+<kbd>Space</kbd> | Open or hide PowerToys Run |
+|<kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Open or hide PowerToys Run |
 |<kbd>Esc</kbd> | Hide PowerToys Run |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
@@ -73,7 +73,7 @@ These default activation phrases will force PowerToys Run into only targeted plu
 
 PowerToys Run enables a set of system level actions that can be executed.
 
-| Action key | Action |
+| Action command | Action |
 | :--- | :--- |
 | `Shutdown` | Shuts down the computer |
 | `Restart` | Restarts the computer |
@@ -119,13 +119,13 @@ If the Windows Search plugin is not set to cover all drives, you will receive th
 
 ![PowerToys Run Indexer Warning](../images/pt-run-warning.png)
 
-You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows 10 settings "Searching Windows" options menu will open.
+You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows settings "Searching Windows" options menu will open.
 
 ![Indexing Settings](../images/pt-run-indexing.png)
 
 In this "Searching Windows" menu, you can:
 
-- Select "Enhanced" mode to enable indexing across all of the drives on your Windows 10 machine.
+- Select "Enhanced" mode to enable indexing across all of the drives on your Windows machine.
 - Specify folder paths to exclude.
 - Select the "Advanced Search Indexer Settings" (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
 
@@ -138,5 +138,4 @@ For a list of all known issues and suggestions, see the [PowerToys product repo 
 ## Attribution
 
 - [Wox](https://github.com/Wox-launcher/Wox/)
-
 - [Beta Tadele's Window Walker](https://github.com/betsegaw/windowwalker)

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Push notifications overview
 
-Push notifications in the Windows App SDK use [Windows Notification Push Service](https://aka.ms/wns) to send rich notifications to Windows apps using Azure App Registration identities.
+Push notifications in the Windows App SDK use [Windows Notification Push Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) to send rich notifications to Windows apps using Azure App Registration identities.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Push notifications in the Windows App SDK use [Windows Notification Push Service
 
 To use push notifications in the Windows App SDK:
 
-1. Download and install the latest experimental release of the Windows App SDK. For more information, see [Install developer tools](../../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+1. Download and install the latest experimental release of the Windows App SDK. For more information, see [Install developer tools](../../set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix).
 2. Follow the instructions to [create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../../use-windows-app-sdk-in-existing-project.md).
 
 
@@ -52,7 +52,7 @@ The push notifications support in the Windows App SDK currently has these limita
 
 ## Related topics
 
-- [Windows Push Notification Service](https://aka.ms/wns)
+- [Windows Push Notification Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 - [Send a push notification using the Windows App SDK](push-quickstart.md)
 - [Troubleshooting Windows App SDK](/troubleshooting.md)
 - [Toast UX Guidance](../../../design/shell/tiles-and-notifications/toast-ux-guidance.md)

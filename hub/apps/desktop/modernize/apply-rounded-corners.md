@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Rounded corners are the most immediately noticeable feature of [Windows 11 Geometry](../../design/signature-experiences/geometry.md). On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps. However, some Win32 apps might not be rounded. This topic describes how to round your Win32 app's main window corners if the system does not round them automatically.
 
 > [!NOTE]
-> By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), or running on a Windows Virtual Desktop (WVD).
+> By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), running on a Windows Virtual Desktop (WVD), or running as a Windows Defender Application Guard (WDAG) window.
 
 :::image type="content" source="./images/apply-design/notepad-rounded.png" alt-text="The Notepad app on Windows 11 with rounded corners.":::
 
@@ -234,38 +234,5 @@ HWND CreateCustomMenu()
     }
 
     return hWnd;
-}
-```
-
-### Example 5 – Customizing window contents for rounding - C++
-
-When the corners of a window are rounded, a little bit of the window's client area is clipped. Some apps may want to adjust their contents to account for this.
-
-For example, the thumb of a vertical scrollbar may be placed right at the bottom-right corner of a window, so it may be clipped by rounding. If that is visually undesirable, you might position the scroll bar differently when the window is rounded. However, because the window is not always rounded – for example, it is never rounded when it is maximized – you should call [**DwmGetWindowAttribute**](/windows/win32/api/dwmapi/nf-dwmapi-dwmgetwindowattribute) to determine whether or not the UI needs to be adjusted, and by how much.
-
-```cpp
-LRESULT ExampleWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
-{
-    switch (message)
-    {
-    // ...
-    // Handle various window messages...
-    // ...
-
-    case WM_SIZE:
-        // Whenever an interesting size change takes place, there may be a corresponding rounding change.
-        int radius = 0;
-        if (SUCCEEDED(DwmGetWindowAttribute(hWnd, DWMWA_WINDOW_CORNER_RADIUS, &radius, sizeof(radius))))
-        {
-            AdjustScrollbarForCornerRadius(radius);
-        }
-        break;
-
-    // ...
-    // Handle various other window messages...
-    // ...
-    }
-
-    return 0;
 }
 ```

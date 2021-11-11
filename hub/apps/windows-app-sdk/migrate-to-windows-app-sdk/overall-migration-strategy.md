@@ -15,22 +15,22 @@ ms.localizationpriority: medium
 
 The Windows App SDK provides a broad set of Windows APIs&mdash;with implementations that are decoupled from the OS, and released to developers via [NuGet](https://www.nuget.org/) packages. As a developer with a Universal Windows Platform (UWP) application, you can make great use of your existing skill set, and your source code, by moving your app to the Windows App SDK.
 
-With the Windows App SDK you can incorporate the latest runtime, language, and platform features into your app. Since each application is different, and so are your requirements and preferences, there are many different ways to approach the process of migrating your app's source code. But the high-level approach, and code changes needed for various feature areas, are similar. So in this topic we'll review strategies on how you can approach migrating your app, as well as more info (and limitations) about certain feature areas. So also see [What is supported when when porting from UWP to WinUI 3](what-is-supported.md).
+With the Windows App SDK you can incorporate the latest runtime, language, and platform features into your app. Since each application is different, and so are your requirements and preferences, there are many different ways to approach the process of migrating your app's source code. But the high-level approach, and code changes needed for various feature areas, are similar. So in this topic we'll review strategies on how you can approach migrating your app, as well as more info (and limitations) about certain feature areas. So also see [What is supported when porting from UWP to WinUI 3](what-is-supported.md).
 
 Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK apps. But there are some that aren't supported in desktop apps, or have restrictions.
 
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.
 
-For those APIs, we'll show your what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](/windows/apps/winui/), or via WinRT COM interfaces that are available in the Windows App SDK.
+For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in the [Windows UI Library (WinUI)](/windows/apps/winui/), or via WinRT COM interfaces that are available in the Windows App SDK.
 
-For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
+For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 > [!NOTE]
 > Also see [Windows Runtime APIs not supported in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-supported-api). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
 
 We'd love to hear your feeback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
-* For questions and feedback about the Windows App SDK, or just to start a [discussion](https://github.com/microsoft/WindowsAppSDK/discussions/categories/announcements), use the **This product** button. Using that channel, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
+* For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion in the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
 * For feedback about missing or incorrect information in this migration guide, use the **This page** button.
 
 ## Why migrate to the Windows App SDK?
