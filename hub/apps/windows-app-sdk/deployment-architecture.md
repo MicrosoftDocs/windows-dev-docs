@@ -40,8 +40,6 @@ The Windows App SDK framework package is an MSIX package that is deployed to end
 
 [![Diagram of how apps access the Windows App SDK framework package](images/framework.png) ](images/framework.png#lightbox)
 
-
-
 When a new version of the Windows App SDK framework package is released, all apps are updated to the new version without themselves having to redistribute a copy. Windows updates to the newest version of frameworks as they are released, and apps will automatically reference the latest framework package version during relaunch. Older framework package versions will not be removed from the system until they are no longer running or being actively used by apps on the system.
 
 [![Diagram of how apps get updates to the Windows App SDK framework package](images/framework-update.png) ](images/framework-update.png#lightbox)
@@ -67,9 +65,12 @@ The bootstrapper is a library that must be included with your unpackaged app. It
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the bootstrapper API must be called in your unpackaged app's startup code so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you may [call the bootstrapper API directly in your app's startup code](tutorial-unpackaged-deployment.md) so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
 
-The bootstrapper library is named **Microsoft.WindowsAppSDK.Bootstrap.dll**.
+The bootstrapper library in the Windows App SDK 1.0 Stable release includes:
+
+- **Microsoft.WindowsAppRuntime.Bootstrap.dll** (C++ and C#) 
+- **Microsoft.WindowsAppRuntime.Bootstrap.Net.dll** (C# wrapper)
 
 ### Dynamic Dependency Lifetime Manager (DDLM)
 
