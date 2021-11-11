@@ -38,11 +38,13 @@ When you build an app that uses the Windows App SDK, your app references a set o
 
 The Windows App SDK framework package is an MSIX package that is deployed to end users through the Microsoft Store. It can be easily and quickly updated with the latest releases, in addition to security and reliability fixes. All apps that use the Windows App SDK on a computer have a dependency on a shared instance of the framework package, as illustrated in the following diagram.
 
-![Diagram of how apps access the Windows App SDK framework package](images/framework.png)
+[![Diagram of how apps access the Windows App SDK framework package](images/framework.png) ](images/framework.png#lightbox)
+
+
 
 When a new version of the Windows App SDK framework package is released, all apps are updated to the new version without themselves having to redistribute a copy. Windows updates to the newest version of frameworks as they are released, and apps will automatically reference the latest framework package version during relaunch. Older framework package versions will not be removed from the system until they are no longer running or being actively used by apps on the system.
 
-![Diagram of how apps get updates to the Windows App SDK framework package](images/framework-update.png)
+[![Diagram of how apps get updates to the Windows App SDK framework package](images/framework-update.png) ](images/framework-update.png#lightbox)
 
 Because app compatibility is important to Microsoft and to apps that depend on the Windows App SDK, the Windows App SDK framework package follows [Semantic Versioning 2.0.0](https://semver.org/) rules. This means that after we release version 1.0 of the Windows App SDK, the Windows App SDK framework package will guarantee compatibility between minor and patch version changes, and breaking changes will occur only between major version updates.
 

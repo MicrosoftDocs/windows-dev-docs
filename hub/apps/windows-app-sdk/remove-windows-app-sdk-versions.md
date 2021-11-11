@@ -43,7 +43,8 @@ To remove [main](deployment-architecture.md#main-package) and [Dynamic Dependenc
 
 On the **Apps & features** page, search for **reunion** to filter and show installed versions of Windows App SDK packages. Select any versions you want to remove from your computer and click **Uninstall**.
 
-![Screenshot of Apps & Features page in Settings to remove Windows App SDK packages](images/remove-reunion-packages-versions.png)
+[![Screenshot of Apps & Features page in Settings to remove Windows App SDK packages](images/remove-reunion-packages-versions.png) ](images/remove-reunion-packages-versions.png#lightbox)
+
 
 ## Related topics
 
