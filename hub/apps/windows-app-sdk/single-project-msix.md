@@ -14,7 +14,7 @@ Single-project MSIX is a feature that enables you to build MSIX-packaged desktop
 - Create new desktop projects using the **Blank App, Packaged (WinUI 3 in Desktop)** templates in the Windows App SDK. These projects are configured to build your app into an MSIX package without the use of a separate packaging project.
 - Modify existing desktop WinUI 3 projects created using the Windows App SDK so that the separate packaging project is no longer needed.
 
-![Comparing packaging project to single project](images/single-project-overview.png)
+[![Comparing packaging project to single project](images/single-project-overview.png) ](images/single-project-overview.png#lightbox)
 
 ## Overview
 
@@ -34,14 +34,9 @@ Single-project MSIX only supports a single executable in the generated MSIX pack
 
 ## Install the single-project MSIX packaging tools
 
-The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. 
+The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install developer tools](set-up-your-development-environment.md).
 
-For installation instructions for the SDK, see [Install developer tools](set-up-your-development-environment.md).
-
-
-- **Windows App SDK 0.8 AND C# version of 1.0 Preview 3:** You must install the single-project MSIX packaging tools extension separately. 
-
-  To install the single-project MSIX packaging tools extension:
+**Windows App SDK 0.8 AND C# version of 1.0 Preview 3:** You must install the single-project MSIX packaging tools extension separately.
 
   - **Visual Studio 2019:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2019 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools). The extension requires Visual Studio 2019 version 16.10.x or later.
 
@@ -100,7 +95,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
     2. Select the **Debug** tab and set the **Launch** property to **MsixPackage**. You might have to select this twice if it reverts back on the first attempt.
 
-        ![Enabling MsixProject option](images/single-project-msixpackageoption.png)
+        [![Enabling MsixProject option](images/single-project-msixpackageoption.png) ](images/single-project-msixpackageoption.png#lightbox)
 
     3. Save your changes.
 
@@ -178,7 +173,7 @@ Next, move several important files to the application project. There are differe
 1. In **File Explorer**, move the **Package.appxmanifest** file and the **Images** folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.
 2. Remove the packaging project from your solution.
 
-![Illustration of moving files to main app](images/single-project-move-to-one.png)
+[![Illustration of moving files to main app](images/single-project-move-to-one.png) ](images/single-project-move-to-one.png#lightbox)
 
 #### [C++](#tab/cpp)
 
@@ -196,7 +191,9 @@ Next, move several important files to the application project. There are differe
     > [!NOTE]
     > Be sure to use the **Active solution configuration** and **Active solution platform** drop-downs at the top instead of the **Configuration** and **Platform** drop-downs in the same row as the **Deploy** check box.
 
-![Enabling Deploy in Configuration Manager](images/single-project-configmanager.png)
+[![Enabling Deploy in Configuration Manager](images/single-project-configmanager.png) ](images/single-project-configmanager.png#lightbox)
+
+
 
 ### Step 5: Deploy your app
 

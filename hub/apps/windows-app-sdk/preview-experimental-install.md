@@ -69,7 +69,7 @@ To download the latest Windows App SDK extensions for Visual Studio, see the ins
 
 ### [Preview release](#tab/preview/vs)
 
-To install a preview of the next stable release that can be used to develop desktop (C#/.NET 5 or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](preview-channel.md). The preview release channel can't be used by apps in production environments.
+To install a preview of the next stable release that can be used to develop desktop (C# or C++) apps, install the latest extensions from the **preview** release channel. For more information about this channel and the features available in it, see [Preview release channel](preview-channel.md). The preview release channel can't be used by apps in production environments.
 
 To download, choose one or more of the following extensions for the latest preview release. The extensions below are tailored for your programming language and version of Visual Studio.
 
@@ -100,7 +100,7 @@ Visual Studio 2022 version 17.1 (Preview) already includes the latest Preview re
 
 ### [Experimental release](#tab/experimental/vs)
 
-To develop desktop (C#/.NET 5 or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel cannot be used by apps in production environments.
+To develop desktop (C# or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel cannot be used by apps in production environments.
 
 Choose one of these options to install the latest experimental release ([version 1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1)):
 

@@ -13,8 +13,6 @@ ms.localizationpriority: medium
 
 This article provides guidance about deploying non-[MSIX](/windows/msix) packaged apps that use the Windows App SDK to other computers.
 
-> [!IMPORTANT]
-> Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. You should not deploy your unpackaged app using the methods described below in production environments until the Stable release. For more info, [see our roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md).
 
 ## Overview
 

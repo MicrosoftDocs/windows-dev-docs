@@ -1,4 +1,4 @@
----
+--- 
 description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
 title: Update existing projects to the latest release of the Windows App SDK
 ms.topic: article
@@ -53,7 +53,7 @@ If you created a project using version 0.8 Stable (for example, version 0.8.4), 
     ```Console
     install-package Microsoft.WindowsAppSDK -Version 1.0.0-stable 
     ```   
-
+    
 ## Update from 0.8 Stable or Preview to 1.0 Experimental or Preview 3
 
 > [!IMPORTANT]

@@ -12,13 +12,12 @@ ms.localizationpriority: medium
 # Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK 
 
 **Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md). You can also follow an [advanced tutorial](tutorial-unpackaged-deployment.md) in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs.
-
 This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
 > [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+>  The dynamic depednencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
 
 ## Prerequisites
 
@@ -32,7 +31,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 ## Instructions
 
-You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
+You can choose to follow this tutorial using a C++ project or a C# project.
 
 > [!IMPORTANT]
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
@@ -207,7 +206,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+	    var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);

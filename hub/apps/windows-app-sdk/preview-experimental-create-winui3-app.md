@@ -27,7 +27,7 @@ To create a WinUI 3 application with MSIX packaging, choose from one of the foll
 
 ### [C# with 1.0 Preview 3](#tab/csharp)
 
-To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Preview 3:
+To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
 1. In Visual Studio, select **File** -> **New** -> **Project**.
 
@@ -287,7 +287,7 @@ To create a WinUI 3 application without MSIX packaging, choose from one of the f
 
 ### [C# with 1.0 Preview 3](#tab/csharp-unpackaged)
 
-To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Preview 3:
+To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
 1. Install the [Single-project MSIX Packaging Tools](/windows/apps/windows-app-sdk/single-project-msix#install-the-single-project-msix-packaging-tools).
 
