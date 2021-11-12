@@ -60,7 +60,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [Windows Forms](#tab/windows-forms)
 
-Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
+Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to rewrite your application to WinUI 3 entails a complete re-write of your UI.
 
 > [!div class="button"]
 > [Get started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
