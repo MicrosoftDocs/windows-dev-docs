@@ -10,6 +10,10 @@ ms.localizationpriority: medium
 
 For guidance about packaging and deploying different types of Windows apps, see the following articles. Generally we recommend using [MSIX](/windows/msix) for a modern and reliable deployment experience for your customers. However, you can also deploy your apps using other installation technologies.
 
+### Key concepts
+
+[!INCLUDE [Packaged apps, Unpackaged apps](../../apps/windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
+
 ## Apps that use the Windows App SDK
 
 Before configuring your apps for deployment, review [the Windows App SDK runtime architecture](../windows-app-sdk/deployment-architecture.md) to learn more about the dependencies your app takes when it uses the Windows App SDK.

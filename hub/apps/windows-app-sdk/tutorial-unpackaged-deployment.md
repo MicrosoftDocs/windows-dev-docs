@@ -1,6 +1,6 @@
 ---
 title: Build and deploy an unpackaged app that uses the Windows App SDK 
-description: This article provides a walkthrough for building and deploying an unpackaged app that uses the Windows App SDK.
+description: This article provides an advanced tutorial for building and deploying an unpackaged app that uses the Windows App SDK.
 ms.topic: article
 ms.date: 05/24/2021
 keywords: windows win32, windows app development, Windows App SDK 
@@ -9,11 +9,11 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
+# Advanced tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
 
-This article provides a step-by-step tutorial for an **advanced scenario**, in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. 
+This article provides a step-by-step tutorial for an advanced scenario, in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. 
 
-You can also choose the simple approach of auto-initializing the Windows App SDK through the `WindowsPackageType` project property. See [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) for instructions.
+**Simple approach:** You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property. See [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) for instructions.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
@@ -21,11 +21,14 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 1. [Install Visual Studio](set-up-your-development-environment.md#1-install-visual-studio).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
-3. C# projects must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
+3. If you're using Visual Studio 2019 version 16.11, C# projects must use .NET 5 SDK version 5.0.400 or later. Later versions of Visual Studio can use .NET 6.
 
 ## Instructions
 
-You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
+You can follow this tutorial using a C++ project or a C# project.
+
+> [!NOTE]
+>  The dynamic depednencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
 
 ### [C++](#tab/cpp)
 
@@ -132,7 +135,7 @@ Follow these instructions to configure a C# project that includes WinUI 3 unpack
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 does not support this platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
@@ -191,7 +194,7 @@ Follow these instructions to configure a C# project that includes WinUI 3 unpack
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+	    var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);

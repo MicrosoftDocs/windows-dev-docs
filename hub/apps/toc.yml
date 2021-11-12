@@ -310,7 +310,7 @@ items:
                 href: windows-app-sdk/deploy-unpackaged-apps.md
               - name: "Reference the Windows App SDK framework package at run time"
                 href: windows-app-sdk/reference-framework-package-run-time.md
-              - name: "Tutorial: Build and deploy an unpackaged app"
+              - name: "Advanced tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
           - name: "Check for installed versions of the Windows App SDK runtime"
             href: windows-app-sdk/check-windows-app-sdk-versions.md
