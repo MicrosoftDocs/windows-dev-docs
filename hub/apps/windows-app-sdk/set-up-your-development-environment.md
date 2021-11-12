@@ -52,11 +52,11 @@ For a list of the minimum system requirements to use the Windows App SDK, see [S
 
 You can download and install the latest C# or C++ VSIX extension directly from the links below.
 
-    > [!div class="button"]
-    > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cs)
+> [!div class="button"]
+> [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cs)
 
-    > [!div class="button"]
-    > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp)
+> [!div class="button"]
+> [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp)
 
 #### [Visual Studio 2019](#tab/vs-2019)
 
@@ -64,10 +64,10 @@ You can download and install the latest C# or C++ VSIX extension directly from t
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace. 
 
     > [!div class="button"]
-    > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
+    > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix)
 
     > [!div class="button"]
-    > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix-cpp)
+    > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-cpp)
 
 ---
 
