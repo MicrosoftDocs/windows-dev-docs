@@ -199,6 +199,9 @@ Next, move several important files to the application project. There are differe
 
 Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application.
 
+### Step 6: Package your app for publishing
+Use the [Package & Publish command in Visual Studio](/windows/msix/package/packaging-uwp-apps) to package your application to publish to the Store.
+
 ## Provide feedback
 
 To send us your feedback, report problems, or ask questions about the single-project MSIX feature, post a discussion or issue on the [Windows App SDK GitHub repository](https://github.com/microsoft/WindowsAppSDK).
