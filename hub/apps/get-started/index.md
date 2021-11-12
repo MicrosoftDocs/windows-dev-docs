@@ -15,7 +15,7 @@ When you want to create a new app for Windows 11 or Windows 10, the first decisi
 
 ## Create a WinUI 3 app
 
-The Windows UI Library (WinUI) 3 is the premiere and recommended user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns.
+The Windows UI Library (WinUI) 3 is the latest and recommended user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns.
 
 WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index.md)**. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
 
