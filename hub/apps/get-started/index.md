@@ -80,7 +80,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [.NET MAUI](#tab/net-maui)
 
-.NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI 3 and the Windows App SDK so apps get the premiere user experience on Windows and access to everything you get with WinUI 3 plus the ability to reach to other platforms.
+.NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI 3 and the Windows App SDK so apps get the latest user experience on Windows. This gives your apps access to everything you get with WinUI 3 plus the ability to reach to other platforms.
 
 .NET MAUI for Windows is a great choice if:
 - You want to share as much .NET code as possible across mobile and desktop applications.
