@@ -41,7 +41,7 @@ highlightedContent:
      url: /learn/browse/?products=windows
 
 productDirectory:
-  title: Dive into Develop desktop apps for Windows
+  title: Dive into developing apps for Windows
   items:
   - title: Get started
     imageSrc: https://docs.microsoft.com/media/common/i_get-started.svg
