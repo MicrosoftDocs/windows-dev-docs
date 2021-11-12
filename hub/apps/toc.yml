@@ -42,8 +42,6 @@ items:
             href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
           - name: "Package your app using single-project MSIX"
             href: windows-app-sdk/single-project-msix.md
-          - name: "Localize your WinUI 3 app"
-            href: winui/winui3/localize-winui3-app.md
           - name: "Update existing projects to the latest release"
             href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
           - name: "Release channels"
