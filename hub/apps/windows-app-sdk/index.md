@@ -40,6 +40,18 @@ The following table highlights the development features that are provided by the
 | [Manage app windows](windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
 | [Push notifications](notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
 
+### Windows App SDK release channels
+
+The following table provides an overview of the different release channels.
+
+| Release channel | Description |
+|--|--|
+| [Stable](stable-channel.md) | This channel is supported for use by apps in production environments. It only includes stable APIs. By default, the Windows App SDK docs focus on the Stable channel. |
+| [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. For documentation on using the Preview release, see [Preview and Experimental guidance](preview-experimental-install.md). |
+| [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. For documentation on using the Experimental release, see [Preview and Experimental guidance](preview-experimental-install.md). |
+
+ For more details about the release channels of the Windows App SDK, see [Windows App SDK release channels](release-channels.md).
+
 ## Benefits of the Windows App SDK for Windows developers
 
 The Windows App SDK provides a broad set of Windows APIs with implementations that are decoupled from the OS and released to developers via NuGet packages. The Windows App SDK is not meant to replace the Windows SDK. The Windows SDK will continue to work as is, and there are many core components of Windows that will continue to evolve via APIs that are delivered via OS and Windows SDK releases. Developers are encouraged to adopt the Windows App SDK at their own pace.

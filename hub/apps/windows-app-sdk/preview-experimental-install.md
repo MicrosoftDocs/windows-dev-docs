@@ -13,6 +13,8 @@ ms.localizationpriority: medium
 
 To develop apps for Windows 11 and Windows 10, you'll need to configure your development computer with the required development tools.
 
+**Using the Windows App SDK Stable version**: To set up your environment using the stable version of the Windows App SDK, see [Install developer tools](set-up-your-development-environment.md).
+
 ## 1. Install Visual Studio
 
 Use the following links to install Visual Studio 2022 version 17.0 (recommended), Visual Studio 2022 version 17.1 (Preview), or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed.
@@ -117,8 +119,7 @@ Visual Studio 2022 version 17.1 (Preview) only supports the latest 1.0 Preview 3
 ## Related topics
 
 - [System requirements for Windows app development](system-requirements.md)
-- [Get started developing apps for Windows desktop](../get-started/index.md)
-- [Visual Studio project and item templates for Windows apps](../desktop/visual-studio-templates.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Overview of app development options](../get-started/index.md)
+- [Create a WinUI 3 app](preview-experimental-create-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Enable your device for development](../get-started/enable-your-device-for-development.md)
+

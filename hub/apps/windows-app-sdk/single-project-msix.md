@@ -34,14 +34,12 @@ Single-project MSIX only supports a single executable in the generated MSIX pack
 
 ## Install the single-project MSIX packaging tools
 
-<!-- The installation process for the single-project MSIX packaging tools depends on the version of the Windows App SDK that you're using. -->
+The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. 
 
-The single-project MSIX packaging tools are included with the Windows App SDK extension for Visual Studio. For these releases, the tools include project templates you can use to create new MSIX-packaged WinUI 3 apps. For installation instructions for the SDK, see [Install the Windows App SDK extension for Visual Studio](set-up-your-development-environment.md).
+For installation instructions for the SDK, see [Install developer tools](set-up-your-development-environment.md).
 
-  <!-- > [!NOTE]
-  > If you install the C# version of the Windows App SDK 1.0 Preview 3 extension for Visual Studio 2019, you must also install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) separately. The **Blank App, Packaged (WinUI 3 in Desktop)** project template has a known issue that results in a build error unless you also install the single-project packaging tools extension. This issue does not affect other versions of the Windows App SDK 1.0 Preview 3 extension. -->
 
-<!-- - **Windows App SDK 1.0 Preview 1 and earlier:** You must install the single-project MSIX packaging tools extension separately. For these releases, the tools do not include project templates; however, you can still use the tools to modify an existing desktop WinUI 3 project so that the separate packaging project is no longer needed. -->
+- **Windows App SDK 0.8 AND C# version of 1.0 Preview 3:** You must install the single-project MSIX packaging tools extension separately. 
 
   To install the single-project MSIX packaging tools extension:
 

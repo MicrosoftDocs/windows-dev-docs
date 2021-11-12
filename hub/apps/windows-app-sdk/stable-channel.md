@@ -21,26 +21,20 @@ The following releases of the stable channel are currently available:
 
 If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md). 
 
-> [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
-
-
 ## Version 1.0
 
-Version 1.0 is the latest release of the stable channel for the Windows App SDK. 1.0 supports all stable channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
+Version 1.0 is the latest release of the stable channel for the Windows App SDK. 1.0 supports all [stable channel features](release-channels.md#features-available-by-release-channel).
 
 ### Download 1.0 Stable Visual Studio extensions (VSIX)
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Stable release. For all versions, see [Downloads for the Windows App SDK](downloads.md). If you haven't done so already, start by configuring your development environment, using the steps in [Install tools for Windows app development](set-up-your-development-environment.md?tabs=preview).
-
-The extensions below are tailored for your programming language and version of Visual Studio.
+From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Stable release. If you haven't done so already, [Install developer tools](set-up-your-development-environment.md?tabs=preview).
 
 | **1.0 Stable downloads** | **Description** |
 | ----------- | ----------- |
-| [Extension for Visual Studio](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftProjectReunion) | Build production apps with the Windows App SDK Visual Studio extension. |
+| [Extension for Visual Studio](https://aka.ms/windowsappsdk/stable-vsix) | Build production apps with the Windows App SDK Visual Studio extension. |
 | [The `.exe` installer, and MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer) | Deploy the Windows App SDK with your app using the `.exe` installer, and MSIX packages. |
 
 The following sections describe new and updated features, limitations, and known issues for 1.0 Stable.
@@ -116,14 +110,20 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
 ### DWriteCore
 
-Description
+DWriteCore is the Windows App SDK implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal), which is the DirectX API for high-quality text rendering, resolution-independent outline fonts, and full Unicode text and layout support. DWriteCore is a form of DirectWrite that runs on versions of Windows down to Windows 10, version 1809 (10.0; Build 17763), and opens the door for you to use it cross-platform. 
 
-**New Features**
-Description
+**Features**
+DWriteCore contains all of the features of DirectWrite, with a few exceptions.
 
 **Important limitations**
-Description
+- DWriteCore does not contain the following DirectWrite features:  
+    - Per-session fonts 
+    - End-user defined character (EUDC) fonts 
+    - Font-streaming APIs 
+- Low-level rendering API support is partial. 
+- DWriteCore doesn't interoperate with Direct2D, but you can use [IDWriteGlyphRunAnalysis](/windows/win32/api/dwrite/nn-dwrite-idwriteglyphrunanalysis) and [IDWriteBitmapRenderTarget](/windows/win32/api/dwrite/nn-dwrite-idwritebitmaprendertarget).
 
+For more information, see [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview).
 
 ### MRT Core
 
@@ -168,6 +168,9 @@ The latest available release of the stable channel is the servicing release 0.8.
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
+
+> [!NOTE]
+> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
 
 ### Version 0.8.5
 

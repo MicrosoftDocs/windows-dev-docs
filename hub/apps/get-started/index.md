@@ -9,13 +9,13 @@ ms.localizationpriority: medium
 
 # Overview of app development options
 
-This article contains all the information you need to get started building apps for the Windows desktop environment or updating existing apps to take advantage of the latest Windows OS experiences.
+This article contains all the information you need to get started building apps for the Windows desktop environment.
 
 When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features. 
 
-## Create a new WinUI 3 app
+## Create a WinUI 3 app
 
-The Windows UI Library (WinUI) 3 is the premiere user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns.
+The Windows UI Library (WinUI) 3 is the premiere and recommended user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest UI patterns.
 
 WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index.md)**. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
 
@@ -23,13 +23,6 @@ WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index
 > [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
 
 If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
-
-<!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-- [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
-- [WinUI project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
-- [API reference](/windows/winui/api)
-- [Samples](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview) -->
 
 
 ## Other app types
@@ -56,16 +49,6 @@ Here are a few highlights of what the Win32 API and C++ offers to enable you to 
 
 You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
-<!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-- [Get started with classic Win32 desktop apps](/windows/win32/desktop-programming/)
-- [Get started with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started)
-- [Project templates](../desktop/visual-studio-templates.md#c-desktop-win32-templates)
-- [Create your first Win32 and C++ app](/windows/win32/learnwin32/learn-to-program-for-windows/)
-- [Technologies and features provided by the Win32 API](/windows/win32/desktop-app-technologies)
-- [Win32 API reference](/windows/win32/apiindex/windows-api-list/)
-- [Samples](https://github.com/Microsoft/Windows-classic-samples) -->
-
-
 #### [WPF](#tab/wpf)
 
 WPF is the established platform for managed Windows applications with access to .NET 5 or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
@@ -75,13 +58,6 @@ WPF is the established platform for managed Windows applications with access to 
 
 You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
-<!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-- [Getting started (WPF)](/dotnet/framework/wpf/getting-started/)
-- [Project templates](../desktop/visual-studio-templates.md#net-templates)
-- [Create your first app](/dotnet/desktop/wpf/get-started/create-app-visual-studio)
-- [API reference (.NET)](/dotnet/api/index)
-- [Samples](https://github.com/Microsoft/WPF-Samples) -->
-
 #### [Windows Forms](#tab/windows-forms)
 
 Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET 5 or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
@@ -90,15 +66,6 @@ Windows Forms is the original platform for managed Windows applications with a l
 > [Get started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 
 You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Modernize your desktop apps](../desktop/modernize/index.md).
-
-
-<!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-- [Getting started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
-- [Project templates](../desktop/visual-studio-templates.md#net-templates)
-- [Create your first Windows Forms app](/dotnet/framework/winforms/creating-a-new-windows-form)
-- [Tutorial: Create a picture viewer](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
-- [API reference (.NET)](/dotnet/api/index)
-- [Enhancing Windows Forms apps](/dotnet/framework/winforms/advanced/) -->
 
 #### [UWP](#tab/uwp)
 
@@ -110,15 +77,6 @@ UWP is a highly customizable platform that uses XAML markup to separate UI (pres
 > [Get started with UWP](/windows/uwp/get-started/)
 
 You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md).
-
-<!-- - [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
-- [Get started](/windows/uwp/get-started/)
-- [Project templates](../desktop/visual-studio-templates.md#uwp-templates)
-- [Design and UI](/windows/uwp/design/)
-- [Technologies and features](/windows/uwp/develop/)
-- [API reference](/uwp/)
-- [Samples](https://github.com/Microsoft/Windows-universal-samples) -->
-
 
 #### [React Native for Windows](#tab/rnw)
 
