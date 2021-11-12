@@ -15,6 +15,7 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 The following releases of the stable channel are currently available:
 
+- [Version 1.0](#version-10-stable)
 - [Version 0.8](#version-08)
 - [Version 0.5](#version-05)
 
