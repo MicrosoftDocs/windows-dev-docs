@@ -15,7 +15,7 @@ To develop apps for Windows 11 and Windows 10, you'll need to configure your dev
 
 ## 1. Install Visual Studio
 
-Use the following links to install Visual Studio 2022 version 17.0 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed.
+Use the following links to install Visual Studio 2022 version 17.0 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise.
 
 For a list of the minimum system requirements for Visual Studio, see [System requirements for Windows app development](system-requirements.md).
 
