@@ -379,25 +379,22 @@ The following listing identifies file names, methods, and lines of code that nee
     }
 ```
 
-### Switch to the UI thread before updating UI elements
+### App type issue (affects only Preview 3)
 
-A user interface (UI) element must be updated from the thread that created it (which is the UI thread). In a coroutine, a `co_await` constitutes a *suspension point*, where control is returned to the caller, and resumption *should* take place on the original thread.
+If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](/windows/apps/windows-app-sdk/preview-channel#version-10-preview-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
 
-But with the Windows App SDK 1.0 Preview 3, that doesn't happen. So we need to search the code for uses of the `co_await` operator. And then look for code that follows it that updates a UI element. If we find cases like that, then we need to switch to the UI thread before updating the UI.
+In Visual Studio, in **Solution Explorer**, right-click the project node, and click **Unload Project**. Now `PhotoEditor.vcxproj` is open for editing. As the first child of **Project**, add a **PropertyGroup** element like this:
 
-First add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-
-Then add the following include to `pch.h` in the target project.
-
-```cppwinrt
-#include <wil/cppwinrt_helpers.h>
+```xml
+<Project ... >
+    <PropertyGroup>
+        <EnableWin32Codegen>true</EnableWin32Codegen>
+    </PropertyGroup>
+    <Import ... />
+...
 ```
 
-The way you switch to the UI thread is to add the following line of code (before updating the UI).
-
-```cppwinrt
-co_await wil::resume_foreground(this->DispatcherQueue());
-```
+Save and close `PhotoEditor.vcxproj`, and rebuild the project.
 
 ## Test the migrated app
 
