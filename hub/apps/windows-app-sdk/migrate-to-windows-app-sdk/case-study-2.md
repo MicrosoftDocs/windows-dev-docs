@@ -394,7 +394,7 @@ In Visual Studio, in **Solution Explorer**, right-click the project node, and cl
 ...
 ```
 
-Save and close `PhotoEditor.vcxproj`, and rebuild the project.
+Save and close `PhotoEditor.vcxproj`. Right-click the project node, and click **Reload Project**. Now rebuild the project.
 
 ## Test the migrated app
 
