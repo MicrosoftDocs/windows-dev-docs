@@ -17,7 +17,7 @@ The following table provides an overview of the different release channels. For 
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |---|---|---|---|---|---|
-| **✅** | [Stable](stable-channel.md)  | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every four months<br>(+ servicing) | Yes | [0.8](stable-channel.md#version-08) (6/24/2021) |
+| **✅** | [Stable](stable-channel.md)  | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every four months<br>(+ servicing) | Yes | [1.0](stable-channel.md#version-10) (11/16/2021) |
 | **❇️** | [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
 | **🔄️** | [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | Targeting monthly | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
 
@@ -33,13 +33,13 @@ The following table shows which features are currently available in each release
 | [MSIX desktop app support](deploy-packaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  |  :heavy_check_mark: Available |
 | [Unpackaged desktop app support](deploy-unpackaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  |  :heavy_check_mark: Available |
 | [UWP app support](../winui/winui3/create-your-first-winui3-app.md) | :x: Not available |  :x: Not available  |  :heavy_check_mark: Available |
-| [WinUI 3](../winui/winui3/index.md) |  :heavy_check_mark: Available for MSIX desktop<br>❌ Not available for UWP and unpackaged desktop | :heavy_check_mark: Available for MSIX and unpackaged desktop <br> ❌ Not available for UWP | :heavy_check_mark: Available for MSIX desktop and UWP<br>❌ Not available for unpackaged desktop |
+| [WinUI 3](../winui/winui3/index.md) | :heavy_check_mark: Available for MSIX and unpackaged desktop <br> :x: Not available for UWP | :heavy_check_mark: Available for MSIX and unpackaged desktop <br> :x: Not available for UWP | :heavy_check_mark: Available for MSIX desktop and UWP<br> :x: Not available for unpackaged desktop |
 | [Text rendering](dwritecore.md) | :heavy_check_mark: Available| :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
-| [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
-| [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
-| [App lifecycle: Power management](applifecycle/applifecycle-power.md) | :x: Not available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
-| [Manage app windows](windowing/windowing-overview.md) | :x: Not available | :heavy_check_mark: Available | :heavy_check_mark: Available |
+| [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) |  :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
+| [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md) |  :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
+| [App lifecycle: Power management](applifecycle/applifecycle-power.md) |  :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
+| [Manage app windows](windowing/windowing-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [Push notifications](notifications/push/index.md) | :x: Not available | :x: Not available  | :heavy_check_mark: Available |
 
 ## Windows App SDK release policy
@@ -52,6 +52,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date  | Latest patch version  | Patch release date | Support level | End of support |
 |---|---|---|---|---|---|
+|1.0| 11/16/2021 | - | - |Current | 11/16/2022 |
 |0.8| 6/24/2021 |0.8.4| 9/22/2021|Current | 6/24/2022 |
 |0.5| 3/29/2021 | 0.5.8 | 7/13/2021 | Maintenance | 11/1/2021 |
 
@@ -110,7 +111,7 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 - [Stable channel](stable-channel.md)
 - [Preview channel](preview-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
-- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
+- [Preview and Experimental guidance](preview-experimental-install.md)
+- [Install developer tools](set-up-your-development-environment.md)
+- [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+

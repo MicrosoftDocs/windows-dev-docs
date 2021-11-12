@@ -14,15 +14,15 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The preview channel is **not supported** for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store. There are currently no releases available from the preview channel, and we recommend using the [latest stable release](stable-channel.md).
 
-The preview channel provides a preview of the next upcoming stable release.
+The preview channel provides a preview of the next upcoming stable release. There may be breaking API changes between a given preview channel release and the next stable release. Preview channel releases do not include experimental APIs.
 
-There may be breaking API changes between a given preview channel release and the next stable release. Preview channel releases do not include experimental APIs.
-
-If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
+**Important links**: 
+- If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
+- For documentation on preview releases, see [Preview and Experimental guidance](preview-experimental-install.md).
 
 ## Version 1.0 Preview 3 (1.0.0-preview3)
 
-Preview 3 is the latest release of the preview channel for version 1.0 of the Windows App SDK. Preview 3 supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
+Preview 3 is the latest release of the preview channel for version 1.0 of the Windows App SDK. Preview 3 supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
 ### Download Preview 3 Visual Studio extensions (VSIX)
 

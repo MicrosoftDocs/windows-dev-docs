@@ -12,6 +12,8 @@ ms.custom: 19H1
 
 The [Windows App SDK](index.md) includes WinUI 3 project templates that enable you to create desktop and UWP apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
 
+**Using the Windows App SDK Stable version**: To build a WinUI 3 app using the stable version of the Windows App SDK, see [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
+
 ## Prerequisites
 
 To use the WinUI 3 project templates described in this article, configure your development computer and install the Windows App SDK extension for Visual Studio. For details, see [Set up your development environment](preview-experimental-install.md).
