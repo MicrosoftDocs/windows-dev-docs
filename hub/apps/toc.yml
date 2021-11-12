@@ -56,7 +56,7 @@ items:
                 href: windows-app-sdk/preview-experimental-create-winui3-app.md
               - name: "Tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
-      - name: Migrate to the Windows App SDK
+      - name: Migrate from UWP to Windows App SDK
         items:
           - name: "Index of migration topics"
             href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
