@@ -5236,11 +5236,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/winui/winui3/index.md",
-      "redirect_url": "/windows/apps/winui/",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "hub/apps/winui/winui3/release-notes/index.md",
       "redirect_url": "/windows/apps/winui/winui3/release-notes/release-notes-08-preview",
       "redirect_document_id": false
