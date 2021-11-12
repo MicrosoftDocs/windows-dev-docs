@@ -74,15 +74,15 @@ productDirectory:
         text: Windows App SDK features
       - url: ./winui/index.md
         text: Windows UI Library (WinUI)
-      - url: ./get-started/make-apps-great-for-windows.md
-        text: Make your apps great on Windows 11
+      - url: ./desktop/modernize/index.md
+        text: Modernize your desktop apps
   - title: Deploy
     imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
     links:
       - url: ./package-and-deploy/index.md
         text: Package and deploy apps
-      - url: ./package-and-deploy/index.md#apps-that-use-the-windows-app-sdk
-        text: Deploy apps that use the Windows App SDK
+      - url: ./windows-app-sdk/deployment-architecture.md
+        text: Windows App SDK deployment guide 
       - url: /windows/msix
         text: Package apps using MSIX
       - url: /windows/msix/desktop/managing-your-msix-deployment-overview
