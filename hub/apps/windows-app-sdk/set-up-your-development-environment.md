@@ -47,11 +47,29 @@ The [Windows App SDK](index.md) includes project and item templates for creating
 For a list of the minimum system requirements to use the Windows App SDK, see [System requirements for Windows app development](system-requirements.md).
 
 ### Installation options 
-- You can install the latest stable release VSIX from Visual Studio: click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension. 
+
+#### [Visual Studio 2022](#tab/vs-2022)
+
+You can download and install the latest C# or C++ VSIX extension directly from the links below.
+
+> [!div class="button"]
+> [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cs)
+
+> [!div class="button"]
+> [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp)
+
+#### [Visual Studio 2019](#tab/vs-2019)
+
+- You can install the latest stable release VSIX from Visual Studio: click **Extensions** > **Manage Extensions**, search for **Windows App SDK**, and install the latest C# or C++ extension depending on what language you want to use. 
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace. 
 
     > [!div class="button"]
-    > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
+    > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix)
+
+    > [!div class="button"]
+    > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-cpp)
+
+---
 
 For all other versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md) and [Install tools for Preview and Experimental](preview-experimental-install.md).
 
