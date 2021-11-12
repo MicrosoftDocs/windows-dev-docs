@@ -42,36 +42,20 @@ items:
             href: windows-app-sdk/use-windows-app-sdk-in-existing-project.md
           - name: "Package your app using single-project MSIX"
             href: windows-app-sdk/single-project-msix.md
+          - name: "Update existing projects to the latest release"
+            href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
+          - name: "Release channels"
+            href: windows-app-sdk/release-channels.md
           - name: "Downloads"
             href: windows-app-sdk/downloads.md
-          - name: "Releases"
+          - name: "Preview and Experimental guidance"
             items:
-              - name: "Release channels"
-                href: windows-app-sdk/release-channels.md
-              - name: "Stable channel release notes"
-                href: windows-app-sdk/stable-channel.md
-              - name: "Update existing projects to the latest release"
-                href: windows-app-sdk/update-existing-projects-to-the-latest-release.md
-              - name: "Preview and Experimental guidance"
-                items:
-                  - name: "Preview channel release notes"
-                    href: windows-app-sdk/preview-channel.md
-                  - name: "Experimental channel release notes"
-                    href: windows-app-sdk/experimental-channel.md
-                  - name: "Install Developer Tools"
-                    href: windows-app-sdk/preview-experimental-install.md
-                  - name: "Create a WinUI 3 app"
-                    href: windows-app-sdk/preview-experimental-create-winui3-app.md
-                  - name: "Tutorial: Build and deploy an unpackaged app"
-                    href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
-              - name: "Release notes archive"
-                items:
-                  - name: "WinUI 3 - Project Reunion 0.8 Preview"
-                    href: winui/winui3/release-notes/release-notes-08-preview.md
-                  - name: "WinUI 3 - Project Reunion 0.5"
-                    href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
-                  - name: "WinUI 3 - Project Reunion 0.5 Preview"
-                    href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
+              - name: "Install Developer Tools"
+                href: windows-app-sdk/preview-experimental-install.md
+              - name: "Create a WinUI 3 app"
+                href: windows-app-sdk/preview-experimental-create-winui3-app.md
+              - name: "Tutorial: Build and deploy an unpackaged app"
+                href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
       - name: Migrate to the Windows App SDK
         items:
           - name: "Index of migration topics"
@@ -211,6 +195,7 @@ items:
           - name: "Overview"
             href: winui/index.md
           - name: "Windows UI Library 3"
+            href: winui/winui3/index.md
             items:
               - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
                 href: winui/winui3/desktop-winui3-app-with-basic-interop.md
@@ -218,34 +203,15 @@ items:
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
               - name: "Build XAML controls with C#"
                 href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
+              - name: "Localize your WinUI 3 app"
+                href: winui/winui3/localize-winui3-app.md
           - name: "Windows UI Library 2"
+            href: winui/winui2/index.md
             items: 
-              - name: "Overview"
-                href: winui/winui2/index.md
               - name: "Get started with WinUI 2"
                 href: winui/winui2/getting-started.md
               - name: "NuGet package list"
                 href: winui/winui2/nuget-packages.md
-              - name: "Release notes"
-                items: 
-                  - name: "Overview"
-                    href:  winui/winui2/release-notes/index.md
-                  - name: "WinUI 2.7"
-                    href: winui/winui2/release-notes/winui-2.7.md
-                  - name: "WinUI 2.6"
-                    href: winui/winui2/release-notes/winui-2.6.md
-                  - name: "WinUI 2.5"
-                    href: winui/winui2/release-notes/winui-2.5.md
-                  - name: "WinUI 2.4"
-                    href: winui/winui2/release-notes/winui-2.4.md
-                  - name: "WinUI 2.3"
-                    href: winui/winui2/release-notes/winui-2.3.md
-                  - name: "WinUI 2.2"
-                    href: winui/winui2/release-notes/winui-2.2.md
-                  - name: "WinUI 2.1"
-                    href: winui/winui2/release-notes/winui-2.1.md
-                  - name: "WinUI 2.0"
-                    href: winui/winui2/release-notes/winui-2.0.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview
@@ -310,13 +276,13 @@ items:
                 href: windows-app-sdk/deploy-unpackaged-apps.md
               - name: Reference the Windows App SDK framework package at run time
                 href: windows-app-sdk/reference-framework-package-run-time.md
-              - name: "Tutorial: Build and deploy an unpackaged app"
+              - name: "Advanced tutorial: Build and deploy an unpackaged app"
                 href: windows-app-sdk/tutorial-unpackaged-deployment.md
           - name: "Check for installed versions of the Windows App SDK runtime"
             href: windows-app-sdk/check-windows-app-sdk-versions.md
           - name: "Remove outdated Windows App SDK runtime versions"
             href: windows-app-sdk/remove-windows-app-sdk-versions.md
-  - name: Reference
+  - name: API reference
     items:
       - name: Windows SDK API reference
         items: 
@@ -340,7 +306,27 @@ items:
         href: /dotnet/api/
       - name: Schema reference for Windows apps
         href: /uwp/schemas/
-  - name: What's new for developers in Windows 11
-    href: whats-new/windows-11-build-22000.md
-  - name: Latest doc updates
-    href: whats-new/latest-doc-updates.md
+  - name: What's new?
+    expanded: true
+    items:
+      - name: Windows App SDK release notes
+        expanded: true
+        items:
+           - name: "Stable channel release notes"
+             href: windows-app-sdk/stable-channel.md
+           - name: "Preview channel release notes"
+             href: windows-app-sdk/preview-channel.md
+           - name: "Experimental channel release notes"
+             href: windows-app-sdk/experimental-channel.md
+           - name: "Release notes archive"
+             items:
+               - name: "WinUI 3 - Project Reunion 0.8 Preview"
+                 href: winui/winui3/release-notes/release-notes-08-preview.md
+               - name: "WinUI 3 - Project Reunion 0.5"
+                 href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
+               - name: "WinUI 3 - Project Reunion 0.5 Preview"
+                 href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
+      - name: What's new for developers in Windows 11
+        href: whats-new/windows-11-build-22000.md
+      - name: Latest doc updates
+        href: whats-new/latest-doc-updates.md

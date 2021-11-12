@@ -172,6 +172,10 @@ It depends on how the game accesses your keys. Certain keyboard APIs do not work
 
 Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in `B`, this is consistent with how Windows handles multilingual input.
 
+### Can I have different key mappings across multiple keyboards?
+
+Currently no, currently we are not aware of an API where we can see the input and which keyboard / device it came from.  The typical use case here is a laptop and an external keyboard is connected.
+
 ## Troubleshooting
 
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
