@@ -86,7 +86,7 @@ When should you choose .NET MAUI for Windows:
 - You want to share as much .NET code as possible across mobile and desktop applications.
 - You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.
 - You want to use C# and/or XAML for building cross-platform apps.
-- You are using Blazor for web development and wish to include all or part of that in a mobile or desktop application.
+- You're using Blazor for web development and wish to include all or part of that in a mobile or desktop application.
 
 > [!div class="button"]
 > [Get started with .NET MAUI](/dotnet/maui/get-started/installation)
