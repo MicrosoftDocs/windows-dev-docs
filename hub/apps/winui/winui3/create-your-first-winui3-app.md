@@ -82,7 +82,7 @@ To create a packaged WinUI 3 desktop app with C# and .NET 5 using Windows App SD
 
 To create an unpackaged WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0:
 
-1. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your [unpackaged](../../windows-app-sdk/deploy-unpackaged-apps) app.
+1. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your [unpackaged](../../windows-app-sdk/deploy-unpackaged-apps.md) app.
 
 2. Create a new app using the "Blank App, Packaged (WinUI 3 in Desktop)" project template. Starting with a packaged app is required to use XAML diagnostics.
 
@@ -175,7 +175,7 @@ To create an unpackaged WinUI 3 desktop app with C++ using Windows App SDK 1.0:
 
 1. Install the [Single-project MSIX Packaging Tools](/windows/apps/windows-app-sdk/single-project-msix#install-the-single-project-msix-packaging-tools).
 
-2. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your [unpackaged](../../windows-app-sdk/deploy-unpackaged-apps) app.
+2. Install the [Windows App SDK runtime and MSIX packages](../../windows-app-sdk/downloads.md). These are required to run and deploy your [unpackaged](../../windows-app-sdk/deploy-unpackaged-apps.md) app.
 
 3. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) for the appropriate architecture
 
