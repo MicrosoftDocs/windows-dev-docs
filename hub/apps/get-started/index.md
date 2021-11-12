@@ -51,7 +51,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [WPF](#tab/wpf)
 
-WPF is the established platform for managed Windows applications with access to .NET 5 or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
+WPF is the established platform for managed Windows applications with access to .NET or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
 
 > [!div class="button"]
 > [Get started with WPF](/dotnet/framework/wpf/getting-started/)
@@ -60,7 +60,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [Windows Forms](#tab/windows-forms)
 
-Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET 5 or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
+Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
 
 > [!div class="button"]
 > [Get started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
