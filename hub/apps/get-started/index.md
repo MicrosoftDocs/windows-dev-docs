@@ -51,7 +51,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [WPF](#tab/wpf)
 
-WPF is the established platform for managed Windows applications with access to .NET or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
+WPF is the established platform for managed Windows applications with access to .NET or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to WinUI 3 development skills, so migrating from WPF to WinUI 3 is easier than migrating from Windows Forms.
 
 > [!div class="button"]
 > [Get started with WPF](/dotnet/framework/wpf/getting-started/)
