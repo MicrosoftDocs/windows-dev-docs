@@ -197,7 +197,10 @@ Next, move several important files to the application project. There are differe
 
 ### Step 5: Deploy your app
 
-Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application. We also recommend using the "Package and Publish" command to create an MSIX package optimized for WinUI 3 applications.
+Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application.
+
+### Step 6: Package your app for publishing
+Use the [Package & Publish command in Visual Studio](/windows/msix/package/packaging-uwp-apps) to package your application to publish to the Store.
 
 ## Provide feedback
 
