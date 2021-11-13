@@ -23,14 +23,13 @@ The following table provides an overview of the different release channels. For 
 
 ## Features available by release channel
 
-The following table shows which features are currently available in each release channel. To learn more about what's coming next, [see our roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md).
+The following table shows which features are currently available in each release channel. To learn more about what's coming next, [see our roadmap](https://aka.ms/winappsdkportal).
 
 | Feature | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) |🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
 |--|--|--|--|
 | [MSIX desktop app support](deploy-packaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  |  :heavy_check_mark: Available |
 | [Unpackaged desktop app support](deploy-unpackaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  |  :heavy_check_mark: Available |
-| [UWP app support](../winui/winui3/create-your-first-winui3-app.md) | :x: Not available |  :x: Not available  |  :heavy_check_mark: Available |
-| [WinUI 3](../winui/winui3/index.md) | :heavy_check_mark: Available for MSIX and unpackaged desktop <br> :x: Not available for UWP | :heavy_check_mark: Available for MSIX and unpackaged desktop <br> :x: Not available for UWP | :heavy_check_mark: Available for MSIX desktop and UWP<br> :x: Not available for unpackaged desktop |
+| [WinUI 3](../winui/winui3/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available for MSIX<br> :x: Not available for unpackaged |
 | [Text rendering](dwritecore.md) | :heavy_check_mark: Available| :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) |  :heavy_check_mark: Available | :heavy_check_mark: Available  | :heavy_check_mark: Available |
