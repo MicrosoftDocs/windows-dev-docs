@@ -36,9 +36,7 @@ While installing Visual Studio 2022 or 2019, select the following workloads and 
 
 - On the **Individual components** tab of the installation dialog, make sure **Windows 10 SDK (10.0.19041.0)** is selected in the **SDKs, libraries, and frameworks** section.
 
-- In the **Installation details** pane of the installation dialog, make sure the following items are selected in the **Universal Windows Platform development** section:
-  - For Visual Studio 2019: **C++ (v142) Universal Windows Platform tools**
-  - For Visual Studio 2022: **C++ (v143) Universal Windows Platform tools**
+- In the **Installation details** pane of the installation dialog, make sure **C++ (v142) Universal Windows Platform tools** is selected in the **Universal Windows Platform development** section.
 
 ## 2. Install the Windows App SDK extension for Visual Studio (VSIX)
 

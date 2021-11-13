@@ -113,16 +113,19 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 
 ### Input
 
-This release enables a few input APIs, which support WinUI and provide a lower level API surface for developers to achieve more advanced input interactions. 
+These are the input APIs that support WinUI, and provide a lower level API surface for developers to achieve more advanced input interactions.
 
 **New Features**
-- [Pointer API]() allows developer to observe pointer event information 
-- [Cursor API]() allows developer to change the cursor bitmap 
-- [GestureRecognizer API](/windows/winui/api/microsoft.ui.input.gesturerecognizer) allows developers to recognize certain gestures like drag, hold, and click when given pointer information 
+- Pointer APIs: [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint), [PointerPointProperties](/windows/winui/api/microsoft.ui.input.pointerpointproperties), and [PointerEventArgs](/windows/winui/api/microsoft.ui.input.pointereventargs) to support retrieving pointer event information with XAML input APIs.
+- [InputPointerSource API](/windows/winui/api/microsoft.ui.input.inputpointersource): Represents an object that is registered to report pointer input, and provides pointer cursor and input event handling for XAML's SwapChainPanel API.
+- [Cursor API](/windows/winui/api/microsoft.ui.input.inputcursor): Allows developers to change the cursor bitmap.
+- [GestureRecognizer API](/windows/winui/api/microsoft.ui.input.gesturerecognizer): Allows developers to recognize certain gestures such as drag, hold, and click when given pointer information.
 
 **Important limitations**
-Description
-
+- All [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint) static factory functions have been removed: **GetCurrentPoint**, **GetCurrentPointTransformed**, **GetIntermediatePoints**, and **GetIntermediatePointsTransformed**.
+- The Windows App SDK doesn't support retrieving **PointerPoint** objects with pointer IDs. Instead, you can use the **PointerPoint** member function **GetTransformedPoint** to retrieve a transformed version of an existing **PointerPoint** object. For intermediate points, you can use the **PointerEventArgs** member functions [**GetIntermediatePoints**](/windows/winui/api/microsoft.ui.input.pointereventargs.getintermediatepoints) and **GetTransformedIntermediatePoints**. 
+- Direct use of the platform SDK API [**Windows.UI.Core.CoreDragOperation**](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation) will not work with WinUI applications.
+- **PointerPoint** properties **RawPosition** and **ContactRectRaw** were removed because they referred to non-predicted values, which were the same as the normal values in the OS. Use [**Position**](/en-us/windows/winui/api/microsoft.ui.input.pointerpoint.position) and [**ContactRect**](/windows/winui/api/microsoft.ui.input.pointerpointproperties.contactrect) instead. Pointer prediction is now handled with the **Microsoft.UI.Input.PointerPredictor** API object.
 
 ### App Lifecycle
 
@@ -181,14 +184,27 @@ For more information, see [DWriteCore overview](/windows/win32/directwrite/dwrit
 
 ### MRT Core
 
-Description
-
-**New Features**
-Description
+MRT Core is a streamlined version of the modern Windows [Resource Management System](/windows/uwp/app-resources/resource-management-system) that is distributed as part of the Windows App SDK.
 
 **Important limitations**
-Description
-
+- In .NET projects, resource files copy-pasted into the project folder aren't indexed on F5 if the app was already built. As a workaround, rebuild the app. See [issue 1503](https://github.com/microsoft/WindowsAppSDK/issues/1503) for more info.
+- In .NET projects, when a resource file is added to the project using the VS UI, the files may not be indexed by default. See [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786) for more info. To work around this issue, please remove the entries below in the CSPROJ file:
+    ```xml 
+     <ItemGroup>
+        <Content Remove="<image file name>" />
+    </ItemGroup>
+    <ItemGroup>
+        <PRIResource Remove="<resw file name>" />
+    </ItemGroup>
+    ```
+- For unpackaged C++ WinUI apps, the resource URI is not built correctly. To work around this issue, add the following in the vcxproj:
+    ```xml 
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <PropertyGroup>
+        <AppxPriInitialPath></AppxPriInitialPath>   
+    </PropertyGroup>
+    ```
+For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
 
 ### Deployment
 
@@ -199,7 +215,7 @@ Description
 - Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see the [deployment guide for packaged apps](deploy-packaged-apps.md).
 
 **Important limitations**
-- The .NET wrapper for the bootstrapper API only is only intended for use by unpackaged .NET applications to simplify access to the Windows App SDK.
+- The .NET wrapper for the bootstrapper API is only intended for use by unpackaged .NET applications to simplify access to the Windows App SDK.
 - Only MSIX packaged apps that are full trust or have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the deployment API to install the main and singleton package dependencies. Support for partial-trust packaged apps will be coming in later releases. 
 - When F5 testing an x86 app which uses the [DeploymentManager.Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) method on an x64 system, ensure that the x64 framework is first installed by running the [WindowsAppRuntimeInstall.exe](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer). Otherwise, you will encounter a **NOT_FOUND** error due to Visual Studio not deploying the x64 framework, which normally occurs through Store deployment or sideloading.
 
