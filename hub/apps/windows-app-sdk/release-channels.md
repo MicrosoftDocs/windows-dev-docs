@@ -21,9 +21,6 @@ The following table provides an overview of the different release channels. For 
 | **❇️** | [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
 | **🔄️** | [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | Targeting monthly | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
 
-> [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
-
 ## Features available by release channel
 
 The following table shows which features are currently available in each release channel. To learn more about what's coming next, [see our roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md).
@@ -53,8 +50,8 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date  | Latest patch version  | Patch release date | Support level | End of support |
 |---|---|---|---|---|---|
 |1.0| 11/16/2021 | - | - |Current | 11/16/2022 |
-|0.8| 6/24/2021 |0.8.4| 9/22/2021|Current | 6/24/2022 |
-|0.5| 3/29/2021 | 0.5.8 | 7/13/2021 | Maintenance | 11/1/2021 |
+|0.8| 6/24/2021 |0.8.5| 10/11/2021|Current | 6/24/2022 |
+|0.5| 3/29/2021 | 0.5.9 | 8/10/2021 | Maintenance | 11/1/2021 |
 
 ### Servicing  
 

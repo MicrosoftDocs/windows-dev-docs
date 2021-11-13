@@ -234,13 +234,13 @@ For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-
 
 ## Version 0.8
 
-The latest available release of the stable channel is the servicing release 0.8.2.
+The latest available release of the stable channel is the servicing release 0.8.5.
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
 
 > [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
 
 ### Version 0.8.5
 
@@ -413,7 +413,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 ## Version 0.5
 
-The latest available servicing release is [0.5.7](https://github.com/microsoft/WindowsAppSDK/discussions/820).
+The latest available servicing release is [0.5.9](https://github.com/microsoft/WindowsAppSDK/discussions/1214).
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
