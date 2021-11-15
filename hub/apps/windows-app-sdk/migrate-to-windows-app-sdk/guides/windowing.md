@@ -11,6 +11,8 @@ ms.localizationpriority: medium
 
 # Windowing functionality migration
 
+[!INCLUDE [UWP migration guidance](../../includes/uwp-app-sdk-migration-pointer.md)]
+
 This topic contains guidance related to window management, including migrating from UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).
 
 ## Important APIs

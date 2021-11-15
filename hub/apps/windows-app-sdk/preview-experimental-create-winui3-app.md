@@ -8,9 +8,15 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
+<!--todo: clarify / potentially add to FAQ - can we create a winui3 app without creating a win app sdk app? -->
+<!-- is it possible for devs to use winui3 without using win app sdk? -->
+<!-- potential source of confusion - win app sdk doesn't support UWP (we're encouraging devs to upgrade from UWP to win app sdk) but winui3 is part of Win app sdk and can be used with UWP... -->
+
 # Create a WinUI 3 app using Preview and Experimental channels of the Windows App SDK
 
-The [Windows App SDK](index.md) includes WinUI 3 project templates that enable you to create desktop and UWP apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+The [Windows App SDK](index.md) includes WinUI 3 project templates that enable you to create desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+
+[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 **Using the Windows App SDK Stable version**: To build a WinUI 3 app using the stable version of the Windows App SDK, see [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
 
@@ -408,6 +414,8 @@ To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:
 ---
 
 ## Instructions for WinUI 3 with UWP apps
+
+<!-- should we remove this entirely, or add more nuanced guidance to explain that "you can use the UI framework from Win App SDK within UWP apps, but otherwise you're encouraged to upgrade"?-->
 
 > [!NOTE]
 > WinUI 3 support for building UWP apps is currently in preview, and is not production-ready. You will not be able to ship WinUI 3 UWP apps to the Microsoft Store. You must download the [Windows App SDK Experimental Extension for Visual Studio](https://aka.ms/projectreunion/previewdownload) to get the UWP Experimental project templates and build UWP apps with WinUI 3.

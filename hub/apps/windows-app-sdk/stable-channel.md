@@ -129,6 +129,8 @@ These are the input APIs that support WinUI, and provide a lower level API surfa
 
 Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by all app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself.
 
+[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
+
 Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK **RegisterForXXXActivation** APIs and must instead register for rich activation via the manifest.
 
 All the constraints for packaged apps also apply to WinUI apps, which are packaged, and there are additional considerations as described below.
@@ -376,7 +378,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 - Desktop apps (C# or C++ desktop): This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
 
-- UWP apps: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use the [experimental release channel](experimental-channel.md).
+[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 #### Known issues 
 
@@ -428,8 +430,9 @@ This release supports all [stable channel features](release-channels.md#features
 This release has the following limitations and known issues:
 
 - **Desktop apps (C# or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
-- **UWP apps**: This release is not supported for UWP apps that are used in production environments. To use the Windows App SDK in UWP apps, you must use a release from the [experimental release channel](experimental-channel.md).
 - **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+
+[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 ## Related topics
 
