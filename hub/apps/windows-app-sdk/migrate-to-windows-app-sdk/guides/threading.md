@@ -115,7 +115,7 @@ public void NotifyUser(string strMessage)
     }
     else
     {
-        var task = this.DispatcherQueue.TryEnqueue(
+        bool isQueued = this.DispatcherQueue.TryEnqueue(
         Microsoft.UI.Dispatching.DispatcherQueuePriority.Normal,
         () => StatusBlock.Text = strMessage);
     }
@@ -134,7 +134,7 @@ void MainPage::NotifyUser(std::wstring strMessage)
     }
     else
     {
-        auto task = this->DispatcherQueue().TryEnqueue(
+        bool isQueued = this->DispatcherQueue().TryEnqueue(
             Microsoft::UI::Dispatching::DispatcherQueuePriority::Normal,
             [strMessage, this]()
             {
@@ -156,6 +156,7 @@ winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventAr
 {
     ...
     co_await winrt::resume_foreground(this->Dispatcher());
+    ...
 }
 ```
 
@@ -176,11 +177,11 @@ And then follow the pattern shown below.
 
 ```cppwinrt
 // MainPage.xaml.cpp in a Windows App SDK app
-#include <winrt/Microsoft.UI.Dispatching.h> // includes Microsoft.UI.Dispatching.DispatcherQueue
 ...
 winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
     ...
-    co_await winrt::resume_foreground(this->DispatcherQueue());
+    co_await wil::resume_foreground(this->DispatcherQueue());
+    ...
 }
 ```
