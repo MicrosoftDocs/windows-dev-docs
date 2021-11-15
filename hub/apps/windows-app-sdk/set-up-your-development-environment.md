@@ -62,10 +62,10 @@ You can download and install the latest C# or C++ VSIX extension directly from t
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace. 
 
     > [!div class="button"]
-    > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix)
+    > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix-2019-cs)
 
     > [!div class="button"]
-    > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-cpp)
+    > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-2019-cpp)
 
 ---
 
