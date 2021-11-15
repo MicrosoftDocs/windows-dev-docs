@@ -77,7 +77,7 @@ In the demo below, we start with a default template applied to the screen and 2 
 ![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif)
 
 > [!TIP]
-> The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can can be manually changed to tweak zones, and exported to share layouts across devices.
+> The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak zones, and exported to share layouts across devices.
 
 ## Snapping a window to two or more zones
 
