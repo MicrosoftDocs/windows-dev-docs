@@ -22,7 +22,7 @@ WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index
 > [!div class="button"]
 > [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
 
-If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
 
 
 ## Other app types
@@ -51,7 +51,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [WPF](#tab/wpf)
 
-WPF is the established platform for managed Windows applications with access to .NET 5 or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to UWP development skills, so migration from WPF to UWP apps is easier than migration from Windows Forms.
+WPF is a well-established platform for managed Windows applications with access to .NET or the .NET Framework, and it also uses XAML markup to separate UI from code. This platform is designed for desktop applications that require a sophisticated UI, styles customization, and graphics-intensive scenarios. WPF development skills are similar to WinUI 3 development skills, so migrating from WPF to WinUI 3 is easier than migrating from Windows Forms.
 
 > [!div class="button"]
 > [Get started with WPF](/dotnet/framework/wpf/getting-started/)
@@ -60,7 +60,7 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [Windows Forms](#tab/windows-forms)
 
-Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET 5 or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to extend your application to UWP entails a complete re-write of your UI.
+Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to .NET or the .NET Framework. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to rewrite your application to WinUI 3 entails a complete re-write of your UI.
 
 > [!div class="button"]
 > [Get started with Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
@@ -69,14 +69,14 @@ You also have access to modern Windows platform features and APIs provided by th
 
 #### [UWP](#tab/uwp)
 
-The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices that run Windows 10 and later versions. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform for Xbox, HoloLens, and Surface Hub applications. UWP apps can be native or managed.
+The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices in the Universal Windows Platform. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform to write a single native universal app that runs across Xbox, HoloLens, and Surface Hub. UWP apps can be native or managed.
 
 UWP is a highly customizable platform that uses XAML markup to separate UI (presentation) from code (business logic). UWP is suitable for desktop apps that require a sophisticated UI, styles customization, and graphics-intensive scenarios. UWP also has built-in support for the [Fluent Design System](/windows/uwp/design/fluent-design-system/) for the default UX experience and provides access to the [Windows Runtime (WinRT) APIs](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis).
 
 > [!div class="button"]
 > [Get started with UWP](/windows/uwp/get-started/)
 
-You also have access to modern Windows platform features and APIs provided by the **Windows App SDK**. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md).
+You will not have access to the APIs provided by the **Windows App SDK**. To use the Windows App SDK, you will have to migrate your UWP app to WinUI 3. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md).
 
 #### [.NET MAUI](#tab/net-maui)
 

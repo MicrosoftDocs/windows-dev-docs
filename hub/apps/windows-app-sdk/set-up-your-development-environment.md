@@ -15,7 +15,7 @@ To develop apps for Windows 11 and Windows 10, you'll need to configure your dev
 
 ## 1. Install Visual Studio
 
-Use the following links to install Visual Studio 2022 version 17.0 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed.
+Use the following links to install Visual Studio 2022 version 17.0 (recommended) or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise.
 
 For a list of the minimum system requirements for Visual Studio, see [System requirements for Windows app development](system-requirements.md).
 
@@ -35,8 +35,8 @@ While installing Visual Studio 2022 or 2019, select the following workloads and 
   - **Desktop development with C++**
 
 - On the **Individual components** tab of the installation dialog, make sure **Windows 10 SDK (10.0.19041.0)** is selected in the **SDKs, libraries, and frameworks** section.
-
 - In the **Installation details** pane of the installation dialog, make sure **C++ (v142) Universal Windows Platform tools** is selected in the **Universal Windows Platform development** section:
+
 
 ## 2. Install the Windows App SDK extension for Visual Studio (VSIX)
 
@@ -45,11 +45,29 @@ The [Windows App SDK](index.md) includes project and item templates for creating
 For a list of the minimum system requirements to use the Windows App SDK, see [System requirements for Windows app development](system-requirements.md).
 
 ### Installation options 
-- You can install the latest stable release VSIX from Visual Studio: click **Extensions** > **Manage Extensions**, search for **Project Reunion**, and install the latest extension. 
+
+#### [Visual Studio 2022](#tab/vs-2022)
+
+You can download and install the latest C# or C++ VSIX extension directly from the links below.
+
+> [!div class="button"]
+> [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cs)
+
+> [!div class="button"]
+> [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp)
+
+#### [Visual Studio 2019](#tab/vs-2019)
+
+- You can install the latest stable release VSIX from Visual Studio: click **Extensions** > **Manage Extensions**, search for **Windows App SDK**, and install the latest C# or C++ extension depending on what language you want to use. 
 - Alternatively, you can download and install the extension directly from Visual Studio Marketplace. 
 
     > [!div class="button"]
-    > [Download latest stable release](https://aka.ms/windowsappsdk/stable-vsix)
+    > [Download latest C# stable release](https://aka.ms/windowsappsdk/stable-vsix)
+
+    > [!div class="button"]
+    > [Download latest C++ stable release](https://aka.ms/windowsappsdk/stable-vsix-cpp)
+
+---
 
 For all other versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md) and [Install tools for Preview and Experimental](preview-experimental-install.md).
 

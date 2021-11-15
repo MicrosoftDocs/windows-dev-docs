@@ -13,9 +13,6 @@ The Windows App SDK is a set of new developer components and tools that represen
 
 The Windows App SDK does not replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements these existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
 
-> [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release. The Windows App SDK requires that you also have the Windows SDK installed.
-
 ## Get started with the Windows App SDK
 
 The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio 2022. These extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
