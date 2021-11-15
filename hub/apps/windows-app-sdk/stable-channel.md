@@ -192,9 +192,9 @@ MRT Core is a streamlined version of the modern Windows [Resource Management Sys
 
 **Important limitations**
 - In .NET projects, resource files copy-pasted into the project folder aren't indexed on F5 if the app was already built. As a workaround, rebuild the app. See [issue 1503](https://github.com/microsoft/WindowsAppSDK/issues/1503) for more info.
-- In .NET projects, when a resource file is added to the project using the VS UI, the files may not be indexed by default. See [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786) for more info. To work around this issue, please remove the entries below in the CSPROJ file:
+- In .NET projects, when a resource file is added to the project using the Visual Studio UI, the files may not be indexed by default. See [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786) for more info. To work around this issue, please remove the entries below in the CSPROJ file:
     ```xml 
-     <ItemGroup>
+    <ItemGroup>
         <Content Remove="<image file name>" />
     </ItemGroup>
     <ItemGroup>
@@ -203,12 +203,13 @@ MRT Core is a streamlined version of the modern Windows [Resource Management Sys
     ```
 - For unpackaged C++ WinUI apps, the resource URI is not built correctly. To work around this issue, add the following in the vcxproj:
     ```xml 
-    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <!-- Add the following after <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" /> -->
+    
     <PropertyGroup>
         <AppxPriInitialPath></AppxPriInitialPath>   
     </PropertyGroup>
     ```
-For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
+For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
 
 ### Deployment
 
