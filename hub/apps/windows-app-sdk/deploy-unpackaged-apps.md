@@ -90,6 +90,13 @@ You can silently launch and track the Windows App SDK setup while showing your o
 
 For a code example that demonstrates how to run the Windows App SDK installer from your setup program, see the **RunInstaller** function in the [installer functional test](https://aka.ms/testruninstaller) for the Windows App SDK.
 
+### Installer sample 
+
+For additional guidance on how to launch the WindowsAppRuntimeInstaller from a Win32 setup program without popping up a console window during setup, explore the available sample. 
+
+> [!div class="button"]
+> [Explore installer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Installer)
+
 ### Troubleshooting
 
 #### Return codes
@@ -118,13 +125,14 @@ For an example that demonstrates how your setup program can install the MSIX pac
 
 ## Deployment scenarios
 
+- **Installing the Windows App SDK system-wide**: System-wide install alters the machine for all users, including new users that are added in the future. If the app is running elevated and the user doing the installation has admin privileges, then WindowsAppRuntimeInstall.exe will register the Windows App SDK packages system-wide by calling the [ProvisionPackageForAllUsersAsync](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync). If system-wide registration is not successful, the installation will be performed for the current user doing the installation only. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.
+
+- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the `x86`, `x64` and `ARM64` architectures. Each version of the installer also includes the MSIX packages for all architectures. For example, if you run the x86 WindowsAppRuntimeInstall.exe on an x64 or ARM64 device, the installer will deploy the packages for that device architecture. 
+
 - **All Windows App SDK MSIX packages are already installed on the computer**: MSIX packages are installed to a system-wide location with only one copy on disk. If an app attempts installation of the Windows App SDK when all the MSIX package dependencies are already installed on the machine, then the installation is not performed.
 
-- **One or more of the Windows App SDK MSIX packages are not installed on the computer**: When deploying the Windows App SDK, always attempt to install all the MSIX packages (framework, main, singleton, DDLM) to ensure that all dependencies are installed and avoid disruption to the end-user experience.
+- **One or more of the Windows App SDK MSIX packages are not installed on the computer**: When deploying the Windows App SDK, always attempt to install all the MSIX packages (framework, main, singleton, DDLM) to ensure that all dependencies are installed and you avoid disruption to the end-user experience.
 
-- **Installing the Windows App SDK system-wide**: System-wide install alters the machine for all users. If the app is running elevated and the user has admin privileges, then WindowsAppRuntimeInstall.exe will register the Windows App SDK packages system-wide by calling the [ProvisionPackageForAllUsersAsync](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync). Otherwise, the installation will be performed for the current user doing the installation. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.
-
-- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the x86, x64, and ARM64. If you have an x86 app and include the x86 WindowsAppRuntimeInstall.exe, the installation can be performed on an `x86`, `x64` or `ARM64` device.
 
 ## Using features at run time
 

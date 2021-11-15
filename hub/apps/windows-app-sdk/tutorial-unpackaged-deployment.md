@@ -1,5 +1,5 @@
 ---
-title: Build and deploy an unpackaged app that uses the Windows App SDK 
+title: Advanced tutorial - Build and deploy an unpackaged app that uses the Windows App SDK 
 description: This article provides an advanced tutorial for building and deploying an unpackaged app that uses the Windows App SDK.
 ms.topic: article
 ms.date: 05/24/2021
@@ -61,7 +61,7 @@ Follow these instructions to configure a C++ project that includes WinUI 3 unpac
         ```cpp
 
         const UINT32 majorMinorVersion{ 0x00010000 }; 
-        PCWSTR versionTag{ L"stable" }; 
+        PCWSTR versionTag{ L"" }; 
         const PACKAGE_VERSION minVersion{};
 
         const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -96,7 +96,7 @@ Follow these instructions to configure a C++ project that includes WinUI 3 unpac
 
             // Take a dependency on Windows App SDK Stable.
             const UINT32 majorMinorVersion{ 0x00010000 }; 
-            PCWSTR versionTag{ L"stable" }; 
+            PCWSTR versionTag{ L"" }; 
             const PACKAGE_VERSION minVersion{};
 
             const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -162,7 +162,7 @@ Follow these instructions to configure a C# project that includes WinUI 3 unpack
         {
             static void Main(string[] args)
             {
-                Bootstrap.Initialize(0x00010000, "preview3");
+                Bootstrap.Initialize(0x00010000);
                 Console.WriteLine("Hello World!");
     
                 // Release the DDLM and clean up.

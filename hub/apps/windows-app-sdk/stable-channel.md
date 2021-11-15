@@ -114,7 +114,7 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 
 ### Input
 
-These are the input APIs that support WinUI, and provide a lower level API surface for developers to achieve more advanced input interactions.
+These are the input APIs that support WinUI and provide a lower level API surface for developers to achieve more advanced input interactions.
 
 **New Features**
 - Pointer APIs: [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint), [PointerPointProperties](/windows/winui/api/microsoft.ui.input.pointerpointproperties), and [PointerEventArgs](/windows/winui/api/microsoft.ui.input.pointereventargs) to support retrieving pointer event information with XAML input APIs.
@@ -163,7 +163,10 @@ All the constraints for packaged apps also apply to WinUI apps, which are packag
 
 **Known issue**:
 
-File Type associations incorrectly encode %1 to be %251 when setting the Verb handler's command line template, which crashes unpackaged Win32 apps. You can manually edit the Registry value to be %1 instead as a partial workaround. If the target file path has a space in it, then it will still fail and there is no workaround for that scenario.
+- File Type associations incorrectly encode %1 to be %251 when setting the Verb handler's command line template, which crashes unpackaged Win32 apps. You can manually edit the Registry value to be %1 instead as a partial workaround. If the target file path has a space in it, then it will still fail and there is no workaround for that scenario.
+- These Single/Multi-instancing bugs will be fixed in an upcoming servicing patch: 
+    - AppInstance redirection doesn't work when compiled for x86
+    - Registering a key, unregistering it, and re-registering it causes the app to crash
 
 
 ### DWriteCore
