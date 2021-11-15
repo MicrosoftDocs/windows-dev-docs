@@ -89,8 +89,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
     - Any API in the [Microsoft.Windows.ApplicationModel.Resources](/uwp/api/windows.applicationmodel.resources.core?view=winrt-22000) namespace
 
 - Known issues for **packaging and deploying WinUI applications**:
-  - **Needs additional info**
-  - The `Package & Publish` command is not supported in WinUI apps with Single-project MSIX (Blank App, Packaged template).
+  - The `Package` command is not supported in WinUI apps with Single-project MSIX (Blank App, Packaged template). Instead, use the `Package & Publish` command to create an MSIX package.
   - To create a NuGet package from a C# Class Library with the `Pack` command, ensure the active `Configuration` is `Release`.
   - The `Pack` command is not supported in C++ Windows Runtime Components to create a NuGet package.
 
@@ -98,7 +97,6 @@ For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
 - [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
-
 
 ### Windowing
 
@@ -229,7 +227,10 @@ For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework> 
     ```
 
-- **C# Single-project MSIX app doesn't compile if C++ UWP Tools aren't installed**. If you have a C# Single-project MSIX project, then you'll need to install the **C++ (v14x) Universal Windows Platform Tools** optional component. 
+- **C# Single-project MSIX app doesn't compile if C++ UWP Tools aren't installed.** If you have a C# Single-project MSIX project, then you'll need to install the **C++ (v14x) Universal Windows Platform Tools** optional component.
+
+-  **Subsequent language VSIX fails to install into Visual Studio 2019 when multiple versions of Visual Studio 2019 are installed.** If you have multiple versions of Visual Studio 2019 installed (e.g. Release and Preview) and then install the Windows App SDK VSIX for both C++ *and* C#, the second installation will fail. To resolve, uninstall the Single-project MSIX Packaging Tools for Visual Studio 2019 after the first language VSIX.
+  - View [this feedback](https://developercommunity.visualstudio.com/t/Installation-of-a-VSIX-into-both-Release/1582487?entry=myfeedback) for additional information about this issue.
 
 
 ## Version 0.8
