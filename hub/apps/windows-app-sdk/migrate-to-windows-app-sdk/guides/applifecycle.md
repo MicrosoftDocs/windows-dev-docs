@@ -25,8 +25,6 @@ This topic contains migration guidance in the application lifecycle area.
 
 ## Summary of API and/or feature differences
 
-[!INCLUDE [UWP migration guidance](../../includes/uwp-app-sdk-migration-pointer.md)]
-
 Universal Windows Platform (UWP) apps are single-instanced by default; Windows App SDK (WinUI 3) apps are multi-instanced by default.
 
 A UWP app has **App** methods such as **OnFileActivated**, **OnSearchActivated**, and **OnActivated** that implicitly tell you how the app was activated; In a Windows App SDK app, in **App.OnLaunched** (or in any method), call ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated.

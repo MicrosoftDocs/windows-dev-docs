@@ -14,8 +14,6 @@ dev_langs:
 
 # User interface migration (including WinUI 3)
 
-[!INCLUDE [UWP migration guidance](../../includes/uwp-app-sdk-migration-pointer.md)]
-
 This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 
 ## Summary of API and/or feature differences

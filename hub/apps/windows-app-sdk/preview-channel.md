@@ -253,8 +253,6 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 
 Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by all app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself. 
 
-[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
-
 Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK **RegisterForXXXActivation** APIs and must instead register for rich activation via the manifest.
 
 All the constraints for packaged apps also apply to WinUI apps, which are packaged, and there are additional considerations as described below.

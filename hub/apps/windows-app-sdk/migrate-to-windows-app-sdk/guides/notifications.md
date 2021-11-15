@@ -13,8 +13,6 @@ ms.localizationpriority: medium
 
 This topic contains migration guidance in the notifications feature area.
 
-[!INCLUDE [UWP migration guidance](../../includes/uwp-app-sdk-migration-pointer.md)]
-
 > [!IMPORTANT]
 > Only raw push notifications are currently supported.
 

@@ -14,8 +14,6 @@ dev_langs:
 
 # Threading functionality migration
 
-[!INCLUDE [UWP migration guidance](../../includes/uwp-app-sdk-migration-pointer.md)]
-
 This topic shows how to migrate your threading code.
 
 ## Summary of API and/or feature differences

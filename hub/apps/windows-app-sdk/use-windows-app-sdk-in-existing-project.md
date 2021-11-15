@@ -13,10 +13,10 @@ ms.localizationpriority: medium
 
 If you have an existing project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project. Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
 
-<!--unsure-->
+[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 > [!NOTE]
-> This procedure is supported in C# .NET 5 or later and C++ desktop projects. These projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md). UWP projects must use the NuGet package from the [experimental release channel](experimental-channel.md).
+> This procedure is supported in C# .NET 5 or later and C++ desktop projects. These projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md).
 
 ## Prerequisites
 
