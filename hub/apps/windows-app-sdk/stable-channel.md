@@ -50,9 +50,10 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 **New features and updates**:
  - We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI 2.6](../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
  - Single-project MSIX packaging is supported in WinUI by creating a new application using the “Blank App, Packaged…” template. 
- - We now support deploying WinUI 3 apps without MSIX-packaging on Windows versions 1803 and above. Please view [Create a WinUI 3 unpackaged desktop app](../winui/winui3/create-your-first-winui3-app.md) for additional information.
- - WinUI apps can now target 17763 or above.
- - In-app toolbar, Hot Reload, & Live Visual Tree for WinUI apps are supported in Visual Studio 2022 Preview 5 and GA.
+ - We now support deploying WinUI 3 apps without MSIX-packaging on Windows versions 1809 and above. Please view [Create a WinUI 3 unpackaged desktop app](../winui/winui3/create-your-first-winui3-app.md) for additional information.
+ - WinUI 3 projects can now set their target version down to Windows 10, version 1809. Previously, they could only be set as low as version 1903.
+ - In-app toolbar, Hot Reload, & Live Visual Tree for WinUI packaged apps are supported in Visual Studio 2022 Preview 5 and GA.
+
 
 **Important limitations**:
 
