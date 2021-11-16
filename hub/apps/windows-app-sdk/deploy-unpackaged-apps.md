@@ -55,27 +55,29 @@ You can deploy the Windows App SDK by running the Windows App SDK silent install
 You should see an output similar to the following:
 
 ```console
-Deploying package: Microsoft.WindowsAppRuntime.1.0_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 
-Deploying package: Microsoft.WindowsAppRuntime.1.0_0.264.801.0_x86__8wekyb3d8bbwe
+Deploying package: Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x86__8wekyb3d8bbwe
 Package deployment result : 0x0
 
-Deploying package: Microsoft.WindowsAppRuntime.Main.1.0_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: MicrosoftCorporationII.WindowsAppRuntime.Main.1.0_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
 
-Deploying package: Microsoft.WindowsAppRuntime.Singleton_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: Microsoft.WindowsAppRuntime.Singleton_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
 
-Deploying package: Microsoft.WinAppRuntime.DDLM.0.264.801.0-x6_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
 
-Deploying package: Microsoft.WinAppRuntime.DDLM.0.264.801.0-x8_0.264.801.0_x86__8wekyb3d8bbwe
+Deploying package: Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8_0.318.928.0_x86__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
+
+All install operations successful.
 ```
 
 You can also run the installer with no user interaction and suppress all text output with `WindowsAppRuntimeInstall.exe --quiet` or `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`, depending on the Windows App SDK version.
@@ -107,7 +109,7 @@ The following table lists the most common return codes for the Windows App SDK .
 |-------------|-------------------------------------------------------------------------------------|
 | 0x0         | Package installation or provisioning was completed successfully.                                    |
 | 0x80073d06  | One or more packages failed to install.                                             |
-| 0x80070005  | System-wide install or provisioning was unsuccessful.                                 |
+| 0x80070005  | System-wide install or provisioning was not possible because the app is not running elevated or the user doing the installation doesn't have admin privileges.                                |
 
 #### Installation errors
 

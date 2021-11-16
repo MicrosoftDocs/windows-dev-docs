@@ -17,8 +17,10 @@ The Windows App SDK does not replace the Windows SDK or existing desktop Windows
 
 The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio 2022. These extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
-1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](set-up-your-development-environment.md).
-2. Follow the instructions in [create a WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) to use Windows App SDK in a new project. You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+> [!div class="button"]
+> [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
+
+If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
@@ -36,6 +38,7 @@ The following table highlights the development features that are provided by the
 | [App lifecycle: Power management](applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
 | [Push notifications](notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
+| [Deployment](deployment-architecture.md) | Deploy Windows App SDK runtime with your unpackaged and packaged app |
 
 ### Windows App SDK release channels
 

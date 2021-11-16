@@ -1,5 +1,5 @@
 ---
-title: Runtime architecture for the Windows App SDK
+title: Deployment architecture for the Windows App SDK
 description: This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.
 ms.topic: article
 ms.date: 09/18/2021
@@ -9,7 +9,7 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Runtime architecture for the Windows App SDK
+# Deployment architecture for the Windows App SDK
 
 This article explains the basic building blocks and high-level architecture of Windows App SDK deployment. For instructions to deploy apps that use the Windows App SDK, see these articles:
 
