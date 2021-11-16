@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Windows App SDK's release channels.
 ms.topic: article
-ms.date: 09/18/2021
+ms.date: 11/16/2021
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.author: zafaraj
 author: zaryaf
