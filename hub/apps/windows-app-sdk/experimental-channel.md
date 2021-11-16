@@ -2,7 +2,7 @@
 title: Experimental release channel for the Windows App SDK
 description: Learn about the latest experimental releases of the Windows App SDK.
 ms.topic: article
-ms.date: 09/18/2021
+ms.date: 11/16/2021
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.author: zafaraj
 author: zaryaf
