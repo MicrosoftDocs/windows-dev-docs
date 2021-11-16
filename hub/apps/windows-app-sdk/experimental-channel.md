@@ -114,7 +114,7 @@ This release introduces new experimental features related to managing the app li
 - All apps (packaged and unpackaged) can use **GetActivatedEventArgs** (although packaged apps can already use the implementation of this in the platform).
 - Only unpackaged apps can use the **RegisterForXXXActivation** functions.
 - Packaged desktop apps can use app lifecycle instancing.
-- UWP apps cannot use app lifecycle features in the current release.
+
 
 For more information, see [App instancing](applifecycle/applifecycle-instancing.md) and [Rich activation](applifecycle/applifecycle-rich-activation.md).
 

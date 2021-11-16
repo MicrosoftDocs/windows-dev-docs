@@ -15,6 +15,7 @@ To develop apps for Windows 11 and Windows 10, you'll need to configure your dev
 
 **Using the Windows App SDK Stable version**: To set up your environment using the stable version of the Windows App SDK, see [Install developer tools](set-up-your-development-environment.md).
 
+
 ## 1. Install Visual Studio
 
 Use the following links to install Visual Studio 2022 version 17.0 (recommended), Visual Studio 2022 version 17.1 (Preview), or Visual Studio 2019. You can choose between the free Visual Studio Community edition, Visual Studio Professional, or Visual Studio Enterprise. Whichever version you choose, the latest Windows SDK will also be installed.
@@ -100,7 +101,7 @@ Visual Studio 2022 version 17.1 (Preview) already includes the latest Preview re
 
 ### [Experimental release](#tab/experimental/vs)
 
-To develop desktop (C# or C++) apps or UWP apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel cannot be used by apps in production environments.
+To develop desktop (C# or C++) apps that use the latest experimental features, install the latest extension from the **experimental** release channel. For more information about this channel and the features available in it, see [Experimental release channel](experimental-channel.md). This release channel shouldn't be used by apps in production environments.
 
 Choose one of these options to install the latest experimental release ([version 1.0 Experimental](experimental-channel.md#version-10-experimental-100-experimental1)):
 
