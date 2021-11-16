@@ -40,7 +40,7 @@ The following WinRT classes are not supported in desktop apps.
 | [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) | Instead of the [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [KeyboardInput.GetKeyStateForCurrentThread](/windows/winui/api/microsoft.ui.input.keyboardinput.getkeystateforcurrentthread) method provided by WinUI 3 instead.<br/><br/>Instead of the [PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [UIElement.ProtectedCursor](/windows/winui/api/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3 instead. You'll need to have a subclass of [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement) to access this property. |
 | [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the [IUserActivitySourceHostInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop) COM interface instead (in useractivityinterop.h). |
 
-### Classes with an XxxForCurrentView methods
+### Classes with an XxxForCurrentView method
 
 Many WinRT classes have a static `GetForCurrentView` method or `CreateForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `XxxForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `XxxForCurrentView` methods are supported either. Note that some unsupported `XxxForCurrentView` methods will not only return **null**, but will also throw exceptions.
 
@@ -49,7 +49,7 @@ For those classes below that have a COM interface alternative API listed, C# dev
 > [!NOTE]
 > One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
 
-The following classes are not supported in desktop apps because they have `GetForCurrentView` methods. This list may not be comprehensive.
+The following classes are not supported in desktop apps because they have a `GetForCurrentView` or `CreateForCurrentView` method. This list may not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
