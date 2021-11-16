@@ -15,7 +15,6 @@ To develop apps for Windows 11 and Windows 10, you'll need to configure your dev
 
 **Using the Windows App SDK Stable version**: To set up your environment using the stable version of the Windows App SDK, see [Install developer tools](set-up-your-development-environment.md).
 
-[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 ## 1. Install Visual Studio
 

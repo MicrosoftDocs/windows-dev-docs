@@ -127,7 +127,7 @@ These are the input APIs that support WinUI, and provide a lower level API surfa
 
 ### App Lifecycle
 
-Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by all app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself.
+Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by desktop app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself.
 
 [!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
