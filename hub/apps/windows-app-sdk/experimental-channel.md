@@ -14,16 +14,15 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The experimental channel is **not supported** for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.
 
-The experimental channel provides releases of the Windows App SDK that include [experimental channel features](release-channels.md#features-available-by-release-channel) that are in early stages of development. 
+The experimental channel provides releases of the Windows App SDK that include [experimental channel features](release-channels.md#features-available-by-release-channel) that are in early stages of development. APIs for experimental features have the [Experimental](/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute) attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel might have breaking changes in future releases, but experimental APIs are especially subject to change. Experimental features may be removed from the next release, or may never be released.
 
-APIs for experimental features have the [Experimental](/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute) attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel might have breaking changes in future releases, but experimental APIs are especially subject to change. Experimental features may be removed from the next release, or may never be released.
+**Important links**: 
+- If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
+- For documentation on experimental releases, see [Preview and Experimental guidance](preview-experimental-install.md).
 
-The following releases of the experimental channel are currently available:
-
+**Experimental channel releases:**
 - [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
 - [Version 0.8 Preview](#version-08-preview-080-preview)
-
-If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 
 ## Version 1.0 Experimental (1.0.0-experimental1)
 
@@ -115,7 +114,7 @@ This release introduces new experimental features related to managing the app li
 - All apps (packaged and unpackaged) can use **GetActivatedEventArgs** (although packaged apps can already use the implementation of this in the platform).
 - Only unpackaged apps can use the **RegisterForXXXActivation** functions.
 - Packaged desktop apps can use app lifecycle instancing.
-- UWP apps cannot use app lifecycle features in the current release.
+
 
 For more information, see [App instancing](applifecycle/applifecycle-instancing.md) and [Rich activation](applifecycle/applifecycle-rich-activation.md).
 

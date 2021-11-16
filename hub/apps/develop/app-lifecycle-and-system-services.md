@@ -14,6 +14,8 @@ This article provides an index of development features that are related to scena
 
 The [Windows App SDK](../windows-app-sdk/index.md) provides the following features related to app lifecycle and system services for Windows 10 and later OS releases.
 
+[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+
 | Feature | Description |
 |---------|-------------|
 | [App instancing](../windows-app-sdk/applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |

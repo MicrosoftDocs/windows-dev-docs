@@ -14,15 +14,15 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The preview channel is **not supported** for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store. There are currently no releases available from the preview channel, and we recommend using the [latest stable release](stable-channel.md).
 
-The preview channel provides a preview of the next upcoming stable release.
+The preview channel provides a preview of the next upcoming stable release. There may be breaking API changes between a given preview channel release and the next stable release. Preview channel releases do not include experimental APIs.
 
-There may be breaking API changes between a given preview channel release and the next stable release. Preview channel releases do not include experimental APIs.
-
-If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
+**Important links**: 
+- If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
+- For documentation on preview releases, see [Preview and Experimental guidance](preview-experimental-install.md).
 
 ## Version 1.0 Preview 3 (1.0.0-preview3)
 
-Preview 3 is the latest release of the preview channel for version 1.0 of the Windows App SDK. Preview 3 supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
+Preview 3 is the latest release of the preview channel for version 1.0 of the Windows App SDK. Preview 3 supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
 ### Download Preview 3 Visual Studio extensions (VSIX)
 
@@ -45,7 +45,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3
 
-We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions for WinUI 3 unpackaged desktop apps](../winui/winui3/create-your-first-winui3-app.md#instructions-for-winui-3-unpackaged-desktop-apps) to configure your WinUI 3 application to support unpackaged deployment.
+We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions for WinUI 3 unpackaged desktop apps](../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI 3 application to support unpackaged deployment.
 
 **Important limitations**
 
@@ -83,7 +83,7 @@ For more info, or to get started developing with WinUI, see:
 
   - **C# template for Visual Studio 2019 and Visual Studio 2022**. In Visual Studio when you **Start Debugging** or **Start Without Debugging**, if your app doesn't deploy and run (and there's no feedback from Visual Studio), then click on the project node in **Solution Explorer** to select it, and try again.
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md?tabs=csharp#instructions-for-winui-3-packaged-desktop-apps).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
 
   - **C++ template for Visual Studio 2022 version 17.0 releases up to Preview 4**. You will encounter the following error the first time you try to run your project: "There were deployment errors". To resolve this issue, run or deploy your project a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 7.
 
@@ -251,7 +251,7 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 
 ### App Lifecycle
 
-Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by all app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself.
+Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by desktop app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself. 
 
 Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK **RegisterForXXXActivation** APIs and must instead register for rich activation via the manifest.
 
@@ -294,7 +294,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
   - **C# template for Visual Studio 2019.** You will encounter the error when you try to build the project: "The project doesn't know how to run the profile *project name*". To resolve this issue, install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools).
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md?tabs=csharp#instructions-for-winui-3-packaged-desktop-apps).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
 
   - **C++ template for Visual Studio 2019 and Visual Studio 2022.** In this release, these projects are restricted to calling the subset of Win32 APIs that can be called by UWP apps. The **Blank App, Packaged with WAP (WinUI 3 in Desktop)** template is not affected by this issue.
 
@@ -321,9 +321,6 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 > Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](#version-10-preview-3-100-preview3) instead. 
 
 This is the first release of the preview channel for version 1.0. It supports all [preview channel features](release-channels.md#features-available-by-release-channel).
-
-> [!div class="button"]
-> [Download](set-up-your-development-environment.md?tabs=preview#4-install-the-windows-app-sdk-extension-for-visual-studio-vsix)
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 

@@ -10,13 +10,17 @@ ms.localizationpriority: medium
 
 For guidance about packaging and deploying different types of Windows apps, see the following articles. Generally we recommend using [MSIX](/windows/msix) for a modern and reliable deployment experience for your customers. However, you can also deploy your apps using other installation technologies.
 
+### Key concepts
+
+[!INCLUDE [Packaged apps, Unpackaged apps](../../apps/windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
+
 ## Apps that use the Windows App SDK
 
 Before configuring your apps for deployment, review [the Windows App SDK runtime architecture](../windows-app-sdk/deployment-architecture.md) to learn more about the dependencies your app takes when it uses the Windows App SDK.
 
 ### Packaged apps
 
-If you build an app that uses the [Windows App SDK](../windows-app-sdk/index.md) (either a [WinUI 3 app](../get-started/index.md#app-types) or a different type of app that [uses the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)), you can package and deploy your app using MSIX.
+If you build an app that uses the [Windows App SDK](../windows-app-sdk/index.md) (either a [WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) or a different type of app that [uses the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)), you can package and deploy your app using MSIX.
 
 For instructions on how to deploy the Windows App SDK runtime with your packaged app, see these articles:
 
