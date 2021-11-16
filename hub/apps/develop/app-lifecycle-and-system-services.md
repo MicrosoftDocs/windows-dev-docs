@@ -10,11 +10,11 @@ keywords:
 
 This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and using system-level services provided by the Windows OS.
 
-[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
-
 ## Windows App SDK features
 
 The [Windows App SDK](../windows-app-sdk/index.md) provides the following features related to app lifecycle and system services for Windows 10 and later OS releases.
+
+[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
 | Feature | Description |
 |---------|-------------|
