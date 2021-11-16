@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Use the Windows App SDK in an existing project
 
-If you have an existing project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project. Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
+If you have an existing desktop project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project. Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
 
 [!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
