@@ -1,15 +1,14 @@
 ---
 title: Install tools for Windows app development
-description: This article provides instructions for setting up your development computer for Windows app development.
+description: This article provides instructions for setting up your development computer for Windows app development. Install tools for developing apps for Windows 10 and Windows 11.
 ms.topic: article
-ms.date: 10/05/2021
-keywords: windows win32, windows app development, Windows App SDK 
+ms.date: 10/05/2021 
 ms.author: zafaraj
 author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Install developer tools
+# Install tools for developing apps for Windows 10 and Windows 11
 
 To develop apps for Windows 11 and Windows 10, you'll need to configure your development computer with the required development tools.
 
