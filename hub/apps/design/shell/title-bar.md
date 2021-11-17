@@ -41,20 +41,20 @@ This example shows how to get an instance of ApplicationViewTitleBar and set its
 var titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
 // Set active window colors
-titleBar.ForegroundColor = Windows.UI.Colors.White;
-titleBar.BackgroundColor = Windows.UI.Colors.Green;
-titleBar.ButtonForegroundColor = Windows.UI.Colors.White;
-titleBar.ButtonBackgroundColor = Windows.UI.Colors.SeaGreen;
-titleBar.ButtonHoverForegroundColor = Windows.UI.Colors.White;
-titleBar.ButtonHoverBackgroundColor = Windows.UI.Colors.DarkSeaGreen;
-titleBar.ButtonPressedForegroundColor = Windows.UI.Colors.Gray;
-titleBar.ButtonPressedBackgroundColor = Windows.UI.Colors.LightGreen;
+titleBar.ForegroundColor = Microsoft.UI.Colors.White;
+titleBar.BackgroundColor = Microsoft.UI.Colors.Green;
+titleBar.ButtonForegroundColor = Microsoft.UI.Colors.White;
+titleBar.ButtonBackgroundColor = Microsoft.UI.Colors.SeaGreen;
+titleBar.ButtonHoverForegroundColor = Microsoft.UI.Colors.White;
+titleBar.ButtonHoverBackgroundColor = Microsoft.UI.Colors.DarkSeaGreen;
+titleBar.ButtonPressedForegroundColor = Microsoft.UI.Colors.Gray;
+titleBar.ButtonPressedBackgroundColor = Microsoft.UI.Colors.LightGreen;
 
 // Set inactive window colors
-titleBar.InactiveForegroundColor = Windows.UI.Colors.Gray;
-titleBar.InactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
-titleBar.ButtonInactiveForegroundColor = Windows.UI.Colors.Gray;
-titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
+titleBar.InactiveForegroundColor = Microsoft.UI.Colors.Gray;
+titleBar.InactiveBackgroundColor = Microsoft.UI.Colors.SeaGreen;
+titleBar.ButtonInactiveForegroundColor = Microsoft.UI.Colors.Gray;
+titleBar.ButtonInactiveBackgroundColor = Microsoft.UI.Colors.SeaGreen;
 ```
 
 > [!NOTE]
