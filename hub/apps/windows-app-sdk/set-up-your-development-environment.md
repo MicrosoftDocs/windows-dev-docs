@@ -19,7 +19,7 @@ Use the following links to install Visual Studio 2022 version 17.0 (recommended)
 For a list of the minimum system requirements for Visual Studio, see [System requirements for Windows app development](system-requirements.md).
 
 > [!div class="button"]
-> [Download Visual Studio 2022 version 17.0](/visualstudio/releases/2022/release-notes)
+> [Download Visual Studio 2022](/visualstudio/releases/2022/release-notes)
 
 > [!div class="button"]
 > [Download Visual Studio 2019](/visualstudio/releases/2019/release-notes)
