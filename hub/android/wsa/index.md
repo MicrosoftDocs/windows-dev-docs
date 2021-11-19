@@ -26,7 +26,7 @@ To test your Android app in the Windows desktop environment, a bit of set up wil
 
 ### Prerequisites
 
-Windows Subsystem for Android is currently only available through **preview** via the Beta Channel of the [Windows Insiders Program](https://insider.windows.com/) (Windows 11 Build 22000.xxx series) in the U.S. only.
+Windows Subsystem for Android is currently only available through **preview** via the Beta and Dev Channels of the [Windows Insiders Program](https://insider.windows.com/) (Windows 11 Build 22000.xxx series) in the U.S. only.
 
 Your device also must meet specific Windows 11 requirements. Check the "Windows Subsystem for Android" section under "Feature-specific requirements" on the page: [Find Windows 11 specs, features, and computer requirements](https://www.microsoft.com/windows/windows-11-specifications).
 
