@@ -1,6 +1,6 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C++/WinRT.
-title: Templated XAML controls for WinUI 3 apps with C++/WinRT
+title: Build XAML controls with C++/WinRT
 ms.date: 07/09/2020
 ms.topic: article
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, custom control, templated control
@@ -10,11 +10,15 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Templated XAML controls for WinUI 3 apps with C++/WinRT
+# Build XAML controls with C++/WinRT
 
 This article walks you through creating a templated XAML control for WinUI 3 with C++/WinRT. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates. This article describes the same scenario as the article [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) but has been adapted to use WinUI 3.
 
-Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./create-your-first-winui3-app.md). You will also need to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com).
+## Prerequisites
+
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md).
+2. Download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
+3. Follow the instructions on how to [create a new project that uses the Windows App SDK](create-your-first-winui3-app.md). 
 
 ## Create a Blank App (BgLabelControlApp)
 

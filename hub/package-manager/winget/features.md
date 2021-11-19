@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 The **features** command of the [winget](index.md) tool displays a list of the experimental features available with your version of the Windows Package Manager.
 
-Each feature can be turned on individually by enabling the features through [**settings**](.\settings.md).
+Each feature can be turned on individually by enabling the features through [**settings**](./settings.md).
 
 You can find the latest up to date information features on the [experimental features](https://aka.ms/winget-experimentalfeatures) web page.
 
@@ -18,7 +18,7 @@ You can find the latest up to date information features on the [experimental fea
 
 `winget features`
 
-![features command](images\features.png)
+![features command](./images/features.png)
 
 Notice above that the status of each feature is listed. If the feature is **disabled** you will not be able to use it. If the feature is **enabled** you will notice that the command will be available to you through **winget**.
 

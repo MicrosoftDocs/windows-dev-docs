@@ -5,8 +5,6 @@ ms.date: 08/16/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -16,12 +14,12 @@ ms.custom: 19H1
 Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET 5 and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
 
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
-* APIs that require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
+* APIs that require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/winui3/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
+This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
-> Starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, .NET 5 apps can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
+> Starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
 
 This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API and and provide details about what you are trying to achieve by using it.
 
@@ -39,19 +37,19 @@ The following WinRT classes are not supported in desktop apps.
 | [CoreApplicationView](/uwp/api/windows.applicationmodel.core.coreapplicationview) | Use the [Window](/windows/winui/api/microsoft.ui.xaml.window) class provided by WinUI 3 instead. |
 | [CoreApplicationViewTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)  |  Instead of the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) property, use the [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) property provided by WinUI 3 instead. |
 | [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) | Use the [Microsoft.UI.Xaml.Window.DispatcherQueue](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) property provided by WinUI 3 instead.<br/><br/>Note that the [Windows.UI.Xaml.Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) and [Windows.UI.Xaml.DependencyObject.Dispatcher](/uwp/api/Windows.UI.Xaml.DependencyObject.Dispatcher) properties return `null` in desktop apps.  |
-| [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) | Instead of the [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [KeyboardInput.GetKeyStateForCurrentThread](/windows/winui/api/microsoft.ui.input.keyboardinput.getkeystateforcurrentthread) method provided by WinUI 3 instead.<br/><br/>Instead of the [PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [UIElement.ProtectedCursor](/windows/winui/api/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3 instead. You'll need to have a subclass of [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement) to access this property. |
+| [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) | Instead of the [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [InputKeyboardSource.GetKeyStateForCurrentThread](/windows/winui/api/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread) method provided by WinUI 3 instead.<br/><br/>Instead of the [PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [UIElement.ProtectedCursor](/windows/winui/api/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3 instead. You'll need to have a subclass of [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement) to access this property. |
 | [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the [IUserActivitySourceHostInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop) COM interface instead (in useractivityinterop.h). |
 
-### Classes with GetForCurrentView methods
+### Classes with an XxxForCurrentView method
 
-Many WinRT classes have a static `GetForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `GetForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `GetForCurrentView` methods are supported either. Note that some unsupported `GetForCurrentView` methods will not only return **null**, but will also throw exceptions.
+Many WinRT classes have a static `GetForCurrentView` method or `CreateForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `XxxForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `XxxForCurrentView` methods are supported either. Note that some unsupported `XxxForCurrentView` methods will not only return **null**, but will also throw exceptions.
 
 For those classes below that have a COM interface alternative API listed, C# developers on .NET 5 or later can [consume these WinRT COM interfaces](winrt-com-interop-csharp.md) starting in the July 2021 .NET 5 SDK update.
 
 > [!NOTE]
 > One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
 
-The following classes are not supported in desktop apps because they have `GetForCurrentView` methods. This list may not be comprehensive.
+The following classes are not supported in desktop apps because they have a `GetForCurrentView` or `CreateForCurrentView` method. This list may not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
@@ -79,9 +77,10 @@ The following classes are not supported in desktop apps because they have `GetFo
 | [Print3DManager](/uwp/api/windows.graphics.printing3d.print3dmanager) | Use the [IPrinting3DManagerInterop](/windows/win32/api/print3dmanagerinterop/nn-print3dmanagerinterop-iprinting3dmanagerinterop) COM interface instead (in print3dmanagerinterop.h). |
 | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
 | [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
+| [RadialContoller](/uwp/api/windows.ui.input.radialcontroller) | Use the [IRadialControllerInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop) COM interface instead (in radialcontrollerinterop.h). |
 | [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
-| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | None |
-| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | None |
+| [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext) | See [MRT to MRT Core migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore) |
+| [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader) | See [MRT to MRT Core migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore) |
 | [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
 | [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
 | [SpatialInteractionManager](/uwp/api/windows.ui.input.spatial.spatialinteractionmanager) | Use the [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) COM interface instead (in spatialinteractionmanagerinterop.h). |
@@ -139,7 +138,7 @@ The full list of methods that follow the `Request` naming pattern is very long, 
 
 ## APIs that require package identity
 
-The following WinRT classes require require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
+The following WinRT classes require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/). This list may not be comprehensive.
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -391,6 +390,7 @@ The following WinRT classes require require [package identity](modernize-package
 * [Windows.Services.Store.StoreSendRequestResult](/uwp/api/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](/uwp/api/Windows.Services.Store.StoreSku)
 * [Windows.Services.Store.StoreVideo](/uwp/api/Windows.Services.Store.StoreVideo)
+* [Windows.Storage.ApplicationData](/uwp/api/windows.storage.applicationdata)
 * [Windows.Storage.ApplicationDataSetVersionHandler](/uwp/api/windows.storage.applicationdatasetversionhandler)
 * [Windows.Storage.CachedFileManager](/uwp/api/Windows.Storage.CachedFileManager)
 * [Windows.Storage.DownloadsFolder](/uwp/api/Windows.Storage.DownloadsFolder)

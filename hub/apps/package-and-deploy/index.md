@@ -4,24 +4,35 @@ title: Package and deploy
 ms.topic: article
 ms.date: 06/17/2021
 ms.localizationpriority: medium
-ms.author: mcleans
-author: mcleanbyron
 ---
 
 # Package and deploy
 
 For guidance about packaging and deploying different types of Windows apps, see the following articles. Generally we recommend using [MSIX](/windows/msix) for a modern and reliable deployment experience for your customers. However, you can also deploy your apps using other installation technologies.
 
+### Key concepts
+
+[!INCLUDE [Packaged apps, Unpackaged apps](../../apps/windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
+
 ## Apps that use the Windows App SDK
 
-If you build an app that uses the [Windows App SDK](../windows-app-sdk/index.md) (either a [WinUI 3 app](../get-started/index.md#app-types) or a different type of app that [uses the Windows App SDK NuGet package](../windows-app-sdk/get-started.md#use-the-windows-app-sdk-in-an-existing-project)), you can package and deploy your app using MSIX.
+Before configuring your apps for deployment, review [the Windows App SDK runtime architecture](../windows-app-sdk/deployment-architecture.md) to learn more about the dependencies your app takes when it uses the Windows App SDK.
 
-- [Deploy packaged apps that use the Windows App SDK](../windows-app-sdk/deploy-packaged-apps.md)
+### Packaged apps
+
+If you build an app that uses the [Windows App SDK](../windows-app-sdk/index.md) (either a [WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) or a different type of app that [uses the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)), you can package and deploy your app using MSIX.
+
+For instructions on how to deploy the Windows App SDK runtime with your packaged app, see these articles:
+
+- [Windows App SDK deployment guide for packaged apps](../windows-app-sdk/deploy-packaged-apps.md)
 - [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
 
-You can also deploy these types of apps using non-MSIX installation technologies.
+### Unpackaged apps
 
-- [Deploy unpackaged apps that use the Windows App SDK](../windows-app-sdk/deploy-unpackaged-apps.md)
+For instructions on how to deploy the Windows App SDK runtime with your unpackaged app, see these articles:
+
+- [Windows App SDK deployment guide for unpackaged apps](../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md)
 
 ## Win32 and .NET desktop apps
 

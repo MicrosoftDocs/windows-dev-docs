@@ -22,6 +22,6 @@ For an overview of the dynamic dependencies feature and guidance about using it 
 
 ## Related topics
 
-- [Deploy unpackaged apps that use the Windows App SDK](../../../windows-app-sdk/deploy-unpackaged-apps.md)
-- [Runtime architecture and deployment scenarios for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
+- [Windows App SDK deployment guide for unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
 - [MSIX documentation](/windows/msix)

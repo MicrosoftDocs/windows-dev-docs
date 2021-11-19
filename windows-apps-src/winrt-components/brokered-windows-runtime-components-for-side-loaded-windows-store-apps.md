@@ -259,7 +259,7 @@ As stated previously, the side-loaded application is built like any
 other UWP app, but there is one additional detail: declaring the
 availability of the RuntimeClass (es) in the side-loaded application's
 manifest. This allows the application to simply write new to access the
-functionality in the desktop component. A new manifest entry in the <Extension> section describes the RuntimeClass implemented in the
+functionality in the desktop component. A new manifest entry in the \<Extension> section describes the RuntimeClass implemented in the
 desktop component and information on where it is located. These
 declaration content in application’s manifest is the same for apps
 targeting Windows 10. For example:
@@ -277,18 +277,18 @@ targeting Windows 10. For example:
 
 The category is inProcessServer because there are several entries in the
 outOfProcessServer category that are not applicable to this application
-configuration. Note that the <Path> component must always contain
+configuration. Note that the \<Path> component must always contain
 clrhost.dll (however this is **not** enforced and specifying a different
 value will fail in undefined ways).
 
-The <ActivatableClass> section is the same as a true in-process
+The \<ActivatableClass> section is the same as a true in-process
 RuntimeClass preferred by a Windows Runtime component in the app's
-package. <ActivatableClassAttribute> is a new element, and the
+package. \<ActivatableClassAttribute> is a new element, and the
 attributes Name="DesktopApplicationPath" and Type="string" are mandatory
 and invariant. The Value attribute points to the location where the
 desktop component's implementation winmd resides (more detail on this in
 the next section). Each RuntimeClass preferred by the desktop component
-should have its own <ActivatableClass> element tree. The
+should have its own \<ActivatableClass> element tree. The
 ActivatableClassId must match the fully namespace-qualified name of the
 RuntimeClass.
 
@@ -311,7 +311,7 @@ one sure sign that the wrong **winmd** has been referenced. The
 post-build rules in the IPC server app (detailed in the next section)
 carefully segregate these two **winmd** into separate directories.
 
-Environment variables (especially %ProgramFiles%) can be used in <ActivatableClassAttribute Value="path"> .As noted earlier, the App Broker only supports 32-bit so %ProgramFiles% will resolve to
+Environment variables (especially %ProgramFiles%) can be used in \<ActivatableClassAttribute Value="path"> .As noted earlier, the App Broker only supports 32-bit so %ProgramFiles% will resolve to
 C:\\Program Files (x86) if the application is run on a 64-bit OS.
 
 ## Desktop IPC server detail
@@ -571,7 +571,7 @@ includes the major patterns used in Windows Runtime:
 
 To install the app, copy the implementation **winmd** to the correct
 directory specified in the associated side-loaded application's
-manifest: <ActivatableClassAttribute>'s Value="path". Also copy
+manifest: \<ActivatableClassAttribute>'s Value="path". Also copy
 any associated support files and the proxy/stub dll (this latter detail
 is covered below). Failing to copy the implementation **winmd** to the
 server directory location will cause all of the side-loaded
@@ -773,7 +773,7 @@ Here is a non-exhaustive list of things to consider:
 -   Bulk transfer of results reduces cross-process chattiness. This is
     normally performed by using the Windows Runtime Array construct.
 
--   Returning *List<T>* where *T* is an object from an async
+-   Returning *List\<T>* where *T* is an object from an async
     operation or property fetch, will cause a lot of
     cross-process chattiness. For example, assume you return
     a*List&lt;People&gt;* objects. Each iteration pass will be a

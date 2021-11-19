@@ -1,3 +1,4 @@
+items:
 - name: Windows development environment
   href: ./index.md
   items:
@@ -75,9 +76,11 @@
           items:
               - name: Overview
                 href: ../android/overview.md
-              - name: Get started with Native Android
+              - name: Windows Subsystem for Android™️
+                href: ../android/wsa/index.md
+              - name: Native Android
                 href: ../android/native-android.md
-              - name: Get started with Cross-platform
+              - name: Cross-platform
                 items:
                   - name: Xamarin Native
                     href: ../android/xamarin-android.md
@@ -95,6 +98,8 @@
           href: /cpp/
         - name: Get started with C#
           href: /dotnet/csharp/
+        - name: Get started with F#
+          href: /dotnet/fsharp/
         - name: Get started with Docker
           href: ../dev-environment/docker/overview.md
         - name: Get started with Powershell
@@ -127,6 +132,8 @@
               items:
                 - name: Overview
                   href: ../package-manager/winget/index.md
+                - name: Debugging and troubleshooting
+                  href: ../package-manager/winget/troubleshooting.md
                 - name: export command
                   href: ../package-manager/winget/export.md
                 - name: features command
@@ -183,7 +190,7 @@
                   href: ../powertoys/install.md
                 - name: Run in admin mode
                   href: ../powertoys/administrator.md
-            - name: Awake
+            - name: PowerToys Awake
               href: ../powertoys/awake.md
             - name: Color Picker
               href: ../powertoys/color-picker.md
@@ -195,6 +202,8 @@
               href: ../powertoys/image-resizer.md
             - name: Keyboard Manager
               href: ../powertoys/keyboard-manager.md
+            - name: Mouse Utilities
+              href: ../powertoys/mouse-utilities.md
             - name: PowerRename
               href: ../powertoys/powerrename.md
             - name: PowerToys Run

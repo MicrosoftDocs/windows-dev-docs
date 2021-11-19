@@ -4,8 +4,6 @@ title: Grant identity to non-packaged desktop apps
 ms.date: 04/23/2020
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -186,7 +184,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## Sample
 
-See the [SparesePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a sparse package. More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a sparse package. More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 This sample includes the following:
 

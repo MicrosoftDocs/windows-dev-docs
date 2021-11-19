@@ -2,7 +2,7 @@
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
-ms.date: 06/24/2021
+ms.date: 09/21/2021
 keywords: windows win32, desktop development
 ms.author: jimwalk
 author: jwmsft
@@ -12,14 +12,14 @@ ms.collection: windows11
 
 # Top 11 things you can do to make your app great on Windows 11
 
-This release of Windows marks a visual evolution of the operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in two areas: _app fundamentals_ and _user experience_.
+Windows 11 marks a visual evolution of the Windows operating system. As Windows moves forward, customers continue to set a higher bar for app experiences, too. We see these customer expectations manifest primarily in two areas: _app fundamentals_ and _user experience_.
 
 - _App fundamentals_ - good performance on low-cost, highly mobile device form factors, and hassle-free app lifecycle and state rehydration/roaming.
 - _User experience_ - the ability to work naturally with a complete range of inputs, design and interaction patterns that look and feel at home on current and future devices, and support for modern windowing workflows and shell integration points.
 
 With entirely new visuals signaling change, [signature experiences](../design/signature-experiences/signature-experiences.md) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
 
-Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) (Project Reunion) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
+Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
 
 Here are the top 10 things you can do to make your app shine on Windows 11.
 
@@ -63,7 +63,7 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibly can reduce the cost of maintaining your app.
 
-[Accessibility in Windows](../accessibility.md)
+[Accessibility in Windows](/windows/apps/develop/accessibility)
 
 ## 4. Use the latest common controls
 
@@ -99,18 +99,24 @@ We are introducing a new material called _Mica_ that lets the user's desktop bac
 
 [Mica guidance](../design/style/mica.md), [Acrylic guidance](../design/style/acrylic.md)
 
-## 6. Make sure your Window corners are rounded
+## 6. Use rounded corners for your windows and support snap layouts
 
-We rounded the corners of window borders and your app will get this automatically in most cases. Our user research team found that rounded geometry psychologically provides a feeling of safety and makes the app's UI much easier to scan. This makes users feel less intimidated and the app feel more engaging. The amount of rounding was also carefully chosen. We worked across the company and user research to balance between feeling professional and being softer and more inviting.
+App windows have new features like rounded corners and a menu with snap layouts that your app will automatically receive in most cases. If you've customized your window or title bar, you might need to do some work to make sure these new features are supported.
+
+We rounded the corners of window borders in Windows 11. Our user research team found that rounded geometry psychologically provides a feeling of safety and makes the app's UI much easier to scan. This makes users feel less intimidated and the app feel more engaging. The amount of rounding was also carefully chosen. We worked across the company and user research to balance between feeling professional and being softer and more inviting.
 
 ![An image of an app window with rounded corners.](images/great-apps/rounded-corners.png)
 
-- Most apps will automatically receive rounded corners, but in some cases you might need to do a little work to get them:
+Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Snap layouts are easily accessible by hovering the mouse over a window's maximize button or pressing Win + Z. After invoking the menu that shows the available layouts, users can click on a zone in a layout to snap a window to that particular zone and then use Snap Assist to finish building an entire layout of windows. Snap layouts are tailored to the current screen size and orientation, including support for three side-by-side windows on large landscape screens and top/bottom stacked windows on portrait screens.
+
+- Most apps will automatically receive rounded corners and support for the menu with snap layouts, but in some cases you might need to do a little work to get them:
   - Allow the system to draw your border and shadow.
-  - Call our rounding API to opt in if you need to draw your own border and shadow.<br/>(See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/apply-rounded-corners.md).)
-- You will get rounded corners automatically if you use UWP or you adopt Windows App SDK windowing to:
+  -  If you need to draw your own border and shadow:
+     - Call our rounding API to opt in. See [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/apply-rounded-corners.md).
+     - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/apply-snap-layout-menu.md).
+- You will get these features automatically if you use UWP or you adopt Windows App SDK windowing to:
   - Configure the style of your window using the pre-defined templates.
-  - Customize the TitleBar of your windows.
+  - Customize the title bar of your windows.
 
 ## 7. Support Dark and Light themes
 

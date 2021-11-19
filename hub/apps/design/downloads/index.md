@@ -9,11 +9,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-
-
 # Design toolkits and samples for Windows apps
-
-![Design basics](../images/downloads-2x.png)
 
 Design and UI-related downloads for Fluent Design/Windows apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>.
 
@@ -85,7 +81,7 @@ The Fluent XAML Theme Editor is a tool that helps demonstrate the flexibility of
 
 ![VanArsdel image](images/van-arsdel-screenshot.png)
 **VanArsdel**<br>
-The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the next wave of the Microsoft Fluent Design System. It makes extensive use of the improved density and new controls in the <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI Library</a> as well as powerful underlying features of the ux framework and composition. The sample shows how you can build a rich, productive experience for managing and purchasing IoT devices (in this case, lamps).<br>
+The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the next wave of the Microsoft Fluent Design System. It makes extensive use of the improved density and new controls in the <a href="/windows/apps/winui/">Windows UI Library</a> as well as powerful underlying features of the UX framework and composition. The sample shows how you can build a rich, productive experience for managing and purchasing IoT devices (in this case, lamps).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Download the VanArsdel sample</a> <br><a href="https://github.com/microsoft/vanarsdel">Check out the VanArsdel sample on GitHub</a>
 
 ![build cast image](images/buildcast.png)

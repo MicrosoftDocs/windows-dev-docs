@@ -88,7 +88,7 @@ public sealed partial class MainPage : Page
 
 The [Data Binding overview](../data-binding/data-binding-quickstart.md#binding-to-a-collection-of-items) walks you through a similar problem, in its section about binding to a collection of items. Our example here shows the following crucial steps:
 
-* In the code-behind of your UI, create a property of type **ObservableCollection<T>** to hold your Customer objects.
+* In the code-behind of your UI, create a property of type **ObservableCollection\<T>** to hold your Customer objects.
 * Bind your ListView's **ItemSource** to that property.
 * Provide a basic **ItemTemplate** for the ListView, which will configure how each item in the list is displayed.
 

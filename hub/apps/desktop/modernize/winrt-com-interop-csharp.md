@@ -3,14 +3,12 @@ description: Enhance your desktop application for Windows 10 users by using proj
 title: Call WinRT COM interop interfaces from .NET 5+ apps
 ms.date: 07/07/2021
 ms.topic: article
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
 # Call WinRT COM interop interfaces from .NET 5+ apps
 
-In .NET 5 and later, C# desktop application developers can more easily access select WinRT COM interop interfaces. These APIs are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
+In .NET 5 and later, C# desktop application developers can more easily access select WinRT COM interop interfaces. These APIs are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
 
 Before .NET 5, C# developers could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute and directly cast a projected class to that interop interface. Starting with .NET 5, built-in WinRT projection support has been removed from the C# compiler and .NET runtime. While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces which are used for interoperating with WinRT interfaces (see [ComInterfaceType](/dotnet/api/system.runtime.interopservices.cominterfacetype)).
 
@@ -50,7 +48,7 @@ To configure your desktop project to access the C# interop classes, follow these
     </PropertyGroup>
     ```
 
-    For more information including a list of other supported values, see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option).
+    For more information including a list of other supported values, see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option).
 
 2. The following example demonstrates how to use the **WinRT.Interop.WindowNative** interop class in a [WinUI 3-based application](../../winui/winui3/create-your-first-winui3-app.md) to obtain a window handle object and then open a folder picker dialog using the window handle. In this example, the `this` object is an instance of the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class provided by WinUI 3. Note that the **WinRT.Interop.WindowNative** class implements the [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) interface provided by WinUI 3, and this interface is implemented by the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class.
 

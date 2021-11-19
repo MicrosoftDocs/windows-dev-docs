@@ -15,7 +15,7 @@ Windows UI Library (WinUI) 3 is a native user experience (UX) framework for buil
 > [!Important]
 > This preview release is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps.
 >
-> If you're looking to ship a production app using Project Reunion and WinUI 3, see [Overview and release notes: WinUI 3 - Project Reunion 0.5](../index.md).
+> If you're looking to ship a production app using Project Reunion and WinUI 3, see [Overview and release notes: WinUI 3 - Project Reunion 0.5](/windows/apps/winui/).
 >
 > Please use the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) to provide feedback and log suggestions and issues.
 
@@ -28,7 +28,7 @@ This version of WinUI 3 is available as part of the Project Reunion 0.8 Preview.
 
 **[Installation instructions for Project Reunion 0.8 Preview](../../../windows-app-sdk/set-up-your-development-environment.md)**
 
-Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../../windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md). The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
+Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk). The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the [WinUI 3 Controls Gallery](#winui-3-controls-gallery) from GitHub, or download it from the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
@@ -38,7 +38,7 @@ Once you've set up your development environment, see [WinUI 3 project templates 
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
 - [Get started with WinUI 3 for desktop apps](../create-your-first-winui3-app.md)
-- [Build a basic WinUI 3 app for desktop](../desktop-build-basic-winui3-app.md)
+- [Build a basic WinUI 3 app for desktop](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
 - [Build a basic WinUI 3 app for UWP](../create-your-first-winui3-app.md)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.

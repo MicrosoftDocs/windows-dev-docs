@@ -86,7 +86,7 @@ Supported on all sizes. This is the recommended way of specifying your tile cont
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Children** | IList<ITileBindingContentAdaptiveChild> | false | The inline visual elements. [AdaptiveText](#adaptivetext), [AdaptiveImage](#adaptiveimage), and [AdaptiveGroup](#adaptivegroup) objects can be added. The children are displayed in a vertical StackPanel fashion. |
+| **Children** | IList\<ITileBindingContentAdaptiveChild> | false | The inline visual elements. [AdaptiveText](#adaptivetext), [AdaptiveImage](#adaptiveimage), and [AdaptiveGroup](#adaptivegroup) objects can be added. The children are displayed in a vertical StackPanel fashion. |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | An optional background image that gets displayed behind all the Tile content, full bleed. |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | An optional peek image that animates in from the top of the Tile. |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | Controls the text stacking (vertical alignment) of the children content as a whole. |
