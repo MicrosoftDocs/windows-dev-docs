@@ -2,7 +2,7 @@
 title: A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)
 description: A case study of taking the C++/WinRT [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/), and migrating it to the Windows App SDK.
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 11/17/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C++/WinRT, Photo, Editor, UWP
 ms.author: stwhi
 author: stevewhims
@@ -310,6 +310,35 @@ For the next step, we'll make the change that's explained in [ContentDialog, and
    #include <winrt/Windows.Storage.Search.h>
    ```
 
+### Migration changed needed for threading model difference
+
+This change is necessary due to a threading model difference between UWP and the Windows App SDK, as described in [ASTA to STA threading model](guides/threading.md#asta-to-sta-threading-model). Here's a brief description of the cause of the issue, and then a way to resolve it.
+
+**MainPage** loads image files from your **Pictures** folder, calls [**StorageItemContentProperties::GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync) to get the image file's properties, creates a **Photo** model object for each image file (saving those same properties in a data member), and adds that **Photo** object to a collection. The collection of **Photo** objects is data-bound to a **GridView** in the UI. On behalf of that **GridView**, **MainPage** handles the [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) event, and for phase 1 that handler calls into a coroutine that calls [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync). This call to **GetThumbnailAsync** results in messages being pumped (it doesn't return immediately, and do *all* of its work async), and that causes reentrancy. The result is that the **GridView** has its **Items** collection changed while layout is taking place, and that causes a crash.
+
+If we comment out the call to **StorageItemContentProperties::GetImagePropertiesAsync**, then we don't get the crash. But the real fix is to make the **StorageFile.GetThumbnailAsync** call be explicitly async by cooperatively awaiting **wil::resume_foreground** immediately before calling **GetThumbnailAsync**. This works because **wil::resume_foreground** schedules the code that follows it to be a task on the **DispatcherQueue**.
+
+Here's the code to change:
+
+```cppwinrt
+// MainPage.xaml.cpp
+IAsyncAction MainPage::OnContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+    ...
+    if (args.Phase() == 1)
+    {
+        ...
+        try
+        {
+            co_await wil::resume_foreground(this->DispatcherQueue());
+            auto thumbnail = co_await impleType->GetImageThumbnailAsync(this->DispatcherQueue());
+            image.Source(thumbnail);
+        }
+        ...
+    }
+}
+```
+
 Confirm that you can build the target solution (but don't run yet).
 
 ## Update MainWindow
@@ -324,59 +353,17 @@ Those are the last of the changes we need to make to migrate the *Photo Editor* 
 
 ## Known issues
 
-### ImageProperties
+### Accessing ImageProperties::Title
 
-There is one issue that we need to work around by commenting out a few lines of code from the project. For background, see GitHub issue [StorageItemContentProperties.GetImagePropertiesAsync causes an access violation when the same code works fine in the UWP version](https://github.com/microsoft/WindowsAppSDK/issues/1141).
-
-The following listing identifies file names, methods, and lines of code that need to be commented out (or, in some cases shown below, added). We recommend that you copy-paste the snippets below to replace what's currently in the target project.
+There is one issue that we need to work around by commenting out a line of code from the project. Open `Photo.h`, and copy-paste the snippet below to replace what's currently in the target project.
 
 ```cppwinrt
-// MainPage.xaml.cpp:
-    IAsyncOperation<PhotoEditor::Photo> MainPage::LoadImageInfoAsync(StorageFile file)
-    {
-        //auto properties = co_await file.Properties().GetImagePropertiesAsync();
-        auto info = winrt::make<Photo>(nullptr, file, file.DisplayName(), file.DisplayType());
-        co_return info;
-    }
-
-// Photo.cpp:
-    hstring Photo::ImageDimensions() const
-    {
-        return L"Not implemented";
-
-        //wstringstream stringStream;
-        //stringStream << m_imageProperties.Width() << " x " << m_imageProperties.Height();
-        //wstring str = stringStream.str();
-        //return static_cast<hstring>(str);
-    }
-
-    void Photo::ImageTitle(hstring const& value)
-    {
-        //if (m_imageProperties.Title() != value)
-        //{
-        //    m_imageProperties.Title(value);
-        //    auto ignoreResult = m_imageProperties.SavePropertiesAsync();
-        //    RaisePropertyChanged(L"ImageTitle");
-        //}
-    }
-
 // Photo.h:
-    hstring ImageTitle() const
-    {
-        return m_imageName;
-        // return m_imageProperties.Title() == L"" ? m_imageName : m_imageProperties.Title();
-    }
-
-// DetailPage.xaml.cpp
-// And be sure to change the return type in `.idl` and `.h`.
-    IAsyncAction DetailPage::FitToScreen()
-    {
-        auto properties = co_await Item().ImageFile().Properties().GetImagePropertiesAsync();
-        auto a = MainImageScroller().ActualWidth() / properties.Width();
-        auto b = MainImageScroller().ActualHeight() / properties.Height();
-        auto ZoomFactor = static_cast<float>(std::min(a, b));
-        MainImageScroller().ChangeView(nullptr, nullptr, ZoomFactor);
-    }
+hstring ImageTitle() const
+{
+    return m_imageName;
+    // return m_imageProperties.Title() == L"" ? m_imageName : m_imageProperties.Title();
+}
 ```
 
 ### App type issue (affects only Preview 3)

@@ -1,6 +1,6 @@
 ---
 title: Threading functionality migration
-description: This topic shows how to migrate your threading code.
+description: This topic shows how to migrate the threading code in your Universal Windows Platform (UWP) application to the Windows App SDK.
 ms.topic: article
 ms.date: 09/20/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
@@ -14,13 +14,33 @@ dev_langs:
 
 # Threading functionality migration
 
-This topic shows how to migrate your threading code.
+This topic shows how to migrate the threading code in your Universal Windows Platform (UWP) application to the Windows App SDK.
 
 ## Summary of API and/or feature differences
+
+UWP's threading model is *ASTA*, which blocks reentrancy to avoid certain categories of reentrancy bugs and deadlocks. The Windows App SDK's threading model is *STA*, and it doesn't have the same assurances around preventing reentrancy issues.
 
 The **CoreDispatcher** type migrates to **DispatcherQueue**. And the **CoreDispatcher.RunAsync** method migrates to **DispatcherQueue.TryEnqueue**.
 
 **C++/WinRT**. If you're using **winrt::resume_foreground** with **CoreDispatcher**, then migrate that to use **DispatcherQueue** instead.
+
+## ASTA to STA threading model
+
+UWP's threading model is application single-threaded apartment (ASTA) (see the blog post [What is so special about the Application STA?](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901)). The ASTA threading model blocks reentrancy to avoid certain categories of reentrancy bugs and deadlocks. An ASTA thread is also known as a UI thread.
+
+The Windows App SDK's threading model is [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments), and the STA model doesn't have the same assurances around preventing reentrancy issues. So if the code in your UWP app assumes the non re-entrant behavior of the ASTA threading model, then your code might not behave as expected.
+
+One thing to watch out for is reentrancy into XAML controls (see the example in [A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)](case-study-2.md)). And for some crashes, such as access violations, the direct crash callstack is usually the right stack to use. But if it's a *stowed exception* crash&mdash;which has exception code: 0xc000027b&mdash;then more work is required to get the right callstack.
+
+### Stowed exceptions
+
+Stowed exception crashes save away a possible error, and that gets used later if no part of the code handles the exception. XAML sometimes decides the error is fatal immediately, in which case the direct crash stack might be good. But more frequently the stack has unwound before it was determined to be fatal. For more details about stowed exceptions, see the Inside Show episode [Stowed Exception C000027B](https://docs.microsoft.com/en-us/shows/inside/c000027b).
+
+For stowed exception crashes (to see a nested message pump, or to see the XAML control's specific exception being thrown), you can get more info on the crash by loading a crash dump in the Windows Debugger (WinDbg) (see [Download debugging tools for Windows](/windows-hardware/drivers/debugger/debugger-download-tools)), and then using `!pde.dse` to dump the stowed exceptions.
+
+The PDE debugger extension (for the `!pde.dse` command) is available by downloading the [PDE*.zip](https://onedrive.live.com/?authkey=%21AJeSzeiu8SQ7T4w&id=DAE128BD454CF957%217152&cid=DAE128BD454CF957) file from OneDrive. Put the appropiate x64 or x86 `.dll` from that zip file into the `winext` directory of your WinDbg install, and then `!pde.dse` will work on stowed exception crash dumps.
+
+Frequently there'll be multiple stowed exceptions, with some at the end that were handled/ignored. Most commonly, the first stowed exception is the interesting one. In some cases, the first stowed exception might be a re-throw of the second, so if the second stowed exception shows deeper into the same stack as the first, then the second exception might be the origination of the error. The error code shown with each stowed exception is also valuable, since that provides the **HRESULT** associated with that exception.
 
 ## Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue
 
