@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 The title bar sits at the top of an app on the [base layer](../signature-experiences/layering.md). Its main purpose is to allow users to be able to identify the app via its title, move the app window, and minimize, maximize, or close the app.
 
-:::image type="content" source="images/titlebar/titlebar-example.png" alt-text="An example of a title bar":::
+:::image type="content" source="images/titlebar/titlebar-overview.png" alt-text="An example of a title bar":::
 
 ## Standard design
 
@@ -37,11 +37,7 @@ If global search functionality is present, a searchbox should be added to the ti
 
 :::image type="content" source="images/titlebar/search.png" alt-text="An example of a search box centered in the title bar":::
 
-Searchbox in this area will need to be designed to be responsive to react to window size changes. 
-
-Examples below:
-
-:::image type="content" source="images/titlebar/responsive-search.png" alt-text="An example of a search box that collapses to a search icon when the window is narrow":::
+Searchbox in this area will need to be designed to be responsive to react to window size changes.
 
 ### People
 
