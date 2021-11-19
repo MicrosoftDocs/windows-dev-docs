@@ -318,6 +318,8 @@ items:
              href: windows-app-sdk/preview-channel.md
            - name: "Experimental channel release notes"
              href: windows-app-sdk/experimental-channel.md
+           - name: "Breaking changes"
+             href: windows-app-sdk/breaking-changes.md
            - name: "Release notes archive"
              items:
                - name: "WinUI 3 - Project Reunion 0.8 Preview"
