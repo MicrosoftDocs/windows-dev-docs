@@ -100,7 +100,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
 
