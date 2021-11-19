@@ -381,19 +381,6 @@ hstring ImageTitle() const
 
 ## Known issues
 
-### Accessing ImageProperties::Title
-
-There is one issue that we need to work around by commenting out a line of code from the project. Open `Photo.h`, and copy-paste the snippet below to replace what's currently in the target project.
-
-```cppwinrt
-// Photo.h:
-hstring ImageTitle() const
-{
-    return m_imageName;
-    // return m_imageProperties.Title() == L"" ? m_imageName : m_imageProperties.Title();
-}
-```
-
 ### App type issue (affects only Preview 3)
 
 If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](/windows/apps/windows-app-sdk/preview-channel#version-10-preview-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
