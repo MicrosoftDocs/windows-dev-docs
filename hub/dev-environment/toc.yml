@@ -98,6 +98,8 @@ items:
           href: /cpp/
         - name: Get started with C#
           href: /dotnet/csharp/
+        - name: Get started with F#
+          href: /dotnet/fsharp/
         - name: Get started with Docker
           href: ../dev-environment/docker/overview.md
         - name: Get started with Powershell

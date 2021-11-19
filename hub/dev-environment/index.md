@@ -6,9 +6,8 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Set up windows, windows 11, windows 10, Dev Environment, Dev tools, development paths, Microsoft Developer, Tips, Performance, WSL, terminal, nodejs, python
+ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.date: 10/25/2021
 ---
 
 # Set up your development environment on Windows
@@ -50,6 +49,11 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
         Get started building apps using C# and .NET Core.
+    :::column-end:::
+    :::column:::
+       [![F# icon](../images/fsharp-logo.png)](/dotnet/fsharp/)<br>
+        **[Get started with F#](/dotnet/fsharp/)**<br>
+        Get started building apps using F# and .NET Core.
     :::column-end:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
