@@ -6,9 +6,8 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Set up windows, Dev Environment, Dev tools, development paths, Microsoft, Windows, Developer, Tips, Performance, WSL, terminal, nodejs, python
 ms.localizationpriority: medium
-ms.date: 06/01/2021
+ms.date: 11/19/2021
 ---
 
 # Set up your development environment on Windows 10
