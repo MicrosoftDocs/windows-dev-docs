@@ -201,6 +201,10 @@ You can zoom the focused pane to fill the entire contents of the window.
 
 ![Windows Terminal toggle pane zoom](./images/toggle-pane-zoom.gif)
 
+
+> [!NOTE]
+> The menu in the above gif is the [Command Palette](./command-palette.md), which can be opened with <kbd>Ctrl+Shift+P</kbd> by default.
+
 This can be done by using the `togglePaneZoom` command.
 
 ```json
