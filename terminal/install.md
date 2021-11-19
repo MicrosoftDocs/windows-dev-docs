@@ -86,7 +86,8 @@ The path for your Windows Terminal settings.json file may be found in one of the
 - Terminal (unpackaged: Scoop, Chocolately, etc): `%LOCALAPPDATA%\Microsoft\Windows Terminal\settings.json`
 
 > [!Tip]
-> You can access the default settings for Windows Terminal by selecting  **Settings** in the dropdown menu while holding <kbd>Alt</kbd> to open the `defaults.json` file in your default text editor. This file is auto-generated and any changes to it will be ignored.
+> 1. You can access the default settings for Windows Terminal by selecting  **Settings** in the dropdown menu while holding <kbd>Alt</kbd> to open the `defaults.json` file in your default text editor. This file is auto-generated and any changes to it will be ignored.
+> 2. It is possible to create a [JSON fragment extension](./json-fragment-extensions.md) in order to store profile data and color schemes in a separate file, which can be useful to prevent excessively large configuration files.
 
 ## Command line arguments
 
