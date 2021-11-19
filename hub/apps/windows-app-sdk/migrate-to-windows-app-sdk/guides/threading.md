@@ -34,7 +34,7 @@ One thing to watch out for is reentrancy into XAML controls (see the example in 
 
 ### Stowed exceptions
 
-Stowed exception crashes save away a possible error, and that gets used later if no part of the code handles the exception. XAML sometimes decides the error is fatal immediately, in which case the direct crash stack might be good. But more frequently the stack has unwound before it was determined to be fatal. For more details about stowed exceptions, see the Inside Show episode [Stowed Exception C000027B](https://docs.microsoft.com/en-us/shows/inside/c000027b).
+Stowed exception crashes save away a possible error, and that gets used later if no part of the code handles the exception. XAML sometimes decides the error is fatal immediately, in which case the direct crash stack might be good. But more frequently the stack has unwound before it was determined to be fatal. For more details about stowed exceptions, see the Inside Show episode [Stowed Exception C000027B](/shows/inside/c000027b).
 
 For stowed exception crashes (to see a nested message pump, or to see the XAML control's specific exception being thrown), you can get more info on the crash by loading a crash dump in the Windows Debugger (WinDbg) (see [Download debugging tools for Windows](/windows-hardware/drivers/debugger/debugger-download-tools)), and then using `!pde.dse` to dump the stowed exceptions.
 
