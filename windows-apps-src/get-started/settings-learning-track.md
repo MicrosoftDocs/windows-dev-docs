@@ -89,8 +89,8 @@ Here is a quick summary of APIs, and other useful documentation, to help get you
 
 | Topic | Description |
 |-------|----------------|
-| [Guidelines for app settings](../design/app-settings/guidelines-for-app-settings.md) | Describes best practices for creating and displaying app settings. |
-| [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md#create-and-read-a-local-file) | Walk-through for saving and retrieving settings, including roaming settings. |
+| [Guidelines for app settings](/windows/apps/design/app-settings/guidelines-for-app-settings) | Describes best practices for creating and displaying app settings. |
+| [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Walk-through for saving and retrieving settings, including roaming settings. |
 
 ## Useful code samples
 

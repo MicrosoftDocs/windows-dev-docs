@@ -161,4 +161,4 @@ Otherwise, no thumbnail is retrieved.</td>
 - [StorageItemThumbnail class](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
 - [StorageFile class](/uwp/api/windows.storage.storagefile)
 - [File and folder thumbnail sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [List and grid view](../design/controls-and-patterns/lists.md)
+- [List and grid view](/windows/apps/design/controls/lists)

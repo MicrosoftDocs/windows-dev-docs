@@ -493,7 +493,7 @@ struct MyPage : Page
 The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) member function name. But the parameter `Visibility::Collapsed` follows the word `Visibility` with `::`, and so the method name is ignored, and the compiler finds the enum class.
 
 ## Important APIs
-* [QueryInterface interface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [QueryInterface function](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))
 * [RoActivateInstance function](/windows/desktop/api/roapi/nf-roapi-roactivateinstance)
 * [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)

@@ -142,7 +142,7 @@ With both namespaces defined, you can set the Text property twice as long as you
            contract5Present:Text="Hello, Fall Creators Update"/>
 ```
 
-Here's another example that sets the background of a button. The [Acrylic material](../design/style/acrylic.md) feature is available starting with the Fall Creators Update, so you’ll use Acrylic for the background when the app runs on the Fall Creators Update. It's not available on earlier versions, so in those cases, you set the background to red.
+Here's another example that sets the background of a button. The [Acrylic material](/windows/apps/design/style/acrylic) feature is available starting with the Fall Creators Update, so you’ll use Acrylic for the background when the app runs on the Fall Creators Update. It's not available on earlier versions, so in those cases, you set the background to red.
 
 ```xaml
 <Button Content="Button"

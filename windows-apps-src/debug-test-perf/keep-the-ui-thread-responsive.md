@@ -22,8 +22,8 @@ You need to use the UI thread to make almost all changes to the UI thread, inclu
 
 Some of the slowest stages in an app can include startup, and switching views. Don't do more work than necessary to bring up the UI that the user sees initially. For example, don't create the UI for progressively-disclosed UI and the contents of popups.
 
--   Use [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) to delay-instantiate elements.
--   Programmatically insert elements into the tree on-demand.
+- Use [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) to delay-instantiate elements.
+- Programmatically insert elements into the tree on-demand.
 
 [**CoreDispatcher.RunIdleAsync**](/uwp/api/windows.ui.core.coredispatcher.runidleasync) queues work for the UI thread to process when it's not busy.
 
@@ -60,26 +60,8 @@ public class AsyncExample
 }
 ```
 
-> [!div class="tabbedCodeSnippets"]
-> ```csharp
-> public class Example
-> {
->     // ...
->     private async void NextMove_Click(object sender, RoutedEventArgs e)
->     {
->         await Task.Run(() => ComputeNextMove());
->         // Update the UI with results
->     }
-> 
->     private async Task ComputeNextMove()
->     {
->         // ...
->     }
->     // ...
-> }
-> ```
 > ```vb
-> Public Class Example
+> Public Class AsyncExample
 >     ' ...
 >     Private Async Sub NextMove_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
 >         Await Task.Run(Function() ComputeNextMove())
@@ -99,4 +81,4 @@ In this example, the `NextMove_Click` handler returns at the **await** in order 
 
 ## Related topics
 
-* [Custom user interactions](../design/layout/index.md)
+* [Custom user interactions](/windows/apps/design/layout/index)

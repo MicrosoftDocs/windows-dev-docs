@@ -30,7 +30,7 @@ In XAML, you set attached properties by using the syntax _AttachedPropertyProvid
 ```
 
 > [!NOTE]
-> We're just using [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) handles its layout children, see the [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) reference topic or [Define layouts with XAML](../design/layout/layouts-with-xaml.md).
+> We're just using [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) as an example attached property without fully explaining why you'd use it. If you want to know more about what **Canvas.Left** is for and how [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) handles its layout children, see the [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) reference topic or [Define layouts with XAML](/windows/apps/design/layout/layouts-with-xaml).
 
 ## Why use attached properties?
 
@@ -125,7 +125,7 @@ The dot in an attached property name is a key part of the identification pattern
 
 - [Custom attached properties](custom-attached-properties.md)
 - [Dependency properties overview](dependency-properties-overview.md)
-- [Define layouts with XAML](../design/layout/layouts-with-xaml.md)
+- [Define layouts with XAML](/windows/apps/design/layout/layouts-with-xaml)
 - [Quickstart: Translating UI resources](/previous-versions/windows/apps/hh943060(v=win.10))
 - [**SetValue**](/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

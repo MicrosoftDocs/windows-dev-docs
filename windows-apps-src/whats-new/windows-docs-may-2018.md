@@ -18,34 +18,34 @@ The Windows Developer Documentation is constantly being updated with information
 
 The user of motion in the Fluent Design System is evolving, built on the fundamentals of timing, easing, directionality, and gravity. Applying these fundamentals will help guide the user through your app, and connects them with their digital experience by reflecting the natural world. Learn more in this articles:
 
-* [The Motion overview](../design/motion/index.md) has been updated to reflect these fundamentals.
-* [Motion-in-practice](../design/motion/motion-in-practice.md) provides examples of how to apply these fundamentals within your app.
-* [Directionality and gravity](../design/motion/directionality-and-gravity.md) solidifies the user's mental model of your app.
-* [Timing and easing](../design/motion/timing-and-easing.md) adds realism to the motion in your app.
+* [The Motion overview](/windows/apps/design/motion/index) has been updated to reflect these fundamentals.
+* [Motion-in-practice](/windows/apps/design/motion/motion-in-practice) provides examples of how to apply these fundamentals within your app.
+* [Directionality and gravity](/windows/apps/design/motion/directionality-and-gravity) solidifies the user's mental model of your app.
+* [Timing and easing](/windows/apps/design/motion/timing-and-easing) adds realism to the motion in your app.
 
-![Motion in action](../design/motion/images/contextual.gif)
+![Motion in action](images/contextual.gif)
 
 ### Fluent Design Updates
 
 Visual updates and minor changes have been made to the following Fluent Design pages:
 
-* [Alignment, padding, margins](../design/layout/alignment-margin-padding.md)
-* [Color](../design/style/color.md)
-* [Command basics](../design/basics/commanding-basics.md)
+* [Alignment, padding, margins](/windows/apps/design/layout/alignment-margin-padding)
+* [Color](/windows/apps/design/style/color)
+* [Command basics](/windows/apps/design/basics/commanding-basics)
 * [Fluent Design for Windows apps](/windows/apps/fluent-design-system)
-* [Introduction to app design](../design/basics/design-and-ui-intro.md)
-* [Navigation basics](../design/basics/navigation-basics.md)
-* [Responsive design techniques](../design/layout/responsive-design.md)
-* [Screen sizes and breakpoints](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-* [Style overview](../design/style/index.md)
-* [Writing style](../design/style/writing-style.md)
+* [Introduction to app design](/windows/apps/design/basics/design-and-ui-intro)
+* [Navigation basics](/windows/apps/design/basics/navigation-basics)
+* [Responsive design techniques](/windows/apps/design/layout/responsive-design)
+* [Screen sizes and breakpoints](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+* [Style overview](/windows/apps/design/style/index)
+* [Writing style](/windows/apps/design/style/writing-style)
 
 In addition, we've rewritten the following pages with all-new information on their content areas:
 
-* [Icons](../design/style/icons.md) now provides practical recommendations for using icons and making them clickable.
-* [Typography](../design/style/typography.md) consolidates information from similar articles, putting everything in a single place with updated guidance and illustrations.
+* [Icons](/windows/apps/design/style/icons) now provides practical recommendations for using icons and making them clickable.
+* [Typography](/windows/apps/design/style/typography) consolidates information from similar articles, putting everything in a single place with updated guidance and illustrations.
 
-![Color palette image](../design/style/images/color/accent-color-palette.svg)
+![Color palette image](images/accent-color-palette.svg)
 
 ### App Installer files in Visual Studio
 
@@ -59,7 +59,7 @@ Look for other controls like WebView in future releases of the Windows Community
 
 ### Gaze input and interactions
 
-[Track a user's gaze, attention, and presence based on the location and movement of their eyes.](../design/input/gaze-interactions.md) This powerful new way to use and interact with your UWP apps is especially useful as an assistive technology. Gaze input also provides compelling opportunities for both gaming (including target acquisition and tracking) and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available.
+[Track a user's gaze, attention, and presence based on the location and movement of their eyes.](/windows/apps/design/input/gaze-interactions) This powerful new way to use and interact with your UWP apps is especially useful as an assistive technology. Gaze input also provides compelling opportunities for both gaming (including target acquisition and tracking) and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available.
 
 ### MSIX Packaging Format
 
@@ -81,7 +81,7 @@ Optional packages in your app can now contain executable C# code. [Learn how to 
 
 ### Page transitions
 
-[Page transitions](../design/motion/page-transitions.md) navigate users between pages in an app. They help users understand where they are in the navigation hierarchy, and provide feedback about the relationship between pages.
+[Page transitions](/windows/apps/design/motion/page-transitions) navigate users between pages in an app. They help users understand where they are in the navigation hierarchy, and provide feedback about the relationship between pages.
 
 ### Project Rome
 

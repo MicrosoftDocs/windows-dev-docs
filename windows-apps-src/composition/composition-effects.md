@@ -79,7 +79,7 @@ Effect properties support animation, during effect compilation you can specify e
 
 ### Constant vs Animated Effect Properties
 
-During effect compilation you can specify effect properties as dynamic or as properties that are "baked in" as constants. The dynamic properties are specified through strings of the form “<effect name>.<property name>”. The dynamic properties can be set to a specific value or can be animated using the composition animation system.
+During effect compilation you can specify effect properties as dynamic or as properties that are "baked in" as constants. The dynamic properties are specified through strings of the form “\<effect name>.\<property name>”. The dynamic properties can be set to a specific value or can be animated using the composition animation system.
 
 When compiling the effect description above, you have the flexibility of either baking in saturation to be equal to 0.5 or making it dynamic and setting it dynamically or animating it.
 

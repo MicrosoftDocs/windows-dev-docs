@@ -31,7 +31,7 @@ For more info, see [Run app experiments with A/B testing](../monetize/run-app-ex
 
 ## Maps
 
-To use map services in apps targeting Windows 10 or Windows 8.x, visit the [Bing Maps Dev Center](https://www.bingmapsportal.com/). For info about how to request a maps authentication key from the Bing Maps Developer Center and add it to your app, see [Request a maps authentication key](../maps-and-location/authentication-key.md) for more info. 
+To use map services in apps targeting Windows 10 or Windows 11, visit the [Bing Maps Dev Center](https://www.bingmapsportal.com/). For info about how to request a maps authentication key from the Bing Maps Developer Center and add it to your app, see [Request a maps authentication key](../maps-and-location/authentication-key.md) for more info. 
 
 Use the **Maps** page only for previously-published apps for Windows Phone 8.1 and earlier. To use map services in these apps, you'll need to request a map service application ID and a token to include in your app's code. When you click **Get token**, we'll generate a Map service Application ID (**ApplicationID**) and Map service Authentication Token (**AuthenticationToken**) for your app. Be sure to add these values to your code before you package and submit your app. For more info, see [How to add a Map control to a page (Windows Phone 8.1)](/previous-versions/windows/apps/jj207033(v=vs.105)).
 
@@ -79,11 +79,11 @@ Developers with OEM permissions can also [generate preinstall packages](generate
 The **WNS/MPNS** section provides options to help you create and send notifications to your app's customers. 
 
 > [!TIP]
-> For UWP apps, we suggest using the **Notifications** feature in Partner Center. This feature lets you send notifications to all of your app's customers, or to a targeted subset of your Windows 10 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). For more info, see [Send notifications to your app's customers](send-push-notifications-to-your-apps-customers.md).
+> For UWP apps, we suggest using the **Notifications** feature in Partner Center. This feature lets you send notifications to all of your app's customers, or to a targeted subset of your Windows 10/11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). For more info, see [Send notifications to your app's customers](send-push-notifications-to-your-apps-customers.md).
 
 Depending on your app's package type and its specific requirements, you can also use one of the following options: 
 
--   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
+-   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview).
 
 -   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](/azure/app-service-mobile/).
 

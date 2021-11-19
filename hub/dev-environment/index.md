@@ -1,18 +1,18 @@
 ---
-title: Setup a development environment on Windows 10
-description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. 
+title: Setup a development environment on Windows
+description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-ms.localizationpriority: medium
 ms.date: 11/19/2021
+ms.localizationpriority: medium
 ---
 
-# Set up your development environment on Windows 10
+# Set up your development environment on Windows
 
-This guide will help you get started with installing and setting up the languages and tools you need to develop on Windows or Windows Subsystem for Linux.
+Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
 
 ## Development paths
 
@@ -35,7 +35,7 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
         **[Get started with Windows Desktop](../apps/index.yml)**<br>
-        Get started building desktop apps for Windows 10 using UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
+        Get started building desktop apps for Windows using the Windows App SDK, UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
 :::row-end:::
 
@@ -73,6 +73,11 @@ This guide will help you get started with installing and setting up the language
         **[Get started with Rust](./rust/index.yml)**<br>
         Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
     :::column-end:::
+    :::column:::
+       [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
+        **[Get started with Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**<br>
+        Get started with Blazor, a client-side UI framework within ASP.NET Core. Use HTML, CSS, and C# (rather than JavaScript) to create UI components and single page applications for the web.
+    :::column-end:::
 :::row-end:::
 
 ## Tools and platforms
@@ -94,8 +99,8 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
-        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows 10.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
+        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
+        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-the-winget-client)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>

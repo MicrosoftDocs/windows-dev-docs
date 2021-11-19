@@ -3,7 +3,7 @@ title: NuGet package list for the Windows UI Library
 description: Lists the NuGet packages for the Windows UI Library 
 ms.topic: article
 ms.date: 07/15/2020
-keywords: windows 10, uwp, toolkit sdk
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
 

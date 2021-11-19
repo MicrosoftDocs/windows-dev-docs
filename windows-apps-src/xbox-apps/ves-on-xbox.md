@@ -215,5 +215,5 @@ Finally, with `button3`, VES grabs the `Name` from the first child element since
 ## See also
 - [UI Automation Fundamentals](/dotnet/framework/ui-automation/ui-automation-fundamentals "UI Automation Fundamentals")
 - [Automation Properties for Accessibility Support in UI](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automation Properties for Accessibility Support in UI")
-- [Frequently asked questions](frequently-asked-questions.md)
+- [Frequently asked questions](frequently-asked-questions.yml)
 - [UWP on Xbox One](index.md)

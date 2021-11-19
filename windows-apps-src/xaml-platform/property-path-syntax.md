@@ -66,7 +66,7 @@ Because a property path is interpreted by a binding engine and relies on info th
 
 Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](/dotnet/api/system.windows.media.animation.storyboard.targetname), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
-For more info on the how to define animations in XAML, see [Storyboarded animations](../design/motion/storyboarded-animations.md).
+For more info on the how to define animations in XAML, see [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations).
 
 ## Simple targeting
 
@@ -106,7 +106,7 @@ Most of the time, you can apply a [**PropertyPath**](/uwp/api/Windows.UI.Xaml.Pr
 ## Related topics
 
 * [Data binding in depth](../data-binding/data-binding-in-depth.md)
-* [Storyboarded animations](../design/motion/storyboarded-animations.md)
+* [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations)
 * [{Binding} markup extension](binding-markup-extension.md)
 * [**PropertyPath**](/uwp/api/Windows.UI.Xaml.PropertyPath)
 * [**Binding**](/uwp/api/Windows.UI.Xaml.Data.Binding)

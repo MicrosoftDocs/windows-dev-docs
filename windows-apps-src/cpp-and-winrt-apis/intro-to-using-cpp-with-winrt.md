@@ -1,7 +1,7 @@
 ---
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.date: 04/18/2019
+ms.date: 11/11/2021
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
@@ -30,14 +30,16 @@ The Windows Runtime is based on Component Object Model (COM) APIs, and it's desi
 When you're browsing [Windows Runtime APIs](/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
-For Visual Studio support, you'll need Visual Studio 2019 or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). From within the Visual Studio Installer, install the **Universal Windows Platform development** workload. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option(s), if you haven't already done so. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
+For Visual Studio support, you'll need Visual Studio 2022, Visual Studio 2019, or Visual Studio 2017 (at least version 15.6; we recommend at least 15.7). From within the Visual Studio Installer, install the **Universal Windows Platform development** workload. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option(s), if you haven't already done so. And, in Windows **Settings** > **Update \& Security** > **For developers**, choose the **Developer mode** option rather than the **Sideload apps** option.
 
 While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using a version of C++/WinRT that shipped with the Windows SDK prior to 10.0.17763.0 (Windows 10, version 1809), then, to use the the Windows namespaces headers mentioned above, you'll need a minimum Windows SDK target version in your project of 10.0.17134.0 (Windows 10, version 1803).
 
-You'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+Visual Studio 2022 ships with C++/WinRT project and item templates built in, so that you can get started with C++/WinRT development right away. It also comes with Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. For more info, see [Visual Studio native debug visualization for C++/WinRT](./natvis.md).
 
-- The VSIX extension gives you C++/WinRT project and item templates in Visual Studio, so that you can get started with C++/WinRT development.
-- In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. For more info, see [Visual Studio native debug visualization for C++/WinRT](./natvis.md).
+For older versions of Visual Studio, you'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+
+- The VSIX extension gives you C++/WinRT project and item templates in Visual Studio.
+- In addition, it gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types.
 
 The Visual Studio project templates for C++/WinRT are described in the sections below. When you create a new C++/WinRT project with the latest version of the VSIX extension installed, the new C++/WinRT project automatically installs the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). The **Microsoft.Windows.CppWinRT** NuGet package provides C++/WinRT build support (MSBuild properties and targets), making your project portable between a development machine and a build agent (on which only the NuGet package, and not the VSIX extension, is installed).
 
@@ -70,7 +72,7 @@ A project template for a Universal Windows Platform (UWP) app that has a XAML us
 
 Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those stub type definitions for reference to implement your local runtime classes. See [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
-The XAML design surface support in Visual Studio 2019 for C++/WinRT is close to parity with C#. In Visual Studio 2019, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
+The XAML design surface support in Visual Studio for C++/WinRT is close to parity with C#. In Visual Studio, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
 
 ### Core App (C++/WinRT)
 A project template for a Universal Windows Platform (UWP) app that doesn't use XAML.

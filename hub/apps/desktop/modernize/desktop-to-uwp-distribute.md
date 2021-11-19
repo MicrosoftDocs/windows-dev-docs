@@ -5,8 +5,6 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 

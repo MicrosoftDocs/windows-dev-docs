@@ -75,7 +75,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Design your apps with the Fluent Design System
-            url: design/index.md
+            url: /windows/apps/design/
       - linkListType: reference
         links:
           - text: Add UI controls with the Windows UI Library

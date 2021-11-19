@@ -210,7 +210,7 @@ sections:
       - question: |
           How do I turn a string into a type (for navigation, for example)?
         answer: |
-          At the end of the [Navigation view code example](../design/controls-and-patterns/navigationview.md#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
+          At the end of the [Navigation view code example](/windows/apps/design/controls/navigationview#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
           
       - question: |
           How do I resolve ambiguities with GetCurrentTime and/or TRY?

@@ -4,8 +4,8 @@ title: Host a standard WinRT XAML control in a WPF app using XAML Islands
 ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, wrapped controls, standard controls, InkCanvas, InkToolbar
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -21,7 +21,7 @@ This article demonstrates two ways to use [XAML Islands](xaml-islands.md) to hos
 Although this article demonstrates how to host WinRT XAML controls in a WPF app, the process is similar for a Windows Forms app.
 
 > [!NOTE]
-> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that any version of the .NET Framework.
+> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET 5, or in apps that target any version of the .NET Framework.
 
 ## Required components
 
@@ -63,7 +63,7 @@ Before getting started, follow these instructions to create a WPF project and co
 
 ## Define a XamlApplication class in a UWP app project
 
-Next, add a UWP app project to your solution and revise the default `App` class in this project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread.
+Next, add a UWP app project to your solution and revise the default `App` class in this project to derive from the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit. This class supports the [IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread.
 
 > [!NOTE]
 > Although this step isn't required for hosting a first-party WinRT XAML control, your app needs the `XamlApplication` object to support the full range of XAML Island scenarios, including hosting custom WinRT XAML controls. Therefore, we recommend that you always define a `XamlApplication` object in any solution in which you are using XAML Islands.

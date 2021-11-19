@@ -61,7 +61,7 @@ When you're happy with your concept, you're ready for the next stage—creating 
 
 Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](https://www.windowsphone.com/store/app/audible-for-windows-phone/bdc813dd-c20b-41f8-8646-de72fa0b365d) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
 
-For related guidelines, see [Navigation design basics](../design/basics/navigation-basics.md).
+For related guidelines, see [Navigation design basics](/windows/apps/design/basics/navigation-basics).
 
 ## Dynamics
 
@@ -131,18 +131,18 @@ For more info, see [App contracts and extensions](/previous-versions/windows/app
 
 For example, semantic zoom is a touch-optimized way to navigate through a large set of content. Users can pan or scroll through categories of content, and then zoom in on those categories to view more and more detailed information. You can use this to present your content in a more tactile, visual, and informative way than with traditional navigation and layout patterns like tabs.
 
-Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../design/input/input-primer.md).
+Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](/windows/apps/design/input/input-primer).
 
 **Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
 
--   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../design/motion/xaml-animation.md).
--   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../design/shell/tiles-and-notifications/index.md).
--   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../design/shell/tiles-and-notifications/creating-tiles.md).
+-   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](/windows/apps/design/motion/xaml-animation).
+-   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](/windows/apps/design/shell/tiles-and-notifications/index).
+-   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](/windows/apps/design/shell/tiles-and-notifications/creating-tiles).
 
 **Personalization**
 
--   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../design/app-settings/guidelines-for-app-settings.md).
--   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../design/app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](../design/app-settings/store-and-retrieve-app-data.md).
+-   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](/windows/apps/design/app-settings/guidelines-for-app-settings).
+-   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](/windows/apps/design/app-settings/store-and-retrieve-app-data) and see [Guidelines for roaming application data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 -   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
 
 **Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
@@ -197,7 +197,7 @@ Let's look at the "Share itineraries for friends and families to follow" flow. W
 
 During this process, you begin to see what UI you need to create and the additional details you need to figure out (like drafting a standard email boilerplate for friends who aren't using your app yet). You also can start eliminating unnecessary steps. Perhaps the user doesn't actually need to see the details of the trip before sharing, for example. The cleaner the flow, the easier to use.
 
-For more details on how to use different surfaces, take a look at <!--[Command design basics](../design/basics/commanding-basics.md)-->.
+For more details on how to use different surfaces, take a look at <!--[Command design basics](/windows/apps/design/basics/commanding-basics)-->.
 
 **What should the flow feel like?** When you have defined the steps your user will take, you can turn that flow into performance goals. For more info, see [Plan for performance](../debug-test-perf/planning-and-measuring-performance.md).
 
@@ -206,15 +206,15 @@ For more details on how to use different surfaces, take a look at <!--[Command d
 -   **Always try to use the content.**  Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
 -   **If you can't use the content.** Place commands on one of these UI surfaces if you are not able to use the content:
 
-    -   In the [command bar](../design/controls-and-patterns/app-bars.md): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
+    -   In the [command bar](/windows/apps/design/controls/command-bar): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
     -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
-    -   In a [context menu](../design/controls-and-patterns/menus.md): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
+    -   In a [context menu](/windows/apps/design/controls/menus): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
 
 **Decide how to lay out your app in each view.**  Windows supports landscape and portrait orientations and supports resizing apps to any width, from full screen to a minimum width. You want your app to look and work great at any size, on any screen, in either orientation. This means you need to plan the layout of your UI elements for different sizes and views. When you do this, your app UI changes fluidly to meet your user's needs and preferences.
 
 ![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## Make a good first impression
 

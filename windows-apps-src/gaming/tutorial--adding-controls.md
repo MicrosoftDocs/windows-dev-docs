@@ -30,7 +30,7 @@ We'll take a look at how our game implements first person shooter move-look cont
 - Gamepad
 
 >[!Note]
->If you haven't downloaded the latest game code for this sample, go to [Direct3D sample game](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). This sample is part of a large collection of UWP feature samples. For instructions on how to download the sample, see [Get the UWP samples from GitHub](../get-started/get-app-samples.md).
+>If you haven't downloaded the latest game code for this sample, go to [Direct3D sample game](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). This sample is part of a large collection of UWP feature samples. For instructions on how to download the sample, see [Get the UWP samples from GitHub](/windows/apps/get-started/samples).
 
 ## Common control behaviors
 

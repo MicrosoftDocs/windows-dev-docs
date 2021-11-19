@@ -37,7 +37,7 @@ L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
 
 For a point light and a spotlight, the direction to light is computed as follows:
 
-L<sub>dir</sub> = norm(V \* Lₚ), where the parameters are defined in the following table.
+L<sub>dir</sub> = norm(V \- Lₚ), where the parameters are defined in the following table.
 
 | Parameter       | Default value | Type                                          | Description                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|

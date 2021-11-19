@@ -254,7 +254,7 @@ To debug the background task, set a breakpoint in the task’s Run method. In th
 * [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager)
 * [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Guidelines and checklist for tiles and badges](../design/shell/tiles-and-notifications/creating-tiles.md)
+* [Guidelines and checklist for tiles and badges](/windows/apps/design/shell/tiles-and-notifications/creating-tiles)
 
  
 

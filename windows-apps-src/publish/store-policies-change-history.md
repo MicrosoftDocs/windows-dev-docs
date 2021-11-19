@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 04/15/2021
+ms.date: 09/28/2021
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -24,9 +24,55 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 </thead>
 <tbody>
+</tr>
+<tr class="odd">
+<td>September 28, 2021</td>
+<td><a href="/windows/uwp/publish/store-policies">7.15</a></td>
+<td>
+<p>Update to 10.1.3 requirements for product search terms.</p>
+<p>Update to 10.1.5, removing prohibition on products whose primary functionality is to enable acquisition of digital goods from outside the Store.</p>
+<p>New 10.1.6 policy allowing products that are standalone digital storefronts on PC devices.</p>
+<p>Update to 10.2.1 regarding web browser requirements on console. </p>
+<p>Update to 10.13.4, prohibiting products that enable general browsing of the operating system, file systems or attached physical media file structures</p>
+<p>Update to 10.13.10, added game platform.</p>
+<p>New 11.13, added Third Party Digital Storefronts content policy. </p>
+</td>
+</tr>
+<tr class="even">
+<td>July 30, 2021</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
+<td>
+<p><b>Note</b>: The below updates were added to version 7.14 of the Store Policies on July 30, 2021. </p>
+<p>Update to 10.2.4, updated to require exception for dependency on non-Microsoft drivers or NT services.  </p>
+<p>Update to 10.14 to include application name.  </p>
+</td>
+</tr>
+<tr class="odd">
+<td>June 28, 2021</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
+<td>
+<p>Update to 10.1.5 to allow specific additional products, adds-ons or extensions to be available from within your product.</p>
+<p>Update to 10.2, incorporating product safety testing and other product safety requirements previously included in policy 11.3.</p>
+<p>Update to 10.2.1 requirements for products that browse the web.</p>
+<p>Update to 10.2.3 to prohibit bundleware within your product.</p>
+<p>Update to 10.2.5 regarding software dependency requirements.</p>
+<p>New 10.2.7 policy requiring clean uninstall of products.</p>
+<p>New 10.2.8 policy requiring use of supported methods and user consent to change any Windows user settings.</p>
+<p>New 10.2.9 policy governing eligibility and requirements for submitting an HTTPS-enabled download URL to a product’s installer binaries.</p>
+<p>Removed 10.4.4, back button policy.</p>
+<p>Removed 10.5.6, identity authentication policy.</p>
+<p>Removed legacy platform references from 10.5.7.</p>
+<p>Update to 10.8.1 requirements regarding usage of Microsoft Store in-app purchase API for purchases of digital goods and services and requirements when using secure third-party purchase API.</p>
+<p>Update to 10.8.6 requirements regarding usage of Microsoft recurring billing API for subscriptions of digital goods and services.</p>
+<p>Update to 10.9 requirements for notifications.</p>
+<p>Removed 10.11 mobile voice plan policy.</p>
+<p>Remove 10.12 Edge extensions policy.  Microsoft Edge Add-ons policies can be found <a href="/microsoft-edge/extensions-chromium/store-policies/developer-policies">here</a>.</p>
+<p>Update to 11.3.2, relocating the product safety testing and other product safety requirements to 10.2.</p>
+</td>
+</tr>
 <tr class="even">
 <td>April 15, 2021</td>
-<td><a href="/windows/uwp/publish/store-policies">7.13</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-13">7.13</a></td>
 <td><p>Update to policy 10.1 to include examples of metadata, which is inclusive of product category, and provide guidance on products that are considered games. </p>
 <p>Update to policy 10.8.6 with specific policies that apply to PC Gaming subscription products.</p>
 <p>Update to policy 10.13 to remove XBL requirements for Creators products; also removes any XBL specific policies from Store policies as XBL requirements can be found at https://aka.ms/xboxlivepolicy.</p>

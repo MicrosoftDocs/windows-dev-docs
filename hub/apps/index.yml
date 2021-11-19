@@ -1,164 +1,121 @@
 ### YamlMime:Hub
-title: Windows app developer documentation
+title: Windows app development documentation
 summary: Learn how to design, develop, and deploy apps and solutions for Windows PCs and other devices.
 brand: windows
 metadata:
-   title: Windows developer documentation
+   title: Windows development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
-   author: mcleanbyron
-   ms.author: mcleans
+   ms.author: stwhi
+   author: stevewhims
    ms.topic: hub-page
-   ms.date: 11/08/2019
+   ms.date: 06/16/2021
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-WinDevCenter"
    
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Get Visual Studio and the Windows SDK
+   - title: App development options
+     itemType: overview
+     url: /get-started/index
+   - title: Create a WinUI 3 app
+     itemType: quickstart
+     url: /winui/winui3/create-your-first-winui3-app
+   - title: What is the Windows App SDK?
+     itemType: concept
+     url: /windows-app-sdk/index
+   - title: Windows App SDK Release Notes
+     itemType: whats-new 
+     url: /windows-app-sdk/stable-channel
+   - title: Download Visual Studio
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
-   - title: What's new for developers in the latest release
+   - title: Download the Windows App SDK
+     itemType: download
+     url: https://aka.ms/windowsappsdk/stable-vsix
+   - title: Windows Subsystem for Linux and other tools
      itemType: overview
-     url: /windows/uwp/whats-new/windows-10-build-19041
-   - title: Join the Insider Program
-     itemType: overview
-     url: /windows-insider
+     url: ../dev-environment/index.md
    - title: Online training for Windows app developers
      itemType: learn
      url: /learn/browse/?products=windows
 
 productDirectory:
-  title: Develop for Windows
+  title: Dive into developing apps for Windows
   items:
-  - title: Desktop apps for Windows
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+  - title: Get started
+    imageSrc: https://docs.microsoft.com/media/common/i_get-started.svg
     links:
-      - url: ./desktop/index.md
-        text: Get started
-  - title: Windows UI Library (WinUI)
-    imageSrc: images/logo-winui.svg
+      - url: ./get-started/index.md
+        text: Overview of app development options
+      - url: ./windows-app-sdk/set-up-your-development-environment.md
+        text: Install developer tools
+      - url: ./winui/winui3/create-your-first-winui3-app.md
+        text: Build a WinUI 3 app
+      - url: ./get-started/samples.md
+        text: Samples
+  - title: Design
+    imageSrc: https://docs.microsoft.com/media/common/i_design.svg
     links:
+      - url: ./design/index.md
+        text: Design and code your app UI
+      - url: ./design/basics/index.md
+        text: Design basics for Windows apps
+      - url: ./design/signature-experiences/design-principles.md
+        text: Windows 11 design principles
+      - url: ./design/downloads/index.md
+        text: Design toolkits
+  - title: Develop
+    imageSrc: https://docs.microsoft.com/media/common/i_code-samples.svg
+    links:
+      - url: ./develop/index.md
+        text: Windows development features
+      - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
+        text: Windows App SDK features
       - url: ./winui/index.md
-        text: Get started
-  - title: Windows Subsystem for Linux, Windows Terminal, Python, and other tools
-    imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
+        text: Windows UI Library (WinUI)
+      - url: ./desktop/modernize/index.md
+        text: Modernize your desktop apps
+  - title: Deploy
+    imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
     links:
-      - url: ../dev-environment/index.md
-        text: Get started
-
-conceptualContent:
-  title: App platforms and frameworks
-  items:
-    - title: UWP
-      links:
-        - text: Overview
-          url: /windows/uwp/
-          itemType: overview 
-        - text: Get started
-          url: /windows/uwp/get-started/
-          itemType: get-started
-        - text: Reference for APIs, schemas, and more
-          url: /uwp/
-          itemType: reference
-        - text: API namespaces
-          url: /uwp/api/
-          itemType: reference 
-        - text: Samples
-          url: https://github.com/Microsoft/Windows-universal-samples
-          itemType: sample
-    - title: Win32
-      links:
-        - text: Overview
-          url: /windows/win32/
-          itemType: overview 
-        - text: Get started
-          url: /windows/win32/desktop-programming/
-          itemType: get-started
-        - text: API reference (by header)
-          url: /windows/win32/api/
-          itemType: reference
-        - text: API reference (by feature)
-          url: /windows/win32/apiindex/windows-api-list
-          itemType: reference
-        - text: Samples
-          url: https://github.com/Microsoft/Windows-classic-samples
-          itemType: sample
-    - title: WPF
-      links:
-        - text: Overview
-          url: /dotnet/desktop-wpf/overview/?view=vs-2019
-          itemType: overview 
-        - text: Get started
-          url: /visualstudio/get-started/csharp/tutorial-wpf?bc=%252fdotnet%252fbreadcrumb%252ftoc.json&toc=%252fdotnet%252fdesktop-wpf%252ftoc.json&view=vs-2019
-          itemType: get-started
-        - text: API reference (.NET Core)
-          url: /dotnet/api/index?view=netcore-3.1
-          itemType: reference 
-        - text: API reference (.NET Framework)
-          url: /dotnet/api/index?view=netframework-4.8
-          itemType: reference 
-        - text: Samples
-          url: https://github.com/Microsoft/WPF-Samples
-          itemType: sample
-    - title: Windows Forms
-      links:
-        - text: Overview
-          url: /dotnet/framework/winforms/
-          itemType: overview 
-        - text: Get started
-          url: /dotnet/framework/winforms/getting-started-with-windows-forms
-          itemType: get-started
-        - text: API reference (.NET Core)
-          url: /dotnet/api/index?view=netcore-3.1
-          itemType: reference 
-        - text: API reference (.NET Framework)
-          url: /dotnet/api/index?view=netframework-4.8
-          itemType: reference 
+      - url: ./package-and-deploy/index.md
+        text: Package and deploy apps
+      - url: ./windows-app-sdk/deployment-architecture.md
+        text: Windows App SDK deployment guide 
+      - url: /windows/msix
+        text: Package apps using MSIX
+      - url: /windows/msix/desktop/managing-your-msix-deployment-overview
+        text: Manage your MSIX deployment
 
 tools:
-  title: Device platforms
+  title: Develop for other Windows device platforms
   items:
-    - title: Windows PCs
-      imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: ./desktop/index.md
     - title: Mixed Reality and HoloLens
-      imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-5.svg
       url: /windows/mixed-reality/
     - title: Windows for IoT
-      imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
-      url: /windows/iot-core/windows-iot-core
+      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-4.svg
+      url: /windows/iot-core/
     - title: Xbox One
-      imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-3.svg
       url: https://www.xbox.com/developers
 
 additionalContent:
   sections:
     # Section
-    - title: Tasks and technologies
+    - title: Contribute to Windows Open Source projects
       items:
-        - title: Windows features for developers
-          summary: Learn how Windows features are supported in different app platforms.
-          url: ./features-and-technologies.md
-        - title: Add Windows 10 features to your desktop app
-          summary: Enhance and modernize your existing desktop app to use the latest features in Windows 10.
-          url: ./desktop/modernize/index.md
-        - title: MSIX
-          summary: Package and deploy any Windows app in a modern and universal packaging format.
-          url: /windows/msix/
-        - title: Develop for mobile
-          summary: Explore Microsoft services that enable you to build secure and reliable cloud-based mobile applications.
-          url: /azure/mobile-apps/
-        - title: Publish to the Microsoft Store
-          summary: Use Partner Center to publish Windows apps and games to the Microsoft Store.
-          url: /windows/uwp/publish/
-        - title: Make your app accessible
-          summary: Build accessibility into your applications to empower people of all abilities.
-          url: ./accessibility.md
-        - title: Windows AI
-          summary: Use Windows AI to build intelligent solutions for complex problems in your apps.
-          url: /windows/ai/
-        - title: Containers on Windows
-          summary: Package your applications with their dependencies in fast, fully isolated Windows environments. 
-          url: /virtualization/windowscontainers/
+        - title: Windows App SDK
+          summary: A set of developer tools and APIs that represent the next evolution in the Windows app platform.
+          url: https://github.com/microsoft/ProjectReunion
+        - title: Windows UI Library (WinUI)
+          summary: The native user interface layer for building Windows apps including modern controls and styles.
+          url: https://github.com/microsoft/microsoft-ui-xaml
+        - title: MSIX SDK
+          summary: Enables developers to pack and unpack app packages on a variety of platforms.
+          url: https://github.com/Microsoft/msix-packaging
+        - title: .NET
+          summary: Engage with .NET open source projects including .NET Core, WPF, Windows Forms, and much more.
+          url: https://github.com/microsoft/dotnet
   footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](https://aka.ms/OneDevMinute) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

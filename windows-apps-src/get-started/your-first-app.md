@@ -51,12 +51,12 @@ Learn more about C++ here.
 
 When you're ready to try something a little more fun than "Hello, World!", try out these tutorials.
 
-* [Tutorial: Create a user interface](../design/basics/xaml-basics-ui.md)
+* [Tutorial: Create a user interface](/windows/apps/design/basics/xaml-basics-ui)
 * [Windows apps on Microsoft Learn](/learn/browse/?products=windows)
 
 ## See Also
 
 * [Start coding](create-uwp-apps.md)
 * [What's a UWP app?](universal-application-platform-guide.md)
-* [Get set up](/windows/apps/get-started/get-set-up.md)
-* [Sign up for Windows account](/windows/apps/get-started/sign-up.md)
+* [Get set up](/windows/apps/get-started/get-set-up)
+* [Sign up for Windows account](/windows/apps/get-started/sign-up)

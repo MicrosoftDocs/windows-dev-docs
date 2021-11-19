@@ -10,7 +10,7 @@ dev_langs:
   - csharp
   - vb
   - cppwinrt
-  - cpp
+  - cppcx
 ---
 # Custom dependency properties
 
@@ -120,7 +120,7 @@ Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
 ...
 ```
 
-```cpp
+```cppcx
 //.h file
 //using namespace Windows::UI::Xaml::Controls;
 //using namespace Windows::UI::Xaml::Interop;
@@ -212,7 +212,7 @@ void Label(winrt::hstring const& value)
 ...
 ```
 
-```cpp
+```cppcx
 //using namespace Platform;
 public:
 ...
@@ -276,7 +276,7 @@ Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
 ...
 ```
 
-```cpp
+```cppcx
 DependencyProperty^ ImageWithLabelControl::_LabelProperty =
     DependencyProperty::Register("Label",
     Platform::String::typeid,
@@ -356,7 +356,7 @@ void ImageWithLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject c
 }
 ```
 
-```cpp
+```cppcx
 static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
     ImageWithLabelControl^ iwlc = (ImageWithLabelControl^)d;
@@ -403,7 +403,7 @@ static void OnVisibilityValueChanged(Windows::UI::Xaml::DependencyObject const& 
 }
 ```
 
-```cpp
+```cppcx
 static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
     if ((Visibility)e->NewValue != (Visibility)e->OldValue)

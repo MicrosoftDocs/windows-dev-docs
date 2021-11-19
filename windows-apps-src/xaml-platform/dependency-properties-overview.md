@@ -111,7 +111,7 @@ However, an animation that specifies a **To** with a [**HoldEnd**](/uwp/api/Wind
 
 Multiple animations can be applied to a single property. Each of these animations might have been defined to replace base values that came from different points in the value precedence. However, these animations will all be running simultaneously at run time, and that often means that they must combine their values because each animation has equal influence on the value. This depends on exactly how the animations are defined, and the type of the value that is being animated.
 
-For more info, see [Storyboarded animations](../design/motion/storyboarded-animations.md).
+For more info, see [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations).
 
 ### Default values
 
@@ -160,7 +160,7 @@ Wiring the binding is not the only thing that's needed for most data binding sce
 
 ### Styles and templates
 
-Styles and templates are two of the scenarios for properties being defined as dependency properties. Styles are useful for setting properties that define the app's UI. Styles are defined as resources in XAML, either as an entry in a [**Resources**](/uwp/api/windows.ui.xaml.frameworkelement.resources) collection, or in separate XAML files such as theme resource dictionaries. Styles interact with the property system because they contain setters for properties. The most important property here is the [**Control.Template**](/uwp/api/windows.ui.xaml.controls.control.template) property of a [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control): it defines most of the visual appearance and visual state for a **Control**. For more info on styles, and some example XAML that defines a [**Style**](/uwp/api/Windows.UI.Xaml.Style) and uses setters, see [Styling controls](../design/controls-and-patterns/xaml-styles.md).
+Styles and templates are two of the scenarios for properties being defined as dependency properties. Styles are useful for setting properties that define the app's UI. Styles are defined as resources in XAML, either as an entry in a [**Resources**](/uwp/api/windows.ui.xaml.frameworkelement.resources) collection, or in separate XAML files such as theme resource dictionaries. Styles interact with the property system because they contain setters for properties. The most important property here is the [**Control.Template**](/uwp/api/windows.ui.xaml.controls.control.template) property of a [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control): it defines most of the visual appearance and visual state for a **Control**. For more info on styles, and some example XAML that defines a [**Style**](/uwp/api/Windows.UI.Xaml.Style) and uses setters, see [Styling controls](/windows/apps/design/style/xaml-styles).
 
 Values that come from styles or templates are deferred values, similar to bindings. This is so that control users can re-template controls or redefine styles. And that's why property setters in styles can only act on dependency properties, not ordinary properties.
 
@@ -172,7 +172,7 @@ To be animated, the animation's target property must be a dependency property. A
 
 When an animation is applied and running, the animated value operates at a higher precedence than any value (such as a local value) that the property otherwise has. Animations also have an optional [**HoldEnd**](/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) behavior that can cause animations to apply to property values even if the animation visually appears to be stopped.
 
-The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](../design/motion/storyboarded-animations.md). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](/previous-versions/windows/apps/jj819808(v=win.10)) or [Control templates](../design/controls-and-patterns/control-templates.md).
+The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](/previous-versions/windows/apps/jj819808(v=win.10)) or [Control templates](/windows/apps/design/style/xaml-control-templates).
 
 ### Property-changed behavior
 
@@ -199,7 +199,7 @@ The threading aspects of [**DependencyObject**](/uwp/api/Windows.UI.Xaml.Depende
 - [Custom dependency properties](custom-dependency-properties.md)
 - [Attached properties overview](attached-properties-overview.md)
 - [Data binding in depth](../data-binding/data-binding-in-depth.md)
-- [Storyboarded animations](../design/motion/storyboarded-animations.md)
+- [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations)
 - [Creating Windows Runtime components](/previous-versions/windows/apps/hh441572(v=vs.140))
 - [XAML user and custom controls sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
 

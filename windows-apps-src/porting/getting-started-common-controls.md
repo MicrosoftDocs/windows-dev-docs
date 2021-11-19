@@ -22,11 +22,11 @@ The rather clever thing about UWP controls is that they can sense the type of de
 | Ad banner view (**ADBannerView**) and ad banner view delegate (**ADBannerViewDelegate**) | [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) <br/> See also [Display ads in your app](../monetize/display-ads-in-your-app.md) |
 | Button (UIButton) | [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) <br/> See also [Quickstart: Adding button controls](/previous-versions/windows/apps/jj153346(v=win.10)) |
 | Date picker (UIDatePicker) | [DatePicker](/previous-versions/windows/apps/br211681(v=win.10)) |
-| Image view (UIImageView) | [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) <br/> See also [Image and ImageBrush](../design/controls-and-patterns/images-imagebrushes.md) |
+| Image view (UIImageView) | [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) <br/> See also [Image and ImageBrush](/windows/apps/design/controls/images-imagebrushes) |
 | Label (UILabel) | [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/> See also [Quickstart: displaying text](/previous-versions/windows/apps/hh700392(v=win.10)) |
 | Map view (MKMapView) and map view delegate (MKMapViewDelegate) | See [Bing Maps for UWP apps](/previous-versions/windows/apps/dn642089(v=win.10)) |
-| Navigation controller (UINavigationController) and navigation controller delegate (UINavigationControllerDelegate) | [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/> See also [Navigation](../design/basics/navigation-basics.md) |
-| Page control (UIPageControl) | [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) <br/> See also [Navigation](../design/basics/navigation-basics.md) |
+| Navigation controller (UINavigationController) and navigation controller delegate (UINavigationControllerDelegate) | [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/> See also [Navigation](/windows/apps/design/basics/navigation-basics) |
+| Page control (UIPageControl) | [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) <br/> See also [Navigation](/windows/apps/design/basics/navigation-basics) |
 | Picker view (UIPickerView) and picker view delegate (UIPickerViewDelegate) | [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) <br/> See also [Adding combo boxes and list boxes](/previous-versions/windows/apps/hh780616(v=win.10)) |
 | Progress bar (UIProgressView) | [ProgressBar](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) <br/> See also [Quickstart: adding progress controls](/previous-versions/windows/apps/hh780651(v=win.10)) |
 | Scroll view (UIScrollView) and scroll view delegate (UIScrollViewDelegate) | [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) <br/>  See also [Extensible Application Markup Language (XAML) scrolling, panning, and zooming sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample%20(Windows%208)) |
@@ -37,13 +37,13 @@ The rather clever thing about UWP controls is that they can sense the type of de
 | Switch (UISwitch) | [ToggleSwitch](/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) <br/>  See also [How to add a toggle switch](/previous-versions/windows/apps/hh868198(v=win.10)) |
 | Tab bar controller (UITabBarController) and tab bar controller delegate (UITabBarControllerDelegate) | None |
 | Table view controller (UITableViewController), table view (UITableView), table view delegate (UITableViewDelegate), and table cell (UITableViewCell) | [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) <br/>  See also [Quickstart: adding ListView and GridView controls](/previous-versions/windows/apps/hh780650(v=win.10)) |
-| Text field (UITextField) and text field delegate (UITextFieldDelegate) | [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) <br/>  See also [Display and edit text](../design/controls-and-patterns/text-controls.md) |
+| Text field (UITextField) and text field delegate (UITextFieldDelegate) | [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) <br/>  See also [Display and edit text](/windows/apps/design/controls/text-controls) |
 | Text view (UITextView) and text view delegate (UITextViewDelegate) | [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/>  See also [Quickstart: displaying text](/previous-versions/windows/apps/hh700392(v=win.10)) |
-| View (UIView) and view controller (UIViewController) | [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) <br/>  See also [Navigation](../design/basics/navigation-basics.md) |
+| View (UIView) and view controller (UIViewController) | [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) <br/>  See also [Navigation](/windows/apps/design/basics/navigation-basics) |
 | Web view (UIWebView) and web view delegate (UIWebViewDelegate) | [WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView) <br/>  See also [XAML WebView control sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20WebView%20control%20sample%20(Windows%208)) |
-| Window (UIWindow) | [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/>  See also [Navigation](../design/basics/navigation-basics.md) |
+| Window (UIWindow) | [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/>  See also [Navigation](/windows/apps/design/basics/navigation-basics) |
 
-For even more controls, see [Controls list](../design/controls-and-patterns/index.md).
+For even more controls, see [Controls list](/windows/apps/design/controls/index).
 
 **Note**  For a list of controls for UWP apps using JavaScript and HTML, see [Controls list](/previous-versions/windows/apps/hh465453(v=win.10)).
 

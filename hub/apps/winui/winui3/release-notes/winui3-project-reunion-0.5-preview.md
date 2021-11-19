@@ -1,6 +1,7 @@
 ---
 title: Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release notes
 description: Release notes for the Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021) release.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 03/19/2021
 ms.topic: article
 ---
@@ -9,20 +10,21 @@ ms.topic: article
 
 Windows UI Library (WinUI) 3 is a native user experience (UX) platform for building modern Windows apps. This preview of WinUI 3 works with both desktop/Win32 and UWP apps, and includes Visual Studio project templates to help get started building apps with a WinUI-based user interface as well as a NuGet package that contains the WinUI libraries.
 
-**WinUI 3 - Project Reunion 0.5 Preview** is the first release of WinUI 3 where it's provided as a part of the Project Reunion package. Alongside that change, this preview release contains critical bug fixes, increased stability, and a few other general improvements (see **[Capabilities introduced in WinUI 3  - Project Reunion 0.5 Preview](#major-changes-introduced-in-this-release)**).
+**WinUI 3 - Project Reunion 0.5 Preview** is the first release of WinUI 3 where it is provided as a part of the Project Reunion package (now called the **Windows App SDK**). Alongside that change, this preview release contains critical bug fixes, increased stability, and a few other general improvements (see **[Capabilities introduced in WinUI 3  - Project Reunion 0.5 Preview](#major-changes-introduced-in-this-release)**).
 
-> [!Important]
+> [!IMPORTANT]
 > This WinUI 3 preview is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps.
->
-> We expect to ship Project Reunion 0.5 in late March, which will include the first stable, supported version of WinUI 3.
 >
 > Please use the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) to provide feedback and log suggestions and issues.
 
+> [!NOTE]
+> **Project Reunion** is the previous code name for the [Windows App SDK](../../../windows-app-sdk/index.md). This documentation still uses **Project Reunion** when referring to previous releases that used this code name.
+
 ## Install WinUI 3 - Project Reunion 0.5 Preview
 
-This version of WinUI 3 is available as part of the Project Reunion 0.5 Preview. 
+This version of WinUI 3 is available as part of the Project Reunion 0.5 Preview.
 
-To install, follow the directions found in the [Set up your development environment](../../../project-reunion/set-up-your-development-environment.md) guide for Project Reunion. 
+To install, follow the directions found in the [Set up your development environment](../../../windows-app-sdk/set-up-your-development-environment.md) guide.
 
 In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. Once you've completed your installation, the experience of developing a WinUI 3 app should not change.
 
@@ -36,10 +38,10 @@ Once you've set up your development environment, see [Create WinUI 3 projects](.
 
 For more information about getting started with the WinUI project templates, see the following articles:
 
-- [Get started with WinUI 3 for desktop apps](../get-started-winui3-for-desktop.md)
-- [Get started with WinUI 3 for UWP apps (Preview)](../get-started-winui3-for-uwp.md)
+- [Get started with WinUI 3 for desktop apps](../create-your-first-winui3-app.md)
+- [Get started with WinUI 3 for UWP apps (Preview)](../create-your-first-winui3-app.md)
 
-Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2.x. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
+Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
@@ -240,3 +242,9 @@ After cloning, ensure that you switch to the **winui3preview** branch in your lo
 ```
 git checkout winui3preview
 ```
+
+## See also
+
+- [Windows App SDK](../../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

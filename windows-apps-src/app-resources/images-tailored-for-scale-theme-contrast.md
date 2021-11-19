@@ -8,7 +8,7 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
 # Load images and assets tailored for scale, theme, high contrast, and others
-Your app can load image resource files (or other asset files) tailored for [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest source file (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
+Your app can load image resource files (or other asset files) tailored for [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest source file (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
 
 An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
@@ -85,7 +85,7 @@ For any of the scenarios shown in these examples, use the [Uri constructor](/dot
 Notice how in these example URIs the scheme ("`ms-appx`" or "`ms-appx-web`") is followed by "`://`" which is followed by an absolute path. In an absolute path, the leading "`/`" causes the path to be interpreted from the root of the package.
 
 > [!NOTE]
-> The `ms-resource` (for [string resources](localize-strings-ui-manifest.md)) and `ms-appx(-web)` (for images and other assets) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) and explicitly load the appropriate assets from app data using their full physical file name in the URI. For info about app data, see [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+> The `ms-resource` (for [string resources](localize-strings-ui-manifest.md)) and `ms-appx(-web)` (for images and other assets) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) and explicitly load the appropriate assets from app data using their full physical file name in the URI. For info about app data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast#hosting-and-loading-images-in-the-cloud).
 
 Absolute paths are a good choice if your image files remain where they are in the project structure. If you want to be able to move an image file, but you're careful that it remains in the same location relative to its referencing XAML markup file, then instead of an absolute path you might want to use a path that's relative to the containing markup file. If you do that, then you needn't use a URI scheme. You will still benefit from automatic qualifier matching in this case, but only because you are using the relative path in XAML markup.
 
@@ -93,7 +93,7 @@ Absolute paths are a good choice if your image files remain where they are in th
 <Image Source="Assets/Images/logo.png"/>
 ```
 
-Also see [Tile and toast support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
+Also see [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast).
 
 ## Qualify an image resource for targetsize
 You can use the `scale` and `targetsize` qualifiers on different variants of the same image resource; but you can't use them both on a single variant of a resource. Also, you need to define at least one variant without a `TargetSize` qualifier. That variant must either define a value for `scale`, or let it default to `scale-100`. So, these two variants of the `/Assets/Square44x44Logo.png` resource are valid.
@@ -130,10 +130,10 @@ If you name folders and/or files as in either of the two valid examples in the p
 That's all you need to do, and the OS will perform automatic qualifier matching to find the resource that's most appropriate for the current context. For a list of all items in the app package manifest that you can localize or otherwise qualify in this way, see [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
 ## Qualify an image resource for layoutdirection
-See [Mirroring images](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images).
+See [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images).
 
 ## Load an image for a specific language or other context
-For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
 
 The default [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) (obtained from [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView)) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Image files are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
 
@@ -205,8 +205,8 @@ private void RefreshUIImages()
 ## Related topics
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
 * [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
-* [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md)
-* [Tile and toast support for language, scale, and high contrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
+* [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)
 * [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [Mirroring images](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
-* [Globalization and localization](../design/globalizing/globalizing-portal.md)
+* [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images)
+* [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)

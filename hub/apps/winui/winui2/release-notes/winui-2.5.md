@@ -1,13 +1,14 @@
 ---
 title: WinUI 2.5 Release Notes
 description: Release notes for WinUI 2.5, including new features and bug fixes.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 12/01/2020
 ms.topic: article
 ---
 
 # Windows UI Library 2.5
 
-WinUI 2.5 is the latest official release of the Windows UI Library (WinUI).
+WinUI 2.5 is the December 2020 release of the Windows UI Library (WinUI).
 
 WinUI is an open source project hosted on GitHub at [Windows UI Library repo](https://aka.ms/winui). Please register all bug reports, feature requests, and community code contributions in this repo.
 

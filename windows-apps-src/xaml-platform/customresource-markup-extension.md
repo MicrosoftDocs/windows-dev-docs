@@ -42,6 +42,6 @@ A `{CustomResource}` usage doesn't work by default (the base implementation of [
 
 ## Related topics
 
-* [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+* [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary)
 * [**CustomXamlResourceLoader**](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader)
 * [**GetResource**](/uwp/api/windows.ui.xaml.resources.customxamlresourceloader.getresource)

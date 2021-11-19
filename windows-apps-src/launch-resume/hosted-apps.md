@@ -4,8 +4,6 @@ title: Create hosted apps
 ms.date: 04/23/2020
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
 ---

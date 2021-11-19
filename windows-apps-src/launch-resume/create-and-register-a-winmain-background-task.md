@@ -1042,6 +1042,8 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](/windows-hardware/design/device-experiences/modern-standby) to learn more.
 
+[!NOTE] Download the [WinMain COM background task sample](https://github.com/microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTaskWinMainComSample) to see similar code examples in the context of a complete Desktop Bridge app that uses background tasks.
+    
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
 ## Related topics

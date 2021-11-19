@@ -2,20 +2,18 @@
 title: Getting started with the Windows UI library
 description: How to install and use the Windows UI Library. 
 ms.topic: article
-
-
-ms.date: 07/15/2020
-keywords: windows 10, uwp, toolkit sdk
+ms.date: 09/14/2021
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ---
 
-# Getting started with the Windows UI 2.x Library
+# Getting started with the Windows UI 2 Library
 
-[WinUI 2.5](release-notes/winui-2.5.md) is the latest stable version of WinUI and should be used for apps in production.
+[Windows UI Library 2.7](release-notes/winui-2.7.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on trying out early previews of WinUI 3, see [Windows UI Library 3 Preview 4 (February 2021)](../winui3/index.md).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
 
 ## Download and install the Windows UI Library
 
@@ -24,7 +22,7 @@ The library is available as a NuGet package that can be added to any new or exis
 2. Open an existing project, or create a new project using the Blank App template under Visual C# -> Windows -> Universal, or the appropriate template for your language projection.  
 
     > [!IMPORTANT]
-    > To use WinUI 2.5, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
+    > To use WinUI 2.7, you must set TargetPlatformVersion >= 10.0.18362.0 and TargetPlatformMinVersion >= 10.0.15063.0 in the project properties.
 
 3. In the Solution Explorer panel, right click on your project name and select **Manage NuGet Packages**. 
 

@@ -98,7 +98,7 @@ Clipboard.ContentChanged += async (s, e) =>
 * [FailWithDisplayText](/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
 * [ShowShareUi](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
 * [RequestedOperation](/uwp/api/windows.applicationmodel.datatransfer.datapackage.requestedoperation) 
-* [ControlsList](../design/controls-and-patterns/index.md)
+* [ControlsList](/windows/apps/design/controls/index)
 * [SetContent](/uwp/api/windows.applicationmodel.datatransfer.clipboard.setcontent)
 * [GetContent](/uwp/api/windows.applicationmodel.datatransfer.clipboard.getcontent)
 * [AvailableFormats](/uwp/api/windows.applicationmodel.datatransfer.datapackageview.availableformats)

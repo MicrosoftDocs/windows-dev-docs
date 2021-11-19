@@ -19,21 +19,21 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Adaptive and interactive toast notifications
 
-Enhance your app with adaptive and interactive notifications. Get started with our [updated guidance on toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md), and explore the new information on image size restrictions, progress bars, and adding input options.
+Enhance your app with adaptive and interactive notifications. Get started with our [updated guidance on toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts), and explore the new information on image size restrictions, progress bars, and adding input options.
 
-Customize your toast notifications further with [Custom timestamps](../design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md), [Custom audio](../design/shell/tiles-and-notifications/custom-audio-on-toasts.md), or [Progress bars](../design/shell/tiles-and-notifications/toast-progress-bar.md)
+Customize your toast notifications further with [Custom timestamps](/windows/apps/design/shell/tiles-and-notifications/custom-timestamps-on-toasts), [Custom audio](/windows/apps/design/shell/tiles-and-notifications/custom-audio-on-toasts), or [Progress bars](/windows/apps/design/shell/tiles-and-notifications/toast-progress-bar)
 
-Extend notifications across your user's devices with [Notification mirroring](../design/shell/tiles-and-notifications/notification-mirroring.md) and [Universal dismiss](../design/shell/tiles-and-notifications/universal-dismiss.md).
+Extend notifications across your user's devices with [Notification mirroring](/windows/apps/design/shell/tiles-and-notifications/notification-mirroring) and [Universal dismiss](/windows/apps/design/shell/tiles-and-notifications/universal-dismiss).
 
-Group and organize your notifications with [Toast headers](../design/shell/tiles-and-notifications/toast-headers.md) and [Pending update activation](../design/shell/tiles-and-notifications/toast-pending-update.md).
+Group and organize your notifications with [Toast headers](/windows/apps/design/shell/tiles-and-notifications/toast-headers) and [Pending update activation](/windows/apps/design/shell/tiles-and-notifications/toast-pending-update).
 
-![Pending update activation in action](../design/shell/tiles-and-notifications/images/toast-pendingupdate.gif)
+![Pending update activation in action](images/toast-pendingupdate.gif)
 
 ### Page layouts with XAML
 
-We've updated our [XAML page layout](../design/layout/layouts-with-xaml.md) docs with new information on fluid layouts and visual states. These new features allow for greater control over how the position of elements in your app respond and adapt to the available visual space.
+We've updated our [XAML page layout](/windows/apps/design/layout/layouts-with-xaml) docs with new information on fluid layouts and visual states. These new features allow for greater control over how the position of elements in your app respond and adapt to the available visual space.
 
-![Margins and padding for XAML page layouts](../design/layout/images/xaml-layout-margins-padding.png)
+![Margins and padding for XAML page layouts](images/xaml-layout-margins-padding.png)
 
 ### Subscription add-ons are now available to all developers
 
@@ -43,15 +43,15 @@ Create and publish subscription add-ons to sell digital products in your apps an
 
 ### Design basics
 
-Our [introduction to UWP app design](../design/basics/design-and-ui-intro.md) has been enhanced with a slew of new visual examples. The overview of the universal design features in every UWP now highlights how you can put the capabilities of the Fluent Design System into action.
+Our [introduction to UWP app design](/windows/apps/design/basics/design-and-ui-intro) has been enhanced with a slew of new visual examples. The overview of the universal design features in every UWP now highlights how you can put the capabilities of the Fluent Design System into action.
 
-We've added a showcase of common page patterns to our [Content design basics](../design/basics/content-basics.md), providing a gallery of examples of how your app can display diferent types of content.
+We've added a showcase of common page patterns to our [Content design basics](/windows/apps/design/basics/content-basics), providing a gallery of examples of how your app can display diferent types of content.
 
-![An illustration of the hub page pattern](../design/basics/images/hub.png)
+![An illustration of the hub page pattern](images/hub.png)
 
 ### Writing style
 
-We've upgraded and expanded our article on voice and tone, transforming it into [Writing style guidance](../design/style/writing-style.md). This new information provides principles for creating effective text in your app, and recommends best practices for writing for controls such as error messages or dialogs.
+We've upgraded and expanded our article on voice and tone, transforming it into [Writing style guidance](/windows/apps/design/style/writing-style). This new information provides principles for creating effective text in your app, and recommends best practices for writing for controls such as error messages or dialogs.
 
 ### Getting started for game development
 

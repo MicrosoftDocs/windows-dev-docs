@@ -14,6 +14,10 @@ When you [add users to your Partner Center account](add-users-groups-and-azure-a
 > [!NOTE] 
 > The same roles and permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
 
+> [!NOTE] 
+> This section is not applicable for the Microsoft Edge program. Microsoft Edge program does not support assigning roles to users. 
+
+
 When determining what role or permissions to apply, keep in mind: 
 -   Users (including groups and Azure AD applications) will be able to access the entire Partner Center account with the permissions associated with their assigned role(s), unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
 -   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using custom permissions to grant the access you'd like.
@@ -113,6 +117,7 @@ The permissions in this section cannot be limited to specific products. Granting
 <tr><td align="left">    <b>Manage product groups</b>&nbsp;*                            </td><td align="left">  Can view the new product group creation page, but can’t actually create new product groups.    </td><td align="left">  Can create and edit product groups.     </td></tr>
 <tr><td align="left">    <b>New apps</b>                            </td><td align="left">  Can view the new app creation page, but can’t actually create new apps in the account.    </td><td align="left">  Can <a href="create-your-app-by-reserving-a-name.md">create new apps</a> in the account by reserving new app names, and can create submissions and submit apps to the Store.     </td></tr>
 <tr><td align="left">    <b>New bundles</b>&nbsp;*                       </td><td align="left">  Can view the new bundle creation page, but can’t actually create new bundles in the account.     </td><td align="left">  Can create new bundles of products.          </td></tr>
+<tr><td align="left"> <b>Order Xbox Dev Kits</b>&nbsp;* </td><td align="left"> N/A </td><td align="left"> Can order Xbox Dev Kits on the <a href="https://gamedevstore.partners.extranet.microsoft.com/">Entertainment Developer Store</a> </td></tr>
 <tr><td align="left">    <b>Partner services</b>&nbsp;*                  </td><td align="left">  Can view certificates for installing to services to retrieve XTokens.     </td><td align="left">  Can manage and view certificates for installing to services to retrieve XTokens.       </td></tr>
 <tr><td align="left">    <b>Payout account</b>                      </td><td align="left">  Can view <a href="/partner-center/set-up-your-payout-account#payout-account">payout account info</a> in <b>Account settings</b>.     </td><td align="left">  Can edit and view <a href="/partner-center/set-up-your-payout-account#payout-account">payout account info</a> in <b>Account settings</b>.       </td></tr>
 <tr><td align="left">    <b>Payout summary</b>                      </td><td align="left">  Can view the <a href="/partner-center/payout-statement">Payout summary</a> to access and download payout reporting info.       </td><td align="left">  Can view the <a href="/partner-center/payout-statement">Payout summary</a> to access and download payout reporting info.   </td></tr>

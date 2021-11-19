@@ -1,6 +1,7 @@
 ---
 title: WinUI 2.1 Release Notes
 description: Release notes for WinUI 2.1 including new features and bugfixes.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 07/15/2020
 ms.topic: article
 ---

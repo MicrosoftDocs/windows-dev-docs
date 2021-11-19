@@ -581,20 +581,20 @@ Consider removing the special use capability if your app doesn't require it. Add
 
 ### Background
 
-Ensures that the components that ship in an app conform to the UWP type system.
+Ensures that the components that ship in an app conform to the Windows Runtime type system.
 
 ### Test Details
 
-Verifies that the **.winmd** files in the package conform to UWP rules.
+Verifies that the **.winmd** files in the package conform to Windows Runtime rules.
 
 ### Corrective Actions
 
--   **ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.
--   **Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.
--   **Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
--   **Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.
--   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.
--   **Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.
+-   **ExclusiveTo attribute test:** Ensure that Windows Runtime classes don't implement interfaces that are marked as ExclusiveTo another class.
+-   **Type location test:** Ensure that the metadata for all Windows Runtime types is located in the winmd file that has the longest namespace-matching name in the app package.
+-   **Type name case-sensitivity test:** Ensure that all Windows Runtime types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
+-   **Type name correctness test:** Ensure there are no Windows Runtime types in the global namespace or in the Windows top-level namespace.
+-   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the Windows Runtime specifications.
+-   **Properties test:** ensure that all properties on a Windows Runtime class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on Windows Runtime types.
 
 ## Package Sanity tests
 

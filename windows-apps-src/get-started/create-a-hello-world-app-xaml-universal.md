@@ -28,9 +28,7 @@ Here you'll learn how to:
 > [!NOTE]
 > This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
-## Video summary
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
 ## Step 1: Create a new project in Visual Studio.
 
@@ -227,7 +225,7 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 Congratulations, you've created your first app for Windows 10 and the UWP!
 
-To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../design/layout/grid-tutorial.md), or jump straight to [next steps](./create-uwp-apps.md)?
+To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](/windows/apps/design/layout/grid-tutorial), or jump straight to [next steps](./create-uwp-apps.md)?
 
 ## See Also
 

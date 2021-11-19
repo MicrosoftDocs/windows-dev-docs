@@ -22,13 +22,13 @@ The following features have been added to the Windows Insider Preview builds, av
 
 * The [Windows UI Library](/uwp/toolkits/winui/) is a set of NuGet packages that provide controls and other user interfact elements for UWP apps. These packages are also compatable with earlier versions of Windows 10, so your app works even if your users don't have the latest OS version.
 
-* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button), and [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface.
+* [DropDownButton](/windows/apps/design/controls/buttons#create-a-drop-down-button), [SplitButton](/windows/apps/design/controls/buttons#create-a-split-button), and [ToggleSplitButton](/windows/apps/design/controls/buttons#create-a-toggle-split-button) provide button controls with specialized features to enhance your app's user interface.
 
-![A split button for selecting foreground color](../design/controls-and-patterns/images/split-button-rtb.png)
+![A split button for selecting foreground color](images/split-button-rtb.png)
 
-* NavigationView now supports [Top navigation](../design/controls-and-patterns/navigationview.md), for cases in which your app has a smaller number of navigation options and require more space for your app's content.
+* NavigationView now supports [Top navigation](/windows/apps/design/controls-and-patterns/navigationview), for cases in which your app has a smaller number of navigation options and require more space for your app's content.
 
-* TreeView has been enhanced to support [data binding, item templates, and drag and drop.](../design/controls-and-patterns/tree-view.md)
+* TreeView has been enhanced to support [data binding, item templates, and drag and drop.](/windows/apps/design/controls/tree-view)
 
 ### Package Support Framework
 

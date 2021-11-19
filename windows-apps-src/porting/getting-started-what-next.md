@@ -17,7 +17,7 @@ With this basic information, you can now start writing more interesting Universa
 -   [App contracts and extensions](/previous-versions/windows/apps/hh464906(v=win.10)): How to declare agreements between your apps and other apps and Windows, for example, the Play To contract and the Game Explorer extension.
 -   [Working with tiles, badges, and toast notifications](/previous-versions/windows/apps/hh868259(v=win.10)): How to create tiles, update tiles and their badges, send toast notifications, and show and update tile and badge updates on the lock screen.
 -   [Launching, resuming, and multitasking](/previous-versions/windows/apps/hh770837(v=win.10)): How to auto-launch, activate, suspend, and resume apps, and how to work with background tasks.
--   [Guidelines for roaming application data](../design/app-settings/store-and-retrieve-app-data.md): How to provide a great end-user experience for apps where the user utilizes more than one device, such as a PC at work and a tablet at home.
+-   [Guidelines for roaming application data](/windows/apps/design/app-settings/store-and-retrieve-app-data): How to provide a great end-user experience for apps where the user utilizes more than one device, such as a PC at work and a tablet at home.
 -   [Create your first Windows Runtime app using C# or Visual Basic](/previous-versions/windows/apps/hh974581(v=win.10)): A topic focusing on Windows Phone development.
 -   [Videos for iOS and Android devs](/previous-versions/windows/apps/dn393982(v=win.10)): Some more help, this time in visual format.
 
