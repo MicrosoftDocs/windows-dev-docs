@@ -13,8 +13,6 @@ ms.localizationpriority: medium
 
 This article provides guidance about deploying non-[MSIX](/windows/msix) packaged apps that use the Windows App SDK to other computers.
 
-> [!IMPORTANT]
-> Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. You should not deploy your unpackaged app using the methods described below in production environments until the Stable release. For more info, [see our roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md).
 
 ## Overview
 
@@ -27,10 +25,10 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
 
 ## Prerequisites
 
-- Download the latest Windows App SDK installer and MSIX packages. For older versions, see [Downloads](downloads.md).
+- Download the latest Windows App SDK installer and MSIX packages. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
 
   > [!div class="button"]
-  > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
+  > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer)
 
 - [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
   - Sideloading is automatically enabled on Windows 10 version 2004 and later.
@@ -50,34 +48,36 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
 
 You can deploy the Windows App SDK by running the Windows App SDK silent installer:
 
-- **WindowsAppRuntimeInstall.exe** if you are using version 1.0 Preview 1 and later.
-- **WindowsAppSDKInstall.exe** if you are using version 1.0 Experimental.
-- **ProjectReunionInstall.exe** if you are using version 0.8 Preview and earlier. 
+- **WindowsAppRuntimeInstall.exe** if you are using 1.0 Stable or Preview versions.
+- **WindowsAppSDKInstall.exe** if you are using 1.0 Experimental.
+- **ProjectReunionInstall.exe** if you are using version 0.8 and earlier. 
 
 You should see an output similar to the following:
 
 ```console
-Deploying package: Microsoft.WindowsAppRuntime.1.0_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 
-Deploying package: Microsoft.WindowsAppRuntime.1.0_0.264.801.0_x86__8wekyb3d8bbwe
+Deploying package: Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x86__8wekyb3d8bbwe
 Package deployment result : 0x0
 
-Deploying package: Microsoft.WindowsAppRuntime.Main.1.0_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: MicrosoftCorporationII.WindowsAppRuntime.Main.1.0_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
 
-Deploying package: Microsoft.WindowsAppRuntime.Singleton_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: Microsoft.WindowsAppRuntime.Singleton_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
 
-Deploying package: Microsoft.WinAppRuntime.DDLM.0.264.801.0-x6_0.264.801.0_x64__8wekyb3d8bbwe
+Deploying package: Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6_0.318.928.0_x64__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
 
-Deploying package: Microsoft.WinAppRuntime.DDLM.0.264.801.0-x8_0.264.801.0_x86__8wekyb3d8bbwe
+Deploying package: Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8_0.318.928.0_x86__8wekyb3d8bbwe
 Package deployment result : 0x0
 Provisioning result : 0x0
+
+All install operations successful.
 ```
 
 You can also run the installer with no user interaction and suppress all text output with `WindowsAppRuntimeInstall.exe --quiet` or `WindowsAppSDKInstall.exe --quiet` or `ProjectReunionInstall.exe --quiet`, depending on the Windows App SDK version.
@@ -92,6 +92,13 @@ You can silently launch and track the Windows App SDK setup while showing your o
 
 For a code example that demonstrates how to run the Windows App SDK installer from your setup program, see the **RunInstaller** function in the [installer functional test](https://aka.ms/testruninstaller) for the Windows App SDK.
 
+### Installer sample 
+
+For additional guidance on how to launch the WindowsAppRuntimeInstaller from a Win32 setup program without popping up a console window during setup, explore the available sample. 
+
+> [!div class="button"]
+> [Explore installer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Installer)
+
 ### Troubleshooting
 
 #### Return codes
@@ -102,7 +109,7 @@ The following table lists the most common return codes for the Windows App SDK .
 |-------------|-------------------------------------------------------------------------------------|
 | 0x0         | Package installation or provisioning was completed successfully.                                    |
 | 0x80073d06  | One or more packages failed to install.                                             |
-| 0x80070005  | System-wide install or provisioning was unsuccessful.                                 |
+| 0x80070005  | System-wide install or provisioning was not possible because the app is not running elevated or the user doing the installation doesn't have admin privileges.                                |
 
 #### Installation errors
 
@@ -120,13 +127,14 @@ For an example that demonstrates how your setup program can install the MSIX pac
 
 ## Deployment scenarios
 
+- **Installing the Windows App SDK system-wide**: System-wide install alters the machine for all users, including new users that are added in the future. If the app is running elevated and the user doing the installation has admin privileges, then WindowsAppRuntimeInstall.exe will register the Windows App SDK packages system-wide by calling the [ProvisionPackageForAllUsersAsync](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync). If system-wide registration is not successful, the installation will be performed for the current user doing the installation only. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.
+
+- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the `x86`, `x64` and `ARM64` architectures. Each version of the installer also includes the MSIX packages for all architectures. For example, if you run the x86 WindowsAppRuntimeInstall.exe on an x64 or ARM64 device, the installer will deploy the packages for that device architecture. 
+
 - **All Windows App SDK MSIX packages are already installed on the computer**: MSIX packages are installed to a system-wide location with only one copy on disk. If an app attempts installation of the Windows App SDK when all the MSIX package dependencies are already installed on the machine, then the installation is not performed.
 
-- **One or more of the Windows App SDK MSIX packages are not installed on the computer**: When deploying the Windows App SDK, always attempt to install all the MSIX packages (framework, main, singleton, DDLM) to ensure that all dependencies are installed and avoid disruption to the end-user experience.
+- **One or more of the Windows App SDK MSIX packages are not installed on the computer**: When deploying the Windows App SDK, always attempt to install all the MSIX packages (framework, main, singleton, DDLM) to ensure that all dependencies are installed and you avoid disruption to the end-user experience.
 
-- **Installing the Windows App SDK system-wide**: System-wide install alters the machine for all users. If the app is running elevated and the user has admin privileges, then WindowsAppRuntimeInstall.exe will register the Windows App SDK packages system-wide by calling the [ProvisionPackageForAllUsersAsync](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync). Otherwise, the installation will be performed for the current user doing the installation. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.
-
-- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the x86, x64, and ARM64. If you have an x86 app and include the x86 WindowsAppRuntimeInstall.exe, the installation can be performed on an `x86`, `x64` or `ARM64` device.
 
 ## Using features at run time
 

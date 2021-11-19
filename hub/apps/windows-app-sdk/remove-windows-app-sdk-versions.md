@@ -23,13 +23,13 @@ The Windows App SDK runtime includes the [framework](deployment-architecture.md#
 First, run the `get-appxpackage` command to list all versions of the Windows App SDK runtime packages that are installed on your computer (including the framework, main, singleton, and DDLM packages). The list includes details about each runtime package, including the **PackageFullName** value. For an example of the output of this command, see [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md).
 
 ```Powershell
-# For 1.0 Preview 1 and later
+# For 1.0 Stable and Preview releases 
 get-appxpackage *appruntime*
 
 # For 1.0 Experimental
 get-appxpackage *WindowsAppSDK* 
 
-# For 0.8 versions and earlier 
+# For version 0.8
 get-appxpackage *reunion*
 ```
 
@@ -50,7 +50,8 @@ To remove [main](deployment-architecture.md#main-package) and [Dynamic Dependenc
 
 On the **Apps & features** page, search for **reunion** to filter and show installed versions of Windows App SDK packages. Select any versions you want to remove from your computer and click **Uninstall**.
 
-![Screenshot of Apps & Features page in Settings to remove Windows App SDK packages](images/remove-reunion-packages-versions.png)
+[![Screenshot of Apps & Features page in Settings to remove Windows App SDK packages](images/remove-reunion-packages-versions.png) ](images/remove-reunion-packages-versions.png#lightbox)
+
 
 ## Related topics
 

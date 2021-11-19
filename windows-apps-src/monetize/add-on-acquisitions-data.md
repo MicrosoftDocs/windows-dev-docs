@@ -102,7 +102,7 @@ Elements in the Value array contain the following values.
 | productTypeName | string | Product Type Name of the product from XDP, if applicable.  |
 | purchaseTaxType | string | Purchase Tax Type of the product from XDP, if applicable.  |
 | purchasePriceUSDAmount | number | The amount paid by the customer for the add-on, converted to USD.  |
-| purchasePriceLocalAmount | number | The tax amount applied to the add-on.  |
+| purchasePriceLocalAmount | number | The amount paid by the customer for the add-on, in the region's currency.  |
 | purchaseTaxUSDAmount | number | The tax amount applied to the add-on, converted to USD.  |
 | purchaseTaxLocalAmount | number | Purchase Tax Local Amount of the product from XDP, if applicable.  |
 

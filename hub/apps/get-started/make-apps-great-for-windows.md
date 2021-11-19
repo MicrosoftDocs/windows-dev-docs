@@ -19,7 +19,7 @@ Windows 11 marks a visual evolution of the Windows operating system. As Windows 
 
 With entirely new visuals signaling change, [signature experiences](../design/signature-experiences/signature-experiences.md) that showcase the best of Windows and Microsoft together, and a completely new [Store](/windows/uwp/publish) with more apps, Windows 11 is positioned as the Windows for "what's next".
 
-Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) (Project Reunion) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
+Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
 
 Here are the top 10 things you can do to make your app shine on Windows 11.
 

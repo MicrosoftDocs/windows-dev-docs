@@ -6,9 +6,8 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Set up windows, windows 11, windows 10, Dev Environment, Dev tools, development paths, Microsoft Developer, Tips, Performance, WSL, terminal, nodejs, python
+ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.date: 07/21/2021
 ---
 
 # Set up your development environment on Windows
@@ -50,6 +49,11 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
         Get started building apps using C# and .NET Core.
+    :::column-end:::
+    :::column:::
+       [![F# icon](../images/fsharp-logo.png)](/dotnet/fsharp/)<br>
+        **[Get started with F#](/dotnet/fsharp/)**<br>
+        Get started building apps using F# and .NET Core.
     :::column-end:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
@@ -96,7 +100,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
         Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
+        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-the-winget-client)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>

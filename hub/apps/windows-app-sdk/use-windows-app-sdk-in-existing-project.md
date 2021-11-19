@@ -11,25 +11,23 @@ ms.localizationpriority: medium
 
 # Use the Windows App SDK in an existing project
 
-If you have an existing project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project. Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
+If you have an existing desktop project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project. Unpackaged apps (that is, apps that do not use MSIX for their deployment technology) must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
+
+[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 > [!NOTE]
-> This procedure is supported in C# .NET 5, C++ desktop, and UWP projects. C# .NET 5 and C++ desktop projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md). UWP projects must use the NuGet package from the [experimental release channel](experimental-channel.md).
+> This procedure is supported in C# .NET 5 or later and C++ desktop projects. These projects can use the NuGet package from the [stable release channel](stable-channel.md), [preview release channge](preview-channel.md) or [experimental release channel](experimental-channel.md).
 
 ## Prerequisites
 
-- Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
+- Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install Visual Studio](set-up-your-development-environment.md).
 
 ## Instructions
-
-> [!IMPORTANT]
-> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
-
 
 1. Open an existing project in Visual Studio.
 
     > [!NOTE]
-    > If you have a C# .NET 5 desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific .NET 5 moniker, such as **net5.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or higher as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/WindowsAppSDK/issues/921).
+    > If you have a C# desktop project, make sure the **TargetFramework** element in the project file is assigned to a Windows 10-specific moniker, such as **net5.0-windows10.0.19041.0**, so that it can call Windows Runtime APIs. For more information, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). Additionally, you must be targeting **18362** or higher as there is a [known issue blocking apps that target **17763**](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 2. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -45,7 +43,7 @@ If you have an existing project in which you want to use the Windows App SDK, yo
 
 5. After the appropriate Windows App SDK NuGet package is found, select the package and then click **Install** in the right pane of the **NuGet Package Manager** window.
 
-    ![Screenshot of the Windows App SDK NuGet package being installed](images/reunion-nuget-install.png)
+    [![Screenshot of the Windows App SDK NuGet package being installed](images/reunion-nuget-install.png) ](images/reunion-nuget-install.png#lightbox)
 
     > [!NOTE]
     > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and more) that contain the implementations for specific components in the Windows App SDK. You cannot install these sub-packages individually to reference only certain components in your project. You must install the main Windows App SDK NuGet package, which includes all of the components.

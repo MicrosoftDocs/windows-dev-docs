@@ -1,15 +1,15 @@
 ---
-title: Runtime architecture for the Windows App SDK
+title: Deployment architecture for the Windows App SDK
 description: This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.
 ms.topic: article
-ms.date: 09/18/2021
+ms.date: 11/16/2021
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: zafaraj
 author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Runtime architecture for the Windows App SDK
+# Deployment architecture for the Windows App SDK
 
 This article explains the basic building blocks and high-level architecture of Windows App SDK deployment. For instructions to deploy apps that use the Windows App SDK, see these articles:
 
@@ -38,11 +38,11 @@ When you build an app that uses the Windows App SDK, your app references a set o
 
 The Windows App SDK framework package is an MSIX package that is deployed to end users through the Microsoft Store. It can be easily and quickly updated with the latest releases, in addition to security and reliability fixes. All apps that use the Windows App SDK on a computer have a dependency on a shared instance of the framework package, as illustrated in the following diagram.
 
-![Diagram of how apps access the Windows App SDK framework package](images/framework.png)
+[![Diagram of how apps access the Windows App SDK framework package](images/framework.png) ](images/framework.png#lightbox)
 
 When a new version of the Windows App SDK framework package is released, all apps are updated to the new version without themselves having to redistribute a copy. Windows updates to the newest version of frameworks as they are released, and apps will automatically reference the latest framework package version during relaunch. Older framework package versions will not be removed from the system until they are no longer running or being actively used by apps on the system.
 
-![Diagram of how apps get updates to the Windows App SDK framework package](images/framework-update.png)
+[![Diagram of how apps get updates to the Windows App SDK framework package](images/framework-update.png) ](images/framework-update.png#lightbox)
 
 Because app compatibility is important to Microsoft and to apps that depend on the Windows App SDK, the Windows App SDK framework package follows [Semantic Versioning 2.0.0](https://semver.org/) rules. This means that after we release version 1.0 of the Windows App SDK, the Windows App SDK framework package will guarantee compatibility between minor and patch version changes, and breaking changes will occur only between major version updates.
 
@@ -65,12 +65,12 @@ The bootstrapper is a library that must be included with your unpackaged app. It
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the bootstrapper API must be called in your unpackaged app's startup code so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you may [call the bootstrapper API directly in your app's startup code](tutorial-unpackaged-deployment.md) so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
 
-The bootstrapper library has different names depending on the Windows App SDK release:
+The bootstrapper library in the Windows App SDK 1.0 Stable release includes:
 
-- Windows App SDK 1.0 Experimental and later releases: **Microsoft.WindowsAppSDK.Bootstrap.dll**.
-- Windows App SDK 0.8 Preview: **Microsoft.ProjectReunion.Bootstrap.dll**.
+- **Microsoft.WindowsAppRuntime.Bootstrap.dll** (C++ and C#) 
+- **Microsoft.WindowsAppRuntime.Bootstrap.Net.dll** (C# wrapper)
 
 ### Dynamic Dependency Lifetime Manager (DDLM)
 

@@ -10,9 +10,9 @@ ms.custom: 19H1
 
 # Call Windows Runtime APIs in desktop apps
 
-This article describes how to set up your desktop app projects to use Windows Runtime (WinRT) APIs provided by the Windows OS and add modern Windows 11 and Windows 10 experiences to your desktop apps. 
+This topic describes how to set up your desktop app projects to use Windows Runtime (WinRT) APIs provided by the Windows OS, and to add modern Windows 11 and Windows 10 experiences to your desktop apps.
 
-Some WinRT APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
+Some Windows Runtime (WinRT) APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
 
 ## Modify a .NET project to use Windows Runtime APIs
 
@@ -24,9 +24,12 @@ There are several options for .NET projects:
 
 ### .NET 5 and later: Use the Target Framework Moniker option
 
-This option is only supported in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see [this blog post](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+This option is supported only in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see the blog post [Calling Windows APIs in .NET5](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
-1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file should look similar to this.
+1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file will look similar to this.
+
+    > [!NOTE]
+    > The example below shows an **OutputType** of *WinExe*, which specifies a Windows GUI executable (and prevents a console window from opening when the app runs). If your app doesn't have a GUI, then your **OutputType** will have a different value. You can call WinRT APIs from Windows GUI apps, console apps, and libraries. Also, your value for **TargetFramework** might not exactly match the example below.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -37,11 +40,12 @@ This option is only supported in projects that use .NET 5 (or a later release) a
     </Project>
     ```
 
-2. Replace the value of the **TargetFramework** element with one of the following strings:
+2. Leaving all other settings as they are, replace the value of the **TargetFramework** element with one of the following strings:
 
-    * **net5.0-windows10.0.17763.0**: Use this value if your app targets Windows 10, version 1809.
-    * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
-    * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
+    * **net5.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
+    * **net5.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
+    * **net5.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
+    * **net5.0-windows10.0.22000.0**: If your app targets Windows 11.
 
     For example, the following element is for a project that targets Windows 10, version 2004.
 
@@ -55,7 +59,7 @@ This option is only supported in projects that use .NET 5 (or a later release) a
 
 #### Supporting multiple Windows OS versions 
 
-The Windows OS version-specific **TargetFramework** property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both **TargetPlatformVersion** and **TargetPlatformMinVersion** (if not explicitly set). The **TargetPlatformVersion** property does not need to be explicitly defined in the project file, since it is automatically set by the **TargetFramework** OS version.
+The Windows OS version-specific **TargetFramework** property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both **TargetPlatformVersion** and **TargetPlatformMinVersion** (if not explicitly set). The **TargetPlatformVersion** property doesn't need to be explicitly defined in the project file, since it's automatically set by the **TargetFramework** OS version.
 
 The **TargetPlatformMinVersion** can be overridden to be less than the **TargetPlatformVersion** (determined by the version in the **TargetFramework** property). This permits an app to run on earlier OS versions. For example, you can set the following in your project file to support your app downlevel to Windows 10, version 1809. 
 
@@ -73,7 +77,7 @@ Note that setting the **TargetPlatformMinVersion** to a version below the **Targ
 
 ### Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package
 
-Use this option if your app uses .NET Core 3.x or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or a later OS release.
+Use this option if your app uses .NET Core 3.x or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or later.
 
 1. Make sure [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
 
@@ -95,9 +99,12 @@ Use this option if your app uses .NET Core 3.x or .NET Framework. This option is
 
 ### Configure projects that multi-target different versions of .NET
 
-If your project multi-targets .NET 5 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
+If your project multi-targets .NET 5 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker (TFM) to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. The following example demonstrates a project file for an app that uses .NET Core 3.1.
+
+    > [!NOTE]
+    > The example below shows an **OutputType** of *WinExe*, which specifies a Windows GUI executable (and prevents a console window from opening when the app runs). If your app doesn't have a GUI, then your **OutputType** will have a different value. You can call WinRT APIs from Windows GUI apps, console apps, and libraries. Also, your value for **TargetFramework** might not exactly match the example below.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
@@ -109,12 +116,12 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
     </Project>
     ```
 
-2. Replace the **TargetFramework** element in the file with a **TargetFrameworks** element (note the plural). In this element, specify the Target Framework Monikers for all the versions of .NET you want to target, separated by semi-colons. 
+2. Replace the **TargetFramework** element in the file with a **TargetFrameworks** element (note the plural). In this element, specify the Target Framework Monikers (TFMs) for all the versions of .NET you want to target, separated by semi-colons. 
 
-    * For .NET 5 or later, use one of the following Target Framework Monikers:
-        * **net5.0-windows10.0.17763.0**: Use this value if your app targets Windows 10, version 1809.
-        * **net5.0-windows10.0.18362.0**: Use this value if your app targets Windows 10, version 1903.
-        * **net5.0-windows10.0.19041.0**: Use this value if your app targets Windows 10, version 2004.
+    * For .NET 5 or later, use one of the following Target Framework Monikers (TFMs):
+        * **net5.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
+        * **net5.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
+        * **net5.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
     * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
     * For .NET Framework, use **net46**.
 
@@ -364,4 +371,4 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 
 ## Find answers to your questions
 
-Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask on our [forums](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
