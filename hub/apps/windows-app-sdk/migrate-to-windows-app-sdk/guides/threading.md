@@ -30,7 +30,7 @@ UWP's threading model is application single-threaded apartment (ASTA) (see the b
 
 The Windows App SDK's threading model is [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments), and the STA model doesn't have the same assurances around preventing reentrancy issues. So if the code in your UWP app assumes the non re-entrant behavior of the ASTA threading model, then your code might not behave as expected.
 
-One thing to watch out for is reentrancy into XAML controls (see the example in [A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)](case-study-2.md)). And for some crashes, such as access violations, the direct crash callstack is usually the right stack to use. But if it's a *stowed exception* crash&mdash;which has exception code: 0xc000027b&mdash;then more work is required to get the right callstack.
+One thing to watch out for is reentrancy into XAML controls (see the example in [A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)](../case-study-2.md)). And for some crashes, such as access violations, the direct crash callstack is usually the right stack to use. But if it's a *stowed exception* crash&mdash;which has exception code: 0xc000027b&mdash;then more work is required to get the right callstack.
 
 ### Stowed exceptions
 
