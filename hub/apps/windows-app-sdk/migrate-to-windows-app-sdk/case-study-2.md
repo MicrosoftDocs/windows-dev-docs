@@ -310,11 +310,25 @@ For the next step, we'll make the change that's explained in [ContentDialog, and
    #include <winrt/Windows.Storage.Search.h>
    ```
 
-### Migration changed needed for threading model difference
+Confirm that you can build the target solution (but don't run yet).
 
-This change is necessary due to a threading model difference between UWP and the Windows App SDK, as described in [ASTA to STA threading model](guides/threading.md#asta-to-sta-threading-model). Here's a brief description of the cause of the issue, and then a way to resolve it.
+## Update MainWindow
 
-**MainPage** loads image files from your **Pictures** folder, calls [**StorageItemContentProperties::GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync) to get the image file's properties, creates a **Photo** model object for each image file (saving those same properties in a data member), and adds that **Photo** object to a collection. The collection of **Photo** objects is data-bound to a **GridView** in the UI. On behalf of that **GridView**, **MainPage** handles the [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) event, and for phase 1 that handler calls into a coroutine that calls [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync). This call to **GetThumbnailAsync** results in messages being pumped (it doesn't return immediately, and do *all* of its work async), and that causes reentrancy. The result is that the **GridView** has its **Items** collection changed while layout is taking place, and that causes a crash.
+1. In `MainWindow.xaml`, delete the **StackPanel** and its contents, since we don't need any UI in **MainWindow**. That leaves only the empty **Window** element.
+
+2. In `MainWindow.idl`, delete the placeholder `Int32 MyProperty;`, leaving only the constructor.
+
+3. In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and definitions of the placeholder **MyProperty** and **myButton_Click**, leaving only the constructor.
+
+Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
+
+## Migration changes needed for threading model difference
+
+The two changes in this section are necessary due to a threading model difference between UWP and the Windows App SDK, as described in [ASTA to STA threading model](guides/threading.md#asta-to-sta-threading-model). Here are brief descriptions of the causes of the issues, and then a way to resolve each.
+
+### MainPage
+
+**MainPage** loads image files from your **Pictures** folder, calls [**StorageItemContentProperties.GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync) to get the image file's properties, creates a **Photo** model object for each image file (saving those same properties in a data member), and adds that **Photo** object to a collection. The collection of **Photo** objects is data-bound to a **GridView** in the UI. On behalf of that **GridView**, **MainPage** handles the [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) event, and for phase 1 that handler calls into a coroutine that calls [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync). This call to **GetThumbnailAsync** results in messages being pumped (it doesn't return immediately, and do *all* of its work async), and that causes reentrancy. The result is that the **GridView** has its **Items** collection changed while layout is taking place, and that causes a crash.
 
 If we comment out the call to **StorageItemContentProperties::GetImagePropertiesAsync**, then we don't get the crash. But the real fix is to make the **StorageFile.GetThumbnailAsync** call be explicitly async by cooperatively awaiting **wil::resume_foreground** immediately before calling **GetThumbnailAsync**. This works because **wil::resume_foreground** schedules the code that follows it to be a task on the **DispatcherQueue**.
 
@@ -339,17 +353,31 @@ IAsyncAction MainPage::OnContainerContentChanging(ListViewBase sender, Container
 }
 ```
 
-Confirm that you can build the target solution (but don't run yet).
+### Photo
 
-## Update MainWindow
+The **Photo::ImageTitle** property is data-bound to the UI, so the UI calls into the accessor function for that property whenever it needs its value. But when we try to access [**ImageProperties.Title**](/uwp/api/windows.storage.fileproperties.imageproperties.title) from that accessor function on the UI thread, we get an access violation.
 
-1. In `MainWindow.xaml`, delete the **StackPanel** and its contents, since we don't need any UI in **MainWindow**. That leaves only the empty **Window** element.
+So instead, we can just access that **Title** one-time, from the constructor of **Photo**, and store it in the *m_imageName* data member if it's not empty. Then in the **Photo::ImageTitle** accessor function we need only to access the *m_imageName* data member.
 
-2. In `MainWindow.idl`, delete the placeholder `Int32 MyProperty;`, leaving only the constructor.
+Here's the code to change:
 
-3. In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and definitions of the placeholder **MyProperty** and **myButton_Click**, leaving only the constructor.
-
-Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
+```
+// Photo.h
+...
+Photo(...) : ...
+{
+	if (m_imageProperties.Title() != L"")
+	{
+		m_imageName = m_imageProperties.Title();
+	}
+}
+...
+hstring ImageTitle() const
+{
+	return m_imageName;
+}
+...
+```
 
 ## Known issues
 
