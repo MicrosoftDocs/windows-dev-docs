@@ -17,16 +17,16 @@ highlightedContent:
    items:
    - title: App development options
      itemType: overview
-     url: /get-started/index
+     url: /get-started/index.md
    - title: Create a WinUI 3 app
      itemType: quickstart
-     url: /winui/winui3/create-your-first-winui3-app
+     url: /winui/winui3/create-your-first-winui3-app.md
    - title: What is the Windows App SDK?
      itemType: concept
-     url: /windows-app-sdk/index
+     url: /windows-app-sdk/index.md
    - title: Windows App SDK Release Notes
      itemType: whats-new 
-     url: /windows-app-sdk/stable-channel
+     url: /windows-app-sdk/stable-channel.md
    - title: Download Visual Studio
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
