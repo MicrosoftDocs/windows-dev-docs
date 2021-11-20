@@ -56,22 +56,22 @@ Windows invites you to code as you are. Use whatever coding language or framewor
         Get started building apps using F# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
-        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
-        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
-    :::column-end:::
-    :::column:::
-       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
-        **[Get started with PowerShell](/powershell/)**<br>
-        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Get started with Rust](./rust/index.yml)**<br>
+        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
-        **[Get started with Rust](./rust/index.yml)**<br>
-        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
+       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
+        **[Get started with PowerShell](/powershell/)**<br>
+        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+    :::column-end:::
+    :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
     :::column-end:::
     :::column:::
        [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
