@@ -17,7 +17,7 @@ highlightedContent:
    items:
    - title: App development options
      itemType: overview
-     url: ./get-started/index.md
+     url: ./get-started
    - title: Create a WinUI 3 app
      itemType: quickstart
      url: ./winui/winui3/create-your-first-winui3-app.md
