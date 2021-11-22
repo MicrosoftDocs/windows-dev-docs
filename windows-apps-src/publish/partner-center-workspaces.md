@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Partner Center Workspaces
 
-Partner Center is the central place for partners to manage their relationship with Microsoft. As part of our commitment to make it easier to do business with Microsoft, we’re updating the user experience. These changes bring consistency across Partner Center and related Microsoft portals and will help partners have a more efficient and productive experience in they complete tasks. As part of the changes, we’ll define clear user roles, institute consistent and inclusive design principles and organize where users complete their tasks into **workspaces**. We’ll launch with the initial experience and continue to release improvements throughout the year.
+Partner Center is the central place for partners to manage their relationship with Microsoft. As part of our commitment to make it easier to do business with Microsoft, we’re updating the user experience. These changes bring consistency across Partner Center and related Microsoft portals and will help partners have a more efficient and productive experience as they complete tasks. As part of the changes, we’ll define clear user roles, institute consistent and inclusive design principles, and organize where users complete their tasks into **workspaces**. We’ll launch with the initial experience and continue to release improvements throughout the year.
 
 ## What does the transition to the new Partner Center user experience mean for me?
 
