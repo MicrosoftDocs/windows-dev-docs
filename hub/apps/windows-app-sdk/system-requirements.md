@@ -26,7 +26,7 @@ For the minimum system requirements, see:
 
 ## Windows SDK
 
-The Windows SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows SDK is installed with Visual Studio 2019 by default.
+The Windows SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows SDK is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
 For the minimum system requirements, see [Windows SDK system requirements](https://developer.microsoft.com/windows/downloads/windows-10-sdk/#sysreq).
 
@@ -46,7 +46,7 @@ The Windows App SDK has these system requirements:
   - **.NET Desktop Development** (needed even if you're only building C++ Win32 apps)
   - **Desktop development with C++** (needed even if you're only building .NET apps)
 
-- Windows SDK version 2004 (build 19041) and later. This is installed with Visual Studio 2019 by default.
+- Windows SDK version 2004 (build 19041) and later. This is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
 - Building .NET apps also requires:
   - .NET 5 SDK version 5.0.300 and later if you're using Visual Studio 2019 version 16.10
