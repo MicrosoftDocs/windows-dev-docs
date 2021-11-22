@@ -60,6 +60,8 @@
           href: custom-terminal-gallery/frosted-glass-theme.md
         - name: Retro Command Prompt
           href: custom-terminal-gallery/retro-command-prompt.md
+    - name: Samples
+      href: samples.md
     - name: Troubleshooting
       href: troubleshooting.md
 
