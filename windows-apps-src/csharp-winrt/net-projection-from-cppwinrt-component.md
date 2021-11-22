@@ -21,7 +21,7 @@ In .NET 5 and later, consumption of Windows metadata (WinMD) files is no longer 
 
 This walkthrough and the corresponding sample require the following tools and components:
 
-* [Visual Studio 16.8](https://visualstudio.microsoft.com/downloads/) (or later) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
+* [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
 * [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0) or [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0).
 * [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), which gives you C++/WinRT project templates in Visual Studio.
 
