@@ -80,6 +80,9 @@ ___
 
 Windows Terminal includes these color schemes inside the defaults.json file, which can be accessed by holding <kbd>alt</kbd> and selecting the settings button. Color schemes can **not** be changed in the defaults.json file. For a color scheme to apply across all profiles, change it in the [defaults section of your settings.json file](./profile-general.md).
 
+> [!NOTE]
+> You can print the current color scheme to the Terminal using [`colortool`](https://github.com/microsoft/terminal/tree/main/src/tools/ColorTool), with the commandline `colortool -c`
+
 
 ### Campbell
 

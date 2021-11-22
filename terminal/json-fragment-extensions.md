@@ -130,6 +130,6 @@ The first is that the installation is for all the users on the system. In this c
 
 In the second case, the installation is only for the current user. In this case, the JSON files should be added to the folder:
 
-`C:\Users\<user>\AppData\Local\Microsoft\Windows Terminal\Fragments\{file-name}.json`
+`C:\Users\<user>\AppData\Local\Microsoft\Windows Terminal\Fragments\{app-name}\{file-name}.json`
 
 Note that both the `ProgramData` and `LocalAppData` folders are known folders that the installer should be able to access. If in either case, if the `Windows Terminal\Fragments` directory does not exist, the installer should create it. The `{app-name}` should be unique to your application and the `{file-name}.json` can be anything - the terminal will read all .json files in that directory.

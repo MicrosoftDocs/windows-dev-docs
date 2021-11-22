@@ -102,8 +102,7 @@ If you would like to use Oh My Posh to style both Windows and Windows Subsystem 
     For PowerShell, open your profile file with `notepad $PROFILE` and add the following:
 
     ```powershell
-    oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
-    Set-PoshPrompt -Theme jandedobbeleer
+    oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/themes/jandedobbeleer.omp.json | Invoke-Expression
     ```
 
     Once added, reload your profile for the changes to take effect.
