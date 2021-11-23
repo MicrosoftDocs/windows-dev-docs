@@ -131,7 +131,7 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
     ```
 
     > [!NOTE]
-    > For this walkthrough and the related sample code, the solution and all projects are configured to build for **x64** and **Debug**. You can choose to build for any other .NET-supported platform, but you will need to adjust the [NuGet spec properties](#create-a-nuget-package-with-the-projection) accordingly.
+    > For this walkthrough and the related sample code, the solution and all projects are configured to build for **x64** and **Release**. You can choose to build for any other .NET-supported platform, but you will need to adjust the [NuGet spec properties](#create-a-nuget-package-with-the-projection) accordingly.
 
 3. Add a second `PropertyGroup` element (immediately after the first) that sets several C#/WinRT properties.
 
@@ -192,12 +192,12 @@ To distribute the projection assembly for .NET application developers, you can a
       <files>
         <!--Support .NET Core 3, UAP, .NET Framework 4.6, .NET 6, C++ -->
         <!--Architecture-netural assemblies-->
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Debug\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
+        <file src="..\..\_build\x64\Release\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
         <!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
       </files>
     </package>
     ```
@@ -209,7 +209,7 @@ To distribute the projection assembly for .NET application developers, you can a
 
 ## Build the solution to generate the projection and NuGet package
 
-Before building the solution, make sure to check the **Configuration Manager** settings in Visual Studio, under **Build** > **Configuration Manager**. For this walkthrough, set the **Configuration** to **Debug** and **Platform** to **x64**, for both projects and the solution.
+Before building the solution, make sure to check the **Configuration Manager** settings in Visual Studio, under **Build** > **Configuration Manager**. For this walkthrough, set the **Configuration** to **Release** and **Platform** to **x64**, for both projects and the solution.
 
 At this point you can now build the solution. Right-click on your solution node and select **Build Solution**. This will first build the **SimpleMathComponent** project, and then the **SimpleMathProjection** project. The component WinMD and implementation assembly (**SimpleMathComponent.winmd** and **SimpleMathComponent.dll**), the projection source files, and the projection assembly (**SimpleMathProjection.dll**), will all be generated under the **_build** output directory. You'll also be able to see the the generated NuGet package, **SimpleMathComponent0.1.0-prerelease.nupkg**, under the **\SimpleMathProjection\nuget** folder.
 
