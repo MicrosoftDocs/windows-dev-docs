@@ -28,15 +28,15 @@ This walkthrough and the corresponding sample require the following tools and co
 We'll be using Visual Studio 2022 and .NET 6 in this walkthrough.
 
 > [!IMPORTANT]
-> Also, you'll need to download or clone the sample code for this topic from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample) on GitHub. Visit [CsWinRT](https://github.com/microsoft/CsWinRT), and click the green **Code** button to get the `git clone` url. Be sure to read the [README.md](https://github.com/microsoft/CsWinRT/blob/master/src/Samples/Net5ProjectionSample/README.md) file for the sample.
+> Also, you'll need to download or clone the sample code for this topic from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub. Visit [CsWinRT](https://github.com/microsoft/CsWinRT), and click the green **Code** button to get the `git clone` url. Be sure to read the [README.md](https://github.com/microsoft/CsWinRT/blob/master/src/Samples/NetProjectionSample/README.md) file for the sample.
 
 ## Create a simple C++/WinRT Windows Runtime component
 
 To follow this walkthrough, you must first have a C++/WinRT Windows Runtime component (WRC) from which to generate the C# projection assembly.
 
-This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with the [C++/WinRT VSIX extension](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with the [C++/WinRT VSIX extension](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 
-To open the **SimpleMathComponent** project in Visual Studio, open the `\CsWinRT\src\Samples\Net5ProjectionSample\CppWinRTComponentProjectionSample.sln` file, which you'll find in your download or clone of the repo.
+To open the **SimpleMathComponent** project in Visual Studio, open the `\CsWinRT\src\Samples\NetProjectionSample\CppWinRTComponentProjectionSample.sln` file, which you'll find in your download or clone of the repo.
 
 The code in this project provides the functionality for the basic math operations shown in the header file below.
 
@@ -73,7 +73,7 @@ First, with the **CppWinRTComponentProjectionSample** solution still open in Vis
     
     1. In **Solution Explorer**, right-click your solution node and click **Add** > **New Project**. 
     2. In the **Add a new project** dialog box, type **Class Library** in the search box. Choose **C#** from the language list, and then choose **Windows** from the platform list. Choose the C# project template that's called simply **Class Library** (with no prefixes nor suffixes), and click **Next**.
-    3. Name the new project *SimpleMathProjection*. The location should already be set to the same `\CsWinRT\src\Samples\Net5ProjectionSample` folder that the **SimpleMathComponent** folder is in; but confirm that. Then click **Next**.
+    3. Name the new project *SimpleMathProjection*. The location should already be set to the same `\CsWinRT\src\Samples\NetProjectionSample` folder that the **SimpleMathComponent** folder is in; but confirm that. Then click **Next**.
     4. On the **Additional information** page, select **.NET 6.0 (Long-term support)**, and then choose **Create**.
 
 2. Delete the stub **Class1.cs** file from the project.
@@ -93,7 +93,7 @@ So far, your **Solution Explorer** should look similar to this (your version num
 
 ## Build projects out of source
 
-For the **CppWinRTComponentProjectionSample** solution in the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample) (which you downloaded or cloned from GitHub, and now have open), the build output location is configured with the **Directory.Build.props** file to build *out of source*. That means that files from the build output are generated outside of the source folder. We recommend that you build out of source when you use the C#/WinRT tool. That prevents the C# compiler from inadvertently picking up all *\*.cs* files under the project root directory, which can cause duplicate type errors (for example when compiling for multiple configurations and/or platforms).
+For the **CppWinRTComponentProjectionSample** solution in the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) (which you downloaded or cloned from GitHub, and now have open), the build output location is configured with the **Directory.Build.props** file to build *out of source*. That means that files from the build output are generated outside of the source folder. We recommend that you build out of source when you use the C#/WinRT tool. That prevents the C# compiler from inadvertently picking up all *\*.cs* files under the project root directory, which can cause duplicate type errors (for example when compiling for multiple configurations and/or platforms).
 
 Even though this is already configured for the **CppWinRTComponentProjectionSample** solution, follow the steps below to get practice in doing the configuration for yourself.
 
@@ -131,7 +131,7 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
     ```
 
     > [!NOTE]
-    > For this walkthrough and the related sample code, the solution and all projects are configured to build for **x64** and **Debug**. You can choose to build for any other .NET-supported platform, but you will need to adjust the [NuGet spec properties](#create-a-nuget-package-with-the-projection) accordingly.
+    > For this walkthrough and the related sample code, the solution and all projects are configured to build for **x64** and **Release**. You can choose to build for any other .NET-supported platform, but you will need to adjust the [NuGet spec properties](#create-a-nuget-package-with-the-projection) accordingly.
 
 3. Add a second `PropertyGroup` element (immediately after the first) that sets several C#/WinRT properties.
 
@@ -183,21 +183,21 @@ To distribute the projection assembly for .NET application developers, you can a
         <authors>Contoso Math Inc.</authors>
         <description>A simple component with basic math operations</description>
         <dependencies>
+          <group targetFramework="net6.0-windows10.0.19041.0" />
           <group targetFramework=".NETCoreApp3.0" />
           <group targetFramework="UAP10.0" />
           <group targetFramework=".NETFramework4.6" />
-          <group targetFramework="net6.0-windows10.0.19041.0" />
         </dependencies>
       </metadata>
       <files>
         <!--Support .NET Core 3, UAP, .NET Framework 4.6, .NET 6, C++ -->
         <!--Architecture-netural assemblies-->
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Debug\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
+        <file src="..\..\_build\x64\Release\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
         <!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
-        <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
+        <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
       </files>
     </package>
     ```
@@ -209,7 +209,7 @@ To distribute the projection assembly for .NET application developers, you can a
 
 ## Build the solution to generate the projection and NuGet package
 
-Before building the solution, make sure to check the **Configuration Manager** settings in Visual Studio, under **Build** > **Configuration Manager**. For this walkthrough, set the **Configuration** to **Debug** and **Platform** to **x64**, for both projects and the solution.
+Before building the solution, make sure to check the **Configuration Manager** settings in Visual Studio, under **Build** > **Configuration Manager**. For this walkthrough, set the **Configuration** to **Release** and **Platform** to **x64**, for both projects and the solution.
 
 At this point you can now build the solution. Right-click on your solution node and select **Build Solution**. This will first build the **SimpleMathComponent** project, and then the **SimpleMathProjection** project. The component WinMD and implementation assembly (**SimpleMathComponent.winmd** and **SimpleMathComponent.dll**), the projection source files, and the projection assembly (**SimpleMathProjection.dll**), will all be generated under the **_build** output directory. You'll also be able to see the the generated NuGet package, **SimpleMathComponent0.1.0-prerelease.nupkg**, under the **\SimpleMathProjection\nuget** folder.
 
@@ -227,11 +227,11 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 1. Use the steps below to create a new solution containing a C# **Console App** project (creating this project in a new solution allows you to restore the **SimpleMathComponent** NuGet package independently).
 
     > [!IMPORTANT]
-    > We'll be creating this new **Console App** project inside the `\CsWinRT\src\Samples\Net5ProjectionSample` folder, which you'll find in your downloaded or clone of the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample).
+    > We'll be creating this new **Console App** project inside the `\CsWinRT\src\Samples\NetProjectionSample` folder, which you'll find in your downloaded or clone of the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample).
 
     1. In a new instance of Visual Studio, select **File** > **New** > **Project**.
     2. In the **Create a new project** dialog box, search for the **Console App** project template. Choose the C# project template that's called simply **Console App** (with no prefixes nor suffixes), and click **Next**. If you're using Visual Studio 2019, then the project template is **Console Application**.
-    3. Name the new project **SampleConsoleApp**, set its location to the same `\CsWinRT\src\Samples\Net5ProjectionSample` folder that the **SimpleMathComponent** and **SimpleMathProjection** folders are in, and click **Next**.
+    3. Name the new project **SampleConsoleApp**, set its location to the same `\CsWinRT\src\Samples\NetProjectionSample` folder that the **SimpleMathComponent** and **SimpleMathProjection** folders are in, and click **Next**.
     4. On the **Additional information** page, select **.NET 6.0 (Long-term support)**, and then choose **Create**.
 
 2. In **Solution Explorer**, double-click the **SampleConsoleApp** node to open the **SampleConsoleApp.csproj** project file, and edit the `TargetFramework` and `Platform` properties so that they look as shown in the following listing. Add the `Platform` element if it's not there.
@@ -260,7 +260,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
     ```
 
     > [!IMPORTANT]
-    > The `RestoreSources` path for the **SimpleMathComponent** package shown above is set to `../SimpleMathProjection/nuget`. That path is correct provided that you followed the steps in this walkthrough, so that the **SimpleMathComponent** and **SampleConsoleApp** projects are both in the same folder (the `Net5ProjectionSample` folder, in this case). If you've done something different, then you'll need to adjust that path accordingly. Alternatively, you can [add a local NuGet package feed](/nuget/consume-packages/install-use-packages-visual-studio#package-sources) to your solution.
+    > The `RestoreSources` path for the **SimpleMathComponent** package shown above is set to `../SimpleMathProjection/nuget`. That path is correct provided that you followed the steps in this walkthrough, so that the **SimpleMathComponent** and **SampleConsoleApp** projects are both in the same folder (the `NetProjectionSample` folder, in this case). If you've done something different, then you'll need to adjust that path accordingly. Alternatively, you can [add a local NuGet package feed](/nuget/consume-packages/install-use-packages-visual-studio#package-sources) to your solution.
 
 4. Edit the **Program.cs** file to use the functionality provided by **SimpleMathComponent**.
 
@@ -276,6 +276,6 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 
 ## Resources
 
-- [Full code sample for this walkthrough](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample)
+- [Full code sample for this walkthrough](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample)
 - [C#/WinRT NuGet documentation](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)
 - [NuGet.exe documentation](/nuget/create-packages/creating-a-package)
