@@ -22,7 +22,7 @@ By navigating to this folder you will find the logs the *winget* tool has writte
 
 ### --verbose-logs
 
-If you need more comprehenive log files, that provide the complete communication with the CDNs and sources, include **--verbose-logs** on the command line as well.  Here are some examples of using the **--verbose-logs** option:
+If you need more comprehensive log files, that provide the complete communication with the CDNs and sources, include **--verbose-logs** on the command line as well.  Here are some examples of using the **--verbose-logs** option:
 
 ```CMD
 > winget install vscode --verbose-logs
