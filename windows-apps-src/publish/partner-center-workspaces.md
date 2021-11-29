@@ -3,6 +3,7 @@ description: How to use the partner center workspaces feature
 title: Partner Center workspaces
 ms.date: 11/19/2021
 ms.topic: article
+ms.service: partner-dashboard
 keywords: windows 10, windows 11, windows app, partner center, partner center workspaces
 ms.localizationpriority: medium
 ---
