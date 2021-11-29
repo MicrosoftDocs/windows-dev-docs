@@ -60,7 +60,7 @@ Highlights this month include:
 
 ### Tabs vs. Spaces Show
 
-* [Windows Package Manager: Winget v1.0](https://channel9.msdn.com/Shows/Tabs-vs-Spaces/Windows-Package-Manager-Winget-v10)
+* [Windows Package Manager: Winget v1.0](/shows/Tabs-vs-Spaces/Windows-Package-Manager-Winget-v10)
 
 
 The following list of topics have seen significant updates in the past month, as per GitHub logs:

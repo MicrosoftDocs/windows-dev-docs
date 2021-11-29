@@ -144,7 +144,7 @@
                         topicHref: "/windows/uwp/xaml-platform/index"                 
                       - name: API reference
                         tocHref: "/windows/uwp/api/"
-                        topicHref: "https://docs.microsoft.com/en-us/uwp/"         
+                        topicHref: "https://docs.microsoft.com/uwp/"         
                       - name: Windows as a service
                         tocHref: /windows/uwp/application-development-for-windows-as-a-service/
                         topicHref: "/windows/uwp/application-development-for-windows-as-a-service/index" 

@@ -33,7 +33,7 @@ landingContent:
           - text: Build ARM64 Win32 C++ Apps
             url: https://youtu.be/OZtVBDeVqCE
           - text: Build 2018 Windows 10 on ARM for developers
-            url: https://channel9.msdn.com/Events/Build/2018/BRK2438
+            url: https://docs.microsoft.com/events/build-2018/brk2438
 
   # Card
   - title: Develop for Windows on ARM

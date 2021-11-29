@@ -158,7 +158,7 @@ Currently, PowerToys is available in the following languages: Chinese (simplifie
 
 In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
 
-> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
+> [!VIDEO https://docs.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
