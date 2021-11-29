@@ -18,6 +18,8 @@
       href: ../publish/add-users-groups-and-azure-ad-applications.md
     - name: Set roles and custom permissions
       href: ../publish/set-custom-permissions-for-account-users.md
+- name: Partner Center workspaces
+  href: partner-center-workspaces.md
 - name: Publish an MSIX app to the Microsoft Store
   items:
     - name: App submissions
