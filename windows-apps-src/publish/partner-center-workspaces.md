@@ -46,15 +46,15 @@ The Microsoft Documentation at Publish Windows apps and games | Microsoft Docs i
 ## Create a new product in the new Apps and games workspace
 
 1. Sign in to Partner Center.
-2. ![Partner Center home page](images/partner-center-home.png)<br>Select the Apps and games workspace from the Home page or from the left-navigation menu.
-3. ![Partner Center Apps and games page](images/partner-center-apps-games.png)<br>On the Apps and games workspace, select + New product, and then select the type of product from the list.
+2. Select the Apps and games workspace from the Home page or from the left-navigation menu.<br>![Partner Center home page](images/partner-center-home.png)
+3. On the Apps and games workspace, select + New product, and then select the type of product from the list.<br>![Partner Center Apps and games page](images/partner-center-apps-games.png)
 4. Further instructions on creating and publishing specific product types are available in the Microsoft Documentation site here: Publish Windows apps and games | Microsoft Docs
 
 ## Access an existing product in the new Apps and games workspace
 
 1. Sign in to Partner Center.
-1. ![Partner Center home page](images/partner-center-home.png)<br>Select the Apps and games workspace from the Home page or from the left-navigation menu.
-1. ![Partner Center Apps and games search](images/partner-center-apps-games-search.png)<br>On the Apps and games workspace, use the search and filter features to find the product you want.
+1. Select the Apps and games workspace from the Home page or from the left-navigation menu.<br>![Partner Center home page](images/partner-center-home.png)
+1. On the Apps and games workspace, use the search and filter features to find the product you want.<br>![Partner Center Apps and games search](images/partner-center-apps-games-search.png)
 1. Further instructions on publishing updates to specific product types are available in the Microsoft Documentation site here: Publish Windows apps and games | Microsoft Docs
 
 ## Navigating back to the Apps and games workspace
@@ -67,7 +67,7 @@ Use the new site breadcrumb to navigate to the Apps and games workspace from wit
 
 1. Sign in to Partner Center.
 1. Select the Apps and games workspace from the Home page or from the left-navigation menu.
-1. ![Partner Center Apps and games features](images/partner-center-apps-games-features.png)<br>On the Apps and games workspace, select the Engage and Attract features you want from the left navigation.
+1. On the Apps and games workspace, select the Engage and Attract features you want from the left navigation.<br>![Partner Center Apps and games features](images/partner-center-apps-games-features.png)
     - Create promotions
     - Create customer groups
     - View your product’s reviews and feedback
@@ -77,11 +77,11 @@ Use the new site breadcrumb to navigate to the Apps and games workspace from wit
 ## Access analytics reports in the new Partner Center experience
 
 1. Sign in to Partner Center.
-1. ![Partner Center home page](images/partner-center-home.png)<br>Select the Insights workspace from the Home page or from the left-navigation menu.
-1. ![Partner Center highlights page](images/partner-center-highlights.png)<br>View the Highlights report or download reports from the left navigation of the workspace.
+1. Select the Insights workspace from the Home page or from the left-navigation menu.<br>![Partner Center home page](images/partner-center-home.png)
+1. View the Highlights report or download reports from the left navigation of the workspace.<br>![Partner Center highlights page](images/partner-center-highlights.png)
     > [!NOTE]
     > If you are looking for product specific analytic reports, those are still accessible from within the product pages.
-1. ![Partner Center analytics page](images/partner-center-analytics.png)<br>Navigate to Apps and games, select the product, access Analytics reports from the left navigation.
+1. Navigate to Apps and games, select the product, access Analytics reports from the left navigation.<br>![Partner Center analytics page](images/partner-center-analytics.png)
 
 ## Access payout reports in the new Partner Center experience
 
