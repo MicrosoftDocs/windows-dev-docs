@@ -34,7 +34,7 @@ Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing
 There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
 
 - [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
-- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
+- [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
 
 If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
@@ -44,7 +44,7 @@ The MAT must be enabled for your project before you can begin to localize the ap
 
 - Open the project solution in Visual Studio.
 - Select the desired project in Solution Explorer.
-- On the **Tools** menu, select **Multilingual App Toolkit** > **Enable selection**. 
+- On the **Tools** menu, select **Multilingual App Toolkit** > **Enable selection**.
 
 In the Output window (showing output from Multilingual App Toolkit), watch for the message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`. If this message appears, then the MAT is ready to use.
 
@@ -77,12 +77,12 @@ Pseudo language is an artificial modification of the software product intended t
 Follow these steps to pseudo-localize and test your project.
 
 1. Use the Translation Languages dialog to add Pseudo Language (Pseudo) [qps-ploc] to your project.
-2. Right-click the `<project-name>.qps-ploc.xlf` file in Solution Explorer and click **Multilingual App Toolkit** > **Generate machine translations**.
-3. In **Settings** > **Time & Language** > **Region & language** > **Languages**, click **Add a language**.
-5. In the search box, type `qps-ploc`.
-6. Click `English (qps-ploc)` to add it.
-7. From the language list, select `English (qps-ploc)` and click **Set as default**.
-8. Test your pseudo-localized app. For example, look for UI layout issues where not all of a string is displayed (the string is truncated), or strings that are not translated (but instead hard-coded).
+1. Right-click the `<project-name>.qps-ploc.xlf` file in Solution Explorer and click **Multilingual App Toolkit** > **Generate machine translations**.
+1. In **Settings** > **Time & Language** > **Region & language** > **Languages**, click **Add a language**.
+1. In the search box, type `qps-ploc`.
+1. Click `English (qps-ploc)` to add it.
+1. From the language list, select `English (qps-ploc)` and click **Set as default**.
+1. Test your pseudo-localized app. For example, look for UI layout issues where not all of a string is displayed (the string is truncated), or strings that are not translated (but instead hard-coded).
 
 In addition to character replacement and expansion, the pseudo engine provides a unique tracking identifier for each resource. This tracker is prepended to the start of every string and enclosed within brackets `[xxxxx]`. You can use these trackers during visual UI inspection testing. They can help track down specific resources in the product, especially if multiple resources have similar or duplicate text.
 
@@ -155,18 +155,18 @@ Before you start the Microsoft Store Certification process, you must exclude the
 
 ## Related topics
 
-* [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
-* [Globalization and localization](globalizing-portal.md)
-* [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Make your app localizable](prepare-your-app-for-localization.md)
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
+- [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
+- [Globalization and localization](globalizing-portal.md)
+- [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
+- [Make your app localizable](prepare-your-app-for-localization.md)
+- [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 
 ## Downloads
 
-* [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Multilingual App Toolkit 4.0 .msi installer](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
+- [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+- [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md)
 
 ## Translation services
 
-* [Microsoft Language Portal](https://www.microsoft.com/Language/)
-* [Microsoft Translator](https://www.microsofttranslator.com/)
+- [Microsoft Language Portal](https://www.microsoft.com/Language/)
+- [Microsoft Translator](https://www.microsofttranslator.com/)

@@ -1,5 +1,5 @@
 ---
-title: PowerToys Shortcut Guide utility for Windows 10
+title: PowerToys Shortcut Guide utility for Windows
 description: A utility to display common keyboard shortcuts that use the Windows ⊞ key
 ms.date: 05/28/2021
 ms.topic: article
@@ -13,7 +13,7 @@ This guide uses PowerToys to display common keyboard shortcuts that use the Wind
 
 ## Usage
 
-Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + <kbd>?</kbd> *(this may require using the Shift key)* or hold down the <kbd>⊞ Win</kbd> for the time as set in the Settings. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
+Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + <kbd>?</kbd> _(this may require using the Shift key)_ or hold down the <kbd>⊞ Win</kbd> for the time as set in the Settings. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
 
 - common Windows shortcuts
 - shortcuts for changing the position of the active window
@@ -21,7 +21,7 @@ Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd> + 
 
 ![Screenshot of shortcut overlay](../images/pt-shortcut-guide-large.png)
 
-Keyboard shortcuts using the Windows key <kbd>⊞ Win</kbd> can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes, etc) will be displayed in the guide.
+Keyboard shortcuts using the Windows key <kbd>⊞ Win</kbd> can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes etc.) will be displayed in the guide.
 
 Pressing the shortcut key combination again will dismiss the overlay.
 
@@ -36,7 +36,7 @@ These configurations can be edited from the PowerToys Settings:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose your own schortcut or use the <kbd>⊞ Win</kbd> key |
+| Activation method | Choose your own shortcut or use the <kbd>⊞ Win</kbd> key |
 | Activation shortcut | The custom shortcut used to launch the shortcut guide |
 | Press duration | Time (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open Shortcut Guide |
 | App theme | Light, dark or Windows theme |

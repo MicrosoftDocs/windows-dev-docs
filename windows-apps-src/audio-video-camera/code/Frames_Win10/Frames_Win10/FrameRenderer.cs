@@ -88,7 +88,7 @@ namespace Frames_Win10
         public static string GetSubtypeForFrameReader(MediaFrameSourceKind kind, MediaFrameFormat format)
         {
             // Note that media encoding subtypes may differ in case.
-            // https://docs.microsoft.com/en-us/uwp/api/Windows.Media.MediaProperties.MediaEncodingSubtypes
+            // https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingSubtypes
 
             string subtype = format.Subtype;
             switch (kind)

@@ -1,6 +1,6 @@
 ---
 title: Threading functionality migration
-description: This topic shows how to migrate your threading code.
+description: This topic shows how to migrate the threading code in your Universal Windows Platform (UWP) application to the Windows App SDK.
 ms.topic: article
 ms.date: 09/20/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
@@ -14,13 +14,33 @@ dev_langs:
 
 # Threading functionality migration
 
-This topic shows how to migrate your threading code.
+This topic shows how to migrate the threading code in your Universal Windows Platform (UWP) application to the Windows App SDK.
 
 ## Summary of API and/or feature differences
+
+UWP's threading model is *ASTA*, which blocks reentrancy to avoid certain categories of reentrancy bugs and deadlocks. The Windows App SDK's threading model is *STA*, and it doesn't have the same assurances around preventing reentrancy issues.
 
 The **CoreDispatcher** type migrates to **DispatcherQueue**. And the **CoreDispatcher.RunAsync** method migrates to **DispatcherQueue.TryEnqueue**.
 
 **C++/WinRT**. If you're using **winrt::resume_foreground** with **CoreDispatcher**, then migrate that to use **DispatcherQueue** instead.
+
+## ASTA to STA threading model
+
+UWP's threading model is application single-threaded apartment (ASTA) (see the blog post [What is so special about the Application STA?](https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901)). The ASTA threading model blocks reentrancy to avoid certain categories of reentrancy bugs and deadlocks. An ASTA thread is also known as a UI thread.
+
+The Windows App SDK's threading model is [single-threaded apartment (STA)](/windows/win32/com/single-threaded-apartments), and the STA model doesn't have the same assurances around preventing reentrancy issues. So if the code in your UWP app assumes the non re-entrant behavior of the ASTA threading model, then your code might not behave as expected.
+
+One thing to watch out for is reentrancy into XAML controls (see the example in [A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)](../case-study-2.md)). And for some crashes, such as access violations, the direct crash callstack is usually the right stack to use. But if it's a *stowed exception* crash&mdash;which has exception code: 0xc000027b&mdash;then more work is required to get the right callstack.
+
+### Stowed exceptions
+
+Stowed exception crashes save away a possible error, and that gets used later if no part of the code handles the exception. XAML sometimes decides the error is fatal immediately, in which case the direct crash stack might be good. But more frequently the stack has unwound before it was determined to be fatal. For more details about stowed exceptions, see the Inside Show episode [Stowed Exception C000027B](/shows/inside/c000027b).
+
+For stowed exception crashes (to see a nested message pump, or to see the XAML control's specific exception being thrown), you can get more info on the crash by loading a crash dump in the Windows Debugger (WinDbg) (see [Download debugging tools for Windows](/windows-hardware/drivers/debugger/debugger-download-tools)), and then using `!pde.dse` to dump the stowed exceptions.
+
+The PDE debugger extension (for the `!pde.dse` command) is available by downloading the [PDE*.zip](https://onedrive.live.com/?authkey=%21AJeSzeiu8SQ7T4w&id=DAE128BD454CF957%217152&cid=DAE128BD454CF957) file from OneDrive. Put the appropiate x64 or x86 `.dll` from that zip file into the `winext` directory of your WinDbg install, and then `!pde.dse` will work on stowed exception crash dumps.
+
+Frequently there'll be multiple stowed exceptions, with some at the end that were handled/ignored. Most commonly, the first stowed exception is the interesting one. In some cases, the first stowed exception might be a re-throw of the second, so if the second stowed exception shows deeper into the same stack as the first, then the second exception might be the origination of the error. The error code shown with each stowed exception is also valuable, since that provides the **HRESULT** associated with that exception.
 
 ## Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue
 
@@ -115,7 +135,7 @@ public void NotifyUser(string strMessage)
     }
     else
     {
-        var task = this.DispatcherQueue.TryEnqueue(
+        bool isQueued = this.DispatcherQueue.TryEnqueue(
         Microsoft.UI.Dispatching.DispatcherQueuePriority.Normal,
         () => StatusBlock.Text = strMessage);
     }
@@ -134,7 +154,7 @@ void MainPage::NotifyUser(std::wstring strMessage)
     }
     else
     {
-        auto task = this->DispatcherQueue().TryEnqueue(
+        bool isQueued = this->DispatcherQueue().TryEnqueue(
             Microsoft::UI::Dispatching::DispatcherQueuePriority::Normal,
             [strMessage, this]()
             {
@@ -146,7 +166,9 @@ void MainPage::NotifyUser(std::wstring strMessage)
 
 ## Migrate winrt::resume_foreground (C++/WinRT)
 
-This section applies if you're using the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function (in a coroutine in your C++/WinRT UWP app) to switch execution to the foreground thread associated with a [**Windows.UI.Core.CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher).
+This section applies if you use the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function in a coroutine in your C++/WinRT UWP app.
+
+In UWP, the use case for [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) is to switch execution to a foreground thread (that foreground thread is often the one that's associated with a [**Windows.UI.Core.CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)). Here's an example of that.
 
 ```
 // MainPage.cpp in a UWP app
@@ -154,19 +176,32 @@ winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventAr
 {
     ...
     co_await winrt::resume_foreground(this->Dispatcher());
+    ...
 }
 ```
 
-In your Windows App SDK app, instead of **CoreDispatcher** you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) class, as described in [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
+In your Windows App SDK app:
+
+* Instead of **winrt::resume_foreground**, you'll need to use **wil::resume_foreground** (from the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil)).
+* And instead of **CoreDispatcher**, you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) class, as described in [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
+
+So first add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+
+Then add the following include to `pch.h` in the target project.
+
+```cppwinrt
+#include <wil/cppwinrt_helpers.h>
+```
+
+And then follow the pattern shown below.
 
 ```cppwinrt
 // MainPage.xaml.cpp in a Windows App SDK app
-#include <winrt/Microsoft.UI.Dispatching.h> // includes Microsoft.UI.Dispatching.DispatcherQueue
-#include <microsoft.ui.dispatching.co_await.h> // includes winrt::resume_foreground support for DispatcherQueue
 ...
 winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
     ...
-    co_await winrt::resume_foreground(this->DispatcherQueue());
+    co_await wil::resume_foreground(this->DispatcherQueue());
+    ...
 }
 ```

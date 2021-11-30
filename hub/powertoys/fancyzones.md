@@ -1,5 +1,5 @@
 ---
-title: PowerToys FancyZones utility for Windows 10
+title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
 ms.date: 05/28/2021
 ms.topic: article
@@ -30,7 +30,7 @@ Launch the zones editor using the button in the PowerToys Settings menu or by pr
 
 ### Elevated permission admin apps
 
-If you have applications that are elevated, run in administrator mode, read [PowerToys and running as administrator](administrator.md) for more information.
+If you have applications that are elevated, run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
 
 ## Choose your layout (Layout Editor)
 
@@ -44,7 +44,7 @@ If multiple displays are in use, the editor will detect the available monitors a
 
 ### Space around zones
 
-The **Show space around zones** check box enables you to determine what sort of border or margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for the width of the margin. With the Zones Editor open, change the **Show space around zones** after changing the values to see the new value applied.
+The **Show space around zones** check box enables you to determine what sort of margin will surround each FancyZone window. The **Space around zones** field enables you to set a custom value for the width of the margin. With the Zones Editor open, change the **Show space around zones** after changing the values to see the new value applied.
 
 The **Distance to highlight adjacent zones** enables you to set a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.
 
@@ -74,7 +74,10 @@ With a custom layout, this layout can be configured to a user-defined hotkey to 
 
 In the demo below, we start with a default template applied to the screen and 2 custom layouts that we assign hotkeys for. We then use the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[number]</kbd> binding to apply the first custom layout and snap a window to it. Finally, we apply the second custom layout while dragging a window and snap the window to it.
 
-![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif) 
+![FancyZones Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif)
+
+> [!TIP]
+> The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak zones, and exported to share layouts across devices.
 
 ## Snapping a window to two or more zones
 
@@ -86,19 +89,23 @@ To snap a window to multiple zone using only the keyboard, first check the two o
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
+## Window Switching
+
+When two or more windows are snapped in the same zone, users can cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd> + <kbd>PgUp/PgDn</kbd>.
+
 ## Shortcut Keys
 
-| Shortcut      | Action |
-| ----------- | ----------- |
-| <kbd>⊞ Win</kbd>+<kbd>\`</kbd> | Launches the editor (this shortcut can be changed in the settings window) |
+| Shortcut | Action |
+| --- | --- |
+| <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>\`</kbd> | Launches the editor (this shortcut can be changed in the Settings window) |
 | <kbd>⊞ Win</kbd>+<kbd>left/right</kbd> | Move focused window between zones (only if **Override Windows Snap hotkeys** setting is turned on, in that case only the <kbd>⊞ Win</kbd>+<kbd>←</kbd> and <kbd>⊞ Win</kbd>+<kbd>→</kbd> are overridden, while the <kbd>⊞ Win</kbd>+<kbd>↑</kbd> and <kbd>⊞ Win</kbd>+<kbd>↓</kbd> keep working as usual) |
 
-FancyZones doesn't override the Windows 10 <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to quickly move a window to an adjacent monitor.
+FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to quickly move a window to an adjacent monitor.
 
 ## Settings
 
 | Setting | Description |
-| --------- | ------------- |
+| --- | --- |
 | Configure the zone editor hotkey | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard (it's not necessary to select or delete the text) |
 | Follow mouse cursor instead of focus when launching editor in a multi-monitor environment | When checked, the editor will launch on the monitor where the mouse cursor is. When unchecked, the editor will launch on the monitor where the current active window is |
 | Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the shift key during a drag enables snapping |

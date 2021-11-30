@@ -1,5 +1,5 @@
 ---
-title: PowerToys Keyboard Manager utility for Windows 10
+title: PowerToys Keyboard Manager utility for Windows
 description: A utility that enables users to redefine keys on the keyboard
 ms.date: 05/28/2021
 ms.topic: article
@@ -19,11 +19,14 @@ You can also exchange shortcut key combinations. For example: The shortcut key <
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
-> [!NOTE]
+> [!IMPORTANT]
 > There are some shortcut keys that are reserved for the operating system and cannot be replaced. Keys that cannot be remapped include:
 > - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
 > - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
 > - <kbd>Pause</kbd> will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing and holding will only delete a single character.
+> - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when reassigned. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar
+).
+
 
 ## Settings
 
@@ -63,7 +66,7 @@ For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in
 | `Ctrl` | `⊞ Win` + `←` |
 
 
-> [!NOTE]
+> [!IMPORTANT]
 > Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
 
 ## Remap Shortcuts
@@ -99,7 +102,7 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 | :--- | :--- |
 | `⊞ Win` + `←` | `Alt` |
 
-> [!NOTE]
+> [!IMPORTANT]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
 ## App-specific shortcuts
@@ -123,14 +126,6 @@ Keyboard Manager uses the process-names (not application names) to target apps. 
 | Excel           |  excel.exe    |
 | Word            |  winword.exe  |
 | Powerpoint      |  powerpnt.exe |
-
-### Keys that cannot be remapped
-
-There are certain shortcut keys that are not allowed for remapping. These include:
-
-- <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> (interrupt command)
-- <kbd>⊞ Win</kbd>+<kbd>L</kbd> (locking your computer)
-- The <kbd>Fn</kbd> function key cannot be remapped (in most cases) but <kbd>F1</kbd> ~ <kbd>F12</kbd> can be mapped.
 
 ## How to select a key
 
@@ -176,6 +171,10 @@ It depends on how the game accesses your keys. Certain keyboard APIs do not work
 ### Will remapping work if I change my input language?
 
 Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in `B`, this is consistent with how Windows handles multilingual input.
+
+### Can I have different key mappings across multiple keyboards?
+
+Currently no, currently we are not aware of an API where we can see the input and which keyboard / device it came from.  The typical use case here is a laptop and an external keyboard is connected.
 
 ## Troubleshooting
 

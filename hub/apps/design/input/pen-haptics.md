@@ -190,7 +190,7 @@ hapticsController.SendHapticFeedback(currentWaveform);
 It is important that you also stop haptic feedback when the associated pointer exits the element you registered for haptic feedback. Otherwise, the waveform will continue attempting to play on the active pen.
 
 > [!NOTE]
-> If the pen leaves the hover range of the screen, the system automatically sends a stop message. However, you should also explicitly stop the haptic feedback to avoid haptics continuing as the pen moves between elements while still in hover range of the screen.
+> Some pens may optionally stop haptics on their own when the pen leaves the range of the screen. However, it is not required for all pens to do this, so applications should always explicitly stop haptic feedback as described here.
 
 To stop haptic feedback on an element, register for the [PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) event on same element as you registered the PointerEntered handler that sent the haptic signal. In that exited event handler, call [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) as shown here.
 

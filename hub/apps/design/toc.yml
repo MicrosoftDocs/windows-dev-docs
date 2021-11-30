@@ -635,6 +635,8 @@
           href: globalizing/design-for-bidi-text.md
         - name: Use the Multilingual App Toolkit 4.0
           href: globalizing/use-mat.md
+        - name: Download Multilingual App Toolkit 4.0
+          href: globalizing/multilingual-app-toolkit-editor-downloads.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
           href: globalizing/mat-faq-troubleshooting.yml
         - name: Use the UTF-8 code page

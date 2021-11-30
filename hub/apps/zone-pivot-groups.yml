@@ -1,0 +1,14 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: winui3-version
+  title: WinUI 3 application type
+  prompt: "Choose the type of WinUI 3 application you want to build:"
+  pivots:
+    - id: winui3-packaged-csharp
+      title: C# Packaged
+    - id: winui3-unpackaged-csharp
+      title: C# Unpackaged
+    - id: winui3-packaged-cpp
+      title: C++ Packaged
+    - id: winui3-unpackaged-cpp
+      title: C++ Unpackaged

@@ -17,7 +17,7 @@ The **search** command can show all applications available, or it can be filtere
 
 `winget search [[-q] \<query>] [\<options>]`
 
-![Screenshot of the Windows Power Shell window displaying the results of the winget search.](images\search.png)
+![Screenshot of the Windows Power Shell window displaying the results of the winget search.](./images/search.png)
 
 ## Arguments
 
@@ -50,7 +50,7 @@ Search strings can be filtered with the following options.
 The string will be treated as a substring. The search by default is also case insensitive. For example, `winget search micro` could return the following:
 
 * Microsoft
-* microscope
+* Microscope
 * MyMicro
 
 ## Search options

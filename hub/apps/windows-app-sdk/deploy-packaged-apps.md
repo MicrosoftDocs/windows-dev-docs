@@ -45,11 +45,11 @@ As a result of that declared dependency, the framework package is installed when
 
 The main package contains out-of-process services that are brokered between apps, such as push notifications, and it is also needed for the framework to be serviced by the Microsoft Store. The singleton package supports a single long-running process that is brokered between apps for features like push notifications. 
 
-If developers want to use features not included in the framework and prefer to have the framework automatically updated by the Store without needing to redistribute their packaged app, then the main and singleton packages are also required to be installed on the system. 
-
-While the Windows application model supports framework dependencies, it does not support a packaged app (a main package) declaring a dependency on other main packages (the Windows App SDK main and singleton packages). The framework package that is installed with your app will have the main and singleton package embedded within it, but your packaged app must use the API in the [Microsoft.Windows.ApplicationModel.WindowsAppRuntime](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime) namespace to get those packages installed on the machine. The API in this namespace is also called the *deployment API*.
+**Scenarios that require these packages:** The main and singleton packages are only needed if developers want to use features not included in the framework, such as Push Notifications, and prefer to have the framework automatically updated by the Store without needing to redistribute their packaged app.  
 
 ### Use the deployment API
+
+While the Windows application model supports framework dependencies, it does not support a packaged app (a main package) declaring a dependency on other main packages (the Windows App SDK main and singleton packages). So the framework package that is installed with your app will have the main and singleton package embedded within it, but your packaged app must use the *deployment API* in the [Microsoft.Windows.ApplicationModel.WindowsAppRuntime](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime) namespace to get those packages installed on the machine.
 
 The deployment API is provided by the Windows App SDK framework package. You should call the API after your app's process is initialized but before your app uses Windows App SDK runtime content in the main and singleton packages. 
 
@@ -60,6 +60,13 @@ The main methods of the deployment API are the static [GetStatus](/windows/windo
 
 - The **GetStatus** method returns the current deployment status of the Windows App SDK runtime that is currently loaded. Use this method to identify if there is work required to install Windows App SDK runtime packages before the current app can use Windows App SDK features.
 - The **Initialize** method verifies whether all required packages are present to a minimum version needed by the loaded Windows App SDK runtime. If any package dependencies are missing, it attempts to register those missing packages.
+
+#### Deployment API sample 
+
+For additional guidance on how to use the GetStatus and Initialize methods of the DeploymentManager class, explore the available sample. 
+
+> [!div class="button"]
+> [Explore Deployment API sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/DeploymentManager)
 
 ### Address installation errors
 
@@ -73,6 +80,7 @@ If you encounter errors that you can't diagnose, [file an issue](https://github.
 
 ## Related topics
 
-- [Runtime architecture](deployment-architecture.md)
-- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
-- [Release channels](release-channels.md)
+* [Runtime architecture](deployment-architecture.md)
+* [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+* [Release channels](release-channels.md)
+* [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)

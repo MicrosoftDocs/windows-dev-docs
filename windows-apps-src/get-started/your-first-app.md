@@ -22,7 +22,7 @@ Use your .NET, WPF, or Silverlight skills to build apps using C# with Extensible
 
 If you want to learn the basics, or just refresh your memory, try reading these:
 
-* [C# Fundamentals for Absolute Beginners](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
+* [C# Fundamentals for Absolute Beginners](/shows/CSharp-Fundamentals-for-Absolute-Beginners/?l=Lvld4EQIC_2706218949)
 * [VB Fundamentals for Absolute Beginners](/learn/?l=jqMOvLKbC_9206218965)
 * [A Developer's Guide to Windows 10](/learn/)
 
