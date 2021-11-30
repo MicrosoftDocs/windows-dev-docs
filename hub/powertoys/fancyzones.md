@@ -85,9 +85,11 @@ If two zones are adjacent, a window can be snapped to the sum of their area (rou
 
 It's also possible to snap to any number of zones: first drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
-To snap a window to multiple zone using only the keyboard, first check the two options **Override Windows Snap hotkeys (Win+Arrow) to move between zones** and **Move windows based on their position**. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
-
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
+
+To snap a window to multiple zone using only the keyboard, first turn on the setting **Override Windows Snap** and select **Move windows based on: Relative position** as shown below. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
+
+![Settings for Snapping to Multiple Zones via Keyboard](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
 ## Shortcut Keys
 
