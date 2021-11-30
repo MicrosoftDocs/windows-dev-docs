@@ -27,7 +27,7 @@
     - name: App Silhouette
       href: basics/app-silhouette.md  
     - name: App title bar
-      href: basics/app-titlebar.md
+      href: basics/titlebar-design.md
     - name: Content basics
       href: basics/content-basics.md
     - name: Commanding Basics
@@ -405,8 +405,6 @@
       items:
         - name: Pin your app to the taskbar
           href: shell/pin-to-taskbar.md
-    - name: Title bar
-      href: shell/title-bar.md
     - name: Live Tiles
       href: shell/tiles-and-notifications/creating-tiles.md
       items:

@@ -189,7 +189,11 @@ items:
           - name: Choosing performance tools
             href: performance/choose-between-tools.md
       - name: User interface and input
-        href: develop/user-interface.md
+        items:
+          - name: Overview
+            href: develop/user-interface.md
+          - name: Title bar
+            href: develop/title-bar.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"

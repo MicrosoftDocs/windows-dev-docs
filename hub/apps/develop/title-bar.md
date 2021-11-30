@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 11/15/2021
+ms.date: 11/19/2021
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -25,7 +25,7 @@ See the [Title bar](../../design/basics/app-titlebar.md) design article for guid
 The exact features of the title bar and the options available to customize it depend on your UI platform and app requirements. This article shows how to customize the title bar for apps that use either the Windows App SDK with WinUI 3 or UWP with WinUI 2.
 
 > [!NOTE]
-> This article assumes that you are already using either the Windows App SDK/WinUI 3 or UWP/WinUI 2, and therefore does not emphasize any comparison between the two. For a detailed comparison of the windowing models used by the Windows App SDK and UWP,see [Windowing functionality migration](/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md).
+> This article assumes that you are already using either the Windows App SDK/WinUI 3 or UWP/WinUI 2, and therefore does not emphasize any comparison between the two. For a detailed comparison of the windowing models used by the Windows App SDK and UWP, see [Windowing functionality migration](/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md).
 
 ### [Windows App SDK/WinUI 3](#tab/winui3)
 
@@ -41,18 +41,20 @@ In addition to the standard components listed previously, the default title bar 
 
 > WinUI 3 desktop apps can also use Windows App SDK to extend their windowing features. WinUI3 as a platform offers some customization APIs e.g., SetTitleBar.  With Windows App SDK you have access to more customization APIs.
 >
-> ***REVIEW: Need more info. SetTitleBar doesn't seem to do anything in WinUI 3. Are there any other APIs to mention?***
+> **TODO: `Need more info. SetTitleBar doesn't seem to do anything in WinUI 3. Are there any other APIs to mention?`**
 
 ### How to work with AppWindow
 
 You can use AppWindow APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI 3 - and you can adopt them incrementally, using only the APIs you need. You get an AppWindow object from an existing window using the interop APIs. With this AppWindow object you have access to the title bar customization APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](/windows/apps/windows-app-sdk/windowing/windowing-overview#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 > [!IMPORTANT]
-> Title bar customization APIs currently work on Windows 11 only. We recommend that you check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs.
+> Title bar customization APIs currently work on Windows 11 only. We recommend that you check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs to ensure your app doesn't crash on other versions of Windows.
 
 ### Win32/DWM
 
-The Desktop Window Manager (DWM) APIs let you remove the non-client area of your window, which makes your title bar area completely customizable. While this does allow for extensive customization, you lose a lot of core windowing functionality that you have to re-implement yourself; for example, the title, icon, caption buttons, system menu, and the drag and sizing behavior. What's more, picking this option means that you must constantly emulate the new Windows design every time Window's styles are updated. In Windows 11, for example, we introduced rounded corners, updated caption buttons, and the snap flyout menu. Apps with custom title bars and frames need to be updated to look at home in Windows 11. (For more info, see [Apply rounded corners](/windows/apps/desktop/modernize/apply-rounded-corners) and [Support snap layouts](/windows/apps/desktop/modernize/apply-snap-layout-menu)). For new apps, we highly recommend that you use the Windows App SDK APIs to customize your title bar.
+The Desktop Window Manager (DWM) APIs let you remove the non-client area of your window, which makes your title bar area completely customizable. While this does allow for extensive customization, you lose a lot of core windowing functionality that you have to re-implement yourself; for example, the title, icon, caption buttons, system menu, and the drag and sizing behavior. What's more, picking this option means that you must constantly emulate the new Windows design every time Window's styles are updated. In Windows 11, for example, we introduced rounded corners, updated caption buttons, and the snap flyout menu. Apps with custom title bars and frames need to be updated to look at home in Windows 11. For new apps, we highly recommend that you use the Windows App SDK APIs to customize your title bar.
+
+For more info about updating your Win32 app, see [Apply rounded corners](/windows/apps/desktop/modernize/apply-rounded-corners) and [Support snap layouts](/windows/apps/desktop/modernize/apply-snap-layout-menu).
 
 For more info about DWM, see [Custom Window Frame Using DWM](/windows/win32/dwm/customframe).
 
@@ -75,7 +77,7 @@ If you are considering migrating your UWP app to Windows App SDK, please view ou
 
 There are two levels of customization that you can apply to the title bar: apply minor modifications to the default title bar, or extend your app canvas into the title bar area and provide completely custom content.
 
-For simple customization, such as changing the title bar color you can set properties on the title bar object for your app window to specify the colors you want to use for title bar elements. In this case, the system retains responsibility for all other aspects of the title bar, such as drawing the app title and defining draggable areas.
+For simple customization, such as changing the title bar color, you can set properties on your app window's title bar object to specify the colors you want to use for title bar elements. In this case, the system retains responsibility for all other aspects of the title bar, such as drawing the app title and defining draggable areas.
 
 Your other option is to hide the default title bar and replace it with your own custom content. For example, you can place text, a search box, or custom menus in the title bar area. You will also need to use this option to extend a [material](../../design/signature-experiences/materials.md) backdrop, like [Mica](../../design/style/mica.md), into the title bar area.
 
@@ -169,9 +171,9 @@ To use a custom icon, call the [AppWindow.SetIcon](/windows/windows-app-sdk/api/
 m_AppWindow.SetIcon("iconPath/iconName.ico");
 ```
 
->**TODO: Need more info about SetString. Can only get it to work with a full path to the icon; are there other options? What about IconID?**
+> **TODO: `Need more info about SetString. Can only get it to work with a full path to the icon; are there other options? What about IconID?`**
 
-> **TODO: Talk about ResetToDefault?**
+> **TODO: `Mention ResetToDefault here?`**
 
 ### [UWP/WinUI 2](#tab/winui2)
 
@@ -179,13 +181,13 @@ m_AppWindow.SetIcon("iconPath/iconName.ico");
 
 By default, the title bar shows the app's display name as the window title. The display name is set in the ``Package.appxmanifest`` file.
 
-To add custom text to the title, set the [ApplicationView.Title](/uwp/api/windows.ui.viewmanagement.applicationview.title) property to a text value.
+To add custom text to the title, set the [ApplicationView.Title](/uwp/api/windows.ui.viewmanagement.applicationview.title) property to a text value, as shown here.
 
 ```csharp
 ApplicationView.GetForCurrentView().Title = "Custom text";
 ```
 
-Your text is prepended to the window title, which will be displayed as "_custom text - app display name_". To show a custom title without the app display name, you have to replace the default title bar as shown in the _Full customization_ section.
+Your text is prepended to the window title, which will be displayed as "_custom text - app display name_". To show a custom title without the app display name, you have to replace the default title bar as shown in the [Full customization](#full-customization) section.
 
 #### Colors
 
@@ -389,6 +391,8 @@ You specify the draggable region by calling the [Window.SetTitleBar](/uwp/api/wi
 Here's how to set a Grid of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page. See the [Full customization example](./title-bar.md#full-customization-example) section for the full code.
 
 > **TODO: tile bar height(?)**
+
+> **TODO: `Update to show setting title text from app title`**
 
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
@@ -605,10 +609,10 @@ Reference: [Colors.Transparent](/windows/winui/api/microsoft.ui.colors), [ColorH
 
 ### [UWP/WinUI 2](#tab/winui2)
 
-* ButtonBackgroundColor(/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonbackgroundcolor)
-* ButtonHoverBackgroundColor(/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonhoverbackgroundcolor)
-* ButtonPressedBackgroundColor(/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonpressedbackgroundcolor)
-* ButtonInactiveBackgroundColor(/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttoninactivebackgroundcolor)
+* [ButtonBackgroundColor](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonbackgroundcolor)
+* [ButtonHoverBackgroundColor](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonhoverbackgroundcolor)
+* [ButtonPressedBackgroundColor](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonpressedbackgroundcolor)
+* [ButtonInactiveBackgroundColor](/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttoninactivebackgroundcolor)
 
 All other color properties will continue to ignore the alpha channel. If ExtendViewIntoTitleBar is set to **false**, the alpha channel is always ignored for all ApplicationViewTitleBar color properties.
 
@@ -620,6 +624,15 @@ The button background color is not applied to the Close button _hover_ and _pres
 
 > [!TIP]
 > [Mica](/windows/apps/design/style/mica) is a delightful [material](/windows/apps/design/signature-experiences/materials) that helps distinguish the window thats in focus. We recommend it as the background for long-lived windows in Windows 11. If you have applied mica in the client area of your window, you can extend it into the titlebar area and make your caption buttons transparent for the mica to show through. See [Mica material](/windows/apps/design/style/mica) for more info.
+
+### Dim the title bar when the window is inactive
+
+### [Windows App SDK/WinUI 3](#tab/winui3)
+
+### [UWP/WinUI 2](#tab/winui2)
+
+
+---
 
 ### Show and hide the title bar
 

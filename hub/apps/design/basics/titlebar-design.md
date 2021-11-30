@@ -1,8 +1,8 @@
 ---
-description: A high-level look at app patterns commonly used across our in-box applications.
+description: Design the title bar of a desktop app to match the personality of the app.
 title: Windows app title bar
 template: detail.hbs
-ms.date: 09/30/2021
+ms.date: 11/30/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -16,7 +16,7 @@ The title bar sits at the top of an app on the [base layer](../signature-experie
 
 ## Standard design
 
-A standard title bar design features:
+Design features of a standard title bar:
 
 - 32px height
 - 16px app icon

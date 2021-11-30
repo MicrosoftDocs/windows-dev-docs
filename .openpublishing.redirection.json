@@ -6724,6 +6724,11 @@
       "source_path": "hub/apps/whats-new/build2021-docs.md",
       "redirect_url": "/windows/apps",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/title-bar.md",
+      "redirect_url": "/windows/apps/develop/title-bar",
+      "redirect_document_id": false
     }
   ]
 }
