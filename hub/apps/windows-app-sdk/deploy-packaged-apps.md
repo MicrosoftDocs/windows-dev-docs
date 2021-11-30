@@ -47,7 +47,6 @@ The main package contains out-of-process services that are brokered between apps
 
 **Scenarios that require these packages:** The main and singleton packages are only needed if developers want to use features not included in the framework, such as Push Notifications, and prefer to have the framework automatically updated by the Store without needing to redistribute their packaged app.  
 
-
 ### Use the deployment API
 
 While the Windows application model supports framework dependencies, it does not support a packaged app (a main package) declaring a dependency on other main packages (the Windows App SDK main and singleton packages). So the framework package that is installed with your app will have the main and singleton package embedded within it, but your packaged app must use the *deployment API* in the [Microsoft.Windows.ApplicationModel.WindowsAppRuntime](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime) namespace to get those packages installed on the machine.
@@ -81,6 +80,7 @@ If you encounter errors that you can't diagnose, [file an issue](https://github.
 
 ## Related topics
 
-- [Runtime architecture](deployment-architecture.md)
-- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
-- [Release channels](release-channels.md)
+* [Runtime architecture](deployment-architecture.md)
+* [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+* [Release channels](release-channels.md)
+* [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)

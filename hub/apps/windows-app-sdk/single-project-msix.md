@@ -193,14 +193,23 @@ Next, move several important files to the application project. There are differe
 
 [![Enabling Deploy in Configuration Manager](images/single-project-configmanager.png) ](images/single-project-configmanager.png#lightbox)
 
-
-
 ### Step 5: Deploy your app
 
 Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application.
 
 ### Step 6: Package your app for publishing
 Use the [Package & Publish command in Visual Studio](/windows/msix/package/packaging-uwp-apps) to package your application to publish to the Store.
+
+## Automate building and packaging your single-project MSIX app
+
+You can use `msbuild` to build and package your single-project MSIX app, thereby allowing you to automate the workflow. The technique for a single-project solution, and the command-line, is only slightly different from what you might already be doing if you have a two-project solution (one that has a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)).
+
+The important build command option for a single-project solution is `/p:GenerateAppxPackageOnBuild=true`. Without that option, the project will build, but you won't get an MSIX package. Include that option, and that will cause the MSIX package to be generated.
+
+There's a full example in the form of [a GitHub Action that builds a WinUI 3 single-project solution](https://github.com/andrewleader/WindowsAppSDKGallery/blob/main/.github/workflows/dotnet-desktop.yml#L102).
+
+> [!NOTE]
+> Single-project MSIX doesn't currently support producing MSIX bundles (see [Bundling MSIX packages](/windows/msix/package/bundling-overview)). It produces only a single MSIX. But you can bundle `.msix` files into an MSIX bundle by using the [MSIX Bundler](https://github.com/marketplace/actions/msix-bundler) GitHub Action.
 
 ## Provide feedback
 
