@@ -89,6 +89,10 @@ To snap a window to multiple zone using only the keyboard, first check the two o
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
+## Window Switching
+
+When two or more windows are snapped in the same zone, users can cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd> + <kbd>PgUp/PgDn</kbd>.
+
 ## Shortcut Keys
 
 | Shortcut | Action |
