@@ -32,10 +32,14 @@ Exceeding these limitations will cause memory allocation failures. For more info
     * Apps: share of 45% of the GPU depending on the number of apps and games running on the system.
     * Games: full access to available GPU cycles.
 
-* DirectX support
-    * Apps: DirectX 11 Feature Level 10.
-    * Games: DirectX 12, and DirectX 11 Feature Level 10.
+* DirectX support (Xbox One)
+    * Apps: DirectX 11 Hardware Feature Level 10.0
+    * Games: DirectX 12 with Hardware Feature Level 11.0; DirectX 11 with Hardware Feature Level 10.0.
 
+* DirectX support (Xbox Series X|S)
+    * Apps: DirectX 11 Hardware Feature Level 11.0
+    * Games: DirectX 11 and DirectX 12 with Hardware Feature Level 11.0
+    
 * All apps and games must target the x64 architecture in order to be developed or submitted to the store for Xbox.  
 
 For **application development**, resources available may be limited in comparison to a standard PC and can vary based on the number of apps and games running on the system.
