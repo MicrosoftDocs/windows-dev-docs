@@ -16,7 +16,7 @@ Proper sizing ensures all content is clear and legible. Users shouldn’t have t
 
 ![diagram showing dimensions](images/dimensions.svg)
 
-- [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) and [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) specify the size of an element. The default values are mathematically NaN (Not A Number). You can set fixed values measured in [effective pixels](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), or you can use **Auto** or [proportional sizing](layout-panels.md#grid) for fluid behavior.
+- [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) and [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) specify the size of an element. The default values are mathematically NaN (Not A Number). You can set fixed values measured in [effective pixels](screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), or you can use **Auto** or [proportional sizing](layout-panels.md#grid) for fluid behavior.
 
 - [**ActualHeight**](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) and [**ActualWidth**](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) are read-only properties that provide the size of an element at runtime. If fluid layouts grow or shrink, then the values change in a [**SizeChanged**](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) event. Note that a [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) will not change the ActualHeight and ActualWidth values.
 
@@ -91,7 +91,7 @@ You don't have to set each property value individually on a control. It's typica
 ## General recommendations
 - Only apply measurement values to certain key elements and use fluid layout behavior for the other elements. This provides for [responsive UI](responsive-design.md) when the window width changes.
 
-- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When UWP uses [effective pixels and scaling](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
+- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When UWP uses [effective pixels and scaling](screen-sizes-and-breakpoints-for-responsive-design.md) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
 
 - For small window widths (less than 640 pixels), we recommend 12 epx gutters, and for larger window widths, we recommend 24 epx gutters.
 

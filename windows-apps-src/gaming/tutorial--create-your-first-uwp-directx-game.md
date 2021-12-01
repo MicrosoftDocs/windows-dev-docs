@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 In this set of tutorials, you'll learn how to use DirectX and [C++/WinRT](../cpp-and-winrt-apis/index.md) to create the basic Universal Windows Platform (UWP) sample game named **Simple3DGameDX**. The gameplay takes place in a simple first-person 3D shooting gallery.
 
 > [!NOTE]
-> The link from which you can download the **Simple3DGameDX** sample game itself is [Direct3D sample game](/samples/microsoft/windows-universal-samples/simple3dgamedx/). The C++/WinRT source code is in the folder named `cppwinrt`. For info about other UWP sample apps, see [Get UWP app samples](../get-started/get-app-samples.md).
+> The link from which you can download the **Simple3DGameDX** sample game itself is [Direct3D sample game](/samples/microsoft/windows-universal-samples/simple3dgamedx/). The C++/WinRT source code is in the folder named `cppwinrt`. For info about other UWP sample apps, see [Get UWP app samples](/windows/apps/get-started/samples).
 
 These tutorials cover all of the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.
 

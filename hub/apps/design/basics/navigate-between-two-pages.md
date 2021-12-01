@@ -54,13 +54,13 @@ Now, these files should be listed as part of your NavApp1 project.
 </thead>
 <tbody>
 <tr class="odd">
-<td style="vertical-align:top;"><ul>
+<td><ul>
 <li>Page1.xaml</li>
 <li>Page1.xaml.cs</li>
 <li>Page2.xaml</li>
 <li>Page2.xaml.cs</li>
 </ul></td>
-<td style="vertical-align:top;"><ul>
+<td><ul>
 <li>Page1.xaml</li>
 <li>Page1.xaml.cpp</li>
 <li>Page1.xaml.h</li>

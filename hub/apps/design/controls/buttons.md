@@ -74,7 +74,7 @@ Use a **ToggleButton** control when you want the user to be able to immediately 
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
+    <p>If you have <strong>XAML Controls Gallery</strong> installed, click here to <a href="xamlcontrolsgallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
@@ -404,7 +404,7 @@ A toggle split button is typically used to enable or disable a feature when the 
 Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), **ToggleSplitButton** does not have an indeterminate state. As a result, you should keep in mind these differences:
 
 - **ToggleSplitButton** does not have an **IsThreeState** property or **Indeterminate** event.
-- The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a Boolean, not a **Nullable<bool>**.
+- The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a Boolean, not a **Nullable\<bool>**.
 - **ToggleSplitButton** has only the [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
 
 

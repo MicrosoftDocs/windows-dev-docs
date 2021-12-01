@@ -5,7 +5,7 @@ author: hickeys
 ms.author: hickeys 
 manager: jken
 ms.topic: article
-keywords: android, windows, xamarin.android, tutorial, xaml
+keywords: android, windows, xamarin.android, tutorial, xml, axml
 ms.date: 04/28/2020
 ---
 
@@ -40,7 +40,7 @@ In the New Cross Platform App dialog, select **Blank App**. In the **Minimum And
 
 Xamarin will create a new solution with a single project named **TimeChangerAndroid**.
 
-## Create a UI with XAML
+## Create a UI with Android XML
 
 In the **Resources\layout** directory of your project, open **activity_main.xml**. The XML in this file defines the first screen a user will see when opening TimeChanger.
 

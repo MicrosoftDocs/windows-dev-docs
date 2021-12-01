@@ -13,10 +13,10 @@ ms.localizationpriority: medium
 
 This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the `task` class that's defined in the `concurrency` namespace in ppltasks.h.
 
-## Universal Windows Platform (UWP) asynchronous types
-The Universal Windows Platform (UWP) features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the UWP asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
+## Windows Runtime asynchronous types
+The Windows Runtime features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the Windows Runtime asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
 
-Although you can consume the asynchronous Windows Runtime APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the UWP asynchronous types so that it's easier to:
+Although you can consume the asynchronous Windows Runtime APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the Windows Runtime asynchronous types so that it's easier to:
 
 -   chain multiple asynchronous and synchronous operations together
 
@@ -26,7 +26,7 @@ Although you can consume the asynchronous Windows Runtime APIs directly in C++, 
 
 -   ensure that individual tasks run in the appropriate thread context or apartment
 
-This article provides basic guidance about how to use the **task** class with the UWP asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. 
+This article provides basic guidance about how to use the **task** class with the Windows Runtime asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. 
 
 ## Consuming an async operation by using a task
 The following example shows how to use the task class to consume an **async** method that returns an [**IAsyncOperation**][IAsyncOperation] interface and whose operation produces a value. Here are the basic steps:
@@ -74,7 +74,7 @@ The [**task::then**][taskThen] method returns immediately, and its delegate does
 Although you declare the task variable on the local stack, it manages its lifetime so that it is not deleted until all of its operations complete and all references to it go out of scope, even if the method returns before the operations complete.
 
 ## Creating a chain of tasks
-In asynchronous programming, it's common to define a sequence of operations, also known as *task chains*, in which each continuation executes only when the previous one completes. In some cases, the previous (or *antecedent*) task produces a value that the continuation accepts as input. By using the [**task::then**][taskThen] method, you can create task chains in an intuitive and straightforward manner; the method returns a **task<T>** where **T** is the return type of the lambda function. You can compose multiple continuations into a task chain: `myTask.then(…).then(…).then(…);`
+In asynchronous programming, it's common to define a sequence of operations, also known as *task chains*, in which each continuation executes only when the previous one completes. In some cases, the previous (or *antecedent*) task produces a value that the continuation accepts as input. By using the [**task::then**][taskThen] method, you can create task chains in an intuitive and straightforward manner; the method returns a **task\<T>** where **T** is the return type of the lambda function. You can compose multiple continuations into a task chain: `myTask.then(…).then(…).then(…);`
 
 Task chains are especially useful when a continuation creates a new asynchronous operation; such a task is known as an asynchronous task. The following example illustrates a task chain that has two continuations. The initial task acquires the handle to an existing file, and when that operation completes, the first continuation starts up a new asynchronous operation to delete the file. When that operation completes, the second continuation runs, and outputs a confirmation message.
 
@@ -98,9 +98,9 @@ void App::DeleteWithTasks(String^ fileName)
 
 The previous example illustrates four important points:
 
--   The first continuation converts the [**IAsyncAction^**][IAsyncAction] object to a **task<void>** and returns the **task**.
+-   The first continuation converts the [**IAsyncAction^**][IAsyncAction] object to a **task\<void>** and returns the **task**.
 
--   The second continuation performs no error handling, and therefore takes **void** and not **task<void>** as input. It is a value-based continuation.
+-   The second continuation performs no error handling, and therefore takes **void** and not **task\<void>** as input. It is a value-based continuation.
 
 -   The second continuation doesn't execute until the [**DeleteAsync**][deleteAsync] operation completes.
 
@@ -109,18 +109,18 @@ The previous example illustrates four important points:
 **Note**  Creating a task chain is just one of the ways to use the **task** class to compose asynchronous operations. You can also compose operations by using join and choice operators **&&** and **||**. For more information, see [Task Parallelism (Concurrency Runtime)][taskParallelism].
 
 ## Lambda function return types and task return types
-In a task continuation, the return type of the lambda function is wrapped in a **task** object. If the lambda returns a **double**, then the type of the continuation task is **task<double>**. However, the task object is designed so that it doesn't produce needlessly nested return types. If a lambda returns an **IAsyncOperation<SyndicationFeed^>^**, the continuation returns a **task<SyndicationFeed^>**, not a **task<task<SyndicationFeed^>>** or **task<IAsyncOperation<SyndicationFeed^>^>^**. This process is known as *asynchronous unwrapping* and it also ensures that the asynchronous operation inside the continuation completes before the next continuation is invoked.
+In a task continuation, the return type of the lambda function is wrapped in a **task** object. If the lambda returns a **double**, then the type of the continuation task is **task\<double>**. However, the task object is designed so that it doesn't produce needlessly nested return types. If a lambda returns an **IAsyncOperation\<SyndicationFeed^>^**, the continuation returns a **task\<SyndicationFeed^>**, not a **task\<task\<SyndicationFeed^>>** or **task\<IAsyncOperation\<SyndicationFeed^>^>^**. This process is known as *asynchronous unwrapping* and it also ensures that the asynchronous operation inside the continuation completes before the next continuation is invoked.
 
-In the previous example, notice that the task returns a **task<void>** even though its lambda returned an [**IAsyncInfo**][IAsyncInfo] object. The following table summarizes the type conversions that occur between a lambda function and the enclosing task:
+In the previous example, notice that the task returns a **task\<void>** even though its lambda returned an [**IAsyncInfo**][IAsyncInfo] object. The following table summarizes the type conversions that occur between a lambda function and the enclosing task:
 
 | lambda return type | `.then` return type |
 | ------------------ | ------------------- |
-| TResult                                                | task<TResult> |
-| IAsyncOperation<TResult>^                        | task<TResult> |
-| IAsyncOperationWithProgress<TResult, TProgress>^ | task<TResult> |
-|IAsyncAction^                                           | task<void>    |
-| IAsyncActionWithProgress<TProgress>^             |task<void>     |
-| task<TResult>                                    |task<TResult>  |
+| TResult                                                | task\<TResult> |
+| IAsyncOperation\<TResult>^                        | task\<TResult> |
+| IAsyncOperationWithProgress\<TResult, TProgress>^ | task\<TResult> |
+|IAsyncAction^                                           | task\<void>    |
+| IAsyncActionWithProgress\<TProgress>^             |task\<void>     |
+| task\<TResult>                                    |task\<TResult>  |
 
 
 ## Canceling tasks
@@ -146,7 +146,7 @@ Cancellation is cooperative. If your continuation does some long-running work be
 For more information, see [Cancellation in the PPL](/cpp/parallel/concrt/cancellation-in-the-ppl)
 
 ## Handling errors in a task chain
-If you want a continuation to execute even if the antecedent was canceled or threw an exception, then make the continuation a task-based continuation by specifying the input to its lambda function as a **task<TResult>** or **task<void>** if the lambda of the antecedent task returns an [**IAsyncAction^**][IAsyncAction].
+If you want a continuation to execute even if the antecedent was canceled or threw an exception, then make the continuation a task-based continuation by specifying the input to its lambda function as a **task\<TResult>** or **task\<void>** if the lambda of the antecedent task returns an [**IAsyncAction^**][IAsyncAction].
 
 To handle errors and cancellation in a task chain, you don't have to make every continuation task-based or enclose every operation that might throw within a `try…catch` block. Instead, you can add a task-based continuation at the end of the chain and handle all errors there. Any exception—this includes a [**task\_canceled**][taskCanceled] exception—will propagate down the task chain and bypass any value-based continuations, so that you can handle it in the error-handling task-based continuation. We can rewrite the previous example to use an error-handling task-based continuation:
 

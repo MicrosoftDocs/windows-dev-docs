@@ -18,6 +18,8 @@
       href: ../publish/add-users-groups-and-azure-ad-applications.md
     - name: Set roles and custom permissions
       href: ../publish/set-custom-permissions-for-account-users.md
+- name: Partner Center workspaces
+  href: partner-center-workspaces.md
 - name: Publish an MSIX app to the Microsoft Store
   items:
     - name: App submissions
@@ -101,6 +103,8 @@
       href: msiexe/set-app-pricing-and-availability.md
     - name: Specify your MSI or EXE app's properties
       href: msiexe/enter-app-properties.md
+    - name: Age ratings
+      href: msiexe/age-ratings.md
     - name: Provide package details for your MSI or EXE app
       href: msiexe/provide-package-details.md
     - name: Create app Store listings for your MSI or EXE app
@@ -109,6 +113,8 @@
       href: msiexe/manage-submission-options.md
     - name: The MSI or EXE app certification process
       href: msiexe/the-app-certification-process.md
+    - name: Publish update for your EXE or MSI app on the Store
+      href: msiexe/update-your-app.md
 - name: Publish your PWA app to the Microsoft Store
   href: pwa/overview.md
   items:

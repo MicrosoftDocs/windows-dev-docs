@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to make it easier to choose the date
 title: Add a UWP CalendarView control using XAML Islands
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1

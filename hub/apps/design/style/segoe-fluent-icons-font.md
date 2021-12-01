@@ -32,6 +32,13 @@ All glyphs in **Segoe Fluent Icons** have the same fixed width with a consistent
 
 ![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
 
+```xaml
+<Grid>
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB51;" Foreground="#C72335" />
+    <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xEB52;" />
+</Grid>
+```
+
 Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
 
 ## Using the icons
@@ -83,7 +90,7 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -2426,7 +2433,7 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -3637,7 +3644,7 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -4192,7 +4199,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -4766,10 +4773,6 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
     <td>f1d9</td>
     <td>StatusCheckmarkLeft</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/f1db.png" width="32" height="32" alt="UniversalCaptions" /></td>
-    <td>f1db</td>
-    <td>UniversalCaptions</td>
-  </tr>
    <tr><td><img src="images/glyphs/segoe-fluent-icons/f20c.png" width="32" height="32" alt="KeyboardLeftAligned" /></td>
     <td>f20c</td>
     <td>KeyboardLeftAligned</td>
@@ -4855,7 +4858,7 @@ The following table of glyphs displays unicode points prefixed from F3- to F5-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>
@@ -5378,7 +5381,7 @@ The following table of glyphs displays unicode points prefixed from F6- to F8-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
   <tr>
     <td>Glyph</td>
     <td>Unicode point</td>

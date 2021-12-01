@@ -28,9 +28,7 @@ Here you'll learn how to:
 > [!NOTE]
 > This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
-## Video summary
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
 ## Step 1: Create a new project in Visual Studio.
 

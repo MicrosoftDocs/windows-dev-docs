@@ -31,7 +31,7 @@ Windows on ARM runs all x86, ARM32, and ARM64 [UWP apps](../get-started/universa
 
 ### Win32 apps
 
-In addition to UWP apps, Windows on ARM can also run your x86 Win32 apps unmodified, with good performance and a seamless user experience, just like any PC. These x86 Win32 apps don’t have to be recompiled for ARM and don’t even realize they are running on an ARM processor.
+In addition to UWP apps, Windows on ARM can also run Win32 desktop appps compiled natively for ARM64 as well as your existing x86 Win32 apps unmodified, with good performance and a seamless user experience, just like any PC. These x86 Win32 apps don’t have to be recompiled for ARM and don’t even realize they are running on an ARM processor.
 
 ### x86-64 apps
 
@@ -53,4 +53,4 @@ Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Stu
 
 - [Building ARM64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers): Instructions for building an ARM64 driver.
 - [Debugging x86 apps on ARM](/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on ARM.
-- [Windows 10 on ARM for developers (Microsoft Build 2018 video presentation)](https://channel9.msdn.com/Events/Build/2018/BRK2438)
+- [Windows 10 on ARM for developers (Microsoft Build 2018 video presentation)](/events/build-2018/brk2438)

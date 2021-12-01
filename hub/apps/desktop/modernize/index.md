@@ -2,9 +2,7 @@
 description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
 title: Modernize your desktop apps for Windows
 ms.topic: article
-ms.date: 10/02/2020
-ms.author: mcleans
-author: mcleanbyron
+ms.date: 09/21/2021
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +17,7 @@ This article describes the features that you can use in your desktop apps today.
 
 ## Apply Windows 11 features
 
-Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, the Snap Layout Menu, and the updated context menu in File Explorer.
+Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, snap layouts, and the updated context menu in File Explorer.
 
 For more information, see [Top 11 things you can do to make your app great on Windows 11](../../get-started/make-apps-great-for-windows.md).
 
@@ -35,7 +33,7 @@ The Windows UI Library (WinUI) is a native user experience framework for both Wi
 
 You can use WinUI in the following ways in desktop apps:
 
-* Use [WinUI 3](../../winui/winui3/index.md) to create [desktop apps](../../winui/winui3/get-started-winui3-for-desktop.md) with an entirely WinUI-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
+* Use [WinUI 3](/windows/apps/winui/) to create [desktop apps](/windows/apps/winui/winui3/create-your-first-winui3-app) with an entirely WinUI-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
 * You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2 controls.
 
 For more information, see [Windows UI (WinUI) Library](../../winui/index.md).

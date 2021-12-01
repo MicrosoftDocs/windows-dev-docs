@@ -14,7 +14,10 @@ ms.custom: 19H1
 
 This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
-Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./create-your-first-winui3-app.md).
+## Prerequisites
+
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md).
+2. Follow the instructions on how to [create a new project that uses the Windows App SDK](create-your-first-winui3-app.md).
 
 ## Create a Blank App (BgLabelControlApp)
 

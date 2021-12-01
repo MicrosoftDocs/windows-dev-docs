@@ -360,7 +360,7 @@ To modify other ListViewItemPresenter properties that aren't template bound to L
 3. Right-click and select **Edit Additional Templates > Edit Generated Item Container (ItemContainerStyle) > Edit a Copy**.
     ![Visual Studio editor](images/listview-itemcontainerstyle-vs.png)
 4. In the Create Style Resource dialog, enter a name for the style. In this example, you use `colorsGridViewItemStyle`.
-    ![Visual Studio Create Style Resource dialog(images/listview-style-resource-vs.png)
+    ![Visual Studio Create Style Resource dialog](images/listview-style-resource-vs.png)
 
 A copy of the default style is added to your app as a resource, and the **GridView.ItemContainerStyle** property is set to that resource, as shown in this XAML. 
 

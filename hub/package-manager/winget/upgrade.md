@@ -27,6 +27,9 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are upgrading.
+
 ## Options
 
 The options allow you to customize the upgrade experience to meet your needs.
@@ -46,6 +49,9 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to upgrade to (if supported). |
 | **--force** | When a hash mismatch is discovered will ignore the error and attempt to install the package.    |
+| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--all** | Updates all available packages to the latest application. |
 ### Example queries
 
@@ -73,11 +79,11 @@ It is common to use the [**list**](.\list.md) command to identify apps in need o
 
 In the example below you will see [**list**](.\list.md) identifies that an update is available for Microsoft.WindowsTerminalPreview, and then the user uses **upgrade** to update the application.
 
-![Animation demonstrating list and upgrade commands](images\upgrade.gif)
+![Animation demonstrating list and upgrade commands](./images/upgrade.gif)
 
 ## **upgrade** --all
 
-**upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the.
+**upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the updates.
 
 > [!NOTE]
 > Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible.

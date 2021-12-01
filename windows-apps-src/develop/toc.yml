@@ -817,14 +817,18 @@
           href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: A simple C++/WinRT WinUI example
           href: ../cpp-and-winrt-apis/simple-winui-example.md
-        - name: C++ language
-          items:
-            - name: Value categories, and references
-              href: ../cpp-and-winrt-apis/cpp-value-categories.md
+        - name: Windows Runtime components (C++/WinRT)
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: Use a C# component in a C++/WinRT app
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
         - name: Native debug visualization
           href: ../cpp-and-winrt-apis/natvis.md
+        - name: Naming conventions
+          href: ../cpp-and-winrt-apis/naming.md
+        - name: C++ language
+          items:
+            - name: Value categories, and references
+              href: ../cpp-and-winrt-apis/cpp-value-categories.md
     - name: C#/WinRT
       items:
         - name: Overview

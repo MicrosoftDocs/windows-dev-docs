@@ -8,10 +8,10 @@ ms.topic: article
 
 # Windows UI Library 2.6
 
-WinUI 2.6 is the latest stable release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
+WinUI 2.6 is the June 2021 release of the Windows UI Library (WinUI) for UWP applications (and desktop applications using [XAML Islands](../../../desktop/modernize/xaml-islands.md)).
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../../winui3/index.md).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
 
 WinUI is hosted on GitHub in our [Windows UI Library repo](https://github.com/microsoft/microsoft-ui-xaml). As an open source project, you can file your WinUI 2 bug reports, feature requests, and community code contributions there.
 
@@ -136,4 +136,5 @@ You can also view, clone, and build the XAML Controls Gallery source code from [
 
 ## Other updates
 
-See our [Notable Changes](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/v2.5.0) list for many of the GitHub issues addressed in this release.
+- See our [Notable Changes](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/v2.6.0) list for many of the GitHub issues addressed in this release.
+- Check out the [Figma design toolkit](https://aka.ms/winui/2.6-figma-toolkit) for the WinUI 2.6 control and layout templates.

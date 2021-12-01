@@ -12,8 +12,6 @@ ms.localizationpriority: medium
 
 # Controls for Windows apps
 
-![Controls](../images/controls-2x.png)
-
 In Windows app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
 
 We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.

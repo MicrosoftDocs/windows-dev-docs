@@ -37,14 +37,14 @@ Login to your Azure account and create a new [**AAD App Registration**](https://
 - For more information about tenants, see [Who can sign in to your app?](/azure/active-directory/develop/single-and-multi-tenant-apps#who-can-sign-in-to-your-app).
 
 > [!IMPORTANT]
-> ![AAD App Registration Tenant](images/push-notification-aad-app-registration-app-id.png)
+> [![AAD App Registration Tenant](images/push-notification-aad-app-registration-app-id.png) ](images/push-notification-aad-app-registration-app-id.png#lightbox)
 > Take note of your AppId since you will be using that during activation registration, channel request, and access token request.
 
 ### Step 3: Create a secret for your app registration
 
 Your secret will be used along with your ClientId when requesting an access token to send push notifications.
 
-![AAD App Secret](images/push-notification-aad-app-registration-secret.png)
+[![AAD App Secret](images/push-notification-aad-app-registration-secret.png) ](images/push-notification-aad-app-registration-secret.png#lightbox)
 
 Navigate to **Certificates & secrets** and select **New client secret**.
 
@@ -261,5 +261,5 @@ Console.WriteLine(response.Content);
 
 ## Related topics
 
-- [Windows Notification Push Service](https://aka.ms/wns)
+- [Windows Notification Push Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 - [Push notifications sample code](https://github.com/microsoft/WindowsAppSDK/tree/main/test/TestApps/PushNotificationsDemoApp)
