@@ -49,6 +49,29 @@ To install PowerToys using the Windows Package Manager, it is as simple as runni
 winget install Microsoft.PowerToys --source winget
 ```
 
+## Installer arguements 
+
+Our installer has a list of arguments you can chain on to accomplish different tasks such as a silent install.
+
+| Flag  | Description |
+|---|---|
+| `--silent` | Use completely silent installation (no UI and notifications) and do not launch PowerToys afterwards |
+| `--start_pt` | Always launch PowerToys after the installation is complete |
+| `--no_full_ui` | Do not use MSI wizard dialog, use reduced progress bar instead |
+| `--no_start_pt` | Do not start PowerToys after the installation is complete |
+| `--skip_dotnet_install` | Do not install dotnet, even if it's detected that it's not installed |
+| `--help` | Shows the list of supported command-line arguments |
+| `--log_level` | Possible values: `off` `debug` `error` |
+| `--log_dir` | Directory location where to save the logs |
+| `--install_dir` | Directory location where PowerToys is installed |
+| `--extract_msi` | Extract MSI to the working directory and exit. Use only if you must access MSI |
+
+### Example of a installer with args being passed in
+
+A command that would not install dotnet core and be silent would be the following: 
+
+`PowerToysSetup-0.21.0-x64.exe --silent --skip_dotnet_install --log_level error --log_dir C:\PTlogs`
+
 ## Community-driven install tools
 
 These community-driven alternative install methods are not officially supported and the PowerToys team does not update or manage these packages.
