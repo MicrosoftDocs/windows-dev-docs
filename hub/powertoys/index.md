@@ -162,7 +162,7 @@ In this video, Clint Rutkas (PM for PowerToys) walks through how to install and 
 
 ## Known issues
 
-Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub.
+Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. View instructions in the [Report a Bug](reportbug.md) section of these docs. 
 
 ## Contribute to PowerToys (Open Source)
 
