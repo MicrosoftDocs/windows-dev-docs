@@ -43,7 +43,7 @@ Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys)
 
 ## Install with Windows Package Manager
 
-To install PowerToys using the Windows Package Manager, it is as simple as running the following command from the command line / PowerShell:
+To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
 
 ```powershell
 winget install Microsoft.PowerToys --source winget
