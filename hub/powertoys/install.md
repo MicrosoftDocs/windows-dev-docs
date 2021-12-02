@@ -9,48 +9,68 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 
 # Install PowerToys
 
-> [!WARNING]
-> PowerToys v0.37 and beyond will require Windows 10 v1903 or greater. The v1 settings, which supports older Windows versions, was removed in v0.37.
+We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
 
-We recommend installing PowerToys via GitHub, but alternative install methods are also listed if you prefer using a package manager.
-
-## Install with Windows executable file
+## Install with Windows executable file with GitHub
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](https://aka.ms/installpowertoys)
 
 To install PowerToys using a Windows executable file:
 
-1. Visit the [Microsoft PowerToys GitHub releases page](https://github.com/microsoft/PowerToys/releases/).
-2. Browse the list of PowerToys that are available.
-3. Select the **Assets** drop-down menu to display the files for the release.
-4. Select the `PowerToysSetup-0.##.#-x64.exe` file to download the PowerToys executable installer.
-5. Once downloaded, open the executable file and follow the installation prompts.
+1. Visit the [Microsoft PowerToys GitHub releases page](https://aka.ms/installpowertoys).
+2. Select the **Assets** drop-down menu to display the files for the release.
+3. Select the `PowerToysSetup-0.##.#-x64.exe` file to download the PowerToys executable installer.
+4. Once downloaded, open the executable file and follow the installation prompts.
 
 ## Requirements
 
-- PowerToys (v0.37.0 and newer) requires Windows 10 v1903 (18362) or newer.
-- [.NET Core 3.1 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). The PowerToys installer will handle this requirement.
-- x64 architecture currently supported. ARM and x86 support to become available at a later date.
+- Windows 11 or Windows 10 v1903 (18362) or newer.
+- [.NET Core 3.1.20 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-3.1.20-windows-x64-installer) or a newer 3.1.x runtime. The installer will handle this if not present.
+- x64 architecture currently supported. ARM support to become available at a later date.
 
 To ensure that your machine meets these requirements, check your Windows version and build number by selecting <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
 ## Alternative Install Methods
 
-<!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** _(Recommended)_ -->
-- [Windows Package Manager](#install-with-windows-package-manager-preview) _(Preview)_
+- [Microsoft Store](#install-with-microsoft-store)
+- [Windows Package Manager](#install-with-windows-package-manager)
 - [Community-driven install tools](#community-driven-install-tools) _(Not officially supported)_
 
-## Install with Windows Package Manager (Preview)
+### Install with Microsoft Store
 
-To install PowerToys using the Windows Package Manager (WinGet) preview:
+Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys). You must be using the [new Microsoft Store](https://blogs.windows.com/windowsExperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) which will be available for both Windows 11 and Windows 10.
 
-1. Download PowerToys from [Windows Package Manager](https://github.com/microsoft/winget-cli/releases).
-2. Run the following command from the command line / PowerShell:
+## Install with Windows Package Manager
+
+To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it is as simple as running the following command from the command line / PowerShell:
 
 ```powershell
 winget install Microsoft.PowerToys --source winget
 ```
+
+## Installer arguements 
+
+Our installer has a list of arguments you can chain on to accomplish different tasks such as a silent install.
+
+| Flag  | Description |
+|---|---|
+| `--silent` | Use completely silent installation (no UI and notifications) and do not launch PowerToys afterwards |
+| `--start_pt` | Always launch PowerToys after the installation is complete |
+| `--no_full_ui` | Do not use MSI wizard dialog, use reduced progress bar instead |
+| `--no_start_pt` | Do not start PowerToys after the installation is complete |
+| `--skip_dotnet_install` | Do not install dotnet, even if it's detected that it's not installed |
+| `--help` | Shows the list of supported command-line arguments |
+| `--log_level` | Possible values: `off` `debug` `error` |
+| `--log_dir` | Directory location where to save the logs |
+| `--install_dir` | Directory location where PowerToys is installed |
+| `--extract_msi` | Extract MSI to the working directory and exit. Use only if you must access MSI |
+
+### Example of a installer with args being passed in
+
+A command that would not install dotnet core and be silent would be the following: 
+
+`PowerToysSetup-0.21.0-x64.exe --silent --skip_dotnet_install --log_level error --log_dir C:\PTlogs`
 
 ## Community-driven install tools
 
