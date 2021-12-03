@@ -84,7 +84,16 @@ C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynam
   <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
   ```
   Refer to the docs on [Calling Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) for more details on specifying the `<TargetFramework>` property.
-
+  
+- [**System.InvalidCastException**](/dotnet/api/system.invalidcastexception) when casting to an interface that has the `ComImport` attribute
+ 
+  When casting an object to an interface that has the `ComImport` attribute, you'll need to use the `.As<>` operator instead of using an explicit [cast expression](/dotnet/csharp/language-reference/operators/type-testing-and-cast#cast-expression). For example:
+  
+  ```csharp
+  someObject.As<SomeComImportInterface>
+  ```
+  
+  For more details, see the [COM interop guide](https://github.com/microsoft/CsWinRT/blob/master/docs/interop.md).
 
 ### .NET SDK versioning errors
 

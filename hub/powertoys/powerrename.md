@@ -191,3 +191,15 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
   - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
 ![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
+
+## Settings
+
+Additional options can be configured from the PowerRename tab in the Settings menu as described below:
+
+| Setting | Description |
+| --- | --- |
+| Show PowerRename in | When opening the context menu for a file, this setting defines whether PowerRename appears as one of the default options or only in the extended context menu |
+| Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
+| Maximum number of items | The largest number search and replace suggestions to display |
+| Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
+| Use Boost library | Enable extended RegEx functionality. See [Regular Expressions](#regular-expressions) above for more details |
