@@ -49,7 +49,7 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install Microsoft.PowerToys --source winget
 ```
 
-## Installer arguements 
+## Installer arguments 
 
 Our installer has a list of arguments you can chain on to accomplish different tasks such as a silent install.
 
