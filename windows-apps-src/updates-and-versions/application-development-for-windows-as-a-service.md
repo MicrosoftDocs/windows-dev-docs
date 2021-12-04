@@ -10,6 +10,7 @@ ms.localizationpriority: medium
 # Application development for Windows as a service
 
 **Applies to**
+-   Windows 11
 -   Windows 10
 -   Windows 10 Mobile
 -   Windows 10 IoT Core 
