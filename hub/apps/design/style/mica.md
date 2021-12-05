@@ -437,6 +437,125 @@ private void NavigationViewControl_DisplayModeChanged(Microsoft.UI.Xaml.Controls
 }
 ```
 
+```cpp
+MainPage::MainPage()
+{
+	InitializeComponent();
+    auto titleBar = ApplicationView::GetForCurrentView()->TitleBar;
+
+    titleBar->ButtonBackgroundColor = Windows::UI::Colors::Transparent;
+    titleBar->ButtonInactiveBackgroundColor = Windows::UI::Colors::Transparent;
+
+    // Hide default title bar.
+    auto coreTitleBar = CoreApplication::GetCurrentView()->TitleBar;
+    coreTitleBar->ExtendViewIntoTitleBar = true;
+    UpdateTitleBarLayout(coreTitleBar);
+
+    // Set XAML element as a draggable region.
+    Window::Current->SetTitleBar(MainPage::AppTitleBar);
+
+    // Register a handler for when the size of the overlaid caption control changes.
+    // For example, when the app moves to a screen with a different DPI.
+    coreTitleBar->LayoutMetricsChanged += ref new TypedEventHandler<CoreApplicationViewTitleBar^, Object^>(this, &MainPage::CoreTitleBar_LayoutMetricsChanged);
+
+    // Register a handler for when the title bar visibility changes.
+    // For example, when the title bar is invoked in full screen mode.
+    coreTitleBar->IsVisibleChanged += ref new TypedEventHandler<CoreApplicationViewTitleBar^, Object^>(this, &MainPage::CoreTitleBar_IsVisibleChanged);
+
+    //Register a handler for when the window changes focus
+    Window::Current->Activated += ref new WindowActivatedEventHandler(this, &MainPage::Current_Activated);
+}
+
+void MainPage::CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar^ sender, Object^ args)
+{
+    UpdateTitleBarLayout(sender);
+}
+
+void MainPage::UpdateTitleBarLayout(CoreApplicationViewTitleBar^ coreTitleBar)
+{
+    // Update title bar control size as needed to account for system size changes.
+    AppTitleBar->Height = coreTitleBar->Height;
+
+    // Ensure the custom title bar does not overlap window caption controls
+    Thickness currMargin = AppTitleBar->Margin;
+    MainPage::AppTitleBar->Margin = Windows::UI::Xaml::Thickness(currMargin.Left, currMargin.Top, coreTitleBar->SystemOverlayRightInset, currMargin.Bottom);
+}
+
+void MainPage::CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar^ sender, Object^ args)
+{
+    if (sender->IsVisible)
+    {
+        MainPage::AppTitleBar->Visibility = Windows::UI::Xaml::Visibility::Visible;
+    }
+    else
+    {
+        MainPage::AppTitleBar->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+    }
+}
+
+//Update the TitleBar based on the inactive/active state of the app
+void MainPage::Current_Activated(Object^ sender, Windows::UI::Core::WindowActivatedEventArgs^ e)
+{
+    SolidColorBrush^ defaultForegroundBrush = safe_cast<SolidColorBrush^>(Application::Current->Resources->Lookup("TextFillColorPrimaryBrush"));
+    
+    SolidColorBrush^ inactiveForegroundBrush = safe_cast<SolidColorBrush^>(Application::Current->Resources->Lookup("TextFillColorDisabledBrush"));
+
+    if (e->WindowActivationState == Windows::UI::Core::CoreWindowActivationState::Deactivated)
+    {
+        AppTitle->Foreground = inactiveForegroundBrush;
+    }
+    else
+    {
+        AppTitle->Foreground = defaultForegroundBrush;
+    }
+}
+
+ //Update the TitleBar content layout depending on NavigationView DisplayMode
+void MainPage::NavigationViewControl_DisplayModeChanged(Microsoft::UI::Xaml::Controls::NavigationView^ sender, Microsoft::UI::Xaml::Controls::NavigationViewDisplayModeChangedEventArgs^ args)
+{
+    const int topIndent = 16;
+    const int expandedIndent = 48;
+    int minimalIndent = 104;
+
+    // If the back button is not visible, reduce the TitleBar content indent.
+    if (NavigationViewControl->IsBackButtonVisible == Microsoft::UI::Xaml::Controls::NavigationViewBackButtonVisible::Collapsed)
+    {
+        minimalIndent = 48;
+    }
+
+    Thickness currMargin = AppTitleBar->Margin;
+
+    // Set the TitleBar margin dependent on NavigationView display mode
+    if (sender->PaneDisplayMode == Microsoft::UI::Xaml::Controls::NavigationViewPaneDisplayMode::Top)
+    {
+        AppTitleBar->Margin = Thickness(topIndent, currMargin.Top, currMargin.Right, currMargin.Bottom);
+    }
+    else if (sender->DisplayMode == Microsoft::UI::Xaml::Controls::NavigationViewDisplayMode::Minimal)
+    {
+        AppTitleBar->Margin = Thickness(minimalIndent, currMargin.Top, currMargin.Right, currMargin.Bottom);
+    }
+    else
+    {
+        AppTitleBar->Margin = Thickness(expandedIndent, currMargin.Top, currMargin.Right, currMargin.Bottom);
+    }
+}
+```
+```cpp
+...
+	public ref class MainPage sealed
+	{
+	public:
+		MainPage();
+	private:
+		void CoreTitleBar_LayoutMetricsChanged(Windows::ApplicationModel::Core::CoreApplicationViewTitleBar^ sender, Platform::Object^ args);
+		void CoreTitleBar_IsVisibleChanged(Windows::ApplicationModel::Core::CoreApplicationViewTitleBar^ sender, Platform::Object^ args);
+		void UpdateTitleBarLayout(Windows::ApplicationModel::Core::CoreApplicationViewTitleBar^ coreTitleBar);
+		void Current_Activated(Platform::Object^ sender, Windows::UI::Core::WindowActivatedEventArgs^ e);
+		void NavigationViewControl_DisplayModeChanged(Microsoft::UI::Xaml::Controls::NavigationView^ sender, Microsoft::UI::Xaml::Controls::NavigationViewDisplayModeChangedEventArgs^ args);
+	};
+...
+```
+
 ## Do's and don'ts
 
 * **Do** apply BackdropMaterial to the back-most layer replacing the ApplicationPageBackgroundThemeBrush.
