@@ -66,7 +66,7 @@ This release includes updates to the windowing APIs. These are a set of high-lev
 Important limitations:
 
 - This release of `AppWindow` is currently available only to Win32 apps (both packaged and unpackaged).
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an `AppWindow`; you are limited to using the `HWND` interop access methods.
+- The Windows App SDK does not currently provide methods for attaching UI framework content to an `AppWindow`; you're limited to using the `HWND` interop access methods.
 - The Windowing API's will currently not work on Windows version 1809 and 1903 for AMD64.
 
 For more information, see [Manage app windows](windowing/windowing-overview.md).

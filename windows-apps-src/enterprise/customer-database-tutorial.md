@@ -5,8 +5,6 @@ keywords: enterprise, tutorial, customer, data, create read update delete, REST,
 ms.date: 05/07/2018
 ms.topic: article
 
-
-ms.localizationpriority: med
 ---
 # Tutorial: Create a customer database application
 
