@@ -773,7 +773,7 @@ Apart from those items, just follow the same guidance that you did previously to
 - Construct C++/WinRT objects on the stack, not on the heap.
 - Replace calls to property get accessors with function-call syntax (`()`).
 
-A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [C3779: Why is the compiler giving me a "consume_Something: function that returns 'auto' cannot be used before it is defined" error?](./faq.yml#c3779--why-is-the-compiler-giving-me-a--consume-something--function-that-returns--auto--cannot-be-used-before-it-is-defined--error-).
+A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [C3779: Why is the compiler giving me a "consume_Something: function that returns 'auto' cannot be used before it is defined" error?](./faq.yml#why-is-the-compiler-giving-me-a--c3779--consume-something--function-that-returns--auto--cannot-be-used-before-it-is-defined--error-).
 
 If you want to follow along with the walkthrough and port **DisplayToast** yourself, then you can compare your results to the code in the C++/WinRT version in the ZIP of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code that you downloaded.
 
