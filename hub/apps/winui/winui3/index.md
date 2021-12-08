@@ -11,8 +11,15 @@ ms.date: 11/10/2021
 
 WinUI 3 is the native UI platform component that ships with the [Windows App SDK](../../windows-app-sdk/index.md) (completely decoupled from [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)). The Windows App SDK provides a unified set of APIs and tools that can be used to create production desktop apps that target Windows 10 and later, and can be published to the Microsoft Store.
 
+> [!Important]
+> The **Windows App SDK** was previously known as **Project Reunion**. Some assets, such as the VSIX extension and NuGet packages, still use this code name (these will be renamed in a future release).
+>
+>**Windows App SDK** is used in all documentation except where a specific release or asset still refers to **Project Reunion**.
+
 > [!div class="nextstepaction"]
 > [Create your first WinUI 3 app](create-your-first-winui3-app.md)
+
+## WinUI resources
 
 :::row:::
    :::column span="2":::
@@ -33,13 +40,6 @@ WinUI 3 is the native UI platform component that ships with the [Windows App SDK
 
    :::column-end:::
 :::row-end:::
-
-> [!Important]
-> The **Windows App SDK** was previously known as **Project Reunion**. Some assets, such as the VSIX extension and NuGet packages, still use this code name (these will be renamed in a future release).
->
->**Windows App SDK** is used in all documentation except where a specific release or asset still refers to **Project Reunion**.
-
-## WinUI resources
 
 ### See also
 

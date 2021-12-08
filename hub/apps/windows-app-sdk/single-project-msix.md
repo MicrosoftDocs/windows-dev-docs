@@ -71,7 +71,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
     <PublishProfile>Properties\PublishProfiles\win10-$(Platform).pubxml</PublishProfile>
     ```
 
-    When you are done, the **\<PropertyGroup\>** element should look similar to this.
+    When you're done, the **\<PropertyGroup\>** element should look similar to this.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
