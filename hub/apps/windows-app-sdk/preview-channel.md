@@ -91,11 +91,12 @@ For more info, or to get started developing with WinUI, see:
 
 - **C# projects using 1.0 Preview 3 must use the following .NET SDK**: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, then use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
 ## Important issue impacting 1.0 Preview 1 and Preview 2
 
@@ -209,7 +210,7 @@ This release introduces updates to the [AppWindow](/windows/windows-app-sdk/api/
 
 **Important limitations**:
 
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you are limited to using the HWND interop access methods.
+- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you're limited to using the HWND interop access methods.
 - Window title bar customization works only on Windows 11. Use the [IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) method to check for title bar customization feature support. We intend to bring this functionality down-level.
 
 For more info, see [Manage app windows](windowing/windowing-overview.md).
@@ -308,12 +309,12 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
 - **C# projects using 1.0 Preview 2 must use the following .NET SDK**: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, use the [resume_foreground](https://github.com/microsoft/wil/blob/68f211ddef18686d957606fa45ccd0e7177e20bd/include/wil/cppwinrt_helpers.h#L97-L107) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <winrt/Microsoft.UI.Dispatching.h>` statement to your code file.
-    3. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    4. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
     
 ## Version 1.0 Preview 1 (1.0.0-preview1)
 
@@ -348,7 +349,7 @@ This release brings the Windowing API we introduced in Experimental 1 to a Previ
 **Important limitations**:
 
 - This release of [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) is currently available only to Win32 apps (both packaged and unpackaged).
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you are limited to using the HWND interop access methods.
+- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you're limited to using the HWND interop access methods.
 - Window title bar customization works only on Windows 11. Use the [IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) method to check for title bar customization feature support. We intend to bring this functionality down-level.
 
 For more info, see [Manage app windows](windowing/windowing-overview.md).
@@ -388,13 +389,12 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
     #include <winrt/microsoft.ui.dispatching.co_await.h>
     ```
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, use the [resume_foreground](https://github.com/microsoft/wil/blob/68f211ddef18686d957606fa45ccd0e7177e20bd/include/wil/cppwinrt_helpers.h#L97-L107) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <winrt/Microsoft.UI.Dispatching.h>` statement to your code file.
-    3. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    4. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
-
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
 - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI project templates](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 
