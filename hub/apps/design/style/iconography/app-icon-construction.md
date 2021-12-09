@@ -20,6 +20,8 @@ Once you've designed your app's icon, you need to create the icon files themselv
 
 :::image type="content" source="images/icon-ramp-full.png" alt-text="{alt-text}":::
 
+:::image type="content" source="images/icon-sizes.png" alt-text="{alt-text}":::
+
 Windows will display your app icon at a variety of sizes depending on where your icon is being displayed and the user's display scale settings. The following table lists all the possible sizes that Windows may use to display your icon.
 
 ## Icon sizes (Win32)
