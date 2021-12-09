@@ -22,7 +22,7 @@ An icon should be a metaphor for its app: a visual representation of the value p
 
 Your icon should illustrate the concept of your app in a singular element using simple forms.
 
-When creating your icon, use clear metaphors and leverage concepts that are largely understood—such as an envelope for mail or magnifying glass for search. The key concept should be the focal point in the icon and not diluted by decorative elements that don’t support the metaphor. To enhance communication clarity, icons should only include one metaphor.
+When creating your icon, use clear metaphors and leverage concepts that are largely understood - such as an envelope for mail or magnifying glass for search. The key concept should be your icon's focal point; don't dilute your icon by adding decorative elements that don’t support the metaphor. To enhance communication clarity, use no more than two two metaphors in a single icon. If a single metaphor can be used, that’s even better.
 
 :::image type="content" source="images/abstraction-spectrum.png" alt-text="Examples of less and more abstract icons.":::
 
@@ -34,50 +34,35 @@ Icons should not include typography as part of the design. Letters and words on 
 
 ## Design guidance: Shape
 
-### The grid
+### The grid and rounded corners
 
 :::image type="content" source="images/icon-design-grid.png" alt-text="The grid template used for icon design and alignment.":::
 
-Microsoft aligns its icons to a 48x48 grid to ensure a balanced icon that takes advantage of the space available to it while still maintaining a distinctive shape and silhouette. Whenever possible, align your icon's distinctive features to the grid.
+Microsoft aligns its icons to a 48x48 grid initially to ensure a balanced icon that takes advantage of the space available, while still maintaining a distinctive shape and silhouette. Aligning your icon's distinctive features to the grid will balance well with the other icons around it.
 
-### Rounded corners
-
-:::image type="content" source="images/grid-rounded-corners" alt-text="An image calling out the various rounded corner templates in the grid.":::
-
-**Approachable** is a Microsoft personality principle. We use soft or rounded corners to communicate this trait.
-
-The shapes used to create product icons should be built to align with the icon grid. The corners of these shapes should match the rounded corners in the icon grid.
-
-When rounded corners are applied to an exterior curve, use a 2px radius. When rounded corners are applied to an interior curve, use a 1px radius.
+**Approachability** is a Microsoft personality principle. One way we communicate this trait is by using soft or rounded corners. Shapes used in your app's product icons should be built to align with the icon grid. The corners of these shapes should match the rounded corners in the icon grid. When rounded corners are applied to an exterior curve, use a 2px radius at 48x48. When rounded corners are applied to an interior curve, use a 1px radius instead.
 
 ### Silhouette
 
 :::image type="content" source="images/icons-aligned-in-grid.png" alt-text="Several icons aligned within the grid template.":::
 
-A visually balanced silhouette allows good icon scalability and also avoids extremes of thick and thin shapes
-
-Use the grid to design a silhouette that’s distinctive, yet legible at small sizes. Use as few shapes with as few corners as possible to distinguish your product while still feeling at home on Windows.
+A visually balanced silhouette allows good icon scalability and also avoids extremes of thick and thin shapes. Use the grid to design a silhouette that’s distinctive, yet legible at small sizes. Use as few shapes with as few corners as possible to distinguish your product while still feeling at home on Windows.
 
 ### Detail
 
 When adding detail, care should be taken to maintain legibility at small sizes. It is recommended to only add additional literal detail to the most prominent layer of an icon.
 
-## Design guidance: Color
+## Design guidance: Color and gradients
 
-:::image type="content" source="images/color-spectrum.png" alt-text="A color picker style image showing all available colors and shades.":::
+Pick colors carefully and avoid relying on color alone to convey meaning. Use shape and metaphor with color to communicate. To avoid complexity when scaling an icon across a range of sizes, treatments to colors should be minimized. Color gradients, overlays of varying opacity, and tints of color should be kept to a minimum.
 
-Pick colors carefully and avoid relying on color alone to convey meaning. Use shape and metaphor with color to communicate.
+Gradients should be subtle for the most part. Try to limit your gradient ramps to only one or two steps in both the horizontal and vertical directions. If your icon needs to use additional steps, ((1))
 
-To avoid complexity when scaling an icon across a range of sizes, treatments to colors should be minimized. Color gradients, overlays of varying opacity, and tints of color should be kept to a minimum.
+> [!ALERT]
+> ((1)) List one or two considerations to watch out for when you're using additional steps!
+> ((2)) "gradients should be subtle" vs. "avoid very light transitions"
 
-### The Microsoft color palette
-
-:::image type="content" source="images/create-monochrome-palette" alt-text="An image outlining the steps to create a monochrome color palette":::
-
-> [!WARNING]
-> I totally made this part up. Also we need a better image for this section.
-
-Microsoft uses a standard color palette to represent its brand. Using colors from this palette signals a strong association with Windows. This may be appropriate for a system app such as a terminal replacement or disk management software. Other apps, such as games or design tools, may wish to distinguish themselves by avoiding these colors to make their icons stand out.
+The default angle for gradients is 120 degrees. Start and end points can be adjusted accordingly. The important thing is that it’s a smooth transition. Avoid very tight transitions ((2)) that would feel like reflections or dimension.
 
 ### Monochrome palette
 
@@ -90,6 +75,12 @@ Create a monochrome palette using the following steps:
 3. For a wider palette, create tints to white and shades to black using the same method as step 2. These tints and shades should be used only when you need a little more contrast.
 4. The tints of the dark colors and shades of the light colors are usually useless and drab. They can be removed.
 
+### Monochrome gradients
+
+:::image type="content" source="images/monochrome-gradients.png" alt-text="An image showing transitions in monochrome gradients":::
+
+Monochrome gradients are usually used to give a subtle hint toward an ambient light angle coming from the top left. They should not be treated as a direct light source though. The idea is to give the shapes a little movement without being too dramatic.
+
 ### Analogous palette
 
 :::image type="content" source="images/create-analogous-palette." alt-text="An image outlining the steps to create an analogous color palette":::
@@ -100,23 +91,11 @@ Creating an analogous palette is exactly like creating a monochrome palette, but
 2. Make vertical ramps out of all three color sets.
 3. Instead of creating tints and shades using white and black, use your second and third colors instead.
 
-### Gradients
-
-:::image type="content" source="images/icons-with-gradients.png" alt-text="Several icons that use gradients.":::
-
-Gradients should be subtle for the most part. Rule of thumb is one or two steps in the vertical or horizontal ramps. (see step illustrations below) Of course there are always exceptions. Again it’s about being thoughtful with how you apply it.
-
-:::image type="content" source="images/gradient-angle" alt-text="{alt-text}":::
-
-The default angle for gradients is 120 degrees. Start and end points can be adjusted accordingly. The important thing is that it’s a smooth transition. Avoid very tight transitions that would feel like reflections or dimension.
-
-:::image type="content" source="images/monochrome-gradients.png" alt-text="An image showing transitions in monochrome gradients":::
-
-The monochrome gradients are usually used to give a subtle hint toward an ambient light angle coming from the top left. They should not be treated as a direct light source though. The idea is to give the shapes a little movement without being too dramatic.
+### Analogous gradients
 
 :::image type="content" source="images/analogous-gradients.png" alt-text="An image showing transitions in analogous gradients":::
 
-The analogous gradients should be at the same angle as the monochrome, but don't always have to be. Typically lighter hues should be on top left to avoid looking overly dramatic but also to be as consistent as possible with the monochrome.
+Analogous gradients should be at the same angle as the monochrome, but don't always have to be. Typically lighter hues should be on top left to avoid looking overly dramatic but also to be as consistent as possible with the monochrome.
 
 ## Design guidance: Contrast, shadow, and perspective
 
@@ -131,15 +110,15 @@ The analogous gradients should be at the same angle as the monochrome, but don't
     :::column-end:::
 :::row-end:::
 
-Accessibility is a high priority for Microsoft. Because people have the choice of choosing an accent color, it’s difficult to make an icon 100% accessible on every background. There are several things you can do to ensure your icon is as accessible as possible.
-
-> [!WARNING]
-> ??? Broken image
+Accessibility is a high priority for Microsoft. App icons are primarily displayed on either light and dark backgrounds but displayed over desktop background images and tints or shades of the system accent color. It is difficult to make an icon 100% accessible on every background, but there are several things you can do to ensure your icon is as accessible as possible.
 
 - Use color values in all 3 ranges, dark, medium, light.
-- Make sure at least half of your icon passes a 3.0:1 contrast ratio on light and dark theme. Enough to make out the shape.
-- Some hue values are more difficult than others. Yellow will never pass on light theme until it’s brown. Reds are more difficult on dark theme.
-- There is always the option to have a separate light and dark theme asset.
+- Make sure at least half of your icon passes a 3.0:1 contrast ratio on light and dark theme.
+- Some hue values are more difficult than others. Yellow will never pass an accessible contrast ratio on light theme until it’s brown. Reds are more difficult on dark theme.
+- Provide separate light and dark theme assets for Taskbar, Start and other theme-sensitive areas of Windows.
+
+> [!ALERT]
+> Final bullet reads poorly
 
 ### High contrast
 
@@ -152,43 +131,72 @@ Accessibility is a high priority for Microsoft. Because people have the choice o
     :::column-end:::
 :::row-end:::
 
+> [!TIP]
+> Windows 11 no longer requires high contrast assets for app icons.
 
-High contrast icons are black and white and should be a direct representation of your app icon. Often the high contrast icon can be created from the color version using a solid fill and line. Avoid gradients in high contrast icons.
+High contrast icons are black and white and should be a direct representation of your app icon. Often the high contrast icon can be created from the color version using a solid fill and line. Avoid gradients in high contrast icons. Sometimes [monoline icons](../segoe-fluent-icons-font.md) are required for in-app experiences should be designed according to these guidelines.
 
 ### Layering and shadow
 
-:::image type="content" source="images/icon-layers-angle.png" alt-text="{alt-text}":::
+:::row:::
+    :::column:::
+        :::image type="content" source="images/icon-layers-angle.png" alt-text="{alt-text}":::
+    :::column-end:::
+    :::column:::
+        :::image type="content" source="images/icon-layers-top.png" alt-text="{alt-text}":::
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        Top/Front facing view.
+    :::column-end:::
+    :::column:::
+        Isometric view to illustrate z-depth. For illustrative purposes only; not a suggested design option.
+    :::column-end:::
+:::row-end:::
 
-Icons are composed of layers. Each layer is a flat object sitting on top of the layers below it. Use as few layers as possible, and minimize extreme contrasts of scale between shapes
+Icons are composed of flat objects sitting on top of the layers below it.
 
-:::image type="content" source="images/icon-layers-top.png" alt-text="{alt-text}":::
+- Use as few layers as possible, and minimize extreme contrasts of scale between shapes.
+- Use drop shadows within icons to create definition between object layers and visually connect components to each other within the icon design.
+- In general, shadows cast from light onto dark shapes have the best result.
+- Inner shadows should only cast a shadow on the graphic symbol, not on to the surrounding background.
+- There are two types of inner shadow both of which have two shadows each
 
-Drop shadows can be used within icons to help create definition between object layers and connect visually with the rest of the icon design system. In general, shadows cast from light onto dark shapes have the best result.
+## Shadow construction
 
-Inner shadows should only cast a shadow on the graphic symbol, not on to the surrounding background.
-
-There are two types of inner shadow both of which have two shadows each.
-
-### Separate metaphor
-
-:::image type="content" source="images/separate-metaphor.png" alt-text="{alt-text}":::
-
-This shadow is used when you have two objects that overlap each other but are not necessarily part of the same metaphor. The shadow should be masked into the shape below it.
+All of these values are to be rendered at 48x48 px and scaled up or down from there. If this is not adhered to, shadows will be inconsistant across the icon system.
+ There are two types of object shadows both of which have two shadows each. Objects within the same metaphor have a shadow with slightly less blur.
 
 ### Same metaphor
 
-:::image type="content" source="images/same-metaphor" alt-text="{alt-text}":::
+:::image type="content" source="{source}" alt-text="{alt-text}":::
 
 This shadow is used when you have content within a single metaphor that needs some depth. It’s not always necessary to do this, but single object metaphors need some depth to feel like part of the system. the blue on shadow 2 is the only difference.
 
-### Perspective
+### Separate metaphor
 
-> [!WARNING]
-> ??? Broken images
+:::image type="content" source="{source}" alt-text="{alt-text}":::
 
-> [!WARNING]
-> I made up everything except the very first and very last sentences in this section.
+This shadow is used when you have two objects that overlap each other but are not necessarily part of the same metaphor. The shadow should be masked into the shape below it.
 
-Shapes can be drawn with either a straight-on or isometric perspective. Apps that primarily present information may want a straisght-on perspective to show that they're straightforward and easy to understand. Isometric icons may fit better for a creative or complex apps, where the icons should communicate dynamism and depth.
+## Perspective
 
-Regardless, layers should always be flat and perpendicular to the viewing angle.
+:::row:::
+    :::column:::
+        :::image type="content" source="{source}" alt-text="{alt-text}":::
+    :::column-end:::
+    :::column:::
+        :::image type="content" source="{source}" alt-text="{alt-text}":::
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        These icons are fairly simple; perspective may be appropriate.
+    :::column-end:::
+    :::column:::
+        This icon is too complex; use of perspective is not recommended.
+    :::column-end:::
+:::row-end:::
+
+Icons should be drawn with a straight-on perspective to present the metaphor in a simple easy to understand way. Exceptions are cases where the metaphor doesn’t read well without viewing another side of it. For example a cylinder viewed straight on is a rectangle so the top could be added to show that it has volume. The other exception is when an app is related to 3d where it makes sense to show dimension. In both cases the previous guidelines about flat objects still applies. Layers should always be flat and perpendicular to the viewing angle.

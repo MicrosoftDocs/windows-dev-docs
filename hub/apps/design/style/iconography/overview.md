@@ -64,7 +64,8 @@ Create icons that look good [at any size, on any screen](app-icon-construction.m
 
 If your app supports Windows 10, your app's icons will be displayed in Live Tiles. [Learn more about additional considerations for icons on Windows 10](live-tile-icons.md)
 
-## See also
+## Asset production tools
 
-- [Use Visual Studio's asset generation tool](visual-studio-asset-generation.md)
-- [Use PWA Builder's asset generation tool](pwa-builder-asset-generation.md)
+### Create icons using Visual Studio's asset generation tools
+
+[Visual Studio's Manifest Designer](visual-studio-asset-generation.md) can create an entire set of app icons and tile images from a single image. This is useful to create an initial set of icons, but will not achieve the same result as handcrafting each icon file, as Visual Studio will have to scale your image to create the required image sizes.

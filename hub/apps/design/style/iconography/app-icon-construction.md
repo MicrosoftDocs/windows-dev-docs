@@ -16,9 +16,38 @@ Once you've designed your app's icon, you need to create the icon files themselv
 
 ## Icon sizes
 
+:::image type="content" source="images/icon-sizes.png" alt-text="{alt-text}":::
+
 Windows will display your app icon at a variety of sizes depending on where your icon is being displayed and the user's display scale settings. The following table lists all the possible sizes that Windows may use to display your icon.
 
-:::image type="content" source="images/icon-sizes.png" alt-text="{alt-text}":::
+> [!ALERT]
+> We don't call it system tray anymore
+
+| Windows 11 scale factor                                   | 100% | 125% | 150% | 200% | 250% | 300% | 400%  |
+|-----------------------------------------------------------|------|------|------|------|------|------|-------|
+| Context menu, title bar, Search results list, system tray | 16px | 20px | 24px | 32px | 40px | 48px | 64px  |
+| Taskbar, all apps list                                    | 24px | 30px | 36px | 48px | 60px | 72px | 96px  |
+| Start Menu Pinned apps, Search results                    | 32px | 40px | 48px | 64px | 80px | 96px | 256px |
+
+> [!NOTE]
+> Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down; never up.
+
+## Icon scaling
+
+When Windows displays your app's icon, it will look for an exact size match first. If there is no exact match it will look for the next size above and scale down. Including more icon sizes with your app means Windows will more often have a pixel-perfect match, and reduce the amount of scaling applied to scaled icons.
+
+> [!ALERT]
+> Win32 apps!
+
+# Transparent backgrounds
+
+Icons look best with a transparent background. If your app's branding requires your icon be plated on a background, that's okay too. However, you'll have to re-implement some theming functionality that transparent icons get for free. For example, you might provide a version of your app's icon plated on a white background for use in dark mode, and a black background for use in light mode.
+
+
+
+#### ------------------ Revisions end here ------------------ ####
+
+
 
 | Icon size | Comments                                                          |
 |-----------|-------------------------------------------------------------------|

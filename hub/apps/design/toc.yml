@@ -281,12 +281,10 @@
           href: style/iconography/app-icon-design.md
         - name: Construct your Windows app's icon
           href: style/iconography/app-icon-construction.md
-        - name: Icons for live tiles
+        - name: Construction guidelines for Windows 10 icons
           href: style/iconography/live-tile-icons.md  
         - name: Create icons using Visual Studio's asset generation tool
           href: style/iconography/visual-studio-asset-generation.md  
-        - name: Create icons using PWA Builder's asset generation tool
-          href: style/iconography/pwa-builder-asset-generation.md  
         - name: Segoe MDL2 icons
           href: style/segoe-ui-symbol-font.md
         - name: Segoe Fluent Icons
