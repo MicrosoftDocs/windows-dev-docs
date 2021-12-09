@@ -143,7 +143,7 @@ You can also use this functionality to run builds or test scripts.
 
 * When [`windowingBehavior`](./customize-settings/startup.md#new-instance-behavior) is set to `"useExisting"` or `"useAnyExisting"`, they will ignore the existence of the `_quake` window.
 
-* The window will be hidden from the taskbar and from <kbd>Alt</kbd>+<kbd>Tab</kbd>.
+* When minimized, the window will be hidden from the taskbar and from <kbd>Alt</kbd>+<kbd>Tab</kbd>.
 
 * Only one window may be the quake mode window at a time.
 
