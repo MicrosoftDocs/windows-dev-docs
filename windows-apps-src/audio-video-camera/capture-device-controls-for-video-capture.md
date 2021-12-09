@@ -28,7 +28,7 @@ The high dynamic range (HDR) video feature applies HDR processing to the video s
 
 The HDR video control supports three modes: on, off, and automatic, which means that the device dynamically determines if HDR video processing would improve the media capture and, if so, enables HDR video. To determine if a particular mode is supported on the current device, check to see if the [**HdrVideoControl.SupportedModes**](/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes) collection contains the desired mode.
 
-Enable or disable HDR video processing by setting the [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) to the desired mode. This control requires that the stream is at a stopped state before the mode is set, see [KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR](https://docs.microsoft.com/en-us/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-videohdr).
+Enable or disable HDR video processing by setting the [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) to the desired mode. This control requires that the stream is at a stopped state before the mode is set, see [KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR](/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-videohdr).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetSetHdrVideoMode":::
 
