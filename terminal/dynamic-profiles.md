@@ -4,7 +4,7 @@ description: Learn about dynamic profiles in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 08/30/2021
-ms.topic: concept
+ms.topic: conceptual
 ---
 
 # Dynamic profiles in Windows Terminal
