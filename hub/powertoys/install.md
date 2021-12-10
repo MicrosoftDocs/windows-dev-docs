@@ -1,7 +1,7 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 05/28/2021
+ms.date: 12/03/2021
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 
 We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
 
-## Install with Windows executable file with GitHub
+## Install with Windows executable file via GitHub
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](https://aka.ms/installpowertoys)

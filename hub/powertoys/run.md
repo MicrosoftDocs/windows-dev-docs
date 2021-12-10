@@ -103,6 +103,24 @@ If the program plugin's option "Include in global result" is not selected, be su
 
 `.Visual Studio Code -- C:\myFolder`
 
+## Calculator Plugin
+
+The PowerToys Run calculator plugin supports the following operations:
+
+| Operation |  Operator Syntax |
+| - | - |
+| Addition |  a + b |
+| Subtraction | a - b |
+| Multiplication | a * b |
+| Division |  a / b |
+| Modulo/Remainder | a % b |
+| Exponentiation | a ^ b |
+| Factorial | x ! |
+| Sine | sin( x ) |
+| Cosine | cos( x ) |
+| Tangent | tan( x ) |
+| Arc Tangent | arctan( x ) |
+
 ## Monitor Positioning
 
 If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options are opening on:
@@ -112,6 +130,7 @@ If multiple monitors are in use, PowerToys Run can be launched on the desired mo
 - Monitor with focused window
 
 ![PowerToys Run Monitor Selection](../images/pt-run-monitor.png)
+
 
 ## Windows Search settings
 
