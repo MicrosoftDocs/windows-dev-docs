@@ -48,6 +48,8 @@
           href: tutorials/ssh.md
         - name: Set the tab title
           href: tutorials/tab-title.md
+        - name: Open tab or pane in same directory
+          href: tutorials/new-tab-same-directory.md
     - name: Custom Terminal gallery
       items:
         - name: Custom Terminal guide
