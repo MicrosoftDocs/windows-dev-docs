@@ -3,7 +3,7 @@ metadata:
   title: Windows Terminal FAQ
   description: Frequently asked questions about Windows Terminal, such as how to start terminal in administrator mode, how to save a terminal session, and more.
   ms.topic: troubleshooting
-  ms.date: 11/15/2021
+  ms.date: 12/09/2021
   ms.author: mattwoj
   author: mattwojo
   manager: jken
@@ -41,6 +41,16 @@ sections:
           In your [settings.json file](./install.md#settings-json-file), you can create or modify profiles that run any command-line executable. In the settings.json file, set "commandline" to whatever you want. For example, powershell --> "pwsh.exe".
           You can also add a profile using the terminal settings ui by scrolling to the bottom of your profiles list and selecting "+ Add a new profile".
           ![Screenshot of settings add a profile](./images/settings-add-profile.png)
+
+      - question: How do I exit focus mode?
+        answer: |
+          To exit [focus mode](./customize-settings/actions.md#toggle-focus-mode), which hides the tabs and title bar on Windows Terminal, open the terminal command palette (Ctrl+Shift+P), find "toggle focus mode", then hit enter.
+
+          ![Toggle focus mode setting in Windows Terminal command pallette](./images/toggle-focus-mode.png)
+
+          You may also want to ensure that your launch mode is not set to "focus" in the Startup settings.
+          
+          ![Focus mode selector in Windows Terminal Startup settings](./images/startup-focus-mode.png)
 
       - question: What is the difference between Windows Terminal and Windows Terminal (Preview)?
         answer: |
