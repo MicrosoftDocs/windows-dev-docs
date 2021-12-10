@@ -21,7 +21,7 @@ To see how your app behaves with contrast themes, enable and customize them thro
 > [!Tip]
 > You can also press the left-Alt key + Shift key + Print screen (PrtScn on some keyboards) to quickly turn contrast themes on or off. If you have not selected a theme previously, the Aquatic theme is used by default (shown in the following image).
 >
-> :::image type="content" source="images/contrast-theme-calculators.png" alt-text="Calculator shown in Light theme and Aquatic contrast theme.":::
+> :::image type="content" border="false" source="images/contrast-theme-calculators.png" alt-text="Calculator shown in Light theme and Aquatic contrast theme.":::
 
 ## Setting HighContrastAdjustment to None
 
@@ -71,11 +71,11 @@ A [**ResourceDictionary.ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedi
 
 On the *Settings > Ease of access > Contrast themes* page (shown in the following image), users can select from four default contrast themes: **Aquatic**, **Desert**, **Dusk**, and **Night sky**.
 
-:::image type="content" source="images/contrast-theme-settings.png" alt-text="Contrast theme settings.":::
+:::image type="content" border="false" source="images/contrast-theme-settings.png" alt-text="Contrast theme settings.":::
 
 After the user selects an option, they can choose to immediately apply it, or they can edit the theme. The following image shows the Edit theme dialog for the **Aquatic** contrast theme.
 
-:::image type="content" source="images/contrast-theme-resources.png" alt-text="Settings - Edit theme dialog for the **Aquatic** contrast theme.":::
+:::image type="content" border="false" source="images/contrast-theme-resources.png" alt-text="Settings - Edit theme dialog for the **Aquatic** contrast theme.":::
 
 This table shows the contrast theme colors and their recommended pairings. Each **SystemColor** resource is a variable that automatically updates the color when the user switches contrast themes.
 
@@ -189,7 +189,7 @@ Pages, panes, popups, and bars should all use **SystemColorWindowColor** for the
 
 The navigation pane and the page both share the same background color in contrast themes. To distinguish them, a contrast theme-only border is essential.
 
-:::image type="content" source="images/contrast-theme-border.png" alt-text="A navigation pane separated from the rest of the page.":::
+:::image type="content" border="false" source="images/contrast-theme-border.png" alt-text="A navigation pane separated from the rest of the page.":::
 
 ### List items with colored text
 
@@ -197,11 +197,11 @@ In contrast themes, items in a [ListView](/uwp/api/windows.ui.xaml.controls.list
 
 Be careful when you set the TextBlock.Foreground in the [**DataTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) of the **ListView** (typically done to establish visual hierarchy). The **Foreground** property is set on the **ListViewItem**, and each **TextBlock** in the DataTemplate inherits the correct **Foreground** color. Setting **Foreground** breaks this inheritance.
 
-:::image type="content" source="images/high-contrast-list1.png" alt-text="Complex list in Light theme and Aquatic theme (note how the text color is not inverted in HighContrast).":::
+:::image type="content" border="false" source="images/high-contrast-list1.png" alt-text="Complex list in Light theme and Aquatic theme (note how the text color is not inverted in HighContrast).":::
 
 You can resolve this by setting **Foreground** conditionally through a **Style** in a [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection. As the **Foreground** is not set by **SecondaryBodyTextBlockStyle** in **HighContrast**, the color will invert correctly.
 
-:::image type="content" source="images/high-contrast-list2.png" alt-text="Complex list in Light theme and Aquatic theme (note how the text color is inverted in HighContrast).":::
+:::image type="content" border="false" source="images/high-contrast-list2.png" alt-text="Complex list in Light theme and Aquatic theme (note how the text color is inverted in HighContrast).":::
 
 The following code snippet (from an App.xaml file) shows an example [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection in a **ListView** data template.
 
