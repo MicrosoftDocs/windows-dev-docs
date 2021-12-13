@@ -49,8 +49,8 @@ The Windows App SDK has these system requirements:
 - Windows SDK version 2004 (build 19041) and later. This is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
 - Building .NET apps also requires:
-  - .NET 5 SDK version 5.0.300 and later if you're using Visual Studio 2019 version 16.10
-  - .NET 5 SDK version 5.0.204 if you're using Visual Studio 2019 version 16.9
+  - .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
+  - .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
 
 ### Visual Studio support for WinUI 3 tools
 
