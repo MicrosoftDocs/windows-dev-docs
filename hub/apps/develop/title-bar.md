@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 11/19/2021
+ms.date: 12/13/2021
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -18,7 +18,7 @@ Windows provides a default title bar for every app window and lets you to custom
 See the [Title bar](../../design/basics/app-titlebar.md) design article for guidance on customizing your app's title bar, acceptable title bar area content, and recommended UI patterns.
 
 > [!div class="nextstepaction"]
-> [See the Windows 11 Fluent Design guidance for title bar](../../design/basics/app-titlebar.md)
+> [See the Windows 11 Fluent Design guidance for title bar](../../apps/design/basics/titlebar-design.md)
 
 ## Platform options
 

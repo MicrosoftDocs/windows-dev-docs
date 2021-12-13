@@ -2,7 +2,7 @@
 description: Design the title bar of a desktop app to match the personality of the app.
 title: Windows app title bar
 template: detail.hbs
-ms.date: 11/30/2021
+ms.date: 12/13/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -55,4 +55,4 @@ If using tabs as the main element of an app, use the titlebar space and keep cap
 ### Next steps
 
 > [!div class="nextstepaction"]
-> [See the developer guidance for title bar](../../design/basics/app-titlebar.md)
+> [See the developer guidance for title bar](../../develop/title-bar.md)
