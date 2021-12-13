@@ -138,7 +138,7 @@ Assuming that you've installed MSYS2 into `C:\\msys64`:
 
 For more details, see the Terminals section of the [MSYS2 documentation](https://www.msys2.org/docs/terminals/#windows-terminal).
 
-### Developer Command Prompt for Visual Studio
+### Developer Command Prompt for Visual Studio 2019
 
 Assuming that you've installed [Visual Studio 2019 Professional](https://visualstudio.microsoft.com/downloads/):
 
@@ -149,3 +149,22 @@ Assuming that you've installed [Visual Studio 2019 Professional](https://visuals
     "startingDirectory": "%USERPROFILE%"
 }
 ```
+
+### Developer Powershell for Visual Studio 2019
+
+Assuming that you've installed [Visual Studio 2019 Enterprise](https://visualstudio.microsoft.com/downloads/):
+
+```json
+{
+    "name": "Developer Powershell for VS 2019",
+    "commandline": "powershell.exe -noe -c \"&{Import-Module \"\"\"C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/Common7/Tools/Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 994a9d58}\""
+}
+```
+
+An easy way to figure out the `commandline` to use for your Visual Studio instance is:
+1. Find the shortcut to `Developer Powershell for VS 2019` in the start menu
+2. Right-click and select `Open File Location`
+3. Right-click and select `Properties` on the shortcut
+4. Inspect the `Target` field. It will be some value like `C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "&{Import-Module """C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"""; Enter-VsDevShell 994a9d58}"`
+5. Use `Target` field value to update the file path for `Import-Module` in the profile `commandline`
+6. Use `Target` field value to update the unique instance ID used with the `Enter-VsDevShell` command in the profile `commandline`
