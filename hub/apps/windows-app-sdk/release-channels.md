@@ -49,14 +49,14 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date  | Latest patch version  | Patch release date | Support level | End of support |
 |---|---|---|---|---|---|
 |1.0| 11/16/2021 | - | - |Current | 11/16/2022 |
-|0.8| 6/24/2021 |0.8.5| 10/11/2021|Current | 6/24/2022 |
+|0.8| 6/24/2021 |0.8.6| 12/14/2021| Current | 6/24/2022 |
 |0.5| 3/29/2021 | 0.5.9 | 8/10/2021 | Maintenance | 11/1/2021 |
 
 ### Servicing  
 
 Customers can choose *Current* releases or *Maintenance* releases. Both types of releases receive critical fixes throughout their lifecycle, for security, compatibility, and reliability. You must stay up to date with the latest patches to qualify for support.
 
-The quality of all releases is the same. The only difference is the servicing time frame.
+The quality of all releases is the same. The only difference is the servicin6g time frame.
 
 #### Servicing for Current releases  
 
