@@ -121,7 +121,7 @@ town = Redmond
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [Design guidelines for maps](./display-maps.md)
-* [Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [**MapLocationFinder** class](/uwp/api/Windows.Services.Maps.MapLocationFinder)
 * [**FindLocationsAsync** method](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)

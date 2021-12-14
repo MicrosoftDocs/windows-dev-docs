@@ -157,7 +157,7 @@ The binding-related features of UWP apps currently have the following limitation
 -   The [**IValueConverter**](/uwp/api/Windows.UI.Xaml.Data.IValueConverter) methods take language strings as parameters instead of [**CultureInfo**](/dotnet/api/system.globalization.cultureinfo) objects.
 -   The [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) class does not provide built-in support for sorting and filtering, and grouping works differently. For more info, see [Data binding in depth](../data-binding/data-binding-in-depth.md) and the [Data binding sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
 
-Although the same binding features are still largely supported, Windows 10 offers the option of a new and more performant binding mechanism called compiled bindings, which use the {x:Bind} markup extension. See [Data Binding: Boost Your Apps' Performance Through New Enhancements to XAML Data Binding](https://channel9.msdn.com/Events/Build/2015/3-635), and the [x:Bind Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
+Although the same binding features are still largely supported, Windows 10 offers the option of a new and more performant binding mechanism called compiled bindings, which use the {x:Bind} markup extension. See Data Binding: Boost Your Apps' Performance Through New Enhancements to XAML Data Binding, and the [x:Bind Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
 
 ## Binding an Image to a view model
 

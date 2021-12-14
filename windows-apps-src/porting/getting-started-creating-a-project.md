@@ -13,9 +13,7 @@ ms.localizationpriority: medium
 
 Microsoft Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio. It shows you the absolute basics you'll need to know to get started. Each time you create an app, you'll follow steps similar to these.
 
-The following video compares Xcode and Visual Studio.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Comparing-Xcode-to-Visual-Studio/player]
 
 You will also find this [Building apps for Windows blog posting](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/) very helpful.
 

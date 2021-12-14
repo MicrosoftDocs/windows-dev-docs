@@ -40,10 +40,10 @@ This section includes setup steps, a guide through the authentication process, i
 
 The following talks on Channel 9 are a great source of information for building amazing apps on Xbox:
 
-* [Building Great Universal Windows Platform (UWP) Apps for Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
-* [Adapt Your App for Xbox One and TV](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-* [UWP Development 1: Building an Adaptive UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-* [Web Apps Beyond the Browser: Cross-Platform Meets Cross Device](https://channel9.msdn.com/Events/Build/2016/B888)
+* Building Great Universal Windows Platform (UWP) Apps for Xbox
+* Adapt Your App for Xbox One and TV
+* UWP Development 1: Building an Adaptive UI
+* Web Apps Beyond the Browser: Cross-Platform Meets Cross Device
 
 ## See also
 

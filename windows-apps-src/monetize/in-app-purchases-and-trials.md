@@ -79,7 +79,6 @@ This section provides an overview of important tasks and concepts for the [Windo
 Watch the following video for an overview of how to implement in-app purchases in your app using the [Windows.Services.Store](/uwp/api/windows.services.store) namespace.
 <br/>
 <br/>
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Adding-In-App-Purchases-to-Your-UWP-App/player]
 
 <span id="get-started-storecontext" />
 

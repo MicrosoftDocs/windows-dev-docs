@@ -49,7 +49,6 @@ This example demonstrates how to use the [RequestPurchaseAsync](/uwp/api/windows
 Watch the following video for an overview of how to implement in-app purchases in your app.
 <br/>
 <br/>
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Adding-In-App-Purchases-to-Your-UWP-App/player]
 
 ## Related topics
 

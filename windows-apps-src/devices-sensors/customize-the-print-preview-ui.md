@@ -180,5 +180,5 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ## Related topics
 
 * [Design guidelines for printing](./printing-and-scanning.md)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* //Build 2015 video: Developing apps that print in Windows 10
 * [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
