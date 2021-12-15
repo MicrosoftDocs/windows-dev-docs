@@ -258,6 +258,15 @@ The latest available release of the stable channel is the servicing release 0.8.
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
 
+### Version 0.8.6
+
+This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release. 
+
+To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (either .NET SDK 5.0.404 or later, or .NET SDK 5.0.210 or later). You can now download the latest .NET 5 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0). If you do not have the minimum required version of the .NET SDK installed, you will see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
+
+#### Bug Fixes
+For a detailed list of the performance improvements, see the [C#/WinRT 1.4.1 release notes](https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1). 
+
 ### Version 0.8.5
 
 This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release. 
