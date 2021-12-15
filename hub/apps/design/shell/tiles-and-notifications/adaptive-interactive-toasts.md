@@ -64,17 +64,17 @@ new ToastContentBuilder()
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+    <visual>
+        <binding template="ToastGeneric">
+        ...
+        </binding>
+    </visual>
 
-  <actions>
-    ...
-  </actions>
+    <actions>
+        ...
+    </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+    <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -119,11 +119,17 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    <text hint-maxLines="1">Adaptive Tiles Meeting</text>
-    <text>Conf Room 2001 / Building 135</text>
-    <text>10:00 AM - 10:30 AM</text>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+            <text>Conf Room 2001 / Building 135</text>
+            <text>10:00 AM - 10:30 AM</text>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -149,10 +155,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -177,10 +189,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <image placement="hero" src="https://picsum.photos/364/180?image=1043"/>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <image placement="hero" src="https://picsum.photos/364/180?image=1043"/>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -204,10 +222,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <image src="https://picsum.photos/360/202?image=1043" />
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <image src="https://picsum.photos/360/202?image=1043" />
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -250,10 +274,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <text placement="attribution">Via SMS</text>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <text placement="attribution">Via SMS</text>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -371,19 +401,25 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <group>
-        <subgroup>
-            <text hint-style="base">52 attendees</text>
-            <text hint-style="captionSubtle">23 minute drive</text>
-        </subgroup>
-        <subgroup>
-            <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
-            <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
-        </subgroup>
-    </group>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <group>
+                <subgroup>
+                    <text hint-style="base">52 attendees</text>
+                    <text hint-style="captionSubtle">23 minute drive</text>
+                </subgroup>
+                <subgroup>
+                    <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
+                    <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
+                </subgroup>
+            </group>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -475,28 +511,52 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<action
-    content="Dismiss"
-    imageUri="Assets/NotificationButtonIcons/Dismiss.png"
-    arguments="dismiss"
-    activationType="background"/>
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+        
+        <action
+            content="Dismiss"
+            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
+            arguments="dismiss"
+            activationType="background"/>
+
+    </actions>
+
+</toast>
 ```
 
 ---
 
 **New in Windows 11 Update**: You can add tooltips to your icons with the hint-toolTip property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
+
 #### [Builder syntax](#tab/builder-syntax)
+
 ```csharp
 // The builder syntax does not support icon tool tips yet. 
 ```
+
 #### [XML](#tab/xml)
+
 ```xml
-<action
-    content=""
-    hint-toolTip="Dismiss"
-    imageUri="Assets/NotificationButtonIcons/Dismiss.png"
-    arguments="dismiss"
-    activationType="background"/>
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+        
+        <action
+            content=""
+            hint-toolTip="Dismiss"
+            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
+            arguments="dismiss"
+            activationType="background"/>
+
+    </actions>
+
+</toast>
 ```
 
 ---
@@ -543,7 +603,7 @@ ToastContent content = new ToastContent()
 #### [XML](#tab/xml)
 
 ```xml
-<toast>
+<toast launch="app-defined-string">
 
     ...
 
@@ -763,25 +823,25 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
+<toast scenario="reminder" launch="app-defined-string">
    
-  ...
- 
-  <actions>
+    ...
+    
+    <actions>
      
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
+        <input id="snoozeTime" type="selection" defaultInput="15">
+            <selection id="1" content="1 minute"/>
+            <selection id="15" content="15 minutes"/>
+            <selection id="60" content="1 hour"/>
+            <selection id="240" content="4 hours"/>
+            <selection id="1440" content="1 day"/>
+        </input>
  
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+        <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
  
-    <action activationType="system" arguments="dismiss" content=""/>
+        <action activationType="system" arguments="dismiss" content=""/>
      
-  </actions>
+    </actions>
    
 </toast>
 ```
