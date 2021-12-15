@@ -484,6 +484,22 @@ new ToastContentBuilder()
 
 ---
 
+**New in Windows 11 Update**: You can add tooltips to your icons with the hint-toolTip property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
+#### [Builder syntax](#tab/builder-syntax)
+```csharp
+// The builder syntax does not support icon tool tips yet. 
+```
+#### [XML](#tab/xml)
+```xml
+<action
+    content=""
+    hint-toolTip="Dismiss"
+    imageUri="Assets/NotificationButtonIcons/Dismiss.png"
+    arguments="dismiss"
+    activationType="background"/>
+```
+
+---
 
 ### Buttons with pending update activation
 
