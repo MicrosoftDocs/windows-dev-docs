@@ -530,12 +530,12 @@ new ToastContentBuilder()
 
 ---
 
-**New in Windows 11 Update**: You can add tooltips to your icons with the hint-toolTip property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
+**New in Windows 11 Update**: You can add tooltips to your icons with the **HintToolTip** property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
 
 #### [Builder syntax](#tab/builder-syntax)
 
 ```csharp
-// The builder syntax does not support icon tool tips yet. 
+// The builder syntax does not support icon tooltips yet. 
 ```
 
 #### [XML](#tab/xml)
@@ -553,6 +553,56 @@ new ToastContentBuilder()
             imageUri="Assets/NotificationButtonIcons/Dismiss.png"
             arguments="dismiss"
             activationType="background"/>
+
+    </actions>
+
+</toast>
+```
+
+---
+
+### Buttons with colors
+
+**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **UseButtonStyle** property to the toast XML tag and the **HintButtonStyle** property as seen below.
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+// The builder syntax does not support red and green button colors yet.
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast launch="app-defined-string" useButtonStyle="true">
+
+    ...
+
+    <actions>
+        
+        <action
+            content=""
+            hint-toolTip="Answer Video Call"
+            hint-buttonStyle="Success"
+            imageUri="Assets/Icons/VideoCall.png"
+            activationType="foreground"
+            arguments="videoId" />
+
+        <action
+            content=""
+            hint-toolTip="Answer Phone Call"
+            hint-buttonStyle="Success"
+            imageUri="Assets/Icons/PhoneCall.png"
+            activationType="foreground"
+            arguments="answerId" />
+
+        <action
+            content=""
+            hint-toolTip="Hang Up"
+            hint-buttonStyle="Critical"
+            imageUri="Assets/Icons/HangUp.png"
+            activationType="background"
+            arguments="hangupId" />
 
     </actions>
 
