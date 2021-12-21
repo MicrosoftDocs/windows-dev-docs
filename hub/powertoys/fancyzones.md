@@ -4,7 +4,7 @@ description: A window manager utility for arranging and snapping windows into ef
 ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
+no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 ---
 
 # FancyZones utility
