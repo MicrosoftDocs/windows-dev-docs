@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows developer docs
 ms.topic: article
-ms.date: 10/18/2021
+ms.date: 12/10/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,7 +10,7 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of October 18th, 2021.
+The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of December 10th, 2021.
 
 Note: For information regarding Windows 11, please see [What's cool for developers](https://developer.microsoft.com/windows/windows-for-developers/) and the [Windows Developer Center](https://developer.microsoft.com/windows/).
 
@@ -65,100 +65,73 @@ Highlights this month include:
 
 The following list of topics have seen significant updates in the past month, as per GitHub logs:
 
-## Windows UWP Conceptual
+## Windows Conceptual
 
 <ul>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/boxing">Boxing and unboxing values to IInspectable with C++/WinRT</a></li>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/naming">C++/WinRT naming conventions</a></li>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/natvis">Visual Studio native debug visualization for C++/WinRT</a></li>
-<li><a href="/windows/uwp/develop/index">Develop UWP apps</a></li>
-<li><a href="/windows/uwp/gaming/tutorial--adding-sound">Add sound</a></li>
-<li><a href="/windows/uwp/gaming/tutorial-game-rendering">Set up</a></li>
-<li><a href="/windows/uwp/get-started/index">Get started with the Universal Windows Platform (UWP)</a></li>
-<li><a href="/windows/uwp/get-started/your-first-app">Create your first app</a></li>
-<li><a href="/windows/uwp/launch-resume/hosted-apps">Create hosted apps</a></li>
-<li><a href="/windows/uwp/launch-resume/launch-store-app">Launch the Microsoft Store with a URI</a></li>
-<li><a href="/windows/uwp/maps-and-location/display-maps">Display maps with 2D, 3D, and Streetside views</a></li>
-<li><a href="/windows/uwp/monetize/query-for-products">Query for products</a></li>
-<li><a href="/windows/uwp/porting/android-ios-uwp-map">Compare platform features between iOS, Android, and Windows 10.</a></li>
-<li><a href="/windows/uwp/publish/app-submissions">App submissions</a></li>
-<li><a href="/windows/uwp/publish/create-customer-groups">Create customer groups</a></li>
-<li><a href="/windows/uwp/publish/enter-app-properties">Enter app properties</a></li>
-<li><a href="/windows/uwp/publish/feedback-report">Feedback report</a></li>
-<li><a href="/windows/uwp/publish/in-app-ads">In-app ads</a></li>
-<li><a href="/windows/uwp/publish/index">Publish Windows apps</a></li>
-<li><a href="/windows/uwp/publish/link-to-your-app">Link to your app</a></li>
-<li><a href="/windows/uwp/publish/msiexe/age-ratings">Age ratings for MSI and EXE apps</a></li>
-<li><a href="/windows/uwp/publish/package-flights">Package flights</a></li>
-<li><a href="/windows/uwp/publish/pwa/overview">Submit your PWA to the Microsoft Store</a></li>
-<li><a href="/windows/uwp/publish/reviews-report">Reviews report</a></li>
-<li><a href="/windows/uwp/publish/store-policies">Microsoft Store Policies</a></li>
-<li><a href="/windows/uwp/publish/upload-app-packages">Upload app packages</a></li>
-<li><a href="/windows/uwp/publish/usage-report">Usage report</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/files/file-access-permissions">File access permissions</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/game-development-videos">Game development videos</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/AD/domain-user-accounts">Using a domain user account as a service logon account</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/AD/naming-contexts-and-partitions">Naming Contexts and Directory Partitions</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/AD/service-principal-names">Service Principal Names</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/CoreAudio/spatial-sound">Spatial Sound for app developers for Windows, Xbox, and Hololens 2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Debug/system-error-codes">Tutorial - Debug system error codes</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/ETW/process-v2">Process_V2 class</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/NativeWiFi/eap-aka-profile-sample">EAP-AKA Profile Sample</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/NativeWiFi/wireless-profile-samples">Wireless profile samples</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page">Remote procedure call (RPC)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests">Application Manifests</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecMgmt/local-security-policy">Local Security Policy</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Services/service-control-manager">Service control manager</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/apisetqueryapisetpresence">ApiSetQueryApiSetPresence function</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/apisetqueryapisetpresenceex">ApiSetQueryApiSetPresenceEx function</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/handles-and-objects">Handles and objects</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WES/getting-a-provider-s-metadata-">Getting a Provider's Metadata</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinInet/internetgetproxyinfo">InternetGetProxyInfo function</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-apisets">Windows API sets</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/inputdev/virtual-key-codes">Virtual-Key Codes (Winuser.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/index">Update Orchestrator API</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/progress-bars">Progress Bars</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/text-style-tone">Style and Tone</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/xinput/getting-started-with-xinput">Getting Started With XInput in Windows applications</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-and-directinput">Comparison of XInput and DirectInput features</a></li>
+<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/guid">winrt::guid struct (C++/WinRT)</a></li>
+<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/handle">winrt::handle struct (C++/WinRT)</a></li>
+<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/winrt">winrt namespace (C++/WinRT)</a></li>
 </ul>
 
-## Win32 Conceptual
 
-<ul>
-<li><a href="/windows/desktop/DMWmiBridgeProv/mdm-remotewipe">MDM_RemoteWipe class</a></li>
-<li><a href="/windows/desktop/DirectWrite/dwritecore-overview">DWriteCore overview</a></li>
-<li><a href="/windows/desktop/DirectWrite/enumerations">DirectWrite enumerations</a></li>
-<li><a href="/windows/desktop/ETW/system-providers">System Providers</a></li>
-<li><a href="/windows/desktop/Http/http-response">HTTP_RESPONSE (Http.h)</a></li>
-<li><a href="/windows/desktop/IpHlp/packet-timestamping">Packet timestamping</a></li>
-<li><a href="/windows/desktop/Power/system-wake-up-events">System Wake-up Events</a></li>
-<li><a href="/windows/desktop/SbsCs/mt-exe">Mt.exe</a></li>
-<li><a href="/windows/desktop/Sync/using-event-objects">Using Event Objects (Synchronization)</a></li>
-<li><a href="/windows/desktop/comp_swapchain/comp-swapchain">Composition swapchain programming guide</a></li>
-<li><a href="/windows/desktop/delivery_optimization/bg-file-range">BG_FILE_RANGE structure (Deliveryoptimization.h)</a></li>
-<li><a href="/windows/desktop/delivery_optimization/bg-job-state-">BG_JOB_STATE enumeration (Deliveryoptimization.h)</a></li>
-<li><a href="/windows/desktop/delivery_optimization/do-interfaces">Delivery Optimization Interfaces</a></li>
-<li><a href="/windows/desktop/delivery_optimization/do-reference">Delivery Optimization Reference</a></li>
-<li><a href="/windows/desktop/direct3d12/direct3d-12-structures">Core structures (Direct3D 12 Graphics)</a></li>
-<li><a href="/windows/desktop/direct3d12/nf-d3d12-d3d12sdkversion">D3D12SDKVersion symbol</a></li>
-<li><a href="/windows/desktop/dlgbox/using-common-dialog-boxes">Using Common Dialog Boxes</a></li>
-<li><a href="/windows/desktop/dxmath/pg-xnamath-internals">Library Internals</a></li>
-<li><a href="/windows/desktop/dxmath/pg-xnamath-optimizing">Code Optimization with the DirectXMath Library</a></li>
-<li><a href="/windows/desktop/graphics-and-multimedia">Graphics and gaming</a></li>
-<li><a href="/windows/desktop/medfound/direct3d-12-video-overview">Direct3D 12 Video Overview</a></li>
-<li><a href="/windows/desktop/medfound/mft-message-command-drain">MFT_MESSAGE_COMMAND_DRAIN (Mftransform.h)</a></li>
-<li><a href="/windows/desktop/medfound/video-subtype-guids">Video Subtype GUIDs</a></li>
-</ul>
 
 ## Win32 API reference
 
 <ul>
-<li><a href="/windows/win32/api/_comp_swapchain/index">Composition swapchain </a></li>
-<li><a href="/windows/win32/api/d3d12/ne-d3d12-d3d12_filter">D3D12_FILTER (d3d12.h) </a></li>
-<li><a href="/windows/win32/api/evntrace/index">Evntrace.h header </a></li>
-<li><a href="/windows/win32/api/fileapi/nf-fileapi-lockfile">LockFile function (fileapi.h) </a></li>
-<li><a href="/windows/win32/api/http/nf-http-httpinitialize">HttpInitialize function (http.h) </a></li>
-<li><a href="/windows/win32/api/ioringapi/index">ioringapi </a></li>
-<li><a href="/windows/win32/api/lmdfs/ns-lmdfs-dfs_info_2">DFS_INFO_2 (lmdfs.h) </a></li>
-<li><a href="/windows/win32/api/lmuse/ns-lmuse-use_info_0">USE_INFO_0 (lmuse.h) </a></li>
-<li><a href="/windows/win32/api/lmuse/ns-lmuse-use_info_1">USE_INFO_1 (lmuse.h) </a></li>
-<li><a href="/windows/win32/api/lmuse/ns-lmuse-use_info_2">USE_INFO_2 (lmuse.h) </a></li>
-<li><a href="/windows/win32/api/mfd3d12/index">mfd3d12 </a></li>
-<li><a href="/windows/win32/api/netsh/ns-netsh-cmd_entry">CMD_ENTRY (netsh.h) </a></li>
-<li><a href="/windows/win32/api/ntioring_x/index">ntioring_x </a></li>
-<li><a href="/windows/win32/api/ocidl/ne-ocidl-uasflags">UASFLAGS (ocidl.h) </a></li>
-<li><a href="/windows/win32/api/ole/nf-ole-oledraw">OleDraw function (ole.h) </a></li>
-<li><a href="/windows/win32/api/ole2/nf-ole2-olecreateex">OleCreateEx function (ole2.h) </a></li>
-<li><a href="/windows/win32/api/ole2/nf-ole2-oledraw">OleDraw function (ole2.h) </a></li>
-<li><a href="/windows/win32/api/pdh/nf-pdh-pdhclosequery">PdhCloseQuery function (pdh.h) </a></li>
-<li><a href="/windows/win32/api/pdh/nf-pdh-pdhremovecounter">PdhRemoveCounter function (pdh.h) </a></li>
-<li><a href="/windows/win32/api/presentation/index">Presentation.h header </a></li>
-<li><a href="/windows/win32/api/presentationtypes/index">Presentationtypes.h header </a></li>
-<li><a href="/windows/win32/api/shlwapi/ne-shlwapi-assocstr">ASSOCSTR (shlwapi.h) </a></li>
-<li><a href="/windows/win32/api/tdh/ne-tdh-map_flags">MAP_FLAGS (tdh.h) </a></li>
-<li><a href="/windows/win32/api/tuner/nn-tuner-iesevent">IESEvent (tuner.h) </a></li>
-<li><a href="/windows/win32/api/winbase/nf-winbase-winexec">WinExec function (winbase.h) </a></li>
-<li><a href="/windows/win32/api/winerror/nf-winerror-failed">FAILED macro (winerror.h) </a></li>
-<li><a href="/windows/win32/api/wingdi/nf-wingdi-gdicomment">GdiComment function (wingdi.h) </a></li>
-<li><a href="/windows/win32/api/wingdi/ns-wingdi-bitmap">BITMAP (wingdi.h) </a></li>
-<li><a href="/windows/win32/api/winternl/ns-winternl-peb">PEB (winternl.h) </a></li>
-<li><a href="/windows/win32/api/wtypes/ne-wtypes-tyspec">TYSPEC (wtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/camerauicontrol/index">Camerauicontrol.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/combaseapi/index">Combaseapi.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12video/index">D3D12Video.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/dragdropinterop/index">Dragdropinterop.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/emi/ns-emi-emi_metadata_v2">EMI_METADATA_V2 (emi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mpeg2psiparser/index">Mpeg2Psiparser.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/print3dmanagerinterop/index">Print3dmanagerinterop.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/sdoias/index">Sdoias.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/segment/index">Segment.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/sensorsapi/index">Sensorsapi.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/index">Shlobj_Core.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shobjidl_core/index">Shobjidl_Core.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/strmif/index">Strmif.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/uiviewsettingsinterop/index">Uiviewsettingsinterop.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/useractivityinterop/index">Useractivityinterop.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wbemcli/index">Wbemcli.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/index">Winbase.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/windef/index">Windef.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/windowsx/index">Windowsx.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winerror/index">Winerror.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wingdi/index">Wingdi.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winnt/index">Winnt.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winnt/nc-winnt-papcfunc">PAPCFUNC (winnt.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winreg/index">Winreg.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/index">Winuser.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmcodecdsp/index">Wmcodecdsp.h header </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wtypes/index">Wtypes.h header </a></li>
 </ul>
 
 ## UWP API reference

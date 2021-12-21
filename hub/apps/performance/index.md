@@ -54,7 +54,7 @@ PerfView is an open source monitoring and analysis tool created by the .NET team
 
 * [PerfView GitHub Repository](https://github.com/Microsoft/perfview)
 
-* [PerfView Tutorial Series](https://channel9.msdn.com/Series/PerfView-Tutorial)
+* PerfView Tutorial Series
 
 ### ![SizeBench Icon](./images/sizebench.png) SizeBench
 

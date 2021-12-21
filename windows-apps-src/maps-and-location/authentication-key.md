@@ -89,5 +89,5 @@ To use services in the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Map
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Design guidelines for maps](./display-maps.md)
-* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
 * [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)

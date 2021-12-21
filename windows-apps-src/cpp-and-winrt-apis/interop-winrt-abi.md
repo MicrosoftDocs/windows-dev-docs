@@ -315,7 +315,7 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 ## Interoperating with the ABI's GUID struct
 
-[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) is projected as **winrt::guid**. For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
+[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) is projected as [**winrt::guid**](/uwp/cpp-ref-for-winrt/guid). For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
 
 If you don't do that, then you can hard-`reinterpret_cast` between them. For the table that follows, assume these declarations.
 
@@ -326,7 +326,7 @@ GUID abiguid;
 
 | Conversion | With `#include <unknwn.h>` | Without `#include <unknwn.h>` |
 |-|-|-|
-| From **winrt::guid** to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
+| From [**winrt::guid**](/uwp/cpp-ref-for-winrt/guid) to **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | From **GUID** to **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
 
 You can construct a **winrt::guid** like this.
