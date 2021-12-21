@@ -25,7 +25,7 @@ If you are creating a Windows App SDK application with WinUI 3, you must use a p
 
 If you are using WPF or WinForms and have not packaged your app with the Desktop Bridge, [you must do so first](/windows/msix/desktop/source-code-overview) before you can use any Windows Runtime APIs.
 
-## Initialize and pin the secondary tile using the IInitializeWithWindow interface
+## Initialize and pin a secondary tile using the IInitializeWithWindow interface
 
 #### [C# (.NET 5 or later)](#tab/csharpnet5)
 
@@ -113,15 +113,16 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
 #### [C++](#tab/cpp)
 
 1. Add a reference to the following header files in your code:
-- **shobjidl.h**: contains the declaration of the *IInitializeWithWindow* interface. 
-- **winrt/Windows.Foundation.h**: contains *Windows::Foundation::Uri*
-- **Windows.UI.StartScreen.h**: contains *Windows::UI::StartScreen*
+    - **shobjidl.h** (contains the declaration of the *IInitializeWithWindow* interface) 
+    - **winrt/Windows.Foundation.h**
+    - **winrt/Windows.UI.StartScreen.h**
+    - **Microsoft.UI.Xaml.Window.h** (for WinUI 3 applications)
 
     ```cpp
     #include <shobjidl.h>
-    #include <Microsoft.UI.Xaml.Window.h>
     #include <winrt/Windows.UI.StartScreen.h>
     #include <winrt/Windows.Foundation.h> 
+    #include <Microsoft.UI.Xaml.Window.h>
     ```
 
 2. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
@@ -162,6 +163,8 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
 
     // TODO: Update UI to reflect whether user can now either unpin or pin
     ```
+
+---
 
 ## Send tile notifications
 
