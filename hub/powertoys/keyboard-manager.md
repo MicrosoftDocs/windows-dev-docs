@@ -176,6 +176,12 @@ Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US)
 
 Currently no, currently we are not aware of an API where we can see the input and which keyboard / device it came from.  The typical use case here is a laptop and an external keyboard is connected.
 
+### I see keys listed in the drop down menus that don't work. Why is that?
+
+Keyboard Manager lists mappings for all known physical keyboard buttons. Some of these mappings may not be available on your keyboard as there may not be a physical key that it corresponds to. For instance, the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
+
+ ![PowerToys Keyboard Manager List of Keys](../images/pt-key-remap-drop-down.png)
+
 ## Troubleshooting
 
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
