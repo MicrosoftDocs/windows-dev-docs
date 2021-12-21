@@ -134,7 +134,7 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
             Windows::Foundation::Uri(L"ms-appx:///Assets/Square150x150Logo.png"),
             Windows::UI::StartScreen::TileSize::Default);
     ```
-3. Retrieve and pass in the window handle to pop the modal dialog. The code snippet below is an example of a helper method in a Windows App SDK app to get an HWND from a [WinUI 3 Window](windows/winui/api/microsoft.ui.xaml.window) object.
+3. Retrieve and pass in the window handle to pop the modal dialog. The code snippet below is an example of a helper method in a Windows App SDK app to get an HWND from a [WinUI 3 Window](windows/winui/api/microsoft.ui.xaml.window?view=winui-3.0&preserve-view=true) object.
 
     ```cpp
     // Helper method to retrieve the window handle a WinUI 3 Window object 
