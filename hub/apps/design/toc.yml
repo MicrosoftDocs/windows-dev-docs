@@ -397,8 +397,10 @@
           href: shell/tiles-and-notifications/request-create-save-notification-channel.md
         - name: Push notification service request and response headers
           href: shell/tiles-and-notifications/push-request-response-headers.md
-        - name: Troubleshooting tile, toast, and badge notifications
+        - name: Troubleshooting push notifications
           href: shell/tiles-and-notifications/troubleshoot-notifications.md
+        - name: Raw Notification Overview
+          href: shell/tiles-and-notifications/raw-notification-overview.md
     - name: Taskbar
       items:
         - name: Pin your app to the taskbar
