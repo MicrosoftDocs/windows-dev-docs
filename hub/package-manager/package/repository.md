@@ -17,7 +17,7 @@ After you submit a pull request to add a new manifest to the GitHub repository, 
 
 ## Third-party repositories
 
-There are currently no known third party repositories. Microsoft is working with multiple partners to develop protocols or an API to enable third party repositories.
+**[winget.pro](https://winget.pro)** offers private winget repository hosting on a paid basis.
 
 ## Manifest validation
 
