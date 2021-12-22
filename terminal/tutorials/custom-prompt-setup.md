@@ -88,7 +88,7 @@ Now, each new PowerShell instance will start by importing Oh My Posh and setting
 
 ## Customize your WSL prompt with Oh My Posh
 
-Oh My Posh now allows you to customize WSL prompts, just like you would a PowerShell prompt using built-in themes.
+Oh My Posh now allows you to customize WSL prompts, just like you would a PowerShell prompt using [built-in themes](https://ohmyposh.dev/docs/themes).
 
 ### Install Oh My Posh for WSL
 
