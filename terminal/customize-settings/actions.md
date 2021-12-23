@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 10/15/2021
 ms.topic: how-to
-ms.localizationpriority: high
 ---
 
 # Custom actions in Windows Terminal

@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 10/08/2021
 ms.topic: how-to
-ms.localizationpriority: high
 ---
 
 # Appearance settings in Windows Terminal

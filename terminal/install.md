@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 10/04/2021
 ms.topic: quickstart
-ms.localizationpriority: high
 ---
 
 # Install and get started setting up Windows Terminal

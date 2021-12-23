@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 04/14/2021
 ms.topic: how-to
-ms.localizationpriority: high
 ---
 
 # Rendering settings in Windows Terminal
