@@ -230,7 +230,7 @@ namespace winrt::Example::implementation
         CustomVSM() {}
 
         bool GoToStateCore(winrt::Windows::UI::Xaml::Controls::Control const& control, winrt::Windows::UI::Xaml::FrameworkElement const& templateRoot, winrt::hstring const& stateName, winrt::Windows::UI::Xaml::VisualStateGroup const& group, winrt::Windows::UI::Xaml::VisualState const& state, bool useTransitions) {
-            return __super::GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
+            return base_type::GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
         }
     };
 }
