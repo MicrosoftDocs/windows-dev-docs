@@ -737,6 +737,9 @@ namespace winrt::MyNamespace::implementation
 
 This requires that all members of the class hierarchy agree on the return value and parameter types of the **OnNavigatedFrom** method. If they disagree, then you should use the version above as the virtual method, and wrap the alternates.
 
+Note that your IDL does not need to declare the overridden method. See [Implementing overridable methods](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl#implementing-overridable-methods) for more details.
+
+
 ## Important APIs
 * [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
