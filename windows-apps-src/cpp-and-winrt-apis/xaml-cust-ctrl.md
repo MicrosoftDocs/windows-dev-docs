@@ -182,9 +182,14 @@ Now build and run the project. You'll see that the default control template is b
 
 This walkthrough showed a simple example of a custom (templated) control in C++/WinRT. You can make your own custom controls arbitrarily rich and full-featured. For example, a custom control can take the form of something as complicated as an editable data grid, a video player, or a visualizer of 3D geometry.
 
-## Implementing *overridable* functions, such as **MeasureOverride** and **OnApplyTemplate**
+## Implementing *overridable* methods
 
-You derive a custom control from the [**Control**](/uwp/api/windows.ui.xaml.controls.control) runtime class, which itself further derives from base runtime classes. And there are overridable methods of **Control**, [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement), and [**UIElement**](/uwp/api/windows.ui.xaml.uielement) that you can override in your derived class. Here's a code example showing you how to do that.
+There are some extension points in XAML that an application can plug into, for example:
+- [MeasureOverride](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+- [OnApplyTemplate](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)
+- [GoToStateCore](/uwp/api/windows.ui.xaml.visualstatemanager.gotostatecore)
+
+You derive a custom control from the [**Control**](/uwp/api/windows.ui.xaml.controls.control) runtime class, which itself further derives from base runtime classes. And there are `overridable` methods of **Control**, [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement), and [**UIElement**](/uwp/api/windows.ui.xaml.uielement) that you can override in your derived class. Here's a code example showing you how to do that.
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>
@@ -203,7 +208,34 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-*Overridable* functions present themselves differently in different language projections. In C#, for example, overridable functions typically appear as protected virtual functions. In C++/WinRT, they're neither virtual nor protected, but you can still override them and provide your own implementation, as shown above.
+*Overridable* functions present themselves differently in different language projections. In C#, for example, overridable functions typically appear as `protected virtual` functions. In C++/WinRT, they're neither `virtual` nor `protected`, but you can still override them and provide your own implementation, as shown above.
+If you are overriding one of these `overridable` functions in C++/WinRT, your `runtimeclass` IDL must not declare the method:
+**IDL**
+```ìdl
+namespace Example
+{
+    runtimeclass CustomVSM : Windows.UI.Xaml.VisualStateManager
+    {
+        CustomVSM();
+        // note that we do not declare GoToStateCore here
+    }
+}
+```
+**C++**
+```cppwinrt
+namespace winrt::Example::implementation
+{
+    struct CustomVSM : CustomVSMT<CustomVSM>
+    {
+        CustomVSM() {}
+
+        bool GoToStateCore(winrt::Windows::UI::Xaml::Controls::Control const& control, winrt::Windows::UI::Xaml::FrameworkElement const& templateRoot, winrt::hstring const& stateName, winrt::Windows::UI::Xaml::VisualStateGroup const& group, winrt::Windows::UI::Xaml::VisualState const& state, bool useTransitions) {
+            return __super::GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
+        }
+    };
+}
+```
+
 
 ## Important APIs
 * [Control class](/uwp/api/windows.ui.xaml.controls.control)
