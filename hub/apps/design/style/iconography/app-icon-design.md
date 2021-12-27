@@ -115,10 +115,7 @@ Accessibility is a high priority for Microsoft. App icons are primarily displaye
 - Use color values in all 3 ranges, dark, medium, light.
 - Make sure at least half of your icon passes a 3.0:1 contrast ratio on light and dark theme.
 - Some hue values are more difficult than others. Yellow will never pass an accessible contrast ratio on light theme until it’s brown. Reds are more difficult on dark theme.
-- Provide separate light and dark theme assets for Taskbar, Start and other theme-sensitive areas of Windows.
-
-> [!ALERT]
-> Final bullet reads poorly
+- Though not required, you have the option to provide separate light and dark theme assets for Taskbar, Start and other theme-sensitive areas of Windows.
 
 ### High contrast
 

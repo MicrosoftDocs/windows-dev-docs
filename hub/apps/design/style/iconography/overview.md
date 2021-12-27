@@ -24,19 +24,18 @@ App icons appear in a variety of places in Windows
 
 :::row:::
     :::column:::
-        - Start tiles
-        - App list
+        - Start menu
+        - Start menu's 'All apps' list
         - Taskbar
         - Splash screen
         - App title bar
         - Search results
-        - Action center notifications
+        - Notifications
     :::column-end:::
     :::column:::
         - "Open with" list
         - Task manager
         - JumpLists
-        - App & Features
         - Settings
         - Share dialog
     :::column-end:::

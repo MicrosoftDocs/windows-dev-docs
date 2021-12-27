@@ -30,7 +30,7 @@ Windows will display your app icon at a variety of sizes depending on where your
 | Start Menu Pinned apps, Search results                    | 32px | 40px | 48px | 64px | 80px | 96px | 256px |
 
 > [!NOTE]
-> Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down; never up.
+> Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down, never up.
 
 ## Icon scaling
 
@@ -39,117 +39,210 @@ When Windows displays your app's icon, it will look for an exact size match firs
 > [!ALERT]
 > Win32 apps!
 
-# Transparent backgrounds
+## Transparent backgrounds
 
 Icons look best with a transparent background. If your app's branding requires your icon be plated on a background, that's okay too. However, you'll have to re-implement some theming functionality that transparent icons get for free. For example, you might provide a version of your app's icon plated on a white background for use in dark mode, and a black background for use in light mode.
 
+## Complete list of icons and variations
 
+Windows utilizes different icon assets in different UI contexts. The usage has changed a little between Windows 10 & Windows 11. Note there are light theme variations in the case where there are different visuals for dark and light theme.
 
-#### ------------------ Revisions end here ------------------ ####
+The lists below define the specific filenames Windows expects to contain each corresponding icon.
 
+### App icon
 
+In Windows 10 and 11, the AppList icon is your app's primary icon. It will be used in several places, including the Taskbar, Start Menu pinned items, the all app list, and the search results list. Windows 11 selects an appropriate icon for the all apps list based on the current scale factor, but Windows 10 uses specific, explicitly defined icons if you provide them.
 
-| Icon size | Comments                                                          |
-|-----------|-------------------------------------------------------------------|
-| 16x16     | Context menu and system tray icons at 100% scale factor           |
-| 20x20     |                                                                   |
-| 24x24     | Taskbar icons at 100% scale factor                                |
-| 30x30     |                                                                   |
-| 32x32     | Live tile icon size at 100% scale factor (size of icon, not tile) |
-| 36x36     |                                                                   |
-| 40x40     |                                                                   |
-| 48x48     | Taskbar icons at 200% scale factor                                |
-| 60x60     |                                                                   |
-| 64x64     | Live tile icon size at 200% scale factor (size of icon, not tile) |
-| 72x72     |                                                                   |
-| 80x80     |                                                                   |
-| 96x96     | Taskbar icons at 400% scale factor                                |
-| 256x256   |                                                                   |
+Separate files for all three theme variations (default, light theme, dark theme) are required, even if the icon is the same. If you do not provide these files, your icon will appear on a system icon plate to ensure a minimum contrast ratio.
 
-### Icon scaling
+**App List Target Size (Required)**
 
-Whenever Windows displays your app's icon, it will select the icon file with dimensions closest to the space in which the icon will be displayed. If your app provides an exact fit, Windows will use that size. If not, Windows will automatically select a close match and scale it to look great. Including more icon sizes with your app means Windows will more often have a pixel-perfect match, and reduce the amount of scaling applied to scaled icons.
+- AppList.targetsize-16.png
+- AppList.targetsize-20.png
+- AppList.targetsize-24.png
+- AppList.targetsize-30.png
+- AppList.targetsize-32.png
+- AppList.targetsize-36.png
+- AppList.targetsize-40.png
+- AppList.targetsize-48.png
+- AppList.targetsize-60.png
+- AppList.targetsize-64.png
+- AppList.targetsize-72.png
+- AppList.targetsize-80.png
+- AppList.targetsize-96.png
+- AppList.targetsize-256.png
+
+**Dark theme (Required)**
+
+- AppList.targetsize-16_altform-unplated.png
+- AppList.targetsize-20_altform-unplated.png
+- AppList.targetsize-24_altform-unplated.png
+- AppList.targetsize-30_altform-unplated.png
+- AppList.targetsize-32_altform-unplated.png
+- AppList.targetsize-36_altform-unplated.png
+- AppList.targetsize-40_altform-unplated.png
+- AppList.targetsize-48_altform-unplated.png
+- AppList.targetsize-60_altform-unplated.png
+- AppList.targetsize-64_altform-unplated.png
+- AppList.targetsize-72_altform-unplated.png
+- AppList.targetsize-80_altform-unplated.png
+- AppList.targetsize-96_altform-unplated.png
+- AppList.targetsize-256_altform-unplated.png
+
+**Light theme (Required)**
+
+- AppList.targetsize-16_altform-lightunplated.png
+- AppList.targetsize-20_altform-lightunplated.png
+- AppList.targetsize-24_altform-lightunplated.png
+- AppList.targetsize-30_altform-lightunplated.png
+- AppList.targetsize-32_altform-lightunplated.png
+- AppList.targetsize-36_altform-lightunplated.png
+- AppList.targetsize-40_altform-lightunplated.png
+- AppList.targetsize-48_altform-lightunplated.png
+- AppList.targetsize-60_altform-lightunplated.png
+- AppList.targetsize-64_altform-lightunplated.png
+- AppList.targetsize-72_altform-lightunplated.png
+- AppList.targetsize-80_altform-lightunplated.png
+- AppList.targetsize-96_altform-lightunplated.png
+- AppList.targetsize-256_altform-lightunplated.png
+
+**App List Scale (Windows 10) (Optional)**
+
+- AppList.scale-100.png
+- AppList.scale-125.png
+- AppList.scale-150.png
+- AppList.scale-200.png
+- AppList.scale-400.png
+
+**Light theme (Optional)**
+
+- AppList.scale-100_altform-colorful_theme-light.png
+- AppList.scale-125_altform-colorful_theme-light.png
+- AppList.scale-150_altform-colorful_theme-light.png
+- AppList.scale-200_altform-colorful_theme-light.png
+- AppList.scale-400_altform-colorful_theme-light.png
 
 > [!NOTE]
-> Apps should have, at the bare minimum, three icon sizes: 24x24, 32x32, and 256x256. This covers the two most common icon sizes, and by providing a 256px icon, ensures Windows will only ever scale your icon down; never up.
+> If you do not include the altform unplated assets above your icon will scale to a smaller size and will get an undesirable backplate behind the icon on Taskbar and Start.
 
-There are two specific times when Windows will use a scaled icon, even when an icon of the correct size is available.
+### Tiles
 
-1. When displaying a Win32 app's icon in the taskbar, Windows will select the 32x32 icon and scale it down to 24x24.
-2. When displaying a WinUI app's icon on a medium live tile, Windows will plate your app's 48x48 icon against a 150x150 tile, and scale the images down to a 32x32 icon on a 100x100 tile.  
+Windows 10 supports four tile sizes: small, medium, wide, and large.
 
-## Icon variations
+> [!ALERT]
+> If we say partially required, we should explain what is and isn't required.
 
-Windows uses different types of icon assets in different scenarios.
+**Default / dark theme (partially required)**
 
-- **App list icons** are used in the Start Menu's All Apps list, and in...
-- **Dark mode icons** are used in the Start Menu and taskbar when Windows is in Dark Mode. These icon files are identified via their filename, which must be of the form `name_altform-unplated`.
-- **Light mode icons** are used in the Start Menu and taskbar when Windows is in Light Mode. These icon files are identified via their filename, which must be of the form `name_altform-lightunplated`.
-- **Search result list icons**
-- **Splash screen icons**
-- **Badge logo icons**
+- SmallTile.scale-100.png
+- SmallTile.scale-125.png
+- SmallTile.scale-150.png
+- SmallTile.scale-200.png
+- SmallTile.scale-400.png
 
-### Complete list of icons and variations
+- MedTile.scale-100.png
+- MedTile.scale-125.png
+- MedTile.scale-150.png
+- MedTile.scale-200.png
+- MedTile.scale-400.png
 
-| Icon size | Variation  | Filename                          |
-|-----------|------------|-----------------------------------|
-| 16x16     | standard   | 16x16.png                         |
-| 16x16     | dark mode  | 16x16_altform-unplated.png        |
-| 16x16     | light mode | 16x16_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 20x20     | standard   | 20x20.png                         |
-| 20x20     | dark mode  | 20x20_altform-unplated.png        |
-| 20x20     | light mode | 20x20_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 24x24     | standard   | 24x24.png                         |
-| 24x24     | dark mode  | 24x24_altform-unplated.png        |
-| 24x24     | light mode | 24x24_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 30x30     | standard   | 30x30.png                         |
-| 30x30     | dark mode  | 30x30_altform-unplated.png        |
-| 30x30     | light mode | 30x30_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 32x32     | standard   | 32x32.png                         |
-| 32x32     | dark mode  | 32x32_altform-unplated.png        |
-| 32x32     | light mode | 32x32_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 36x36     | standard   | 36x36.png                         |
-| 36x36     | dark mode  | 36x36_altform-unplated.png        |
-| 36x36     | light mode | 36x36_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 40x40     | standard   | 40x40.png                         |
-| 40x40     | dark mode  | 40x40_altform-unplated.png        |
-| 40x40     | light mode | 40x40_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 48x48     | standard   | 48x48.png                         |
-| 48x48     | dark mode  | 48x48_altform-unplated.png        |
-| 48x48     | light mode | 48x48_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 60x60     | standard   | 60x60.png                         |
-| 60x60     | dark mode  | 60x60_altform-unplated.png        |
-| 60x60     | light mode | 60x60_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 64x64     | standard   | 64x64.png                         |
-| 64x64     | dark mode  | 64x64_altform-unplated.png        |
-| 64x64     | light mode | 64x64_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 72x72     | standard   | 72x72.png                         |
-| 72x72     | dark mode  | 72x72_altform-unplated.png        |
-| 72x72     | light mode | 72x72_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 80x80     | standard   | 80x80.png                         |
-| 80x80     | dark mode  | 80x80_altform-unplated.png        |
-| 80x80     | light mode | 80x80_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 96x96     | standard   | 96x96.png                         |
-| 96x96     | dark mode  | 96x96_altform-unplated.png        |
-| 96x96     | light mode | 96x96_altform-lightunplated.png   |
-| ---       |            |                                   |  
-| 256x256   | standard   | 256x256.png                       |
-| 256x256   | dark mode  | 256x256_altform-unplated.png      |
-| 256x256   | light mode | 256x256_altform-lightunplated.png |
+- WideTile.scale-100.png
+- WideTile.scale-125.png
+- WideTile.scale-150.png
+- WideTile.scale-200.png
+- WideTile.scale-400.png
 
-### Transparent background
+- LargeTile.scale-100.png
+- LargeTile.scale-125.png
+- LargeTile.scale-150.png
+- LargeTile.scale-200.png
+- LargeTile.scale-400.png
 
-Icons look best with a transparent background. If your app's branding requires your icon be plated on a background, that's okay too. However, you'll have to re-implement some theming functionality that transparent icons get for free. For example, you might provide a version of your app's icon plated on a white background for use in dark mode, and a black background for use in light mode.
+**Light theme (optional)**
 
+- SmallTile.scale-100_altform-colorful_theme-light.png
+- SmallTile.scale-125_altform-colorful_theme-light.png
+- SmallTile.scale-150_altform-colorful_theme-light.png
+- SmallTile.scale-200_altform-colorful_theme-light.png
+- SmallTile.scale-400_altform-colorful_theme-light.png
+
+- MedTile.scale-100_altform-colorful_theme-light.png
+- MedTile.scale-125_altform-colorful_theme-light.png
+- MedTile.scale-150_altform-colorful_theme-light.png
+- MedTile.scale-200_altform-colorful_theme-light.png
+- MedTile.scale-400_altform-colorful_theme-light.png
+
+- WideTile.scale-100_altform-colorful_theme-light.png
+- WideTile.scale-125_altform-colorful_theme-light.png
+- WideTile.scale-150_altform-colorful_theme-light.png
+- WideTile.scale-200_altform-colorful_theme-light.png
+- WideTile.scale-400_altform-colorful_theme-light.png
+
+- LargeTile.scale-100_altform-colorful_theme-light.png
+- LargeTile.scale-125_altform-colorful_theme-light.png
+- LargeTile.scale-150_altform-colorful_theme-light.png
+- LargeTile.scale-200_altform-colorful_theme-light.png
+- LargeTile.scale-400_altform-colorful_theme-light.png
+
+> [!NOTE]
+> Windows 11 does not use the tile assets, but currently at minimum the Medium tile assets at 100% are required to publish to the Microsoft Store. If your app is Windows 10 & 11 compatible it is suggested that you include as many tile assets as possible.
+
+### Splash screen
+
+Splash screens can also be Light and Dark theme aware like the App icon assets.
+
+**Default**
+
+- SplashScreen.scale-100.png
+- SplashScreen.scale-125.png
+- SplashScreen.scale-150.png
+- SplashScreen.scale-200.png
+- SplashScreen.scale-400.png
+
+**Dark theme (Optional)**
+
+- SplashScreen.scale-100_altform-colorful_theme-dark.png
+- SplashScreen.scale-125_altform-colorful_theme-dark.png
+- SplashScreen.scale-150_altform-colorful_theme-dark.png
+- SplashScreen.scale-200_altform-colorful_theme-dark.png
+- SplashScreen.scale-400_altform-colorful_theme-dark.png
+
+**Light theme (Optional)**
+
+- SplashScreen.scale-100_altform-colorful_theme-light.png
+- SplashScreen.scale-125_altform-colorful_theme-light.png
+- SplashScreen.scale-150_altform-colorful_theme-light.png
+- SplashScreen.scale-200_altform-colorful_theme-light.png
+- SplashScreen.scale-400_altform-colorful_theme-light.png
+
+### Badge logo
+
+Badge icons are used on the Windows 10 lock screen and for most apps are not required.
+
+**Windows 10 (optional)**
+
+- BadgeLogo.scale-100.png
+- BadgeLogo.scale-125.png
+- BadgeLogo.scale-150.png
+- BadgeLogo.scale-200.png
+- BadgeLogo.scale-400.png
+
+### Package logo (Microsoft Store logo)
+
+These assets are required to publish to the Microsoft Store.
+
+**Default / Dark theme (required)**
+
+- StoreLogo.scale-100.png
+- StoreLogo.scale-125.png
+- StoreLogo.scale-150.png
+- StoreLogo.scale-200.png
+- StoreLogo.scale-400.png
+
+**Light theme (optional)**
+
+- StoreLogo.scale-100_altform-colorful_theme-light.png
+- StoreLogo.scale-125_altform-colorful_theme-light.png
+- StoreLogo.scale-150_altform-colorful_theme-light.png
+- StoreLogo.scale-200_altform-colorful_theme-light.png
+- StoreLogo.scale-400_altform-colorful_theme-light.png

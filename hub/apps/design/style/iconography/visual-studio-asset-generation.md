@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Create icons using Visual Studio's asset generation tool
 
-Visual Studio's Manifest Designer can create an entire set of app icons and tile images from a single image. This is useful to create an initial set of icons, but will not achieve the same result as handcrafting each icon file, as Visual Studio will have to scale your image to create the required image sizes.
+While handcrafting each icon file will create the best, most consistent user experience, teams running short on resources can take advantage of Visual Studio's Manifest Designer. This tool can create an entire set of app icons and tile images from a single image. This is useful to create an initial set of icons, but will not achieve the same result as handcrafting each icon file, as Visual Studio will have to scale your image to create the required image sizes.
 
 ## Launching the Manifest Designer
 
