@@ -66,7 +66,7 @@ The default angle for gradients is 120 degrees. Start and end points can be adju
 
 ### Monochrome palette
 
-:::image type="content" source="images/create-monochrome-palette" alt-text="An image outlining the steps to create a monochrome color palette":::
+:::image type="content" source="images/create-monochrome-palette.png" alt-text="An image outlining the steps to create a monochrome color palette":::
 
 Create a monochrome palette using the following steps:
 
@@ -83,7 +83,7 @@ Monochrome gradients are usually used to give a subtle hint toward an ambient li
 
 ### Analogous palette
 
-:::image type="content" source="images/create-analogous-palette." alt-text="An image outlining the steps to create an analogous color palette":::
+:::image type="content" source="images/create-analogous-palette.png" alt-text="An image outlining the steps to create an analogous color palette":::
 
 Creating an analogous palette is exactly like creating a monochrome palette, but with more colors. The key to this type of palette is not to overdo it. Be thoughtful with your color transitions.
 
@@ -101,14 +101,7 @@ Analogous gradients should be at the same angle as the monochrome, but don't alw
 
 ### Color contrast
 
-:::row:::
-    :::column:::
-        :::image type="content" source="images/contrast-light.png" alt-text="{alt-text}":::
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="images/contrast-dark.png" alt-text="{alt-text}":::
-    :::column-end:::
-:::row-end:::
+:::image type="content" source="images/contrast-light-dark.png" alt-text="{alt-text}":::
 
 Accessibility is a high priority for Microsoft. App icons are primarily displayed on either light and dark backgrounds but displayed over desktop background images and tints or shades of the system accent color. It is difficult to make an icon 100% accessible on every background, but there are several things you can do to ensure your icon is as accessible as possible.
 
@@ -119,14 +112,7 @@ Accessibility is a high priority for Microsoft. App icons are primarily displaye
 
 ### High contrast
 
-:::row:::
-    :::column:::
-        :::image type="content" source="images/high-contrast-light.png" alt-text="{alt-text}":::
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="images/high-contrast-dark.png" alt-text="{alt-text}":::
-    :::column-end:::
-:::row-end:::
+:::image type="content" source="images/high-contrast-light-dark.png" alt-text="{alt-text}":::
 
 > [!TIP]
 > Windows 11 no longer requires high contrast assets for app icons.
@@ -135,14 +121,7 @@ High contrast icons are black and white and should be a direct representation of
 
 ### Layering and shadow
 
-:::row:::
-    :::column:::
-        :::image type="content" source="images/icon-layers-angle.png" alt-text="{alt-text}":::
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="images/icon-layers-top.png" alt-text="{alt-text}":::
-    :::column-end:::
-:::row-end:::
+:::image type="content" source="images/layer-and-shadow.png" alt-text="{alt-text}":::
 :::row:::
     :::column:::
         Top/Front facing view.
@@ -167,26 +146,20 @@ All of these values are to be rendered at 48x48 px and scaled up or down from th
 
 ### Same metaphor
 
-:::image type="content" source="{source}" alt-text="{alt-text}":::
+:::image type="content" source="images/shadow-same-metaphor.png" alt-text="{alt-text}":::
 
 This shadow is used when you have content within a single metaphor that needs some depth. It’s not always necessary to do this, but single object metaphors need some depth to feel like part of the system. the blue on shadow 2 is the only difference.
 
 ### Separate metaphor
 
-:::image type="content" source="{source}" alt-text="{alt-text}":::
+:::image type="content" source="images/shadow-separate-metaphor.png" alt-text="{alt-text}":::
 
 This shadow is used when you have two objects that overlap each other but are not necessarily part of the same metaphor. The shadow should be masked into the shape below it.
 
 ## Perspective
 
-:::row:::
-    :::column:::
-        :::image type="content" source="{source}" alt-text="{alt-text}":::
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="{source}" alt-text="{alt-text}":::
-    :::column-end:::
-:::row-end:::
+:::image type="content" source="images/perspective.png" alt-text="{alt-text}":::
+
 :::row:::
     :::column:::
         These icons are fairly simple; perspective may be appropriate.

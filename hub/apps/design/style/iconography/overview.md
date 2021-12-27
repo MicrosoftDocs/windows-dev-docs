@@ -30,9 +30,9 @@ App icons appear in a variety of places in Windows
         - Splash screen
         - App title bar
         - Search results
-        - Notifications
     :::column-end:::
     :::column:::
+        - Notifications
         - "Open with" list
         - Task manager
         - JumpLists

@@ -12,13 +12,25 @@ ms.localizationpriority: medium
 
 # Construct your Windows app's icon
 
+:::image type="content" source="images/win-11-icon-locations.png" alt-text="{alt-text}":::
+
 Once you've designed your app's icon, you need to create the icon files themselves. Because Windows supports multiple themes, display resolutions, and scale factors, you should provide multiple versions of your icon to make sure it looks great on every device, at any size.
 
-## Icon sizes
+## Icon sizes (WPF, UWP, WinUI)
 
-:::image type="content" source="images/icon-sizes.png" alt-text="{alt-text}":::
+:::image type="content" source="images/icon-ramp-full.png" alt-text="{alt-text}":::
 
 Windows will display your app icon at a variety of sizes depending on where your icon is being displayed and the user's display scale settings. The following table lists all the possible sizes that Windows may use to display your icon.
+
+## Icon sizes (Win32)
+
+:::image type="content" source="images/icon-ramp-win32.png" alt-text="{alt-text}":::
+
+Windows ICO files have been around for a long time. There are standard sizes that are used which is a subset of the full set above.
+
+## Icon scaling
+
+When Windows displays your app's icon, it will look for an exact size match first. If there is no exact match it will look for the next size above and scale down. Including more icon sizes with your app means Windows will more often have a pixel-perfect match, and reduce the amount of scaling applied to scaled icons.
 
 > [!ALERT]
 > We don't call it system tray anymore
@@ -31,13 +43,6 @@ Windows will display your app icon at a variety of sizes depending on where your
 
 > [!NOTE]
 > Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down, never up.
-
-## Icon scaling
-
-When Windows displays your app's icon, it will look for an exact size match first. If there is no exact match it will look for the next size above and scale down. Including more icon sizes with your app means Windows will more often have a pixel-perfect match, and reduce the amount of scaling applied to scaled icons.
-
-> [!ALERT]
-> Win32 apps!
 
 ## Transparent backgrounds
 
