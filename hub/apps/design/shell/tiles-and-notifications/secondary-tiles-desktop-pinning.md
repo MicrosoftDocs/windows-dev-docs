@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Pin secondary tiles from desktop apps
 
-Desktop applications such as Windows App SDK (using WinUI 3), WPF, and Windows Forms can pin secondary tiles by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is also previously known as Desktop Bridge.
+Desktop applications such as Windows App SDK (using WinUI 3), WPF, and Windows Forms apps can pin secondary tiles by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is also previously known as Desktop Bridge.
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
@@ -27,7 +27,7 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
 
 ## Initialize and pin a secondary tile using the IInitializeWithWindow interface
 
-#### [C# (.NET 5 or later)](#tab/csharpnet5)
+### [C# (.NET 5 or later)](#tab/csharpnet5)
 
 1. Make sure that the `TargetFramework` property in the project file is [set to a specific Windows SDK version to access the Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option), which provides access to the **WinRT.Interop** namespace. For example:
 
@@ -67,7 +67,7 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
 
     // TODO: Update UI to reflect whether user can now either unpin or pin
     ```
-#### [C# (Earlier versions of .NET)](#tab/csharp)
+### [C# (Earlier versions of .NET)](#tab/csharp)
 
 1. Declare the IInitializeWithWindow interface in your app's code with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) and Guid attribute as shown in the following C# example. This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.
 
@@ -110,7 +110,7 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
     // TODO: Update UI to reflect whether user can now either unpin or pin
     ```
 
-#### [C++](#tab/cpp)
+### [C++](#tab/cpp)
 
 1. Add a reference to the following header files in your code:
     - **shobjidl.h** (contains the declaration of the *IInitializeWithWindow* interface) 
