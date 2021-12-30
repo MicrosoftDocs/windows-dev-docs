@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 10/05/2021
 ms.topic: how-to
-ms.localizationpriority: high
 ---
 
 # Interaction settings in Windows Terminal

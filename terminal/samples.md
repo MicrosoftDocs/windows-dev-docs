@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 11/16/2021
 ms.topic: samples
-ms.localizationpriority: medium
 ---
 
 # Windows Terminal sample code

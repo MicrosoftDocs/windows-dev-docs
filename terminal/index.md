@@ -5,7 +5,6 @@ author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 09/22/2020
 ms.topic: overview
-ms.localizationpriority: high
 ---
 
 # What is Windows Terminal?
