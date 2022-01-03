@@ -49,28 +49,31 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install Microsoft.PowerToys --source winget
 ```
 
-## Installer arguments 
+## Installer args:
 
-Our installer has a list of arguments you can chain on to accomplish different tasks such as a silent install.
+The installer execuatable accepts the [Microsoft Standard Installer command-line options](https://docs.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options)
 
-| Flag  | Description |
-|---|---|
-| `--silent` | Use completely silent installation (no UI and notifications) and do not launch PowerToys afterwards |
-| `--start_pt` | Always launch PowerToys after the installation is complete |
-| `--no_full_ui` | Do not use MSI wizard dialog, use reduced progress bar instead |
-| `--no_start_pt` | Do not start PowerToys after the installation is complete |
-| `--skip_dotnet_install` | Do not install dotnet, even if it's detected that it's not installed |
-| `--help` | Shows the list of supported command-line arguments |
-| `--log_level` | Possible values: `off` `debug` `error` |
-| `--log_dir` | Directory location where to save the logs |
-| `--install_dir` | Directory location where PowerToys is installed |
-| `--extract_msi` | Extract MSI to the working directory and exit. Use only if you must access MSI |
+Here are the common commands you may want:
 
-### Example of a installer with args being passed in
+| Command | Alternatives | What it does |
+|-------------|--------------| -------------- |
+| -quiet | -q | Silent install |
+| -silent| -s | Silent install |
+| -passive | | progress bar only install |
+| -layout |  | create a local image of the bootstrapper |
+| -log | -l | log to a specific file |
 
-A command that would not install dotnet core and be silent would be the following: 
+### Extracting out the MSI from the bundle:
+Make sure you have Wix toolset installed. https://wixtoolset.org/releases/
 
-`PowerToysSetup-0.21.0-x64.exe --silent --skip_dotnet_install --log_level error --log_dir C:\PTlogs`
+This PowerShell example assumes the default install location for Wix toolset 3.11.2 and the PowerToys installer downloaded to the desktop.
+
+```powershell
+cd $Env:WIX\"bin"
+
+# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
+.\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
+````
 
 ## Community-driven install tools
 
