@@ -1,10 +1,10 @@
 ---
 title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 05/28/2021
+ms.date: 01/03/2022
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
+no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 ---
 
 # FancyZones utility
@@ -17,7 +17,7 @@ FancyZones is a window manager utility for arranging and snapping windows into e
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
 
-It's also possible to snap to any number of zones: first drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
+It's also possible to snap to any number of zones. First, drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
