@@ -59,6 +59,7 @@ These default activation phrases will force PowerToys Run into only targeted plu
 | :--- | :--- | :--- |
 | `=` | Calculator only | `=2+2` |
 | `?` | File searching only | `?road` to find `roadmap.txt` |
+| `??` | Web search only | `??What is the answer to life` to search with your default browser's search engine. |
 | `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup |
 | `//` | URIs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. Also supports `mailto:` and `ms-settings:` |
 | `<` | Running processes only | `<outlook` to find all processes that contain outlook |
