@@ -182,9 +182,10 @@ Now build and run the project. You'll see that the default control template is b
 
 This walkthrough showed a simple example of a custom (templated) control in C++/WinRT. You can make your own custom controls arbitrarily rich and full-featured. For example, a custom control can take the form of something as complicated as an editable data grid, a video player, or a visualizer of 3D geometry.
 
-## Implementing *overridable* methods
+## Implementing *overridable* methods, such as **MeasureOverride** and **OnApplyTemplate**
 
-There are some extension points in XAML that an application can plug into, for example:
+There are some extension points in XAML that your application can plug into, for example:
+
 - [MeasureOverride](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
 - [OnApplyTemplate](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)
 - [GoToStateCore](/uwp/api/windows.ui.xaml.visualstatemanager.gotostatecore)
@@ -208,20 +209,25 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-*Overridable* functions present themselves differently in different language projections. In C#, for example, overridable functions typically appear as `protected virtual` functions. In C++/WinRT, they're neither `virtual` nor `protected`, but you can still override them and provide your own implementation, as shown above.
-If you are overriding one of these `overridable` functions in C++/WinRT, your `runtimeclass` IDL must not declare the method:
+*Overridable* methods present themselves differently in different language projections. In C#, for example, overridable methods typically appear as protected virtual methods. In C++/WinRT, they're neither virtual nor protected, but you can still override them and provide your own implementation, as shown above.
+
+If you're overriding one of these overridable methods in C++/WinRT, then your `runtimeclass` IDL mustn't declare the method.
+
 **IDL**
+
 ```ìdl
 namespace Example
 {
     runtimeclass CustomVSM : Windows.UI.Xaml.VisualStateManager
     {
         CustomVSM();
-        // note that we do not declare GoToStateCore here
+        // note that we don't declare GoToStateCore here
     }
 }
 ```
-**C++**
+
+**C++/WinRT**
+
 ```cppwinrt
 namespace winrt::Example::implementation
 {
@@ -235,7 +241,6 @@ namespace winrt::Example::implementation
     };
 }
 ```
-
 
 ## Important APIs
 * [Control class](/uwp/api/windows.ui.xaml.controls.control)
