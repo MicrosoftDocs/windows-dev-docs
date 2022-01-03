@@ -51,7 +51,7 @@ Launch the zones editor using the button in the PowerToys Settings menu or by pr
 
 ### Snapping apps with elevated permission
 
-If you have applications that are elevated and want them snapped with FancyZones, such as Windows Terminal or Task Manager, please run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
+If you have applications that are elevated (such as Windows Terminal or Task Manager) and want them snapped with FancyZones, please run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
 
 ## Choose your layout (Layout Editor)
 
