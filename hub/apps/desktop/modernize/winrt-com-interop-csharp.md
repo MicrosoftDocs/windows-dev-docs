@@ -10,9 +10,12 @@ ms.localizationpriority: medium
 
 In .NET 5 and later, C# desktop application developers can more easily access select WinRT COM interop interfaces. These APIs are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
 
-Before .NET 5, C# developers could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute and directly cast a projected class to that interop interface. Starting with .NET 5, built-in WinRT projection support has been removed from the C# compiler and .NET runtime. While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces which are used for interoperating with WinRT interfaces (see [ComInterfaceType](/dotnet/api/system.runtime.interopservices.cominterfacetype)).
+Prior to .NET 5, C# developers could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute and directly cast a projected class to that interop interface. Starting with .NET 5, built-in WinRT projection support has been removed from the C# compiler and .NET runtime. While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces which are used for interoperating with WinRT interfaces.
 
-As a replacement, starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, apps can make use of COM interop class implementations for several WinRT COM interop interfaces as well as [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow). This article provides a list of the available class implementations and instructions for using them.
+As a replacement, in .NET 5 and later, apps can make use of COM interop class implementations for several WinRT COM interop interfaces as well as [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow). This article provides a list of the available class implementations and instructions for using them.
+
+> [!NOTE]
+> The classes below require the .NET 5.0.205 SDK or later.
 
 ## Available interop classes
 
@@ -50,27 +53,24 @@ To configure your desktop project to access the C# interop classes, follow these
 
     For more information including a list of other supported values, see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option).
 
-2. The following example demonstrates how to use the **WinRT.Interop.WindowNative** interop class in a [WinUI 3-based application](../../winui/winui3/create-your-first-winui3-app.md) to obtain a window handle object and then open a folder picker dialog using the window handle. In this example, the `this` object is an instance of the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class provided by WinUI 3. Note that the **WinRT.Interop.WindowNative** class implements the [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) interface provided by WinUI 3, and this interface is implemented by the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class.
+2. The following example demonstrates how to use the **WinRT.Interop.WindowNative** and **WinRT.Interop.InitializeWithWindow** interop classes in a [WinUI 3 application](../../winui/winui3/create-your-first-winui3-app.md) to obtain a window handle object and then open a folder picker dialog using the window handle. In this example, `this` is a reference to a [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) object from the main window code-behind file.
 
     ```csharp
-    private async void myButton_Click(object sender, RoutedEventArgs e)
-    {
-        // Pass in the current WinUI window and get its handle
-        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-        var folderPicker = new Windows.Storage.Pickers.FolderPicker();
-        folderPicker.FileTypeFilter.Add("*");
-        WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
+    var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 
-        // Now you can call methods on folderPicker
-        var folder = await folderPicker.PickSingleFolderAsync();
-        // ...
-    }
+    // Pass in the current WinUI window and get its handle
+    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+    // Associate the HWND with the folder picker
+    WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
+
+    // Use folder picker like normal!
+    folderPicker.FileTypeFilter.Add("*");
+    var folder = await folderPicker.PickSingleFolderAsync();
     ```
 
 ## Troubleshooting and known issues
 
 This section lists known issues and solutions for using the WinRT COM interop APIs. To provide feedback or to report other issues, add your feedback to an existing issue or file a new issue on the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT).
 
-- **WinRT.Interop.WindowNative.GetWindowHandle does not marshal window handles (HWNDs) correctly when running on x86 platforms.** To resolve this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.303, or 5.0.400.
-
-
+- **WinRT.Interop.WindowNative.GetWindowHandle does not marshal window handles (HWNDs) correctly when running on x86 platforms.** To resolve this issue, update your .NET SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.

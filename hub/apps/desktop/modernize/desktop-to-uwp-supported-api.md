@@ -11,7 +11,7 @@ ms.custom: 19H1
 
 # Windows Runtime APIs not supported in desktop apps
 
-Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET 5 and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
+Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
 
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
@@ -19,7 +19,7 @@ Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop a
 This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
-> Starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
+> Apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md). Note that these classes require the .NET 5.0.205 SDK or later.
 
 This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API and and provide details about what you are trying to achieve by using it.
 
@@ -97,8 +97,30 @@ Some WinRT classes require a [CoreWindow](/uwp/api/windows.ui.core.corewindow) o
 
 However, some of these classes implement the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface, which provides a way to use them in desktop apps. This interface enables you to specify the owner window for the operations that will be performed using the class. Examples of these classes include [PopupMenu](/uwp/api/Windows.UI.Popups.PopupMenu) and [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker). For more details, including a list of more WinRT classes that implement this interface, see [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
 
-The following example demonstrates how to use the **IInitializeWithWindow** interface to specify the owner window for the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class.
+The following examples demonstrate how to use the **IInitializeWithWindow** interface to specify the owner window for the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class.
 
+#### [C# (.NET 5 and later)](#tab/csharp)
+
+> [!NOTE]
+> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
+
+In the call to `GetWindowHandle(this)`, the object you pass must be a Window (either a WinUI 3 Window, a WPF Window, or a WinForms Window). In the example below, we assume the code is being called from the Window code-behind, which is why `this` is used as the parameter. If you are calling this code from another file, you need to pass a reference to the window.
+
+```csharp
+var filePicker = new FileOpenPicker();
+
+// Get the current window's HWND by passing in a reference to the Window object
+var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+// Associate the HWND with the file picker
+WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hwnd);
+
+// Use file picker like normal!
+filePicker.FileTypeFilter.Add("*");
+var file = await filePicker.PickSingleFileAsync();
+```
+
+#### [C++](#tab/cpp)
 ```cpp
 #include <shobjidl.h>
 #include <winrt/windows.storage.pickers.h>
@@ -113,9 +135,7 @@ ShowFilePickerAsync(HWND hwnd)
 }
 ```
 
-> [!NOTE]
-> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
-
+---
 
 ### Unsupported members
 
