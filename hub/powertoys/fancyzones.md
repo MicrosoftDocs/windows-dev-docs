@@ -123,9 +123,9 @@ In the demo below, we start with a default template applied to the screen and 2 
 | Make dragged window transparent | When the zones are activated, the window being dragged is made transparent to improve the zones visibility |
 | Enable quick layout switch | Enables hotkeys to quickly changes layouts - see individual layout settings |
 | Flash zones when switching layout | The zones will flash when a layout is selected via the shortcut |
-| Zone highlight color | The color of a zone when it is the active drop target during a window drag (default: #008CFF) |
-| Zone Inactive color | The color of zones when they are not an active drop during a window drag (default: #F5FCFF) |
-| Zone border color | The color of the border of active and inactive zones (default: #FFFFFF) |
+| Zone highlight color | The color of a zone when it is the active drop target during a window drag |
+| Zone Inactive color | The color of zones when they are not an active drop during a window drag |
+| Zone border color | The color of the border of active and inactive zones |
 | Zone opacity (%) | The percentage of opacity of active and inactive zones (default: 50%) |
 | Exclude applications from snapping to zones | Add the application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
 
