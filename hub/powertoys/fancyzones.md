@@ -21,7 +21,7 @@ It's also possible to snap to any number of zones: first drag the window until o
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
-To snap a window to multiple zone using only the keyboard, first turn on the setting **Override Windows Snap** and select **Move windows based on: Relative position** as shown below. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
+To snap a window to multiple zones using only the keyboard, first turn on the setting **Override Windows Snap** and select **Move windows based on: Relative position** as shown below. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
 
 ![Settings for Snapping to Multiple Zones via Keyboard](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
