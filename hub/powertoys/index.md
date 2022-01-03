@@ -31,10 +31,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Always on Top screenshot](../images/pt-AlwaysOnTop-menu.png)](alwaysOnTop.md)
+        [![Always on Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
-        [Always on Top](alwaysOnTop.md) TEXT
+        [Always on Top](always-on-top.md) is a quick and easy way to pin windows on top of of all other windows with a quick key shortcut.
     :::column-end:::
 :::row-end:::
 
@@ -182,10 +182,10 @@ PowerToys welcomes your contributions! The PowerToys development team is excited
 - Write a [tech spec](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - Submit a [design concept or recommendation](https://www.microsoft.com/design/inclusive/)
 - [Contribute to documentation](/contribute/)
-- Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/master/src)
-- [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
+- Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/main/src)
+- [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/main/doc/devdocs)
 
-Before starting work on a feature that you would like to contribute, **read the [Contributor's Guide](https://github.com/microsoft/PowerToys/blob/master/CONTRIBUTING.md)**. The PowerToys team will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
+Before starting work on a feature that you would like to contribute, **read the [Contributor's Guide](https://github.com/microsoft/PowerToys/blob/main/CONTRIBUTING.md)**. The PowerToys team will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
 
 ## PowerToys release notes
 
