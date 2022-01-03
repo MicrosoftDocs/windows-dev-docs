@@ -31,7 +31,7 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
 
     ![NVM for Windows installation wizard](../../images/install-nvm-for-windows-wizard.png)
 
-5. Once the installation is complete. Open PowerShell and try using windows-nvm to list which versions of Node are currently installed (should be none at this point): `nvm ls`
+5. Once the installation is complete. Open PowerShell (recommend opening with elevated Admin permissions) and try using windows-nvm to list which versions of Node are currently installed (should be none at this point): `nvm ls`
 
     ![NVM list showing no Node versions](../../images/windows-nvm-powershell-no-node.png)
 
