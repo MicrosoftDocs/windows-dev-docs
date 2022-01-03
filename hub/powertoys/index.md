@@ -4,7 +4,7 @@ description: Microsoft PowerToys is a set of utilities for customizing Windows. 
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake]
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
 ---
 
 <!-- [Jay] shortened description, old =
@@ -20,12 +20,23 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Processor support
 
 - **x64**: Supported
-- **x86**: In development (see [issue #602](https://github.com/microsoft/PowerToys/issues/602))
 - **ARM**: In development (see [issue #490](https://github.com/microsoft/PowerToys/issues/490))
 
 ## Current PowerToy utilities
 
 The currently available utilities include:
+
+
+### Always on Top
+
+:::row:::
+    :::column:::
+        [![Always on Top screenshot](../images/pt-AlwaysOnTop-menu.png)](alwaysOnTop.md)
+    :::column-end:::
+    :::column span="2":::
+        [Always on Top](alwaysOnTop.md) TEXT
+    :::column-end:::
+:::row-end:::
 
 ### PowerToys Awake
 
