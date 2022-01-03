@@ -85,7 +85,7 @@ The **Grid** model starts with a three column grid and allows zones to be create
 
 ![FancyZones Table Editor Mode](../images/pt-fancyzones-grideditor.png)
 
-The additive **Canvas** model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows.  Canvas layouts are directly tied to DPI and resolution of the monitor.
+The **Canvas** model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows. Canvas layouts are directly tied to DPI and resolution of the monitor.
 
 Canvas layout also has keyboard support for zone editing. Use the <kbd>arrow</kbd> keys (up, down, left, right) to move a zone by 10 pixels, or <kbd>Ctrl</kbd>+<kbd>arrow</kbd> to move a zone by 1 pixel. Use the <kbd>Shift</kbd>+<kbd>arrow</kbd> keys to resize a zone by 10 pixels (5 per edge), or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to resize a zone by 2 pixels (1 per edge). To switch between the editor and dialog, press the <kbd>Ctrl</kbd>+<kbd>Tab</kbd> keys.
 
