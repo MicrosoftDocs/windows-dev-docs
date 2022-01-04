@@ -23,7 +23,7 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | MSAL library | ✅ Supported |
 | [Visual Studio App Center](https://appcenter.ms/) | ✅ Supported |
 | [Single-instancing](guides/applifecycle.md#single-instanced-apps) | ✅ Supported |
-| [Background tasks](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-winmain-background-task) | ⚠️ Not supported for C# apps (supported for C++ apps) |
+| [Background tasks](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task) | ⚠️ Supported for C++ apps; not supported for C# apps |
 | [CameraCaptureUI](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/49-support-cameracaptureui) | ❌ Not supported in 1.0 |
 | CoreTextServicesManager | ⚠️ Supported only on Windows 11 |
 | [InkCanvas](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/31-inking-controls) | ❌ Not supported in 1.0 |
