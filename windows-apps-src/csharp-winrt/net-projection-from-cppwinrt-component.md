@@ -21,9 +21,10 @@ In .NET 5 and later, consumption of Windows metadata (WinMD) files is no longer 
 
 This walkthrough and the corresponding sample require the following tools and components:
 
-* [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
+* [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) (or Visual Studio 2019) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
 * [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0) or [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0).
-* [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), which gives you C++/WinRT project templates in Visual Studio.
+
+**Visual Studio 2019** only. The [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), which gives you C++/WinRT project templates in Visual Studio. The project templates are built in to Visual Studio 2022.
 
 We'll be using Visual Studio 2022 and .NET 6 in this walkthrough.
 
@@ -34,7 +35,7 @@ We'll be using Visual Studio 2022 and .NET 6 in this walkthrough.
 
 To follow this walkthrough, you must first have a C++/WinRT Windows Runtime component (WRC) from which to generate the C# projection assembly.
 
-This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with the [C++/WinRT VSIX extension](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with Visual Studio 2022, or with the [C++/WinRT VSIX extension](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 
 To open the **SimpleMathComponent** project in Visual Studio, open the `\CsWinRT\src\Samples\NetProjectionSample\CppWinRTComponentProjectionSample.sln` file, which you'll find in your download or clone of the repo.
 
