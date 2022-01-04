@@ -17,7 +17,7 @@ A system-wide utility for Windows that allows you to pin windows to the top of a
 
 ### Toggling windows to be on top
 
-With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the window will be toggle on top.  By default, you'll have a 
+With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the window will be toggle on top.
 
 ## PowerToys settings
 
@@ -25,7 +25,7 @@ From the settings menu, the following options can be configured:
 
 | Setting | Description |
 | --- | --- |
-| Activation shortcut | The customizable keyboard command to turn on or off mouse highlighting |
+| Activation shortcut | The customizable keyboard command to turn on or off always on top for that window |
 | Do not activate when Game Mode is on | Prevents the feature from being activated when actively playing a game on the system |
 | Color | The color of the highlight border |
 | Border thickness (px)| The thickness of the highlight border - Measured in pixels |
