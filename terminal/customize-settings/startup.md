@@ -76,6 +76,8 @@ Note: Currently, Windows Terminal will save the following information:
 
 - The tab layout of each window, including the layout and profile of each pane, but not any contents of those panes
 
+- If your shell is configured to report the [current working directory](../tutorials/new-tab-same-directory.md) that will be saved as well
+
 **Property name:** `firstWindowPreference`
 
 **Necessity:** Optional
