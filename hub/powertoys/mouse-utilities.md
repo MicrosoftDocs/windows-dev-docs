@@ -39,7 +39,7 @@ From the settings menu, the following options can be configured:
 
 Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd> shortcut.
 
-### Find my mouse settings
+### Mouse Highlighter settings
 
 ![Screenshot of Mouse Highlighter](../images/pt-mouse-highlighter.gif)
 
