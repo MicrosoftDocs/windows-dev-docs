@@ -128,5 +128,5 @@ To open a new pane with the same path (and profile) as the currently active term
 
 the above actions are also available on the tab context menu, under the entries "Duplicate Tab" and "Split Pane".
 
-[!duplicate-tab-same-cwd](../images/duplicate-tab-same-cwd.gif)
-[!split-pane-same-cwd](../images/split-pane-same-cwd.gif)
+![Image duplicate-tab-same-cwd](../images/duplicate-tab-same-cwd.gif)
+![Image split-pane-same-cwd](../images/split-pane-same-cwd.gif)
