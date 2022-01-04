@@ -34,7 +34,7 @@ The currently available utilities include:
         [![Always on Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
-        [Always on Top](always-on-top.md) is a quick and easy way to pin windows on top of of all other windows with a quick key shortcut.
+        [Always on Top](always-on-top.md) is a quick and easy way to pin windows on top of all other windows with a quick key shortcut.
     :::column-end:::
 :::row-end:::
 
