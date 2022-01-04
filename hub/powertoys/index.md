@@ -130,7 +130,7 @@ The currently available utilities include:
         [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>?</kbd> and shows the available shortcuts for the current state of the desktop.
+        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop.  You can also change this setting and press and hold <kbd>⊞ Win</kbd>.
     :::column-end:::
 :::row-end:::
 

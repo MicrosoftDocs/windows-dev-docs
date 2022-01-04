@@ -106,7 +106,7 @@ Let's take Rust for a spin with a simple "Hello, world!" app.
 5. Now let's try running the app under the debugger. Put a breakpoint on line 2, and click **Run** > **Start Debugging** (or press **F5**). There are also **Debug** and **Run** commands embedded inside the text editor.
 
    > [!NOTE]
-   > When you run an app under the debugger for the first time, you'll see a dialog box saying "Cannot start debugging because no launch configuration has been provided". Click **OK** to see a second dialog box saying "Cargo.toml has been detected in this workspace. Would you like to generate launch configurations for its targets?". Click **Yes**. Then close the launch.json file and begin debugging again.
+   > When you run an app under the **CodeLLDB** extension and debugger for the first time, you'll see a dialog box saying "Cannot start debugging because no launch configuration has been provided". Click **OK** to see a second dialog box saying "Cargo.toml has been detected in this workspace. Would you like to generate launch configurations for its targets?". Click **Yes**. Then close the launch.json file and begin debugging again.
 
 6. As you can see, the debugger breaks at line 2. Press **F5** to continue, and the app runs to completion. In the **Terminal** pane, you'll see the expected output "Hello, world!".
 
