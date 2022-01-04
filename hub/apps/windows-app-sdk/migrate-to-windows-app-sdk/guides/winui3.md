@@ -349,7 +349,7 @@ co_await unsupportedFilesDialog.ShowAsync();
 
 ## Do I need to implement page navigation?
 
-In a UWP project, by default there will be navigation code in the methods of the **App** class, even the your app is simple enough that it has only one **Page**.
+In a UWP project, by default there will be navigation code in the methods of the **App** class, even if your app is simple enough that it has only one **Page**.
 
 When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 
