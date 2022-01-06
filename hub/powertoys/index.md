@@ -7,9 +7,6 @@ ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
 ---
 
-<!-- [Jay] shortened description, old =
-description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker (click anywhere to grab a color value), FancyZones (shortcuts to position windows into a grid layout), File Explorer Add-ons (preview SVGs or Markdown files), Image Resizer (resize one or many images with a simple right-click), Keyboard Manager (remap keys or create your own shortcuts), PowerRename (bulk rename using search and replace), PowerToys Run (Alt + Space to launch apps), a Shortcut Guide, and more to come. -->
-
 # Microsoft PowerToys: Utilities to customize Windows
 
 Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.
@@ -34,7 +31,7 @@ The currently available utilities include:
         [![Always on Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
-        [Always on Top](always-on-top.md) is a quick and easy way to pin windows on top of all other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+        [Always on Top](always-on-top.md) enables you to pin windows on top of all other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
     :::column-end:::
 :::row-end:::
 
