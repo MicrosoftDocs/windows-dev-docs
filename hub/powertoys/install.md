@@ -1,7 +1,7 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 12/03/2021
+ms.date: 01/06/2021
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -51,7 +51,7 @@ winget install Microsoft.PowerToys --source winget
 
 ## Installer args:
 
-The installer executable accepts the [Microsoft Standard Installer command-line options](https://docs.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options)
+The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options)
 
 Here are the common commands you may want:
 
