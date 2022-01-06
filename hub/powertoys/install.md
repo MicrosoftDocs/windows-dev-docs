@@ -49,7 +49,7 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install Microsoft.PowerToys --source winget
 ```
 
-## Installer args:
+## Installer args
 
 The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options)
 
