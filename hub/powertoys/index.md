@@ -4,11 +4,8 @@ description: Microsoft PowerToys is a set of utilities for customizing Windows. 
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake]
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
 ---
-
-<!-- [Jay] shortened description, old =
-description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker (click anywhere to grab a color value), FancyZones (shortcuts to position windows into a grid layout), File Explorer Add-ons (preview SVGs or Markdown files), Image Resizer (resize one or many images with a simple right-click), Keyboard Manager (remap keys or create your own shortcuts), PowerRename (bulk rename using search and replace), PowerToys Run (Alt + Space to launch apps), a Shortcut Guide, and more to come. -->
 
 # Microsoft PowerToys: Utilities to customize Windows
 
@@ -20,12 +17,23 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Processor support
 
 - **x64**: Supported
-- **x86**: In development (see [issue #602](https://github.com/microsoft/PowerToys/issues/602))
 - **ARM**: In development (see [issue #490](https://github.com/microsoft/PowerToys/issues/490))
 
 ## Current PowerToy utilities
 
 The currently available utilities include:
+
+
+### Always on Top
+
+:::row:::
+    :::column:::
+        [![Always on Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
+    :::column-end:::
+    :::column span="2":::
+        [Always on Top](always-on-top.md) enables you to pin windows on top of all other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+    :::column-end:::
+:::row-end:::
 
 ### PowerToys Awake
 
@@ -171,10 +179,10 @@ PowerToys welcomes your contributions! The PowerToys development team is excited
 - Write a [tech spec](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - Submit a [design concept or recommendation](https://www.microsoft.com/design/inclusive/)
 - [Contribute to documentation](/contribute/)
-- Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/master/src)
-- [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
+- Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/main/src)
+- [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/main/doc/devdocs)
 
-Before starting work on a feature that you would like to contribute, **read the [Contributor's Guide](https://github.com/microsoft/PowerToys/blob/master/CONTRIBUTING.md)**. The PowerToys team will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
+Before starting work on a feature that you would like to contribute, **read the [Contributor's Guide](https://github.com/microsoft/PowerToys/blob/main/CONTRIBUTING.md)**. The PowerToys team will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
 
 ## PowerToys release notes
 
