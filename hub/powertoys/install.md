@@ -51,7 +51,7 @@ winget install Microsoft.PowerToys --source winget
 
 ## Installer args:
 
-The installer execuatable accepts the [Microsoft Standard Installer command-line options](https://docs.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options)
+The installer executable accepts the [Microsoft Standard Installer command-line options](https://docs.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options)
 
 Here are the common commands you may want:
 
