@@ -17,7 +17,7 @@ A system-wide utility for Windows that allows you to pin windows to the top of a
 
 ### Toggling windows to be on top
 
-With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the window will be toggle on top.
+With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the window will be toggled on top.
 
 ## PowerToys settings
 
