@@ -403,14 +403,14 @@ When a Bluetooth HFP device is connected and ready to be used for calling, your 
     /////////////////////////////////////////////////////////////////////////////////////
     // Under ViewModel class
     //   A viewModel object is created and maintained in the app
-    //
+    //git
 
 ```
 
 ## Managing an Ongoing Call
 Managing an Ongoing Call
 When there is an active call, your app should provide UX controls for the following actions:
-•	Muting the microphone for the call via PhoneCall.Mute()
+• Muting the microphone for the call via PhoneCall.Mute()
 •	Unmuting the microphone for the call via PhoneCall.UnMute()
 •	Sending DTMF tones with the keypad, via PhoneCall.SendDtmfKey() 
 •	Holding the call via PhoneCall.Hold()
