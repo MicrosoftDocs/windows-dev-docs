@@ -41,18 +41,17 @@ Follow the H2 headings with a sentence about how the section contributes to the 
 -->
 
 ## General Guidance
-To determine if the app is running on a Windows release which no longer supports system call control:
 
-App needs to query the API contract ([Windows.ApplicationModel.Calls.CallsPhoneContract](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.callsphonecontract?view=winrt-22000)) with version 7 (via [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent?view=winrt-20348) Method) to determine if it’s running on a Windows release which no longer supports system call-control experience, and if so, app should notify users accordingly for example, to update to a newer version that supports in-app call-control.
+To determine if an app is running on a Windows release which no longer supports system call control, apps need to query the API contract ([Windows.ApplicationModel.Calls.CallsPhoneContract](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.callsphonecontract?view=winrt-22000)) with version 7 (via [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent?view=winrt-20348) Method)  and if so, should notify users accordingly to for example, update to a newer version that supports in-app call-control.
 
-Apps must opt in to host in-app call control experience:
-•	App needs to register [IncomingCallNotification](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-22000) phone trigger to receive incoming call notification to notify the user.
-•	App needs to declare in appxmanifest file "windows.phonecallactivation“ as an uap13:Extension Category; otherwise, the app cannot be activated to host call progress.
+To opt in to host the in-app call control experience:
+- Apps need to register [IncomingCallNotification](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-22000) phone trigger to receive incoming call notification to notify the user.
+- Apps need to declare in appxmanifest file "windows.phonecallactivation“ as an uap13:Extension Category; otherwise, the app cannot be activated to host call progress.
 
 Notes for existing apps using the system call control experience:
-•	[CallOrigin](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.provider?view=winrt-insider) related APIs and [EnableTextReply](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.phoneline.enabletextreply?view=winrt-insider) APIs will no longer work after deprecation.
-•	The [CallOrigin](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-insider) & [IncomingCallDismissed](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-22000&viewFallbackFrom=winrt-insider) phone triggers will no longer be fired after deprecation.
-•	Apps should register [PhoneLineWatcher.LineRemoved](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.phonelinewatcher.lineremoved?view=winrt-20348) Event  so that if the app has not declared "windows.phonecallactivation“ as an uap13:Extension Category in the appxmanifest file, it will get notified of hands-free line registration being removed after upgrading to a new Windows build that no longer supports system call control. This will allow the app to notify users explicitly in a timely fashion.
+- [CallOrigin](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.provider?view=winrt-insider) related APIs and [EnableTextReply](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.phoneline.enabletextreply?view=winrt-insider) APIs will no longer work after deprecation.
+- The [CallOrigin](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-insider) & [IncomingCallDismissed](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-22000&viewFallbackFrom=winrt-insider) phone triggers will no longer be fired after deprecation.
+- Apps should register [PhoneLineWatcher.LineRemoved](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.phonelinewatcher.lineremoved?view=winrt-20348) Event  so that if the app has not declared "windows.phonecallactivation“ as an uap13:Extension Category in the appxmanifest file, it will get notified of hands-free line registration being removed after upgrading to a new Windows build that no longer supports system call control. This will allow the app to notify users explicitly in a timely fashion.
 
 ## Handling HFP Device Registration and PhoneLineTransport Devices
 Handling HFP Device Registration and PhoneLineTransport Devices
@@ -410,13 +409,15 @@ When a Bluetooth HFP device is connected and ready to be used for calling, your 
 ## Managing an Ongoing Call
 Managing an Ongoing Call
 When there is an active call, your app should provide UX controls for the following actions:
-• Muting the microphone for the call via PhoneCall.Mute()
-•	Unmuting the microphone for the call via PhoneCall.UnMute()
-•	Sending DTMF tones with the keypad, via PhoneCall.SendDtmfKey() 
-•	Holding the call via PhoneCall.Hold()
-•	Resuming the held call via PhoneCall.ResumeFromHold()
-•	Transferring the call audio to the local device (PC) or remote device (phone) via PhoneCall.ChangeAudioDevice()
-•	Ending the call via PhoneCall.End()
+
+- Muting the microphone for the call via PhoneCall.Mute()
+- Unmuting the microphone for the call via PhoneCall.UnMute()
+- Sending DTMF tones with the keypad, via PhoneCall.SendDtmfKey()
+- Holding the call via PhoneCall.Hold()
+- Resuming the held call via PhoneCall.ResumeFromHold()
+-	Transferring the call audio to the local device (PC) or remote device (phone) via PhoneCall.ChangeAudioDevice()
+-	Ending the call via PhoneCall.End()
+
 For each of these cases, the [PhoneCallOperationStatus](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.calls.phonecalloperationstatus?view=winrt-22000) returned should be checked, so that the user can be informed in the case of an error.
 
 ```csharp
@@ -686,8 +687,9 @@ These will each trigger an event on either PhoneCall.StatusChanged, PhoneCall.Is
 
 ## Handling IncomingCallNotification Trigger
 Your app needs to register for the IncomingCallNotification PhoneTrigger type to be informed when an incoming call arrives. The trigger will activate your app’s background task, and include the CallId and LineId in the trigger details. The PhoneCall can then be retrieved by either
-•	Calling PhoneCall.GetFromId() and passing the CallId (primary method)
-•	Getting the PhoneLine via PhoneLine.FromIdAsync(), passing the LineId, and then retrieving the list of active PhoneCall objects with PhoneLine.GetAllActivePhoneCallsAsync(). Note that this will include past (now inactive) calls, and your app should filter these out. [Add note on multiple ongoing calls / a link to page discussing it]
+- Calling PhoneCall.GetFromId() and passing the CallId (primary method)
+- Getting the PhoneLine via PhoneLine.FromIdAsync(), passing the LineId, and then retrieving the list of active PhoneCall objects with PhoneLine.GetAllActivePhoneCallsAsync(). Note that this will include past (now inactive) calls, and your app should filter these out. [Add note on multiple ongoing calls / a link to page discussing it]
+
 Once a valid call (or calls) is/are retrieved, your app should display either the incoming call or ongoing call UI, depending on PhoneCall.Status
 ```csharp
 // Background task is in-proc to the app
@@ -750,7 +752,7 @@ Once a valid call (or calls) is/are retrieved, your app should display either th
     }
 
 ```
-Incoming Call UI
+## Incoming Call UI
 When an incoming call arrives, your app should display UI with the option to either accept or reject the call via PhoneCall.AcceptIncomingAsync() or PhoneCall.RejectIncomingAsync, checking the returned PhoneCallOperationStatus for success and handling any errors.
 ```csharp
 private async void AcceptIncomingCallButtonClick(object sender, RoutedEventArgs e)
@@ -792,8 +794,8 @@ private async void AcceptIncomingCallButtonClick(object sender, RoutedEventArgs 
 ```
 ## Handling App Activation by Phone Service (Surprise Calls)
 Your app must also handle being activated directly by the phone service, in the event a call is placed or an active call is discovered through a previously registered PhoneLineTransportDevice. This can occur if:
-•	The user’s phone is connected via Bluetooth, and they place an outgoing call vi the phone, rather than the app.
-•	A user’s phone has become disconnected, and Bluetooth reconnects while there is an ongoing call on the phone.
+- The user’s phone is connected via Bluetooth, and they place an outgoing call vi the phone, rather than the app.
+- A user’s phone has become disconnected, and Bluetooth reconnects while there is an ongoing call on the phone.
 In these cases, the app will be activated with [ActivationKind.PhoneCallActivation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.activationkind?view=winrt-22000), and the [PhoneCallActivatedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.phonecallactivatedeventargs?view=winrt-22000) will contain the LineId for the PhoneLine that the call is on. Your app should then retrieve the PhoneLine via PhoneLine.FromIdAsync(), passing the LineId, and get the outgoing call(s) on the line with PhoneLine.GetAllActivePhoneCallsAsync(). The appropriate UI for an incoming or ongoing call should then be displayed.
 
 ```csharp
@@ -841,9 +843,13 @@ protected override async void OnActivated(IActivatedEventArgs args)
 
 ```
 ## Behavior of Deprecated API
-Existing system call control related APIs will still be present but will have no effect when called. See the corresponding pages for each class, method, and trigger for more details on post-deprecation behavior. Some notable cases to consider:
-CallOrigin and IncomingCallDismissed background triggers will no longer be fired when a call is dialed/arrives or when an incoming call is rejected, respectively. If your app listens for these events post-deprecation, they will not be received.
-PhoneLineTransportDevice.RequestAccessAsync() will now return DeviceAccessStatus.deniedBySystem, unless windows.phonecallactivation is properly declared in the appxmanifest. If there are previous Hands-free Bluetooth device registrations for the app, they will be removed and a new PhoneLineWatcher.LineRemoved event will be sent to the app, unless windows.phonecallactivation is properly declared in the appxmanifest. It is suggested that a handler for this event be included in the app version prior to supporting the new API, so that users who have not yet updated their app post-deprecation can be notified that their hands-free device is no longer registered.
+Existing system call control related APIs will still be present but will have no effect when called. See the corresponding pages for each class, method, and trigger for more details on post-deprecation behavior. 
+
+Some notable cases to consider:
+- CallOrigin and IncomingCallDismissed background triggers will no longer be fired when a call is dialed/arrives or when an incoming call is rejected, respectively. If your app listens for these events post-deprecation, they will not be received.
+- PhoneLineTransportDevice.RequestAccessAsync() will now return DeviceAccessStatus.deniedBySystem, unless windows.phonecallactivation is properly declared in the appxmanifest.
+
+ If there are previous Hands-free Bluetooth device registrations for the app, they will be removed and a new PhoneLineWatcher.LineRemoved event will be sent to the app, unless windows.phonecallactivation is properly declared in the appxmanifest. It is suggested that a handler for this event be included in the app version prior to supporting the new API, so that users who have not yet updated their app post-deprecation can be notified that their hands-free device is no longer registered.
 
 ## Where to get help
 For questions, please reach out to windowscallcontrol@microsoft.com
