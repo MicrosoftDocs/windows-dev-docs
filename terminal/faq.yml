@@ -99,7 +99,6 @@ sections:
       - question: How can I customize PowerShell prompt colors using PSReadLine?
         answer: |
          The PSReadLine module is responsible for setting the colors and behavior of your PowerShell command line. You can set colors for specific attributes of your PowerShell prompt by using the [Set-PSReadLineOption, see Example 4: Set multiple color options](/powershell/module/psreadline/set-psreadlineoption.md#example-4--set-multiple-color-options).
-
         ```powershell
             Set-PSReadLineOption -Colors @{
               Number             = 'Magenta'
