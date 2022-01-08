@@ -3,7 +3,7 @@ title: Windows Terminal Dynamic Profiles
 description: Learn about dynamic profiles in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 08/30/2021
+ms.date: 01/06/2022
 ms.topic: conceptual
 ---
 
@@ -137,41 +137,3 @@ Assuming that you've installed MSYS2 into `C:\\msys64`:
 ```
 
 For more details, see the Terminals section of the [MSYS2 documentation](https://www.msys2.org/docs/terminals/#windows-terminal).
-
-### Developer Command Prompt for Visual Studio
-
-Assuming that you've installed [Visual Studio](/visualstudio/install/install-visual-studio):
-
-```json
-{
-    "name": "Developer Command Prompt",
-    "commandline": "cmd.exe /k \"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/Tools/VsDevCmd.bat\"",
-    "startingDirectory": "%USERPROFILE%"
-}
-```
-
-> [!NOTE]
-> Visual Studio’s “Developer Powershell” and “Developer Command Prompt” include shell environment variables and tools settings that would not be available in the default Command Prompt or Powershell instance.
-
-### Developer Powershell for Visual Studio
-
-Assuming that you've installed [Visual Studio](/visualstudio/install/install-visual-studio):
-
-```json
-{
-    "name": "Developer Powershell",
-    "commandline": "powershell.exe -noe -c \"&{Import-Module \"\"\"C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/Common7/Tools/Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 994a9d58}\""
-}
-```
-
-To find the `commandline` path to use in the Windows Terminal settings for your Visual Studio instance:
-
-1. Find the shortcut to `Developer Powershell for VS 2019` in the start menu
-2. Right-click and select `Open File Location`
-3. Right-click and select `Properties` on the shortcut
-4. Inspect the `Target` field. It will be some value like `C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "&{Import-Module """C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"""; Enter-VsDevShell 994a9d58}"`
-5. Use `Target` field value to update the file path for `Import-Module` in the profile `commandline`
-6. Use `Target` field value to update the unique instance ID used with the `Enter-VsDevShell` command in the profile `commandline`
-
-> [!NOTE]
-> Visual Studio’s “Developer Powershell” and “Developer Command Prompt” include shell environment variables and tools settings that would not be available in the default Command Prompt or Powershell instance.
