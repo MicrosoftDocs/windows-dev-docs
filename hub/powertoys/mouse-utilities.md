@@ -20,6 +20,8 @@ Double press the left <kbd>ctrl</kbd> key to activate a spotlight that focuses o
 
 ![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
 
+### Find My Mouse settings
+
 From the settings menu, the following options can be configured:
 
 | Setting | Description |
@@ -37,6 +39,8 @@ From the settings menu, the following options can be configured:
 
 Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd> shortcut.
 
+### Mouse Highlighter settings
+
 ![Screenshot of Mouse Highlighter](../images/pt-mouse-highlighter.gif)
 
 From the settings menu, the following options can be configured:
@@ -50,7 +54,3 @@ From the settings menu, the following options can be configured:
 | Radius | The radius of the highlight animations - Measured in pixels |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds |
-
-
-
-

@@ -192,6 +192,8 @@ items:
                   href: ../powertoys/administrator.md
                 - name: Report a Bug
                   href: ../powertoys/reportBug.md
+            - name: Always on Top
+              href: ../powertoys/always-on-top.md
             - name: PowerToys Awake
               href: ../powertoys/awake.md
             - name: Color Picker
