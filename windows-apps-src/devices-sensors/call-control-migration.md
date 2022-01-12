@@ -24,7 +24,7 @@ To opt in to host the in-app call control experience:
 Notes for existing apps using the system call control experience:
 - [CallOrigin](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.provider?view=winrt-insider) related APIs and [EnableTextReply](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phoneline.enabletextreply?view=winrt-insider) APIs will no longer work after deprecation.
 - The [CallOrigin](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-insider) & [IncomingCallDismissed](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-22000&viewFallbackFrom=winrt-insider) phone triggers will no longer be fired after deprecation.
-- Apps should register [PhoneLineWatcher.LineRemoved](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinewatcher.lineremoved?view=winrt-20348) Event  so that if the app has not declared "windows.phonecallactivation“ as an `uap13:Extension` Category in the `appxmanifest` file, it will get notified of hands-free line registration being removed after upgrading to a new Windows build that no longer supports system call control. This will allow the app to notify users explicitly in a timely fashion.
+- Apps should register [PhoneLineWatcher.LineRemoved](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinewatcher.lineremoved?view=winrt-20348) Event  so that if the app has not declared `windows.phonecallactivation` as a `uap13:Extension` Category in the `appxmanifest` file, it will get notified of hands-free line registration being removed after upgrading to a new Windows build that no longer supports system call control. This will allow the app to notify users explicitly in a timely fashion.
 
 ## Handling HFP Device Registration and PhoneLineTransport Devices
 
@@ -249,6 +249,7 @@ public sealed partial class Scenario_Client : Page
 ```
 
 Registering a device for calling should be done in response to the user clicking an “enable calling” (or similarly labeled) button, and involves the following:
+
 1.	Registering by calling `RegisterApp` on the `PhoneLineTransportDevice` object
 2.	Adding an event handler for the `PhoneLineTransportDevice.AudioRoutingStatusChanged` event
 3.	Adding an event handler for the `PhoneLineTransportDevice.InBandRingingEnabledChanged` event
@@ -304,12 +305,12 @@ Registering a device for calling should be done in response to the user clicking
 ## Placing an Outgoing Call
 When a Bluetooth HFP device is connected and ready to be used for calling, your app should provide the user with controls for placing an outgoing call (such as by dialing a number or clicking the call button for a contact). When the user attempts to do so, your app should do the following:
 
-1.	Check that audio can be routed to the local device (PC) by checking the PhoneLineTransportDevice.AudioRoutingStatus property. If not, direct the user to make the call from the remote device (phone) instead.
-2.	Access the [PhoneCallStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecallstore?view=winrt-22000) via [PhoneCallManager.RequestStoreAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecallmanager.requeststoreasync?view=winrt-22000)
-3.	Get the ID for the default PhoneLine from the store via PhoneCallStore. GetDefaultLineAsync
-4.	Retrieve the [PhoneLine](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phoneline?view=winrt-22000) using the line ID via PhoneLine.FromIdAsync
-5.	Place the call, passing the number to be dialed and the contact / display name (if known), via PhoneLine.DialWithResultAsync
-6.	Check the DialCallStatus property of the returned PhoneLineDialResult and update the UX accordingly. On success, your app should show the UI for a call being dialed and begin monitoring for `PhoneCall` status changes (see page on ongoing calls)
+1.	Check that audio can be routed to the local device (PC) by checking the `PhoneLineTransportDevice.AudioRoutingStatus` property. If not, direct the user to make the call from the remote device (phone) instead.
+2.	Access the [PhoneCallStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecallstore?view=winrt-22000) via [PhoneCallManager.RequestStoreAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecallmanager.requeststoreasync?view=winrt-22000).
+3.	Get the ID for the default `PhoneLine` from the store via `PhoneCallStore.GetDefaultLineAsync`.
+4.	Retrieve the [PhoneLine](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phoneline?view=winrt-22000) using the line ID via `PhoneLine.FromIdAsync`.
+5.	Place the call, passing the number to be dialed and the contact / display name (if known), via `PhoneLine.DialWithResultAsync`.
+6.	Check the `DialCallStatus` property of the returned `PhoneLineDialResult` and update the UX accordingly. On success, your app should show the UI for a call being dialed and begin monitoring for `PhoneCall` status changes (see page on ongoing calls).
 
 ```c#
     private async void DialPhoneCallOnHfpLine(string number, string displayName)
@@ -387,13 +388,13 @@ When a Bluetooth HFP device is connected and ready to be used for calling, your 
 Managing an Ongoing Call
 When there is an active call, your app should provide UX controls for the following actions:
 
-- Muting the microphone for the call via PhoneCall.Mute()
-- Unmuting the microphone for the call via PhoneCall.UnMute()
-- Sending DTMF tones with the keypad, via PhoneCall.SendDtmfKey()
-- Holding the call via PhoneCall.Hold()
-- Resuming the held call via PhoneCall.ResumeFromHold()
--	Transferring the call audio to the local device (PC) or remote device (phone) via PhoneCall.ChangeAudioDevice()
--	Ending the call via PhoneCall.End()
+- Muting the microphone for the call via `PhoneCall.Mute()`
+- Unmuting the microphone for the call via `PhoneCall.UnMute()`
+- Sending DTMF tones with the keypad, via `PhoneCall.SendDtmfKey()`
+- Holding the call via `PhoneCall.Hold()`
+- Resuming the held call via `PhoneCall.ResumeFromHold()`
+-	Transferring the call audio to the local device (PC) or remote device (phone) via `PhoneCall.ChangeAudioDevice()`
+-	Ending the call via `PhoneCall.End()`
 
 For each of these cases, the [PhoneCallOperationStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonecalloperationstatus?view=winrt-22000) returned should be checked, so that the user can be informed in the event of an error.
 
