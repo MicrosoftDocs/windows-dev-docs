@@ -35,7 +35,7 @@ Your app should use a [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows
 On a device addition, your app should:
 1.	Retrieve a [PhoneLineTransportDevice](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice?view=winrt-22000) object using the device ID via [PhoneLineTransportDevice.FromId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.fromid?view=winrt-22000#Windows_ApplicationModel_Calls_PhoneLineTransportDevice_FromId_System_String_)
 2.	Call [RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.requestaccessasync?view=winrt-22000) on the transport device
-3.	If access is allowed, start tracking the new PhoneLineTransportDevice and prompt the user to enable calling for (register) the device.
+3.	If access is allowed, start tracking the new `PhoneLineTransportDevice` and prompt the user to enable calling for (register) the device.
 
 On a device update, your app should:
 1.	Retrieve the `PhoneLineTransportDevice` object using the device ID via `PhoneLineTransportDevice.FromId`.
