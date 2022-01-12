@@ -1309,6 +1309,8 @@
           href: ../devices-sensors/host-card-emulation.md
     - name: Get battery information
       href: ../devices-sensors/get-battery-info.md
+    - name: Migrate Call Controls
+      href: ../devices-sensors/call-control-migration.md
 - name: Porting apps
   items:
     - name: Overview
