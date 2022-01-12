@@ -82,8 +82,8 @@ There is one DDLM for each version and architecture of the Windows App SDK frame
 
 ## VCLibs framework package, and Visual C++ Redistributable
 
-* For packaged apps, the VCLibs framework package dependency is a requirement.
-* For unpackaged apps, the Visual C++ Redistributable is a requirement.
+* For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
+* For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
 
 ## Related topics
 
