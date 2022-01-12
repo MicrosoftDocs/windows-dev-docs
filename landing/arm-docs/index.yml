@@ -2,7 +2,6 @@
 
 title: Windows on ARM documentation
 summary: Windows runs on PCs powered by ARM processors. This page provides the information for you to learn more about the platform and get started developing apps. # < 160 chars
-
 metadata:
   title: Windows on ARM documentation
   description: This page provides the information for you to get started developing ARM64 win32 and UWP apps.
