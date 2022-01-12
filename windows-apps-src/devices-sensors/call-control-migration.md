@@ -667,7 +667,9 @@ These will each trigger an event on either `PhoneCall.StatusChanged`, `PhoneCall
 Your app needs to register for the `IncomingCallNotification` `PhoneTrigger` type to be informed when an incoming call arrives. The trigger will activate your app’s background task, and include the `CallId` and `LineId` in the trigger details. The `PhoneCall` can then be retrieved by either:
 
 - Calling `PhoneCall.GetFromId()` and passing the `CallId` (primary method)
-- Getting the `PhoneLine` via `PhoneLine.FromIdAsync()`, passing the `LineId`, and then retrieving the list of active `PhoneCall` objects with `PhoneLine.GetAllActivePhoneCallsAsync()`. Note that this will include past (now inactive) calls, and your app should filter these out. [Add note on multiple ongoing calls / a link to page discussing it]
+- Getting the `PhoneLine` via `PhoneLine.FromIdAsync()`, passing the `LineId`, and then retrieving the list of active `PhoneCall` objects with `PhoneLine.GetAllActivePhoneCallsAsync()`. Note that this will include past (now inactive) calls, and your app should filter these out. 
+ 
+<!-- [Add note on multiple ongoing calls / a link to page discussing it] -->
 
 Once a valid call (or calls) is/are retrieved, your app should display either the incoming call or ongoing call UI, depending on `PhoneCall.Status`:
 
