@@ -735,7 +735,7 @@ Once a valid call (or calls) is/are retrieved, your app should display either th
 
 ```
 ## Incoming Call UI
-When an incoming call arrives, your app should display UI with the option to either accept or reject the call via `PhoneCall.AcceptIncomingAsync()` or `PhoneCall.RejectIncomingAsync`, checking the returned PhoneCallOperationStatus for success and handling any errors.
+When an incoming call arrives, your app should display UI with the option to either accept or reject the call via `PhoneCall.AcceptIncomingAsync()` or `PhoneCall.RejectIncomingAsync`, checking the returned `PhoneCallOperationStatus` for success and handling any errors.
 
 ```csharp
 private async void AcceptIncomingCallButtonClick(object sender, RoutedEventArgs e)
