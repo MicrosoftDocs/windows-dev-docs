@@ -35,7 +35,7 @@ The next time you update your app, you’ll see all of the app’s assigned rati
 
 ## Appealing ratings or refused classifications
 
-If you have questions about the age rating your app received, or wish to appeal it, you can contact IARC via the link that appears in the rating certificate email that you will receive after your app has been published.
+If you have questions about the age rating your app received, or wish to appeal it, you can contact IARC via the link that appears in the live rating notice that you will receive after your app has been published.
 
 In some cases, the rating for your app may cause it to be classified as inappropriate for a particular country or region. If this occurs, you will see a message indicating the market(s) to which your app can’t be offered. If you disagree with this classification (or any other for that matter), you can request an appeal using the link that appears in the rating certificate email that you will receive from IARC.
 
