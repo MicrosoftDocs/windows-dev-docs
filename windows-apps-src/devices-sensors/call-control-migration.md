@@ -24,13 +24,13 @@ To opt in to host the in-app call control experience:
 Notes for existing apps using the system call control experience:
 - [CallOrigin](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.provider?view=winrt-insider) related APIs and [EnableTextReply](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phoneline.enabletextreply?view=winrt-insider) APIs will no longer work after deprecation.
 - The [CallOrigin](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-insider) & [IncomingCallDismissed](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.background.phonetriggertype?view=winrt-22000&viewFallbackFrom=winrt-insider) phone triggers will no longer be fired after deprecation.
-- Apps should register [PhoneLineWatcher.LineRemoved](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinewatcher.lineremoved?view=winrt-20348) Event  so that if the app has not declared "windows.phonecallactivation“ as an uap13:Extension Category in the appxmanifest file, it will get notified of hands-free line registration being removed after upgrading to a new Windows build that no longer supports system call control. This will allow the app to notify users explicitly in a timely fashion.
+- Apps should register [PhoneLineWatcher.LineRemoved](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinewatcher.lineremoved?view=winrt-20348) Event  so that if the app has not declared "windows.phonecallactivation“ as an `uap13:Extension` Category in the `appxmanifest` file, it will get notified of hands-free line registration being removed after upgrading to a new Windows build that no longer supports system call control. This will allow the app to notify users explicitly in a timely fashion.
 
 ## Handling HFP Device Registration and PhoneLineTransport Devices
 
 Hands-free calling-capable Bluetooth devices are represented and accessed through a [PhoneLineTransportDevice](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice?view=winrt-22000) object. This allows your app to register the device for calling, and to handle [AudioRoutingStatusChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.audioroutingstatuschanged?view=winrt-22000) and [InBandRingingEnabledChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.inbandringingenabledchanged?view=winrt-22000) events.
 
-Your app should use a [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.devicewatchertrigger?view=winrt-22000) to monitor relevant device additions, removals, and updates. The result of [PhoneLineTransportDevice.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.getdeviceselector?view=winrt-22000)(PhoneLineTransport.Bluetooth) should be passed as the `DeviceClass` parameter to `DeviceInformation.CreateWatcher`.
+Your app should use a [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.devicewatchertrigger?view=winrt-22000) to monitor relevant device additions, removals, and updates. The result of [PhoneLineTransportDevice.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.getdeviceselector?view=winrt-22000) should be passed as the `DeviceClass` parameter to `DeviceInformation.CreateWatcher`.
 
 On a device addition, your app should:
 1.	Retrieve a [PhoneLineTransportDevice](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice?view=winrt-22000) object using the device ID via [PhoneLineTransportDevice.FromId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.phonelinetransportdevice.fromid?view=winrt-22000#Windows_ApplicationModel_Calls_PhoneLineTransportDevice_FromId_System_String_)
@@ -38,11 +38,11 @@ On a device addition, your app should:
 3.	If access is allowed, start tracking the new PhoneLineTransportDevice and prompt the user to enable calling for (register) the device.
 
 On a device update, your app should:
-1.	Retrieve the PhoneLineTransportDevice object using the device ID via PhoneLineTransportDevice.FromId
-2.	Check if the PhoneLineTransportDevice is still registered and prompt the user to re-enable calling for (register) the device if needed.
+1.	Retrieve the `PhoneLineTransportDevice` object using the device ID via `PhoneLineTransportDevice.FromId`.
+2.	Check if the `PhoneLineTransportDevice` is still registered and prompt the user to re-enable calling for (register) the device if needed.
 
 On a device removal, your app should:
-1.	Stop tracking the PhoneLineTransportDevice and prompt the user to re-enable calling for (register) the device
+1.	Stop tracking the `PhoneLineTransportDevice` and prompt the user to re-enable calling for (register) the device.
 
 The following code sample demonstrates these tasks:
 
