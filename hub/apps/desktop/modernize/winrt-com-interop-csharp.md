@@ -1,76 +1,92 @@
 ---
-description: Enhance your desktop application for Windows 10 users by using projected COM interop interfaces in .NET 5+.
-title: Call WinRT COM interop interfaces from .NET 5+ apps
-ms.date: 07/07/2021
+title: Call WinRT COM interop interfaces from a .NET 5+ app
+description: Enhance your desktop application for your users by calling WinRT COM interop interfaces projected into .NET 5+.
+ms.date: 01/12/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Call WinRT COM interop interfaces from .NET 5+ apps
+# Call WinRT COM interop interfaces from a .NET 5+ app
 
-In .NET 5 and later, C# desktop application developers can more easily access select WinRT COM interop interfaces. These APIs are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
+As a C# desktop application developer, in .NET 5 and later you can access certain Windows Runtime (WinRT) COM interoperability interfaces more easily than previously. These APIs are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
 
-Prior to .NET 5, C# developers could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute and directly cast a projected class to that interop interface. Starting with .NET 5, built-in WinRT projection support has been removed from the C# compiler and .NET runtime. While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces which are used for interoperating with WinRT interfaces.
+## Background
 
-As a replacement, in .NET 5 and later, apps can make use of COM interop class implementations for several WinRT COM interop interfaces as well as [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow). This article provides a list of the available class implementations and instructions for using them.
+Previous versions of the .NET Framework and .NET Core had built-in knowledge of WinRT. With those previous versions, you could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute, and then directly cast a projected class to that interop interface.
+
+Since WinRT is a Windows-specific technology, to support the portability and efficiency goals of .NET 5, we lifted the WinRT projection support out of the C# compiler and .NET runtime, and moved it into the [C#/WinRT](/windows/uwp/csharp-winrt/) toolkit (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)).
+
+While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for the [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces that are used for interoperating with WinRT.
+
+So as a replacement, in .NET 5 and later, you can make use of C# interop classes representing several WinRT COM interop interfaces, as well as [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
+
+This topic provides a list of the available C# interop classes, and instructions for using them.
+
+## Configure a .NET 5+ desktop project to use the C# interop classes
+
+To configure your .NET 5+ desktop project to access the C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)), follow these steps:
+
+1. Open the project file for your C# .NET 5+ desktop project.
+
+2. In the `.csproj` file, modify the **TargetFramework** element to target a specific .NET and Windows SDK version. For example, the following element is appropriate for a .NET 6 project that targets Windows 10, version 2004.
+
+    ```xml
+    <PropertyGroup>
+      <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    </PropertyGroup>
+    ```
+
+For more information&mdash;including a list of other supported values&mdash;see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option).
+
+## Available C# interop classes
 
 > [!NOTE]
 > The classes below require the .NET 5.0.205 SDK or later.
 
-## Available interop classes
+Here are the available C# interop classes, mapped from their underlying WinRT COM interop interfaces. Each class listed implements the methods of its underlying WinRT COM interop interface, and provides type-safe wrappers for parameters and return values. For example, **Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop.GetForWindow** requires an **IntPtr** window handle (HWND) parameter, and returns a [**CoreDragDropManager**](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) object. All of the C# interop classes below and associated methods are static.
 
-The following is a list of available C# interop classes and the mappings to the underlying COM interfaces. All classes listed below implement the methods of the associated COM interface and provide type-safe wrappers for parameters and return values. For example, **DragDropManagerInterop.GetForWindow** requires an **IntPtr** window handle parameter and returns a [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) object. All of the WinRT COM interop classes below and associated methods are static.
+|WinRT COM interop interface|C# interop class|
+|-|-|
+|[**IAccountsSettingsPaneInterop**](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop)|(**Windows.UI.ApplicationSettings**) **AccountsSettingsPaneInterop**|
+|[**IDragDropManagerInterop**](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop)|(**Windows.ApplicationModel.DataTransfer.DragDrop.Core**) **DragDropManagerInterop**|
+|[**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow)|(**WinRT.Interop**) **InitializeWithWindow**|
+|[**IInputPaneInterop**](/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop)|(**Windows.UI.ViewManagement**) **InputPaneInterop**|
+|[**IPlayToManagerInterop**](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop)|(**Windows.Media.PlayTo**) **PlayToManagerInterop**|
+|[**IPrintManagerInterop**](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop)|(**Windows.Graphics.Printing**) **PrintManagerInterop**|
+|[**IRadialControllerConfigurationInterop**](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)|(**Windows.UI.Input**) **RadialControllerConfigurationInterop**|
+|**IRadialControllerIndependentInputSourceInterop**|(**Windows.UI.Input.Core**) **RadialControllerIndependentInputSourceInterop**|
+|[**IRadialControllerInterop**](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)|(**Windows.UI.Input**) **RadialControllerInterop**|
+|[**ISpatialInteractionManagerInterop**](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop)|(**Windows.UI.Input.Spatial**) **SpatialInteractionManagerInterop**|
+|[**ISystemMediaTransportControlsInterop**](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop)|(**Windows.Media**) **SystemMediaTransportControlsInterop**|
+|[**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)|(**Windows.UI.ViewManagement**) **UIViewSettingsInterop**|
+|[**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop)|(**Windows.Security.Credentials.UI**) **UserConsentVerifierInterop**|
+|[**IWebAuthenticationCoreManagerInterop**](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop)|(**Windows.Security.Authentication.Web.Core**) **WebAuthenticationCoreManagerInterop**|
+|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|(**WinRT.Interop**) **WindowNative**|
 
-| Class | COM interface |
-| -------------------------|-------|
-| WinRT.Interop.WindowNative | [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) |
-| WinRT.Interop.InitializeWithWindow | [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) |
-| Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop | [IDragDropManagerInterop](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop) |
-| Windows.Graphics.Printing.PrintManagerInterop | [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) |
-| Windows.Media.SystemMediaTransportControlsInterop | [ISystemMediaTransportControlsInterop](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop) |
-| Windows.Media.PlayTo.PlayToManagerInterop | [IPlayToManagerInterop](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop) |
-| Windows.Security.Credentials.UI.UserConsentVerifierInterop | [IUserConsentVerifierInterop](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop) |
-| Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManagerInterop | [IWebAuthenticationCoreManagerInterop](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop) |
-| Windows.UI.ApplicationSettings.AccountsSettingsPaneInterop | [IAccountsSettingsPaneInterop](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop) |
-| Windows.UI.Input.RadialControllerConfigurationInterop | [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) |
-| Windows.UI.Input.RadialControllerInterop | [IRadialControllerInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop) |
-| Windows.UI.Input.Core.RadialControllerIndependentInputSourceInterop | **IRadialControllerIndependentInputSourceInterop** |
-| Windows.UI.Input.Spatial.SpatialInteractionManagerInterop | [ISpatialInteractionManagerInterop](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop) |
-| Windows.UI.ViewManagement.InputPaneInterop | [IInputPaneInterop](/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop) |
-| Windows.UI.ViewManagement.UIViewSettingsInterop | [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) |
+## Code example
 
-## Configure a .NET 5+ desktop project to use the C# interop classes
+This code example demonstrates how to use C# interop classes in a WinUI 3 application (see [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker, it's necessary to initialize it with the handle (HWND) of the owner window.
 
-To configure your desktop project to access the C# interop classes, follow these steps:
+1. You can obtain a window handle (HWND) by using the [**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the **WinRT.Interop.WindowNative** C# interop class. Here, the `this` object is a reference to a [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window) object from the main window code-behind file.
+2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
 
-1. Open the project file for your C# project. In the .csproj file, modify the `TargetFramework` element to target a specific Windows SDK version. For example, the following element is for a project that targets Windows 10, version 2004.
+```csharp
+// Create a folder picker.
+var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 
-    ```xml
-    <PropertyGroup>
-        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-    </PropertyGroup>
-    ```
+// 1. Retrieve the window handle (HWND) of the current WinUI 3 window.
+var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
-    For more information including a list of other supported values, see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option).
+// 2. Initialize the folder picker with the window handle (HWND).
+WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hWnd);
 
-2. The following example demonstrates how to use the **WinRT.Interop.WindowNative** and **WinRT.Interop.InitializeWithWindow** interop classes in a [WinUI 3 application](../../winui/winui3/create-your-first-winui3-app.md) to obtain a window handle object and then open a folder picker dialog using the window handle. In this example, `this` is a reference to a [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) object from the main window code-behind file.
-
-    ```csharp
-    var folderPicker = new Windows.Storage.Pickers.FolderPicker();
-
-    // Pass in the current WinUI window and get its handle
-    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-
-    // Associate the HWND with the folder picker
-    WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
-
-    // Use folder picker like normal!
-    folderPicker.FileTypeFilter.Add("*");
-    var folder = await folderPicker.PickSingleFolderAsync();
-    ```
+// Use the folder picker as usual.
+folderPicker.FileTypeFilter.Add("*");
+var folder = await folderPicker.PickSingleFolderAsync();
+```
 
 ## Troubleshooting and known issues
 
-This section lists known issues and solutions for using the WinRT COM interop APIs. To provide feedback or to report other issues, add your feedback to an existing issue or file a new issue on the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT).
+This section lists known issues and solutions for using the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT).
 
-- **WinRT.Interop.WindowNative.GetWindowHandle does not marshal window handles (HWNDs) correctly when running on x86 platforms.** To resolve this issue, update your .NET SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.
+* **WinRT.Interop.WindowNative.GetWindowHandle doesn't marshal window handles (HWNDs) correctly when running on x86 platforms.** To work around this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.
