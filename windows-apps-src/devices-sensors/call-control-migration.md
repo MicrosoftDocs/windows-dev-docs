@@ -11,7 +11,7 @@ ms.custom: template-concept
 
 # Migration from system to app hosted call control experience
 
-In Windows 11, new APIs became available offering apps the ability to host their own calling UX. We want Windows calling developers to be able to build, innovate, and differentiate their own calling experiences. With the upcoming Windows 2022 release (Fall 2022), Windows Call Control will no longer be supported as a system experience. This document is intended to provide an overview of the key changes to Windows Call Control found in the new APIs including general guidance to developers and code snippets.
+In Windows 11, new APIs became available offering apps the ability to host their own calling UX. We want Windows calling developers to be able to build, innovate, and differentiate their own calling experiences. In an upcoming Windows release, Windows Call Control will no longer be supported as a system experience. This document is intended to provide an overview of the key changes to Windows Call Control found in the new APIs including general guidance to developers and code snippets.
 
 ## General Guidance
 
@@ -841,4 +841,4 @@ If there are previous Hands-free Bluetooth device registrations for the app, the
 For questions, please reach out to windowscallcontrol@microsoft.com
 
 ## Timeline
-New APIs allowing apps to host their own UX are currently available in Windows 11. System Call Control will be removed in Windows 2022 (Fall 2022 release). This section will be updated with flighting and release timelines when available.
+New APIs allowing apps to host their own UX are currently available in Windows 11. System Call Control will be removed in an upcoming Windows release. This section will be updated with flighting and release timelines when available.
