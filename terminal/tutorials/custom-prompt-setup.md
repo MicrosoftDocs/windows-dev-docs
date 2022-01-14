@@ -127,7 +127,7 @@ You can [customize the Oh My Posh themes](https://ohmyposh.dev/docs/linux#custom
 To install Terminal-Icons with PowerShell, use the command:
 
 ```powershell
-PS> Install-Module -Name Terminal-Icons -Repository PSGallery
+Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
 
 For more information, including usage and commands, see the [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) repo on GitHub.
