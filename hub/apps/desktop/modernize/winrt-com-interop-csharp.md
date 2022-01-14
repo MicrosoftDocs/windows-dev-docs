@@ -1,30 +1,28 @@
 ---
 title: Call WinRT COM interop interfaces from a .NET 5+ app
 description: Enhance your desktop application for your users by calling WinRT COM interop interfaces projected into .NET 5+.
-ms.date: 01/12/2022
+ms.date: 01/13/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Call WinRT COM interop interfaces from a .NET 5+ app
 
-As a C# desktop application developer, in .NET 5 and later you can access certain Windows Runtime (WinRT) COM interoperability interfaces more easily than previously. These APIs are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
+As a C# desktop application developer, in .NET 5 and later you can make use of C# interop classes representing several Windows Runtime (WinRT) COM interoperability interfaces. These include [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
 
-## Background
-
-Previous versions of the .NET Framework and .NET Core had built-in knowledge of WinRT. With those previous versions, you could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute, and then directly cast a projected class to that interop interface.
-
-Since WinRT is a Windows-specific technology, to support the portability and efficiency goals of .NET 5, we lifted the WinRT projection support out of the C# compiler and .NET runtime, and moved it into the [C#/WinRT](/windows/uwp/csharp-winrt/) toolkit (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)).
-
-While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for the [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces that are used for interoperating with WinRT.
-
-So as a replacement, in .NET 5 and later, you can make use of C# interop classes representing several WinRT COM interop interfaces, as well as [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
-
-This topic provides a list of the available C# interop classes, and instructions for using them.
+This topic lists the available C# interop classes, and shows how to use them. The [Background](#background) section at the end of the topic describes how interop interfaces were used in previous versions of .NET, and why the change was made.
 
 ## Configure a .NET 5+ desktop project to use the C# interop classes
 
-To configure your .NET 5+ desktop project to access the C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)), follow these steps:
+The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
+
+### A WinUI 3 C# desktop project
+
+When you create a new project from a WinUI 3 project template in Visual Studio (see [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)), your `.csproj` file is already configured, and you can start using the C# interop classes right away.
+
+### Other C# desktop project types
+
+For other .NET 5+ desktop project types, to access the C# interop classes, follow these steps:
 
 1. Open the project file for your C# .NET 5+ desktop project.
 
@@ -71,19 +69,32 @@ This code example demonstrates how to use C# interop classes in a WinUI 3 applic
 2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
 
 ```csharp
-// Create a folder picker.
-var folderPicker = new Windows.Storage.Pickers.FolderPicker();
+private async void myButton_Click(object sender, RoutedEventArgs e)
+{
+    // Create a folder picker.
+    var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 
-// 1. Retrieve the window handle (HWND) of the current WinUI 3 window.
-var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+    // 1. Retrieve the window handle (HWND) of the current WinUI 3 window.
+    var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
-// 2. Initialize the folder picker with the window handle (HWND).
-WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hWnd);
+    // 2. Initialize the folder picker with the window handle (HWND).
+    WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hWnd);
 
-// Use the folder picker as usual.
-folderPicker.FileTypeFilter.Add("*");
-var folder = await folderPicker.PickSingleFolderAsync();
+    // Use the folder picker as usual.
+    folderPicker.FileTypeFilter.Add("*");
+    var folder = await folderPicker.PickSingleFolderAsync();
+}
 ```
+
+## Background
+
+Previous versions of the .NET Framework and .NET Core had built-in knowledge of WinRT. With those previous versions, you could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute, and then directly cast a projected class to that interop interface.
+
+Since WinRT is a Windows-specific technology, to support the portability and efficiency goals of .NET 5, we lifted the WinRT projection support out of the C# compiler and .NET runtime, and moved it into the [C#/WinRT](/windows/uwp/csharp-winrt/) toolkit (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)).
+
+While the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) technique still works for **IUnknown**-based interop interfaces, it no longer works for the [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-based interfaces that are used for interoperating with WinRT.
+
+So as a replacement, in .NET 5 and later, you can make use of the C# interop classes described in this topic.
 
 ## Troubleshooting and known issues
 
