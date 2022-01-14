@@ -75,6 +75,12 @@ cd $Env:WIX\"bin"
 .\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
 ````
 
+### Fixes for uninstalling 0.51 and earlier builds issues
+
+If you have hit an issue where the MSI could have been cleaned up, you can grab the installer via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the command.  You'll want to change the EXECUTABLE_INSTALLER_NAME to what the file name actually is.
+
+In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
+
 ## Community-driven install tools
 
 These community-driven alternative install methods are not officially supported and the PowerToys team does not update or manage these packages.
