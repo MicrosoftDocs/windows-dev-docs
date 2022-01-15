@@ -260,6 +260,22 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Platform
+        items:
+        - name: C#/WinRT
+          items:
+          - name: Overview
+            href: develop/platform/csharp-winrt/index.md
+          - name: .NET mappings of WinRT types in C#/WinRT
+            href: develop/platform/csharp-winrt/net-mappings-of-winrt-types.md
+          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+            href: develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+          - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
+            href: develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+          - name: "Diagnose component errors"
+            href: develop/platform/csharp-winrt/authoring-diagnostics.md
+          - name: "Agile objects"
+            href: develop/platform/csharp-winrt/agile-objects.md
   - name: Package and deploy
     items:
       - name: Overview
