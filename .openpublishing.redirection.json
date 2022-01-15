@@ -6724,6 +6724,36 @@
       "source_path": "hub/apps/whats-new/build2021-docs.md",
       "redirect_url": "/windows/apps",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/index.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/uwp/csharp-winrt/net-mappings-of-winrt-types.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/net-projection-from-cppwinrt-component.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/net-projection-from-cppwinrt-component",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/create-windows-runtime-component-cswinrt.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/authoring-diagnostics.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/authoring-diagnostics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/agile-objects.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/agile-objects",
+      "redirect_document_id": false
     }
   ]
 }
