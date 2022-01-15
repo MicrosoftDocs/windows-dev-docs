@@ -1,28 +1,28 @@
 ---
-title: Call WinRT COM interop interfaces from a .NET 5+ app
-description: Enhance your desktop application for your users by calling WinRT COM interop interfaces projected into .NET 5+.
-ms.date: 01/13/2022
+title: Call interop APIs from a .NET 5+ app
+description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET 5+.
+ms.date: 01/14/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Call WinRT COM interop interfaces from a .NET 5+ app
+# Call interop APIs from a .NET 5+ app
 
-As a C# desktop application developer, in .NET 5 and later you can make use of C# interop classes representing several Windows Runtime (WinRT) COM interoperability interfaces. These include [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) and [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
+As a C# desktop application developer, in .NET 5 and later you can make use of C# interop classes that represent several interoperability functions and Windows Runtime (WinRT) COM interoperability interfaces. These include C# classes representing [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative), [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow), the [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) function, and many others.
 
 This topic lists the available C# interop classes, and shows how to use them. The [Background](#background) section at the end of the topic describes how interop interfaces were used in previous versions of .NET, and why the change was made.
 
 ## Configure a .NET 5+ desktop project to use the C# interop classes
 
-The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET 5 and later by using a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later.
+The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET 5 and later either as part of the [Windows App SDK](/windows/apps/windows-app-sdk/), or else by using a particular [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option), as we'll see.
 
-### A WinUI 3 C# desktop project
+### In a WinUI 3 C# desktop project
 
-When you create a new project from a WinUI 3 project template in Visual Studio (see [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)), your `.csproj` file is already configured, and you can start using the C# interop classes right away.
+When you create a new WinUI 3 project in Visual Studio (see [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)), your project is already configured, and you can start using all of the C# interop classes right away.
 
-### Other C# desktop project types
+### In other C# desktop project types (WPF or Windows Forms)
 
-For other .NET 5+ desktop project types, to access the C# interop classes, follow these steps:
+For other .NET 5+ desktop project types, you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](/windows/apps/windows-app-sdk/). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
 
 1. Open the project file for your C# .NET 5+ desktop project.
 
@@ -41,7 +41,20 @@ For more information&mdash;including a list of other supported values&mdash;see 
 > [!NOTE]
 > The classes below require the .NET 5.0.205 SDK or later.
 
-Here are the available C# interop classes, mapped from their underlying WinRT COM interop interfaces. Each class listed implements the methods of its underlying WinRT COM interop interface, and provides type-safe wrappers for parameters and return values. For example, **Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop.GetForWindow** requires an **IntPtr** window handle (HWND) parameter, and returns a [**CoreDragDropManager**](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) object. All of the C# interop classes below and associated methods are static.
+Here are the available C# interop classes, mapped from their underlying interop function or WinRT COM interop interface. Each class listed implements the function/methods of its underlying interop API, and provides type-safe wrappers for parameters and return values. For example, **Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop.GetForWindow** requires an **IntPtr** window handle (HWND) parameter, and returns a [**CoreDragDropManager**](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager) object. All of the C# interop classes below and associated methods are static.
+
+### Available as part of the Windows App SDK
+
+|Interop function|C# interop class|
+|-|-|
+|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId **Win32Interop.GetDisplayIdFromMonitor**(IntPtr hmonitor)|
+|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetIconFromIconId**(IconId iconId)|
+|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId **Win32Interop.GetIconIdFromIcon**(IntPtr hicon)|
+|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetMonitorFromDisplayId**(DisplayId displayId)|
+|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetWindowFromWindowId**(WindowId windowId)|
+|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId **Win32Interop.GetWindowIdFromWindow**(IntPtr hwnd)|
+
+### Available via Target Framework Moniker
 
 |WinRT COM interop interface|C# interop class|
 |-|-|

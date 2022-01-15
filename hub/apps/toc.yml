@@ -110,7 +110,7 @@ items:
                     href: desktop/modernize/desktop-to-uwp-enhance.md
                   - name: APIs not supported in desktop apps
                     href: desktop/modernize/desktop-to-uwp-supported-api.md
-                  - name: Call WinRT COM interop interfaces from .NET 5+ apps
+                  - name: Call interop APIs from a .NET 5+ app
                     href: desktop/modernize/winrt-com-interop-csharp.md
             - name: Use MSIX framework packages from your desktop app
               items:
