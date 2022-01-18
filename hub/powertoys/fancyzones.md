@@ -79,9 +79,9 @@ There are two ways to create custom zone layouts: **Grid** layout and **Canvas**
 
 The **Grid** model starts with a three column grid and allows zones to be created by splitting and merging zones, resizing the gutter between zones as desired. This is a relative layout and will resize with different screen sizes.
 
-- To divide a zone, just click your mouse.  To rotate the divider, just hold down the shift key. 
+- To divide a zone, just click your mouse.  To rotate the divider, just hold down the <kbd>shift</kbd> key. 
 - To move a divider, click on the thumb and drag.
-- To merge zones, select and hold the left mouse button and drag the mouse until multiple zones are selected, then release the button and a popup menu will show up.  Click "Merge" and they will become one big zone.
+- To merge zones, select and hold the left mouse button and drag the mouse until multiple zones are selected, then release the button and a popup menu will show up.  Click "Merge" and they will become one big zone. This is how you'd a zone would be deleted, it is merge it into another zone.
 
 ![FancyZones Table Editor Mode](../images/pt-fancyzones-grideditor.png)
 
