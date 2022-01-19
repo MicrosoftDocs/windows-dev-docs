@@ -152,7 +152,7 @@ The currently available utilities include:
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 

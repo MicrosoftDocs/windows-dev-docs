@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # Alignment, margin, padding
 
-In UWP apps, most user interface (UI) elements inherit from the [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) class. Every FrameworkElement has dimensions, alignment, margin, and padding properties, which influence layout behavior. The following guidance provides an overview of how to use these layout properties to make sure your app's UI is legible and easy to use in any context.
+In XAML apps, most user interface (UI) elements inherit from the [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) class. Every FrameworkElement has dimensions, alignment, margin, and padding properties, which influence layout behavior. The following guidance provides an overview of how to use these layout properties to make sure your app's UI is legible and easy to use in any context.
 
 ## Dimensions (Height, Width)
 Proper sizing ensures all content is clear and legible. Users shouldn’t have to scroll or zoom to decipher primary content.
@@ -91,7 +91,7 @@ You don't have to set each property value individually on a control. It's typica
 ## General recommendations
 - Only apply measurement values to certain key elements and use fluid layout behavior for the other elements. This provides for [responsive UI](responsive-design.md) when the window width changes.
 
-- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When UWP uses [effective pixels and scaling](screen-sizes-and-breakpoints-for-responsive-design.md) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
+- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When XAML uses [effective pixels and scaling](screen-sizes-and-breakpoints-for-responsive-design.md) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
 
 - For small window widths (less than 640 pixels), we recommend 12 epx gutters, and for larger window widths, we recommend 24 epx gutters.
 

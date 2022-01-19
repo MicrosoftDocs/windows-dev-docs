@@ -19,7 +19,7 @@ Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop a
 This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
-> Apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md). Note that these classes require the .NET 5.0.205 SDK or later.
+> Apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md). Note that these classes require the .NET 5.0.205 SDK or later.
 
 This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API and and provide details about what you are trying to achieve by using it.
 
@@ -44,7 +44,7 @@ The following WinRT classes are not supported in desktop apps.
 
 Many WinRT classes have a static `GetForCurrentView` method or `CreateForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `XxxForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `XxxForCurrentView` methods are supported either. Note that some unsupported `XxxForCurrentView` methods will not only return **null**, but will also throw exceptions.
 
-For those classes below that have a COM interface alternative API listed, C# developers on .NET 5 or later can [consume these WinRT COM interfaces](winrt-com-interop-csharp.md) starting in the July 2021 .NET 5 SDK update.
+For those classes below that have a COM interface alternative API listed, C# developers on .NET 5 or later can consume these WinRT COM interfaces (see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md)) starting in the July 2021 .NET 5 SDK update.
 
 > [!NOTE]
 > One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
@@ -102,7 +102,7 @@ The following examples demonstrate how to use the **IInitializeWithWindow** inte
 #### [C# (.NET 5 and later)](#tab/csharp)
 
 > [!NOTE]
-> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
+> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md).
 
 In the call to `GetWindowHandle(this)`, the object you pass must be a Window (either a WinUI 3 Window, a WPF Window, or a WinForms Window). In the example below, we assume the code is being called from the Window code-behind, which is why `this` is used as the parameter. If you are calling this code from another file, you need to pass a reference to the window.
 

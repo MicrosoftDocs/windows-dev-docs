@@ -85,18 +85,18 @@ A [ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) must be assigned to anoth
 In XAML, use the **ToolTipService.Tooltip** attached property to assign the ToolTip to an owner.
 
 ```xaml
-<Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
+<Button Content="New" ToolTipService.ToolTip="Create a new document"/>
 ```
 
 In code, use the [ToolTipService.SetToolTip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip) method to assign the ToolTip to an owner.
 
 ```xaml
-<Button x:Name="submitButton" Content="Submit"/>
+<Button x:Name="submitButton" Content="New"/>
 ```
 
 ```csharp
 ToolTip toolTip = new ToolTip();
-toolTip.Content = "Click to submit";
+toolTip.Content = "Create a new document";
 ToolTipService.SetToolTip(submitButton, toolTip);
 ```
 
@@ -147,6 +147,7 @@ If a ToolTip obscures the content it is referring to, you can adjust its placeme
 - Keep the tooltip text concise. Tooltips are perfect for short sentences and sentence fragments. Large blocks of text can be overwhelming and the tooltip may time out before the user has finished reading.
 - Create helpful, supplemental tooltip text. Tooltip text must be informative. Don't make it obvious or just repeat what is already on the screen. Because tooltip text isn't always visible, it should be supplemental info that users don't have to read. Communicate important info using self-explanatory control labels or in-place supplemental text.
 - Use images when appropriate. Sometimes it's better to use an image in a tooltip. For example, when the user hovers over a hyperlink, you can use a tooltip to show a preview of the linked page.
+- [Keyboard accelerators](../input/keyboard-accelerators.md#tooltips) are displayed in tooltips by default. If you add your own tooltip, make sure that it includes information about the keyboard accelerators which are available.
 - Don't use a tooltip to display text already visible in the UI. For example, don't put a tooltip on a button that shows the same text of the button.
 - Don't put interactive controls inside the tooltip.
 - Don't put images that look like they are interactive inside the tooltip.

@@ -204,7 +204,7 @@ If your application is written in C# with .NET 5 or later, follow these steps.
     </PropertyGroup>
     ```
 
-2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article. Use the **WinRT.Interop.InitializeWithWindow.Initialize** method as documented [here](/windows/apps/desktop/modernize/winrt-com-interop-csharp#configure-a-net-5-desktop-project-to-use-the-c-interop-classes) to initialize the dialog with the specified window handle. 
+2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article. Use the **WinRT.Interop.InitializeWithWindow.Initialize** method as documented in [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp) to initialize the dialog with the specified window handle. 
 
       ```csharp
       StoreContext context = StoreContext.GetDefault();

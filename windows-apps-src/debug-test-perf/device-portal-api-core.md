@@ -3450,7 +3450,7 @@ The WER reports in the following format.
                 "Name": string, (not base64 encoded)
                 "Type": string ("Queue" or "Archive")
             },
-    },...
+    ]},...
 ]}
 ```
 
@@ -4431,6 +4431,7 @@ Upload a file to a folder.  This will overwrite an existing file with the same n
 | :------     | :----- |
 | knownfolderid | (**required**) The top-level directory where you want to upload files. Use **LocalAppData** for access to sideloaded apps. |
 | packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. |
+| extract | (**required**) True or false. This indicates whether the file should be extracted after upload.|
 | path | (**optional**) The sub-directory within the folder or package specified above. |
 
 **Request headers**

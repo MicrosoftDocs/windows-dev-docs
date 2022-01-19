@@ -1,14 +1,11 @@
 ---
-title: Launch the Microsoft Store with a URI
-description: This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the Store.
-ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
-ms.date: 10/04/2021
+title: Using ms-windows-store URIs
+description: Launch the Microsoft Store app directly to a landing page or your product's page.
+ms.date: 01/11/2022
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
 ---
 
-# Launch the Microsoft Store with a URI
+# Using ms-windows-store URIs
 
 This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method on Windows 10 and Windows 11.
 
