@@ -82,6 +82,24 @@ To create an unpackaged WinUI 3 desktop app with C# and .NET 5 using Windows App
    ```
 
     :::image type="content" source="images/winui-csharp-unpackaged-proj.png" alt-text="Visual Studio 2019 - C# Project file with WindowsPackageType set to None highlighted":::
+    
+    > [!NOTE]
+    > Adding `<WindowsPackageType>None</WindowsPackageType>` will break the bootstrapper in WinUI 3 `v1.0`. While we work on a fix, apply the following workaround as `WinUiBootstrapperFix.cs` in the root of your project.
+
+    ```cs
+    global using Version = Microsoft.WindowsAppSDK.Runtime.Fix.Version;
+    namespace Microsoft.WindowsAppSDK.Runtime.Fix;
+
+    public class Version
+    {
+        public const ushort Major = 0;
+        public const ushort Minor = 319;
+        public const ushort Build = 455;
+        public const ushort Revision = 0;
+        public const ulong UInt64 = 0x0000013F01C70000;
+        public const string DotQuadString = "0.319.455.0";
+    }
+    ```
 
 4. To debug in Visual Studio, select the 'Unpackaged' launch profile in the Start drop down.
    Otherwise, you'll see an error: "The project doesn't know how to run the profile …"
