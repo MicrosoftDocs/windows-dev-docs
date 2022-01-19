@@ -68,36 +68,36 @@ The following list of topics have seen significant updates in the past month, as
 ## Windows Conceptual
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/files/file-access-permissions">File access permissions</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/gaming/game-development-videos">Game development videos</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/AD/domain-user-accounts">Using a domain user account as a service logon account</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/AD/naming-contexts-and-partitions">Naming Contexts and Directory Partitions</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/AD/service-principal-names">Service Principal Names</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CoreAudio/spatial-sound">Spatial Sound for app developers for Windows, Xbox, and Hololens 2</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Debug/system-error-codes">Tutorial - Debug system error codes</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/ETW/process-v2">Process_V2 class</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/NativeWiFi/eap-aka-profile-sample">EAP-AKA Profile Sample</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/NativeWiFi/wireless-profile-samples">Wireless profile samples</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page">Remote procedure call (RPC)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests">Application Manifests</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecMgmt/local-security-policy">Local Security Policy</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Services/service-control-manager">Service control manager</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/apisetqueryapisetpresence">ApiSetQueryApiSetPresence function</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/apisetqueryapisetpresenceex">ApiSetQueryApiSetPresenceEx function</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/handles-and-objects">Handles and objects</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WES/getting-a-provider-s-metadata-">Getting a Provider's Metadata</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinInet/internetgetproxyinfo">InternetGetProxyInfo function</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-apisets">Windows API sets</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/inputdev/virtual-key-codes">Virtual-Key Codes (Winuser.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/index">Update Orchestrator API</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/progress-bars">Progress Bars</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/text-style-tone">Style and Tone</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/xinput/getting-started-with-xinput">Getting Started With XInput in Windows applications</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-and-directinput">Comparison of XInput and DirectInput features</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/guid">winrt::guid struct (C++/WinRT)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/handle">winrt::handle struct (C++/WinRT)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/winrt">winrt namespace (C++/WinRT)</a></li>
+<li><a href="/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="/windows/uwp/files/file-access-permissions">File access permissions</a></li>
+<li><a href="/windows/uwp/gaming/game-development-videos">Game development videos</a></li>
+<li><a href="/windows/desktop/AD/domain-user-accounts">Using a domain user account as a service logon account</a></li>
+<li><a href="/windows/desktop/AD/naming-contexts-and-partitions">Naming Contexts and Directory Partitions</a></li>
+<li><a href="/windows/desktop/AD/service-principal-names">Service Principal Names</a></li>
+<li><a href="/windows/desktop/CoreAudio/spatial-sound">Spatial Sound for app developers for Windows, Xbox, and Hololens 2</a></li>
+<li><a href="/windows/desktop/Debug/system-error-codes">Tutorial - Debug system error codes</a></li>
+<li><a href="/windows/desktop/ETW/process-v2">Process_V2 class</a></li>
+<li><a href="/windows/desktop/NativeWiFi/eap-aka-profile-sample">EAP-AKA Profile Sample</a></li>
+<li><a href="/windows/desktop/NativeWiFi/wireless-profile-samples">Wireless profile samples</a></li>
+<li><a href="/windows/desktop/Rpc/rpc-start-page">Remote procedure call (RPC)</a></li>
+<li><a href="/windows/desktop/SbsCs/application-manifests">Application Manifests</a></li>
+<li><a href="/windows/desktop/SecMgmt/local-security-policy">Local Security Policy</a></li>
+<li><a href="/windows/desktop/Services/service-control-manager">Service control manager</a></li>
+<li><a href="/windows/desktop/SysInfo/apisetqueryapisetpresence">ApiSetQueryApiSetPresence function</a></li>
+<li><a href="/windows/desktop/SysInfo/apisetqueryapisetpresenceex">ApiSetQueryApiSetPresenceEx function</a></li>
+<li><a href="/windows/desktop/SysInfo/handles-and-objects">Handles and objects</a></li>
+<li><a href="/windows/desktop/WES/getting-a-provider-s-metadata-">Getting a Provider's Metadata</a></li>
+<li><a href="/windows/desktop/WinInet/internetgetproxyinfo">InternetGetProxyInfo function</a></li>
+<li><a href="/windows/desktop/apiindex/windows-apisets">Windows API sets</a></li>
+<li><a href="/windows/desktop/inputdev/virtual-key-codes">Virtual-Key Codes (Winuser.h)</a></li>
+<li><a href="/windows/desktop/updateorchestrator/index">Update Orchestrator API</a></li>
+<li><a href="/windows/desktop/uxguide/progress-bars">Progress Bars</a></li>
+<li><a href="/windows/desktop/uxguide/text-style-tone">Style and Tone</a></li>
+<li><a href="/windows/desktop/xinput/getting-started-with-xinput">Getting Started With XInput in Windows applications</a></li>
+<li><a href="/windows/desktop/xinput/xinput-and-directinput">Comparison of XInput and DirectInput features</a></li>
+<li><a href="/windows/apps/cpp-ref-for-winrt/guid">winrt::guid struct (C++/WinRT)</a></li>
+<li><a href="/windows/apps/cpp-ref-for-winrt/handle">winrt::handle struct (C++/WinRT)</a></li>
+<li><a href="/windows/apps/cpp-ref-for-winrt/winrt">winrt namespace (C++/WinRT)</a></li>
 </ul>
 
 
@@ -105,33 +105,33 @@ The following list of topics have seen significant updates in the past month, as
 ## Win32 API reference
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/camerauicontrol/index">Camerauicontrol.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/combaseapi/index">Combaseapi.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12video/index">D3D12Video.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dragdropinterop/index">Dragdropinterop.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/emi/ns-emi-emi_metadata_v2">EMI_METADATA_V2 (emi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mpeg2psiparser/index">Mpeg2Psiparser.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/print3dmanagerinterop/index">Print3dmanagerinterop.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/sdoias/index">Sdoias.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/segment/index">Segment.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/sensorsapi/index">Sensorsapi.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/index">Shlobj_Core.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shobjidl_core/index">Shobjidl_Core.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/strmif/index">Strmif.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/uiviewsettingsinterop/index">Uiviewsettingsinterop.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/useractivityinterop/index">Useractivityinterop.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wbemcli/index">Wbemcli.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/index">Winbase.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windef/index">Windef.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windowsx/index">Windowsx.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winerror/index">Winerror.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wingdi/index">Wingdi.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winnt/index">Winnt.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winnt/nc-winnt-papcfunc">PAPCFUNC (winnt.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winreg/index">Winreg.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/index">Winuser.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wmcodecdsp/index">Wmcodecdsp.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtypes/index">Wtypes.h header </a></li>
+<li><a href="/windows/win32/api/camerauicontrol/index">Camerauicontrol.h header </a></li>
+<li><a href="/windows/win32/api/combaseapi/index">Combaseapi.h header </a></li>
+<li><a href="/windows/win32/api/d3d12video/index">D3D12Video.h header </a></li>
+<li><a href="/windows/win32/api/dragdropinterop/index">Dragdropinterop.h header </a></li>
+<li><a href="/windows/win32/api/emi/ns-emi-emi_metadata_v2">EMI_METADATA_V2 (emi.h) </a></li>
+<li><a href="/windows/win32/api/mpeg2psiparser/index">Mpeg2Psiparser.h header </a></li>
+<li><a href="/windows/win32/api/print3dmanagerinterop/index">Print3dmanagerinterop.h header </a></li>
+<li><a href="/windows/win32/api/sdoias/index">Sdoias.h header </a></li>
+<li><a href="/windows/win32/api/segment/index">Segment.h header </a></li>
+<li><a href="/windows/win32/api/sensorsapi/index">Sensorsapi.h header </a></li>
+<li><a href="/windows/win32/api/shlobj_core/index">Shlobj_Core.h header </a></li>
+<li><a href="/windows/win32/api/shobjidl_core/index">Shobjidl_Core.h header </a></li>
+<li><a href="/windows/win32/api/strmif/index">Strmif.h header </a></li>
+<li><a href="/windows/win32/api/uiviewsettingsinterop/index">Uiviewsettingsinterop.h header </a></li>
+<li><a href="/windows/win32/api/useractivityinterop/index">Useractivityinterop.h header </a></li>
+<li><a href="/windows/win32/api/wbemcli/index">Wbemcli.h header </a></li>
+<li><a href="/windows/win32/api/winbase/index">Winbase.h header </a></li>
+<li><a href="/windows/win32/api/windef/index">Windef.h header </a></li>
+<li><a href="/windows/win32/api/windowsx/index">Windowsx.h header </a></li>
+<li><a href="/windows/win32/api/winerror/index">Winerror.h header </a></li>
+<li><a href="/windows/win32/api/wingdi/index">Wingdi.h header </a></li>
+<li><a href="/windows/win32/api/winnt/index">Winnt.h header </a></li>
+<li><a href="/windows/win32/api/winnt/nc-winnt-papcfunc">PAPCFUNC (winnt.h) </a></li>
+<li><a href="/windows/win32/api/winreg/index">Winreg.h header </a></li>
+<li><a href="/windows/win32/api/winuser/index">Winuser.h header </a></li>
+<li><a href="/windows/win32/api/wmcodecdsp/index">Wmcodecdsp.h header </a></li>
+<li><a href="/windows/win32/api/wtypes/index">Wtypes.h header </a></li>
 </ul>
 
 ## UWP API reference
