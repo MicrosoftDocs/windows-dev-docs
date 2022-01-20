@@ -181,8 +181,8 @@ When set to `true`, the terminal window will auto-center itself on the display i
 
 This interacts with the other launch settings in the following ways:
 
-* `"initialPosition": x,y`, `"centerOnLaunch": true`, `"launchMode": "default"`: center on the monitor that `x,y` is on.
-* `"initialPosition": x,y`, `"centerOnLaunch": true`, `"launchMode": "maximized"`: maximized on the monitor that `x,y` is on (`centerOnLaunch` adds nothing).
+* `"initialPosition": "x,y"`, `"centerOnLaunch": true`, `"launchMode": "default"`: center on the monitor that `x,y` is on.
+* `"initialPosition": "x,y"`, `"centerOnLaunch": true`, `"launchMode": "maximized"`: maximized on the monitor that `x,y` is on (`centerOnLaunch` adds nothing).
 * `"initialPosition": <omitted>`, `"centerOnLaunch": true`, `"launchMode": "default"`: center on the default monitor.
 * `"initialPosition": <omitted>`, `"centerOnLaunch": true`, `"launchMode": "focus"`: center and enter focus mode on the default monitor.
 * `"initialPosition": <omitted>`, `"centerOnLaunch": true`, `"launchMode": "maximized"`: maximized on the default monitor (`centerOnLaunch` adds nothing).
