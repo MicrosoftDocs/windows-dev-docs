@@ -77,7 +77,7 @@ cd $Env:WIX\"bin"
 
 ### Fixes for uninstalling 0.51 and earlier builds issues
 
-If you have hit an issue where the MSI could have been cleaned up, you can grab the installer via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the command.  You'll want to change the EXECUTABLE_INSTALLER_NAME to what the file name actually is.
+If you have an issue where the MSI is not accessible, you can download the installer, that corresponds with the installed version, via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll want to change the EXECUTABLE_INSTALLER_NAME to what the file name actually is.
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
