@@ -19,7 +19,7 @@ Fortunately, there's a workaround. Applications can emit a special escape sequen
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Configure the shell to tell the Terminal about it's current working directory
+> * Configure the shell to tell the Terminal about its current working directory
 > * Use the `duplicateTab` action to open a tab with the same CWD
 > * Use the `splitPane` action to open a pane with the same CWD
 > * Using the tab context menu to open tabs or panes with the same CWD
