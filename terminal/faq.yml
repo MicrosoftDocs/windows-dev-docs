@@ -82,7 +82,7 @@ sections:
 
       - question: What is conhost.exe?
         answer: |
-          The Windows Console host, conhost.exe, is Windows' original command-line user experience. It also hosts Windows' command-line infrastructure and the Windows Console API server, input engine, rendering engine, user preferences, etc. A primary goal of Windows Console is to maintain backward compatibility, thus adding new features became prohibitive and let to the creation of the Windows Terminal. Learn more in the [Windows Terminal open-source repo](https://github.com/Microsoft/terminal#the-windows-console-host) and in the [WIndows Console docs](/windows/console/definitions#console-host).
+          The Windows Console host, conhost.exe, is Windows' original command-line user experience. It also hosts Windows' command-line infrastructure and the Windows Console API server, input engine, rendering engine, user preferences, etc. A primary goal of Windows Console is to maintain backward compatibility, thus adding new features became prohibitive and led to the creation of the Windows Terminal. Learn more in the [Windows Terminal open-source repo](https://github.com/Microsoft/terminal#the-windows-console-host) and in the [WIndows Console docs](/windows/console/definitions#console-host).
 
       - question: Can I save the layout of all of my open console windows when closing Windows Terminal and restore them when starting a new session?
         answer: |
