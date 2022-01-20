@@ -129,7 +129,7 @@ Controls what happens when the application emits a BEL character. When set to `"
 
 **Necessity:** Optional
 
-**Accepts:** `"all"`, `"audible"`, `"visual"`, `"none"`
+**Accepts:** `"all"`, `"audible"`, `"window"`, `"taskbar"`, `"none"`
 
 **Default value:** `"audible"`
 
