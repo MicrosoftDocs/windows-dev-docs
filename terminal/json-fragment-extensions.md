@@ -66,10 +66,15 @@ Of course, if the developer only wishes to add/modify profiles without adding co
 
 > [!NOTE]
 > If you plan to use PowerShell to generate fragments, you must use `-Encoding Utf8`:
-> `# BAD: PowerShell uses UTF16LE by default`
-> `Write-Output $fragmentJson > $fragmentPath`
-> `# GOOD: Uses UTF8, so Terminal will read this`
-> `Write-Output $fragmentJson | Out-File $fragmentPath -Encoding Utf8`
+> ```powershell
+> # BAD: PowerShell uses UTF16LE by default
+> Write-Output $fragmentJson > $fragmentPath
+> ```
+> 
+> ```powershell
+> # GOOD: Uses UTF8, so Terminal will read this
+> Write-Output $fragmentJson | Out-File $fragmentPath -Encoding Utf8
+> ```
 > If you are using VS Code to edit the JSON, UTF8 is the default, but you can confirm in the bottom status bar.
 
 ## Profile GUIDs
