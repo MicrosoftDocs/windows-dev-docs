@@ -2,7 +2,7 @@
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Write a custom plugin for Windows Device Portal
 description: Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
-ms.date: 01/08/2021
+ms.date: 01/20/2022
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
