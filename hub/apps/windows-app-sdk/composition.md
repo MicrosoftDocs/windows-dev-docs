@@ -29,6 +29,12 @@ To use Microsoft.UI.Composition APIs in the Windows App SDK:
 
 To learn more about the availability of Microsoft.UI.Composition in the Windows App SDK, see [release channels](release-channels.md).
 
+## Sample Gallery
+
+We've updated the Windows Composition Samples Gallery to now take a dependency on the Windows App SDK Composition APIs. Please visit [WindowsCompositionSamples](https://github.com/microsoft/WindowsCompositionSamples) to see the Microsoft.UI.Composition APIs in action!
+
+![app gif](https://media.giphy.com/media/Hx2beMDfEA7QqWPvD4/giphy.gif)
+
 ## Related topics
 
 - [UWP Visual layer overview](/windows/uwp/composition/visual-layer)
