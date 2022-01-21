@@ -64,6 +64,14 @@ In the `"schemes"` list, a new color scheme called "Postmodern Tango Light" is d
 
 Of course, if the developer only wishes to add/modify profiles without adding color schemes (and vice-versa), only the relevant list needs to be present and the other list can be omitted.
 
+> [!NOTE]
+> If you plan to use PowerShell to generate fragments, you must use `-Encoding Utf8`:
+> `# BAD: PowerShell uses UTF16LE by default`
+> `Write-Output $fragmentJson > $fragmentPath`
+> `# GOOD: Uses UTF8, so Terminal will read this`
+> `Write-Output $fragmentJson | Out-File $fragmentPath -Encoding Utf8`
+> If you are using VS Code to edit the JSON, UTF8 is the default, but you can confirm in the bottom status bar.
+
 ## Profile GUIDs
 
 As previously stated profile GUIDs are a way to reference profiles and let users update and extend them without worrying about location or name changes. The only profiles that can be modified through fragments are the default profiles, Command Prompt and PowerShell, as well as [dynamic profiles](./dynamic-profiles.md). Providing a GUID is optional, however, strongly encouraged.
