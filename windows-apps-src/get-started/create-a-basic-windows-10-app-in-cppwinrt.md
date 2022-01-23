@@ -1,6 +1,6 @@
 ---
 title: Create a "Hello, World!" app using C++/WinRT
-description: This topic walks you through creating a Windows 10 UWP "Hello, World!" app using C++/WinRT. The app's UI is defined using Extensible Application Markup Language (XAML).
+description: This topic walks you through creating a Windows 10/11 UWP "Hello, World!" app using C++/WinRT. The app's UI is defined using Extensible Application Markup Language (XAML).
 ms.date: 07/11/2020
 ms.topic: article
 keywords: windows 10, uwp, cppwinrt, C++/WinRT
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Create a "Hello, World!" app using C++/WinRT
 
-This topic walks you through creating a Windows 10 Universal Windows Platform (UWP) "Hello, World!" app using C++/WinRT. The app's user interface (UI) is defined using Extensible Application Markup Language (XAML).
+This topic walks you through creating a Windows Universal Windows Platform (UWP) "Hello, World!" app using C++/WinRT. The app's user interface (UI) is defined using Extensible Application Markup Language (XAML).
 
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more info, and more walkthroughs and code examples, see the [C++/WinRT](../cpp-and-winrt-apis/index.md) documentation. A good topic to begin with is [Get started with C++/WinRT](../cpp-and-winrt-apis/get-started.md).
 

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Create a "Hello, World!" app (XAML)
 
-This tutorial teaches you how to use XAML and C# to create a simple "Hello, world" app for the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
+This tutorial teaches you how to use XAML and C# to create a simple "Hello, world" app for the Universal Windows Platform (UWP) on Windows 10/11. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10/11 device.
 
 Here you'll learn how to:
 
@@ -22,7 +22,7 @@ Here you'll learn how to:
 ## Before you start...
 
 -   [What's a Universal Windows app?](universal-application-platform-guide.md)
--   [Download Visual Studio 2017 (and Windows 10)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](/windows/apps/get-started/get-set-up).
+-   [Download Visual Studio 2017 (and Windows)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](/windows/apps/get-started/get-set-up).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
 > [!NOTE]
@@ -223,7 +223,7 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 ## Summary
 
-Congratulations, you've created your first app for Windows 10 and the UWP!
+Congratulations, you've created your first app for Windows and the UWP!
 
 To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](/windows/apps/design/layout/grid-tutorial), or jump straight to [next steps](./create-uwp-apps.md)?
 
