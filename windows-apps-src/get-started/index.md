@@ -66,7 +66,7 @@ Build apps that work on all Windows devices, or enhance your existing apps with 
         <h3>What's new</h3>
         <p>Expand your horizons and explore the latest additions to Windows.</p>
         <br>
-        <a href="//developer.microsoft.com/windows/windows-10-for-developers">What's cool in the latest version of Windows 11</a><br/>
+        <a href="//developer.microsoft.com/en-us/windows/windows-for-developers/">What's cool in the latest version of Windows 11</a><br/>
         <a href="/windows/uwp/whats-new/windows-10-version-latest">What's new in Windows 10 for developers</a><br/>
     :::column-end:::
 :::row-end:::
