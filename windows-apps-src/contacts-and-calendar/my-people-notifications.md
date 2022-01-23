@@ -8,6 +8,9 @@ ms.localizationpriority: medium
 ---
 # My People notifications
 
+> [!IMPORTANT]
+> My people is no longer supported in Windows 11.
+
 My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 
 ![heart emoji notification](images/heart-emoji-notification-small.gif)
