@@ -1,4 +1,4 @@
-# [Windows 10 on ARM](/windows/arm)
+# [Windows on ARM](/windows/arm)
 ## [ARM64EC for Windows 11 apps on ARM](/windows/uwp/porting/arm64ec)
 ## [Windows apps on ARM](/windows/uwp/porting/apps-on-arm)
 ### [How x86 emulation works on ARM](/windows/uwp/porting/apps-on-arm-x86-emulation)

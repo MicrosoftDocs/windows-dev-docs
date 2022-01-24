@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 
 # Enterprise
 
-This article provides an overview of key enterprise features provided by the Universal Windows Platform (UWP) for Windows 10 apps. For a video that demonstrates some of these features in detail, see [Rapidly Construct LOB Applications with UWP and Visual Studio](/events/build-2018/brk3502).
+This article provides an overview of key enterprise features provided by the Universal Windows Platform (UWP) for Windows apps. For a video that demonstrates some of these features in detail, see [Rapidly Construct LOB Applications with UWP and Visual Studio](/events/build-2018/brk3502).
 
 ## Feature highlights
 
 <a id="template-studio"></a>
 ### Windows Template Studio
 
-Windows Template Studio is a Visual Studio 2019 extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.
+Windows Template Studio is a Visual Studio 2019 extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience. The resulting UWP project is well-formed, readable code that incorporates the latest Windows features while implementing proven patterns and best practices.
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -53,7 +53,7 @@ See [Windows UI Library (Preview version)](/uwp/toolkits/winui/).
 <a id="xaml-islands"></a>
 ### UWP controls in desktop applications (XAML Islands)
 
-Windows 10 now enables you to use UWP controls in WPF, Windows Forms, and C++ Win32 desktop applications using a feature called *XAML Islands*. This means that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows 10 UI features that are only available via UWP controls, such as Windows Ink and controls that support the Fluent Design System. This feature is called XAML islands.
+Windows 10 now enables you to use UWP controls in WPF, Windows Forms, and C++ Win32 desktop applications using a feature called *XAML Islands*. This means that you can enhance the look, feel, and functionality of your existing desktop applications with the latest Windows UI features that are only available via UWP controls, such as Windows Ink and controls that support the Fluent Design System. This feature is called XAML islands.
 
 See [UWP controls in desktop applications](/windows/apps/desktop/modernize/xaml-islands).
 
@@ -102,7 +102,7 @@ Data binding is a way for your app's UI to display data from an external source,
 |-------|-------------|
 | [Data binding overview](../data-binding/data-binding-quickstart.md) | This topic shows you how to bind a control (or other UI element) to a   single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, it shows how to control the rendering of items, implement a details view based on a selection, and convert data for display. |
 | [Entity Framework 7 for UWP](/ef/core/get-started/) | Performing complex queries against large data sets is vastly simplified using Entity Framework 7, which supports UWP. In this walkthrough, you will build a UWP app that performs basic data access against a local SQLite   database using Entity Framework. |
-| SQLite local database | This video is a comprehensive developer's guide to using SQLite, the recommended solution for local app databases. Visit [SQLite](https://www.sqlite.org/download.html) to download the latest version for UWP, or use the version that's already provided with the Windows 10 SDK. |
+| SQLite local database | This video is a comprehensive developer's guide to using SQLite, the recommended solution for local app databases. Visit [SQLite](https://www.sqlite.org/download.html) to download the latest version for UWP, or use the version that's already provided with the Windows SDK. |
 
 ## Networking and data serialization
 
@@ -132,7 +132,7 @@ Many users today are bringing their own phone or tablet to work, which have vary
 
 | Topic | Description |
 |-------|-------------|
-| [Guide to UWP apps](../get-started/universal-application-platform-guide.md) | In this introductory guide, you'll get acquainted with the Windows 10UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
+| [Guide to UWP apps](../get-started/universal-application-platform-guide.md) | In this introductory guide, you'll get acquainted with the Windows UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
 | [Adaptive XAML UI code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
 | [Xamarin topic](/xamarin/) | Xamarin for targeting phone |
 
@@ -144,7 +144,7 @@ You have options for distributing apps to your organization’s users using MSIX
 |-------|-------------|
 | [MSIX documentation](/windows/msix/) | MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. |
 | [Distribute LOB apps to enterprises](../publish/distribute-lob-apps-to-enterprises.md) | Learn about the options for distributing line-of-business apps without making the apps broadly available to the public, including App Installer-based deployment, Microsoft Endpoint Configuration Manager and Microsoft Intune, and publishing to the Microsoft Store for Business. |
-| [Sideload apps](/windows/deploy/sideload-apps-in-windows-10) | When you sideload an app, you deploy a signed app package to a device. You maintain the signing, hosting, and deployment of these apps. The process for sideloading apps is streamlined for Windows 10.             |
+| [Sideload apps](/windows/deploy/sideload-apps-in-windows-10) | When you sideload an app, you deploy a signed app package to a device. You maintain the signing, hosting, and deployment of these apps. The process for sideloading apps is streamlined for Windows.             |
 | [Publish apps to the Microsoft Store](https://developer.microsoft.com/store/publish-apps) | The unified Microsoft Store lets you publish and manage all of your apps for all Windows devices. Customize your app’s availability with per-market pricing, distribution and visibility controls, and other options. |
 
 ## Enterprise UWP samples
