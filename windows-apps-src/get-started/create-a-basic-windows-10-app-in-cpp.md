@@ -1,12 +1,13 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Create a Hello World app in C++/CX (Windows 10/11)
-description: With Microsoft Visual Studio 2019, you can use C++/CX to develop an app that runs on Windows, including on phones running Windows. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
+title: Create a "Hello, World!" app using C++/CX
+description: With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
 ms.date: 06/11/2018
 ms.topic: article
-keywords: windows 10, uwp, windows 11
+keywords: uwp, windows 10, windows 11
 ms.localizationpriority: medium
 ---
+
 # Create a "Hello, World!" app in C++/CX
 
 > [!IMPORTANT]
@@ -20,18 +21,18 @@ With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on 
 ## Before you start
 
 -   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows. To download, see [Get the tools](https://visualstudio.microsoft.com/downloads/).
--   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](../xaml-platform/xaml-overview.md).
--   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
+-   To follow along, you should have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](../xaml-platform/xaml-overview.md).
+-   To follow along, you should use the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
-## Comparing C++ desktop apps to Windows apps
+## Comparing C++ desktop apps to UWP apps
 
-If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of writing apps for the UWP are familiar, but other aspects require some learning.
+If you're coming from a background in Windows desktop programming in C++, then you'll probably find that some aspects of writing apps for the UWP are familiar, but other aspects require some learning.
 
 ### What's the same?
 
--   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code only calls Windows functions that are accessible from the Windows Runtime environment.
+-   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code calls only Windows functions that are accessible from the Windows Runtime environment.
 
--   If you're accustomed to visual designers, you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, you can hand-code your XAML.
+-   If you're accustomed to visual design surfaces, then you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, then you can hand-code your XAML.
 
 -   You're still creating apps that use Windows operating system types and your own custom types.
 
@@ -41,9 +42,9 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 ### What's new?
 
--   The design principles for UWP apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
+-   The design principles for UWP apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great UWP apps incorporate these principles from the very beginning of the planning stage.
 
--   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a Windows Universal app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
+-   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a UWP app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
 
 -   You're primarily programming against a new, easy-to-navigate, object-oriented API, the Windows Runtime, although on Windows devices Win32 is still available for some functionality.
 
