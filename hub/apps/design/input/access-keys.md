@@ -97,10 +97,10 @@ Here, we show how to define an access key scope.
     <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
     <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
     <AppBarSeparator/>
-    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <AppBarToggleButton AccessKey="T" Icon="Favorite" Label="Favorite"/>
     <CommandBar.SecondaryCommands>
         <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
-        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+        <AppBarButton Icon="Setting" AccessKey="S" Label="Settings" />
     </CommandBar.SecondaryCommands>
 </CommandBar>
 ```
@@ -137,10 +137,10 @@ The following example shows how to support CommandBar SecondaryCommands with acc
     <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
     <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
     <AppBarSeparator/>
-    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <AppBarToggleButton AccessKey="T" Icon="Favorite" Label="Favorite"/>
     <CommandBar.SecondaryCommands>
         <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
-        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+        <AppBarButton Icon="Setting" AccessKey="S" Label="Settings" />
     </CommandBar.SecondaryCommands>
 </local:CommandBarHack>
 ```

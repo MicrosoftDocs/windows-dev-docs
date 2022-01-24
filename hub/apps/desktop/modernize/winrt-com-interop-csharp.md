@@ -45,7 +45,7 @@ Here are the available C# interop classes, mapped from their underlying interop 
 
 ### Available as part of the Windows App SDK
 
-|Interop function|C# interop class|
+|Interop function|C# interop method|
 |-|-|
 |[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId **Win32Interop.GetDisplayIdFromMonitor**(IntPtr hmonitor)|
 |[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetIconFromIconId**(IconId iconId)|
@@ -111,6 +111,6 @@ So as a replacement, in .NET 5 and later, you can make use of the C# interop cla
 
 ## Troubleshooting and known issues
 
-This section lists known issues and solutions for using the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT).
+This section lists known issues and solutions for using the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose).
 
 * **WinRT.Interop.WindowNative.GetWindowHandle doesn't marshal window handles (HWNDs) correctly when running on x86 platforms.** To work around this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.

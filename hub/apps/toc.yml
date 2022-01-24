@@ -238,6 +238,8 @@ items:
         items: 
           - name: Overview
             href: develop/graphics.md
+          - name: Enhance UI with the Visual layer
+            href: windows-app-sdk/composition.md
           - name: Render text with DWriteCore
             href: windows-app-sdk/dwritecore.md
       - name: Data and files

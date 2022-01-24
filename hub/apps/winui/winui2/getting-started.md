@@ -54,29 +54,27 @@ The library is available as a NuGet package that can be added to any new or exis
     </Application>
     ```
 
-    b. If you need more than one application resource, add the WinUI resources element `<XamlControlsResources` in a `<ResourceDictionary.MergedDictionaries>` as shown here:
+    b. If you have other resources, then we recommend you add those to `XamlControlsResources.MergedDictionaries`. This works with the platform's resource system to allow overrides of the `XamlControlsResources` resources.
 
     ``` XAML
     <Application
         x:Class="ExampleApp.App"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Microsoft.UI.Xaml.Controls"
         RequestedTheme="Light">
 
         <Application.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            <controls:XamlControlsResources>
+                <controls:XamlControlsResources.MergedDictionaries>
                     <ResourceDictionary Source="/Styles/Styles.xaml"/>
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
+                    <!-- Other app resources here -->
+                </controls:XamlControlsResources.MergedDictionaries>
+            </controls:XamlControlsResources>
         </Application.Resources>
 
     </Application>
     ```
-
-    > [!IMPORTANT]
-    > The order of resources added to a ResourceDictionary affects the order in which they are applied. The `XamlControlsResources` dictionary overrides many default resource keys and should therefore be added to `Application.Resources` first so that it doesn't override any other custom styles or resources in your app. For more information on resource loading, see [ResourceDictionary and XAML resource references](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
 6. Add a reference to the WinUI package to both XAML pages and/or code-behind pages.
 

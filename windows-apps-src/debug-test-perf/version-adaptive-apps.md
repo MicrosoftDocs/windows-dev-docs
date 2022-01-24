@@ -1,7 +1,7 @@
 ---
 title: Version adaptive apps
 description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
-ms.date: 05/17/2019
+ms.date: 01/20/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -89,6 +89,30 @@ For more info and examples, see **[Version adaptive code](version-adaptive-code.
 If your apps Minimum Version is build 15063 (Creators Update) or later, you can use *conditional XAML* to set properties and instantiate objects in markup without needing to use code behind. Conditional XAML provides a way to use the ApiInformation.IsApiContractPresent method in markup.
 
 For more info and examples, see **[Conditional XAML](conditional-xaml.md)**.
+
+### Delay-loaded APIs
+
+The [QueryOptionalDelayLoadedAPI](/windows/win32/api/libloaderapi2/nf-libloaderapi2-queryoptionaldelayloadedapi) function enables Store apps (which are not allowed by policy to call LoadLibrary) to detect whether their delay-loaded function actually was found.
+
+```cpp
+#include <windows.h>
+#include <commdlg.h>
+#include <libloaderapi2.h>
+#include <stdio.h>
+
+EXTERN_C IMAGE_DOS_HEADER __ImageBase;
+#define HMODULE_THISCOMPONENT reinterpret_cast<HMODULE>(&__ImageBase)
+
+int __cdecl main(int argc, char** argv)
+{
+    if (QueryOptionalDelayLoadedAPI(HMODULE_THISCOMPONENT,
+          "comdlg32.dll", "GetOpenFileNameW", 0))
+    {
+        printf("GetOpenFileNameW can be called!\n");
+    }
+    return 0;
+}
+```
 
 ## Test your version adaptive app
 
