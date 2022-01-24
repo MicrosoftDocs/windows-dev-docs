@@ -1,15 +1,14 @@
 ---
 title: My People notifications
 description: Explains how to create and use My People notifications, a new kind of toast.
-ms.date: 10/25/2017
+ms.date: 01/24/2022
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # My People notifications
 
 > [!IMPORTANT]
-> My people is no longer supported in Windows 11.
+> My People is no longer supported in Windows 11.
 
 My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 
