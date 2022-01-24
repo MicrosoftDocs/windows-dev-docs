@@ -68,12 +68,12 @@ The following list of topics have seen significant updates in the past month, as
 ## Windows UWP conceptual
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/gaming/cloud-for-games">Using cloud services for UWP games</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/gaming/e2e">Windows 10 game development guide</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/gaming/game-development-videos">Game development videos</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">UWP on Xbox One</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/tailoring-for-xbox">Xbox best practices</a></li>
+<li><a href="/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a></li>
+<li><a href="/windows/uwp/gaming/cloud-for-games">Using cloud services for UWP games</a></li>
+<li><a href="/windows/uwp/gaming/e2e">Windows 10 game development guide</a></li>
+<li><a href="/windows/uwp/gaming/game-development-videos">Game development videos</a></li>
+<li><a href="/windows/uwp/xbox-apps/index">UWP on Xbox One</a></li>
+<li><a href="/windows/uwp/xbox-apps/tailoring-for-xbox">Xbox best practices</a></li>
 </ul>
 
 ## Win32 conceptual
@@ -295,12 +295,12 @@ The following list of topics have seen significant updates in the past month, as
 ## Win32 API reference
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dinput/index">Dinput.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dinputd/index">Dinputd.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mmddk/index">Mmddk.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntddkbd/index">Ntddkbd.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntddmou/index">Ntddmou.h header </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objidl/ne-objidl-tymed">TYMED (objidl.h) </a></li>
+<li><a href="/windows/win32/api/dinput/index">Dinput.h header </a></li>
+<li><a href="/windows/win32/api/dinputd/index">Dinputd.h header </a></li>
+<li><a href="/windows/win32/api/mmddk/index">Mmddk.h header </a></li>
+<li><a href="/windows/win32/api/ntddkbd/index">Ntddkbd.h header </a></li>
+<li><a href="/windows/win32/api/ntddmou/index">Ntddmou.h header </a></li>
+<li><a href="/windows/win32/api/objidl/ne-objidl-tymed">TYMED (objidl.h) </a></li>
 </ul>
 
 
