@@ -932,8 +932,8 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/design/style/xaml-resource-dictionary",
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/rich-edit-box.md",
