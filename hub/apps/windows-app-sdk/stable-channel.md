@@ -70,8 +70,9 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
           <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
       </PropertyGroup>
       </Target>
-      ``` 
-      - The expected error will be similar to *WinRT originate error - 0x80004005 : 'Cannot locate resource from 'ms-appx:///BlankPage.xaml'.'.*
+      ```
+
+     - The expected error will be similar to *WinRT originate error - 0x80004005 : 'Cannot locate resource from 'ms-appx:///BlankPage.xaml'.'.*
 
 - Known issues for **WinUI applications with Single-project MSIX** (Blank App, Packaged template):
   - *Missing Package & Publish menu item until you restart Visual Studio:* When creating a new app with Single-project MSIX in 
