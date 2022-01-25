@@ -58,18 +58,20 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 **Important limitations**:
 
 - Known issues for **both packaged and unpackaged WinUI applications**:
-  - *Run-time error in C++ apps that reference a C++ Windows Runtime Component:* To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:
+  - *Run-time error in C++ or C# apps that reference a C++ Windows Runtime Component:* 
+    - To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:
 
-    ```xml
-    <Target Name="GetPriIndexName">
-    <PropertyGroup>
-        <!-- Winmd library targets use the default root namespace of the project for the App package name -->
-        <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
-        <!-- If RootNamespace is empty fall back to TargetName -->
-        <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
-    </PropertyGroup>
-    </Target>
-    ``` 
+      ```xml
+      <Target Name="GetPriIndexName">
+      <PropertyGroup>
+          <!-- Winmd library targets use the default root namespace of the project for the App package name -->
+          <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
+          <!-- If RootNamespace is empty fall back to TargetName -->
+          <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
+      </PropertyGroup>
+      </Target>
+      ``` 
+      - The expected error will be similar to *WinRT originate error - 0x80004005 : 'Cannot locate resource from 'ms-appx:///BlankPage.xaml'.'.*
 
 - Known issues for **WinUI applications with Single-project MSIX** (Blank App, Packaged template):
   - *Missing Package & Publish menu item until you restart Visual Studio:* When creating a new app with Single-project MSIX in 
