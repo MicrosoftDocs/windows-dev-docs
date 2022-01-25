@@ -45,11 +45,11 @@ UWP apps declare in their manifest the device capabilities they need such as acc
 
 Windows 10 introduced the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows. The UWP core APIs are the same on all Windows devices. If your app only uses the core APIs, it will run on any Windows device no matter whether you are targeting a desktop PC, Xbox, Mixed-reality headset, and so on.
 
-A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
+A UWP app written in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
 
 ### Extension SDKs expose the unique capabilities of specific device types
 
-If you target the universal APIs, then your app can run on all devices that run Windows 10 or higher. But if you want your UWP app to take advantage of device-specific APIs, then you can do that, too.
+If you target the universal APIs, then your app can run on all devices that run Windows 10 or later. But if you want your UWP app to take advantage of device-specific APIs, then you can do that, too.
 
 Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview#extension-sdks).
 
@@ -149,7 +149,7 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
 - For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 - [Compiling apps with .NET Native](/dotnet/framework/net-native/)
-- Learn how to add modern experiences for Windows users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
+- Learn how to add modern experiences for Windows users to your existing desktop app, and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
 
 ## How the Universal Windows Platform relates to Windows Runtime APIs
 If you're building a Universal Windows Platform (UWP) app, then you can get a lot of mileage and convenience out of treating the terms "Universal Windows Platform (UWP)" and "Windows Runtime (WinRT)" as more or less synonymous. But it *is* possible to look under the covers of the technology, and determine just what the difference is between those ideas. If you're curious about that, then this last section is for you.
