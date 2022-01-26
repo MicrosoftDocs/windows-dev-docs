@@ -28,7 +28,7 @@ Here you'll learn how to:
 > [!NOTE]
 > This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
-## Step 1: Create a new project in Visual Studio.
+## Step 1: Create a new project in Visual Studio
 
 1.  Launch Visual Studio.
 
@@ -44,10 +44,11 @@ Here you'll learn how to:
 
     ![The new project window](images/win10-cs-01.png)
 
-> [!NOTE]
-> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
-
- ![Activate Developer mode dialog](images/win10-cs-00.png)
+    > [!NOTE]
+    > If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+    >
+    > ![Activate Developer mode dialog](images/win10-cs-00.png)
+    >
 
 5.  The target version/minimum version dialog appears. The default settings are fine for this tutorial, so select **OK** to create the project.
 
@@ -89,7 +90,7 @@ To view and edit a file in your project, double-click the file in the **Solution
 -   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
 -   Assets/LockScreenLogo.scale-200.png can be used to represent the app on the lock screen, when the system is locked.
 
-## Step 2: Adding a button
+## Step 2: Add a button
 
 ### Using the designer view
 
