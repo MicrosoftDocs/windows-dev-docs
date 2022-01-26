@@ -1,5 +1,5 @@
 ---
-description: Get started with the Universal Windows Platform (UWP) and app development for Windows 10.
+description: Get started with the Universal Windows Platform (UWP) and app development for Windows.
 title: Get started with the Universal Windows Platform (UWP)
 ms.date: 03/23/2018
 ms.topic: article
@@ -7,17 +7,17 @@ keywords: get started, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
 ---
 
-# Get started with Windows 10 apps
+# Get started with Windows apps
 
-Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.
+Build apps that work on all Windows devices, or enhance your existing apps with new and updated features.
 
 <br/>
 
 :::row:::
     :::column:::
         <img src="/media/illustrations/biztalk-developer-documentation-1.svg" alt="Overview illustration" />
-        <h3>Learn about Windows 10 Apps</h3>
-        <p>Windows 10 and the Universal Windows Platform let you build apps that work and look great across all Windows device types, or update existing apps with modern features.</p>
+        <h3>Learn about Windows apps</h3>
+        <p>Windows and the Universal Windows Platform let you build apps that work and look great across all Windows device types, or update existing apps with modern features.</p>
         <br>
         <a href="/windows/uwp/get-started/universal-application-platform-guide">What's a Windows app?</a><br/>
         <a href="/windows/uwp/design/">Design and UI</a><br/>
@@ -25,14 +25,14 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     :::column:::
         <img src="/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />
         <h3>Get set up</h3>
-        <p>Visual Studio Community and the Windows 10 SDK give you everything you need to build great apps – and they're free.</p>
+        <p>Visual Studio Community and the Windows SDK give you everything you need to build great apps – and they're free.</p>
         <br>
         <a href="/windows/apps/get-started/get-set-up">Download the tools and SDK</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/team-services-dev-ops-test.svg" alt="Code illustration" />
         <h3>Start coding</h3>
-        <p>Whether you're an experienced dev or just building your first app, get hands-on experience with the Windows 10 platform and docs.</p>
+        <p>Whether you're an experienced dev or just building your first app, get hands-on experience with the Windows platform and docs.</p>
         <br>
         <a href="/windows/uwp/get-started/create-uwp-apps">Start coding</a><br/>
         <a href="/uwp/">API Reference</a><br/>
@@ -54,7 +54,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     :::column:::
         <img src="/media/illustrations/biztalk-get-started-scenarios.svg" alt="Samples illustration" />
         <h3>Samples</h3>
-        <p>Get firsthand experience with the Windows 10 platform and see APIs in action.</p>
+        <p>Get firsthand experience with the Windows platform, and see APIs in action.</p>
         <br>
         <a href="/windows/uwp/get-started/get-uwp-app-samples">Using Windows app samples</a><br/>
         <a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Customer Orders Database</a><br/>
@@ -64,9 +64,10 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     :::column:::
         <img src="/media/illustrations/ms365enterprise-partner-news-2.svg" alt="What's new illustration" />
         <h3>What's new</h3>
-        <p>Expand your horizons and explore the latest additions to Windows 10.</p>
+        <p>Expand your horizons and explore the latest additions to Windows.</p>
         <br>
-        <a href="//developer.microsoft.com/windows/windows-10-for-developers">What's cool in the latest version of Windows 10</a><br/>
+        <a href="https://developer.microsoft.com/windows/windows-for-developers/">What's cool for developers in Windows 11</a><br/>
+        <a href="/windows/apps/whats-new/windows-11-build-22000">What's new for developers in Windows 11</a><br/>
         <a href="/windows/uwp/whats-new/windows-10-version-latest">What's new in Windows 10 for developers</a><br/>
     :::column-end:::
 :::row-end:::
