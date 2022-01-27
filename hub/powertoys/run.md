@@ -83,7 +83,7 @@ PowerToys Run enables a set of system level actions that can be executed.
 | `Sleep` | Sleeps the computer | |
 | `Hibernate` | Hibernates the computer | |
 | `Empty Recycle Bin` | Empties the recycle bin | |
-| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br>(Requires administrative permissions.) |
+| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 
 ## Plugin manager
 
