@@ -1039,6 +1039,8 @@ Incoming call notifications are displayed pre-expanded in a special call format 
 
 ![Incoming call toast notification](images/toast-incoming-call.png)
 
+#### [Builder syntax](#tab/builder-syntax)
+
 ```csharp
 new ToastContentBuilder()
     .SetToastScenario(ToastScenario.IncomingCall)
