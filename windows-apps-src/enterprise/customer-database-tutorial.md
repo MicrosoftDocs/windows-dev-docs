@@ -20,7 +20,7 @@ The starting point for this tutorial is a single-page app with minimal UI and fu
 
 ### Prerequisites
 
-* [Ensure you have the latest version of Visual Studio and the Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Ensure you have the latest version of Visual Studio and the Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/)
 * [Clone or download the Customer Database Tutorial sample](https://github.com/microsoft/windows-tutorials-customer-database)
 
 After you've cloned/downloaded the repo, you can edit the project by opening **CustomerDatabaseTutorial.sln** with Visual Studio.

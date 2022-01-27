@@ -11,7 +11,7 @@ ms.custom: 19H1
 
 # App capability declarations
 
-Capabilities must be declared in your Windows app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) to access certain Windows 10 APIs or resources, such as pictures, music, or devices such as the camera or the microphone. Capabilities are used by UWP apps as well as other types of desktop apps that are packaged in an MSIX or AppX package for Windows 10.
+Capabilities must be declared in your Windows app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) to access certain Windows APIs or resources, such as pictures, music, or devices such as the camera or the microphone. Capabilities are used by UWP apps as well as other types of desktop apps that are packaged in an MSIX or AppX package for Windows.
 
 You request access to specific resources or API by declaring capabilities in your app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest). You can declare general capabilities by using the [Manifest Designer](/windows/msix/package/packaging-uwp-apps#configure-an-app-package) in Visual Studio, or you can add them manually. For more information, see [How to specify capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest). It is important to know that when customers get your app from the Store, they're notified of all the capabilities that the app declares. Avoid declaring capabilities that your app doesn't need.
 

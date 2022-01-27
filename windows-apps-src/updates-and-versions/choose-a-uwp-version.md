@@ -16,7 +16,7 @@ dev_langs:
 ---
 # Choose a UWP version
 
-Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Projects using [.NET Standard 2.0](/dotnet/standard/net-standard) must have a **Minimum Version** of Build 16299 or later.
+Each version of Windows has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Projects using [.NET Standard 2.0](/dotnet/standard/net-standard) must have a **Minimum Version** of Build 16299 or later.
 
 > [!WARNING]
 > UWP projects created in current versions of Visual Studio cannot be opened in Visual Studio 2015.

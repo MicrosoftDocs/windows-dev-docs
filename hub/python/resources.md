@@ -12,7 +12,7 @@ ms.date: 07/19/2019
 
 # Resources for developing with Python on Windows
 
-A list of links that we recommend for Python Developers working on machines running Windows 10.
+A list of links that we recommend for Python Developers working on machines running Windows.
 
 ## General
 
