@@ -565,6 +565,7 @@ new ToastContentBuilder()
 
 **New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **UseButtonStyle** property to the toast XML tag and the **HintButtonStyle** property as seen below.
 
+
 <img alt="notification with buttons with colors" src="images/toast-button-with-colors.png" width="364"/>
 
 #### [Builder syntax](#tab/builder-syntax)
@@ -950,16 +951,42 @@ new ToastContentBuilder()
 See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in toast notifications. To learn how to send a toast using custom audio, see [custom audio on toasts](custom-audio-on-toasts.md).
 
 
-## Alarms, reminders, and incoming calls
+## Scenarios
 
-To create alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a scenario value assigned to it. The scenario adusts a few behaviors to create a consistent and unified user experience.
+To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a **Scenario** value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
 
-> [!IMPORTANT]
-> When using Reminder or Alarm, you must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
+* **Urgent**
+* **Reminder**
+* **Alarm**
+* **IncomingCall** 
 
-* **Reminder**: The notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played.
-* **Alarm**: In addition to the reminder behaviors, alarms will additionally loop audio with a default alarm sound.
-* **IncomingCall**: Incoming call notifications are displayed full screen on Windows Mobile devices. Otherwise, they have the same behaviors as alarms except they use ringtone audio and their buttons are styled differently.
+### Important Notifications
+Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
+
+![Important toast notification](images/important-toast-notification.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Urgent)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="urgent" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
+
+### Reminders
+In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -980,6 +1007,56 @@ new ToastContentBuilder()
 ```
 
 ---
+
+
+### Alarms
+Alarms behave the same as reminders, except alarms will additionally loop audio with a default alarm sound. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Alarm)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="alarm" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
+
+
+
+### Incoming calls
+Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
+
+![Incoming call toast notification](images/toast-incoming-call.png)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.IncomingCall)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="incomingCall" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
+
 
 
 ## Localization and accessibility
