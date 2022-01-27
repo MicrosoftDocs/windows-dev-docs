@@ -2,7 +2,7 @@
 description: Design the title bar of a desktop app to match the personality of the app.
 title: Windows app title bar
 template: detail.hbs
-ms.date: 11/30/2021
+ms.date: 12/13/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -51,3 +51,8 @@ Increase the size of the title bar to 48px when including a person-picture.
 If using tabs as the main element of an app, use the titlebar space and keep caption controls anchored to the right.
 
 :::image type="content" source="images/titlebar/tabs.png" alt-text="An example of a tab view with tabs in the titlebar area":::
+
+### Next steps
+
+> [!div class="nextstepaction"]
+> [See the developer guidance for title bar](../../develop/title-bar.md)
