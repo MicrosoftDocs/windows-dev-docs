@@ -1,8 +1,8 @@
 ---
 title: What's a Universal Windows Platform (UWP) app?
-description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
+description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 09/15/2020
+ms.date: 12/10/2021
 ms.topic: article
 ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, universal
@@ -13,14 +13,14 @@ ms.localizationpriority: medium
 
 UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices.
 
-To download the tools you need to start creating UWP apps, see [Get set up](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
+To download the tools you will need to start creating UWP apps, see [Get set up](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
 
 
 ## Where does UWP fit in the Microsoft development story?
 
-UWP is one choice for creating apps that run on Windows 10 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)).
+UWP is one choice for creating apps that run on Windows 10 and Windows 11 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)).
 
-The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and [Project Reunion](https://github.com/microsoft/ProjectReunion), UWP is a powerful tool for creating client apps.
+The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and the [Windows App SDK](/windows/apps/windows-app-sdk/), UWP is a powerful tool for creating client apps.
 
 
 ## Features of a UWP app
@@ -28,9 +28,9 @@ The Microsoft development story continues to evolve, and along with initiatives 
 A UWP app is:
 
 - Secure: UWP apps declare which device resources and data they access. The user must authorize that access.
-- Able to use a common API on all devices that run Windows 10.
+- Able to use a common API on all devices that run Windows.
 - Able to use device specific capabilities and adapt the UI to different device screen sizes, resolutions, and DPI.
-- Available from the Microsoft Store on all devices (or only those that you specify) that run on Windows 10. The Microsoft Store provides multiple ways to make money on your app.
+- Available from the Microsoft Store on all devices (or only those that you specify) that run on Windows 10 or Windows 11. The Microsoft Store provides multiple ways to make money on your app.
 - Able to be installed and uninstalled without risk to the machine or incurring "machine rot".
 - Engaging: use live tiles, push notifications, and user activities that interact with Windows Timeline and Cortana's Pick Up Where I Left Off, to engage users.
 - Programmable in C#, C++, Visual Basic, and Javascript. For UI, use WinUI, XAML, HTML, or DirectX.
@@ -43,20 +43,18 @@ UWP apps declare in their manifest the device capabilities they need such as acc
 
 ### A common API surface across all devices
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows 10. The UWP core APIs are the same on all Windows devices. If your app only uses the core APIs, it will run on any Windows 10 device no matter whether you are targeting a desktop PC, Xbox, Mixed-reality headset, and so on.
+Windows 10 introduced the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows. The UWP core APIs are the same on all Windows devices. If your app only uses the core APIs, it will run on any Windows device no matter whether you are targeting a desktop PC, Xbox, Mixed-reality headset, and so on.
 
-A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows 10 devices.
+A UWP app written in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
 
 ### Extension SDKs expose the unique capabilities of specific device types
 
-If you target the universal APIs, then your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device-specific APIs, then you can do that, too.
+If you target the universal APIs, then your app can run on all devices that run Windows 10 or later. But if you want your UWP app to take advantage of device-specific APIs, then you can do that, too.
 
 Extension SDKs let you call specialized APIs for different devices. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices. For more information about adding extension SDKs, see the **Extension SDKs** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview#extension-sdks).
 
 You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see the **Writing code** section in [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
-The following video provides a brief overview of device families and adaptive coding:
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 ### Adaptive controls and input
 
@@ -74,7 +72,7 @@ Some aspects of your app's UI will automatically adapt across devices. Your app'
 
 ### There's one store for all devices
 
-A unified app store makes your app available on Windows 10 devices such as PC, tablet, Xbox, HoloLens, Surface Hub, and Internet of Things (IoT) devices. You can submit your app to the store and make it available to all types of devices, or only those you choose. You submit and manage all your apps for Windows devices in one place. Have a C++ desktop app that you want to modernize with UWP features and sell in the Microsoft store? That's okay, too.
+A unified app store makes your app available on Windows devices such as PC, tablet, Xbox, HoloLens, Surface Hub, and Internet of Things (IoT) devices. You can submit your app to the store and make it available to all types of devices, or only those you choose. You submit and manage all your apps for Windows devices in one place. Have a C++ desktop app that you want to modernize with UWP features and sell in the Microsoft store? That's okay, too.
 
 UWP apps integrate with [Application Insights](https://azure.microsoft.com/services/application-insights/) for detailed telemetry and analytics—a crucial tool for understanding your users and improving your apps.
 
@@ -121,7 +119,7 @@ Check out [Get set up](/windows/apps/get-started/get-set-up) to download the too
 
 The Microsoft design system is named Fluent. The Fluent Design System is a set of UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. Fluent experiences adapt and feel natural on devices from tablets to laptops, from PCs to televisions, and on virtual reality devices. See [The Fluent Design System for UWP apps](/windows/uwp/design/fluent-design-system) for an introduction to Fluent Design.
 
-Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/windows/apps/design) introduces you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](/windows/apps/design/basics/design-and-ui-intro) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](/windows/apps/design/devices/index) to help you think through the interaction experience of using your app on all the different form factors you want to target.
+Good [design](http://design.windows.com/) is the process of deciding how users will interact with your app, in addition to how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://developer.microsoft.com/windows/apps/design) introduces you to designing a Universal Windows app. See the [device primer](/windows/apps/design/devices/index) to help you think through the interaction experience of using your app on all the different form factors you want to target.
 
 In addition to interaction on different devices, [plan your app](./plan-your-app.md) to embrace the benefits of working across multiple devices. For example:
 
@@ -151,7 +149,7 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
 - For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
 - [Compiling apps with .NET Native](/dotnet/framework/net-native/)
-- Learn how to add modern experiences for Windows 10 users to your existing desktop app and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
+- Learn how to add modern experiences for Windows users to your existing desktop app, and distribute it in the Microsoft Store with the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
 
 ## How the Universal Windows Platform relates to Windows Runtime APIs
 If you're building a Universal Windows Platform (UWP) app, then you can get a lot of mileage and convenience out of treating the terms "Universal Windows Platform (UWP)" and "Windows Runtime (WinRT)" as more or less synonymous. But it *is* possible to look under the covers of the technology, and determine just what the difference is between those ideas. If you're curious about that, then this last section is for you.

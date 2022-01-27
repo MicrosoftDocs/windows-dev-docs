@@ -190,6 +190,10 @@ items:
                   href: ../powertoys/install.md
                 - name: Run in admin mode
                   href: ../powertoys/administrator.md
+                - name: Report a Bug
+                  href: ../powertoys/reportBug.md
+            - name: Always on Top
+              href: ../powertoys/always-on-top.md
             - name: PowerToys Awake
               href: ../powertoys/awake.md
             - name: Color Picker

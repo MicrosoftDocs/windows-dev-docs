@@ -110,7 +110,7 @@ items:
                     href: desktop/modernize/desktop-to-uwp-enhance.md
                   - name: APIs not supported in desktop apps
                     href: desktop/modernize/desktop-to-uwp-supported-api.md
-                  - name: Call WinRT COM interop interfaces from .NET 5+ apps
+                  - name: Call interop APIs from a .NET 5+ app
                     href: desktop/modernize/winrt-com-interop-csharp.md
             - name: Use MSIX framework packages from your desktop app
               items:
@@ -242,6 +242,8 @@ items:
         items: 
           - name: Overview
             href: develop/graphics.md
+          - name: Enhance UI with the Visual layer
+            href: windows-app-sdk/composition.md
           - name: Render text with DWriteCore
             href: windows-app-sdk/dwritecore.md
       - name: Data and files
@@ -264,6 +266,22 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Platform
+        items:
+        - name: C#/WinRT
+          items:
+          - name: Overview
+            href: develop/platform/csharp-winrt/index.md
+          - name: .NET mappings of WinRT types in C#/WinRT
+            href: develop/platform/csharp-winrt/net-mappings-of-winrt-types.md
+          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+            href: develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+          - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
+            href: develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+          - name: "Diagnose component errors"
+            href: develop/platform/csharp-winrt/authoring-diagnostics.md
+          - name: "Agile objects"
+            href: develop/platform/csharp-winrt/agile-objects.md
   - name: Package and deploy
     items:
       - name: Overview

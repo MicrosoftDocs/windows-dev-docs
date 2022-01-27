@@ -639,7 +639,7 @@
           href: globalizing/multilingual-app-toolkit-editor-downloads.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
           href: globalizing/mat-faq-troubleshooting.yml
-        - name: Use the UTF-8 code page
+        - name: Use UTF-8 code pages in Windows apps
           href: globalizing/use-utf8-code-page.md
         - name: Prepare your application for the Japanese era change
           href: globalizing/japanese-era-change.md
@@ -653,5 +653,5 @@
           href: in-app-help/in-app-help.md
         - name: External help
           href: in-app-help/external-help.md
-- name: Design toolkits
+- name: Design toolkits and samples for Windows apps
   href: downloads/index.md

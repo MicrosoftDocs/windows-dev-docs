@@ -53,6 +53,6 @@ For even more controls, see [Controls list](/windows/apps/design/controls/index)
 
 ## Related topics
 
-* [build 2014: What about XAML UI and Controls?](https://channel9.msdn.com/Events/Build/2014/2-516)
-* [build 2014: Developing Apps using the Common XAML UI Framework](https://channel9.msdn.com/Events/Build/2014/2-507)
-* [build 2014: Using Visual Studio to Build XAML Converged Apps](https://channel9.msdn.com/Events/Build/2014/3-591)
+* build 2014: What about XAML UI and Controls?
+* build 2014: Developing Apps using the Common XAML UI Framework
+* build 2014: Using Visual Studio to Build XAML Converged Apps

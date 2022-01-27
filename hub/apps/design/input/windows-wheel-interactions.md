@@ -30,8 +30,6 @@ Windows wheel devices, such as the Surface Dial, are a new category of input dev
       *Surface Dial app partners*
    :::column-end:::
    :::column:::
-      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
-
       *Surface Dial for devs*
    :::column-end:::
 :::row-end:::

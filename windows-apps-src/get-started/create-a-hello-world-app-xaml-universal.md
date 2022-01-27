@@ -1,15 +1,16 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: Learn how to create a "Hello, world" app (XAML)
+title: Learn how to create a "Hello, World!" app (XAML)
 description: Use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows 10.
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world
 ms.localizationpriority: medium
 ---
+
 # Create a "Hello, World!" app (XAML)
 
-This tutorial teaches you how to use XAML and C# to create a simple "Hello, world" app for the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
+This tutorial teaches you how to use XAML and C# to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all versions of Windows 10 and Windows 11.
 
 Here you'll learn how to:
 
@@ -18,19 +19,16 @@ Here you'll learn how to:
 -   Run the project on the local desktop in Visual Studio.
 -   Use a SpeechSynthesizer to make the app talk when you press a button.
 
-
 ## Before you start...
 
 -   [What's a Universal Windows app?](universal-application-platform-guide.md)
--   [Download Visual Studio 2017 (and Windows 10)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](/windows/apps/get-started/get-set-up).
+-   [Download Visual Studio (and Windows)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](/windows/apps/get-started/get-set-up).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
 > [!NOTE]
 > This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
-
-
-## Step 1: Create a new project in Visual Studio.
+## Step 1: Create a new project in Visual Studio
 
 1.  Launch Visual Studio.
 
@@ -46,10 +44,11 @@ Here you'll learn how to:
 
     ![The new project window](images/win10-cs-01.png)
 
-> [!NOTE]
-> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
-
- ![Activate Developer mode dialog](images/win10-cs-00.png)
+    > [!NOTE]
+    > If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+    >
+    > ![Activate Developer mode dialog](images/win10-cs-00.png)
+    >
 
 5.  The target version/minimum version dialog appears. The default settings are fine for this tutorial, so select **OK** to create the project.
 
@@ -60,7 +59,6 @@ Here you'll learn how to:
     ![Screenshot of the Solution Explorer pane with Hello World (Universal Windows) highlighted.](images/win10-cs-03.png)
 
 Although the **Blank App (Universal Window)** is a minimal template, it still contains a lot of files. These files are essential to all UWP apps using C#. Every project that you create in Visual Studio contains them.
-
 
 ### What's in the files?
 
@@ -92,7 +90,7 @@ To view and edit a file in your project, double-click the file in the **Solution
 -   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
 -   Assets/LockScreenLogo.scale-200.png can be used to represent the app on the lock screen, when the system is locked.
 
-## Step 2: Adding a button
+## Step 2: Add a button
 
 ### Using the designer view
 
@@ -223,7 +221,7 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 ## Summary
 
-Congratulations, you've created your first app for Windows 10 and the UWP!
+Congratulations, you've created your first app for Windows and the UWP!
 
 To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](/windows/apps/design/layout/grid-tutorial), or jump straight to [next steps](./create-uwp-apps.md)?
 

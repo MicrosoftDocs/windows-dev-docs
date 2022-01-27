@@ -172,8 +172,8 @@ For more info, see these resources and profiling tools.
 -   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
 -   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
 -   [Analyze performance using Visual Studio diagnostic tools](/visualstudio/profiling/profiling-feature-tour)
--   The //build/ session [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
--   The //build/ session [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
+-   The //build/ session XAML Performance
+-   The //build/ session New XAML Tools in Visual Studio 2015
 
 ## Respond to the performance test results
 

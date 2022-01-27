@@ -241,5 +241,5 @@ When the app runs on the Fall Creators Update, you use a ColorPicker to let the 
 
 - [Guide to UWP apps](../get-started/universal-application-platform-guide.md)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-- [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 video)
+- API Contracts
 - [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)

@@ -670,11 +670,11 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     </tr>
     <tr>
         <td>Publish your Unity game as a Universal Windows Platform app (video)</td>
-        <td><a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app">How to publish your Unity game as a UWP app</a></td>
+        <td>How to publish your Unity game as a UWP app</td>
     </tr>
     <tr>
         <td>Use Unity to make Windows games and apps (video)</td>
-        <td><a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/Making-games-and-apps-with-Unity">Making Windows games and apps with Unity</a></td>
+        <td>Making Windows games and apps with Unity</td>
     </tr>
     <tr>
         <td>Unity game development using Visual Studio (video series)</td>
@@ -797,7 +797,7 @@ BabylonJS is a complete JavaScript framework for building 3D games with HTML5, W
     </tr>
     <tr>
         <td>WebGL 3D with HTML5 and BabylonJS (video series)</td>
-        <td><a href="https://channel9.msdn.com/Series/Introduction-to-WebGL-3D-with-HTML5-and-Babylonjs/01">Learning WebGL 3D and BabylonJS</a></td>
+        <td>Learning WebGL 3D and BabylonJS</a></td>
     </tr>
     <tr>
         <td>Building a cross-platform WebGL game with BabylonJS</td>
@@ -820,7 +820,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting a Windows 8 app to a Universal Windows Platform app (video)</td>
-        <td><a href="https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21">Porting 8.1 Apps to Windows 10</a></td>
+        <td>Porting 8.1 Apps to Windows 10</td>
     </tr>
     <tr>
         <td>Porting an iOS app to a Universal Windows Platform app</td>
@@ -832,7 +832,7 @@ If you have an existing game, there are many resources and guides available to h
     </tr>
     <tr>
         <td>Porting from XAML or Silverlight to a Universal Windows Platform app (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2015/3-741">Porting an App from XAML or Silverlight to Windows 10</a></td>
+        <td>Porting an App from XAML or Silverlight to Windows 10</td>
     </tr>
     <tr>
         <td>Porting an Xbox game to a Universal Windows Platform app</td>
@@ -904,7 +904,7 @@ Getting set up and ready to develop a Universal Windows Platform app is quick an
     </tr>
 </table>
 
-If you're an "absolute beginner" to UWP programming, and are considering using XAML in your game (see [Choosing your graphics technology and programming language](#choosing-your-graphics-technology-and-programming-language)), the [Windows 10 development for absolute beginners](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners) video series is a good place to start.
+If you're an "absolute beginner" to UWP programming, and are considering using XAML in your game (see [Choosing your graphics technology and programming language](#choosing-your-graphics-technology-and-programming-language)), the Windows 10 development for absolute beginners video series is a good place to start.
 
 <table>
     <colgroup>
@@ -913,7 +913,7 @@ If you're an "absolute beginner" to UWP programming, and are considering using X
     </colgroup>
     <tr>
         <td>Beginners guide to Windows 10 development with XAML (Video series)</td>
-        <td><a href="https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners">Windows 10 development for absolute beginners</a></td>
+        <td>Windows 10 development for absolute beginners</td>
     </tr>
     <tr>
         <td>Announcing the Windows 10 absolute beginners series using XAML (blog post)</td>
@@ -1019,7 +1019,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </tr>
     <tr>
         <td>Targeting multiple device form factors (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">Designing Games for a Windows Core World</a></td>
+        <td>Designing Games for a Windows Core World</td>
     </tr>
 </table>
 
@@ -1099,7 +1099,7 @@ Guides and references for implementing audio in games using XAudio2, XAPO, and W
     </tr>
     <tr>
         <td>Learn how to integrate Windows Sonic into your games (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">Introducing Spatial Audio Capabilities for Xbox and Windows</a></td>
+        <td>Introducing Spatial Audio Capabilities for Xbox and Windows</td>
     </tr>
 </table>
 
@@ -1138,7 +1138,7 @@ Guides and references for DirectX game development.
     </tr>
     <tr>
         <td>DirectX 12 fundamentals (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Better Power, Better Performance: Your Game on DirectX 12</a></td>
+        <td>Better Power, Better Performance: Your Game on DirectX 12</td>
     </tr>
 </table>
 
@@ -1346,11 +1346,11 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     </tr>
     <tr>
         <td>Troubleshoot unresponsible UI using Windows Performance Analyzer (video)</td>
-        <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-156-Critical-Path-Analysis-with-Windows-Performance-Analyzer">Critical path analysis with WPA</a></td>
+        <td>Critical path analysis with WPA</a></td>
     </tr>
     <tr>
         <td>Diagnose memory usage and leaks using Windows Performance Recorder (video)</td>
-        <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-154-Memory-Footprint-and-Leaks">Memory footprint and leaks</a></td>
+        <td>Memory footprint and leaks</td>
     </tr>
     <tr>
         <td>Get ProcDump</td>
@@ -1358,7 +1358,7 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     </tr>
     <tr>
         <td>Learn to use ProcDump (video)</td>
-        <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-131-Windows-10-SDK">Configure ProcDump to create dump files</a></td>
+        <td>Configure ProcDump to create dump files</td>
     </tr>
 </table>
 
@@ -1377,19 +1377,19 @@ Some portions of DirectX development can be nuanced and complex. When you get to
     </tr>
     <tr>
         <td>Debugging and validation tools for D3D12 development (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003">D3D12 Performance Tuning and Debugging with PIX and GPU Validation</a></td>
+        <td>D3D12 Performance Tuning and Debugging with PIX and GPU Validation</td>
     </tr>
     <tr>
         <td>Optimizing graphics and performance (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">Advanced DirectX 12 Graphics and Performance</a></td>
+        <td>Advanced DirectX 12 Graphics and Performance</td>
     </tr>
     <tr>
         <td>DirectX graphics debugging (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">Solve the tough graphics problems with your game using DirectX Tools</a></td>
+        <td>Solve the tough graphics problems with your game using DirectX Tools</td>
     </tr>
     <tr>
         <td>Visual Studio 2015 tools for debugging DirectX 12 (video)</td>
-        <td><a href="https://channel9.msdn.com/Series/ConnectOn-Demand/212">DirectX tools for Windows 10 in Visual Studio 2015</a></td>
+        <td>DirectX tools for Windows 10 in Visual Studio 2015</td>
     </tr>
     <tr>
         <td>Direct3D 12 programming guide</td>
@@ -1412,7 +1412,7 @@ Build game content that uses the full color capabilities of HDR.
     </colgroup>
     <tr>
         <td>Introduction to HDR and color concepts (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/P4061">Lighting up HDR and advanced color in DirectX</a></td>
+        <td>Lighting up HDR and advanced color in DirectX</td>
     </tr>
     <tr>
         <td>Learn how to render HDR content and detect whether the current display supports it</td>
@@ -1483,7 +1483,7 @@ You'll use [Partner Center](https://partner.microsoft.com/dashboard) to publish 
     </colgroup>
     <tr>
         <td>Learn to use streaming install and optional packages (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Nextgen UWP app distribution: Building extensible, stream-able, componentized apps</a></td>
+        <td>Nextgen UWP app distribution: Building extensible, stream-able, componentized apps</td>
     </tr>
     <tr>
         <td>Divide and group content to enable streaming install</td>
@@ -1622,7 +1622,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </tr>
     <tr>
         <td>Learn how to use Windows SDK for Google Analytics (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics">Getting started with Windows SDK for Google Analytics</a></td>
+        <td>Getting started with Windows SDK for Google Analytics</td>
     </tr>
     <tr>
         <td>Use Facebook App Installs Ads to promote your game to Facebook users</td>
@@ -1630,7 +1630,7 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     </tr>
     <tr>
         <td>Learn how to use Facebook App Installs Ads (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-Facebook-App-Install-Ads">Getting started with Windows SDK for Facebook</a></td>
+        <td>Getting started with Windows SDK for Facebook</td>
     </tr>
     <tr>
         <td>Use Vungle to add video ads into your games</td>
@@ -1720,7 +1720,7 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </tr>
     <tr>
         <td>Learn how to integrate cross-platform Xbox Live experiences in UWP games (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005">Xbox Live Creators Program</a></td>
+        <td>Xbox Live Creators Program</td>
     </tr>
 </table>
 
@@ -1757,19 +1757,19 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </tr>
     <tr>
         <td>Overview of Xbox Live game development (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">Developing with Xbox Live for Windows 10</a></td>
+        <td>Developing with Xbox Live for Windows 10</td>
     </tr>
     <tr>
         <td>Cross-platform matchmaking (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live Multiplayer: Introducing services for cross-platform matchmaking and gameplay</a></td>
+        <td>Xbox Live Multiplayer: Introducing services for cross-platform matchmaking and gameplay</td>
     </tr>
     <tr>
         <td>Cross-device gameplay in Fable Legends (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Fable Legends: Cross-device Gameplay with Xbox Live</a></td>
+        <td>Fable Legends: Cross-device Gameplay with Xbox Live</td>
     </tr>
     <tr>
         <td>Xbox Live stats and achievements (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">Best Practices for Leveraging Cloud-Based User Stats and Achievements in Xbox Live</a></td>
+        <td>Best Practices for Leveraging Cloud-Based User Stats and Achievements in Xbox Live</td>
     </tr>
 </table>
 
@@ -1786,14 +1786,14 @@ Xbox Live is a premier gaming network that connects millions of gamers across th
     </tr>
     <tr>
         <td>Indie game development (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">New Opportunities for Independent Developers</a></td>
+        <td>New Opportunities for Independent Developers</td>
     </tr>
     <tr>
         <td>Considerations for multi-core mobile devices (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">Sustained Gaming Performance in multi-core mobile devices</a></td>
+        <td>Sustained Gaming Performance in multi-core mobile devices</td>
     </tr>
     <tr>
         <td>Developing Windows 10 desktop games (video)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">PC Games for Windows 10</a></td>
+        <td>PC Games for Windows 10</td>
     </tr>
 </table>

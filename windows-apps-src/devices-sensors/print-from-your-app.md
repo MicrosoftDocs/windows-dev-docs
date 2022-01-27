@@ -416,5 +416,5 @@ When printing a subset of pages, there are several ways to show the content in t
 ## Related topics
 
 * [Design guidelines for printing](./printing-and-scanning.md)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* //Build 2015 video: Developing apps that print in Windows 10
 * [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)

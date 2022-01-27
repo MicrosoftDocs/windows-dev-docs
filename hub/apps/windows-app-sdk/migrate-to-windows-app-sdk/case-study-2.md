@@ -320,8 +320,6 @@ Confirm that you can build the target solution (but don't run yet).
 
 3. In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and definitions of the placeholder **MyProperty** and **myButton_Click**, leaving only the constructor.
 
-Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
-
 ## Migration changes needed for threading model difference
 
 The two changes in this section are necessary due to a threading model difference between UWP and the Windows App SDK, as described in [ASTA to STA threading model](guides/threading.md#asta-to-sta-threading-model). Here are brief descriptions of the causes of the issues, and then a way to resolve each.
@@ -364,7 +362,9 @@ Here's the code to change:
 ```
 // Photo.h
 ...
-Photo(...) : ...
+Photo(Photo(Windows::Storage::FileProperties::ImageProperties const& props,
+    ...
+    ) : ...
 {
 	if (m_imageProperties.Title() != L"")
 	{
@@ -378,6 +378,8 @@ hstring ImageTitle() const
 }
 ...
 ```
+
+Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
 
 ## Known issues
 

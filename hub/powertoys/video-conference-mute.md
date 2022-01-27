@@ -18,7 +18,7 @@ Quickly mute your microphone (audio) and turn off your camera (video) with a sin
 
 The default shortcuts to use Video Conference Mute are:
 
-- <kbd>⊞ Win</kbd>+<kbd>N</kbd> to toggle both audio and video at the same time
+- <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> to toggle both audio and video at the same time
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> to toggle microphone
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> to toggle camera
 

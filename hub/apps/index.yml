@@ -17,16 +17,16 @@ highlightedContent:
    items:
    - title: App development options
      itemType: overview
-     url: /get-started/index
+     url: ./get-started/index.md
    - title: Create a WinUI 3 app
      itemType: quickstart
-     url: /winui/winui3/create-your-first-winui3-app
+     url: ./winui/winui3/create-your-first-winui3-app.md
    - title: What is the Windows App SDK?
      itemType: concept
-     url: /windows-app-sdk/index
+     url: ./windows-app-sdk/index.md
    - title: Windows App SDK Release Notes
      itemType: whats-new 
-     url: /windows-app-sdk/stable-channel
+     url: ./windows-app-sdk/stable-channel.md
    - title: Download Visual Studio
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
@@ -118,4 +118,4 @@ additionalContent:
         - title: .NET
           summary: Engage with .NET open source projects including .NET Core, WPF, Windows Forms, and much more.
           url: https://github.com/microsoft/dotnet
-  footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](https://aka.ms/OneDevMinute) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"
+  footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](/shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

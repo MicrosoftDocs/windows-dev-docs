@@ -444,6 +444,6 @@ Handle changes that happen when the user or the app changes the settings of the 
 - [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 - [Get current location](get-location.md)
 - [Design guidelines for location-aware apps](./guidelines-and-checklist-for-detecting-location.md)
-- [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+- Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
 - [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 - [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

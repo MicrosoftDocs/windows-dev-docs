@@ -18,13 +18,13 @@ Some Windows Runtime (WinRT) APIs are not supported in desktop apps. For more in
 
 There are several options for .NET projects:
 
-* Starting in .NET 5, you can add a Target Framework Moniker (TFM) to your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
-* For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
+* Starting in .NET 5, you can specify the Target Framework Moniker (TFM) in your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
+* For earlier versions of .NET, you can install the [`Microsoft.Windows.SDK.Contracts`](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
 * If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
 ### .NET 5 and later: Use the Target Framework Moniker option
 
-This option is supported only in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see the blog post [Calling Windows APIs in .NET5](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+This option is supported only in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. By specifying a Windows OS version-specific TFM in the project file, a reference is added to the appropriate [Windows SDK targeting package](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref). For more background info about this scenario, see the blog post [Calling Windows APIs in .NET 5](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file will look similar to this.
 

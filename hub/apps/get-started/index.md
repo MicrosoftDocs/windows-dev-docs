@@ -11,7 +11,10 @@ ms.localizationpriority: medium
 
 This article contains all the information you need to get started building apps for the Windows desktop environment.
 
-When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features. 
+When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
+
 
 ## Create a WinUI 3 app
 

@@ -1,17 +1,15 @@
 ---
 title: What's New in Windows 10, build 19041
-description: Windows 10 build 18362 and new developer tools provide the tools, features, and experiences powered by Windows 10.
+description: New developer features in Windows 10 build 19041
 keywords: what's new, whats new, Windows, Windows 10, update, updates, features, new, newest, developers, 19041, may
-ms.date: 05/12/2020
+ms.date: 01/10/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # What's New for developers in Windows 10 build 19041
 
-Windows 10 build 19041 (also known as SDK version 2004), in combination with Visual Studio 2019 and related tools and features, provide you with everything you need to create remarkable Windows apps. [Install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
-
-This is a collection of new and improved features and guidance of interest to Windows developers in this release. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 build 19041 API changes](windows-10-build-19041-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers).
+This is a collection of articles providing information and guidance on features added in Windows 10 build 19041 (also known as Version 2004). For a full list of new namespaces added to the Windows SDK, see the [Windows 10 build 19041 API changes](windows-10-build-19041-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers).
 
 ## Windows 10 apps
 

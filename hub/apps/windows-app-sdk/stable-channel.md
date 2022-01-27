@@ -58,18 +58,21 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 **Important limitations**:
 
 - Known issues for **both packaged and unpackaged WinUI applications**:
-  - *Run-time error in C++ apps that reference a C++ Windows Runtime Component:* To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:
+  - *Run-time error in C++ or C# apps that reference a C++ Windows Runtime Component:* 
+    - To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:
 
-    ```xml
-    <Target Name="GetPriIndexName">
-    <PropertyGroup>
-        <!-- Winmd library targets use the default root namespace of the project for the App package name -->
-        <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
-        <!-- If RootNamespace is empty fall back to TargetName -->
-        <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
-    </PropertyGroup>
-    </Target>
-    ``` 
+      ```xml
+      <Target Name="GetPriIndexName">
+      <PropertyGroup>
+          <!-- Winmd library targets use the default root namespace of the project for the App package name -->
+          <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
+          <!-- If RootNamespace is empty fall back to TargetName -->
+          <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
+      </PropertyGroup>
+      </Target>
+      ```
+
+     - The expected error will be similar to *WinRT originate error - 0x80004005 : 'Cannot locate resource from 'ms-appx:///BlankPage.xaml'.'.*
 
 - Known issues for **WinUI applications with Single-project MSIX** (Blank App, Packaged template):
   - *Missing Package & Publish menu item until you restart Visual Studio:* When creating a new app with Single-project MSIX in 
@@ -100,7 +103,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](../winui/winui3/get-started-winui3-for-desktop.md)
+- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
 
@@ -241,12 +244,12 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 -  **Subsequent language VSIX fails to install into Visual Studio 2019 when multiple versions of Visual Studio 2019 are installed.** If you have multiple versions of Visual Studio 2019 installed (e.g. Release and Preview) and then install the Windows App SDK VSIX for both C++ *and* C#, the second installation will fail. To resolve, uninstall the Single-project MSIX Packaging Tools for Visual Studio 2019 after the first language VSIX. View [this feedback](https://developercommunity.visualstudio.com/t/Installation-of-a-VSIX-into-both-Release/1582487?entry=myfeedback) for additional information about this issue.
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, then use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
-
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
 ## Version 0.8
 
@@ -257,6 +260,15 @@ The latest available release of the stable channel is the servicing release 0.8.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+
+### Version 0.8.6
+
+This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release. 
+
+To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (either .NET SDK 5.0.404 or later, or .NET SDK 5.0.210 or later). You can now download the latest .NET 5 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0). If you do not have the minimum required version of the .NET SDK installed, you will see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
+
+#### Bug Fixes
+For a detailed list of the performance improvements, see the [C#/WinRT 1.4.1 release notes](https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1). 
 
 ### Version 0.8.5
 

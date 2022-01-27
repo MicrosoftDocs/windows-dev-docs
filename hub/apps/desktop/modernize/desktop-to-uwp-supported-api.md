@@ -11,7 +11,7 @@ ms.custom: 19H1
 
 # Windows Runtime APIs not supported in desktop apps
 
-Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET 5 and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
+Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop apps (.NET and native C++), there are two main sets of WinRT APIs that are not supported in desktop apps or have restrictions:
 
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require [package identity](modernize-packaged-apps.md). These APIs are only supported in desktop apps that are packaged using [MSIX](/windows/msix/).
@@ -19,7 +19,7 @@ Although most [Windows Runtime (WinRT) APIs](/uwp/api/) can be used by desktop a
 This article provides details about both of these sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the unsupported APIs in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
-> Starting with the .NET 5.0.205 SDK and .NET 5.0.302 SDK releases, apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
+> Apps using .NET 5 or later can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. These classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md). Note that these classes require the .NET 5.0.205 SDK or later.
 
 This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API and and provide details about what you are trying to achieve by using it.
 
@@ -44,7 +44,7 @@ The following WinRT classes are not supported in desktop apps.
 
 Many WinRT classes have a static `GetForCurrentView` method or `CreateForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `XxxForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `XxxForCurrentView` methods are supported either. Note that some unsupported `XxxForCurrentView` methods will not only return **null**, but will also throw exceptions.
 
-For those classes below that have a COM interface alternative API listed, C# developers on .NET 5 or later can [consume these WinRT COM interfaces](winrt-com-interop-csharp.md) starting in the July 2021 .NET 5 SDK update.
+For those classes below that have a COM interface alternative API listed, C# developers on .NET 5 or later can consume these WinRT COM interfaces (see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md)) starting in the July 2021 .NET 5 SDK update.
 
 > [!NOTE]
 > One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
@@ -75,7 +75,7 @@ The following classes are not supported in desktop apps because they have a `Get
 | [PlayToManager](/uwp/api/windows.media.playto.playtomanager.getforcurrentview) | Use the [IPlayToManagerInterop](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop) COM interface instead (in playtomanagerinterop.h). |
 | [PointerVisualizationSettings](/uwp/api/windows.ui.input.pointervisualizationsettings) | None |
 | [Print3DManager](/uwp/api/windows.graphics.printing3d.print3dmanager) | Use the [IPrinting3DManagerInterop](/windows/win32/api/print3dmanagerinterop/nn-print3dmanagerinterop-iprinting3dmanagerinterop) COM interface instead (in print3dmanagerinterop.h). |
-| [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h). |
+| [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Use the [IPrintManagerInterop](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop) COM interface instead (in printmanagerinterop.h).<br/><br/> **Note:** PrintManager is currently not supported in WinUI 3 apps. |
 | [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
 | [RadialContoller](/uwp/api/windows.ui.input.radialcontroller) | Use the [IRadialControllerInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop) COM interface instead (in radialcontrollerinterop.h). |
 | [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration) | Use the [IRadialControllerConfigurationInterop](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) COM interface instead (in radialcontrollerinterop.h). |
@@ -97,8 +97,30 @@ Some WinRT classes require a [CoreWindow](/uwp/api/windows.ui.core.corewindow) o
 
 However, some of these classes implement the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface, which provides a way to use them in desktop apps. This interface enables you to specify the owner window for the operations that will be performed using the class. Examples of these classes include [PopupMenu](/uwp/api/Windows.UI.Popups.PopupMenu) and [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker). For more details, including a list of more WinRT classes that implement this interface, see [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
 
-The following example demonstrates how to use the **IInitializeWithWindow** interface to specify the owner window for the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class.
+The following examples demonstrate how to use the **IInitializeWithWindow** interface to specify the owner window for the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class.
 
+#### [C# (.NET 5 and later)](#tab/csharp)
+
+> [!NOTE]
+> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md).
+
+In the call to `GetWindowHandle(this)`, the object you pass must be a Window (either a WinUI 3 Window, a WPF Window, or a WinForms Window). In the example below, we assume the code is being called from the Window code-behind, which is why `this` is used as the parameter. If you are calling this code from another file, you need to pass a reference to the window.
+
+```csharp
+var filePicker = new FileOpenPicker();
+
+// Get the current window's HWND by passing in a reference to the Window object
+var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+// Associate the HWND with the file picker
+WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hwnd);
+
+// Use file picker like normal!
+filePicker.FileTypeFilter.Add("*");
+var file = await filePicker.PickSingleFileAsync();
+```
+
+#### [C++](#tab/cpp)
 ```cpp
 #include <shobjidl.h>
 #include <winrt/windows.storage.pickers.h>
@@ -113,9 +135,7 @@ ShowFilePickerAsync(HWND hwnd)
 }
 ```
 
-> [!NOTE]
-> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call WinRT COM interop interfaces from .NET 5+ apps](winrt-com-interop-csharp.md).
-
+---
 
 ### Unsupported members
 
