@@ -301,6 +301,7 @@ items:
           - name: "Remove outdated Windows App SDK runtime versions"
             href: windows-app-sdk/remove-windows-app-sdk-versions.md
   - name: API reference
+    href: reference/index.md
     items:
       - name: Windows SDK API reference
         items: 
