@@ -20,12 +20,21 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
 ##### Abra
 The following table lists various Windows app samples repositories along with a description. 
 
+##### Abra2
+The following table lists various Windows app samples repositories along with a description. 
+
 ### B
 
 ##### Babra
 The following table lists various Windows app samples repositories along with a description. 
 
+##### Babra2
+The following table lists various Windows app samples repositories along with a description. 
+
 ### C
 
 ##### Cadabra
+The following table lists various Windows app samples repositories along with a description. 
+
+##### Cadabra2
 The following table lists various Windows app samples repositories along with a description. 
