@@ -19,6 +19,9 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 
 ## Keyboard shortcuts
 
+> [!TIP]
+> You can use the [Keyboard Manager](https://docs.microsoft.com/en-us/windows/powertoys/keyboard-manager) from [Microsoft PowerToys](https://aka.ms/getpowertoys) to remap Windows shortcuts to the shortcuts you're used to use.
+
 | **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Copy | Command+C | Ctrl+C |
