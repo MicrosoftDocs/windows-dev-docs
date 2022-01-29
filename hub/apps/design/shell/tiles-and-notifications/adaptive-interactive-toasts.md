@@ -955,35 +955,10 @@ See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for in
 
 To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a **Scenario** value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
 
-* **Urgent**
 * **Reminder**
 * **Alarm**
 * **IncomingCall** 
-
-### Important Notifications
-Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
-
-![Important toast notification](images/important-toast-notification.png)
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```csharp
-new ToastContentBuilder()
-    .SetToastScenario(ToastScenario.Urgent)
-    ...
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast scenario="urgent" launch="app-defined-string">
-
-    ...
-
-</toast>
-```
-
----
+* **Urgent**
 
 ### Reminders
 In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
@@ -1059,7 +1034,30 @@ new ToastContentBuilder()
 
 ---
 
+### Important Notifications
+Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
 
+![Important toast notification](images/important-toast-notification.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Urgent)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="urgent" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
 
 ## Localization and accessibility
 
