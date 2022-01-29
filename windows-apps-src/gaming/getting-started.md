@@ -12,7 +12,7 @@ localizationpriority: medium
 This article is a getting started guide for creators who want to develop games on Windows or Xbox. 
 
 Here are some questions to help you find the info you need:
-* Are you an experienced game developer and want all the details? See the [Windows 10 game development guide](e2e.md).
+* Are you an experienced game developer and want all the details? See the [Windows game development guide](e2e.md).
 * Completely new to coding? Something fun like the [Minecraft Hour of Code tutorials](https://code.org/minecraft) might be of interest.
 * Just looking for great games to play? Check out the [Microsoft Store](https://www.microsoft.com/store).
 * Ready to start developing great games for Windows or Xbox?  You’re in the right place!
@@ -27,7 +27,7 @@ Make sure you have Windows 10 installed on your device and have the latest updat
 
 Install a suitable IDE like Visual Studio. Visual Studio Community 2017 is available for free download. For more information, see [Visual Studio downloads](https://visualstudio.microsoft.com/downloads/).
 
-If you plan to use a game engine and other middleware, see [Bridges, game engines, and middleware](e2e.md#bridges-game-engines-and-middleware) section in the [Windows 10 game development guide](e2e.md). For information about developing Windows and Xbox games using a specific game engine, you'll need to go to the game engine's documentation.
+If you plan to use a game engine and other middleware, see [Bridges, game engines, and middleware](e2e.md#bridges-game-engines-and-middleware) section in the [Windows game development guide](e2e.md). For information about developing Windows and Xbox games using a specific game engine, you'll need to go to the game engine's documentation.
 
 ### Step 2: Prepare your hardware for development
 
@@ -65,7 +65,7 @@ For more information, see [Publish Windows apps and games](../publish/index.md).
 
 ## Useful links
 
-* [Windows 10 game development guide](e2e.md)
+* [Windows game development guide](e2e.md)
 * [What's a UWP app?](../get-started/universal-application-platform-guide.md)
 * [Using cloud services for UWP games](cloud-for-games.md)
 * [Making games accessible](accessibility-for-games.md)
