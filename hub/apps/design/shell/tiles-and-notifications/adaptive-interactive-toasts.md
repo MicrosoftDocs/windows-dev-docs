@@ -1035,7 +1035,12 @@ new ToastContentBuilder()
 ---
 
 ### Important Notifications
+
+> [!IMPORTANT]
+> **Requires**: You must be running Windows Insider Preview Build 22546 or higher to use important notifications.
+
 Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
+
 
 ![Important toast notification](images/important-toast-notification.png)
 
