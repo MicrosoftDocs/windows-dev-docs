@@ -15,7 +15,7 @@ ms.collection: windows11
 The following glossary of terms is meant to promote a common vocabulary among Windows developers.
 
 <!-- goal: 1-2 sentences for each, with a comment on when it matters. 
-Also list related questions under each term, and in terms, list related questions.
+Link to related resources.
 -->
 
 
