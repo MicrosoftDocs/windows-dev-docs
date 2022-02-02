@@ -1,6 +1,6 @@
 ---
 title: PowerToys File Explorer add-ons utility for Windows
-description: A File Explorer add on that enables different preview pane and thumbnail renderers for different file types.
+description: A File Explorer add-on that enables different preview pane and thumbnail renderers for different file types.
 ms.date: 02/02/2022
 ms.topic: article
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, File Explorer, Monaco]
 
 # File Explorer add-ons utility
 
-File Explorer add-ons currently includes:
+File Explorer add-ons currently include:
 
 - Preview Pane rendering for:
   - SVG icons (.svg)
@@ -25,7 +25,7 @@ File Explorer add-ons currently includes:
 
 ## Preview Pane
 
-Preview Pane is an existing feature in the Windows File Explorer which shows a lightweight, rich, read-only preview of the file's contents in the view's reading pane. PowerToys adds four extensions: Markdown, SVG, PDF and G-Code. Additionally, PowerToys adds support for source code files (for over 150 file extensions).
+Preview Pane is an existing feature in the Windows File Explorer which shows a lightweight, rich, read-only preview of the file's contents in the view's reading pane. PowerToys adds four extensions: Markdown, SVG, PDF, and G-code. PowerToys also adds support for source code files (for more than 150 file extensions).
 
 ### Enabling Preview Pane
 
@@ -38,16 +38,16 @@ To enable, first ensure that in the PowerToys Settings all are set to **On**.
 
 **Windows 10:**
 
-Next, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, then select **Preview Pane**.
+Next, in Windows 10, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, and then select **Preview Pane**.
 
-![PowerToys Preview Pane Demo](../images/powertoys-fileexplorer.gif)
+![PowerToys Preview Pane Demo for Windows 10.](../images/powertoys-fileexplorer.gif)
 
 **Windows 11:**
 
-Next, open Windows File Explorer, open the **View** menu in the File Explorer ribbon, then hover **Show**, then select **Preview pane**.
+In Windows 11, in Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
 
-![PowerToys Preview Pane Demo](../images/powertoys-fileexplorer-win11.gif)
+![PowerToys Preview Pane Demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
 
 ## Thumbnail preview
 
-Showing thumbnails is a built-in Windows feature. PowerToys adds three extensions: SVG, PDF and G-Code.
+Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds three extensions: SVG, PDF, and G-code.
