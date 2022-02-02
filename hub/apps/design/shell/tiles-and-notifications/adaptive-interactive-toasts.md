@@ -623,16 +623,17 @@ To learn how to implement this, see [Toast pending update](toast-pending-update.
 ![Toast with pending update](images/toast-pendingupdate.gif)
 
 
-### Context menu actions
+## Context menu actions
 
-**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast from within Action Center. Note that this menu only appears when right clicked from Action Center. It does not appear when right clicking a toast popup banner.
+**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast notification or selects the context menu icon.
 
 > [!NOTE]
 > On older devices, these additional context menu actions will simply appear as normal buttons on your toast.
 
-The additional context menu actions you add (such as "Change location") appear above the two default system entries.
+The additional context menu actions you add (such as "Mute group chat for 1 hour") appear above the two default system entries.
 
-<img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
+![Toast with context menu](images/toast-contextmenu.png)
+
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -647,7 +648,7 @@ ToastContent content = new ToastContent()
     {
         ContextMenuItems =
         {
-            new ToastContextMenuItem("Change location", "action=changeLocation")
+            new ToastContextMenuItem("Mute group chat for 1 hour", "action=muteId")
         }
     }
 };
@@ -664,8 +665,8 @@ ToastContent content = new ToastContent()
 
         <action
             placement="contextMenu"
-            content="Change location"
-            arguments="action=changeLocation"/>
+            content="Mute group chat for 1 hour"
+            arguments="action=muteId"/>
 
     </actions>
 
