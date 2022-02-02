@@ -1,7 +1,7 @@
 ---
 title: PowerToys File Explorer add-ons utility for Windows
 description: A File Explorer add on that enables different preview pane and thumbnail renderers for different file types.
-ms.date: 01/23/2022
+ms.date: 02/02/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Monaco]
