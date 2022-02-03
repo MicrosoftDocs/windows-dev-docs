@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/15/2021
+ms.date: 02/03/2022
 ms.topic: how-to
 ---
 
@@ -132,7 +132,7 @@ ___
 
 ## Application-level commands
 
-### Quit ([Preview](https://aka.ms/terminal-preview))
+### Quit
 
 This closes all open terminal windows. A confirmation dialog will appear in the current window to ensure you'd like to close all windows.
 
@@ -143,9 +143,6 @@ This closes all open terminal windows. A confirmation dialog will appear in the 
 ```json
 { "command": "quit" }
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Close window
 
@@ -398,11 +395,15 @@ This creates a new tab. Without any arguments, this will open the default profil
 | ---- | --------- | ------- | ----------- |
 | `commandline` | Optional | Executable file name as a string | Executable run within the tab. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the tab will open. |
+| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator-preview) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
 | `tabTitle` | Optional | String | Title of the new tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
 | `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. In order to enter a new tab title and have that title persist, this must be set to true. |
+
+> [!IMPORTANT]
+> The `elevate` property is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Open next tab
 
@@ -796,6 +797,7 @@ This halves the size of the active pane and opens another. Without any arguments
 | `split` | Required | `"vertical"`, `"horizontal"`, `"auto"`, `"up"`, `"right"`, `"down"`, `"left"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
 | `commandline` | Optional | Executable file name as a string | Executable run within the pane. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the pane will open. |
+| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator-preview) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
 | `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
@@ -805,7 +807,7 @@ This halves the size of the active pane and opens another. Without any arguments
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
 
 > [!IMPORTANT]
-> The `"up"`, `"right"`, `"down"`, and `"left"` options for `split` are only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> The `elevate` property is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -837,7 +839,7 @@ This copies the selected terminal content to your clipboard. If no selection exi
  | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
  | `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `"copyFormatting"` behavior is inherited. |
 
-### Keyboard Selection ([Preview](https://aka.ms/terminal-preview))
+### Keyboard selection
 
 This modifies an existing selection. If no selection exists, the key chord is sent directly to the terminal.
 
@@ -873,9 +875,6 @@ This modifies an existing selection. If no selection exists, the key chord is se
 | ---- | --------- | ------- | ----------- |
 | `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the selection endpoint will move. |
 | `mode` | Required | `"char"`, `"word"`, `"view"`, `"buffer"` | Controls how much the endpoint moves by. |
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Paste
 
@@ -986,6 +985,24 @@ This scrolls the screen down to the bottom of the input buffer.
 
 <br />
 
+### Clear buffer
+
+This action can be used to manually clear the terminal buffer. This is useful for scenarios where you're not sitting at a command-line shell prompt and can't easily run `Clear-Host`/`cls`/`clear`.
+
+**Command name:** `clearBuffer`
+
+**Default bindings:**
+
+```json
+{ "command": { "action": "clearBuffer", "clear": "all" } }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `clear` | Optional | `"screen"`, `"scrollback"`, `"all"` | What part of the screen to clear. <ul><li>`"screen"`: Clear the terminal viewport content. Leaves the scrollback untouched. Moves the cursor row to the top of the viewport (unmodified).</li><li>`"scrollback"`: Clear the scrollback. Leaves the viewport untouched.</li><li>`"all"` (_default_): Clear the scrollback and the visible viewport. Moves the cursor row to the top of the viewport. </li></ul> |
+
 ___
 
 ## Visual adjustment commands
@@ -1024,6 +1041,31 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+numpad_0" }
 ```
 
+### Adjust opacity ([Preview](https://aka.ms/terminal-preview))
+
+This changes the opacity of the window. If `relative` is set to true, it will adjust the opacity relative to the current opacity. Otherwise, it will set the opacity directly to the given `opacity`
+
+**Command name:** `adjustOpacity`
+
+**Default bindings:**
+
+```json
+{ "command": { "action": "adjustOpacity", "relative": false, "opacity": 0 } },
+{ "command": { "action": "adjustOpacity", "relative": false, "opacity": 25 } },
+{ "command": { "action": "adjustOpacity", "relative": false, "opacity": 50 } },
+{ "command": { "action": "adjustOpacity", "relative": false, "opacity": 100 } }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `opacity` | Optional | Integer | How opaque the terminal should become or how much the opacity should be changed by, depending on the value of `relative` |
+| `relative` | Optional | Boolean | If true, then adjust the current opacity by the given `opacity` parameter. If false, set the opacity to exactly that value. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
 ### Toggle pixel shader effects
 
 This toggles any pixel shader effects enabled in the terminal. If the user specified a valid shader with `experimental.pixelShaderPath`, this action will toggle that shader on/off. This will also toggle the "retro terminal effect", which is enabled with the profile setting `experimental.retroTerminalEffect`.
@@ -1058,6 +1100,31 @@ Changes the active color scheme.
 ```
 
 <br />
+
+___
+
+## Buffer exporting
+
+### Export buffer ([Preview](https://aka.ms/terminal-preview))
+
+This allows the user to export the text of the buffer to a file. If the file doesn't exist, it will be created. If the file already exists, its contents will be replaced with the Terminal buffer text.
+
+**Command name:** `exportBuffer`
+
+**Default bindings:**
+
+```json
+{ "command": { "action": "exportBuffer" } }
+```
+
+#### Actions
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `path` | Optional | String | If provided, then the Terminal will export the buffer contents to the given file. Otherwise, the terminal will open a file picker to choose the file to export to. |
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ___
 
@@ -1187,7 +1254,7 @@ If you'd like to change the behavior of the `quakeMode` action, we recommended c
 
 ___
 
-## Run multiple actions ([Preview](https://aka.ms/terminal-preview))
+## Run multiple actions
 
 This action allows the user to bind multiple sequential actions to one command. 
 
@@ -1220,9 +1287,6 @@ This action allows the user to bind multiple sequential actions to one command.
         ]
 }}
 ```
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
