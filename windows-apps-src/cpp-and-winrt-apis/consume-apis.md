@@ -88,7 +88,7 @@ Uri contosoUri{ L"http://www.contoso.com" };
 WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
 ```
 
-This convenience is achieved via a query for the appropriate interface. But you're always in control. You can opt to give away a little of that convenience for a little performance by retrieving the IStringable interface yourself and using it directly. In the code example below, you obtain an actual IStringable interface pointer at run time (via a one-time query). After that, your call to **ToString** is direct, and avoids any further call to **QueryInterface**.
+This convenience is achieved via a query for the appropriate interface. But you're always in control. You can opt to give away a little of that convenience for a little performance by retrieving the IStringable interface yourself and using it directly. In the code example below, you obtain an actual IStringable interface pointer at run time (via a one-time query). After that, your call to **ToString** is direct, and avoids any further call to [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)).
 
 ```cppwinrt
 ...
@@ -388,7 +388,7 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 
 - You can access the members of all of the interfaces of a projected type.
 - You can return a projected type to a caller.
-- Projected types and interfaces derive from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on a projected type or interface to query for other projected interfaces, which you can also either use or return to a caller. The **as** member function works like [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)).
+- Projected types and interfaces derive from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on a projected type or interface to query for other projected interfaces, which you can also either use or return to a caller. The **as** member function works like [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)).
 
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
