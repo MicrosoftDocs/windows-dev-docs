@@ -3,7 +3,7 @@ title: Windows Terminal General Profile Settings
 description: Learn how to customize the general profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 04/14/2021
+ms.date: 02/03/2022
 ms.topic: how-to
 ---
 
@@ -105,7 +105,32 @@ If set, this will replace the `name` as the title to pass to the shell on startu
 **Accepts:** String
 
 <br />
+___
 
+## Automatically run as Administrator ([Preview](https://aka.ms/terminal-preview))
+
+If set, this profile will automatically open up in an "elevated" window (running as Administrator) by default. If you run this profile from an unelevated window, then a new elevated terminal window will be created to host this profile. If you launch this profile from an already elevated window, then it will open as a new tab.
+
+When this property is set to `false`, opening this profile in an elevated window will not launch an _unelevated_ window to host this profile. The profile will simply open in the elevated window, running as Administrator.
+
+If you set this property in `profiles.defaults`, then _all_ profiles will launch as Administrator by default, unless overrided by specifically setting this to false.
+
+This property can be overridden in the [`newTab`](./actions.md#new-tab) and [`splitPane`](./actions.md#split-a-pane) actions, with the `elevate` property.
+
+Elevated and unelevated tabs cannot exist in the same terminal window. For more details, please see the [FAQ](./../faq.yml#can-you-have-have-tabs-running-as-administrator--elevated--in-unelevated-terminal-windows).
+
+**Property name:** `elevate`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+<br />
 ___
 
 ## Hide profile from dropdown

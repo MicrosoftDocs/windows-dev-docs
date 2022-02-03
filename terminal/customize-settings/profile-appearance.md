@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Profile Settings
 description: Learn how to customize the appearance profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/08/2021
+ms.date: 02/03/2022
 ms.topic: how-to
 ---
 
@@ -328,7 +328,7 @@ ___
 
 ## Transparency
 
-### Opacity ([Preview](https://aka.ms/terminal-preview))
+### Opacity
 
 :::row:::
 :::column span="":::
@@ -356,7 +356,7 @@ When `useAcrylic` is set to `true`, the window will use the acrylic material to 
 > Prior to Windows Terminal version 1.12, this setting was `acrylicOpacity`, was a float that accepted 0.0-1.0 which defaulted to 0.5, and the opacity would only apply if `useAcrylic` was set to true. On 1.12+, `acrylicOpacity` will gracefully continue to work as the equivalent `opacity` value.
 
 > [!IMPORTANT]
-> Unblurred opacity (`"useAcrylic": false`) only works on Windows 11 or above with [Windows Terminal Preview](https://aka.ms/terminal-preview).
+> Unblurred opacity (`"useAcrylic": false`) only works on Windows 11.
 
 ### Enable acrylic
 
@@ -462,7 +462,7 @@ This sets the background color of a selection within the profile. This will over
 
 **Accepts:** Color as a string in hex format: `"#rgb"` or `"#rrggbb"`
 
-### Adjust indistinguishable colors ([Preview](https://aka.ms/terminal-preview))
+### Adjust indistinguishable colors
 
 When set to true, this will (when necessary) adjust the foreground color to make it more visible, based on the background color.
 
@@ -473,9 +473,6 @@ When set to true, this will (when necessary) adjust the foreground color to make
 **Accepts:** `true`, `false`
 
 **Default value:** `true`
-
-> [!IMPORTANT]
-> This feature only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Cursor color
 

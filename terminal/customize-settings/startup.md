@@ -3,7 +3,7 @@ title: Windows Terminal Startup Settings
 description: Learn how to customize startup settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/08/2021
+ms.date: 02/03/2022
 ms.topic: how-to
 ---
 
@@ -64,7 +64,7 @@ Note: if the Windows Terminal startup task entry is disabled either by org polic
 
 ___
 
-## Behavior when starting a new terminal session ([Preview](https://aka.ms/terminal-preview))
+## Behavior when starting a new terminal session
 
 When set to `"defaultProfile"`, Windows Terminal will start a new session by opening a single tab with your default profile.
 
@@ -85,9 +85,6 @@ Note: Currently, Windows Terminal will save the following information:
 **Accepts:** `"defaultProfile"`, `"persistedWindowLayout"`
 
 **Default value:** `"defaultProfile"`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

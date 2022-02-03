@@ -3,7 +3,7 @@ metadata:
   title: Windows Terminal FAQ
   description: Frequently asked questions about Windows Terminal, such as how to start terminal in administrator mode, how to save a terminal session, and more.
   ms.topic: troubleshooting
-  ms.date: 01/06/2022
+  ms.date: 02/03/2022
   ms.author: mattwoj
   author: mattwojo
   manager: jken
@@ -86,7 +86,7 @@ sections:
 
       - question: Can I save the layout of all of my open console windows when closing Windows Terminal and restore them when starting a new session?
         answer: |
-          Yes! As of [Windows Terminal Preview v1.12.2922.0](https://github.com/microsoft/terminal/releases/tag/v1.12.2922.0), you can now save window pane layouts upon closing a terminal session with the [firstWindowPreference](./customize-settings/startup.md#behavior-when-starting-a-new-terminal-session-preview) global setting.
+          Yes! As of [Windows Terminal Preview v1.12.2922.0](https://github.com/microsoft/terminal/releases/tag/v1.12.2922.0), you can now save window pane layouts upon closing a terminal session with the [firstWindowPreference](./customize-settings/startup.md#behavior-when-starting-a-new-terminal-session) global setting.
 
       - question: What is being planned for Windows Terminal? Is there a development roadmap or feature request list that I can contribute to?
         answer: |
@@ -100,6 +100,10 @@ sections:
         answer: |
          The PSReadLine module is responsible for setting the colors and behavior of your PowerShell command line. You can set colors for specific attributes of your PowerShell prompt by using the [Set-PSReadLineOption, see Example 4: Set multiple color options](/powershell/module/psreadline/set-psreadlineoption#example-4--set-multiple-color-options).
         
+      - question: Can you have have tabs running as Administrator (elevated) in unelevated Terminal windows?
+        answer: |
+          No. For more technical details, refer to [this spec](https://github.com/microsoft/terminal/blob/main/doc/specs/%235000%20-%20Process%20Model%202.0/%231032%20-%20Elevation%20Quality%20of%20Life%20Improvements.md#background) and [this doc](https://github.com/microsoft/terminal/blob/main/doc/Niksa.md#elevation).
+
       # - question: Is there a way to sync your terminal settings across devices?
       #   answer: |
       #     TBD
