@@ -41,7 +41,10 @@ Follow these instructions to configure a C++ project that includes WinUI 3 unpac
 
     After you create the project, you should have a 'Hello World' C++ console app.
 
-2. Next, install the Windows App SDK NuGet package in your project. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**. In the **NuGet Package Manager** window, select the **Browse** tab, and search for **Microsoft.WindowsAppSDK**.
+2. Next, install the Windows App SDK NuGet package in your project. 
+
+    1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**. 
+    2. In the **NuGet Package Manager** window, select the **Browse** tab, and search for **Microsoft.WindowsAppSDK**.
 
 3. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
@@ -142,7 +145,7 @@ Follow these instructions to configure a C# project that includes WinUI 3 unpack
 4. Install the Windows App SDK NuGet package in your project.
 
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
-    2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
+    2. In the **NuGet Package Manager** window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
 
 5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
 
