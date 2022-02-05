@@ -14,8 +14,14 @@ ms.collection: windows11
 
 The following glossary of terms is meant to promote a common vocabulary among Windows developers.
 
-<!-- goal: 1-2 sentences for each, with a comment on when it matters. 
-Link to related resources.
+<!-- 
+    1. List terms for v1 [done]
+    2. Define terms [we are here]
+    3. Align with teams
+    4. Add links to related resources when helpful
+    5. Publish
+    6. Explore terminology standardization with Monica Rush
+
 -->
 
 
