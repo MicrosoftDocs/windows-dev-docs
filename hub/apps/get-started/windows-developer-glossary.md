@@ -55,6 +55,9 @@ TODO
 ##### Managed Apps
 TODO
 
+##### MAUI
+See .NET MAUI below.
+
 ##### MFC
 TODO
 
@@ -62,7 +65,11 @@ TODO
 TODO
 
 ##### MSIX
-A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). See: https://docs.microsoft.com/en-us/windows/msix/overview 
+A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). [Learn more about MSIX](https://docs.microsoft.com/en-us/windows/msix/overview ).
+
+
+##### MVVM
+
 
 
 ### N
@@ -70,8 +77,15 @@ A modern application package format that allows you to easily deploy your Window
 ##### Native Apps
 TODO
 
-##### .NET Maui
+
+##### Native Compilation
 TODO
+
+
+##### .NET MAUI
+.NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [Learn more about .NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/what-is-maui).
+
+ 
 
 
 ### P
@@ -121,7 +135,7 @@ Unpackaged apps don’t use MSIX. They’re typically installed and updated thro
 
 
 ##### UWP
-TODO
+
 
 
 ### V
@@ -160,7 +174,7 @@ An application that can run on Windows. Windows Apps can be built using a variet
 TODO
 
 ##### Windows App SDK
-TODO
+A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP.
 
 ##### Windows Forms
 Otherwise known as WinForms. A thin layer over Windows APIs with minimal layout and styling options. Not being actively developed. WinUI 3 and Win App SDK are the latest and recommended alternatives for new app development.
@@ -194,4 +208,7 @@ TODO
 ### X
 
 ##### XAML islands
+TODO
+
+##### Xamarin
 TODO
