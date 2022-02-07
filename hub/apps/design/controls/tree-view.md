@@ -12,7 +12,7 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5, 19H1
+ms.custom: RS5, 19H1, seo-windows-dev
 ---
 
 # TreeViews in UWP Apps

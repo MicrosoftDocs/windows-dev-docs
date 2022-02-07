@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 12/02/2020
+ms.date: 12/03/2021
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -170,7 +170,7 @@ In this video, Clint Rutkas (PM for PowerToys) walks through how to install and 
 
 ## Known issues
 
-Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. View instructions in the [Report a Bug](reportbug.md) section of these docs. 
+Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. View instructions in the [Report a Bug](reportbug.md) section of these docs.
 
 ## Contribute to PowerToys (Open Source)
 
@@ -190,7 +190,7 @@ PowerToys [release notes](https://github.com/microsoft/PowerToys/releases/) are 
 
 ## PowerToys history
 
-Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found [here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
+Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. An overview of the original PowerToys can be found here: [Using Windows 95 PowerToys](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
 
 ## PowerToys roadmap
 
