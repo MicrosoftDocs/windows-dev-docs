@@ -42,7 +42,7 @@ This will append `$e]9;9;$P$e\` to your current prompt. When cmd evaluates this 
 * the `$e` with the escape character 
 * the `$p` with the current working directory
 
-Note that the above command will only work for the current `cmd.exe` session. To set the value permantently, AFTER running the above command, you'll want to run
+Note that the above command will only work for the current `cmd.exe` session. To set the value permanently, AFTER running the above command, you'll want to run
 
 ```cmd
 setx PROMPT %PROMPT%
