@@ -78,7 +78,9 @@ items:
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
               - name: "Application lifecycle functionality migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
-              - name: "Notifications migration"
+              - name: "Toast notifications"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md
+              - name: "Push notifications"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
               - name: "DirectWrite to DWriteCore migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md

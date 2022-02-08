@@ -11,13 +11,13 @@ ms.localizationpriority: medium
 
 # What is supported when migrating from UWP to WinUI 3
 
-WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that still aren't supported. This topic provides information to ensure that you know whether all the features you need for your are supported before you attempt migration.
+WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that still aren't supported. This article provides information on which features are supported before you attempt migration.
 
 | UWP feature | WinUI 3 status |
 | - | - |
 | Common UI controls | ✅ Supported |
 | MSIX | ✅ Supported |
-| Toast notifications | ✅ Supported |
+| [Toast notifications](guides/toast-notifications.md) | ✅ Supported |
 | Live Tiles (on Windows 10) | ✅ Supported |
 | Distributing via Store | ✅ Supported |
 | MSAL library | ✅ Supported |
