@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 01/24/2022
+ms.date: 02/08/2022
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -844,17 +844,21 @@ The button background color is not applied to the Close button _hover_ and _pres
 
 ### Dim the title bar when the window is inactive
 
+You should make it obvious when your window is active or inactive. At a minimum, you should change the color of the text, icons, and buttons in your title bar.
+
 ### [Windows App SDK](#tab/wasdk)
 
-> **`TODO: Need example`**
+Handle an event to determine the activation state of the window, and update your title bar UI as needed. How you determine the state of the window depends on the UI framework you use for your app.
+
+- **Win32**: Listen and respond to the [WM_ACTIVATE](/windows/win32/inputdev/wm-activate) message.
+- **WPF**: Handle [Window.Activated](/dotnet/api/system.windows.window.activated), [Window.Deactivated](/dotnet/api/system.windows.window.deactivated).
+- **WinForms**: Handle [Form.Activated](/dotnet/api/system.windows.forms.form.activated), [Form.Deactivate](/dotnet/api/system.windows.forms.form.deactivate).
 
 ### [WinUI 3](#tab/winui3)
 
-> **`TODO: Need example`**
+Listen and respond to the [WM_ACTIVATE](/windows/win32/inputdev/wm-activate) message to determine the activation state of the window, and update your title bar UI as needed.
 
 ### [UWP/WinUI 2](#tab/winui2)
-
-You should make it obvious when your window is active or inactive. At a minimum, you should change the color of the text, icons, and buttons in your title bar.
 
 Handle the [CoreWindow.Actived](/uwp/api/windows.ui.core.corewindow.activated) event to determine the activation state of the window, and update your title bar UI as needed.
 
@@ -886,7 +890,7 @@ private void CoreWindow_Activated(CoreWindow sender, WindowActivatedEventArgs ar
 To reset or switch to the system title bar while your app is running, you can call [AppWindowTitleBar.ResetToDefault](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.resettodefault).
 
 ```csharp
-m_AppWindow.TitleBar?.ResetToDefault();
+m_AppWindow.TitleBar.ResetToDefault();
 ```
 
 ### [WinUI 3](#tab/winui3)
