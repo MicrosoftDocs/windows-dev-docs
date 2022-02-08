@@ -1,7 +1,7 @@
 ---
 title: Version adaptive apps
 description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
-ms.date: 05/17/2019
+ms.date: 01/20/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -90,6 +90,30 @@ If your apps Minimum Version is build 15063 (Creators Update) or later, you can 
 
 For more info and examples, see **[Conditional XAML](conditional-xaml.md)**.
 
+### Delay-loaded APIs
+
+The [QueryOptionalDelayLoadedAPI](/windows/win32/api/libloaderapi2/nf-libloaderapi2-queryoptionaldelayloadedapi) function enables Store apps (which are not allowed by policy to call LoadLibrary) to detect whether their delay-loaded function actually was found.
+
+```cpp
+#include <windows.h>
+#include <commdlg.h>
+#include <libloaderapi2.h>
+#include <stdio.h>
+
+EXTERN_C IMAGE_DOS_HEADER __ImageBase;
+#define HMODULE_THISCOMPONENT reinterpret_cast<HMODULE>(&__ImageBase)
+
+int __cdecl main(int argc, char** argv)
+{
+    if (QueryOptionalDelayLoadedAPI(HMODULE_THISCOMPONENT,
+          "comdlg32.dll", "GetOpenFileNameW", 0))
+    {
+        printf("GetOpenFileNameW can be called!\n");
+    }
+    return 0;
+}
+```
+
 ## Test your version adaptive app
 
 When you use version adaptive code or conditional XAML to write a version adaptive app, you need to test it on a device running the Minimum Version and on a device running the Target Version of Windows 10.
@@ -101,4 +125,4 @@ For more info about remote debugging, see [Deploying and debugging UWP apps](dep
 
 - [What's a UWP app](../get-started/universal-application-platform-guide.md)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-- [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 video)
+- API Contracts (Build 2015 video)

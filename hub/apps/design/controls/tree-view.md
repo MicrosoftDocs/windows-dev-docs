@@ -1,11 +1,10 @@
 ---
-description: You can create an expandable tree view by binding the ItemsSource to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
-title: Tree view
+description: TreeView and data binding in UWP.
+title: TreeViews in UWP Apps
 label: Tree view
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 01/11/2022
 ms.topic: article
-ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
 dev-contact: joyate
@@ -16,7 +15,7 @@ dev_langs:
 ms.custom: RS5, 19H1
 ---
 
-# TreeView
+# TreeViews in UWP Apps
 
 The XAML [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 

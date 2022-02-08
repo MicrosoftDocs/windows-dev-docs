@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Windows app silhouettes
 
-Silhouettes indicate a common pattern of relationships between elements such app layering, menus, navigation, commanding and content areas. This article focuses on the common silhouettes as used in several Windows in-box apps.
+Silhouettes indicate a common pattern of relationships between elements such as app layering, menus, navigation, commanding and content areas. This article focuses on the common silhouettes as used in several Windows in-box apps.
 
 Also refer to [Content Basics](content-basics.md) for common arrangements of content and controls.
 

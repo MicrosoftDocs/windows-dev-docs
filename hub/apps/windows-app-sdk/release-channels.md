@@ -49,7 +49,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date  | Latest patch version  | Patch release date | Support level | End of support |
 |---|---|---|---|---|---|
 |1.0| 11/16/2021 | - | - |Current | 11/16/2022 |
-|0.8| 6/24/2021 |0.8.5| 10/11/2021|Current | 6/24/2022 |
+|0.8| 6/24/2021 |0.8.6| 12/14/2021| Current | 6/24/2022 |
 |0.5| 3/29/2021 | 0.5.9 | 8/10/2021 | Maintenance | 11/1/2021 |
 
 ### Servicing  
@@ -100,7 +100,7 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 - The Windows App SDK uses GitHub Issues to track bugs and feature requests. Search the existing issues before filing new issues to avoid duplicates. For new issues, [file your bug or feature request](https://github.com/microsoft/WindowsAppSDK/issues) as a new issue.
 - For help and questions about using the Windows App SDK, search for existing questions or post a new question on our [GitHub Discussions page](https://github.com/microsoft/WindowsAppSDK/discussions).
-- Technical support for the use of the Windows App SDK may be available from Microsoft Customer Support Services (CSS). If you are a Premier or Unified Support customer, reach out to your account manager for further assistance. Otherwise, visit the [Support For Business](https://support.serviceshub.microsoft.com/supportforbusiness/onboarding?origin=%2Fsupportforbusiness%2Fcreate%3FsapId%3D2510d164-8500-6eba-dda3-5b6ade9cad01) site to open a new support case for the Windows App SDK.  
+- Technical support for the use of the Windows App SDK may be available from Microsoft Customer Support Services (CSS). If you're a Premier or Unified Support customer, reach out to your account manager for further assistance. Otherwise, visit the [Support For Business](https://support.serviceshub.microsoft.com/supportforbusiness/onboarding?origin=%2Fsupportforbusiness%2Fcreate%3FsapId%3D2510d164-8500-6eba-dda3-5b6ade9cad01) site to open a new support case for the Windows App SDK.  
 
 ## Related topics
 

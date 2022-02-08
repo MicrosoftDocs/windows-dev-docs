@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
 description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows 10 computers.
-ms.date: 10/22/2020
+ms.date: 11/19/2020
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -139,3 +139,10 @@ The **winget** tool is open source software available on GitHub in the repo [htt
 The source for **winget** is contained in a Visual Studio 2019 C++ solution. To build the solution correctly, install the latest [Visual Studio with the C++ workload](https://visualstudio.microsoft.com/downloads/).
 
 We encourage you to contribute to the **winget** source on GitHub. You must first agree to and sign the Microsoft CLA.
+
+## Troubleshooting
+
+The winget-cli repo maintains a list of common issues and common errors, along with recommendations on how to resolve:
+
+- [common issues -- not recognized, failed to run, App Installer version or PATH variable need updating](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting#common-issues)
+- [common errors -- Error 0x801901a0, 0x80d03002, 0x80070490](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting#common-errors)

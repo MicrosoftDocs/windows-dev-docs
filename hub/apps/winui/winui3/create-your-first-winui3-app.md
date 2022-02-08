@@ -4,8 +4,7 @@ title: Create a new project that uses the Windows App SDK
 ms.date: 10/05/2021
 zone_pivot_groups: winui3-version
 ms.topic: article
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
-ms.localizationpriority: high
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk
 ms.custom: 19H1
 ---
 
@@ -16,7 +15,6 @@ ms.custom: 19H1
 ### Key concepts
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
-
 
 ## Instructions for packaged C# WinUI 3 apps
 
@@ -55,20 +53,11 @@ To create a packaged WinUI 3 desktop app with C# and .NET 5 using Windows App SD
 
         ![Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file.](images/WinUI-csharp-packageproject.png)
 
-7. Enable deployment for your project in **Configuration Manager**. If you do not follow these steps to enable deployment, you will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager".
-
-    1. Select **Build** -> **Configuration Manager**.
-    2. In **Configuration Manager**, click the **Deploy** check box for every combination of configuration and platform (for example, **Debug** and **x86**, **Debug** and **arm64**, **Release** and **x64**, and more).
-        > [!NOTE]
-        > Be sure to use the **Active solution configuration** and **Active solution platform** drop-downs at the top instead of the **Configuration** and **Platform** drop-downs in the same row as the **Deploy** check box.
-
-        ![Enabling Deploy in Configuration Manager](../../windows-app-sdk/images/single-project-configmanager.png)
-
-8. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+7. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
 
     ![Screenshot of the Add New Item dialog box with the Installed > Visual C sharp Items > Win U I selected and the Blank Page option highlighted.](images/winui3-addnewitem.png)
 
-9. Build and run your solution on your development computer to confirm that the app runs without errors.
+8. Build and run your solution on your development computer to confirm that the app runs without errors.
 
 ::: zone-end
 

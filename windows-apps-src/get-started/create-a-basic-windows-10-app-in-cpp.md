@@ -1,37 +1,38 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Create a Hello World app in C++/CX (Windows 10)
-description: With Microsoft Visual Studio 2019, you can use C++/CX to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
+title: Create a "Hello, World!" app using C++/CX
+description: With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
 ms.date: 06/11/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: uwp, windows 10, windows 11
 ms.localizationpriority: medium
 ---
+
 # Create a "Hello, World!" app in C++/CX
 
 > [!IMPORTANT]
 > This tutorial uses C++/CX. Microsoft has released C++/WinRT: an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs. For more information on this language, please see [C++/WinRT](../cpp-and-winrt-apis/index.md).
 
-With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
+With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows with a UI that's defined in Extensible Application Markup Language (XAML).
 
 > [!NOTE]
 > This tutorial uses Visual Studio Community 2019. If you are using a different version of Visual Studio, it may look a little different for you.
 
 ## Before you start
 
--   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows 10. To download, see [Get the tools](https://visualstudio.microsoft.com/downloads/).
--   We assume you have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](../xaml-platform/xaml-overview.md).
--   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
+-   To complete this tutorial, you must use Visual Studio Community, or one of the non-Community versions of Visual Studio, on a computer that's running Windows. To download, see [Get the tools](https://visualstudio.microsoft.com/downloads/).
+-   To follow along, you should have a basic understanding of C++/CX, XAML, and the concepts in the [XAML overview](../xaml-platform/xaml-overview.md).
+-   To follow along, you should use the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
-## Comparing C++ desktop apps to Windows apps
+## Comparing C++ desktop apps to UWP apps
 
-If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of writing apps for the UWP are familiar, but other aspects require some learning.
+If you're coming from a background in Windows desktop programming in C++, then you'll probably find that some aspects of writing apps for the UWP are familiar, but other aspects require some learning.
 
 ### What's the same?
 
--   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code only calls Windows functions that are accessible from the Windows Runtime environment.
+-   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code calls only Windows functions that are accessible from the Windows Runtime environment.
 
--   If you're accustomed to visual designers, you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, you can hand-code your XAML.
+-   If you're accustomed to visual design surfaces, then you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, then you can hand-code your XAML.
 
 -   You're still creating apps that use Windows operating system types and your own custom types.
 
@@ -41,9 +42,9 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 ### What's new?
 
--   The design principles for UWP apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
+-   The design principles for UWP apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great UWP apps incorporate these principles from the very beginning of the planning stage.
 
--   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a Windows Universal app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
+-   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a UWP app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
 
 -   You're primarily programming against a new, easy-to-navigate, object-oriented API, the Windows Runtime, although on Windows devices Win32 is still available for some functionality.
 
@@ -55,7 +56,7 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 ## Hello World Store app in C++/CX
 
-Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, VR devices and so on.
+Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows, devices such as tablets, mobile phones, VR devices and so on.
 
 We'll start with the basics:
 
@@ -391,6 +392,6 @@ Congratulations, you've completed the first tutorial! It taught how to add conte
 
 ## Next steps
 
-If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) and [Porting to the Universal Windows Platform (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
+If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10 or Windows 11. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) and [Porting to the Universal Windows Platform (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
 
 If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app).

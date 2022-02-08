@@ -268,7 +268,7 @@ To ensure authorized access to web services, they must require authentication ev
 
 The **apps** that these developers create then access the API through the proxy offered by Azure API Management. The proxy both provides a layer of obscurity, hiding the actual end-point of the API on the publisher/administrator’s server and can also include additional logic like API translation to ensure the exposed API is kept consistent when a call to one API is redirected to another. It can also use IP filtering to block API calls originating from a specific IP domain or set of domains. Azure API Management also keeps its web services secure by using a set of public keys, called API keys, to authenticate and authorize each API call. When authorization fails, access to the API and the functionality it supports is blocked.
 
-Azure API Management can also reduce the number of API calls to a service (a procedure called throttling) to optimizes the performance of the web service. To learn more, review [Azure API Management](https://azure.microsoft.com/services/api-management/) and [Azure API Management at AzureCon 2015.](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313)
+Azure API Management can also reduce the number of API calls to a service (a procedure called throttling) to optimizes the performance of the web service. To learn more, review [Azure API Management](https://azure.microsoft.com/services/api-management/) and Azure API Management at AzureCon 2015.
 
 ## 4 Data-at-rest security methods
 

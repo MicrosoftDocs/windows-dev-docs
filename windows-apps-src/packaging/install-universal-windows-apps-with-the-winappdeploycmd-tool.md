@@ -118,7 +118,7 @@ Installs the app from MyApp.appx package that is in your PC's Downloads director
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
-Uninstalls the specified package (based on its full name) from a Windows 10 device with an IP address of 192.168.0.1. You can use the list command to see the full names of any packages that are installed on a device.
+Uninstalls the specified package (based on its full name) from a Windows device with an IP address of 192.168.0.1. You can use the list command to see the full names of any packages that are installed on a device.
 
 ``` CMD
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1

@@ -20,7 +20,7 @@ If you're migrating an app to Windows App SDK 1.0 from 0.8 Stable, the breaking 
 - No access to experimental types | API change |
 - Stable [**Microsoft.UI.Input.PointerPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint) added. It replaces **Microsoft.UI.Input.Experimental.ExpPointerPoint**.
   - [**PointerPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint) now references [**Microsoft.UI.Input**](/windows/winui/api/microsoft.ui.input) enums and structs instead of **Windows.UI.\*** enums and structs (for example, [**IPointerPointTransform**](/windows/winui/api/microsoft.ui.input.ipointerpointtransform), [**PointerUpdateKind**](/windows/winui/api/microsoft.ui.input.pointerupdatekind), [**PointerDeviceType**](/windows/winui/api/microsoft.ui.input.pointerdevicetype)).
-  - [**PointerPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint) is now fully agile.
+  - [**PointerPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint) is now fully [agile](/windows/uwp/cpp-and-winrt-apis/agile-objects).
   - [**PointerPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint) static functions **GetCurrentPoint**, **GetCurrentPointTransformed**, **GetIntermediatePoints**, and **GetIntermediatePointsTransformed** removed. They are replaced by member functions on [**PointerPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint) and [**PointerEventArgs**](/windows/winui/api/microsoft.ui.input.pointereventargs).
   - New [**GetTransformedPoint**](/windows/winui/api/microsoft.ui.input.pointerpoint.gettransformedpoint) method.
   - Removed **ContactRectRaw** from [**PointerPointProperties**](/windows/winui/api/microsoft.ui.input.pointerpointproperties).

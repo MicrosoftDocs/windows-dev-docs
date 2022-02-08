@@ -1,22 +1,26 @@
 ---
 title: Web development on Windows
-description: A guide to web development on Windows with links to tools, apis, and various resources from across Microsoft.
+description: A guide to Microsoft web development tools available on Windows, including Microsoft Edge, DevTools, WebView, PWAs, Visual Studio Code extensions, virtual machines, terminal, package manager, and more. 
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 10/25/2021
+ms.custom: seo-windows-dev
+ms.date: 11/29/2021
 ---
 
 # Web development on Windows
 
-Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/windows/web/apis). For more help with getting started, see [Set up your development environment on Windows](../dev-environment/index.md).
+Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows. This guide covers many of the tools available and provides a place to [leave feedback](../dev-environment/index.md#additional-resources) toward making Windows your ideal environment to develop on for the web. For a list of APIs, see [APIs for web development](/windows/web/apis).
+
+> [!div class="nextstepaction"]
+> [Set up your development environment on Windows](../dev-environment/index.md)
 
 ## WebView, DevTools, PWAs
 
 :::row:::
     :::column:::
-        [![WebView icon](../images/webview2.png)](https://developer.microsoft.com/microsoft-edge/webview2/)<br>
+        [![WebView 2 icon](../images/webview2.png)](https://developer.microsoft.com/microsoft-edge/webview2/)<br>
         **[WebView 2](https://developer.microsoft.com/microsoft-edge/webview2/)**<br>
         Embed web content (HTML, CSS, and JavaScript) in your native applications with Microsoft Edge WebView2.
         [Download WebView 2](https://developer.microsoft.com/microsoft-edge/webview2/#download-section)
@@ -235,7 +239,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
 :::row:::
     :::column:::
        [![Set up dev environment icon](../images/dev-environment-icon.png)](../dev-environment/index.md)<br>
-        **[Set up your development environment on Windows 10](../dev-environment/index.md)**<br>
+        **[Set up your development environment on Windows](../dev-environment/index.md)**<br>
         Get help setting up your development environment to work with Python, NodeJS, C#, C, C++, build Android apps, build Windows desktop apps, build Docker containers, run PowerShell scripts, and more.
         <br>
         [Get started](../dev-environment/index.md)
@@ -243,7 +247,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
     :::column:::
        [![React Native for Windows icon](../images/reactnative-windows.png)](https://microsoft.github.io/react-native-windows/)<br>
         **[React Native for Windows + macOS](https://microsoft.github.io/react-native-windows/)**<br>
-        Bring React Native support to the Windows 10 SDK and macOS 10.13 SDK. Use JavaScript to build native Windows apps for all devices supported by Windows 10 including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
+        Bring React Native support to the Windows SDK and macOS 10.13 SDK. Use JavaScript to build native Windows apps for all devices supported by Windows including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
         <br>
         [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)<br>
         [Install React Native for macOS](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)

@@ -91,6 +91,6 @@ This enables all the types, as well as all their members, in all the assemblies 
 ## See also
 
 - [Metadata and Self-Describing Components](/dotnet/standard/metadata-and-self-describing-components)
-- [Inside .NET Native (Channel 9 Video)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
+- Inside .NET Native (Channel 9 Video)
 - [Reflection and .NET Native](reflection-and-net-native.md)
 - [.NET Native General Troubleshooting](net-native-general-troubleshooting.md)

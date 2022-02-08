@@ -37,9 +37,9 @@ The C#/WinRT NuGet package can be used to both generate C# projections (also cal
 
 ### Generate and distribute an interop assembly
 
-WinRT APIs are defined in Windows Metadata (WinMD) files. The C#/WinRT NuGet package ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) includes the C#/WinRT compiler, **cswinrt.exe**, which you can use to process WinMD files and generate .NET 5+ C# code. C#/WinRT compiles these source files into an interop assembly, similar to how [C++/WinRT](../cpp-and-winrt-apis/index.md) generates headers for the C++ language projection. You can then distribute the C#/WinRT interop assembly along with the implementation assembly for .NET 5+ applications to reference, typically as a NuGet package.
+WinRT APIs are defined in Windows Metadata (WinMD) files. The C#/WinRT NuGet package ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) includes the C#/WinRT compiler, **cswinrt.exe**, which you can use to process WinMD files and generate .NET 5+ C# code. C#/WinRT compiles these source files into an interop assembly, similar to how [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index.md) generates headers for the C++ language projection. You can then distribute the C#/WinRT interop assembly along with the implementation assembly for .NET 5+ applications to reference, typically as a NuGet package.
 
-For more details on how to generate and distribute an interop assembly, see [Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5+ apps](net-projection-from-cppwinrt-component.md).
+For more details on how to generate and distribute an interop assembly, see [Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5 and later apps](net-projection-from-cppwinrt-component.md).
 
 ### Reference an interop assembly
 
@@ -55,7 +55,7 @@ For more details, see the [C#/WinRT embedded documentation](https://github.com/m
 
 ### WinRT type activation
 
-C#/WinRT supports activation of WinRT types hosted by the operating system, as well as third-party components such as [Win2D](https://www.nuget.org/packages/Win2D.uwp/). Support for third-party component activation in a desktop application is enabled with [registration free WinRT activation](https://blogs.windows.com/windowsdeveloper/2019/04/30/enhancing-non-packaged-desktop-apps-using-windows-runtime-components/), available in Windows 10 version 1903 and later. This may also require use of the [VCRT Forwarders](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140/) package, if the component was built to target UWP apps.
+C#/WinRT supports activation of WinRT types hosted by the operating system, as well as third-party components such as [Win2D](https://www.nuget.org/packages/Win2D.uwp/). Support for third-party component activation in a desktop application is enabled with [registration free WinRT activation](https://blogs.windows.com/windowsdeveloper/2019/04/30/enhancing-non-packaged-desktop-apps-using-windows-runtime-components/), available in Windows 10 version 1903 and later. Native C++ components should set the **Windows Desktop Compatible** property to *True* either via the project properties or the `.vcxproj` file, in order to reference and forward the **Microsoft.VCLibs.Desktop** binaries to consuming apps. Otherwise, the [VCRT Forwarders](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140/) package will be required by consuming apps if the component targets UWP apps only.
 
 C#/WinRT also provides an activation fallback path if Windows fails to activate the type as described above. In this case, C#/WinRT attempts to locate a native implementation DLL based on the fully qualified type name, progressively removing elements. For example, the fallback logic would attempt to activate the Contoso.Controls.Widget type from the following modules, in sequence:
 
@@ -84,7 +84,20 @@ C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynam
   <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
   ```
   Refer to the docs on [Calling Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) for more details on specifying the `<TargetFramework>` property.
+  
+- [**System.InvalidCastException**](/dotnet/api/system.invalidcastexception) when casting to an interface that has the `ComImport` attribute
+ 
+  When casting an object to an interface that has the `ComImport` attribute, you'll need to use the `.As<>` operator instead of using an explicit [cast expression](/dotnet/csharp/language-reference/operators/type-testing-and-cast#cast-expression). For example:
+  
+  ```csharp
+  someObject.As<SomeComImportInterface>
+  ```
+  
+  For more details, see the [COM interop guide](https://github.com/microsoft/CsWinRT/blob/master/docs/interop.md).
+  
+- System.Runtime.InteropServices.COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))
 
+  - If you see this exception when consuming a C#/WinRT projection from a C++/WinRT component, make sure the component has set the **Windows Desktop Compatible** property to *True* either via the project properties or via the the `.vcxproj` file.
 
 ### .NET SDK versioning errors
 
