@@ -1,7 +1,7 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
-description: Create a Universal Windows Platform (UWP) app for Windows 10 using your favorite programming language.
+description: Create a Universal Windows Platform (UWP) app for Windows using your favorite programming language.
 ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp, first app, c#, c++, JavaScript
@@ -24,7 +24,7 @@ If you want to learn the basics, or just refresh your memory, try reading these:
 
 * [C# Fundamentals for Absolute Beginners](/shows/CSharp-Fundamentals-for-Absolute-Beginners/?l=Lvld4EQIC_2706218949)
 * [VB Fundamentals for Absolute Beginners](/learn/?l=jqMOvLKbC_9206218965)
-* [A Developer's Guide to Windows 10](/learn/)
+* [Develop Windows 10 applications](/learn/paths/develop-windows10-apps/)
 
 ## C++/WinRT and XAML
 

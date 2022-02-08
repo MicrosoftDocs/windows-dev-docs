@@ -25,7 +25,7 @@ To see how your app behaves with contrast themes, enable and customize them thro
 
 ## Setting HighContrastAdjustment to None
 
-Windows apps have [**HighContrastAdjustment**](/windows/uwp/api/windows.ui.xaml.uielement.highcontrastadjustment) turned on by default. This sets all text color to white with a solid black highlight behind it, ensuring sufficient contrast against all backgrounds. If you are using brushes correctly, this setting should be turned off.
+Windows apps have [**HighContrastAdjustment**](/uwp/api/windows.ui.xaml.uielement.highcontrastadjustment) turned on by default. This sets all text color to white with a solid black highlight behind it, ensuring sufficient contrast against all backgrounds. If you are using brushes correctly, this setting should be turned off.
 
 ## Detecting high contrast
 

@@ -130,7 +130,7 @@ New to version control systems? Intro to Git and Git Virtual File System (GVFS):
 
 ## Archive
 
-These are videos that were in the Windows 10 game development guide.
+These are videos that were in the Windows game development guide.
 
 - Accelerating Microsoft Store Game Development with Middleware
 - Game Development Middleware - What is it? Do I need it?

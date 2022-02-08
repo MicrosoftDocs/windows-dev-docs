@@ -300,7 +300,10 @@ items:
             href: windows-app-sdk/check-windows-app-sdk-versions.md
           - name: "Remove outdated Windows App SDK runtime versions"
             href: windows-app-sdk/remove-windows-app-sdk-versions.md
+      - name: Set up CI for WinUI 3 app
+        href: package-and-deploy/ci-for-winui3.md
   - name: API reference
+    href: reference/index.md
     items:
       - name: Windows SDK API reference
         items: 

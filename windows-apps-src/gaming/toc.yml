@@ -1,6 +1,6 @@
 - name: Getting started
   href: ../gaming/getting-started.md
-- name: Windows 10 game development guide
+- name: Windows game development guide
   href: ../gaming/e2e.md
 - name: Game programming
   href: ../gaming/index.md

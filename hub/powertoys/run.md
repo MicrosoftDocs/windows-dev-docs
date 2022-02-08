@@ -74,15 +74,16 @@ These default activation phrases will force PowerToys Run into only targeted plu
 
 PowerToys Run enables a set of system level actions that can be executed.
 
-| Action command | Action |
-| :--- | :--- |
-| `Shutdown` | Shuts down the computer |
-| `Restart` | Restarts the computer |
-| `Sign Out` | Signs current user out |
-| `Lock` | Locks the computer |
-| `Sleep` | Sleeps the computer |
-| `Hibernate` | Hibernates the computer |
-| `Empty Recycle Bin` | Empties the recycle bin |
+| Action command | Action | Note |
+| :--- | :--- | :--- |
+| `Shutdown` | Shuts down the computer | |
+| `Restart` | Restarts the computer | |
+| `Sign Out` | Signs current user out | |
+| `Lock` | Locks the computer | |
+| `Sleep` | Sleeps the computer | |
+| `Hibernate` | Hibernates the computer | |
+| `Empty Recycle Bin` | Empties the recycle bin | |
+| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 
 ## Plugin manager
 
