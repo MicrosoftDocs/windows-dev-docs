@@ -107,9 +107,11 @@ Inking waveforms play continuously while the pen is in contact with the screen, 
 | BrushContinuous waveform | Continuous haptic signal when user selects brush as inking tool. | Optional |
 | ChiselMarkerContinuous waveform | Continuous haptic signal when user selects chisel marker/highlighter as inking tool. | Optional |
 | EraserContinuous waveform | Continuous haptic signal when user selects eraser as inking tool. | Optional |
-| GalaxyContinuous waveform | Continuous haptic signal for special ink tools, such as a multi-colored brush. | Optional |
+| GalaxyContinuous waveform<sup>*</sup> | Continuous haptic signal for special ink tools, such as a multi-colored brush. | Optional |
 | MarkerContinuous waveform | Continuous haptic signal when user selects marker as inking tool. | Optional |
 | PencilContinuous waveform | Continuous haptic signal when user selects pencil as inking tool. | Optional |
+
+<sup>*</sup>_GalaxyContinuous waveform should be named SparkleContinuous waveform. However, V1 of the SDK shipped with the name GalaxyContinuous. The HID documentation and implementation guide displays the correct name, SparkleContinuous._
 
 ### Interaction waveforms
 
