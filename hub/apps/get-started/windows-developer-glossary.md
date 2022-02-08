@@ -27,16 +27,23 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
 
 ### A
 
-##### App Lifecycle
-TODO
+##### App Lifecycle (Management)
+suspend, resume, etc
 
 ##### App SDK
 Shorthand for Windows App SDK.
+
 
 ##### Application Model
 TODO
 
 ##### Application Packaging
+TODO
+
+
+### C
+
+##### Capability-based access model
 TODO
 
 
@@ -56,6 +63,13 @@ TODO
 ##### Hot Reloading
 TODO
 
+
+### I
+
+##### In-app updates
+In-app updates allow you to update your applications without requiring your users to take any installation or update action. Packaged apps support in-app updates.
+
+
 ### M
 
 ##### Managed Apps
@@ -71,7 +85,7 @@ TODO
 TODO
 
 ##### MSIX
-A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). [Learn more about MSIX](https://docs.microsoft.com/en-us/windows/msix/overview ).
+A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). When you use MSIX to deploy your apps, your app is a "packaged" app. Packaged apps can check for updates and can control when updates are applied. [Learn more about MSIX](https://docs.microsoft.com/en-us/windows/msix/overview ).
 
 
 ##### MVVM
@@ -85,6 +99,10 @@ TODO
 
 
 ##### Native Compilation
+TODO
+
+
+##### Native Sandboxing
 TODO
 
 
@@ -107,7 +125,7 @@ This was the codename used to refer to Windows App SDK.
 
 
 ##### Packaged App
-Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity.
+Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Windows Store or Windows App Installer.
 
 ### Q
 
@@ -137,7 +155,7 @@ TODO
 ### U
 
 ##### Unpackaged App
-Unpackaged apps don’t use MSIX. They’re typically installed and updated through .exe and .msi files. These run without package identity.
+Unpackaged apps don’t use MSIX. They’re typically installed and updated through .exe, Squirrel, or .msi files. These run without package identity. Both packaged and unpackaged apps can be published to the Microsoft Store.
 
 
 ##### UWP
@@ -166,7 +184,7 @@ A development platform that uses WinRT APIs. Not being actively developed. WinUI
 ### W
 
 ##### WebView2
-TODO
+WebView2 is the best way to include web content in your native Windows apps. You can use WebView2 with WinUI 3, WPF, and WinForms. [It will soon be supported by WinUI 2](https://github.com/MicrosoftEdge/WebView2Feedback/issues/1604).
 
 
 ##### Win32
@@ -200,7 +218,7 @@ A convenient control library for UWP's UI stack.
 
 
 ##### WinUI 3
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK.
+The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses Fluent Design to provide a native UX framework for windows desktop and UWP apps. It will feel very familiar if you've worked with UWP XAML.
 
 
 ##### WPF
@@ -213,8 +231,9 @@ TODO
 
 ### X
 
-##### XAML islands
-TODO
+##### XAML Islands
+XAML Islands lets you use new UI components in existing desktop (Win32, WinForms WPF) apps.
+<!-- note: definition duplicated in FAQ -->
 
 ##### Xamarin
 TODO
