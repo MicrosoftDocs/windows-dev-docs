@@ -18,7 +18,7 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
     1. List terms for v1 [done]
     2. Define terms [we are here]
     3. Align with teams
-    4. Add links to related resources when helpful
+    4. Add links to related resources and definitions when helpful
     5. Publish
     6. Explore terminology standardization with Monica Rush
 
@@ -28,23 +28,22 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
 ### A
 
 ##### App Lifecycle (Management)
-suspend, resume, etc
+App Lifecycle Management describes the management of your application's execution state: not running, running in background, running in foreground, suspended, etc. [Learn more about App Lifecycle](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/app-lifecycle).
 
 ##### App SDK
 Shorthand for Windows App SDK.
 
-
 ##### Application Model
-TODO
+An application model describes the framework components that support a specific application. For example, the UWP app model includes UWP, WinUI 2, and XAML.
 
 ##### Application Packaging
-TODO
+Application packaging describes the manner in which your application is packaged before being distributed and installed by users. Applications can be either packaged or unpackaged.
 
 
 ### C
 
 ##### Capability-based access model
-TODO
+Capability-based access describes TODO...
 
 
 ### D
@@ -56,12 +55,12 @@ Dynamic Dependency Lifetime Manager. See https://github.com/microsoft/WindowsApp
 ### F
 
 ##### Fluent Design
-TODO
+Microsoft's [Fluent Design System](https://www.microsoft.com/design/fluent/#/) gives you an open-source design system that lets you create reusable cross-platform user interfaces.
 
 ### H
 
 ##### Hot Reloading
-TODO
+A .NET and C++ feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-rerun your apps while developing. See: [Visual Studio Hot Reloading](https://docs.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022).
 
 
 ### I
@@ -73,22 +72,22 @@ In-app updates allow you to update your applications without requiring your user
 ### M
 
 ##### Managed Apps
-TODO
+Managed apps are apps that administrators manage through administrative capabilities like Intune. Unmanaged apps are apps that users install and manage without admin control.
 
 ##### MAUI
 See .NET MAUI below.
 
 ##### MFC
-TODO
+The Microsoft Foundation Class (MFC) Library can be used to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: [MFC Desktop Applications](https://docs.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=msvc-170).
+
 
 ##### Mica
-TODO
+Mica is a UI technology that subtly tints your app based on the user's background. [Learn more about Mica](https://docs.microsoft.com/en-us/windows/apps/design/style/mica).
+
 
 ##### MSIX
 A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). When you use MSIX to deploy your apps, your app is a "packaged" app. Packaged apps can check for updates and can control when updates are applied. [Learn more about MSIX](https://docs.microsoft.com/en-us/windows/msix/overview ).
 
-
-##### MVVM
 
 
 
@@ -153,6 +152,10 @@ TODO
 
 
 ### U
+
+##### Unmanaged App
+Unmanaged apps are apps that users install and manage without admin control. Managed apps are apps that administrators manage through administrative capabilities like Intune.
+
 
 ##### Unpackaged App
 Unpackaged apps don’t use MSIX. They’re typically installed and updated through .exe, Squirrel, or .msi files. These run without package identity. Both packaged and unpackaged apps can be published to the Microsoft Store.
@@ -232,8 +235,7 @@ TODO
 ### X
 
 ##### XAML Islands
-XAML Islands lets you use new UI components in existing desktop (Win32, WinForms WPF) apps.
-<!-- note: definition duplicated in FAQ -->
+XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms WPF) apps starting in Windows 10, version 1903. [Learn more about XAML Islands](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands).
 
 ##### Xamarin
 TODO
