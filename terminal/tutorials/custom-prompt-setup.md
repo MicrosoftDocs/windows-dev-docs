@@ -40,7 +40,7 @@ To set a Nerd Font for use with Oh My Posh and Terminal Icons, open the Windows 
 
 Oh My Posh enables you to use a full color set to define and render your terminal prompt, including the ability to use built-in themes or create your own custom theme.
 
-If you want to use the same custom prompt themes across both PowerShell and WSL, we recommend installing Oh My Posh using [winget](windows/package-manager/winget), the official Windows Package Manager. It's included with Windows 11, but you may need to install it if you're running Windows 10. Then follow the `winget` install instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/windows).
+If you want to use the same custom prompt themes across both PowerShell and WSL, we recommend installing Oh My Posh using [winget](./package-manager/winget), the official Windows Package Manager. It's included with Windows 11, but you may need to install it if you're running Windows 10. Then follow the `winget` install instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/windows).
 
 ### Install Oh My Posh for PowerShell
 
