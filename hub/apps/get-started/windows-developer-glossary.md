@@ -94,7 +94,7 @@ A modern application package format that allows you to easily deploy your Window
 ### N
 
 ##### Native Apps
-TODO
+Native Windows apps are apps that have been built to run on Windows.
 
 
 ##### Native Compilation
@@ -113,8 +113,6 @@ TODO
 
 ### P
 
-##### Packaging
-TODO
 
 ##### Package identity
 TODO
@@ -134,7 +132,7 @@ TODO
 ### R
 
 ##### React Native
-TODO
+React Native for Windows + macOS brings React Native support for the Windows SDK as well as the macOS 10.14 SDK. [Learn more about React Native](https://microsoft.github.io/react-native-windows/).
 
 
 
@@ -168,14 +166,14 @@ Unpackaged apps don’t use MSIX. They’re typically installed and updated thro
 ### V
 
 ##### VSIX
-TODO
+You can use the VSIX Project template to create an extension or to package an existing extension for deployment. [Learn more about VSIX](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-the-vsix-project-template?view=vs-2022).
 
 ##### Visual Studio
-TODO
+The Visual Studio IDE is a creative launching pad that you can use to edit, debug, and build code, and then publish an app. [Learn more about Visual Studio](https://docs.microsoft.com/en-us/visualstudio/get-started/visual-studio-ide?view=vs-2022).
+
 
 ##### Visual Studio Code
-TODO
-
+Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. [Learn more about VS Code](https://code.visualstudio.com/docs).
 
 
 ### U
@@ -191,7 +189,7 @@ WebView2 is the best way to include web content in your native Windows apps. You
 
 
 ##### Win32
-TODO
+The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT (for UWP apps for Windows 10). This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware. [Learn more about Win32](https://docs.microsoft.com/en-us/windows/win32/desktop-programming).
 
 
 ##### Windows App
@@ -210,11 +208,12 @@ Otherwise known as WinForms. A thin layer over Windows APIs with minimal layout 
 A project that you work on through an IDE. You generate application builds from your projects before packaging and deploying them.
 
 ##### WinRT
-TODO
+C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. [Learn more about WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/).
 
 
 ##### WinUI
-TODO
+The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications. [Learn more about WinUI](https://docs.microsoft.com/en-us/windows/apps/winui/).
+
 
 ##### WinUI 2
 A convenient control library for UWP's UI stack.
@@ -228,8 +227,6 @@ The latest and recommended UI framework for Windows desktop apps. This framework
 More advanced than WinForms, but not being actively developed. WinUI 3 and Win App SDK are the latest and recommended alternatives for new app development.
 
 
-##### WTL
-TODO
 
 
 ### X
@@ -238,4 +235,4 @@ TODO
 XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms WPF) apps starting in Windows 10, version 1903. [Learn more about XAML Islands](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands).
 
 ##### Xamarin
-TODO
+Xamarin is an open-source app platform that lets you build Android and iOS apps with .NET and C#. [Learn more about Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin).
