@@ -4,8 +4,8 @@ description: This article provides a high level explanation of the Windows App S
 ms.topic: article
 ms.date: 11/16/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: stwhi
+author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -80,10 +80,11 @@ The purpose of the DDLM is to prevent servicing of the Windows App SDK framework
 
 There is one DDLM for each version and architecture of the Windows App SDK framework package. This means on an `x64` computer, you may have both an `x86` and an `x64` version of the DDLM to support apps of both architectures.
 
-## VCLibs framework package, and Visual C++ Redistributable
+## Additional requirements
 
 * For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
 * For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
+* **C#**. For the .NET 5.0 runtime, see [Download .NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
 ## Related topics
 

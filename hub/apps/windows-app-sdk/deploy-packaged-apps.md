@@ -15,7 +15,13 @@ This article provides guidance about deploying [MSIX](/windows/msix)-packaged ap
 
 By default, when you create a project using one of the [WinUI project templates](..\winui\winui3\winui-project-templates-in-visual-studio.md) that are provided with the Windows App SDK extension for Visual Studio, your project includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an MSIX package. For more information about configuring this project to build an MSIX package for your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options for deploying it to other computers. For more information, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
-Before configuring your apps for deployment, review [the Windows App SDK deployment architecture](deployment-architecture.md) to learn more about the dependencies your packaged app takes when it uses the Windows App SDK. These dependencies include the **framework**, **main**, and **singleton** packages, which are all signed and published by Microsoft. 
+> [!IMPORTANT]
+> Before configuring your app for deployment, and to learn more about the dependencies your packaged app takes when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). These dependencies include the *framework*, *main*, and *singleton* packages, which are all signed and published by Microsoft.
+
+## Prerequisites
+
+* For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
+* **C#**. For the .NET 5.0 runtime, see [Download .NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
 ## Deploy the Windows App SDK framework package
 
@@ -23,7 +29,7 @@ The Windows App SDK framework package contains the Windows App SDK binaries used
 
 ### Preview version
 
-When you install a [preview release channel](preview-channel.md) version of the Windows App SDK extension for Visual Studio or the Windows App SDK NuGet package on your development computer, the preview version of the [framework package](deployment-architecture.md#framework-package) is deployed during build time as a NuGet package dependency.
+When you install a [preview release channel](preview-channel.md) version of the Windows App SDK extension for Visual Studio or the Windows App SDK NuGet package on your development computer, the preview version of the Windows App SDK framework package (see [Deployment architecture for the Windows App SDK](deployment-architecture.md)) is deployed during build time as a NuGet package dependency.
 
 ### Stable version
 
@@ -80,7 +86,7 @@ If you encounter errors that you can't diagnose, [file an issue](https://github.
 
 ## Related topics
 
-* [Runtime architecture](deployment-architecture.md)
+* [Deployment architecture for the Windows App SDK](deployment-architecture.md)
 * [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
 * [Release channels](release-channels.md)
 * [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
