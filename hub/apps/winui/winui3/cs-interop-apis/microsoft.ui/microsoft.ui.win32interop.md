@@ -1,6 +1,6 @@
 ---
 title: Win32Interop class
-description: TBD
+description: The **Win32Interop** class is available in .NET 5 and later as part of the [Windows App SDK](/windows/apps/windows-app-sdk/).
 ms.topic: article
 ms.date: 02/08/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, Windows UI Library, app sdk, C#, interop
@@ -26,8 +26,8 @@ public class Win32Interop
 ## Methods
 
 * [GetDisplayIdFromMonitor(IntPtr)](microsoft.ui.win32interop.getdisplayidfrommonitor.md)
-* [GetIconFromIconId(IconId)](microsoft.ui.win32interop.geticonfromiconid)
-* [GetIconIdFromIcon(IntPtr)](microsoft.ui.win32interop.geticonidfromicon)
+* [GetIconFromIconId(IconId)](microsoft.ui.win32interop.geticonfromiconid.md)
+* [GetIconIdFromIcon(IntPtr)](microsoft.ui.win32interop.geticonidfromicon.md)
 * [GetMonitorFromDisplayId(DisplayId)](microsoft.ui.win32interop.getmonitorfromdisplayid.md)
 * [GetWindowFromWindowId(WindowId)](microsoft.ui.win32interop.getwindowfromwindowid.md)
 * [GetWindowIdFromWindow(IntPtr)](microsoft.ui.win32interop.getwindowidfromwindow.md)
