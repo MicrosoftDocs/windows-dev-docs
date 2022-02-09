@@ -117,7 +117,7 @@ Let's use the built-in OS module to get some information about your computer's o
 
 3) To check your CPU's architecture, enter: `os.arch()`
 
-4) To view the the CPUs available on your system, enter: `os.cpus()`
+4) To view the CPUs available on your system, enter: `os.cpus()`
 
 5) Leave the Node.js CLI by entering `.exit` or by selecting Ctrl+C twice.
 

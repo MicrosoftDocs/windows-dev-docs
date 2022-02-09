@@ -42,7 +42,7 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
     3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
 
     > [!NOTE]
-    > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**.
+    > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**.
 
 ## Deploy Windows App SDK using the .exe installer
 

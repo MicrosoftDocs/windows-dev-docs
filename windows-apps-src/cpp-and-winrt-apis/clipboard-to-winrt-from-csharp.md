@@ -900,7 +900,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-It's an important and interesting method, because here's where our collection of **Scenario** objects is assigned to the UI. The C# code builds a [**System.Collections.Generic.List**](/dotnet/api/system.collections.generic.list-1) of **Scenario** objects, and assigns that to the [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property of a **ListBox** (which is an items control). And, in C#, we use [string interpolation](/dotnet/csharp/language-reference/tokens/interpolated) to build the title for each **Scenario** object (note the use of the The `$` special character).
+It's an important and interesting method, because here's where our collection of **Scenario** objects is assigned to the UI. The C# code builds a [**System.Collections.Generic.List**](/dotnet/api/system.collections.generic.list-1) of **Scenario** objects, and assigns that to the [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property of a **ListBox** (which is an items control). And, in C#, we use [string interpolation](/dotnet/csharp/language-reference/tokens/interpolated) to build the title for each **Scenario** object (note the use of the `$` special character).
 
 In C++/WinRT, we'll make **OnNavigatedTo** a public method of **MainPage**. And we'll add a stub **ListBox** element to the XAML so that a build will succeed. After the code listing, we'll examine some of the details.
 
