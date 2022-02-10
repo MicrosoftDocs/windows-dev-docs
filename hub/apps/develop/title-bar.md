@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Windows provides a default title bar for every window and lets you to customize it to match the personality of your app. The default title bar comes with some standard components and core functionality such as dragging and resizing the window.
 
-:::image type="content" source="images/titlebar-overview.png" alt-text="Title bar" border="false":::
+:::image type="content" source="images/titlebar-overview.png" alt-text="A Windows app showing the title bar" border="false":::
 
 See the [Title bar](../design/basics/titlebar-design.md) design article for guidance on customizing your app's title bar, acceptable title bar area content, and recommended UI patterns.
 
@@ -47,8 +47,6 @@ The exact features of the title bar and the options available to customize it de
 > - **Important APIs**: [AppWindow.TitleBar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.titlebar), [AppWindowTitleBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
 Windowing functionality in the [Windows App SDK](/windows/apps/develop) is through the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which is based on the Win32 HWND model. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows, including customization of the title bar. You can modify the default title bar that Windows provides so that it blends with the rest of your UI, or extend your app canvas into the title bar area and provide your own title bar content.
-
-:::image type="content" source="images/titlebar-overview.png" alt-text="Title bar" border="false":::
 
 > [!IMPORTANT]
 > Title bar customization APIs are currently supported on Windows 11 only. We recommend that you check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs to ensure your app doesn't crash on other versions of Windows.
@@ -518,7 +516,7 @@ AppTitleTextBlock.Text = AppInfo.Current.DisplayInfo.DisplayName;
 
 You can place interactive controls, like buttons, menus, or a search box, in the top part of the app so they appear to be in the title bar. However, there are a few rules you must follow to ensure that your interactive elements receive user input while still allowing users to move your window around.
 
-:::image type="content" source="images/titlebar-search.png" alt-text="Title bar" border="false":::
+:::image type="content" source="images/titlebar-search.png" alt-text="A Windows app with a search box in the title bar" border="false":::
 
 ### [Windows App SDK](#tab/wasdk)
 
