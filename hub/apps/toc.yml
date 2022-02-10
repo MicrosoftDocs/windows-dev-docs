@@ -6,6 +6,8 @@ items:
     items:
         - name: Overview of app development options
           href: get-started/index.md
+        - name: About migrating from UWP to Windows App SDK
+          href: get-started/migrate-from-uwp-to-winappsdk.md
         - name: Install developer tools
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create a WinUI 3 app"
@@ -58,7 +60,7 @@ items:
                 href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
       - name: Migrate from UWP to Windows App SDK
         items:
-          - name: "Index of migration topics"
+          - name: "Migrate from UWP to Windows App SDK"
             href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
           - name: "Overall migration strategy"
             href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
