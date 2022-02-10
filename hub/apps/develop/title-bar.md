@@ -518,6 +518,8 @@ AppTitleTextBlock.Text = AppInfo.Current.DisplayInfo.DisplayName;
 
 You can place interactive controls, like buttons, menus, or a search box, in the top part of the app so they appear to be in the title bar. However, there are a few rules you must follow to ensure that your interactive elements receive user input while still allowing users to move your window around.
 
+:::image type="content" source="images/titlebar-search.png" alt-text="Title bar" border="false":::
+
 ### [Windows App SDK](#tab/wasdk)
 
 If you add interactive content in the title bar area, you should define explicit drag regions around that content so that users can interact with it. After you set a custom drag region, the default drag region is removed and the system does not reserve any mandatory drag region. You are responsible for ensuring that there is enough space in your title bar for your users to move your window.
@@ -840,7 +842,7 @@ Reference: [Colors.Transparent](/uwp/api/windows.ui.colors.Transparent), [Color]
 The button background color is not applied to the Close button _hover_ and _pressed_ states. The close button always uses the system-defined color for those states.
 
 > [!TIP]
-> [Mica](/windows/apps/design/style/mica) is a delightful [material](/windows/apps/design/signature-experiences/materials) that helps distinguish the window thats in focus. We recommend it as the background for long-lived windows in Windows 11. If you have applied mica in the client area of your window, you can extend it into the titlebar area and make your caption buttons transparent for the mica to show through. See [Mica material](/windows/apps/design/style/mica) for more info.
+> [Mica](/windows/apps/design/style/mica) is a delightful [material](/windows/apps/design/signature-experiences/materials) that helps distinguish the window that's in focus. We recommend it as the background for long-lived windows in Windows 11. If you have applied mica in the client area of your window, you can extend it into the titlebar area and make your caption buttons transparent for the mica to show through. See [Mica material](/windows/apps/design/style/mica) for more info.
 
 ### Dim the title bar when the window is inactive
 
