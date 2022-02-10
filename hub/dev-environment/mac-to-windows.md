@@ -19,6 +19,9 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 
 ## Keyboard shortcuts
 
+> [!TIP]
+> You can use [PowerToys Keyboard Manager](/windows/powertoys/keyboard-manager) to map Windows shortcuts to the shortcuts you use on a Mac.
+
 | **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Copy | Command+C | Ctrl+C |
@@ -44,7 +47,10 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 
 ## Trackpad shortcuts
 
-Note: Some of these shortcuts require a "Precision Trackpad", such as the trackpad on Surface devices and some other third party laptops.
+> [!NOTE]
+> Some of these shortcuts require a "Precision Trackpad", such as the trackpad on Surface devices and some other third-party laptops. 
+> 
+> Trackpad options are configurable on both platforms.
 
  **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
@@ -58,8 +64,6 @@ Note: Some of these shortcuts require a "Precision Trackpad", such as the trackp
 | Open Cortana / Action center | Two finger slide from right | Three finger tap |
 | Open extra information | Three finger tap | N/A |
 |Show launchpad / start an app | Pinch with four fingers | Tap with four fingers |
-
-Note: Trackpad options are configurable on both platforms.
 
 ## Command-line shells and terminals
 
