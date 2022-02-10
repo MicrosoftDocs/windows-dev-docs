@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 11/18/2020
+ms.date: 02/10/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -164,7 +164,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Audio | ms-settings:easeofaccess-audio |
 | Closed captions | ms-settings:easeofaccess-closedcaptioning |
 | Color filters | ms-settings:easeofaccess-colorfilter </br> ms-settings:easeofaccess-colorfilter-adaptivecolorlink </br> ms-settings:easeofaccess-colorfilter-bluelightlink |
-| Cursor & pointer size | ms-settings:easeofaccess-mousepointer </br> ms-settings:easeofaccess-cursor|
 | Display | ms-settings:easeofaccess-display |
 | Eye control | ms-settings:easeofaccess-eyecontrol |
 | Fonts | ms-settings:fonts |
@@ -172,8 +171,10 @@ The following sections describe different categories of ms-settings URIs used to
 | Keyboard | ms-settings:easeofaccess-keyboard |
 | Magnifier | ms-settings:easeofaccess-magnifier |
 | Mouse | ms-settings:easeofaccess-mouse |
+| Mouse pointer & touch | ms-settings:easeofaccess-mousepointer|
 | Narrator | ms-settings:easeofaccess-narrator </br> ms-settings:easeofaccess-narrator-isautostartenabled |
 | Speech | ms-settings:easeofaccess-speechrecognition |
+| Text cursor | ms-settings:easeofaccess-cursor|
 | Visual Effects | ms-settings:easeofaccess-visualeffects |
 
 ### Extras
@@ -345,8 +346,8 @@ The following sections describe different categories of ms-settings URIs used to
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
 | Region | ms-settings:regionformatting |
-| Language | ms-settings:keyboard<br/>ms-settings:keyboard-advanced</br>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin</br>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime <br/> ms-settings:regionlanguage-korime |
-| Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
+| Language | ms-settings:keyboard<br/>ms-settings:keyboard-advanced</br>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime <br/> ms-settings:regionlanguage-korime |
+| Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed)</br>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp |
 | Speech | ms-settings:speech |
 | Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
 | Add display language | ms-settings:regionlanguage-adddisplaylanguage |
@@ -403,10 +404,3 @@ The following sections describe different categories of ms-settings URIs used to
 | Search | ms-settings:search |
 | Search more details | ms-settings:search-moredetails |
 | Search Permissions | ms-settings:search-permissions |
-
-### Samples
-
-|Settings page| URI |
-|-------------|-----|
-| Samples Entity Item | ms-settings:samples-entityitem |
-| Samples Entity Item List | ms-settings:samples-entityitemlist |
