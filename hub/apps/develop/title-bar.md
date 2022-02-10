@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 02/08/2022
+ms.date: 02/10/2022
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -856,14 +856,40 @@ Handle an event to determine the activation state of the window, and update your
 
 ### [WinUI 3](#tab/winui3)
 
-Listen and respond to the [WM_ACTIVATE](/windows/win32/inputdev/wm-activate) message to determine the activation state of the window, and update your title bar UI as needed.
+Handle the [Window.Activated](/windows/winui/api/microsoft.ui.xaml.window.activated) event to determine the activation state of the window, and update your title bar UI as needed.
+
+```csharp
+public MainWindow()
+{
+    ...
+    Activated += MainWindow_Activated;
+}
+
+private void MainWindow_Activated(object sender, WindowActivatedEventArgs args)
+{
+    if (args.WindowActivationState == WindowActivationState.Deactivated)
+    {
+        AppTitleTextBlock.Foreground =
+            (SolidColorBrush)App.Current.Resources["WindowCaptionForegroundDisabled"];
+    }
+    else
+    {
+        AppTitleTextBlock.Foreground =
+            (SolidColorBrush)App.Current.Resources["WindowCaptionForeground"];
+    }
+}
+```
 
 ### [UWP/WinUI 2](#tab/winui2)
 
-Handle the [CoreWindow.Actived](/uwp/api/windows.ui.core.corewindow.activated) event to determine the activation state of the window, and update your title bar UI as needed.
+Handle the [CoreWindow.Activated](/uwp/api/windows.ui.core.corewindow.activated) event to determine the activation state of the window, and update your title bar UI as needed.
 
 ```csharp
-Window.Current.CoreWindow.Activated += CoreWindow_Activated;
+public MainPage()
+{
+    ...
+    Window.Current.CoreWindow.Activated += CoreWindow_Activated;
+}
 
 private void CoreWindow_Activated(CoreWindow sender, WindowActivatedEventArgs args)
 {
