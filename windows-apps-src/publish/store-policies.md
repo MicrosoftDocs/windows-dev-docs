@@ -346,7 +346,7 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 > [!NOTE]
 > Additional requirements for titles which use Xbox Live on PC/Mobile and/or the Creators program on Xbox consoles are available at https://aka.ms/xboxlivepolicy.
 >
-> February 10, 2022 Policy Note: For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
+> **February 10, 2022 Policy Note**: For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
 
 **10.13.1**
 
