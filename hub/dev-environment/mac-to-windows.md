@@ -20,7 +20,7 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 ## Keyboard shortcuts
 
 > [!TIP]
-> You can use [PowerToys Keyboard Manager](/windows/powertoys/keyboard-manager) to map Windows shortcuts to the shortcuts you're accustomed to using on a Mac.
+> You can use [PowerToys Keyboard Manager](/windows/powertoys/keyboard-manager) to map Windows shortcuts to the shortcuts you use on a Mac.
 
 | **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
