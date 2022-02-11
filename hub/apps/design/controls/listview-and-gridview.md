@@ -16,15 +16,14 @@ ms.localizationpriority: medium
 
 Most applications manipulate and display sets of data, such as a gallery of images or a set of email messages. The XAML UI framework provides ListView and GridView controls that make it easy to display and manipulate data in your app.
 
-> [!NOTE]
-> **Important APIs** discussed in this article: [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), and [Items property](/uwp/api/windows.ui.xaml.controls.itemscontrol.items).
->  
+This article discusses the following important APIs: [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), and [Items property](/uwp/api/windows.ui.xaml.controls.itemscontrol.items).
+
+> [!NOTE]  
 > ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality but display data differently. In this article, discussions about *list views* apply to both the ListView and GridView controls, unless otherwise specified. Likewise, in discussions of classes, such as ListView or ListViewItem, the *List* prefix can be considered interchangeable with *Grid* in, for example, *GridView* or *GridViewItem*.
 
-ListView and GridView controls provide many benefits for working with collections. Both are easy to implement and provide basic UI, interaction, and scrolling while being easily customizable. And both can be bound to existing dynamic data sources, or to the hard-coded data provided in either the XAML itself or the code-behind.
+ListView and GridView controls provide many benefits as you work with collections. Both are easy to implement and provide basic UI, interaction, and scrolling while being easily customizable. And both can be bound to existing dynamic data sources, or to the hard-coded data that's provided in either the XAML itself or the code-behind.
 
-Both controls are flexible to use in a variety of scenarios but, overall, they work best with collections in which all items should have the same basic structure and appearance, as well as the same interaction behavior. That is, they should perform the same action when clicked (for example, open a link or navigate).
-
+Both controls are flexible to use in a variety of scenarios but, overall, they work best with collections in which all items have the same basic structure and appearance, as well as the same interaction behavior. That is, they should perform the same action when they're clicked (for example, to open a link or navigate throughout an app).
 
 ## Compare the ListView and GridView controls
 
@@ -72,7 +71,7 @@ Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) 
 </table>
 -->
 
-| XAML&nbsp;Controls&nbsp;Gallery | |
+| XAML&nbsp;Controls&nbsp;Gallery | &nbsp; |
 | --- | --- |
 | ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon-sm.png) | If you already have the XAML Controls Gallery app installed, open it to see the [ListView](xamlcontrolsgallery:/item/ListView) or [GridView](xamlcontrolsgallery:/item/GridView) control in action. If the app isn't already installed: <li>[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)<li>[Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery) |
 |||
