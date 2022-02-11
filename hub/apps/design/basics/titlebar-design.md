@@ -20,7 +20,7 @@ Design features of a standard title bar:
 
 - 32px height
 - 16px app icon
-- Caption size title text
+- Caption style text (see [XAML type ramp](../style/xaml-theme-resources.md#the-xaml-type-ramp))
 - Caption controls (minimize, maximize, close)
 
 ## Additional design patterns

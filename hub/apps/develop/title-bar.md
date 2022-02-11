@@ -358,6 +358,9 @@ public MainWindow()
 > [!CAUTION]
 > `ExtendsContentIntoTitleBar` shows in the XAML IntelliSense for `Window`, but setting it in XAML causes an error. Set this property in code instead.
 
+> [!WARNING]
+> If you set `ExtendsContentIntoTitleBar=true` without specifying a drag region by calling `SetTitleBar` with a `UIElement` the application will create a fallback title bar that only contains the minimum drag region and caption controls.
+
 ### [UWP/WinUI 2](#tab/winui2)
 
 This example shows how to get the [CoreApplicationViewTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) and set the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) property to `true`.
@@ -840,7 +843,7 @@ Reference: [Colors.Transparent](/uwp/api/windows.ui.colors.Transparent), [Color]
 The button background color is not applied to the Close button _hover_ and _pressed_ states. The close button always uses the system-defined color for those states.
 
 > [!TIP]
-> [Mica](/windows/apps/design/style/mica) is a delightful [material](/windows/apps/design/signature-experiences/materials) that helps distinguish the window that's in focus. We recommend it as the background for long-lived windows in Windows 11. If you have applied mica in the client area of your window, you can extend it into the titlebar area and make your caption buttons transparent for the mica to show through. See [Mica material](/windows/apps/design/style/mica) for more info.
+> [Mica](/windows/apps/design/style/mica) is a delightful [material](/windows/apps/design/signature-experiences/materials) that helps distinguish the window that's in focus. We recommend it as the background for long-lived windows in Windows 11. If you have applied Mica in the client area of your window, you can extend it into the titlebar area and make your caption buttons transparent for the Mica to show through. See [Mica material](/windows/apps/design/style/mica) for more info.
 
 ### Dim the title bar when the window is inactive
 
