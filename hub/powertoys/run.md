@@ -1,5 +1,5 @@
 ---
-title: PowerToys Run utility for Windows 10
+title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
 ms.date: 05/28/2021
 ms.topic: article
@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, WindowWalker]
 
 PowerToys Run is a quick launcher for power users that contains some additional features without sacrificing performance. It is open source and modular for additional plugins.
 
-To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(note that this shortcut can be changed in the settings window)*
+To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(note that this shortcut can be changed in the settings window)_
 ![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
 
 ## Requirements
@@ -25,8 +25,8 @@ PowerToys Run features include:
 
 - Search for applications, folders, or files
 - Search for running processes (previously known as [WindowWalker](https://github.com/betsegaw/windowwalker/))
-- Clickable buttons with keyboard shortcuts (such as *Open as administrator* or *Open containing folder*)
-- Invoke Shell Plugin using `>`  (for example, `> Shell:startup` will open the Windows startup folder)
+- Clickable buttons with keyboard shortcuts (such as _Open as administrator_ or _Open containing folder_)
+- Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
 - Do a simple calculation using calculator
 
 ## Settings
@@ -36,7 +36,7 @@ The following Run options are available in the PowerToys settings menu.
 | Settings | Action |
 | :--- | :--- |
 | Open PowerToys Run | Define the keyboard shortcut to open/hide PowerToys Run |
-| Ignore shortcuts in Fullscreen mode | When in full-screen (F11), Run won't be engaged with the shortcut |
+| Ignore shortcuts in Fullscreen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
 
@@ -44,7 +44,7 @@ The following Run options are available in the PowerToys settings menu.
 
 | Shortcuts | Action |
 | :--- | :--- |
-|<kbd>Alt</kbd>+<kbd>Space</kbd> | Open or hide PowerToys Run |
+|<kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Open or hide PowerToys Run |
 |<kbd>Esc</kbd> | Hide PowerToys Run |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
@@ -59,8 +59,9 @@ These default activation phrases will force PowerToys Run into only targeted plu
 | :--- | :--- | :--- |
 | `=` | Calculator only | `=2+2` |
 | `?` | File searching only | `?road` to find `roadmap.txt` |
+| `??` | Web search only | `??What is the answer to life` to search with your default browser's search engine. |
 | `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup |
-| `//` | URLs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
+| `//` | URIs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. Also supports `mailto:` and `ms-settings:` |
 | `<` | Running processes only | `<outlook` to find all processes that contain outlook |
 | `>` | Shell command only | `>ping localhost` to do a ping query |
 | `:` | Registry keys only | `:hkcu` to search for the HKEY_CURRENT_USER registry key |
@@ -73,15 +74,16 @@ These default activation phrases will force PowerToys Run into only targeted plu
 
 PowerToys Run enables a set of system level actions that can be executed.
 
-| Action key | Action |
-| :--- | :--- |
-| `Shutdown` | Shuts down the computer |
-| `Restart` | Restarts the computer |
-| `Sign Out` | Signs current user out |
-| `Lock` | Locks the computer |
-| `Sleep` | Sleeps the computer |
-| `Hibernate` | Hibernates the computer |
-| `Empty Recycle Bin` | Empties the recycle bin |
+| Action command | Action | Note |
+| :--- | :--- | :--- |
+| `Shutdown` | Shuts down the computer | |
+| `Restart` | Restarts the computer | |
+| `Sign Out` | Signs current user out | |
+| `Lock` | Locks the computer | |
+| `Sleep` | Sleeps the computer | |
+| `Hibernate` | Hibernates the computer | |
+| `Empty Recycle Bin` | Empties the recycle bin | |
+| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 
 ## Plugin manager
 
@@ -103,6 +105,24 @@ If the program plugin's option "Include in global result" is not selected, be su
 
 `.Visual Studio Code -- C:\myFolder`
 
+## Calculator Plugin
+
+The PowerToys Run calculator plugin supports the following operations:
+
+| Operation |  Operator Syntax |
+| - | - |
+| Addition |  a + b |
+| Subtraction | a - b |
+| Multiplication | a * b |
+| Division |  a / b |
+| Modulo/Remainder | a % b |
+| Exponentiation | a ^ b |
+| Factorial | x ! |
+| Sine | sin( x ) |
+| Cosine | cos( x ) |
+| Tangent | tan( x ) |
+| Arc Tangent | arctan( x ) |
+
 ## Monitor Positioning
 
 If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options are opening on:
@@ -113,19 +133,20 @@ If multiple monitors are in use, PowerToys Run can be launched on the desired mo
 
 ![PowerToys Run Monitor Selection](../images/pt-run-monitor.png)
 
+
 ## Windows Search settings
 
 If the Windows Search plugin is not set to cover all drives, you will receive the following warning:
 
 ![PowerToys Run Indexer Warning](../images/pt-run-warning.png)
 
-You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows 10 settings "Searching Windows" options menu will open.
+You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows settings "Searching Windows" options menu will open.
 
 ![Indexing Settings](../images/pt-run-indexing.png)
 
 In this "Searching Windows" menu, you can:
 
-- Select "Enhanced" mode to enable indexing across all of the drives on your Windows 10 machine.
+- Select "Enhanced" mode to enable indexing across all of the drives on your Windows machine.
 - Specify folder paths to exclude.
 - Select the "Advanced Search Indexer Settings" (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
 
@@ -138,5 +159,4 @@ For a list of all known issues and suggestions, see the [PowerToys product repo 
 ## Attribution
 
 - [Wox](https://github.com/Wox-launcher/Wox/)
-
 - [Beta Tadele's Window Walker](https://github.com/betsegaw/windowwalker)

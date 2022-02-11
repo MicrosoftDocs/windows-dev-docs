@@ -12,7 +12,7 @@ ms.assetid: {E49797FA-A081-40D5-980B-558B5CC21DE9}
 
 **Document version: 7.12**
 
-**Effective dates: March 4, 2021 - May 14, 2021**
+**Effective dates: Oct 1, 2019 - May 14, 2021**
 
 > [!WARNING]
 > There is a newer version of this document. See [Microsoft Store Policies](../store-policies.md) for details.

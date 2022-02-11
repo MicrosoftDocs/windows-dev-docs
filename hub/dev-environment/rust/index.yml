@@ -54,6 +54,6 @@ landingContent:
           - text: The Rust website
             url: https://www.rust-lang.org/
           - text: Rust documentation for the Windows API
-            url: https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/
+            url: https://microsoft.github.io/windows-docs-rs/doc/windows/
           - text: Minesweeper sample app
             url: https://github.com/robmikh/minesweeper-rs

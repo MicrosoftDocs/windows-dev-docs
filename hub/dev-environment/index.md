@@ -6,9 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Set up windows, windows 11, windows 10, Dev Environment, Dev tools, development paths, Microsoft Developer, Tips, Performance, WSL, terminal, nodejs, python
-ms.localizationpriority: medium
-ms.date: 07/21/2021
+ms.date: 01/11/2022
 ---
 
 # Set up your development environment on Windows
@@ -52,22 +50,27 @@ Windows invites you to code as you are. Use whatever coding language or framewor
         Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
-        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
-        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
+       [![F# icon](../images/fsharp-logo.png)](/dotnet/fsharp/)<br>
+        **[Get started with F#](/dotnet/fsharp/)**<br>
+        Get started building apps using F# and .NET Core.
     :::column-end:::
     :::column:::
-       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
-        **[Get started with PowerShell](/powershell/)**<br>
-        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Get started with Rust](./rust/index.yml)**<br>
+        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
-        **[Get started with Rust](./rust/index.yml)**<br>
-        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
+       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
+        **[Get started with PowerShell](/powershell/)**<br>
+        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+    :::column-end:::
+    :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
     :::column-end:::
     :::column:::
        [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
@@ -96,7 +99,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
         Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
+        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-the-winget-client)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
@@ -137,15 +140,16 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 ## Run Windows and Linux
 
 Windows Subsystem for Linux (WSL) allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. WSL enables you to use BASH and will provide the kind of environment most familiar to Mac users.
-- Learn more in the [WSL docs](/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
+Learn more in the [WSL docs](/windows/wsl).
+
+> [!VIDEO https://docs.microsoft.com/shows/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
 You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
 
-Learn more in the [Windows Terminal docs](/windows/terminal) or via [Windows Terminal videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
+Learn more in the [Windows Terminal docs](/windows/terminal).
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
+> [!VIDEO https://docs.microsoft.com/shows/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
 ## Transitioning between Mac and Windows
 

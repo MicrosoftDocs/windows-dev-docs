@@ -13,10 +13,10 @@ ms.localizationpriority: medium
 
 This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the `task` class that's defined in the `concurrency` namespace in ppltasks.h.
 
-## Universal Windows Platform (UWP) asynchronous types
-The Universal Windows Platform (UWP) features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the UWP asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
+## Windows Runtime asynchronous types
+The Windows Runtime features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the Windows Runtime asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
 
-Although you can consume the asynchronous Windows Runtime APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the UWP asynchronous types so that it's easier to:
+Although you can consume the asynchronous Windows Runtime APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the Windows Runtime asynchronous types so that it's easier to:
 
 -   chain multiple asynchronous and synchronous operations together
 
@@ -26,7 +26,7 @@ Although you can consume the asynchronous Windows Runtime APIs directly in C++, 
 
 -   ensure that individual tasks run in the appropriate thread context or apartment
 
-This article provides basic guidance about how to use the **task** class with the UWP asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. 
+This article provides basic guidance about how to use the **task** class with the Windows Runtime asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. 
 
 ## Consuming an async operation by using a task
 The following example shows how to use the task class to consume an **async** method that returns an [**IAsyncOperation**][IAsyncOperation] interface and whose operation produces a value. Here are the basic steps:

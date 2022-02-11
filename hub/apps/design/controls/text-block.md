@@ -87,7 +87,7 @@ Certain conditions require TextBlock to fall back to a more feature-rich and CPU
 
 You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) property to **true** during debugging to determine whether text is using fast path rendering. When this property is set to true, the text that is on the fast path displays in a bright green color.
 
->**Tip**&nbsp;&nbsp;This feature is explained in depth in this session from Build 2015- [XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
+>**Tip**&nbsp;&nbsp;This feature is explained in depth in this session from Build 2015- XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML.
 
 
 

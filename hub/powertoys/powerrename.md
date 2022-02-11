@@ -1,5 +1,5 @@
 ---
-title: PowerToys PowerRename utility for Windows 10
+title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
 ms.date: 12/02/2020
 ms.topic: article
@@ -11,7 +11,7 @@ no-loc: [PowerRename, Pampalona, Windows, File Explorer, regex]
 
 PowerRename is a bulk renaming tool that enables you to:
 
-- Modify the file names of a large number of files *(without giving all of the files the same name)*.
+- Modify the file names of a large number of files _(without giving all of the files the same name)_.
 - Perform a search and replace on a targeted section of file names.
 - Perform a regular expression rename on multiple files.
 - Check expected rename results in a preview window before finalizing a bulk rename.
@@ -31,7 +31,7 @@ After selecting some files in Windows File Explorer, right-clicking and selectin
 
 ### Search for
 
-Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expression) to find the files in your selection that contain the criteria matching your entry. You will see the matching items in the *Preview* window.
+Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expression) to find the files in your selection that contain the criteria matching your entry. You will see the matching items in the _Preview_ window.
 
 ### Replace with
 
@@ -93,7 +93,7 @@ Appends a numeric suffix to file names that were modified in the operation. For 
 
 The creation date and time attributes of a file can be used in the *Replace with* text by entering a variable pattern according to the table below. Selecting the tool-tip in the *Replace with* field allows you to view and select from the supported patterns.
 
-Variable pattern |Explanation
+Variable pattern | Explanation
 |:---|:---|
 |`$YYYY`|Year represented by a full four or five digits, depending on the calendar used.
 |`$YY`|Year represented only by the last two digits. A leading zero is added for single-digit years.
@@ -118,8 +118,8 @@ Variable pattern |Explanation
 
 For example, given the file names:
 
-- `powertoys.png`, created on 11/02/2020 *(november second)*
-- `powertoys-menu.png`, created on 11/03/2020 *(november third)*
+- `powertoys.png`, created on 11/02/2020 _(november second)_
+- `powertoys-menu.png`, created on 11/03/2020 _(november third)_
 
 Enter the criteria to rename the items:
 
@@ -148,7 +148,7 @@ To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/
 #### Simple matching examples
 
 | Search for       | Description                                           |
-| ---------------- | ------------- |
+| :--- | :--- |
 | `^`              | Match the beginning of the filename                   |
 | `$`              | Match the end of the filename                         |
 | `.*`             | Match all the text in the name                        |
@@ -160,13 +160,13 @@ To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/
 
 #### Matching and variable examples
 
-*When using the variables, the "Match All Occurrences" option must be enabled.*
+_When using the variables, the "Match All Occurrences" option must be enabled._
 
-| Search for   | Replace With    | Description                                |
-| ------------ | --------------- |--------------------------------------------|
-| `(.*).png`   | `foo_$1.png`   | Prepends "foo\_" to the existing file name |
-| `(.*).png`   | `$1_foo.png`   | Appends "\_foo" to the existing file name  |
-| `(.*)`       | `$1.txt`        | Appends ".txt" extension to existing file |
+| Search for | Replace With | Description |
+| :--- | :--- | :--- |
+| `(.*).png` | `foo_$1.png` | Prepends "foo\_" to the existing file name |
+| `(.*).png` | `$1_foo.png` | Appends "\_foo" to the existing file name |
+| `(.*)` | `$1.txt` | Appends ".txt" extension to existing file |
 | `(^\w+\.$)¦(^\w+$)` | `$2.txt` | Appends ".txt" extension to existing file name only if it does not have an extension |
 | `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | Move numbers in the filename: "29-03-2020" becomes "2020-03-29" |
 
@@ -187,7 +187,19 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
   - Unchecked: The file is not selected to be renamed (even though it fits the value entered in the search criteria).
 
 - **Renamed**, the second column in the *Preview* window can be toggled.
-  - The default preview will show all selected files, with only files matching the *Search for* criteria displaying the updated rename value.
-  - Selecting the filter will allow users to toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
+  - The default preview will show all selected files, with only files matching the _Search for_ criteria displaying the updated rename value.
+  - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
 ![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
+
+## Settings
+
+Additional options can be configured from the PowerRename tab in the Settings menu as described below:
+
+| Setting | Description |
+| --- | --- |
+| Show PowerRename in | When opening the context menu for a file, this setting defines whether PowerRename appears as one of the default options or only in the extended context menu |
+| Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
+| Maximum number of items | The largest number search and replace suggestions to display |
+| Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |
+| Use Boost library | Enable extended RegEx functionality. See [Regular Expressions](#regular-expressions) above for more details |

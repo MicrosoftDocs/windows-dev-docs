@@ -101,6 +101,6 @@ landingContent:
           - text: "@WindowsDocs on Twitter"
             url: https://twitter.com/WindowsDocs
           - text: OneDevMinute on YouTube
-            url: https://aka.ms/OneDevMinute
+            url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
           - text: Windows developer support
             url: https://developer.microsoft.com/windows/support

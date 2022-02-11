@@ -325,6 +325,10 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 Or, using the default queuing order.
 
 ```cppwinrt
+...
+#include <winrt/Windows.System.h>
+using namespace Windows::System;
+...
 winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 {
     ...
@@ -334,6 +338,9 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
     ...
 }
 ```
+
+> [!NOTE]
+> As shown above, be sure to include the projection header for the namespace of the type you're `co_await`-ing. For example, **Windows::UI::Core::CoreDispatcher**, **Windows::System::DispatcherQueue**, or **Microsoft::UI::Dispatching::DispatcherQueue**.
 
 Or, in this case detecting queue shutdown, and handling it gracefully.
 
@@ -370,6 +377,7 @@ The Windows Runtime's features for asynchronous programming allow you to cancel 
 
 // MainPage.h
 ...
+#include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.Search.h>
 

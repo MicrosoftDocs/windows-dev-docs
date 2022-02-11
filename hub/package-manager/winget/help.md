@@ -12,8 +12,8 @@ The **help** command of the [winget](index.md) tool displays help for all the su
 
 ## Usage
 
-* Display help for all commands: `winget --help`
-* View options for a command: `winget <command> --help`
+* Display help for all commands: `winget --help` or `winget -?`
+* View options for a command: `winget <command> --help` or `winget <command> -?`
 
 ## Related topics
 

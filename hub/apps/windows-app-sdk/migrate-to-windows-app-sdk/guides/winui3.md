@@ -1,6 +1,6 @@
 ---
-title: Windows UI Library (WinUI) migration
-description: This topic shows how to migrate your user interface (UI) code.
+title: User interface migration (including WinUI 3)
+description: This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 ms.topic: article
 ms.date: 09/16/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, Windows UI Library, WinUI
@@ -12,15 +12,17 @@ dev_langs:
   - cppwinrt
 ---
 
-# Windows UI Library (WinUI) migration
+# User interface migration (including WinUI 3)
 
-This topic shows how to migrate your user interface (UI) code to the [Windows UI Library (WinUI)](/windows/apps/winui/).
+This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 
 ## Summary of API and/or feature differences
 
 The **Window.Current** property migrates to **App.Window**. And the **CoreDispatcher.RunAsync** method migrates to **DispatcherQueue.TryEnqueue**.
 
 You need to set your window's *handle* (**HWND**) on a **MessageDialog**, and on **Picker**s.
+
+To use **DataTransferManager** APIs, you need to associate them with your window.
 
 For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
 
@@ -83,7 +85,7 @@ var width = App.Window.Bounds.Width;
 ```cppwinrt
 // MainPage.xaml.cpp in a UWP app
 #include <App.xaml.h>
-auto width{ App.Window()::Bounds().Width };
+auto width{ App::Window().Bounds().Width };
 ```
 
 ## MessageDialog, and Pickers
@@ -237,6 +239,76 @@ ParentDialogToWindow(showDialog);
 co_await showDialog.ShowAsync();
 ```
 
+## DataTransferManager
+
+In your UWP app, if you call the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui#Windows_ApplicationModel_DataTransfer_DataTransferManager_ShowShareUI) method, then this section contains info to help you migrate that code.
+
+Here's some typical UWP code that calls **ShowShareUI**.
+
+```csharp
+// In a UWP app
+Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
+```
+
+```cppwinrt
+// In a UWP app
+Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
+```
+
+To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. Use the code shown below.
+
+```csharp
+// In MainWindow.xaml.cs in a Windows App SDK app
+...
+public sealed partial class MainWindow : Window
+{
+    ...
+    private void myButton_Click(object sender, RoutedEventArgs e)
+    {
+        // `this` in `GetWindowHandle(this)` must be a reference to
+        // your current window
+        IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+        IDataTransferManagerInterop interop = Windows.ApplicationModel.DataTransfer.DataTransferManager.As<IDataTransferManagerInterop>();
+
+        // Show the Share UI
+        interop.ShowShareUIForWindow(windowHandle);
+    }
+
+    [System.Runtime.InteropServices.ComImport, System.Runtime.InteropServices.Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
+    [System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
+    interface IDataTransferManagerInterop
+    {
+        Windows.ApplicationModel.DataTransfer.DataTransferManager GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow, [System.Runtime.InteropServices.In] ref Guid riid);
+        void ShowShareUIForWindow(IntPtr appWindow);
+    }
+}
+...
+```
+
+```cppwinrt
+// pch.h in a Windows App SDK app
+...
+#include <shobjidl_core.h>
+#include <microsoft.ui.xaml.window.h>
+#include <winrt/Windows.ApplicationModel.DataTransfer.h>
+...
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
+{
+    winrt::Microsoft::UI::Xaml::Window window{ *this };
+    auto windowNative{ window.as<::IWindowNative>() };
+    HWND hWnd{ 0 };
+    windowNative->get_WindowHandle(&hWnd);
+
+    auto interop = winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager, IDataTransferManagerInterop>();
+    interop->ShowShareUIForWindow(hWnd);
+}
+...
+```
+
 ## ContentDialog, and Popup
 
 If in your UWP app you're using the [**Windows.UI.Xaml.Controls.ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) or [**Windows.UI.Xaml.Controls.Primitives.Popup**](/uwp/api/windows.ui.xaml.controls.primitives.popup) classes, then this section contains info to help you migrate that code. The code examples below use **ContentDialog**, but you can apply exactly the same techniques to displaying a **Popup** object.
@@ -277,7 +349,7 @@ co_await unsupportedFilesDialog.ShowAsync();
 
 ## Do I need to implement page navigation?
 
-In a UWP project, by default there will be navigation code in the methods of the **App** class, even the your app is simple enough that it has only one **Page**.
+In a UWP project, by default there will be navigation code in the methods of the **App** class, even if your app is simple enough that it has only one **Page**.
 
 When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 

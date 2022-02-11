@@ -16,8 +16,8 @@ If you are not sure what you want you app's name to be, you can reserve multiple
 
 Follow the following steps to reserve your app's name:
 
-1. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
-2. Click **Create a new app**.
+1. Navigate to the [Partner Center apps and games page](/gaming/xbox-live/get-started/setup-partner-center/live-setup-partner-center-partners).
+2. Click **New product**.
 3. Choose your app's type.
 4. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
 5. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.

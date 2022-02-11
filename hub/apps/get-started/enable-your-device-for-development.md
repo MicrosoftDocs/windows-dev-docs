@@ -1,16 +1,14 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Enable your device for development
-description: Learn how to enable your Windows device for development and debugging by activating Developer Mode in Visual Studio.
-keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 10/13/2020
+description: Active Developer mode on your PC to develop apps.
+keywords: Developer mode, Visual Studio, developer license, enable device
+ms.date: 01/10/2022
 ms.topic: article
-ms.localizationpriority: high
+ms.custom: seo-windows-dev
 ---
 
 # Enable your device for development
-
-## Activate Developer Mode, sideload apps and access other developer features
 
 ![Enable your devices for development](images/developer-poster.png)
 
@@ -23,12 +21,12 @@ However, if you are writing software with Visual Studio on a computer for first 
 
 ![Enable developer mode dialog that is displayed in Visual Studio](images/latestenabledialog.png)
 
-When you see this dialog, click **settings for developers** to open the **For developers** settings page.
+When you see this dialog, select `settings for developers` to open the **For developers** settings page.
 
 > [!NOTE]
 > You can go to the **For developers** page at any time to enable or disable Developer Mode: simply enter "for developers" into the Cortana search box in the taskbar.
 
-## Accessing settings for Developers
+## Active Developer Mode
 
 To enable Developer mode, or access other settings:
 

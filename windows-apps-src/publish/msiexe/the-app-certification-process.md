@@ -62,8 +62,6 @@ This test checks if your app is attempting to install any additional third-party
 
 This test will check to see if your app has a dependency on any type of non-Microsoft drivers or NT services. You are required to disclose such dependency in Partner Center during app submission.
 
-### Digital Signature/code signing
-
 Digital signature/code signing is an integral part of ensuring a verified and trusted ecosystem of apps and updates on Windows.
 It is highly recommended that your EXE/MSI app and the Portable Executable (PE) files inside of it are digitally signed with a certificate that chains upto a certificate of a Certificate Authority (CA) that is part of the [Microsoft Trusted Root Program](/security/trusted-root/participants-list).
 
@@ -84,6 +82,8 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 - Test your app on several different configurations to ensure that it's as stable as possible.
 - Ensure that your app does not crash without network connectivity. Even if a connection is required to use your app, it needs to perform appropriately when no connection is present.
 - Provide any necessary info required to use your app, such as the username and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
+- Configure your app's installer to provide your app’s information such as ProductName, Publisher Name, Default Language, Version info (as applicable) in places where customers expect to find such information such as ‘Add/Remove Programs’ in Windows. This information is part of your app’s installer package.  See [setting installer properties](/windows/win32/msi/property-reference#product-information-properties) for more details on how to set properties for your Windows installer
+- Include a privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies#105-personal-information)..
 - Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](../write-a-great-app-description.md).
 - Do not declare your app as accessible unless you have specifically engineered and tested it for accessibility scenarios.
 - Review the [Microsoft Store Policies](/legal/windows/agreements/store-policies) to ensure your app meets all the requirements listed there.

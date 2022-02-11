@@ -4,7 +4,7 @@ ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Expose basic accessibility information
 label: Expose basic accessibility information
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 01/20/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -91,7 +91,7 @@ XAML
 <span id="LABELS"/>
 
 ## Labels and LabeledBy  
-The preferred way to associate a label with a form element is to use a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) with an **x:Name** for label text, and then to set the [**AutomationProperties.LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) attached property on the form element to reference the labeling **TextBlock** by its XAML name. If you use this pattern, when the user clicks the label, the focus moves to the associated control and assistive technologies can use the label text as the accessible name for the form field. Here's an example that shows this technique.
+The preferred way to associate a label with a form element is to use a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) with an **x:Name** for label text, and then to set the [**AutomationProperties.LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) attached property on the form element to reference the labeling **TextBlock** by its XAML name. If you use this pattern, assistive technologies can use the label text as the accessible name for the form field. Here's an example that shows this technique.
 
 XAML
 ```xml

@@ -16,7 +16,7 @@ In this article, we step through how to build a basic **C# .NET 5** application 
 
 ## Prerequisites
 
-1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md#4-install-the-windows-app-sdk-extension-for-visual-studio).
+1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](../../windows-app-sdk/set-up-your-development-environment.md).
 2. Test your configuration by [creating a new project that uses the Windows App SDK](create-your-first-winui3-app.md). 
 
 ## Basic managed C#/.NET 5 app
@@ -76,7 +76,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ### Code
 
-1. In the App.xaml.cs code-behind file, we get a handle to the [Window](/windows/winui/api/microsoft.ui.xaml.window) using the [WindowNative.GetWindowHandle](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) WinRT COM interop method (see [Call WinRT COM interop interfaces from .NET 5+ apps](/windows/apps/desktop/modernize/winrt-com-interop-csharp)).
+1. In the App.xaml.cs code-behind file, we get a handle to the [Window](/windows/winui/api/microsoft.ui.xaml.window) using the [WindowNative.GetWindowHandle](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) WinRT COM interop method (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)).
 
    This method is called from the app's [OnLaunched](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
 
@@ -86,7 +86,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    In this method:
 
-   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the the dots per inch (dpi) value for the window (Win32 uses actual pixels while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor and apply it to the width and height specified for the window.
+   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the dots per inch (dpi) value for the window (Win32 uses actual pixels while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor and apply it to the width and height specified for the window.
    - We then call [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) to specify the desired location of the window.
    - Finally, we call [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) to disable the *Minimize* and *Maximize* buttons.
 
