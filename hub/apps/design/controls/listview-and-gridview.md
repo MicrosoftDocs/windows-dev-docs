@@ -25,7 +25,7 @@ ListView and GridView controls provide many benefits as you work with collection
 
 Both controls are flexible to use in a variety of scenarios but, overall, they work best with collections in which all items have the same basic structure and appearance, as well as the same interaction behavior. That is, they should perform the same action when they're clicked (for example, to open a link or navigate throughout an app).
 
-## Compare the ListView and GridView controls
+## Compare ListView and GridView
 
 ### ListView
 
@@ -51,7 +51,7 @@ The feature-rich ListView and GridView controls work *out of box*, which means t
 
 The [ItemsRepeater](./items-repeater.md) control also is used to display collections, but it's designed as a building block for creating a custom control to suit your particular UI requirements. It doesn't have the same built-in features and functionality as ListView and GridView, so you'll need to implement any necessary features or interactions. Use ItemsRepeater if you have a highly customized UI that you can't create by using either ListView or GridView, or if your data source requires different behavior for each item.
 
-Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) and [API Documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) pages.
+Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) and [API documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater).
 
 ## Examples
 
@@ -124,13 +124,13 @@ You can add items to the ListView or GridView [Items collection](/uwp/api/window
     FruitsPanel.Children.Add(Fruits);
     ```
 
-Both of these options produce the same ListView, as shown here:
+Both of these options produce the same list view, as shown here:
 
 ![Screenshot of a simple list view displaying a list of fruits.](images/listview-basic-code-example2.png)
 
 **Method 2: Add items by setting the ItemsSource property**
 
-You would ordinarily use a ListView or GridView to display data from a source such as a database or the internet. To populate a ListView or GridView from a data source, you set its [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) to a collection of data items. This method works better if your ListView or GridView is going to hold custom class objects, as shown in the examples for the following options.
+You would ordinarily use a ListView or GridView to display data from a source such as a database or the internet. To populate a ListView or GridView control from a data source, you set its [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) to a collection of data items. This method works better if ListView or GridView is going to hold custom class objects, as shown in the following examples.
 
 * Option 1: Set ItemsSource in code
 
@@ -165,7 +165,7 @@ You would ordinarily use a ListView or GridView to display data from a source su
 
 * Option 2: Set ItemsSource in XAML
 
-    You can also bind the ItemsSource property to a collection in the XAML. Here, ItemsSource is bound to a public property named `Contacts`, which exposes the Page's private data collection, named `_contacts`.
+    You can also bind the ItemsSource property to a collection in the XAML. Here, ItemsSource is bound to a public property named Contacts, which exposes the page's private data collection, named *_contacts*.
 
     ```xaml
     <ListView x:Name="ContactsLV" ItemsSource="{x:Bind Contacts}"/>
@@ -194,7 +194,7 @@ You would ordinarily use a ListView or GridView to display data from a source su
     }
     ```
 
-Both of these options will produce the same ListView, as shown in the following screenshot. (The list view shows the string representation of each item, because we didn't define a data template in this exercise.)
+Both of these options will produce the same list view, as shown in the following screenshot. (The list view shows the string representation of each item, because a data template isn't defined for this exercise.)
 
 ![Screenshot displaying a simple list view with the ItemsSource property set.](images/listview-basic-code-example-final.png)
 
@@ -206,19 +206,19 @@ The next section goes into greater detail about how to visually represent simple
 For more information about data binding, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!NOTE]
-> If you need to show grouped data in your ListView, you must bind to a [CollectionViewSource class](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more information, see [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
+> If you need to show grouped data in your list view, you must bind to a [CollectionViewSource class](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more information, see [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
 
-## Customize the look of items with a data template
+## Customize the look with a data template
 
-By using a data template in a ListView or GridView control, you can define how the items and data are to be visualized. By default, a data item is displayed in the ListView as the string representation of the data object it's bound to. You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) to that property.
+By using a data template in a ListView or GridView control, you can define how the items and data are to be visualized. By default, a data item is displayed in the list view as the string representation of the data object it's bound to. You can show the string representation of a particular property of the data item by setting the [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) to that property.
 
-However, you might ordinarily want to show a richer presentation of your data. To specify how items in the ListView or GridView are to be displayed, you create a [DataTemplate class](/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in DataTemplate defines the layout and appearance of the controls that are used to display an individual item. The controls in the layout can be bound to the properties of a data object, or they can have static content that's defined inline.
+However, you might ordinarily want to show a richer presentation of your data. To specify how items in the list view or grid view are to be displayed, you create a [DataTemplate class](/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in DataTemplate defines the layout and appearance of the controls that are used to display an individual item. The controls in the layout can be bound to the properties of a data object, or they can have static content that's defined inline.
 
 > [!NOTE]
 > When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
 
 #### A simple ListView data template
-In this example, the data item is a simple string. To add an image to the left of the string, and to display the string in teal, you define DataTemplate inline within the ListView definition. This is the same ListView that you created earlier by using option 1 under method 1.
+In this example, the data item is a simple string. To add an image to the left of the string, and to display the string in teal, you define DataTemplate inline within the ListView definition. This is the same ListView control that you created earlier by using option 1 under method 1.
 
 ```xaml
 <!--No corresponding code is needed for this example.-->
@@ -382,13 +382,13 @@ You can choose from a variety of ways to let users interact with a list view. By
 
 The following table lists the ways users can interact with a list view, and how you can respond to the interaction.
 
-| User&nbsp;interaction | Setting&nbsp;to&nbsp;use | Event&nbsp;to&nbsp;handle | Property&nbsp;to&nbsp;use
-----------------------------|---------------------|--------------------|--------------------------------------------
-| No interaction | [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)&nbsp;=&nbsp;*None*<br>[IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled)&nbsp;=&nbsp;*False* | N/A | N/A
-| Single selection | SelectionMode&nbsp;=&nbsp;*Single*<br>IsItemClickEnabled&nbsp;=&nbsp;*False* | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)<br>[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)
-| Multiple selection | SelectionMode&nbsp;=&nbsp;*Multiple*<br>IsItemClickEnabled&nbsp;=&nbsp;*False* | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)
-| Extended selection | SelectionMode&nbsp;=&nbsp;*Extended*<br>IsItemClickEnabled&nbsp;=&nbsp;*False* | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)
-| Click | SelectionMode&nbsp;=&nbsp;*None*<br>IsItemClickEnabled&nbsp;=&nbsp;*True* | [ItemClick](/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A
+| User&nbsp;interaction | Setting&nbsp;to&nbsp;use | Event&nbsp;to&nbsp;handle | Property&nbsp;to&nbsp;use |
+| --- |--- |--- |--- |
+| No interaction | [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)="None"<br>[IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled)="False" | N/A | N/A |
+| Single selection | SelectionMode="Single"<br>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)<br>[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) |
+| Multiple selection | SelectionMode="Multiple"<br>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) |
+| Extended selection | SelectionMode="Extended"<br>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) |
+| Click | SelectionMode="None"<br>IsItemClickEnabled="True" | [ItemClick](/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A |
 | | |
 
 > [!NOTE]
@@ -420,7 +420,7 @@ This table describes keyboard, mouse, and touch interactions when SelectionMode 
 | Modifier&nbsp;key | Interaction |
 | -------------|------------ |
 | None | <li>Users can select a single item by using the space bar, mouse clicks, or taps. |
-| Ctrl | <li>Users can deselect a single item by using the space bar, mouse clicks, or taps.<li>By using the arrow keys, users can move focus independent of the selection. |
+| Ctrl | <li>Users can deselect a single item by using the space bar, mouse clicks, or taps.<li>By using the arrow keys, users can move the focus independent of the selection. |
 | | |
 
 When SelectionMode is set to *Single*, you can get the selected data item from the [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) property. You can get the index in the collection of the selected item by using the [SelectedIndex property](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex). If no item is selected, SelectedItem is *null*, and SelectedIndex is *-1*.
@@ -433,8 +433,8 @@ This table describes the keyboard, mouse, and touch interactions when SelectionM
 
 | Modifier&nbsp;key | Interaction |
 | -------------|------------ |
-| None | <li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move focus independent of their selection. |
-| Shift | <li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key. |
+| None | <li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of their selection. |
+| Shift | <li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key. |
 | | |
 
 ### Extended selection
@@ -444,7 +444,7 @@ This table describes the keyboard, mouse, and touch interactions when SelectionM
 | Modifier&nbsp;key | Interaction |
 -------------|------------ |
 | None | <li>The behavior is the same as *Single* selection.
-Ctrl | <li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move focus independent of the selection. |
+Ctrl | <li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of the selection. |
 | Shift | <li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key. |
 | | |
 
