@@ -95,6 +95,8 @@ In addition, the custom request headers listed here can be used in the notificat
 | X-WNS-RequestForStatus | FALSE    | Requests device status and WNS connection status in the notification response. |
 | X-WNS-Tag              | FALSE    | String used to provide a notification with an identifying label, used for tiles that support the notification queue. This header applies only to tile notifications. |
 | X-WNS-TTL              | FALSE    | Integer value, expressed in seconds, that specifies the time to live (TTL). |
+| MS-CV | FALSE |  [Correlation Vector](https://github.com/microsoft/CorrelationVector/blob/master/cV%20-%202.1.md) value used for your request. |
+
 
 ### Important notes
 
