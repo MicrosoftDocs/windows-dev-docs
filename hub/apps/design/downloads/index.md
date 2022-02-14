@@ -3,7 +3,7 @@ description: Get the latest downloads and tools for Windows apps user interface 
 title: Design toolkits and samples for Windows apps
 ms.date: 01/11/2022
 ms.topic: conceptual
-ms.custom: RS5
+ms.custom: RS5, seo-windows-dev
 ---
 
 # Design toolkits and samples for Windows apps
@@ -16,7 +16,7 @@ Design and UI-related downloads for Fluent Design/Windows apps. For additional t
     :::column:::
         ![Figma Toolkit icon](images/figma.png)
         **Figma Toolkit**<br/>
-        WinUI 2.6, June 2021<br/>
+        WinUI 2.7, November 2021<br/>
         [Download](https://aka.ms/figmatoolkit)
     :::column-end:::
     :::column:::

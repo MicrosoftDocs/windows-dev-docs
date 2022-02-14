@@ -16,6 +16,8 @@ ms.custom: 19H1
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 
+[!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+
 ## Instructions for packaged C# WinUI 3 apps
 
 To create a packaged WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0:
@@ -67,6 +69,8 @@ To create a packaged WinUI 3 desktop app with C# and .NET 5 using Windows App SD
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 
+[!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+
 ## Instructions for unpackaged C# WinUI 3 apps
 
 To create an unpackaged WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0:
@@ -106,6 +110,8 @@ To create an unpackaged WinUI 3 desktop app with C# and .NET 5 using Windows App
 ### Key concepts
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
+
+[!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
 ## Instructions for packaged C++ WinUI 3 apps
 
@@ -157,6 +163,8 @@ To create a packaged WinUI 3 desktop app with C++ using Windows App SDK 1.0:
 ### Key concepts
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
+
+[!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
 ## Instructions for unpackaged C++ WinUI 3 apps
 

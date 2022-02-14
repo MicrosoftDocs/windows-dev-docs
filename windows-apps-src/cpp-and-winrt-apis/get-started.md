@@ -1,7 +1,7 @@
 ---
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
-ms.date: 04/18/2019
+ms.date: 01/28/2022
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
@@ -116,7 +116,9 @@ Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULT
 
 ## Modify a Windows Desktop application project to add C++/WinRT support
 
-This section shows you how you can add C++/WinRT support to a Windows Desktop application project that you might have. If you don't have an existing Windows Desktop application project, then you can follow along with these steps by first creating one. For example, open Visual Studio and create a **Visual C++** \> **Windows Desktop** \> **Windows Desktop Application** project.
+Some desktop projects (for example, the [WinUI 3 project templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio)) have C++/WinRT support built in.
+
+But this section shows you how you can add C++/WinRT support to any Windows Desktop application project that you might have. If you don't have an existing Windows Desktop application project, then you can follow along with these steps by first creating one. For example, open Visual Studio and create a **Visual C++** \> **Windows Desktop** \> **Windows Desktop Application** project.
 
 You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and the NuGet package. For details, see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
@@ -160,11 +162,11 @@ You can now compile and link, and add C++/WinRT code to your project (for exampl
 
 As you use and become familiar with C++/WinRT, and work through the rest of the documentation here, you'll likely notice that there are three main scenarios, as described in the following sections.
 
-### Consuming Windows Runtime APIs and types
+### Consuming Windows APIs and types
 
 In other words, *using*, or *calling* APIs. For example, making API calls to communicate using Bluetooth; to stream and present video; to integrate with the Windows shell; and so on. C++/WinRT fully and uncompromisingly supports this category of scenario. For more info, see [Consume APIs with C++/WinRT](./consume-apis.md).
 
-### Authoring Windows Runtime APIs and types
+### Authoring Windows APIs and types
 
 In other words, *producing* APIs and types. For example, producing the kinds of APIs described in the section above; or the graphics APIs; the storage and file system APIs; the networking APIs, and so on. For more info, see [Author APIs with C++/WinRT](./author-apis.md).
 

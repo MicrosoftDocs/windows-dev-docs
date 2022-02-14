@@ -122,17 +122,18 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
 
 1. In **Solution Explorer**, double-click the **SimpleMathProjection** node to open the project file in the editor.
 
-2. Update the `TargetFramework` element to target a specific Windows SDK version. This adds assembly dependencies that are necessary for the interop and projection support. This sample targets the Windows 10 SDK version **net6.0-windows10.0.19041.0** (also known as Windows 10, version 2004). Add the `Platforms` element if it's not there. To allow referencing applications to support earlier Windows 10 SDK versions, you can also set the `TargetPlatformMinimumVersion` property.
+2. Update the `TargetFramework` element to target a specific Windows SDK version. This adds assembly dependencies that are necessary for the interop and projection support. This sample targets the Windows 10 SDK version **net6.0-windows10.0.19041.0** (also known as Windows 10, version 2004). Set the `Platform` element to **AnyCPU** so that the resulting projection assembly can be referenced from any app architecture. To allow referencing applications to support earlier Windows 10 SDK versions, you can also set the `TargetPlatformMinimumVersion` property.
 
     ```xml
     <PropertyGroup>
       <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
-      <Platforms>x64</Platforms>
+      <!-- Set Platform to AnyCPU to allow consumption of the projection assembly from any architecture. -->
+      <Platform>AnyCPU</Platform>
     </PropertyGroup>
     ```
 
     > [!NOTE]
-    > For this walkthrough and the related sample code, the solution and all projects are configured to build for **x64** and **Release**. You can choose to build for any other .NET-supported platform, but you will need to adjust the [NuGet spec properties](#create-a-nuget-package-with-the-projection) accordingly.
+    > For this walkthrough and the related sample code, the solution is built for **x64** and **Release**. Note that the **SimpleMathProjection** project is configured to build for AnyCPU for all solution architecture configurations.
 
 3. Add a second `PropertyGroup` element (immediately after the first) that sets several C#/WinRT properties.
 
@@ -173,7 +174,7 @@ To distribute the projection assembly for .NET application developers, you can a
     > [!NOTE]
     > If you prefer generating a package separately, then you can also choose to run the `nuget.exe` tool from the command line. For more information about creating a NuGet package, see [Create a package using the nuget.exe CLI](/nuget/create-packages/creating-a-package).
 
-3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example NuGet spec for distributing the projection assembly from the C++/WinRT component. Note that **SimpleMathProjection.dll** is specified instead of **SimpleMathComponent.winmd** for the target `lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll`. This behavior is new in .NET 5 and later, and is enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be deployed, and will be loaded at runtime. Replace the contents of **SimpleMathProjection.nuspec** with the following.
+3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties, and paste the following code. The snippet below is an example NuGet spec for distributing **SimpleMathComponent** to multiple target frameworks. Note that projection assembly, **SimpleMathProjection.dll**, is specified instead of **SimpleMathComponent.winmd** for the target `lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll`. This behavior is new in .NET 5 and later, and is enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be distributed, and will be loaded at runtime.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -191,28 +192,31 @@ To distribute the projection assembly for .NET application developers, you can a
         </dependencies>
       </metadata>
       <files>
-        <!--Support .NET Core 3, UAP, .NET Framework 4.6, .NET 6, C++ -->
+        <!--Support .NET 6, .NET Core 3, UAP, .NET Framework 4.6, C++ -->
         <!--Architecture-netural assemblies-->
+        <file src="..\..\_build\AnyCPU\Release\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
-        <file src="..\..\_build\x64\Release\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll" />
         <!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
+        <!--To support x86 and ARM64, build SimpleMathComponent for those other architectures and uncomment the entries below.-->
+        <!--<file src="..\..\_build\Win32\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x86\native\SimpleMathComponent.dll" />-->
+        <!--<file src="..\..\_build\arm64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-arm64\native\SimpleMathComponent.dll" />-->
       </files>
     </package>
     ```
 
     > [!NOTE]
-    > **SimpleMathComponent.dll**, the implementation assembly for the component, is architecture-specific. If you're building for other platforms (for example, x86 or ARM64), then you must first build **SimpleMathComponent** for the desired platforms, and add targets for the appropriate [RID-relative folder](/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders). The projection assembly **SimpleMathProjection.dll** and the component **SimpleMathComponent.winmd** are both architecture-neutral.
+    > **SimpleMathComponent.dll**, the implementation assembly for the component, is architecture-specific. If you're supporting other platforms (for example, x86 or ARM64), then you must first build **SimpleMathComponent** for the desired platforms, and add these assembly files to the appropriate [RID-relative folder](/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders). The projection assembly **SimpleMathProjection.dll** and the component **SimpleMathComponent.winmd** are both architecture-neutral.
 
 4. Save and close the files you just edited.
 
 ## Build the solution to generate the projection and NuGet package
 
-Before building the solution, make sure to check the **Configuration Manager** settings in Visual Studio, under **Build** > **Configuration Manager**. For this walkthrough, set the **Configuration** to **Release** and **Platform** to **x64**, for both projects and the solution.
+Before building the solution, make sure to check the **Configuration Manager** settings in Visual Studio, under **Build** > **Configuration Manager**. For this walkthrough, set the **Configuration** to **Release** and **Platform** to **x64** for the solution.
 
-At this point you can now build the solution. Right-click on your solution node and select **Build Solution**. This will first build the **SimpleMathComponent** project, and then the **SimpleMathProjection** project. The component WinMD and implementation assembly (**SimpleMathComponent.winmd** and **SimpleMathComponent.dll**), the projection source files, and the projection assembly (**SimpleMathProjection.dll**), will all be generated under the **_build** output directory. You'll also be able to see the the generated NuGet package, **SimpleMathComponent0.1.0-prerelease.nupkg**, under the **\SimpleMathProjection\nuget** folder.
+At this point you can now build the solution. Right-click on your solution node and select **Build Solution**. This will first build the **SimpleMathComponent** project, and then the **SimpleMathProjection** project. The component WinMD and implementation assembly (**SimpleMathComponent.winmd** and **SimpleMathComponent.dll**), the projection source files, and the projection assembly (**SimpleMathProjection.dll**), will all be generated under the **_build** output directory. You'll also be able to see the generated NuGet package, **SimpleMathComponent0.1.0-prerelease.nupkg**, under the **\SimpleMathProjection\nuget** folder.
 
 > [!IMPORTANT]
 > If any of the files mentioned above are not generated, then build the solution a second time. You might also need to close and reopen the solution before rebuilding.
@@ -274,6 +278,17 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 5. Save and close the files you just edited, and build and run the console app. You should see the output below.
 
     ![Console NET5 output](images/console-output.png)
+    
+## Known issues
+
+- When building the projection project, you might see an error like: *Error MSB3271 There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture, "x86", of the implementation file "..\SimpleMathComponent.dll" for "..\SimpleMathComponent.winmd". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and implementation file, or choose a winmd file with an implementation file that has a processor architecture which matches the targeted processor architecture of your project.*
+    To work around this error, add the following property to your C# library project file:
+    ```xml
+    <PropertyGroup>
+        <!-- Workaround for MSB3271 error on processor architecture mismatch -->
+        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    </PropertyGroup>
+    ```
 
 ## Resources
 

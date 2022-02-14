@@ -45,7 +45,7 @@ When the Rust installer is finished, you'll be ready to program with Rust. You w
 
 If you're curious about the use of the `cargo` keyword above, *Cargo* is the name of the tool in the Rust development environment that manages and builds your projects (more properly, *packages*) and their dependencies.
 
-And if you really do want to dive in to some programming at this point (even without the convenience of an IDE), then you could read the [Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html) chapter of the The Rust Programming Language book on the Rust website.
+And if you really do want to dive in to some programming at this point (even without the convenience of an IDE), then you could read the [Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html) chapter of The Rust Programming Language book on the Rust website.
 
 ## Install Visual Studio Code
 

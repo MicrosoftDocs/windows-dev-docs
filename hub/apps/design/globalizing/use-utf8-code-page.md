@@ -3,6 +3,7 @@ description: How to use UTF code pages in Windows apps.
 title: Use UTF-8 code pages in Windows apps
 ms.date: 01/11/2022
 ms.topic: article
+ms.custom: seo-windows-dev
 ---
 
 # Use UTF-8 code pages in Windows apps

@@ -14,9 +14,9 @@ This topic shows how to register and revoke event-handling delegates using [C++/
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-## Using Visual Studio 2019 to add an event handler
+## Using Visual Studio to add an event handler
 
-A convenient way of adding an event handler to your project is by using the XAML Designer user interface (UI) in Visual Studio 2019. With your XAML page open in the XAML Designer, select the control whose event you want to handle. Over in the property page for that control, click on the lightning-bolt icon to list all of the events that are sourced by that control. Then, double-click on the event that you want to handle; for example, *OnClicked*.
+A convenient way of adding an event handler to your project is by using the XAML Designer user interface (UI) in Visual Studio. With your XAML page open in the XAML Designer, select the control whose event you want to handle. Over in the property page for that control, click on the lightning-bolt icon to list all of the events that are sourced by that control. Then, double-click on the event that you want to handle; for example, *OnClicked*.
 
 The XAML Designer adds the appropriate event handler function prototype (and a stub implementation) to your source files, ready for you to replace with your own implementation.
 

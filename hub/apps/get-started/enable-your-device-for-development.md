@@ -5,7 +5,7 @@ description: Active Developer mode on your PC to develop apps.
 keywords: Developer mode, Visual Studio, developer license, enable device
 ms.date: 01/10/2022
 ms.topic: article
-ms.localizationpriority: high
+ms.custom: seo-windows-dev
 ---
 
 # Enable your device for development

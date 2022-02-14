@@ -3,6 +3,7 @@ title: Using ms-windows-store URIs
 description: Launch the Microsoft Store app directly to a landing page or your product's page.
 ms.date: 01/11/2022
 ms.topic: article
+ms.custom: seo-windows-dev
 ---
 
 # Using ms-windows-store URIs

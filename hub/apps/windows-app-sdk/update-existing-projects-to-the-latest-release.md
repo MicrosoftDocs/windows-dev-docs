@@ -45,13 +45,13 @@ If you created a project using version 0.8 Stable (for example, version 0.8.4), 
 6. To add the `WindowsAppSDK` package reference to your `.csproj`/`.vcxproj`:
     
     ```Console
-    install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0-stable
+    install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0
     ```
 
 7. To add the `WindowsAppSDK` package reference to your `.wapproj`:
     
     ```Console
-    install-package Microsoft.WindowsAppSDK -Version 1.0.0-stable 
+    install-package Microsoft.WindowsAppSDK -Version 1.0.0 
     ```   
     
 ## Update from 0.8 Stable or Preview to 1.0 Experimental or Preview 3

@@ -5,7 +5,7 @@ ms.topic: article
 ms.date: 10/05/2021 
 ms.author: zafaraj
 author: zaryaf
-ms.localizationpriority: medium
+ms.custom: seo-windows-dev
 ---
 
 # Install tools for developing apps for Windows 10 and Windows 11

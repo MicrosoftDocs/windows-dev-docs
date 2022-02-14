@@ -86,7 +86,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    In this method:
 
-   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the the dots per inch (dpi) value for the window (Win32 uses actual pixels while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor and apply it to the width and height specified for the window.
+   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the dots per inch (dpi) value for the window (Win32 uses actual pixels while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor and apply it to the width and height specified for the window.
    - We then call [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) to specify the desired location of the window.
    - Finally, we call [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) to disable the *Minimize* and *Maximize* buttons.
 

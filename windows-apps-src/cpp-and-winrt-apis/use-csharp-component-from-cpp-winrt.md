@@ -204,7 +204,7 @@ It is recommended to build and test your application with the C# component built
 
 Next, set the `UseDotNetNativeToolchain` property to `true` in the Release and ARM64 configurations in the C++ project file.
 
-In the Visual Studio Solution Explorer, open the shortcut menu for the the *CppToCSharpWinRT* project and choose **Reload Project**.
+In the Visual Studio Solution Explorer, open the shortcut menu for the *CppToCSharpWinRT* project and choose **Reload Project**.
 
 ```xml
   <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">

@@ -13,36 +13,37 @@ ms.localizationpriority: medium
 
 This article provides guidance about deploying non-[MSIX](/windows/msix) packaged apps that use the Windows App SDK to other computers.
 
-
 ## Overview
 
-Unpackaged apps use the *dynamic dependencies* support in the Windows App SDK to dynamically take a dependency on the Windows App SDK framework package and any other MSIX framework packages. Dynamic dependencies enables unpackaged applications to keep their existing deployment mechanism, such as MSI or any installer, and be able to leverage the Windows App SDK in their application. Dynamic dependencies can be used by both packaged applications and unpackaged apps, although it is primarily intended to be used by unpackaged apps. To learn more about the dependencies your app takes when it uses the Windows App SDK, see [the Windows App SDK deployment architecture](deployment-architecture.md).
+Unpackaged apps use the *dynamic dependencies* support in the Windows App SDK to dynamically take a dependency on the Windows App SDK framework package and any other MSIX framework packages. Dynamic dependencies enables unpackaged applications to keep their existing deployment mechanism, such as MSI or any installer, and be able to leverage the Windows App SDK in their application. Dynamic dependencies can be used by both packaged applications and unpackaged apps, although it is primarily intended to be used by unpackaged apps. 
 
-Unpackaged apps have two options available for deploying the Windows App SDK package dependencies, which include the **[framework](deployment-architecture.md#framework-package)**, **[main](deployment-architecture.md#main-package)** and **[Dynamic Dependency Lifetime Manager (DDLM)](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm)** packages.
+> [!IMPORTANT]
+> Before configuring your app for deployment, and to learn more about the dependencies your unpackaged app takes when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). These dependencies include the *framework*, *main*, and *Dynamic Dependency Lifetime Manager (DDLM)* packages, which are all signed and published by Microsoft.
+
+Unpackaged apps have two options available for deploying the Windows App SDK package dependencies:
 
 - **The Windows App SDK installer (.exe)**: The silent installer contains a copy of the MSIX packages for the Windows App SDK. By default, the installer will automatically detect the system architecture and install the MSIX packages in either the `X64`,`X86` or `ARM64` architectures.
 - **Install the packages directly**: You can have your existing setup or MSI tool carry and install the MSIX packages for the Windows App SDK.
 
 ## Prerequisites
 
-- Download the latest Windows App SDK installer and MSIX packages. For downloads for all versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
+* [Download the latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer).
+* For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
+* **C#**. For the .NET 5.0 runtime, see [Download .NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
-  > [!div class="button"]
-  > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer)
+### Additional prerequisites details
 
-- [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
+* For downloads for other versions of the Windows App SDK, see [Downloads for the Windows App SDK](downloads.md).
+* [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
   - Sideloading is automatically enabled on Windows 10 version 2004 and later.
   - If your development computer or the deployment computer is running **Windows 11**, confirm whether sideloading is enabled:
-    1. Open **Settings**.
-    2. Click **Privacy & security** > **For developers**.
-    3. Make sure the **Developer mode** setting is turned on (the **Developer mode** setting includes sideloading as well as other features).
+    - **Settings** > **Privacy & security** > **For developers**. Make sure the **Developer mode** setting is turned on.
   - If your development computer or the deployment computer is running **Windows 10 version 1909 or an earlier version**, confirm whether sideloading is enabled:
-    1. Open **Settings**.
-    2. Click **Update & Security** > **For developers**.
-    3. In the **Use developer features** section, make sure the **Sideload apps** or **Developer mode** setting is selected (the **Developer mode** setting includes sideloading as well as other features).
+    - **Settings** > **Update & Security** > **For developers** > **Use developer features**. Confirm that **Sideload apps** or **Developer mode** is selected.
+  - The **Developer mode** setting includes sideloading as well as other features
 
     > [!NOTE]
-    > If the computer is managed in an enterprise environment, the computer may have a policy that disables the ability to modify these settings. If so, you may get an error when you or your app tries to install the the Windows App SDK runtime. In this case, you must contact your IT Professional to enable sideloading or **Developer mode**.
+    > If the computer is managed in an enterprise environment, there might be a policy preventing these settings from being changed. In that case if you get an error when you or your app tries to install the Windows App SDK runtime, contact your IT Professional to enable sideloading or **Developer mode**.
 
 ## Deploy Windows App SDK using the .exe installer
 
@@ -94,10 +95,7 @@ For a code example that demonstrates how to run the Windows App SDK installer fr
 
 ### Installer sample 
 
-For additional guidance on how to launch the WindowsAppRuntimeInstaller from a Win32 setup program without popping up a console window during setup, explore the available sample. 
-
-> [!div class="button"]
-> [Explore installer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Installer)
+For additional guidance on how to launch the WindowsAppRuntimeInstaller from a Win32 setup program without popping up a console window during setup, see the [Explore installer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Installer).
 
 ### Troubleshooting
 
@@ -146,9 +144,9 @@ For more information, see the [Use MSIX framework packages dynamically from your
 
 ## Related topics
 
-- [Runtime architecture](deployment-architecture.md)
+* [Deployment architecture for the Windows App SDK](deployment-architecture.md)
+- [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
+- [Release channels](release-channels.md)
 - [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
 - [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
-- [Release channels](release-channels.md)
-- [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
