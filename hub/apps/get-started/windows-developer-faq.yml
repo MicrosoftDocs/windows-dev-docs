@@ -27,7 +27,7 @@ sections:
           [Learn more about choosing a development technology](./index.md).
      - question: Can I incrementally migrate my old app to Windows App SDK and WinUI 3?
        answer: |
-          Yes - you can gradually migrate your WinForms, WPF, and UWP apps to WinUI 3.
+          Yes&mdash;you can gradually migrate your WinForms, WPF, and UWP apps to WinUI 3.
      - question: Do I need to use Visual Studio to build WinUI 3 apps?
        answer: |
            We strongly recommend using Visual Studio for at least initial project creation. Visual Studio Community Edition is supported. You can also use `msbuild.exe` and VS Code together, although this isn't recommended because it hasn't been fully tested.
@@ -43,7 +43,7 @@ sections:
             - App lifecycle management isn't supported yet.
      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
        answer: |
-          Yes - this is the recommended nomenclature.
+          Yes&mdash;that's the term that we recommend you use.
      
  
 
@@ -212,7 +212,7 @@ sections:
      - question: Can I configure my WinUI 3 app to auto-update?
        answer: |
           Yes. TODO: Link to guidance
-        # ask product peers to confirm - see https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500094 
+        # ask product peers to confirm&mdash;see https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500094 
      - question: Can I use Windows App SDK without using MSBuild?
        answer: |
           TODO
@@ -239,7 +239,7 @@ sections:
           TODO
      - question: How do I make sure my apps run smoothly on all targeted devices and platforms?
        answer: |
-          TODO - link to guidance
+          TODO&mdash;link to guidance
      - question: My built WinUI 3 app is large. How to I reduce the size of my build?
        answer: |
           TODO
@@ -293,7 +293,7 @@ sections:
      - question: When should I migrate my WinForms app to WinUI 3? Is guidance available?
        answer: |
           SSSSS
-     - question: Is WinRT deprecated?
+     - question: Is the Windows Runtime (WinRT) deprecated?
        answer: |
           WinRT is in maintenance mode, but is still supported for production scenarios.
      - question: When should I migrate my WinRT app to WinUI 3? Is guidance available?
