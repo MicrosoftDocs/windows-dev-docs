@@ -73,7 +73,7 @@ Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) 
 
 | XAML&nbsp;Controls&nbsp;Gallery | &nbsp; |
 | --- | --- |
-| ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon-sm.png) | If you already have the XAML Controls Gallery app installed, open it to see the [ListView](xamlcontrolsgallery:/item/ListView) or [GridView](xamlcontrolsgallery:/item/GridView) control in action. If the app isn't already installed: <li>[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)<li>[Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery) |
+| ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon-sm.png) | If you already have the XAML Controls Gallery app installed, see the [ListView](xamlcontrolsgallery:/item/ListView) and [GridView](xamlcontrolsgallery:/item/GridView) controls in action. If the app isn't already installed: <li>[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)<li>[Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery) |
 |||
 
 ## Create a list view or a grid view
