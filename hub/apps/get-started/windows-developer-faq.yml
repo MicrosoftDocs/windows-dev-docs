@@ -69,7 +69,7 @@ sections:
           Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform.
      - question: What does Windows App SDK mean for UWP and desktop developers?
        answer: |
-          UWP developers don't need to migrate. WinUI 2.x and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. Windows actually uses UWP project types for several of our own Windows apps. If you want to use the Windows App SDK or .NET 5 in your existing UWP app, you can migrate your project to a desktop project type by following our [migration guidance](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy). 
+          UWP developers don't need to migrate. WinUI 2.x and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. Windows actually uses UWP project types for several of our own Windows apps. If you want to use the Windows App SDK or .NET 5 in your existing UWP app, you can migrate your project to a desktop project type by following our [migration guidance](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy). 
 
           If you're working on a desktop project type (WPF, Windows, or .NET 5+), you can simply add the Windows App SDK as a NuGet package and get access to all the new APIs.
 
@@ -143,7 +143,7 @@ sections:
    questions: 
      - question: What can I do with XAML Islands?
        answer: |
-          As of Windows 10 version 1903, you can use XAML Islands to [host WinRT XAML controls in non-UWP desktop apps](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands). [Learn more about XAML Islands](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands).
+          As of Windows 10 version 1903, you can use XAML Islands to [host WinRT XAML controls in non-UWP desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands). [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
      
      
  - name: Combining Windows development technologies
@@ -165,7 +165,7 @@ sections:
           Yes. Note that WinUI 3 uses the `Microsoft.*` namespace. WinUI 2 uses the `Windows.*` namespace.
      - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
        answer: |
-          The Windows App SDK API closely resembles the UWP API. [Learn more about migrating your UWP apps.](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
+          The Windows App SDK API closely resembles the UWP API. [Learn more about migrating your UWP apps.](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
      - question: If I have an existing UWP app in the Store, can I publish a new packaged app using the same identifiers?
        answer: |
           Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version.
@@ -185,7 +185,7 @@ sections:
           If you're targeting both Windows and Surface hub, we recommend using UWP. You'll eventually be able to target Surface Hub with Windows App SDK / WinUI 3, but we aren't there yet.
      - question: What should I use if I want to build apps that work on Windows and Hololens and/or Mixed Reality?
        answer: |
-          We recommend using Windows App SDK and WinUI 3 to build Windows apps. For Hololens apps, we recommend using OpenXR + Win32. [Learn more about OpenXR](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr). Mixed Reality apps can be built [using the Windows SDK and Visual Studio](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/install-the-tools).
+          We recommend using Windows App SDK and WinUI 3 to build Windows apps. For Hololens apps, we recommend using OpenXR + Win32. [Learn more about OpenXR](https://docs.microsoft.com/windows/mixed-reality/develop/native/openxr). Mixed Reality apps can be built [using the Windows SDK and Visual Studio](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools).
 
 
 
@@ -208,7 +208,7 @@ sections:
           Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. Unpackaged apps don't use MSIX. Both types of applications can be published to the Microsoft Store.
      - question: Can I create an unpackaged WinUI 3 app?
        answer: |
-          Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/create-your-first-winui3-app?pivots=winui3-unpackaged-csharp).
+          Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app?pivots=winui3-unpackaged-csharp).
      - question: Can I configure my WinUI 3 app to auto-update?
        answer: |
           Yes. TODO: Link to guidance
@@ -245,7 +245,7 @@ sections:
           TODO
      - question: What can I do to make my Windows app feel great to end-users?
        answer: |
-          See [Make apps great for Windows](https://docs.microsoft.com/en-us/windows/apps/get-started/make-apps-great-for-windows).
+          See [Make apps great for Windows](https://docs.microsoft.com/windows/apps/get-started/make-apps-great-for-windows).
 
 
 
@@ -308,7 +308,7 @@ sections:
         # See: https://www.reddit.com/r/Windows11/comments/qw7o69/comment/hl675ea/?utm_source=share&utm_medium=web2x&context=3 
      - question: Where can I find release notes for Windows App SDK?
        answer: |
-          See [Stable channel release notes](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/stable-channel).
+          See [Stable channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/stable-channel).
      - question: Where can I find a public roadmap for Windows App SDK?
        answer: |
            - [Windows App SDK roadmap](https://portal.productboard.com/winappsdk/1-windows-app-sdk/tabs/2-planned)
@@ -322,7 +322,7 @@ sections:
 additionalContent: |
   ## Related
   - Review [the official Windows Developer Glossary](windows-developer-glossary.md)
-  - [Build your first Windows App](https://docs.microsoft.com/en-us/windows/apps/get-started/?tabs=cpp-win32#app-types)
+  - [Build your first Windows App](https://docs.microsoft.com/windows/apps/get-started/?tabs=cpp-win32#app-types)
 
 
 

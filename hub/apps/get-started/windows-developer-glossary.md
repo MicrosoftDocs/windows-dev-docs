@@ -28,7 +28,7 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
 ### A
 
 ##### App Lifecycle (Management)
-App Lifecycle Management describes the management of your application's execution state: not running, running in background, running in foreground, suspended, etc. [Learn more about App Lifecycle](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/app-lifecycle).
+App Lifecycle Management describes the management of your application's execution state: not running, running in background, running in foreground, suspended, etc. [Learn more about App Lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
 
 ##### App SDK
 Shorthand for Windows App SDK.
@@ -60,7 +60,7 @@ Microsoft's [Fluent Design System](https://www.microsoft.com/design/fluent/#/) g
 ### H
 
 ##### Hot Reloading
-A .NET and C++ feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-rerun your apps while developing. See: [Visual Studio Hot Reloading](https://docs.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022).
+A .NET and C++ feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-rerun your apps while developing. See: [Visual Studio Hot Reloading](https://docs.microsoft.com/visualstudio/debugger/hot-reload?view=vs-2022).
 
 
 ### I
@@ -78,15 +78,15 @@ Managed apps are apps that administrators manage through administrative capabili
 See .NET MAUI below.
 
 ##### MFC
-The Microsoft Foundation Class (MFC) Library can be used to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: [MFC Desktop Applications](https://docs.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=msvc-170).
+The Microsoft Foundation Class (MFC) Library can be used to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: [MFC Desktop Applications](https://docs.microsoft.com/cpp/mfc/mfc-desktop-applications?view=msvc-170).
 
 
 ##### Mica
-Mica is a UI technology that subtly tints your app based on the user's background. [Learn more about Mica](https://docs.microsoft.com/en-us/windows/apps/design/style/mica).
+Mica is a UI technology that subtly tints your app based on the user's background. [Learn more about Mica](https://docs.microsoft.com/windows/apps/design/style/mica).
 
 
 ##### MSIX
-A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). When you use MSIX to deploy your apps, your app is a "packaged" app. Packaged apps can check for updates and can control when updates are applied. [Learn more about MSIX](https://docs.microsoft.com/en-us/windows/msix/overview ).
+A modern application package format that allows you to easily deploy your Windows applications (built using Windows App SDK, Win32, WPF, or Windows Forms). When you use MSIX to deploy your apps, your app is a "packaged" app. Packaged apps can check for updates and can control when updates are applied. [Learn more about MSIX](https://docs.microsoft.com/windows/msix/overview ).
 
 
 
@@ -106,7 +106,7 @@ TODO
 
 
 ##### .NET MAUI
-.NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [Learn more about .NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/what-is-maui).
+.NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [Learn more about .NET MAUI](https://docs.microsoft.com/dotnet/maui/what-is-maui).
 
  
 
@@ -166,10 +166,10 @@ Unpackaged apps don’t use MSIX. They’re typically installed and updated thro
 ### V
 
 ##### VSIX
-You can use the VSIX Project template to create an extension or to package an existing extension for deployment. [Learn more about VSIX](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-the-vsix-project-template?view=vs-2022).
+You can use the VSIX Project template to create an extension or to package an existing extension for deployment. [Learn more about VSIX](https://docs.microsoft.com/visualstudio/extensibility/getting-started-with-the-vsix-project-template?view=vs-2022).
 
 ##### Visual Studio
-The Visual Studio IDE is a creative launching pad that you can use to edit, debug, and build code, and then publish an app. [Learn more about Visual Studio](https://docs.microsoft.com/en-us/visualstudio/get-started/visual-studio-ide?view=vs-2022).
+The Visual Studio IDE is a creative launching pad that you can use to edit, debug, and build code, and then publish an app. [Learn more about Visual Studio](https://docs.microsoft.com/visualstudio/get-started/visual-studio-ide?view=vs-2022).
 
 
 ##### Visual Studio Code
@@ -189,7 +189,7 @@ WebView2 is the best way to include web content in your native Windows apps. You
 
 
 ##### Win32
-The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT (for UWP apps for Windows 10). This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware. [Learn more about Win32](https://docs.microsoft.com/en-us/windows/win32/desktop-programming).
+The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT (for UWP apps for Windows 10). This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware. [Learn more about Win32](https://docs.microsoft.com/windows/win32/desktop-programming).
 
 
 ##### Windows App
@@ -212,11 +212,11 @@ The Windows SDK is a collection of headers, libraries, metadata, and tools that 
 
 
 ##### WinRT
-C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. [Learn more about WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/).
+C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. [Learn more about WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
 
 
 ##### WinUI
-The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications. [Learn more about WinUI](https://docs.microsoft.com/en-us/windows/apps/winui/).
+The Windows UI Library (WinUI) is a native user experience (UX) framework for both Windows desktop and UWP applications. [Learn more about WinUI](https://docs.microsoft.com/windows/apps/winui/).
 
 
 ##### WinUI 2
@@ -236,7 +236,7 @@ More advanced than WinForms, but not being actively developed. WinUI 3 and Win A
 ### X
 
 ##### XAML Islands
-XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms WPF) apps starting in Windows 10, version 1903. [Learn more about XAML Islands](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands).
+XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms WPF) apps starting in Windows 10, version 1903. [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
 
 ##### Xamarin
-Xamarin is an open-source app platform that lets you build Android and iOS apps with .NET and C#. [Learn more about Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin).
+Xamarin is an open-source app platform that lets you build Android and iOS apps with .NET and C#. [Learn more about Xamarin](https://dotnet.microsoft.com/apps/xamarin).
