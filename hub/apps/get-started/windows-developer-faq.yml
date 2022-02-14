@@ -69,7 +69,7 @@ sections:
           Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform.
      - question: What does Windows App SDK mean for UWP and desktop developers?
        answer: |
-          UWP developers don't need to migrate. WinUI 2.x and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. Windows actually uses UWP project types for several of our own Windows apps. If you want to use the Windows App SDK or .NET 5 in your existing UWP app, you can migrate your project to a desktop project type by following our [migration guidance](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy). 
+          UWP developers don't need to migrate. WinUI 2.x and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. Windows actually uses UWP project types for several of our own Windows apps. If you want to use the Windows App SDK or .NET 5 in your existing UWP app, you can migrate your project to a desktop project type by following our migration guidance (see [Migrate from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)). 
 
           If you're working on a desktop project type (WPF, Windows, or .NET 5+), you can simply add the Windows App SDK as a NuGet package and get access to all the new APIs.
 
