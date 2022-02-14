@@ -16,6 +16,8 @@ items:
           href: get-started/samples.md
         - name: Windows Developer Glossary 
           href: get-started/windows-developer-glossary.md
+        - name: Windows Developer FAQ 
+          href: get-started/windows-developer-faq.yml
   - name: Setup guides and resources
     items:
         - name: System requirements
