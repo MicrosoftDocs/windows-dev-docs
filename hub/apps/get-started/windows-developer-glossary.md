@@ -199,13 +199,17 @@ An application that can run on Windows. Windows Apps can be built using a variet
 TODO
 
 ##### Windows App SDK
-A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP.
+A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP. It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. [Learn more on Github](https://github.com/microsoft/WindowsAppSDK/discussions/1615).
 
 ##### Windows Forms
 Otherwise known as WinForms. A thin layer over Windows APIs with minimal layout and styling options. Not being actively developed. WinUI 3 and Win App SDK are the latest and recommended alternatives for new app development.
 
 ##### Windows Project
 A project that you work on through an IDE. You generate application builds from your projects before packaging and deploying them.
+
+##### Windows SDK
+The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build Win32 and UWP Windows apps.
+
 
 ##### WinRT
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. [Learn more about WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/).
