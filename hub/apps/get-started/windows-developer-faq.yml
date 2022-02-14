@@ -33,13 +33,13 @@ sections:
            We strongly recommend using Visual Studio for at least initial project creation. Visual Studio Community Edition is supported. You can also use `msbuild.exe` and VS Code together, although this isn't recommended because it hasn't been fully tested.
      - question: What limitations are there when building with WinUI 3 and Windows App SDK?
        answer: |
-            - Multi-windowing isn't supported yet. This is currently in-scope for Windows App SDK v1.1, which is scheduled to ship in Q2 2022. 
-            - Non-store apps can't send push notifications. This is currently in-scope for Windows App SDK v1.1.
-            - Local toast notifications aren't supported yet. This is currently in-scope for Windows App SDK v1.1.
+            - Multi-windowing isn't supported yet. This is currently in scope for Windows App SDK v1.1, which is scheduled to ship in Q2 2022. 
+            - Non-store apps can't send push notifications. This is currently in scope for Windows App SDK v1.1.
+            - Local toast notifications aren't supported yet. This is currently in scope for Windows App SDK v1.1.
             - XAML Islands aren't supported yet.
             - Media, map, and inking controls aren't supported yet.
-            - ARM64 isn't yet supported for unpackaged scenarios. This is currently in-scope for Windows App SDK v1.1.
-            - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet. This is currently in-scope for Windows App SDK v1.1.
+            - ARM64 isn't yet supported for unpackaged scenarios. This is currently in scope for Windows App SDK v1.1.
+            - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet. This is currently in scope for Windows App SDK v1.1.
             - App lifecycle management isn't supported yet.
      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
        answer: |
@@ -124,7 +124,7 @@ sections:
           To use the Windows SDK, you have to download an installer that allows you to use WinUI 2 within UWP apps. Windows App SDK is released to developers through NuGet and lets you build modern apps using WinUI 3.
      - question: Can I use Mica (Windows 11) or Acrylic (Windows 10) backgrounds in apps built with Windows App SDK?
        answer: |
-          Not quite. This is currently in-scope for Windows App SDK v1.1.
+          Not quite. This is currently in scope for Windows App SDK v1.1.
      - question: Is WinUI 3 pure XAML like UWP/WPF?
        answer: |
           It can be, but you can also code your UI.
