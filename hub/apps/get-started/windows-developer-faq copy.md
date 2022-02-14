@@ -1,28 +1,6 @@
----
-description: The official Windows Developer FAQ.
-title: Windows Developer FAQ
-ms.topic: article
-ms.date: 01/24/2022
-keywords: windows win32, desktop development
-ms.author: mikben
-author: mikben
-ms.localizationpriority: medium
-ms.collection: windows11
----
 
 # Windows Developer FAQ
 
-The following FAQ is meant to promote a common understanding of the Windows development experience and product direction.
-
-<!--
-  1. List and categorize v1 questions [done]
-  2. Try to answer the questions [we are here]
-  3. Align + refine with team + Ryan Demo + PMM
-  4. Remove comments, link out to resources when helpful, format for instant answer previews in google, follow the FAQ template, link to glossary
-  5. Add this doc to stable release checklist
-  -
-  - This is an example of the pain we're trying to alleviate through clear messaging: https://github.com/microsoft/WindowsAppSDK/discussions/1615 
- -->
 
 
 ### Getting started

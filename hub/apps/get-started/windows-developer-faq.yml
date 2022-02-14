@@ -1,0 +1,38 @@
+### YamlMime:FAQ
+metadata:
+  description: The official Windows Developer FAQ. Get answers to common questions about Windows application development and Windows App SDK.
+  title: Windows Developer FAQ
+  ms.topic: faq
+  ms.date: 02/04/2022
+  keywords: windows, win32, desktop development, windows app sdk, appsdk, uwp, wpf
+  ms.author: mikben
+  author: mikben
+  ms.localizationpriority: medium
+  ms.collection: windows11
+title: Windows Developer FAQ
+summary: This article answers questions commonly asked about Windows application development. It's meant to promote a common understanding of the Windows development experience and product direction.
+sections: 
+ - name: "Getting started" 
+   questions: 
+     - question: What's the latest and recommended way to build Windows Apps?
+       answer: | 
+          The commercial marketplace connects business and government agencies with solutions built by our partners. Our partners create and manage offers in Partner Center, and customers can discover and buy solutions … 
+          To learn more, go to the [Microsoft commercial marketplace hub](https://partner.microsoft.com/asset/collection/commercial-marketplace#/). 
+     - question: Where can I learn more about the Microsoft Admin Center? 
+       answer: For information about the Microsoft Admin Center, see [Manage third-party app subscriptions for your organization](/microsoft-365/commerce/manage-saas-apps).
+ - name: Test
+   questions: 
+     - question: What's the latest and recommended way to build Windows Apps?
+       answer: | 
+          The commercial marketplace connects business and government agencies with solutions built by our partners. Our partners create and manage offers in Partner Center, and customers can discover and buy solutions … 
+          To learn more, go to the [Microsoft commercial marketplace hub](https://partner.microsoft.com/asset/collection/commercial-marketplace#/). 
+     - question: Where can I learn more about the Microsoft Admin Center? 
+       answer: For information about the Microsoft Admin Center, see [Manage third-party app subscriptions for your organization](/microsoft-365/commerce/manage-saas-apps). 
+
+
+ 
+
+
+
+
+
