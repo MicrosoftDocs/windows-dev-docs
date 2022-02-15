@@ -17,7 +17,7 @@ Windows provides a default title bar for every window and lets you to customize 
 See the [Title bar](../design/basics/titlebar-design.md) design article for guidance on customizing your app's title bar, acceptable title bar area content, and recommended UI patterns.
 
 > [!div class="nextstepaction"]
-> [See the Windows 11 Fluent Design guidance for title bar](../../apps/design/basics/titlebar-design.md)
+> [See the Windows 11 Fluent Design guidance for title bar](../design/basics/titlebar-design.md)
 
 ## Title bar components
 
@@ -37,7 +37,7 @@ This list describes the components of the standard title bar.
 The exact features of the title bar and the options available to customize it depend on your UI platform and app requirements. This article shows how to customize the title bar for apps that use either the Windows App SDK, WinUI 3, or UWP with WinUI 2.
 
 > [!NOTE]
-> For a detailed comparison of the windowing models used by the Windows App SDK and UWP, see [Windowing functionality migration](/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md).
+> For a detailed comparison of the windowing models used by the Windows App SDK and UWP, see [Windowing functionality migration](../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md).
 
 ### [Windows App SDK](#tab/wasdk)
 
@@ -64,7 +64,7 @@ You can use AppWindow APIs with any UI framework that the Windows App SDK suppor
 > - **Applies to**: WinUI 3 desktop apps
 > - **Important APIs**: [Microsoft.UI.Xaml.Window class](/windows/winui/api/microsoft.ui.xaml.window), [Window.ExtendsContentIntoTitleBar property](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar), [Window.SetTitleBar method](/windows/winui/api/microsoft.ui.xaml.window.settitlebar)
 
-Windowing functionality in [WinUI 3](/windows/apps/develop) is through the [Microsoft.UI.Xaml.Window]() class, which is based on the Win32 HWND model. The Window class includes APIs that let you replace the standard title bar with your own custom content.
+Windowing functionality in [WinUI 3](/windows/apps/develop) is through the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class, which is based on the Win32 HWND model. The Window class includes APIs that let you replace the standard title bar with your own custom content.
 
 WinUI 3 is also part of the Windows App SDK, so both the Window class and the AppWindow class are available to customize the title bar. You can pass the window handle of the XAML Window to the AppWindow object and use the AppWindow functionality in conjunction with the Window APIs (see the Windows App SDK tab). However, title bar customization with AppWindow is supported only on Windows 11.
 
@@ -1488,4 +1488,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ## Related articles
 
 - [Acrylic](../design/style/acrylic.md)
+- [Mica](../design/style/mica.md)
 - [Color](../design/style/color.md)
