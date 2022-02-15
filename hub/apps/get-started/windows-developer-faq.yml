@@ -151,7 +151,7 @@ sections:
      - question: Can I start with WinUI 3 and App SDK, and later integrate .NET MAUI if I eventually want to target cross-platform scenarios?
        answer: |
           TODO
-     - question: Can I combine WPF and WinUI 3? When would I want to?
+     - question: Can I combine WPF and WinUI 3? What are the reasons to do that?
        answer: |
           Yes, you can integrate WinUI 3 into your WPF app. This can be useful in situations where you need browser controls from your WPF app.
  
@@ -284,19 +284,19 @@ sections:
      - question: Is WPF deprecated?
        answer: |
           WPF is in maintenance mode, but is still supported for production scenarios.
-     - question: When should I migrate my WPF app to WinUI 3? Is guidance available?
+     - question: What are the reasons to migrate a WPF app to WinUI 3? Is guidance available?
        answer: |
           TODO
      - question: Is WinForms deprecated?
        answer: |
           WinForms is in maintenance mode, but is still supported for production scenarios.
-     - question: When should I migrate my WinForms app to WinUI 3? Is guidance available?
+     - question: What are the reasons to migrate a WinForms app to WinUI 3? Is guidance available?
        answer: |
           SSSSS
      - question: Is the Windows Runtime (WinRT) deprecated?
        answer: |
           WinRT is in maintenance mode, but is still supported for production scenarios.
-     - question: When should I migrate my WinRT app to WinUI 3? Is guidance available?
+     - question: What are the reasons to migrate a WinRT app to WinUI 3? Is guidance available?
        answer: |
           TODO
 
