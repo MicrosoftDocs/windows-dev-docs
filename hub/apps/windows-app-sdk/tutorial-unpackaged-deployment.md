@@ -11,9 +11,9 @@ ms.localizationpriority: medium
 
 # Advanced tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
 
-This article provides a step-by-step tutorial for an advanced scenario, in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. 
+This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. 
 
-**Simple approach:** You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property. See [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) for instructions.
+This guidance demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. This is considered a more advanced scenario. A simple approach using auto-initialization via the `WindowsPackageType` project property is available beginning in 1.0 Preview3. See [Create your first WinUI 3 App](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app) for more info.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
@@ -21,7 +21,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 1. [Install Visual Studio](set-up-your-development-environment.md#1-install-visual-studio).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
-3. If you're using Visual Studio 2019 version 16.11, C# projects must use .NET 5 SDK version 5.0.400 or later. Later versions of Visual Studio can use .NET 6.
+3. C# projects using the **1.0 Preview version 3** of the Windows App SDK (or later) must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 
 ## Instructions
 
@@ -45,6 +45,7 @@ Follow these instructions to configure a C++ project that includes WinUI 3 unpac
 
     1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**. 
     2. In the **NuGet Package Manager** window, select the **Browse** tab, and search for **Microsoft.WindowsAppSDK**.
+
 
 3. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
@@ -193,7 +194,7 @@ Follow these instructions to configure a C# project that includes WinUI 3 unpack
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-	    var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
+   	    var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);
