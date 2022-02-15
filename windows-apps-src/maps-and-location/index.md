@@ -74,5 +74,5 @@ Your app can launch the Windows Maps app as shown here to display specific maps 
 * [Design guidelines for location-aware apps](guidelines-and-checklist-for-detecting-location.md)
 * [Design guidelines for maps](./display-maps.md)
 * [Design guidelines for privacy-aware apps](../security/index.md)
-* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
 * [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)

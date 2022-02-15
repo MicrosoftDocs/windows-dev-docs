@@ -79,7 +79,6 @@ This section provides an overview of important tasks and concepts for the [Windo
 Watch the following video for an overview of how to implement in-app purchases in your app using the [Windows.Services.Store](/uwp/api/windows.services.store) namespace.
 <br/>
 <br/>
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Adding-In-App-Purchases-to-Your-UWP-App/player]
 
 <span id="get-started-storecontext" />
 
@@ -186,15 +185,42 @@ If you implement in-app purchases using the **Windows.Services.Store** namespace
 
 ### Using the StoreContext class with the Desktop Bridge
 
-Desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) can use the [StoreContext](/uwp/api/windows.services.store.storecontext) class to implement in-app purchases and trials. However, if you have a Win32 desktop application or a desktop application that has a window handle (HWND) that is associated with the rendering framework (such as a WPF application), your application must configure the **StoreContext** object to specify which application window is the owner window for modal dialogs that are shown by the object.
+Desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) can use the [StoreContext](/uwp/api/windows.services.store.storecontext) class to implement in-app purchases and trials. However, if you have a Win32 desktop application or a desktop application that has a window handle (HWND) that is associated with the rendering framework (such as a WPF or Windows App SDK application), your application must configure the **StoreContext** object to specify which application window is the owner window for modal dialogs that are shown by the object.
 
 Many **StoreContext** members (and members of other related types that are accessed through the **StoreContext** object) display a modal dialog to the user for Store-related operations such as purchasing a product. If a desktop application does not configure the **StoreContext** object to specify the owner window for modal dialogs, this object will return inaccurate data or errors.
 
 To configure a **StoreContext** object in a desktop application that uses the Desktop Bridge, follow these steps.
 
-1. Do one of the following to enable your app to access the [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface:
+#### For .NET 5 or later
 
-    * If your application is written in a managed language such as C# or Visual Basic, declare the **IInitializeWithWindow** interface in your app's code with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute as shown in the following C# example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
+If your application is written in C# with .NET 5 or later, follow these steps.
+
+1. Make sure that the `TargetFramework` property in the project file is [set to a specific Windows SDK version to access the Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option), which provides access to the **WinRT.Interop** namespace. For example:
+
+    ```xml
+    <PropertyGroup>
+      <!-- You can also target other versions of the Windows SDK and .NET, e.g. "net5.0-windows10.0.19041.0" -->
+      <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    </PropertyGroup>
+    ```
+
+2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article. Use the **WinRT.Interop.InitializeWithWindow.Initialize** method as documented in [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp) to initialize the dialog with the specified window handle. 
+
+      ```csharp
+      StoreContext context = StoreContext.GetDefault();
+      // Obtain window handle by passing in pointer to the window object
+      var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(windowObject);
+      // Initialize the dialog using wrapper funcion for IInitializeWithWindow
+      WinRT.Interop.InitializeWithWindow.Initialize(context, hwnd); 
+      ```
+
+#### For earlier versions of .NET or C++
+
+If your application is written with an earlier version of .NET or in C++, follow these steps.
+
+1. Do one of the following to enable your app to access the [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface:
+ 
+    * If your application is written in a managed language such as C# or Visual Basic (prior to .NET 5), declare the **IInitializeWithWindow** interface in your app's code with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute as shown in the following C# example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
 
         ```csharp
         [ComImport]

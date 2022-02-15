@@ -10,7 +10,7 @@ ms.date: 10/19/2021
 
 # Overview of Android development on Windows
 
-A guide to help you set up your development environment on a Windows 10 or Windows 11 machine for developing Android apps.
+A guide to help you set up your development environment on a Windows 10 or Windows 11 machine for developing Android apps. Android is a trademark of Google LLC. If you're a developer interested in using Windows operating system to build apps that work on Android devices and across other device platforms, this guide is for you.
 
 You can also learn about using Windows Subsystem for Android™️ to update and test your Android application so that it will run on a Windows 11 device using the Amazon Appstore. [Learn more](./wsa/index.md).
 

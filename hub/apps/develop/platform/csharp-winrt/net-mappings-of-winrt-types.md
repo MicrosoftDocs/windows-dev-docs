@@ -11,14 +11,14 @@ ms.localizationpriority: medium
 
 This article lists the mappings that C#/WinRT makes between Windows Runtime (WinRT) types and .NET types in desktop apps that target .NET 5 (or later). In these apps, Visual Studio IntelliSense shows the .NET type instead of the Windows Runtime type. For example, if a Windows Runtime method takes a parameter of type **IVector&lt;string&gt;**, then IntelliSense shows a parameter of type **IList&lt;string&gt;**. Similarly, in a WinRT component authored using C#/WinRT, you use the .NET type in member signatures. When you use C#/WinRT to generate a Windows Runtime component, the .NET type is translated into the corresponding WinRT type.
 
-The C#/WinRT custom type mappings are categorized by types in the Windows SDK or in [WinUI 3](/windows/apps/winui) (WinUI 3 is part of [Project Reunion](/windows/apps/project-reunion)). The WinRT types for Windows SDK mappings live under the **Windows.\*** namespaces, and the WinRT types for WinUI 3 mappings live under the **Microsoft.UI.Xaml.\*** namespaces. There are two reasons for custom type mappings that C#/WinRT makes for WinRT types:
+The C#/WinRT custom type mappings are categorized by types in the Windows SDK or in [WinUI 3](/windows/apps/winui) (WinUI 3 is part of the [Windows App SDK](/windows/apps/windows-app-sdk)). The WinRT types for Windows SDK mappings live under the **Windows.\*** namespaces, and the WinRT types for WinUI 3 mappings live under the **Microsoft.UI.Xaml.\*** namespaces. There are two reasons for custom type mappings that C#/WinRT makes for WinRT types:
 
 - **WinRT types that map to .NET types with a different name and/or namespace.** These custom mappings are for mapping WinRT types to existing .NET equivalent types. There are also cases where the mapping is to a different type (e.g., a value type maps to a class type).
 
 - **WinRT types that map to .NET types with the same name and namespace.** These custom mappings are generally for performance or enhancement reasons, and are implemented directly in C#. Most of the types that have the same namespace name and type name in WinRT and .NET are structures (or types associated with structures, such as enumerations). In WinRT, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types (for example, **Windows.UI.Color**).
 
 > [!NOTE]
-> For a list of mappings between WinRT and .NET types in the context of UWP apps, see [.NET mappings of WinRT types in UWP](../winrt-components/net-framework-mappings-of-windows-runtime-types.md).
+> For a list of mappings between WinRT and .NET types in the context of UWP apps, see [.NET mappings of WinRT types in UWP](/windows/apps/develop/platform/winrt-components/net-framework-mappings-of-windows-runtime-types.md).
 
 ## Mappings for WinRT types in the Windows SDK
 

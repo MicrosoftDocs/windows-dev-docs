@@ -96,7 +96,7 @@ The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) doesn't have 
 
 Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](../layout/layouts-with-xaml.md) and [Layout panels](../layout/layout-panels.md) for more info about creating an adaptive UI.
 
-This example creates the the simple picture/info app UI shown previously in the _Examples_ section. When the app is spanned across dual-screens, the picture and the info are shown on separate screens. On a single screen, the content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
+This example creates the simple picture/info app UI shown previously in the _Examples_ section. When the app is spanned across dual-screens, the picture and the info are shown on separate screens. On a single screen, the content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
 
 ![Small image of example app spanned on dual-screens](images/two-pane-view/tpv-left-right.png)
 

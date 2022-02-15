@@ -24,7 +24,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > - <kbd>⊞ Win</kbd>+<kbd>L</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be remapped as they are reserved by the Windows OS.
 > - The <kbd>Fn</kbd> (function) key cannot be remapped (in most cases). The <kbd>F1</kbd> ~ <kbd>F12</kbd> (and F13 ~ F24) keys can be mapped.
 > - <kbd>Pause</kbd> will only send a single keydown event. So mapping it against the backspace key, for instance, and pressing and holding will only delete a single character.
-> - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when re-assinged. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar
+> - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when reassigned. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar
 ).
 
 
@@ -171,6 +171,16 @@ It depends on how the game accesses your keys. Certain keyboard APIs do not work
 ### Will remapping work if I change my input language?
 
 Yes it will. Right now if you remap <kbd>A</kbd> to <kbd>B</kbd> on English (US) keyboard and then change the language setting to French, typing <kbd>A</kbd> on the French keyboard (<kbd>Q</kbd> on the English US physical keyboard) would result in `B`, this is consistent with how Windows handles multilingual input.
+
+### Can I have different key mappings across multiple keyboards?
+
+Currently no, currently we are not aware of an API where we can see the input and which keyboard / device it came from.  The typical use case here is a laptop and an external keyboard is connected.
+
+### I see keys listed in the drop down menus that don't work. Why is that?
+
+Keyboard Manager lists mappings for all known physical keyboard buttons. Some of these mappings may not be available on your keyboard as there may not be a physical key that it corresponds to. For instance, the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
+
+ ![PowerToys Keyboard Manager List of Keys](../images/pt-key-remap-drop-down.png)
 
 ## Troubleshooting
 

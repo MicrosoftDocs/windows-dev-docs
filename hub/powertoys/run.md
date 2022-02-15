@@ -59,8 +59,9 @@ These default activation phrases will force PowerToys Run into only targeted plu
 | :--- | :--- | :--- |
 | `=` | Calculator only | `=2+2` |
 | `?` | File searching only | `?road` to find `roadmap.txt` |
+| `??` | Web search only | `??What is the answer to life` to search with your default browser's search engine. |
 | `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup |
-| `//` | URLs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com |
+| `//` | URIs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. Also supports `mailto:` and `ms-settings:` |
 | `<` | Running processes only | `<outlook` to find all processes that contain outlook |
 | `>` | Shell command only | `>ping localhost` to do a ping query |
 | `:` | Registry keys only | `:hkcu` to search for the HKEY_CURRENT_USER registry key |
@@ -73,15 +74,16 @@ These default activation phrases will force PowerToys Run into only targeted plu
 
 PowerToys Run enables a set of system level actions that can be executed.
 
-| Action command | Action |
-| :--- | :--- |
-| `Shutdown` | Shuts down the computer |
-| `Restart` | Restarts the computer |
-| `Sign Out` | Signs current user out |
-| `Lock` | Locks the computer |
-| `Sleep` | Sleeps the computer |
-| `Hibernate` | Hibernates the computer |
-| `Empty Recycle Bin` | Empties the recycle bin |
+| Action command | Action | Note |
+| :--- | :--- | :--- |
+| `Shutdown` | Shuts down the computer | |
+| `Restart` | Restarts the computer | |
+| `Sign Out` | Signs current user out | |
+| `Lock` | Locks the computer | |
+| `Sleep` | Sleeps the computer | |
+| `Hibernate` | Hibernates the computer | |
+| `Empty Recycle Bin` | Empties the recycle bin | |
+| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 
 ## Plugin manager
 
@@ -103,6 +105,24 @@ If the program plugin's option "Include in global result" is not selected, be su
 
 `.Visual Studio Code -- C:\myFolder`
 
+## Calculator Plugin
+
+The PowerToys Run calculator plugin supports the following operations:
+
+| Operation |  Operator Syntax |
+| - | - |
+| Addition |  a + b |
+| Subtraction | a - b |
+| Multiplication | a * b |
+| Division |  a / b |
+| Modulo/Remainder | a % b |
+| Exponentiation | a ^ b |
+| Factorial | x ! |
+| Sine | sin( x ) |
+| Cosine | cos( x ) |
+| Tangent | tan( x ) |
+| Arc Tangent | arctan( x ) |
+
 ## Monitor Positioning
 
 If multiple monitors are in use, PowerToys Run can be launched on the desired monitor by configuring the appropriate launch behavior in the Settings menu. Options are opening on:
@@ -112,6 +132,7 @@ If multiple monitors are in use, PowerToys Run can be launched on the desired mo
 - Monitor with focused window
 
 ![PowerToys Run Monitor Selection](../images/pt-run-monitor.png)
+
 
 ## Windows Search settings
 

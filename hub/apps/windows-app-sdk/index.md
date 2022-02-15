@@ -11,17 +11,18 @@ ms.localizationpriority: medium
 
 The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
 
-The Windows App SDK does not replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements these existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
+The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements these existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
 
-> [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release. The Windows App SDK requires that you also have the Windows SDK installed.
+[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
 ## Get started with the Windows App SDK
 
 The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio 2022. These extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
-1. Set up your development environment and install the latest Windows App SDK VSIX from [Install developer tools](set-up-your-development-environment.md).
-2. Follow the instructions on how to [create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+> [!div class="button"]
+> [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
+
+If you have already installed the required developer tools, you're ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
@@ -39,6 +40,19 @@ The following table highlights the development features that are provided by the
 | [App lifecycle: Power management](applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
 | [Push notifications](notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
+| [Deployment](deployment-architecture.md) | Deploy Windows App SDK runtime with your unpackaged and packaged app |
+
+### Windows App SDK release channels
+
+The following table provides an overview of the different release channels.
+
+| Release channel | Description |
+|--|--|
+| [Stable](stable-channel.md) | This channel is supported for use by apps in production environments. It only includes stable APIs. By default, the Windows App SDK docs focus on the Stable channel. |
+| [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. For documentation on using the Preview release, see [Preview and Experimental guidance](preview-experimental-install.md). |
+| [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. For documentation on using the Experimental release, see [Preview and Experimental guidance](preview-experimental-install.md). |
+
+ For more details about the release channels of the Windows App SDK, see [Windows App SDK release channels](release-channels.md).
 
 ## Benefits of the Windows App SDK for Windows developers
 

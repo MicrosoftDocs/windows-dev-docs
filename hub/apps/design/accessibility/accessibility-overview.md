@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
+
 
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>

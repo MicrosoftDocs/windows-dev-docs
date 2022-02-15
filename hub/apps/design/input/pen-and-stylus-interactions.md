@@ -24,13 +24,9 @@ Optimize your Windows app for pen input to provide both standard [**pointer devi
 
 :::row:::
    :::column:::
-      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
-
       *Using ink in your Windows app*
    :::column-end:::
    :::column:::
-      <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
-
       *Use Windows Pen and Ink to build more engaging enterprise apps*
    :::column-end:::
 :::row-end:::

@@ -62,7 +62,7 @@ Compact sizing enables dense, information-rich groups of controls and can help w
 
 Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the [WinUI](/uwp/toolkits/winui/) Nuget package.
 
-The following examples show how the the `Compact` style can be applied for the page and an individual Grid control.
+The following examples show how the `Compact` style can be applied for the page and an individual Grid control.
 
 #### Page level
 

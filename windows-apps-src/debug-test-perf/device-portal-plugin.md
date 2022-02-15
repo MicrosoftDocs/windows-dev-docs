@@ -2,7 +2,7 @@
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Write a custom plugin for Windows Device Portal
 description: Learn how to write a UWP app that uses the Windows Device Portal to host a web page and provide diagnostic information.
-ms.date: 01/08/2021
+ms.date: 01/20/2022
 ms.topic: article
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
@@ -76,9 +76,14 @@ Two new capabilities are required for this functionality. they must also be adde
 In order to set up the Device Portal connection, your app must hook up an app service connection from the Device Portal service with the instance of Device Portal running within your app. To do this, add a new WinRT Component to your application with a class that implements [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask).
 
 ```csharp
+using Windows.System.Diagnostics.DevicePortal;
+using Windows.ApplicationModel.Background;
+
 namespace MySampleProvider {
     // Implementing a DevicePortalConnection in a background task
     public sealed class SampleProvider : IBackgroundTask {
+        BackgroundTaskDeferral taskDeferral;
+        DevicePortalConnection devicePortalConnection;
         //...
     }
 ```
@@ -123,9 +128,9 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
         con += String.Format("This process is consuming {0} bytes (Working Set)<br/>", proc.MemoryUsage.GetReport().WorkingSetSizeInBytes);
         con += String.Format("The process PID is {0}<br/>", proc.ProcessId);
         con += String.Format("The executable filename is {0}", proc.ExecutableFileName);
-        res.Content = new HttpStringContent(con);
-        res.Content.Headers.ContentType = new HttpMediaTypeHeaderValue("text/html");
-        res.StatusCode = HttpStatusCode.Ok;            
+        res.Content = new Windows.Web.HttpStringContent(con);
+        res.Content.Headers.ContentType = new Windows.Web.Http.Headers.HttpMediaTypeHeaderValue("text/html");
+        res.StatusCode = Windows.Web.Http.HttpStatusCode.Ok;            
     }
     //...
 }
@@ -141,7 +146,7 @@ The response is then set as an HTTP response and given a 200 (OK) status code. I
 Static content can be served directly from a folder within your package, making it very easy to add a UI to your provider.  The easiest way to serve static content is to create a content folder in your project that can map to a URL.
 
 ![device portal static content folder](images/device-portal/plugin-static-content.png)
- 
+
 Then, add a route handler in your **RequestReceived** event handler that detects static content routes and maps a request appropriately.  
 
 ```csharp
@@ -156,17 +161,19 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
     } catch(FileNotFoundException e) {
         string con = String.Format("<h1>{0} - not found</h1>\r\n", filePath);
         con += "Exception: " + e.ToString();
-        res.Content = new HttpStringContent(con);
-        res.StatusCode = HttpStatusCode.NotFound;
-        res.Content.Headers.ContentType = new HttpMediaTypeHeaderValue("text/html");
+        res.Content = new Windows.Web.Http.HttpStringContent(con);
+        res.StatusCode = Windows.Web.Http.HttpStatusCode.NotFound;
+        res.Content.Headers.ContentType = new Windows.Web.Http.Headers.HttpMediaTypeHeaderValue("text/html");
     }
 }
 ```
+
 Make sure that all files inside of the content folder are marked as "Content" and set to "Copy if newer" or "Copy always" in Visual Studio’s Properties menu.  This ensures that the files will be inside your AppX Package when you deploy it.  
 
 ![configure static content file copying](images/device-portal/plugin-file-copying.png)
 
 ## Using existing Device Portal resources and APIs
+
 Static content served by a Device Portal provider is served on the same port as the core Device Portal service.  This means that you can reference the existing JS and CSS included with Device Portal with simple `<link>` and `<script>` tags in your HTML. In general, we suggest the use of *rest.js*, which wraps all the core Device Portal REST APIs in a convenient webbRest object, and the *common.css* file, which will allow you to style your content to fit with the rest of Device Portal's UI. You can see an example of this in the *index.html* page included in the sample. It uses *rest.js* to retrieve the device name and running processes from Device Portal. 
 
 ![device portal plugin output](images/device-portal/plugin-output.png)

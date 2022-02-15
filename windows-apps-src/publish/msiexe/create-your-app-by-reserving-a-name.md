@@ -19,11 +19,15 @@ If you are not sure what you want you app's name to be, you can reserve multiple
 
 Follow the following steps to reserve your app's name:
 
-1. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
-2. Click **Create a new app**.
-3. Choose your app's type.
-4. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
-5. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.
+
+
+1. Sign in to Partner Center.
+2. MSI or EXE app publishing experience is available in the new Workspace interface and you can click the “Workspaces” button on the top right of the page to toggle to the new interface.
+3. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
+4. Click **New product**.
+5. Choose your app's type.
+6. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
+7. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.
 
 > [!NOTE]
 > You might find that you cannot reserve a name, even though you do not see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but has not submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).

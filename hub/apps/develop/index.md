@@ -10,9 +10,14 @@ ms.localizationpriority: medium
 
 This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET, and don't require use of the Windows App SDK.
 
+[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+
 ## Windows App SDK features
 
 The following table highlights the development features that are provided by the current releases of the Windows App SDK. For more details about the release channels of the Windows App SDK that include each of these features, see [Features available by release channel](../windows-app-sdk/release-channels.md#features-available-by-release-channel).
+
+> [!div class="button"]
+> [Learn about the Windows App SDK](../windows-app-sdk/index.md)
 
 | Feature | Description |
 |--|--|
@@ -24,6 +29,7 @@ The following table highlights the development features that are provided by the
 | [App lifecycle: Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](../windows-app-sdk/windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
 | [Push notifications](../windows-app-sdk/notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
+| [Deployment](../windows-app-sdk/deployment-architecture.md) | Deploy the Windows App SDK runtime with your unpackaged and packaged app |
 
 ## Windows app development features organized by scenario
 

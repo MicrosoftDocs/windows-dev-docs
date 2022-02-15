@@ -26,6 +26,8 @@
       href: basics/index.md
     - name: App Silhouette
       href: basics/app-silhouette.md  
+    - name: App title bar
+      href: basics/titlebar-design.md
     - name: Content basics
       href: basics/content-basics.md
     - name: Commanding Basics
@@ -397,14 +399,14 @@
           href: shell/tiles-and-notifications/request-create-save-notification-channel.md
         - name: Push notification service request and response headers
           href: shell/tiles-and-notifications/push-request-response-headers.md
-        - name: Troubleshooting tile, toast, and badge notifications
+        - name: Troubleshooting push notifications
           href: shell/tiles-and-notifications/troubleshoot-notifications.md
+        - name: Raw Notification Overview
+          href: shell/tiles-and-notifications/raw-notification-overview.md
     - name: Taskbar
       items:
         - name: Pin your app to the taskbar
           href: shell/pin-to-taskbar.md
-    - name: Title bar
-      href: shell/title-bar.md
     - name: Live Tiles
       href: shell/tiles-and-notifications/creating-tiles.md
       items:
@@ -639,7 +641,7 @@
           href: globalizing/multilingual-app-toolkit-editor-downloads.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
           href: globalizing/mat-faq-troubleshooting.yml
-        - name: Use the UTF-8 code page
+        - name: Use UTF-8 code pages in Windows apps
           href: globalizing/use-utf8-code-page.md
         - name: Prepare your application for the Japanese era change
           href: globalizing/japanese-era-change.md
@@ -653,5 +655,5 @@
           href: in-app-help/in-app-help.md
         - name: External help
           href: in-app-help/external-help.md
-- name: Design toolkits
+- name: Design toolkits and samples for Windows apps
   href: downloads/index.md

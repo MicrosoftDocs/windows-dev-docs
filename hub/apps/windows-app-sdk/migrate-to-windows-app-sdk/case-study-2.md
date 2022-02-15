@@ -2,7 +2,7 @@
 title: A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)
 description: A case study of taking the C++/WinRT [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/), and migrating it to the Windows App SDK.
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 11/17/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C++/WinRT, Photo, Editor, UWP
 ms.author: stwhi
 author: stevewhims
@@ -320,84 +320,85 @@ Confirm that you can build the target solution (but don't run yet).
 
 3. In `MainWindow.xaml.h` and `MainWindow.xaml.cpp`, delete the declarations and definitions of the placeholder **MyProperty** and **myButton_Click**, leaving only the constructor.
 
+## Migration changes needed for threading model difference
+
+The two changes in this section are necessary due to a threading model difference between UWP and the Windows App SDK, as described in [ASTA to STA threading model](guides/threading.md#asta-to-sta-threading-model). Here are brief descriptions of the causes of the issues, and then a way to resolve each.
+
+### MainPage
+
+**MainPage** loads image files from your **Pictures** folder, calls [**StorageItemContentProperties.GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync) to get the image file's properties, creates a **Photo** model object for each image file (saving those same properties in a data member), and adds that **Photo** object to a collection. The collection of **Photo** objects is data-bound to a **GridView** in the UI. On behalf of that **GridView**, **MainPage** handles the [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) event, and for phase 1 that handler calls into a coroutine that calls [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync). This call to **GetThumbnailAsync** results in messages being pumped (it doesn't return immediately, and do *all* of its work async), and that causes reentrancy. The result is that the **GridView** has its **Items** collection changed while layout is taking place, and that causes a crash.
+
+If we comment out the call to **StorageItemContentProperties::GetImagePropertiesAsync**, then we don't get the crash. But the real fix is to make the **StorageFile.GetThumbnailAsync** call be explicitly async by cooperatively awaiting **wil::resume_foreground** immediately before calling **GetThumbnailAsync**. This works because **wil::resume_foreground** schedules the code that follows it to be a task on the **DispatcherQueue**.
+
+Here's the code to change:
+
+```cppwinrt
+// MainPage.xaml.cpp
+IAsyncAction MainPage::OnContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+    ...
+    if (args.Phase() == 1)
+    {
+        ...
+        try
+        {
+            co_await wil::resume_foreground(this->DispatcherQueue());
+            auto thumbnail = co_await impleType->GetImageThumbnailAsync(this->DispatcherQueue());
+            image.Source(thumbnail);
+        }
+        ...
+    }
+}
+```
+
+### Photo
+
+The **Photo::ImageTitle** property is data-bound to the UI, so the UI calls into the accessor function for that property whenever it needs its value. But when we try to access [**ImageProperties.Title**](/uwp/api/windows.storage.fileproperties.imageproperties.title) from that accessor function on the UI thread, we get an access violation.
+
+So instead, we can just access that **Title** one-time, from the constructor of **Photo**, and store it in the *m_imageName* data member if it's not empty. Then in the **Photo::ImageTitle** accessor function we need only to access the *m_imageName* data member.
+
+Here's the code to change:
+
+```
+// Photo.h
+...
+Photo(Photo(Windows::Storage::FileProperties::ImageProperties const& props,
+    ...
+    ) : ...
+{
+	if (m_imageProperties.Title() != L"")
+	{
+		m_imageName = m_imageProperties.Title();
+	}
+}
+...
+hstring ImageTitle() const
+{
+	return m_imageName;
+}
+...
+```
+
 Those are the last of the changes we need to make to migrate the *Photo Editor* sample app. In the **Test the migrated app** section we'll confirm that we've correctly followed the steps.
 
 ## Known issues
 
-### ImageProperties
+### App type issue (affects only Preview 3)
 
-There is one issue that we need to work around by commenting out a few lines of code from the project. For background, see GitHub issue [StorageItemContentProperties.GetImagePropertiesAsync causes an access violation when the same code works fine in the UWP version](https://github.com/microsoft/WindowsAppSDK/issues/1141).
+If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](/windows/apps/windows-app-sdk/preview-channel#version-10-preview-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
 
-The following listing identifies file names, methods, and lines of code that need to be commented out (or, in some cases shown below, added). We recommend that you copy-paste the snippets below to replace what's currently in the target project.
+In Visual Studio, in **Solution Explorer**, right-click the project node, and click **Unload Project**. Now `PhotoEditor.vcxproj` is open for editing. As the first child of **Project**, add a **PropertyGroup** element like this:
 
-```cppwinrt
-// MainPage.xaml.cpp:
-    IAsyncOperation<PhotoEditor::Photo> MainPage::LoadImageInfoAsync(StorageFile file)
-    {
-        //auto properties = co_await file.Properties().GetImagePropertiesAsync();
-        auto info = winrt::make<Photo>(nullptr, file, file.DisplayName(), file.DisplayType());
-        co_return info;
-    }
-
-// Photo.cpp:
-    hstring Photo::ImageDimensions() const
-    {
-        return L"Not implemented";
-
-        //wstringstream stringStream;
-        //stringStream << m_imageProperties.Width() << " x " << m_imageProperties.Height();
-        //wstring str = stringStream.str();
-        //return static_cast<hstring>(str);
-    }
-
-    void Photo::ImageTitle(hstring const& value)
-    {
-        //if (m_imageProperties.Title() != value)
-        //{
-        //    m_imageProperties.Title(value);
-        //    auto ignoreResult = m_imageProperties.SavePropertiesAsync();
-        //    RaisePropertyChanged(L"ImageTitle");
-        //}
-    }
-
-// Photo.h:
-    hstring ImageTitle() const
-    {
-        return m_imageName;
-        // return m_imageProperties.Title() == L"" ? m_imageName : m_imageProperties.Title();
-    }
-
-// DetailPage.xaml.cpp
-// And be sure to change the return type in `.idl` and `.h`.
-    IAsyncAction DetailPage::FitToScreen()
-    {
-        auto properties = co_await Item().ImageFile().Properties().GetImagePropertiesAsync();
-        auto a = MainImageScroller().ActualWidth() / properties.Width();
-        auto b = MainImageScroller().ActualHeight() / properties.Height();
-        auto ZoomFactor = static_cast<float>(std::min(a, b));
-        MainImageScroller().ChangeView(nullptr, nullptr, ZoomFactor);
-    }
+```xml
+<Project ... >
+    <PropertyGroup>
+        <EnableWin32Codegen>true</EnableWin32Codegen>
+    </PropertyGroup>
+    <Import ... />
+...
 ```
 
-### Switch to the UI thread before updating UI elements
-
-A user interface (UI) element must be updated from the thread that created it (which is the UI thread). In a coroutine, a `co_await` constitutes a *suspension point*, where control is returned to the caller, and resumption *should* take place on the original thread.
-
-But with the Windows App SDK 1.0 Preview 3, that doesn't happen. So we need to search the code for uses of the `co_await` operator. And then look for code that follows it that updates a UI element. If we find cases like that, then we need to switch to the UI thread before updating the UI.
-
-First add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-
-Then add the following include to `pch.h` in the target project.
-
-```cppwinrt
-#include <wil/cppwinrt_helpers.h>
-```
-
-The way you switch to the UI thread is to add the following line of code (before updating the UI).
-
-```cppwinrt
-co_await wil::resume_foreground(this->DispatcherQueue());
-```
+Save and close `PhotoEditor.vcxproj`. Right-click the project node, and click **Reload Project**. Now rebuild the project.
 
 ## Test the migrated app
 

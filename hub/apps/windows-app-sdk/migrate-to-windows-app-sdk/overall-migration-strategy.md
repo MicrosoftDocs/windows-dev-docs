@@ -39,7 +39,7 @@ The Windows App SDK offers you an opportunity to enhance your app with new platf
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
-The value proposition of moving the the Windows App SDK is manifold. Here are some considerations:
+The value proposition of moving the Windows App SDK is manifold. Here are some considerations:
 
 * Latest user interface (UI) platform and controls such as [Windows UI Library (WinUI)](/windows/apps/winui/) 3 and [WebView2](/microsoft-edge/webview2/).
 * A single API surface across desktop app platforms.

@@ -1,6 +1,6 @@
 ---
-title: Build and deploy an unpackaged app that uses the Windows App SDK 
-description: This article provides a walkthrough for building and deploying an unpackaged app that uses the Windows App SDK.
+title: Advanced tutorial - Build and deploy an unpackaged app that uses the Windows App SDK 
+description: This article provides an advanced tutorial for building and deploying an unpackaged app that uses the Windows App SDK.
 ms.topic: article
 ms.date: 05/24/2021
 keywords: windows win32, windows app development, Windows App SDK 
@@ -9,31 +9,30 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
+# Advanced tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
 
-> [!IMPORTANT]
-> Unpackaged app deployment is currently supported in the [preview release channel](preview-channel.md) and [experimental release channel](experimental-channel.md) of the Windows App SDK. This feature is not supported for use by apps in production environments.
+This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. 
 
-This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. This is considered a more advanced scenario. A simple approach using auto-initialization via the `WindowsPackageType` project property is available beginning in 1.0 Preview3. See for more info [https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app)
+This guidance demonstrates explicitly calling the bootstraper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. This is considered a more advanced scenario. A simple approach using auto-initialization via the `WindowsPackageType` project property is available beginning in 1.0 Preview3. See [Create your first WinUI 3 App](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app) for more info.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
-> [!NOTE]
-> The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets such as the VSIX extension and NuGet packages still use the code name, but these assets will be renamed in a future release. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
-
 ## Prerequisites
 
-1. [Install Visual Studio](set-up-your-development-environment.md#2-install-visual-studio).
+1. [Install Visual Studio](set-up-your-development-environment.md#1-install-visual-studio).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
 3. C# projects using the **1.0 Preview version 3** of the Windows App SDK (or later) must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 
 ## Instructions
 
-You can choose to follow this tutorial using a C++ project or a C# project that targets .NET 5.
+You can follow this tutorial using a C++ project or a C# project.
+
+> [!NOTE]
+>  The dynamic depednencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C++ project that includes WinUI 3 unpackaged support.  
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -42,11 +41,11 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
 
     After you create the project, you should have a 'Hello World' C++ console app.
 
-2. Next, install the Windows App SDK NuGet package in your project.
+2. Next, install the Windows App SDK NuGet package in your project. 
 
-    1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**.
-    2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install one of the following packages:
-        - To install  1.0 Preview 3 or later, search for **Microsoft.WindowsAppSDK**.
+    1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**. 
+    2. In the **NuGet Package Manager** window, select the **Browse** tab, and search for **Microsoft.WindowsAppSDK**.
+
 
 3. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to initialize the [Bootstrapper](deployment-architecture.md#bootstrapper) component in your app. This enables you to use the Windows App SDK APIs in the app.
 
@@ -61,11 +60,8 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
 
         ```cpp
 
-        // The following code is for 1.0 Preview 3. If using 1.0 Experimental,  
-        // replace with versionTag{ L"experimental1" }. If using version 0.8 Preview,
-        // replace with majorMinorVersion{ 0x00000008 } and versionTag{ L"preview" }. 
         const UINT32 majorMinorVersion{ 0x00010000 }; 
-        PCWSTR versionTag{ L"preview3" }; 
+        PCWSTR versionTag{ L"" }; 
         const PACKAGE_VERSION minVersion{};
 
         const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -98,11 +94,9 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
         int main() 
         { 
 
-            // Take a dependency on Windows App SDK 1.0 Preview 3. If using 1.0 Experimental,
-            // replace with versionTag{ L"experimental1" }. If using version 0.8 Preview, 
-            // replace with majorMinorVersion{ 0x00000008 } and  versionTag{ L"preview" }.
+            // Take a dependency on Windows App SDK Stable.
             const UINT32 majorMinorVersion{ 0x00010000 }; 
-            PCWSTR versionTag{ L"preview3" }; 
+            PCWSTR versionTag{ L"" }; 
             const PACKAGE_VERSION minVersion{};
 
             const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
@@ -124,9 +118,9 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
 
 4. Press F5 to build and run your app.
 
-### [C# with 1.0 Preview 3 and later](#tab/csharp-dotnet-preview3)
+### [C#](#tab/csharp)
 
-Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C# project that includes WinUI 3 unpackaged support.  
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -141,7 +135,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 does not support this platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
@@ -152,7 +146,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 4. Install the Windows App SDK NuGet package in your project.
 
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
-    2. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
+    2. In the **NuGet Package Manager** window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
 
 5. You are now ready to use the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
 
@@ -168,7 +162,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
         {
             static void Main(string[] args)
             {
-                Bootstrap.Initialize(0x00010000, "preview3");
+                Bootstrap.Initialize(0x00010000);
                 Console.WriteLine("Hello World!");
     
                 // Release the DDLM and clean up.
@@ -200,7 +194,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
         ```csharp
         // Create a resource manager using the resource index generated during build.
-        var manager = new ResourceManager("DynamicDependenciesTest.pri");
+   	    var manager = new Microsoft.ApplicationModel.Resources.ResourceManager("DynamicDependenciesTest.pri");
 
         // Lookup a string in the RESW file using its name.
         Console.WriteLine(manager.MainResourceMap.GetValue("Resources/Message").ValueAsString);

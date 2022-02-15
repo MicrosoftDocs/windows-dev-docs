@@ -37,8 +37,6 @@ These steps will show you how to create a basic mesh cube.
 If you prefer a talked-through explanation of these concepts, check out this video.
 </br>
 </br>
-<iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
-
 
 ### Step 1: Construct the mesh for the model
 

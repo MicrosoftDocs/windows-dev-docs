@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals.. This section shows you how to organize your performance workflow, fix animation glitches and frame rate problems, and tune your startup time, page navigation time, and memory usage.
 
-If you haven't done so already, a step that we've seen result in significant performance improvements is just porting your app to target Windows 10. Several XAML optimizations (for example, [{x:Bind}](../xaml-platform/x-bind-markup-extension.md)) are only available in Windows 10 apps. See [Porting apps to Windows 10](../porting/index.md) and the //build/ session [Moving to the Universal Windows Platform](https://channel9.msdn.com/Events/Build/2015/3-741).
+If you haven't done so already, a step that we've seen result in significant performance improvements is just porting your app to target Windows 10. Several XAML optimizations (for example, [{x:Bind}](../xaml-platform/x-bind-markup-extension.md)) are only available in Windows 10 apps. See [Porting apps to Windows 10](../porting/index.md) and the //build/ session Moving to the Universal Windows Platform.
 
 | Topic | Description |
 |-------|-------------|

@@ -1,123 +1,108 @@
 ---
-description: Describes the steps needed to ensure your Windows app is usable when a high-contrast theme is active.
-ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
-title: High-contrast themes
+description: Describes the steps needed to ensure your Windows app is usable when a contrast theme is active.
+title: Contrast themes
+label: Contrast design guidelines
+keywords: 
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 12/08/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# High contrast themes  
 
-Windows supports high contrast themes for the OS and apps that users may choose to enable. High contrast themes use a small palette of contrasting colors that makes the interface easier to see.
+# Contrast themes  
 
-![Calculator shown in light theme and High Contrast Black theme.](images/high-contrast-calculators.png)
-
-*Calculator shown in light theme and High Contrast Black theme.*
-
-You can switch to a high contrast theme by using *Settings > Ease of access > High contrast*.
+Contrast themes use a small palette of colors (with a contrast ratio of at least 7:1) to help make elements in the UI easier to see, reduce eye strain, improve text readability, and accommodate user preferences.
 
 > [!NOTE]
-> Don't confuse high contrast themes with light and dark themes, which allow a much larger color palette that isn't considered to have high contrast. For more light and dark themes, see the article on [color](../style/color.md).
+> Don’t confuse contrast themes with light and dark themes, which support a much larger color palette and don't necessarily increase contrast or make things easier to see. For more on light and dark themes, see [Color](../style/color.md).
 
-While common controls come with full high contrast support for free, care needs to be taken while customizing your UI. The most common high contrast bug is caused by hard-coding a color on a control inline.
+To see how your app behaves with contrast themes, enable and customize them through the *Settings > Accessibility > Contrast themes* page.
+
+> [!Tip]
+> You can also press the left-Alt key + Shift key + Print screen (PrtScn on some keyboards) to quickly turn contrast themes on or off. If you have not selected a theme previously, the Aquatic theme is used by default (shown in the following image).
+>
+> :::image type="content" border="false" source="images/contrast-theme-calculators.png" alt-text="Calculator shown in Light theme and Aquatic contrast theme.":::
+
+## Setting HighContrastAdjustment to None
+
+Windows apps have [**HighContrastAdjustment**](/uwp/api/windows.ui.xaml.uielement.highcontrastadjustment) turned on by default. This sets all text color to white with a solid black highlight behind it, ensuring sufficient contrast against all backgrounds. If you are using brushes correctly, this setting should be turned off.
+
+## Detecting high contrast
+
+You can programmatically check if the current theme is a contrast theme through the [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) class (you must call the **AccessibilitySettings** constructor from a scope where the app is initialized and is already displaying content).
+
+## Creating theme dictionaries
+
+A [**ResourceDictionary.ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) object can indicate theme colors that are different from the system-defined colors by specifying brushes for the **Default** (Dark), **Light**, and **HighContrast** contrast themes.
+
+> [!Tip]
+> **Contrast theme** refers to the feature in general, while **HighContrast** refers to the specific dictionary being referenced.
+
+1. In App.xaml, create a **ThemeDictionaries** collection with both a **Default** and a **HighContrast** [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) (a **Light** [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) is not necessary for this example).
+2. In the **Default** dictionary, create the type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) you need (usually a **SolidColorBrush**). Give it an *x:Key* name corresponding to its intended use (a **StaticResource** referencing an existing system brush would also be appropriate).
+3. In the **HighContrast** ResourceDictionary (shown in the following code snippet), specify an appropriate **SystemColor** brush. See [Contrast colors](#contrast-colors) for details on picking one of the dynamic system **HighContrast** colors for the **SystemColor** brush.
+
+    ```xaml
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!-- Default is a fallback if a more precise theme isn't called
+                out below -->
+                <ResourceDictionary x:Key="Default">
+                    <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+                </ResourceDictionary>
+    
+                <!-- Optional, Light is used in light theme.
+                If included, Default will be used for Dark theme -->
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+                </ResourceDictionary>
+    
+                <!-- HighContrast is used in all high contrast themes -->
+                <ResourceDictionary x:Key="HighContrast">
+                    <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    ```
+
+## Contrast colors
+
+On the *Settings > Ease of access > Contrast themes* page (shown in the following image), users can select from four default contrast themes: **Aquatic**, **Desert**, **Dusk**, and **Night sky**.
+
+:::image type="content" border="false" source="images/contrast-theme-settings.png" alt-text="Contrast theme settings.":::
+
+After the user selects an option, they can choose to immediately apply it, or they can edit the theme. The following image shows the Edit theme dialog for the **Aquatic** contrast theme.
+
+:::image type="content" border="false" source="images/contrast-theme-resources.png" alt-text="Settings - Edit theme dialog for the **Aquatic** contrast theme.":::
+
+This table shows the contrast theme colors and their recommended pairings. Each **SystemColor** resource is a variable that automatically updates the color when the user switches contrast themes.
+
+| Color swatch | Description |
+|---------|---------|
+|:::image type="icon" source="images/sys-color/aquatic-color-window.png":::|  **SystemColorWindowColor**</br>Background of pages, panes, popups, and windows.<br/><br/>Pair with **SystemColorWindowTextColor**       |
+|:::image type="icon" source="images/sys-color/aquatic-color-windowtext.png"::: | **SystemColorWindowTextColor**</br>Headings, body copy, lists, placeholder text, app and window borders, any UI that can't be interacted with.</br></br>Pair with **SystemColorWindowColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-hotlight.png":::| **SystemColorHotlightColor**</br>Hyperlinks.</br></br>Pair with **SystemColorWindowColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-graytext.png":::|  **SystemColorGrayTextColor**</br>Inactive (disabled) UI.</br></br>Pair with **SystemColorWindowColor**       |
+|:::image type="icon" source="images/sys-color/aquatic-color-highlighttext.png":::| **SystemColorHighlightTextColor**</br>Foreground color for text or UI that is in selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-highlight.png":::| **SystemColorHighlightColor**</br>Background or accent color for UI that is in selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightTextColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-btntext.png":::| **SystemColorButtonTextColor**</br>Foreground color for buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonFaceColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-3dface.png":::| **SystemColorButtonFaceColor**</br>Background color for buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonTextColor**        |
+
+The next table shows how the colors appear when used on a background set to **SystemColorWindowColor**.
+
+| Example | Values |
+|---------|---------|
+|:::image type="content" source="images/sys-color/aquatic-example-windowtext.png" alt-text="A window with text using the window text color." border="false"::: | **SystemColorWindowTextColor** |
+|:::image type="content" source="images/sys-color/aquatic-example-hotlight.png" alt-text="A window with hyperlink text using the hot light color." border="false":::| **SystemColorHotlightColor** |
+|:::image type="content" source="images/sys-color/aquatic-example-graytext.png" alt-text="A window with inactive text using the gray text color." border="false":::| **SystemColorGrayTextColor** |
+|:::image type="content" source="images/sys-color/aquatic-example-highlighttext+highlight.png" alt-text="A window with text using the highlight text color on the highlight color." border="false":::|**SystemColorHighlightTextColor** + **SystemColorHighlightColor** |
+|:::image type="content" source="images/sys-color/aquatic-example-btntext+3dface.png" alt-text="A window with a button using the 3d face color and button text using the button text color." border="false":::| **SystemColorButtonTextColor** + **SystemColorButtonFaceColor**
+
+In the following code snippet, we show how to pick a resource for **BrandedPageBackgroundBrush**. **SystemColorWindowColor** is a good choice here as **BrandedPageBackgroundBrush** indicates that it will be used for a background.
 
 ```xaml
-<!-- Don't do this! -->
-<Grid Background="#E6E6E6">
-
-<!-- Instead, create BrandedPageBackgroundBrush and do this. -->
-<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
-```
-
-When the `#E6E6E6` color is set inline in the first example, the Grid will retain that background color in all themes. If the user switches to the High Contrast Black theme, they'll expect your app to have a black background. Since `#E6E6E6` is almost white, some users may not be able to interact with your app.
-
-In the second example, the [**{ThemeResource} markup extension**](/windows/uwp/xaml-platform/themeresource-markup-extension) is used to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection, a dedicated property of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element. **ThemeDictionaries** allows XAML to automatically swap colors for you based on the user's current theme.
-
-## Theme dictionaries
-
-When you need to change a color from its system default, create a ThemeDictionaries collection for your app.
-
-1. Start by creating the proper plumbing, if it doesn't already exist. In App.xaml, create a **ThemeDictionaries** collection, including **Default** and **HighContrast** at a minimum.
-2. In **Default**, create the type of [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) you need, usually a **SolidColorBrush**. Give it a *x:Key* name specific to what it is being used for.
-3. Assign the **Color** you want for it.
-4. Copy that **Brush** into **HighContrast**.
-
-``` xaml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called
-            out below -->
-            <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
-            </ResourceDictionary>
-
-            <!-- Optional, Light is used in light theme.
-            If included, Default will be used for Dark theme -->
-            <ResourceDictionary x:Key="Light">
-                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
-            </ResourceDictionary>
-
-            <!-- HighContrast is used in all high contrast themes -->
-            <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-    </ResourceDictionary>
-</Application.Resources>
-```
-
-The last step is to determine what color to use in high contrast, which is covered in the next section.
-
-> [!NOTE]
-> **HighContrast** is not the only available key name. There's also **HighContrastBlack**, **HighContrastWhite**, and **HighContrastCustom**. In most cases, **HighContrast** is all you need.
-
-## High contrast colors
-
-On the *Settings > Ease of access > High contrast* page, there are 4 high contrast themes by default. 
-
-
-![High-contrast settings](images/high-contrast-settings.png)  
-
-*After the user selects an option, the page shows a preview.*  
-
-![High-contrast resources](images/high-contrast-resources.png)  
-
-*Every color swatch on the preview can be clicked to change its value. Every swatch also directly maps to an XAML color resource.*  
-
-Each **SystemColor*Color** resource is a variable that automatically updates color when the user switches high contrast themes. Following are guidelines for where and when to use each resource.
-
-Resource | Usage |
-|--------|-------|
-**SystemColorWindowTextColor** | Body copy, headings, lists; any text that can't be interacted with |
-| **SystemColorHotlightColor** | Hyperlinks |
-| **SystemColorGrayTextColor** | Disabled UI |
-| **SystemColorHighlightTextColor** | Foreground color for text or UI that's in progress, selected, or currently being interacted with |
-| **SystemColorHighlightColor** | Background color for text or UI that's in progress, selected, or currently being interacted with |
-| **SystemColorButtonTextColor** | Foreground color for buttons; any UI that can be interacted with |
-| **SystemColorButtonFaceColor** | Background color for buttons; any UI that can be interacted with |
-| **SystemColorWindowColor** | Background of pages, panes, popups, and bars |
-
-It's often helpful to look to existing apps, Start, or the common controls to see how others have solved high contrast design problems that are similar to your own.
-
-**Do**
-
-* Respect the background/foreground pairs where possible.
-* Test in all 4 high contrast themes while your app is running. The user should not have to restart your app when they switch themes.
-* Be consistent.
-
-**Don't**
-
-* Hard code a color in the **HighContrast** theme; use the **SystemColor*Color** resources.
-* Choose a color resource for aesthetics. Remember, they change with the theme!
-* Don't use **SystemColorGrayTextColor** for body copy that's secondary or acts as a hint.
-
-
-To continue the earlier example, you need to pick a resource for **BrandedPageBackgroundBrush**. Because the name indicates that it will be used for a background, **SystemColorWindowColor** is a good choice.
-
-``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
@@ -142,51 +127,93 @@ To continue the earlier example, you need to pick a resource for **BrandedPageBa
 </Application.Resources>
 ```
 
-Later in your app, you can now set the background.
+The resource is then assigned to the background of an element.
 
 ```xaml
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-Note how **\{ThemeResource\}** is used twice, once to reference **SystemColorWindowColor** and again to reference **BrandedPageBackgroundBrush**. Both are required for your app to theme correctly at run time. This is a good time to test out the functionality in your app. The Grid's background will automatically update as you switch to a high contrast theme. It will also update when switching between different high contrast themes.
+We use `{ThemeResource}` twice in the preceding example, once to reference **SystemColorWindowColor** and again to reference **BrandedPageBackgroundBrush**. Both are required for your app to theme correctly at run time. This is a good time to test out the functionality in your app. The **Grid** background will automatically update as you switch to a high contrast theme. It will also update when switching between different high contrast themes.
 
-## When to use borders
+> [!NOTE]
+>**WinUI 2.6 and newer**
+>
+> There are eight high contrast system brushes available for referencing through a **ResourceKey** (see the following example for **SystemColorWindowTextColorBrush**).
+>
+> `<StaticResource x:Key="MyControlBackground" ResourceKey="SystemColorWindowTextColorBrush" />`
+>
+> The brush names match one of the eight previously mentioned system colors exactly (with "Brush" appended). We recommend using a **StaticResource** instead of a local **SolidColorBrush** for performance reasons.
 
-Pages, panes, popups, and bars should all use **SystemColorWindowColor** for their background in high contrast. Add a high contrast-only border where necessary to preserve important boundaries in your UI.
+## Best practices
 
-![A navigation pane separated from the rest of the page](images/high-contrast-actions-content.png)  
+Here are some recommendations for customizing the contrast theme colors in your Windows app.
 
-*The navigation pane and the page both share the same background color in high contrast. A high contrast-only border to divide them is essential.*
+- Test in all four high contrast themes while your app is running.
+- Be consistent.
+- Make sure **HighContrastAdjustment** is set to `None` in your app (it is turned on by default). See [Setting HighContrastAdjustment to None](#setting-highcontrastadjustment-to-none).
+- **Do not** hard code a color in the HighContrast theme. Instead, use the **SystemColor** `Color` and `ColorBrush` resources. For more detail, see [Hard-coded colors](#hard-coded-colors).
+- **Do not** mix background/foreground pairs that are not compatible
+- **Do not** choose color resource for aesthetics. Remember, the colors change with the theme.
+- **Do not** use `SystemColorGrayTextColor` for body copy that is secondary or acts as hint text. This is intended for disabled content only.
+- **Do not** use `SystemColorHotlightColor` and corresponding brush as both are reserved for hyperlinks.
 
+> [!TIP]
+> It's often helpful to look at the XAML Controls Gallery app to see how common controls use the **SystemColor** brushes.
+>
+> - If you have it installed, [launch the **XAML Controls Gallery**](xamlcontrolsgallery:/).
+> - [Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
+> - [Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
-## List items
+### Hard-coded colors
 
-In high contrast, items in a [ListView](/uwp/api/windows.ui.xaml.controls.listview) have their background set to **SystemColorHighlightColor** when they are hovered, pressed, or selected. Complex list items commonly have a bug where the content of the list item fails to invert its color when the item is hovered, pressed, or selected. This makes the item impossible to read.
+Platform controls provide built-in support for contrast themes, but you should be careful when customizing your application UI. Two of the most common issues occur when either the color of an element is hard-coded or an incorrect **SystemColor** resource is used.
 
-![Simple list in light theme and High Contrast Black theme](images/high-contrast-list1.png)
+In the following code snippet, we show a Grid element declared with a background color set to `#E6E6E6` (a very light grey). If you hard-code the color in this way, you also override the background color across all themes. For example, if the user selects the **Aquatic** contrast theme, instead of white text on a near black background, the text color in this app changes to white while the background remains light grey. The very low contrast between text and background could make this app very difficult to use.
 
-*A simple list in light theme (left) and High Contrast Black theme (right). The second item is selected; note how its text color is inverted in high contrast.*
+```xaml
+<Grid Background="#E6E6E6">
+```
 
+Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/uwp/xaml-platform/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
+
+```xaml
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
+```
+
+### Borders
+
+Pages, panes, popups, and bars should all use **SystemColorWindowColor** for their background. Add a contrast theme-only border only where necessary to preserve important boundaries in your UI.
+
+> [!Tip]
+> We recommend using 2px borders for transitory surfaces such as flyouts and dialogs.
+
+The navigation pane and the page both share the same background color in contrast themes. To distinguish them, a contrast theme-only border is essential.
+
+:::image type="content" border="false" source="images/contrast-theme-border.png" alt-text="A navigation pane separated from the rest of the page.":::
 
 ### List items with colored text
 
-One culprit is setting TextBlock.Foreground in the ListView's [DataTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). This is commonly done to establish visual hierarchy. The Foreground property is set on the [ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem), and TextBlocks in the DataTemplate inherit the correct Foreground color when the item is hovered, pressed, or selected. However, setting Foreground breaks the inheritance.
+In contrast themes, items in a [ListView](/uwp/api/windows.ui.xaml.controls.listview) have their background set to **SystemColorHighlightColor** when the user hovers over, presses, or selects them. A common issue with complex list items occurs when the content of the list item fails to invert its color, making the items impossible to read.
 
-![Complex list in light theme and High Contrast Black theme](images/high-contrast-list2.png)
+Be careful when you set the TextBlock.Foreground in the [**DataTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) of the **ListView** (typically done to establish visual hierarchy). The **Foreground** property is set on the **ListViewItem**, and each **TextBlock** in the DataTemplate inherits the correct **Foreground** color. Setting **Foreground** breaks this inheritance.
 
-*Complex list in light theme (left) and High Contrast Black theme (right). In high contrast, the second line of the selected item failed to invert.*  
+:::image type="content" border="false" source="images/high-contrast-list1.png" alt-text="Complex list in Light theme and Aquatic theme (note how the text color is not inverted in HighContrast).":::
 
-You can work around this by setting Foreground conditionally via a Style that's in a **ThemeDictionaries** collection. Because the **Foreground** is not set by **SecondaryBodyTextBlockStyle** in **HighContrast**, its color will correctly invert.
+You can resolve this by setting **Foreground** conditionally through a **Style** in a [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection. As the **Foreground** is not set by **SecondaryBodyTextBlockStyle** in **HighContrast**, the color will invert correctly.
+
+:::image type="content" border="false" source="images/high-contrast-list2.png" alt-text="Complex list in Light theme and Aquatic theme (note how the text color is inverted in HighContrast).":::
+
+The following code snippet (from an App.xaml file) shows an example [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection in a **ListView** data template.
 
 ```xaml
-<!-- In App.xaml... -->
 <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Default">
         <Style
             x:Key="SecondaryBodyTextBlockStyle"
             TargetType="TextBlock"
             BasedOn="{StaticResource BodyTextBlockStyle}">
-            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+            <Setter Property="Foreground" 
+                Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
         </Style>
     </ResourceDictionary>
 
@@ -195,7 +222,8 @@ You can work around this by setting Foreground conditionally via a Style that's 
             x:Key="SecondaryBodyTextBlockStyle"
             TargetType="TextBlock"
             BasedOn="{StaticResource BodyTextBlockStyle}">
-            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+            <Setter Property="Foreground" 
+                Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
         </Style>
     </ResourceDictionary>
 
@@ -219,17 +247,10 @@ You can work around this by setting Foreground conditionally via a Style that's 
 </DataTemplate>
 ```
 
+## Related topics
 
-## Detecting high contrast
-
-You can programmatically check if the current theme is a high contrast theme by using members of the [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) class.
-
-> [!NOTE]
-> Make sure you call the **AccessibilitySettings** constructor from a scope where the app is initialized and is already displaying content.
-
-## Related topics  
-* [Accessibility](accessibility.md)
-* [UI contrast and settings sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
-* [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
-* [XAML high contrast sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
-* [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)
+- [Accessibility](accessibility.md)
+- [UI contrast and settings sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
+- [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+- [XAML high contrast sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20high%20contrast%20style%20sample%20(Windows%208))
+- [**AccessibilitySettings**](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

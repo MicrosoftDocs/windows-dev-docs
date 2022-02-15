@@ -299,7 +299,7 @@
           href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
         - name: Testing and debugging tools for PLM
           href: ../debug-test-perf/testing-debugging-plm.md
-        - name: Test with the Microsoft Emulator for Windows 10
+        - name: Test with the Microsoft Emulator for Windows
           href: ../debug-test-perf/test-with-the-emulator.md
         - name: Test Surface Hub apps using Visual Studio
           href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
@@ -829,20 +829,6 @@
           items:
             - name: Value categories, and references
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-    - name: C#/WinRT
-      items:
-        - name: Overview
-          href: ../csharp-winrt/index.md
-        - name: .NET mappings of WinRT types in C#/WinRT
-          href: ../csharp-winrt/net-mappings-of-winrt-types.md
-        - name: "Walkthrough: Make a C# projection from a C++/WinRT component"
-          href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
-        - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
-          href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
-        - name: "Diagnose component errors"
-          href: ../csharp-winrt/authoring-diagnostics.md
-        - name: "Agile objects"
-          href: ../csharp-winrt/agile-objects.md
     - name: .NET Native
       items:
         - name: Overview
@@ -1356,7 +1342,7 @@
               href: ../porting/getting-started-animation.md
             - name: "Getting started: What next?"
               href: ../porting/getting-started-what-next.md
-        - name: Setting up your Mac with Windows 10
+        - name: Setting up your Mac with Windows
           href: ../porting/setting-up-your-mac-with-windows-10.md
     - name: Move from Windows Phone Silverlight to UWP
       href: ../porting/wpsl-to-uwp-root.md
@@ -1379,7 +1365,7 @@
           href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
         - name: "Case study: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
-    - name: Convert your web app to a PWA on Windows 10
+    - name: Convert your web app to a PWA on Windows
       href: /microsoft-edge/progressive-web-apps
       items:
         - name: Package Windows 7 app as a PWA

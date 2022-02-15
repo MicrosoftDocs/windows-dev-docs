@@ -7,7 +7,7 @@ title: ResourceDictionary and XAML resource references
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 01/24/2022
 ms.topic: conceptual
 ms.custom: contperf-fy21q1
 keywords: windows 10, uwp
@@ -16,17 +16,16 @@ dev_langs:
   - csharp
   - cppwinrt
 ---
-# ResourceDictionary and XAML resource references
 
- 
+# ResourceDictionary and XAML resource references
 
 You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element from the Windows Runtime XAML. Then, you can reference your resources by using a [StaticResource markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) or [ThemeResource markup extension](/windows/uwp/xaml-platform/themeresource-markup-extension).
 
 The XAML elements you might want to declare most often as XAML resources include [Style](/uwp/api/Windows.UI.Xaml.Style), [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate), animation components, and [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) subclasses. Here, we explain how to define a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package. We also explain resource dictionary advanced features such as [MergedDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) and [ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
 
-**Prerequisites**
+## Prerequisites
 
-We assume that you understand XAML markup and have read the [XAML overview](/windows/uwp/xaml-platform/xaml-overview).
+A solid understanding of XAML markup. We recommend reading [XAML overview](/windows/uwp/xaml-platform/xaml-overview).
 
 ## Define and use XAML resources
 
@@ -432,11 +431,13 @@ The lookup behavior for XAML resource references starts with the object where th
 
 The lookup sequence then checks the next parent object in the runtime object tree of the app. If a [FrameworkElement.Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) exists and holds a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary), the dictionary item with the specified key string is requested. If the resource is found, the lookup sequence stops and the object is provided to the location where the reference was made. Otherwise, the lookup behavior advances to the next parent level towards the object tree root. The search continues recursively upwards until the root element of the XAML is reached, exhausting the search of all possible immediate resource locations.
 
-> **Note**&nbsp;&nbsp;It is a common practice to define all the immediate resources at the root level of a page, both to take advantage of this resource-lookup behavior and also as a convention of XAML markup style.
-
- 
+> [!NOTE]
+> It is a common practice to define all the immediate resources at the root level of a page, both to take advantage of this resource-lookup behavior and also as a convention of XAML markup style.
 
 If the requested resource is not found in the immediate resources, the next lookup step is to check the [Application.Resources](/uwp/api/windows.ui.xaml.application.resources) property. **Application.Resources** is the best place to put any app-specific resources that are referenced by multiple pages in your app's navigation structure.
+
+> [!IMPORTANT]
+> The order of resources added to a ResourceDictionary affects the order in which they are applied. The `XamlControlsResources` dictionary overrides many default resource keys and should therefore be added to `Application.Resources` first so that it doesn't override any other custom styles or resources in your app.
 
 Control templates have another possible location in the reference lookup: theme dictionaries. A theme dictionary is a single XAML file that has a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) element as its root. The theme dictionary might be a merged dictionary from [Application.Resources](/uwp/api/windows.ui.xaml.application.resources). The theme dictionary might also be the control-specific theme dictionary for a templated custom control.
 

@@ -25,7 +25,7 @@
             "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
             "feedback_system": "GitHub",
             "feedback_github_repo": "MicrosoftDocs/windows-uwp",
-            "feedback_product_url": "https://docs.microsoft.com/en-us/answers/topics/windows-uwp-feedback.html",
+            "feedback_product_url": "https://docs.microsoft.com/answers/topics/windows-uwp-feedback.html",
             "extendBreadcrumb": false,
             "htmlDangerZone":  true,
             "searchScope": ["UWP"],

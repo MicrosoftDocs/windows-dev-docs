@@ -53,9 +53,9 @@ The **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [
 
 To protect the integrity of the original file in case something goes wrong while writing the data, the **Write** methods use a transactional model by opening the file using [**OpenTransactedWriteAsync**](/uwp/api/windows.storage.storagefile.opentransactedwriteasync). This process creates a [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction) object. After this transaction object is created, the APIs write the data following a similar fashion to the [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) sample or the code example in the [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction) article.
 
-The following diagram illustrates the underlying tasks performed by the the **WriteTextAsync** method in a successful write operation. This illustration provides a simplified view of the operation. For example, it skips steps such as text encoding and async completion on different threads.
+The following diagram illustrates the underlying tasks performed by the **WriteTextAsync** method in a successful write operation. This illustration provides a simplified view of the operation. For example, it skips steps such as text encoding and async completion on different threads.
 
-![UWP API call sequence diagram for writing to a file](images/file-write-call-sequence.svg)
+![UWP API call sequence diagram for writing to a file](images/file-write-call-sequence.png)
 
 The advantages of using the **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [**PathIO**](/uwp/api/windows.storage.pathio) classes instead of the more complex four-step model using a stream are:
 

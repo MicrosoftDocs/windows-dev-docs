@@ -10,6 +10,7 @@ ms.localizationpriority: medium
 # Application development for Windows as a service
 
 **Applies to**
+-   Windows 11
 -   Windows 10
 -   Windows 10 Mobile
 -   Windows 10 IoT Core 
@@ -96,7 +97,7 @@ Your apps should not call undocumented Windows APIs, or take dependency on speci
 
 ### Develop Universal Windows Platform (UWP) and Centennial apps
 
-We encourage all Win32 app ISVs to develop [Universal Windows Platform (UWP)](https://blogs.windows.com/windowsdeveloper/2016/02/25/an-update-on-the-developer-opportunity-and-windows-10/) and, specifically, [Centennial](https://channel9.msdn.com/Events/Build/2015/2-692) apps moving forward. There are great benefits to developing these app packages rather than using traditional Win32 installers. UWP apps are also supported in the [Microsoft Store](https://blogs.windows.com/windowsdeveloper/2016/02/04/windows-store-trends-february-2016/), so it’s easier for you to update your users to a consistent version automatically, lowering your support costs.
+We encourage all Win32 app ISVs to develop [Universal Windows Platform (UWP)](https://blogs.windows.com/windowsdeveloper/2016/02/25/an-update-on-the-developer-opportunity-and-windows-10/) and, specifically, Centennial apps moving forward. There are great benefits to developing these app packages rather than using traditional Win32 installers. UWP apps are also supported in the [Microsoft Store](https://blogs.windows.com/windowsdeveloper/2016/02/04/windows-store-trends-february-2016/), so it’s easier for you to update your users to a consistent version automatically, lowering your support costs.
 
 If your Win32 app types do not work with the Centennial model, we highly recommend that you use the right installer and ensure this is fully tested. An installer is your user or customer’s first experience with your app, so ensure that this works well. All too often, this doesn’t work well or it hasn’t been fully tested for all scenarios. The [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) can help you test the install and uninstall of your Win32 app and help you identify use of undocumented APIs, as well as other basic performance-related best-practice issues, before your users do.
 

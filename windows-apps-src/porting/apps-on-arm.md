@@ -53,4 +53,4 @@ Remote Tools for Visual Studio are available for ARM apps. Visit the [Visual Stu
 
 - [Building ARM64 Drivers with the WDK](/windows-hardware/drivers/develop/building-arm64-drivers): Instructions for building an ARM64 driver.
 - [Debugging x86 apps on ARM](/windows-hardware/drivers/debugger/debugging-arm64) | Guidance for debugging x86 apps on ARM.
-- [Windows 10 on ARM for developers (Microsoft Build 2018 video presentation)](https://channel9.msdn.com/Events/Build/2018/BRK2438)
+- [Windows 10 on ARM for developers (Microsoft Build 2018 video presentation)](/events/build-2018/brk2438)
