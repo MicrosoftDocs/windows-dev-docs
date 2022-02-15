@@ -308,7 +308,7 @@ sections:
         # See: https://www.reddit.com/r/Windows11/comments/qw7o69/comment/hl675ea/?utm_source=share&utm_medium=web2x&context=3 
      - question: Where can I find release notes for Windows App SDK?
        answer: |
-          See [Stable channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/stable-channel).
+          See See [Stable channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/stable-channel), [Preview channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/preview-channel), and [Experimental channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/experimental-channel).
      - question: Where can I find a public roadmap for Windows App SDK?
        answer: |
            - [Windows App SDK roadmap](https://portal.productboard.com/winappsdk/1-windows-app-sdk/tabs/2-planned)
