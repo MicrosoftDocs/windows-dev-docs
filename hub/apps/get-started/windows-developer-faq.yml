@@ -240,7 +240,7 @@ sections:
      - question: How do I make sure my apps run smoothly on all targeted devices and platforms?
        answer: |
           TODO&mdash;link to guidance
-     - question: My built WinUI 3 app is large. How to I reduce the size of my build?
+     - question: My built WinUI 3 app is large. How do I reduce the size of my built binary?
        answer: |
           TODO
      - question: What can I do to make my Windows app feel great to end-users?
