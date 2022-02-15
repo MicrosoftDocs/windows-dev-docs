@@ -1,7 +1,7 @@
 ---
 title: Call interop APIs from a .NET 5+ app
 description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET 5+.
-ms.date: 01/14/2022
+ms.date: 02/08/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -45,14 +45,16 @@ Here are the available C# interop classes, mapped from their underlying interop 
 
 ### Available as part of the Windows App SDK
 
+The [**Microsoft.UI.Win32Interop**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview#code-example).
+
 |Interop function|C# interop method|
 |-|-|
-|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId **Win32Interop.GetDisplayIdFromMonitor**(IntPtr hmonitor)|
-|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetIconFromIconId**(IconId iconId)|
-|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId **Win32Interop.GetIconIdFromIcon**(IntPtr hicon)|
-|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetMonitorFromDisplayId**(DisplayId displayId)|
-|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr **Win32Interop.GetWindowFromWindowId**(WindowId windowId)|
-|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId **Win32Interop.GetWindowIdFromWindow**(IntPtr hwnd)|
+|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId [**Win32Interop.GetDisplayIdFromMonitor**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor)(IntPtr hmonitor)|
+|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetIconFromIconId**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid)(IconId iconId)|
+|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId [**Win32Interop.GetIconIdFromIcon**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon)(IntPtr hicon)|
+|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetMonitorFromDisplayId**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid)(DisplayId displayId)|
+|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetWindowFromWindowId**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid)(WindowId windowId)|
+|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId [**Win32Interop.GetWindowIdFromWindow**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow)(IntPtr hwnd)|
 
 ### Available via Target Framework Moniker
 
@@ -114,3 +116,8 @@ So as a replacement, in .NET 5 and later, you can make use of the C# interop cla
 This section lists known issues and solutions for using the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose).
 
 * **WinRT.Interop.WindowNative.GetWindowHandle doesn't marshal window handles (HWNDs) correctly when running on x86 platforms.** To work around this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.
+
+## Related topics
+
+* [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)
+* [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)

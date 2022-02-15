@@ -15,10 +15,6 @@ After you submit a pull request to add a new manifest to the GitHub repository, 
 > [!IMPORTANT]
 > Microsoft reserves the right to refuse a submission for any reason.
 
-## Third-party repositories
-
-There are currently no known third party repositories. Microsoft is working with multiple partners to develop protocols or an API to enable third party repositories.
-
 ## Manifest validation
 
 When you submit a manifest to the [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) repository on GitHub, your manifest will be automatically validated and evaluated for the safety of the Windows ecosystem. Manifests may also be reviewed manually.

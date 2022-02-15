@@ -97,7 +97,7 @@ C#/WinRT uses the [LoadLibrary alternate search order](/windows/win32/dlls/dynam
   
 - System.Runtime.InteropServices.COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))
 
-  - If you see this exception when consuming a C#/WinRT projection from a C++/WinRT component, make sure the component has set the **Windows Desktop Compatible** property to *True* either via the project properties or via the the `.vcxproj` file.
+  - If you see this exception when consuming a C#/WinRT projection from a C++/WinRT component, make sure the component has set the **Windows Desktop Compatible** property to *True* either via the project properties or via the `.vcxproj` file.
 
 ### .NET SDK versioning errors
 

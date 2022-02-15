@@ -6726,6 +6726,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/design/shell/title-bar.md",
+      "redirect_url": "/windows/apps/develop/title-bar",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/csharp-winrt/index.md",
       "redirect_url": "/windows/apps/develop/platform/csharp-winrt/index",
       "redirect_document_id": false

@@ -6,6 +6,8 @@ items:
     items:
         - name: Overview of app development options
           href: get-started/index.md
+        - name: About migrating from UWP to Windows App SDK
+          href: get-started/migrate-from-uwp-to-winappsdk.md
         - name: Install developer tools
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create a WinUI 3 app"
@@ -58,7 +60,7 @@ items:
                 href: windows-app-sdk/preview-experimental-unpackaged-tutorial.md
       - name: Migrate from UWP to Windows App SDK
         items:
-          - name: "Index of migration topics"
+          - name: "Migrate from UWP to Windows App SDK"
             href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
           - name: "Overall migration strategy"
             href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
@@ -78,7 +80,9 @@ items:
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
               - name: "Application lifecycle functionality migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
-              - name: "Notifications migration"
+              - name: "Toast notifications"
+                href: windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md
+              - name: "Push notifications"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
               - name: "DirectWrite to DWriteCore migration"
                 href: windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
@@ -189,7 +193,11 @@ items:
           - name: Choosing performance tools
             href: performance/choose-between-tools.md
       - name: User interface and input
-        href: develop/user-interface.md
+        items:
+          - name: Overview
+            href: develop/user-interface.md
+          - name: Title bar
+            href: develop/title-bar.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"
@@ -205,6 +213,29 @@ items:
                 href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
               - name: "Localize your WinUI 3 app"
                 href: winui/winui3/localize-winui3-app.md
+              - name: "C# interop APIs for WinUI"
+                href: winui/winui3/cs-interop-apis/index.md
+                items: 
+                  - name: "Microsoft.UI namespace"
+                    href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.md
+                    items: 
+                      - name: "Win32Interop class"
+                        href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md
+                        items: 
+                          - name: "Methods"
+                            items: 
+                              - name: "Win32Interop.GetDisplayIdFromMonitor"
+                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md
+                              - name: "Win32Interop.GetIconFromIconId"
+                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md
+                              - name: "Win32Interop.GetIconIdFromIcon"
+                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md
+                              - name: "Win32Interop.GetMonitorFromDisplayId"
+                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md
+                              - name: "Win32Interop.GetWindowFromWindowId"
+                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md
+                              - name: "Win32Interop.GetWindowIdFromWindow"
+                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md
           - name: "Windows UI Library 2"
             href: winui/winui2/index.md
             items: 
@@ -303,7 +334,7 @@ items:
       - name: Set up CI for WinUI 3 app
         href: package-and-deploy/ci-for-winui3.md
   - name: API reference
-    href: reference/index.md
+    href: api-reference/index.md
     items:
       - name: Windows SDK API reference
         items: 
@@ -323,6 +354,8 @@ items:
                 href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
+              - name: C# interop APIs for WinUI
+                href: winui/winui3/cs-interop-apis/index.md
       - name: .NET API reference
         href: /dotnet/api/
       - name: Schema reference for Windows apps

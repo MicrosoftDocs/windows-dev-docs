@@ -20,7 +20,7 @@ In this quickstart you will create a packaged Windows application that sends and
 ## Prerequisites
 
 - An [Azure Account](https://azure.microsoft.com/free/) is required in order to use Windows App SDK Push Notifications.
-- Sign up for the the [Push Notification Private Preview](https://aka.ms/windowsappsdk/push-private-preview) if you have not already done so.
+- Sign up for the [Push Notification Private Preview](https://aka.ms/windowsappsdk/push-private-preview) if you have not already done so.
 
 ## Configure your app's identity in Azure Active Directory
 
