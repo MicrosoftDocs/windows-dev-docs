@@ -71,7 +71,7 @@ In-app updates allow you to update your applications without requiring your user
 
 ### M
 
-##### Managed Apps
+##### Managed apps
 Managed apps are apps that administrators manage through administrative capabilities such as Intune. Unmanaged apps are apps that users install and manage without admin control.
 
 ##### MAUI
