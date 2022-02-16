@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 02/10/2022
+ms.date: 02/16/2022
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -141,8 +141,8 @@ public MainWindow()
 private AppWindow GetAppWindowForCurrentWindow()
 {
     IntPtr hWnd = WindowNative.GetWindowHandle(this);
-    WindowId myWndId = Win32Interop.GetWindowIdFromWindow(hWnd);
-    return AppWindow.GetFromWindowId(myWndId);
+    WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+    return AppWindow.GetFromWindowId(wndId);
 }
 ```
 
@@ -336,8 +336,8 @@ public MainWindow()
 private AppWindow GetAppWindowForCurrentWindow()
 {
     IntPtr hWnd = WindowNative.GetWindowHandle(this);
-    WindowId myWndId = Win32Interop.GetWindowIdFromWindow(hWnd);
-    return AppWindow.GetFromWindowId(myWndId);
+    WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+    return AppWindow.GetFromWindowId(wndId);
 }
 ```
 
@@ -405,6 +405,7 @@ This example shows the XAML for a custom title bar UI without interactive conten
     </Grid.ColumnDefinitions>
     <Image x:Name="TitleBarIcon" Source="/Images/WindowIcon.png"
            Grid.Column="1"
+           HorizontalAlignment="Left"
            Width="16" Height="16"
            Margin="8,0,0,0"/>
     <TextBlock x:Name="TitleTextBlock" 
@@ -412,11 +413,12 @@ This example shows the XAML for a custom title bar UI without interactive conten
                Style="{StaticResource CaptionTextBlockStyle}"
                Grid.Column="1"
                VerticalAlignment="Center"
-               Margin="4,0,0,0"/>
+               Margin="28,0,0,0"/>
 </Grid>
 ```
 
-The `LeftPaddingColumn` and `RightPaddingColumn` are used to reserve space for the caption buttons. They are explained in the [_System caption buttons_](#system-caption-buttons) section.
+> [!IMPORTANT]
+> The `LeftPaddingColumn` and `RightPaddingColumn` are used to reserve space for the caption buttons. The `Width` values for these columns are set in code, which is shown later. See the [_System caption buttons_](#system-caption-buttons) section for the code and explanation.
 
 ### [WinUI 3](#tab/winui3)
 
@@ -525,7 +527,7 @@ You can place interactive controls, like buttons, menus, or a search box, in the
 
 If you add interactive content in the title bar area, you should define explicit drag regions around that content so that users can interact with it. After you set a custom drag region, the default drag region is removed and the system does not reserve any mandatory drag region. You are responsible for ensuring that there is enough space in your title bar for your users to move your window.
 
-To set the drag regions, call the [AppWindowTitleBar.SetDragRectangles](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles) method. This method takes an array of rectangles, each of which defines a drag region. When the size of the window changes, you need to recalculate the drag regions to match the new size, and call `SetDragRectangles` with the new values.
+To set the drag regions, call the [AppWindowTitleBar.SetDragRectangles](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles) method. This method takes an array of rectangles, each of which defines a drag region. When the size of the title bar changes, you need to recalculate the drag regions to match the new size, and call `SetDragRectangles` with the new values.
 
 Your custom title bar will not be shown if it's not supported on the system where it's run. You should provide an alternative UI for any functionality that you placed in your custom title bar.
 
@@ -550,7 +552,7 @@ This example shows a custom title bar UI with a search box and demonstrates how 
         <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
         <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
     </Grid.ColumnDefinitions>
-    <Image x:Name="TitleBarIcon" Source="/Images/window_icon.png"
+    <Image x:Name="TitleBarIcon" Source="/Images/WindowIcon.png"
            Grid.Column="1"
            Width="16" Height="16"
            Margin="8,0,0,0"/>
@@ -568,17 +570,19 @@ This example shows a custom title bar UI with a search box and demonstrates how 
 ```
 
 ```csharp
+private AppWindow m_AppWindow;
+
 public MainWindow()
 {
     this.InitializeComponent();
 
     m_AppWindow = GetAppWindowForCurrentWindow();
+    m_AppWindow.Changed += AppWindow_Changed;
+
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         var titleBar = m_AppWindow.TitleBar;
         titleBar.ExtendsContentIntoTitleBar = true;
-        // Handle Loaded and SizeChanged events for
-        // AppTitleBar element to calculate drag rectangles.
         AppTitleBar.Loaded += AppTitleBar_Loaded;
         AppTitleBar.SizeChanged += AppTitleBar_SizeChanged;
     }
@@ -588,26 +592,69 @@ public MainWindow()
         // Show alternative UI for any functionality in
         // the title bar, such as search.
     }
+
 }
 
 private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
 {
-    SetDragRegionForCustomTitleBar(m_AppWindow);
+    if (AppWindowTitleBar.IsCustomizationSupported())
+    {
+        SetDragRegionForCustomTitleBar(m_AppWindow);
+    }
 }
 
 private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
 {
-    // Update drag regions if the size changes.
-    SetDragRegionForCustomTitleBar(m_AppWindow);
+    if (AppWindowTitleBar.IsCustomizationSupported()
+        && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
+    {
+        // Update drag region if the size of the title bar changes.
+        SetDragRegionForCustomTitleBar(m_AppWindow);
+    }
+}
+
+private AppWindow GetAppWindowForCurrentWindow()
+{
+    IntPtr hWnd = WindowNative.GetWindowHandle(this);
+    WindowId wndId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+    return AppWindow.GetFromWindowId(wndId);
+}
+
+[DllImport("Shcore.dll", SetLastError = true)]
+internal static extern int GetDpiForMonitor(IntPtr hmonitor, Monitor_DPI_Type dpiType, out uint dpiX, out uint dpiY);
+
+internal enum Monitor_DPI_Type : int
+{
+    MDT_Effective_DPI = 0,
+    MDT_Angular_DPI = 1,
+    MDT_Raw_DPI = 2,
+    MDT_Default = MDT_Effective_DPI
+}
+
+private double GetScaleAdjustment()
+{
+    IntPtr hWnd = WindowNative.GetWindowHandle(this);
+    WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+    DisplayArea displayArea = DisplayArea.GetFromWindowId(wndId, DisplayAreaFallback.Primary);
+    IntPtr hMonitor = Win32Interop.GetMonitorFromDisplayId(displayArea.DisplayId);
+
+    // Get DPI.
+    int result = GetDpiForMonitor(hMonitor, Monitor_DPI_Type.MDT_Default, out uint dpiX, out uint _);
+    if (result != 0)
+    {
+        throw new Exception("Could not get DPI for monitor.");
+    }
+
+    uint scaleFactorPercent = (uint)(((long)dpiX * 100 + (96 >> 1)) / 96);
+    return scaleFactorPercent / 100.0;
 }
 
 private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
 {
     if (AppWindowTitleBar.IsCustomizationSupported()
-        && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
+        && appWindow.TitleBar.ExtendsContentIntoTitleBar)
     {
-        // Either the right or left inset will be 0. Use the non-zero value.
-        int scaleAdjustment = Math.Max(appWindow.TitleBar.LeftInset, appWindow.TitleBar.RightInset) / 138;
+        double scaleAdjustment = GetScaleAdjustment();
 
         RightPaddingColumn.Width = new GridLength(appWindow.TitleBar.RightInset / scaleAdjustment);
         LeftPaddingColumn.Width = new GridLength(appWindow.TitleBar.LeftInset / scaleAdjustment);
@@ -615,23 +662,23 @@ private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
         List<Windows.Graphics.RectInt32> dragRectsList = new();
 
         Windows.Graphics.RectInt32 dragRectL;
-        dragRectL.X = (int)(LeftPaddingColumn.ActualWidth
-                            + IconColumn.ActualWidth) * scaleAdjustment;
+        dragRectL.X = (int)((LeftPaddingColumn.ActualWidth) * scaleAdjustment);
         dragRectL.Y = 0;
-        dragRectL.Height = (int)AppTitleBar.ActualHeight * scaleAdjustment;
-        dragRectL.Width = (int)(TitleColumn.ActualWidth
-                                + LeftDragColumn.ActualWidth) * scaleAdjustment;
+        dragRectL.Height = (int)(AppTitleBar.ActualHeight * scaleAdjustment);
+        dragRectL.Width = (int)((IconColumn.ActualWidth
+                                + TitleColumn.ActualWidth
+                                + LeftDragColumn.ActualWidth) * scaleAdjustment);
         dragRectsList.Add(dragRectL);
 
         Windows.Graphics.RectInt32 dragRectR;
-        dragRectR.X = (int)(LeftPaddingColumn.ActualWidth
+        dragRectR.X = (int)((LeftPaddingColumn.ActualWidth
                             + IconColumn.ActualWidth
                             + TitleTextBlock.ActualWidth
                             + LeftDragColumn.ActualWidth
-                            + SearchColumn.ActualWidth) * scaleAdjustment;
+                            + SearchColumn.ActualWidth) * scaleAdjustment);
         dragRectR.Y = 0;
-        dragRectR.Height = (int)AppTitleBar.ActualHeight * scaleAdjustment;
-        dragRectR.Width = (int)RightDragColumn.ActualWidth * scaleAdjustment;
+        dragRectR.Height = (int)(AppTitleBar.ActualHeight * scaleAdjustment);
+        dragRectR.Width = (int)(RightDragColumn.ActualWidth * scaleAdjustment);
         dragRectsList.Add(dragRectR);
 
         Windows.Graphics.RectInt32[] dragRects = dragRectsList.ToArray();
@@ -642,9 +689,11 @@ private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
 ```
 
 > [!WARNING]
-> Currently, `RightInset`, `LeftInset`, and the values passed to `SetDragRectangles` use physical pixels. These values need to be adjusted if the display scale is not 100%. In this example, we calculate a `scaleAdjustment` value to account for the display scale setting. If the UI is Left-To-Right, `LeftInset` will be 0; otherwise, `RightInset` will be 0. We choose the non-zero value and divide it by 138, which is the value of `RightInset` (in LTR UI) at 100% scale.
+> `AppWindow` uses physical pixels for compatibility with UI frameworks that don't use logical coordinates. If you use WPF or WinUI 3, `RightInset`, `LeftInset`, and the values passed to `SetDragRectangles` need to be adjusted if the display scale is not 100%. In this example, we calculate a `scaleAdjustment` value to account for the display scale setting.
 >
-> `int scaleAdjustment = Math.Max(appWindow.TitleBar.LeftInset, appWindow.TitleBar.RightInset) / 138;`
+> For WPF, you can hnadle the [Window.DpiChanged](/dotnet/api/system.windows.window.dpichanged) event to get the [NewDpi](/dotnet/api/system.windows.dpichangedeventargs.newdpi) value.
+>
+> For WinUI 3, use [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke) to call the native [GetDpiForMonitor](/windows/win32/api/shellscalingapi/nf-shellscalingapi-getdpiformonitor) function, as shown in the preceding example.
 
 > [!TIP]
 > You can get the height of the system TitleBar (`int titleBarHeight = appWindow.TitleBar.Height;`) and use that to set the height of your custom title bar and drag regions. However, the [design guidance](/windows/apps/design/basics/titlebar-design) recommends setting the title bar height to 48px if you add other controls. In this case, the height of the system title bar will not match your content, so instead, use the [ActualHeight](/windows/winui/api/microsoft.ui.xaml.frameworkelement.actualheight) of the title bar element to set the drag region height.
@@ -1061,32 +1110,32 @@ This examples shows all the code described in the Full customization section.
             <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-<Grid x:Name="AppTitleBar"  
+        <Grid x:Name="AppTitleBar"  
       Height="48">
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
-        <ColumnDefinition x:Name="IconColumn" Width="Auto"/>
-        <ColumnDefinition x:Name="TitleColumn" Width="Auto"/>
-        <ColumnDefinition x:Name="LeftDragColumn" Width="*"/>
-        <ColumnDefinition x:Name="SearchColumn" Width="Auto"/>
-        <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
-        <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
-    </Grid.ColumnDefinitions>
-    <Image x:Name="TitleBarIcon" Source="/Images/window_icon.png"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition x:Name="IconColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="TitleColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="LeftDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="SearchColumn" Width="Auto"/>
+                <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="TitleBarIcon" Source="/Images/WindowIcon.png"
            Grid.Column="1"
            Width="16" Height="16"
            Margin="8,0,0,0"/>
-    <TextBlock x:Name="TitleTextBlock" 
+            <TextBlock x:Name="TitleTextBlock" 
                Text="App title" 
                Style="{StaticResource CaptionTextBlockStyle}"
                Grid.Column="2"
                VerticalAlignment="Center"
                Margin="4,0,0,0"/>
-    <AutoSuggestBox Grid.Column="4" QueryIcon="Find"
+            <AutoSuggestBox Grid.Column="4" QueryIcon="Find"
                     PlaceholderText="Search"
                     VerticalAlignment="Center"
                     Width="260" Margin="4,0"/>
-</Grid>
+        </Grid>
 
         <NavigationView Grid.Row="1"
                         IsBackButtonVisible="Collapsed" 
@@ -1119,6 +1168,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using WinRT.Interop;
 
 namespace WASDK_ExtendedTitleBar
@@ -1163,7 +1213,7 @@ namespace WASDK_ExtendedTitleBar
             if (AppWindowTitleBar.IsCustomizationSupported()
                 && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
             {
-                // Update drag region if the size of the window changes
+                // Update drag region if the size of the title bar changes.
                 SetDragRegionForCustomTitleBar(m_AppWindow);
             }
         }
@@ -1171,17 +1221,45 @@ namespace WASDK_ExtendedTitleBar
         private AppWindow GetAppWindowForCurrentWindow()
         {
             IntPtr hWnd = WindowNative.GetWindowHandle(this);
-            WindowId myWndId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
-            return AppWindow.GetFromWindowId(myWndId);
+            WindowId wndId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+            return AppWindow.GetFromWindowId(wndId);
+        }
+
+        [DllImport("Shcore.dll", SetLastError = true)]
+        internal static extern int GetDpiForMonitor(IntPtr hmonitor, Monitor_DPI_Type dpiType, out uint dpiX, out uint dpiY);
+
+        internal enum Monitor_DPI_Type : int
+        {
+            MDT_Effective_DPI = 0,
+            MDT_Angular_DPI = 1,
+            MDT_Raw_DPI = 2,
+            MDT_Default = MDT_Effective_DPI
+        }
+
+        private double GetScaleAdjustment()
+        {
+            IntPtr hWnd = WindowNative.GetWindowHandle(this);
+            WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+            DisplayArea displayArea = DisplayArea.GetFromWindowId(wndId, DisplayAreaFallback.Primary);
+            IntPtr hMonitor = Win32Interop.GetMonitorFromDisplayId(displayArea.DisplayId);
+
+            // Get DPI.
+            int result = GetDpiForMonitor(hMonitor, Monitor_DPI_Type.MDT_Default, out uint dpiX, out uint _);
+            if (result != 0)
+            {
+                throw new Exception("Could not get DPI for monitor.");
+            }
+
+            uint scaleFactorPercent = (uint)(((long)dpiX * 100 + (96 >> 1)) / 96);
+            return scaleFactorPercent / 100.0;
         }
 
         private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
         {
             if (AppWindowTitleBar.IsCustomizationSupported()
-                && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
+                && appWindow.TitleBar.ExtendsContentIntoTitleBar)
             {
-                // Either the right or left inset will be 0. Use the non-zero value.
-                int scaleAdjustment = Math.Max(appWindow.TitleBar.LeftInset, appWindow.TitleBar.RightInset) / 138;
+                double scaleAdjustment = GetScaleAdjustment();
 
                 RightPaddingColumn.Width = new GridLength(appWindow.TitleBar.RightInset / scaleAdjustment);
                 LeftPaddingColumn.Width = new GridLength(appWindow.TitleBar.LeftInset / scaleAdjustment);
@@ -1189,23 +1267,23 @@ namespace WASDK_ExtendedTitleBar
                 List<Windows.Graphics.RectInt32> dragRectsList = new();
 
                 Windows.Graphics.RectInt32 dragRectL;
-                dragRectL.X = (int)(LeftPaddingColumn.ActualWidth) * scaleAdjustment;
+                dragRectL.X = (int)((LeftPaddingColumn.ActualWidth) * scaleAdjustment);
                 dragRectL.Y = 0;
-                dragRectL.Height = (int)AppTitleBar.ActualHeight * scaleAdjustment;
-                dragRectL.Width = (int)(IconColumn.ActualWidth
+                dragRectL.Height = (int)(AppTitleBar.ActualHeight * scaleAdjustment);
+                dragRectL.Width = (int)((IconColumn.ActualWidth
                                         + TitleColumn.ActualWidth
-                                        + LeftDragColumn.ActualWidth) * scaleAdjustment;
+                                        + LeftDragColumn.ActualWidth) * scaleAdjustment);
                 dragRectsList.Add(dragRectL);
 
                 Windows.Graphics.RectInt32 dragRectR;
-                dragRectR.X = (int)(LeftPaddingColumn.ActualWidth
+                dragRectR.X = (int)((LeftPaddingColumn.ActualWidth
                                     + IconColumn.ActualWidth
                                     + TitleTextBlock.ActualWidth
                                     + LeftDragColumn.ActualWidth
-                                    + SearchColumn.ActualWidth) * scaleAdjustment;
+                                    + SearchColumn.ActualWidth) * scaleAdjustment);
                 dragRectR.Y = 0;
-                dragRectR.Height = (int)AppTitleBar.ActualHeight * scaleAdjustment;
-                dragRectR.Width = (int)RightDragColumn.ActualWidth * scaleAdjustment;
+                dragRectR.Height = (int)(AppTitleBar.ActualHeight * scaleAdjustment);
+                dragRectR.Width = (int)(RightDragColumn.ActualWidth * scaleAdjustment);
                 dragRectsList.Add(dragRectR);
 
                 Windows.Graphics.RectInt32[] dragRects = dragRectsList.ToArray();
@@ -1213,7 +1291,6 @@ namespace WASDK_ExtendedTitleBar
                 appWindow.TitleBar.SetDragRectangles(dragRects);
             }
         }
-
 
         private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
         {
@@ -1292,7 +1369,6 @@ namespace WASDK_ExtendedTitleBar
         }
     }
 }
-
 ```
 
 ### [WinUI 3](#tab/winui3)
