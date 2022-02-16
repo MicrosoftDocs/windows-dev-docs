@@ -570,6 +570,8 @@ This example shows a custom title bar UI with a search box and demonstrates how 
 ```
 
 ```csharp
+using System.Runtime.InteropServices;
+
 private AppWindow m_AppWindow;
 
 public MainWindow()
@@ -577,7 +579,6 @@ public MainWindow()
     this.InitializeComponent();
 
     m_AppWindow = GetAppWindowForCurrentWindow();
-    m_AppWindow.Changed += AppWindow_Changed;
 
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
@@ -691,7 +692,7 @@ private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
 > [!WARNING]
 > `AppWindow` uses physical pixels for compatibility with UI frameworks that don't use logical coordinates. If you use WPF or WinUI 3, `RightInset`, `LeftInset`, and the values passed to `SetDragRectangles` need to be adjusted if the display scale is not 100%. In this example, we calculate a `scaleAdjustment` value to account for the display scale setting.
 >
-> For WPF, you can hnadle the [Window.DpiChanged](/dotnet/api/system.windows.window.dpichanged) event to get the [NewDpi](/dotnet/api/system.windows.dpichangedeventargs.newdpi) value.
+> For WPF, you can handle the [Window.DpiChanged](/dotnet/api/system.windows.window.dpichanged) event to get the [NewDpi](/dotnet/api/system.windows.dpichangedeventargs.newdpi) value.
 >
 > For WinUI 3, use [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke) to call the native [GetDpiForMonitor](/windows/win32/api/shellscalingapi/nf-shellscalingapi-getdpiformonitor) function, as shown in the preceding example.
 
@@ -905,6 +906,7 @@ Handle an event to determine the activation state of the window, and update your
 - **Win32**: Listen and respond to the [WM_ACTIVATE](/windows/win32/inputdev/wm-activate) message.
 - **WPF**: Handle [Window.Activated](/dotnet/api/system.windows.window.activated), [Window.Deactivated](/dotnet/api/system.windows.window.deactivated).
 - **WinForms**: Handle [Form.Activated](/dotnet/api/system.windows.forms.form.activated), [Form.Deactivate](/dotnet/api/system.windows.forms.form.deactivate).
+- **WinUI 3 with Windows App SDK title bar APIs**: Handle [Window.Activated](/windows/winui/api/microsoft.ui.xaml.window.activated) (See the WinUI 3 tab).
 
 ### [WinUI 3](#tab/winui3)
 
