@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Windows App SDK release channels
 
-The Windows App SDK provides the three release channels. When you [set up your development environment](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
+The Windows App SDK provides the three release channels. When you [Install tools for the Windows App SDK](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
 
 The following table provides an overview of the different release channels. For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
@@ -107,7 +107,7 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 - [Stable channel](stable-channel.md)
 - [Preview channel](preview-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Preview and Experimental guidance](preview-experimental-install.md)
-- [Install developer tools](set-up-your-development-environment.md)
+- [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
 

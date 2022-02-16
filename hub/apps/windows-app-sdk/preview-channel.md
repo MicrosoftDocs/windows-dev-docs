@@ -18,7 +18,7 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 
 **Important links**: 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
-- For documentation on preview releases, see [Preview and Experimental guidance](preview-experimental-install.md).
+- For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
 ## Version 1.0 Preview 3 (1.0.0-preview3)
 
@@ -29,7 +29,7 @@ Preview 3 is the latest release of the preview channel for version 1.0 of the Wi
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Preview 3 release. For all versions, see [Downloads for the Windows App SDK](downloads.md). If you haven't done so already, start by configuring your development environment, using the steps in [Install tools for Windows app development](set-up-your-development-environment.md?tabs=preview).
+From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Preview 3 release. For all versions, see [Downloads for the Windows App SDK](downloads.md). If you haven't done so already, start by configuring your development environment, using the steps in [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview).
 
 The extensions below are tailored for your programming language and version of Visual Studio.
 
@@ -408,7 +408,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 
 - [Stable channel](stable-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

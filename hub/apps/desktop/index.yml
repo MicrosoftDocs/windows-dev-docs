@@ -20,7 +20,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Set up your development environment
+          - text: Install tools for the Windows App SDK
             url: ../windows-app-sdk/set-up-your-development-environment.md
           - text: Enable your device for development
             url: ../get-started/enable-your-device-for-development.md

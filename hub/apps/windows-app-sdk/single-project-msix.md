@@ -34,7 +34,7 @@ Single-project MSIX only supports a single executable in the generated MSIX pack
 
 ## Install the single-project MSIX packaging tools
 
-The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install developer tools](set-up-your-development-environment.md).
+The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 **Windows App SDK 0.8 and C# version of 1.0 Preview 3:** You must install the single-project MSIX packaging tools extension separately.
 

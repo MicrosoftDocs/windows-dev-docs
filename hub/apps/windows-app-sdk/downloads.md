@@ -15,7 +15,7 @@ This page provides download links to the various releases of the [Windows App SD
 
 Depending on your development scenario, you may require the following:
 
-- **VSIX:** The Windows App SDK provides a unified set of APIs, project templates, and other tools for building Windows apps, which is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: stable, preview, and experimental. For setup instructions, see [Install developer tools](set-up-your-development-environment.md). 
+- **VSIX:** The Windows App SDK provides a unified set of APIs, project templates, and other tools for building Windows apps, which is available as a Visual Studio extension (VSIX). You can choose from three versions of the extension: stable, preview, and experimental. For setup instructions, see [Install tools for the Windows App SDK](set-up-your-development-environment.md). 
 - **Nuget Package:** If you have an existing project in which you want to use the Windows App SDK, you can install the latest version of the Windows App SDK NuGet package in your project directly from Visual Studio. For setup instructions, see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 - **Installer and MSIX packages:** Unpackaged apps that use the Windows App SDK can use the standalone .exe installer or MSIX packages to deploy the Windows App SDK package dependencies with their app. For setup instructions, see [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md).
 

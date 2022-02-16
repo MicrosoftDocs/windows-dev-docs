@@ -20,7 +20,7 @@ If you have an existing desktop project in which you want to use the Windows App
 
 ## Prerequisites
 
-- Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install Visual Studio](set-up-your-development-environment.md).
+- Visual Studio 2019 or Visual Studio 2022 with the required workloads and components for Windows app development. For more information, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Instructions
 
@@ -56,5 +56,5 @@ If you have an existing desktop project in which you want to use the Windows App
 
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

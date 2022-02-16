@@ -8,7 +8,7 @@ items:
           href: get-started/index.md
         - name: About migrating from UWP to Windows App SDK
           href: get-started/migrate-from-uwp-to-winappsdk.md
-        - name: Install developer tools
+        - name: Install tools for the Windows App SDK
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create a WinUI 3 app"
           href: winui/winui3/create-your-first-winui3-app.md
@@ -50,9 +50,9 @@ items:
             href: windows-app-sdk/release-channels.md
           - name: "Downloads"
             href: windows-app-sdk/downloads.md
-          - name: "Preview and Experimental guidance"
+          - name: "Preview and experimental guidance"
             items:
-              - name: "Install Developer Tools"
+              - name: "Install tools for preview and experimental channels of the Windows App SDK"
                 href: windows-app-sdk/preview-experimental-install.md
               - name: "Create a WinUI 3 app"
                 href: windows-app-sdk/preview-experimental-create-winui3-app.md

@@ -8,7 +8,7 @@ ms.topic: article
 
 # WinUI 3 project templates in Visual Studio
 
-After installing the Windows App SDK VSIX and [installing developer tools](../../windows-app-sdk/set-up-your-development-environment.md), you're ready to create a WinUI 3 app using one of the WinUI project templates in Visual Studio. 
+See [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md). Now you're ready to create a WinUI 3 app using one of the WinUI 3 project templates in Visual Studio. 
 
 To access the WinUI project templates in the **Create a new project** dialog, filter the language to **C++** or **C#**, the platform to **Windows**, and the project type to **WinUI**. Alternatively, you can search for *WinUI* and select one of the available C# or C++ templates.
 

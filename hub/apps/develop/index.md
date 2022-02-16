@@ -50,7 +50,7 @@ The following articles provide information to help you get started using feature
 
 For information about setting up your development environment and getting started creating a new app, see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+* [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 * [Get started developing apps](../get-started/index.md)
 
 ## Related topics

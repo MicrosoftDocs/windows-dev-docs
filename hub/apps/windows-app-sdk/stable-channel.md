@@ -31,7 +31,7 @@ Version 1.0 is the latest release of the stable channel for the Windows App SDK.
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-From the table below you can download the Visual Studio extensions (VSIX) and the .exe installer for the 1.0 Stable release. If you haven't done so already, [Install developer tools](set-up-your-development-environment.md?tabs=preview).
+From the table below you can download the Visual Studio extensions (VSIX) and the .exe installer for the 1.0 Stable release. If you haven't done so already, [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview).
 
 | **1.0 Stable downloads** | **Description** |
 | ----------- | ----------- |
@@ -79,7 +79,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
   both Visual Studio 2019 and Visual Studio 2022 using the Blank App, Packaged (WinUI 3 in Desktop) project template, 
   the command to publish the project doesn't appear in the menu until you close and re-open Visual Studio.
   - A C# app with Single-project MSIX will not compile without the "C++ (v14x) Universal Windows Platform Tools" 
-  optional component installed. View [Install developer tools](set-up-your-development-environment.md) for additional information.
+  optional component installed. See [Install tools for the Windows App SDK](set-up-your-development-environment.md) for additional information.
   - *Potential run-time error in an app with Single-project MSIX that consumes types defined in a referenced Windows Runtime Component:* 
   To resolve, manually add [activatable class entries](/uwp/schemas/appxpackage/how-to-specify-extension-points-in-a-package-manifest) to the appxmanifest.xml.
     - The expected error in C# applications is “COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG)). 
@@ -463,7 +463,7 @@ This release has the following limitations and known issues:
 
 - [Preview channel](preview-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
