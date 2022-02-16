@@ -7,6 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
 ms.localizationpriority: medium
+ms.author: jimwalk
+author: jwmsft
 ---
 # Title bar customization
 
