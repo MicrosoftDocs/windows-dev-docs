@@ -62,11 +62,7 @@ You may also want to enter this command to ensure you have the latest updates: `
 
 ### Choose and apply a PowerShell prompt theme
 
-To browse the Oh My Posh prompt themes, use the command:
-
-```powershell
-Get-PoshThemes
-```
+You may browse the full list of themes on the [Oh My Posh themes page](https://ohmyposh.dev/docs/themes).
 
 Choose a theme and update your PowerShell profile with this command. (You can replace `notepad` with the text editor of your choice.)
 

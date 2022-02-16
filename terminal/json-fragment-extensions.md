@@ -145,7 +145,7 @@ The location to place the JSON fragment files varies depending on the installati
 
 ### Microsoft Store applications
 
-For applications installed through the Microsoft Store (or similar), the application must declare itself to be an app extension. Learn more about how to [Create an host an app extenstion](/windows/uwp/launch-resume/how-to-create-an-extension). The necessary section is replicated here. The appxmanifest file of the package must include:
+For applications installed through the Microsoft Store (or similar), the application must declare itself to be an app extension. Learn more about how to [Create and host an app extension](/windows/uwp/launch-resume/how-to-create-an-extension). The necessary section is replicated here. The appxmanifest file of the package must include:
 
 ```xml
 <Package
