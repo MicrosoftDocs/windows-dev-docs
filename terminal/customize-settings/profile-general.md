@@ -113,7 +113,7 @@ If set, this profile will automatically open up in an "elevated" window (running
 
 When this property is set to `false`, opening this profile in an elevated window will not launch an _unelevated_ window to host this profile. The profile will simply open in the elevated window, running as Administrator.
 
-If you set this property in `profiles.defaults`, then _all_ profiles will launch as Administrator by default, unless overrided by specifically setting this to false.
+If you set this property in `profiles.defaults`, then _all_ profiles will launch as Administrator by default, unless overridden by specifically setting this to false.
 
 This property can be overridden in the [`newTab`](./actions.md#new-tab) and [`splitPane`](./actions.md#split-a-pane) actions, with the `elevate` property.
 

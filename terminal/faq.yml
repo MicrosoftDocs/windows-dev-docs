@@ -46,7 +46,7 @@ sections:
         answer: |
           To exit [focus mode](./customize-settings/actions.md#toggle-focus-mode), which hides the tabs and title bar on Windows Terminal, open the terminal command palette (Ctrl+Shift+P), find "toggle focus mode", then hit enter.
 
-          ![Toggle focus mode setting in Windows Terminal command pallette](./images/toggle-focus-mode.png)
+          ![Toggle focus mode setting in Windows Terminal command palette](./images/toggle-focus-mode.png)
 
           You may also want to ensure that your launch mode is not set to "focus" in the Startup settings.
           
