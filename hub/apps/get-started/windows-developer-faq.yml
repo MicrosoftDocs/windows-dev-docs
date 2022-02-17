@@ -214,7 +214,7 @@ sections:
         # todo: define sparsed
      - question: Can I create an unpackaged WinUI 3 app?
        answer: |
-          Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app?pivots=winui3-unpackaged-csharp).
+          Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app).
      - question: Can I configure my WinUI 3 app to auto-update?
        answer: |
           Yes. TODO: Link to guidance
@@ -283,7 +283,7 @@ sections:
            - You're building an app for Xbox
            - You're building an app for Hololens
            - You're building an app for Surface Hub 
-           - You're building an app that targets Windows 10 versio
+           - You're building an app that targets Windows 10 version TODO
            - You need application lifecycle management 
            - You need ultra-high-performance UIs 
         # <!-- see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500116  -->
@@ -301,7 +301,7 @@ sections:
           SSSSS
      - question: Is the Windows Runtime (WinRT) deprecated?
        answer: |
-          WinRT is in maintenance mode, but is still supported for production scenarios.
+          WinRT refers to a type of API. WinRT APIs are the evolution of COM APIs, and they're alive and kicking. WinAppSDK and WinUI 3 APIs are WinRT APIs.
      - question: What are the reasons to migrate a WinRT app to WinUI 3? Is guidance available?
        answer: |
           TODO
