@@ -146,7 +146,7 @@ This was the one-time codename for the Windows App SDK.
 <!-- docs status: pending feedback. product status: pending feedback. -->
 <!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Packaged app
-Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer.
+Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer. Refer to [Sparse-package](#sparse-package) to learn about an alternative packaging format.
 
 ### Q
 
@@ -174,11 +174,16 @@ TODO
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Sparse package
-TODO
+TODO. Refer to [unpackaged](#unpackaged-app) and [packaged](#packaged-app) to learn about alternative packaging formats.
 
 
 
 ### U
+
+<!-- docs status: pending feedback. product status: pending feedback. -->
+##### Universal Windows Platform (UWP)
+An application development platform that uses WinRT APIs to deliver packaged apps. UWP apps are generally locked down, they inherit the security of the UWP platform, and they run in a sandbox. The UWP platform is not being actively developed. WinUI 3 and the Windows App SDK are the latest and recommended alternatives for new app development. [Learn more about UWP](https://docs.microsoft.com/en-us/windows/uwp/).
+
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Unmanaged app
@@ -187,10 +192,7 @@ TODO
 <!-- docs status: pending feedback. product status: pending feedback. -->
 <!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Unpackaged app
-Unpackaged apps don't use MSIX. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. These run without package identity. Both packaged and unpackaged apps can be published to the Microsoft Store.
-
-<!-- docs status: pending feedback. product status: pending feedback. -->
-##### UWP
+Unpackaged apps don't use MSIX. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. These run without package identity. Both packaged and unpackaged apps can be published to the Microsoft Store. Refer to [Sparse-package](#sparse-package) to learn about an alternative packaging format.
 
 
 
@@ -209,12 +211,6 @@ The Visual Studio IDE is a creative launching pad that you can use to edit, debu
 Visual Studio Code is a lightweight but powerful source code editor, which runs on your desktop and is available for Windows, macOS and Linux. [Getting Started with Visual Studio Code](https://code.visualstudio.com/docs).
 
 
-### U
-
-<!-- docs status: pending feedback. product status: pending feedback. -->
-##### Universal Windows Platform (UWP)
-A development platform that uses WinRT APIs. Not being actively developed. WinUI 3 and the Windows App SDK are the latest and recommended alternatives for new app development.
-
 
 ### W
 
@@ -224,7 +220,13 @@ WebView2 is the best way to include web content in your native Windows apps. You
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Win32
-The Win32 API (also called the Windows API) is the original platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT (for UWP apps for Windows 10). This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware. [Get started with desktop Windows apps that use the Win32 API](https://docs.microsoft.com/windows/win32/desktop-programming).
+The Win32 API is a platform for native C/C++ Windows applications that require direct access to Windows and hardware. It provides a first-class development experience without depending on a managed runtime environment like .NET and WinRT (for UWP apps for Windows 10). This makes the Win32 API the platform of choice for applications that need the highest level of performance and direct access to system hardware. [Get started with desktop Windows apps that use the Win32 API](https://docs.microsoft.com/windows/win32/desktop-programming).
+
+
+<!-- docs status: pending feedback. product status: pending feedback. -->
+##### Windows API
+Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT APIs that are part of WinAppSDK and WinUI 3.
+
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Windows app
@@ -235,6 +237,7 @@ An application that can run on Windows. Windows apps can be built using a variet
 TODO
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
+<!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Windows App SDK
 A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP. It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. [Developing for Windows with the Windows App SDK](https://github.com/microsoft/WindowsAppSDK/discussions/1615).
 
@@ -247,8 +250,9 @@ Known as WinForms for short. A thin layer over Windows APIs with minimal layout 
 A project that you work on through an IDE. You generate application builds from your projects before packaging and deploying them.
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
+<!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Windows SDK
-The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps.
+The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. Not to be confused with the Windows App SDK, which is a modern abstracton that wraps around the Windows SDK.
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### C++/WinRT
