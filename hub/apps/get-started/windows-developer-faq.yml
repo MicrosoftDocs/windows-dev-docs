@@ -55,7 +55,7 @@ sections:
           No. WinUI 3 / Windows App SDK uses the `Microsoft.*` namespace. WinUI 2 / UWP uses the `Windows.*` namespace. These namespaces can't be mixed. 
      - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
        answer: |
-          The Windows App SDK API closely resembles the UWP API. [Learn more about migrating your UWP apps.](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
+          In most cases your UI code needs just a few namespace changes. Much of your platform code can stay the same. You'll need to adjust some code due to differences between desktop apps and UWP apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks. See [About migrating from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
      - question: If I have an existing UWP app in the Store, can I publish a new packaged app using the same identifiers?
        answer: |
           Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version.
@@ -156,14 +156,14 @@ sections:
           Yes, as long as they're signed with a valid certificate. We recommend developing new apps with Windows App SDK and WinUI 3.
      - question: Can I mix UWP UI controls with Win32 UI controls?
        answer: |
-          TODO
+          Yes - XAML Islands lets you do this. [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
 
 
  - name: XAML Islands
    questions: 
-     - question: What can I do with XAML Islands?
+     - question: What's XAML Islands?
        answer: |
-          As of Windows 10 version 1903, you can use XAML Islands to [host WinRT XAML controls in non-UWP desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands). [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
+          XAML Islands lets you use new pieces of UI from the Universal Windows Platform (UWP) on existing Win32 apps, including Windows Forms and WPF apps. You can use XAML Islands to [host WinRT XAML controls in non-UWP desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands). [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
      
      
  - name: Combining Windows development technologies
@@ -181,7 +181,7 @@ sections:
    questions: 
      - question: What should I use if I want to build apps that work on Windows and Xbox?
        answer: |
-          We recommend using Windows App SDK and WinUI 3 to build Windows apps. If your app needs to support Xbox, we recommend using UWP. For game development, we recommend using [Microsoft Game Development Kit](https://github.com/microsoft/GDK).
+          If your app needs to support both Windows and Xbox, we recommend using the Universal Windows Platform (UWP). We usually recommend using Windows App SDK and WinUI 3 for Windows apps, although these apps won't work on Xbox. And for game development, we recommend using [Microsoft Game Development Kit](https://github.com/microsoft/GDK).
         # TODO: Are there future plans to allow devs to build xbox apps using win app sdk?
         # see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1510738 -->
      - question: What should I use if I want to build apps that work on Windows and Surface Hub?
