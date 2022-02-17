@@ -206,6 +206,7 @@ sections:
      - question: What's the difference between packaged and unpackaged apps?
        answer: |
           Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. Unpackaged apps don't use MSIX. Both types of applications can be published to the Microsoft Store.
+        # Note that definitions exist both here and in the glossary - update both places if updating one for consistency.
      - question: Can I create an unpackaged WinUI 3 app?
        answer: |
           Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app?pivots=winui3-unpackaged-csharp).

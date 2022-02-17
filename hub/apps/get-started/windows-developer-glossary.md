@@ -18,7 +18,7 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
     1. List terms for v1 [done]
     2. Define terms [we are here]
     3. Align with teams
-    4. Add links to related resources and definitions when helpful
+    4. Add links to related resources and inter-link definitions (eg mentions of "packaged" can link to "packaged" term in glossary) when helpful
     5. Publish
     6. Explore terminology standardization with Monica Rush
 
@@ -44,7 +44,7 @@ App lifecycle management (ALM) describes the management of your application's ex
 An application model describes the framework components that support a specific application. For example, the Universal Windows Platform (UWP) app model includes UWP, WinUI 2, and XAML.
 
 <!-- docs status: need to include sparse packaging. product status: pending feedback. -->
-<!-- #duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
+<!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Application packaging
 Application packaging describes the manner in which your application is packaged before being distributed and installed by users. Applications can be packaged, unpackaged, or sparsely packaged.
 
@@ -113,21 +113,22 @@ MSIX is a Windows app package format that combines the best features of MSI, .ap
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Native apps
-Traditionally, "native" refers to applications built without using the .NET runtime. In this case, native is synonymous with unmanaged, and can be used to describe win32 apps that manage their own memory and security concerns.
+Traditionally, "native" refers to applications built without using the .NET runtime. In this case, "native" is synonymous with "unmanaged", and can be used to describe win32 apps that manage their own memory and security concerns.
 
 Some developers use "native" to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly. We'll rarely use "native apps" in our docs because of this ambiguity.
 
-<!-- docs status: pending feedback. product status: pending feedback. -->
+<!-- docs status: very low-confidence, pending feedback. product status: pending feedback. -->
 ##### Native compilation
-TODO
+Native compilation refers to applications compiled without using .NET.
 
-<!-- docs status: pending feedback. product status: pending feedback. -->
+
+<!-- docs status: very low-confidence, pending feedback. product status: pending feedback. -->
 ##### Native sandboxing
-TODO
+Native sandboxing refers to applications sandboxed without using .NET.
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### .NET MAUI
-.NET multi-platform app UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [What is .NET MAUI?](https://docs.microsoft.com/dotnet/maui/what-is-maui).
+.NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [What is .NET MAUI?](https://docs.microsoft.com/dotnet/maui/what-is-maui).
 
  
 
@@ -143,6 +144,7 @@ TODO
 This was the one-time codename for the Windows App SDK.
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
+<!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Packaged app
 Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer.
 
@@ -183,6 +185,7 @@ TODO
 "Unmanaged apps" are apps that are not managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app. "Unmanaged" is synonymous with "native".
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
+<!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Unpackaged app
 Unpackaged apps don't use MSIX. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. These run without package identity. Both packaged and unpackaged apps can be published to the Microsoft Store.
 
