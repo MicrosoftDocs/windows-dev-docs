@@ -27,6 +27,14 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
 
 ### A
 
+<!-- docs status: definition clarified. product status: pending feedback. -->
+##### Admin-managed apps
+Admin-managed apps are apps that administrators manage through administrative capabilities such as Intune.
+
+<!-- docs status: definition clarified. product status: pending feedback. -->
+##### Admin-unmanaged apps
+Admin-unmanaged apps are apps that users install and manage without admin control.
+
 <!-- docs status: no comments. product status: pending feedback. -->
 ##### App lifecycle management (ALM)
 App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
@@ -35,43 +43,56 @@ App lifecycle management (ALM) describes the management of your application's ex
 ##### Application model
 An application model describes the framework components that support a specific application. For example, the Universal Windows Platform (UWP) app model includes UWP, WinUI 2, and XAML.
 
+<!-- docs status: need to include sparse packaging. product status: pending feedback. -->
+<!-- #duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Application packaging
-Application packaging describes the manner in which your application is packaged before being distributed and installed by users. Applications can be either packaged or unpackaged.
+Application packaging describes the manner in which your application is packaged before being distributed and installed by users. Applications can be packaged, unpackaged, or sparsely packaged.
 
 
 ### C
 
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### Capability-based access model
 Capability-based access describes TODO...
 
 
 ### D
 
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### Dynamic Dependency Lifetime Manager (DDLM)
 Dynamic Dependency Lifetime Manager. See https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md 
 
 
 ### F
 
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### Fluent Design
 Microsoft's [Fluent Design System](https://www.microsoft.com/design/fluent/#/) gives you an open-source design system that lets you create reusable cross-platform user interfaces.
 
 ### H
 
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### Hot Reload
 A .NET and C++ feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-rerun your apps while developing. See: [Write and debug running code with Hot Reload](https://docs.microsoft.com/visualstudio/debugger/hot-reload).
 
 
 ### I
 
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### In-app updates
 In-app updates allow you to update your applications without requiring your users to take any installation or update action. Packaged apps support in-app updates.
 
 
 ### M
 
+<!-- docs status: definition clarified. product status: pending feedback. -->
 ##### Managed apps
-Managed apps are apps that administrators manage through administrative capabilities such as Intune. Unmanaged apps are apps that users install and manage without admin control.
+"Managed" refers to the "managed runtime" of .NET, which provides managed services such as garbage collection and security assurances. If you're building an app with .NET, you're building a managed app.
+
+
+
+
+
 
 ##### MAUI
 See [.NET MAUI](#net-maui) below.
@@ -150,8 +171,9 @@ TODO
 
 ### U
 
+<!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Unmanaged app
-Unmanaged apps are apps that users install and manage without admin control. Managed apps are apps that administrators manage through administrative capabilities like Intune.
+"Unmanaged apps" are apps that are not managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app. "Unmanaged" is synonymous with "native".
 
 
 ##### Unpackaged app
