@@ -51,7 +51,7 @@ sections:
           Yes&mdash;that's the term that we recommend you use.
      - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components? In other words, can WinUI 2 and WinUI 3 components be mixed?
        answer: |
-          Yes. Note that WinUI 3 uses the `Microsoft.*` namespace. WinUI 2 uses the `Windows.*` namespace.
+          No. WinUI 3 / Windows App SDK uses the `Microsoft.*` namespace. WinUI 2 / UWP uses the `Windows.*` namespace. These namespaces can't be mixed. 
      - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
        answer: |
           The Windows App SDK API closely resembles the UWP API. [Learn more about migrating your UWP apps.](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
