@@ -23,8 +23,8 @@ sections:
      - question: What's the latest and recommended way to build Windows Apps?
        answer: | 
           - **Windows:** Windows App SDK + WinUI 3 are the future of Windows app development. 
-          - **Targeting multiple platforms:** .NET MAUI lets you build cross-platform apps that use WinUI 3 when running on Windows.
-          - **React developers:** React Native will soon use WinUI 3 on Windows. 
+          - **Cross-platform:** .NET MAUI lets you build cross-platform apps that use WinUI 3 when running on Windows.
+          - **React developers:** We're working on supporting WinUI 3 in React Native on Windows. 
           - **Web developers:** WebView2 gives your web applications a way to feel like Windows desktop apps while accessing the Windows platform and Windows App SDK.  
 
           [Learn more about choosing a development technology](./index.md).
@@ -35,17 +35,18 @@ sections:
         # Provide migration guidance here
      - question: Do I need to use Visual Studio to build WinUI 3 apps?
        answer: |
-           We strongly recommend using Visual Studio for at least initial project creation. The free Visual Studio Community Edition is supported. You can also use `msbuild.exe` and VS Code together, although this isn't recommended because it hasn't been fully tested.
+           Yes. Other IDEs (such as Visual Studio Code) are currently unsupported.
      - question: What limitations are there when building with WinUI 3 and Windows App SDK?
        answer: |
             - Multi-windowing isn't supported yet. This is currently in scope for Windows App SDK v1.1, which is scheduled to ship in Q2 2022. 
-            - Non-store apps can't send push notifications. This is currently in scope for Windows App SDK v1.1.
+            - Apps that haven't been published through the Microsoft Store can't send push notifications. This is currently in scope for Windows App SDK v1.1
             - Local toast notifications aren't supported yet. This is currently in scope for Windows App SDK v1.1.
             - XAML Islands aren't supported yet.
             - Media, map, and inking controls aren't supported yet.
             - ARM64 isn't yet supported for unpackaged scenarios. This is currently in scope for Windows App SDK v1.1.
             - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet. This is currently in scope for Windows App SDK v1.1.
             - App lifecycle management isn't supported yet.
+           # TODO: push notifications limitation needs confirmation
      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
        answer: |
           Yes&mdash;that's the term that we recommend you use.
