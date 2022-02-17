@@ -29,7 +29,7 @@ sections:
         # Provide migration guidance here
      - question: Do I need to use Visual Studio to build WinUI 3 apps?
        answer: |
-           We strongly recommend using Visual Studio for at least initial project creation. Visual Studio Community Edition is supported. You can also use `msbuild.exe` and VS Code together, although this isn't recommended because it hasn't been fully tested.
+           We strongly recommend using Visual Studio for at least initial project creation. The free Visual Studio Community Edition is supported. You can also use `msbuild.exe` and VS Code together, although this isn't recommended because it hasn't been fully tested.
      - question: What limitations are there when building with WinUI 3 and Windows App SDK?
        answer: |
             - Multi-windowing isn't supported yet. This is currently in scope for Windows App SDK v1.1, which is scheduled to ship in Q2 2022. 
@@ -81,12 +81,12 @@ sections:
 
  - name: Windows App SDK and WinUI 3
    questions: 
-     - question: What's Windows App SDK?
+     - question: What is the Windows App SDK?
        answer: |
           Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform.
      - question: What does Windows App SDK mean for UWP and desktop developers?
        answer: |
-          UWP developers don't need to migrate. WinUI 2.x and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. If you want to use the Windows App SDK or .NET 5 in your existing UWP app, you can migrate your project to a desktop project type by following our migration guidance (see [Migrate from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)). 
+          UWP developers don't need to migrate. WinUI 2.x and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. If you want to update your UWP app to use the Windows App SDK or .NET 5, you can migrate your project to a desktop project type by following our migration guidance (see [Migrate from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)). 
 
           If you're working on a desktop project type (WPF, Windows, or .NET 5+), you can simply add the Windows App SDK as a NuGet package and get access to all the new APIs.
 
