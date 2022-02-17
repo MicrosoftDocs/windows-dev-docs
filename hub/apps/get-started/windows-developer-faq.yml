@@ -105,10 +105,10 @@ sections:
      - question: Do you need to use XAML if you want to use WinUI 3?
        answer: |
           No. UI controls can be created in code. You can also use XAML if preferred, which means that you can reuse your XAML when migrating from UWP/WPF to WinUI 3.
-     - question: Does WinUI 3 have a designer?
+     - question: Does Visual Studio have a design surface / GUI designer for WinUI 3?
        answer: |
-          Not yet.
-        # Will we? Can we set developer expectations?
+          Yes, you can use Visual Studio to design WinUI 3 apps through a GUI interface?
+        # Is this right?
      - question: Do I need to use WinForms or WPF when creating GUIs in WinUI 3 apps?
        answer: |
           No. WinUI 3 is a full-fledged UI framework. You can integrate WinUI 3 into your WinForms / WPF apps, but WinUI 3 doesn't have a dependency on WinForms or WPF.
