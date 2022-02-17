@@ -53,22 +53,6 @@ Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) 
 
 ## Examples
 
-<!--
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ListView">ListView</a> or <a href="xamlcontrolsgallery:/item/GridView">GridView</a> in action.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
--->
-
 | XAML Controls Gallery | &nbsp; |
 | --- | --- |
 | ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon-sm.png) | If you already have the XAML Controls Gallery app installed, see the [ListView](xamlcontrolsgallery:/item/ListView) and [GridView](xamlcontrolsgallery:/item/GridView) controls in action. If the app isn't already installed: <li>[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)<li>[Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery) |
