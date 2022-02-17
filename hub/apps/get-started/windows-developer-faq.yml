@@ -144,10 +144,10 @@ sections:
           TODO
      - question: Can I use Mica (Windows 11) or Acrylic (Windows 10) backgrounds in apps built with Windows App SDK?
        answer: |
-          Not quite. This is currently in scope for Windows App SDK v1.1.
-     - question: Is WinUI 3 pure XAML like UWP/WPF?
+          Not yet. This is currently in scope for Windows App SDK v1.1.
+     - question: Does WinUI 3 use XAML markup, like UWP and Windows Presentation Foundation (WPF)?
        answer: |
-          It can be, but you can also code your UI.
+          Yes, there are many benefits (including designability) to representing your WinUI 3 UI in the form of declarative XAML markup. But (like with UWP and WPF) you can also use WinUI 3 types using imperative code (C#) where doing so is necessary.
 
  - name: UWP and WinUI 2
    questions: 
