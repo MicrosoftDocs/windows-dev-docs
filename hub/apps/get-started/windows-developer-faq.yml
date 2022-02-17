@@ -43,7 +43,7 @@ sections:
      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
        answer: |
           Yes&mdash;that's the term that we recommend you use.
-     - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components?
+     - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components? In other words, can WinUI 2 and WinUI 3 components be mixed?
        answer: |
           Yes. Note that WinUI 3 uses the `Microsoft.*` namespace. WinUI 2 uses the `Windows.*` namespace.
      - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
@@ -57,7 +57,12 @@ sections:
           Yes&mdash;you can gradually migrate your WinForms, Win32, WPF, and UWP apps to WinUI 3.
         # Low confidence - need product guidance
         # Provide migration guidance here
- 
+     - question: Can I use Windows App SDK features in my existing app without fully rewriting it?
+       answer: |
+          TODO
+     - question: Where can I find migration guidance?
+       answer: |
+          TODO - enumerate the different bits of migration guidance we have here
 
  - name: Selecting a Windows development technology
    questions: 
