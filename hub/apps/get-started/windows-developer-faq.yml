@@ -189,7 +189,7 @@ sections:
           If you're targeting both Windows and Surface hub, we recommend using UWP.
      - question: What should I use if I want to build apps that work on Windows and Hololens and/or Mixed Reality?
        answer: |
-          We recommend using Windows App SDK and WinUI 3 to build Windows apps. For Hololens apps, we recommend using OpenXR + Win32. [Learn more about OpenXR](https://docs.microsoft.com/windows/mixed-reality/develop/native/openxr). Mixed Reality apps can be built [using the Windows SDK and Visual Studio](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools).
+          It's not currently possible to build one app that works on Windows, Hololens, and Mixed Reality. We recommend using Windows App SDK and WinUI 3 to build Windows apps. For Hololens apps, we recommend using either UWP or OpenXR + Win32. [Learn more about OpenXR](https://docs.microsoft.com/windows/mixed-reality/develop/native/openxr). Mixed Reality apps can be built [using the Windows SDK and Visual Studio](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools).
 
 
 
@@ -207,10 +207,11 @@ sections:
 
  - name: Packaging, deployment, and updates
    questions: 
-     - question: What's the difference between packaged and unpackaged apps?
+     - question: What's the difference between packaged, unpackaged, and sparse-packaged apps?
        answer: |
           Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. Unpackaged apps don't use MSIX. Both types of applications can be published to the Microsoft Store.
         # Note that definitions exist both here and in the glossary - update both places if updating one for consistency.
+        # todo: define sparsed
      - question: Can I create an unpackaged WinUI 3 app?
        answer: |
           Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app?pivots=winui3-unpackaged-csharp).
