@@ -27,12 +27,11 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
 
 ### A
 
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### App lifecycle management (ALM)
 App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
 
-##### App SDK
-Shorthand for the Windows App SDK.
-
+<!-- docs status: no comments. product status: pending feedback. -->
 ##### Application model
 An application model describes the framework components that support a specific application. For example, the Universal Windows Platform (UWP) app model includes UWP, WinUI 2, and XAML.
 
