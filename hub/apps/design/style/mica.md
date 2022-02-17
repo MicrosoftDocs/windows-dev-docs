@@ -332,7 +332,7 @@ To follow the card pattern using a NavigationView you will need to remove the de
 
 The previous three app layout XAML pages use the below code-behind to create a custom title bar adaptive to app state and visibility.
 
-For more information see [Title bar customization](../shell/title-bar.md).
+For more information see [Title bar customization](/windows/apps/develop/title-bar).
 
 ```csharp
 public MainPage()
