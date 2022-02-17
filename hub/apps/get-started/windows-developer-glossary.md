@@ -252,7 +252,7 @@ A project that you work on through an IDE. You generate application builds from 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 <!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Windows SDK
-The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. Not to be confused with the Windows App SDK, which is a modern abstracton that wraps around the Windows SDK.
+The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. Not to be confused with the Windows App SDK, which is a modern abstracton around Windows APIs that succeeds the Windows SDK.
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### C++/WinRT
