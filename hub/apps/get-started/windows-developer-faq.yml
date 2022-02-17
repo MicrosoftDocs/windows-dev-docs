@@ -17,9 +17,9 @@ sections:
      - question: What is the Windows App SDK?
        answer: |
           The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform.
-     - question: What's the difference between the "Windows SDK" and the "Windows App SDK"?
+     - question: What's the difference between the Windows App SDK and the Windows SDK?
        answer: |
-          To use the Windows SDK, you have to download an installer that allows you to use WinUI 2 within UWP apps. Windows App SDK is released to developers through NuGet and lets you build modern apps using WinUI 3.
+          Both are software development kits (SDKs) (containing documentation, header files, libraries, samples, and tools) that enable you to develop Windows apps. The Windows App SDK is newer, it's focused on desktop apps, it supports WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users. The Windows SDK is older, is aimed at UWP apps as well as desktop apps, it supports WinUI 2.x, and it's designed around Windows APIs that are coupled to particular versions of the OS.
      - question: What's the latest and recommended way to build Windows Apps?
        answer: | 
           - **Windows:** Windows App SDK + WinUI 3 are the future of Windows app development. 
@@ -112,6 +112,7 @@ sections:
      - question: Do I need to use WinForms or WPF when creating GUIs in WinUI 3 apps?
        answer: |
           No. WinUI 3 is a full-fledged UI framework. You can integrate WinUI 3 into your WinForms / WPF apps, but WinUI 3 doesn't have a dependency on WinForms or WPF.
+        # todo: link to guidance
      - question: Does Windows App SDK include WinUI 3?
        answer: |
           Windows App SDK includes WinUI 3; WinUI 3 is part of the Windows App SDK. 
