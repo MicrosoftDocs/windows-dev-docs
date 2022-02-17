@@ -101,7 +101,7 @@ sections:
           It's best to think of Windows App SDK / WinUI 3 as an OS-decoupled superset of UWP / WinUI 2 that will eventually reach approximate feature parity. UWP will be supported by the Windows SDK in the meantime, with the caveat that .NET 5/6 won't be coming to UWP.
      - question: Can WinUI 3 be used with UWP?
        answer: |
-          WinUI 3 can be used to supplement WinUI 2 components in UWP apps, but UWP and WinUI 3 don't depend on each other.
+          WinUI 3 is supported only in desktop-based projects. To use WinUI 3 in your UWP project, your UWP projects can migrate their project type to desktop (see [how to migrate your UWP app to the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)).
      - question: Do you need to use XAML if you want to use WinUI 3?
        answer: |
           No. UI controls can be created in code. You can also use XAML if preferred, which means that you can reuse your XAML when migrating from UWP/WPF to WinUI 3.
