@@ -265,7 +265,7 @@ sections:
        answer: |
           No. UWP and WinUI 2 are still fully supported for production scenarios and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. 
 
-          UWP's functionality is being incrementally ported into Windows App SDK. There will eventually be parity between UWP and Windows App SDK, but we aren't planning to deprecate UWP any time soon.
+          UWP's functionality is being incrementally ported into Windows App SDK. There will eventually be approximate parity between UWP and Windows App SDK, but we aren't planning to deprecate UWP any time soon.
         # <!--see MSFT representing UWP status here: https://www.reddit.com/r/csharp/comments/r9ecz4/what_is_the_main_framework_used_for_making/  -->
      - question: What are the reasons to migrate a UWP + WinUI 2 app to WinUI 3?
        answer: |
