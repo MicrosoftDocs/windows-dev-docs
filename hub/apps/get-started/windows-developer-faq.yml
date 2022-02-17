@@ -115,7 +115,7 @@ sections:
           TODO
      - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10? And does the answer depend on whether my app is packaged or unpackaged?
        answer: |
-          Yes, your app will look modern on both Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
+          Yes, your app's UI will inherit the latest Fluent UI design principles on both Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
      - question: Can I use WinUI 3 with React Native?
        answer: |
           TODO
