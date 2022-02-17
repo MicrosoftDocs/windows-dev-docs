@@ -98,7 +98,7 @@ sections:
           Over time, Windows App SDK will become the superset of the capabilities of both desktop and UWP.
      - question: How should I think about the future of app development on Windows?
        answer: |
-          Windows App SDK is meant to decouple Windows development APIs from the operating system so that native applications can be built without depending on operating systems being updated. This is going to take a while, but the end result will allow developers to reach more users by removing dependencies on OS versions.
+          Windows App SDK decouples Windows development APIs from the operating system (OS) so that you can build Windows apps that don't depend on operating systems being updated. Successive Windows App SDK releases decouple more and more APIs in this way. By removing dependencies on particular OS versions, you're able to reach more users.
 
           It's best to think of Windows App SDK / WinUI 3 as an OS-decoupled superset of UWP / WinUI 2 that will eventually reach approximate feature parity. UWP will be supported by the Windows SDK in the meantime, with the caveat that .NET 5/6 won't be coming to UWP.
      - question: Can WinUI 3 be used with UWP?
