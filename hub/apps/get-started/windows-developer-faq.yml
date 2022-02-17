@@ -95,7 +95,7 @@ sections:
        answer: |
           If you're working on a desktop project type (WPF, WinForms, Win32, or .NET 5+), you can add the Windows App SDK as a NuGet package and get access to all the new APIs.
 
-          Over time, Windows App SDK will become the superset of the capabilities of both desktop and UWP. [Learn more on Github](https://github.com/microsoft/WindowsAppSDK/discussions/1615).
+          Over time, Windows App SDK will become the superset of the capabilities of both desktop and UWP.
      - question: How should I think about the future of app development on Windows?
        answer: |
           Windows App SDK is meant to decouple Windows development APIs from the operating system so that native applications can be built without depending on operating systems being updated. This is going to take a while, but the end result will allow developers to reach more users by removing dependencies on OS versions.

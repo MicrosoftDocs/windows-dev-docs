@@ -19,6 +19,7 @@ The following glossary of terms is meant to promote a common vocabulary among Wi
     2. Define terms [we are here]
     3. Align with teams
     4. Add links to related resources and inter-link definitions (eg mentions of "packaged" can link to "packaged" term in glossary) when helpful
+    4. make sure links use the title text per steve
     5. Publish
     6. Explore terminology standardization with Monica Rush
 
