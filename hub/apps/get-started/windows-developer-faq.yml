@@ -43,7 +43,20 @@ sections:
      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
        answer: |
           Yes&mdash;that's the term that we recommend you use.
-     
+     - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components?
+       answer: |
+          Yes. Note that WinUI 3 uses the `Microsoft.*` namespace. WinUI 2 uses the `Windows.*` namespace.
+     - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
+       answer: |
+          The Windows App SDK API closely resembles the UWP API. [Learn more about migrating your UWP apps.](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
+     - question: If I have an existing UWP app in the Store, can I publish a new packaged app using the same identifiers?
+       answer: |
+          Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version.
+     - question: Can I incrementally migrate my existing app to Windows App SDK and WinUI 3?
+       answer: |
+          Yes&mdash;you can gradually migrate your WinForms, Win32, WPF, and UWP apps to WinUI 3.
+        # Low confidence - need product guidance
+        # Provide migration guidance here
  
 
  - name: Selecting a Windows development technology
@@ -154,22 +167,6 @@ sections:
        answer: |
           Yes, you can integrate WinUI 3 into your WPF app. This can be useful in situations where you need browser controls from your WPF app.
  
-
-
-
- - name: Upgrading apps to Windows App SDK
-   questions:        
-     - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components?
-       answer: |
-          Yes. Note that WinUI 3 uses the `Microsoft.*` namespace. WinUI 2 uses the `Windows.*` namespace.
-     - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
-       answer: |
-          The Windows App SDK API closely resembles the UWP API. [Learn more about migrating your UWP apps.](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
-     - question: If I have an existing UWP app in the Store, can I publish a new packaged app using the same identifiers?
-       answer: |
-          Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version.
-
-
 
 
  - name: Cross-platform development
