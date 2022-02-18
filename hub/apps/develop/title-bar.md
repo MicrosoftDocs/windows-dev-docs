@@ -157,6 +157,8 @@ This example shows how to get an instance of [AppWindowTitleBar](/windows/window
 ```csharp
 private bool SetTitleBarColors()
 {
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         if (m_AppWindow is null)
@@ -313,7 +315,8 @@ To hide the default title bar and extend your content into the title bar area, s
 
 This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`.
 
-Title bar customization APIs are not supported on all versions of Windows where your app might run, so be sure to check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs. If title bar customization is not supported, you will typically hide your custom title bar UI by setting `Visibility` to `Collapsed`.
+> [!IMPORTANT]
+> Title bar customization APIs are not supported on all versions of Windows where your app might run, so be sure to check [AppWindowTitleBar.IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs. If title bar customization is not supported, you will typically hide your custom title bar UI by setting `Visibility` to `Collapsed`.
 
 ```csharp
 using Microsoft.UI;           // Needed for WindowId
@@ -327,6 +330,8 @@ public MainWindow()
     this.InitializeComponent();
 
     m_AppWindow = GetAppWindowForCurrentWindow();
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         var titleBar = m_AppWindow.TitleBar;
@@ -335,6 +340,9 @@ public MainWindow()
     }
     else
     {
+        // Title bar customization using these APIs is currently
+        // supported only on Windows 11. In other cases, hide
+        // the custom title bar element.
         AppTitleBar.Visibility = Visibility.Collapsed;
     }
 }
@@ -590,6 +598,8 @@ public MainWindow()
 
     m_AppWindow = GetAppWindowForCurrentWindow();
 
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         var titleBar = m_AppWindow.TitleBar;
@@ -599,7 +609,11 @@ public MainWindow()
     }
     else
     {
+        // Title bar customization using these APIs is currently
+        // supported only on Windows 11. In other cases, hide
+        // the custom title bar element.
         AppTitleBar.Visibility = Visibility.Collapsed;
+
         // Show alternative UI for any functionality in
         // the title bar, such as search.
     }
@@ -608,6 +622,8 @@ public MainWindow()
 
 private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
 {
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported())
     {
         SetDragRegionForCustomTitleBar(m_AppWindow);
@@ -616,6 +632,8 @@ private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
 
 private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
 {
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported()
         && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
     {
@@ -662,6 +680,8 @@ private double GetScaleAdjustment()
 
 private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
 {
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (AppWindowTitleBar.IsCustomizationSupported()
         && appWindow.TitleBar.ExtendsContentIntoTitleBar)
     {
@@ -1024,6 +1044,8 @@ public MainWindow()
 
 private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
 {
+    // Check to see if customization is supported.
+    // Currently only supported on Windows 11.
     if (args.DidPresenterChange
         && AppWindowTitleBar.IsCustomizationSupported())
     {
