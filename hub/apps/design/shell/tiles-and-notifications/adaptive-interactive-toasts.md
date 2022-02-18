@@ -1048,9 +1048,7 @@ Important notifications allow users to have more control over what 1st party and
 #### [Builder syntax](#tab/builder-syntax)
 
 ```csharp
-new ToastContentBuilder()
-    .SetToastScenario(ToastScenario.Urgent)
-    ...
+// The builder syntax does not support important notifications yet.
 ```
 
 #### [XML](#tab/xml)
