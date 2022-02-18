@@ -38,14 +38,17 @@ sections:
            Yes. Other IDEs (such as Visual Studio Code) are currently unsupported.
      - question: What limitations are there when building with WinUI 3 and Windows App SDK?
        answer: |
-            - Multi-windowing isn't supported yet. This is currently in scope for Windows App SDK v1.1, which is scheduled to ship in Q2 2022. 
-            - Apps that haven't been published through the Microsoft Store can't send push notifications. This is currently in scope for Windows App SDK v1.1
-            - Local toast notifications aren't supported yet. This is currently in scope for Windows App SDK v1.1.
+           Current limitations include:
+            - Multi-windowing isn't supported yet.  
+            - Apps that haven't been published through the Microsoft Store can't send push notifications. 
+            - Local toast notifications aren't supported yet.
             - XAML Islands aren't supported yet.
             - Media, map, and inking controls aren't supported yet.
-            - ARM64 isn't yet supported for unpackaged scenarios. This is currently in scope for Windows App SDK v1.1.
-            - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet. This is currently in scope for Windows App SDK v1.1.
+            - ARM64 isn't yet supported for unpackaged scenarios. 
+            - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet.
             - App lifecycle management isn't supported yet.
+
+           Refer to the official [Windows App SDK Roadmap](https://portal.productboard.com/winappsdk/1-windows-app-sdk/tabs/2-planned) for the latest product plans.
            # TODO: push notifications limitation needs confirmation
      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
        answer: |
