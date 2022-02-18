@@ -143,7 +143,7 @@ To connect to the Windows Subsystem for Android VM for debugging:
 
 2. The IP address will be displayed under the IP address section. If there is no IP address being displayed, launch an Android app that was installed using the Amazon Appstore, then select **Refresh** on the IP address button in the Settings app.
 
-3. Now that you have the IP address to connect to the Windows Subsystem for Android VM, connect using adb connect in terminal or Powershell:
+3. Now that you have the IP address to connect to the Windows Subsystem for Android VM, in your terminal or Powershell, you can connect using adb connect (you must have [adb installed](https://developer.android.com/studio/command-line/adb)):
 
     ```powershell
     adb connect 172.22.137.166

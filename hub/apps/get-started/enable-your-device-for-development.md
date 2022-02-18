@@ -13,7 +13,7 @@ ms.custom: seo-windows-dev
 ![Enable your devices for development](images/developer-poster.png)
 
 > [!IMPORTANT]
-> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10). If you're developing for the first time, you'll also want to [get set up](../windows-app-sdk/set-up-your-development-environment.md) by downloading the tools you need.
+> If you're not creating your own applications on your PC, you don't need to enable Developer Mode. If you're trying to fix an issue with your computer, check out [Windows help](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10). If you're developing for the first time, you'll also want to [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md) by downloading the tools you need.
 
 If you are using your computer for ordinary day-to-day activities such as games, web browsing, email or Office apps, you do *not* need to activate Developer Mode and in fact, you shouldn't activate it. The rest of the information on this page won't matter to you, and you can safely get back to whatever it is you were doing. Thanks for stopping by!
 

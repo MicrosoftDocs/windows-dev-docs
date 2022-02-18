@@ -36,7 +36,7 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
 * If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
-    * [Get set up](../../windows-app-sdk/set-up-your-development-environment.md)
+    * [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
     * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
 

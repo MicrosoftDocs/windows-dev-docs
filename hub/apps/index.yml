@@ -49,7 +49,7 @@ productDirectory:
       - url: ./get-started/index.md
         text: Overview of app development options
       - url: ./windows-app-sdk/set-up-your-development-environment.md
-        text: Install developer tools
+        text: Install tools for the Windows App SDK
       - url: ./winui/winui3/create-your-first-winui3-app.md
         text: Build a WinUI 3 app
       - url: ./get-started/samples.md

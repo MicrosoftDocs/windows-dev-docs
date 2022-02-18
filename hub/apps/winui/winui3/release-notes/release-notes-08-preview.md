@@ -26,7 +26,7 @@ Windows UI Library (WinUI) 3 is a native user experience (UX) framework for buil
 
 This version of WinUI 3 is available as part of the Project Reunion 0.8 Preview. To install, see:
 
-**[Installation instructions for Project Reunion 0.8 Preview](../../../windows-app-sdk/set-up-your-development-environment.md)**
+**[Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)**
 
 Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk). The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 

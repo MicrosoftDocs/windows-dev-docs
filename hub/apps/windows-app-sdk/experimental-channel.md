@@ -18,7 +18,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 
 **Important links**: 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
-- For documentation on experimental releases, see [Preview and Experimental guidance](preview-experimental-install.md).
+- For documentation on experimental releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
 **Experimental channel releases:**
 - [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
@@ -160,7 +160,7 @@ The [Windows App SDK samples](https://github.com/microsoft/Project-Reunion-Sampl
 
 - [Stable channel](stable-channel.md)
 - [Preview channel](preview-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
