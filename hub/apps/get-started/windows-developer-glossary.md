@@ -105,7 +105,7 @@ You can use Microsoft Foundation Classes (MFC) to create complex user interfaces
 Mica is a user interface (UI) technology that subtly tints your app based on the user's background. [Learn more about Mica](https://docs.microsoft.com/windows/apps/design/style/mica).
 
 <!-- docs status: meaning clarified. product status: pending feedback. -->
-##### MSIX
+##### MSIX - Modern Microsoft Installer Packaging
 MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is a "packaged" app. MSIX-packaged apps can check for updates and can control when updates are applied. [What is MSIX?](https://docs.microsoft.com/windows/msix/overview).
 
 
