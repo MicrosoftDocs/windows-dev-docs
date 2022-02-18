@@ -143,7 +143,7 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 - The Windows App SDK doesn't currently provide methods for attaching UI framework content to an **AppWindow**. You're
   limited to using the **HWND** interop access methods demonstrated in the [Code example](#code-example) section.
 - TitleBar customization is currently only supported on Windows 11 or later versions. See [Title bar
-  customization](https://docs.microsoft.com/en-us/windows/apps/develop/title-bar?tabs=wasdk) for details.
+  customization](/windows/apps/develop/title-bar?tabs=wasdk) for details.
 
 ## Related topics
 
