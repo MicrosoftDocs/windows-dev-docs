@@ -133,6 +133,7 @@ sections:
      - question: Can I use WinUI 3 in Win32 apps?
        answer: |
           Yes, but the WinUI 3 UI controls can't be mixed with Win32 UI controls.
+        # low confidence
      - question: What's the difference between XAML Islands and WinUI 3?
        answer: |
           TODO
@@ -288,8 +289,9 @@ sections:
            - You're building an app for Surface Hub 
            - You're building an app that targets Windows 10 version TODO
            - You need application lifecycle management 
-           - You need ultra-high-performance UIs 
+           - UI performance is a priority 
         # <!-- see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500116  -->
+        # leaning towards cutting the last bullet...
      - question: Is WPF deprecated?
        answer: |
           WPF is in maintenance mode, but is still supported for production scenarios.
