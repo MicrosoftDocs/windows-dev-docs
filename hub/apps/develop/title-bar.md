@@ -935,8 +935,6 @@ You should make it obvious when your window is active or inactive. At a minimum,
 
 ### [Windows App SDK](#tab/wasdk)
 
-> (Windows 11 only. See [Platform options](#platform-options) for more info.)
-
 Handle an event to determine the activation state of the window, and update your title bar UI as needed. How you determine the state of the window depends on the UI framework you use for your app.
 
 - **Win32**: Listen and respond to the [WM_ACTIVATE](/windows/win32/inputdev/wm-activate) message.
