@@ -140,7 +140,10 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 ## Limitations
 
 - [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) is available only to desktop apps (both packaged and unpackaged); it's not available to UWP apps.
-- The Windows App SDK doesn't currently provide methods for attaching UI framework content to an **AppWindow**. You're limited to using the **HWND** interop access methods demonstrated in the [Code example](#code-example) section.
+- The Windows App SDK doesn't currently provide methods for attaching UI framework content to an **AppWindow**. You're
+  limited to using the **HWND** interop access methods demonstrated in the [Code example](#code-example) section.
+- TitleBar customization is currently only supported on Windows 11 or later versions. See [Title bar
+  customization](https://docs.microsoft.com/en-us/windows/apps/develop/title-bar?tabs=wasdk) for details.
 
 ## Related topics
 
