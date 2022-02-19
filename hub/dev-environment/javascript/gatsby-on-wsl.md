@@ -5,14 +5,14 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: Gatsby.js, Gatsby, Node.js web app, windows 10, microsoft, node on windows, node on wsl, nodejs with vs code, install gatsby on Windows, wsl, NodeJS on Windows Subsystem for Linux
+keywords: Gatsby.js, Gatsby, Node.js web app, windows 10, windows 11, microsoft, node on windows, node on wsl, nodejs with vs code, install gatsby on Windows, wsl, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
 ms.date: 03/30/2021
 ---
 
 # Get started with Gatsby.js on Windows
 
-A guide to help you install the Gatsby.js web framework and get up and running on Windows 10.
+A guide to help you install the Gatsby.js web framework and get up and running on Windows.
 
 Gatsby.js is a static site generator framework based on React.js, as opposed to being server-rendered like Next.js. A static site generator generates static HTML on build time. It doesn’t require a server. Next.js generates HTML on runtime (each time a new request comes in), requiring a server to run. Gatsby also dictates how to handle data in your app (with GraphQL), whereas Next.js leaves that decision up to you.
 
@@ -22,7 +22,7 @@ To learn more about React and other JavaScript frameworks based on React, see th
 
 This guide assumes that you've already completed the steps to set up your Node.js development environment, including:
 
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+)
+- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
 - [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
 - [Install Node.js on WSL 2](./nodejs-on-wsl.md): This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension.
 

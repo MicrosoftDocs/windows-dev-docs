@@ -19,12 +19,12 @@ In this article, you will create a simple Android app using Xamarin.Forms and Vi
 
 To use this tutorial, you'll need the following:
 
-- Windows 10
+- Windows 10  or newer
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/) (see note)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
 > [!NOTE]
-> This guide will work with Visual Studio 2017 or 2019. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
+> This guide will work with Visual Studio 2017, 2019 or 2022. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
 
 You will also to have an Android phone or configured emulator in which to run your app. See [Test on an Android device or emulator](emulator.md).
 
