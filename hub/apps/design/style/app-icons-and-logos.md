@@ -224,7 +224,7 @@ Here's an example of these assets as they appear in icons on the Windows taskbar
 ![assets in windows taskbar](images/assetguidance21.png)
 
 ### Unplated assets
-By default, Windows uses a target-based asset on top of a colored backplate by default. If you want, you can provide a target-based unplated asset. "Unplated" means the asset will be displayed on a transparent background. Keep in mind that these assets will appear over a variety of background colors. 
+By default, Windows uses a target-based asset on top of a colored backplate. If you want, you can provide a target-based unplated asset. "Unplated" means the asset will be displayed on a transparent background. Keep in mind that these assets will appear over a variety of background colors. 
 
 ![unplated and plated assets](images/assetguidance22.png)
 
