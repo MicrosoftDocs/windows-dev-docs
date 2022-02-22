@@ -1,6 +1,6 @@
 ---
 title: NodeJS on Windows
-description: A guide to help you set up a NodeJS development environment on Windows 10.
+description: A guide to help you set up a NodeJS development environment on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -16,7 +16,7 @@ Node.js is an open-source, cross-platform, server-side JavaScript runtime enviro
 
 ## Does Node.js work on Windows?
 
-Yes. Windows 10 supports two different environments for developing apps with Node.js:
+Yes. Windows supports two different environments for developing apps with Node.js:
 
 - [Install a Node.js development environment on Windows](./nodejs-on-windows.md)
 - [Install a Node.js development environment on Windows Subsystem for Linux](./nodejs-on-wsl.md)
