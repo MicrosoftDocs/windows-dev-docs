@@ -247,7 +247,7 @@ If you encounter issues specific to the Amazon Appstore on Windows, try the foll
 
 For further troubleshooting steps relating to the Windows Subsystem for Android Settings app or to leave feedback using Feedback Hub, see [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
 
-For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.htm).
+For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
 
 ## Additional resources
 
