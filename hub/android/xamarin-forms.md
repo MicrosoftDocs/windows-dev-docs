@@ -24,7 +24,7 @@ To use this tutorial, you'll need the following:
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
 > [!NOTE]
-> This guide will work with Visual Studio 2017, 2019 or 2022. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
+> This guide works with Visual Studio 2022, Visual Studio 2019, and Visual Studio 2017. If you're using Visual Studio 2017, some instructions might be incorrect due to UI differences between versions of Visual Studio.
 
 You will also to have an Android phone or configured emulator in which to run your app. See [Test on an Android device or emulator](emulator.md).
 
