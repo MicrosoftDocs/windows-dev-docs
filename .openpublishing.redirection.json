@@ -6759,6 +6759,11 @@
       "source_path": "windows-apps-src/csharp-winrt/agile-objects.md",
       "redirect_url": "/windows/apps/develop/platform/csharp-winrt/agile-objects",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/reference/index.md",
+      "redirect_url": "/windows/apps/api-reference/index",
+      "redirect_document_id": true
     }
   ]
 }
