@@ -5,7 +5,6 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: Gatsby.js, Gatsby, Node.js web app, windows 10, windows 11, microsoft, node on windows, node on wsl, nodejs with vs code, install gatsby on Windows, wsl, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
 ms.date: 03/30/2021
 ---
