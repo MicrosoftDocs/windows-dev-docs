@@ -167,7 +167,7 @@ Learn about more [Azure services that support containers](https://azure.microsof
     :::column:::
        [![windows container icon](../../images/windows-container.png)](/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)<br>
         **[Set up your environment](/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)**<br>
-        Learn how to set up Windows 10, 11 or Windows Server to create, run, and deploy containers, including prerequisites, installing Docker, and working with [Windows Container Base Images](/virtualization/windowscontainers/manage-containers/container-base-images).
+        Learn how to set up Windows 11, Windows 10, or Windows Server to create, run, and deploy containers, including prerequisites, installing Docker, and working with [Windows Container Base Images](/virtualization/windowscontainers/manage-containers/container-base-images).
     :::column-end:::
     :::column:::
        [![AKS icon](../../images/kubernettes.png)](/azure/aks/windows-container-cli)<br>
