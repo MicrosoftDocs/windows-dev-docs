@@ -302,6 +302,6 @@ Checks if the current session is running within a virtual machine.
 This API check can only detect VM sessions that are running in certain hypervisors that implement the appropriate APIs
 
 **Requirements**  
-Windows 10, version 1709 or newer
+Windows 10, version 1709 or later
 
 ---
