@@ -62,7 +62,7 @@ Locks down the device. Also used to unlock the device. The testing web applicati
 * `onError` - [optional] The function to call if the lockdown operation failed. It must be of the form `Function(Boolean currentlockdownstate)`.  
 
 **Requirements**  
-Windows 10, version 1709 or newer
+Windows 10, version 1709 or later
 
 ---
 
