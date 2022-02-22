@@ -19,7 +19,7 @@ In this article, you will create a simple Android app using Xamarin.Android and 
 
 To use this tutorial, you'll need the following:
 
-- Windows 10 or newer
+- Windows 11 or Windows 10
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/) (see note)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
