@@ -283,7 +283,7 @@ Checks if the current session is logged in remotely.
 **true** if the current session is remote, otherwise **false**.
 
 **Requirements**  
-Windows 10, version 1709 or newer
+Windows 10, version 1709 or later
 
 ---
 
