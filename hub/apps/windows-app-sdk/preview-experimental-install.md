@@ -32,11 +32,11 @@ While installing Visual Studio, select these workloads and components.
 
 * On the **Workloads** tab of the installation dialog, select:
   * **Universal Windows Platform development**
+    * Then in the **Installation details** pane of the installation dialog for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
   * **.NET Desktop Development** for C# app development
   * **Desktop development with C++** for C++ app development
 
 * On the **Individual components** tab of the installation dialog, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
-* In the **Installation details** pane of the installation dialog, in the **Universal Windows Platform development** section, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
 
 ## Preview release
 
