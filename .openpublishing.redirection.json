@@ -5256,6 +5256,51 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/index.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/desktop/choose-your-platform.md",
       "redirect_url": "/windows/apps/desktop#choose-your-app-type",
       "redirect_document_id": false

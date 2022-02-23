@@ -45,16 +45,16 @@ Here are the available C# interop classes, mapped from their underlying interop 
 
 ### Available as part of the Windows App SDK
 
-The [**Microsoft.UI.Win32Interop**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview#code-example).
+The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview#code-example).
 
 |Interop function|C# interop method|
 |-|-|
-|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId [**Win32Interop.GetDisplayIdFromMonitor**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor)(IntPtr hmonitor)|
-|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetIconFromIconId**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid)(IconId iconId)|
-|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId [**Win32Interop.GetIconIdFromIcon**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon)(IntPtr hicon)|
-|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetMonitorFromDisplayId**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid)(DisplayId displayId)|
-|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetWindowFromWindowId**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid)(WindowId windowId)|
-|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId [**Win32Interop.GetWindowIdFromWindow**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow)(IntPtr hwnd)|
+|[**GetDisplayIdFromMonitor**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor)|(**Microsoft.UI**) DisplayId [**Win32Interop.GetDisplayIdFromMonitor**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor)(IntPtr hmonitor)|
+|[**GetIconFromIconId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetIconFromIconId**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid)(IconId iconId)|
+|[**GetIconIdFromIcon**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon)|(**Microsoft.UI**) IconId [**Win32Interop.GetIconIdFromIcon**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon)(IntPtr hicon)|
+|[**GetMonitorFromDisplayId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetMonitorFromDisplayId**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid)(DisplayId displayId)|
+|[**GetWindowFromWindowId**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid)|(**Microsoft.UI**) IntPtr [**Win32Interop.GetWindowFromWindowId**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid)(WindowId windowId)|
+|[**GetWindowIdFromWindow**](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow)|(**Microsoft.UI**) WindowId [**Win32Interop.GetWindowIdFromWindow**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow)(IntPtr hwnd)|
 
 ### Available via Target Framework Moniker
 
