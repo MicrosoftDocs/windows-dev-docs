@@ -362,7 +362,8 @@ sections:
    questions:
      - question: Will WinUI 3 and Windows App SDK be open-sourced?
        answer: |
-          The team is currently focused on delivering stable features, but open source *is* on our internal roadmap. We'll keep the developer community updated through our community calls.
+          TODO - do we want to communicate this in the FAQ? If so - 
+          The team is currently focused on delivering stable features, but open source *is* on our roadmap. We'll keep the developer community updated through our community calls.
         # See: https://www.reddit.com/r/Windows11/comments/qw7o69/comment/hl675ea/?utm_source=share&utm_medium=web2x&context=3 
      - question: Where can I find release notes for Windows App SDK?
        answer: |
