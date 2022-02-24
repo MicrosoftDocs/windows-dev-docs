@@ -20,7 +20,7 @@ The Windows App SDK provides the easy-to-use [**Microsoft.UI.Windowing.AppWindow
 
 The Windows App SDK version of **Microsoft.UI.Windowing.AppWindow** doesn't rely on asynchronous patterns; and it provides immediate feedback to your app about whether API calls have succeeded. Going forward&mdash;when it comes to introducing new features, integrating with Windows UI/UX, and enabling new windowing scenarios&mdash;the Windows App SDK windowing APIs will be the focus. We recommend that you start leveraging these APIs for your windowing operations.
 
-Also see [Install tools for the Windows App SDK](../set-up-your-development-environment.md), [Create a WinUI 3 app](../../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+Also see [Install tools for the Windows App SDK](../set-up-your-development-environment.md), [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## The AppWindow class
 

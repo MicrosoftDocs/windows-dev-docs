@@ -44,7 +44,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 For more information or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Push notifications (experimental feature)
 
@@ -161,6 +161,6 @@ The [Windows App SDK samples](https://github.com/microsoft/Project-Reunion-Sampl
 - [Stable channel](stable-channel.md)
 - [Preview channel](preview-channel.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

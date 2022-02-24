@@ -17,7 +17,7 @@ WinUI 3 is the native UI platform component that ships with the [Windows App SDK
 >**Windows App SDK** is used in all documentation except where a specific release or asset still refers to **Project Reunion**.
 
 > [!div class="nextstepaction"]
-> [Create your first WinUI 3 app](create-your-first-winui3-app.md)
+> [Create your first WinUI 3 project](create-your-first-winui3-app.md)
 
 ## WinUI resources
 

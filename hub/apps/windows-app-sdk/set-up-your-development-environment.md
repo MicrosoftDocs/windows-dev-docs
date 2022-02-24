@@ -99,7 +99,7 @@ For more versions of the Windows App SDK, see [Downloads for the Windows App SDK
 
 ## Next steps
 
-To create your first WinUI 3 app that uses the Windows App SDK, see [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
+To create your first WinUI 3 app that uses the Windows App SDK, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
@@ -110,5 +110,5 @@ Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in
 * [Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)
 * [System requirements for Windows app development](system-requirements.md)
 * [Downloads for the Windows App SDK](downloads.md)
-* [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+* [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 * [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)

@@ -12,7 +12,7 @@ For guidance about packaging and deploying different types of Windows apps, see 
 
 ### Key concepts
 
-[!INCLUDE [Packaged apps, Unpackaged apps](../../apps/windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
+[!INCLUDE [Packaged apps, unpackaged apps](../../apps/windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 
 ## Apps that use the Windows App SDK
 
@@ -20,7 +20,7 @@ Before configuring your apps for deployment, review [the Windows App SDK runtime
 
 ### Packaged apps
 
-If you build an app that uses the [Windows App SDK](../windows-app-sdk/index.md) (either a [WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) or a different type of app that [uses the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)), you can package and deploy your app using MSIX.
+If you build an app that uses the [Windows App SDK](../windows-app-sdk/index.md) (either [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) or a different type of app that [uses the Windows App SDK NuGet package](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)), you can package and deploy your app using MSIX.
 
 For instructions on how to deploy the Windows App SDK runtime with your packaged app, see these articles:
 

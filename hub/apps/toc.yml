@@ -34,7 +34,7 @@ items:
           href: get-started/migrate-from-uwp-to-winappsdk.md
         - name: Install tools for the Windows App SDK
           href: windows-app-sdk/set-up-your-development-environment.md
-        - name: "Create a WinUI 3 app"
+        - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
         - name: Samples 
           href: get-started/samples.md

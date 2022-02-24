@@ -18,9 +18,9 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 > [!IMPORTANT]
 > For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [Overall migration strategy](overall-migration-strategy.md). It's particularly important to see [What is supported when when porting from UWP to WinUI 3](what-is-supported.md) so that you can ensure that all the features you need for your app are supported before you attempt migration.
 
-## Install the Windows App SDK VSIX
+## Install tools for the Windows App SDK
 
-If you haven't already, then download the Windows App SDK Visual Studio extension (VSIX) installer, and run to install it. See [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels).
+To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.

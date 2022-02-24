@@ -18,7 +18,7 @@ The C# interop classes listed in the next section ([Available C# interop classes
 
 ### In a WinUI 3 C# desktop project
 
-When you create a new WinUI 3 project in Visual Studio (see [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)), your project is already configured, and you can start using all of the C# interop classes right away.
+When you create a new WinUI 3 project in Visual Studio (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)), your project is already configured, and you can start using all of the C# interop classes right away.
 
 ### In other C# desktop project types (WPF or Windows Forms)
 
@@ -78,7 +78,7 @@ The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/
 
 ## Code example
 
-This code example demonstrates how to use C# interop classes in a WinUI 3 application (see [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker, it's necessary to initialize it with the handle (HWND) of the owner window.
+This code example demonstrates how to use C# interop classes in a WinUI 3 application (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker, it's necessary to initialize it with the handle (HWND) of the owner window.
 
 1. You can obtain a window handle (HWND) by using the [**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the **WinRT.Interop.WindowNative** C# interop class. Here, the `this` object is a reference to a [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window) object from the main window code-behind file.
 2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
@@ -119,5 +119,5 @@ This section lists known issues and solutions for using the C# interop classes. 
 
 ## Related topics
 
-* [Create a WinUI 3 app](/windows/apps/winui/winui3/create-your-first-winui3-app)
+* [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
