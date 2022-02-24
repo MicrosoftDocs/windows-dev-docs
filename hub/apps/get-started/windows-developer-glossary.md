@@ -14,17 +14,7 @@ ms.collection: windows11
 
 The following glossary of terms is meant to promote a common vocabulary among Windows developers.
 
-<!-- 
-    1. List terms for v1 [done]
-    2. Define terms [done]
-    3. Align with teams [pending docs]
-    4. Add links to related resources and inter-link definitions (eg mentions of "packaged" can link to "packaged" term in glossary) when helpful
-    4. make sure links use the title text per steve
-    4. make sure all acronyms are expanded
-    5. Publish
-    6. Explore terminology standardization with Monica Rush
 
--->
 
 
 ### A
