@@ -52,14 +52,14 @@ Capability-based access describes TODO...
 
 <!-- docs status: no comments. product status: pending feedback. -->
 ##### Dynamic Dependency Lifetime Manager (DDLM)
-Dynamic Dependency Lifetime Manager. See https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md 
+Dynamic Dependency Lifetime Manager. 
 
 
 ### F
 
 <!-- docs status: no comments. product status: pending feedback. -->
 ##### Fluent Design
-Microsoft's [Fluent Design System](https://www.microsoft.com/design/fluent/#/) gives you an open-source design system that lets you create reusable cross-platform user interfaces.
+
 
 ### H
 

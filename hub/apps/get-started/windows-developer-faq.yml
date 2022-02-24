@@ -14,19 +14,19 @@ summary:
   This article is meant to promote a common understanding of the Windows development experience, product direction, and key terminology.
 sections: 
 
- - name: " " 
+ - name: "Glossary" 
    questions: 
-     - question: "Key terms"
+     - question: " "
        answer: |+
-          - **Admin-managed apps**: Admin-managed apps are apps that administrators manage through administrative capabilities such as Intune.
-          - **Admin-unmanaged apps:** Admin-unmanaged apps are apps that users install and manage without admin control.
-          - **App lifecycle management (ALM):** App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
-          - **SSS:** sss
-          - **SSS:** sss
-          - **SSS:** sss
-          - **SSS:** sss
-          - **SSS:** sss
-          - **SSS:** sss
+          - **Admin-managed apps**: Apps that administrators manage through administrative capabilities such as Intune.
+          - **Admin-unmanaged apps:** Apps that users install and manage without admin control.
+          - **App lifecycle management (ALM):** Describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
+          - **Application model:** Describes the framework components that support a specific application. For example, the Universal Windows Platform (UWP) app model includes UWP, WinUI 2, and XAML.
+          - **Application packaging:** Describes the manner in which your application is packaged before being distributed and installed by users. Applications can be packaged, unpackaged, or sparsely packaged.
+          - **[Dynamic Dependencies](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md):** Makes Framework packages accessible to all kinds of apps, packaged and unpackaged.
+          - **[Fluent Design](https://www.microsoft.com/design/fluent/#/):** Gives you an open-source design system that lets you create reusable cross-platform user interfaces.
+          - **Hot Reload:** A .NET and C++ feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-rerun your apps while developing. See: [Write and debug running code with Hot Reload](https://docs.microsoft.com/visualstudio/debugger/hot-reload).
+          - **In-app updates:** Allow you to update your applications without requiring your users to take any installation or update action. Packaged apps support in-app updates.
           - **SSS:** sss
           - **SSS:** sss
           - **SSS:** sss
