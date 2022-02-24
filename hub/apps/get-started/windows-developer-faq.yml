@@ -16,7 +16,7 @@ sections:
 
  - name: Glossary 
    questions: 
-     - question: 
+     - question: " "
        answer: |
           - **Admin-managed apps**: Admin-managed apps are apps that administrators manage through administrative capabilities such as Intune.
           - **Admin-unmanaged apps:** Admin-unmanaged apps are apps that users install and manage without admin control.
