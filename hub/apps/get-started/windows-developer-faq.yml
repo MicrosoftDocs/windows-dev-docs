@@ -4,7 +4,6 @@ metadata:
   title: Windows Developer FAQ
   ms.topic: faq
   ms.date: 02/04/2022
-  keywords: windows, win32, desktop development, windows app sdk, appsdk, uwp, wpf
   ms.author: mikben
   author: mikben
   ms.localizationpriority: medium
@@ -64,7 +63,7 @@ sections:
           The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform.
      - question: What's the difference between the Windows App SDK and the Windows SDK?
        answer: |
-          Both are software development kits (SDKs) (containing documentation, header files, libraries, samples, and tools) that enable you to develop Windows apps. The Windows App SDK is newer, it's focused on desktop apps, it supports WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users. The Windows SDK is older, is aimed at UWP apps as well as desktop apps, it supports WinUI 2, and it's designed around Windows APIs that are coupled to particular versions of the OS.
+          Both are software development kits (SDKs) containing header files, libraries, samples, and tools that enable you to develop Windows apps. The Windows App SDK is newer, it's focused on desktop apps, it supports WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users. The Windows SDK is older, is aimed at UWP apps as well as desktop apps, it supports WinUI 2, and it's designed around Windows APIs that are coupled to particular versions of the OS.
      - question: What's the latest and recommended way to build Windows Apps?
        answer: | 
           - **Windows:** Windows App SDK + WinUI 3 are the future of Windows app development. 
