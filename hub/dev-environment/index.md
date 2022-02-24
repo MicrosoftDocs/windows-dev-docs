@@ -6,7 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-ms.date: 01/11/2022
+ms.date: 02/24/2022
 ---
 
 # Set up your development environment on Windows
@@ -99,7 +99,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
         Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-the-winget-client)
+        [Install Windows Package Manager](../package-manager/winget/index.md#install-the-winget-client)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
