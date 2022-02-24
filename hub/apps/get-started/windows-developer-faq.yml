@@ -20,9 +20,8 @@ sections:
        answer: |
           - **Admin-managed apps**: Admin-managed apps are apps that administrators manage through administrative capabilities such as Intune.
           - **Admin-unmanaged apps:** Admin-unmanaged apps are apps that users install and manage without admin control.
-          - **App lifecycle management (ALM):** App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
-          " "
-          " "
+          - **App lifecycle management (ALM):** App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).\n\n
+          
  - name: "Getting started" 
    questions: 
      - question: What is the Windows App SDK?
