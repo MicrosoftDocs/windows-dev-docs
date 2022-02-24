@@ -133,12 +133,11 @@ TODO
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 ##### Project Reunion
-This was the one-time codename for the Windows App SDK.
 
 <!-- docs status: pending feedback. product status: pending feedback. -->
 <!-- duplication - ensure that when updating this entry, related Glossary and FAQ entries are updated. -->
 ##### Packaged app
-Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer. Refer to [Sparse-package](#sparse-package) to learn about an alternative packaging format.
+
 
 ### Q
 
