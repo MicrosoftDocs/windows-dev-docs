@@ -14,9 +14,9 @@ summary:
   This article is meant to promote a common understanding of the Windows development experience, product direction, and key terminology.
 sections: 
 
- - name: " " 
+ - name: "Glossary" 
    questions: 
-     - question: "Glossary"
+     - question: " "
        answer: |+
           - **Admin-managed apps**: Apps that administrators manage through administrative capabilities such as Intune.
           - **Admin-unmanaged apps:** Apps that users install and manage without admin control.
