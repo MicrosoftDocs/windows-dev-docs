@@ -11,16 +11,28 @@ metadata:
   ms.collection: windows11
 title: Windows Developer FAQ/Glossary
 summary: 
-  This is the official Windows Development FAQ/Glossary. The **FAQ** answers frequently-asked questions (FAQs) about Windows application development to promote a common understanding of the Windows development experience and product direction. The **glossary** is meant to promote a common vocabulary among Windows developers.
+  This article is meant to promote a common understanding of the Windows development experience, product direction, and key terminology.
 sections: 
 
- - name: Glossary 
+ - name: " " 
    questions: 
-     - question: " "
+     - question: "Key terms"
        answer: |+
           - **Admin-managed apps**: Admin-managed apps are apps that administrators manage through administrative capabilities such as Intune.
           - **Admin-unmanaged apps:** Admin-unmanaged apps are apps that users install and manage without admin control.
           - **App lifecycle management (ALM):** App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+          - **SSS:** sss
+
           --- 
  - name: "Getting started" 
    questions: 
