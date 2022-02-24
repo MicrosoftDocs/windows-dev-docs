@@ -22,8 +22,8 @@ sections:
           - **Admin-unmanaged apps:** Admin-unmanaged apps are apps that users install and manage without admin control.
           - **App lifecycle management (ALM):** App lifecycle management (ALM) describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
      - question: " "
-       answer: |+
-            
+       answer: |
+             
 
  - name: "Getting started" 
    questions: 
