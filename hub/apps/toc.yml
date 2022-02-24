@@ -14,8 +14,6 @@ items:
           href: winui/winui3/create-your-first-winui3-app.md
         - name: Samples 
           href: get-started/samples.md
-        - name: Windows developer glossary 
-          href: get-started/windows-developer-glossary.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
   - name: Setup guides and resources
