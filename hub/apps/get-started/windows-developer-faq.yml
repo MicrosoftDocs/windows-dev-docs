@@ -17,7 +17,7 @@ sections:
    questions: 
      - question: " "
        answer: |+
-          - **Admin-managed apps**: Apps that administrators manage through administrative capabilities such as Intune.
+          - **<a href='#admin-managed-apps'>Admin-managed apps</a>**: Apps that administrators manage through administrative capabilities such as Intune.
           - **Admin-unmanaged apps:** Apps that users install and manage without admin control.
           - **App lifecycle management (ALM):** Describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See [Windows 10 universal Windows platform (UWP) app lifecycle](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
           - **Application model:** Describes the framework components that support a specific application. For example, the Universal Windows Platform (UWP) app model includes UWP, WinUI 2, and XAML.
@@ -185,7 +185,7 @@ sections:
      - question: Can XAML Islands be used with Windows App SDK?
        answer: |
           TODO - product guidance needed
-     - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10? And does the answer depend on whether my app is packaged or unpackaged?
+     - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10?
        answer: |
           Yes, your app's UI will inherit the latest Fluent UI design principles on both Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
      - question: Can I use WinUI 3 with React Native?
