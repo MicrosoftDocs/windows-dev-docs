@@ -73,7 +73,7 @@ In order to take advantage of the latest tooling features added into WinUI 3 lik
 
 - The Pivot control is no longer supported, and has been deprecated in WinUI 3. We recommend using the [NavigationView control](/windows/uwp/design/controls-and-patterns/navigationview) for your in-app navigation scenarios.
 
-- WinUI 3 and Project Reunion will only be supported down-level to Windows 10 version 1809 - it requires build 17763 or newer.
+- WinUI 3 and Project Reunion will only be supported down-level to Windows 10 version 1809 - it requires build 17763 or later.
 
 - Preview features are now marked as experimental. 
   - A preview feature is anything that will continue to be a part of WinUI 3 previews, but will not be a part of the next WinUI 3 supported release. 

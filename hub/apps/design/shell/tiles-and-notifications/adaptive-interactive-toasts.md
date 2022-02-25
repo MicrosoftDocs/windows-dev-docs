@@ -918,7 +918,7 @@ To use the system snooze and dismiss actions:
 
 ## Audio
 
-Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or newer. Custom audio can be referenced via the following paths:
+Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or later. Custom audio can be referenced via the following paths:
 
 -   ms-appx:///
 -   ms-appdata:///

@@ -13,14 +13,14 @@ ms.localizationpriority: medium
 > Feedback report deprecation on April 15th 2020
 > This report will no longer be supported after April 15th 2020. Data on this report will not refresh after this date and the report will be removed in future without further notice. You can continue to view feedback received from your customers directly in the Feedback Hub.
 
-The **Feedback report** in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10/11 customers have submitted through Feedback Hub. You can view this data in Partner Center, or export the data to view offline.
+The **Feedback report** in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 or Windows 11 customers have submitted through Feedback Hub. You can view this data in Partner Center, or export the data to view offline.
 
 > [!NOTE]
 > You can also [respond to feedback](respond-to-customer-feedback.md) directly from this report to let your customers know you're listening.
 
 Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them. When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review in the Store.
 
-You can use the Feedback API in the [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10/11 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report even if you have not specifically asked for feedback from within your app.
+You can use the Feedback API in the [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 or Windows 11 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report even if you have not specifically asked for feedback from within your app.
 
 Feedback can also be helpful when using [package flighting](package-flights.md), since the **Feedback** report shows you the specific package that each customer had installed on their device when they left the feedback.
 

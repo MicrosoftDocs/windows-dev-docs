@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 
 -   [OS versions and package distribution](#os-versions-and-package-distribution)
--   [Adding packages for Windows 10/11 to a previously-published app](#adding-packages-for-windows-10-to-a-previously-published-app)
+-   [Adding packages for Windows 10 or Windows 11 to a previously-published app](#adding-packages-for-windows-10-to-a-previously-published-app)
 -   [Removing an app from the Store](#removing-an-app-from-the-store)
 -   [Removing packages for a previously-supported device family](#removing-packages-for-a-previously-supported-device-family)
 
@@ -21,7 +21,7 @@ Learn how your app's packages are made available to your customers, and how to m
 
 Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.
 
-Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x. However, customers on Windows 10/11 will only get those packages if the app doesn't include UWP packages targeting the applicable device family.
+Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. Windows 10 devices can run all previous supported OS versions (per device family). Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x. However, customers on Windows 10 or Windows 11 will only get those packages if the app doesn't include UWP packages targeting the applicable device family.
 
 > [!IMPORTANT]
 > You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -29,7 +29,7 @@ Generally speaking, later OS versions can run packages that target previous OS v
 
 ## Removing an app from the Store
 
-At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10/11 device).
+At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 or Windows 11 device).
 
 > [!IMPORTANT]
 > This option will override any [visibility](choose-visibility-options.md#discoverability) settings that you have selected in your submissions. 

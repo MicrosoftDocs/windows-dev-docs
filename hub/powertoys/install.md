@@ -25,7 +25,7 @@ To install PowerToys using a Windows executable file:
 
 ## Requirements
 
-- Windows 11 or Windows 10 v1903 (18362) or newer.
+- Windows 11 or Windows 10 v1903 (18362) or later.
 - [.NET Core 3.1.20 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-3.1.20-windows-x64-installer) or a newer 3.1.x runtime. The installer will handle this if not present.
 - x64 architecture currently supported. ARM support to become available at a later date.
 
