@@ -45,7 +45,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3
 
-We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions for WinUI 3 unpackaged desktop apps](../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI 3 application to support unpackaged deployment.
+We now support deploying WinUI 3 apps without MSIX packaging. See [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI 3 application to support unpackaged deployment.
 
 **Important limitations**
 
@@ -63,7 +63,7 @@ We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions 
 For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Other limitations and known issues
 
@@ -83,7 +83,7 @@ For more info, or to get started developing with WinUI, see:
 
   - **C# template for Visual Studio 2019 and Visual Studio 2022**. In Visual Studio when you **Start Debugging** or **Start Without Debugging**, if your app doesn't deploy and run (and there's no feedback from Visual Studio), then click on the project node in **Solution Explorer** to select it, and try again.
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
   - **C++ template for Visual Studio 2022 version 17.0 releases up to Preview 4**. You will encounter the following error the first time you try to run your project: "There were deployment errors". To resolve this issue, run or deploy your project a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 7.
 
@@ -196,7 +196,7 @@ The following sections describe new and updated features, limitations, and known
 For more info or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
 
@@ -206,7 +206,7 @@ This release introduces updates to the [AppWindow](/windows/windows-app-sdk/api/
 
 - The **AppWindowConfiguration** class has been removed. The properties of this class is now available on the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) itself, or on the **Presenter** classes.
 - Most `bool` return values for the WinRT API methods in this space has been removed and are now `void` since these methods would always succeed.
-- The C# ImportDll calls are no longer needed for [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) and [GetWindowFromWindowId](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid). Use the .NET wrapper methods available in the [**Microsoft.UI.Win32Interop**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class instead.
+- The C# ImportDll calls are no longer needed for [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) and [GetWindowFromWindowId](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid). Use the .NET wrapper methods available in the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class instead.
 
 **Important limitations**:
 
@@ -295,7 +295,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
   - **C# template for Visual Studio 2019.** You will encounter the error when you try to build the project: "The project doesn't know how to run the profile *project name*". To resolve this issue, install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools).
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
   - **C++ template for Visual Studio 2019 and Visual Studio 2022.** In this release, these projects are restricted to calling the subset of Win32 APIs that can be called by UWP apps. The **Blank App, Packaged with WAP (WinUI 3 in Desktop)** template is not affected by this issue.
 
@@ -335,7 +335,7 @@ This release of WinUI 3 is focused on building towards 1.0 Stable with bug fixes
 For more info or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
 
@@ -409,6 +409,6 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 - [Stable channel](stable-channel.md)
 - [Experimental channel](experimental-channel.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

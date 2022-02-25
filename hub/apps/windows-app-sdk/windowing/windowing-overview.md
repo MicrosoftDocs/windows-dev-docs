@@ -20,7 +20,7 @@ The Windows App SDK provides the easy-to-use [**Microsoft.UI.Windowing.AppWindow
 
 The Windows App SDK version of **Microsoft.UI.Windowing.AppWindow** doesn't rely on asynchronous patterns; and it provides immediate feedback to your app about whether API calls have succeeded. Going forward&mdash;when it comes to introducing new features, integrating with Windows UI/UX, and enabling new windowing scenarios&mdash;the Windows App SDK windowing APIs will be the focus. We recommend that you start leveraging these APIs for your windowing operations.
 
-Also see [Install tools for the Windows App SDK](../set-up-your-development-environment.md), [Create a WinUI 3 app](../../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+Also see [Install tools for the Windows App SDK](../set-up-your-development-environment.md), [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## The AppWindow class
 
@@ -60,7 +60,7 @@ These [**AppWindowPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.w
 
 The [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class is available for *any* top-level **HWND** in your app. That means that when you're working with a UI framework you can continue to use that framework's entry point for creating a window, and attaching its content. And once you've created a window, you can use the windowing interop functions provided in the Windows App SDK to access the corresponding **AppWindow** and its methods, properties, and events.
 
-**C#**. .NET wrappers for the windowing interop functions are implemented as methods of the [**Microsoft.UI.Win32Interop**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class. Also see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+**C#**. .NET wrappers for the windowing interop functions are implemented as methods of the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class. Also see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 **C++**. The interop functions are defined in the [winrt/Microsoft.ui.interop.h](/windows/windows-app-sdk/api/win32/winrt-microsoft.ui.interop/) header file.
 
@@ -76,7 +76,7 @@ Some of the benefits of using **AppWindow** even when working with a UI framewor
 
 This code example demonstrates how to retrieve an [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from a WinUI 3 window. To use the example, create a new **Blank App, Packaged (WinUI 3 in Desktop)** project, and paste the code in.
 
-**C#**. For more info about the **WinRT.Interop.WindowNative** class used in the code example, see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp). The code example also uses the [**Microsoft.UI.Win32Interop**](/windows/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)).
+**C#**. For more info about the **WinRT.Interop.WindowNative** class used in the code example, see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp). The code example also uses the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)).
 
 For additional details on how to work with **AppWindow**, see the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 

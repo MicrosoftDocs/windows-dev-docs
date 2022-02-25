@@ -33,7 +33,7 @@ The Windows UI Library (WinUI) is a native user experience framework for both Wi
 
 You can use WinUI in the following ways in desktop apps:
 
-* Use [WinUI 3](/windows/apps/winui/) to create [desktop apps](/windows/apps/winui/winui3/create-your-first-winui3-app) with an entirely WinUI-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
+* Use [WinUI 3](/windows/apps/winui/) to create desktop apps (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)) with an entirely WinUI 3-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
 * You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands.md) and host WinUI 2 controls.
 
 For more information, see [Windows UI (WinUI) Library](../../winui/index.md).
@@ -60,7 +60,7 @@ For more information, see [Use MSIX framework packages dynamically from your des
 
 ## .NET 5
 
-.NET 5 is the latest major release of .NET Core. This release supports Windows desktop apps, including [WinUI 3 apps created with the Windows App SDK](../../winui/winui3/create-your-first-winui3-app.md) as well as Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET 5 and enjoy all the benefits that .NET Core has to offer. 
+.NET 5 is the latest major release of .NET Core. This release supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)) as well as Windows Forms and Windows Presentation Foundation (WPF) apps. You can run new and existing Windows desktop apps on .NET 5 and enjoy all the benefits that .NET Core has to offer. 
 
 For more information, see [What's new in .NET 5](/dotnet/core/dotnet-five).
 

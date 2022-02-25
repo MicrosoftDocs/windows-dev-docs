@@ -2,6 +2,30 @@ items:
 - name: Build desktop apps
   href: desktop/index.yml
   items:
+  - name: What's new?
+    items:
+      - name: Windows App SDK release notes
+        items:
+           - name: "Stable channel release notes"
+             href: windows-app-sdk/stable-channel.md
+           - name: "Preview channel release notes"
+             href: windows-app-sdk/preview-channel.md
+           - name: "Experimental channel release notes"
+             href: windows-app-sdk/experimental-channel.md
+           - name: "Breaking changes"
+             href: windows-app-sdk/breaking-changes.md
+           - name: "Release notes archive"
+             items:
+               - name: "WinUI 3 - Project Reunion 0.8 Preview"
+                 href: winui/winui3/release-notes/release-notes-08-preview.md
+               - name: "WinUI 3 - Project Reunion 0.5"
+                 href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
+               - name: "WinUI 3 - Project Reunion 0.5 Preview"
+                 href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
+      - name: What's new for developers in Windows 11
+        href: whats-new/windows-11-build-22000.md
+      - name: Latest doc updates
+        href: whats-new/latest-doc-updates.md
   - name: Get started
     items:
         - name: Overview of app development options
@@ -10,7 +34,7 @@ items:
           href: get-started/migrate-from-uwp-to-winappsdk.md
         - name: Install tools for the Windows App SDK
           href: windows-app-sdk/set-up-your-development-environment.md
-        - name: "Create a WinUI 3 app"
+        - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
         - name: Samples 
           href: get-started/samples.md
@@ -213,29 +237,6 @@ items:
                 href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
               - name: "Localize your WinUI 3 app"
                 href: winui/winui3/localize-winui3-app.md
-              - name: "C# interop APIs for WinUI"
-                href: winui/winui3/cs-interop-apis/index.md
-                items: 
-                  - name: "Microsoft.UI namespace"
-                    href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.md
-                    items: 
-                      - name: "Win32Interop class"
-                        href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md
-                        items: 
-                          - name: "Methods"
-                            items: 
-                              - name: "Win32Interop.GetDisplayIdFromMonitor"
-                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md
-                              - name: "Win32Interop.GetIconFromIconId"
-                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md
-                              - name: "Win32Interop.GetIconIdFromIcon"
-                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md
-                              - name: "Win32Interop.GetMonitorFromDisplayId"
-                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md
-                              - name: "Win32Interop.GetWindowFromWindowId"
-                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md
-                              - name: "Win32Interop.GetWindowIdFromWindow"
-                                href: winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md
           - name: "Windows UI Library 2"
             href: winui/winui2/index.md
             items: 
@@ -354,35 +355,30 @@ items:
                 href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
-              - name: C# interop APIs for WinUI
-                href: winui/winui3/cs-interop-apis/index.md
+              - name: "C# interop APIs for WinUI"
+                href: api-reference/cs-interop-apis/index.md
+                items: 
+                  - name: "Microsoft.UI namespace"
+                    href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.md
+                    items: 
+                      - name: "Win32Interop class"
+                        href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md
+                        items: 
+                          - name: "Methods"
+                            items: 
+                              - name: "Win32Interop.GetDisplayIdFromMonitor"
+                                href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md
+                              - name: "Win32Interop.GetIconFromIconId"
+                                href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md
+                              - name: "Win32Interop.GetIconIdFromIcon"
+                                href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md
+                              - name: "Win32Interop.GetMonitorFromDisplayId"
+                                href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md
+                              - name: "Win32Interop.GetWindowFromWindowId"
+                                href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md
+                              - name: "Win32Interop.GetWindowIdFromWindow"
+                                href: api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md
       - name: .NET API reference
         href: /dotnet/api/
-      - name: Schema reference for Windows apps
+      - name: Schema specifications for Windows apps
         href: /uwp/schemas/
-  - name: What's new?
-    expanded: true
-    items:
-      - name: Windows App SDK release notes
-        expanded: true
-        items:
-           - name: "Stable channel release notes"
-             href: windows-app-sdk/stable-channel.md
-           - name: "Preview channel release notes"
-             href: windows-app-sdk/preview-channel.md
-           - name: "Experimental channel release notes"
-             href: windows-app-sdk/experimental-channel.md
-           - name: "Breaking changes"
-             href: windows-app-sdk/breaking-changes.md
-           - name: "Release notes archive"
-             items:
-               - name: "WinUI 3 - Project Reunion 0.8 Preview"
-                 href: winui/winui3/release-notes/release-notes-08-preview.md
-               - name: "WinUI 3 - Project Reunion 0.5"
-                 href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
-               - name: "WinUI 3 - Project Reunion 0.5 Preview"
-                 href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
-      - name: What's new for developers in Windows 11
-        href: whats-new/windows-11-build-22000.md
-      - name: Latest doc updates
-        href: whats-new/latest-doc-updates.md

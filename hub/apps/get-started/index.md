@@ -26,7 +26,7 @@ WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index
 > [!div class="button"]
 > [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
-If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
+If you have already installed the required developer tools, you are ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 
 ## Other app types

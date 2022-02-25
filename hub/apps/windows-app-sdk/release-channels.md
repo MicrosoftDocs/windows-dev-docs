@@ -17,9 +17,9 @@ The following table provides an overview of the different release channels. For 
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |---|---|---|---|---|---|
-| **✅** | [Stable](stable-channel.md)  | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every four months<br>(+ servicing) | Yes | [1.0](stable-channel.md#version-10) (11/16/2021) |
-| **❇️** | [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
-| **🔄️** | [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | Targeting monthly | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
+| **✅** | Stable ([release notes](stable-channel.md)) | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every four months<br>(+ servicing) | Yes | [1.0](stable-channel.md#version-10) (11/16/2021) |
+| **❇️** | Preview ([release notes](preview-channel.md)) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
+| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | Targeting monthly | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
 
 ## Features available by release channel
 
@@ -109,5 +109,5 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 - [Experimental channel](experimental-channel.md)
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 

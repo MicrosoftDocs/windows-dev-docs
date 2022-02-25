@@ -22,7 +22,7 @@ The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio
 > [!div class="button"]
 > [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
-If you have already installed the required developer tools, you're ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+If you have already installed the required developer tools, you're ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
@@ -86,6 +86,6 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

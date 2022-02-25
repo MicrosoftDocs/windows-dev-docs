@@ -38,8 +38,7 @@ Once you've set up your development environment, see [Create WinUI 3 projects](.
 
 For more information about getting started with the WinUI project templates, see the following articles:
 
-- [Get started with WinUI 3 for desktop apps](../create-your-first-winui3-app.md)
-- [Get started with WinUI 3 for UWP apps (Preview)](../create-your-first-winui3-app.md)
+- [Create your first WinUI 3 project](../create-your-first-winui3-app.md)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
