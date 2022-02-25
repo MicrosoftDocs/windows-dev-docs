@@ -73,9 +73,9 @@ This image may appear in various Store pages for Windows 10, Windows 11, and Xbo
 
 ### 1:1 App tile icon (300 x 300 pixels)
 
-This image is required for proper display on Windows Phone 8.1 and earlier. If your previously-published app supports Windows Phone 8.1 or earlier, and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10/11 if your app only has packages targeting Windows Phone 8.1 or earlier.)
+This image is required for proper display on Windows Phone 8.1 and earlier. If your previously-published app supports Windows Phone 8.1 or earlier, and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10 or Windows 11 if your app only has packages targeting Windows Phone 8.1 or earlier.)
 
-If your submission *only* includes UWP packages, you don’t need to provide this image (unless you check the box for  **For customers on Windows 10/11 and Xbox, display uploaded logo images instead of the images from my packages**, as described in the next section).
+If your submission *only* includes UWP packages, you don’t need to provide this image (unless you check the box for  **For customers on Windows 10 or Windows 11 and Xbox, display uploaded logo images instead of the images from my packages**, as described in the next section).
 
 ### Display only uploaded logo images in the Store
 
@@ -175,7 +175,7 @@ For H.264 Mezzanine files, we recommend the following:
 
 ### Windows 10 and Xbox image (16:9 Super hero art)
 
-In the **Windows 10/11 and Xbox image** section, the **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** image is used in various layouts in the Microsoft Store on all Windows 10, Windows 11, and Xbox devices. We recommend providing this image, regardless of which OS versions or device types your app targets.
+In the **Windows 10 or Windows 11 and Xbox image** section, the **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** image is used in various layouts in the Microsoft Store on all Windows 10, Windows 11, and Xbox devices. We recommend providing this image, regardless of which OS versions or device types your app targets.
 
 This image is *required* for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later (which includes Xbox), it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). It may also be used to feature your app in promotional layouts throughout the Store. Note that this image must not include the product's title or other text.
 

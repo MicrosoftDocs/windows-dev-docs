@@ -225,7 +225,7 @@ TextStacking specifies the vertical alignment of content.
 
 
 ## AdaptiveProgressBar
-New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or newer.
+New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or later.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
