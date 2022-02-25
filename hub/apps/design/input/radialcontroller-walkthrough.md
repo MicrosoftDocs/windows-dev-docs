@@ -36,7 +36,7 @@ The Dial supports three basic gestures:
 
 ## Prerequisites
 
-* A computer (or a virtual machine) running Windows 10 Creators Update, or later
+* A computer (or a virtual machine) running Windows 10 Creators Update or later
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
