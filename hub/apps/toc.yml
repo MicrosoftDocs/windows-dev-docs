@@ -154,7 +154,7 @@ items:
                     href: desktop/modernize/xaml-islands.md
                   - name: XAML Islands in WPF and Windows Forms apps
                     items:
-                        - name: Host a standard WinRT XAML control
+                        - name: Use XAML Islands to host a UWP XAML control in a C# WPF app
                           href: desktop/modernize/host-standard-control-with-xaml-islands.md
                         - name: Host a custom WinRT XAML control
                           href: desktop/modernize/host-custom-control-with-xaml-islands.md
