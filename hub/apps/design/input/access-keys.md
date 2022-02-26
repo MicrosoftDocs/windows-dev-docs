@@ -113,7 +113,7 @@ _CommandBar primary scope and supported access keys_
 
 _CommandBar secondary scope and supported access keys_
 
-### Windows 10 Creators Update and older
+### Windows 10 Creators Update and newer
 
 Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn’t support built-in access key scopes.
 

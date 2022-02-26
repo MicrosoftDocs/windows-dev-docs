@@ -157,9 +157,9 @@ sections:
           The import process performs basic validation before importing. This ensures that the target culture information in the files being imported matches that in the existing .xlf files. Open the .xlf files in the Multilingual Editor and make sure that the culture information matches.
 
       - question: |
-          What if my translator doesn't have Windows 10, and/or Visual Studio and/or the Multilingual App Toolkit installed?
+          What if my translator doesn't have Windows 10, Windows 11 and/or Visual Studio and/or the Multilingual App Toolkit installed?
         answer: |
-          When you select **Output: Mail recipient** in the Export string resources dialog, the email includes a link to download and install the Multilingual App Toolkit (MAT) 4.0. Your translator can still install the MAT 4.0 standalone Multilingual Editor tool even without Windows 10 nor Visual Studio.
+          When you select **Output: Mail recipient** in the Export string resources dialog, the email includes a link to download and install the Multilingual App Toolkit (MAT) 4.0. Your translator can still install the MAT 4.0 standalone Multilingual Editor tool even without Windows 10, Windows 11 nor Visual Studio.
           
           For more details, see [Use the Multilingual App Toolkit 4.0](use-mat.md).
           

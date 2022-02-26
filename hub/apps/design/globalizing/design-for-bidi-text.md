@@ -30,7 +30,7 @@ Four elements influence BiDi design decisions in Windows.
 
 ## Feature design overview
 
-Windows supports the four BiDi design elements. Let's look at some of the major relevant features in Windows, and provide some context around how they affect your app.
+Windows supports the four BiDi design elements. Let's look at some of the major relevant features of (prior versions of) Windows, and provide some context around how they affect your app.
 
 ### Navigate in the direction that feels natural
 
