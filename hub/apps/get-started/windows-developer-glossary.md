@@ -129,7 +129,7 @@ Also known as WinForms. A thin layer over Windows APIs with minimal layout and s
 
 <!--pending product signoff -->
 ##### Windows SDK
-The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. Not to be confused with the Windows App SDK, which is a modern abstracton around Windows APIs that succeeds the Windows SDK.
+The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. See [Windows App SDK](#windows-app-sdk), which is a modern abstracton around Windows APIs that succeeds the Windows SDK.
 
 <!--pending product signoff -->
 ##### WinRT

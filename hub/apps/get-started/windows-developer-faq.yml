@@ -123,7 +123,7 @@ sections:
        answer: |
           Windows App SDK decouples Windows development APIs from the operating system (OS) so that you can build Windows apps that don't depend on operating systems being updated. Successive Windows App SDK releases decouple more and more APIs in this way. By removing dependencies on particular OS versions, you're able to reach more users.
 
-          It's best to think of Windows App SDK / WinUI 3 as an OS-decoupled superset of UWP / WinUI 2 that will eventually reach approximate feature parity. UWP will be supported by the Windows SDK in the meantime, with the caveat that .NET 5/6 won't be coming to UWP.
+          It's best to think of Windows App SDK / WinUI 3 as an OS-decoupled superset of UWP / WinUI 2. UWP will be supported while UWP features are being ported to the Windows App SDK with the caveat that .NET 5/6 won't be coming to UWP.
          # pending product signoff
      - question: Can WinUI 3 be used with UWP?
        answer: |
@@ -153,7 +153,7 @@ sections:
          # pending product signoff
      - question: Can I do everything that I can do with WinUI 2 using WinUI 3?
        answer: |
-          Not quite. WinUI 3 isn't an in-place upgrade of WinUI 2. WinUI 3 is a new technology that replaces WinUI 2. We're working towards approximate feature parity between UWP / WinUI 2 and Windows App SDK / WinUI 3.
+          Not quite. WinUI 3 isn't an in-place upgrade of WinUI 2. WinUI 3 is a new technology that replaces WinUI 2. Many UWP features are being ported to the Windows App SDK on a prioritized basis. Eventually, the WinApp SDK will support most UWP functionality, along with various new and improved features.
          # pending product signoff
      - question: Can I use WinUI 3 without using Windows App SDK?
        answer: |
@@ -326,14 +326,14 @@ sections:
        answer: |
           No. UWP and WinUI 2 are still fully supported for production scenarios and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. 
 
-          UWP's functionality is being incrementally ported into Windows App SDK. There will eventually be approximate parity between UWP and Windows App SDK, but we aren't planning to deprecate UWP any time soon.
+          UWP's functionality is being incrementally ported into Windows App SDK. Many UWP features are being ported to the Windows App SDK on a prioritized basis. Eventually, the WinApp SDK will support most UWP functionality, along with various new and improved features.
         # <!--see MSFT representing UWP status here: https://www.reddit.com/r/csharp/comments/r9ecz4/what_is_the_main_framework_used_for_making/  -->
          # pending product signoff
      - question: When should I migrate a UWP + WinUI 2 app to WinUI 3?
        # "What are the reasons to -> when should I" based on an assumption that people are more likely to search for "when should I" vs "what are the reasons"
        answer: |
           We encourage you to migrate your UWP project to a WinUI 3 desktop project if you need to use .NET 5/6 because .NET 5/6 won't be coming to UWP project types.
-          Otherwise, there's no need to migrate your UWP app to WinUI 3. We're working towards approximate feature parity between UWP and Windows App SDK (which includes WinUI 3), but you can use UWP if Windows App SDK doesn't yet meet your needs.
+          Otherwise, there's no need to migrate your UWP app to WinUI 3. We're working on porting the most popular UWP features to Windows App SDK (which includes WinUI 3), but you can use UWP if Windows App SDK doesn't yet meet your needs.
         # <!-- https://github.com/microsoft/WindowsAppSDK/discussions/1615 -->
          # pending product signoff
      - question: When should I *not* to migrate a UWP + WinUI 2 app to WinUI 3?
