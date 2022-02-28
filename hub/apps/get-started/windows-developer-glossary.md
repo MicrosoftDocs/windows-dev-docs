@@ -120,10 +120,6 @@ The Win32 API is a platform for native C/C++ Windows applications that require d
 Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT APIs that are part of WinAppSDK and WinUI 3.
 
 <!--pending product signoff -->
-##### Windows app
-An application that can run on Windows. Windows apps can be built using a variety of technologies including the Windows App SDK, .NET Maui, Win32, and WPF. See the [overview of application development options](index.md) if you need help deciding which technology to use.
-
-<!--pending product signoff -->
 ##### Windows App SDK
 A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP. It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](https://docs.microsoft.com/en-us/windows/apps/get-started/?tabs=cpp-win32).
 
