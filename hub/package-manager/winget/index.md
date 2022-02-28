@@ -1,6 +1,6 @@
 ---
 title: Use the winget tool to install and manage applications
-description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows 10 computers.
+description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
 ms.date: 11/19/2020
 ms.topic: overview
 ms.localizationpriority: medium

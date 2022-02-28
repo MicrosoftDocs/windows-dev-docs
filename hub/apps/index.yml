@@ -18,7 +18,7 @@ highlightedContent:
    - title: App development options
      itemType: overview
      url: ./get-started/index.md
-   - title: Create a WinUI 3 app
+   - title: Create your first WinUI 3 project
      itemType: quickstart
      url: ./winui/winui3/create-your-first-winui3-app.md
    - title: What is the Windows App SDK?
@@ -49,9 +49,9 @@ productDirectory:
       - url: ./get-started/index.md
         text: Overview of app development options
       - url: ./windows-app-sdk/set-up-your-development-environment.md
-        text: Install developer tools
+        text: Install tools for the Windows App SDK
       - url: ./winui/winui3/create-your-first-winui3-app.md
-        text: Build a WinUI 3 app
+        text: Create your first WinUI 3 project
       - url: ./get-started/samples.md
         text: Samples
   - title: Design

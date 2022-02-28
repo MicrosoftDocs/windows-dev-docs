@@ -8,7 +8,7 @@ ms.topic: article
 
 # WinUI 3 project templates in Visual Studio
 
-After installing the Windows App SDK VSIX and [installing developer tools](../../windows-app-sdk/set-up-your-development-environment.md), you're ready to create a WinUI 3 app using one of the WinUI project templates in Visual Studio. 
+See [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md). Now you're ready to create a WinUI 3 app using one of the WinUI 3 project templates in Visual Studio. 
 
 To access the WinUI project templates in the **Create a new project** dialog, filter the language to **C++** or **C#**, the platform to **Windows**, and the project type to **WinUI**. Alternatively, you can search for *WinUI* and select one of the available C# or C++ templates.
 
@@ -20,7 +20,7 @@ You can use these WinUI project templates to create apps.
 
 ### Blank App, Packaged (WinUI 3 in Desktop)
 
-This project template creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about using this project template, see [Create a new project that uses the Windows App SDK](create-your-first-winui3-app.md).
+This project template creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
 The features of this project template vary between [versions of the Windows App SDK extension](../../windows-app-sdk/downloads.md).
 
@@ -33,7 +33,7 @@ The features of this project template vary between [versions of the Windows App 
 
 ### Blank App, Packaged with WAP (WinUI 3 in Desktop)
 
-This project template is available in [version 1.0 Preview 1 and later releases](../../windows-app-sdk/downloads.md). It creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about using this project template, see [Create a new project that uses the Windows App SDK](create-your-first-winui3-app.md).
+This project template is available in [version 1.0 Preview 1 and later releases](../../windows-app-sdk/downloads.md). It creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI library that you can use to start building your UI. For more information about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
 The solution also includes a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). You can optionally install the [single-project MSIX packaging tools extension for Visual Studio](../../windows-app-sdk/single-project-msix.md) and combine the packaging project settings into your application project so you no longer need to maintain a separate packaging project.
 

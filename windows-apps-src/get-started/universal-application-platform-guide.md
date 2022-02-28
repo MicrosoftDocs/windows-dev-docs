@@ -13,8 +13,7 @@ ms.localizationpriority: medium
 
 UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices.
 
-To download the tools you will need to start creating UWP apps, see [Get set up](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
-
+To download the tools you will need to start creating Windows apps, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
 
 ## Where does UWP fit in the Microsoft development story?
 

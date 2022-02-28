@@ -62,7 +62,7 @@ Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stab
 
 ## Create a new project
 
-In Visual Studio, [create a new Windows App SDK project](/windows/apps/winui/winui3/create-your-first-winui3-app). For example, use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app). For example, use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 

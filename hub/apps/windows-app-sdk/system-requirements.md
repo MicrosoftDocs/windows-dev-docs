@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 To develop apps for Windows 11 and Windows 10, you'll need Visual Studio, the Windows SDK, and the Windows App SDK. Before installing these tools, check the information in this article to make sure your development computer meets the minimum system requirements.
 
-For instructions to install and set up these tools, see [Set up your development environment](set-up-your-development-environment.md).
+For instructions to install and set up these tools, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Visual Studio
 
@@ -65,5 +65,5 @@ You can build, run, and deploy apps built with stable versions of the Windows Ap
 
 ## Related topics
 
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Get started developing apps for Windows desktop](../get-started/index.md)

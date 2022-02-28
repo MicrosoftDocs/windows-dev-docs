@@ -6,19 +6,28 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 02/14/2022
 ---
 
 # Windows Subsystem for Android™️
 
-Windows Subsystem for Android™️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore.
+Windows Subsystem for Android™️ enables your Windows 11 device to run Android applications that are available in the Amazon Appstore. Android is a trademark of Google LLC. If you're a developer interested in targeting Windows desktop devices and optimizing for the Windows operating system, this guide is for you.
 
-If you're a developer interested in targeting Windows desktop devices and optimizing for the Windows operating system, this guide is for you. Learn how to:
+To make your Android app available on Windows 11 devices, you must:
 
-- [Set up your development environment](#set-up-your-development-environment), including [prerequisites](#prerequisites), [installing the Amazon Appstore](#install-the-amazon-appstore), and using the [Settings app](#settings-app).
+- [Submit your app to the Amazon Appstore](https://developer.amazon.com/docs/app-submission/getting-started.html).
+
+For more information or support:
+
+- [Sign up for updates to the Amazon Appstore on Windows program](https://m.amazonappservices.com/developer-interest).
+- [Visit the Amazon developer support portal](https://developer.amazon.com/support/) where you can find articles, forums, FAQs, or reach out for direct support via the Appstore "Contact us" page once you set up an Amazon Developer account.
+
+This guide can help you test and debug your Android app on Windows:
+
+- [Set up your development environment](#set-up-your-development-environment), including [prerequisites](#prerequisites), [installing the Amazon Appstore](#install-the-amazon-appstore), and using the [Settings app](#windows-subsystem-for-android-settings-app).
 - Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
 - [Test and debug](#test-and-debug) your app on a Windows 11 device.
-- [Submit apps to the Amazon Appstore](#amazon-appstore): Your app must be available in the Amazon Appstore to run on Windows 11 devices.
+- [Troubleshoot and find answers](#troubleshooting-issues).
 
 ## Set up your development environment
 
@@ -26,42 +35,27 @@ To test your Android app in the Windows desktop environment, a bit of set up wil
 
 ### Prerequisites
 
-Windows Subsystem for Android is currently only available through **preview** via the Beta and Dev Channels of the [Windows Insiders Program](https://insider.windows.com/) (Windows 11 Build 22000.xxx series) in the U.S. only.
+Windows Subsystem for Android is available for **public preview** on Windows 11.
 
-Your device also must meet specific Windows 11 requirements. Check the "Windows Subsystem for Android" section under "Feature-specific requirements" on the page: [Find Windows 11 specs, features, and computer requirements](https://www.microsoft.com/windows/windows-11-specifications).
+Your device must meet specific requirements: [Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
 ### Install the Amazon Appstore
 
-The Microsoft Store will automatically install Windows Subsystem for Android (running Android 11) silently in the background when either of the two following user actions are taken:
+The Microsoft Store will automatically install Windows Subsystem for Android silently in the background when either of the two following user actions are taken:
 
-1. Install the Amazon Appstore from the Microsoft Store.
-2. Install an Android or Amazon app from the Microsoft Store for the first time, which will also install the Amazon Appstore.
+1. Install the Amazon Appstore from the Microsoft Store. Selecting **Get** will begin the installation of the app.
+2. Install an Android app from the Microsoft Store for the first time, which will also install the Amazon Appstore.
 
-The Amazon Appstore will then appear in the Windows 11 Start menu and be available on search, offering a curated catalogue of Android apps.
-
-![Screenshot of Microsoft Store page featuring the Amazon App Store](../../images/wsa-amazon-appstore.png)
-
-Selecting **Get** will begin the installation of the app. The app will also appear in Windows Start, Search and in the Windows Programs list.
+The Amazon Appstore and the Windows Subsystem for Android Settings app will then appear in the Windows 11 Start menu and be available on search, offering a catalogue of Android apps.
 
 ![Screenshot of Microsoft Store page featuring the Get button on the Amazon App Store](../../images/wsa-amazon-appstore-get.png)
 
-## Settings app
+> [!NOTE]
+> The Amazon Appstore on Windows (a requirement for running Android apps on Windows 11) is currently only available in the US.
 
-To access the Windows Subsystem for Android Settings app, go to: **Start > All Apps > Windows Subsystem for Android™️**. The Settings app can be used to adjust the following settings:
+## Windows Subsystem for Android™️ Settings app
 
-- **Subsystem Screen Reader**
-
-    If touch input isn't working, make sure the Subsystem Screen Reader is turned off. For more info, see [Microsoft Support: Accessibility on Windows Subsystem for Android](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658).
-
-- **Subsystem resources**
-
-  - **As needed**: When this is selected, the subsystem will open when a mobile app is opened. Since the subsystem needs to open first, the mobile app might take a little longer to open. Mobile apps opened after the first one might not be affected.
-
-  - **Continuous**: The subsystem is always ready to open apps. Since it's always open in the background, it will use more of your PC's memory and processing power.
-
-- **Enable developer mode**
-
-    To [test and debug](#test-and-debug) your app on a Windows 11 device, you will need set Developer Mode to **On**.
+To access the Windows Subsystem for Android Settings app, go to: **Start > All Apps > Windows Subsystem for Android™️ Settings**. Learn more about specific settings app features: [Manage settings for mobile apps on Windows](https://support.microsoft.com/windows/000f97e8-8c20-490e-9ef4-cd90d903f847).
 
 ![Screenshot of Latte app settings](../../images/wsa-settings.png)
 
@@ -140,29 +134,25 @@ To test and debug your app on a Windows 11 device using the Windows Subsystem fo
 
 You must first enable developer mode in Windows Settings. There are three ways to enable developer mode:
 
-- Open the [Windows Subsystem for Android Settings app](#settings-app). Once open, select **Enable Developer Settings**.
+- Open the [Windows Subsystem for Android Settings app](#windows-subsystem-for-android-settings-app). Once open, enable **Developer Mode**.
 - Search for “Developer Settings” in Windows search.
 - Navigate to Settings > Privacy and Security > For developers > Developer mode.
 
 ### Connect to the Windows Subsystem for Android for debugging
 
-To connect to the Windows Subsystem for Android VM for debugging, you have two options:
+To connect to the Windows Subsystem for Android VM for debugging:
 
-1. **Recommended Method**:
-    - Use localhost for connecting to debugging. The IP address of the localhost is: `127.0.0.1:58526`. Windows Subsystem for Android must be running in order to connect, the best way to launch Windows Subsystem for Android is by launching an Android app that was installed with the Amazon Appstore.
-    - To connect to the localhost address of Windows Subsystem for Android, enter: `adb connect 127.0.0.1:58526`
+1. Get the IP address by opening the Windows Subsystem for Android Settings app. (Use Windows Search to select and launch.)
 
-2. **Alternative Method**: Use the Windows Subsystem for Android Settings app to get the IP address.
-    - Launch the Settings app. (Use Windows Search to select and launch.)
-    - The IP address will be displayed under the IP address section. If there is no IP address being displayed, launch an Android app that was installed using the Amazon Appstore, then select **Refresh** on the IP address button in the Settings app.
+2. The IP address will be displayed under the IP address section. If there is no IP address being displayed, launch an Android app that was installed using the Amazon Appstore, then select **Refresh** on the IP address button in the Settings app.
 
-Now that you have the IP address to connect to the Windows Subsystem for Android VM, connect using adb connect:
+3. Now that you have the IP address to connect to the Windows Subsystem for Android VM, in your terminal or Powershell, you can connect using adb connect (you must have [adb installed](https://developer.android.com/studio/command-line/adb)):
 
-```powershell
-adb connect 172.22.137.166
-```
+    ```powershell
+    adb connect 172.22.137.166
+    ```
 
-## Connect to a test device
+### Connect to a test device
 
 To connect to a test device (with Windows Subsystem for Android installed) on the same network from Windows/Mac:
 
@@ -175,7 +165,7 @@ To connect to a test device (with Windows Subsystem for Android installed) on th
 2. Using the debugging device terminal where Android Studio and the Android SDK is installed (Mac/Windows), enter the command:
 
     ```console
-    adb connect <TEST DEVICE IP ADDRESS>
+    adb connect <TEST DEVICE IP ADDRESS>:58526
     ```
 
 The `<TEST DEVICE IP ADDRESS>` can be found in the output of "ipconfig" from the test device. You can also deploy and debug apps from Android Studio.
@@ -200,6 +190,10 @@ To debug an APK using adb:
     ```
 
 3. A successful “app installed” notification  will appear in the Windows notification menu and the app will launch once selected.
+
+### Building Universal APKs
+
+Windows Subsystem for Android utilizes Intel Bridge Technology to emulate ARM applications on x86 based processors. ARM applications will run on ARM based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and ARM64 architectures.
 
 ## VM lifecycle considerations
 
@@ -234,15 +228,15 @@ Both Windows kernel-mode drivers and Windows applications running at medium inte
 
 Developers querying `getSecurityLevel` will get `SECURITY_LEVEL_SW_SECURE_CRYPTO`. Learn more about `getSecurityLevel` in the [Android API Reference guide](https://developer.android.com/reference/android/media/MediaDrm#getSecurityLevel(byte[])).
 
-## Amazon Appstore
+## Uninstalling Windows Subsystem for Android
 
-In order to be available on a Windows 11 device, an Android app must be published to the Amazon Appstore. Currently, only a small set of apps selected by Microsoft and Amazon are available.
+You can uninstall the Windows Subsystem for Android, but note that all associated apps will also be uninstalled.
 
-Developers should refer to the Amazon Device Targeting guidance for information on targeting APKs to specific devices.
+- Uninstalling the Amazon Appstore will uninstall the Windows Subsystem for Android and all other Android apps.
+- Uninstalling an Amazon Appstore app will only uninstall the app (same behavior as Windows apps).
+- Uninstalling the Windows Subsystem for Android will uninstall the Amazon Appstore and all Android apps.
 
-- [Amazon Docs: Windows Subsystem for Android](https://developer.amazon.com/blogs/appstore/post/fe7771ac-f2df-42be-ac51-eb7fe0df1b5b/amazon-and-microsoft-announce-next-steps-for-bringing-the-amazon-appstore-to-windows-customers)
-
-### Troubleshooting issues with Amazon Appstore
+## Troubleshooting issues
 
 If you encounter issues specific to the Amazon Appstore on Windows, try the following troubleshooting steps:
 
@@ -251,45 +245,14 @@ If you encounter issues specific to the Amazon Appstore on Windows, try the foll
 3. Select “App Settings” in the dropdown options.
 4. Select “Storage and Cache” and click both “Clear Storage” and “Clear cache”.
 5. Go back and select “Force Stop”.
-6. Close the Amazon Apptore Settings window.
+6. Close the Amazon Appstore Settings window.
 7. Relaunch the Amazon Appstore.
 
-For further troubleshooting steps relating to the Windows Subsystem for Android Settings app or to leave feedback using Feedback Hub, see [Troubleshoot mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
+For further troubleshooting steps relating to the Windows Subsystem for Android Settings app or to leave feedback using Feedback Hub, see [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
 
-### Building Universal APKs
-
-Windows Subsystem for Android utilizes Intel Bridge Technology to emulate ARM applications on x86 based processors. ARM applications will of course run on ARM based processors natively. The emulation layer will induce a performance overhead – for optimal performance, please submit your application for both the x86-64 and ARM64 architectures.
-
-<!-- ## Block Android apps
-
-If you want to prevent users from installing Android apps, you have the following options:
-
-- **Option 1: Use Windows Defender Application Control (WDAC) PowerShell cmdlets**. For more information, see [Manage Packaged Apps with Windows Defender Application Control](/windows/security/threat-protection/windows-defender-application-control/manage-packaged-apps-with-windows-defender-application-control).
-
-- **Option 2: Block the Microsoft Store app**. This option uses group policy or an MDM provider to block access to the Microsoft Store app. It prevents users from using the entire Microsoft Store app, not just Android apps.
-
-  - **Group policy**:
-
-    - `Computer configuration\Administrative templates\Windows Components\Store`
-    - `User configuration\Administrative templates\Windows Components\Store`
-
-  - **Microsoft Endpoint Manager, which is an MDM provider**: Use [Administrative Templates](/mem/intune/configuration/administrative-templates-windows) or the [Settings Catalog](/mem/intune/configuration/settings-catalog) to turn off the Microsoft Store app.
-
-  For more possible options, see [Configure access to Microsoft Store](/windows/configuration/stop-employees-from-using-microsoft-store). -->
-
-## Uninstalling Windows Subsystem for Android
-
-You can uninstall the Windows Subsystem for Android, but note that all associated apps will also be uninstalled.
-
-- Uninstalling the Amazon Appstore will uninstall the Windows Subsystem for Android and all other Amazon apps.
-- Uninstalling an Amazon Appstore app will only uninstall the app (same behavior as Windows apps).
-- Uninstalling the Windows Subsystem for Android will uninstall the Amazon Appstore and all Amazon apps.
+For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](https://docs.microsoft.com/answers/topics/windows-subsystem-for-android.html).
 
 ## Additional resources
 
-- [Mobile apps and the Windows Subsystem for Android](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c)
+- [Install mobile apps and the Amazon Appstore](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c)
 - [Accessibility on Windows Subsystem for Android](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658)
-- [Windows Subsystem for Android keyboard shortcuts](https://support.microsoft.com/windows/f18a072e-22dd-4c8b-aa25-c6562bb409bc)
-- [Microsoft License Terms - Microsoft Windows Subsystem for Android](https://support.microsoft.com/windows/cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad)
-- [Privacy with Windows subsystem for Android and Amazon Appstore](https://support.microsoft.com/windows/123fad73-f524-4151-bb42-ad7c8e252dd4)
-- [Troubleshoot mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5)

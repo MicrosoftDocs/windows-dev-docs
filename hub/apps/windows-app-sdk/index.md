@@ -20,9 +20,9 @@ The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows 
 The Windows App SDK provides extensions for Visual Studio 2019 and Visual Studio 2022. These extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
 > [!div class="button"]
-> [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
+> [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
-If you have already installed the required developer tools, you're ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
+If you have already installed the required developer tools, you're ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
@@ -49,8 +49,8 @@ The following table provides an overview of the different release channels.
 | Release channel | Description |
 |--|--|
 | [Stable](stable-channel.md) | This channel is supported for use by apps in production environments. It only includes stable APIs. By default, the Windows App SDK docs focus on the Stable channel. |
-| [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. For documentation on using the Preview release, see [Preview and Experimental guidance](preview-experimental-install.md). |
-| [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. For documentation on using the Experimental release, see [Preview and Experimental guidance](preview-experimental-install.md). |
+| [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. For documentation on using the Preview release, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md). |
+| [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. For documentation on using the Experimental release, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md). |
 
  For more details about the release channels of the Windows App SDK, see [Windows App SDK release channels](release-channels.md).
 
@@ -85,7 +85,7 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 ## Related topics
 
 - [Release channels and release notes](release-channels.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

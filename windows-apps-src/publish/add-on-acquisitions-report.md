@@ -59,7 +59,7 @@ You can view this data in a visual **Map** form, or toggle the setting to view i
 
 ## Add-on page views and conversions by campaign ID
 
-The **Add-on page views and conversions by campaign ID** chart shows you the total number of add-on conversions (acquisitions) per campaign ID over the selected period of time, helping you track conversions and page views from customers on Windows 10/11 (including Xbox) for each of your [custom promotion campaigns](create-a-custom-app-promotion-campaign.md). Only add-on conversions are shown in this chart.
+The **Add-on page views and conversions by campaign ID** chart shows you the total number of add-on conversions (acquisitions) per campaign ID over the selected period of time, helping you track conversions and page views from customers on Windows 10 or Windows 11 (including Xbox) for each of your [custom promotion campaigns](create-a-custom-app-promotion-campaign.md). Only add-on conversions are shown in this chart.
 
 > [!NOTE]
 > Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views. 
@@ -67,7 +67,7 @@ The **Add-on page views and conversions by campaign ID** chart shows you the tot
 
 ## Conversions breakdown by campaign ID
 
-The **Conversions breakdown by campaign ID** chart lets you track conversions and page views from customers on Windows 10/11 for each of your [custom promotion campaigns](create-a-custom-app-promotion-campaign.md). Both app and add-on conversions are shown per campaign ID.
+The **Conversions breakdown by campaign ID** chart lets you track conversions and page views from customers on Windows 10 or Windows 11 for each of your [custom promotion campaigns](create-a-custom-app-promotion-campaign.md). Both app and add-on conversions are shown per campaign ID.
 
 In this chart, a *page view* means that a customer viewed the app's Store listing. A *conversion* means that a customer has newly obtained a license for the app or add-on (whether you charged money or you've offered it for free).
 

@@ -54,7 +54,7 @@ The following wrapped WinRT XAML controls are currently available in the Windows
 | [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
 | [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
 
-For a walkthrough that demonstrates how to use the wrapped WinRT XAML controls, see [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md).
+For a walkthrough that demonstrates how to use the wrapped WinRT XAML controls, see [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md).
 
 ### Host controls
 
@@ -64,7 +64,7 @@ For custom controls and other scenarios beyond those covered by the available wr
 |-----------------|-------------------------------|-------------|
 | [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, version 1903 | Can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including any first-party WinRT XAML control provided by the Windows SDK as well as custom controls. |
 
-For walkthroughs that demonstrate how to use the **WindowsXamlHost** control, see [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md) and [Host a custom WinRT XAML control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
+For walkthroughs that demonstrate how to use the **WindowsXamlHost** control, see [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md) and [Host a custom WinRT XAML control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
 
 <span id="requirements" />
 
@@ -74,8 +74,8 @@ The XAML Island .NET controls require Windows 10, version 1903, or a later versi
 
 | Type of control | NuGet package  | Related articles |
 |-----------------|----------------|---------------------|
-| [Wrapped controls](#wrapped-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md)  |
-| [Host control](#host-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md)<br/>[Host a custom WinRT XAML control in a WPF app](host-custom-control-with-xaml-islands.md)  |
+| [Wrapped controls](#wrapped-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md)  |
+| [Host control](#host-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md)<br/>[Host a custom WinRT XAML control in a WPF app](host-custom-control-with-xaml-islands.md)  |
 
 Be aware of the following details:
 

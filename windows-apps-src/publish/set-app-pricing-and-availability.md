@@ -62,9 +62,9 @@ Choose **Unlimited** to let customers access your app for free indefinitely. You
 By default, your trial will be available as soon as your app is published, and it will never stop being offered. If you’d like, you can specify the date and time that your trial should start to be offered and when it should stop being offered. 
 
 >[!NOTE]
-> These dates only apply for customers on Windows 10/11 (including Xbox). If your app is available to customers on earlier OS versions, the trial will be offered to those customers for as long as your product is available. 
+> These dates only apply for customers on Windows 10 or Windows 11 (including Xbox). If your app is available to customers on earlier OS versions, the trial will be offered to those customers for as long as your product is available. 
 
-To set dates for when your trial should be offered to customers on Windows 10/11, change the **Starts on** and/or **Ends on** dropdown to **at**, then choose the date and time. If you do so, you can either choose **UTC** so that the time you select will be Universal Coordinated Time (UTC) time, or choose **Local** so that these times will be used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.) You can select **Customize for specific markets** if you want to set different dates for any market(s).
+To set dates for when your trial should be offered to customers on Windows 10 or Windows 11, change the **Starts on** and/or **Ends on** dropdown to **at**, then choose the date and time. If you do so, you can either choose **UTC** so that the time you select will be Universal Coordinated Time (UTC) time, or choose **Local** so that these times will be used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.) You can select **Customize for specific markets** if you want to set different dates for any market(s).
 
 
 ## Sale pricing

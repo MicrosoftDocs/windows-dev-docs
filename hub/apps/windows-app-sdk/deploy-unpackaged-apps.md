@@ -142,6 +142,10 @@ For an example that demonstrates how your setup program can install the MSIX pac
 
 For more information, see the [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/index.md).
 
+## Deploy .winmd files to the target machine
+
+Along with your app, we recommend that you go ahead and deploy Windows Metadata (`.winmd`) files. Metadata can be used by various APIs and behaviors at runtime, and its absence can limit or break functionality. For example, metadata can be used to marshal objects across apartments boundaries; and the need to marshal can be a function of machine performance. Since there's no deterministic way to know whether you need metadata, you should deploy `.winmd`s unless you're extremely concerned about size.
+
 ## Related topics
 
 * [Deployment architecture for the Windows App SDK](deployment-architecture.md)
