@@ -66,8 +66,9 @@ MSIX is a Windows app package format that combines the best features of MSI, .ap
 Traditionally, "native" refers to applications built without using the .NET runtime. In this case, "native" is synonymous with "unmanaged", and can be used to describe win32 apps that manage their own memory and security concerns. Some developers use "native" to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly. We'll rarely use "native apps" in our docs because of this ambiguity.
 
 <!--pending product signoff -->
+<!-- todo: try to add a "in other words" plain explanation that speaks to devs who don't know or care about IL/runtime layers/etc. make it easy for new grads to understand what this means and how to use the information at low cognitive cost. -->
 ##### Native compilation
-Native compilation refers to applications compiled without using .NET.
+Native compilation refers to applications compiled into a binary that runs directly on the hardware. As contrasted with (as in the case of .NET) being compiled into an intermediate language (IL) assembly, which then runs on top of a managed runtime layer.
 
 <!--pending product signoff -->
 ##### .NET MAUI
