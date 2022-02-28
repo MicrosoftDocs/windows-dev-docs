@@ -69,6 +69,7 @@ sections:
        answer: |
           In most cases your UI code needs just a few namespace changes. Much of your platform code can stay the same. You'll need to adjust some code due to differences between desktop apps and UWP apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks. See [About migrating from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
          # pending product signoff
+         # todo: should we reframe this as "what's involved"? "No" reason: people think / search in terms of "how hard is it"... "yes" reason: it's subjective
      - question: If I have an existing UWP app in the Store, can I publish a new packaged app using the same identifiers?
        answer: |
           Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version.
@@ -233,6 +234,7 @@ sections:
        answer: |
           It's not currently possible to build one app that works on Windows, Hololens, and Mixed Reality. We recommend using Windows App SDK and WinUI 3 to build Windows apps. For Hololens apps, we recommend using either UWP or OpenXR + Win32. [Learn more about OpenXR](https://docs.microsoft.com/windows/mixed-reality/develop/native/openxr). Mixed Reality apps can be built [using the Windows SDK and Visual Studio](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools).
          # pending product signoff
+         # todo: consider splitting up if we think it's worth it
 
 
  - name: Samples and real-world apps
@@ -341,7 +343,6 @@ sections:
            - You're building an app for Surface Hub 
            - You're building an app that targets Windows 10 version TODO
            - You need application lifecycle management 
-           - UI performance is a priority 
         # <!-- see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500116  -->
         # leaning towards cutting the last bullet...
          # pending product signoff
