@@ -58,7 +58,7 @@ Allow you to update your applications without requiring your users to take any i
 You can use Microsoft Foundation Classes (MFC) to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: [MFC desktop applications](https://docs.microsoft.com/cpp/mfc/mfc-desktop-applications).
 
 <!--pending product signoff -->
-##### MSIX
+##### MSIX (Microsoft Installer package format)
 MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is a "packaged" app. MSIX-packaged apps can check for updates and can control when updates are applied. [What is MSIX?](https://docs.microsoft.com/windows/msix/overview).
 
 <!--pending product signoff -->

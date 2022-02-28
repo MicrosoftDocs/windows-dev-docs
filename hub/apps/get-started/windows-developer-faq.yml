@@ -256,8 +256,9 @@ sections:
        answer: |
           Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. Unpackaged apps don't use MSIX. Both types of applications can be published to the Microsoft Store.
         # Note that definitions exist both here and in the glossary - update both places if updating one for consistency.
-        # todo: define sparsed
-         # pending product signoff
+        # todo: include sparsed
+        # todo: RE duplication between here and glossary: my current energy is a comparison isn't the same as a definition, so this isn't quite duplication. We could enumerate definitions here as includes - in my mind this is an optimization we can address later
+        # pending product signoff
      - question: Can I create an unpackaged WinUI 3 app?
        answer: |
           Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app).
