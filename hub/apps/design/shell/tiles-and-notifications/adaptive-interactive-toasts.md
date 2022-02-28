@@ -64,17 +64,17 @@ new ToastContentBuilder()
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+    <visual>
+        <binding template="ToastGeneric">
+        ...
+        </binding>
+    </visual>
 
-  <actions>
-    ...
-  </actions>
+    <actions>
+        ...
+    </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+    <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -119,11 +119,17 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    <text hint-maxLines="1">Adaptive Tiles Meeting</text>
-    <text>Conf Room 2001 / Building 135</text>
-    <text>10:00 AM - 10:30 AM</text>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+            <text>Conf Room 2001 / Building 135</text>
+            <text>10:00 AM - 10:30 AM</text>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -149,10 +155,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -177,10 +189,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <image placement="hero" src="https://picsum.photos/364/180?image=1043"/>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <image placement="hero" src="https://picsum.photos/364/180?image=1043"/>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -204,10 +222,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <image src="https://picsum.photos/360/202?image=1043" />
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <image src="https://picsum.photos/360/202?image=1043" />
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -250,10 +274,16 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <text placement="attribution">Via SMS</text>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <text placement="attribution">Via SMS</text>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -371,19 +401,25 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<binding template="ToastGeneric">
-    ...
-    <group>
-        <subgroup>
-            <text hint-style="base">52 attendees</text>
-            <text hint-style="captionSubtle">23 minute drive</text>
-        </subgroup>
-        <subgroup>
-            <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
-            <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
-        </subgroup>
-    </group>
-</binding>
+<toast launch="app-defined-string">
+
+    <visual>
+        <binding template="ToastGeneric">
+            ...
+            <group>
+                <subgroup>
+                    <text hint-style="base">52 attendees</text>
+                    <text hint-style="captionSubtle">23 minute drive</text>
+                </subgroup>
+                <subgroup>
+                    <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
+                    <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
+                </subgroup>
+            </group>
+        </binding>
+    </visual>
+
+</toast>
 ```
 
 ---
@@ -475,15 +511,108 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<action
-    content="Dismiss"
-    imageUri="Assets/NotificationButtonIcons/Dismiss.png"
-    arguments="dismiss"
-    activationType="background"/>
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+        
+        <action
+            content="Dismiss"
+            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
+            arguments="dismiss"
+            activationType="background"/>
+
+    </actions>
+
+</toast>
 ```
 
 ---
 
+**New in Windows 11 Update**: You can add tooltips to your icons with the **HintToolTip** property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+// The builder syntax does not support icon tooltips yet. 
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+        
+        <action
+            content=""
+            hint-toolTip="Dismiss"
+            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
+            arguments="dismiss"
+            activationType="background"/>
+
+    </actions>
+
+</toast>
+```
+
+---
+
+### Buttons with colors
+
+**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **UseButtonStyle** property to the toast XML tag and the **HintButtonStyle** property as seen below.
+
+
+<img alt="notification with buttons with colors" src="images/toast-button-with-colors.png" width="364"/>
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+// The builder syntax does not support red and green button colors yet.
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast launch="app-defined-string" useButtonStyle="true">
+
+    ...
+
+    <actions>
+        
+        <action
+            content=""
+            hint-toolTip="Answer Video Call"
+            hint-buttonStyle="Success"
+            imageUri="Assets/Icons/VideoCall.png"
+            activationType="foreground"
+            arguments="videoId" />
+
+        <action
+            content=""
+            hint-toolTip="Answer Phone Call"
+            hint-buttonStyle="Success"
+            imageUri="Assets/Icons/PhoneCall.png"
+            activationType="foreground"
+            arguments="answerId" />
+
+        <action
+            content=""
+            hint-toolTip="Hang Up"
+            hint-buttonStyle="Critical"
+            imageUri="Assets/Icons/HangUp.png"
+            activationType="background"
+            arguments="hangupId" />
+
+    </actions>
+
+</toast>
+```
+
+---
 
 ### Buttons with pending update activation
 
@@ -494,16 +623,17 @@ To learn how to implement this, see [Toast pending update](toast-pending-update.
 ![Toast with pending update](images/toast-pendingupdate.gif)
 
 
-### Context menu actions
+## Context menu actions
 
-**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast from within Action Center. Note that this menu only appears when right clicked from Action Center. It does not appear when right clicking a toast popup banner.
+**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast notification or selects the context menu icon.
 
 > [!NOTE]
 > On older devices, these additional context menu actions will simply appear as normal buttons on your toast.
 
-The additional context menu actions you add (such as "Change location") appear above the two default system entries.
+The additional context menu actions you add (such as "Mute group chat for 1 hour") appear above the two default system entries.
 
-<img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
+![Toast with context menu](images/toast-contextmenu.png)
+
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -518,7 +648,7 @@ ToastContent content = new ToastContent()
     {
         ContextMenuItems =
         {
-            new ToastContextMenuItem("Change location", "action=changeLocation")
+            new ToastContextMenuItem("Mute group chat for 1 hour", "action=muteId")
         }
     }
 };
@@ -527,7 +657,7 @@ ToastContent content = new ToastContent()
 #### [XML](#tab/xml)
 
 ```xml
-<toast>
+<toast launch="app-defined-string">
 
     ...
 
@@ -535,8 +665,8 @@ ToastContent content = new ToastContent()
 
         <action
             placement="contextMenu"
-            content="Change location"
-            arguments="action=changeLocation"/>
+            content="Mute group chat for 1 hour"
+            arguments="action=muteId"/>
 
     </actions>
 
@@ -747,25 +877,25 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
+<toast scenario="reminder" launch="app-defined-string">
    
-  ...
- 
-  <actions>
+    ...
+    
+    <actions>
      
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
+        <input id="snoozeTime" type="selection" defaultInput="15">
+            <selection id="1" content="1 minute"/>
+            <selection id="15" content="15 minutes"/>
+            <selection id="60" content="1 hour"/>
+            <selection id="240" content="4 hours"/>
+            <selection id="1440" content="1 day"/>
+        </input>
  
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+        <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
  
-    <action activationType="system" arguments="dismiss" content=""/>
+        <action activationType="system" arguments="dismiss" content=""/>
      
-  </actions>
+    </actions>
    
 </toast>
 ```
@@ -788,7 +918,7 @@ To use the system snooze and dismiss actions:
 
 ## Audio
 
-Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or newer. Custom audio can be referenced via the following paths:
+Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or later. Custom audio can be referenced via the following paths:
 
 -   ms-appx:///
 -   ms-appdata:///
@@ -822,16 +952,17 @@ new ToastContentBuilder()
 See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in toast notifications. To learn how to send a toast using custom audio, see [custom audio on toasts](custom-audio-on-toasts.md).
 
 
-## Alarms, reminders, and incoming calls
+## Scenarios
 
-To create alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a scenario value assigned to it. The scenario adusts a few behaviors to create a consistent and unified user experience.
+To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a **Scenario** value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
 
-> [!IMPORTANT]
-> When using Reminder or Alarm, you must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
+* **Reminder**
+* **Alarm**
+* **IncomingCall** 
+* **Urgent**
 
-* **Reminder**: The notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played.
-* **Alarm**: In addition to the reminder behaviors, alarms will additionally loop audio with a default alarm sound.
-* **IncomingCall**: Incoming call notifications are displayed full screen on Windows Mobile devices. Otherwise, they have the same behaviors as alarms except they use ringtone audio and their buttons are styled differently.
+### Reminders
+In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -853,6 +984,86 @@ new ToastContentBuilder()
 
 ---
 
+
+### Alarms
+Alarms behave the same as reminders, except alarms will additionally loop audio with a default alarm sound. You must provide at least one button on your toast notification. Otherwise, the toast will be treated as a normal toast.
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Alarm)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="alarm" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
+
+
+
+### Incoming calls
+Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
+
+![Incoming call toast notification](images/toast-incoming-call.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.IncomingCall)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="incomingCall" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
+
+### Important Notifications
+
+> [!IMPORTANT]
+> **Requires**: You must be running Windows Insider Preview Build 22546 or higher to use important notifications.
+
+Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
+
+
+![Important toast notification](images/important-toast-notification.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Urgent)
+    ...
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast scenario="urgent" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+---
 
 ## Localization and accessibility
 

@@ -12,7 +12,7 @@ ms.date: 03/30/2021
 
 # Get started with Nuxt.js on Windows
 
-A guide to help you install the Nuxt.js web framework and get up and running on Windows 10.
+A guide to help you install the Nuxt.js web framework and get up and running on Windows.
 
 Nuxt.js is a framework for creating server-rendered JavaScript apps based on Vue.js, Node.js, Webpack and Babel.js. It was inspired by Next.js. It is basically a project boilerplate for Vue. Just like Next.js, it is crafted with attention to best practices and allows you to create "universal" web apps in a simple, consistent way, with hardly any configuration. These "universal" server-rendered web apps are also sometimes called “isomorphic”, meaning that code is shared between the client and server.
 

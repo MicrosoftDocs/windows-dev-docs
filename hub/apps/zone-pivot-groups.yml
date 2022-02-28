@@ -5,18 +5,18 @@ groups:
   prompt: "Choose the type of WinUI 3 application you want to build:"
   pivots:
     - id: winui3-packaged-csharp
-      title: C# Packaged
+      title: C# packaged
     - id: winui3-unpackaged-csharp
-      title: C# Unpackaged
+      title: C# unpackaged
     - id: winui3-packaged-cpp
-      title: C++ Packaged
+      title: C++ packaged
     - id: winui3-unpackaged-cpp
-      title: C++ Unpackaged
+      title: C++ unpackaged
 - id: winui3-version-c#-only
   title: WinUI 3 application type
   prompt: "Choose the type of WinUI 3 application you want to build:"
   pivots:
     - id: winui3-packaged-csharp
-      title: C# Packaged
+      title: C# packaged
     - id: winui3-unpackaged-csharp
-      title: C# Unpackaged
+      title: C# unpackaged

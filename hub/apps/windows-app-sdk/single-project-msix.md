@@ -34,7 +34,7 @@ Single-project MSIX only supports a single executable in the generated MSIX pack
 
 ## Install the single-project MSIX packaging tools
 
-The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install developer tools](set-up-your-development-environment.md).
+The single-project MSIX packaging tools, which include project templates you can use to create new MSIX-packaged WinUI 3 apps, are included with the Windows App SDK extension for Visual Studio. For installation instructions for the SDK, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 **Windows App SDK 0.8 and C# version of 1.0 Preview 3:** You must install the single-project MSIX packaging tools extension separately.
 
@@ -44,7 +44,7 @@ The single-project MSIX packaging tools, which include project templates you can
 
 ## Create a new project
 
-If you're using Windows App SDK 1.0 Preview 2 or later, you can create a new WinUI 3-based project that includes single-project MSIX support by using the **Blank App, Packaged (WinUI 3 in Desktop)** template. For more information, see [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
+If you're using Windows App SDK 1.0 Preview 2 or later, you can create a new WinUI 3-based project that includes single-project MSIX support by using the **Blank App, Packaged (WinUI 3 in Desktop)** template. For more information, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 ## Modify an existing project
 
@@ -54,7 +54,7 @@ Follow these steps to modify an existing desktop WinUI 3 project created using t
 
 If you already have a solution for a [WinUI 3 in Desktop](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3) app that includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), open that solution in Visual Studio now.
 
-Otherwise, create a new WinUI 3 in Desktop project in Visual Studio by following the instructions in [Create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
+Otherwise, create a new WinUI 3 in Desktop project in Visual Studio by following the instructions in [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 ![A project using the packaging project](images/single-project-packaging-project.png)
 

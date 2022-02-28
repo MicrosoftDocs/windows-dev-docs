@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK 
 
-**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md). You can also follow an [advanced tutorial](tutorial-unpackaged-deployment.md) in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs.
+**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also follow an [advanced tutorial](tutorial-unpackaged-deployment.md) in which you configure a non-MSIX packaged app to load the Windows App SDK runtime and call Windows App SDK APIs.
 
 This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
@@ -22,7 +22,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 
 ## Prerequisites
 
-1. [Install Visual Studio](set-up-your-development-environment.md).
+1. [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
 3. C# projects using the **1.0 Preview version 1** of the Windows App SDK (or later) must use the following .NET SDK: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 4. C# projects using the **1.0 Experimental version** of the Windows App SDK must use one of the following .NET SDKs:

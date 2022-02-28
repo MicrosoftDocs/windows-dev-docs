@@ -73,7 +73,7 @@ Run experiments in your apps to measure the effectiveness of feature changes bef
     :::column span="2":::
 **App feedback**
 
-Invite your Windows 10/11 customers to tell you what they think by directing them to the Feedback Hub, where they can submit problems, suggestions, and upvotes. Then review and respond to their feedback in the dashboard.
+Invite your Windows 10 or Windows 11 customers to tell you what they think by directing them to the Feedback Hub, where they can submit problems, suggestions, and upvotes. Then review and respond to their feedback in the dashboard.
 
 [Get feedback](respond-to-customer-feedback.md)
     :::column-end:::

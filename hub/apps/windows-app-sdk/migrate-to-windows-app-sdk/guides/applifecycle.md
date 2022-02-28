@@ -71,9 +71,9 @@ public static class Program
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.STAThreadAttribute]
     // Replaces the standard App.g.i.cs.
-    // We must declare Main to be async, as we want to await 
-    // another async function call.
-    static async Task<int> Main(string[] args)
+    // Note: We can't declare Main to be async because in a WinUI app
+    // that prevents Narrator from reading XAML elements.
+    static void Main(string[] args)
     {
         XamlCheckProcessRequirements();
 
@@ -107,8 +107,6 @@ public static class Program
                 new App();
             });
         }
-
-        return 0;
     }
 }
 #endif

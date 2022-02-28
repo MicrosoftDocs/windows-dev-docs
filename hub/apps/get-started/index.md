@@ -24,9 +24,9 @@ The Windows UI Library (WinUI) 3 is the latest and recommended user interface (U
 WinUI 3 is available as part of the **[Windows App SDK](../windows-app-sdk/index.md)**. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any C++ Win32 or C# .NET app on a broad set of target Windows OS versions.
 
 > [!div class="button"]
-> [Start by installing developer tools](../windows-app-sdk/set-up-your-development-environment.md)
+> [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
-If you have already installed the required developer tools, you are ready to [create your first WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md).
+If you have already installed the required developer tools, you are ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 
 ## Other app types
