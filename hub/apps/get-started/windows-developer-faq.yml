@@ -25,7 +25,7 @@ sections:
         # pending product signoff
      - question: What's the latest and recommended way to build Windows Apps?
        answer: | 
-          - **Windows:** Windows App SDK + WinUI 3 are the future of Windows app development. 
+          - **Windows:** Windows App SDK + WinUI 3 are the future of Windows app development. This technology combination succeeds UWP + WinUI 2.
           - **Cross-platform:** .NET MAUI lets you build cross-platform apps that use WinUI 3 when running on Windows.
           - **React developers:** We're working on supporting WinUI 3 in React Native on Windows. 
           - **Web developers:** WebView2 gives your web applications a way to feel like Windows desktop apps while accessing the Windows platform and Windows App SDK.  
