@@ -366,11 +366,6 @@ sections:
        answer: |
           WinRT refers to a type of API. WinRT APIs are the evolution of COM APIs, and they're alive and kicking. WinAppSDK and WinUI 3 APIs are WinRT APIs.
          # pending product signoff
-     - question: When should I migrate a WinRT app to WinUI 3? Is guidance available?
-       answer: |
-          TODO
-         # pending product signoff
-
 
  - name: Release notes, future plans, and roadmaps
    questions:
