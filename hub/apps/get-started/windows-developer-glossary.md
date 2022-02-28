@@ -79,8 +79,9 @@ Native compilation refers to applications compiled into a binary that runs direc
 The codename for the Windows App SDK. No longer in use.
 
 <!--pending product signoff -->
+<!-- cc howard k, peter torr, andrew leader, mike hillberg -->
 ##### Packaged app
-Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer.
+Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer. See also: Unpackaged app, Sparsed app (links pending)
 
 <!--pending product signoff -->
 ##### React Native
@@ -105,10 +106,6 @@ Apps that don't use MSIX. They're typically installed and updated through `.exe`
 <!--pending product signoff -->
 ##### Visual Studio extension (VSIX)
 Lets you create, package, and deploy Visual Studio extensions. [Get started with the VSIX Project template](https://docs.microsoft.com/visualstudio/extensibility/getting-started-with-the-vsix-project-template).
-
-<!--pending product signoff -->
-##### Visual Studio
-An IDE that lets you create, edit, debug, build, and publish Windows apps. [Welcome to the Visual Studio IDE](https://docs.microsoft.com/visualstudio/get-started/visual-studio-ide).
 
 <!--pending product signoff -->
 ##### WebView2
