@@ -152,11 +152,12 @@ sections:
          # pending product signoff
      - question: Can I do everything that I can do with WinUI 2 using WinUI 3?
        answer: |
-          Not quite. WinUI 3 isn't an in-place upgrade of WinUI 2. WinUI 3 is a new technology that's meant to replace WinUI 2 as we work towards approximate feature parity between UWP / WinUI 2 and Windows App SDK / WinUI 3.
+          Not quite. WinUI 3 isn't an in-place upgrade of WinUI 2. WinUI 3 is a new technology that replaces WinUI 2. We're working towards approximate feature parity between UWP / WinUI 2 and Windows App SDK / WinUI 3.
          # pending product signoff
      - question: Can I use WinUI 3 without using Windows App SDK?
        answer: |
           No. Since WinUI 3 is part of the Windows App SDK, by using WinUI 3 you're actually using the Windows App SDK.
+        # pending product signoff
      - question: Can I use WinUI 3 in Win32 apps?
        answer: |
           Yes, but the WinUI 3 UI controls can't be mixed with Win32 UI controls.
@@ -180,12 +181,12 @@ sections:
          # pending product signoff
      - question: Can I use Mica (Windows 11) or Acrylic (Windows 10) backgrounds in apps built with Windows App SDK?
        answer: |
-          Not yet. This is currently in scope for Windows App SDK v1.1.
+          Not yet.
          # pending product signoff
      - question: Does WinUI 3 use XAML markup, like UWP and Windows Presentation Foundation (WPF)?
        answer: |
-          Yes, there are many benefits (including designability) to representing your WinUI 3 UI in the form of declarative XAML markup. But (like with UWP and WPF) you can also use WinUI 3 types using imperative code (C#) where doing so is necessary.
-
+          Yes, there are many benefits (including designability) to representing your WinUI 3 UI in the form of declarative XAML markup. But you can also use WinUI 3 types using imperative code (C#) where doing so is necessary, just like you can with UWP and WPF.
+        # pending product signoff
  - name: UWP and WinUI 2
    questions: 
      - question: Can UWP apps be distributed outside of the Microsoft Store?
