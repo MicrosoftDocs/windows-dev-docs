@@ -50,7 +50,7 @@ In Windows 11, Settings is a good example of an app that uses a left navigation 
 
 :::image type="content" source="images/tab-view-silhouette.png" alt-text="An example of a tab view app":::
 
-A [TabView](../controls/tab-view.md) can integrate with the app’s [base layer](../signature-experiences/layering.md), and [title bar](../shell/title-bar.md)control. This brings more focus to the content area’s primary task, in this case code composition and editing.
+A [TabView](../controls/tab-view.md) can integrate with the app’s [base layer](../signature-experiences/layering.md), and [title bar](/windows/apps/develop/title-bar)control. This brings more focus to the content area’s primary task, in this case code composition and editing.
 
 This example depicts a text editor using 12epx margins to compliment the utility of the app.
 
