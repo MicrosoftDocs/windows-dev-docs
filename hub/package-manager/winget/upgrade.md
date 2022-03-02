@@ -53,6 +53,7 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--all** | Updates all available packages to the latest application. |
+| **--include-unknown** | Upgrade packages even if their current version cannot be determined. |
 ### Example queries
 
 The following example upgrades a specific version of an application.
