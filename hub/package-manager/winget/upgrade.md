@@ -54,6 +54,7 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--all** | Updates all available packages to the latest application. |
 | **--include-unknown** | Upgrade packages even if their current version cannot be determined. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 ### Example queries
 
 The following example upgrades a specific version of an application.

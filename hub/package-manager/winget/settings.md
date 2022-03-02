@@ -135,6 +135,26 @@ The `downloader` setting controls which code is used when downloading packages. 
 }
 ```
 
+### logging
+
+The `logging` settings control the level of detail in log files. `--verbose-logs` will override this setting and always creates a verbose log.
+
+
+```json
+"logging": {
+    "level": "verbose"
+}
+```
+
+#### level
+The following logging levels are available. Defaults to `info` if the value is not set or is invalid. 
+
+- verbose
+- info
+- warning
+- error
+- critical
+
 ## Enabling experimental features
 
 To discover which experimental features are available, go to [https://aka.ms/winget-settings](https://aka.ms/winget-settings) where you can see the experimental features available to you.

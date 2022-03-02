@@ -56,6 +56,7 @@ The options allow you to customize the install experience to meet your needs.
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ### Example queries
 
