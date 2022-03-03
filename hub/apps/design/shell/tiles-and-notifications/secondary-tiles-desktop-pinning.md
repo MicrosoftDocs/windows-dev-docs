@@ -1,16 +1,17 @@
 ---
-description: Desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: Pin secondary tiles from desktop apps
+description: A desktop application such as a Windows App SDK (using WinUI 3), Windows Presentation Foundation (WPF), or Windows Forms (WinForms) app can pin a secondary tile by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is formerly known as Desktop Bridge.
 label: Pin secondary tiles from desktop apps
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 03/03/2022
 ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
 ms.localizationpriority: medium
 ---
+
 # Pin secondary tiles from desktop apps
 
-Desktop applications such as Windows App SDK (using WinUI 3), Windows Presentation Foundation (WPF), and Windows Forms (WinForms) apps can pin secondary tiles by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is also previously known as Desktop Bridge.
+A desktop application such as a Windows App SDK (using WinUI 3), Windows Presentation Foundation (WPF), or Windows Forms (WinForms) app can pin a secondary tile by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is formerly known as Desktop Bridge.
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
@@ -21,7 +22,7 @@ Adding a secondary tile from your Windows App SDK, WPF, or WinForms application 
 
 ## Package your app
 
-If you are creating a Windows App SDK application with WinUI 3, you must use a packaged application. There are no extra steps required to package your app if you start with the packaged app template.
+If you're creating a Windows App SDK application with WinUI 3, you must use a packaged application to pin secondary tiles. There are no extra steps required to package your app if you start with the packaged app template.
 
 If you're using WPF or WinForms, and you haven't packaged your app with the Desktop Bridge, then you'll need to do that before you can use any Windows Runtime APIs (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)).
 
@@ -38,7 +39,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
     </PropertyGroup>
     ```
 
-2. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
+1. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
 
     ```csharp
     // Initialize the tile with required arguments
@@ -50,14 +51,14 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-3. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```csharp
-    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-    WinRT.Interop.InitializeWithWindow.Initialize(tile, hwnd);
+    var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+    WinRT.Interop.InitializeWithWindow.Initialize(tile, hWnd);
     ```
 
-4. Finally, request to pin the tile as you would in a normal UWP app.
+1. Finally, request to pin the tile as you would in a normal UWP app.
 
     ```csharp
     // Pin the tile
@@ -76,11 +77,11 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IInitializeWithWindow
     {
-        void Initialize(IntPtr hwnd);
+        void Initialize(IntPtr hWnd);
     }
     ```
 
-2. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
+1. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
 
     ```csharp
     // Initialize the tile with required arguments
@@ -92,7 +93,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-3. Assign the window handle. This is the key step for desktop applications. Cast the object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
+1. Assign the window handle. This is the key step for desktop applications. Cast the object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
 
     ```csharp
     // Assign the window handle
@@ -100,7 +101,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
     initWindow.Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle);
     ```
 
-4. Finally, request to pin the tile as you would a normal UWP app.
+1. Finally, request to pin the tile as you would a normal UWP app.
 
     ```csharp
     // Pin the tile
@@ -111,22 +112,18 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
 ### [C++](#tab/cpp)
 
-1. Add a reference to the following header files in your code:
-    - **shobjidl.h** (contains the declaration of the *IInitializeWithWindow* interface) 
-    - **winrt/Windows.Foundation.h**
-    - **winrt/Windows.UI.StartScreen.h**
-    - **Microsoft.UI.Xaml.Window.h** (for WinUI 3 applications)
+1. Add the following includes to your `pch.h` file. `shobjidl.h` provides access to the **IInitializeWithWindow** interface; `Microsoft.UI.Xaml.Window.h` provides access to the WinUI 3 **Window** class.
 
-    ```cpp
+    ```cppwinrt
     #include <shobjidl.h>
-    #include <winrt/Windows.UI.StartScreen.h>
     #include <winrt/Windows.Foundation.h> 
+    #include <winrt/Windows.UI.StartScreen.h>
     #include <Microsoft.UI.Xaml.Window.h>
     ```
 
-2. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
+1. Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).
 
-    ```cpp
+    ```cppwinrt
     auto tile = Windows::UI::StartScreen::SecondaryTile(
             L"myTileId5391",
             L"Display name",
@@ -134,33 +131,25 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
             Windows::Foundation::Uri(L"ms-appx:///Assets/Square150x150Logo.png"),
             Windows::UI::StartScreen::TileSize::Default);
     ```
-3. Retrieve and pass in the window handle to pop the modal dialog. The code snippet below is an example of a helper method in a Windows App SDK app to get an HWND from a [WinUI 3 Window](/windows/winui/api/microsoft.ui.xaml.window) object.
 
-    ```cpp
-    // Helper method to retrieve the window handle a WinUI 3 Window object 
-    HWND GetHWNDFromWindow(winrt::Microsoft::UI::Xaml::Window const& window)
-    {
-        HWND nativeWindow{ nullptr };
-        winrt::check_hresult(window.as<IWindowNative>()->get_WindowHandle(&nativeWindow));
-        return nativeWindow;
-    }
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/winui/api/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
+
+    ```cppwinrt
+    auto windowNative{ this->try_as<::IWindowNative>() };
+    winrt::check_bool(windowNative);
+    HWND hWnd{ 0 };
+    windowNative->get_WindowHandle(&hWnd);
+
+    tile.as<IInitializeWithWindow>()->Initialize(hWnd);
     ```
 
-    The following code casts the secondary tile object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object and calls the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, passing the handle of the window that you want to be the owner for the modal dialog.
+1. Finally, request to pin the tile as you would in a normal UWP app.
 
-    ```cpp
-    // Pass in a Window object (this) to the helper method to get the HWND
-    HWND hwnd = GetHWNDFromWindow(*this);
-    tile.as<IInitializeWithWindow>()->Initialize(hwnd);
-    ```
-
-4. Finally, request to pin the tile as you would a normal UWP app.
-
-    ```cpp
+    ```cppwinrt
     // Pin the tile
     bool isPinned = co_await tile.RequestCreateAsync();
 
-    // TODO: Update UI to reflect whether user can now either unpin or pin
+    // Here, update UI to reflect whether user can now either unpin or pin
     ```
 
 ---
