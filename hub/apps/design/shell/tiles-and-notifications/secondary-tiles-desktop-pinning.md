@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Pin secondary tiles from desktop apps
 
-Desktop applications such as Windows App SDK (using WinUI 3), WPF, and Windows Forms apps can pin secondary tiles by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is also previously known as Desktop Bridge.
+Desktop applications such as Windows App SDK (using WinUI 3), Windows Presentation Foundation (WPF), and Windows Forms (WinForms) apps can pin secondary tiles by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is also previously known as Desktop Bridge.
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
@@ -23,17 +23,17 @@ Adding a secondary tile from your Windows App SDK, WPF, or WinForms application 
 
 If you are creating a Windows App SDK application with WinUI 3, you must use a packaged application. There are no extra steps required to package your app if you start with the packaged app template.
 
-If you are using WPF or WinForms and have not packaged your app with the Desktop Bridge, [you must do so first](/windows/msix/desktop/source-code-overview) before you can use any Windows Runtime APIs.
+If you're using WPF or WinForms, and you haven't packaged your app with the Desktop Bridge, then you'll need to do that before you can use any Windows Runtime APIs (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)).
 
 ## Initialize and pin a secondary tile using the IInitializeWithWindow interface
 
 ### [C# (.NET 5 or later)](#tab/csharpnet5)
 
-1. Make sure that the `TargetFramework` property in the project file is [set to a specific Windows SDK version to access the Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option), which provides access to the **WinRT.Interop** namespace. For example:
+1. In the project file, set the **TargetFramework** property to a value that gives you access to the Windows Runtime APIs (see [.NET 5 and later: Use the Target Framework Moniker option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option)). That includes access to the **WinRT.Interop** namespace (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp#available-via-target-framework-moniker)). For example:
 
     ```xml
     <PropertyGroup>
-      <!-- You can also target other versions of the Windows SDK and .NET, e.g. "net5.0-windows10.0.19041.0" -->
+      <!-- You can also target other versions of the Windows SDK and .NET; for example, "net5.0-windows10.0.19041.0" -->
       <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     </PropertyGroup>
     ```
@@ -50,26 +50,25 @@ If you are using WPF or WinForms and have not packaged your app with the Desktop
         TileSize.Default);
     ```
 
-3. Obtain the window handle using the **WinRT.Interop.WindowNative.GetWindowHandle** method, where **this** is a pointer to the Window object (whether a WinUI 3 window, WPF window, or WinForms window). Use the **WinRT.Interop.InitializeWithWindow.Initialize** method to initialize the secondary tile object with the specified window handle.
+3. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```csharp
     var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
     WinRT.Interop.InitializeWithWindow.Initialize(tile, hwnd);
     ```
 
-    See [Call WinRT COM interop interfaces from .NET 5 or later apps](/windows/apps/desktop/modernize/winrt-com-interop-csharp#configure-a-net-5-desktop-project-to-use-the-c-interop-classes) for more details on these methods.
-
-4. Finally, request to pin the tile as you would a normal UWP app.
+4. Finally, request to pin the tile as you would in a normal UWP app.
 
     ```csharp
     // Pin the tile
     bool isPinned = await tile.RequestCreateAsync();
 
-    // TODO: Update UI to reflect whether user can now either unpin or pin
+    // Here, update UI to reflect whether user can now either unpin or pin
     ```
+
 ### [C# (Earlier versions of .NET)](#tab/csharp)
 
-1. Declare the IInitializeWithWindow interface in your app's code with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) and Guid attribute as shown in the following C# example. This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.
+1. Declare the **IInitializeWithWindow** interface in your app's code with the [**ComImport**](/dotnet/api/system.runtime.interopservices.comimportattribute) and **Guid** attributes, as shown in the following C# example. For this example to compile, your code file will need a `using` directive for the **System.Runtime.InteropServices** namespace.
 
     ```csharp
     [ComImport]
@@ -175,7 +174,7 @@ Sending tile or badge notifications is the same as UWP apps. See [Send a local t
 
 ## Resources
 
-* [Full code sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [Secondary tile sample app](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Secondary tiles overview](secondary-tiles.md)
 * [Pin secondary tiles (UWP)](secondary-tiles-pinning.md)
 * [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
