@@ -222,6 +222,10 @@ items:
             href: develop/user-interface.md
           - name: Title bar
             href: develop/title-bar.md
+          - name: "Retrieve a window handle (HWND)"
+            href: develop/ui-input/retrieve-hwnd.md
+          - name: "Display Windows.*-namespace UI objects"
+            href: develop/ui-input/display-ui-objects.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"
