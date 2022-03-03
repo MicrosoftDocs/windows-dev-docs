@@ -52,7 +52,6 @@ The options allow you to customize the install experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to install to (if supported). |
 | **--force** | Overrides the installer hash check. Not recommended. |
-| **--dependency-source** | Find package dependencies using the specified source. |
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
