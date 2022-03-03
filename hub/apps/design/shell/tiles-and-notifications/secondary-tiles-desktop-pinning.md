@@ -30,6 +30,9 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
 ### [C# (.NET 5 or later)](#tab/csharpnet5)
 
+> [!NOTE]
+> This section is for WinUI 3; and for WPF/WinForms with .NET 5 or later.
+
 1. In the project file, set the **TargetFramework** property to a value that gives you access to the Windows Runtime APIs (see [.NET 5 and later: Use the Target Framework Moniker option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option)). That includes access to the **WinRT.Interop** namespace (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp#available-via-target-framework-moniker)). For example:
 
     ```xml
@@ -69,12 +72,15 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
 ### [C# (Earlier versions of .NET)](#tab/csharp)
 
-1. Declare the **IInitializeWithWindow** interface in your app's code with the [**ComImport**](/dotnet/api/system.runtime.interopservices.comimportattribute) and **Guid** attributes, as shown in the following C# example. For this example to compile, your code file will need a `using` directive for the **System.Runtime.InteropServices** namespace.
+> [!NOTE]
+> This section is for WPF/WinForms with a version of .NET earlier than 5.
+
+1. Use the [**ComImport**](/dotnet/api/system.runtime.interopservices.comimportattribute) and **Guid** attributes to declare the **IInitializeWithWindow** interface.
 
     ```csharp
     [ComImport]
     [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
-    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
     public interface IInitializeWithWindow
     {
         void Initialize(IntPtr hWnd);
@@ -93,21 +99,22 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-1. Assign the window handle. This is the key step for desktop applications. Cast the object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for the modal dialog. The following C# example shows how to pass the handle of your app’s main window to the method.
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```csharp
-    // Assign the window handle
+    var wih = new System.Windows.Interop.WindowInteropHelper(this);
+    var hWnd = wih.Handle; // For a WinForms window object, access the NativeWindow.Handle property instead.
     IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)tile;
-    initWindow.Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle);
+    initWindow.Initialize(hWnd);
     ```
 
-1. Finally, request to pin the tile as you would a normal UWP app.
+1. Finally, request to pin the tile as you would in a normal UWP app.
 
     ```csharp
     // Pin the tile
     bool isPinned = await tile.RequestCreateAsync();
 
-    // TODO: Update UI to reflect whether user can now either unpin or pin
+    // Here, update UI to reflect whether user can now either unpin or pin
     ```
 
 ### [C++](#tab/cpp)
