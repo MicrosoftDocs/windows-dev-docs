@@ -7,9 +7,6 @@ keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Window
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
-dev_langs:
-  - csharp
-  - cppwinrt
 ---
 
 # Retrieve a window handle (HWND)
@@ -20,7 +17,10 @@ The development and UI frameworks listed above are (behind the scenes) built on 
 
 There are several reasons to retrieve the **HWND** for a window in your WinUI 3, WPF, or WinForms desktop app. One example is to use the **HWND** to interoperate with certain system types in the **Windows.\*** namespaces. For more info, see [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
 
-## Windows UI Library (WinUI) 3, by using C#
+## WinUI 3 (also WPF/WinForms with .NET 5 or later) with C#
+
+> [!NOTE]
+> The code example in this section uses the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 5 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 The C# code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/winui/api/microsoft.ui.xaml.window) object. This example calls the **GetWindowHandle** method on the **WinRT.Interop.WindowNative** C# interop class. For more info about the C# interop classes, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
@@ -33,7 +33,7 @@ private async void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Windows UI Library (WinUI) 3, by using C++
+## WinUI 3 with C++
 
 The C++/WinRT code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/winui/api/microsoft.ui.xaml.window) object. This example calls the [**IWindowNative::get_WindowHandle**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) method.
 
@@ -53,25 +53,30 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 }
 ```
 
-## Windows Presentation Foundation (WPF), by using C#
+## WPF (earlier than .NET 5) with C#
 
 The C# code below shows how to retrieve the window handle (HWND) for a WPF window object. This example uses the [**WindowInteropHelper**](/dotnet/api/system.windows.interop.windowinterophelper) class.
 
 ```csharp
-var wih = new System.Windows.Interop.WindowInteropHelper(this);
-var hWnd = wih.Handle;
-Microsoft.UI.WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+// MainWindow.xaml.cs
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    var wih = new System.Windows.Interop.WindowInteropHelper(this);
+    var hWnd = wih.Handle;
+}
 ```
 
-> [!NOTE]
-> If you target .NET 5 or later, then you can also use the **WinRT.Interop.WindowNative** C# interop class in a WPF project. For more info, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+## WinForms (earlier than .NET 5) with C#
 
-## Windows Forms (WinForms)
+The C# code below shows how to retrieve the window handle (HWND) for a WinForms form object. This example uses the [**NativeWindow.Handle**](/dotnet/api/system.windows.forms.nativewindow.handle) property.
 
-To retrieve the window handle (HWND) for a WinForms window object, you can access the [**NativeWindow.Handle**](/dotnet/api/system.windows.forms.nativewindow.handle) property. The coding pattern is similar to the one shown above for WPF.
-
-> [!NOTE]
-> If you target .NET 5 or later, then you can also use the **WinRT.Interop.WindowNative** C# interop class in a WinForms project. For more info, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+```csharp
+// Form1.cs
+private void button1_Click(object sender, EventArgs e)
+{
+    var hWnd = this.Handle;
+}
+```
 
 ## Related topics
 

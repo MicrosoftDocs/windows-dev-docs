@@ -20,9 +20,9 @@ The C# interop classes listed in the next section ([Available C# interop classes
 
 When you create a new WinUI 3 project in Visual Studio (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)), your project is already configured, and you can start using all of the C# interop classes right away.
 
-### In other C# desktop project types (WPF or Windows Forms)
+### In other C# desktop project types (WPF or WinForms)
 
-For other .NET 5+ desktop project types, you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](/windows/apps/windows-app-sdk/). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
+For other .NET 5+ desktop project types&mdash;such as [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) or [Windows Forms (WinForms)](/dotnet/desktop/winforms/)&mdash;you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](/windows/apps/windows-app-sdk/). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
 
 1. Open the project file for your C# .NET 5+ desktop project.
 

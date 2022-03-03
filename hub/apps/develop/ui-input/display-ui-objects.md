@@ -7,9 +7,6 @@ keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Window
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
-dev_langs:
-  - csharp
-  - cppwinrt
 ---
 
 # Display Windows.\*-namespace UI objects
@@ -33,7 +30,10 @@ The interop code involves simply parenting the UI object to a window in your app
 
 The next sections contain code examples to display a [**FolderPicker**](/uwp/api/windows.storage.pickers.fileopenpicker). But it's the same technique to display any of the UI objects listed above.
 
-## Windows UI Library (WinUI) 3, by using C#
+## WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
+
+> [!NOTE]
+> The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 5 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c). Then, to *parent* the UI object that you want to display to a window, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
@@ -53,7 +53,7 @@ private async void ShowFolderPickerAsync(IntPtr hWnd)
 }
 ```
 
-## Windows UI Library (WinUI) 3, by using C++
+## WinUI 3 with C++
 
 The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c-1). Then, to *parent* the UI object that you want to display to a window, the code calls the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 

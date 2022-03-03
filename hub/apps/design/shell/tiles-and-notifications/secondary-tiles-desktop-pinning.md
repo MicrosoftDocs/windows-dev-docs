@@ -78,9 +78,11 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 1. Use the [**ComImport**](/dotnet/api/system.runtime.interopservices.comimportattribute) and **Guid** attributes to declare the **IInitializeWithWindow** interface.
 
     ```csharp
-    [ComImport]
-    [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
-    [InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
+    [System.Runtime.InteropServices.ComImport]
+    [System.Runtime.InteropServices.Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
+    [System.Runtime.InteropServices.InterfaceType(
+        System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown
+    )]
     public interface IInitializeWithWindow
     {
         void Initialize(IntPtr hWnd);
