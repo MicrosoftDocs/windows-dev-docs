@@ -78,9 +78,9 @@ landingContent:
           - text: Win32 API for the Windows SDK
             url: /windows/win32/api/
           - text: WinRT API for the Windows App SDK
-            url: https://review.docs.microsoft.com/windows/windows-app-sdk/api/winrt/?branch=release-0.8
+            url: /windows/windows-app-sdk/api/winrt/
           - text: Win32 API for the Windows App SDK
-            url: https://review.docs.microsoft.com/windows/windows-app-sdk/api/win32/?branch=release-0.8
+            url: /windows/windows-app-sdk/api/win32/
 
   - title: Deploy
     linkLists:
