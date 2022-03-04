@@ -43,6 +43,7 @@ The options allow you to customize the install experience to meet your needs.
 | **-v, --version**  |  Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |  
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **--scope**   |  Allows you to specify if the installer should target user or machine scope. |  
+| **-a, --architecture**   |  Select the architecture to install. | 
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
 | **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
@@ -54,6 +55,7 @@ The options allow you to customize the install experience to meet your needs.
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ### Example queries
 
