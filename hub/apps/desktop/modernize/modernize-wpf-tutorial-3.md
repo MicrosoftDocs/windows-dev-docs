@@ -12,7 +12,7 @@ ms.custom: RS5, 19H1
 
 This is the third part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md). This article assumes you have already completed [part 2](modernize-wpf-tutorial-2.md).
 
-In the fictional scenario of this tutorial, the Contoso development team wants to make it easier to choose the date for an expense report on a touch-enabled device. In this part of the tutorial, you will add a UWP [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view) control to the app. This is the same control that is used in the Windows 10 date and time functionality on the taskbar.
+In the fictional scenario of this tutorial, the Contoso development team wants to make it easier to choose the date for an expense report on a touch-enabled device. In this part of the tutorial, you will add a UWP [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view) control to the app. This is the same control that is used in the Windows date and time functionality on the taskbar.
 
 ![CalendarViewControl image](images/wpf-modernize-tutorial/CalendarViewControl.png)
 
@@ -225,4 +225,4 @@ However, the **WindowsXamlHost** control is a generic host control for *any* kin
 
 At this point in the tutorial, you have successfully replaced a WPF date time control with the UWP **CalendarView** control, which supports touch and digital pens in addition to mouse and keyboard input. Although the Windows Community Toolkit doesn't provide a wrapped version of the UWP **CalendarView** control that can be used directly in a WPF app, you were able to host the control by using the generic [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control.
 
-You are now ready for [Part 4: Add Windows 10 user activities and notifications](modernize-wpf-tutorial-4.md).
+You are now ready for [Part 4: Add Windows user activities and notifications](modernize-wpf-tutorial-4.md).

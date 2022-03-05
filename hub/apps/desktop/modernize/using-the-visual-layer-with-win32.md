@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ---
 # Using the Visual Layer with Win32
 
-You can use Windows Runtime Composition APIs (also called the [Visual layer](/windows/uwp/composition/visual-layer)) in your Win32 apps to create modern experiences that light up for Windows 10 users.
+You can use Windows Runtime Composition APIs (also called the [Visual layer](/windows/uwp/composition/visual-layer)) in your Win32 apps to create modern experiences that light up for Windows users.
 
 The complete code for this tutorial is available on GitHub: [Win32 HelloComposition sample](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition).
 
-Universal Windows Applications that need precise control over their UI composition have access to the [Windows.UI.Composition](/uwp/api/windows.ui.composition) namespace to exert fine grained control over how their UI is composed and rendered. This composition API is not limited to UWP apps, however. Win32 desktop applications can take advantage of the modern composition systems in UWP and Windows 10.
+Universal Windows Applications that need precise control over their UI composition have access to the [Windows.UI.Composition](/uwp/api/windows.ui.composition) namespace to exert fine grained control over how their UI is composed and rendered. This composition API is not limited to UWP apps, however. Win32 desktop applications can take advantage of the modern composition systems in UWP and Windows.
 
 ## Prerequisites
 
@@ -23,8 +23,8 @@ The UWP hosting API has these prerequisites.
 
 - We assume that you have some familiarity with app development using Win32 and UWP. For more info, see:
   - [Get Started with Win32 and C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-  - [Get started with Windows 10 apps](/windows/uwp/get-started/)
-  - [Enhance your desktop application for Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
+  - [Get started with Windows apps](/windows/uwp/get-started/)
+  - [Enhance your desktop application for Windows](/windows/uwp/porting/desktop-to-uwp-enhance)
 - Windows 10 version 1803 or later
 - Windows 10 SDK 17134 or later
 
@@ -375,8 +375,8 @@ When you run the app and click the button, you should see animated squares added
 
 - [Win32 HelloComposition sample (GitHub)](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)
 - [Get Started with Win32 and C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-- [Get started with Windows 10 apps](/windows/uwp/get-started/) (UWP)
-- [Enhance your desktop application for Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Get started with Windows apps](/windows/uwp/get-started/) (UWP)
+- [Enhance your desktop application for Windows](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
 - [Windows.UI.Composition namespace](/uwp/api/windows.ui.composition) (UWP)
 
 ## Complete code

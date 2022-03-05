@@ -8,15 +8,18 @@ ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ---
 
-# Part 4: Add Windows 10 user activities and notifications
+# Part 4: Add Windows user activities and notifications
 
 This is the fourth part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see [Tutorial: Modernize a WPF app](modernize-wpf-tutorial.md). This article assumes you have already completed [part 3](modernize-wpf-tutorial-3.md).
 
-In the previous parts of this tutorial you added UWP XAML controls to the app using XAML Islands. As a by product of this, you also enabled the app to call any WinRT API. This opens up the opportunity for the app to use many other features offered by Windows 10, not just UWP XAML controls.
+In the previous parts of this tutorial you added UWP XAML controls to the app using XAML Islands. As a by product of this, you also enabled the app to call any WinRT API. This opens up the opportunity for the app to use many other features offered by Windows, not just UWP XAML controls.
 
 In the fictional scenario of this tutorial, the Contoso development team has decided to add two new features to the app: activities and notifications. This part of the tutorial shows how to implement these features.
 
 ## Add a user activity
+
+>[!Note]
+> The timeline feature is discontinued since Windows 11
 
 In Windows 10, apps can track activities performed by the user such as opening a file or displaying a specific page. These activities are then made available through Timeline, a feature introduced in Windows 10 version 1803, which allows the user to quickly go back to the past and resume an activity they started previously.
 

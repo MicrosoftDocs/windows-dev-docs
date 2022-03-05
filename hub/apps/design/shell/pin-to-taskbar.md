@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 You can programmatically pin your own app to the taskbar, just like you can [pin your app to the Start menu](tiles-and-notifications/primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning. 
 
-![Screenshot of a Windows 10 task bar showing the app pinned there.](images/taskbar/taskbar.png)
+![Screenshot of a Windows 11 task bar showing the app pinned there.](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
 > **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or higher to use the taskbar APIs.
