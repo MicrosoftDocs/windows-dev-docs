@@ -26,7 +26,7 @@ There is overlap between the two tools. Often you can start exploring an issue i
 
 The Visual Studio Performance Profiler is a component of Visual Studio itself and is installable through the same [installation wizard](/visualstudio/install/install-visual-studio) as the rest of the development environment.
 
-The Windows Performance Toolkit is downloadable separately as a part of the [Windows Assessment and Deployment Kit](/windows-hardware/get-started/adk-install). However, the command-line Performance Recorder tool is pre-installed with Windows 10 and later as `wpr.exe` available on the default path variable from shells like PowerShell and the Command Prompt.
+The Windows Performance Toolkit is downloadable separately as a part of the [Windows Assessment and Deployment Kit](/windows-hardware/get-started/adk-install). However, the command-line Performance Recorder tool is pre-installed with Windows 10 and Windows 11 and later as `wpr.exe` available on the default path variable from shells like PowerShell and the Command Prompt.
 
 The Performance Analyzer is available as an [application in the Microsoft Store](https://www.microsoft.com/store/productId/9N0W1B2BXGNZ).
 

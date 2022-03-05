@@ -27,8 +27,8 @@ The following table lists various Windows app samples repositories along with a 
 | [Desktop Bridge to UWP samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Demonstrate the Desktop Conversion Extensions for converting classic desktop apps (such as Win32, Windows Forms, WPF) and games to UWP apps and games. |
 | [DirectX 12 graphics samples](https://github.com/Microsoft/DirectX-Graphics-Samples) | Demonstrate how to build graphics intensive apps on Windows using DirectX 12. |
 | [Windows Composition samples](https://github.com/microsoft/WindowsCompositionSamples) | Demonstrate how to use Windows.UI.Xaml and Windows.UI.Composition to make beautiful UWP apps. |
-| [Windows 10 samples for IoT](https://github.com/Microsoft/Windows-iotcore-samples) | Code samples to help you get started with developing for Windows on Devices. |
-| [Windows Community Toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit) | A collection of helper functions, custom controls, and app services. It simplifies and demonstrates common developer tasks when building apps for Windows 10.  |
+| [Windows samples for IoT](https://github.com/Microsoft/Windows-iotcore-samples) | Code samples to help you get started with developing for Windows on Devices. |
+| [Windows Community Toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit) | A collection of helper functions, custom controls, and app services. It simplifies and demonstrates common developer tasks when building apps for Windows.  |
 | [Windows task snippets](https://github.com/Microsoft/Windows-task-snippets) | Snippets of ready-to-use code that accomplish small, but useful, tasks of interest to UWP app developers. These snippets show simple solutions to common problems, and simple recipes to help you implement new app features. |
 | [Win2D](https://github.com/Microsoft/win2d) | Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration. It is available to C# and C++ developers, and utilizes the power of Direct2D, integrating seamlessly with XAML and CoreWindow. |
 
