@@ -76,7 +76,7 @@ Some of the benefits of using **AppWindow** even when working with a UI framewor
 
 This code example demonstrates how to retrieve an [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from a WinUI 3 window. To use the example, create a new **Blank App, Packaged (WinUI 3 in Desktop)** project, and paste the code in.
 
-**C#**. For more info about the **WinRT.Interop.WindowNative** class used in the code example, see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp). The code example also uses the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)).
+**C#**. The code example uses the **WinRT.Interop.WindowNative** and the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) classes (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)). Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
 
 For additional details on how to work with **AppWindow**, see the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
@@ -149,4 +149,5 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 
 * [Windowing functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing)
 * [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
 * [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)
