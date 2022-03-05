@@ -1,41 +1,52 @@
 ---
-title: Display Windows.\*-namespace UI objects
-description: In your desktop app, you can display many Windows Runtime (WinRT) user-interface (UI) objects that are in **Windows.\*** namespaces. For some of those types (pickers, popups, dialogs, and other UI objects), you just need to add a little bit of interoperation code. This topic shows you how.
+title: Display WinRT UI objects that depend on CoreWindow
+description: You can use certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects in your desktop app by adding a little bit of interoperation code.
 ms.topic: article
-ms.date: 03/02/2022
-keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Windows UI Library, WinUI, interop
+ms.date: 03/04/2022
+keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Windows UI Library, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Display Windows.\*-namespace UI objects
+# Display WinRT UI objects that depend on CoreWindow
 
-In your desktop app, you can display many Windows Runtime (WinRT) user-interface (UI) objects that are in **Windows.\*** namespaces. For some of those types (pickers, popups, dialogs, and other UI objects), you just need to add a little bit of interoperation code. This topic shows you how.
+Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](/windows/apps/desktop/modernize/desktop-to-uwp-supported-api#core-unsupported-classes)), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
-## Parent a UI object to a window handle (HWND)
+Your desktop app can be [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), or [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. Code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
-The following UI objects apply to this section:
+## Set the owner window handle (HWND) for a WinRT UI object
 
-* [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui#Windows_ApplicationModel_DataTransfer_DataTransferManager_ShowShareUI) method
-* [**Windows.Storage.Pickers.FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) class
-* [**Windows.Storage.Pickers.FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker) class
-* [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker) class
-* [**Windows.UI.Popups.PopupMenu**](/uwp/api/windows.ui.popups.popupmenu) class
+For classes that implement the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface (or the equivalent [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface), you can use that interface to set an owner window on the object before you display it. It's a two-step process.
 
-The interop code involves simply parenting the UI object to a window in your app. It's a two-step process.
+1. Decide which window will be the owner of the UI object that you want to display, and retrieve that window's HWND. For more details and code examples for this step, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
+2. Then call the appropriate interoperatability API (for C# or C++/WinRT) to set an owner window handle (HWND) for the WinRT UI object.
 
-1. Decide which window will be the parent of the UI object that you want to display, and retrieve that window's HWND. For more details and code examples for this step, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
-2. Then call the appropriate interoperatability API (for C# or C++/WinRT) to *parent* the UI object to the window handle (HWND).
+## For classes that implement IInitializeWithWindow
 
-The next sections contain code examples to display a [**FolderPicker**](/uwp/api/windows.storage.pickers.fileopenpicker). But it's the same technique to display any of the UI objects listed above.
+These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow):
 
-## WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
+* [**Windows.Devices.Enumeration.DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker)
+* [**Windows.Graphics.Capture.GraphicsCapturePicker**](/uwp/api/windows.graphics.capture.graphicscapturepicker)
+* [**Windows.Services.Store.StoreContext**](/uwp/api/windows.services.store.storecontext)
+* [**Windows.Storage.Pickers.FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker)
+* [**Windows.Storage.Pickers.FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker)
+* [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker)
+* [**Windows.UI.Popups.MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). But for new apps we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead.
+* [**Windows.UI.Popups.PopupMenu**](/uwp/api/windows.ui.popups.popupmenu)
+* [**Windows.UI.StartScreen.SecondaryTile**](/uwp/api/windows.ui.startscreen.secondarytile)
+
+> [!NOTE]
+> The list above is necessarily incomplete&mdash;refer to a type's documentation to see whether it implements **IInitializeWithWindow** (or an equivalent interop interface).
+
+The next sections contain code examples to display a [**FolderPicker**](/uwp/api/windows.storage.pickers.fileopenpicker). But it's the same technique to display any of the APIs listed above.
+
+### WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
 
 > [!NOTE]
 > The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 5 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
-The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c). Then, to *parent* the UI object that you want to display to a window, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c). Then, to set the owner window for the UI object that you want to display, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 ```csharp
 // MainWindow.xaml.cs
@@ -53,9 +64,9 @@ private async void ShowFolderPickerAsync(IntPtr hWnd)
 }
 ```
 
-## WinUI 3 with C++
+### WinUI 3 with C++
 
-The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c-1). Then, to *parent* the UI object that you want to display to a window, the code calls the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
+The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c-1). Then, to set the owner window for the UI object that you want to display, the code calls the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 ```cppwinrt
 // pch.h
@@ -80,11 +91,72 @@ winrt::fire_and_forget ShowFolderPickerAsync(HWND hWnd)
 }
 ```
 
+## For classes that implement IDataTransferManagerInterop
+
+The [**Windows.ApplicationModel.DataTransfer.DataTransferManager**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) class implements the [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface (which, like **IInitializeWithWindow**, lets you set an owner window).
+
+Instead of calling the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) method, you call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow), as shown in the code examples below.
+
+### WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
+
+```csharp
+// MainWindow.xaml.cs
+...
+public sealed partial class MainWindow : Window
+{
+    ...
+    private void myButton_Click(object sender, RoutedEventArgs e)
+    {
+        // `this` in `GetWindowHandle(this)` must be a reference to your current window
+        IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+        IDataTransferManagerInterop interop = 
+            Windows.ApplicationModel.DataTransfer.DataTransferManager.As<IDataTransferManagerInterop>();
+
+        // Show the Share UI
+        interop.ShowShareUIForWindow(windowHandle);
+    }
+
+    [System.Runtime.InteropServices.ComImport, System.Runtime.InteropServices.Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
+    [System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
+    interface IDataTransferManagerInterop
+    {
+        Windows.ApplicationModel.DataTransfer.DataTransferManager GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow, [System.Runtime.InteropServices.In] ref Guid riid);
+        void ShowShareUIForWindow(IntPtr appWindow);
+    }
+}
+...
+```
+
+### WinUI 3 with C++
+
+```cppwinrt
+// pch.h in a Windows App SDK app
+...
+#include <shobjidl_core.h>
+#include <microsoft.ui.xaml.window.h>
+#include <winrt/Windows.ApplicationModel.DataTransfer.h>
+...
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
+{
+    winrt::Microsoft::UI::Xaml::Window window{ *this };
+    auto windowNative{ window.as<::IWindowNative>() };
+    HWND hWnd{ 0 };
+    windowNative->get_WindowHandle(&hWnd);
+
+    auto interop = winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager, IDataTransferManagerInterop>();
+    interop->ShowShareUIForWindow(hWnd);
+}
+...
+```
+
 ## Related topics
 
 * [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
-* [DataTransferManager.ShowShareUI method](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui#Windows_ApplicationModel_DataTransfer_DataTransferManager_ShowShareUI)
-* [Windows.Storage.Pickers.FileOpenPicker class](/uwp/api/windows.storage.pickers.fileopenpicker)
-* [Windows.Storage.Pickers.FileSavePicker class](/uwp/api/windows.storage.pickers.filesavepicker)
-* [Windows.Storage.Pickers.FolderPicker class](/uwp/api/windows.storage.pickers.folderpicker)
-* [Windows.UI.Popups.PopupMenu class](/uwp/api/windows.ui.popups.popupmenu)
+* [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/)
+* [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
+* [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
+* [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)

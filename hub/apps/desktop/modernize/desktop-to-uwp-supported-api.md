@@ -91,51 +91,11 @@ The following classes are not supported in desktop apps because they have a `Get
 | [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
 | [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
 
-### Classes that use IInitializeWithWindow
+### Classes that implement IInitializeWithWindow
 
-Some WinRT classes require a [CoreWindow](/uwp/api/windows.ui.core.corewindow) object on which to call certain methods, typically to display a UI. Because the [CoreWindow](/uwp/api/windows.ui.core.corewindow) class is [not supported in desktop apps](#core-unsupported-classes), these WinRT classes cannot be used in desktop apps by default.
+Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](#core-unsupported-classes) above), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
-However, some of these classes implement the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface, which provides a way to use them in desktop apps. This interface enables you to specify the owner window for the operations that will be performed using the class. Examples of these classes include [PopupMenu](/uwp/api/Windows.UI.Popups.PopupMenu) and [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker). For more details, including a list of more WinRT classes that implement this interface, see [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow).
-
-The following examples demonstrate how to use the **IInitializeWithWindow** interface to specify the owner window for the [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class.
-
-#### [C# (.NET 5 and later)](#tab/csharp)
-
-> [!NOTE]
-> In C# apps that use .NET 5 and later, you can use the **WinRT.Interop.InitializeWithWindow** helper class instead of using the [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface directly. For more information, see [Call interop APIs from a .NET 5+ app](winrt-com-interop-csharp.md).
-
-In the call to `GetWindowHandle(this)`, the object you pass must be a Window (either a WinUI 3 Window, a WPF Window, or a WinForms Window). In the example below, we assume the code is being called from the Window code-behind, which is why `this` is used as the parameter. If you are calling this code from another file, you need to pass a reference to the window.
-
-```csharp
-var filePicker = new FileOpenPicker();
-
-// Get the current window's HWND by passing in a reference to the Window object
-var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-
-// Associate the HWND with the file picker
-WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hwnd);
-
-// Use file picker like normal!
-filePicker.FileTypeFilter.Add("*");
-var file = await filePicker.PickSingleFileAsync();
-```
-
-#### [C++](#tab/cpp)
-```cpp
-#include <shobjidl.h>
-#include <winrt/windows.storage.pickers.h>
-
-winrt::Windows::Foundation::IAsyncAction
-ShowFilePickerAsync(HWND hwnd)
-{
-    auto picker = winrt::Windows::Storage::Pickers::FileOpenPicker();
-    picker.as<IInitializeWithWindow>()->Initialize(hwnd);
-    picker.FileTypeFilter().Append(L".jpg");
-    auto file = co_await picker.PickSingleFileAsync();
-}
-```
-
----
+For more info (including a list of affected types), and code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
 ### Unsupported members
 

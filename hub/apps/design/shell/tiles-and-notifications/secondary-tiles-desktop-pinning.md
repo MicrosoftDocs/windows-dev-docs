@@ -18,7 +18,7 @@ A desktop application such as a Windows App SDK (using WinUI 3), Windows Present
 > [!IMPORTANT]
 > **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.
 
-Adding a secondary tile from your Windows App SDK, WPF, or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the desktop application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.
+Adding a secondary tile from your Windows App SDK, WPF, or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the desktop application doesn't configure the [**SecondaryTile**](/uwp/api/windows.ui.startscreen.secondarytile) object with the owner window, then Windows doesn't know where to draw the dialog, and the operation will fail.
 
 ## Package your app
 
@@ -46,7 +46,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
     ```csharp
     // Initialize the tile with required arguments
-    SecondaryTile tile = new SecondaryTile(
+    var tile = new Windows.UI.StartScreen.SecondaryTile(
         "myTileId5391",
         "Display name",
         "myActivationArgs",
@@ -54,7 +54,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```csharp
     var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
@@ -93,7 +93,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
     ```csharp
     // Initialize the tile with required arguments
-    SecondaryTile tile = new SecondaryTile(
+    var tile = new Windows.UI.StartScreen.SecondaryTile(
         "myTileId5391",
         "Display name",
         "myActivationArgs",
@@ -101,7 +101,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```csharp
     var wih = new System.Windows.Interop.WindowInteropHelper(this);
@@ -141,7 +141,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
             Windows::UI::StartScreen::TileSize::Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/winui/api/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/winui/api/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```cppwinrt
     auto windowNative{ this->try_as<::IWindowNative>() };

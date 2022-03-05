@@ -15,7 +15,7 @@ This topic shows you how, in a desktop app, to retrieve the window handle for a 
 
 The development and UI frameworks listed above are (behind the scenes) built on the [Win32 API](/windows/win32/). In Win32, a [window](/windows/win32/winmsg/about-windows) object is identified by a value known as a [window handle](/windows/win32/winmsg/about-windows#window-handle). And the type of a window handle is an **[HWND](/windows/win32/winprog/windows-data-types)** (although it surfaces in C# as an [**IntPtr**](/dotnet/api/system.intptr)). In any case, you'll hear the term **HWND** used as a shorthand for *window handle*.
 
-There are several reasons to retrieve the **HWND** for a window in your WinUI 3, WPF, or WinForms desktop app. One example is to use the **HWND** to interoperate with certain system types in the **Windows.\*** namespaces. For more info, see [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects).
+There are several reasons to retrieve the **HWND** for a window in your WinUI 3, WPF, or WinForms desktop app. One example is to use the **HWND** to interoperate with certain Windows Runtime (WinRT) objects that depend on a **CoreWindow** to display a user-interface (UI). For more info, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
 ## WinUI 3 (also WPF/WinForms with .NET 5 or later) with C#
 
@@ -80,7 +80,7 @@ private void button1_Click(object sender, EventArgs e)
 
 ## Related topics
 
-* [Display Windows.\*-namespace UI objects](/windows/apps/develop/ui-input/display-ui-objects)
+* [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects)
 * [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/)
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
