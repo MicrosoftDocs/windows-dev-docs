@@ -1,7 +1,7 @@
 ---
 title: Call interop APIs from a .NET 5+ app
 description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET 5+.
-ms.date: 02/08/2022
+ms.date: 03/07/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -74,7 +74,7 @@ The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/
 |[**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)|(**Windows.UI.ViewManagement**) **UIViewSettingsInterop**|
 |[**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop)|(**Windows.Security.Credentials.UI**) **UserConsentVerifierInterop**|
 |[**IWebAuthenticationCoreManagerInterop**](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop)|(**Windows.Security.Authentication.Web.Core**) **WebAuthenticationCoreManagerInterop**|
-|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|(**WinRT.Interop**) **WindowNative**|
+|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|WinUI 3 only<br/><br/>(**WinRT.Interop**) **WindowNative**<br/><br/>For alternatives for WPF and WinForms, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).|
 
 ## Code example
 
@@ -121,3 +121,4 @@ This section lists known issues and solutions for using the C# interop classes. 
 
 * [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
+* [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
