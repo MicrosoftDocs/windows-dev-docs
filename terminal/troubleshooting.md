@@ -20,7 +20,7 @@ If you click on the "settings" button in the dropdown, the Terminal will attempt
 
 ## Set your WSL distribution to start in the home `~` directory when launched
 
-By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL distributions, the file systems are now directly referenced, as of Windows Terminal [version 1.12.3472.0](https://github.com/microsoft/terminal/releases). You can use `/home/<Your Ubuntu Username>` to directly refer to your home folder. For example, the following setting will launch the "Ubuntu-20.04" distribution in its home file path:
+By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL distributions, the file systems can now be directly referenced, as of Windows Terminal [version 1.11.2921.0](https://github.com/microsoft/terminal/releases/tag/v1.11.2921.0). You can use `/home/<Your Ubuntu Username>` to directly refer to your home folder. For example, the following setting will launch the "Ubuntu-20.04" distribution in its home file path:
 
 ```json
 {
@@ -40,8 +40,6 @@ If you are using an earlier version of Windows Terminal, WSL may require using t
 }
 ```
 
-> [!IMPORTANT]
-> On newer versions of Windows, `startingDirectory` can accept Linux-style paths.
 
 ## Setting the tab title
 
