@@ -78,15 +78,10 @@ Create a new tab command for each profile.
 
 ```json
 {
-    "name": "New tab",
-    "commands": [
-        {
-            "iterateOn": "profiles",
-            "icon": "${profile.icon}",
-            "name": "${profile.name}",
-            "command": { "action": "newTab", "profile": "${profile.name}" }
-        }
-    ]
+    "iterateOn": "profiles",
+    "icon": "${profile.icon}",
+    "name": "${profile.name}",
+    "command": { "action": "newTab", "profile": "${profile.name}" }
 }
 ```
 
@@ -109,22 +104,33 @@ The above command would behave like the following three commands:
 
 ```json
 {
-    "name": "New tab...",
+    "icon": null,
+    "name": "Command Prompt",
+    "command": { "action": "newTab", "profile": "Command Prompt" }
+},
+{
+    "icon": "C:\\path\\to\\icon",
+    "name": "PowerShell",
+    "command": { "action": "newTab", "profile": "PowerShell" }
+},
+{
+    "icon": null,
+    "name": "Ubuntu",
+    "command": { "action": "newTab", "profile": "Ubuntu" }
+}
+```
+
+It's also possible to combine nested and iterable commands. For example, you can combine the three "new tab" commands above under a single "New tab" entry in the command palette, as shown in the image above, in the following way:
+
+```json
+{
+    "name": "New tab",
     "commands": [
         {
-            "icon": null,
-            "name": "Command Prompt",
-            "command": { "action": "newTab", "profile": "Command Prompt" }
-        },
-        {
-            "icon": "C:\\path\\to\\icon",
-            "name": "PowerShell",
-            "command": { "action": "newTab", "profile": "PowerShell" }
-        },
-        {
-            "icon": null,
-            "name": "Ubuntu",
-            "command": { "action": "newTab", "profile": "Ubuntu" }
+            "iterateOn": "profiles",
+            "icon": "${profile.icon}",
+            "name": "${profile.name}",
+            "command": { "action": "newTab", "profile": "${profile.name}" }
         }
     ]
 }
