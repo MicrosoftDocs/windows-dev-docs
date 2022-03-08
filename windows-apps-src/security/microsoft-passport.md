@@ -232,7 +232,7 @@ When the app attempts to access a protected backend service, the service sends a
 
 In addition to checking the keys, the service can also check the key attestation and discern if there are any limitations invoked on how the keys are stored on the device. For example, when the device uses TPM to protect the keys, it is more secure than devices storing the keys without TPM. The backend logic could decide, for example, that the user is only allowed to transfer a certain amount of money when no TPM is used to reduce the risks.
 
-Attestation is only available for devices with a TPM chip that’s version 2.0 or higher. Therefore, you need to take into account that this information might not be available on every device.
+Attestation is only available for devices with a TPM chip that’s version 2.0 or later. Therefore, you need to take into account that this information might not be available on every device.
 
 The client workflow might look like the following chart:
 

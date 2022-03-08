@@ -44,7 +44,7 @@ You can use the package versioning rules to gradually move your customers to a s
 | 4          | -   Package version: 2.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0   | -   All customers on all device families on Windows 10 build v10.0.10240.0 and above will get package 2.0.0.0 |
 
 > [!NOTE]
->  In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or higher and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.
+>  In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or later and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.
 
 ### Using version numbering to roll back to a previously-shipped package for new acquisitions
 

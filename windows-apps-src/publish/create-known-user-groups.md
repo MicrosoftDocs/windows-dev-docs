@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Known user groups let you add specific people to a group, using the email address associated with their Microsoft account. These known user groups are most often used to distribute specific packages to a selected group of people with [package flights](package-flights.md), or for distribution of a submission to a [private audience](choose-visibility-options.md#audience). They can also be used for engagement campaigns, such as sending [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of specific customers.
 
-In order to be counted as a member of the group, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide. To download the app with package flighting, group members must be using a version of Windows 10 or Windows 11 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One). With private audience submissions, group members must be using Windows 10, version 1607 or higher (including Xbox One).
+In order to be counted as a member of the group, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide. To download the app with package flighting, group members must be using a version of Windows 10 or Windows 11 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One). With private audience submissions, group members must be using Windows 10, version 1607 or later (including Xbox One).
 
 ## To create a known user group
 

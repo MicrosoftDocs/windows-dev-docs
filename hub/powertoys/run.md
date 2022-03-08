@@ -16,7 +16,7 @@ To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _
 
 ## Requirements
 
-- Windows 10 version 1903 or higher
+- Windows 10 version 1903 or later
 - After installing, PowerToys must be enabled and running in the background for this utility to work
 
 ## Features

@@ -404,7 +404,7 @@ float4 main(sPSInput input) : SV_TARGET
 ```
 
 > [!WARNING]
-> The compiled pixel shader contains 32 arithmetic instructions and 1 texture instruction. This shader should perform well on desktop computers and higher-end tablets. However, a lower-end computer might not be able to process this shader and still provide an interactive frame rate. Consider the typical hardware of your target audience and design your shaders to meet the capabilities of that hardware.
+> The compiled pixel shader contains 32 arithmetic instructions and 1 texture instruction. This shader should perform well on desktop computers and later-end tablets. However, a lower-end computer might not be able to process this shader and still provide an interactive frame rate. Consider the typical hardware of your target audience and design your shaders to meet the capabilities of that hardware.
 
  
 

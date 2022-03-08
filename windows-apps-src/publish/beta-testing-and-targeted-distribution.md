@@ -25,7 +25,7 @@ Whichever method you choose, here are some things to keep in mind as you beta te
 
 If you want to let testers use your app before it’s available to others, and make sure that no one else can see its listing, use the **Private audience** option under [Visibility](choose-visibility-options.md) (on the **Pricing and availability** page of your submission). This is the only method that lets you distribute your app to testers while completely preventing anyone else from seeing the app’s Store listing, even if they were able to type in its direct link. 
 
-The **Private audience** option can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or higher (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
+The **Private audience** option can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or later (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
 
 For more info, see [Private audience](choose-visibility-options.md#audience).
 

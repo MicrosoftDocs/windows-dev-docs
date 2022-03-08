@@ -27,9 +27,9 @@ If you're ready to go through each task, let's start.
 
 You'll need these:
 
-* A test Virtual Machine (VM) that runs Windows 10, version 1607 or higher. You'll debug your app against this test VM.
+* A test Virtual Machine (VM) that runs Windows 10, version 1607 or later. You'll debug your app against this test VM.
 
-* A development computer that runs Windows 10, version 1607 or higher. This could be your test VM if you have Visual Studio installed on it.
+* A development computer that runs Windows 10, version 1607 or later. This could be your test VM if you have Visual Studio installed on it.
 
 ## Setup your development environment
 

@@ -21,7 +21,7 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
 
 1. [Install Visual Studio Code](https://code.visualstudio.com) (or your code editor of choice).
 
-2. [Install Android Studio for Windows](https://developer.android.com/studio). Android Studio installs the latest Android SDK by default. React Native requires Android 6.0 (Marshmallow) SDK or higher. We recommend using the latest SDK.
+2. [Install Android Studio for Windows](https://developer.android.com/studio). Android Studio installs the latest Android SDK by default. React Native requires Android 6.0 (Marshmallow) SDK or later. We recommend using the latest SDK.
 
 3. Create environment variable paths for the Java SDK and Android SDK:
     - In the Windows search menu, enter: "Edit the system environment variables", this will open the **System Properties** window.

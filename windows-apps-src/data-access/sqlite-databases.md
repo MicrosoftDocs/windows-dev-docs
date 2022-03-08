@@ -50,7 +50,7 @@ Use one of the following sections depending on the minimum version of the Window
 
 ### The minimum version of your project does not target the Fall Creators Update
 
-If you're using Visual Studio 2015, click **Help**->**About Microsoft Visual Studio**. Then in the list of installed programs, make sure that you have NuGet package manager version of **3.5** or higher. If your version number is lower than that, install a later version of NuGet [here](https://www.nuget.org/downloads). On that page, you'll find all of the versions of Nuget listed beneath the **Visual Studio 2015** heading.
+If you're using Visual Studio 2015, click **Help**->**About Microsoft Visual Studio**. Then in the list of installed programs, make sure that you have NuGet package manager version of **3.5** or later. If your version number is lower than that, install a later version of NuGet [here](https://www.nuget.org/downloads). On that page, you'll find all of the versions of Nuget listed beneath the **Visual Studio 2015** heading.
 
 Next, add class library to your solution. You don't have to use a class library to contain your data access code, but we'll use one our example. We'll name the library **DataAccessLibrary** and we'll name the class in the library to **DataAccess**.
 
@@ -60,7 +60,7 @@ Right-click the solution, and then click **Manage NuGet Packages for Solution**.
 
 ![Screenshot of the Solution Explorer panel with the project right-clicked and the Manage NuGet Packages for Solution option highlighted.](images/manage-nuget.png)
 
-If you're using Visual Studio 2015, Choose the **Installed** tab, and make sure that the version number of the **Microsoft.NETCore.UniversalWindowsPlatform** package is **5.2.2** or higher.
+If you're using Visual Studio 2015, Choose the **Installed** tab, and make sure that the version number of the **Microsoft.NETCore.UniversalWindowsPlatform** package is **5.2.2** or later.
 
 ![Version of .NETCore](images/package-version.png)
 

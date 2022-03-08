@@ -10,16 +10,16 @@ ms.localizationpriority: medium
 # Respond to customer reviews
 
 
-You can respond to reviews of your app to let customers know you’re listening to their feedback. With a review response, you can tell customers about the features you’ve added or bugs you’ve fixed based on their comments, or get more specific feedback on how to improve your app. Your responses will be displayed in the Microsoft Store for all Windows 10 customers to see. You can also choose to send your response by email to the customer (if they haven’t opted out and are using a device running Windows 10, version 1803 or higher).
+You can respond to reviews of your app to let customers know you’re listening to their feedback. With a review response, you can tell customers about the features you’ve added or bugs you’ve fixed based on their comments, or get more specific feedback on how to improve your app. Your responses will be displayed in the Microsoft Store for all Windows 10 customers to see. You can also choose to send your response by email to the customer (if they haven’t opted out and are using a device running Windows 10, version 1803 or later).
 
 To view your app's reviews and provide responses, find the app in [Partner Center](https://partner.microsoft.com/dashboard). In the left navigation menu, expand **Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md). Select **Respond to review** to provide your response.
 
 > [!TIP]
 > In addition to using Partner Center to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md).
 
-By default, your response will be posted in the Store, directly below the original customer review. These responses will be visible to any customer viewing the Store on a Windows 10 or Windows 11 device. If the customer who left the review is using a device running Windows 10, version 1803 or higher, and they haven't opted out of receiving email responses, a copy of your response will also be sent to that customer by email.  You'll need to provide a valid email address in order to submit your response, which we will include in the email to the customer. They can then use this email address to contact you directly.
+By default, your response will be posted in the Store, directly below the original customer review. These responses will be visible to any customer viewing the Store on a Windows 10 or Windows 11 device. If the customer who left the review is using a device running Windows 10, version 1803 or later, and they haven't opted out of receiving email responses, a copy of your response will also be sent to that customer by email.  You'll need to provide a valid email address in order to submit your response, which we will include in the email to the customer. They can then use this email address to contact you directly.
 
-If you don't want your response to appear in the Store, and instead want to respond only via email to the customer, uncheck the **Make this response public** box. Note that you will not be able to uncheck this box if the customer has opted out of receiving email responses and/or if they are using a device that is not running Windows 10, version 1803 or higher.
+If you don't want your response to appear in the Store, and instead want to respond only via email to the customer, uncheck the **Make this response public** box. Note that you will not be able to uncheck this box if the customer has opted out of receiving email responses and/or if they are using a device that is not running Windows 10, version 1803 or later.
 
 ## Guidelines for responses
 

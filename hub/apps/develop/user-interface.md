@@ -74,9 +74,9 @@ The table below shows a brief summary of a few main capabilities between these U
 | Capability   | WinUI 3   | WinUI 2/UWP      | WPF    | WinForms      |
 |--------------|-----------|------------------|--------|---------------|
 | Languages supported   | C#/.NET 5, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
-| Devices supported   | PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon | All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
-| Inputs supported    | All Windows 10 inputs supported      | All Windows 10 inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
-| Windows OS version supported | Windows 10 version 1809 and higher  | Windows 10 version 1703 and higher    | Windows XP and higher     | Windows XP and higher   |
+| Devices supported   | PCs (incl. laptops and tablets), support for all Windows devices coming soon | All Windows devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
+| Inputs supported    | All Windows inputs supported      | All Windows inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
+| Windows OS version supported | Windows 10 version 1809 and later  | Windows 10 version 1703 and later    | Windows XP and later     | Windows XP and later   |
 | WebView support   | Chromium-based WebView2         | Non-chromium WebView       | WebView2 support coming soon   | WebView2 support coming soon     |
 | Open Source   | Coming soon       | Yes     | Yes (.NET 5 version only)      | Yes (.NET 5 version only)   |
 
@@ -124,7 +124,7 @@ WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3
 
 #### Key app scenarios enabled by WinUI 2
 
-- UWP apps that are looking to work downlevel to all versions of Windows 10
+- UWP apps that are looking to work downlevel to all versions of Windows 10 and Windows 11
 - Graphic-heavy apps or games that want to take advantage of DirectX and Win2D 
 - UWP apps that need to run on a variety of modern devices, with a range of modern inputs
 - Apps that seek to provide experiences that "fit right in" on the Windows OS and with other first party Windows apps

@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 You can visually group a set of related notifications inside Action Center by using a toast header on your notifications.
 
 > [!IMPORTANT]
-> **Requires Desktop Creators Update and 1.4.0 of Notifications library**: You must be running Desktop build 15063 or higher to see toast headers. You must use version 1.4.0 or higher of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your toast's content. Headers are only supported on Desktop.
+> **Requires Desktop Creators Update and 1.4.0 of Notifications library**: You must be running Desktop build 15063 or later to see toast headers. You must use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your toast's content. Headers are only supported on Desktop.
 
 As seen below, this group conversation is unified under a single header, "Camping!!". Each individual message in the conversation is a separate toast notification sharing the same toast header.
 

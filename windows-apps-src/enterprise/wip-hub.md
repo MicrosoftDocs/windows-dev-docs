@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 ---
 # Windows Information Protection (WIP)
 
-__Note__ Windows Information Protection (WIP) policy can be applied to Windows 10, version 1607 or higher.
+__Note__ Windows Information Protection (WIP) policy can be applied to Windows 10, version 1607 or later.
 
 WIP protects data that belongs to an organization by enforcing policies that are defined by the organization. If your app is included in those polices, all data produced by your app is subject to policy restrictions. This topic helps you to build apps that more gracefully enforce these policies without having any impact on the user's personal data.
 

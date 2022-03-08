@@ -120,7 +120,7 @@ You can now build and run the project. Each time you click the button, the numbe
 
 ## Application Minimum Version
 
-The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or higher will enable .NET Standard 2.0 and Windows ARM64 processor support.
+The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or later will enable .NET Standard 2.0 and Windows ARM64 processor support.
 
 > [!TIP]
 > We recommend using **Application Minimum** versions lower than 16299 to avoid extra build configuration if .NET Standard 2.0 or ARM64 support is not necessary.
@@ -129,7 +129,7 @@ The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) o
 
 Follow these steps to enable .NET Standard 2.0 or Windows ARM64 support in the C# projects referenced from your C++/WinRT project.
 
-In Visual Studio, go to the Solution Explorer and open the shortcut menu for the *CppToCSharpWinRT* project.  Choose **Properties** and set the Universal Windows App Min version to **Windows 10 Fall Creators Update (10.0; Build 16299)** (or higher). Do the same for the *SampleComponent* project.
+In Visual Studio, go to the Solution Explorer and open the shortcut menu for the *CppToCSharpWinRT* project.  Choose **Properties** and set the Universal Windows App Min version to **Windows 10 Fall Creators Update (10.0; Build 16299)** (or later). Do the same for the *SampleComponent* project.
 
 In Visual Studio, open the shortcut menu for the *CppToCSharpWinRT* project and choose **Unload Project** to open `CppToCSharpWinRT.vcxproj` in the text editor.
 

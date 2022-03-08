@@ -35,9 +35,9 @@ sections:
           For the full set of changes (including breaking changes), see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). For example, if you're using a range-based `for` on a Windows Runtime collection, then you'll now need to `#include <winrt/Windows.Foundation.Collections.h>`.
           
       - question: |
-          Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134
+          Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or later), and SDK version 17134
         answer: |
-          If you're using Visual Studio 2017 (version 15.8.0 or higher), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Command Line** under **Additional Options**, then delete it).
+          If you're using Visual Studio 2017 (version 15.8.0 or later), and targeting the Windows SDK version 10.0.17134.0 (Windows 10, version 1803), then a newly created C++/WinRT project may fail to compile with the error "*error C3861: 'from_abi': identifier not found*", and with other errors originating in *base.h*. The solution is to either target a later (more conformant) version of the Windows SDK, or set project property **C/C++** > **Language** > **Conformance mode: No** (also, if **/permissive-** appears in project property **C/C++** > **Command Line** under **Additional Options**, then delete it).
           
       - question: |
           How do I resolve the build error "The C++/WinRT VSIX no longer provides project build support.  Please add a project reference to the Microsoft.Windows.CppWinRT Nuget package"?

@@ -31,7 +31,7 @@ RAM
 
 Operating system
 
--   Windows 8 or higher (Windows 10 strongly recommended)
+-   Windows 8 or later (Windows 10 strongly recommended)
 -   64-bit
 -   Pro edition or higher
 

@@ -147,7 +147,7 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 
 This is all we need for our pass-through pixel shader. Even though we call it a pass-through, it's actually getting perspective-correct interpolated color data for each pixel. Note that the SV\_TARGET system value semantic is applied to the color value output by our pixel shader as required by the API.
 
-> **Note**  Shader level 9\_x pixel shaders cannot read from the SV\_POSITION system value semantic. Model 4.0 (and higher) pixel shaders can use SV\_POSITION to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5).
+> **Note**  Shader level 9\_x pixel shaders cannot read from the SV\_POSITION system value semantic. Model 4.0 (and later) pixel shaders can use SV\_POSITION to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5).
 
  
 

@@ -33,7 +33,7 @@ Content candidates for game resource packs include:
 
 -   International locale specific assets (localized text, audio, or images)
 -   High resolution assets for different device scaling factors (1.0x, 1.4x, and 1.8x)
--   High definition assets for higher DirectX feature levels (9, 10, and 11)
+-   High definition assets for later DirectX feature levels (9, 10, and 11)
 
 All of this is defined in the package.appxmanifest that is part of your UWP project, and in your directory structure of your final package. Because of the new Visual Studio UI, if you follow the process in this document, you should not need to edit it manually.
 
@@ -104,7 +104,7 @@ DirectX feature levels correspond to GPU feature sets for prior and current vers
 
 Your baseline app pack should use the baseline texture compression formats: BC1, BC2, or BC3. These formats can be consumed by any UWP device, from low-end ARM platforms up to dedicated multi-GPU workstations and media computers.
 
-Texture format support at DirectX feature level 10 or higher should be added in a resource pack to conserve local disk space and download bandwidth. This enables using the more advanced compression schemes for 11, like BC6H and BC7. (For more details, see [Texture block compression in Direct3D 11](/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11).) These formats are more efficient for the high-resolution texture assets supported by modern GPUs, and using them improves the look, performance, and space requirements of your game on high-end platforms.
+Texture format support at DirectX feature level 10 or later should be added in a resource pack to conserve local disk space and download bandwidth. This enables using the more advanced compression schemes for 11, like BC6H and BC7. (For more details, see [Texture block compression in Direct3D 11](/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11).) These formats are more efficient for the high-resolution texture assets supported by modern GPUs, and using them improves the look, performance, and space requirements of your game on high-end platforms.
 
 | DirectX feature level | Supported texture compression |
 |-----------------------|-------------------------------|

@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Primary tile APIs let you check whether your app is currently pinned to Start, and request to pin your app's primary tile.
 
 > [!IMPORTANT]
-> **Requires Creators Update**: You must target SDK 15063 and be running build 15063 or higher to use the primary tile APIs.
+> **Requires Creators Update**: You must target SDK 15063 and be running build 15063 or later to use the primary tile APIs.
 
 > **Important APIs**: [**StartScreenManager class**](/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
