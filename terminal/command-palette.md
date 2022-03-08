@@ -74,8 +74,6 @@ You can currently iterate over the following properties:
 
 Create a new tab command for each profile.
 
-![Windows Terminal iterable commands](./images/command-palette-iterable-commands.gif)
-
 ```json
 {
     "iterateOn": "profiles",
@@ -135,6 +133,8 @@ It's also possible to combine nested and iterable commands. For example, you can
     ]
 }
 ```
+
+![Windows Terminal iterable commands](./images/command-palette-iterable-commands.gif)
 
 ## Hiding a command
 
