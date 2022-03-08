@@ -18,9 +18,9 @@ If you click on the "settings" button in the dropdown, the Terminal will attempt
 > [!TIP]
 > You can also use the settings UI to configure your settings if you are using [Windows Terminal Preview](https://aka.ms/terminal-preview). You can learn how to open the settings UI on the [Actions page](./customize-settings/actions.md#application-level-commands).
 
-## Set your WSL distribution to start in the home `~` directory when launched
+## Set your WSL distribution to start in the home `~` directory when launched in older versions of Windows Terminal
 
-By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL distributions, the file systems can now be directly referenced, as of Windows Terminal [version 1.11.2921.0](https://github.com/microsoft/terminal/releases/tag/v1.11.2921.0). You can use `/home/<Your Ubuntu Username>` to directly refer to your home folder. For example, the following setting will launch the "Ubuntu-20.04" distribution in its home file path:
+By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL distributions running a new version of Windows Terminal, the file systems can enter `~` to set this home path. In older versions of Windows Terminal, you can use `/home/<Your Ubuntu Username>` to directly refer to your home folder. For example, the following setting will launch the "Ubuntu-20.04" distribution in its home file path:
 
 ```json
 {
@@ -30,7 +30,7 @@ By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<
 }
 ```
 
-If you are using an earlier version of Windows Terminal, WSL may require using the `\\wsl$\` prefix when referring to a distribution's home path for the `startingDirectory` setting. For example, in earlier versions of Windows Terminal the following setting will launch the "Ubuntu-18.04" distribution in its home file path:
+If you are using a very early version of Windows Terminal, WSL may require using the `\\wsl$\` prefix when referring to a distribution's home path for the `startingDirectory` setting. For example, the following setting will launch the "Ubuntu-18.04" distribution in its home file path:
 
 ```json
 {
@@ -40,6 +40,8 @@ If you are using an earlier version of Windows Terminal, WSL may require using t
 }
 ```
 
+> [!IMPORTANT]
+> On newer versions of Windows, `startingDirectory` can accept Linux-style paths.
 
 ## Setting the tab title
 
