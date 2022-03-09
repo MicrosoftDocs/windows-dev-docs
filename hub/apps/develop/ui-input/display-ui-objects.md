@@ -3,7 +3,7 @@ title: Display WinRT UI objects that depend on CoreWindow
 description: You can use certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects in your desktop app by adding a little bit of interoperation code.
 ms.topic: article
 ms.date: 03/04/2022
-keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Windows UI Library, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop
+keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, Windows UI Library, WinUI, interop, IInitializeWithWindow, IInitializeWithWindow::Initialize, WinRT.Interop.InitializeWithWindow, IDataTransferManagerInterop, IUserConsentVerifierInterop
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -95,7 +95,7 @@ winrt::fire_and_forget ShowFolderPickerAsync(HWND hWnd)
 
 The [**Windows.ApplicationModel.DataTransfer.DataTransferManager**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) class implements the [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface (which, like **IInitializeWithWindow**, lets you set an owner window).
 
-Instead of calling the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) method, you call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow), as shown in the code examples below.
+In a desktop app, instead of calling the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) method, you call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow), as shown in the code examples below.
 
 ### WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
 
@@ -152,6 +152,12 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 }
 ...
 ```
+
+## For classes that implement IUserConsentVerifierInterop
+
+The [**Windows.Security.Credentials.UI.UserConsentVerifier**](/uwp/api/windows.security.credentials.ui.userconsentverifier) class implements the [**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop) interface (which, like **IInitializeWithWindow**, lets you set an owner window).
+
+In a desktop app, instead of calling the [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) method, you call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow). For more info, and code examples, see [**UserConsentVerifier**](/uwp/api/windows.security.credentials.ui.userconsentverifier).
 
 ## Related topics
 
