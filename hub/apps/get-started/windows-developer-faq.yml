@@ -49,15 +49,14 @@ sections:
           - if MFC: No. But you can use Windows App SDK APIs that are not related to WinUI 3 in your WPF app. For example - App Lifecycle APIs, Windowing, Toast Notifications. 
           
           APIs which are in the namespace which are in Microsoft.UI.XAML are not compatible with WPF / Winforms / MFC / UWP.
+          truth ^ 
 
-          -- truth ^ 
-        # sign off with edits - get another signoff
           No. WinUI 3 and Windows App SDK doesn't yet support XAML islands.
           Windows App SDK has many APIs that work well with WPF and WinForms. If your existing WPF / winforms app doesn't interact with
           Windowing API - is a window, it's part of the UI, you can grab a WPF app and use the titlebar apis, change color, background, etc.
           WinUI - answer is no because of XAML islands.
           But other APIs like toast notifications, windowing, - 
-          Can I "modernize"
+        # sign off with edits - get another signoff
      - question: Do I need to use Visual Studio to build WinUI 3 apps?
        answer: |
            Yes. Other IDEs (such as Visual Studio Code) are currently unsupported. We strongly recommend using the latest - at least Visual Studio 2022 17.1 to build WinUI 3 apps. Other tools will lose features like hot reload, but the apps will build.
