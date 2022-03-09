@@ -26,12 +26,22 @@ For classes that implement the [**IInitializeWithWindow**](/windows/win32/api/sh
 
 These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow):
 
-* [**Windows.Devices.Enumeration.DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker)
+* [**Windows.ApplicationModel.Contacts.PinnedContactManager**](/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
+* [**Windows.ApplicationModel.Payments.PaymentMediator**](/uwp/api/windows.applicationmodel.payments.paymentmediator)
+* [**Windows.Devices.Enumeration.DevicePicker**](/uwp/api/windows.devices.enumeration.devicepicker)
 * [**Windows.Graphics.Capture.GraphicsCapturePicker**](/uwp/api/windows.graphics.capture.graphicscapturepicker)
+* [**Windows.Media.Casting.CastingDevicePicker**](/uwp/api/windows.media.casting.castingdevicepicker)
+* [**Windows.Media.DialProtocol.DialDevicePicker**](/uwp/api/windows.media.dialprotocol.dialdevicepicker)
+* [**Windows.Networking.NetworkOperators.ProvisioningAgent**](/uwp/api/windows.networking.networkoperators.provisioningagent)
+* [**Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator**](/uwp/api/windows.security.authentication.onlineid.onlineidauthenticator)
 * [**Windows.Services.Store.StoreContext**](/uwp/api/windows.services.store.storecontext)
 * [**Windows.Storage.Pickers.FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker)
 * [**Windows.Storage.Pickers.FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker)
 * [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker)
+* [**Windows.System.FolderLauncherOptions**](/uwp/api/windows.system.folderlauncheroptions)
+* [**Windows.System.LauncherOptions**](/uwp/api/windows.system.launcheroptions)
+* [**Windows.UI.Core.CoreWindowDialog**](/uwp/api/windows.ui.core.corewindowdialog)
+* [**Windows.UI.Core.CoreWindowFlyout**](/uwp/api/windows.ui.core.corewindowflyout)
 * [**Windows.UI.Popups.MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). But for new apps we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead.
 * [**Windows.UI.Popups.PopupMenu**](/uwp/api/windows.ui.popups.popupmenu)
 * [**Windows.UI.StartScreen.SecondaryTile**](/uwp/api/windows.ui.startscreen.secondarytile)
