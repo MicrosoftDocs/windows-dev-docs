@@ -94,7 +94,7 @@ sections:
          # in terms of UI, yes, it's simple.
          # and for UI controls, yes, it's simple.
          # but for migrating from UWP -> win app sdk, there are many pieces that are no longer working. Look at the migration guidelines. 
-         # not true - too many things not working in WinUI 3 - new dispatcher, api set is different. API set is different so it needs to be rewritten. CoreWindow needs to be rewritten. APIs for setting the window on the screen, height, width need to be rewritten - win32 api needs to be rewritten with appsdk.
+         # not true - too many things not working in WinUI 3 - new dispatcher, api set is different. API set is different so it needs to be rewritten. CoreWindow needs to be rewritten. APIs for setting the window on the screen, height, width need to be rewritten - win32 api needs to be used when building with appsdk instead of using the UWP abstractions.
          # this needs to be updated throughout our corpus.
          # need to offer guidance about when to migrate vs when to rewrite.
          # needs revision + revisit
