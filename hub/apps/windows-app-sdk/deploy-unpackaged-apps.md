@@ -29,7 +29,7 @@ Unpackaged apps have two options available for deploying the Windows App SDK pac
 
 * [Download the latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer).
 * For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
-* **C#**. For the .NET 5.0 runtime, see [Download .NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
+* [Download .NET 5 or later](https://dotnet.microsoft.com/download/dotnet)
 
 ### Additional prerequisites details
 
