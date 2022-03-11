@@ -13,7 +13,7 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
+> For more information on building Windows desktop apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
 
 ## Download and install the Windows UI Library
 
