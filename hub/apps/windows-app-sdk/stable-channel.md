@@ -373,7 +373,7 @@ For more information on WinUI, see [Windows UI 3 Library (WinUI)](../winui/index
 To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Controls Gallery app [from GitHub](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/p/winui-3-controls-gallery/9p3jfpwwdzrc).
 
 To get started developing with WinUI, check out the following articles:
-- [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
+- [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)

@@ -27,7 +27,7 @@ We're going to build our example app from the initial template application (see 
 
 ### The application solution
 
-By default, the Visual Studio Solution for an app contains two projects: The application itself, and another for creating an [MSIX](/windows/msix) app package (see [WinUI 3 project templates in Visual Studio](winui-project-templates-in-visual-studio.md) for more details).
+By default, the Visual Studio Solution for an app contains two projects: The application itself, and another for creating an [MSIX](/windows/msix) app package (see [WinUI 3 templates in Visual Studio](winui-project-templates-in-visual-studio.md) for more details).
 
 :::image type="content" source="images/build-basic/solution-explorer-pinvoke.png" alt-text="Screenshot of the Visual Studio Solution Explorer showing the file structure of the initial template app.":::<br/>*Solution Explorer showing the file structure of the initial template app.*
 

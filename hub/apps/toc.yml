@@ -52,7 +52,7 @@ items:
           items:
             - name: All templates for Windows apps
               href: desktop/visual-studio-templates.md
-            - name: "WinUI templates"
+            - name: "WinUI 3 templates in Visual Studio"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
   - name: Design
     href: design/toc.yml
