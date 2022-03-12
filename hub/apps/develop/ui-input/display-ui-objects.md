@@ -115,24 +115,44 @@ In a desktop app, instead of calling the [**DataTransferManager.ShowShareUI**](/
 public sealed partial class MainWindow : Window
 {
     ...
-    private void myButton_Click(object sender, RoutedEventArgs e)
-    {
-        // `this` in `GetWindowHandle(this)` must be a reference to your current window
-        IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
-        IDataTransferManagerInterop interop = 
-            Windows.ApplicationModel.DataTransfer.DataTransferManager.As<IDataTransferManagerInterop>();
-
-        // Show the Share UI
-        interop.ShowShareUIForWindow(windowHandle);
-    }
-
-    [System.Runtime.InteropServices.ComImport, System.Runtime.InteropServices.Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
-    [System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
+    [System.Runtime.InteropServices.ComImport]
+    [System.Runtime.InteropServices.Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
+    [System.Runtime.InteropServices.InterfaceType(
+        System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
     interface IDataTransferManagerInterop
     {
-        Windows.ApplicationModel.DataTransfer.DataTransferManager GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow, [System.Runtime.InteropServices.In] ref Guid riid);
+        IntPtr GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow,
+            [System.Runtime.InteropServices.In] ref Guid riid);
         void ShowShareUIForWindow(IntPtr appWindow);
+    }
+
+    static readonly Guid _dtm_iid = 
+        new Guid(0xa5caee9b, 0x8708, 0x49d1, 0x8d, 0x36, 0x67, 0xd2, 0x5a, 0x8d, 0xa0, 0x0c);
+
+    private void myButton_Click(object sender, RoutedEventArgs e)
+    {
+        // Retrieve the window handle (HWND) of the current WinUI 3 window.
+        var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+        IDataTransferManagerInterop interop =
+        Windows.ApplicationModel.DataTransfer.DataTransferManager.As
+            <IDataTransferManagerInterop>();
+
+        IntPtr result = interop.GetForWindow(hWnd, _dtm_iid);
+        var dataTransferManager = WinRT.MarshalInterface
+            <Windows.ApplicationModel.DataTransfer.DataTransferManager>.FromAbi(result);
+
+        dataTransferManager.DataRequested += (sender, args) =>
+        {
+            args.Request.Data.Properties.Title = "In a desktop app...";
+            args.Request.Data.SetText("...display WinRT UI objects that depend on CoreWindow.");
+            args.Request.Data.RequestedOperation = 
+                Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+        };
+
+        // Show the Share UI
+        interop.ShowShareUIForWindow(hWnd);
     }
 }
 ...
@@ -152,12 +172,28 @@ public sealed partial class MainWindow : Window
 ...
 void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 {
-    winrt::Microsoft::UI::Xaml::Window window{ *this };
-    auto windowNative{ window.as<::IWindowNative>() };
+    // Retrieve the window handle (HWND) of the current WinUI 3 window.
+    auto windowNative{ this->try_as<::IWindowNative>() };
+    winrt::check_bool(windowNative);
     HWND hWnd{ 0 };
     windowNative->get_WindowHandle(&hWnd);
 
-    auto interop = winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager, IDataTransferManagerInterop>();
+    winrt::com_ptr<IDataTransferManagerInterop> interop = 
+        winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager,
+        IDataTransferManagerInterop>();
+
+    winrt::guid _dtm_iid{ 0xa5caee9b, 0x8708, 0x49d1, { 0x8d, 0x36, 0x67, 0xd2, 0x5a, 0x8d, 0xa0, 0x0c } };
+    Windows::ApplicationModel::DataTransfer::DataTransferManager dataTransferManager{ nullptr };
+    interop->GetForWindow(hWnd, _dtm_iid, winrt::put_abi(dataTransferManager));
+
+    dataTransferManager.DataRequested([](Windows::ApplicationModel::DataTransfer::DataTransferManager const& /* sender */,
+        Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs const& args)
+    {
+        args.Request().Data().Properties().Title(L"In a desktop app...");
+        args.Request().Data().SetText(L"...display WinRT UI objects that depend on CoreWindow.");
+        args.Request().Data().RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation::Copy);
+    });
+
     interop->ShowShareUIForWindow(hWnd);
 }
 ...
