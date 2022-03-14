@@ -63,7 +63,7 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
-1. In the New Project dialog's drop-down filters, select **C#**, **Windows**, and **WinUI**, respectively.
+1. In the New Project dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively.
 
 1. You need to start with a packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**. .
 
