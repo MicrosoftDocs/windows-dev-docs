@@ -1,5 +1,5 @@
 ---
-description: Learn how to store and retrieve local, roaming, and temporary app data.
+description: Learn how to store and retrieve local and temporary app data.
 title: Store and retrieve settings and other app data
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
@@ -147,9 +147,10 @@ async void ReadTimestamp()
 ## Roaming data
 
 > [!WARNING]
-> As of Windows 10, version 1909, it was [announced](/windows/deployment/planning/windows-10-deprecated-features) that Package State Roaming (PSR) will be removed in a future update. PSR allows non-Microsoft developers to access roaming data on devices, enabling developers of UWP applications to write data to Windows and synchronize it to other instantiations of Windows for that user.
-> 
->The recommended replacement for PSR is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
+> Roaming data and settings is [no longer supported as of Windows 11](/windows/deployment/planning/windows-10-deprecated-features).
+> The recommended replacement is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
+>
+> The following documentation applies to Windows 10 versions 1909 and lower.
 
 If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
 
