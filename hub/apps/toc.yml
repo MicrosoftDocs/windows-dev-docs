@@ -306,14 +306,20 @@ items:
             href: develop/platform/csharp-winrt/index.md
           - name: .NET mappings of WinRT types in C#/WinRT
             href: develop/platform/csharp-winrt/net-mappings-of-winrt-types.md
-          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
-            href: develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
-          - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
-            href: develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
-          - name: "Diagnose component errors"
-            href: develop/platform/csharp-winrt/authoring-diagnostics.md
           - name: "Agile objects"
             href: develop/platform/csharp-winrt/agile-objects.md
+          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+            href: develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+          - name: Windows Runtime components with C#/WinRT
+            items:
+              - name: "Author Windows Runtime components with C#/WinRT"
+                href: develop/platform/csharp-winrt/authoring.md
+              - name: "Walkthrough: Create a C#/WinRT component, and consume it from C++/WinRT"
+                href: develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+              - name: "Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK app"
+                href: develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
+              - name: "Diagnose component errors"
+                href: develop/platform/csharp-winrt/authoring-diagnostics.md
   - name: Package and deploy
     items:
       - name: Overview
