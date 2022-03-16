@@ -26,6 +26,12 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 Version 1.0.1 is the latest stable release of the stable channel for the Windows App SDK. 1.0.x supports all [stable channel features](release-channels.md#features-available-by-release-channel).
 
+### Downloads for 1.0 
+
+The Windows App SDK VSIX and runtime (installer and MSIX packages) are available at [Downloads for the Windows App SDK](downloads.md). The SDK downloads include the Visual Studio extensions to create and build new projects using the Windows App SDK. The runtime downloads include the installer and MSIX packages used to deploy apps. If you haven't done so already, [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview). 
+
+> [!NOTE]
+> If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). 
 ### Version 1.0.1
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes and multi-window support for the 1.0 release.
