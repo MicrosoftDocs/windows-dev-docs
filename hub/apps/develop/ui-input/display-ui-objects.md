@@ -210,6 +210,23 @@ In a desktop app, instead of calling the [**UserConsentVerifier.RequestVerificat
 
 For more info, and code examples, see [**UserConsentVerifier**](/uwp/api/windows.security.credentials.ui.userconsentverifier).
 
+## For classes that implement other interop interfaces
+
+These interfaces have **XxxForWindow** methods, which let you set an owner window handle (HWND). You can use these interfaces directly from C++/WinRT. Versions of the interfaces also exist in the form of C# classes&mdash;for more details, see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+
+* [**IAccountsSettingsPaneInterop**](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop)
+* [**IDragDropManagerInterop**](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop)
+* [**IInputPaneInterop**](/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop)
+* [**IPlayToManagerInterop**](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop)
+* [**IPrintManagerInterop**](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop)
+* [**IRadialControllerConfigurationInterop**](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)
+* **IRadialControllerIndependentInputSourceInterop**
+* [**IRadialControllerInterop**](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)
+* [**ISpatialInteractionManagerInterop**](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop)
+* [**ISystemMediaTransportControlsInterop**](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop)
+* [**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)
+* [**IWebAuthenticationCoreManagerInterop**](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop)
+
 ## Related topics
 
 * [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
@@ -217,3 +234,4 @@ For more info, and code examples, see [**UserConsentVerifier**](/uwp/api/windows
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 * [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
+* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
