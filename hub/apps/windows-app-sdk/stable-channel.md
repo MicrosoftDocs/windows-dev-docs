@@ -53,21 +53,6 @@ We have stabilized and enabled the creation of **multiple windows on the same th
 
 ### Version 1.0 Stable
 
-#### Downloads for 1.0 Stable
-
-> [!NOTE]
-> If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
-
-From the table below you can download the Visual Studio extensions (VSIX) and the .exe installer for the 1.0 Stable release. If you haven't done so already, [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview).
-
-| **1.0 Stable downloads** | **Description** |
-| ----------- | ----------- |
-| [C# Visual Studio 2022 extension](https://aka.ms/windowsappsdk/stable-vsix-2022-cs) | Build C# apps with the Windows App SDK Visual Studio 2022 extension. |
-| [C++ Visual Studio 2022 extension](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp) | Build C++ apps with the Windows App SDK Visual Studio 2022 extension. |
-| [C# Visual Studio 2019 extension](https://aka.ms/windowsappsdk/stable-vsix-2019-cs) | Build C# apps with the Windows App SDK Visual Studio 2019 extension. |
-| [C++ Visual Studio 2019 extension](https://aka.ms/windowsappsdk/stable-vsix-2019-cpp) |  Build C++ apps with the Windows App SDK Visual Studio 2019 extension. |
-| [The `.exe` installer, and MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer) | Deploy the Windows App SDK with your app using the `.exe` installer, and MSIX packages. |
-
 The following sections describe new and updated features, limitations, and known issues for 1.0 Stable.
 
 #### WinUI 3
