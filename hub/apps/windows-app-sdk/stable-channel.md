@@ -49,6 +49,11 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 - Fixed crash when calling GetWindowIdFromWindow() in unpackaged apps. For more information, see [discussion 1891](https://github.com/microsoft/WindowsAppSDK/discussions/1891) on GitHub.
 
 The [limitations and known issues](#other-limitations-and-known-issues) for version 1.0 also apply to version 1.0.1.
+
+Additionally, for apps with custom title bars, we have made changes in this release (and fixed numerous issues) that include fixes to the glass window used for drag&drop operations. 
+The recommendation is to use the default values and behaviors (give them a try!). 
+If your title bar used margins so that the default caption buttons were interactive, we recommend visualizing your drag region by setting the background of your title bar to red and then adjusting the margins to extend the drag region to the caption controls.
+
 #### New features
 We have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 
