@@ -61,6 +61,7 @@ There are three areas of the controls where the rounded corner styles are used: 
 - TimePicker
 - ToggleButton
 - ToggleSplitButton
+- ToolTip (this is flyout element but smaller radii due to small footprint)
 
 ### Corners of flyout and overlay UI elements
 
@@ -77,7 +78,6 @@ There are three areas of the controls where the rounded corner styles are used: 
 - MenuFlyout
 - TabView tabs
 - TeachingTip
-- ToolTip
 - Flyout part (when open)
   - AutoSuggestBox
   - CalendarDatePicker
