@@ -351,5 +351,5 @@ This XAML creates the group of `Expander` controls shown in other parts of this 
 
 ## Related articles
 
-- [Page layout](/windows/apps/design/basics/app-silhouette)
+- [Page layout](../basics/app-silhouette.md)
 - [Expander class](/uwp/api/microsoft.ui.xaml.controls.expander)
