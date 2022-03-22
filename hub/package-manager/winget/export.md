@@ -37,6 +37,7 @@ The options allow you to customize the export experience to meet your needs.
 | **-s, --source**  |  [Optional] Specifies a source to export files from. Use this option when you only want files from a specific source.  |
 | **--include-versions** | [Optional] Includes the version of the app currently installed. Use this option if you want a specific version. By default, unless specified, [**import**](./import.md) will use latest. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ## JSON schema
 

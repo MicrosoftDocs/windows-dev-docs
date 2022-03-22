@@ -11,15 +11,15 @@ ms.localizationpriority: medium
 
 # Windows App SDK release channels
 
-The Windows App SDK provides the three release channels. When you [set up your development environment](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
+The Windows App SDK provides the three release channels. When you [Install tools for the Windows App SDK](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
 
 The following table provides an overview of the different release channels. For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |---|---|---|---|---|---|
-| **✅** | [Stable](stable-channel.md)  | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every four months<br>(+ servicing) | Yes | [1.0](stable-channel.md#version-10) (11/16/2021) |
-| **❇️** | [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | Targeting monthly | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
-| **🔄️** | [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | Targeting monthly | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
+| **✅** | Stable ([release notes](stable-channel.md)) | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every six months<br>(+ servicing) | Yes | [1.0.1](stable-channel.md#version-101) (03/16/2021) |
+| **❇️** | Preview ([release notes](preview-channel.md)) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | At least two previews per stable version | No | [1.0.0-preview3](preview-channel.md#version-10-preview-3-100-preview3) (10/27/2021) |
+| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
 
 ## Features available by release channel
 
@@ -49,7 +49,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date  | Latest patch version  | Patch release date | Support level | End of support |
 |---|---|---|---|---|---|
 |1.0| 11/16/2021 | - | - |Current | 11/16/2022 |
-|0.8| 6/24/2021 |0.8.5| 10/11/2021|Current | 6/24/2022 |
+|0.8| 6/24/2021 |0.8.6| 12/14/2021| Current | 6/24/2022 |
 |0.5| 3/29/2021 | 0.5.9 | 8/10/2021 | Maintenance | 11/1/2021 |
 
 ### Servicing  
@@ -100,14 +100,14 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 - The Windows App SDK uses GitHub Issues to track bugs and feature requests. Search the existing issues before filing new issues to avoid duplicates. For new issues, [file your bug or feature request](https://github.com/microsoft/WindowsAppSDK/issues) as a new issue.
 - For help and questions about using the Windows App SDK, search for existing questions or post a new question on our [GitHub Discussions page](https://github.com/microsoft/WindowsAppSDK/discussions).
-- Technical support for the use of the Windows App SDK may be available from Microsoft Customer Support Services (CSS). If you are a Premier or Unified Support customer, reach out to your account manager for further assistance. Otherwise, visit the [Support For Business](https://support.serviceshub.microsoft.com/supportforbusiness/onboarding?origin=%2Fsupportforbusiness%2Fcreate%3FsapId%3D2510d164-8500-6eba-dda3-5b6ade9cad01) site to open a new support case for the Windows App SDK.  
+- Technical support for the use of the Windows App SDK may be available from Microsoft Customer Support Services (CSS). If you're a Premier or Unified Support customer, reach out to your account manager for further assistance. Otherwise, visit the [Support For Business](https://support.serviceshub.microsoft.com/supportforbusiness/onboarding?origin=%2Fsupportforbusiness%2Fcreate%3FsapId%3D2510d164-8500-6eba-dda3-5b6ade9cad01) site to open a new support case for the Windows App SDK.  
 
 ## Related topics
 
 - [Stable channel](stable-channel.md)
 - [Preview channel](preview-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Preview and Experimental guidance](preview-experimental-install.md)
-- [Install developer tools](set-up-your-development-environment.md)
-- [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md)
+- [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 

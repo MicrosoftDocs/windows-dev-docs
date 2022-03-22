@@ -16,7 +16,7 @@ Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UW
 
 You can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:
 
-* Any first-party WinRT XAML control provided by the Windows SDK or the WinUI 2 library.
+* Most first-party WinRT XAML control provided by the Windows SDK or the WinUI 2 library (see [exceptions](#limitations-and-workarounds)).
 * Any custom WinRT XAML control (for example, a user control that consists of several WinRT XAML controls that work together). You must have the source code for the custom control so you can compile it with your application.
 
 Fundamentally, XAML Islands are created by using the *WinRT XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) that use the WinRT XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
@@ -54,7 +54,7 @@ The following wrapped WinRT XAML controls are currently available in the Windows
 | [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application. |
 | [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, version 1903 | Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application. |
 
-For a walkthrough that demonstrates how to use the wrapped WinRT XAML controls, see [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md).
+For a walkthrough that demonstrates how to use the wrapped WinRT XAML controls, see [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md).
 
 ### Host controls
 
@@ -64,7 +64,7 @@ For custom controls and other scenarios beyond those covered by the available wr
 |-----------------|-------------------------------|-------------|
 | [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, version 1903 | Can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including any first-party WinRT XAML control provided by the Windows SDK as well as custom controls. |
 
-For walkthroughs that demonstrate how to use the **WindowsXamlHost** control, see [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md) and [Host a custom WinRT XAML control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
+For walkthroughs that demonstrate how to use the **WindowsXamlHost** control, see [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md) and [Host a custom WinRT XAML control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
 
 <span id="requirements" />
 
@@ -74,8 +74,8 @@ The XAML Island .NET controls require Windows 10, version 1903, or a later versi
 
 | Type of control | NuGet package  | Related articles |
 |-----------------|----------------|---------------------|
-| [Wrapped controls](#wrapped-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md)  |
-| [Host control](#host-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Host a standard WinRT XAML control in a WPF app](host-standard-control-with-xaml-islands.md)<br/>[Host a custom WinRT XAML control in a WPF app](host-custom-control-with-xaml-islands.md)  |
+| [Wrapped controls](#wrapped-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md)  |
+| [Host control](#host-controls) | Version 6.0.0 or later of these packages: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Use XAML Islands to host a UWP XAML control in a C# WPF app](host-standard-control-with-xaml-islands.md)<br/>[Host a custom WinRT XAML control in a WPF app](host-custom-control-with-xaml-islands.md)  |
 
 Be aware of the following details:
 
@@ -124,7 +124,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 ### Supported only with workarounds
 
-:heavy_check_mark: Hosting controls from the [WinUI 2 Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
+:heavy_check_mark: Hosting controls from the [WinUI 2 Library](../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview). Support for hosting controls from the [WinUI 3.0 Library](../../winui/winui3/index.md) is coming in a later release.
 
 :heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 
@@ -138,7 +138,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 :no_entry_sign: UWP XAML content in XAML Islands doesn't respond to Windows theme changes from dark to light or vice versa at run time. Content does respond to high contrast changes at run time.
 
-:no_entry_sign: Adding a **WebView** control to a custom user control (either on-thread, off-thread, or out of process).
+:no_entry_sign: Adding a [Windows.UI.Xaml.WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView) control. For WPF and WinForms apps, see [these alternatives](#web-view-controls). 
 
 :no_entry_sign: The [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) control and [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) host control are not supported in full screen mode.
 

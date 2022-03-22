@@ -20,7 +20,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Set up your development environment
+          - text: Install tools for the Windows App SDK
             url: ../windows-app-sdk/set-up-your-development-environment.md
           - text: Enable your device for development
             url: ../get-started/enable-your-device-for-development.md
@@ -37,8 +37,8 @@ landingContent:
             url: ../get-started/index.md
           - text: Build apps with the Windows App SDK
             url: ../windows-app-sdk/index.md
-          - text: Build an app for Windows 11
-            url: /windows/apps/winui/winui3/create-your-first-winui3-app
+          - text: Create your first WinUI 3 project
+            url: ../winui/winui3/create-your-first-winui3-app.md
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference
@@ -78,9 +78,9 @@ landingContent:
           - text: Win32 API for the Windows SDK
             url: /windows/win32/api/
           - text: WinRT API for the Windows App SDK
-            url: https://review.docs.microsoft.com/windows/windows-app-sdk/api/winrt/?branch=release-0.8
+            url: /windows/windows-app-sdk/api/winrt/
           - text: Win32 API for the Windows App SDK
-            url: https://review.docs.microsoft.com/windows/windows-app-sdk/api/win32/?branch=release-0.8
+            url: /windows/windows-app-sdk/api/win32/
 
   - title: Deploy
     linkLists:

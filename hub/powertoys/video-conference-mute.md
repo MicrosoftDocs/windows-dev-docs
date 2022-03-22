@@ -1,7 +1,7 @@
 ---
 title: PowerToys Video Conference Mute utility for Windows
 description: A utility that allows to quickly mute the microphone (audio) and turn off the camera (video) while on a conference call with a single keystroke, regardless of what application has focus.
-ms.date: 05/28/2021
+ms.date: 03/18/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
@@ -18,7 +18,7 @@ Quickly mute your microphone (audio) and turn off your camera (video) with a sin
 
 The default shortcuts to use Video Conference Mute are:
 
-- <kbd>⊞ Win</kbd>+<kbd>N</kbd> to toggle both audio and video at the same time
+- <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> to toggle both audio and video at the same time
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> to toggle microphone
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> to toggle camera
 
@@ -60,7 +60,3 @@ So, how does PowerToys handle this so you can keep streaming?
 To debug the camera driver, open this file on your machine: `C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\PowerToysVideoConference.log`
 
 You can also create an empty `PowerToysVideoConferenceVerbose.flag` in the same directory to enable verbose logging mode in the driver.
-
-## Known issues
-
-To view all of the known issues currently open on the Video Conference Mute utility, see [PowerToys tracking issue #6246 on GitHub](https://github.com/microsoft/PowerToys/issues/6246). The PowerToys development team and contributor community are actively working toward resolving these issues and plans to keep the utility in pre-release until essential issues are resolved.

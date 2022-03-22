@@ -932,8 +932,8 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/design/style/xaml-resource-dictionary",
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/rich-edit-box.md",
@@ -5256,6 +5256,51 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/index.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/desktop/choose-your-platform.md",
       "redirect_url": "/windows/apps/desktop#choose-your-app-type",
       "redirect_document_id": false
@@ -6724,6 +6769,46 @@
       "source_path": "hub/apps/whats-new/build2021-docs.md",
       "redirect_url": "/windows/apps",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/title-bar.md",
+      "redirect_url": "/windows/apps/develop/title-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/index.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/uwp/csharp-winrt/net-mappings-of-winrt-types.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/net-projection-from-cppwinrt-component.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/net-projection-from-cppwinrt-component",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/create-windows-runtime-component-cswinrt.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/authoring-diagnostics.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/authoring-diagnostics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/agile-objects.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/agile-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/reference/index.md",
+      "redirect_url": "/windows/apps/api-reference/index",
+      "redirect_document_id": true
     }
   ]
 }

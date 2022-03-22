@@ -18,7 +18,7 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 
 **Important links**: 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
-- For documentation on preview releases, see [Preview and Experimental guidance](preview-experimental-install.md).
+- For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
 ## Version 1.0 Preview 3 (1.0.0-preview3)
 
@@ -29,7 +29,7 @@ Preview 3 is the latest release of the preview channel for version 1.0 of the Wi
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Preview 3 release. For all versions, see [Downloads for the Windows App SDK](downloads.md). If you haven't done so already, start by configuring your development environment, using the steps in [Install tools for Windows app development](set-up-your-development-environment.md?tabs=preview).
+From the table below you can download the Visual Studio extensions (VSIX) for the 1.0 Preview 3 release. For all versions, see [Downloads for the Windows App SDK](downloads.md). If you haven't done so already, start by configuring your development environment, using the steps in [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview).
 
 The extensions below are tailored for your programming language and version of Visual Studio.
 
@@ -45,7 +45,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3
 
-We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions for WinUI 3 unpackaged desktop apps](../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI 3 application to support unpackaged deployment.
+We now support deploying WinUI 3 apps without MSIX packaging. See [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI 3 application to support unpackaged deployment.
 
 **Important limitations**
 
@@ -63,7 +63,7 @@ We now support deploying WinUI 3 apps without MSIX packaging. See [Instructions 
 For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Other limitations and known issues
 
@@ -83,7 +83,7 @@ For more info, or to get started developing with WinUI, see:
 
   - **C# template for Visual Studio 2019 and Visual Studio 2022**. In Visual Studio when you **Start Debugging** or **Start Without Debugging**, if your app doesn't deploy and run (and there's no feedback from Visual Studio), then click on the project node in **Solution Explorer** to select it, and try again.
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
   - **C++ template for Visual Studio 2022 version 17.0 releases up to Preview 4**. You will encounter the following error the first time you try to run your project: "There were deployment errors". To resolve this issue, run or deploy your project a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 7.
 
@@ -91,11 +91,12 @@ For more info, or to get started developing with WinUI, see:
 
 - **C# projects using 1.0 Preview 3 must use the following .NET SDK**: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, then use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
 ## Important issue impacting 1.0 Preview 1 and Preview 2
 
@@ -195,7 +196,7 @@ The following sections describe new and updated features, limitations, and known
 For more info or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
 
@@ -205,11 +206,11 @@ This release introduces updates to the [AppWindow](/windows/windows-app-sdk/api/
 
 - The **AppWindowConfiguration** class has been removed. The properties of this class is now available on the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) itself, or on the **Presenter** classes.
 - Most `bool` return values for the WinRT API methods in this space has been removed and are now `void` since these methods would always succeed.
-- The C# ImportDll calls are no longer needed for [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) and [GetWindowFromWindowId](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid). Use the .NET wrapper methods available in **Microsoft.UI.Win32Interop** instead.
+- The C# ImportDll calls are no longer needed for [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) and [GetWindowFromWindowId](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid). Use the .NET wrapper methods available in the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class instead.
 
 **Important limitations**:
 
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you are limited to using the HWND interop access methods.
+- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you're limited to using the HWND interop access methods.
 - Window title bar customization works only on Windows 11. Use the [IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) method to check for title bar customization feature support. We intend to bring this functionality down-level.
 
 For more info, see [Manage app windows](windowing/windowing-overview.md).
@@ -294,7 +295,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
   - **C# template for Visual Studio 2019.** You will encounter the error when you try to build the project: "The project doesn't know how to run the profile *project name*". To resolve this issue, install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools).
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [instructions for creating a WinUI 3 desktop app with C# and the Windows App SDK 1.0 Preview 2](../winui/winui3/create-your-first-winui3-app.md).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
   - **C++ template for Visual Studio 2019 and Visual Studio 2022.** In this release, these projects are restricted to calling the subset of Win32 APIs that can be called by UWP apps. The **Blank App, Packaged with WAP (WinUI 3 in Desktop)** template is not affected by this issue.
 
@@ -308,12 +309,12 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
 - **C# projects using 1.0 Preview 2 must use the following .NET SDK**: .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11.
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, use the [resume_foreground](https://github.com/microsoft/wil/blob/68f211ddef18686d957606fa45ccd0e7177e20bd/include/wil/cppwinrt_helpers.h#L97-L107) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <winrt/Microsoft.UI.Dispatching.h>` statement to your code file.
-    3. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    4. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
     
 ## Version 1.0 Preview 1 (1.0.0-preview1)
 
@@ -334,7 +335,7 @@ This release of WinUI 3 is focused on building towards 1.0 Stable with bug fixes
 For more info or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
 
@@ -348,7 +349,7 @@ This release brings the Windowing API we introduced in Experimental 1 to a Previ
 **Important limitations**:
 
 - This release of [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) is currently available only to Win32 apps (both packaged and unpackaged).
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you are limited to using the HWND interop access methods.
+- The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you're limited to using the HWND interop access methods.
 - Window title bar customization works only on Windows 11. Use the [IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) method to check for title bar customization feature support. We intend to bring this functionality down-level.
 
 For more info, see [Manage app windows](windowing/windowing-overview.md).
@@ -388,15 +389,14 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
     #include <winrt/microsoft.ui.dispatching.co_await.h>
     ```
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, use the [resume_foreground](https://github.com/microsoft/wil/blob/68f211ddef18686d957606fa45ccd0e7177e20bd/include/wil/cppwinrt_helpers.h#L97-L107) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <winrt/Microsoft.UI.Dispatching.h>` statement to your code file.
-    3. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    4. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
-
-- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI project templates](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 
 - **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
 
@@ -408,7 +408,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 
 - [Stable channel](stable-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

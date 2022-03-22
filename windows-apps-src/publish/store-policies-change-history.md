@@ -92,7 +92,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="even">
 <td>March 5, 2019</td>
-<td>7.11</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-11">7.11</a></td>
 <td><p>Updated 10.1.1 to add ownership requirements for publishing web apps.</p>
 <p>Added 10.1.5 to republish software promotion and distribution requirements.</p>
 <p>Updated 10.8.3 to apply only where apps require financial account information.</p>

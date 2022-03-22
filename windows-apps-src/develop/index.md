@@ -1,5 +1,5 @@
 ---
-description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows 10 including an overview, samples, and API reference.
+description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows including an overview, samples, and API reference.
 title: Develop UWP apps
 keywords: uwp app development threading async platform overview portal develop developers
 ms.date: 03/29/2018
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Develop UWP apps
 
-How-to articles and code for creating UWP apps for Windows 10.
+How-to articles and code for creating UWP apps for Windows .
 
 :::row:::
     :::column:::
@@ -189,7 +189,7 @@ How-to articles and code for creating UWP apps for Windows 10.
         <a href="/windows/uwp/porting/android-ios-uwp-map">Concept mapping for Android and iOS developers</a><br/>
         <a href="/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a><br/>
         <a href="/microsoft-edge/progressive-web-apps">Convert your web app to a PWA</a><br/>
-        <a href="/windows/uwp/porting/apps-on-arm">Windows 10 on ARM</a><br/>
+        <a href="/windows/uwp/porting/apps-on-arm">Windows on ARM</a><br/>
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -216,6 +216,6 @@ How-to articles and code for creating UWP apps for Windows 10.
             <img src="/media/illustrations/sql-get-started-download.svg" alt="Developer tools" />
         </a><br/>
         <h3><a href="https://developer.microsoft.com/windows/downloads">Developer tools</a></h3>
-        <p>Get Visual Studio 2019, the Windows 10 SDK, and other developer tools.</p>
+        <p>Get Visual Studio 2019, the Windows SDK, and other developer tools.</p>
     :::column-end:::
 :::row-end:::

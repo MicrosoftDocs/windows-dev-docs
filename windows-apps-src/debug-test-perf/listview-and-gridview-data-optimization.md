@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # ListView and GridView data virtualization
 
 
-**Note**  For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Note**  For more details, see the //build/ session Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView.
 
 Improve [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) and [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) performance and startup time through data virtualization. For UI virtualization, element reduction, and progressive updating of items, see [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
 

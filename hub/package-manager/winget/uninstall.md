@@ -48,6 +48,7 @@ The options allow you to customize the uninstall experience to meet your needs.
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 After you have successfully identified the application intended to uninstall, winget will execute the uninstall command. In the example below, the **name** 'orca' and the **id** was passed in.
 

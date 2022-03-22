@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Use the Multilingual App Toolkit 4.0
 
-The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
+The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
 
 - Helps you manage resource changes and translation status during development.
 - Provides a UI for choosing languages based on configured translation providers.
@@ -33,10 +33,11 @@ Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing
 
 There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
 
-- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017 and later](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
+- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2019, in the form of a .vsix installer.
+- [Multilingual App Toolkit 4.1 Extension for Visual Studio 2022 and later](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022). This contains the MAT 4.1 extension for Visual Studio 2022, in the form of a .vsix installer.
 - [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
 
-If you use Visual Studio 2017 or Visual Studio 2019, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
+If you use Visual Studio 2017 or later, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
 ### Step 3. Enable the Multilingual App Toolkit for your project
 
@@ -163,7 +164,8 @@ Before you start the Microsoft Store Certification process, you must exclude the
 
 ## Downloads
 
-- [Multilingual App Toolkit 4.0 .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+- [Multilingual App Toolkit 4.0 Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+- [Multilingual App Toolkit 4.0 Visual Studio 2022+](https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022)
 - [Multilingual app toolkit 4.0 Editor](multilingual-app-toolkit-editor-downloads.md)
 
 ## Translation services

@@ -1,36 +1,30 @@
 ---
-description: Author a Windows Runtime Component with C#/WinRT and consume it from a native application 
-title: Create a C#/WinRT component and consume it from C++/WinRT
-ms.date: 01/28/2021
+title: Walkthrough&mdash;Create a C#/WinRT component, and consume it from C++/WinRT
+description: Author a Windows Runtime component with C#/WinRT, and consume it from a native application.
+ms.date: 03/15/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT
+# Walkthrough&mdash;Create a C#/WinRT component, and consume it from C++/WinRT
 
-> [!NOTE]
-> The C#/WinRT authoring support described in this article is currently in preview. As of C#/WinRT v1.3.5, we recommend using .NET 6 RC1 SDK or later for authoring and hosting scenarios.
-
-C#/WinRT enables .NET 5+ developers to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
+C#/WinRT enables developers using .NET 5 or later to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
 
 This walkthrough demonstrates how to create a simple Windows Runtime component using C#/WinRT, distribute the component as a NuGet package, and consume the component from a C++/WinRT console application. For the full sample that provides the code for this article, see the [C#/WinRT authoring sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo). For more details about authoring, see [Authoring components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
 
-While authoring your runtime component, follow the guidelines and type restrictions outlined in [this article.](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) Internally, the Windows Runtime types in your component can use any .NET functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true). Externally, the members of your type can expose only Windows Runtime types for their parameters and return values.
-
-> [!NOTE]
-> There are some Windows Runtime types that are [mapped to .NET types](../winrt-components/net-framework-mappings-of-windows-runtime-types.md). These .NET types can be used in the public interface of your Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types.
+For a walkthrough on authoring WinUI controls with C#/WinRT specifically for use in Windows App SDK applications, refer to the article [Walkthrough: Author a C# component with WinUI 3 controls and consume from a C++ Windows App SDK application](./create-winrt-component-winui-cswinrt.md)
 
 ## Prerequisites
 
 This walkthrough requires the following tools and components:
 
-- Visual Studio 2019
-- .NET 6.0 SDK 
+- [Visual Studio 2022](/visualstudio/releases/2022/release-notes)
+- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 - [C++/WinRT VSIX](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) for C++/WinRT project templates
 
 ## Create a simple Windows Runtime Component using C#/WinRT
 
-Begin by creating a new project in Visual Studio 2019. Select the **Class Library (.NET Core)** project template and name it **AuthoringDemo**. You will need to make the following additions and modifications to the project:
+Begin by creating a new project in Visual Studio. Select the **Class Library** project template, and name the project **AuthoringDemo**. You'll need to make the following additions and modifications to the project:
 
 1. Update the `TargetFramework` in the **AuthoringDemo.csproj** file and add the following elements to the `PropertyGroup`:
 
@@ -41,23 +35,15 @@ Begin by creating a new project in Visual Studio 2019. Select the **Class Librar
     </PropertyGroup>
     ```
 
-    For the `TargetFramework` element, you can use one of the following [target framework monikers](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-use-the-target-framework-moniker-option).
-    - **net5.0-windows10.0.17763.0**
-    - **net5.0-windows10.0.18362.0**
-    - **net5.0-windows10.0.19041.0**
-    - **net5.0-windows10.0.20348.0**
-    - **net6.0-windows10.0.17763.0**
-    - **net6.0-windows10.0.18362.0**
-    - **net6.0-windows10.0.19041.0**
-    - **net6.0-windows10.0.20348.0**
+    To access Windows Runtime types, you need to set a specific Windows SDK version in the TFM. For more details on the supported version, see [.NET 5 and later: Use the TFM option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-use-the-target-framework-moniker-option).
 
-2. Install the latest version of the [C#/WinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/).
+2. Install the [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) NuGet package in your project.
 
     a. In Solution Explorer, right click on the project node and select **Manage NuGet Packages**.
 
-    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version. This walkthrough uses C#/WinRT version 1.3.5.
+    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version. This walkthrough uses C#/WinRT version 1.4.1.
 
-3. Add a new `PropertyGroup` element that sets the following C#/WinRT property. The `CsWinRTComponent` property specifies that your project is a Windows Runtime component, so that a WinMD file is generated for the component.
+3. Add a new `PropertyGroup` element that sets the `CsWinRTComponent` property. This specifies that your project is a Windows Runtime component so that a `.winmd` file is generated when you build the project.
 
     ```xml
     <PropertyGroup>   
@@ -67,7 +53,7 @@ Begin by creating a new project in Visual Studio 2019. Select the **Class Librar
 
       For a full list of C#/WinRT project properties, refer to the [C#/WinRT NuGet documentation.](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)
 
-4. You can author your runtime classes using library **(.cs)** class files. Right click on the **Class1.cs** file and rename it to **Example.cs**. Add the following code to this file, which adds a public property and method to the runtime class. Remember to mark any classes you want to expose in the runtime component **public**.
+4. You can author your runtime classes using library `.cs` class files. Right click on the `Class1.cs` file, and rename it to `Example.cs`. Add the following code to this file, which adds a public property and method to the runtime class. Remember to mark any classes you want to expose in the runtime component as `public`.
 
     ```csharp
     namespace AuthoringDemo
@@ -84,11 +70,11 @@ Begin by creating a new project in Visual Studio 2019. Select the **Class Librar
     }
     ```
 
-5. You can now build the project to generate the metadata file for your component. Right click on the project in **Solution Explorer** and click **Build**. You will see the generated **AuthoringDemo.winmd** file in the in the **Solution Explorer** under **Generated Files** folder, and also in your build output folder.
+5. You can now build the project to generate the `.winmd` file for your component. Right-click on the project in **Solution Explorer**, and click **Build**. You'll see the generated `AuthoringDemo.winmd` file in your build output folder.
 
 ## Generate a NuGet package for the component
 
-Next, generate a NuGet package for the component. When you generate the package, C#/WinRT configures the component and hosting assemblies in the package for consumption from native applications.
+Most developers will want to distribute and share their Windows Runtime component as a NuGet package. Another option is to consume the component as a project reference. The following steps demonstrate how to package the **AuthoringDemo** component. When you generate the package, C#/WinRT configures the component and hosting assemblies in the package to enable consumption from native applications.
 
 There are several ways to generate the NuGet package:
 
@@ -102,11 +88,11 @@ There are several ways to generate the NuGet package:
 
 * Alternatively, you can generate a NuGet package by right clicking the **AuthoringDemo** project in **Solution Explorer** and selecting **Pack**.
 
-When you build the package, the **Build** window should indicate that the NuGet package `AuthoringDemo.1.0.0.nupkg` was successfully created.
+When you build the package, the **Build** window should indicate that the NuGet package `AuthoringDemo.1.0.0.nupkg` was successfully created. See [Create a package using the dotnet CLI](/nuget/create-packages/creating-a-package-dotnet-cli) for more details on NuGet package properties with the .NET CLI.
 
 ## Consume the component from a C++/WinRT app
 
-C#/WinRT authored Windows Runtime components can be consumed from any WinRT-compatible language. The following steps demonstrate how to call the authored component above in a native C++/WinRT console application. 
+C#/WinRT authored Windows Runtime components can be consumed from any Windows Runtime (WinRT)-compatible language. The following steps demonstrate how to call the authored component above in a C++/WinRT console application. 
 
 > [!NOTE]
 > Consuming a C#/WinRT component from C#/.NET apps is supported by both package reference or project reference. This scenario is equivalent to consuming any ordinary C# class library and does not involve WinRT activation in most cases. Starting with C#/WinRT 1.3.5, project references for C# consumers require .NET 6.
@@ -133,11 +119,11 @@ C#/WinRT authored Windows Runtime components can be consumed from any WinRT-comp
 
     - **Option 2 (Project reference)**:
         
-        a. Right click the **CppConsoleApp** project and select **Add** -> **Reference**. Under the **Projects** node, add a reference to the **AuthoringDemo** project. If your authored component is built with .NET 5 or you are using a version of C#/WinRT prior to 1.3.5, you will also need to add a file reference to **AuthoringDemo.winmd** from the **Browse** node. The generated winmd file can be found in the output directory of the **AuthoringDemo** project.
+        a. Right click the **CppConsoleApp** project and select **Add** -> **Reference**. Under the **Projects** node, add a reference to the **AuthoringDemo** project.
 
-3. To assist with hosting the component, you will need to add a manifest file for activatable class registrations. For more details about managed component hosting, see [Managed component hosting](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md).
+3. To host the component, you will need to add a manifest file for activatable class registrations. For more details about managed component hosting, see [Managed component hosting](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md).
 
-    a. To add the manifest file, again right click on the project and choose **Add -> New Item**. Search for the **Text File** template and name it **CppConsoleApp.exe.manifest**. Paste the following contents:
+    a. To add the manifest file, again right click on the project and choose **Add -> New Item**. Search for the **Text File** template and name it **CppConsoleApp.exe.manifest**. Paste the following contents, which specify the runtime classes using activatable class registration entries:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -152,7 +138,7 @@ C#/WinRT authored Windows Runtime components can be consumed from any WinRT-comp
     </assembly>
     ```
 
-    The manifest file is required for non-packaged applications. In this file, specify your runtime classes using activatable class registrations entries as shown above.
+    The application manifest file is required for apps that are not MSIX-packaged. For MSIX-packaged apps, the app consumer needs to register the activatable classes in their `Package.appxmanifest` package manifest file, as explained in [Walkthrough: Create a C# component with WinUI 3 controls and consume from a C++ Windows App SDK application](./create-winrt-component-winui-cswinrt.md).
 
     b. Modify the project to include the manifest file in the output when deploying the project. Click the **CppConsoleApp.exe.manifest** file in **Solution Explorer** and set the **Content** property to **True**. Here is an example of what this looks like.
 

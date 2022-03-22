@@ -46,6 +46,7 @@ The following options are available.
 | **--versions**    | Show available versions of the application. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ## Multiple selections
 

@@ -24,33 +24,51 @@ If you'd like to upgrade an existing app from an older version of the Windows Ap
 
 ## Version 1.0
 
-Version 1.0 is the latest release of the stable channel for the Windows App SDK. 1.0 supports all [stable channel features](release-channels.md#features-available-by-release-channel).
+Version 1.0.1 is the latest stable release of the stable channel for the Windows App SDK. 1.0.x supports all [stable channel features](release-channels.md#features-available-by-release-channel).
 
-### Downloads for 1.0 Stable
+### Downloads for 1.0 
+
+The Windows App SDK VSIX and runtime (installer and MSIX packages) are available at [Downloads for the Windows App SDK](downloads.md). The SDK downloads include the Visual Studio extensions to create and build new projects using the Windows App SDK. The runtime downloads include the installer and MSIX packages used to deploy apps. If you haven't done so already, [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview). 
 
 > [!NOTE]
-> If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
+> If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). 
+### Version 1.0.1
 
-From the table below you can download the Visual Studio extensions (VSIX) and the .exe installer for the 1.0 Stable release. If you haven't done so already, [Install developer tools](set-up-your-development-environment.md?tabs=preview).
+This is a servicing release of the Windows App SDK that includes critical bug fixes and multi-window support for the 1.0 release.
 
-| **1.0 Stable downloads** | **Description** |
-| ----------- | ----------- |
-| [C# Visual Studio 2022 extension](https://aka.ms/windowsappsdk/stable-vsix-2022-cs) | Build C# apps with the Windows App SDK Visual Studio 2022 extension. |
-| [C++ Visual Studio 2022 extension](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp) | Build C++ apps with the Windows App SDK Visual Studio 2022 extension. |
-| [C# Visual Studio 2019 extension](https://aka.ms/windowsappsdk/stable-vsix-2019-cs) | Build C# apps with the Windows App SDK Visual Studio 2019 extension. |
-| [C++ Visual Studio 2019 extension](https://aka.ms/windowsappsdk/stable-vsix-2019-cpp) |  Build C++ apps with the Windows App SDK Visual Studio 2019 extension. |
-| [The `.exe` installer, and MSIX packages](https://aka.ms/windowsappsdk/1.0-stable/msix-installer) | Deploy the Windows App SDK with your app using the `.exe` installer, and MSIX packages. |
+#### Bug fixes
+
+- Fixed issue causing the MddBootstrapAutoinitializer to not compile with enabled ImplicitUsings. For more information see [issue 1686](https://github.com/microsoft/WindowsAppSDK/issues/1686) on GitHub.
+- Fixed issue where focus in WebView2 would be unexpectedly lost causing input and selection issues. For more information, see [issue 5615](https://github.com/microsoft/microsoft-ui-xaml/issues/5615) & [issue 5570](https://github.com/microsoft/microsoft-ui-xaml/issues/5570) on GitHub.
+- Fixed issue causing the in-app toolbar in Visual Studio to be unclickable when using a custom title bar in a WinUI 3 app.
+- Fixed issue causing Snap Layout to not appear when using a custom title bar in a WinUI 3 app. For more information, see [issue 6333](https://github.com/microsoft/microsoft-ui-xaml/issues/6333) & [issue 6246](https://github.com/microsoft/microsoft-ui-xaml/issues/6246) on GitHub.
+- Fixed issue causing an exception when setting Window.ExtendsContentIntoTitleBar property when Window.SetTitlebar has been called with a still-loading UIElement.
+- Fixed issue where Single-project MSIX apps did not support `dotnet build`.
+- Fixed issue causing unpackaged apps to not install after installing a packaged app. For more information, see [issue 1871](https://github.com/microsoft/WindowsAppSDK/issues/1871) on GitHub.
+- Fixed issue reducing performance during mouse drag operations.
+- Fixed crash when calling GetWindowIdFromWindow() in unpackaged apps. For more information, see [discussion 1891](https://github.com/microsoft/WindowsAppSDK/discussions/1891) on GitHub.
+
+The [limitations and known issues](#other-limitations-and-known-issues) for version 1.0 also apply to version 1.0.1.
+
+Additionally, for apps with custom title bars, we have made changes in this release (and fixed numerous issues) that include fixes to the glass window used for drag&drop operations. 
+The recommendation is to use the default values and behaviors (give them a try!). 
+If your title bar used margins so that the default caption buttons were interactive, we recommend visualizing your drag region by setting the background of your title bar to red and then adjusting the margins to extend the drag region to the caption controls.
+
+#### New features
+We have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
+
+### Version 1.0 Stable
 
 The following sections describe new and updated features, limitations, and known issues for 1.0 Stable.
 
-### WinUI 3
+#### WinUI 3
 
 WinUI 3 is the native user experience (UX) framework for Windows App SDK. In this release we've added multiple new features from Windows App SDK 0.8 and stabilized issues from 1.0 Preview releases.
 
 **New features and updates**:
  - We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI 2.6](../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
  - Single-project MSIX packaging is supported in WinUI by creating a new application using the “Blank App, Packaged…” template. 
- - We now support deploying WinUI 3 apps without MSIX-packaging on Windows versions 1809 and above. Please view [Create a WinUI 3 unpackaged desktop app](../winui/winui3/create-your-first-winui3-app.md) for additional information.
+ - We now support deploying WinUI 3 apps without MSIX-packaging on Windows versions 1809 and above. Please view [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for additional information.
  - WinUI 3 projects can now set their target version down to Windows 10, version 1809. Previously, they could only be set as low as version 1903.
  - In-app toolbar, Hot Reload, & Live Visual Tree for WinUI packaged apps are supported in Visual Studio 2022 Preview 5 and GA.
 
@@ -58,25 +76,28 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 **Important limitations**:
 
 - Known issues for **both packaged and unpackaged WinUI applications**:
-  - *Run-time error in C++ apps that reference a C++ Windows Runtime Component:* To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:
+  - *Run-time error in C++ or C# apps that reference a C++ Windows Runtime Component:* 
+    - To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:
 
-    ```xml
-    <Target Name="GetPriIndexName">
-    <PropertyGroup>
-        <!-- Winmd library targets use the default root namespace of the project for the App package name -->
-        <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
-        <!-- If RootNamespace is empty fall back to TargetName -->
-        <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
-    </PropertyGroup>
-    </Target>
-    ``` 
+      ```xml
+      <Target Name="GetPriIndexName">
+      <PropertyGroup>
+          <!-- Winmd library targets use the default root namespace of the project for the App package name -->
+          <PriIndexName Condition="'$(RootNamespace)' != ''">$(RootNamespace)</PriIndexName>
+          <!-- If RootNamespace is empty fall back to TargetName -->
+          <PriIndexName Condition="$(PriIndexName) == ''">$(TargetName)</PriIndexName>
+      </PropertyGroup>
+      </Target>
+      ```
+
+     - The expected error will be similar to *WinRT originate error - 0x80004005 : 'Cannot locate resource from 'ms-appx:///BlankPage.xaml'.'.*
 
 - Known issues for **WinUI applications with Single-project MSIX** (Blank App, Packaged template):
   - *Missing Package & Publish menu item until you restart Visual Studio:* When creating a new app with Single-project MSIX in 
   both Visual Studio 2019 and Visual Studio 2022 using the Blank App, Packaged (WinUI 3 in Desktop) project template, 
   the command to publish the project doesn't appear in the menu until you close and re-open Visual Studio.
   - A C# app with Single-project MSIX will not compile without the "C++ (v14x) Universal Windows Platform Tools" 
-  optional component installed. View [Install developer tools](set-up-your-development-environment.md) for additional information.
+  optional component installed. See [Install tools for the Windows App SDK](set-up-your-development-environment.md) for additional information.
   - *Potential run-time error in an app with Single-project MSIX that consumes types defined in a referenced Windows Runtime Component:* 
   To resolve, manually add [activatable class entries](/uwp/schemas/appxpackage/how-to-specify-extension-points-in-a-package-manifest) to the appxmanifest.xml.
     - The expected error in C# applications is “COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG)). 
@@ -100,9 +121,9 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 For more info, or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
-### Windowing
+#### Windowing
 
 The Windows App SDK provides an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class that evolves the previous easy-to-use Windows.UI.WindowManagement.AppWindow preview class and makes it available to all Windows apps, including Win32, WPF, and WinForms. 
 
@@ -113,7 +134,7 @@ The Windows App SDK provides an [AppWindow](/windows/windows-app-sdk/api/winrt/m
 
 For more info, see [Manage app windows](windowing/windowing-overview.md).
 
-### Input
+#### Input
 
 These are the input APIs that support WinUI and provide a lower level API surface for developers to achieve more advanced input interactions.
 
@@ -129,7 +150,7 @@ These are the input APIs that support WinUI and provide a lower level API surfac
 - Direct use of the platform SDK API [**Windows.UI.Core.CoreDragOperation**](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation) will not work with WinUI applications.
 - **PointerPoint** properties **RawPosition** and **ContactRectRaw** were removed because they referred to non-predicted values, which were the same as the normal values in the OS. Use [**Position**](/en-us/windows/winui/api/microsoft.ui.input.pointerpoint.position) and [**ContactRect**](/windows/winui/api/microsoft.ui.input.pointerpointproperties.contactrect) instead. Pointer prediction is now handled with the **Microsoft.UI.Input.PointerPredictor** API object.
 
-### App Lifecycle
+#### App Lifecycle
 
 Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by desktop app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself.
 
@@ -172,7 +193,7 @@ All the constraints for packaged apps also apply to WinUI apps, which are packag
     - Registering a key, unregistering it, and re-registering it causes the app to crash
 
 
-### DWriteCore
+#### DWriteCore
 
 DWriteCore is the Windows App SDK implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal), which is the DirectX API for high-quality text rendering, resolution-independent outline fonts, and full Unicode text and layout support. DWriteCore is a form of DirectWrite that runs on versions of Windows down to Windows 10, version 1809 (10.0; Build 17763), and opens the door for you to use it cross-platform. 
 
@@ -189,7 +210,7 @@ DWriteCore contains all of the features of DirectWrite, with a few exceptions.
 
 For more information, see [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview).
 
-### MRT Core
+#### MRT Core
 
 MRT Core is a streamlined version of the modern Windows [Resource Management System](/windows/uwp/app-resources/resource-management-system) that is distributed as part of the Windows App SDK.
 
@@ -214,10 +235,10 @@ MRT Core is a streamlined version of the modern Windows [Resource Management Sys
     ```
 For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overview.md).
 
-### Deployment
+#### Deployment
 
 **New Features and updates**
--  You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create a WinUI 3 app](../winui/winui3/create-your-first-winui3-app.md) for instructions.
+-  You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for instructions.
 - Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md). 
 - Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](reference-framework-package-run-time.md#net-wrapper-for-the-bootstrapper-api). 
 - Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see the [deployment guide for packaged apps](deploy-packaged-apps.md).
@@ -228,7 +249,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 - When F5 testing an x86 app which uses the [DeploymentManager.Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) method on an x64 system, ensure that the x64 framework is first installed by running the [WindowsAppRuntimeInstall.exe](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer). Otherwise, you will encounter a **NOT_FOUND** error due to Visual Studio not deploying the x64 framework, which normally occurs through Store deployment or sideloading.
 
 
-### Other limitations and known issues
+#### Other limitations and known issues
 
 - **No support for Any CPU build configuration**: When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 - **Upgrading from .NET 5 to .NET 6**: When upgrading in the Visual Studio UI, you may run into build errors. As a workaround, manually update your project file's TargetFrameworkPackage to the below:
@@ -241,22 +262,31 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 -  **Subsequent language VSIX fails to install into Visual Studio 2019 when multiple versions of Visual Studio 2019 are installed.** If you have multiple versions of Visual Studio 2019 installed (e.g. Release and Preview) and then install the Windows App SDK VSIX for both C++ *and* C#, the second installation will fail. To resolve, uninstall the Single-project MSIX Packaging Tools for Visual Studio 2019 after the first language VSIX. View [this feedback](https://developercommunity.visualstudio.com/t/Installation-of-a-VSIX-into-both-Release/1582487?entry=myfeedback) for additional information about this issue.
 
-- If you want to `co_await` on the [DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method, then use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
-    1. Add a reference to [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
-    2. Add the `#include <wil/cppwinrt_helpers.h>` statement to your code file.
-    3. Use `wil::resume_foreground(your_dispatcher);` to `co_await` the result.
-
+    1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
+    2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
+    3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
+    4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
 ## Version 0.8
 
-The latest available release of the stable channel is the servicing release 0.8.5.
+The latest available release of the stable channel is the servicing release 0.8.6.
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+
+### Version 0.8.6
+
+This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release. 
+
+To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (either .NET SDK 5.0.404 or later, or .NET SDK 5.0.210 or later). You can now download the latest .NET 5 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0). If you do not have the minimum required version of the .NET SDK installed, you will see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
+
+#### Bug Fixes
+For a detailed list of the performance improvements, see the [C#/WinRT 1.4.1 release notes](https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1). 
 
 ### Version 0.8.5
 
@@ -361,8 +391,8 @@ For more information on WinUI, see [Windows UI 3 Library (WinUI)](../winui/index
 To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Controls Gallery app [from GitHub](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/p/winui-3-controls-gallery/9p3jfpwwdzrc).
 
 To get started developing with WinUI, check out the following articles:
-- [WinUI 3 project templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
@@ -451,7 +481,7 @@ This release has the following limitations and known issues:
 
 - [Preview channel](preview-channel.md)
 - [Experimental channel](experimental-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)

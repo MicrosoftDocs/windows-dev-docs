@@ -1,7 +1,7 @@
 ---
 title: Install PowerToys
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.date: 05/28/2021
+ms.date: 01/06/2021
 ms.topic: quickstart
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 
 We recommend installing PowerToys via GitHub or Microsoft Store, but alternative install methods are also listed if you prefer using a package manager.
 
-## Install with Windows executable file with GitHub
+## Install with Windows executable file via GitHub
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](https://aka.ms/installpowertoys)
@@ -25,7 +25,7 @@ To install PowerToys using a Windows executable file:
 
 ## Requirements
 
-- Windows 11 or Windows 10 v1903 (18362) or newer.
+- Windows 11 or Windows 10 v1903 (18362) or later.
 - [.NET Core 3.1.20 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-3.1.20-windows-x64-installer) or a newer 3.1.x runtime. The installer will handle this if not present.
 - x64 architecture currently supported. ARM support to become available at a later date.
 
@@ -49,28 +49,37 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install Microsoft.PowerToys --source winget
 ```
 
-## Installer arguements 
+## Installer args
 
-Our installer has a list of arguments you can chain on to accomplish different tasks such as a silent install.
+The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options)
 
-| Flag  | Description |
-|---|---|
-| `--silent` | Use completely silent installation (no UI and notifications) and do not launch PowerToys afterwards |
-| `--start_pt` | Always launch PowerToys after the installation is complete |
-| `--no_full_ui` | Do not use MSI wizard dialog, use reduced progress bar instead |
-| `--no_start_pt` | Do not start PowerToys after the installation is complete |
-| `--skip_dotnet_install` | Do not install dotnet, even if it's detected that it's not installed |
-| `--help` | Shows the list of supported command-line arguments |
-| `--log_level` | Possible values: `off` `debug` `error` |
-| `--log_dir` | Directory location where to save the logs |
-| `--install_dir` | Directory location where PowerToys is installed |
-| `--extract_msi` | Extract MSI to the working directory and exit. Use only if you must access MSI |
+Here are the common commands you may want:
 
-### Example of a installer with args being passed in
+| Command | Alternatives | What it does |
+|-------------|--------------| -------------- |
+| -quiet | -q | Silent install |
+| -silent| -s | Silent install |
+| -passive | | progress bar only install |
+| -layout |  | create a local image of the bootstrapper |
+| -log | -l | log to a specific file |
 
-A command that would not install dotnet core and be silent would be the following: 
+### Extracting out the MSI from the bundle:
+Make sure you have Wix toolset installed. https://wixtoolset.org/releases/
 
-`PowerToysSetup-0.21.0-x64.exe --silent --skip_dotnet_install --log_level error --log_dir C:\PTlogs`
+This PowerShell example assumes the default install location for Wix toolset 3.11.2 and the PowerToys installer downloaded to the desktop.
+
+```powershell
+cd $Env:WIX\"bin"
+
+# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
+.\dark.exe -x ${Env:\USERPROFILE}"\Desktop\extractedPath" ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.53.0-x64.exe"
+````
+
+### Fixes for uninstalling 0.51 and earlier builds issues
+
+If you have an issue where the MSI is not accessible, you can download the installer, that corresponds with the installed version, via the [PowerToys release page](https://github.com/microsoft/PowerToys/releases) and then run the following command. You'll want to change the EXECUTABLE_INSTALLER_NAME to what the file name actually is.
+
+In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
 ## Community-driven install tools
 

@@ -10,6 +10,8 @@ ms.localizationpriority: medium
 
 This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET, and don't require use of the Windows App SDK.
 
+[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+
 ## Windows App SDK features
 
 The following table highlights the development features that are provided by the current releases of the Windows App SDK. For more details about the release channels of the Windows App SDK that include each of these features, see [Features available by release channel](../windows-app-sdk/release-channels.md#features-available-by-release-channel).
@@ -48,7 +50,7 @@ The following articles provide information to help you get started using feature
 
 For information about setting up your development environment and getting started creating a new app, see the following articles:
 
-* [Set up your development environment](../windows-app-sdk/set-up-your-development-environment.md)
+* [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 * [Get started developing apps](../get-started/index.md)
 
 ## Related topics

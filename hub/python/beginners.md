@@ -1,5 +1,5 @@
 ---
-title: Python on Windows 10 for beginners
+title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 author: mattwojo 
 ms.author: mattwoj 
@@ -12,7 +12,7 @@ ms.date: 05/05/2021
 
 # Get started using Python on Windows for beginners
 
-The following is a step-by-step guide for beginners interested in learning Python using Windows 10.
+The following is a step-by-step guide for beginners interested in learning Python using Windows.
 
 ## Set up your development environment
 

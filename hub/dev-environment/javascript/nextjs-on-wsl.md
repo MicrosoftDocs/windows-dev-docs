@@ -12,7 +12,7 @@ ms.date: 03/30/2021
 
 # Get started with Next.js on Windows
 
-A guide to help you install the Next.js web framework and get up and running on Windows 10.
+A guide to help you install the Next.js web framework and get up and running on Windows.
 
 Next.js is a framework for creating server-rendered JavaScript apps based on React.js, Node.js, Webpack and Babel.js. It is basically a project boilerplate for React, crafted with attention to best practices, that allows you to create "universal" web apps in a simple, consistent way, with hardly any configuration. These "universal" server-rendered web apps are also sometimes called “isomorphic”, meaning that code is shared between the client and server.
 
@@ -22,7 +22,7 @@ To learn more about React and other JavaScript frameworks based on React, see th
 
 This guide assumes that you've already completed the steps to set up your Node.js development environment, including:
 
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+)
+- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
 - [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
 - [Install Node.js on WSL 2](./nodejs-on-wsl.md): This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension.
 

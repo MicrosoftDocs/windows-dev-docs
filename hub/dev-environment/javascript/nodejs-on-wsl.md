@@ -7,7 +7,7 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, learning nodejs, node on windows, node on wsl, node on linux on windows, install node on windows, nodejs with vs code, develop with node on windows, develop with nodejs on windows, install node on WSL, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
-ms.date: 03/30/2021
+ms.date: 12/10/2021
 ---
 
 # Install Node.js on Windows Subsystem for Linux (WSL2)
@@ -21,7 +21,7 @@ Using Windows Subsystem for Linux (WSL), enables you to install your preferred L
 
 ## Install WSL 2
 
-WSL 2 is the most recent version available on Windows 10 and we recommend it for professional Node.js development workflows. To enable and install WSL 2, follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
+WSL 2 is the most recent version available for Windows and we recommend it for professional Node.js development workflows. To enable and install WSL 2, follow the steps in the [WSL install documentation](/windows/wsl/install-win10). These steps will include choosing a Linux distribution (for example, Ubuntu).
 
 Once you have installed WSL 2 and a Linux distribution, open the Linux distribution (it can be found in your Windows start menu) and check the version and codename using the command: `lsb_release -dc`.
 
@@ -40,27 +40,30 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
 > [!IMPORTANT]
 > It is always recommended to remove any existing installations of Node.js or npm from your operating system before installing a version manager as the different types of installation can lead to strange and confusing conflicts. For example, the version of Node that can be installed with Ubuntu's `apt-get` command is currently outdated. For help with removing previous installations, see [How to remove nodejs from ubuntu](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04).)
 
-1. Open your Ubuntu 18.04 command line.
-2. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
-3. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
+1. Open your Ubuntu command line (or distribution of your choice).
+1. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
+1. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
 
     > [!NOTE]
-    > At the time of this writing, NVM v0.39.0 is the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
-    Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
+    > As of January 25, 2022, NVM v0.39.1 is the most recent version available. You can check the [GitHub project page for the latest release of NVM](https://github.com/nvm-sh/nvm), and adjust the above command to include the newest version.
+    Installing the newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For example: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
 
-4. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
-5. List which versions of Node are currently installed (should be none at this point): `nvm ls`
+1. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
+1. List which versions of Node are currently installed (should be none at this point): `nvm ls`
 
     ![NVM list showing no Node versions](../../images/nvm-no-node.png)
 
-6. Install the current release of Node.js (for testing the newest feature improvements, but more likely to have issues): `nvm install node`
-7. Install the latest stable LTS release of Node.js (recommended): `nvm install --lts`
-8. List what versions of Node are installed: `nvm ls` ...now you should see the two versions that you just installed listed.
+1. Install both the current and stable LTS versions of Node.js. In a later step, you'll learn how to switch between active versions of Node.js with an `nvm` command.
+
+    - Install the current stable LTS release of Node.js (recommended for production applications): `nvm install --lts`
+    - Install the current release of Node.js (for testing latest Node.js features and improvements, but more likely to have issues): `nvm install node`
+
+1. List what versions of Node are installed: `nvm ls` ...now you should see the two versions that you just installed listed.
 
     ![NVM list showing LTS and Current Node versions](../../images/nvm-node-installed.png)
 
-9. Verify that Node.js is installed and the currently default version with: `node --version`. Then verify that you have npm as well, with: `npm --version` (You can also use `which node` or `which npm` to see the path used for the default versions).
-10. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, and enter the directory `cd NodeTest`, then enter `nvm use node` to switch to the Current version, or `nvm use --lts` to switch to the LTS version. You can also use the specific number for any additional versions you've installed, like `nvm use v8.2.1`. (To list all of the versions of Node.js available, use the command: `nvm ls-remote`).
+1. Verify that Node.js is installed and the currently default version with: `node --version`. Then verify that you have npm as well, with: `npm --version` (You can also use `which node` or `which npm` to see the path used for the default versions).
+1. To change the version of Node.js you would like to use for a project, create a new project directory `mkdir NodeTest`, and enter the directory `cd NodeTest`, then enter `nvm use node` to switch to the Current version, or `nvm use --lts` to switch to the LTS version. You can also use the specific number for any additional versions you've installed, like `nvm use v8.2.1`. (To list all of the versions of Node.js available, use the command: `nvm ls-remote`).
 
 If you are using NVM to install Node.js and NPM, you should not need to use the SUDO command to install new packages.
 

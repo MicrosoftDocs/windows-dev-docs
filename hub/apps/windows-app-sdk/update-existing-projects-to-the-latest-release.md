@@ -18,7 +18,7 @@ If you created a project with an earlier version of the Windows App SDK (previou
 
 If you created a project using version 0.8 Stable (for example, version 0.8.4), you can follow these instructions to update your project to the 1.0 Stable release.
 
-**Prerequisite:** Download and install the latest release of the Windows App SDK. For more information, see [Install developer tools](set-up-your-development-environment.md).
+**Prerequisite:** Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ### Instructions
 
@@ -45,13 +45,13 @@ If you created a project using version 0.8 Stable (for example, version 0.8.4), 
 6. To add the `WindowsAppSDK` package reference to your `.csproj`/`.vcxproj`:
     
     ```Console
-    install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0-stable
+    install-package Microsoft.WindowsAppSDK -ProjectName {yourProject} -Version 1.0.0
     ```
 
 7. To add the `WindowsAppSDK` package reference to your `.wapproj`:
     
     ```Console
-    install-package Microsoft.WindowsAppSDK -Version 1.0.0-stable 
+    install-package Microsoft.WindowsAppSDK -Version 1.0.0 
     ```   
     
 ## Update from 0.8 Stable or Preview to 1.0 Experimental or Preview 3
@@ -61,7 +61,7 @@ If you created a project using version 0.8 Stable (for example, version 0.8.4), 
 
 If you created a project using version 0.8 Preview or any version of 0.8 Stable (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview 3 or Experimental release.
 
-Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 First, do the following:
 
@@ -166,7 +166,7 @@ If you created a project using version 0.8 Preview, you can follow these instruc
 > [!NOTE]
 > You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
-Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 First, do the following:
 
@@ -242,7 +242,7 @@ If you created a project using version 0.5 stable, you can follow these instruct
 > [!NOTE]
 > You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
-Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 First, do the following:
 
@@ -311,7 +311,7 @@ If you created a project using version 0.5 preview, you can follow these instruc
 > [!NOTE]
 > You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** -> **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
-Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 First, do the following:
 
@@ -413,7 +413,7 @@ Next, make these changes to your project:
 
 If you created a project using version 0.5 preview, you can follow these instructions to update your project to stable version 0.5.7.
 
-Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 First, do the following:
 
@@ -488,7 +488,7 @@ Next, make these changes to your project:
 
 If you created a desktop app using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion 0.5 Stable. 
 
-Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see the [installation instructions](set-up-your-development-environment.md).
+Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 First, do the following:
 

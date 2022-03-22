@@ -14,7 +14,7 @@ The Universal Windows Platform (UWP) offers new opportunities to create, distrib
 
 | Topic | Description |
 |-|-|
-| [Windows 10 game development guide](e2e.md) | An end-to-end guide with resources and information for developing UWP games. |
+| [Windows game development guide](e2e.md) | An end-to-end guide with resources and information for developing UWP games. |
 | [Planning](planning.md) | This topic contains a list of articles for the game planning stage. |
 | [UWP programming](uwp-programming.md) | Learn how to use Windows Runtime APIs to develop UWP games. |
 | [Game development videos](game-development-videos.md) | A collection of game dev videos from major conferences and events. |

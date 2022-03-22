@@ -39,7 +39,7 @@ The Windows App SDK offers you an opportunity to enhance your app with new platf
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
-The value proposition of moving the the Windows App SDK is manifold. Here are some considerations:
+The value proposition of moving the Windows App SDK is manifold. Here are some considerations:
 
 * Latest user interface (UI) platform and controls such as [Windows UI Library (WinUI)](/windows/apps/winui/) 3 and [WebView2](/microsoft-edge/webview2/).
 * A single API surface across desktop app platforms.
@@ -62,7 +62,7 @@ Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stab
 
 ## Create a new project
 
-In Visual Studio, [create a new Windows App SDK project](/windows/apps/winui/winui3/create-your-first-winui3-app). For example, use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app). For example, use the **Blank App, Packaged with WAP (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 

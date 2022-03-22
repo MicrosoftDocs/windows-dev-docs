@@ -3,7 +3,7 @@ title: Configure a barcode scanner for a specific application
 description: Tutorial - Learn how to configure a barcode scanner to support specific applications.
 ms.date: 11/24/2021
 ms.topic: article
-ms.localizationpriority: medium
+ms.custom: seo-windows-dev
 ---
 # Configure a barcode scanner to support specific applications
 

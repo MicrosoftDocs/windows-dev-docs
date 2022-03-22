@@ -1,53 +1,58 @@
 ---
 description: Get the latest downloads and tools for Windows apps user interface layout and controls designs.
-keywords: uwp app layout, UI, user interface designs, downloads, uwp tools, windows app layout, windows ui tools
 title: Design toolkits and samples for Windows apps
-ms.date: 06/30/2021
+ms.date: 01/11/2022
 ms.topic: conceptual
-ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
-ms.localizationpriority: medium
-ms.custom: RS5
+ms.custom: RS5, seo-windows-dev
 ---
 
 # Design toolkits and samples for Windows apps
 
 Design and UI-related downloads for Fluent Design/Windows apps. For additional tools, such as Visual Studio, see <a href="https://developer.microsoft.com/windows/downloads">our main downloads page</a>.
 
-## Design toolkits
-
-These toolkits provide controls and layout templates for designing Windows apps.
+## Toolkits and libraries
 
 :::row:::
     :::column:::
         ![Figma Toolkit icon](images/figma.png)
-    :::column-end:::
-    :::column span="2":::
-        **Figma Toolkit**<br>
-        WinUI 2.6, June 2021<br>
+        **Figma Toolkit**<br/>
+        WinUI 2.7, November 2021<br/>
         [Download](https://aka.ms/figmatoolkit)
     :::column-end:::
-:::row-end:::
-
-## Developer toolkits and libraries
-
-:::row:::
     :::column:::
-![WinUI library thumbnail](images/winui-library.png)
-<b>Windows UI Library</b><br>
-Controls and other UI elements for Windows apps.<br/>
-<a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
+        ![WinUI library thumbnail](images/winui-library.png)
+        **Windows UI Library**<br/>
+        Controls and other UI elements for Windows apps.<br/>
+        [Installation instructions](/uwp/toolkits/winui/getting-started)
     :::column-end:::
     :::column:::
-![Windows community thumbnail](images/windows-community-toolkit.png)
-<b>Windows Community Toolkit</b><br>
-Helper functions, custom controls, and app services.<br />
-<a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
+        ![Windows community thumbnail](images/windows-community-toolkit.png)
+        **Windows Community Toolkit**<br/>
+        Helper functions, custom controls, and app services.<br/>
+        [Installation instructions](/windows/uwpcommunitytoolkit/getting-started)
     :::column-end:::
     :::column:::
         ![Windows Template Studio thumbnail](images/windows-template-studio.png)
-        <b>Windows Template Studio</b><br>
-        Quickly scaffold a UWP app using a wizard-based UI.<br />
-        <a href="https://aka.ms/wtsinstall">Download</a>
+        **Windows Template Studio**<br/>
+        Quickly scaffold a UWP app using a wizard-based UI.<br/>
+        [Download](https://aka.ms/wtsinstall)
+    :::column-end:::
+:::row-end:::
+
+## XAML Controls Gallery
+
+:::row:::
+    :::column:::
+        ![Xaml Controls Gallery](images/xaml-controls-gallery.png)
+    :::column-end:::
+    :::column:::
+        **XAML Controls Gallery**
+
+This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project.
+
+[Download the XAML Controls Gallery sample](https://github.com/microsoft/Xaml-Controls-Gallery/archive/refs/heads/master.zip)
+[Check out the XAML Controls Gallery sample on GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery)
+[Download the XAML Controls Gallery app from the Store](https://www.microsoft.com/store/apps/9msvh128x2zt)
     :::column-end:::
 :::row-end:::
 
@@ -86,16 +91,12 @@ The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the nex
 
 ![build cast image](images/buildcast.png)
 **BuildCast**<br>
-BuildCast is an end-to-end sample built to showcase the Fluent Design System and Windows. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Build Amazing Apps with Fluent Design</a> talk. <br>
+BuildCast is an end-to-end sample built to showcase the Fluent Design System and Windows. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the Build Amazing Apps with Fluent Design talk. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Download the BuildCast sample</a> <br><a href="https://github.com/Microsoft/BuildCast">Check out the BuildCast sample on GitHub</a>
 
 ![Lunch Scheduler](images/lunchscheduler.png)
 **Lunch Scheduler**<br>
 A Windows app sample that schedules lunches with your friends and coworkers. You create a lunch, invite friends to a restaurant of interest, and the app takes care of the lunch management for all involved parties. This app incorporates elements of the Fluent Design System in a Windows app, including acrylic, reveal, and connected animations. <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">Download the Lunch Scheduler sample</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">Check out the Lunch Scheduler sample on GitHub</a></p>  
-
-![Xaml controls gallery](images/xaml-controls-gallery.png)
-**XAML Controls Gallery**<br>
-This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project.<br/><a href="https://github.com/microsoft/Xaml-Controls-Gallery/archive/refs/heads/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>
 
 ## Want more code?
 

@@ -124,7 +124,7 @@
                       - name: Packaging apps
                         tocHref: /windows/uwp/packaging/
                         topicHref: "/windows/uwp/packaging/index"                 
-                      - name: Porting apps to Windows 10
+                      - name: Porting apps to Windows
                         tocHref: /windows/uwp/porting/
                         topicHref: "/windows/uwp/porting/index"         
                       - name: Security

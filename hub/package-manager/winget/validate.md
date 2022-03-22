@@ -21,6 +21,7 @@ The following arguments are available.
 | Argument  | Description |
 |--------------|-------------|
 | **--manifest** |  the path to the manifest to be validated. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **-?, --help** |  get additional help on this command |
 
 ## Related topics

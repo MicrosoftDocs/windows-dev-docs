@@ -18,13 +18,13 @@ Some Windows Runtime (WinRT) APIs are not supported in desktop apps. For more in
 
 There are several options for .NET projects:
 
-* Starting in .NET 5, you can add a Target Framework Moniker (TFM) to your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
-* For earlier versions of .NET, you can install the `Microsoft.Windows.SDK.Contracts` NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
+* Starting in .NET 5, you can specify the Target Framework Moniker (TFM) in your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
+* For earlier versions of .NET, you can install the [`Microsoft.Windows.SDK.Contracts`](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
 * If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
 
 ### .NET 5 and later: Use the Target Framework Moniker option
 
-This option is supported only in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. For more background info about this scenario, see the blog post [Calling Windows APIs in .NET5](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+This option is supported only in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. By specifying a Windows OS version-specific TFM in the project file, a reference is added to the appropriate [Windows SDK targeting package](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref). For more background info about this scenario, see the blog post [Calling Windows APIs in .NET 5](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file will look similar to this.
 
@@ -56,6 +56,15 @@ This option is supported only in projects that use .NET 5 (or a later release) a
     In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
 
 3. Save your changes and close the project file.
+
+#### WinRT APIs not supported in .NET 5 or later
+
+In .NET 5 and later, there are several Windows Runtime (WinRT) APIs in the **Windows.UI** namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (**Microsoft.UI**) namespace (for example, [**Microsoft.UI.Text**](/windows/winui/api/microsoft.ui.text)). The following WinRT APIs are *not* supported on .NET 5 and later:
+
+* [**Windows.UI.Colors**](/uwp/api/Windows.UI.Colors) class
+* [**Windows.UI.ColorHelper**](/uwp/api/Windows.UI.ColorHelper) class
+* [**Windows.UI.Text**](/uwp/api/windows.ui.text) (all classes in this namespace **except** for **Windows.UI.Text.FontStretch**, **Windows.UI.Text.FontStyle**, **Windows.UI.Text.FontWeight**, **Windows.UI.Text.UnderlineType**, and all classes under the **Windows.UI.Text.Core** namespace)
+* [**Windows.UI.Xaml**](/uwp/api/windows.ui.xaml) (all classes in this namespace)
 
 #### Supporting multiple Windows OS versions 
 

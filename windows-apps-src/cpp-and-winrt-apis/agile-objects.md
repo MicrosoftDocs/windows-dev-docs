@@ -18,7 +18,7 @@ But you can opt out. You might have a compelling reason to require an object of 
 
 ## Code examples
 
-Let's use an example implementation of a runtime class to illustrate how C++/WinRT supports agility.
+Let's use an example implementation of a runtime class to show how C++/WinRT supports agility.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>

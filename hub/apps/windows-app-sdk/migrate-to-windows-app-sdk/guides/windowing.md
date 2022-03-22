@@ -23,7 +23,7 @@ This topic contains guidance related to window management, including migrating f
 
 The Windows App SDK provides a [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class that's based on the Win32 HWND model. That **AppWindow** class is the Windows App SDK's version of UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) and [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow).
 
-To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK **AppWindow**, see [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview).
+To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK **AppWindow**, see [Manage app windows](../../windowing/windowing-overview.md).
 
 ## Window types in UWP versus the Windows App SDK
 
@@ -93,7 +93,7 @@ As you migrate from UWP to the Windows App SDK, you can expect the same experien
 
 Apps that enter into compact overlay, or full-screen, should take advantage of the Windows App SDK [**AppWindowPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter). If you're familiar with the UWP **AppWindow**, then you might already be familiar with the concept of presenters.
 
-There isn't a 1:1 mapping of functionality and behavior from UWP app window presenters to Windows App SDK app window presenters. If you have a UWP **ApplicationView**/**CoreWindow** app, then you can still have compact overlay (picture-in-picture) or full-screen windowing experiences in your app, but the concept of presenters might be new to you. For more information on app window presenters, see [Presenters](/windows/apps/windows-app-sdk/windowing/windowing-overview#presenters). By default, an overlapped presenter is applied to an **AppWindow** at creation time. **CompactOverlay** and **FullScreen** are the only available presenters, aside from default.
+There isn't a 1:1 mapping of functionality and behavior from UWP app window presenters to Windows App SDK app window presenters. If you have a UWP **ApplicationView**/**CoreWindow** app, then you can still have compact overlay (picture-in-picture) or full-screen windowing experiences in your app, but the concept of presenters might be new to you. For more information on app window presenters, see [Presenters](../../windowing/windowing-overview.md). By default, an overlapped presenter is applied to an **AppWindow** at creation time. **CompactOverlay** and **FullScreen** are the only available presenters, aside from default.
 
 ### Compact overlay
 

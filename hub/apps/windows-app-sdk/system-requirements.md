@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 To develop apps for Windows 11 and Windows 10, you'll need Visual Studio, the Windows SDK, and the Windows App SDK. Before installing these tools, check the information in this article to make sure your development computer meets the minimum system requirements.
 
-For instructions to install and set up these tools, see [Set up your development environment](set-up-your-development-environment.md).
+For instructions to install and set up these tools, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Visual Studio
 
@@ -49,8 +49,8 @@ The Windows App SDK has these system requirements:
 - Windows SDK version 2004 (build 19041) and later. This is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
 - Building .NET apps also requires:
-  - .NET 5 SDK version 5.0.300 and later if you're using Visual Studio 2019 version 16.10
-  - .NET 5 SDK version 5.0.204 if you're using Visual Studio 2019 version 16.9
+  - .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
+  - .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
 
 ### Visual Studio support for WinUI 3 tools
 
@@ -65,5 +65,5 @@ You can build, run, and deploy apps built with stable versions of the Windows Ap
 
 ## Related topics
 
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Get started developing apps for Windows desktop](../get-started/index.md)

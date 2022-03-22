@@ -56,7 +56,7 @@ This section will only appear if you selected **Games** as your product’s cate
 
 If your game supports any of the multiplayer options, be sure to indicate the minimum and maximum number of players for a session. You can't enter more than 1,000 minimum or maximum players.
 
-**Cross-platform multiplayer** means that the game supports multiplayer sessions between players on Windows 10/11 PCs and Xbox.
+**Cross-platform multiplayer** means that the game supports multiplayer sessions between players on Windows 10 or Windows 11 PCs and Xbox.
 
 
 ## Display mode

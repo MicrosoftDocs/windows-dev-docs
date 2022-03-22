@@ -51,6 +51,7 @@ The  **source** command supports the following options.
 |  **-t,--type** | The type of source. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 |  **-?, --help** |  Gets additional help on this command. |
 
 ## add

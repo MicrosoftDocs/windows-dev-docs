@@ -107,7 +107,7 @@ Instead of having tabs occupy their own row below a Window's titlebar, you can m
 
 Because a user can drag a window by its titlebar to reposition the Window, it is important that the titlebar is not completely filled with Tabs. Therefore, when displaying tabs in a titlebar, you must specify a portion of the titlebar to be reserved as a draggable area. If you do not specify a draggable region, the entire titlebar will be draggable, which will prevent your tabs from receiving input events. If your TabView will display in a window's titlebar, you should always include a [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) in your [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) and mark it as a draggable region.
 
-For more information, see [Title bar customization](../shell/title-bar.md)
+For more information, see [Title bar customization](/windows/apps/develop/title-bar)
 
 ![Tabs in titlebar](images/tabview/tab-extend-to-title.png)
 

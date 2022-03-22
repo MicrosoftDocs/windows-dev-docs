@@ -1,6 +1,6 @@
 ---
-title: Notifications functionality migration
-description: This topic contains migration guidance in the notifications feature area.
+title: Push notifications functionality migration
+description: This topic contains migration guidance in the push notifications feature area.
 ms.topic: article
 ms.date: 10/07/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications
@@ -9,9 +9,9 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Notifications functionality migration
+# Push notifications functionality migration
 
-This topic contains migration guidance in the notifications feature area.
+This topic contains migration guidance in the push notifications feature area.
 
 > [!IMPORTANT]
 > Only raw push notifications are currently supported.

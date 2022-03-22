@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
-description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows 10 computers.
-ms.date: 11/19/2020
+description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
+ms.date: 02/22/2022
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -10,31 +10,26 @@ ms.localizationpriority: medium
 
 The **winget** command line tool enables users to discover, install, upgrade, remove and configure applications on Windows 10 and Windows 11 computers. This tool is the client interface to the Windows Package Manager service.
 
-## Install the winget client
+## Install winget
 
-There are two versions of the **winget** client available:
+Windows Package Manager **winget** command-line tool is bundled with Windows 11 by default as the **App Installer**. 
 
-* [Production [Recommended]](#production-recommended)
-* [Preview [Developers Only]](#preview-developers-only)
+If you are running an earlier version of Windows and the App Installer is not installed, you can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
 
-### Production [Recommended]
-
-For most users, you should obtain the latest production version from the [Microsoft Store](https://www.microsoft.com/en-us/store/apps/windows).
-
-The client is distributed within the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) package, which is pre-installed on Windows. When you go to the Microsoft Store, you can simply update the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) and the **winget** command line tool will be installed.
+App Installer includes the production version of the winget tool.
 
 > [!NOTE]
 > The **winget** command line tool is only supported on Windows 10 1709 (build 16299) or later at this time.
 
-### Preview [Developers Only]
+### Install winget preview version [Developers Only]
 
-For developers who want to try the latest features, they can install the latest preview build of the **winget** command line tool. To get access to the in development tool you can either:
+To try the latest Windows Package Manager features, install the latest preview build of the **winget** command line tool in one of the following ways:
 
-* Participate in the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting).
+* Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Dev Channel](https://insider.windows.com/understand-flighting).
+
+* Use a Microsoft Account (MSA) to sign up for the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram).
 
 * Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases). Installing this package will give you the WinGet client, but it will not enable automatic updates from the Microsoft Store.
-
-* Participate in the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram).
 
 ## Administrator considerations
 
@@ -122,7 +117,6 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 ## Debugging and troubleshooting
 
 **winget** provides logging to help diagnose issues. For troubleshooting and details on logging, see [Debugging and troubleshooting](./troubleshooting.md).
-
 
 ## Missing tools
 

@@ -175,7 +175,6 @@ Various videos covering how to build accessible Windows applications to general 
 :::row:::
 
    :::column:::
-      > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
    :::column-end:::
    :::column:::
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]

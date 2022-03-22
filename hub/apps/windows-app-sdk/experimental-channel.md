@@ -18,7 +18,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 
 **Important links**: 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
-- For documentation on experimental releases, see [Preview and Experimental guidance](preview-experimental-install.md).
+- For documentation on experimental releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
 **Experimental channel releases:**
 - [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
@@ -44,7 +44,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 For more information or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Get started developing apps with WinUI 3](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Push notifications (experimental feature)
 
@@ -66,7 +66,7 @@ This release includes updates to the windowing APIs. These are a set of high-lev
 Important limitations:
 
 - This release of `AppWindow` is currently available only to Win32 apps (both packaged and unpackaged).
-- The Windows App SDK does not currently provide methods for attaching UI framework content to an `AppWindow`; you are limited to using the `HWND` interop access methods.
+- The Windows App SDK does not currently provide methods for attaching UI framework content to an `AppWindow`; you're limited to using the `HWND` interop access methods.
 - The Windowing API's will currently not work on Windows version 1809 and 1903 for AMD64.
 
 For more information, see [Manage app windows](windowing/windowing-overview.md).
@@ -87,7 +87,7 @@ For more information, see the following articles:
 
 ### Other limitations and known issues
 
-- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI project templates](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 - **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 - **C# apps using 1.0 Experimental must use one of the following .NET SDKs**: 
 	- .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
@@ -149,7 +149,7 @@ For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-
 
 ### Limitations and known issues
 
-- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI project templates](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 - **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 ### Samples
@@ -160,7 +160,7 @@ The [Windows App SDK samples](https://github.com/microsoft/Project-Reunion-Sampl
 
 - [Stable channel](stable-channel.md)
 - [Preview channel](preview-channel.md)
-- [Set up your development environment](set-up-your-development-environment.md)
-- [Create a new project that uses the Windows App SDK](../winui/winui3/create-your-first-winui3-app.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
