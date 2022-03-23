@@ -14,9 +14,6 @@ A Windows Hello companion device is a device that can act in conjunction with yo
 > [!NOTE]
 > The API for the Windows Hello companion device framework is deprecated in Windows 10, version 2004.
 
-> [!NOTE]
-> The Windows Hello companion device framework is a specialized feature that's not available to all app developers. To use this framework, your app must be specifically provisioned by Microsoft and list the restricted *secondaryAuthenticationFactor* capability in its manifest. To obtain approval, contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
-
 ## Introduction
 
 > For a video overview, see the [Windows Unlock with IoT Devices](https://channel9.msdn.com/Events/Build/2016/P491) session from Build 2016 on Channel 9.
@@ -34,7 +31,7 @@ There are numerous ways one can use the Windows Hello companion device framework
 
 ### Biometric enabled Windows Hello companion devices
 
-If the companion device supports biometrics, in some cases the [Windows Biometric framework](/windows-hardware/design/device-experiences/windows-hello) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
+If the companion device supports biometrics, in some cases the [Windows Biometric framework](/windows-hardware/design/device-experiences/windows-hello) may be a better solution than the Windows Hello companion device framework.
 
 ### Components of the solution
 
