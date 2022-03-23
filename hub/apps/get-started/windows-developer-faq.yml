@@ -9,362 +9,357 @@ metadata:
   ms.localizationpriority: medium
   ms.collection: windows11
 title: Windows Developer FAQ/Glossary
-summary: 
-  This article is meant to promote a common understanding of the Windows development experience and product direction. The answers to these questiosn apply to Windows App SDK version 1.0.
-sections: 
-
- - name: "Getting started" 
-   questions: 
-     - question: What is Windows App SDK?
-       answer: |
+summary: This article is meant to promote a common understanding of the Windows development experience and product direction. The answers to these questiosn apply to Windows App SDK version 1.0.
+sections:
+  - name: "Getting started"
+    questions:
+      - question: What is Windows App SDK?
+        answer: |
           Windows App SDK is a Windows application development platform that allows you to build WinUI 3 desktop applications.
         # sign off
-     - question: What's the difference between Windows App SDK and the Windows SDK?
-       answer: |
-          Both are software development kits (SDKs) that let you build Windows apps. **Windows App SDK** is newer, it's focused on desktop apps, it ships with WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users. The **Windows SDK** is older, is aimed at UWP apps as well as desktop apps, it supports WinUI 2, and it's designed around Windows APIs that are coupled to particular versions of the OS.
-        # sign off
-     - question: What should I use to build Windows apps?
-       answer: | 
-          - **If you're targeting Windows:** Windows App SDK + WinUI 3 would be a great choice. This combination of technologies succeeds UWP + WinUI 2.
+      - question: What's the difference between Windows App SDK and the Windows SDK?
+        answer: |
+          Both are software development kits (SDKs) that let you build Windows apps. **Windows App SDK** is newer, it's focused on desktop apps, it ships with WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users. The **Windows SDK** is older, is aimed at UWP apps as well as desktop apps, it supports WinUI 2, and it's designed around Windows APIs that are coupled to particular versions of the OS. The Windows App SDK builds on top of the Windows SDK. When you build apps with Windows App SDK, you can expect to use the Windows SDK to gain access to all of the functionality that you need.
+        # sign off with edits
+        # ensure that we don't frame the app sdk as being obsolete - there are things that will always need to be coupled to the OS.
+        # part of the value prop of the new stuff is that it runs downlevel, but most of the win sdk stuff is supported everywhere
+        # appsdk provides access to win32 and com etc - catalogue of older apis and functionality
+      - question: What should I use to build Windows apps?
+        answer: |
+          - **If you'd like to build a modern, native Windows app:** Windows App SDK + WinUI 3 would be a great choice. This combination of technologies succeeds UWP + WinUI 2.
           - **If you're targeting cross-platform:** .NET MAUI lets you build cross-platform apps that use WinUI 3 when running on Windows.
           - **If you're a React developer:** We're working on supporting WinUI 3 in React Native on Windows. 
           - **If you're a web developer:** WebView2 gives your web applications a way to feel like Windows desktop apps while accessing the Windows platform and Windows App SDK.  
-          - **If you're a C++ developer:** Windows App SDK + WinUI 3.
+          - **If you're a C++ developer:** If you're building a game, consider using DirectX. For desktop apps, Windows App SDK + WinUI 3 are a great choice.
 
           [Learn more about choosing a development technology](./index.md).
         # pending product signoff
-     - question: Can I use Windows App SDK and WinUI 3 in my existing Windows app?
-       answer: |
-          Generally speaking, no. 
-          
+        # distinguish between using webview2 as an app vs in an app
+        # c++: possibly link to rust and include directx for a ui framework 
+        #  - link to this: https://docs.microsoft.com/en-us/windows/dev-environment/rust/rust-for-windows 
+      - question: Can I use Windows App SDK and WinUI 3 in my existing Windows app?
+        answer: |
+
           - **WPF/MFC/WinForms**: You can use Windows App SDK APIs that are not related to WinUI 3 in your existing WPF/MFC/WinForms apps. Examples of such APIs include App Lifecycle, Windowing, and Toast Notifications. 
           - **UWP/WinUI 2**: WinUI 3 and Windows App SDK use the win32 app model, which is incompatible with UWP/WinUI 2. You can't use WinUI 3 controls in UWP/WinUI 2 apps.
            
           Note that APIs within the `Microsoft.UI.XAML`` namespace are not compatible with WPF, Winforms, MFC, or UWP.
         # sign off - get another signoff
         # mikeb
-     - question: Do I need to use Visual Studio to build WinUI 3 apps?
-       answer: |
-           Yes. Other IDEs (such as Visual Studio Code) are currently unsupported. We strongly recommend using Visual Studio 2022 versions 17.1 and above to build WinUI 3 apps. Using the latest version of Visual Studio will give you access to rich development features like Hot Reload.
-         # sign off
-     - question: What limitations are there when building with WinUI 3 and Windows App SDK?
-       answer: |
-           Current limitations include:
-            - Multi-windowing (multi threads) isn't supported yet. You can't create multiple XAML windows in separate UI threads. However multiple windows can be created in the same UI thread. 
-            - Apps that haven't been published through the Microsoft Store can't send push notifications. (not sure - ask adam braden)
-            - Local toast notifications aren't supported yet.
-            - XAML Islands aren't supported yet.
-            - Media, map, and inking controls aren't supported yet.
-            - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet.
-            - App lifecycle management isn't supported yet. (follow up with andrew whitechapel - working for unpackaged, not packaged, or go ask adam braden)
-         # everything signed off except follow ups
-     - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
-       answer: |
+        # don't lead with no - clarify that UI framework may not be usable with wpf etc since it's so nuanced. Consider breaking this up into different technologies.
+      - question: Do I need to use Visual Studio to build WinUI 3 apps?
+        answer: |
+          Yes. Other IDEs (such as Visual Studio Code) are currently unsupported. We strongly recommend using Visual Studio 2022 versions 17.1 and above to build WinUI 3 apps. Using the latest version of Visual Studio will give you access to rich development features like Hot Reload.
+        # sign off
+      - question: What limitations are there when building with WinUI 3 and Windows App SDK?
+        answer: |
+          Current limitations include:
+           - Apps that haven't been published through the Microsoft Store can't send push notifications. (not sure - ask adam braden)
+           - Local toast notifications aren't supported yet.
+           - XAML Islands aren't supported yet.
+           - Media, map, and inking controls aren't supported yet.
+           - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet.
+           - App lifecycle management isn't supported yet. (follow up with andrew whitechapel - working for unpackaged, not packaged, or go ask adam braden)
+        # everything signed off except follow ups
+      - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
+        answer: |
           Yes - that's the term that we recommend you use. We generally refer to Windows app types in terms of the UI frameork used. Though keep in mind - a WPF app could *use* .NET and Windows App SDK.
-         # signed off
-     - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components?
-       answer: |
+        # signed off
+      - question: Can I incrementally update my WinUI 2 app to WinUI 3 by gradually replacing WinUI 2 components with WinUI 3 components?
+        answer: |
           No. You can't mix WinUI 2 and WinUI 3. See [About migrating from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
-         # signed off
-         # Link to migration guidelines
-     - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
-       answer: |
+        # signed off
+        # Link to migration guidelines
+      - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3?
+        answer: |
           Windows App SDK / WinUI 3 introduce a large number of significant changes. Migrating UI components will generally be straightforward. Other components will require a high level of effort. See [About migrating from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
-         # sign off
-     - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
-       answer: |
-          Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version. (follow up with someone from the store - adam braden, mike battista)
-         # signed off but needs confirmation 
-         # mikeb      
-     - question: Where can I find Windows App SDK migration guidance?
-       answer: |
+        # sign off
+      - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
+        answer: |
+          Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version.
+        # signed off but needs confirmation
+        # mikeb
+        # this answer applies to desktop apps, but not xbox or hololens
+      - question: Where can I find Windows App SDK migration guidance?
+        answer: |
           - **UWP developers**: See [About migrating from UWP to the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
-         # signed off.
-     - question: Where can I find a straightforward comparison of Windows development technologies?
-       answer: |
+        # signed off.
+      - question: Where can I find a straightforward comparison of Windows development technologies?
+        answer: |
           See [Select a development technology](./index.md).
-         # signed off 
- - name: Windows App SDK and WinUI 3
-   questions: 
-     - question: What does Windows App SDK mean for UWP developers?
-       answer: |
-          UWP developers don't need to migrate yet. WinUI 2 and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. If you want to update your UWP app to use the Windows App SDK or .NET 5, you can migrate your project to a desktop project type by following our migration guidance (see [Migrate from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)). 
-         # signed off - could ask the MVPs - what is the honest answer you want to see here? Is this clear / confidence inspirin. 
-     - question: What are the key benefits of using Windows App SDK?
-       answer: |
+        # signed off
+  - name: Windows App SDK and WinUI 3
+    questions:
+      - question: What does Windows App SDK mean for UWP developers?
+        answer: |
+          UWP developers don't need to migrate yet. WinUI 2 and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. If you want to update your UWP app to use the Windows App SDK or .NET 5, you can migrate your project to a desktop project type by following our migration guidance (see [Migrate from UWP to the Windows App SDK](https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)).
+        # signed off - could ask the MVPs - what is the honest answer you want to see here? Is this clear / confidence inspirin.
+      - question: What are the key benefits of using Windows App SDK?
+        answer: |
           Windows App SDK decouples Windows development APIs from the operating system (OS) so that you can build Windows apps that don't depend on operating systems being updated. Successive Windows App SDK releases decouple more and more APIs in this way. By removing dependencies on particular OS versions, you're able to reach more users.
 
-          It's best to think of Windows App SDK / WinUI 3 as the OS-decoupled successor to UWP / WinUI 2. If you want to learn more about the APIs that are being decoupled from the OS, see _____. 
-         # sign off with edits
-         # refer to migration guidance for UWP for this.
-     - question: Can WinUI 3 be used with UWP?
-       answer: |
+          It's best to think of Windows App SDK / WinUI 3 as the OS-decoupled successor to UWP / WinUI 2. If you want to learn more about the APIs that are being decoupled from the OS, see _____.
+        # sign off with edits
+        # refer to migration guidance for UWP for this.
+      - question: Can WinUI 3 be used with UWP?
+        answer: |
           No. See [Migrate your UWP app to the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
-         # sign off consider delete
-     - question: Do you need to use XAML if you want to use WinUI 3?
-       answer: |
+        # sign off consider delete
+      - question: Do you need to use XAML if you want to use WinUI 3?
+        answer: |
           No. UI controls can be created in code. But we strongly encourage you to use XAML. XAML offers many benefits that reduce _________. You can also use XAML if preferred, which means that you can reuse much of your XAML when migrating from UWP/WPF to WinUI 3 (but you'll have to update some of the syntax).
-         # sign off with edits
-         # you lose x:bind, code-generated based on xaml syntax
-         # xaml simplifies this
-         # binding is runtime - x:bind is compile-time, code generated to monitor changes and raise events when things
-     - question: Does Visual Studio have a design surface / GUI designer for WinUI 3?
-       answer: |
+        # sign off with edits
+        # you lose x:bind, code-generated based on xaml syntax
+        # xaml simplifies this
+        # binding is runtime - x:bind is compile-time, code generated to monitor changes and raise events when things
+      - question: Does Visual Studio have a design surface / GUI designer for WinUI 3?
+        answer: |
           No. But there are tools available that help you design ________. XAML Hot Reload can help in ____ scenarios.
-         # need to be polite about reality of the situation.
-         # we committed to this - but not investing right now, it's important, we recognize, we should do it sooner than later, but probably 2 years. Can't talk about anything beyond 1.1.
-         # point them to roadmap as a way to stay up to date with the team's plans.
-         # productboard definitely not - follow up with gabby.
-         # pending product signoff
-         # we have strong feedback that hot reloading isn't helping with design...
-         # designer does have flexibility - you can swap panels, components, you can do animations... nobody knows how to do animations... designer helps with this
-         # designer also lets you export generic styles, can right-click, import style, easy. But today we don't have that.
-         # currently super painful.
-     - question: Does Windows App SDK include WinUI 3?
-       answer: |
-          Yes. 
-         # signed off
-     - question: Does Windows App SDK include WinUI 2?
-       answer: |
+        # need to be polite about reality of the situation.
+        # we committed to this - but not investing right now, it's important, we recognize, we should do it sooner than later, but probably 2 years. Can't talk about anything beyond 1.1.
+        # point them to roadmap as a way to stay up to date with the team's plans.
+        # productboard definitely not - follow up with gabby.
+        # pending product signoff
+        # we have strong feedback that hot reloading isn't helping with design...
+        # designer does have flexibility - you can swap panels, components, you can do animations... nobody knows how to do animations... designer helps with this
+        # designer also lets you export generic styles, can right-click, import style, easy. But today we don't have that.
+        # currently super painful.
+      - question: Does Windows App SDK include WinUI 3?
+        answer: |
+          Yes.
+        # signed off
+      - question: Does Windows App SDK include WinUI 2?
+        answer: |
           WinUI 2 and UWP are not included as part of Windows App SDK. WinUI 2 ships as a standalone NuGet package; WinUI 3 ships within Windows App SDK.
-         # signed off.
-     - question: Can I do everything that I can do with WinUI 2 using WinUI 3?
-       answer: |
+        # signed off.
+      - question: Can I do everything that I can do with WinUI 2 using WinUI 3?
+        answer: |
           Not quite. WinUI 3 isn't an in-place upgrade of WinUI 2. WinUI 3 is a new technology that replaces WinUI 2. Many UWP features are being ported to the Windows App SDK on a prioritized basis. Eventually, the WinApp SDK will support most UWP functionality, along with various new and improved features. There are many things that you can do in WinUI 3 that you can't do in WinUI 3, such as calling any I/O win32 apis without restriction.
-         # sign off with edits
-     - question: Can I use WinUI 3 without using Windows App SDK?
-       answer: |
+        # sign off with edits
+      - question: Can I use WinUI 3 without using Windows App SDK?
+        answer: |
           No. Since WinUI 3 is part of the Windows App SDK, by using WinUI 3 you're actually using the Windows App SDK.
         # sign off
-     - question: Can I use WinUI 3 in Win32 apps?
-       answer: |
-          Yes. WinUI 3 is based on win32. But WinUI 3 UI controls can't be mixed with Win32 UI controls within the same surface. 
-         # low confidence
-         # signed off
-         # you could create a winui3 app that has a window that uses win32 UI controls.
-     - question: What's the difference between XAML Islands and WinUI 3?
-       answer: |
+      - question: Can I use WinUI 3 in Win32 apps?
+        answer: |
+          Yes. WinUI 3 is based on win32. But WinUI 3 UI controls can't be mixed with Win32 UI controls within the same surface.
+        # low confidence
+        # signed off
+        # you could create a winui3 app that has a window that uses win32 UI controls.
+      - question: What's the difference between XAML Islands and WinUI 3?
+        answer: |
           XAML Islands lets you host UWP content within win32 apps. XAML Islands is the foundation of WinUI 3. Under the hood, WinUI 3 uses desktop XAML manager APIs. But WinUI 3 gives you a scoped-down version of XAML Islands.
-         # sign off with edits
-         # todo: clarify the fact that the scoped-down version is closed-source / private? maybe don't expose this info...
-     - question: Can I use XAML Islands with WinUI 3 / Windows App SDK?
-       answer: |
+        # sign off with edits
+        # todo: clarify the fact that the scoped-down version is closed-source / private? maybe don't expose this info...
+      - question: Can I use XAML Islands with WinUI 3 / Windows App SDK?
+        answer: |
           No. Although..... incompatible.
-         # sign off with edits
-     - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10?
-       answer: |
+        # sign off with edits
+      - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10?
+        answer: |
           Yes, your app's UI will inherit the latest Fluent UI design principles on all supported versions of Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
-         # sign off with cleanup
-         # we only support the versions that are only supported in market - 19H1 out of support in May.
-     - question: Can I use WinUI 3 with React Native?
-       answer: |
+        # sign off with cleanup
+        # we only support the versions that are only supported in market - 19H1 out of support in May.
+      - question: Can I use WinUI 3 with React Native?
+        answer: |
           React native for windows website - refer to roadmap.
-         # pending product signoff
-         # they're using WinUI 2 for now, AppSDK 1.2 in nov maybe. 
-     - question: Can I use Mica (Windows 11) or Acrylic (Windows 10) backgrounds in apps built with Windows App SDK?
-       answer: |
-          Not yet. 
-         # sign off with caveats
-         # This is in-scope for AppSDK version 1.1.* pending
-     - question: Does WinUI 3 use XAML markup, like UWP and Windows Presentation Foundation (WPF)?
-       answer: |
+        # pending product signoff
+        # they're using WinUI 2 for now, AppSDK 1.2 in nov maybe.
+      - question: Can I use Mica (Windows 11) or Acrylic (Windows 10) backgrounds in apps built with Windows App SDK?
+        answer: |
+          Not yet.
+        # sign off with caveats
+        # This is in-scope for AppSDK version 1.1.* pending
+      - question: Does WinUI 3 use XAML markup, like UWP and Windows Presentation Foundation (WPF)?
+        answer: |
           Yes, there are many benefits to representing your WinUI 3 UI in the form of declarative XAML markup. But you can also use WinUI 3 types using imperative code (C#) where doing so is necessary, just like you can with UWP and WPF. But there are drawbacks... (incorporate above)
         # signed off
- - name: UWP and WinUI 2
-   questions: 
-     - question: Can UWP apps be distributed outside of the Microsoft Store?
-       answer: |
+  - name: UWP and WinUI 2
+    questions:
+      - question: Can UWP apps be distributed outside of the Microsoft Store?
+        answer: |
           Yes, as long as they're signed with a valid certificate.
-         # sign off
-     - question: Can I mix UWP UI controls with Win32, WPF, or WinForms UI controls?
-       answer: |
+        # sign off
+      - question: Can I mix UWP UI controls with Win32, WPF, or WinForms UI controls?
+        answer: |
           Yes - XAML Islands lets you do this. [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands). Remember that XAML Islands are only supported in projects with .NET core 3.1.
-         # sign off with cleanup needed
-         # system xaml islands that we have today is supported for C++ and .net but .net core 3.1 only
-         # means if you have .net framework, you can't use XAML islands. .NET 5/6/standard - no - only .net core 3.1 - means support of .net core 3.1 ends this year. So officially, XAML islands won't be supported in .NET - only C++
-         # Remember that XAML Islands are only supported in projects with .net core 3.1 - we want devs to use WinUI 3 - when we publish xaml islands in 1.2, everyone (c++ .net etc) will be able to use WinUI 3. WinUI3/XAML Islands suppports .net 5 etc.
- - name: XAML Islands
-   questions: 
-     - question: What's XAML Islands?
-       answer: |
+        # sign off with cleanup needed
+        # system xaml islands that we have today is supported for C++ and .net but .net core 3.1 only
+        # means if you have .net framework, you can't use XAML islands. .NET 5/6/standard - no - only .net core 3.1 - means support of .net core 3.1 ends this year. So officially, XAML islands won't be supported in .NET - only C++
+        # Remember that XAML Islands are only supported in projects with .net core 3.1 - we want devs to use WinUI 3 - when we publish xaml islands in 1.2, everyone (c++ .net etc) will be able to use WinUI 3. WinUI3/XAML Islands suppports .net 5 etc.
+  - name: XAML Islands
+    questions:
+      - question: What's XAML Islands?
+        answer: |
           XAML Islands lets you use new pieces of UI from the Universal Windows Platform (UWP) on existing Win32 apps, including Windows Forms and WPF apps. You can use XAML Islands to [host UWP XAML controls in non-UWP desktop apps](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands). [Learn more about XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
-        # sign off 
-        # todo - bit about .net support above (Remember that XAML Islands are o/... 
+        # sign off
+        # todo - bit about .net support above (Remember that XAML Islands are o/...
 
- - name: Combining Windows development technologies
-   questions:      
-     - question: Can I start with WinUI 3 and App SDK, and later integrate .NET MAUI if I eventually want to target cross-platform scenarios?
-       answer: |
+  - name: Combining Windows development technologies
+    questions:
+      - question: Can I start with WinUI 3 and App SDK, and later integrate .NET MAUI if I eventually want to target cross-platform scenarios?
+        answer: |
           No - if you anticipat...... start with .net MAUI.
-         # sign off with edits
-     - question: Can I combine WPF and WinUI 3?
-       answer: |
+        # sign off with edits
+      - question: Can I combine WPF and WinUI 3?
+        answer: |
           No. There's no XAML Islands support in WinUI 3.
         # sign off
 
-
- - name: Cross-platform development
-   questions: 
-     - question: What should I use if I want to build apps that work on Windows and Xbox?
-       answer: |
+  - name: Cross-platform development
+    questions:
+      - question: What should I use if I want to build apps that work on Windows and Xbox?
+        answer: |
           If your app needs to support both Windows and Xbox, we recommend using the Universal Windows Platform (UWP). We usually recommend using Windows App SDK and WinUI 3 for Windows apps, although these apps won't work on Xbox. And for game development, we recommend using [Microsoft Game Development Kit](https://github.com/microsoft/GDK).
         # TODO: Are there future plans to allow devs to build xbox apps using win app sdk?
         # see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1510738 -->
         # pending product signoff
-     - question: What should I use if I want to build apps that work on Windows and Surface Hub?
-       answer: |
+      - question: What should I use if I want to build apps that work on Windows and Surface Hub?
+        answer: |
           If you're targeting both Windows and Surface hub, we recommend using UWP.
-         # pending product signoff
-     - question: What should I use if I want to build apps that work on Windows and Hololens and/or Mixed Reality?
-       answer: |
+        # pending product signoff
+      - question: What should I use if I want to build apps that work on Windows and Hololens and/or Mixed Reality?
+        answer: |
           It's not currently possible to build one app that works on Windows, Hololens, and Mixed Reality. We recommend using Windows App SDK and WinUI 3 to build Windows apps. For Hololens apps, we recommend using either UWP or OpenXR + Win32. [Learn more about OpenXR](https://docs.microsoft.com/windows/mixed-reality/develop/native/openxr). Mixed Reality apps can be built [using the Windows SDK and Visual Studio](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools).
-         # pending product signoff
-         # todo: consider splitting up if we think it's worth it
+        # pending product signoff
+        # todo: consider splitting up if we think it's worth it
 
-
- - name: Samples and real-world apps
-   questions: 
-     - question: Where can I find an example of a small and easy-to-deploy WinUI 3 app?
-       answer: |
+  - name: Samples and real-world apps
+    questions:
+      - question: Where can I find an example of a small and easy-to-deploy WinUI 3 app?
+        answer: |
           TODO - product guidance needed
-         # https://github.com/microsoft/WinUI-3-Demos winui%203%20gallery%20demo
-         # "win app sdk samples"
-         # don't hesitate to share this - folks can submit prs - add disclaimer
-         # https://github.com/microsoft/WinUI-3-Demos # for demos and presentations
-         # https://github.com/microsoft/WindowsAppSDK-Samples  # demo how to use specific api sets
-         # https://github.com/Microsoft/Xaml-Controls-Gallery - default solution in master branch is winui 3 - to showcase specifically winui3 layer of appsdk
-         # sign off with edits
+        # https://github.com/microsoft/WinUI-3-Demos winui%203%20gallery%20demo
+        # "win app sdk samples"
+        # don't hesitate to share this - folks can submit prs - add disclaimer
+        # https://github.com/microsoft/WinUI-3-Demos # for demos and presentations
+        # https://github.com/microsoft/WindowsAppSDK-Samples  # demo how to use specific api sets
+        # https://github.com/Microsoft/Xaml-Controls-Gallery - default solution in master branch is winui 3 - to showcase specifically winui3 layer of appsdk
+        # sign off with edits
+        # todo: mike battista on extension - template studio for 2019+ - wait for 2022
 
- - name: Packaging, deployment, and updates
-   questions: 
-     - question: What's the difference between packaged, unpackaged, and sparse-packaged apps?
-       answer: |
+  - name: Packaging, deployment, and updates
+    questions:
+      - question: What's the difference between packaged, unpackaged, and sparse-packaged apps?
+        answer: |
           Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. Unpackaged apps don't use MSIX. Both types of applications can be published to the Microsoft Store.
         # Note that definitions exist both here and in the glossary - update both places if updating one for consistency.
         # todo: include sparsed
         # todo: RE duplication between here and glossary: my current energy is a comparison isn't the same as a definition, so this isn't quite duplication. We could enumerate definitions here as includes - in my mind this is an optimization we can address later
         # pending product signoff
+        # https://review.docs.microsoft.com/en-us/windows/apps/package-and-deploy/?branch=release-appsdk-1.1-preview1
         # mikeb
-     - question: Can I create an unpackaged WinUI 3 app?
-       answer: |
+      - question: Can I create an unpackaged WinUI 3 app?
+        answer: |
           Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app).
-         # sign off
-     - question: Can I configure my WinUI 3 app to auto-update?
-       answer: |
+        # sign off
+      - question: Can I configure my WinUI 3 app to auto-update?
+        answer: |
           Yes. Through packaged scenario, but... not heavily tested...
-        # ask product peers to confirm&mdash;see https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500094 
-         # pending product signoff
-         # consider cutting
-         # mikeb
-     - question: Can I use Windows App SDK without using MSBuild?
-       answer: |
+        # ask product peers to confirm&mdash;see https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500094
+        # pending product signoff
+        # consider cutting
+        # there is a wizard experience that might make this easy, but not sure... might be gaps...
+        # either you have to manually create the file
+        # check with evelyn wu
+      - question: Can I use Windows App SDK without using MSBuild?
+        answer: |
           No - WinUI 3 and Windows App SDK require MSBuild, which is why vs and not vs code
-         # see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1499451 -->
-         # sign off with friendly edits
- - name: Security
-   questions:
-     - question: Where can I learn more about security best practices when developing apps for Windows?
-       answer: |
+        # see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1499451 -->
+        # sign off with friendly edits
+  - name: Security
+    questions:
+      - question: Where can I learn more about security best practices when developing apps for Windows?
+        answer: |
           TODO
-         # pending product signoff
-         # adam braden
+        # pending product signoff
+        # adam braden
 
- - name: Performance and optimization
-   questions:
-     - question: Does Windows App SDK support native compilation?
-       answer: |
-          If you're a c++ developer, it's native. You don't have .net runtime. If you're using .net runtime - it's a bit different from UWP. compilation goes into native code, however in .net, assemblies use IL intermediate language. However - you can always precompile binaries in .net using functionality called Ready to Run. 
+  - name: Performance and optimization
+    questions:
+      - question: Does Windows App SDK support native compilation?
+        answer: |
+          If you're a c++ developer, it's native. You don't have .net runtime. If you're using .net runtime - it's a bit different from UWP. compilation goes into native code, however in .net, assemblies use IL intermediate language. However - you can always precompile binaries in .net using functionality called Ready to Run.
         # pending product signoff
         # native is faster - memory consumption lower
         # every .net app is managed - non-native - but in UWP, used something called .net native, in compilation time, assemblies of .net are translated into .net native code - still need the runtime, but it's compiled into native bits.
-        # uwp using .net native, appsdk using standard .net 5
+        # uwp using .net native, appsdk using standard .net 5 (doesn't support AOT - reason why no update path from UWP, so UWP builders are disappointed by lack of AOT performance benefits for end-users)
         # removed support for .net native is that we pay a cost for having two frameworks - couldn't afford this cost.
         # .net team has more resources - moves fast - so we use C#/winrt projection to use .net 5 instead of trying to keep up
         # eg in .net 3.1 - there's a specific winrt projection - means every time a new .net version is made (eg version 5), we have to wait on specific projections, means appsdk team is tightly coupled to .net team - need to decouple from .net team, and then use the latest bits - remove projection from .net and use C#/winrt projections that we control.
-     - question: My built WinUI 3 app is large. How do I reduce the size of my built binary?
-       answer: |
-          TODO - product guidance needed
-        # pending product signoff
-        # no good story for this yet - .net has a trick, but this isn't tested. 
-        # is important - cut temporarily
-     - question: What can I do to make my Windows app feel great to end-users?
-       answer: |
+        # AOT vs JIT - by default, JIT is used, compiles on the fly, AOT compiles ahead of time into native code
+      - question: What can I do to make my Windows app feel great to end-users?
+        answer: |
           See [Make apps great for Windows](https://docs.microsoft.com/windows/apps/get-started/make-apps-great-for-windows).
-         # adam braden
- - name: Compatibility
-   questions:
-     - question: Will my users ever have to update Windows to use my Windows App SDK / WinUI 3 app?
-       answer: |
+        # adam braden
+  - name: Compatibility
+    questions:
+      - question: Will my users ever have to update Windows to use my Windows App SDK / WinUI 3 app?
+        answer: |
           Users who have Windows 10, version 1809 and beyond will be able to install your WinUI 3 / Windows App SDK apps without updating their OS as long as your project is configured to target Windows 10 version 1809.
-         # signed off
-     - question: Can I target ARM64 with my WinUI 3 app?
-       answer: |
+        # signed off
+      - question: Can I target ARM64 with my WinUI 3 app?
+        answer: |
           ARM64 is supported for packaged and unpackaged WinUI 3 apps.
-         # pending product signoff
-         # mikeb
+        # signed off - need to verify
+        # need a remote device for unpackaged
+        # howard k and jon wiswal
 
-
- - name: Deprecations and migrations
-   questions:
-     - question: Are UWP / WinUI 2 deprecated?
-       answer: |
+  - name: Deprecations and migrations
+    questions:
+      - question: Are UWP / WinUI 2 deprecated?
+        answer: |
           No. UWP and WinUI 2 are still fully supported for production scenarios and the Windows SDK will continue to support UWP project types, including bug, reliability, and security fixes. UWP will be supported while UWP features are being ported to the Windows App SDK with the caveat that .NET 5/6 won't be coming to UWP.
 
           Many UWP features are being ported to the Windows App SDK on a prioritized basis. Eventually, the Windows App SDK will support most UWP functionality, along with various new and improved features.
         # <!--see MSFT representing UWP status here: https://www.reddit.com/r/csharp/comments/r9ecz4/what_is_the_main_framework_used_for_making/  -->
-         # sign off
-     - question: When should I migrate a UWP + WinUI 2 app to WinUI 3?
-       # "What are the reasons to -> when should I" based on an assumption that people are more likely to search for "when should I" vs "what are the reasons"
-       answer: |
+        # sign off
+      - question: When should I migrate a UWP + WinUI 2 app to WinUI 3?
+        # "What are the reasons to -> when should I" based on an assumption that people are more likely to search for "when should I" vs "what are the reasons"
+        answer: |
           We encourage you to migrate your UWP project to a WinUI 3 desktop project if you need to use .NET 5/6 because .NET 5/6 won't be coming to UWP project types.
           Otherwise, there's no immediate need to migrate your UWP app to WinUI 3. We're working on porting the most popular UWP features to Windows App SDK (which includes WinUI 3), but you can use UWP if Windows App SDK doesn't yet meet your needs.
         # <!-- https://github.com/microsoft/WindowsAppSDK/discussions/1615 -->
-         # sign off with edits
-         # another reason - if at some point your app needs access to os resources that need access outside sandbox of security - eg selecting a system folder - this requires winui3. Access to registry etc.  UWP has a sandbox of security - blocks app access to pieces of the OS. win32 expands this access.
-     - question: When should I *not* migrate a UWP + WinUI 2 app to WinUI 3?
-       answer: |
+        # sign off with edits
+        # another reason - if at some point your app needs access to os resources that need access outside sandbox of security - eg selecting a system folder - this requires winui3. Access to registry etc.  UWP has a sandbox of security - blocks app access to pieces of the OS. win32 expands this access.
+      - question: When should I *not* migrate a UWP + WinUI 2 app to WinUI 3?
+        answer: |
           We recommend continuing to use UWP if:
            - You're building an app for Xbox
            - You're building an app for Hololens
-           - You're building an app for Surface Hub 
+           - You're building an app for Surface Hub
         # leaning towards cutting the last bullet...
-         # sign off with edits
-         # uwp/winui2 may have features that are not yet ported to winui3 - for example the map control. refer to roadmap - + gabby wotking on feature by release
-     - question: Is WPF deprecated?
-       answer: |
+        # sign off with edits
+        # uwp/winui2 may have features that are not yet ported to winui3 - for example the map control. refer to roadmap - + gabby wotking on feature by release
+      - question: Is WPF deprecated?
+        answer: |
           No. WPF is still actively developed and supported for production scenarios.
-         # sign off
-     - question: Is WinForms deprecated?
-       answer: |
+        # sign off
+      - question: Is WinForms deprecated?
+        answer: |
           No. Winforms is still actively developed and supported for production scenarios.
-         # signed off
-     - question: Is the Windows Runtime (WinRT) deprecated?
-       answer: |
+        # signed off
+      - question: Is the Windows Runtime (WinRT) deprecated?
+        answer: |
           WinRT refers to a type of API. WinRT APIs are the evolution of COM APIs, and they're alive and kicking. WinAppSDK and WinUI 3 APIs are WinRT APIs because they run on the win32 application model.
-         # pending product signoff
-         # notes for me: windows uses something called COM components to expose APIs to other languages - every API that you want to use externally, will be implementing a COM interface that is registered in the registry - why registry is so large. Thsi is how the OS makes sure that APIs can be used across platforms. Windows RunTime was about taking COM and allow libraries like .net to take advantage of the com components in an easy way. This extends com components with new interfaces that every library fulfilles - allows for projections to be created. Right now in windows, every time you create a new library, it uses the winrt model. With win appsdk, all libraries are exposed via winrt. Every winrt component requires the COM binary + IDL file which is similar to IDL in .net, which describes the interface - every platform that wants to consume the winrt component, needs to read the IDL - which is just an interface/contract. WinRT extends COM components that makes it easier to consume/
- - name: Release notes, future plans, and roadmaps
-   questions:
-     - question: Where can I find release notes for Windows App SDK?
-       answer: |
+        # pending product signoff
+        # notes for me: windows uses something called COM components to expose APIs to other languages - every API that you want to use externally, will be implementing a COM interface that is registered in the registry - why registry is so large. Thsi is how the OS makes sure that APIs can be used across platforms. Windows RunTime was about taking COM and allow libraries like .net to take advantage of the com components in an easy way. This extends com components with new interfaces that every library fulfilles - allows for projections to be created. Right now in windows, every time you create a new library, it uses the winrt model. With win appsdk, all libraries are exposed via winrt. Every winrt component requires the COM binary + IDL file which is similar to IDL in .net, which describes the interface - every platform that wants to consume the winrt component, needs to read the IDL - which is just an interface/contract. WinRT extends COM components that makes it easier to consume/
+  - name: Release notes, future plans, and roadmaps
+    questions:
+      - question: Where can I find release notes for Windows App SDK?
+        answer: |
           See [Stable channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/stable-channel), [Preview channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/preview-channel), and [Experimental channel release notes](https://docs.microsoft.com/windows/apps/windows-app-sdk/experimental-channel).
         # on me
-     - question: Where can I find a public roadmap for Windows App SDK?
-       answer: |
-           - [WinUI 3 roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/main/docs/roadmap.md#winui-3)
-         # on me
-     - question: Where can I find a roadmap for React Native Windows + Windows App SDK integration?
-       answer: |
+      - question: Where can I find a public roadmap for Windows App SDK?
+        answer: |
+          - [WinUI 3 roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/main/docs/roadmap.md#winui-3)
+        # on me
+      - question: Where can I find a roadmap for React Native Windows + Windows App SDK integration?
+        answer: |
           See [the roadmap on Github](https://github.com/microsoft/react-native-windows/discussions/8906).
-         # pending product signoff - ask stmoy
-
+        # pending product signoff - ask stmoy
 
 additionalContent: |
   ## Related
   - [Windows Developer Glossary](windows-developer-glossary.md)
   - [Build your first Windows App](https://docs.microsoft.com/windows/apps/get-started/?tabs=cpp-win32#app-types)
-
-
-
-
-
