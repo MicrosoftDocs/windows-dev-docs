@@ -77,7 +77,7 @@ There are three areas of the controls where the rounded corner styles are used: 
 - MenuFlyout
 - TabView tabs
 - TeachingTip
-- ToolTip
+- ToolTip (uses **4px** radius due to small size)
 - Flyout part (when open)
   - AutoSuggestBox
   - CalendarDatePicker
