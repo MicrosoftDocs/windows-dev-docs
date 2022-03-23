@@ -30,7 +30,7 @@ Highlights this month include:
 
 ## Other new content
 
-* [Byte-sized C++ tutoruals](https://github.com/MicrosoftDocs/windows-devdocs-team/tree/main/bite-sized-cpp)
+* [Byte-sized C++ tutorials](https://github.com/MicrosoftDocs/windows-devdocs-team/tree/main/bite-sized-cpp)
 
 ## Updated content
 
