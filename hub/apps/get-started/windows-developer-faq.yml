@@ -33,8 +33,6 @@ sections:
 
           [Learn more about choosing a development technology](./index.md).
         # pending product signoff
-        # should we remove video?
-        # blazor?
      - question: Can I use Windows App SDK and WinUI 3 in my existing Windows app?
        answer: |
           Generally speaking, no. 
@@ -44,6 +42,7 @@ sections:
            
           Note that APIs within the `Microsoft.UI.XAML`` namespace are not compatible with WPF, Winforms, MFC, or UWP.
         # sign off - get another signoff
+        # mikeb
      - question: Do I need to use Visual Studio to build WinUI 3 apps?
        answer: |
            Yes. Other IDEs (such as Visual Studio Code) are currently unsupported. We strongly recommend using Visual Studio 2022 versions 17.1 and above to build WinUI 3 apps. Using the latest version of Visual Studio will give you access to rich development features like Hot Reload.
@@ -75,7 +74,8 @@ sections:
      - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
        answer: |
           Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version. (follow up with someone from the store - adam braden, mike battista)
-         # signed off but needs confirmation       
+         # signed off but needs confirmation 
+         # mikeb      
      - question: Where can I find Windows App SDK migration guidance?
        answer: |
           - **UWP developers**: See [About migrating from UWP to the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
@@ -210,7 +210,7 @@ sections:
           If your app needs to support both Windows and Xbox, we recommend using the Universal Windows Platform (UWP). We usually recommend using Windows App SDK and WinUI 3 for Windows apps, although these apps won't work on Xbox. And for game development, we recommend using [Microsoft Game Development Kit](https://github.com/microsoft/GDK).
         # TODO: Are there future plans to allow devs to build xbox apps using win app sdk?
         # see: https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1510738 -->
-       # pending product signoff
+        # pending product signoff
      - question: What should I use if I want to build apps that work on Windows and Surface Hub?
        answer: |
           If you're targeting both Windows and Surface hub, we recommend using UWP.
@@ -244,7 +244,7 @@ sections:
         # todo: include sparsed
         # todo: RE duplication between here and glossary: my current energy is a comparison isn't the same as a definition, so this isn't quite duplication. We could enumerate definitions here as includes - in my mind this is an optimization we can address later
         # pending product signoff
-        # mike battista
+        # mikeb
      - question: Can I create an unpackaged WinUI 3 app?
        answer: |
           Yes. WinUI 3 apps without MSIX packaging can be deployed on Windows versions 1809 and above. See [Create a WinUI 3 app](https://docs.microsoft.com/windows/apps/winui/winui3/create-your-first-winui3-app).
@@ -254,7 +254,8 @@ sections:
           Yes. Through packaged scenario, but... not heavily tested...
         # ask product peers to confirm&mdash;see https://github.com/microsoft/WindowsAppSDK/discussions/1615#discussioncomment-1500094 
          # pending product signoff
-         # mike battista - if no validation, then cut this q
+         # consider cutting
+         # mikeb
      - question: Can I use Windows App SDK without using MSBuild?
        answer: |
           No - WinUI 3 and Windows App SDK require MSBuild, which is why vs and not vs code
@@ -300,7 +301,7 @@ sections:
        answer: |
           ARM64 is supported for packaged and unpackaged WinUI 3 apps.
          # pending product signoff
-         # mike battista - check - miguel not sure
+         # mikeb
 
 
  - name: Deprecations and migrations
