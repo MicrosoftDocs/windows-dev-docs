@@ -80,7 +80,7 @@ productDirectory:
     imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
     links:
       - url: ./package-and-deploy/index.md
-        text: Package and deploy apps
+        text: Deployment architecture
       - url: ./windows-app-sdk/deployment-architecture.md
         text: Windows App SDK deployment guide 
       - url: /windows/msix

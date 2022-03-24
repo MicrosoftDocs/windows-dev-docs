@@ -411,4 +411,4 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)

@@ -320,30 +320,36 @@ items:
                 href: develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
               - name: "Diagnose component errors"
                 href: develop/platform/csharp-winrt/authoring-diagnostics.md
-  - name: Package and deploy
+  - name: Deploy
     items:
-      - name: Overview
+      - name: Deployment overview
         href: package-and-deploy/index.md
       - name: Windows App SDK deployment guide
         items:
-          - name: "Overview and runtime architecture"
-            href: windows-app-sdk/deployment-architecture.md
-          - name: "Deployment guide for packaged apps"
-            href: windows-app-sdk/deploy-packaged-apps.md
-          - name: "Deployment guide for unpackaged apps"
+          - name: Windows App SDK deployment overview
+            href: package-and-deploy/deploy-overview.md
+          - name: Deployment guide for fx-dependent apps
             items:
-              - name: "Deployment instructions"
-                href: windows-app-sdk/deploy-unpackaged-apps.md
-              - name: "Reference the Windows App SDK framework package at run time"
-                href: windows-app-sdk/reference-framework-package-run-time.md
-              - name: "Advanced tutorial: Build and deploy an unpackaged app"
-                href: windows-app-sdk/tutorial-unpackaged-deployment.md
-          - name: "Check for installed versions of the Windows App SDK runtime"
-            href: windows-app-sdk/check-windows-app-sdk-versions.md
-          - name: "Remove outdated Windows App SDK runtime versions"
-            href: windows-app-sdk/remove-windows-app-sdk-versions.md
-      - name: Set up CI for WinUI 3 app
-        href: package-and-deploy/ci-for-winui3.md
+              - name: "Deployment architecture"
+                href: windows-app-sdk/deployment-architecture.md
+              - name: "Deployment guide for fx-dependent MSIX-packaged apps"
+                href: windows-app-sdk/deploy-packaged-apps.md
+              - name: "Deployment guide for fx-dependent non-MSIX-packaged apps"
+                items:
+                  - name: "Deployment guide overview"
+                    href: windows-app-sdk/deploy-unpackaged-apps.md
+                  - name: "Reference the Windows App SDK framework package at run time"
+                    href: windows-app-sdk/reference-framework-package-run-time.md
+                  - name: "Tutorial: Build and deploy a non-MSIX packaged app"
+                    href: windows-app-sdk/tutorial-unpackaged-deployment.md
+              - name: "Check for installed versions of the Windows App SDK runtime"
+                href: windows-app-sdk/check-windows-app-sdk-versions.md
+              - name: "Remove outdated Windows App SDK runtime versions"
+                href: windows-app-sdk/remove-windows-app-sdk-versions.md
+          - name: Deployment guide for self-contained apps
+            href: package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
+          - name: Set up CI for your WinUI 3 app
+            href: package-and-deploy/ci-for-winui3.md
   - name: API reference
     href: api-reference/index.md
     items:
@@ -359,6 +365,15 @@ items:
             href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
+            items: 
+              - name: "Bootstrapper C++ API"
+                href: api-reference/bootstrapper-cpp-api/index.md
+                items: 
+                  - name: "Microsoft::Windows::ApplicationModel namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
+                    items: 
+                      - name: "PackageVersion class"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
           - name: WinUI API reference
             items: 
               - name: WinRT APIs for WinUI
