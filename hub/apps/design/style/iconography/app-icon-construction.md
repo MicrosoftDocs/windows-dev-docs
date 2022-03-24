@@ -32,21 +32,18 @@ Windows ICO files have been around for a long time. There are standard sizes tha
 
 When Windows displays your app's icon, it will look for an exact size match first. If there is no exact match it will look for the next size above and scale down. Including more icon sizes with your app means Windows will more often have a pixel-perfect match, and reduce the amount of scaling applied to scaled icons.
 
-> [!ALERT]
-> We don't call it system tray anymore
-
-| Windows 11 scale factor                                   | 100% | 125% | 150% | 200% | 250% | 300% | 400%  |
-|-----------------------------------------------------------|------|------|------|------|------|------|-------|
-| Context menu, title bar, Search results list, system tray | 16px | 20px | 24px | 32px | 40px | 48px | 64px  |
-| Taskbar, all apps list                                    | 24px | 30px | 36px | 48px | 60px | 72px | 96px  |
-| Start Menu Pinned apps, Search results                    | 32px | 40px | 48px | 64px | 80px | 96px | 256px |
+| Windows 11 scale factor                 | 100% | 125% | 150% | 200% | 250% | 300% | 400%  |
+|-----------------------------------------|------|------|------|------|------|------|-------|
+| Context menu, title bar, taskbar corner | 16px | 20px | 24px | 32px | 40px | 48px | 64px  |
+| Taskbar, search results, all apps list  | 24px | 30px | 36px | 48px | 60px | 72px | 96px  |
+| Start Menu Pinned apps, Search results  | 32px | 40px | 48px | 64px | 80px | 96px | 256px |
 
 > [!NOTE]
 > Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down, never up.
 
 ## Transparent backgrounds
 
-Icons look best with a transparent background. If your app's branding requires your icon be plated on a background, that's okay too. However, you'll have to re-implement some theming functionality that transparent icons get for free. For example, you might provide a version of your app's icon plated on a white background for use in dark mode, and a black background for use in light mode.
+Icons look best with a transparent background. If your app's branding requires your icon be plated on a background, that's okay too. However, you'll have to re-implement some theming functionality that transparent icons get for free. For example, you might provide a version of your app's icon plated on a two different backgrounds, one better suited to a light theme and the other to a dark theme.
 
 ## Complete list of icons and variations
 
@@ -128,14 +125,11 @@ Separate files for all three theme variations (default, light theme, dark theme)
 - AppList.scale-400_altform-colorful_theme-light.png
 
 > [!NOTE]
-> If you do not include the altform unplated assets above your icon will scale to a smaller size and will get an undesirable backplate behind the icon on Taskbar and Start.
+> If you do not include the targetsize-*-altform-unplated assets above your icon will scale to a smaller size and will get an undesirable backplate behind the icon on Taskbar and Start.
 
 ### Tiles
 
 Windows 10 supports four tile sizes: small, medium, wide, and large.
-
-> [!ALERT]
-> If we say partially required, we should explain what is and isn't required.
 
 **Default / dark theme (partially required)**
 
