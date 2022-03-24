@@ -97,7 +97,7 @@ Analogous gradients should be at the same angle as the monochrome, but don't alw
 
 ### Color contrast
 
-:::image type="content" source="images/contrast-light-dark.png" alt-text="{alt-text}":::
+:::image type="content" source="images/contrast-light-dark.png" alt-text="Two versions of the same icon, one in a dark theme and the other in a light theme":::
 
 Accessibility is a high priority for Microsoft. App icons are primarily displayed on either light and dark backgrounds but displayed over desktop background images and tints or shades of the system accent color. It is difficult to make an icon 100% accessible on every background, but there are several things you can do to ensure your icon is as accessible as possible.
 
@@ -108,7 +108,7 @@ Accessibility is a high priority for Microsoft. App icons are primarily displaye
 
 ### High contrast
 
-:::image type="content" source="images/high-contrast-light-dark.png" alt-text="{alt-text}":::
+:::image type="content" source="images/high-contrast-light-dark.png" alt-text="Two versions of an icon in high contrast color themes":::
 
 > [!TIP]
 > Windows 11 no longer requires high contrast assets for app icons.
@@ -142,19 +142,19 @@ All of these values are to be rendered at 48x48 px and scaled up or down from th
 
 ### Same metaphor
 
-:::image type="content" source="images/shadow-same-metaphor.png" alt-text="{alt-text}":::
+:::image type="content" source="images/shadow-same-metaphor.png" alt-text="Several icons demonstrating how to use shadows to represent a single metaphor with multiple components":::
 
 This shadow is used when you have content within a single metaphor that needs some depth. It’s not always necessary to do this, but single object metaphors need some depth to feel like part of the system. the blue on shadow 2 is the only difference.
 
 ### Separate metaphor
 
-:::image type="content" source="images/shadow-separate-metaphor.png" alt-text="{alt-text}":::
+:::image type="content" source="images/shadow-separate-metaphor.png" alt-text="Several icons demonstrating how to use shadows to represent a multiple, separate metaphors with multiple components":::
 
 This shadow is used when you have two objects that overlap each other but are not necessarily part of the same metaphor. The shadow should be masked into the shape below it.
 
 ## Perspective
 
-:::image type="content" source="images/perspective.png" alt-text="{alt-text}":::
+:::image type="content" source="images/perspective.png" alt-text="Several icons displayed at 3/4 view":::
 
 The icons on the left are fairly simple; perspective is not recommended, but my be appropriate here. The icon on the right is too complex for perspective, so using it for this icon is not recommended.
 

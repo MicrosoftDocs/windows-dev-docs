@@ -1,6 +1,6 @@
 ---
 title: Construction guidelines for Windows 10 icons
-description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
+description: Additional considerations for Windows app icons on platforms that support Live Tiles
 keywords: windows 10, uwp
 author: hickeys
 ms.author: hickeys
@@ -28,14 +28,14 @@ The easiest way to look great on Live Tiles is to just just display your app's i
 
 #### Creating a full bleed tile
 
-:::image type="content" source="images/full-bleed-tile.png" alt-text="{alt-text}":::
+:::image type="content" source="images/full-bleed-tile.png" alt-text="An example of a full-bleed tile":::
 
 When required, apps can create full-bleed Live Tile images to fully customize their tile. Typically, this functionality is used by games. Non-game apps should generally not use full-bleed tiles, because it will make your tile stand out awkwardly compared to "standard" icon-based tiles. Full bleed tiles can be used to achieve several looks.
 
-:::image type="content" source="images/transparent-tile-background.png" alt-text="{alt-text}":::
+:::image type="content" source="images/transparent-tile-background.png" alt-text="An example of a tile with a transparent background":::
 
 Apps using a full bleed tile can make their icon any size they want. To do this, simply make your icon the size you would like it to display when the tile is shown. App icons should never take up the complete tile. Be sure to use at least 16% margins on each side.
 
-:::image type="content" source="images/full-bleed-no-margin.png" alt-text="{alt-text}":::
+:::image type="content" source="images/full-bleed-no-margin.png" alt-text="An example of a full bleed tile with no margin around the app name":::
 
 Some apps, usually games, might want to display a full-bleed image instead of an icon. In this case, do not use margins - the image should take up all available space.
