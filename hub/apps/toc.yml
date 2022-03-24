@@ -36,6 +36,8 @@ items:
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
+        - name: "Tutorial—Create a simple photo viewer with WinUI 3 (C#)"
+          href: get-started/simple-photo-viewer-winiu3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
   - name: Setup guides and resources
