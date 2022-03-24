@@ -374,6 +374,15 @@ items:
                     items: 
                       - name: "PackageVersion class"
                         href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
+                  - name: "Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                    items: 
+                      - name: "Initialize function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md
+                      - name: "InitializeFailFast function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
+                      - name: "InitializeNoThrow function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
           - name: WinUI API reference
             items: 
               - name: WinRT APIs for WinUI

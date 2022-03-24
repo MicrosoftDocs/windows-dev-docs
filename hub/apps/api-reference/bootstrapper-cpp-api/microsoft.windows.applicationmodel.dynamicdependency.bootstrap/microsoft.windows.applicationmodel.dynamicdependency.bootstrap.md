@@ -17,9 +17,9 @@ Types and functions from the [Bootstrapper C++ API](../index.md) that are in the
 
 | Function | Description |
 | - | - |
-| [Initialize function](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md) | Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, throws an exception. |
+| [Initialize function](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md) | Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, throws an exception. |
 | [InitializeFailFast function](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md) | Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, aborts the process (via **std::abort**). |
-| [InitializeNoThrow function](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md) | Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, returns a failure **HRESULT**. |
+| [InitializeNoThrow function](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md) | Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, returns a failure **HRESULT**. |
 
 ## See also 
 
