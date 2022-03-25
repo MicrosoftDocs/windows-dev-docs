@@ -51,7 +51,7 @@ Learn more about C++ here.
 
 When you're ready to try something a little more fun than "Hello, World!", try out these tutorials.
 
-* [Tutorial: Create a user interface](/windows/apps/design/basics/xaml-basics-ui)
+* [Tutorial: Navigate between two pages](/windows/apps/design/basics/navigate-between-two-pages)
 * [Windows apps on Microsoft Learn](/learn/browse/?products=windows)
 
 ## See Also
