@@ -57,12 +57,12 @@ sections:
       - question: What limitations are there when building with WinUI 3 and Windows App SDK?
         answer: |
           Current limitations include:
-           - Apps that haven't been published through the Microsoft Store can't send push notifications. (not sure - ask adam braden)
+           - Apps that haven't been published through the Microsoft Store can't send push notifications.
            - Local toast notifications aren't supported yet.
            - XAML Islands aren't supported yet.
            - Media, map, and inking controls aren't supported yet.
            - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet.
-           - App lifecycle management isn't supported yet. (follow up with andrew whitechapel - working for unpackaged, not packaged, or go ask adam braden)
+           - App lifecycle management isn't supported yet.
         # everything signed off except follow ups
       - question: When I build an app using Windows App SDK and WinUI 3, am I building a "WinUI 3 app"?
         answer: |
