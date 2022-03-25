@@ -31,11 +31,11 @@ Describes the framework components that support a specific application. For exam
 
 <!--pending product signoff -->
 ##### Application packaging
-Describes the manner in which your application is packaged before being distributed and installed by users. Applications can be packaged, unpackaged, or sparsely packaged.
+Describes the manner in which your application is packaged before being distributed and installed by users. Applications can be MSIX-packaged, unpackaged, or sparsely packaged.
 
 <!--pending product signoff -->
 ##### Dynamic Dependencies
-[Dynamic Dependencies](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) makes framework packages accessible to all kinds of apps, packaged and unpackaged.
+[Dynamic Dependencies](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) makes framework packages accessible to many kinds of apps.
 
 <!--pending product signoff -->
 ##### Fluent Design
@@ -59,7 +59,11 @@ You can use Microsoft Foundation Classes (MFC) to create complex user interfaces
 
 <!--pending product signoff -->
 ##### MSIX (Microsoft Installer package format)
-MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is a "packaged" app. MSIX-packaged apps can check for updates and can control when updates are applied. [What is MSIX?](https://docs.microsoft.com/windows/msix/overview).
+MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is an "MSIX-packaged" app. MSIX-packaged apps can check for updates and can control when updates are applied. [What is MSIX?](https://docs.microsoft.com/windows/msix/overview).
+
+<!--pending product signoff -->
+##### MSIX-Packaged app
+Apps that are packaged using MSIX. MSIX-packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. MSIX-packaged apps can be installed through the Microsoft Store or Windows App Installer. See also: Unpackaged app, Sparsed app (links pending)
 
 <!--pending product signoff -->
 ##### Native apps
@@ -79,11 +83,6 @@ Native compilation refers to applications compiled into a binary that runs direc
 The codename for the Windows App SDK. No longer in use.
 
 <!--pending product signoff -->
-<!-- cc howard k, peter torr, andrew leader, mike hillberg -->
-##### Packaged app
-Apps that are packaged using MSIX. Packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity. Packaged apps can be installed through the Microsoft Store or Windows App Installer. See also: Unpackaged app, Sparsed app (links pending)
-
-<!--pending product signoff -->
 ##### React Native
 React Native for Windows + macOS brings React Native support for the Windows SDK as well as the macOS 10.14 SDK. [React Native for Windows and macOS](https://microsoft.github.io/react-native-windows/).
 
@@ -101,7 +100,7 @@ Apps that aren't managed by the .NET runtime. If you're handling your own memory
 
 <!--pending product signoff -->
 ##### Unpackaged app
-Apps that don't use MSIX. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. These run without package identity. Both packaged and unpackaged apps can be published to the Microsoft Store.
+Apps that don't use MSIX. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. These run without package identity. Both MSIX-packaged and unpackaged apps can be published to the Microsoft Store.
 
 <!--pending product signoff -->
 ##### Visual Studio extension (VSIX)
