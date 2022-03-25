@@ -13,44 +13,47 @@ summary: This article is meant to promote a common understanding of the Windows 
 sections:
   - name: "Getting started"
     questions:
-      - question: What is Windows App SDK?
+      - question: What is the Windows App SDK?
         answer: |
-          Windows App SDK is a Windows application development platform that allows you to build WinUI 3 desktop applications.
-        # sign off
-      - question: What's the difference between Windows App SDK and the Windows SDK?
+          The Windows App SDK is a Windows application development platform that allows you to build WinUI 3 desktop applications.
+        # signed off
+      - question: What's the difference between the Windows App SDK and the Windows SDK?
         answer: |
-          Both are software development kits (SDKs) that let you build Windows apps. **Windows App SDK** is newer, it's focused on desktop apps, it ships with WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users. The **Windows SDK** is older, is aimed at UWP apps as well as desktop apps, it supports WinUI 2, and it's designed around Windows APIs that are coupled to particular versions of the OS. The Windows App SDK builds on top of the Windows SDK. When you build apps with Windows App SDK, you can expect to use the Windows SDK to gain access to all of the functionality that you need.
-        # sign off with edits
-        # ensure that we don't frame the app sdk as being obsolete - there are things that will always need to be coupled to the OS.
-        # part of the value prop of the new stuff is that it runs downlevel, but most of the win sdk stuff is supported everywhere
-        # appsdk provides access to win32 and com etc - catalogue of older apis and functionality
+          Both are software development kits (SDKs) that let you build Windows apps. 
+          
+          The **Windows App SDK** is a newer development platform that lets you build desktop apps. It ships with WinUI 3, and it allows you to call Windows APIs that are decoupled from the operating system (OS). By removing dependencies on particular OS versions, you're ultimately able to reach more users.
+          
+          The **Windows SDK** is an older development platform that lets you build UWP apps as well as desktop apps. It supports WinUI 2, and it's designed around Windows APIs that are coupled to particular versions of the OS. 
+          
+          The Windows App SDK doesn't replace the Windows SDK. Instead, the Windows App SDK provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs that you can already access using the Windows SDK. When you build apps with Windows App SDK, you might end up using some Windows SDK APIs depending on the functionality that you need.
+        # signed off
       - question: What should I use to build Windows apps?
         answer: |
           - **If you'd like to build a modern, native Windows app:** Windows App SDK + WinUI 3 would be a great choice. This combination of technologies succeeds UWP + WinUI 2.
           - **If you're targeting cross-platform:** .NET MAUI lets you build cross-platform apps that use WinUI 3 when running on Windows.
           - **If you're a React developer:** We're working on supporting WinUI 3 in React Native on Windows. 
-          - **If you're a web developer:** WebView2 gives your web applications a way to feel like Windows desktop apps while accessing the Windows platform and Windows App SDK.  
-          - **If you're a C++ developer:** If you're building a game, consider using DirectX. For desktop apps, Windows App SDK + WinUI 3 are a great choice.
+          - **If you're a web developer:** You can use WebView2 as an application host. This gives your web applications a way to feel like a desktop app while accessing the Windows SDK and Windows App SDK APIs.  
+          - **If you're a C++ developer:** If you're building a game, consider using DirectX. For desktop apps, Windows App SDK + WinUI 3 are a great choice. C++ developers may also enjoy using [Rust for Windows](https://docs.microsoft.com/en-us/windows/dev-environment/rust/rust-for-windows).
 
           [Learn more about choosing a development technology](./index.md).
-        # pending product signoff
-        # distinguish between using webview2 as an app vs in an app
-        # c++: possibly link to rust and include directx for a ui framework 
-        #  - link to this: https://docs.microsoft.com/en-us/windows/dev-environment/rust/rust-for-windows 
+        # signed off
       - question: Can I use Windows App SDK and WinUI 3 in my existing Windows app?
         answer: |
-
+          It's important to note that WinUI 3 (a UI framework) ships with Windows App SDK (a Windows platform development framework). 
+          
+          Generally, you can't use WinUI 3 unless you're ready to migrate your UI framework entirely.
+          
+          You may be able to use Windows App SDK in your existing app, depending on how your existing app was built: 
+          
           - **WPF/MFC/WinForms**: You can use Windows App SDK APIs that are not related to WinUI 3 in your existing WPF/MFC/WinForms apps. Examples of such APIs include App Lifecycle, Windowing, and Toast Notifications. 
-          - **UWP/WinUI 2**: WinUI 3 and Windows App SDK use the win32 app model, which is incompatible with UWP/WinUI 2. You can't use WinUI 3 controls in UWP/WinUI 2 apps.
+          - **UWP/WinUI 2**: WinUI 3 and Windows App SDK use the Win32 app model, which is incompatible with UWP/WinUI 2. You can't use WinUI 3 controls in UWP/WinUI 2 apps.
            
-          Note that APIs within the `Microsoft.UI.XAML`` namespace are not compatible with WPF, Winforms, MFC, or UWP.
-        # sign off - get another signoff
-        # mikeb
-        # don't lead with no - clarify that UI framework may not be usable with wpf etc since it's so nuanced. Consider breaking this up into different technologies.
+          Note that APIs within the `Microsoft.UI.XAML` namespace are not compatible with WPF, Winforms, MFC, or UWP. 
+        # signed off
       - question: Do I need to use Visual Studio to build WinUI 3 apps?
         answer: |
           Yes. Other IDEs (such as Visual Studio Code) are currently unsupported. We strongly recommend using Visual Studio 2022 versions 17.1 and above to build WinUI 3 apps. Using the latest version of Visual Studio will give you access to rich development features like Hot Reload.
-        # sign off
+        # signed off
       - question: What limitations are there when building with WinUI 3 and Windows App SDK?
         answer: |
           Current limitations include:
