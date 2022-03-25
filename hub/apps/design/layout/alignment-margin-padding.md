@@ -58,7 +58,7 @@ Margin and padding properties keep UI from looking too cluttered or too sparse, 
 - Margin values are constrained last, so be careful with margins because containers can clip or constrain elements. A Margin value could be the cause of an element not appearing to render; with a Margin applied, an element's dimension can be constrained to 0.
 
 ### Padding
-[**Padding**](/uwp/api/windows.ui.xaml.frameworkelement.padding) controls the amount of space between the inner border of an element and its child content or elements. A positive Padding value decreases the content area of the element. 
+[**Padding**](/uwp/api/windows.ui.xaml.frameworkelement.margin?view=winrt-22000&preserve-view=true#margin-and-padding) controls the amount of space between the inner border of an element and its child content or elements. A positive Padding value decreases the content area of the element. 
 
 Unlike Margin, Padding is not a property of FrameworkElement. There are several classes which each define their own Padding property:
 
