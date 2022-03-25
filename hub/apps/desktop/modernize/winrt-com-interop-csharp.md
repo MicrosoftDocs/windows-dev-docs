@@ -115,9 +115,9 @@ So as a replacement, in .NET 5 and later, you can make use of the C# interop cla
 
 ## Troubleshooting and known issues
 
-This section lists known issues and solutions for using the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose).
+There are currently no known issues for the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose).
 
-* **WinRT.Interop.WindowNative.GetWindowHandle doesn't marshal window handles (HWNDs) correctly when running on x86 platforms.** To work around this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.
+
 
 ## Related topics
 
