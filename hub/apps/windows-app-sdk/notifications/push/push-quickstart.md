@@ -19,8 +19,9 @@ In this quickstart you will create a packaged Windows application that sends and
 
 ## Prerequisites
 
+- [Set up your development environment](../../set-up-your-development-environment.md)
+- Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../use-windows-app-sdk-in-existing-project.md)
 - An [Azure Account](https://azure.microsoft.com/free/) is required in order to use Windows App SDK Push Notifications.
-- Sign up for the [Push Notification Private Preview](https://aka.ms/windowsappsdk/push-private-preview) if you have not already done so.
 
 ## Configure your app's identity in Azure Active Directory
 
@@ -58,7 +59,7 @@ Navigate to **Certificates & secrets** and select **New client secret**.
 >
 > During the experimental phase, the mapping between your app's Package Family Name (PFN) and its Azure AppId must be manually created. In future releases, this functionality will be integrated into the Azure Portal.
 
-Use [this Microsoft Form](https://aka.ms/windowsappsdk-push-mapping) to create a PFN mapping request. During the experimental phase, mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
+Create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line **Windows App SDK Push Notifications Mapping Request** and body **PFN: *your PFN*, AppId: *your AppId***. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
 
 ## Configure your app to receive push notifications
 
