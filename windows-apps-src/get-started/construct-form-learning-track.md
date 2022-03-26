@@ -134,7 +134,7 @@ When you're creating more complex layouts with more visual elements, you'll want
 
 ## Going further
 
-Though you've created a form here, the concepts of layouts and controls are applicable across all XAML UIs you might construct. Feel free to go back through the docs we've linked you to and experiment with the form you have, adding new UI features and further refining the user experience. If you want step-by-step guidance through more detailed layout features, see our [adaptive layout tutorial](/windows/apps/design/basics/xaml-basics-adaptive-layout)
+Though you've created a form here, the concepts of layouts and controls are applicable across all XAML UIs you might construct. Feel free to go back through the docs we've linked you to and experiment with the form you have, adding new UI features and further refining the user experience. If you want step-by-step guidance through more detailed layout features, see our [adaptive layout tutorial](/windows/apps/design/layout/layouts-with-xaml)
 
 Forms also don't have to exist in a vacuum - you could go one step further and embed yours within a [list/details pattern](/windows/apps/design/controls/list-details) or a [NavigationView](/windows/apps/design/controls/navigationview). Or if you want to get to work on the code-behind for your form, you might want to get started with our [events overview](../xaml-platform/events-and-routed-events-overview.md).
 
