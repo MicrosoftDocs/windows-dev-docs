@@ -157,9 +157,9 @@ The PowerToys Run calculator plugin supports the following operations:
 | Ceil | ceil( x.y ) |  Rounds a number up to the next largest integer. |
 | Floor | floor( x.y ) | Rounds a number down to the next smallest integer. |
 | Exponential function | exp( x ) | Returns e raised to the specified power. |
-| Maximum | max( x, y, z) | |
+| Maximum | max( x, y, z ) | |
 | Minimum | max( x, y, z ) | |
-| Absolute | abs( - x) | Absolute value of a number |
+| Absolute | abs( - x ) | Absolute value of a number |
 | Log10 | log( x ) | |
 | Log base e | ln( x ) | |
 | Square root | sqrt( x ) | |
