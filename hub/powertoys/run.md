@@ -142,7 +142,7 @@ If the program plugin's option "Include in global result" is not selected, be su
 > The calculator plugin respects your computers number format setting. Please be aware of the different decimal delimiters in different languages when searching.
 
 > [!WARNING]
-> There is a known issue that the comma sign used in some operations as delimiter between numbers gets interpreted as decimal delimiter. This happens if your number format setting in Windows is configured that you use comma decimal separator.
+> There is a known issue that the comma sign used in some operations as delimiter between numbers gets interpreted as decimal delimiter. This happens if your number format setting in Windows is configured to use the comma sign as decimal separator.
 
 The PowerToys Run calculator plugin supports the following operations:
 
