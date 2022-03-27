@@ -36,8 +36,6 @@ PowerToys Run features include:
 
 The following general options are available for PowerToys Run in the PowerToys settings menu.
 
-![PowerToys Run settings](../images/pt-run-settings.png)
-
 | Settings | Description |
 | :--- | :--- |
 | Activation shortcut | Define the keyboard shortcut to open/hide PowerToys Run |
@@ -145,7 +143,7 @@ If the program plugin's option "Include in global result" is not selected, be su
 The PowerToys Run calculator plugin supports the following operations:
 
 | Operation |  Operator Syntax |
-| - | - |
+| :- | :- |
 | Addition |  a + b |
 | Subtraction | a - b |
 | Multiplication | a * b |
@@ -175,11 +173,11 @@ Examples:
 
 In the folder plugin you can filter the results by using some special characters.
 
-Character sequence | Result | Example
-| - | - |
-| `>` | Search inside the folder. | `C:\Users\tom\Documents\>`
-| `*` | Search files by mask. | `C:\Users\tom\Documents\*.doc`
-| `>*` | Search files inside the folder by mask.  | `C:\Users\tom\Documents\>*.doc`
+| Character sequence | Result | Example
+| :- | :- | :- |
+| `>` | Search inside the folder. | `C:\Users\tom\Documents\>` |
+| `*` | Search files by mask. | `C:\Users\tom\Documents\*.doc` |
+| `>*` | Search files inside the folder by mask. | `C:\Users\tom\Documents\>*.doc` |
 
 ### Settings plugin
 
