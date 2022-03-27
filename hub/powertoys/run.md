@@ -29,7 +29,8 @@ PowerToys Run features include:
 - Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
 - Do a simple calculation using calculator
 - Executing system commands
-- Getting time and date informations or coverting units
+- Getting time and date informations
+- Converting units
 - Opening web pages or starting a web search
 
 ## Settings
@@ -44,7 +45,7 @@ The following general options are available for PowerToys Run in the PowerToys s
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
 | Preferred monitor position | If multiple monitors are in use, PowerToys Run can be launched on the desired monitor:<br />- Primary monitor<br />- Monitor with mouse cursor<br />- Monitor with focused window |
-| App theme | Change the color theme used by PowerToys Run|
+| App theme | Change the color theme used by PowerToys Run |
 
 
 ## Usage
@@ -79,7 +80,7 @@ These default direct activation commands will force PowerToys Run into only targ
 | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. This plugin is off by default. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths |
 | `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet |
 | `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. `$ Device:` to view all available Device settings |
-| '(' | Show only time and date results | `(time and date` show the current time and date in different formats. For example, to get the calendar week for a specific date you can type `(calendar week::04/01/2022`.
+| `(` | Show only time and date results | `(time and date` show the current time and date in different formats. For example, to get the calendar week for a specific date you can type `(calendar week::04/01/2022`.
 
 
 ## Plugins
@@ -90,7 +91,7 @@ PowerToys Run uses a plugin system to provide different types of results.
 
 The PowerToys Run settings menu includes a plugin manager that allows you to enable/disable the various available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available.
 
-![PowerToys Run plugin manager](../images/pt-run-plugin-manager.png)
+![PowerToys Run Plugin Manager](../images/pt-run-plugin-manager.png)
 
 
 ### System commands
@@ -116,7 +117,7 @@ PowerToys Run enables a set of system level actions that can be executed.
 The PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
 > [!NOTE]
-> To input valid search queries, the first element after the program name has to be one of the following phrases:
+> To input valid search queries, the first element after the program name has to be one of the following possibilities:
 > - The symbol sequence `--`.
 > - A parameter that starts with `-`.
 > - A parameter that starts with `--`.
@@ -140,21 +141,46 @@ If the program plugin's option "Include in global result" is not selected, be su
 > [!NOTE]
 > The calculator plugin respects your computers number format setting. Please be aware of the different decimal delimiters in different languages when searching.
 
+> [!WARNING]
+> There is a known issue that the comma sign used in some operations as delimiter between numbers gets interpreted as decimal delimiter. This happens if your number format setting in Windows is configured that you use comma decimal separator.
+
 The PowerToys Run calculator plugin supports the following operations:
 
-| Operation |  Operator Syntax |
-| :- | :- |
-| Addition |  a + b |
-| Subtraction | a - b |
-| Multiplication | a * b |
-| Division |  a / b |
-| Modulo/Remainder | a % b |
-| Exponentiation | a ^ b |
-| Factorial | x ! |
-| Sine | sin( x ) |
-| Cosine | cos( x ) |
-| Tangent | tan( x ) |
-| Arc Tangent | arctan( x ) |
+| Operation |  Operator Syntax | Description |
+| :- | :- | :- |
+| Addition |  a + b | |
+| Subtraction | a - b | |
+| Multiplication | a * b | |
+| Division |  a / b | |
+| Modulo/Remainder | a % b | |
+| Exponentiation | a ^ b | |
+| Ceil | ceil( x.y ) |  Rounds a number up to the next largest integer. |
+| Floor | floor( x.y ) | Rounds a number down to the next smallest integer. |
+| Exponential function | exp( x ) | Returns e raised to the specified power. |
+| Maximum | max( x, y, z) | |
+| Minimum | max( x, y, z ) | |
+| Absolute | abs( - x) | Absolute value of a number |
+| Log10 | log( x ) | |
+| Log base e | ln( x ) | |
+| Square root | sqrt( x ) | |
+| Power | pow( x, y ) | Calculate a number raised to the power of some other number. |
+| Factorial | x ! | |
+| Sign | sign( - x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
+| Round | round( x.abcd ) | | Example: `round(8.7867)`
+| Random | rand() | |
+| Pi | +pi | Returns the number of Pi. |
+| Sine | sin( x ) | |
+| Cosine | cos( x ) | |
+| Tangent | tan( x ) | |
+| Arc Sine | arcsin( x ) | |
+| Arc Cosine | arccos( x ) | |
+| Arc Tangent | arctan( x ) | |
+| Hyperbolic Sine | sinh( x ) | |
+| Hyperbolic Cosine | cosh( x ) | |
+| Hyperbolic Tangent | tanh( x ) | |
+| Hyperbolic Arc Sine | arcsinh( x ) | |
+| Hyperbolic Arc Cosine | arccosh( x ) | |
+| Hyperbolic Arc Tangent | arctanh( x ) | |
 
 
 ### Time and Date values
@@ -179,9 +205,9 @@ In the folder plugin you can filter the results by using some special characters
 | `*` | Search files by mask. | `C:\Users\tom\Documents\*.doc` |
 | `>*` | Search files inside the folder by mask. | `C:\Users\tom\Documents\>*.doc` |
 
-### Settings plugin
+### Windows Settings plugin
 
-The settings plugin allows you to search for windows settings. You can search the settings by their name or by their location.
+The Windows Settings plugin allows you to search for Windows settings. You can search the settings by their name or by their location.
 
 To search by location you can use the following syntax:
 - `$device:` to list all settings with `device` in the area name.
@@ -204,7 +230,7 @@ With the Window Walker plugin you can kill the process of a window if it hangs.
 
 If the File Explorer settings in Windows are not set to open each window in a seperate process, you will receive the following information when searching for open Explorer windows:
 
-![PowerToys Run: Explorer Process Info](../images/pt-run-explorer-info.png)
+![Explorer Process Info IN PowerToys Run](../images/pt-run-explorer-info.png)
 
 You can turn off the information in the PowerToys Run plugin manager options for Window Walker, or select the information to change the File Explorer settings. After selecting the information, the "Folder options" window will open.
 
@@ -214,7 +240,7 @@ On the "Folder options" window, you can enabled the setting "Launch folder windo
 
 ### Windows Search settings
 
-If the search settings in Windows are not set to cover all drives, you will receive the following warning when using the Windows Search plugin:
+If the indexing settings for Windows Search are not set to cover all drives, you will receive the following warning when using the Windows Search plugin:
 
 ![PowerToys Run Indexer Warning](../images/pt-run-indexer-warning.png)
 
