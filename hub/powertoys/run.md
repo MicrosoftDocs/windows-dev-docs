@@ -185,7 +185,7 @@ The settings plugin allows you to search for windows settings. You can search th
 
 To search by location you can use the following syntax:
 - `$device:` to list all settings with `device` in the area name.
-- `$app>area>area` to navigate through the settings like in the settings app.<br />For example, the query `control>system>admin` shows all settings under the path "System and Security > Administrative Tools" in the "Control Panel" application. 
+- `control>system>admin` shows all settings of the path `Control Panel > System and Security > Administrative Tools`.
 
 ### Kill a window process
 
