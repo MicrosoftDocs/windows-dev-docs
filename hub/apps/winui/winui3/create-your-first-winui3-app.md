@@ -48,10 +48,7 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
-1. Use the button below to download the installer and MSIX packages for the Windows App SDK version 1.0 Stable runtime. Those are required to run and deploy an unpackaged app on a target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
-
-    > [!div class="button"]
-    > [Microsoft.WindowsAppRuntime.Redist.1.0.0.zip](https://aka.ms/windowsappsdk/1.0-stable/msix-installer)
+1. Download the latest installer for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). This will install the runtime package dependencies required to run and deploy an unpackaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
 
 1. **C++**. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) appropriate for the architecture of the target device.
 
