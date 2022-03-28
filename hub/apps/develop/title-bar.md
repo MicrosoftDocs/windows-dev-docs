@@ -93,7 +93,7 @@ In UWP applications, you can customize the title bar by using members of the App
 > [!NOTE]
 > The [Windows.UI.WindowManagement.AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) class, used for secondary windows in UWP apps, does not support title bar customization. To customize the title bar of a UWP app that uses secondary windows, use ApplicationView as described in [Show multiple views with ApplicationView](/windows/apps/design/layout/application-view).
 
-If you are considering migrating your UWP app to Windows App SDK, please view our windowing functionality migration guide. See [Windowing functionality migration](/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md) for more information.
+If you are considering migrating your UWP app to Windows App SDK, please view our windowing functionality migration guide. See [Windowing functionality migration](../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md) for more information.
 
 ---
 
