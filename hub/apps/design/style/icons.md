@@ -162,7 +162,7 @@ Set the button's font family to `Segoe MDL2 Assets` and its content property to 
 You can use one of the icon element objects: [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon),
 [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), 
 [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon), 
-[ImageIcon](/uwp/api/windows.ui.xaml.controls.imageicon), or
+[ImageIcon](/windows/winui/api/microsoft.ui.xaml.controls.imageicon?view=winui-3.0), or
 [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon). This gives you more types of icons to choose from, and enables you to combine icons and other types of content, such as text, if you want:
     :::column-end:::
 	:::column:::
@@ -211,7 +211,7 @@ There are other ways to provide icons for a button in a command bar:
 + [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.
 + [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.
 + [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.
-+ [ImageIcon](/uwp/api/windows.ui.xaml.controls.imageicon) - the icon is based on an image file type supported by the [Image](/uwp/api/windows.ui.xaml.controls.image) class. 
++ [ImageIcon](/windows/winui/api/microsoft.ui.xaml.controls.imageicon?view=winui-3.0) - the icon is based on an image file type supported by the [Image](/uwp/api/windows.ui.xaml.controls.image) class. 
 
 To learn more about command bars, see the [command bar article](../controls/command-bar.md). 
 
