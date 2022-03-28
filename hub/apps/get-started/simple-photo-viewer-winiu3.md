@@ -516,7 +516,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
         <TextBlock Text="{x:Bind ImageFileType}" ... />
         <TextBlock Text="{x:Bind ImageDimensions}" ... />
     </StackPanel>
-    <muxc:RatingControl Value="{x:Bind ImageRating}" ... />
+    <RatingControl Value="{x:Bind ImageRating}" ... />
     ```
 
 If you build and run the app now, instead of placeholders you'll see real photos, and real text (and other data). Visually and functionally, this simple little app is now complete. But as a coda, let's do one last little bit of data binding.
