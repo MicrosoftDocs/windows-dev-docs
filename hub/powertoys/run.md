@@ -178,9 +178,9 @@ The PowerToys Run calculator plugin supports the following operations:
 | Hyperbolic Sine | sinh( x ) | |
 | Hyperbolic Cosine | cosh( x ) | |
 | Hyperbolic Tangent | tanh( x ) | |
-| Hyperbolic Arc Sine | arcsinh( x ) | |
-| Hyperbolic Arc Cosine | arccosh( x ) | |
-| Hyperbolic Arc Tangent | arctanh( x ) | |
+| Hyperbolic Arc Sine | arsinh( x ) | |
+| Hyperbolic Arc Cosine | arcosh( x ) | |
+| Hyperbolic Arc Tangent | artanh( x ) | |
 
 
 ### Time and Date values
