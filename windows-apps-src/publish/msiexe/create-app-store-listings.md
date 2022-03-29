@@ -19,7 +19,7 @@ Many of the fields in a Store listing are optional, but we suggest providing mul
 
 ## Manage Store listing languages
 
-You must complete the Store listing page for at least one language. We recommend providing a Store listing in each language that your packages support, and you  aldo have flexibility to create Store listings in additional languages which are not supported by your packages and not support languages for which you do not wish to provide a Store listing.
+You must complete the Store listing page for at least one language. We recommend providing a Store listing in each language that your packages support, and you also have flexibility to create Store listings in additional languages which are not supported by your packages and not support languages for which you do not wish to provide a Store listing.
 
 To add or remove languages for your Store listings, click Add/remove languages from Manage Store listings page.
 
@@ -30,15 +30,6 @@ The Manage Store listings page of the app submission process is where you can al
 ## Add and edit Store listing info
 
 To edit a Store listing, select the language name from the Store listings overview page. You must edit each language separately.
-
-**Product name**<br>*Required*
-
-Your app's name. Must be a name you've already reserved for your app.
-
-If you need to rename the app after it's already been published, you can select a different reserved name here when you create a new submission, after you've provided URLs to packages that use the new name.
-
-> [!NOTE]
-The Product name you select only applies to the Store listing in the language you're working in. It does not impact the name displayed when a customer installs the app; that name comes from the package that gets installed. To avoid confusion, we recommend that each language's package(s) and Store listing use the same name.
 
 **Description**<br>*Required*<br>*Character limit: 10,000 characters*
 
@@ -57,21 +48,31 @@ These are short summaries of your app's key features. They are displayed to the 
 
 **Screenshots**<br>*Required: 1*<br>*Recommended: 4+*<br>*Maximum: 10*
 
-See [App screenshots and images](../app-screenshots-and-images.md) for more information.
+Screenshots are images of your app that are displayed to your customers in your app's Store listing. 
+
+Each screenshot must be a .png file in either landscape or portrait orientation, and the file size cannot be larger than 50 MB. 
+
+Size requirements: 1366 x 768 pixels or larger. Supports 4K images (3840 x 2160). (Will also be shown to customers on Surface Hub devices.) 
+
+Note that if you create Store listings for multiple languages, you'll have a Store listing page for each one. You'll need to upload images for each language separately (even if you are using the same images). 
 
 **Store logos**<br>*Required: 1:1 box art*<br>*Recommended: 2:3 poster art*
 
 Store logos are optional images that you can upload to enhance the way your app is displayed to customers.
 
-See [App screenshots and images](../app-screenshots-and-images.md) for more information.
+You can provide these images as .png files (no greater than 50 MB).
+
+*1:1 box art (1080 x 1080 or 2160 x 2160 pixels)*
+
+This is used as the main logo image for customers, so we require providing this image to ensure proper display. This image should include your app’s name.
+
+*2:3 Poster art (720 x 1080 or 1440 x 2160 pixels)*
+
+This image may appear in search results or in editorially curated collections. 
 
 ## Supplemental fields
 
 The fields in this section are all optional, although a short description is recommended for all apps. Review the info below to determine if providing this info makes sense for your submission. The other fields may help provide an optimal experience for your product in different scenarios.
-
-**Sort title**<br>*Character limit: 255*
-
-If you would like your title to be alphabetized according to an alternate title, specify that title here. For example, an app named "The Best App" can use "Best App" as its sort title to be sorted under B (for Best) instead of T (for The).
 
 **Short description**<br>*Recommended*<br>*Character limit: 1,000*
 
@@ -105,11 +106,11 @@ When adding search terms, think about the words that customers might use when se
 
 Enter any copyright or trademark info that applies to your app here.
 
-**Additional license terms**<br>*Character limit: 10,000
+**Applicable license terms**<br>*Character limit: 10,000
 
 Enter license terms for your app to be licensed to customers. License terms will be displayed as plain text in the store.
 
-You can enter a single url in this field instead of your license text. If you do, the store will display the url as link to a page that contains your additional license terms. This is useful if your additional license terms are very long, or if you want to include clickable links or formatting in your additional license terms.
+You can enter a single url in this field instead of your license text. If you do, the store will display the url as link to a page that contains your applicable license terms. This is useful if your applicable license terms are very long, or if you want to include clickable links or formatting in your applicable license terms.
 
 **Developed by**<br>*Character limit: 255*
 
