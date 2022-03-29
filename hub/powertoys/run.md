@@ -169,7 +169,7 @@ The PowerToys Run calculator plugin supports the following operations:
 | Power | pow( x, y ) | Calculate a number raised to the power of some other number. |
 | Factorial | x ! | |
 | Sign | sign( - x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
-| Round | round( x.abcd ) | | Example: `round(8.7867)`
+| Round | round( x.abcd ) | Example: `round(8.7867)` |
 | Random | rand() | |
 | Pi | +pi | Returns the number of Pi. |
 | Sine | sin( x ) | |
