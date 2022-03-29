@@ -68,21 +68,21 @@ These default direct activation commands will force PowerToys Run into only targ
 
 | Direct activation command | Action | Example | Plugin enabled by default |
 | :--- | :--- | :--- | :--- |
-| `=` | Calculator only | `=2+2` | yes |
-| `?` | File searching only | `?road` to find `roadmap.txt` | yes |
-| `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup | yes |
-| `:` | Registry keys only | `:hkcu` to search for the 'HKEY_CURRENT_USER' registry key. | yes |
-| `!` | Windows services only | `!alg` to search for the 'Application Layer Gateway' service to be started or stopped. | yes |
-| `>` | Shell command only | `>ping localhost` to do a ping query. | yes |
-| `(` | Time and date only | `(time and date` shows the current time and date in different formats.<br />`(calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. | yes |
-| `&` | Time zones only | `(& Newfoundland` shows the current time in the time zone of Newfoundland.| yes |
+| `=` | Calculator only | `= 2+2` | yes |
+| `?` | File searching only | `? road` to find 'roadmap.txt' | yes |
+| `.` | Installed programs only | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) | yes |
+| `:` | Registry keys only | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. | yes |
+| `!` | Windows services only | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped. | yes |
+| `>` | Shell command only | `> ping localhost` to do a ping query. | yes |
+| `(` | Time and date only | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. | yes |
+| `&` | Time zones only | `& Newfoundland` shows the current time in the time zone of Newfoundland.| yes |
 | `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet. | yes |
-| `//` | URIs only | `//` to launch your default browser.<br />`//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are also supported. | yes |
-| `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths. | **no** |
-| `??` | Web search only | `??What is the answer to life` to search with your default browser's search engine. | yes |
-| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name. | yes |
-| `_` | Windows Terminal profiles only | `_powershell` to list all profiles that contains 'powershell' in their name. | **no** |
-| `<` | Open windows only | `<outlook` to find all processes that contain 'outlook'. | yes |
+| `//` | URIs only | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are also supported. | yes |
+| `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. | `{ powertoys` to search for workspaces that contain 'powertoys' in their paths. | **no** |
+| `??` | Web search only | `//` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. | yes |
+| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. | yes |
+| `_` | Windows Terminal profiles only | `_ powershell` to list all profiles that contains 'powershell' in their name. | **no** |
+| `<` | Open windows only | `< outlook` to find all processes that contain 'outlook'. | yes |
 
 
 
@@ -193,9 +193,10 @@ The time and date plugin provides the current time and date or a custom one in d
 > The time and date plugin respects your computers date and time format settings. Please be aware of the different notations in different locals.
 
 Examples:
-- To show the time use `time` or `(time`.
-- To show all available formats for a date value use `(3/27/2022`.
-- To show the calendar week for a date value use `(calendar week::3/27/2022`.
+- `time` or `( time` to show the time.
+- `( 3/27/2022` to show all available formats for a date value.
+- `( calendar week::3/27/2022` to show the calendar week for a date value.
+- `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 
 ### Folder search filters
@@ -213,8 +214,8 @@ In the folder plugin you can filter the results by using some special characters
 The Windows Settings plugin allows you to search for Windows settings. You can search the settings by their name or by their location.
 
 To search by location you can use the following syntax:
-- `$device:` to list all settings with `device` in the area name.
-- `control>system>admin` shows all settings of the path `Control Panel > System and Security > Administrative Tools`.
+- `$ device:` to list all settings with 'device' in the area name.
+- `$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'.
 
 ### Kill a window process
 
