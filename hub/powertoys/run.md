@@ -29,7 +29,7 @@ PowerToys Run features include:
 - Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
 - Do a simple calculation using calculator
 - Executing system commands
-- Getting time and date informations
+- Getting time and date information
 - Converting units
 - Opening web pages or starting a web search
 
@@ -80,7 +80,7 @@ These default direct activation commands will force PowerToys Run into only targ
 | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. This plugin is off by default. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths |
 | `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet |
 | `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. `$ Device:` to view all available Device settings |
-| `(` | Show only time and date results | `(time and date` show the current time and date in different formats. For example, to get the calendar week for a specific date you can type `(calendar week::04/01/2022`.
+| `(` | Time and date only | `(time and date` shows the current time and date in different formats. For example, to get the calendar week for a specific date you can type `(calendar week::04/01/2022`.
 
 
 ## Plugins
@@ -154,8 +154,8 @@ The PowerToys Run calculator plugin supports the following operations:
 | Division |  a / b | |
 | Modulo/Remainder | a % b | |
 | Exponentiation | a ^ b | |
-| Ceil | ceil( x.y ) |  Rounds a number up to the next largest integer. |
-| Floor | floor( x.y ) | Rounds a number down to the next smallest integer. |
+| Ceil | ceil( x.y ) |  Rounds a number up to the next larger integer. |
+| Floor | floor( x.y ) | Rounds a number down to the next smaller integer. |
 | Exponential function | exp( x ) | Returns e raised to the specified power. |
 | Maximum | max( x, y, z ) | |
 | Minimum | max( x, y, z ) | |
@@ -219,9 +219,9 @@ With the Window Walker plugin you can kill the process of a window if it hangs.
 
 > [!Note]
 > There are some limitations for the "kill process" feature:
-> - Killing the Explorer process is only allowed, if each folder window is running in its own process.
-> - You can only kill elevated processes, if you have admin permissions (UAC).
-> - Windows of UWP apps don't know their process, until they are searched in non-minimized state.
+> - Killing the Explorer process is only allowed if each folder window is running in its own process.
+> - You can only kill elevated processes if you have admin permissions (UAC).
+> - Windows of UWP apps don't know their process until they are searched in non-minimized state.
 
 > [!WARNING]
 > If you kill the process of an UWP app window, you kill all instances of the app. All windows are assigned to the same process.
@@ -234,7 +234,7 @@ If the File Explorer settings in Windows are not set to open each window in a se
 
 You can turn off the information in the PowerToys Run plugin manager options for Window Walker, or select the information to change the File Explorer settings. After selecting the information, the "Folder options" window will open.
 
-On the "Folder options" window, you can enabled the setting "Launch folder windows in a separate process".
+On the "Folder options" window, you can enable the setting "Launch folder windows in a separate process".
 
 ![Folder Options Window](../images/pt-run-folder-options.png)
 
