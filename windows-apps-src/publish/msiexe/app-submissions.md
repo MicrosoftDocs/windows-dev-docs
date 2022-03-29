@@ -81,7 +81,6 @@ Here are the details that you will need when creating your app submission. Requi
 | **Language**                | Required | At least one language is required. |
 | **Architecture**            | Required |       |
 | **Installer parameters**    | Required | Support for silent install is required. Other parameters are optional. |
-| **Let Microsoft decide...** |          | If selected, Microsoft will automatically make this app available to any appropriate future device families. |
 
 ## Store listings page
 
@@ -94,10 +93,9 @@ Each language has a separate store listing page. One listing page is required. I
 | **App features**                   |          | Character limit: 200 per feature; Feature limit: 20. |
 | **Screenshots**                    | Required | Required: 1; Recommended: 4+; Maximum: 10<br>For more information see [Create app Store listings for your MSI or EXE app](create-app-store-listings.md). |
 | **Store logos**                    | Required | 1:1 Box art required, 2:3 Poster art recommended<br>For more information see [Create app Store listings for your MSI or EXE app](create-app-store-listings.md).  |
-| **Sort title**                     |          | Character limit: 255    |
 | **Short description**              |          | Character limit: 1,000  |
 | **Additional system requirements** |          | Character limit: 200 characters per requirement; Requirements limit: 11 for each of minimum and recommended hardware. |
 | **Search terms**                   |          | Character limit: 30 per term; Term limit: 7; Maximum of 21 unique words total among all terms. |
 | **Copyright and trademark info**   |          | Character limit: 200    |
-| **Additional license terms**       | Required | Character limit: 10,000 |
+| **Applicable license terms**       | Required | Character limit: 10,000 |
 | **Developed by**                   |          | Character limit: 255    |
