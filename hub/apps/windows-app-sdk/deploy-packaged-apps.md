@@ -1,5 +1,5 @@
 ---
-title: Windows App SDK deployment guide for packaged apps 
+title: Windows App SDK deployment guide for fx-dependent packaged apps 
 description: This article provides instructions for deploying packaged apps that use the Windows App SDK.
 ms.topic: article
 ms.date: 05/21/2021
@@ -9,9 +9,9 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Windows App SDK deployment guide for packaged apps 
+# Windows App SDK deployment guide for fx-dependent packaged apps 
 
-This article provides guidance about deploying [MSIX](/windows/msix)-packaged apps that use the Windows App SDK to other computers.
+This article provides guidance about deploying framework-dependent [MSIX](/windows/msix)-packaged apps that use the Windows App SDK.
 
 By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md) that are provided with the Windows App SDK extension for Visual Studio, your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio]](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). For more info about configuring this project to build an MSIX package for your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options for deploying it to other computers. For more information, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 

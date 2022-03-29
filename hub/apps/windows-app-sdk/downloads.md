@@ -2,7 +2,7 @@
 title: Downloads for the Windows App SDK 
 description: Downloads for the Windows App SDK, including the VSIX, Installer and MSIX packages 
 ms.topic: article
-ms.date: 08/30/2021
+ms.date: 3/29/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: zafaraj
 author: zaryaf
@@ -11,16 +11,23 @@ ms.localizationpriority: medium
 
 # Downloads for the Windows App SDK
 
-This page provides download links to the various releases of the [Windows App SDK](index.md). To get started quickly, download the latest VSIX templates and installer below:
+This page provides download links to the various releases of the [Windows App SDK](index.md). To get started quickly, download the latest Visual Studio extensions (VSIX) and installer below:
 
-> [!div class="button" style="text-align: center;"]
-> [Download 1.0 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cs)
+**Latest Stable**
 
-> [!div class="button" style="text-align: center;"]
+> [!div class="button" style="text-align: left;" width="150px;"] 
+> [Download 1.0 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cs) 
+
+> [!div class="button" style="text-align: left;" width="150px;"] 
 > [Download 1.0 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cpp)
 
-> [!div class="button" style="text-align: center;"]
-> [Download 1.0 Installer (x64)](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0.1-x64.exe)
+> [!div class="button" style="text-align: left;" width="150px;"] 
+> [Download 1.0 Installer (x64)](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0.1-x64.exe) 
+
+**Latest Preview**
+
+> [!div class="button" style="text-align: left;" width="150px;"] 
+> [Download 1.1 Preview 1 Installer (x64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x64.exe) 
 
 For all Windows App SDK downloads, refer to the tables and links below. Depending on your development scenario, you may require the following:
 
@@ -43,6 +50,11 @@ Unpackaged or sparse-packaged apps that use the Windows App SDK can use the stan
 To learn more, see the [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 
 ## Current releases
+
+#### Windows App SDK 1.1
+|   | Version | SDK downloads | Runtime&nbsp;downloads |
+|---|---|---|---|
+| **✅** | [1.1.0&nbsp;Preview&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](preview-channel.md#version-11-preview-1-110-preview1) <br> 3/29/2022 <br> [Release&nbsp;notes](preview-channel.md#version-11-preview-1-110-preview1)&nbsp; | No new Visual Studio extensions.&nbsp;&nbsp; | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeredist-1.1.0-preview1.zip) | 
 
 #### Windows App SDK 1.0
 

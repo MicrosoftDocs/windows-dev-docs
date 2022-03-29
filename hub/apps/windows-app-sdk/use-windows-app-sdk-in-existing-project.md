@@ -57,4 +57,4 @@ If you have an existing desktop project in which you want to use the Windows App
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)

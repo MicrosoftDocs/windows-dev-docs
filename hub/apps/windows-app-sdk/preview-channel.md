@@ -20,11 +20,64 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
+## Version 1.1 Preview 1 (1.1.0-preview1)
+This is the first release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
+
+In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/apps/windows-app-sdk/downloads) for the updated  runtime and MSIX.
+
+The following sections describe new and updated features, limitations, and known issues for this release.
+
+### WinUI 3
+**Known issue**: Users are unable to drop an element when drag-and-drop is enabled.
+
+### Elevated (admin) support
+Using Windows App SDK 1.1 Preview 1, apps (including WinUI 3) will be able to run with elevated privilege.
+
+**Important limitations**
+- Available only on Windows 11
+
+**Known issues**
+- WinUI 3 apps crash when dragging an element during a drag-and-drop interaction.
+
+### Self-contained deployment
+Windows App SDK 1.1 will introduce support for self-contained deployment. Our [Deployment overview](../package-and-deploy/deploy-overview.md) details the differences between framework-dependent and self-contained deployment, and how to get started.
+
+**Known issues:**
+- C++ apps need to add the below to the bottom of their project file to workaround a bug in the self-contained `.targets` file that removes framework references to VCLibs:
+    ```xml
+      <Target Name="_RemoveFrameworkReferences" BeforeTargets="_ConverItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
+        <ItemGroup>
+          <FrameworkSdkRefrence Remove="@(FrameworkSdkReference)" Condition="'%(FrameworkSdkReference.SDKName)'=='Microsoft.WindowsAppRuntime.1.1'"/>
+        </ItemGroup>
+      </Target>
+      ```
+- Supported only on Windows 10, 1903 and above
+
+### Notifications
+Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send Windows notifications.
+
+**New features:**
+- Support for app notifications for packaged and unpackaged apps. Full details on [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md)
+  - Developers can send app notifications, also known as toast notifications, locally or from their own cloud service.
+- Support for push notification for packaged and unpackaged apps. Full details on [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md)
+  - Developers can send raw notifications or app notifications from their own cloud service.
+
+**Limitations:**
+- Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
+- Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
+- Windows App SDK runtime must be installed to support push notifications in unpackaged applications, see [Downloads for the Windows App SDK](/apps/windows-app-sdk/downloads) for the installer.
+
+### Environment manager
+API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
+
+**New features**
+- Provides automatic removal of any environment variables changes when an app that used environment manager is uninstalled.
+
 ## Version 1.0 Preview 3 (1.0.0-preview3)
 
 Preview 3 is the latest release of the preview channel for version 1.0 of the Windows App SDK. Preview 3 supports all [preview channel features](release-channels.md#features-available-by-release-channel).
 
-### Download Preview 3 Visual Studio extensions (VSIX)
+### Download 1.0 Preview 3 Visual Studio extensions (VSIX)
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
@@ -41,7 +94,7 @@ The extensions below are tailored for your programming language and version of V
 | [C++ Visual Studio 2022 extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/cpp) | Build C++ apps with the Windows App SDK Visual Studio 2022 extension. |
 | [The `.exe` installer, and MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer) | Deploy the Windows App SDK with your app using the `.exe` installer, and MSIX packages. |
 
-The following sections describe new and updated features, limitations, and known issues for Preview 3.
+The following sections describe new and updated features, limitations, and known issues for 1.0 Preview 3.
 
 ### WinUI 3
 
@@ -411,4 +464,4 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
