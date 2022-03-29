@@ -66,21 +66,24 @@ The following general options are available for PowerToys Run in the PowerToys s
 
 These default direct activation commands will force PowerToys Run into only targeted plugins.
 
-| Direct activation command | Action | Example |
-| :--- | :--- | :--- |
-| `=` | Calculator only | `=2+2` |
-| `?` | File searching only | `?road` to find `roadmap.txt` |
-| `??` | Web search only | `??What is the answer to life` to search with your default browser's search engine. |
-| `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup |
-| `//` | URIs only | `//` to launch your default browser, or `//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com. Also supports `mailto:` and `ms-settings:` |
-| `<` | Running processes only | `<outlook` to find all processes that contain outlook |
-| `>` | Shell command only | `>ping localhost` to do a ping query |
-| `:` | Registry keys only | `:hkcu` to search for the HKEY_CURRENT_USER registry key |
-| `!` | Windows services only | `!alg` to search for the Application Layer Gateway service to be started or stopped |
-| `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. This plugin is off by default. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths |
-| `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet |
-| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs. To list all settings of an area category, type `:` after the category name. `$ Device:` to view all available Device settings |
-| `(` | Time and date only | `(time and date` shows the current time and date in different formats. For example, to get the calendar week for a specific date you can type `(calendar week::04/01/2022`.
+| Direct activation command | Action | Example | Plugin enabled by default |
+| :--- | :--- | :--- | :--- |
+| `=` | Calculator only | `=2+2` | yes |
+| `?` | File searching only | `?road` to find `roadmap.txt` | yes |
+| `.` | Installed programs only | `.code` to get Visual Studio Code. See [Program parameters](#program-parameters) for options on adding parameters to a program's startup | yes |
+| `:` | Registry keys only | `:hkcu` to search for the 'HKEY_CURRENT_USER' registry key. | yes |
+| `!` | Windows services only | `!alg` to search for the 'Application Layer Gateway' service to be started or stopped. | yes |
+| `>` | Shell command only | `>ping localhost` to do a ping query. | yes |
+| `(` | Time and date only | `(time and date` shows the current time and date in different formats.<br />`(calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. | yes |
+| `&` | Time zones only | `(& Newfoundland` shows the current time in the time zone of Newfoundland.| yes |
+| `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet. | yes |
+| `//` | URIs only | `//` to launch your default browser.<br />`//docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are also supported. | yes |
+| `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. | `{powertoys` to search for workspaces that contain 'powertoys' in their paths. | **no** |
+| `??` | Web search only | `??What is the answer to life` to search with your default browser's search engine. | yes |
+| `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name. | yes |
+| `_` | Windows Terminal profiles only | `_powershell` to list all profiles that contains 'powershell' in their name. | **no** |
+| `<` | Open windows only | `<outlook` to find all processes that contain 'outlook'. | yes |
+
 
 
 ## Plugins
