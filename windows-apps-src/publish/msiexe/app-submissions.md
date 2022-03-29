@@ -20,7 +20,7 @@ You can start your submission when your app is complete and ready to publish, or
 > [!NOTE]
 > You must have an active developer account in Partner Center in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
 
-After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make  whatever changes are needed, whether you're providing new packages or just changing details such as What’s new or Description. To create a new submission for a published app, click Update next to the most recent submission shown on its Overview page. You can also remove an app from the Store if you need to (and then make it available again later if you'd like).
+After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make  whatever changes are needed, whether you're providing new packages or just changing details such as What’s new or Description. To create a new submission for a published app, click Update next to the most recent submission shown on its Overview page. 
 
 ## App submission checklist
 
