@@ -283,7 +283,7 @@ If on the other hand you want or need navigation between pages in your Windows A
 
 Also see [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation). If you *do* have a UWP app that's simple enough where you can copy your XAML markup and code-behind into **MainWindow**, then bear in mind these exceptions.
 
-Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml). You have these two options, though:
+Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml)). You have these two options, though:
 
 * Add a **UserControl** item to the project, and migrate your markup and code-behind to that. Then place an instance of that user control in **MainWindow**.
 * Add a **Page** item to the project, and migrate your markup and code-behind to that. Then add code to your **App** class to navigate to that **Page** on startup, as described in [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation).
