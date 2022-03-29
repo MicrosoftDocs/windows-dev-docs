@@ -79,10 +79,10 @@ These default direct activation commands will force PowerToys Run into only targ
 | `%%` | Unit converter only | `%% 10 ft in m` to calculate the number of meters in 10 feet. | yes |
 | `//` | URIs only | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are also supported. | yes |
 | `{` | Visual Studio Code previously opened workspaces, remote machines (SSH or Codespaces) and containers. | `{ powertoys` to search for workspaces that contain 'powertoys' in their paths. | **no** |
-| `??` | Web search only | `//` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. | yes |
+| `??` | Web search only | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. | yes |
 | `$` | Windows settings only | `$ Add/Remove Programs` to launch the Windows settings menu for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. | yes |
 | `_` | Windows Terminal profiles only | `_ powershell` to list all profiles that contains 'powershell' in their name. | **no** |
-| `<` | Open windows only | `< outlook` to find all processes that contain 'outlook'. | yes |
+| `<` | Open windows only | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process. | yes |
 
 
 
