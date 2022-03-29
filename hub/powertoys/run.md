@@ -142,7 +142,7 @@ If the program plugin's option "Include in global result" is not selected, be su
 ### Calculator Plugin
 
 > [!NOTE]
-> The calculator plugin respects your computers number format setting. Please be aware of the different decimal delimiters in different languages when searching.
+> The calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
 
 > [!WARNING]
 > There is a known issue that the comma sign used in some operations as delimiter between numbers gets interpreted as decimal delimiter. This happens if your number format setting in Windows is configured to use the comma sign as decimal separator.
@@ -190,7 +190,8 @@ The PowerToys Run calculator plugin supports the following operations:
 The time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
 
 > [!NOTE]
-> The time and date plugin respects your computers date and time format settings. Please be aware of the different notations in different locals.
+> - The time and date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
+> - For global queries the first word of the query has to be a complete match.
 
 Examples:
 - `time` or `( time` to show the time.
