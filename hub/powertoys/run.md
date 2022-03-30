@@ -11,13 +11,13 @@ no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, WindowWalker]
 
 PowerToys Run is a quick launcher for power users that contains some additional features without sacrificing performance. It is open source and modular for additional plugins.
 
-To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(note that this shortcut can be changed in the settings window)_
+To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
+
+> [!IMPORTANT]
+> After installing, PowerToys must be enabled and running in the background for this utility to work.
+
 ![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
 
-## Requirements
-
-- Windows 10 version 1903 or higher
-- After installing, PowerToys must be enabled and running in the background for this utility to work
 
 ## Features
 
@@ -65,6 +65,9 @@ The following general options are available for PowerToys Run in the PowerToys s
 ### Direct activation commands
 
 These default direct activation commands will force PowerToys Run into only targeted plugins.
+
+> [!TIPP]
+> You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
 | Direct activation command | Action | Example | Plugin enabled by default |
 | :--- | :--- | :--- | :--- |
@@ -121,7 +124,7 @@ The PowerToys Run program plugin allows for program arguments to be added when l
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
-> - The symbol sequence `--`.
+> - The characters sequence `--`.
 > - A parameter that starts with `-`.
 > - A parameter that starts with `--`.
 > - A parameter that starts with `/`.
@@ -190,8 +193,10 @@ The PowerToys Run calculator plugin supports the following operations:
 The time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
 
 > [!NOTE]
-> - The time and date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
-> - For global queries the first word of the query has to be a complete match.
+> The time and date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
+
+> [!IMPORTANT]
+> For global queries the first word of the query has to be a complete match.
 
 Examples:
 - `time` or `( time` to show the time.
@@ -222,7 +227,7 @@ To search by location you can use the following syntax:
 
 With the Window Walker plugin you can kill the process of a window if it hangs.
 
-> [!Note]
+> [!NOTE]
 > There are some limitations for the "kill process" feature:
 > - Killing the Explorer process is only allowed if each folder window is running in its own process.
 > - You can only kill elevated processes if you have admin permissions (UAC).
