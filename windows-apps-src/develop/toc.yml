@@ -823,6 +823,8 @@
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
         - name: Native debug visualization
           href: ../cpp-and-winrt-apis/natvis.md
+        - name: C++/WinRT configuration macros
+          href: ../cpp-and-winrt-apis/macros.md
         - name: Naming conventions
           href: ../cpp-and-winrt-apis/naming.md
         - name: C++ language
