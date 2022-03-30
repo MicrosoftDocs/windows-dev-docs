@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 03/29/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: zafaraj
 author: zaryaf
@@ -72,6 +72,10 @@ API set that allows developers to add, remove, and modify environment variables 
 
 **New features**
 - Provides automatic removal of any environment variables changes when an app that used environment manager is uninstalled.
+
+### Other limitations and known issues
+
+- If you're using C# with 1.1.0 Preview 1, then you must use one of the following .NET SDK versions at a minimum: .NET SDK 6.0.201, 6.0.103, 5.0.212, or 5.0.406. To upgrade your .NET SDK, you can update to the latest version of Visual Studio, or visit [Download .NET](https://dotnet.microsoft.com/en-us/download).
 
 ## Version 1.0 Preview 3 (1.0.0-preview3)
 
