@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 # Preview channel release notes for the Windows App SDK
 
 > [!IMPORTANT]
-> The preview channel is **not supported** for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store. There are currently no releases available from the preview channel, and we recommend using the [latest stable release](stable-channel.md).
+> The preview channel is **not supported** for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.
 
 The preview channel provides a preview of the next upcoming stable release. There may be breaking API changes between a given preview channel release and the next stable release. Preview channel releases do not include experimental APIs.
 
@@ -65,7 +65,7 @@ Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send W
 **Limitations:**
 - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
 - Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
-- Windows App SDK runtime must be installed to support push notifications in unpackaged applications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
+- Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
 
 ### Environment manager
 API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
