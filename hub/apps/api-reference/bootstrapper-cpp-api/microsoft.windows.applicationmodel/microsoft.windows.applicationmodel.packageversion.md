@@ -33,8 +33,8 @@ class PackageVersion : public PACKAGE_VERSION;
 ## Member functions
 |Function|Description|
 |------------|-----------------|
-|[PackageVersion::ToVersion function](#packageversiontoversion-function)|Retrieves the version as a **uint64_t**.|
 |[PackageVersion::ToString function](#packageversiontostring-function)|Retrieves the version as a **std::wstring**.|
+|[PackageVersion::ToVersion function](#packageversiontoversion-function)|Retrieves the version as a **uint64_t**.|
 
 ## PackageVersion::PackageVersion constructor
 Initializes a new instance of the **PackageVersion** class.
@@ -62,17 +62,6 @@ An optional **uint16_t** value representing the `revision` position of a `major.
 `version`
 A `major.minor.build.revision` sequence encoded as a (little-endian) **uint64_t** (so that the first 16 bits contain the revision, and so on).
 
-## PackageVersion::ToVersion function
-Retrieves the version as a **uint64_t**.
-
-### Syntax
-```cppwinrt
-uint64_t ToVersion() const;
-```
-
-### Return value 
-The `major.minor.build.revision` sequence encoded as a (little-endian) **uint64_t** (so that the first 16 bits contain the revision, and so on).
-
 ## PackageVersion::ToString function
 Retrieves the version as a **std::wstring**.
 
@@ -83,6 +72,17 @@ std::wstring ToString() const;
 
 ### Return value 
 The `major.minor.build.revision` sequence encoded as a string (**std::wstring**) in the format "12345.12345.12345.12345" + null-terminator.
+
+## PackageVersion::ToVersion function
+Retrieves the version as a **uint64_t**.
+
+### Syntax
+```cppwinrt
+uint64_t ToVersion() const;
+```
+
+### Return value 
+The `major.minor.build.revision` sequence encoded as a (little-endian) **uint64_t** (so that the first 16 bits contain the revision, and so on).
 
 ## See also
 * [Microsoft::Windows::ApplicationModel namespace](microsoft.windows.applicationmodel.md)
