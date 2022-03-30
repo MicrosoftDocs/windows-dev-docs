@@ -31,10 +31,10 @@ To install PowerToys using a Windows executable file:
 - System architecture
 	- x64 architecture currently supported.
 	- ARM support to become available at a later date.
-- Our installer will install the following runtime items:
+- Our installer will install the following runtimes:
    - .NET Core 3.1.22 Desktop Runtime or a newer 3.1.x runtime. (This is needed currently for the Settings application.)
    - .NET 6.0.3 Desktop Runtime or a newer 6.0.x runtime.
-   - Microsoft Edge WebView2 Runtime bootstrapper. (This will install the latest version.)
+   - Microsoft Edge WebView2 Runtime bootstrapper (This will install always the latest version.)
 
 To ensure that your machine meets these requirements, check your Windows version and build number by selecting <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 

@@ -66,7 +66,7 @@ The following general options are available for PowerToys Run in the PowerToys s
 
 These default direct activation commands will force PowerToys Run into only targeted plugins.
 
-> [!TIPP]
+> [!TIP]
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
 | Direct activation command | Action | Example | Plugin enabled by default |
