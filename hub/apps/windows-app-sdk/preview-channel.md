@@ -23,7 +23,7 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 ## Version 1.1 Preview 1 (1.1.0-preview1)
 This is the first release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
-In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/apps/windows-app-sdk/downloads) for the updated  runtime and MSIX.
+In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the updated runtime and MSIX.
 
 The following sections describe new and updated features, limitations, and known issues for this release.
 
@@ -65,7 +65,7 @@ Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send W
 **Limitations:**
 - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
 - Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
-- Windows App SDK runtime must be installed to support push notifications in unpackaged applications, see [Downloads for the Windows App SDK](/apps/windows-app-sdk/downloads) for the installer.
+- Windows App SDK runtime must be installed to support push notifications in unpackaged applications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
 
 ### Environment manager
 API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
