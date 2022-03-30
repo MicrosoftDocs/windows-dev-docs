@@ -42,7 +42,7 @@ landingContent:
           - text: ARM64EC for Windows 11 apps on ARM
             url: /windows/uwp/porting/arm64ec
           - text:  Understanding Arm64EC ABI and assembly code
-            url: /windows/uwp/porting/arm64ec-abi.md
+            url: /windows/uwp/porting/arm64ec-abi
           - text: Build ARM64 apps with the SDK
             url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
           - text: Build ARM64 Drivers with the WDK
