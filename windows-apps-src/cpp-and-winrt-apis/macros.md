@@ -21,7 +21,9 @@ If defined, disables these rarely-used features (in order to reduce compile time
 * The ability to implement exclusive interfaces outside the component.
 * **std::hash** specializations for interface and runtime class smart pointers.
 
-You're allowed to combine files with different settings for **WINRT_LEAN_AND_MEAN**, unlike the other configuration macros.
+You're allowed to combine files with different settings for **WINRT_LEAN_AND_MEAN**.
+
+Files that don't define **WINRT_LEAN_AND_MEAN** gain access to the rarely-used features.
 
 ## WINRT_NO_MODULE_LOCK
 If defined, disables object counts for the current module. The module never unloads from the process. Defining this macro is customary for executables (which can never unload), or for `.dll`s that you intend to leave pinned. May not be combined with **WINRT_CUSTOM_MODULE_LOCK**.
@@ -50,6 +52,10 @@ If defined, enables internal statistics to track various operations:
 If defined, includes helper functions to assist in native debug visualizations in Visual Studio. The code isn't used at runtime; it exists only for debugging.
 
 If you don't customize this macro, then visualization support functions are enabled if **_DEBUG** is defined. For more details, see [Visual Studio native debug visualization (natvis) for C++/WinRT](natvis.md).
+
+You're allowed to combine files with different settings for **WINRT_NATVIS**.
+
+If any file is compiled with **WINRT_NATVIS** support, then the resulting module will have native debug visualizations enabled.
 
 ## WINRT_EXPORT, WINRT_FAST_ABI_SIZE
 
