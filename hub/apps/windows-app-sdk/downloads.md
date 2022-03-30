@@ -22,7 +22,7 @@ This page provides download links to the various releases of the [Windows App SD
 > [Download 1.0 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cpp)
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.0 Installer (x64)](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0.1-x64.exe) 
+> [Download 1.0 Installer (x64)](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0-x64.exe) 
 
 **Latest Preview**
 
