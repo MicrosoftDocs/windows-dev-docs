@@ -34,7 +34,7 @@ The following sections describe new and updated features, limitations, and known
 Using Windows App SDK 1.1 Preview 1, apps (including WinUI 3) will be able to run with elevated privilege.
 
 **Important limitations**
-- Available only on Windows 11
+- Currently available only on Windows 11. But we're evaluating bringing this support downlevel in a later release.
 
 **Known issues**
 - WinUI 3 apps crash when dragging an element during a drag-and-drop interaction.
@@ -43,13 +43,18 @@ Using Windows App SDK 1.1 Preview 1, apps (including WinUI 3) will be able to ru
 Windows App SDK 1.1 will introduce support for self-contained deployment. Our [Deployment overview](../package-and-deploy/deploy-overview.md) details the differences between framework-dependent and self-contained deployment, and how to get started.
 
 **Known issues:**
-- C++ apps need to add the below to the bottom of their project file to workaround a bug in the self-contained `.targets` file that removes framework references to VCLibs:
+- A C++ app that is MSIX-packaged needs to add the below to the bottom of their project file to workaround a bug in the self-contained `.targets` file that removes framework references to VCLibs:
     ```xml
-      <Target Name="_RemoveFrameworkReferences" BeforeTargets="_ConverItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
+      <PropertyGroup>
+        <IncludeGetResolvedSDKReferences>true</IncludeGetResolvedSDKReferences>
+      </PropertyGroup>
+
+      <Target Name="_RemoveFrameworkReferences"
+        BeforeTargets="_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
         <ItemGroup>
-          <FrameworkSdkRefrence Remove="@(FrameworkSdkReference)" Condition="'%(FrameworkSdkReference.SDKName)'=='Microsoft.WindowsAppRuntime.1.1'"/>
+          <FrameworkSdkReference Remove="@(FrameworkSdkReference)" Condition="'%(FrameworkSdkReference.SDKName)' == 'Microsoft.WindowsAppRuntime.1.1-preview1'" />
         </ItemGroup>
-      </Target>
+    </Target>
       ```
 - Supported only on Windows 10, 1903 and above
 
@@ -66,12 +71,16 @@ Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send W
 - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
 - Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
 - Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
+- A WinUI3 app that's not running can't be background-activated via a notification. But we're evaluating supporting that in a future release.
 
 ### Environment manager
 API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
 
 **New features**
 - Provides automatic removal of any environment variables changes when an app that used environment manager is uninstalled.
+
+**Limitations**
+- Currently unavailable in C# apps. But we're evaluating bringing this feature to C# apps in a later release.
 
 ### Other limitations and known issues
 
