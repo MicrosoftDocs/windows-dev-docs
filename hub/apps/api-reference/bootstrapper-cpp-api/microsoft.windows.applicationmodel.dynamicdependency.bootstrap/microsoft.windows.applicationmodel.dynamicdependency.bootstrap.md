@@ -11,7 +11,7 @@ ms.localizationpriority: low
 
 # Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace
 
-Types and functions from the [Bootstrapper C++ API](../index.md) that are in the **Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap** namespace.
+Types and functions from the [Bootstrapper C++ API](../index.md) that are in the **Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap** namespace. For example, helper functions that wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 
 ## Functions in theMicrosoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace
 

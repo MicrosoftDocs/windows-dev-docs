@@ -11,7 +11,7 @@ ms.localizationpriority: low
 
 # Microsoft::Windows::ApplicationModel namespace
 
-Types and functions from the [Bootstrapper C++ API](../index.md) that are in the **Microsoft::Windows::ApplicationModel** namespace.
+Types and functions from the [Bootstrapper C++ API](../index.md) that are in the **Microsoft::Windows::ApplicationModel** namespace. For example, a class that represents a version of the Windows App SDK framework package.
 
 ## Types in the Microsoft::Windows::ApplicationModel namespace
 
