@@ -15,7 +15,6 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 The following releases of the stable channel are currently available:
 
-
 - [Version 1.0](#version-10)
 - [Version 0.8](#version-08)
 - [Version 0.5](#version-05)
@@ -31,7 +30,7 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.0
 
-Version 1.0.1 is the latest release from the stable channel for the Windows App SDK. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.1. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
 
 ### Version 1.0.1
 
@@ -272,7 +271,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 ## Version 0.8
 
-The latest available release of the stable channel is the servicing release 0.8.7.
+The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.7.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
@@ -476,7 +475,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 ## Version 0.5
 
-The latest available servicing release is [0.5.9](https://github.com/microsoft/WindowsAppSDK/discussions/1214).
+The latest available release of the 0.5.x lineage of the stable channel of the Windows App SDK is version [0.5.9](https://github.com/microsoft/WindowsAppSDK/discussions/1214).
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)
