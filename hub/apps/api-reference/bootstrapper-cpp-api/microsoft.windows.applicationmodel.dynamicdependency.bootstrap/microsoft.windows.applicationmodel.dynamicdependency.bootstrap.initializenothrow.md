@@ -14,7 +14,7 @@ ms.localizationpriority: low
 Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, returns a failure **HRESULT**.
 
 ## Syntax
-```cppwinrt
+```cpp
 inline auto Initialize(
     uint32_t majorMinorVersion = WINDOWSAPPSDK_RELEASE_MAJORMINOR,
     PCWSTR versionTag = WINDOWSAPPSDK_RELEASE_VERSION_TAG_W,

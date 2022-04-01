@@ -14,7 +14,7 @@ ms.localizationpriority: low
 Represents a version of the Windows App SDK framework package.
 
 ## Syntax
-```cppwinrt
+```cpp
 class PackageVersion : public PACKAGE_VERSION;
 ```
 
@@ -40,7 +40,7 @@ class PackageVersion : public PACKAGE_VERSION;
 Initializes a new instance of the **PackageVersion** class.
 
 ### Syntax
-```cppwinrt
+```cpp
 PackageVersion();
 PackageVersion(uint16_t major, uint16_t minor = 0, uint16_t build = 0, uint16_t revision = 0);
 PackageVersion(uint64_t version);
@@ -66,7 +66,7 @@ A `major.minor.build.revision` sequence encoded as a (little-endian) **uint64_t*
 Retrieves the version as a **std::wstring**.
 
 ### Syntax
-```cppwinrt
+```cpp
 std::wstring ToString() const;
 ```
 
@@ -77,7 +77,7 @@ The `major.minor.build.revision` sequence encoded as a string (**std::wstring**)
 Retrieves the version as a **uint64_t**.
 
 ### Syntax
-```cppwinrt
+```cpp
 uint64_t ToVersion() const;
 ```
 
