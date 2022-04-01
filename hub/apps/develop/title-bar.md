@@ -443,8 +443,7 @@ You specify the drag region by calling the [Window.SetTitleBar](/windows/winui/a
 Here's how to set a `Grid` of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page.
 
 ```xaml
-<Grid x:Name="AppTitleBar" 
-      Margin="0,0,120,0">
+<Grid x:Name="AppTitleBar">
     <Image Source="Images/WindowIcon.png"
            HorizontalAlignment="Left" 
            Width="16" Height="16" 
@@ -798,7 +797,7 @@ These lines from the previous example show the padding columns in the XAML that 
     <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
     <ColumnDefinition/>
     <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
-</Grid.ColumnDefinition
+</Grid.ColumnDefinitions>
 ```
 
 The dimensions and position of the caption control area is communicated by the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the [LeftInset](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset) or [RightInset](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset) properties, and its height is given by the [Height](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height) property.
@@ -820,11 +819,7 @@ LeftPaddingColumn.Width = new GridLength(CaptionButtonOcclusionWidthLeft);
 
 #### [WinUI 3](#tab/winui3)
 
-The title bar element (specified in the call to `SetTitleBar`) is presented over the caption buttons, so you need to set the side margins of your UIElement to leave space for the caption buttons. (If the title bar element is placed over the caption buttons and has a transparent background, the caption buttons will show through but will not receive any input.) For example, if all caption buttons (minimize, maximize/restore, close) are shown on the right side of the window, your title bar element should have a right margin value of 120 to ensure enough space for the buttons.
-
-```xaml
-<Grid x:Name="AppTitleBar" Margin="0,0,120,0">
-```
+The system reserves the upper-left or upper-right corner of the app window for the system caption buttons (minimize, maximize/restore, close). The system retains control of the caption button area to guarantee that minimum functionality is provided for dragging, minimizing, maximizing, and closing the window. The system draws the Close button in the upper-right for left-to-right languages and the upper-left for right-to-left languages.
 
 #### [UWP/WinUI 2](#tab/winui2)
 
@@ -839,7 +834,7 @@ These lines from the previous example show the padding columns in the XAML that 
     <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
     <ColumnDefinition/>
     <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
-</Grid.ColumnDefinition
+</Grid.ColumnDefinitions>
 ```
 
 The dimensions and position of the caption control area is communicated by the [CoreApplicationViewTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the [SystemOverlayLeftInset](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) or [SystemOverlayRightInset](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) properties, and its height is given by the [Height](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) property.
@@ -1439,7 +1434,7 @@ namespace WASDK_ExtendedTitleBar
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid x:Name="AppTitleBar" Margin="0,0,120,0">
+        <Grid x:Name="AppTitleBar">
             <Image Source="Images/WindowIcon.png"
                    HorizontalAlignment="Left" 
                    Width="16" Height="16" 
