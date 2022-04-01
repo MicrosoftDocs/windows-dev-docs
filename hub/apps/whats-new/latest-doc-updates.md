@@ -572,32 +572,15 @@ The following list of topics have seen significant updates in the past month, as
 
 ## C++/WinRT
 <ul>
-<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/guid-of">winrt::guid_of function template (C++/WinRT)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/cpp-ref-for-winrt/is-guid-of">winrt::is_guid_of function template (C++/WinRT)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/extension-sdks/device-families-overview">Programming with extension SDKs</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/midl-3/predefined-attributes">Predefined attributes (MIDL 3.0)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/appxpackage/uapmanifestschema/element-resources">Resources (Windows 10 package schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/appxpackage/uapmanifestschema/element-uap10-logo">uap10:Logo</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/appxpackage/uapmanifestschema/element-uap2-url">uap2:Url</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/appxpackage/uapmanifestschema/extensions">Extensions in the package manifest schema</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/appxpackage/uapmanifestschema/root-elements">Element Hierarchy (Windows 10 package schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/appxpackage/uapmanifestschema/schema-root">Package manifest schema reference for Windows 10</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-action">action</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-actions">actions</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-audio">audio</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-binding">binding (Toast schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-command">command</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-commands">commands</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-group">group</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-header">header</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-image">image (Toast schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-input">input</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-progress">progress</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-selection">selection</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-subgroup">subgroup</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-text">text (Toast schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-toast">toast</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/element-visual">visual (Toast schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/root-elements">Element Hierarchy (Toast schema)</a></li>
-<li><a href="https://docs.microsoft.com/windows/apps/schemas/tiles/toastschema/schema-root">Toast schema</a></li>
+<li><a href="https://docs.microsoft.com/uwp/cpp-ref-for-winrt/guid-of">winrt::guid_of function template (C++/WinRT)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/cpp-ref-for-winrt/is-guid-of">winrt::is_guid_of function template (C++/WinRT)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/extension-sdks/device-families-overview">Programming with extension SDKs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/midl-3/predefined-attributes">Predefined attributes (MIDL 3.0)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-resources">Resources (Windows 10 package schema)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-logo">uap10:Logo</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap2-url">uap2:Url</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/extensions">Extensions in the package manifest schema</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/root-elements">Element Hierarchy (Windows 10 package schema)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root">Package manifest schema reference for Windows 10</a></li>
+<li><a href="https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root">Toast schema</a></li>
 </ul>
