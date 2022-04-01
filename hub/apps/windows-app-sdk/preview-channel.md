@@ -71,7 +71,7 @@ Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send W
 - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
 - Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
 - Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
-- A WinUI3 app that's not running can't be background-activated via a notification. But we're evaluating supporting that in a future release.
+- A WinUI3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
 
 ### Environment manager
 API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
