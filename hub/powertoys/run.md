@@ -106,13 +106,13 @@ PowerToys Run enables a set of system level actions that can be executed.
 
 | Action command / Search result | Action | Note |
 | :--- | :--- | :--- |
-| `Shutdown` | Shuts down the computer | |
-| `Restart` | Restarts the computer | |
-| `Sign Out` | Signs current user out | |
-| `Lock` | Locks the computer | |
-| `Sleep` | Sleeps the computer | |
-| `Hibernate` | Hibernates the computer | |
-| `Empty Recycle Bin` | Empties the recycle bin | |
+| `Shutdown` | Shuts down the computer | Can use localised keyword |
+| `Restart` | Restarts the computer | Can use localised keyword |
+| `Sign Out` | Signs current user out | Can use localised keyword |
+| `Lock` | Locks the computer | Can use localised keyword |
+| `Sleep` | Sleeps the computer | Can use localised keyword |
+| `Hibernate` | Hibernates the computer | Can use localised keyword |
+| `Empty Recycle Bin` | Empties the recycle bin | Can use localised keywords |
 | `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 | `IP address` | Shows the ip addresses from the network connections of your computer. | The search query has to start with `IP` or `address`. |
 | `MAC address` | Shows the mac addresses from the network adapters in your computer. | The search query has to start with `MAC` or `address`. |
@@ -160,21 +160,21 @@ The PowerToys Run calculator plugin supports the following operations:
 | Division |  a / b | |
 | Modulo/Remainder | a % b | |
 | Exponentiation | a ^ b | |
-| Ceil | ceil( x.y ) |  Rounds a number up to the next larger integer. |
+| Ceiling | ceil( x.y ) |  Rounds a number up to the next larger integer. |
 | Floor | floor( x.y ) | Rounds a number down to the next smaller integer. |
+| Round | round( x.abcd ) | Rounds a fractional number to the nearest integer. |
 | Exponential function | exp( x ) | Returns e raised to the specified power. |
 | Maximum | max( x, y, z ) | |
-| Minimum | max( x, y, z ) | |
-| Absolute | abs( - x ) | Absolute value of a number |
+| Minimum | min( x, y, z ) | |
+| Absolute | abs( -x ) | Absolute value of a number |
 | Log10 | log( x ) | |
 | Log base e | ln( x ) | |
 | Square root | sqrt( x ) | |
-| Power | pow( x, y ) | Calculate a number raised to the power of some other number. |
-| Factorial | x ! | |
-| Sign | sign( - x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
-| Round | round( x.abcd ) | Example: `round(8.7867)` |
-| Random | rand() | |
-| Pi | +pi | Returns the number of Pi. |
+| Power | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y) |
+| Factorial | x! | |
+| Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
+| Random | rand() | Returns a fractional number between 0 and 1. |
+| Pi | pi | Returns the number of Pi. |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |
 | Tangent | tan( x ) | |
