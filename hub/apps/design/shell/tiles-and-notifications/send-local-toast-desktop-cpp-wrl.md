@@ -29,7 +29,7 @@ In the top **Configuration** menu, select **All Configurations** so that the fol
 
 Under **Linker -> Input**, add `runtimeobject.lib` to the **Additional Dependencies**.
 
-Then under **General**, make sure that the **Windows SDK Version** is set to something 10.0 or later (not Windows 8.1).
+Then under **General**, make sure that the **Windows SDK Version** is set to version 10.0 or later (not Windows 8.1).
 
 
 ## Step 2: Copy compat library code
