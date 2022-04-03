@@ -1356,7 +1356,7 @@ Share your custom fonts with other Windows applications.
 
 #### XML namespaces
 
-`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/4`
 
 #### Elements and attributes of this extension
 

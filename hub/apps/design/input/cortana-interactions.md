@@ -34,7 +34,7 @@ By integrating the basic functionality of your app, and providing a central entr
 
 ### Speech, voice, and conversation in Windows 10
 
-See [Speech, voice, and conversation in Windows 10](/windows/apps/develop/speech) for information on how the various Windows development frameworks provide speech recognition, speech synthesis, and conversation support for developers building Windows applications.
+See [Speech, voice, and conversation in Windows 10](../../develop/speech.md) for information on how the various Windows development frameworks provide speech recognition, speech synthesis, and conversation support for developers building Windows applications.
 
 ### Cortana Skills Kit
 

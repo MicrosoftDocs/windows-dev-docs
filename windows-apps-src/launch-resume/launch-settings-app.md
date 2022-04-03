@@ -86,7 +86,7 @@ The following sections describe different categories of ms-settings URIs used to
 * [User accounts](#user-accounts)
 
 > [!NOTE]
-> Whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
+> Whether a settings page is available varies by Windows SKU. The notes column also captures additional requirements that must be met for a page to be available.
 
 <!-- TODO: 
 * ms-settings:controlcenter

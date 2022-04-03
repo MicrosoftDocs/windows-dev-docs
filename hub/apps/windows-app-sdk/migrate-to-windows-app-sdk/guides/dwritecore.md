@@ -1,6 +1,6 @@
 ---
 title: DirectWrite to DWriteCore migration
-description: DWriteCore is the [Windows App SDK](/windows/apps/windows-app-sdk/) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal).
+description: DWriteCore is the [Windows App SDK](../../index.md) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal).
 ms.topic: article
 ms.date: 09/16/2021
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, DirectWrite, DWriteCore
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # DirectWrite to DWriteCore migration
 
-DWriteCore is the [Windows App SDK](/windows/apps/windows-app-sdk/) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal). For more info, see [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview).
+DWriteCore is the [Windows App SDK](../../index.md) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal). For more info, see [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview).
 
 ## Summary of API and/or feature differences
 
@@ -35,4 +35,4 @@ Also see the [DWriteCoreGallery](https://github.com/microsoft/WindowsAppSDK-Samp
 * [DWriteCore overview](/windows/win32/directwrite/dwritecore-overview)
 * [DWriteCoreGallery](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/TextRendering) sample app
 * [DirectWrite](/windows/win32/directwrite/direct-write-portal)
-* [Windows App SDK](/windows/apps/windows-app-sdk/)
+* [Windows App SDK](../../index.md)

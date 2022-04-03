@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This topic contains guidance for migrating from UWP's [Resource Management System](/windows/uwp/app-resources/resource-management-system) (also known as MRT) to the Windows App SDK's MRT Core.
 
-MRT Core is a streamlined version of MRT. For more info, see [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview).
+MRT Core is a streamlined version of MRT. For more info, see [Manage resources with MRT Core](../../mrtcore/mrtcore-overview.md).
 
 ## Summary of API and/or feature differences
 
@@ -112,7 +112,7 @@ Also see the [Load resources using MRT Core](https://github.com/microsoft/Window
 
 ## Related Topics
 
-* [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview)
+* [Manage resources with MRT Core](../../mrtcore/mrtcore-overview.md)
 * [MRT Core images](https://github.com/MicrosoftDocs/windows-uwp/tree/docs/hub/apps/windows-app-sdk/mrtcore/images)
 * [Resource Management System](/windows/uwp/app-resources/resource-management-system)
-* [Windows App SDK](/windows/apps/windows-app-sdk/)
+* [Windows App SDK](../../index.md)

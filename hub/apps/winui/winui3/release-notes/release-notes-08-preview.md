@@ -8,7 +8,7 @@ ms.topic: article
 
 # Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview (May 2021)
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [Visual Studio project templates](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
+Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
 
 **WinUI 3 - Project Reunion 0.8 Preview** is a pre-release version of WinUI 3 that includes bug fixes, general improvements, and experimental features - some of which will be stabilized for the Windows App SDK 0.8 stable release in June 2021.
 
@@ -28,12 +28,12 @@ This version of WinUI 3 is available as part of the Project Reunion 0.8 Preview.
 
 **[Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)**
 
-Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk). The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
+Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use the Windows App SDK](../../../package-and-deploy/index.md#use-the-windows-app-sdk). The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the [WinUI 3 Controls Gallery](#winui-3-controls-gallery) from GitHub, or download it from the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
 
-Once you've set up your development environment, see [WinUI 3 project templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates. 
+Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio project and item templates. 
 
 For more information about getting started with building a WinUI 3 app, see the following articles:
 

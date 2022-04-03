@@ -32,7 +32,7 @@ If your app's main window doesn't receive automatic rounding, it's because you'v
     - Empty non-client area
     - Other customizations, such as extra non-child windows used for custom shadows
 
-    Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then it's possible for the system to round you. Note, however, that the API is a hint to the system and does not guarantee rounding, depending on the customizations.
+    Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then it's possible for the system to round your app's window. Note, however, that the API is a hint to the system and does not guarantee rounding, depending on the customizations.
 1. Apps that cannot ever be rounded, even if they call the opt-in API.
 
     These apps have no frame or borders, and typically have heavily customized UI. If your app does one of the following, it cannot be rounded:
@@ -59,7 +59,7 @@ A pointer to the appropriate value from this enum is passed to the third paramet
 
 ### For C# apps
 
-DwmSetWindowAttribute is a native C++ API. If your app is based on .NET and uses C#, you'll need to use [P/Invoke](/dotnet/standard/native-interop/pinvoke) to import dwmapi.dll and the DwmSetWindowAttribute function signature. All standard WinForms and WPF apps are rounded automatically like any other app, but if you customize your window frame or use a third party framework, you might need to opt-in to rounded corners if doing so results in losing the default rounding. See the Examples section for further details.
+DwmSetWindowAttribute is a native Win32 API and is not exposed directly to .NET code. You'll need to use your language's implementation of P/Invoke to declare the function (C# code is given in the example below). All standard WinForms and WPF apps are rounded automatically, but if you customize your window frame or use a third party framework, you might need to opt-in to rounded corners. See the Examples section for further details.
 
 ## Examples
 
@@ -70,7 +70,7 @@ The following examples show how you can call [**DwmSetWindowAttribute**](/window
 
 ### Example 1 - Rounding an app's main window in C# - WPF
 
-To call DwmSetWindowAttribute in a C# WPF desktop app, you'll need to import dwmapi.dll and the DwmSetWindowAttribute function signature with [P/Invoke](/dotnet/standard/native-interop/pinvoke). First you'll need to redefine the required enum values from the native dwmapi.h header, then declare the function using C# types equivalent to the original native function. Because the original takes a pointer for the third parameter, make sure to use the *ref* keyword so you can pass the address of a variable when you call the function. You can do this in your MainWindow class in MainWindow.xaml.cs.
+This example shows how to call DwmSetWindowAttribute from C# by using the **[DllImport]** attribute. Note that this definition is specific to rounded corners; the DwmSetWindowAttribute function is designed to take different parameters depending on the flags provided, so this is not a general-purpose signature. The example also includes copies of the relevant enums from the dwmapi.h header file. Because the Win32 API takes a pointer for the third parameter, make sure to use the *ref* keyword so you can pass the address of a variable when you call the function. You can do this in your MainWindow class in MainWindow.xaml.cs.
 
 ```CSharp
 using System.Runtime.InteropServices;
@@ -79,6 +79,7 @@ using System.Windows.Interop;
 public partial class MainWindow : Window
 {
     // The enum flag for DwmSetWindowAttribute's second parameter, which tells the function what attribute to set.
+    // Copied from dwmapi.h
     public enum DWMWINDOWATTRIBUTE
     {
         DWMWA_WINDOW_CORNER_PREFERENCE = 33
@@ -86,6 +87,7 @@ public partial class MainWindow : Window
 
     // The DWM_WINDOW_CORNER_PREFERENCE enum for DwmSetWindowAttribute's third parameter, which tells the function
     // what value of the enum to set.
+    // Copied from dwmapi.h
     public enum DWM_WINDOW_CORNER_PREFERENCE
     {
         DWMWCP_DEFAULT      = 0,
@@ -95,12 +97,11 @@ public partial class MainWindow : Window
     }
 
     // Import dwmapi.dll and define DwmSetWindowAttribute in C# corresponding to the native function.
-    [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    private static extern long DwmSetWindowAttribute(IntPtr hwnd,
+    [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
+    internal static extern void DwmSetWindowAttribute(IntPtr hwnd,
                                                      DWMWINDOWATTRIBUTE attribute,
                                                      ref DWM_WINDOW_CORNER_PREFERENCE pvAttribute,
                                                      uint cbAttribute);
-
     // ...
     // Various other definitions
     // ...
@@ -127,7 +128,7 @@ public MainWindow()
 
 ### Example 2 - Rounding an app's main window in C# - WinForms
 
-Like with WPF, for a WinForms app you'll first need to import dwmapi.dll and the DwmSetWindowAttribute function signature with [P/Invoke](/dotnet/standard/native-interop/pinvoke). You can do this in your primary Form class.
+Like with WPF, for a WinForms app you'll first need to import dwmapi.dll and the DwmSetWindowAttribute function signature with P/Invoke. You can do this in your primary Form class.
 
 ```Csharp
 using System;
@@ -136,24 +137,26 @@ using System.Runtime.InteropServices;
 public partial class Form1 : Form
 {
     // The enum flag for DwmSetWindowAttribute's second parameter, which tells the function what attribute to set.
+    // Copied from dwmapi.h
     public enum DWMWINDOWATTRIBUTE
     {
         DWMWA_WINDOW_CORNER_PREFERENCE = 33
-    }            
+    }
 
     // The DWM_WINDOW_CORNER_PREFERENCE enum for DwmSetWindowAttribute's third parameter, which tells the function
     // what value of the enum to set.
+    // Copied from dwmapi.h
     public enum DWM_WINDOW_CORNER_PREFERENCE
     {
         DWMWCP_DEFAULT      = 0,
         DWMWCP_DONOTROUND   = 1,
         DWMWCP_ROUND        = 2,
         DWMWCP_ROUNDSMALL   = 3
-    }               
+    }
 
     // Import dwmapi.dll and define DwmSetWindowAttribute in C# corresponding to the native function.
-    [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    private static extern long DwmSetWindowAttribute(IntPtr hwnd, 
+    [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
+    internal static extern void DwmSetWindowAttribute(IntPtr hwnd,
                                                      DWMWINDOWATTRIBUTE attribute, 
                                                      ref DWM_WINDOW_CORNER_PREFERENCE pvAttribute, 
                                                      uint cbAttribute);

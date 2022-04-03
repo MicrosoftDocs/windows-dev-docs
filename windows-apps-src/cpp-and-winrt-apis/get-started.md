@@ -116,7 +116,7 @@ Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULT
 
 ## Modify a Windows Desktop application project to add C++/WinRT support
 
-Some desktop projects (for example, the [WinUI 3 project templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio)) have C++/WinRT support built in.
+Some desktop projects (for example, the [WinUI 3 templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio)) have C++/WinRT support built in.
 
 But this section shows you how you can add C++/WinRT support to any Windows Desktop application project that you might have. If you don't have an existing Windows Desktop application project, then you can follow along with these steps by first creating one. For example, open Visual Studio and create a **Visual C++** \> **Windows Desktop** \> **Windows Desktop Application** project.
 

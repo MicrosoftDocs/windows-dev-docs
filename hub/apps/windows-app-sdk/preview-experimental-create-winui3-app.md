@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Create a WinUI 3 app using Preview and Experimental channels of the Windows App SDK
 
-The [Windows App SDK](index.md) includes WinUI 3 project templates that enable you to create desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [Project templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3).
+The [Windows App SDK](index.md) includes WinUI 3 project templates that enable you to create desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 
 **Using the Windows App SDK Stable version**: To build a WinUI 3 app using the stable version of the Windows App SDK, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
@@ -74,7 +74,7 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
         ![Enabling Deploy in Configuration Manager](images/single-project-configmanager.png)
 
-8. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+8. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
     ![Screenshot of the Add New Item dialog box with the Installed > Visual C sharp Items > Win U I selected and the Blank Page option highlighted.](../winui/winui3/images/winui3-addnewitem.png)
 
@@ -128,7 +128,7 @@ To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Exp
         > [!NOTE]
         > Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](single-project-msix.md).
 
-6. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+6. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
     ![Screenshot of the Add New Item dialog box with the Installed > Visual C sharp Items > Win U I selected and the Blank Page option highlighted.](../winui/winui3/images/winui3-addnewitem.png)
 
@@ -192,7 +192,7 @@ To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 2:
 
         ![Another screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file.](../winui/winui3/images/WinUI-cpp-packageproject.png)
 
-7. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+7. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
     ![New Item](../winui/winui3/images/winui3-addnewitem-cpp.png)
 
@@ -249,7 +249,7 @@ To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Experimental 
         > [!NOTE]
         > Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your MSIX-packaged application without requiring a separate packaging project. For more information, see [Package your app using single-project MSIX](single-project-msix.md).
 
-6. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [Item templates for WinUI 3](../winui/winui3/winui-project-templates-in-visual-studio.md#item-templates-for-winui-3).
+6. To add a new item to your app project, right-click the **_Project name_ (Desktop)** project node in **Solution Explorer** and select **Add** -> **New Item**. In the **Add New Item** dialog box, select the **WinUI** tab, choose the item you want to add, and then click **Add**. For more details about the available items, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
     ![New Item](../winui/winui3/images/winui3-addnewitem-cpp.png)
 
