@@ -116,16 +116,16 @@ WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. 
 
 ### WinUI 2
 
-For most UWP apps, we recommend using Windows UI Library (WinUI) 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience. 
+For most UWP apps, we recommend using Windows UI Library (WinUI) 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
 
-WinUI 2 is an open source platform, and ships new updates trimesterly. 
+WinUI 2 is an open source platform, and ships new updates trimesterly.
 
 WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](/windows/apps/winui/).
 
 #### Key app scenarios enabled by WinUI 2
 
 - UWP apps that are looking to work downlevel to all versions of Windows 10 and Windows 11
-- Graphic-heavy apps or games that want to take advantage of DirectX and Win2D 
+- Graphic-heavy apps or games that want to take advantage of DirectX and Win2D
 - UWP apps that need to run on a variety of modern devices, with a range of modern inputs
 - Apps that seek to provide experiences that "fit right in" on the Windows OS and with other first party Windows apps
 
