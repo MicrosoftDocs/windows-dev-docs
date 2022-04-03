@@ -26,7 +26,7 @@ Before the introduction of the single-project MSIX feature, you needed two proje
 
 ### Supported project types
 
-The current release of the single-project MSIX feature supports [WinUI 3 in Desktop projects](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3) (C# and C++) in the Windows App SDK.
+The current release of the single-project MSIX feature supports [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) (C# and C++) in the Windows App SDK.
 
 ### Limitations
 
@@ -52,7 +52,7 @@ Follow these steps to modify an existing desktop WinUI 3 project created using t
 
 ### Step 1: Create or open an existing packaging project
 
-If you already have a solution for a [WinUI 3 in Desktop](../winui/winui3/winui-project-templates-in-visual-studio.md#project-templates-for-winui-3) app that includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), open that solution in Visual Studio now.
+If you already have a solution for a WinUI 3 desktop app (see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)) that includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), then open that solution in Visual Studio now.
 
 Otherwise, create a new WinUI 3 in Desktop project in Visual Studio by following the instructions in [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 

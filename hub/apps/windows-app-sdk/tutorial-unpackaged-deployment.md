@@ -1,6 +1,6 @@
 ---
-title: Advanced tutorial - Build and deploy an unpackaged app that uses the Windows App SDK 
-description: This article provides an advanced tutorial for building and deploying an unpackaged app that uses the Windows App SDK.
+title: Tutorial&mdash;Build and deploy a non-MSIX-packaged app that uses the Windows App SDK
+description: This article provides a step-by-step tutorial for configuring a non-MSIX-packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs.
 ms.topic: article
 ms.date: 05/24/2021
 keywords: windows win32, windows app development, Windows App SDK 
@@ -9,11 +9,11 @@ author: zaryaf
 ms.localizationpriority: medium
 ---
 
-# Advanced tutorial: Build and deploy an unpackaged app that uses the Windows App SDK
+# Tutorial&mdash;Build and deploy a non-MSIX-packaged app that uses the Windows App SDK
 
-This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. 
+This article provides a step-by-step tutorial for configuring a non-MSIX-packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. 
 
-This guidance demonstrates explicitly calling the bootstrapper API and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. This is considered a more advanced scenario. A simple approach using auto-initialization via the `WindowsPackageType` project property is available beginning in 1.0 Preview3. See [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app) for more info.
+This guidance demonstrates explicitly calling the bootstrapper API, and leverages a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK. This is considered a more advanced scenario. A simple approach using auto-initialization via the `WindowsPackageType` project property is available beginning in 1.0 Preview3. See [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app) for more info.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 

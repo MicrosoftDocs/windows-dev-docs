@@ -22,7 +22,7 @@ Modern drag and drop is available on all devices that support UWP. It allows dat
 Here's an overview of what you need to do to enable drag and drop in your app:
 
 1. Enable dragging on an element by setting its **CanDrag** property to true.  
-2. Build the data package. The system handles images and text automatically, but for other content, you'll need to handle the **DragStarted** and **DragCompleted** events and use them to construct your own data package. 
+2. Build the data package. The system handles images and text automatically, but for other content, you'll need to handle the [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting) and [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted) events and use them to construct your own data package. 
 3. Enable dropping by setting the **AllowDrop** property to **true** on all the elements that can receive dropped content. 
 4. Handle the **DragOver** event to let the system know what type of drag operations the element can receive. 
 5. Process the **Drop** event to receive the dropped content. 
@@ -44,10 +44,10 @@ You don't need to do any other work to allow dragging, unless you want to custom
 ## Construct a data package 
 
 In most cases, the system will construct a data package for you. The system automatically handles:
-* Images
-* Text 
+- Images
+- Text 
 
-For other content, you'll need to handle the **DragStarted** and **DragCompleted** events and use them to construct your own [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage).
+For other content, you'll need to handle the [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting) and [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted) events and use them to construct your own [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
 ## Enable dropping
 
@@ -80,9 +80,9 @@ The system provides a default UI for dragging and dropping. However, you can als
 
 When using touch, dragging a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) and opening its context menu share similar touch gestures; each begins with a press and hold. Here's how the system disambiguates between the two actions for elements in your app that support both: 
 
-* If a user presses and holds an item and begins dragging it within 500 milliseconds, the item is dragged and the context menu is not shown. 
-* If the user presses and holds but does not drag within 500 milliseconds, the context menu is opened. 
-* After the context menu is open, if the user tries to drag the item (without lifting their finger), the context menu is dismissed and the drag will start.
+- If a user presses and holds an item and begins dragging it within 500 milliseconds, the item is dragged and the context menu is not shown. 
+- If the user presses and holds but does not drag within 500 milliseconds, the context menu is opened. 
+- After the context menu is open, if the user tries to drag the item (without lifting their finger), the context menu is dismissed and the drag will start.
 
 ## Designate an item in a ListView or GridView as a folder
 
@@ -107,16 +107,16 @@ The [UIElement](/uwp/api/windows.ui.xaml.uielement) class does most of the work 
 | Hand off drag to the shell  | [CoreDragOperation.StartAsync](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 | Receive drop from the shell  | [CoreDragDropManager](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[ICoreDropOperationTarget](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
 
-
-
 ## See also
 
-* [App-to-app communication](index.md)
-* [AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop)
-* [CanDrag](/uwp/api/windows.ui.xaml.uielement.candrag)
-* [DragOver](/uwp/api/windows.ui.xaml.uielement.dragover)
-* [AcceptedOperation](/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
-* [DataView](/uwp/api/windows.ui.xaml.drageventargs.dataview)
-* [DragUIOverride](/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
-* [Drop](/uwp/api/windows.ui.xaml.uielement.drop)
-* [IsDragSource](/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)
+- [App-to-app communication](index.md)
+- [AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop)
+- [CanDrag](/uwp/api/windows.ui.xaml.uielement.candrag)
+- [DragOver](/uwp/api/windows.ui.xaml.uielement.dragover)
+- [AcceptedOperation](/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
+- [DataView](/uwp/api/windows.ui.xaml.drageventargs.dataview)
+- [DragUIOverride](/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
+- [Drop](/uwp/api/windows.ui.xaml.uielement.drop)
+- [IsDragSource](/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)
+- [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted)

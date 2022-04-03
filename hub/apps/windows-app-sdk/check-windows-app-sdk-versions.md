@@ -11,11 +11,13 @@ ms.localizationpriority: medium
 
 # Check for installed versions of the Windows App SDK runtime
 
-To check which versions of the Windows App SDK runtime are installed on your development computer, open a **PowerShell** window and run this command.
+To check which versions of the Windows App SDK runtime are installed on your development computer, open a **PowerShell** window and run one of the following commands.
 
 ```Powershell
-# For 1.0 Stable and Preview releases 
+# For 1.0 Stable and Preview releases and later
 get-appxpackage *appruntime*
+# For shorter output displaying only PackageFullName
+(get-appxpackage micro*win*appruntime*).packagefullname
 
 # For 1.0 Experimental
 get-appxpackage *WindowsAppSDK* 

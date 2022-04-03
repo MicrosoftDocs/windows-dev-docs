@@ -26,7 +26,7 @@ This version of WinUI 3 is available as part of the Project Reunion 0.5 Preview.
 
 To install, follow the directions found in [Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install).
 
-In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. Once you've completed your installation, the experience of developing a WinUI 3 app should not change.
+In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. Once you've completed your installation, the experience of developing a WinUI 3 app should not change.
 
 > [!NOTE]
 > You can also clone and build the WinUI 3 Preview version of the [XAML Controls Gallery](#xaml-controls-gallery-winui-3-preview-branch).
@@ -34,7 +34,7 @@ In contrast to past preview versions of WinUI 3, you'll download a Project Reuni
 > [!NOTE]
 > To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer, you must enable WinUI 3 tooling with Visual Studio Preview Features as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
-Once you've set up your development environment, see [Create WinUI 3 projects](../winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates. 
+Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates. 
 
 For more information about getting started with the WinUI project templates, see the following articles:
 

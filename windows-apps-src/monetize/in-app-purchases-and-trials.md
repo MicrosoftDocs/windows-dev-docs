@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, trials, consumable, durable, subscription
 ms.localizationpriority: medium
 ---
+
 # In-app purchases and trials
 
 The Windows SDK provides APIs you can use to implement the following features to make more money from your Universal Windows Platform (UWP) app:
@@ -204,7 +205,7 @@ If your application is written in C# with .NET 5 or later, follow these steps.
     </PropertyGroup>
     ```
 
-2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article. Use the **WinRT.Interop.InitializeWithWindow.Initialize** method as documented in [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp) to initialize the dialog with the specified window handle. 
+2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article). To initialize the dialog with the specified window handle, use the **WinRT.Interop.WindowNative.GetWindowHandle** and **WinRT.Interop.InitializeWithWindow.Initialize** methods (see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects)).
 
       ```csharp
       StoreContext context = StoreContext.GetDefault();
@@ -232,9 +233,10 @@ If your application is written with an earlier version of .NET or in C++, follow
         }
         ```
 
-    * If your application is written in C++, add a reference to the shobjidl.h header file in your code. This header file contains the declaration of the **IInitializeWithWindow** interface.
+    * If your application is written in C++, add a reference to the `shobjidl.h` header file in your code. This header file contains the declaration of the **IInitializeWithWindow** interface.
 
-2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article, and cast this object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for any modal dialogs that are shown by **StoreContext** methods. The following C# example shows how to pass the handle of your app's main window to the method.
+2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article, and cast this object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for any modal dialogs that are shown by **StoreContext** methods. The following C# example shows how to pass the handle of your app's main window to the method. Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
+
     ```csharp
     StoreContext context = StoreContext.GetDefault();
     IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)context;

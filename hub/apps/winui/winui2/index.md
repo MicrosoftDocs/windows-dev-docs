@@ -8,7 +8,7 @@ ms.date: 11/10/2021
 # Windows UI Library (WinUI) 2
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](/windows/apps/winui/).
+> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../index.md).
 
 ![WinUI controls](images/winui-hero1.png)
 

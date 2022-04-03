@@ -74,9 +74,9 @@ The table below shows a brief summary of a few main capabilities between these U
 | Capability   | WinUI 3   | WinUI 2/UWP      | WPF    | WinForms      |
 |--------------|-----------|------------------|--------|---------------|
 | Languages supported   | C#/.NET 5, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
-| Devices supported   | PCs (incl. laptops and tablets), support for all Windows devices coming soon | All Windows devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
-| Inputs supported    | All Windows inputs supported      | All Windows inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
-| Windows OS version supported | Windows 10 version 1809 and later  | Windows 10 version 1703 and later    | Windows XP and later     | Windows XP and later   |
+| Devices supported   | PCs (incl. laptops and tablets), support for all Windows devices coming soon | All Windows  devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
+| Inputs supported    | All Windows 10 inputs supported      | All Windows 10 inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
+| Windows OS version supported | Windows 10 version 1809 and later  | Windows 10 version 1703 and later    | Windows XP and later     | Windows XP and hlater   |
 | WebView support   | Chromium-based WebView2         | Non-chromium WebView       | WebView2 support coming soon   | WebView2 support coming soon     |
 | Open Source   | Coming soon       | Yes     | Yes (.NET 5 version only)      | Yes (.NET 5 version only)   |
 
@@ -90,7 +90,7 @@ For most new Windows apps, we recommend using Windows UI Library (WinUI) 3 to bu
 
 WinUI 3 is completely decoupled from the Windows OS and ships as a part of the Windows App SDK, which is a set of tools and components that represent the next evolution in the Windows app development platform.
 
-WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](/windows/apps/winui/).
+WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](../winui/index.md).
 
 #### Key app scenarios enabled by WinUI 3
 
@@ -102,7 +102,7 @@ WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. 
 
 #### Helpful documentation for WinUI 3
 
-- Overview: [Windows UI Library 3](/windows/apps/winui/)
+- Overview: [Windows UI Library 3](../winui/index.md)
 - Get started: [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
@@ -120,7 +120,7 @@ For most UWP apps, we recommend using Windows UI Library (WinUI) 2 to build your
 
 WinUI 2 is an open source platform, and ships new updates trimesterly.
 
-WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](/windows/apps/winui/).
+WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](../winui/index.md).
 
 #### Key app scenarios enabled by WinUI 2
 
@@ -200,7 +200,7 @@ Note that Windows Forms does not have animations built in, unlike the other UI f
 
 There are a few UI frameworks that haven't been discussed in this article, including Win32/ComCtl32 and MFC. While these UI frameworks are still available for use, they are not regularly maintained and don't meet the same accessibility and design standards that Windows provides today. It's recommended that you use a more modern framework when creating new Windows apps.
 
-If you'd like to learn about modernizing an app that's using an older UI framework, see [Modernize your desktop apps](/windows/apps/desktop/modernize).
+If you'd like to learn about modernizing an app that's using an older UI framework, see [Modernize your desktop apps](../desktop/modernize/index.md).
 
 For more information on these UI frameworks, see the following documentation:
 
