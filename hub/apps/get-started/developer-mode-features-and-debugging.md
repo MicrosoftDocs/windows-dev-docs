@@ -1,6 +1,6 @@
 ---
 title: Developer Mode features and debugging
-description: Learn specifics about the features of developer mode in Windows, and informaiton on installation errors.
+description: Learn specifics about the features of developer mode in Windows, and information on installation errors.
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.date: 10/13/2020
 ms.topic: article
@@ -23,8 +23,8 @@ This image shows developer features for Windows:
 
 To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal.md).
 
-
 For device specific setup instructions, see:
+
 - [Device Portal for Desktop](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Device Portal for HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
 - [Device Portal for IoT](/windows/iot-core/manage-your-device/deviceportal)
@@ -129,7 +129,7 @@ To fix this issue:
 
 For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows desktop device for development.  Note that these steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.
 
-You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home ore Windows 11 Home. If you do have Windows 10 Home or Windows 11 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
+You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home or Windows 11 Home. If you do have Windows 10 Home or Windows 11 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
 
 **Use gpedit to enable your device**
 
