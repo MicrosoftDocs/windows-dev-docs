@@ -53,7 +53,7 @@ To create a new Win32 Application project in C++ named _HelloComposition_:
 
 To use Windows Runtime (WinRT) APIs in your Win32 app, we use C++/WinRT. You need to configure your Visual Studio project to add C++/WinRT support.
 
-(For details, see [Get started with C++/WinRT - Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)).
+(For details, see [Get started with C++/WinRT - Modify a Windows Desktop application project to add C++/WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)).
 
 1. From the **Project** menu, open the project properties (_HelloComposition Properties_) and ensure the following settings are set to the specified values:
 

@@ -38,7 +38,7 @@ landingContent:
           - text: Build apps with the Windows App SDK
             url: ../windows-app-sdk/index.md
           - text: Create your first WinUI 3 project
-            url: /windows/apps/winui/winui3/create-your-first-winui3-app
+            url: ../winui/winui3/create-your-first-winui3-app.md
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
       - linkListType: reference
@@ -78,18 +78,18 @@ landingContent:
           - text: Win32 API for the Windows SDK
             url: /windows/win32/api/
           - text: WinRT API for the Windows App SDK
-            url: https://review.docs.microsoft.com/windows/windows-app-sdk/api/winrt/?branch=release-0.8
+            url: /windows/windows-app-sdk/api/winrt/
           - text: Win32 API for the Windows App SDK
-            url: https://review.docs.microsoft.com/windows/windows-app-sdk/api/win32/?branch=release-0.8
+            url: /windows/windows-app-sdk/api/win32/
 
   - title: Deploy
     linkLists:
       - linkListType: overview
         links:
-          - text: Package and deploy Windows apps
+          - text: Deployment overview
             url: ../package-and-deploy/index.md
           - text: Deploy apps that use the Windows App SDK
-            url: ../package-and-deploy/index.md#apps-that-use-the-windows-app-sdk
+            url: ../package-and-deploy/index.md#use-the-windows-app-sdk
           - text: MSIX documentation
             url: /windows/msix
 

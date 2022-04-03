@@ -50,7 +50,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ### The **from_cx** function
 
-The **from_cx** helper function converts a C++/CX object to an equivalent C++/WinRT object. The function casts a C++/CX object to its underlying [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) interface pointer. It then calls [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) on that pointer to query for the default interface of the C++/WinRT object. **QueryInterface** is the Windows Runtime application binary interface (ABI) equivalent of the C++/CX `safe_cast` extension. And, the [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) function retrieves the address of a C++/WinRT object's underlying **IUnknown** interface pointer so that it can be set to another value.
+The **from_cx** helper function converts a C++/CX object to an equivalent C++/WinRT object. The function casts a C++/CX object to its underlying [**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) interface pointer. It then calls [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) on that pointer to query for the default interface of the C++/WinRT object. **QueryInterface** is the Windows Runtime application binary interface (ABI) equivalent of the C++/CX `safe_cast` extension. And, the [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) function retrieves the address of a C++/WinRT object's underlying **IUnknown** interface pointer so that it can be set to another value.
 
 ### The **to_cx** function
 
@@ -333,7 +333,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## Important APIs
 * [IUnknown interface](/windows/win32/api/unknwn/nn-unknwn-iunknown)
-* [QueryInterface function](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [QueryInterface function](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))
 * [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 

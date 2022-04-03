@@ -53,7 +53,7 @@ productDirectory:
       - url: ./winui/winui3/create-your-first-winui3-app.md
         text: Create your first WinUI 3 project
       - url: ./get-started/samples.md
-        text: Samples
+        text: Sample apps for Windows
   - title: Design
     imageSrc: https://docs.microsoft.com/media/common/i_design.svg
     links:
@@ -80,7 +80,7 @@ productDirectory:
     imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
     links:
       - url: ./package-and-deploy/index.md
-        text: Package and deploy apps
+        text: Deployment architecture
       - url: ./windows-app-sdk/deployment-architecture.md
         text: Windows App SDK deployment guide 
       - url: /windows/msix

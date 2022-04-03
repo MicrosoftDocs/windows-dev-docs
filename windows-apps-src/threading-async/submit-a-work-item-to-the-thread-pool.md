@@ -33,9 +33,7 @@ The following example creates a work item and supplies a lambda to do the work:
 // The nth prime number to find.
 const uint n = 9999;
 
-// A shared pointer to the result.
-// We use a shared pointer to keep the result alive until the
-// thread is done.
+// Receives the result.
 ulong nthPrime = 0;
 
 // Simulates work by searching for the nth prime number. Uses a
@@ -113,14 +111,17 @@ m_workItem = asyncAction;
 // The nth prime number to find.
 const unsigned int n{ 9999 };
 
-unsigned long nthPrime{ 0 };
+// A shared pointer to the result.
+// We use a shared pointer to keep the result alive until the
+// work is done.
+std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
 
 // A reference to the work item is cached so that we can trigger a
 // cancellation when the user presses the Cancel button.
-m_workItem = Windows::System::Threading::ThreadPool::RunAsync([&](Windows::Foundation::IAsyncAction const& workItem)
+m_workItem = Windows::System::Threading::ThreadPool::RunAsync([=](Windows::Foundation::IAsyncAction const& workItem)
 {
     unsigned int progress = 0; // For progress reporting.
     unsigned int primes = 0;   // Number of primes found so far.
@@ -128,7 +129,7 @@ m_workItem = Windows::System::Threading::ThreadPool::RunAsync([&](Windows::Found
 
     if ((n >= 0) && (n <= 2))
     {
-        nthPrime = n;
+        *nthPrime = n;
         return;
     }
 
@@ -178,23 +179,23 @@ m_workItem = Windows::System::Threading::ThreadPool::RunAsync([&](Windows::Found
         }
     }
     // Return the nth prime number.
-    nthPrime = i;
+    *nthPrime = i;
 });
 ```
 
-```cpp
+```cppcx
 // The nth prime number to find.
 const unsigned int n = 9999;
 
 // A shared pointer to the result.
 // We use a shared pointer to keep the result alive until the
-// thread is done.
-std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long int>(0);
+// work is done.
+std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
 auto workItem = ref new Windows::System::Threading::WorkItemHandler(
-    \[this, n, nthPrime](IAsyncAction^ workItem)
+    [this, n, nthPrime](IAsyncAction^ workItem)
 {
     unsigned int progress = 0; // For progress reporting.
     unsigned int primes = 0;   // Number of primes found so far.
@@ -273,9 +274,9 @@ Provide a completion handler by setting the [**IAsyncAction.Completed**](/uwp/ap
 
 The following example updates the UI with the result of the work item submitted in step 1:
 
-```cpp
+```cppcx
 asyncAction->Completed = ref new AsyncActionCompletedHandler(
-    \[this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
+    [this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
 {
     if (asyncStatus == AsyncStatus::Canceled)
     {
@@ -297,22 +298,23 @@ asyncAction->Completed = ref new AsyncActionCompletedHandler(
 ```
 
 ```cppwinrt
-m_workItem.Completed([&](Windows::Foundation::IAsyncAction const& asyncInfo, Windows::Foundation::AsyncStatus const& asyncStatus)
+m_workItem.Completed([=](Windows::Foundation::IAsyncAction const& asyncInfo, Windows::Foundation::AsyncStatus const& asyncStatus)
 {
     if (asyncStatus == Windows::Foundation::AsyncStatus::Canceled)
     {
         return;
     }
 
-    std::wstringstream updateString;
-    updateString << std::endl << L"The " << n << L"th prime number is " << nthPrime << std::endl;
+    std::wstringstream updateStream;
+    updateStream << std::endl << L"The " << n << L"th prime number is " << *nthPrime << std::endl;
+    std::wstring updateString = updateStream.str();
 
     // Update the UI thread with the CoreDispatcher.
     Windows::ApplicationModel::Core::CoreApplication::MainView().CoreWindow().Dispatcher().RunAsync(
         Windows::UI::Core::CoreDispatcherPriority::High,
-        Windows::UI::Core::DispatchedHandler([&]()
+        Windows::UI::Core::DispatchedHandler([=]()
     {
-        UpdateUI(updateString.str());
+        UpdateUI(updateString);
     }));
 });
 ```

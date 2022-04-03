@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This article explains the basic building blocks and high-level architecture of Windows App SDK deployment.
 
-For instructions to deploy apps that use the Windows App SDK, see these articles:
+For instructions on deploying apps that use the Windows App SDK, see these articles:
 
 * [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
 * [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md) 

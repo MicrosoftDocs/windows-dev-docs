@@ -32,7 +32,6 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | [PrintManager](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/50-support-printmanager-api) | ❌ Not supported in 1.0 |
 | WebAuthenticationBroker | ❌ Not supported in 1.0 |
 | [Background acrylic](guides/winui3.md#acrylicbrushbackgroundsource-property) | ❌ Not supported in 1.0 |
-| DisplayRequest API | ❌ Not supported in 1.0 |
 | [Single-app kiosk](https://portal.productboard.com/winappsdk/1-windows-app-sdk/c/62-support-single-app-kiosk) | ❌ Not supported in 1.0 |
 | [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) API | ❌ Not supported in 1.0 |
 | Full containerization of your app | ❌ Not supported in 1.0 |

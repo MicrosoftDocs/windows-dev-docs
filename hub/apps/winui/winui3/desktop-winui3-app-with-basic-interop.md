@@ -27,7 +27,7 @@ We're going to build our example app from the initial template application (see 
 
 ### The application solution
 
-By default, the Visual Studio Solution for an app contains two projects: The application itself, and another for creating an [MSIX](/windows/msix) app package (see [WinUI 3 project templates in Visual Studio](winui-project-templates-in-visual-studio.md) for more details).
+By default, the Visual Studio Solution for an app contains two projects: The application itself, and another for creating an [MSIX](/windows/msix) app package (see [WinUI 3 templates in Visual Studio](winui-project-templates-in-visual-studio.md) for more details).
 
 :::image type="content" source="images/build-basic/solution-explorer-pinvoke.png" alt-text="Screenshot of the Visual Studio Solution Explorer showing the file structure of the initial template app.":::<br/>*Solution Explorer showing the file structure of the initial template app.*
 
@@ -76,9 +76,9 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ### Code
 
-1. In the App.xaml.cs code-behind file, we get a handle to the [Window](/windows/winui/api/microsoft.ui.xaml.window) using the [WindowNative.GetWindowHandle](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) WinRT COM interop method (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)).
+1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/winui/api/microsoft.ui.xaml.window) using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)).
 
-   This method is called from the app's [OnLaunched](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
+   This method is called from the app's [**OnLaunched**](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
 
    :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/app.xaml.cs" id="OnLaunched":::
 

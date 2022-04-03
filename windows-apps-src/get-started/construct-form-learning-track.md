@@ -11,8 +11,6 @@ ms.custom: RS5
 
 If you're creating an app that requires users to input a significant amount of information, chances are you'll want to create a form for them to fill out. This article will show you what you need to know in order to create a form that is useful and robust.
 
-This is not a tutorial. If you want one, see our [adaptive layout tutorial](/windows/apps/design/basics/xaml-basics-adaptive-layout), which will provide you with a step-by-step guided experience.
-
 We'll discuss what **XAML controls** go into a form, how to best arrange them on your page, and how to optimize your form for changing screen sizes. But because a form is about the relative position of visual elements, let's first discuss page layout with XAML.
 
 ## What do you need to know?
@@ -173,7 +171,6 @@ Here's a quick summary of APIs and other useful documentation to help you get st
 
 | Code sample | Description |
 |-----------------|---------------|
-| [Adaptive layout tutorial](/windows/apps/design/basics/xaml-basics-adaptive-layout) | A step-by-step guided experience through adaptive layouts and responsive design. |
 | [Customer Orders Database](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | See layout and forms in action on a multi-page enterprise sample. |
 | [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) | See a selection of XAML controls, and how they're implemented. |
 | [Additional code samples](https://developer.microsoft.com/windows/samples) | Choose **Controls, layout, and text** in the category drop-down list to see related code samples. |

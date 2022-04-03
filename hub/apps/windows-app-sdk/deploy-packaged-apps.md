@@ -1,19 +1,19 @@
 ---
-title: Windows App SDK deployment guide for packaged apps 
+title: Windows App SDK deployment guide for fx-dependent packaged apps 
 description: This article provides instructions for deploying packaged apps that use the Windows App SDK.
 ms.topic: article
 ms.date: 05/21/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: stwhi
+author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Windows App SDK deployment guide for packaged apps 
+# Windows App SDK deployment guide for fx-dependent packaged apps 
 
-This article provides guidance about deploying [MSIX](/windows/msix)-packaged apps that use the Windows App SDK to other computers.
+This article provides guidance about deploying framework-dependent [MSIX](/windows/msix)-packaged apps that use the Windows App SDK.
 
-By default, when you create a project using one of the [WinUI project templates](..\winui\winui3\winui-project-templates-in-visual-studio.md) that are provided with the Windows App SDK extension for Visual Studio, your project includes a [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an MSIX package. For more information about configuring this project to build an MSIX package for your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options for deploying it to other computers. For more information, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
+By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md) that are provided with the Windows App SDK extension for Visual Studio, your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). For more info about configuring this project to build an MSIX package for your app, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options for deploying it to other computers. For more information, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
 > [!IMPORTANT]
 > Before configuring your app for deployment, and to learn more about the dependencies your packaged app takes when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). These dependencies include the *framework*, *main*, and *singleton* packages, which are all signed and published by Microsoft.
@@ -21,7 +21,7 @@ By default, when you create a project using one of the [WinUI project templates]
 ## Prerequisites
 
 * For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
-* **C#**. For the .NET 5.0 runtime, see [Download .NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
+* **C#**. .NET 5 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ## Deploy the Windows App SDK framework package
 
@@ -35,12 +35,12 @@ When you install a [preview release channel](preview-channel.md) version of the 
 
 When you install a [stable release channel](stable-channel.md) version of the Windows App SDK extension or NuGet package on your development computer and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
 
-However, if you build your app package manually, you must declare **PackageReference** in your Application (package).wapproj. For version specific instructions, see [Update existing projects to the latest release of the Windows AppSDK](update-existing-projects-to-the-latest-release.md).
+However, if you build your app package manually using a separate Windows Application Packaging Project, you must declare a **PackageReference** in your Application (package).wapproj. For version specific instructions, see [Update existing projects to the latest release of the Windows AppSDK](update-existing-projects-to-the-latest-release.md).
 
  ```xml
     <ItemGroup>
-        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.8.0]">
-        <IncludeAssets>build</IncludeAssets>
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1">
+            <IncludeAssets>build</IncludeAssets>
         </PackageReference>
     </ItemGroup>
 ```

@@ -37,7 +37,7 @@
             - name: Modernize desktop apps
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize
-            - name: Package and deploy
+            - name: Deploy
               tocHref: /windows/apps/package-and-deploy/
               topicHref: /windows/apps/package-and-deploy
             - name: Reference

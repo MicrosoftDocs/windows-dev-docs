@@ -237,7 +237,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](../shell/title-bar.md).
+In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](/windows/apps/develop/title-bar).
 
 ## Do's and don'ts
 * Do use acrylic on transient surfaces.

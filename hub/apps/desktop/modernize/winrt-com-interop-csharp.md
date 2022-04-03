@@ -1,7 +1,7 @@
 ---
 title: Call interop APIs from a .NET 5+ app
 description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET 5+.
-ms.date: 02/08/2022
+ms.date: 03/07/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -20,9 +20,9 @@ The C# interop classes listed in the next section ([Available C# interop classes
 
 When you create a new WinUI 3 project in Visual Studio (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)), your project is already configured, and you can start using all of the C# interop classes right away.
 
-### In other C# desktop project types (WPF or Windows Forms)
+### In other C# desktop project types (WPF or WinForms)
 
-For other .NET 5+ desktop project types, you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](/windows/apps/windows-app-sdk/). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
+For other .NET 5+ desktop project types&mdash;such as [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) or [Windows Forms (WinForms)](/dotnet/desktop/winforms/)&mdash;you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](/windows/apps/windows-app-sdk/). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
 
 1. Open the project file for your C# .NET 5+ desktop project.
 
@@ -74,11 +74,11 @@ The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/
 |[**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)|(**Windows.UI.ViewManagement**) **UIViewSettingsInterop**|
 |[**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop)|(**Windows.Security.Credentials.UI**) **UserConsentVerifierInterop**|
 |[**IWebAuthenticationCoreManagerInterop**](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop)|(**Windows.Security.Authentication.Web.Core**) **WebAuthenticationCoreManagerInterop**|
-|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|(**WinRT.Interop**) **WindowNative**|
+|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|WinUI 3 only<br/><br/>(**WinRT.Interop**) **WindowNative**<br/><br/>For alternatives for WPF and WinForms, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).|
 
 ## Code example
 
-This code example demonstrates how to use C# interop classes in a WinUI 3 application (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker, it's necessary to initialize it with the handle (HWND) of the owner window.
+This code example demonstrates how to use two of the C# interop classes in a WinUI 3 application (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
 
 1. You can obtain a window handle (HWND) by using the [**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the **WinRT.Interop.WindowNative** C# interop class. Here, the `this` object is a reference to a [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window) object from the main window code-behind file.
 2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
@@ -101,6 +101,8 @@ private async void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
+
 ## Background
 
 Previous versions of the .NET Framework and .NET Core had built-in knowledge of WinRT. With those previous versions, you could define an interop interface directly in C# with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute, and then directly cast a projected class to that interop interface.
@@ -113,11 +115,13 @@ So as a replacement, in .NET 5 and later, you can make use of the C# interop cla
 
 ## Troubleshooting and known issues
 
-This section lists known issues and solutions for using the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose).
+There are currently no known issues for the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose).
 
-* **WinRT.Interop.WindowNative.GetWindowHandle doesn't marshal window handles (HWNDs) correctly when running on x86 platforms.** To work around this issue, update your .NET 5 SDK version to one of the following versions (or later): .NET SDK 5.0.206, 5.0.400, or 6.0.100.
+
 
 ## Related topics
 
 * [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
+* [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
+* [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects)

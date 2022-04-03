@@ -247,7 +247,7 @@ Here are the size recommendations for target-based assets, at 100% scale:
 
 
 ## More about splash screen assets
-For more info about splash screens, see [Windows app splash screens](/windows/uwp/launch-resume/splash-screens.md).
+For more info about splash screens, see [Windows app splash screens](/windows/uwp/launch-resume/splash-screens).
 
 ## More about badge logo assets
 

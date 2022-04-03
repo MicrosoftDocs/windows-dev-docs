@@ -24,6 +24,7 @@ The following arguments are available:
 |--------------|-------------|
 | **-f,--file** |  The path to the file to be hashed. |
 | **-m,--msix**  | Specifies that the hash command will also create the SHA-256 SignatureSha256 for use with MSIX installers. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **-?, --help** |  Gets additional help on this command. |
 
 ## Related topics
