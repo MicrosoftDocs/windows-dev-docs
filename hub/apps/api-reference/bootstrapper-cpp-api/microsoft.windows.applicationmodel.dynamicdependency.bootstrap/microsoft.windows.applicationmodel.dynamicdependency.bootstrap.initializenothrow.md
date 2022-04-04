@@ -45,7 +45,8 @@ On success, returns **S_OK**. If the call to [MddBootstrapInitialize](/windows/w
 
 #include <iostream>
 
-using MddBootstrap = Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap;
+namespace MddBootstrap {using namespace
+    ::Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap; }
 
 int main()
 {

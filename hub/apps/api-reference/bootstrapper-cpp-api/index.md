@@ -18,7 +18,7 @@ The Bootstrapper C++ API is a set of types and functions (callable only from C++
 | Topic | Description |
 | - | - |
 | [Microsoft::Windows::ApplicationModel namespace](microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md) | Types and functions from the Bootstrapper C++ API that are in the (**Microsoft::Windows**) **ApplicationModel** namespace. For example, a class that represents a version of the Windows App SDK framework package. |
-| [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md) | Types and functions from the Bootstrapper C++ API that are in the (**M::W::A::DynamicDependency**) **Bootstrap** namespace. For example, helper functions that wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/). |
+| [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md) | Types and functions from the Bootstrapper C++ API that are in the (**Microsoft::Windows::ApplicationModel::DynamicDependency**) **Bootstrap** namespace. For example, helper functions that wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/). |
 
 ## See also
 

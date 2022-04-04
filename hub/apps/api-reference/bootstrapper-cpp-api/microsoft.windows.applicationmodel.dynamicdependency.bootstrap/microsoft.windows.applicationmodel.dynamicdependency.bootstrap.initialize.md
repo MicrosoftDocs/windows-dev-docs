@@ -47,7 +47,8 @@ On success, returns a resource acquisition is initialization (RAII) object which
 
 #include <iostream>
 
-using MddBootstrap = MddBootstrap;
+namespace MddBootstrap {using namespace
+    ::Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap; }
 
 int main()
 {
