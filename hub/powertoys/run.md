@@ -153,7 +153,7 @@ If the program plugin's option "Include in global result" is not selected, be su
 > The calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
 
 > [!IMPORTANT]
-> In case you system's number format uses the comma sign as decimal delimiter you have to write a space between number and comma sign on operations with multiple parameters. Then your input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
+> In case your system's number format uses the comma sign as decimal delimiter you have to write a space between number and comma sign on operations with multiple parameters. Then your input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 The Calculator plugin supports the following operations:
 
@@ -175,7 +175,7 @@ The Calculator plugin supports the following operations:
 | Logarithm base 10 | log( x ) | |
 | Logarithm base e | ln( x ) | |
 | Square root | sqrt( x ) | |
-| Power | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y). |
+| Power of x | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y). |
 | Factorial | x! | |
 | Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
 | Random number | rand() | Returns a fractional number between 0 and 1. |
