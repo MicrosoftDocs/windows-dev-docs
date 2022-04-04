@@ -57,7 +57,7 @@ The Pivot control, just like [NavigationView](navigationview.md), underlines the
 ## Is this the right control?
 
 > [!NOTE]
->The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). When designing for Windows 11, consider using a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#link) section for an example
+>The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). When designing for Windows 11, consider using a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example
 
 To create a tabbed UI, use a [TabView](tab-view.md) control.
 
