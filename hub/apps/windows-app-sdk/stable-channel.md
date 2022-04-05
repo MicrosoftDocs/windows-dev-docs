@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 05/21/2021
+ms.date: 03/31/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: zafaraj
 author: zaryaf
@@ -15,23 +15,23 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 The following releases of the stable channel are currently available:
 
-
 - [Version 1.0](#version-10)
 - [Version 0.8](#version-08)
 - [Version 0.5](#version-05)
 
 If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md). 
 
-## Version 1.0
-
-Version 1.0.1 is the latest stable release of the stable channel for the Windows App SDK. 1.0.x supports all [stable channel features](release-channels.md#features-available-by-release-channel).
-
-### Downloads for 1.0 
+## Downloads for Windows App SDK
 
 The Windows App SDK VSIX and runtime (installer and MSIX packages) are available at [Downloads for the Windows App SDK](downloads.md). The SDK downloads include the Visual Studio extensions to create and build new projects using the Windows App SDK. The runtime downloads include the installer and MSIX packages used to deploy apps. If you haven't done so already, [Install tools for the Windows App SDK](set-up-your-development-environment.md?tabs=preview). 
 
 > [!NOTE]
 > If you have Windows App SDK Visual Studio extensions (VSIX) already installed, then uninstall them before installing a new version. For directions, see [Manage extensions for Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). 
+
+## Version 1.0
+
+The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.1. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
 ### Version 1.0.1
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes and multi-window support for the 1.0 release.
@@ -271,13 +271,29 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 ## Version 0.8
 
-The latest available release of the stable channel is the servicing release 0.8.6.
-
-> [!div class="button"]
-> [Download](https://aka.ms/projectreunion/vsixdownload)
+The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.7.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+
+### Version 0.8.7
+
+This is a servicing release of the Windows App SDK that includes several performance updates for C#/.NET applications. To update to this version, you'll need to reference the latest Windows SDK package version. To do that, add the property `<WindowsSdkPackageVersion>10.0.<sdk_version>.24</WindowsSdkPackageVersion>` to your `.csproj` file with the SDK version your app is targeting from the `TargetFramework` property. For example:
+
+ ```xml
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+        <WindowsSdkPackageVersion>10.0.19041.24</WindowsSdkPackageVersion>
+    <PropertyGroup>
+    ...
+ ```
+
+This version of the Windows SDK projection will be available in an upcoming .NET 6 and .NET 5 servicing release. After that .NET SDK update is available, you should remove the `<WindowsSdkPackageVersion>` property from your project file. 
+
+If you don't set this property, then you'll see an error like: `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.6 or greater."`
 
 ### Version 0.8.6
 
@@ -459,7 +475,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 ## Version 0.5
 
-The latest available servicing release is [0.5.9](https://github.com/microsoft/WindowsAppSDK/discussions/1214).
+The latest available release of the 0.5.x lineage of the stable channel of the Windows App SDK is version [0.5.9](https://github.com/microsoft/WindowsAppSDK/discussions/1214).
 
 > [!div class="button"]
 > [Download](https://aka.ms/projectreunion/vsixdownload)

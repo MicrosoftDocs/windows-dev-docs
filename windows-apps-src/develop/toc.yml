@@ -823,6 +823,8 @@
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
         - name: Native debug visualization
           href: ../cpp-and-winrt-apis/natvis.md
+        - name: C++/WinRT configuration macros
+          href: ../cpp-and-winrt-apis/macros.md
         - name: Naming conventions
           href: ../cpp-and-winrt-apis/naming.md
         - name: C++ language
@@ -1379,8 +1381,10 @@
     - name: Windows on ARM
       href: ../porting/apps-on-arm.md
       items:
-        - name: ARM64EC for Windows 11 apps on ARM
+        - name: Arm64EC for Windows 11 apps on Arm
           href: ../porting/arm64ec.md
+        - name: Understanding Arm64EC ABI
+          href: ../porting/arm64ec-abi.md
         - name: How x86 emulation works on ARM
           href: ../porting/apps-on-arm-x86-emulation.md
         - name: Troubleshooting desktop x86 apps

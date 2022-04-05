@@ -113,11 +113,11 @@ usage: `winget source update [-n, --name] \<name>`
 
 ### update all
 
-The **update** sub command by itself will request and update to each repo. For example: `C:\winget update`
+The **update** sub command by itself will request and update to each repo. For example: `winget source update`
 
 ### update source
 
-The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `C:\winget source update --name contoso`
+The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `winget source update --name contoso`
 
 ## remove
 
