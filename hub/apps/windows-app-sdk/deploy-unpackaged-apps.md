@@ -1,5 +1,5 @@
 ---
-title: Windows App SDK deployment guide for non-MSIX-packaged apps 
+title: Windows App SDK deployment guide for fx-dependent non-MSIX-packaged apps 
 description: This article provides guidance about deploying non-MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK. Non-MSIX-packaged apps include sparse-packaged and unpackaged apps.
 ms.topic: article
 ms.date: 05/21/2021
@@ -9,9 +9,9 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Windows App SDK deployment guide for non-MSIX-packaged apps 
+# Windows App SDK deployment guide for fx-dependent non-MSIX-packaged apps 
 
-This article provides guidance about deploying non-MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK. Non-MSIX-packaged apps include sparse-packaged and unpackaged apps.
+This article provides guidance about deploying framework-dependent non-MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK. Non-MSIX-packaged apps include sparse-packaged and unpackaged apps.
 
 ## Overview
 
