@@ -37,7 +37,7 @@ The display monitor handle that corresponds to the specified *displayId*, if the
 
 ## Applies to
 
-| Product | Versions |
+| Product | Introduced in |
 |-|-|
 |**WinUI 3**|Windows App SDK 1.0|
 
