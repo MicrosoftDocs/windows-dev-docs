@@ -117,7 +117,7 @@ The Windows System Commands plugin provides a set of system level actions that c
 | `Sleep` | Puts the computer to sleep | |
 | `Hibernate` | Hibernates the computer | |
 | `Empty Recycle Bin` | Empties the recycle bin | |
-| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
+| `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 | `IP address` * | Shows the ip addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
 | `MAC address` * | Shows the mac addresses from the network adapters in your computer. | The search query has to start with the word `MAC` or the word `address`. |
 
