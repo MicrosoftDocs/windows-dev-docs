@@ -71,7 +71,7 @@ These default direct activation commands will force PowerToys Run into only targ
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
 | Direct activation command | Action | Example | Plugin enabled by default |
-| :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- |
 | `=` | Calculator only | `= 2+2` | yes |
 | `?` | File searching only | `? road` to find 'roadmap.txt' | yes |
 | `.` | Installed programs only | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) | yes |
@@ -109,7 +109,7 @@ The Windows System Commands plugin provides a set of system level actions that c
 > If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can disable the setting **'Use localized system commands instead of English ones'**  in the [plugin manager](#plugin-manager).
 
 | Command / Search result | Action | Note |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | `Shutdown` | Shuts down the computer | |
 | `Restart` | Restarts the computer | |
 | `Sign Out` | Signs current user out | |
