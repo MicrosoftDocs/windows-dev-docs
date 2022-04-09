@@ -5,7 +5,6 @@ author: drewbatgit
 ms.author: drewbat 
 manager: jken
 ms.topic: article
-keywords: windows, react native, emulator, expo, metro bundler, react native for android, build android app on windows, develop an android app on windows
 ms.date: 03/30/2021
 ---
 
@@ -27,7 +26,7 @@ React Native is an [open-source](https://github.com/facebook/react-native) mobil
     - In the Windows search menu, enter: "Edit the system environment variables", this will open the **System Properties** window.
     - Choose **Environment Variables...** and then choose **New...** under **User variables**.
     - Enter the Variable name and value (path). The default paths for the Java and Android SDKs are as follows. If you've chosen a specific location to install the Java and Android SDKs, be sure to update the variable paths accordingly.
-        - JAVA_HOME: C:\Program Files\Android\Android Studio\jre\jre
+        - JAVA_HOME: C:\Program Files\Android\Android Studio\jre\bin
         - ANDROID_HOME: C:\Users\username\AppData\Local\Android\Sdk
 
     ![Screenshot of adding environmental variable path](../../images/add-environmental-variable-path.png)

@@ -21,5 +21,5 @@ These C# interop classes are available in .NET 5 and later as part of the [Windo
 
 ## See also
 
-* [C# interop APIs for WinUI](../index.md)
+* [Interop C# APIs for WinUI](../index.md)
 * [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
