@@ -106,7 +106,7 @@ The PowerToys Run settings menu includes a plugin manager that allows you to ena
 The Windows System Commands plugin provides a set of system level actions that can be executed.
 
 > [!TIP]
-> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, disable the setting **'Use localized system commands instead of English ones'**  in the [plugin manager](#plugin-manager).
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can disable the setting **'Use localized system commands instead of English ones'**  in the [plugin manager](#plugin-manager).
 
 | Command / Search result | Action | Note |
 | :--- | :--- | :--- | :--- |
