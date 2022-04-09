@@ -71,7 +71,7 @@ These default direct activation commands will force PowerToys Run into only targ
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
 | Direct activation command | Action | Example | Plugin enabled by default |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | `=` | Calculator only | `= 2+2` | yes |
 | `?` | File searching only | `? road` to find 'roadmap.txt' | yes |
 | `.` | Installed programs only | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) | yes |
