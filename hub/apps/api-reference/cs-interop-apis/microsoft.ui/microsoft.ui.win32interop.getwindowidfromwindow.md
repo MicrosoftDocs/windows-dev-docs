@@ -37,7 +37,7 @@ The identifier that corresponds to the specified *hwnd*, if the provided *hwnd* 
 
 ## Applies to
 
-| Product | Versions |
+| Product | Introduced in |
 |-|-|
 |**WinUI 3**|Windows App SDK 1.0|
 

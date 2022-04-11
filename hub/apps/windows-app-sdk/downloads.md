@@ -1,4 +1,4 @@
-﻿---
+---
 title: Downloads for the Windows App SDK 
 description: Downloads for the Windows App SDK, including the VSIX, Installer and MSIX packages 
 ms.topic: article
@@ -16,10 +16,10 @@ This page provides download links to the various releases of the [Windows App SD
 **Latest Stable**
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.0 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cs) 
+> [Download 1.0 Visual Studio 2022 Extension (C#)](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2022-cs) 
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
-> [Download 1.0 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cpp)
+> [Download 1.0 Visual Studio 2022 Extension (C++)](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2022-cpp)
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
 > [Download 1.0 Installer (x64)](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0-x64.exe) 
@@ -54,29 +54,30 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 #### Windows App SDK 1.1
 |   | Version | SDK downloads | Runtime&nbsp;downloads |
 |---|---|---|---|
-| **✅** | [1.1.0&nbsp;Preview&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](preview-channel.md#version-11-preview-1-110-preview1) <br> 3/29/2022 <br> [Release&nbsp;notes](preview-channel.md#version-11-preview-1-110-preview1)&nbsp; | No new Visual Studio extensions.&nbsp;&nbsp; | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeredist-1.1.0-preview1.zip) | 
+| **✅** | [1.1.0&nbsp;Preview&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](preview-channel.md#version-11-preview-1-110-preview1) <br> 03/29/2022 <br> [Release&nbsp;notes](preview-channel.md#version-11-preview-1-110-preview1)&nbsp; | No new Visual Studio extensions.&nbsp;&nbsp; | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeinstall-1.1.0-preview1-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.1/1.1.0-preview1/windowsappruntimeredist-1.1.0-preview1.zip) | 
 
 #### Windows App SDK 1.0
 
 |   | Version | SDK downloads | Runtime&nbsp;downloads |
 |---|---|---|---|
-| **✅** | [1.0.1 (Latest)](stable-channel.md#version-10) <br> 3/15/2022 <br> [Release&nbsp;notes](stable-channel.md#version-10)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cpp) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2019-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2019-cpp)| [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeinstall-1.0.1-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeinstall-1.0.1-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeinstall-1.0.1-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeredist-1.0.1.zip) | 
+| **✅** | [1.0.2 (Latest)](stable-channel.md#version-10) <br> 04/05/2022 <br> [Release&nbsp;notes](stable-channel.md#version-10)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2022-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2022-cpp) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2019-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2019-cpp)| [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.0/1.0.2/windowsappruntimeinstall-1.0.2-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.0/1.0.2/windowsappruntimeinstall-1.0.2-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.0/1.0.2/windowsappruntimeinstall-1.0.2-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.0/1.0.2/windowsappruntimeredist-1.0.2.zip) | 
+| **✅** | [1.0.1](stable-channel.md#version-101) <br> 03/15/2022 <br> [Release&nbsp;notes](stable-channel.md#version-101)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2022-cpp) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2019-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0/1.0.1/vsix-2019-cpp)| [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeinstall-1.0.1-x64.exe) <br/> [Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeinstall-1.0.1-x86.exe) <br/> [Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeinstall-1.0.1-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.0/1.0.1/windowsappruntimeredist-1.0.1.zip) | 
 | **✅** | [1.0.0](stable-channel.md#version-10) <br> 11/16/2021 <br> [Release&nbsp;notes](stable-channel.md#version-10)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/stable-vsix-2022-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/stable-vsix-2022-cpp) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/stable-vsix-2019-cs)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/stable-vsix-2019-cpp)| [Redistributable](https://aka.ms/windowsappsdk/1.0-stable/msix-installer) |
 | **❇️** | [1.0.0&nbsp;Preview 3&nbsp;](preview-channel.md#version-10-preview-3-100-preview3) <br> 10/27/2021 <br> [Release&nbsp;notes](preview-channel.md#version-10-preview-3-100-preview3)&nbsp; | [C#&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/csharp)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2022&nbsp;extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2022/cpp) <br/> [C#&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2019/csharp)<br/>[C++&nbsp;Visual&nbsp;Studio&nbsp;2019&nbsp;extension](https://aka.ms/windowsappsdk/1.0-preview3/extension/VS2019/cpp)| [Redistributable](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer) |
-| **🔄️** | [1.0.0&nbsp;Experimental&nbsp;](experimental-channel.md#version-10-experimental-100-experimental1) <br> 8/09/2021 <br> [Release&nbsp;notes&nbsp;](experimental-channel.md#version-10-experimental-100-experimental1) | [Visual&nbsp;Studio&nbsp;extension&nbsp;](https://aka.ms/projectreunion/previewdownload) | [Redistributable](https://github.com/microsoft/WindowsAppSDK/releases/tag/1.0.0-experimental1) |
+| **🔄️** | [1.0.0&nbsp;Experimental&nbsp;](experimental-channel.md#version-10-experimental-100-experimental1) <br> 08/09/2021 <br> [Release&nbsp;notes&nbsp;](experimental-channel.md#version-10-experimental-100-experimental1) | [Visual&nbsp;Studio&nbsp;extension&nbsp;](https://aka.ms/projectreunion/previewdownload) | [Redistributable](https://github.com/microsoft/WindowsAppSDK/releases/tag/1.0.0-experimental1) |
 
 #### Windows App SDK 0.8
 
 |   | Version | SDK Downloads | Runtime Downloads |
 |---|---|---|---|
-| **✅** | [0.8&nbsp;Stable&nbsp;](stable-channel.md#version-08) <br> 6/24/2021 <br> [Release&nbsp;notes&nbsp;](stable-channel.md#version-08)&nbsp;  | [Visual&nbsp;Studio&nbsp;extension&nbsp;](https://aka.ms/projectreunion/vsixdownload) | [Redistributable](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8.0) |
-| **❇️** | [0.8&nbsp;Preview&nbsp;](experimental-channel.md#version-08-preview-080-preview) <br> 5/27/2021 <br> [Release&nbsp;notes&nbsp;](experimental-channel.md#version-08-preview-080-preview)&nbsp; | [Visual&nbsp;Studio&nbsp;extension&nbsp;](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8.0-rc) | [Redistributable](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8-preview) |
+| **✅** | [0.8&nbsp;Stable&nbsp;](stable-channel.md#version-08) <br> 06/24/2021 <br> [Release&nbsp;notes&nbsp;](stable-channel.md#version-08)&nbsp;  | [Visual&nbsp;Studio&nbsp;extension&nbsp;](https://aka.ms/projectreunion/vsixdownload) | [Redistributable](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8.0) |
+| **❇️** | [0.8&nbsp;Preview&nbsp;](experimental-channel.md#version-08-preview-080-preview) <br> 05/27/2021 <br> [Release&nbsp;notes&nbsp;](experimental-channel.md#version-08-preview-080-preview)&nbsp; | [Visual&nbsp;Studio&nbsp;extension&nbsp;](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8.0-rc) | [Redistributable](https://github.com/microsoft/WindowsAppSDK/releases/tag/v0.8-preview) |
 
 ## Maintenance releases 
 
 |   | Version |  
 |---|---|
-| **✅** | [0.5 Stable](stable-channel.md#version-05) <br> 3/29/2021 |
+| **✅** | [0.5 Stable](stable-channel.md#version-05) <br> 03/29/2021 |
 
 
 ## Out of support releases 
@@ -84,5 +85,5 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 |   | Version |
 |---|---|
 | **❇️** | [1.0&nbsp;Preview 2&nbsp;](preview-channel.md#version-10-preview-2-100-preview2) <br> [Deprecated] <br> 10/5/2021 <br> [Release&nbsp;notes&nbsp;](preview-channel.md#version-10-preview-2-100-preview2)&nbsp; | 
-| **❇️** | [1.0&nbsp;Preview 1&nbsp;](preview-channel.md#version-10-preview-1-100-preview1) <br> [Deprecated] <br> 9/17/2021 <br> [Release&nbsp;notes&nbsp;](preview-channel.md#version-10-preview-1-100-preview1)&nbsp; | 
+| **❇️** | [1.0&nbsp;Preview 1&nbsp;](preview-channel.md#version-10-preview-1-100-preview1) <br> [Deprecated] <br> 09/17/2021 <br> [Release&nbsp;notes&nbsp;](preview-channel.md#version-10-preview-1-100-preview1)&nbsp; | 
 | **✅** | 0.1 Stable <br> 12/11/2020 |
