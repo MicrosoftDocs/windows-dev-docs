@@ -65,9 +65,4 @@ You can specify a directory in the filename format to group resized images into 
 
 [Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) are replaced by an underscore `_`.
 
-<!-- [Jay] fixed with pr #14040
-> [!IMPORTANT]
-> As mentioned above, you can use a backslash to create a new folder upon execution. Please be aware that, at this point - until a fix is committed, all special charaters are not filtered. For example: giving a preset a name with "1/4" in it, will also unintentionally create a folder. A colon `:` will result in corrupted files.  For a complete list, see [File and Directory Names](/windows/win32/fileio/naming-a-file#file-and-directory-names) in the WIN32 Local File Systems docs..
--->
-
 You can choose to retain the original _last modified_ date on the resized image.

@@ -50,4 +50,4 @@ In Windows 11, in Windows File Explorer, select the **View** menu in the File Ex
 
 ## Thumbnail preview
 
-Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds four extensions: SVG, PDF, G-code and STL.
+Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds multiple extensions: SVG, PDF, G-code and STL.

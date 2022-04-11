@@ -14,7 +14,7 @@ A system-wide utility for Windows that allows you to pin windows to the top of a
 
 ### Toggle windows to be on top
 
-With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), a window will be toggled on top.
+With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the targeted window window will be toggled on top.
 
 ## PowerToys settings
 
@@ -22,9 +22,9 @@ From the settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off always on top for that window |
-| Do not activate when Game Mode is on | Prevents the feature from being activated when actively playing a game on the system |
-| Color | The color of the highlight border |
+| Activation shortcut | The customizable keyboard command to turn on or off always on top for that window. |
+| Do not activate when Game Mode is on | Prevents the feature from being activated when actively playing a game on the system. |
+| Color | The color of the highlight border. |
 | Border thickness (px)| The thickness of the highlight border. Measured in pixels |
-| Play a sound | A small alert chirp is played.  Activating and deactivating are different sounds. |
-| Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
+| Play a sound | A short alert chirp is played. Activating and deactivating are different sounds. |
+| Excluded apps | Add an application's name, or part of the name, one per line. (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |

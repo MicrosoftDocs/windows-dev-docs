@@ -110,7 +110,7 @@ In the demo below, we start with a default template applied to the screen and tw
 | :-- | :-- |
 | Configure the zone editor hotkey | To change the default hotkey, click on the textbox and then press the desired key combination on your keyboard. |
 | Launch editor on the display [...] | Select where the Editor will show. |
-| Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the Shift key during a drag enables snapping. |
+| Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the <kbd>Shift</kbd> key during a drag enables snapping. |
 | Use a non-primary mouse button to toggle zone activation | Clicking a non-primary mouse button toggles the zones activation |
 | Show zones on all monitors while dragging a window | By default, FancyZones shows only the zones available on the current monitor. (This feature may have a performance impact when checked) |
 | Allow zones to span across monitors (all monitors must have the same DPI scaling) | Allows to treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor. (There might be unexpected effects when using monitors in different orientations) |
