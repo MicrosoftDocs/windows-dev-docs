@@ -15,7 +15,7 @@ Image Resizer is a Windows shell extension for bulk image-resizing. After instal
 
 ## Drag and Drop
 
-Image Resizer also allows you to resize images by dragging and dropping your selected files **with the right mouse button**. This allows you to quickly save your resized pictures in a different folder.
+Image Resizer allows you to resize images by dragging and dropping your selected files **with the right mouse button**. This allows you to quickly save your resized pictures in a different folder.
 
 ![Image Resizer Drag And Drop Demo](../images/powertoys-resize-drag-drop.gif)
 
@@ -27,9 +27,9 @@ Inside the PowerToys Image Resizer tab, you can configure the following settings
 
 ### Sizes
 
-Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The dimension to be used for resizing can also be configured as Centimeters, Inches, Percent and Pixels.
+Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The dimension to be used for resizing can be configured as Centimeters, Inches, Percent and Pixels.
 
-#### Fill vs Fit vs Stretch
+#### Fill versus Fit versus Stretch
 
 - **Fill:** Fills the entire specified size with the image. Scales the image proportionally. Crops the image as needed.
 - **Fit:** Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
@@ -38,6 +38,9 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 > [!NOTE]
 > If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
 
+### Auto width/height
+
+You can leave the width or height empty. This will honor the specified dimension and "lock" the other dimension to a value proportional to the original image aspect ratio.
 
 ### Fallback encoding
 
@@ -60,12 +63,11 @@ For example, setting the filename format to: `%1 (%2)` on the file `example.png`
 
 You can specify a directory in the filename format to group resized images into sub-directories. For example, a value of `%2\%1` would save the resized image(s) to `Small\example.jpg`
 
-<!-- [Jay] remove following warning if/when a solution is committed -->
+[Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) are replaced by an underscore `_`.
+
+<!-- [Jay] fixed with pr #14040
 > [!IMPORTANT]
 > As mentioned above, you can use a backslash to create a new folder upon execution. Please be aware that, at this point - until a fix is committed, all special charaters are not filtered. For example: giving a preset a name with "1/4" in it, will also unintentionally create a folder. A colon `:` will result in corrupted files.  For a complete list, see [File and Directory Names](/windows/win32/fileio/naming-a-file#file-and-directory-names) in the WIN32 Local File Systems docs..
+-->
 
-You can also choose to retain the original _last modified_ date on the resized image.
-
-### Auto width/height
-
-You can leave the height or width empty. This will honor the specified dimension and "lock" the other dimension to a value proportional to the original image aspect ratio.
+You can choose to retain the original _last modified_ date on the resized image.

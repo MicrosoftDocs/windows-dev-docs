@@ -29,20 +29,20 @@ Preview Pane is an existing feature in the Windows File Explorer which shows a l
 
 ### Enabling Preview Pane
 
-To enable, first ensure that in the PowerToys Settings all are set to **On**.
+To enable, first set all to **On**.
 
 ![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
 
 > [!NOTE]
 > Windows Explorer has an additional setting that needs to be checked in order for preview handlers to work. Open Explorer's Folder options, go to tab "View", under "Advanced settings" check **Show preview handlers in preview pane**.
 
-**Windows 10:**
+**Windows 10**
 
-Next, in Windows 10, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, and then select **Preview Pane**.
+In Windows 10, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, and then select **Preview Pane**.
 
 ![PowerToys Preview Pane Demo for Windows 10.](../images/powertoys-fileexplorer.gif)
 
-**Windows 11:**
+**Windows 11**
 
 In Windows 11, in Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
 
@@ -50,4 +50,4 @@ In Windows 11, in Windows File Explorer, select the **View** menu in the File Ex
 
 ## Thumbnail preview
 
-Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds three extensions: SVG, PDF, and G-code.
+Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds four extensions: SVG, PDF, G-code and STL.

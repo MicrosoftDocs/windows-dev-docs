@@ -12,7 +12,7 @@ PowerToys Awake is a utility tool for Windows designed to keep a computer awake 
 
 ## Get started
 
-PowerToys Awake can be used directly from PowerToys settings or as a standalone executable. When the tool is running from PowerToys, it can be managed from PowerToys settings or the system tray.
+PowerToys Awake can be used directly from PowerToys Settings or as a standalone executable. When the tool is running from PowerToys, it can be managed from PowerToys Settings or the system tray.
 
 > [!NOTE]
 > PowerToys Awake does not modify any of the Windows power plan settings, and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine.
@@ -26,9 +26,11 @@ In the PowerToys settings view, start PowerToys Awake by using the **Enable Awak
 
 The following Awake states can be selected:
 
-- **Off (Passive)** - The computer awakeness state is unaffected. The application is waiting for user input.
-- **Keep awake indefinitely** - The computer stays awake indefinitely, until the user explicitly puts the machine to sleep or exits/disables the application.
-- **Keep awake temporarily** - Keep machine awake for a pre-defined limited time. Once the time elapses, computer resumes its previous awakeness state.
+| Setting | Description |
+| :-- | :-- |
+| Keep using the selected power plan | The computer awakeness state is unaffected. The application is waiting for user input. |
+| Keep awake indefinitely | The computer stays awake indefinitely, until the user explicitly puts the machine to sleep or exits/disables the application. |
+| Keep awake temporarily | Keep machine awake for a pre-defined limited time. Once the time elapses, the computer resumes its previous awakeness state. |
 
 > [!NOTE]
 > Changing the hours or minutes while the computer is kept awake temporarily will reset the timer.

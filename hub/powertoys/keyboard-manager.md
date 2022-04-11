@@ -15,7 +15,7 @@ For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd
 
 ![PowerToys Keyboard Manger remap keys screenshot](../images/powertoys-keyboard-remap.png)
 
-You can also exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in Microsoft Word. With PowerToys Keyboard Manager utility, you can exchange that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
+You can also exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
@@ -35,33 +35,33 @@ To create mappings with Keyboard Manager, you will need to open the PowerToys Se
 - Launch the Remap Keys settings window by pressing <kbd>Remap a key</kbd>
 - Launch the Remap Shortcuts settings window by pressing <kbd>Remap a shortcut</kbd>
 
-## Remap Keys
+### Remap Keys
 
 To remap a key, changing it to a new value, launch the Remap Keyboard settings window with the <kbd>Remap a Key</kbd> button. When first launched, no predefined mappings will be displayed. You must select the <kbd>+</kbd> button to add a new remap.
 
-Once a new remap row appears, select the input key whose output you want to *change* in the “Key” column. Select the new key value to assign in the “Mapped To” column.
+Once a new remap row appears, select the input key whose output you want to _change_ in the “Physical Key” column. Select the new key value to assign in the “Mapped To” column.
 
-For example, if you want to press <kbd>A</kbd> and have `B` appear:
+For example, to press <kbd>A</kbd> and have `B` appear:
 
-| Key: | Mapped To: |
+| Physical Key: | Mapped To: |
 | :--- | :--- |
 | `A` | `B` |
 
 To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add another remapping with:
 
-| Key: | Mapped To: |
+| Physical Key: | Mapped To: |
 | :--- | :--- |
 | `B` | `A` |
 
 ![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
 
-## Key to Shortcut
+### Key to Shortcut
 
 To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "Mapped To" column.
 
-For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in `⊞ Win` + `←` (left arrow):
+For example, to press the <kbd>Ctrl</kbd> key and have it result in `⊞ Win` + `←` (left arrow):
 
-| Key: | Mapped To: |
+| Physical Key: | Mapped To: |
 | :--- | :--- |
 | `Ctrl` | `⊞ Win` + `←` |
 
@@ -69,17 +69,17 @@ For example, if you want to select the <kbd>Ctrl</kbd> key and have it result in
 > [!IMPORTANT]
 > Key remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> would result as `⊞ Win` + `left arrow` + `C`. Pressing the <kbd>Ctrl</kbd> key will first execute `⊞ Win` + `left arrow`. Pressing the <kbd>C</kbd> key first will execute `C` + `⊞ Win` + `left arrow`.
 
-## Remap Shortcuts
+### Remap Shortcuts
 
 To remap a shortcut key combination, like <kbd>Ctrl</kbd>+<kbd>C</kbd>, press <kbd>Remap a shortcut</kbd> to launch the Remap Shortcuts settings window.
 
 When first launched, no predefined mappings will be displayed. You must select the <kbd>+</kbd> button to add a new remap.
 
-Once a new remap row appears, select the input keys whose output you want to *change* in the “Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
+Once a new remap row appears, select the input keys whose output you want to _change_ in the “Physical Shortcut” column. Select the new shortcut value to assign in the “Mapped To” column.
 
-For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies your selected text. To remap that shortcuts to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
+For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies selected text. To remap that shortcut to use the <kbd>Alt</kbd> key, rather than the <kbd>Ctrl</kbd> key:
 
-| Shortcut: | Mapped To: |
+| Physical Shortcut: | Mapped To: |
 | :--- | :--- |
 | `Alt` + `C` | `Ctrl` + `C` |
 
@@ -90,11 +90,11 @@ There are a few rules to follow when remapping shortcuts (these rules only apply
 
 - Shortcuts must begin with a modifier key: <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Alt</kbd>, or <kbd>⊞ Win</kbd>
 - Shortcuts must end with an action key (all non-modifier keys): A, B, C, 1, 2, 3, etc.
-- Shortcuts cannot be longer than 3 keys  
+- Shortcuts cannot be longer than three keys
 
-## Remap a shortcut to a single key
+### Remap a shortcut to a single key
 
-It is possible to remap a shortcut (key combination) to a single key press by selecting the <kbd>Remap a shortcut</kbd> button in PowerToys Settings. 
+It is possible to remap a shortcut (key combination) to a single key press by selecting the <kbd>Remap a shortcut</kbd> button in PowerToys Settings.
 
 For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arrow) with a single key press <kbd>Alt</kbd>:
 
@@ -105,7 +105,7 @@ For example, to replace the shortcut <kbd>⊞ Win</kbd>+<kbd>←</kbd> (left arr
 > [!IMPORTANT]
 > Shortcut remapping will be maintained even if the remapped key is used inside another shortcut. The order of keypress matters in this scenario as the action is executed during keydown, not keyup. For example, pressing <kbd>⊞ Win</kbd>+<kbd>←</kbd>+<kbd>Shift</kbd> would result in `Alt` + `Shift`.
 
-## App-specific shortcuts
+### App-specific shortcuts
 
 Keyboard Manager enables you to remap shortcuts for only specific apps (rather than globally across Windows).
 
@@ -187,15 +187,16 @@ Keyboard Manager lists mappings for all known physical keyboard buttons. Some of
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
 
 - **Run As Admin:** Remapping will not work on an app or window if that window is running in administrator (elevated) mode and PowerToys is not running as administrator. Try running PowerToys as an administrator.
-
 - **Not Intercepting Keys:** Keyboard Manger intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings and disable then re-enable Keyboard Manager.
 
 ## Known Issues
 
-- [Caps light indicator not toggling correctly](https://github.com/microsoft/PowerToys/issues/1692)
-
-- [Remaps not working for FancyZones and Shortcut Guide](https://github.com/microsoft/PowerToys/issues/3079)
-
 - [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special buttons](https://github.com/microsoft/PowerToys/issues/3703)
+- AltGr and Ctrl+Alt gives issues, since AltGr behaves as (L)Ctrl + (R)Alt and remapping one of these keys can break the function.
+
+<!-- [Jay] @crutkas: these following issues are closed
+- [Caps light indicator not toggling correctly](https://github.com/microsoft/PowerToys/issues/1692)
+- [Remaps not working for FancyZones and Shortcut Guide](https://github.com/microsoft/PowerToys/issues/3079)
+-->
 
 See the list of [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).

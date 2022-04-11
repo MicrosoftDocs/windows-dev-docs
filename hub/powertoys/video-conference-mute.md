@@ -9,9 +9,6 @@ no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
 
 # Video Conference Mute
 
-> [!IMPORTANT]
-> Running Video Conference Mute requires Windows 10 version 1903 (build 18362) or later.
-
 Quickly mute your microphone (audio) and turn off your camera (video) with a single keystroke while on a conference call, regardless of what application has focus on your computer.
 
 ## Usage
@@ -22,9 +19,9 @@ The default shortcuts to use Video Conference Mute are:
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> to toggle microphone
 - <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> to toggle camera
 
-![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
-
 When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether your microphone and camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
+
+![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
 
 To use this module, it must be selected as the _source_ in the apps that are using camera and/or microphone. Go to the settings and select Powertoys VCM.
 
@@ -32,7 +29,7 @@ To use this module, it must be selected as the _source_ in the apps that are usi
 
 ## Settings
 
-The Video Conference Mute tab in PowerToys settings provides the following options:
+The Video Conference Mute page in PowerToys Settings provides the following options:
 
 | Setting | Description |
 | :--- | :--- |
@@ -59,4 +56,4 @@ So, how does PowerToys handle this so you can keep streaming?
 
 To debug the camera driver, open this file on your machine: `C:\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\PowerToysVideoConference.log`
 
-You can also create an empty `PowerToysVideoConferenceVerbose.flag` in the same directory to enable verbose logging mode in the driver.
+You can create an empty `PowerToysVideoConferenceVerbose.flag` in the same directory to enable verbose logging mode in the driver.

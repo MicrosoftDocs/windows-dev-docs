@@ -1,6 +1,6 @@
 ---
 title: PowerToys Color Picker utility for Windows
-description: A system-wide color picking utility for Windows that enables you to pick colors from the screen and automatically copies the default value to your clipboard. 
+description: A system-wide color picking utility for Windows that enables you to pick colors from the screen and automatically copies the default value to your clipboard.
 ms.date: 05/28/2021
 ms.topic: article
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ A system-wide color picking utility for Windows that enables you to pick colors 
 
 ### Enable
 
-To start using Color Picker, make sure it is enabled in the PowerToys settings (Color Picker section).
+To start using Color Picker, enable it in the PowerToys settings (Color Picker section).
 
 ### Activate
 
@@ -47,9 +47,11 @@ The copied color will be stored in your clipboard in the format that is configur
 
 The editor lets you see the history of picked colors (up to 20) and copy their representation in any predefined string format. You can configure which color formats are visible in the editor, and in what order that they appear. This configuration can be found in PowerToys Settings.
 
-The editor also allows you to fine tune any picked color or get a new similar color. Editor previews different shades of currently selected color: 2 lighter and 2 darker ones.
+The editor also allows you to fine-tune any picked color or get a new similar color. Editor suggests two lighter and two darker shades of the currently selected color. Clicking on any of those alternative color shades will add the selection to the history of picked colors (it will appear at the top of the colors history list).
 
-Clicking on any of those alternative color shades will add the selection to the history of picked colors (it will appear at the top of the colors history list). The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine tuning configuration control will appear, where you can change HUE or RGB values of the current color. Pressing <kbd>Select</kbd> will add newly configured color into the colors history.
+The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine tuning configuration control will appear, where you can change HUE or RGB values of the current color. Pressing <kbd>Select</kbd> will add newly configured color into the colors history.
+
+<!-- [Jay] context menu in image below is out-dated -->
 
 ![ColorPicker Editor](../images/pt-colorpicker-editor.gif)
 
@@ -70,4 +72,3 @@ Color picker will let you change following settings:
 
 - Color picker can't be displayed on top of the start menu or action center (you can still pick a color).
 - If the currently focused application was started with an administrator elevation (Run as administrator), the Color Picker activation shortcut will not work, unless PowerToys was also started with an administrator elevation.
-- Currently, there is a "blind spot" in the bottom right corner of the desktop.

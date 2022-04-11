@@ -23,9 +23,9 @@ In this demo, all instances of the file name "foo" are replaced with "foobar". S
 
 ![PowerRename Demo](../images/powerrename-demo.gif)
 
-## PowerRename menu
+## PowerRename window
 
-After selecting some files in Windows File Explorer, right-clicking and selecting **PowerRename** (which will appear only when enabled in PowerToys), the PowerRename window will appear. The number of items you've selected will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values you've entered.
+After selecting files in Windows File Explorer, right-clicking and selecting **PowerRename** (which will appear only when enabled in PowerToys), the PowerRename window will appear. The number of items you've selected will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values you've entered.
 
 ![PowerRename Menu screenshot](../images/powerrename-menu.png)
 
@@ -35,15 +35,15 @@ Enter text or a [regular expression](https://wikipedia.org/wiki/Regular_expressi
 
 ### Replace with
 
-Enter text to replace the *Search for* value entered previously that match your selected files. You can view the original file name and renamed file in the *Preview* window.
+Enter text to replace the _Search for_ value entered previously. You can view the original file name and renamed file name in the _Preview_ window.
 
-### Options - Use Regular Expressions
+### Use Regular Expressions
 
-If checked, the Search value will be interpreted as a [regular expression](https://wikipedia.org/wiki/Regular_expression) (regex). The Replace value can also contain regex variables (see examples below). If not checked, the Search value will be interpreted as plain text to be replaced with the text in the Replace field.
+If checked, the Search value will be interpreted as a [regular expression](https://wikipedia.org/wiki/Regular_expression) (regex). The Replace value can also contain regex variables (see [examples below](#regular-expressions)). If not checked, the Search value will be interpreted as plain text to be replaced with the text in the Replace field.
 
 For more information regarding the **Use Boost library** option in the settings menu for extended regex functionalities, see the [regular expressions section](#regular-expressions).
 
-### Options - Match All Occurrences
+### Match all occurrences
 
 If checked, all matches of text in the Search field will be replaced with the Replace text. Otherwise, only the first instance of the Search for text in the file name will be replaced (left to right).
 
@@ -54,38 +54,38 @@ For example, given the file name: `powertoys-powerrename.txt`:
 
 The value of the renamed file would result in:
 
-- Match All Occurrences (unchecked): `supertoys-powerrename.txt`
-- Match All Occurrences (checked): `supertoys-superrename.txt`
+- Match all occurrences (unchecked): `supertoys-powerrename.txt`
+- Match all occurrences (checked): `supertoys-superrename.txt`
 
-### Options - Case Sensitive
+### Case Sensitive
 
 If checked, the text specified in the Search field will only match text in the items if the text is the same case. Case matching will be insensitive (not recognizing a difference between upper and lowercase letters) by default.
 
-### Options - Apply to: Filename only
+### Apply to: Filename only
 
 Only the file name portion (not the file extension) is modified by the operation. For example: `txt.txt` → `NewName.txt`
 
-### Options - Apply to: Extension only
+### Apply to: Extension only
 
 Only the file extension portion (not the file name) is modified by the operation. For example: `txt.txt` → `txt.NewExtension`
 
-### Options - Include Files
+### Include Files
 
 Deselecting causes files to not be included in the operation. Only folders will be included.
 
-### Options - Include Folders
+### Include Folders
 
 Deselecting causes folders to not be included in the operation. Only files will be included.
 
-### Options - Include Subfolders
+### Include Subfolders
 
 Deselecting causes files within folders to not be included in the operation. By default, all subfolder items are included.
 
-### Options - Text Formatting
+### Text Formatting
 
 Select between four options to either convert items to be all lowercase, all uppercase, title case (first character of name is capitalized), or capitalize each word.
 
-### Options - Enumerate Items
+### Enumerate Items
 
 Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` -> `foo (1).jpg`
 
@@ -139,16 +139,16 @@ Regular Expressions define a search pattern for text. They can be used to search
 
 To enable regular expressions, check the **Use Regular Expressions** check box.
 
-**Note:** You will likely want to check **Match All Occurrences** while using regular expressions.
+**Note:** You will likely want to check **Match all occurrences** while using regular expressions.
 
 To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) instead of the standard library, check the **Use Boost library** option in the PowerToys settings. It enables extended features, like [lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind), which are not supported by the standard library.
 
 ### Examples of regular expressions
 
-#### Simple matching examples
+Simple matching examples
 
 | Search for       | Description                                           |
-| :--- | :--- |
+| :---             | :---                                                  |
 | `^`              | Match the beginning of the filename                   |
 | `$`              | Match the end of the filename                         |
 | `.*`             | Match all the text in the name                        |
@@ -158,9 +158,9 @@ To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/
 | `.+?(?=bar)`     | Match everything up to "bar"                          |
 | `foo[\s\S]*bar`  | Match everything between "foo" and "bar"              |
 
-#### Matching and variable examples
+Matching and variable examples. Capturing groups are defined in parentheses `()`. To refer to them, use `$` folloed by a number: `$1` will refer to the first group, `$2` to the second etc.
 
-_When using the variables, the "Match All Occurrences" option must be enabled._
+_When using the variables, the "Match all occurrences" option must be enabled._
 
 | Search for | Replace With | Description |
 | :--- | :--- | :--- |
@@ -172,7 +172,7 @@ _When using the variables, the "Match All Occurrences" option must be enabled._
 
 ### Additional resources for learning regular expressions
 
-There are great examples/cheatsheets available online to help you
+There are great examples/cheatsheets available online to help you:
 
 [Regex tutorial — A quick cheatsheet by examples](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
 
@@ -192,13 +192,13 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
 
 ![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
 
-## Settings
+## PowerToys Settings
 
 Additional options can be configured from the PowerRename tab in the Settings menu as described below:
 
 | Setting | Description |
-| --- | --- |
-| Show PowerRename in | When opening the context menu for a file, this setting defines whether PowerRename appears as one of the default options or only in the extended context menu |
+| :--- | :--- |
+| Show PowerRename in | Defines whether PowerRename appears as one of the default options or only in the extended context menu |
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename |
 | Maximum number of items | The largest number search and replace suggestions to display |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used |

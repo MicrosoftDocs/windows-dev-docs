@@ -25,7 +25,7 @@ Double press the left <kbd>ctrl</kbd> key to activate a spotlight that focuses o
 From the settings menu, the following options can be configured:
 
 | Setting | Description |
-| --- | --- |
+| :--- | :--- |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system |
 | Overlay opacity | The percentage of opacity of the spotlight animation (default: 50%) |
 | Background color | The color of the spotlight backdrop (default: #000000) |
@@ -46,7 +46,7 @@ Display visual indicators when the left or right mouse buttons are clicked. By d
 From the settings menu, the following options can be configured:
 
 | Setting | Description |
-| --- | --- |
+| :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn on or off mouse highlighting |
 | Left button highlight color | The color of the highlight when the left mouse button is clicked |
 | Right button highlight color | The color of the highlight when the right mouse button is clicked |
@@ -54,3 +54,17 @@ From the settings menu, the following options can be configured:
 | Radius | The radius of the highlight animations - Measured in pixels |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds |
+
+## Mouse Pointer Crosshairs
+
+Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
+
+| Setting | Description |
+| :--- | :--- |
+| Activation shortcut | The customizable keyboard command to turn on or off mouse crossheird |
+| Color | |
+| Opacity | (default: 75%) |
+| Center radius | (default: 20px) |
+| Thickness | (default: 5px) |
+| Border color | |
+| Border size | (in pixels) |

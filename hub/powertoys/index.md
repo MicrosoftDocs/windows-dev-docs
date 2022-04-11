@@ -97,7 +97,7 @@ The currently available utilities include:
         [![Keyboard Manager screenshot](../images/pt-keyboard-manager.png)](keyboard-manager.md)
     :::column-end:::
     :::column span="2":::
-        [Keyboard Manager](keyboard-manager.md) allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts. This PowerToy requires Windows 10 1903 (build 18362) or later.
+        [Keyboard Manager](keyboard-manager.md) allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts.
     :::column-end:::
 :::row-end:::
 
@@ -130,7 +130,7 @@ The currently available utilities include:
         [![PowerToys Run screenshot](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well. This PowerToy requires Windows 10 1903 (build 18362) or later.
+        [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
     :::column-end:::
 :::row-end:::
 
@@ -152,7 +152,7 @@ The currently available utilities include:
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
     :::column-end:::
 :::row-end:::
 
@@ -160,7 +160,7 @@ The currently available utilities include:
 
 Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
 
-*Note that new elements of the app will often not yet be translated in the first version release.*
+_Note that new elements of the app might not yet be translated in the first version release._
 
 ## PowerToys video walk-through
 
@@ -194,7 +194,7 @@ Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki
 
 ## PowerToys roadmap
 
-PowerToys is a rapid-incubation, open source team aimed at providing power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
+PowerToys is a rapid-incubation, open source team aimed at providing power users ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
 
 - [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
 - [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)
