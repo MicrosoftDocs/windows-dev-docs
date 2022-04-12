@@ -339,7 +339,7 @@
       href: shell/index.md
     - name: Toast notifications
       items:
-        - name: Toast notifications overview
+        - name: Overview
           href: shell/tiles-and-notifications/toast-notifications-overview.md
         - name: UX guidance
           href: shell/tiles-and-notifications/toast-ux-guidance.md
