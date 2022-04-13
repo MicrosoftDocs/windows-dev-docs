@@ -13,6 +13,7 @@ FancyZones is a window manager utility for arranging and snapping windows into e
 
 ![FancyZones screenshot](../images/pt-fancy-zones2.png)
 
+
 ## Getting started snapping windows
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
@@ -25,11 +26,11 @@ To snap a window to multiple zones using only the keyboard, first turn on the se
 
 ![Settings for Snapping to Multiple Zones via Keyboard](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
-### Window Switching
+### Window switching
 
 When two or more windows are snapped in the same zone, users can cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd> + <kbd>PgUp/PgDn</kbd>.
 
-### Shortcut Keys
+### Shortcut keys
 
 | Shortcut | Action |
 | --- | --- |
@@ -48,7 +49,7 @@ If you have applications that are elevated (such as Windows Terminal or Task Man
 
 ### Launch zones editor
 
-Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the settings dialog).
+Launch the zones editor using the button in the PowerToys Settings menu or by pressing <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> ("back-tick" or "accent grave"; note that this shortcut can be changed in the Settings dialog).
 
 > [!NOTE]
 > Previous to PowerToys v0.39, this shortcut was <kbd>Win</kbd>+<kbd>`</kbd> without Shift. This was updated so that it does not conflict with [Windows Terminal Quake mode](/windows/terminal/tips-and-tricks#quake-mode) shortcut.
@@ -103,6 +104,7 @@ In the demo below, we start with a default template applied to the screen and tw
 
 > [!TIP]
 > The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak zones, and exported to share layouts across devices.
+
 
 ## Settings
 

@@ -24,7 +24,7 @@ From the settings menu, the following options can be configured:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn on or off always on top for that window. |
 | Do not activate when Game Mode is on | Prevents the feature from being activated when actively playing a game on the system. |
-| Color | The color of the highlight border. |
-| Border thickness (px)| The thickness of the highlight border. Measured in pixels |
-| Play a sound | A short alert chirp is played. Activating and deactivating are different sounds. |
+| Color | The custom color of the highlight border. |
+| Border thickness (px) | The thickness of the highlight border. Measured in pixels |
+| Play a sound | A short alert chirp is played. Activating and deactivating use different sounds. |
 | Excluded apps | Add an application's name, or part of the name, one per line. (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |

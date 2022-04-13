@@ -38,7 +38,7 @@ In the case of an elevated command line, typically the text "Administrator" will
 
 PowerToys only needs elevated administrator permission when interacting with other applications that are running in administrator mode. If those applications are in focus, PowerToys may not function unless it is elevated as well.
 
-These are the two scenarios we will not work in:
+These are the two scenarios PowerToys will not work in:
 
 - Intercepting certain types of keyboard strokes
 - Resizing / Moving windows

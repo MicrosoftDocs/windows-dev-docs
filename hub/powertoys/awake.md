@@ -35,7 +35,7 @@ The following Awake states can be selected:
 > [!NOTE]
 > Changing the hours or minutes while the computer is kept awake temporarily will reset the timer.
 
-## Keep screen on
+### Keep screen on
 
 While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off, even though the computer won't go to sleep. If you need the displays to be available, use the **Keep screen on** switch, which will ensure that all monitors remain on.
 

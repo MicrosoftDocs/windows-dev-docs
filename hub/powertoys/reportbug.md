@@ -14,6 +14,7 @@ When using PowerToys, users may occasionally experience quirks or issues with on
 > [!NOTE]
 > To reduce the number of duplicate reports filed and increase the priority given to an issue, we encourage users to search the [existing entries](https://github.com/microsoft/PowerToys/issues) for that issue first, and if found, submit information, comment, and up-vote that report instead.
 
+
 ## Bug Report Form
 
 Selecting **Bug report** from the available templates opens the below page for submitting details about an issue.
@@ -27,3 +28,6 @@ Visual aids like screenshots and recordings (encoded as GIFs) can also be attach
 PowerToys also generates helpful diagnostic logs about the app's activities which can be added to the bug report to further help identify the issue. Right clicking the PowerToys icon in the system tray and selecting **Report Bug** as shown below will generate a `PowerToysReport.zip` file on the desktop, which can then be drag and dropped into the **Steps to reproduce** section of the bug report.
 
 ![Bug Report Tool](../images/pt-report-bug.png)
+
+> [!NOTE]
+> When you answer to an issue via e-mail, attachments are not passed to the issue/comment. Please open the issue in a browser and upload the attachments there.

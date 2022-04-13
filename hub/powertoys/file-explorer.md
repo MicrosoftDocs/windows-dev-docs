@@ -40,13 +40,13 @@ To enable, first set all to **On**.
 
 In Windows 10, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, and then select **Preview Pane**.
 
-![PowerToys Preview Pane Demo for Windows 10.](../images/powertoys-fileexplorer.gif)
+![PowerToys Preview Pane demo for Windows 10.](../images/powertoys-fileexplorer.gif)
 
 **Windows 11**
 
 In Windows 11, in Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
 
-![PowerToys Preview Pane Demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
+![PowerToys Preview Pane demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
 
 ## Thumbnail preview
 

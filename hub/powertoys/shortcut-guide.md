@@ -11,6 +11,7 @@ no-loc: [PowerToys, Windows, File Explorer]
 
 This guide uses PowerToys to display common keyboard shortcuts that use the Windows key.
 
+
 ## Usage
 
 Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) or hold down the <kbd>⊞ Win</kbd> for the time as set in the Settings. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
@@ -30,6 +31,7 @@ Tapping the Windows key will display the Windows Start menu.
 > [!IMPORTANT]
 > The PowerToys app must be running and Shortcut Guide must be enabled in the PowerToys settings for this feature to be used.
 
+
 ## Settings
 
 These configurations can be edited from the PowerToys Settings:
@@ -40,7 +42,7 @@ These configurations can be edited from the PowerToys Settings:
 | Activation shortcut | The custom shortcut used to launch the shortcut guide |
 | Press duration | Time (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open Shortcut Guide |
 | App theme | Light, dark or Windows theme |
-| Opacity of background | This slider bar controls the opacity of the Shortcut Guide overlay |
+| Opacity of background | Opacity of the Shortcut Guide overlay |
 | Exclude apps | Ignores Shortcut Guide when these apps are in focus |
 
 ![Image of the Options](../images/pt-shortcut-guide-settings.png)
