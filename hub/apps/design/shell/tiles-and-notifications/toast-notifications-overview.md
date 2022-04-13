@@ -8,6 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
+# Toast notifications
 
 ![A screen capture showing a toast notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, "Going". There are two buttons labeled "RSVP" and "Dismiss"](../../images/shell-1x.png)
 
