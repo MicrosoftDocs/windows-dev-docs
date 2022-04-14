@@ -17,7 +17,7 @@ A system-wide color picking utility for Windows that enables you to pick colors 
 
 ### Enable
 
-To start using Color Picker, enable it in the PowerToys settings (Color Picker section).
+To start using Color Picker, enable it in the PowerToys Settings (Color Picker section).
 
 ### Activate
 

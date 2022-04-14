@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 
 # FancyZones utility
 
-FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve the speed of your workflow and restore layouts quickly. FancyZones allows the user to define a set of window locations for a desktop that are drag targets for windows. When the user drags a window into a zone, the window is resized and repositioned to fill that zone.
+FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve the speed of your workflow and restore layouts quickly. FancyZones allows you to define a set of window locations for a desktop that are drag targets for windows. When you drag a window into a zone, the window is resized and repositioned to fill that zone.
 
 ![FancyZones screenshot](../images/pt-fancy-zones2.png)
 
@@ -28,7 +28,7 @@ To snap a window to multiple zones using only the keyboard, first turn on the se
 
 ### Window switching
 
-When two or more windows are snapped in the same zone, users can cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd> + <kbd>PgUp/PgDn</kbd>.
+When two or more windows are snapped in the same zone, you can cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd>+<kbd>PgUp/PgDn</kbd>.
 
 ### Shortcut keys
 
@@ -62,7 +62,7 @@ When first launched, the zones editor presents a list of layouts that can be adj
 
 ![FancyZones Picker screenshot](../images/pt-fancyzones-picker.png)
 
-If multiple displays are in use, the editor will detect the available monitors and display them for the user to choose between. The chosen monitor will then be the target of the selected layout.
+If multiple displays are in use, the editor will detect the available monitors and display them for you to choose between. The chosen monitor will then be the target of the selected layout.
 
 ![FancyZones Picker Multiple Monitors](../images/pt-fancyzones-multimon.png)
 

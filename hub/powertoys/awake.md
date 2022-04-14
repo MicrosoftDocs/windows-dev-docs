@@ -29,7 +29,7 @@ The following Awake states can be selected:
 | Setting | Description |
 | :-- | :-- |
 | Keep using the selected power plan | The computer awakeness state is unaffected. The application is waiting for user input. |
-| Keep awake indefinitely | The computer stays awake indefinitely, until the user explicitly puts the machine to sleep or exits/disables the application. |
+| Keep awake indefinitely | The computer stays awake indefinitely, until you explicitly put the machine to sleep or exits/disables the application. |
 | Keep awake temporarily | Keep machine awake for a pre-defined limited time. Once the time elapses, the computer resumes its previous awakeness state. |
 
 > [!NOTE]
