@@ -30,7 +30,18 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.0
 
-The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.1. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.2. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.0.2
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.
+
+#### Bug fixes
+
+- Fixed layout cycle issue causing an app to crash when scrolling to the end of a ListView. For more information see [issue 6218](https://github.com/microsoft/microsoft-ui-xaml/issues/6218) on GitHub.
+- Fixed issue causing C# apps to crash on launch when the C/C++ Runtime (CRT) isn't installed. However, the CRT is still required for C# apps using WebView2. For more information see [issue 2117](https://github.com/microsoft/WindowsAppSDK/issues/2117) on GitHub.
+- Fixed issue where applications with Single-project MSIX did not generate a .appinstaller file. For more information see [issue 1821](https://github.com/microsoft/WindowsAppSDK/issues/1821) on GitHub.
+- Fixed issue where WinUI applications did not support .NET 6 `dotnet build`.
 
 ### Version 1.0.1
 

@@ -37,7 +37,7 @@ The icon handle that corresponds to the specified *iconId*, if the provided *ico
 
 ## Applies to
 
-| Product | Versions |
+| Product | Introduced in |
 |-|-|
 |**WinUI 3**|Windows App SDK 1.0|
 

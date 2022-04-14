@@ -339,6 +339,8 @@
       href: shell/index.md
     - name: Toast notifications
       items:
+        - name: Overview
+          href: shell/tiles-and-notifications/toast-notifications-overview.md
         - name: UX guidance
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: Send local toast
@@ -351,6 +353,8 @@
               href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
             - name: Other apps
               href: shell/tiles-and-notifications/send-local-toast-other-apps.md
+            - name: Activating toast notifications from desktop apps
+              href: shell/tiles-and-notifications/toast-desktop-apps.md
         - name: Toast content
           items:
             - name: Content

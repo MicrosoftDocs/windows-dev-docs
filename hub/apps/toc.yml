@@ -385,13 +385,23 @@ items:
                         href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
                       - name: "InitializeNoThrow function"
                         href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
+          - name: "Bootstrapper C# APIs"
+            href: api-reference/cs-bootstrapper-apis/index.md
+            items: 
+              - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
+                href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
+                items: 
+                  - name: "Bootstrap class"
+                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                  - name: "PackageVersion struct"
+                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
           - name: WinUI API reference
             items: 
               - name: WinRT APIs for WinUI
                 href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
-              - name: "C# interop APIs for WinUI"
+              - name: "Interop C# APIs for WinUI"
                 href: api-reference/cs-interop-apis/index.md
                 items: 
                   - name: "Microsoft.UI namespace"
