@@ -57,7 +57,7 @@ The installer executable accepts the [Microsoft Standard Installer command-line 
 
 Here are the common commands you may want:
 
-| Command  | Alternatives | Function     |
+| Command  | Abbreviation | Function     |
 |----------|--------------| ------------ |
 | -quiet   | -q           | Silent install |
 | -silent  | -s           | Silent install |
