@@ -44,18 +44,20 @@ Windows App SDK 1.1 will introduce support for self-contained deployment. Our [D
 
 **Known issues:**
 - A C++ app that is MSIX-packaged needs to add the below to the bottom of their project file to workaround a bug in the self-contained `.targets` file that removes framework references to VCLibs:
-    ```xml
-      <PropertyGroup>
-        <IncludeGetResolvedSDKReferences>true</IncludeGetResolvedSDKReferences>
-      </PropertyGroup>
 
-      <Target Name="_RemoveFrameworkReferences"
+    ```xml
+    <PropertyGroup>
+        <IncludeGetResolvedSDKReferences>true</IncludeGetResolvedSDKReferences>
+    </PropertyGroup>
+
+    <Target Name="_RemoveFrameworkReferences"
         BeforeTargets="_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
         <ItemGroup>
-          <FrameworkSdkReference Remove="@(FrameworkSdkReference)" Condition="'%(FrameworkSdkReference.SDKName)' == 'Microsoft.WindowsAppRuntime.1.1-preview1'" />
+            <FrameworkSdkReference Remove="@(FrameworkSdkReference)" Condition="'%(FrameworkSdkReference.SDKName)' == 'Microsoft.WindowsAppRuntime.1.1-preview1'" />
         </ItemGroup>
     </Target>
-      ```
+     ```
+
 - Supported only on Windows 10, 1903 and above
 
 ### Notifications
