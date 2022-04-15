@@ -13,15 +13,16 @@ Image Resizer is a Windows shell extension for bulk image-resizing. After instal
 
 ![Image Resizer Demo](../images/powertoys-resize-images.gif)
 
-## Drag and Drop
-
-Image Resizer allows you to resize images by dragging and dropping your selected files **with the right mouse button**. This allows you to quickly save your resized pictures in a different folder.
+Image Resizer allows you to resize images by dragging and dropping your selected files with the right mouse button. This way, resized pictures can quickly be saved in a different folder.
 
 ![Image Resizer Drag And Drop Demo](../images/powertoys-resize-drag-drop.gif)
 
-## Settings
+> [!NOTE]
+> If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
 
-Inside the PowerToys Image Resizer tab, you can configure the following settings.
+## PowerToys Settings
+
+Inside the PowerToys Settings window, on the Image Resizer tab, you can configure the following settings.
 
 ![PowerToys Image Resize Settings Menu](../images/powertoys-imageresize-settings.png)
 
@@ -35,12 +36,8 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 - **Fit:** Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
 - **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
 
-> [!NOTE]
-> If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
-
-### Auto width/height
-
-You can leave the width or height empty. This will honor the specified dimension and "lock" the other dimension to a value proportional to the original image aspect ratio.
+> ![TIP]
+> You can leave the width or height empty. The other dimension will be calculated to a value proportional to the original image aspect ratio.
 
 ### Fallback encoding
 
@@ -59,10 +56,10 @@ The file name of the resized image can be modified with the following parameters
 | `%5` | Actual height |
 | `%6` | Actual width |
 
-For example, setting the filename format to: `%1 (%2)` on the file `example.png` and selecting the `Small` file size setting, would result in the file name `example (Small).png`. Setting the format to `%1_%4` on the file `example.jpg` and selecting the size setting `Medium 1366 x 768px` would result in the file name: `example_768.jpg`.
+Example: setting the filename format to: `%1 (%2)` on the file `example.png` and selecting the `Small` file size setting, would result in the file name `example (Small).png`. Setting the format to `%1_%4` on the file `example.jpg` and selecting the size setting `Medium 1366 x 768px` would result in the file name: `example_768.jpg`.
 
-You can specify a directory in the filename format to group resized images into sub-directories. For example, a value of `%2\%1` would save the resized image(s) to `Small\example.jpg`
+You can specify a directory in the filename format to group resized images into sub-directories. Example: a value of `%2\%1` would save the resized image(s) to `Small\example.jpg`
 
-[Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) are replaced by an underscore `_`.
+[Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) will be replaced by an underscore `_`.
 
 You can choose to retain the original _last modified_ date on the resized image or reset it at time of the resizing action.

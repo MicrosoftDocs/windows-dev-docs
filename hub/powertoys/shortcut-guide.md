@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, File Explorer]
 This guide uses PowerToys to display common keyboard shortcuts that use the Windows key.
 
 
-## Usage
+## Getting started
 
 Open the shortcut guide with the shortcut key combination: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) or hold down the <kbd>⊞ Win</kbd> for the time as set in the Settings. An overlay will appear showing keyboard shortcuts that use the Windows key, including:
 

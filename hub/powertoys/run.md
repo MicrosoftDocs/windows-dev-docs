@@ -33,7 +33,8 @@ PowerToys Run features include:
 - Convert units
 - Open web pages or start a web search
 
-## Settings
+
+## PowerToys Settings
 
 The following general options are available on the PowerToys Settings page.
 
@@ -48,19 +49,17 @@ The following general options are available on the PowerToys Settings page.
 | App theme | Change the color theme used by PowerToys Run |
 
 
-## Usage
+## Keyboard shortcuts
 
-### Keyboard shortcuts
-
-| Shortcuts | Action |
+| Shortcut | Action |
 | :--- | :--- |
-|<kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Open or hide PowerToys Run |
+|<kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Show or hide PowerToys Run |
 |<kbd>Esc</kbd> | Hide PowerToys Run |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> | Open the selected application as different user (only applicable to applications) |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
 |<kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
-|<kbd>Tab</kbd> | Navigate through the search result and context menu buttons |
+|<kbd>Tab</kbd> | Navigate through the search results and context menu buttons |
 
 
 ## Plugins
@@ -89,7 +88,7 @@ PowerToys Run uses a plugin system to provide different types of results. The de
 | Open windows                                                                         | yes                | `<`                       | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process.                                                                                                                                                                                              |
 
 
-###  Plugin manager
+### Plugin manager
 
 The PowerToys Run settings page includes a plugin manager that allows you to enable/disable the various available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results, as well as set additional plugin options where available.
 
@@ -187,7 +186,6 @@ The Calculator plugin supports the following operations:
 | Hyperbolic Arc Cosine | arcosh( x ) | |
 | Hyperbolic Arc Tangent | artanh( x ) | |
 
-
 ### Time and Date plugin
 The Time and Date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
 
@@ -202,7 +200,6 @@ Examples:
 - `( 3/27/2022` to show all available formats for a date value.
 - `( calendar week::3/27/2022` to show the calendar week for a date value.
 - `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
-
 
 ### Unit Converter plugin
 
@@ -225,7 +222,6 @@ The Unit Converter plugin supports the following unit types:
 - Speed
 - Temperature
 - Volume
-
 
 ### Folder search filters
 

@@ -27,7 +27,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when reassigned. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar).
 
 
-## Settings
+## PowerToys Settings
 
 To create mappings with Keyboard Manager, open the PowerToys Settings. Inside PowerToys Settings, on the Keyboard Manager tab, you will see options to:
 
@@ -113,17 +113,17 @@ Keyboard Manager uses process-names (not application names) to target apps. For 
 
 | Application     | Process name  |
 | :---            | :---          |
-| Microsoft Edge  |  msedge.exe   |
-| OneNote         |  onenote.exe  |
-| Outlook         |  outlook.exe  |
-| Teams           |  Teams.exe    |
-| Adobe Photoshop |  Photoshop.exe|
-| File Explorer   |  explorer.exe |
-| Spotify Music   |  spotify.exe  |
-| Google Chrome   |  chrome.exe   |
-| Excel           |  excel.exe    |
-| Word            |  winword.exe  |
-| Powerpoint      |  powerpnt.exe |
+| Microsoft Edge  | msedge.exe    |
+| OneNote         | onenote.exe   |
+| Outlook         | outlook.exe   |
+| Teams           | Teams.exe     |
+| Adobe Photoshop | Photoshop.exe |
+| File Explorer   | explorer.exe  |
+| Spotify Music   | spotify.exe   |
+| Google Chrome   | chrome.exe    |
+| Excel           | excel.exe     |
+| Word            | winword.exe   |
+| Powerpoint      | powerpnt.exe  |
 
 
 ## How to select a key
@@ -188,8 +188,8 @@ Keyboard Manager lists mappings for all known physical keyboard buttons. Some of
 
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
 
-- **Run As Admin:** Remapping will not work on an app or window if that window is running in administrator (elevated) mode and PowerToys is not running as administrator. Try running PowerToys as an administrator.
-- **Not Intercepting Keys:** Keyboard Manger intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings and disable then re-enable Keyboard Manager.
+- **Run As Admin:** Remapping will not work on an app or window if that window is running in administrator (elevated) mode and PowerToys is not running as administrator. Try [running PowerToys as an administrator](administrator.md).
+- **Not Intercepting Keys:** Keyboard Manger intercepts keyboard hooks to remap your keys. Some apps that also do this can interfere with Keyboard Manager. To fix this, go to the settings, disable and enable Keyboard Manager.
 
 
 ## Known Issues

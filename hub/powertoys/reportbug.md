@@ -15,7 +15,7 @@ When using PowerToys, you may occasionally experience quirks or issues with one 
 > To reduce the number of duplicate reports filed and increase the priority given to an issue, we encourage you to search the [existing entries](https://github.com/microsoft/PowerToys/issues) for that issue first, and if found, submit information, comment, and up-vote that report instead.
 
 
-## Bug Report Form
+## Bug report form
 
 Selecting **Bug report** from the available templates opens the below page for submitting details about an issue.
 

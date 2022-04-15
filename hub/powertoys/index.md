@@ -76,7 +76,7 @@ The currently available utilities include:
         [![File Explorer screenshot](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer](file-explorer.md) add-ons enable preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer](file-explorer.md) add-ons enable Preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
     :::column-end:::
 :::row-end:::
 
