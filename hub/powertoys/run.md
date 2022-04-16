@@ -49,26 +49,13 @@ The following general options are available on the PowerToys Run settings page.
 | App theme | Change the color theme used by PowerToys Run |
 
 
-## Keyboard shortcuts
-
-| Shortcut | Action |
-| :--- | :--- |
-|<kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Show or hide PowerToys Run |
-|<kbd>Esc</kbd> | Hide PowerToys Run |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> | Open the selected application as different user (only applicable to applications) |
-|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
-|<kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
-|<kbd>Tab</kbd> | Navigate through the search results and context menu buttons |
-
-
-## Plugin manager
+### Plugin manager
 
 PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the various available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.
 
 ![PowerToys Run Plugin Manager](../images/pt-run-plugin-manager.png)
 
-### Direct activation commands
+#### Direct activation commands
 
 A number of the plugins can be activated with a direct activation command so that PowerToys Run will only use the targeted plugin.
 
@@ -92,6 +79,21 @@ A number of the plugins can be activated with a direct activation command so tha
 | Windows settings                                                                     | `$`                       | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br >`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
 | Windows Terminal profiles                                                            | `_`                       | `_ powershell` to list all profiles that contains 'powershell' in their name.                                                                                                                                                                                                                        |
 | Open windows                                                                         | `<`                       | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process.                                                                                                                                                                                              |
+
+
+## Using PowerToys Run
+
+### General keyboard shortcuts
+
+| Shortcut | Action |
+| :--- | :--- |
+| <kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Show or hide PowerToys Run |
+| <kbd>Esc</kbd> | Hide PowerToys Run |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> | Open the selected application as different user (only applicable to applications) |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
+| <kbd>Tab</kbd> | Navigate through the search results and context menu buttons |
 
 ### System commands
 
@@ -138,7 +140,7 @@ If the program plugin's option "Include in global result" is not selected, be su
 
 `.Visual Studio Code -- C:\myFolder`
 
-### Calculator Plugin
+### Calculator plugin
 
 > [!NOTE]
 > The Calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
@@ -184,8 +186,9 @@ The Calculator plugin supports the following operations:
 | Hyperbolic Arc Cosine | arcosh( x ) | |
 | Hyperbolic Arc Tangent | artanh( x ) | |
 
-### Time and Date plugin
-The Time and Date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
+### Time and date plugin
+
+The Time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
 
 > [!NOTE]
 > The Time and Date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
@@ -199,7 +202,7 @@ Examples:
 - `( calendar week::3/27/2022` to show the calendar week for a date value.
 - `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
-### Unit Converter plugin
+### Unit converter plugin
 
 > [!NOTE]
 > The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
