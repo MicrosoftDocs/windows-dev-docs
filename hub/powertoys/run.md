@@ -36,7 +36,7 @@ PowerToys Run features include:
 
 ## PowerToys Settings
 
-The following general options are available on the PowerToys Settings page.
+The following general options are available on the PowerToys Run settings page.
 
 | Setting | Description |
 | :--- | :--- |
