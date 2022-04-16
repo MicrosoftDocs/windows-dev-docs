@@ -36,12 +36,12 @@ PowerToys Run features include:
 
 ## Settings
 
-The following general options are available on the PowerToys Settings page.
+The following general options are available on the PowerToys Run settings page.
 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
-| Use centralized keyboard hook | Try this setting if there are issues with the shortcut
+| Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut
 | Ignore shortcuts in Fullscreen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
