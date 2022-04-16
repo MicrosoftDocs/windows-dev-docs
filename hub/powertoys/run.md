@@ -34,7 +34,7 @@ PowerToys Run features include:
 - Open web pages or start a web search
 
 
-## PowerToys Settings
+## Settings
 
 The following general options are available on the PowerToys Settings page.
 

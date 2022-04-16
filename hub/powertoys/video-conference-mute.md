@@ -28,7 +28,7 @@ To use this module, it must be selected as the _source_ in the apps that are usi
 ![VCM selected as source in Skype](../images/pt-vcm-source-in-app.png)
 
 
-## PowerToys Settings
+## Settings
 
 The Video Conference Mute page in Settings provides the following options:
 

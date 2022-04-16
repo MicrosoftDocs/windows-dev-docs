@@ -20,7 +20,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 > [!NOTE]
 > If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
 
-## PowerToys Settings
+## Settings
 
 Inside the PowerToys Settings window, on the Image Resizer tab, you can configure the following settings.
 

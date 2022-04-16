@@ -18,7 +18,7 @@ PowerToys Awake can be used directly from PowerToys Settings or as a standalone 
 > PowerToys Awake does not modify any of the Windows power plan settings, and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine.
 
 
-## PowerToys Settings
+## Settings
 
 <!-- [Jay] GUI text should be updated to "PowerToys Awake", then change following text and images accordingly -->
 In the PowerToys Settings view, start PowerToys Awake by using the **Enable Awake** toggle. Once enabled, the application will manage the awakeness state of the computer.

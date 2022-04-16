@@ -106,7 +106,7 @@ In the demo below, we start with a default template applied to the screen and tw
 > The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak zones, and exported to share layouts across devices.
 
 
-## PowerToys Settings
+## Settings
 
 | Setting | Description |
 | :-- | :-- |

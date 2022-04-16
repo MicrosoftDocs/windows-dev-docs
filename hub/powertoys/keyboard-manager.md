@@ -27,7 +27,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 > - <kbd>⊞ Win</kbd>+<kbd>G</kbd> often opens the Xbox Game Bar, even when reassigned. Game Bar can be disabled in [Windows Settings](ms-settings:gaming-gamebar).
 
 
-## PowerToys Settings
+## Settings
 
 To create mappings with Keyboard Manager, open the PowerToys Settings. Inside PowerToys Settings, on the Keyboard Manager tab, you will see options to:
 

@@ -21,7 +21,7 @@ Double press the left <kbd>Ctrl</kbd> key or shake the mouse to activate a spotl
 
 ![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
 
-### Find my mouse settings
+### Settings
 
 From the settings menu, the following options can be configured:
 
@@ -42,7 +42,7 @@ From the settings menu, the following options can be configured:
 
 Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
 
-### Mouse highlighter settings
+### Settings
 
 ![Screenshot of Mouse Highlighter](../images/pt-mouse-highlighter.gif)
 

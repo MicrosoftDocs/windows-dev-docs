@@ -198,7 +198,7 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
 ![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
 
 
-## PowerToys Settings
+## Settings
 
 Additional options can be configured from the PowerRename tab in the Settings menu as described below:
 

@@ -16,7 +16,7 @@ A system-wide utility for Windows that allows you to pin windows to the top of a
 
 With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the targeted window will be placed above all non-topmost windows and should stay above them, even when the window is deactivated.
 
-## PowerToys Settings
+## Settings
 
 From the Settings menu, the following options can be configured:
 
