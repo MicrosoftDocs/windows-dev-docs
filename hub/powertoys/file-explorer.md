@@ -36,17 +36,17 @@ To enable, first set all to **On**.
 > [!NOTE]
 > Windows Explorer has an additional setting that needs to be checked in order for preview handlers to work. Open Explorer's Folder options, go to tab "View", under "Advanced settings" check **Show preview handlers in preview pane**.
 
+**Windows 11**
+
+In Windows 11, open Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
+
+![PowerToys Preview Pane demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
+
 **Windows 10**
 
 In Windows 10, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, and then select **Preview Pane**.
 
 ![PowerToys Preview Pane demo for Windows 10.](../images/powertoys-fileexplorer.gif)
-
-**Windows 11**
-
-In Windows 11, in Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
-
-![PowerToys Preview Pane demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
 
 ## Thumbnail preview
 

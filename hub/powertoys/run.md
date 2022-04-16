@@ -14,7 +14,7 @@ PowerToys Run is a quick launcher for power users that contains some additional 
 To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _(Note that this shortcut can be changed in the settings window.)_
 
 > [!IMPORTANT]
-> PowerToys must be enabled and running in the background for this utility to work.
+> PowerToys must be running in the background and Run must be enabled for this utility to work.
 
 ![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
 
@@ -45,7 +45,7 @@ The following general options are available on the PowerToys Settings page.
 | Ignore shortcuts in Fullscreen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
-| Preferred monitor position | If multiple monitors are in use, PowerToys Run can be launched on the desired monitor:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
+| Preferred display position | If multiple displays are in use, PowerToys Run can be launched on:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
 | App theme | Change the color theme used by PowerToys Run |
 
 
@@ -80,10 +80,10 @@ PowerToys Run uses a plugin system to provide different types of results. The de
 | Time and date                                                                        | yes                | `(`                       | `( time and date` shows the current time and date in different formats. `( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'.                                                                                                                                             |
 | Time zones                                                                           | yes                | `&`                       | `& Newfoundland` shows the current time in the time zone of Newfoundland.                                                                                                                                                                                                                            |
 | Unit converter                                                                       | yes                | `%%`                      | `%% 10 ft in m` to calculate the number of meters in 10 feet.                                                                                                                                                                                                                                        |
-| URIs                                                                                 | yes                | `//`                      | `//` to launch your default browser. `// docs.microsoft.com` to have your default browser go to   https://docs.microsoft.com. `mailto:` and `ms-settings:` links are supported.                                                                                                                      |
-| Visual Studio Code<br>_previously opened workspaces, remote machines and containers_ | **no**             | `{`                       | `{ powertoys` to search for workspaces that contain 'powertoys' in their paths.                                                                                                                                                                                                                      |
+| URIs                                                                                 | yes                | `//`                      | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are supported.                                                                                                              |
+| Visual Studio Code<br />_previously opened workspaces, remote machines and containers_ | **no**           | `{`                       | `{ powertoys` to search for workspaces that contain 'powertoys' in their paths.                                                                                                                                                                                                                      |
 | Web search                                                                           | yes                | `??`                      | `??` to launch your default browser's search page. `?? What is the answer to life` to search with your   default browser's search engine.                                                                                                                                                            |
-| Windows settings                                                                     | yes                | `$`                       | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br>`$ Device:` to list all settings with 'device' in their area/category name.<br>`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
+| Windows settings                                                                     | yes                | `$`                       | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
 | Windows Terminal profiles                                                            | **no**             | `_`                       | `_ powershell` to list all profiles that contains 'powershell' in their name.                                                                                                                                                                                                                        |
 | Open windows                                                                         | yes                | `<`                       | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process.                                                                                                                                                                                              |
 
@@ -102,7 +102,7 @@ The Windows System Commands plugin provides a set of system level actions that c
 > [!TIP]
 > If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can disable the setting **Use localized system commands instead of English ones** in the [plugin manager](#plugin-manager).
 
-| Command / Search | Action | Note |
+| Command | Action | Note |
 | :--- | :--- | :--- |
 | `Shutdown` | Shuts down the computer | |
 | `Restart` | Restarts the computer | |
@@ -111,7 +111,7 @@ The Windows System Commands plugin provides a set of system level actions that c
 | `Sleep` | Puts the computer to sleep | |
 | `Hibernate` | Hibernates the computer | |
 | `Empty Recycle Bin` | Empties the recycle bin | |
-| `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br>(Requires administrative permissions.) |
+| `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 | `IP address` * | Shows the ip addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
 | `MAC address` * | Shows the mac addresses from the network adapters in your computer. | The search query has to start with the word `MAC` or the word `address`. |
 
