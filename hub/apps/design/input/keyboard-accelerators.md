@@ -45,7 +45,7 @@ An accelerator auto-repeats (for example, when the user presses Ctrl+Shift and t
 
 We recommend that you specify keyboard accelerators wherever appropriate in your UI, and support accelerators in all custom controls.
 
-- Keyboard accelerators make your app more accessible for users with motor disabilities, including those users who can press only one key at a time or have difficulty using a mouse.**
+- Keyboard accelerators make your app more accessible for users with motor disabilities, including those users who can press only one key at a time or have difficulty using a mouse.
 
   A well-designed keyboard UI is an important aspect of software accessibility. It enables users with vision impairments or who have certain motor disabilities to navigate an app and interact with its features. Such users might not be able to operate a mouse and instead rely on various assistive technologies such as keyboard enhancement tools, on-screen keyboards, screen enlargers, screen readers, and voice input utilities. For these users, comprehensive command coverage is crucial.
 
