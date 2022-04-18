@@ -44,7 +44,7 @@ The following general options are available for PowerToys Run in the PowerToys s
 | Ignore shortcuts in Fullscreen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
-| Preferred monitor position | If multiple monitors are in use, PowerToys Run can be launched on the desired monitor:<br />- Primary monitor<br />- Monitor with mouse cursor<br />- Monitor with focused window |
+| Preferred monitor position | If multiple monitors are in use, PowerToys Run can be launched on the desired monitor:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
 | App theme | Change the color theme used by PowerToys Run |
 
 
@@ -57,6 +57,7 @@ The following general options are available for PowerToys Run in the PowerToys s
 |<kbd>Alt</kbd>+<kbd>Space</kbd> (default) | Open or hide PowerToys Run |
 |<kbd>Esc</kbd> | Hide PowerToys Run |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Open the selected application as administrator (only applicable to applications) |
+|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> | Open the selected application as different user (only applicable to applications) |
 |<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> | Open containing folder in File Explorer (only applicable to applications and files) |
 |<kbd>Ctrl</kbd>+<kbd>C</kbd> | Copy path location (only applicable to folders and files) |
 |<kbd>Tab</kbd> | Navigate through the search result and context menu buttons |
@@ -102,25 +103,29 @@ The PowerToys Run settings menu includes a plugin manager that allows you to ena
 
 ### System commands
 
-PowerToys Run enables a set of system level actions that can be executed.
+The Windows System Commands plugin provides a set of system level actions that can be executed.
 
-| Action command / Search result | Action | Note |
+> [!TIP]
+> If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, you can disable the setting **'Use localized system commands instead of English ones'**  in the [plugin manager](#plugin-manager).
+
+| Command / Search result | Action | Note |
 | :--- | :--- | :--- |
 | `Shutdown` | Shuts down the computer | |
 | `Restart` | Restarts the computer | |
 | `Sign Out` | Signs current user out | |
 | `Lock` | Locks the computer | |
-| `Sleep` | Sleeps the computer | |
+| `Sleep` | Puts the computer to sleep | |
 | `Hibernate` | Hibernates the computer | |
 | `Empty Recycle Bin` | Empties the recycle bin | |
-| `UEFI Firmware Settings` | Reboot computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
-| `IP address` | Shows the ip addresses from the network connections of your computer. | The search query has to start with `IP` or `address`. |
-| `MAC address` | Shows the mac addresses from the network adapters in your computer. | The search query has to start with `MAC` or `address`. |
+| `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
+| `IP address` * | Shows the ip addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
+| `MAC address` * | Shows the mac addresses from the network adapters in your computer. | The search query has to start with the word `MAC` or the word `address`. |
 
+_*) This command may take some time to provide the results._
 
 ### Program parameters
 
-The PowerToys Run program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
+The Program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
@@ -145,12 +150,12 @@ If the program plugin's option "Include in global result" is not selected, be su
 ### Calculator Plugin
 
 > [!NOTE]
-> The calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
+> The Calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
 
-> [!WARNING]
-> There is a known issue that the comma sign used in some operations as delimiter between numbers gets interpreted as decimal delimiter. This happens if your number format setting in Windows is configured to use the comma sign as decimal separator.
+> [!IMPORTANT]
+> If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
-The PowerToys Run calculator plugin supports the following operations:
+The Calculator plugin supports the following operations:
 
 | Operation |  Operator Syntax | Description |
 | :- | :- | :- |
@@ -160,21 +165,21 @@ The PowerToys Run calculator plugin supports the following operations:
 | Division |  a / b | |
 | Modulo/Remainder | a % b | |
 | Exponentiation | a ^ b | |
-| Ceil | ceil( x.y ) |  Rounds a number up to the next larger integer. |
-| Floor | floor( x.y ) | Rounds a number down to the next smaller integer. |
+| Ceiling function | ceil( x.y ) |  Rounds a number up to the next larger integer. |
+| Floor function | floor( x.y ) | Rounds a number down to the next smaller integer. |
+| Rounding | round( x.abcd ) | Rounds to the nearest integer.<br />_(Example: `round(8.7867)`)_ |
 | Exponential function | exp( x ) | Returns e raised to the specified power. |
 | Maximum | max( x, y, z ) | |
-| Minimum | max( x, y, z ) | |
-| Absolute | abs( - x ) | Absolute value of a number |
-| Log10 | log( x ) | |
-| Log base e | ln( x ) | |
+| Minimum | min( x, y, z ) | |
+| Absolute | abs( -x ) | Absolute value of a number. |
+| Logarithm base 10 | log( x ) | |
+| Logarithm base e | ln( x ) | |
 | Square root | sqrt( x ) | |
-| Power | pow( x, y ) | Calculate a number raised to the power of some other number. |
-| Factorial | x ! | |
-| Sign | sign( - x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
-| Round | round( x.abcd ) | Example: `round(8.7867)` |
-| Random | rand() | |
-| Pi | +pi | Returns the number of Pi. |
+| Power of x | pow( x, y ) | Calculate a number (x) raised to the power of some other number (y). |
+| Factorial | x! | |
+| Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
+| Random number | rand() | Returns a fractional number between 0 and 1. |
+| Pi | pi | Returns the number of Pi.<br />_(To simply display pi, a sign is required like in this example: `+pi`.)_ |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |
 | Tangent | tan( x ) | |
@@ -189,11 +194,11 @@ The PowerToys Run calculator plugin supports the following operations:
 | Hyperbolic Arc Tangent | artanh( x ) | |
 
 
-### Time and Date values
-The time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
+### Time and Date plugin
+The Time and Date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
 
 > [!NOTE]
-> The time and date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
+> The Time and Date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.
 
 > [!IMPORTANT]
 > For global queries the first word of the query has to be a complete match.
@@ -205,9 +210,32 @@ Examples:
 - `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 
+### Unit Converter plugin
+
+> [!NOTE]
+> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
+>
+> The names and abbreviations of the units aren't localized yet.
+
+The Unit Converter plugin supports the following unit types:
+- Acceleration
+- Angle
+- Area
+- Duration
+- Energy
+- Information technology
+- Length
+- Mass
+- Power
+- Pressure
+- Speed
+- Temperature
+- Volume
+
+
 ### Folder search filters
 
-In the folder plugin you can filter the results by using some special characters.
+In the Folder plugin you can filter the results by using some special characters.
 
 | Character sequence | Result | Example
 | :- | :- | :- |
@@ -268,7 +296,7 @@ On the "Searching Windows" page, you can:
 
 ## Known issues
 
-For a list of all known issues and suggestions, see the [PowerToys product repo issues on GitHub](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-PowerToys+Run%22).
+For a list of all known issues and suggestions, see the [PowerToys product repository issues on GitHub](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-PowerToys+Run%22).
 
 ## Attribution
 
