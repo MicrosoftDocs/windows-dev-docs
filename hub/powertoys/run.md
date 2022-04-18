@@ -120,6 +120,7 @@ The Windows System Commands plugin provides a set of system level actions that c
 | `UEFI Firmware Settings` | Reboots the computer into UEFI Firmware Settings | Only available on systems with UEFI firmware.<br />(Requires administrative permissions.) |
 | `IP address` * | Shows the ip addresses from the network connections of your computer. | The search query has to start with the word `IP` or the word `address`. |
 | `MAC address` * | Shows the mac addresses from the network adapters in your computer. | The search query has to start with the word `MAC` or the word `address`. |
+<<<<<<< HEAD
 
 _*) This command may take some time to provide the results._
 
@@ -134,6 +135,14 @@ The Program plugin allows for program arguments to be added when launching an ap
 > - A parameter that starts with `--`.
 > - A parameter that starts with `/`.
 
+=======
+
+_*) This command may take some time to provide the results._
+
+### Program parameters
+
+The Program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
+>>>>>>> main
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:

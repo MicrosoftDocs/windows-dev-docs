@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # Walkthrough&mdash;Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK
 
 > [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+> When authoring Windows Runtime Components with Windows App SDK and WinUI 3 types, there are currently some bugs and key scenarios that aren't yet supported.
 
 C#/WinRT provides support for authoring components that implement WinUI custom types and custom controls. These components can be consumed from either C# or C++/WinRT applications that use the Windows App SDK. This support is available beginning with C#/WinRT v1.6.1 with some limitations, and is currently in development.
 

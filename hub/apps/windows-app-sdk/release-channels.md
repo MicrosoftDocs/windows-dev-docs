@@ -17,7 +17,11 @@ The following table provides an overview of the different release channels. For 
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |---|---|---|---|---|---|
+<<<<<<< HEAD
 | **✅** | Stable ([release notes](stable-channel.md)) | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every six months<br>(+ servicing) | Yes | [1.0.2](stable-channel.md#version-102) (04/06/2022) |
+=======
+| **✅** | Stable ([release notes](stable-channel.md)) | This channel is supported for use by apps in production environments. It only includes stable APIs. | No faster than every six months<br>(+ servicing) | Yes | [1.0.3](stable-channel.md#version-103) (04/18/2022) |
+>>>>>>> main
 | **❇️** | Preview ([release notes](preview-channel.md)) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. | At least two previews per stable version | No | [1.1.0-preview1](preview-channel.md#version-11-preview-1-110-preview1) (03/29/2022) |
 | **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No | [1.0.0-experimental1](experimental-channel.md#version-10-experimental-100-experimental1) (8/9/2021) |
 
