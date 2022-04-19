@@ -20,5 +20,5 @@ Current limitations of Windows App SDK / WinUI 3 include:
 
 ## See also
 
-  - [Windows Developer FAQ](windows-developer-faq.md)
+  - [Windows Developer FAQ](windows-developer-faq.yml)
   - [Build your first Windows App](https://docs.microsoft.com/windows/apps/get-started/?tabs=cpp-win32#app-types)
