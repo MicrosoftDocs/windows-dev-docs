@@ -44,6 +44,8 @@ items:
           href: get-started/windows-developer-faq.yml
         - name: Windows developer Glossary 
           href: get-started/windows-developer-glossary.md
+        - name: Current limitations of Windows App SDK / WinUI 3
+          href: get-started/current-limitations-appsdk-winui3.md
   - name: Setup guides and resources
     items:
         - name: System requirements
