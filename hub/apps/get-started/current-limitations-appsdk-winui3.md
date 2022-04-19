@@ -9,7 +9,7 @@ ms.custom: seo-windows-dev
 
 # Current Limitations of Windows App SDK / WinUI 3
 
-This document details noteworthy limitations of Windows App SDK / WinUI 3 across for major and minor releases back to version 1.0.
+This document details noteworthy limitations of Windows App SDK / WinUI 3 across major and minor releases back to version 1.0.
 
 
 ### Version 1.1 (preview)
