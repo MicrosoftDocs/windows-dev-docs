@@ -9,7 +9,10 @@ ms.custom: seo-windows-dev
 
 # Current Limitations of Windows App SDK / WinUI 3
 
-Current limitations of Windows App SDK / WinUI 3 include:
+This document details the noteworthy limitations of Windows App SDK / WinUI 3 version 1.0.
+
+### Version 1.0
+
     - Apps that haven't been published through the Microsoft Store can't send push notifications.
     - Local toast notifications aren't supported yet.
     - XAML Islands aren't supported yet.
@@ -17,6 +20,7 @@ Current limitations of Windows App SDK / WinUI 3 include:
     - Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet.
     - App lifecycle management isn't supported yet.
     - Hololens, Xbox, and Surface Hub aren't supported.
+
 
 ## See also
 
