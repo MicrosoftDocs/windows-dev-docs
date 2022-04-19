@@ -122,7 +122,7 @@ sections:
         answer: |
           - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets. 
           - [WinUI 3 Demos](https://github.com/microsoft/WinUI-3-Demos): Contains demos used during Microsoft's WinUI 3 presentations. 
-          - [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery/tree/winui3): Showcases WinUI 3 and Windows App SDK. Note that this points to the `winui3` branch of the XAML Controls Gallery repository. Note that the [XAML Controls Gallery is published to the Store
+          - [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery/tree/winui3): Showcases WinUI 3 and Windows App SDK. Note that this points to the `winui3` branch of the XAML Controls Gallery repository. Note also that the XAML Controls Gallery [is published to the Store](https://www.microsoft.com/en-us/p/xaml-controls-gallery/9msvh128x2zt).
   - name: UWP and WinUI 2
     questions:
       - question: Can UWP apps be distributed outside of the Microsoft Store?
