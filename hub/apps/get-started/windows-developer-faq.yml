@@ -21,8 +21,8 @@ sections:
           Other options may be more appropriate depending on what you’re building and how you’re building it:
 
           - **If Windows App SDK / WinUI 3 don’t meet your needs** based on the [current limitations of Windows App SDK / WinUI 3](current-limitations-appsdk-winui3.md), you can use UWP / WinUI 2.
-          - **If you're targeting cross-platform:** React Native and .NET MAUI let you build cross-platform apps. .NET MAUI is a great choice for C# developers. React Native will feel familiar to JavaScript/TypeScript developers.
-          - **If you're a web developer:** You can use WebView2 as an application host. This lets you use web technology to build desktop apps that can access the Windows SDK and Windows App SDK APIs. You can also use React Native for Windows.  
+          - **If you're targeting cross-platform:** [React Native](https://microsoft.github.io/react-native-windows/) and [.NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/what-is-maui) let you build cross-platform apps. .NET MAUI is a great choice for C# developers. React Native will feel familiar to JavaScript/TypeScript developers.
+          - **If you're a web developer:** You can use [WebView2](https://docs.microsoft.com/en-us/microsoft-edge/webview2/) as an application host. This lets you use web technology to build desktop apps that can access the Windows SDK and Windows App SDK APIs. You can also use React Native for Windows.  
           - **If you're a C++ developer:** For desktop apps, Windows App SDK / WinUI 3 are a great choice. If you're building a game, consider using DirectX. C++ developers may also enjoy using [Rust for Windows](/windows/dev-environment/rust/rust-for-windows) to build non-GUI apps.  
 
           There are other development technologies that may be more appropriate depending on your needs and technology preferences. [Learn more about choosing a development technology](./index.md).
