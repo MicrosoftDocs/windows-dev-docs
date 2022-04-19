@@ -11,8 +11,10 @@ metadata:
 title: Windows Developer FAQ
 summary: 
   This article is meant to promote a common understanding of the Windows development experience and product direction.
+
   > [!NOTE]
   > The answers to these questiosn apply to Windows App SDK version 1.0.
+
 sections:
   - name: "Getting started"
     questions:
