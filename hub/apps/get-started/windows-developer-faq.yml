@@ -20,7 +20,7 @@ sections:
     questions:
       - question: What should I use to build Windows apps?
         answer: |
-          For Windows desktop application development, Windows App SDK / WinUI 3 could be a great choice. This combination of technologies succeeds UWP / WinUI 2 for desktop apps. See [Current Limitations of Windows App SDK / WinUI 3](current-limitations-appsdk-winui3.md) to determine if Windows App SDK / WinUI 3 will meet your needs. 
+          For Windows desktop application development, [Windows App SDK / WinUI 3](../winui/winui3/create-your-first-winui3-app.md) could be a great choice. This combination of technologies succeeds UWP / WinUI 2 for desktop apps. See [Current Limitations of Windows App SDK / WinUI 3](current-limitations-appsdk-winui3.md) to determine if Windows App SDK / WinUI 3 will meet your needs. 
           
           Other options may be more appropriate depending on what you’re building and how you’re building it:
 
