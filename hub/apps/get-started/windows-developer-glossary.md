@@ -82,7 +82,7 @@ A control that allows app developers to embed web content (HTML/CSS/JS) in their
 Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of WinAppSDK and WinUI 3.
 
 ##### Windows App SDK
-A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development (see [current limitations](todo)). It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](https://docs.microsoft.com/windows/apps/get-started/?tabs=cpp-win32).
+A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development (see [current limitations](current-limitations-appsdk-winui3.md)). It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](https://docs.microsoft.com/windows/apps/get-started/?tabs=cpp-win32).
 
 ##### Windows Forms
 Also known as WinForms. A UI framework for building Windows desktop applications. It is a .NET wrapper over Windows user interface libraries, such as User32 and GDI+. It’s a battle-tested way to create desktop applications using a visual designer within Visual Studio.
@@ -107,5 +107,5 @@ XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinFor
 
 
 ## Related articles
-  - [Windows Developer FAQ](windows-developer-faq.md)
+  - [Windows Developer FAQ](windows-developer-faq.yml)
   - [Build your first Windows App](https://docs.microsoft.com/windows/apps/get-started/?tabs=cpp-win32#app-types)

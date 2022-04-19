@@ -68,9 +68,10 @@ sections:
       - question: How hard is it to migrate UWP apps to Windows App SDK and WinUI 3? 
         answer: |
           Windows App SDK / WinUI 3 introduce a large number of significant changes. There are three things you need to consider: 
+
            1. **UI migration**. Migrating UI components will generally be straightforward. See [Current Limitations of Windows App SDK / WinUI 3](current-limitations-appsdk-winui3.md). 
            2. **App model migration**. Migrating your app model from UWP to Win32 may require a significant level of effort, depending on the scope and architecture of your application. 
-           3. **.NET runtime migration**. If your UWP app targets .NET Framework, you’ll have to upgrade to .NET 6+. (?) (Pending Richard Lander) 
+           3. **.NET runtime migration**. If your UWP app targets .NET Framework, you’ll have to upgrade to .NET 6+. (TODO) (?) (Pending Richard Lander) 
 
           See [About migrating from UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
       - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
