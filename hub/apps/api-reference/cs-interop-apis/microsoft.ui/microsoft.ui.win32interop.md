@@ -34,11 +34,11 @@ public class Win32Interop
 
 ## Applies to
 
-| Product | Versions |
+| Product | Introduced in |
 |-|-|
 |**WinUI 3**|Windows App SDK 1.0|
 
 ## See also
 
-* [C# interop APIs for WinUI](../index.md)
+* [Interop C# APIs for WinUI](../index.md)
 * [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

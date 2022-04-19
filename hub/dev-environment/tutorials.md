@@ -41,7 +41,7 @@ We've listed a few tutorials, course, and code samples below to help you get sta
 
 * [Build your first ASP.Net Core web app with Blazor](/aspnet/core/tutorials/build-your-first-blazor-app)
 
-* [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/)
+<!--- * [Call an ASP.NET Core Web API from a WPF application using Azure AD V2](/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/) --->
 
 ## Build a console app
 

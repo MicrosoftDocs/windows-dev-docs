@@ -54,5 +54,5 @@ The push notifications support in the Windows App SDK currently has these limita
 
 - [Windows Push Notification Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 - [Send a push notification using the Windows App SDK](push-quickstart.md)
-- [Troubleshooting Windows App SDK](/troubleshooting.md)
+- [Troubleshooting Windows App SDK](/windows/win32/appxpkg/troubleshooting)
 - [Toast UX Guidance](../../../design/shell/tiles-and-notifications/toast-ux-guidance.md)

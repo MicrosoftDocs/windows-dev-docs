@@ -155,12 +155,11 @@ doc.LoadXml(L"\
     </toast>");
 
 // Populate with text and values
+doc.SelectSingleNode(L"//text[1]").InnerText(L"Andrew sent you a picture");
+doc.SelectSingleNode(L"//text[2]").InnerText(L"Check this out, Happy Canyon in Utah!");
 
 // Arguments returned when user taps body of notification
 doc.DocumentElement().SetAttribute(L"launch", L"action=viewConversation&conversationId=9813"); 
-
-doc.SelectSingleNode(L"//text[1]").InnerText(L"Andrew sent you a picture");
-doc.SelectSingleNode(L"//text[2]").InnerText(L"Check this out, Happy Canyon in Utah!");
 
 // Construct the notification
 winrt::Windows::UI::Notifications::ToastNotification notif{ doc };

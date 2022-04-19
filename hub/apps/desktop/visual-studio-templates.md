@@ -22,7 +22,7 @@ The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user in
 
 WinUI 3 is available as part of [the Windows App SDK](../windows-app-sdk/index.md). It includes a VSIX package for Visual Studio 2019 (and later) that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
-For more information about the available WinUI project and item templates, see [Create WinUI 3 projects](../winui/winui3/winui-project-templates-in-visual-studio.md).
+For more information about the available WinUI project and item templates, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 

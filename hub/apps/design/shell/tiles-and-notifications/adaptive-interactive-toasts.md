@@ -15,10 +15,6 @@ Adaptive and interactive toast notifications let you create flexible notificatio
 
 > **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-> [!NOTE]
-> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](/previous-versions/windows/apps/hh761494(v=win.10)).
-
-
 ## Getting started
 
 **Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 7.0.0 of the NuGet package.
@@ -563,7 +559,7 @@ new ToastContentBuilder()
 
 ### Buttons with colors
 
-**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **UseButtonStyle** property to the toast XML tag and the **HintButtonStyle** property as seen below.
+**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **useButtonStyle** attribute to the toast XML element and the **hint-buttonStyle** attribute to the action XML element as seen below.
 
 
 <img alt="notification with buttons with colors" src="images/toast-button-with-colors.png" width="364"/>
@@ -1048,9 +1044,7 @@ Important notifications allow users to have more control over what 1st party and
 #### [Builder syntax](#tab/builder-syntax)
 
 ```csharp
-new ToastContentBuilder()
-    .SetToastScenario(ToastScenario.Urgent)
-    ...
+// The builder syntax does not support important notifications yet.
 ```
 
 #### [XML](#tab/xml)

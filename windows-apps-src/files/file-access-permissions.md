@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
-ms.date: 09/10/2020
+ms.date: 01/28/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

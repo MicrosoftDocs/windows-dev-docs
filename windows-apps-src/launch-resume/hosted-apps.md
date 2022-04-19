@@ -18,7 +18,7 @@ The hosted apps feature is supported by several elements and attributes in the p
 
 ## Define a host
 
-The *host* is the main executable or runtime process for the hosted app. Currently, the only supported hosts are desktop apps (.NET or C++ desktop) that have *package identity*. UWP apps are not supported as hosts at this time. There are several ways for a desktop app to have package identity:
+The *host* is the main executable or runtime process for the hosted app. Currently, the only supported hosts are desktop apps (.NET or C++ desktop) that have *package identity*. There are several ways for a desktop app to have package identity:
 
 * The most common way to grant package identity to a desktop app is by [packaging it in an MSIX package](/windows/msix).
 * In some cases, you may alternatively choose to grant package identity by creating a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). This option is useful if you are unable to adopt MSIX packaging for deploying your desktop app.

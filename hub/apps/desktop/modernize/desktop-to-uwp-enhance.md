@@ -57,6 +57,15 @@ This option is supported only in projects that use .NET 5 (or a later release) a
 
 3. Save your changes and close the project file.
 
+#### WinRT APIs not supported in .NET 5 or later
+
+In .NET 5 and later, there are several Windows Runtime (WinRT) APIs in the **Windows.UI** namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (**Microsoft.UI**) namespace (for example, [**Microsoft.UI.Text**](/windows/winui/api/microsoft.ui.text)). The following WinRT APIs are *not* supported on .NET 5 and later:
+
+* [**Windows.UI.Colors**](/uwp/api/Windows.UI.Colors) class
+* [**Windows.UI.ColorHelper**](/uwp/api/Windows.UI.ColorHelper) class
+* [**Windows.UI.Text**](/uwp/api/windows.ui.text) (all classes in this namespace **except** for **Windows.UI.Text.FontStretch**, **Windows.UI.Text.FontStyle**, **Windows.UI.Text.FontWeight**, **Windows.UI.Text.UnderlineType**, and all classes under the **Windows.UI.Text.Core** namespace)
+* [**Windows.UI.Xaml**](/uwp/api/windows.ui.xaml) (all classes in this namespace)
+
 #### Supporting multiple Windows OS versions 
 
 The Windows OS version-specific **TargetFramework** property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both **TargetPlatformVersion** and **TargetPlatformMinVersion** (if not explicitly set). The **TargetPlatformVersion** property doesn't need to be explicitly defined in the project file, since it's automatically set by the **TargetFramework** OS version.

@@ -54,4 +54,4 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 
 ### Windows UI Library 3 Preview 4 (February 2021)
 
-For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see  [Windows UI Library 3](/windows/apps/winui/).
+For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see  [Windows UI Library 3](../../index.md).

@@ -92,10 +92,7 @@ auto width{ App::Window().Bounds().Width };
 
 In your UWP app, if you use certain types from the [**Windows.UI.Popups**](/uwp/api/windows.ui.popups) or [**Windows.Storage.Pickers**](/uwp/api/windows.storage.pickers) namespaces, then this section contains info to help you migrate that code. The code examples below use **MessageDialog**, but you can apply exactly the same techniques to displaying a picker (for example, a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker), a [**FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker), or a [**FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker)).
 
-At a high level, the technique involves these steps (code examples later in this section show exactly how to implement these steps).
-
-* First use the interoperatability method [**IWindowNative::get_WindowHandle**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) to obtain your window's *handle* (which is of type [**HWND**](/windows/win32/winprog/windows-data-types)).
-* Then call the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) to *parent* the UI object that you want to display to the window that owns that **HWND**.
+The steps that you have to follow in a desktop app are described in [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
 > [!NOTE]
 > For new apps, we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
@@ -114,9 +111,7 @@ auto showDialog{ Windows::UI::Popups::MessageDialog(L"Message here") };
 co_await showDialog.ShowAsync();
 ```
 
-In your Windows App SDK app, you'll be following the two steps described above.
-
-First, obtain your your window's *handle* (**HWND**). Find the appropriate source code file indicated in the listing below, and add the code that's shown.
+And here's the equivalent code in a Windows App SDK app.
 
 ```csharp
 // In App.xaml.cs in a Windows App SDK app
@@ -135,12 +130,33 @@ public partial class App : Application
 
     public static IntPtr WindowHandle { get; private set; }
 }
+
+// MainWindow.xaml.cs
+...
+using System.Runtime.InteropServices;
+using WinRT;
+...
+public sealed partial class MainWindow : Window
+{
+    ...
+    private static void SetOwnerWindow(object dialog)
+    {
+        WinRT.Interop.InitializeWithWindow.Initialize(dialog, App.WindowHandle);
+    }
+
+    ...
+    var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
+    SetOwnerWindow(showDialog);
+    await showDialog.ShowAsync();
+}
 ```
 
 ```cppwinrt
 // pch.h in a Windows App SDK app
 ...
+#include <Shobjidl.h>
 #include <microsoft.ui.xaml.window.h>
+#include <winrt/Windows.UI.Popups.h>
 ...
 
 // App.xaml.h
@@ -170,31 +186,6 @@ void App::OnLaunched(LaunchActivatedEventArgs const&)
     App::m_hWnd = hWnd;
 }
 ...
-```
-
-And then we can use that window *handle* (**HWND**) in a helper function like this.
-
-```csharp
-// In MainWindow.xaml.cs in a Windows App SDK app
-...
-using System.Runtime.InteropServices;
-using WinRT;
-...
-public sealed partial class MainWindow : Window
-{
-    ...
-    private static void ParentDialogToWindow(object dialog)
-    {
-        WinRT.Interop.InitializeWithWindow.Initialize(dialog, App.WindowHandle);
-    }
-}
-```
-
-```cppwinrt
-// pch.h in a Windows App SDK app
-...
-#include <Shobjidl.h>
-...
 
 // MainWindow.xaml.h
 ...
@@ -204,38 +195,21 @@ struct MainWindow : MainWindowT<MainWindow>
 {
   ...
   private:
-    static void ParentDialogToWindow(Windows::Foundation::IInspectable const&);
+    static void SetOwnerWindow(Windows::Foundation::IInspectable const&);
 };
 ...
 
 // MainWindow.xaml.cpp
 ...
-void MainWindow::ParentDialogToWindow(IInspectable const& dialog)
+void MainWindow::SetOwnerWindow(IInspectable const& dialog)
 {
     auto initializeWithWindow{ dialog.as<::IInitializeWithWindow>() };
     initializeWithWindow->Initialize(App::WindowHandle());
 }
+
 ...
-```
-
-Lastly, we can call that helper function like this.
-
-```csharp
-// In MainWindow.xaml.cs in a Windows App SDK app
-var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
-ParentDialogToWindow(showDialog);
-await showDialog.ShowAsync();
-```
-
-```cppwinrt
-// pch.h in a Windows App SDK app
-...
-#include <winrt/Windows.UI.Popups.h>
-...
-
-// MainWindow.xaml.cpp
 auto showDialog{ Windows::UI::Popups::MessageDialog(L"Message here") };
-ParentDialogToWindow(showDialog);
+SetOwnerWindow(showDialog);
 co_await showDialog.ShowAsync();
 ```
 
@@ -255,59 +229,7 @@ Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
 Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
 ```
 
-To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. Use the code shown below.
-
-```csharp
-// In MainWindow.xaml.cs in a Windows App SDK app
-...
-public sealed partial class MainWindow : Window
-{
-    ...
-    private void myButton_Click(object sender, RoutedEventArgs e)
-    {
-        // `this` in `GetWindowHandle(this)` must be a reference to
-        // your current window
-        IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
-
-        IDataTransferManagerInterop interop = Windows.ApplicationModel.DataTransfer.DataTransferManager.As<IDataTransferManagerInterop>();
-
-        // Show the Share UI
-        interop.ShowShareUIForWindow(windowHandle);
-    }
-
-    [System.Runtime.InteropServices.ComImport, System.Runtime.InteropServices.Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
-    [System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
-    interface IDataTransferManagerInterop
-    {
-        Windows.ApplicationModel.DataTransfer.DataTransferManager GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow, [System.Runtime.InteropServices.In] ref Guid riid);
-        void ShowShareUIForWindow(IntPtr appWindow);
-    }
-}
-...
-```
-
-```cppwinrt
-// pch.h in a Windows App SDK app
-...
-#include <shobjidl_core.h>
-#include <microsoft.ui.xaml.window.h>
-#include <winrt/Windows.ApplicationModel.DataTransfer.h>
-...
-
-// MainWindow.xaml.cpp
-...
-void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
-{
-    winrt::Microsoft::UI::Xaml::Window window{ *this };
-    auto windowNative{ window.as<::IWindowNative>() };
-    HWND hWnd{ 0 };
-    windowNative->get_WindowHandle(&hWnd);
-
-    auto interop = winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager, IDataTransferManagerInterop>();
-    interop->ShowShareUIForWindow(hWnd);
-}
-...
-```
+To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. For more info, and code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
 ## ContentDialog, and Popup
 
@@ -361,7 +283,7 @@ If on the other hand you want or need navigation between pages in your Windows A
 
 Also see [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation). If you *do* have a UWP app that's simple enough where you can copy your XAML markup and code-behind into **MainWindow**, then bear in mind these exceptions.
 
-Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/basics/xaml-basics-adaptive-layout)). You have these two options, though:
+Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml)). You have these two options, though:
 
 * Add a **UserControl** item to the project, and migrate your markup and code-behind to that. Then place an instance of that user control in **MainWindow**.
 * Add a **Page** item to the project, and migrate your markup and code-behind to that. Then add code to your **App** class to navigate to that **Page** on startup, as described in [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation).
@@ -382,3 +304,7 @@ In addition, you won't be able to copy a `<Page.Resources>` element over to **Ma
 The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 So if you're accessing the **AcrylicBrush.BackgroundSource** property in the source code of your UWP app (whether that's in XAML markup or in imperative code), then remove that code when migrating your app to the Windows App SDK.
+
+## Related topics
+
+* [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects)

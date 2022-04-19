@@ -205,10 +205,9 @@ LoadImage(surfaceBrush);
 
     ```cs
     var catVisual = _compositor.CreateSpriteVisual();
-      catVisual.Brush = catEffect;
-      catVisual.Size = new Vector2(219, 300);
-      _root.Children.InsertAtBottom(catVisual);
-    }
+    catVisual.Brush = catEffect;
+    catVisual.Size = new Vector2(219, 300);
+    _root.Children.InsertAtBottom(catVisual);    
     ```
 
 1. Create your image source to load.

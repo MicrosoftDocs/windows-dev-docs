@@ -20,6 +20,9 @@ The **list** command also supports filters which can be used to limit your list 
 
 ![Image of list command usage](./images/list.png)
 
+> [!NOTE]
+> If you want to list all apps with available updates use `winget upgrade` (without any arguments).
+
 ## Arguments
 
 The following arguments are available.
@@ -45,10 +48,10 @@ The options allow you to customize the list experience to meet your needs.
 | **--tag** |  Filters results by tags. |  
 | **--command** |  Filters results by command specified by the application. |  
 | **-n, --count** | Limits the number of apps displayed in one query.   |
-| **-l, --location** |    Location to list to (if supported). |
 | **-e, --exact**   |   Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ### Example queries
 

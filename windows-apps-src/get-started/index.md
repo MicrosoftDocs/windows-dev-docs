@@ -47,9 +47,9 @@ Build apps that work on all Windows devices, or enhance your existing apps with 
         <h3>Tutorials</h3>
         <p>Looking for a guided learning experience? These tutorials will help.</p>
         <br>
-        <a href="/windows/uwp/design/basics/xaml-basics-ui">UI Basics</a><br/>
+        <a href="/windows/apps/design/basics/navigate-between-two-pages">Navigate between two pages</a><br/>
         <a href="/windows/uwp/data-binding/xaml-basics-data-binding">Data binding</a><br/>
-        <a href="/windows/uwp/design/basics/xaml-basics-style">Custom styles</a><br/>
+        <a href="/windows/apps/design/layout/grid-tutorial">Use layout panels</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/biztalk-get-started-scenarios.svg" alt="Samples illustration" />

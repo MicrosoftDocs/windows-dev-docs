@@ -36,7 +36,9 @@ items:
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
-        - name: Samples 
+        - name: "Tutorial—Create a simple photo viewer with WinUI 3 (C#)"
+          href: get-started/simple-photo-viewer-winiu3.md
+        - name: Sample apps for Windows
           href: get-started/samples.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
@@ -56,7 +58,7 @@ items:
           items:
             - name: All templates for Windows apps
               href: desktop/visual-studio-templates.md
-            - name: "WinUI templates"
+            - name: "WinUI 3 templates in Visual Studio"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
   - name: Design
     href: design/toc.yml
@@ -226,6 +228,10 @@ items:
             href: develop/user-interface.md
           - name: Title bar
             href: develop/title-bar.md
+          - name: "Retrieve a window handle (HWND)"
+            href: develop/ui-input/retrieve-hwnd.md
+          - name: "Display WinRT UI objects that depend on CoreWindow"
+            href: develop/ui-input/display-ui-objects.md
       - name: Windows UI Library (WinUI)
         items:
           - name: "Overview"
@@ -306,38 +312,50 @@ items:
             href: develop/platform/csharp-winrt/index.md
           - name: .NET mappings of WinRT types in C#/WinRT
             href: develop/platform/csharp-winrt/net-mappings-of-winrt-types.md
-          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
-            href: develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
-          - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
-            href: develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
-          - name: "Diagnose component errors"
-            href: develop/platform/csharp-winrt/authoring-diagnostics.md
           - name: "Agile objects"
             href: develop/platform/csharp-winrt/agile-objects.md
-  - name: Package and deploy
+          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+            href: develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+          - name: Windows Runtime components with C#/WinRT
+            items:
+              - name: "Author Windows Runtime components with C#/WinRT"
+                href: develop/platform/csharp-winrt/authoring.md
+              - name: "Walkthrough: Create a C#/WinRT component, and consume it from C++/WinRT"
+                href: develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+              - name: "Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK app"
+                href: develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
+              - name: "Diagnose component errors"
+                href: develop/platform/csharp-winrt/authoring-diagnostics.md
+  - name: Deploy
     items:
-      - name: Overview
+      - name: Deployment overview
         href: package-and-deploy/index.md
       - name: Windows App SDK deployment guide
         items:
-          - name: "Overview and runtime architecture"
-            href: windows-app-sdk/deployment-architecture.md
-          - name: "Deployment guide for packaged apps"
-            href: windows-app-sdk/deploy-packaged-apps.md
-          - name: "Deployment guide for unpackaged apps"
+          - name: Windows App SDK deployment overview
+            href: package-and-deploy/deploy-overview.md
+          - name: Deployment guide for framework-dependent apps
             items:
-              - name: "Deployment instructions"
-                href: windows-app-sdk/deploy-unpackaged-apps.md
-              - name: "Reference the Windows App SDK framework package at run time"
-                href: windows-app-sdk/reference-framework-package-run-time.md
-              - name: "Advanced tutorial: Build and deploy an unpackaged app"
-                href: windows-app-sdk/tutorial-unpackaged-deployment.md
-          - name: "Check for installed versions of the Windows App SDK runtime"
-            href: windows-app-sdk/check-windows-app-sdk-versions.md
-          - name: "Remove outdated Windows App SDK runtime versions"
-            href: windows-app-sdk/remove-windows-app-sdk-versions.md
-      - name: Set up CI for WinUI 3 app
-        href: package-and-deploy/ci-for-winui3.md
+              - name: "Deployment architecture and overview"
+                href: windows-app-sdk/deployment-architecture.md
+              - name: "Deployment guide for MSIX-packaged apps"
+                href: windows-app-sdk/deploy-packaged-apps.md
+              - name: "Deploying non-MSIX-packaged apps"
+                items:
+                  - name: "Deployment guide for non-MSIX-packaged apps"
+                    href: windows-app-sdk/deploy-unpackaged-apps.md
+                  - name: "Use the Windows App SDK runtime"
+                    href: windows-app-sdk/use-windows-app-sdk-run-time.md
+                  - name: "Tutorial: Build and deploy a non-MSIX packaged app"
+                    href: windows-app-sdk/tutorial-unpackaged-deployment.md
+              - name: "Check for installed versions of the Windows App SDK runtime"
+                href: windows-app-sdk/check-windows-app-sdk-versions.md
+              - name: "Remove outdated Windows App SDK runtime versions"
+                href: windows-app-sdk/remove-windows-app-sdk-versions.md
+          - name: Deployment guide for self-contained apps
+            href: package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
+          - name: Set up CI for your WinUI 3 app
+            href: package-and-deploy/ci-for-winui3.md
   - name: API reference
     href: api-reference/index.md
     items:
@@ -353,13 +371,23 @@ items:
             href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
+          - name: "Bootstrapper C# APIs"
+            href: api-reference/cs-bootstrapper-apis/index.md
+            items: 
+              - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
+                href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
+                items: 
+                  - name: "Bootstrap class"
+                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                  - name: "PackageVersion struct"
+                    href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
           - name: WinUI API reference
             items: 
               - name: WinRT APIs for WinUI
                 href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
-              - name: "C# interop APIs for WinUI"
+              - name: "Interop C# APIs for WinUI"
                 href: api-reference/cs-interop-apis/index.md
                 items: 
                   - name: "Microsoft.UI namespace"

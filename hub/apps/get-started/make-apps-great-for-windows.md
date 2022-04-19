@@ -2,7 +2,7 @@
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
-ms.date: 09/21/2021
+ms.date: 03/16/2022
 keywords: windows win32, desktop development
 ms.author: jimwalk
 author: jwmsft
@@ -21,7 +21,7 @@ With entirely new visuals signaling change, [signature experiences](../design/si
 
 Great apps on Windows meet these customer expectations for app fundamentals and modern user experience, and we are investing in the native Windows platform to make it easier for your apps to achieve greatness through [WinUI](../winui/index.md), [MSIX](/windows/msix), and the [Windows App SDK](../windows-app-sdk/index.md) family of APIs. This document provides an overview what you need to do to make your app look and behave great so that users feel like your app was made for Windows 11.
 
-Here are the top 10 things you can do to make your app shine on Windows 11.
+Here are the top ~~10~~ 11 things you can do to make your app shine on Windows 11.
 
 ## 1. Test your app to be compatible with Windows 11
 
