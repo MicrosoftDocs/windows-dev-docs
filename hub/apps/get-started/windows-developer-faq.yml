@@ -42,7 +42,7 @@ sections:
 
           The **Windows SDK** is a development platform that lets you build UWP apps and Win32/desktop apps. It's designed around Windows APIs that are coupled to particular versions of the OS.  
 
-          The Windows App SDK doesn't replace the Windows SDK. Instead, the Windows App SDK is a complement to the Windows SDK. It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs that you can already access using the Windows SDK. When you build apps with Windows App SDK, you might end up using some Windows SDK APIs depending on the functionality that you need. Over time, more Windows SDK functionality will be lifted into the Windows App SDK.
+          **The Windows App SDK doesn't replace the Windows SDK**. Instead, the Windows App SDK is a complement to the Windows SDK. It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs that you can already access using the Windows SDK. When you build apps with Windows App SDK, you might end up using some Windows SDK APIs depending on the functionality that you need. Over time, more Windows SDK functionality will be lifted into the Windows App SDK.
       - question: Can I use Windows App SDK and WinUI 3 in my existing Windows app?
         answer: |
           Note that WinUI 3 (a UI framework) ships with Windows App SDK (a Windows platform development framework).  
@@ -147,8 +147,11 @@ sections:
       - question: What's the difference between MSIX-packaged, unpackaged, and sparse-packaged apps?
         answer: |
           MSIX-packaged apps use MSIX to give users an easy installation, uninstallation, and update experience.  
+          
           Unpackaged apps don't use MSIX - instead, they use a non-MSIX installer. 
+          
           Sparse-packaging offers a hybrid between these two approaches. Sparse-packaged apps use MSIX to package, but they use a non-MSIX installer (like unpackaged apps) and they run with package identity (like packaged apps).  
+          
           Each type of app can be published to the Microsoft Store, but we encourage you to MSIX-package your app to ensure that end-users enjoy a seamless installation and update experience.
       - question: Will my WinUI 3 app automatically update for end-users? 
         answer: |
