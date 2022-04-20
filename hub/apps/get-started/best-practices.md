@@ -30,7 +30,7 @@ The following resources will help you incorporate the latest and recommended Win
    - [Caption control and title bar](/windows/apps/design/basics/titlebar-design) 
    - [Rounded geometry](/windows/apps/design/signature-experiences/geometry) 
    - Window border and shadow 
- - [On-object commanding](windows/apps/design/controls/collection-commanding#creating-context-menus) 
+ - [On-object commanding](/windows/apps/design/controls/collection-commanding#creating-context-menus) 
  - [Panning and scrolling](/windows/apps/design/input/guidelines-for-panning) 
  - Text editing
  - DPI awareness
@@ -40,7 +40,7 @@ The following resources will help you incorporate the latest and recommended Win
 
 ## Performance
 
-Improving the performance of your Windows application will improve its overall user experience. We encourage you to review [What is application performance and why is it important?](https://docs.microsoft.com/en-us/windows/apps/performance/#what-is-application-performance-and-why-is-it-important) to learn more about application performance, and how you can measure your application's performance.
+Improving the performance of your Windows application will improve its overall user experience. We encourage you to review [What is application performance and why is it important?](/windows/apps/performance/#what-is-application-performance-and-why-is-it-important) to learn more about application performance, and how you can measure your application's performance.
 
 Application performance considerations include:
 
@@ -50,11 +50,11 @@ Application performance considerations include:
  - Network and storage utilization
  - Animation performance
 
-Windows users expect applications to be responsive. You should be aware of how your application consumes system resources, and how you might be able to optimize. You can learn more about measuring your applications performance here: [When should you measure application performance?](https://docs.microsoft.com/en-us/windows/apps/performance/introduction#when-should-you-measure-application-performance).
+Windows users expect applications to be responsive. You should be aware of how your application consumes system resources, and how you might be able to optimize. You can learn more about measuring your applications performance here: [When should you measure application performance?](/windows/apps/performance/introduction#when-should-you-measure-application-performance).
 
-There are [several tools available](https://docs.microsoft.com/en-us/windows/apps/performance/#what-tools-can-i-use-to-measure-application-performance) to help you assess the performance of your Windows apps. These tools will help you monitor your app and its source code, and they can even provide detailed event tracing for your entire Windows operating system. They'll also help you analyze the memory management of .NET framework. Measuring and analyzing the performance charactieristics of your application will help you identify performance optimization opportunities. 
+There are [several tools available](/windows/apps/performance/#what-tools-can-i-use-to-measure-application-performance) to help you assess the performance of your Windows apps. These tools will help you monitor your app and its source code, and they can even provide detailed event tracing for your entire Windows operating system. They'll also help you analyze the memory management of .NET framework. Measuring and analyzing the performance charactieristics of your application will help you identify performance optimization opportunities. 
 
-For help deciding between performance profiling tools, see [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](https://docs.microsoft.com/en-us/windows/apps/performance/choose-between-tools).
+For help deciding between performance profiling tools, see [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](/windows/apps/performance/choose-between-tools).
 
 
 ## Operating System / Hardware Optimization
@@ -93,7 +93,7 @@ The following best practices will help you deliver secure Windows applications:
    - **Secure defaults** can prevent security issues caused by user error. 
  - **Don't require administrative privileges to install your app**. Ideally, your app should support both administrative installs and per-user installs. Using MSIX packaging is one way to achieve this. 
  - **Don't require administrative privileges to run your app.** If there are certain features that need administrative privileges, consider separating them into their own processes to reduce attack surface.  
- - Consider using techniques such as **AppContainer** (UWP) or **[process attribute flags](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)** to mitigate risk of vulnerabilities. This may require separating your code into a regular UI process and a more-secure child process where you can execute especially risky code like parsing untrusted data.
+ - Consider using techniques such as **AppContainer** (UWP) or **[process attribute flags](/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)** to mitigate risk of vulnerabilities. This may require separating your code into a regular UI process and a more-secure child process where you can execute especially risky code like parsing untrusted data.
  - Prefer to use languages with **guaranteed memory safety** (such as C#, JavaScript, or Rust), especially for risky code paths (like parsing untrusted data). 
  - Use all the provided security mitigations provided by your compiler / toolset (e.g. [see here](https://devblogs.microsoft.com/cppblog/security-features-in-microsoft-visual-c/) for Visual C++).
  - Always use standard libraries for cryptography or other security-sensitive code; do not try and build your own. 
