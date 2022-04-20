@@ -3,7 +3,7 @@ title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
 ms.topic: article
 ms.date: 10/08/2021
-keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview
+keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -22,6 +22,13 @@ But if you've decided to migrate your app from UWP to the Windows App SDK, then 
 For full details, see the topics below. They describe and demonstrate how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
 
 Take particular note of [What's supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported). That topic describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, then consider waiting to migrate.
+
+## Hybrid CRT
+
+In releases 1.0.2 and 1.1 and later, the Windows App SDK uses the Hybrid C runtime library (Hybrid CRT). This is a CRT linkage technique that simplifies deployment.
+
+* For more info, see the [Hybrid CRT coding guidelines](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md) on GitHub.
+* Also see the Hybrid CRT segment of the [WinUI community call](https://www.youtube.com/watch?v=bNHGU6xmUzE&t=977s) from April 20, 2022.
 
 ## Topics in this section
 
