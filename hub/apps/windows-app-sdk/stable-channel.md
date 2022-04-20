@@ -262,7 +262,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 **New Features and updates**
 -  You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for instructions.
 - Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md). 
-- Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](reference-framework-package-run-time.md#net-wrapper-for-the-bootstrapper-api). 
+- Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](use-windows-app-sdk-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api). 
 - Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see the [deployment guide for packaged apps](deploy-packaged-apps.md).
 
 **Important limitations**

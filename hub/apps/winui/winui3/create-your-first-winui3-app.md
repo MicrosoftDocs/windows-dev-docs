@@ -84,7 +84,7 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. Build and run.
 
-Instead of setting the **WindowsPackageType** project property to *None*, you can use the bootstrapper API (see [Reference the Windows App SDK framework package at run time](/windows/apps/windows-app-sdk/reference-framework-package-run-time) to initialize the [Bootstrapper](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper). For more details on that option, see [Build and deploy an unpackaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+Instead of setting the **WindowsPackageType** project property to *None*, you can use the bootstrapper API (see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) to initialize the [Bootstrapper](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper). For more details on that option, see [Build and deploy an unpackaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
 
 ## A look at the code in the project template
 
@@ -132,7 +132,7 @@ To continue your development journey with the Windows App SDK, see [Develop Wind
 * [WinUI 3 project templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio)
 * [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
 * [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist)
-* [Reference the Windows App SDK framework package at run time](/windows/apps/windows-app-sdk/reference-framework-package-run-time)
+* [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 * [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
 * [Build and deploy an unpackaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 * [Develop Windows desktop apps](/windows/apps/develop/)
