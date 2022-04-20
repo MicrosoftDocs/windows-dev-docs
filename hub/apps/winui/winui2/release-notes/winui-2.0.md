@@ -20,7 +20,7 @@ It includes two NuGet packages:
 
 You can download and use WinUI packages in your app using the NuGet package manager: see [Getting Started with the Windows UI Library](/uwp/toolkits/winui/getting-started) for more information.
 
-WinUI is an open source project hosted on GitHub. We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
+WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests and community code contributions.
 
 ## Microsoft.UI.Xaml 2.0.181011001
 

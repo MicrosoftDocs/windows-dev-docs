@@ -39,7 +39,7 @@ The Xaml Controls Gallery sample app includes interactive demos and sample code 
 - Install the XAML Controls Gallery app from the [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-- Download the open source [Xaml Controls Gallery project](https://github.com/Microsoft/Xaml-Controls-Gallery) from [GitHub](https://github.com)
+- Download the [Xaml Controls Gallery project](https://github.com/Microsoft/Xaml-Controls-Gallery) from [GitHub](https://github.com)
 
 ## Documentation
 
@@ -51,9 +51,9 @@ API reference docs are located at [Windows UI Library APIs](/windows/winui/api/)
 
 For instructions on installing and using the WinUI 2 library, see [Getting started with the Windows UI Library](getting-started.md).
 
-## Open source and developer roadmap
+## Developer roadmap
 
-WinUI is an open source project hosted on GitHub. We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
+WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
 
 We are continuing to develop and evolve WinUI to support more developer scenarios. For the latest details about our plans for WinUI, see our [roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) on the Windows UI Library repo.
 
