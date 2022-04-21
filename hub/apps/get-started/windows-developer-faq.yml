@@ -86,7 +86,7 @@ sections:
       - question: Where can I find Windows App SDK migration guidance?
         answer: |
           See [About migrating from UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
-      - question: Do you need to use XAML if you want to use WinUI 3?
+      - question: Do I need to use XAML markup if I want to use WinUI 3?
         answer: |
           No. UI controls can be created in code. But there are many benefits to representing your WinUI 3 UI in the form of declarative XAML markup, such as improved developer experience. 
 
