@@ -74,6 +74,7 @@ sections:
 
            1. **Project file and MSBuild customization:** Migrating your project may require a significant level of effort, depending on whether you used advanced MSBuild features. 
            2. **.NET API migration:** If your UWP app relies on .NET, you'll need to upgrade to .NET 6. In most cases, adopting .NET 6 will be straightfoward.
+           3. **UI component libraries:** If you use UI component libraries, you'll need new versions of them that target WinUI 3.
 
           See [About migrating from UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
       - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
