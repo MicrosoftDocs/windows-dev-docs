@@ -111,8 +111,7 @@ sections:
       - question: What's the difference between XAML Islands and WinUI 3?
         answer: |
           XAML Islands allow you to host modern WinUI controls alongside existing Win32 UI from other frameworks, such as WinForms and WPF. 
-
-          Today, XAML Islands are supported with WinUI 2 controls. XAML Islands support for WinUI 3 controls is currently under development.
+          Today, XAML Islands are supported with _most_ system XAML and WinUI 2 controls. See [here](/windows/apps/desktop/modernize/xaml-islands) for more information. XAML Islands support for WinUI 3 controls is currently under development.
       - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10?
         answer: |
           Yes, your app's UI will inherit the latest Fluent UI design principles on all supported versions of Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
