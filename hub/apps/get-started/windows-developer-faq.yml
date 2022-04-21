@@ -38,7 +38,7 @@ sections:
         answer: |
           Both are software development kits (SDKs) that let you build Windows apps.  
 
-          The **Windows App SDK** is a new development platform that lets you build modern desktop apps that can be installed across Windows versions (down to Win10 1809). When you use Windows App SDK to build an app, you’ll have access to the latest Windows development platform features. The Windows App SDK ships with WinUI 3. 
+          The **Windows App SDK** is a new development platform that lets you build modern desktop apps that can be installed across Windows versions (down to Win10 1809). When you use Windows App SDK to build an app, you’ll have access to the latest Windows development platform features. The Windows App SDK includes WinUI 3.
 
           The **Windows SDK** is a development platform that lets you build UWP apps and Win32/desktop apps. It's designed around Windows APIs that are coupled to particular versions of the OS.  
 
