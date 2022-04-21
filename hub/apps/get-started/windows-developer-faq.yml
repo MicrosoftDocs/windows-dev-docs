@@ -176,7 +176,7 @@ sections:
     questions:
       - question: Are UWP / WinUI 2 deprecated?
         answer: |
-          No. UWP and WinUI 2 are still supported and will receive bug, reliability, and security fixes. However, most new features and capabilities, including support for the latest .NET runtimes, will be added to the Windows App SDK / WinUI 3. 
+          No. UWP and WinUI 2 are still supported and will receive bug, reliability, and security fixes. However, most new features and capabilities, including support for the latest .NET runtimes, will only be added to the Windows App SDK / WinUI 3. 
       - question: When should I migrate a UWP / WinUI 2 app to WinUI 3?
         answer: |
           UWP developers should feel no pressure to migrate their apps to the Windows App SDK, if they are happy with UWP and its feature set. The best choice for some apps may be to never migrate. 
