@@ -155,7 +155,7 @@ sections:
           Each type of app can be published to the Microsoft Store, but we encourage you to MSIX-package your app to ensure that end-users enjoy a seamless installation and update experience.
       - question: Will my WinUI 3 app automatically update for end-users? 
         answer: |
-          A Windows App SDK / WinUI 3 app can be delivered through the Store, a .appinstaller file, or in your existing MSI or setup.exe package. Store and AppInstaller support auto-update for end-users who have automatic updating enabled, but your MSI/setup.exe app needs to have its own updater. 
+          A Windows App SDK / WinUI 3 app can be delivered through the Store, an .appinstaller file, or in your existing MSI or setup.exe package. The Store and the AppInstaller support automatic updates for end-users who have automatic updating enabled, but your MSI/setup.exe app needs to have its own updater. 
       - question: Can I use Windows App SDK without using MSBuild?
         answer: |
           Generally speaking, no. WinUI 3 and Windows App SDK require MSBuild, which is why Visual Studio is a prerequisite to Windows App SDK / WinUI 3 application development. While It's technically possible to build Windows App SDK apps that don’t use WinUI 3 using other toolchains, this isn’t supported. 
