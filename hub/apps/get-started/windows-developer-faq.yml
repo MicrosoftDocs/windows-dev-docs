@@ -45,7 +45,7 @@ sections:
           **The Windows App SDK doesn't replace the Windows SDK**. Instead, the Windows App SDK is a complement to the Windows SDK. It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs that you can already access using the Windows SDK. When you build apps with Windows App SDK, you might end up using some Windows SDK APIs depending on the functionality that you need. Over time, more Windows SDK functionality will be lifted into the Windows App SDK.
       - question: Can I use Windows App SDK / WinUI 3 in my existing Windows app?
         answer: |
-          Note that [WinUI 3](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/) (a UI framework) ships with [Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/) (a Windows platform development framework).  
+          Note that [WinUI 3](/windows/apps/winui/winui3/) (a UI framework) ships with [Windows App SDK](/windows/apps/windows-app-sdk/) (a Windows platform development framework).  
 
           Generally speaking, you can't use WinUI 3 unless you're ready to migrate your UI framework entirely. We’re working on a feature called XAML islands that allow you to mix multiple UI framework components. 
 
