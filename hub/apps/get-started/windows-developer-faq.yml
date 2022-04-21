@@ -180,7 +180,7 @@ sections:
       - question: When should I migrate a UWP / WinUI 2 app to WinUI 3?
         answer: |
           UWP developers should feel no pressure to migrate their apps to the Windows App SDK, if they are happy with UWP and its feature set. The best choice for some apps may be to never migrate. 
-          For apps that want to benefit from the latest Windows platform & .NET investments from Microsoft, these apps should consider moving to the Windows App SDK. 
+          For apps that want to benefit from the latest Windows platform and .NET investments from Microsoft, these apps should consider moving to the Windows App SDK. 
           See [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)).
       - question: When should I *not* migrate a UWP + WinUI 2 app to WinUI 3?
         answer: |
