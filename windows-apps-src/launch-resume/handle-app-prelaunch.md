@@ -104,7 +104,7 @@ private void TryEnablePrelaunch()
 ```
 
 > [!IMPORTANT]
-> The **TryEnablePrelaunch** method in the code example above (with its call to **CoreApplication.EnablePrelaunch**) is itself called only when the app is running on a version of Windows that supports **CoreApplication.EnablePrelaunch**. In general, if there's any doubt, then call a method only after determining that the platform supports it. And you can do that by means of the [**ApiInformation**](/uwp/api/windows.foundation.metadata.apiinformation) class, as shown in the code example above.
+> The **TryEnablePrelaunch** method in the code example above calls **CoreApplication.EnablePrelaunch**. And **TryEnablePrelaunch** is itself called only when the app is running on a version of Windows that supports **CoreApplication.EnablePrelaunch**. In general, if there's any doubt, then you should use a Windows API *only after determining that it is supported by the platform that your code is running on*. And you can do that by means of the [**ApiInformation**](/uwp/api/windows.foundation.metadata.apiinformation) class, as shown in the code example above.
 
 There's also code in the example above that you can uncomment if your app needs to opt out of prelaunch when running on Windows 10, version 1511. In version 1511, all UWP apps were automatically opted in to prelaunch, which might not be appropriate for your app.
 
