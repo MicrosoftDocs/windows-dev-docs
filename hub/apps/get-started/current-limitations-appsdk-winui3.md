@@ -11,6 +11,7 @@ ms.custom: seo-windows-dev
 
 This document details noteworthy limitations of Windows App SDK / WinUI 3 across major and minor releases back to version 1.0.
 
+<!-- {mick} this is blocked - need to align with product -->
 <!-- {mick} consider pulling "Features by Release" here, or incorporating the below into FbR, as a table with features as rows and major/minor releases as columns. -->
 
 ### Version 1.1 (preview)
