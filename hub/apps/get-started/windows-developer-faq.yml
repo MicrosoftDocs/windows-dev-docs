@@ -47,7 +47,7 @@ sections:
         answer: |
           Note that [WinUI 3](/windows/apps/winui/winui3/) (a UI framework) ships with [Windows App SDK](/windows/apps/windows-app-sdk/) (a Windows platform development framework).  
 
-          Generally speaking, you can't use WinUI 3 unless you're ready to migrate your UI framework entirely. We’re working on a feature called XAML islands that allow you to mix multiple UI framework components. 
+          Generally speaking, you can't use WinUI 3 unless you're ready to migrate your UI framework entirely. We’re working on a feature called XAML islands that allow you to host WinUI 3 content in other UI frameworks (WPF, Win32).
 
           You should be able to use elements of the Windows App SDK in any Win32/desktop app, depending on how your existing app was built. UWP apps are not supported by Windows App SDK / WinUI 3. 
 
