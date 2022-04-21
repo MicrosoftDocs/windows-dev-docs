@@ -21,8 +21,8 @@ sections:
           Other options may be more appropriate depending on what you’re building and how you’re building it:
 
           - **If Windows App SDK / WinUI 3 don’t meet your needs** based on the [current limitations of Windows App SDK / WinUI 3](current-limitations-appsdk-winui3.md), you can use UWP / WinUI 2.
-          - **If you're targeting cross-platform:** [React Native](https://microsoft.github.io/react-native-windows/) and [.NET MAUI](https://docs.microsoft.com/en-us/dotnet/maui/what-is-maui) let you build cross-platform apps. .NET MAUI is a great choice for C# developers. React Native will feel familiar to JavaScript/TypeScript developers.
-          - **If you're a web developer:** You can use [WebView2](https://docs.microsoft.com/en-us/microsoft-edge/webview2/) as an application host. This lets you use web technology to build desktop apps that can access the Windows SDK and Windows App SDK APIs. You can also use React Native for Windows.  
+          - **If you're targeting cross-platform:** [React Native](https://aka.ms/reactnative) and [.NET MAUI](/dotnet/maui/what-is-maui) let you build cross-platform apps. .NET MAUI is a great choice for C# developers. React Native will feel familiar to JavaScript/TypeScript developers.
+          - **If you're a web developer:** You can use [WebView2](/microsoft-edge/webview2/) as an application host. This lets you use web technology to build desktop apps that can access the Windows SDK and Windows App SDK APIs. You can also use React Native for Windows.  
           - **If you're a C++ developer:** For desktop apps, Windows App SDK / WinUI 3 are a great choice. If you're building a game, consider using DirectX. C++ developers may also enjoy using [Rust for Windows](/windows/dev-environment/rust/rust-for-windows) to build non-GUI apps.  
 
           There are other development technologies that may be more appropriate depending on your needs and technology preferences. [Learn more about choosing a development technology](./index.md).
@@ -45,7 +45,7 @@ sections:
           **The Windows App SDK doesn't replace the Windows SDK**. Instead, the Windows App SDK is a complement to the Windows SDK. It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs that you can already access using the Windows SDK. When you build apps with Windows App SDK, you might end up using some Windows SDK APIs depending on the functionality that you need. Over time, more Windows SDK functionality will be lifted into the Windows App SDK.
       - question: Can I use Windows App SDK / WinUI 3 in my existing Windows app?
         answer: |
-          Note that [WinUI 3](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/) (a UI framework) ships with [Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/) (a Windows platform development framework).  
+          Note that [WinUI 3](/windows/apps/winui/winui3/) (a UI framework) ships with [Windows App SDK](/windows/apps/windows-app-sdk/) (a Windows platform development framework).  
 
           Generally speaking, you can't use WinUI 3 unless you're ready to migrate your UI framework entirely. We’re working on a feature called XAML islands that allow you to mix multiple UI framework components. 
 
@@ -111,8 +111,7 @@ sections:
       - question: What's the difference between XAML Islands and WinUI 3?
         answer: |
           XAML Islands allow you to host modern WinUI controls alongside existing Win32 UI from other frameworks, such as WinForms and WPF. 
-
-          Today, XAML Islands are supported with WinUI 2 controls. XAML Islands support for WinUI 3 controls is currently under development.
+          Today, XAML Islands are supported with _most_ system XAML and WinUI 2 controls. See [here](/windows/apps/desktop/modernize/xaml-islands) for more information. XAML Islands support for WinUI 3 controls is currently under development.
       - question: If I use WinUI 3, will my app look modern on both Windows 11 and Windows 10?
         answer: |
           Yes, your app's UI will inherit the latest Fluent UI design principles on all supported versions of Windows 11 and Windows 10 down to version 1809 in both packaged and unpackaged scenarios.
@@ -156,7 +155,7 @@ sections:
           Each type of app can be published to the Microsoft Store, but we encourage you to MSIX-package your app to ensure that end-users enjoy a seamless installation and update experience.
       - question: Will my WinUI 3 app automatically update for end-users? 
         answer: |
-          A Windows App SDK / WinUI 3 app can be delivered through the Store, a .appinstaller file, or in your existing MSI or setup.exe package. Store and AppInstaller support auto-update for end-users who have automatic updating enabled, but your MSI/setup.exe app needs to have its own updater. 
+          A Windows App SDK / WinUI 3 app can be delivered through the Store, an .appinstaller file, or in your existing MSI or setup.exe package. The Store and the AppInstaller support automatic updates for end-users who have automatic updating enabled, but your MSI/setup.exe app needs to have its own updater. 
       - question: Can I use Windows App SDK without using MSBuild?
         answer: |
           Generally speaking, no. WinUI 3 and Windows App SDK require MSBuild, which is why Visual Studio is a prerequisite to Windows App SDK / WinUI 3 application development. While It's technically possible to build Windows App SDK apps that don’t use WinUI 3 using other toolchains, this isn’t supported. 
@@ -177,11 +176,11 @@ sections:
     questions:
       - question: Are UWP / WinUI 2 deprecated?
         answer: |
-          No. UWP and WinUI 2 are still supported and will receive bug, reliability, and security fixes. However, most new features and capabilities, including support for the latest .NET runtimes, will be added to the Windows App SDK / WinUI 3. 
+          No. UWP and WinUI 2 are still supported and will receive bug, reliability, and security fixes. However, most new features and capabilities, including support for the latest .NET runtimes, will only be added to the Windows App SDK / WinUI 3. 
       - question: When should I migrate a UWP / WinUI 2 app to WinUI 3?
         answer: |
           UWP developers should feel no pressure to migrate their apps to the Windows App SDK, if they are happy with UWP and its feature set. The best choice for some apps may be to never migrate. 
-          For apps that want to benefit from the latest Windows platform & .NET investments from Microsoft, these apps should consider moving to the Windows App SDK. 
+          For apps that want to benefit from the latest Windows platform and .NET investments from Microsoft, these apps should consider moving to the Windows App SDK. 
           See [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)).
       - question: When should I *not* migrate a UWP + WinUI 2 app to WinUI 3?
         answer: |

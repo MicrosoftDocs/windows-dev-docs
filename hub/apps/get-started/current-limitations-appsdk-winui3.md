@@ -20,7 +20,7 @@ This document details noteworthy limitations of Windows App SDK / WinUI 3 across
 - XAML Islands aren't supported yet.
 - Media, map, and inking controls aren't supported yet.
 - App lifecycle management isn't supported yet.
-- Hololens, Xbox, and Surface Hub aren't supported.
+- HoloLens, Xbox, and Surface Hub aren't supported.
 
 
 ### Version 1.0 (latest release)
@@ -29,9 +29,9 @@ This document details noteworthy limitations of Windows App SDK / WinUI 3 across
 - Local toast notifications aren't supported yet.
 - XAML Islands aren't supported yet.
 - Media, map, and inking controls aren't supported yet.
-- Mica (Win11) and Acrylic (Win10) backgrounds aren't supported yet.
+- [Mica and Acrylic materials](/windows/apps/design/signature-experiences/materials) aren't supported yet.
 - App lifecycle management isn't supported yet.
-- Hololens, Xbox, and Surface Hub aren't supported.
+- HoloLens, Xbox, and Surface Hub aren't supported.
 
 
 ## See also
