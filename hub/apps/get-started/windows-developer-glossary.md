@@ -61,7 +61,7 @@ The codename for the Windows App SDK. No longer in use.
 [React Native](https://reactnative.dev/) is a development platform from Meta which allows developers to build fully native cross-platform apps using JavaScript, TypeScript, and React. [React Native for Windows](https://aka.ms/reactnative) brings React Native support to the Windows 10 and Windows 11 SDKs, enabling developers to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 #### Sparse packaging
-Sparse packaging offers a hybrid between packaged and unpackaged. Sparse-packaged apps use MSIX to package, but they use a non-MSIX installer (like unpackaged apps) and they run with package identity (like packaged apps). You can think of sparse-packaged apps as apps with “Bring-Your-Own-Installer" (BYOI). The app is packaged using MSIX, but you use a non-MSIX/non-appxsvc installer to install/update/service your app.
+Sparse packaging offers a hybrid between packaged and unpackaged. Sparse-packaged apps use MSIX to package, but they use a non-MSIX installer (like unpackaged apps) and they run with package identity (like packaged apps). You can think of sparse-packaged apps as apps with “Bring-Your-Own-Installer" (BYOI).
 
 #### Universal Windows Platform (UWP)
 An application development platform and application model that uses WinRT APIs to deliver packaged apps. UWP apps run in a sandboxed environment and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
