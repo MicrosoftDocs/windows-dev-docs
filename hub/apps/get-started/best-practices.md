@@ -12,7 +12,10 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-This document identifies a collection of best practices that will help you build great apps that run on Windows and are optimized to delight the ~1.5 billion diverse PC users around the world. These guidelines are technology-agnostic.
+This document identifies a collection of best practices that will help you build great apps that run on Windows and are optimized to delight the ~1.5 billion diverse PC users around the world. These best practices apply to all forms of Windows application development.
+
+> [!NOTE]
+> This is a sparse draft that still needs a significant amount of editorial refinement. As the draft content stabilizes in the Word doc, content partners will begin importing that information into this doc, where customer-facing copy will be drafted and finalized.
 
 
 ## User Experience (UX)
