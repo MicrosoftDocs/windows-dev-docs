@@ -76,7 +76,7 @@ Apps that don't use MSIX. They're typically installed and updated through `.exe`
 Lets you create, package, and deploy Visual Studio extensions. [Get started with the VSIX Project template](/visualstudio/extensibility/getting-started-with-the-vsix-project-template).
 
 #### WebView2
-A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI 3, Win32 C++, WPF, WinForms and it has a developer preview in WinUI 2/UWP.
+A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI 3, Win32 C++, WPF, and WinForms, and it offers a developer preview for WinUI 2 / UWP support. See [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/).
 
 #### Windows API
 Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of WinAppSDK and WinUI 3.
