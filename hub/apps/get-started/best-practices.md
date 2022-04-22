@@ -43,7 +43,7 @@ The following resources will help you incorporate the latest and recommended Win
 
 ## Performance
 
-Improving the performance of your Windows application will improve its overall user experience. We encourage you to review [What is application performance and why is it important?](/windows/apps/performance/#what-is-application-performance-and-why-is-it-important) to learn more about application performance, and how you can measure your application's performance.
+Improving the performance of your Windows application will improve its overall user experience. We encourage you to review [What is application performance and why is it important?](/windows/apps/performance/#what-is-application-performance-and-why-is-it-important) to learn more.
 
 Application performance considerations include:
 
