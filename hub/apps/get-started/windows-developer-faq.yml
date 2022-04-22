@@ -74,7 +74,7 @@ sections:
            2. **.NET API migration:** If your UWP app relies on .NET, you'll need to upgrade to .NET 6. In most cases, adopting .NET 6 will be straightfoward.
            3. **UI component libraries:** If you use UI component libraries, you'll need new versions of them that target WinUI 3.
 
-          See [About migrating from UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk) for more information about UWP migration. See the [Windows App SDK Roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md) for more information about current limitations and upcoming features.
+          See [About migrating from UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk) for more information about UWP migration. See the [Windows App SDK Roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md) for more information about upcoming features that may support your migration needs.
       - question: If I have an existing UWP app in the Store, can I publish a new packaged WinUI 3 app using the same identifiers?
         answer: |
           Yes, upgraded apps can be published without having to update your application's identity. Users who have the old version will get updated to the new version. This guidance applies only to desktop apps. Xbox, HoloLens, and Surface Hub apps can't migrate to WinUI 3 yet. 
