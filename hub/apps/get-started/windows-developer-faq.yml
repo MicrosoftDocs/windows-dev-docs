@@ -95,7 +95,7 @@ sections:
       - question: Does Windows App SDK include WinUI 3?
         answer: |
           Yes. WinUI 3 ships as a part of the Windows App SDK.
-      - question: Does Windows App SDK include WinUI 2?
+      - question: Does Windows App SDK include WinUI 2? 
         answer: |
           No. WinUI 2 is part of the UWP platform.
       - question: Are WinUI 2 and WinUI 3 built on the same technology?
