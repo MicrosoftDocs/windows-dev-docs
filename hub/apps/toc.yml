@@ -371,6 +371,8 @@ items:
               - name: "Bootstrapper C++ API"
                 href: api-reference/bootstrapper-cpp-api/index.md
                 items: 
+                  - name: "Constants for use with the Bootstrapper C++ API"
+                    href: api-reference/bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md
                   - name: "Microsoft::Windows::ApplicationModel namespace"
                     href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
                     items: 
@@ -388,6 +390,8 @@ items:
           - name: "Bootstrapper C# APIs"
             href: api-reference/cs-bootstrapper-apis/index.md
             items: 
+              - name: "Constants for use with the Bootstrapper C# APIs"
+                href: api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
               - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
                 href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
                 items: 
