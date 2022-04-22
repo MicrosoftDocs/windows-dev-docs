@@ -85,7 +85,7 @@ Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP Win
 A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development (see [the Windows App SDK Roadmap](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md)). It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See [Overview of app development options](/windows/apps/get-started/?tabs=cpp-win32).
 
 #### Windows Forms
-Also known as WinForms. A UI framework for building Windows desktop applications. It is a .NET wrapper over Windows user interface libraries, such as User32 and GDI+. It’s a battle-tested way to create desktop applications using a visual designer within Visual Studio.
+Also known as WinForms. A UI framework for building Windows desktop applications. It is a .NET wrapper over Windows user interface libraries, such as User32 and GDI+. It’s a battle-tested way to create desktop applications using a visual designer within Visual Studio. See [Desktop Guide (Windows Forms .NET)](/dotnet/desktop/winforms/overview/?view=netdesktop-6.0).
 
 #### Windows SDK
 The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. Not to be confused with the [Windows App SDK](#windows-app-sdk).
@@ -94,13 +94,13 @@ The Windows SDK is a collection of headers, libraries, metadata, and tools that 
 The Windows UI Library (WinUI) is the modern native user interface (UX) framework for both Windows desktop and UWP applications. [Windows UI Library (WinUI)](/windows/apps/winui/). 
 
 #### WinUI 2
-Windows UI Library (WinUI) 2 is tightly integrated with Windows 10 and later SDKs and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands).
+Windows UI Library (WinUI) 2 is tightly integrated with Windows 10 and later SDKs and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](/windows/apps/winui/winui2/).
 
 #### WinUI 3
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses Fluent Design to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2.
+The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses Fluent Design to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/).
 
 #### Windows Presentation Foundation (WPF)
-A UI framework for building Windows desktop applications. WPF applications are based on a vector graphics architecture. This enables applications to look great on high DPI monitors, as they can be infinitely scaled.
+A UI framework for building Windows desktop applications. WPF applications are based on a vector graphics architecture. This enables applications to look great on high DPI monitors, as they can be infinitely scaled. See [What is Windows Presentation Foundation (WPF)?](/visualstudio/designers/getting-started-with-wpf?view=vs-2022).
 
 #### XAML Islands
 XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands).
