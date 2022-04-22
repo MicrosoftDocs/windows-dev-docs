@@ -42,7 +42,7 @@ items:
           href: get-started/samples.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
-        - name: Windows developer Glossary 
+        - name: Windows developer glossary 
           href: get-started/windows-developer-glossary.md
   - name: Setup guides and resources
     items:
