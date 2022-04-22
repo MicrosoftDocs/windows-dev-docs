@@ -1,6 +1,6 @@
 ---
 title: Constants for use with the Bootstrapper C# APIs
-description: The following constants (for use with the Bootstrapper C# APIs) are declared in `WindowsAppSDK-VersionInfo.cs`.
+description: The following constants are for use with the Bootstrapper C# APIs.
 ms.topic: article
 ms.date: 04/21/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API, constants
@@ -11,7 +11,7 @@ ms.localizationpriority: low
 
 # Constants for use with the Bootstrapper C# APIs
 
-The following constants (for use with the Bootstrapper C# APIs) are declared in `WindowsAppSDK-VersionInfo.cs`.
+The following constants are for use with the Bootstrapper C# APIs.
 
 ## Definition
 

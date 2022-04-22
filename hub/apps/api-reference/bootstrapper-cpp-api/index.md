@@ -17,6 +17,7 @@ The Bootstrapper C++ API is a set of types and functions (callable only from C++
 
 | Topic | Description |
 | - | - |
+| [Constants for use with the Bootstrapper C++ API](bootstrapper-cpp-api-constants.md) | The following constants (for use with the Bootstrapper C++ API) are declared in `WindowsAppSDK-VersionInfo.h`. |
 | [Microsoft::Windows::ApplicationModel namespace](microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md) | Types and functions from the Bootstrapper C++ API that are in the (**Microsoft::Windows**) **ApplicationModel** namespace. For example, a class that represents a version of the Windows App SDK framework package. |
 | [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md) | Types and functions from the Bootstrapper C++ API that are in the (**Microsoft::Windows::ApplicationModel::DynamicDependency**) **Bootstrap** namespace. For example, helper functions that wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/). |
 

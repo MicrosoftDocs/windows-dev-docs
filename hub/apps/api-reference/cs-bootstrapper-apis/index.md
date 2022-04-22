@@ -19,6 +19,7 @@ These types are available in .NET 5 and later as part of the [Windows App SDK](/
 
 | Topic | Description |
 | - | - |
+| [Constants for use with the Bootstrapper C# APIs](cs-bootstrapper-apis-constants.md) | The following constants are for use with the Bootstrapper C# APIs. |
 | [Microsoft.Windows.ApplicationModel.DynamicDependency namespace](microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md) | C# Bootstrapper APIs in the **Microsoft.Windows.ApplicationModel.DynamicDependency** namespace. |
 
 ## See also
