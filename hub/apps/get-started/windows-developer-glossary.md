@@ -4,7 +4,7 @@ title: Windows Developer Glossary
 ms.topic: article
 ms.date: 01/24/2022
 ms.author: mikben
-author: mikben
+author: MatchaMatch
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
