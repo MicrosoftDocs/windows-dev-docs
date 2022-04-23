@@ -24,7 +24,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 
 Inside the PowerToys Settings window, on the Image Resizer tab, you can configure the following settings.
 
-![PowerToys Image Resize Settings Menu](../images/powertoys-imageresize-settings.png)
+![PowerToys Image Resizer Settings](../images/powertoys-imageresize-settings.png)
 
 ### Sizes
 

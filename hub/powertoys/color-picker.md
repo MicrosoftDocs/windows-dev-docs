@@ -51,7 +51,7 @@ The editor also allows you to fine-tune any picked color or get a new similar co
 
 The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine-tuning configuration control will appear, where you can change HSV or RGB values of the current color. Pressing <kbd>Select</kbd> will add newly configured color into the colors history.
 
-![ColorPicker Editor](../images/pt-colorpicker-editor.gif)
+![ColorPicker Editor window](../images/pt-colorpicker-editor.gif)
 
 To remove any color from the colors history, right click a color and select **Remove**.
 

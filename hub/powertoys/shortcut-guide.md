@@ -45,4 +45,4 @@ These configurations can be edited from the PowerToys Settings:
 | Opacity of background | Opacity of the Shortcut Guide overlay |
 | Exclude apps | Ignores Shortcut Guide when these apps are in focus |
 
-![Image of the Options](../images/pt-shortcut-guide-settings.png)
+![Shortcut Guide settings](../images/pt-shortcut-guide-settings.png)
