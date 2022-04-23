@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Always on Top, Win]
 
 A system-wide utility for Windows that allows you to pin windows to the top of all your windows.
 
-![ColorPicker](../images/pt-always-on-top.png)
+![AlwaysOnTop screenshot](../images/pt-always-on-top.png)
 
 ### Toggle windows to be on top
 
