@@ -1,6 +1,6 @@
 ---
 title: Design guidelines for Windows app icons
-description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
+description: How to design a beautiful app icon that perfectly and clearly represents your app.
 keywords: windows 10, uwp
 author: hickeys
 ms.author: hickeys

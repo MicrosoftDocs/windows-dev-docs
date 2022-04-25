@@ -1,6 +1,6 @@
 ---
 title: Iconography in Windows
-description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
+description: Design and create an app icon for your Windows app. 
 keywords: windows 10, uwp
 author: hickeys
 ms.author: hickeys
