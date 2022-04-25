@@ -1,6 +1,6 @@
 ---
 title: Create icons using Visual Studio's asset generation tool
-description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
+description: Use the Visual Studio asset generation tool to create a variety of icon files from just one image.
 keywords: windows 10, uwp
 author: hickeys
 ms.author: hickeys
