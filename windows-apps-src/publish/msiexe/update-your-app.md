@@ -8,7 +8,7 @@ keywords: windows 10, windows 11, windows, windows store, store, msi, exe, updat
 ms.localizationpriority: medium
 ---
 
-# Update your MSI or EXE app on the Store
+# Publish update for your EXE or MSI app on the Store
 
 We recommend you submit updates for your EXE or MSI apps through the Store. The Store allows existing users to install app updates through the Store, if your installer supports it. The Store does not provide these updates automatically to existing users. 
 
