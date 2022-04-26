@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Developer Mode features and debugging
 
-If you're just interested in the basics of installing developer mode on your app, you can just follow the instructions outlined in [enable your device for development](enable-your-device-for-development.md) to get started. this article covers advanced features of developer mode, developer mode on previous versions of Windows 10, and debugging failures in Developer Mode installation.
+If you're just interested in the basics of installing developer mode on your app, you can just follow the instructions outlined in [enable your device for development](enable-your-device-for-development.md) to get started. This article covers advanced features of developer mode, developer mode on previous versions of Windows 10, and debugging failures in Developer Mode installation.
 
 ## Additional Developer Mode features
 
@@ -21,7 +21,7 @@ This image shows developer features for Windows 10:
 
 ### <span id="device-discovery-and-pairing"></span>Device Portal
 
-To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal.md).
+To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal).
 
 
 For device specific setup instructions, see:
@@ -38,11 +38,11 @@ If you encounter problems enabling Developer Mode or Device Portal, see the [Kno
 > [!IMPORTANT]
 > As of the latest Windows 10 update, this setting won't be visible, as sideloading is enabled by default. If you are on a previous version of Windows 10, your default settlings will only permit you to run apps from the Microsoft Store, and you must enable Sideloading to install apps from non-Microsoft sources.
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10) and [Microsoft Intune fundamentals](/mem/intune/fundamentals/).
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10) and [Microsoft Intune fundamentals](/mem/intune/fundamentals/).
 
 Device family specific info
 
--   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](/windows/msix/package/packaging-uwp-apps).
+-   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 -   On the mobile device family: If the required certificate is already installed, you can tap the file to install any .appx sent to you via email or on an SD card.
 
@@ -55,7 +55,7 @@ Device family specific info
 
 ### SSH
 
-SSH services are enabled when you enable Device Discovery on your device.  This is used when your device is a remote deployment target for UWP applications.   The names of the services are 'SSH Server Broker' and 'SSH Server Proxy'.
+SSH services are enabled when you enable Device Discovery on your device.  This is used when your device is a remote deployment target for MSIX packaged applications. The names of the services are 'SSH Server Broker' and 'SSH Server Proxy'.
 
 > [!NOTE]
 > This is not Microsoft's OpenSSH implementation, which you can find on [GitHub](https://github.com/PowerShell/Win32-OpenSSH).  
@@ -81,12 +81,12 @@ You should enable device discovery only if you intend to make the device a deplo
 
 
 ## Notes
-In early versions of Windows 10 Mobile, a Crash Dumps option was present in the Developer Settings menu.  This has been moved to [Device Portal](/windows/uwp/debug-test-perf/device-portal.md) so that it can be used remotely rather than just over USB.  
+In early versions of Windows 10 Mobile, a Crash Dumps option was present in the Developer Settings menu.  This has been moved to [Device Portal](/windows/uwp/debug-test-perf/device-portal) so that it can be used remotely rather than just over USB.  
 
 There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Both of the ways listed install only the app package (.appx/.appxbundle); they do not install certificates.
 
 -   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](/previous-versions/windows/apps/mt203806(v=vs.140)).
--   You can use [Device Portal](/windows/uwp/debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](/windows/uwp/debug-test-perf/device-portal.md#apps-manager)** page in Device Portal to upload an app package (.appx) and install it on the device.
+-   You can use [Device Portal](/windows/uwp/debug-test-perf/device-portal) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](/windows/uwp/debug-test-perf/device-portal#apps-manager)** page in Device Portal to upload an app package (.appx) and install it on the device.
 
 ## Failure to install Developer Mode package
 Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device.

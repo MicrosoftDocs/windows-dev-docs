@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # import command (winget)
 
-The **import** command of the [winget](index.md) tool imports a JSON file of apps to install. The **import** command combined with the [**export**](.\export.md) command allows you to batch install applications on your PC.
+The **import** command of the [winget](index.md) tool imports a JSON file of apps to install. The **import** command combined with the [**export**](./export.md) command allows you to batch install applications on your PC.
 
 The **import** command is often used to share your developer environment or build up your PC image with your favorite apps.
 
@@ -16,7 +16,7 @@ The **import** command is often used to share your developer environment or buil
 
 `winget import [-i] <import-file> [<options>]`
 
-![Image of import command options](images\import.png)
+![Image of import command options](./images/import.png)
 
 ## Arguments
 
@@ -34,6 +34,9 @@ The options allow you to customize the import experience to meet your needs.
 |-------------|-------------|  
 | **--ignore-unavailable**  |  Suppresses errors if the app requested is unavailable.  |
 | **--ignore-versions** |  Ignores versions specified in the JSON file and installs the latest available version. |
+| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ## JSON Schema
 
@@ -45,13 +48,13 @@ The JSON file includes the following hierarchy.
 |-------------|-------------|  
 | **Sources**  |  The sources application manifests come from.  |
 | **Packages**  |  The collection of packages to install.  |
-| **Id**  |  The Windows Package Manager package identifier used to specify the package.  |
+| **PackageIdentifier**  |  The Windows Package Manager package identifier used to specify the package.  |
 | **Version**  |  [optional] The specific version of the package to install.  |
 
 ## Importing files
 
 When the Windows Package Manager imports the JSON file, it attempts to install the specified applications in a serial fashion. If the application is not available or the application is already installed, it will notify the user of that case.
 
-![Image of importing files command](images\import-command.png)
+![Image of importing files command](./images/import-command.png)
 
-In the previous example, the Microsoft.WindowsTerminal was already installed. Therefore the import command skipped passed the installation.
+In the previous example, the **Microsoft.WindowsTerminal** was already installed. Therefore the **import** command skipped the installation.

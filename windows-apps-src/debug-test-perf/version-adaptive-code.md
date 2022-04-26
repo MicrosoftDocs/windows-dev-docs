@@ -28,8 +28,9 @@ Here, we look at specific examples for targeting new features in the Windows Ins
 In most cases, you can keep your app's Minimum Version set to SDK version 10240 and use runtime checks to enable any new APIs when your app runs on later a version. However, there are some cases where you must increase your app's Minimum Version in order to use new features.
 
 You must increase your app's Minimum Version if you use:
+
 - a new API that requires a capability that isn't available in an earlier version. You must increase the minimum supported version to one that includes that capability. For more info, see [App capability declarations](../packaging/app-capability-declarations.md).
-- any new resource keys added to generic.xaml and not available in a previous version. The version of generic.xaml used at runtime is determined by the OS version the device is running on. You can't use runtime API checks to determine the presence of XAML resources. So, you must only use resource keys that are available in the minimum version that your app supports or a [XAMLParseException](/uwp/api/windows.ui.xaml.markup.xamlparseexception) will cause your app to crash at runtime.
+- any new resource keys added to generic.xaml and not available in a previous version. The version of generic.xaml used at runtime is determined by the OS version the device is running on. You can't use runtime API checks to determine the presence of XAML resources. So, you must only use resource keys that are available in the minimum version that your app supports or a [**XAMLParseException**](/dotnet/api/windows.ui.xaml.markup.xamlparseexception) will cause your app to crash at runtime.
 
 ### Adaptive code options
 

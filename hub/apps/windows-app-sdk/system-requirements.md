@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 To develop apps for Windows 11 and Windows 10, you'll need Visual Studio, the Windows SDK, and the Windows App SDK. Before installing these tools, check the information in this article to make sure your development computer meets the minimum system requirements.
 
-For instructions to install and set up these tools, see [Set up your development environment](set-up-your-development-environment.md).
+For instructions to install and set up these tools, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Visual Studio
 
@@ -26,7 +26,7 @@ For the minimum system requirements, see:
 
 ## Windows SDK
 
-The Windows SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows SDK is installed with Visual Studio 2019 by default.
+The Windows SDK provides access to all the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components such as services and drivers. The latest Windows SDK is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
 For the minimum system requirements, see [Windows SDK system requirements](https://developer.microsoft.com/windows/downloads/windows-10-sdk/#sysreq).
 
@@ -39,30 +39,31 @@ The [Windows App SDK](index.md) is a set of developer tools that represent the n
 
 The Windows App SDK has these system requirements:
 
-- Windows 10, version 1809 (build 17763) or later.
+- Windows 10, version 1809 (build 17763) and later.
 
-- Visual Studio 2019 version 16.9 or later with the following workloads and components:
+- Visual Studio 2019 version 16.9 and later with the following workloads and components:
   - **Universal Windows Platform development**
   - **.NET Desktop Development** (needed even if you're only building C++ Win32 apps)
   - **Desktop development with C++** (needed even if you're only building .NET apps)
 
-- Windows SDK version 2004 (build 19041) or later. This is installed with Visual Studio 2019 by default.
+- Windows SDK version 2004 (build 19041) and later. This is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
 - Building .NET apps also requires:
-  - .NET 5 SDK version 5.0.300 or later if you're using Visual Studio 2019 version 16.10
-  - .NET 5 SDK version 5.0.204 if you're using Visual Studio 2019 version 16.9
+  - .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
+  - .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
 
 ### Visual Studio support for WinUI 3 tools
 
-You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. You can also use Visual Studio 2022 17.0 Preview 2 and above to build apps with the Windows App SDK v0.8.2 and above. However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
+You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2019 versions 16.9, 16.10, and 16.11 Preview. You can also use Visual Studio 2022 17.0 Preview 2 and later to build apps with the Windows App SDK v0.8.2 and later. However, in order to take advantage of the latest WinUI 3 tooling features such as Hot Reload, Live Visual Tree, and Live Property Explorer, you need the versions of Visual Studio 2019 with the stable versions of the Windows App SDK as listed in the following table.
 
 |   | Visual Studio 2019 16.9  |Visual Studio 2019 16.10  |  Visual Studio 2019 16.11 Previews | Visual Studio 2022 17.0 Previews |
 |---|---|---|---|---|
 | **Windows App SDK 0.5** | Tools unavailable | Tools available   |  Tools unavailable   | Tools unavailable   |
 | **Windows App SDK 0.8** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3  | Tools available starting with Visual Studio 2022 17.0 Preview 2 (Windows App SDK v0.8.2+ only) |
 | **Windows App SDK 1.0 Experimental** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3   | Tools available starting with Visual Studio 2022 17.0 Preview 2   |
+| **Windows App SDK 1.0 Preview 2** | Tools unavailable  | Tools unavailable | Tools available starting with Visual Studio 2019 16.11 Preview 3   | Tools available starting with Visual Studio 2022 17.0 Preview 2   |
 
 ## Related topics
 
-- [Set up your development environment](set-up-your-development-environment.md)
+- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Get started developing apps for Windows desktop](../get-started/index.md)

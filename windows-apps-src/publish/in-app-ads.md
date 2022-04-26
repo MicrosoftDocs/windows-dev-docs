@@ -37,11 +37,11 @@ To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial
     * If you are showing an interstitial video ad or interstitial banner ad in your app, select **Video interstitial** or **Banner interstitial** (be sure to select the appropriate option for the type of interstitial ad you want to show).
     * If you are showing a native ad in your app, select **Native**.
 
-5. In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used. The available options are: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.
+5. In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used. The available options are: **UWP (Windows 10 or Windows 11)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.
 
 6. Configure the following additional settings as desired:
 
-    * If you select the **UWP (Windows 10)** device family for the ad unit, you can optionally configure [mediation settings](#mediation) for the ad unit.
+    * If you select the **UWP (Windows 10 or Windows 11)** device family for the ad unit, you can optionally configure [mediation settings](#mediation) for the ad unit.
     * If you select the **PC/Tablet (Windows 8.1)** or **Mobile (Windows Phone 8.x)** device family for a banner ad unit, you can optionally select **Show community ads in your app** to opt in to [community ads](../monetize/index.md).
 
 7.  If you haven't yet set the COPPA compliance for the selected app, choose an option in the [COPPA compliance](#coppa) section.

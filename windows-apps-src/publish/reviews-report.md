@@ -92,7 +92,7 @@ You can sort the reviews on the page by date and/or by rating, in ascending or d
 You can also use the search box to search for specific words or phrases in your app's reviews. Note that only the original review text written by the customer is searched, even if the review was written in a different language. Translated review text is not searched.
 
 > [!NOTE]
-> You may occasionally notice that reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+> You may occasionally notice that reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10 or Windows 11. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
 
 
 ## Translating reviews

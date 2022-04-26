@@ -204,7 +204,7 @@ It is recommended to build and test your application with the C# component built
 
 Next, set the `UseDotNetNativeToolchain` property to `true` in the Release and ARM64 configurations in the C++ project file.
 
-In the Visual Studio Solution Explorer, open the shortcut menu for the the *CppToCSharpWinRT* project and choose **Reload Project**.
+In the Visual Studio Solution Explorer, open the shortcut menu for the *CppToCSharpWinRT* project and choose **Reload Project**.
 
 ```xml
   <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
@@ -218,7 +218,7 @@ In the Visual Studio Solution Explorer, open the shortcut menu for the the *CppT
 
 ## Referencing other C# nuget packages
 
-If the C# component is referencing other [nuget packages](https://docs.microsoft.com/nuget/what-is-nuget), the application's project file may need list file dependencies from the nuget package as deployment content.  For example, if the C# component references the Newtonsoft.Json nuget package, the same nuget package and file dependency should also be referenced in the application project.
+If the C# component is referencing other [nuget packages](/nuget/what-is-nuget), the application's project file may need list file dependencies from the nuget package as deployment content.  For example, if the C# component references the Newtonsoft.Json nuget package, the same nuget package and file dependency should also be referenced in the application project.
 
 In the **SampleComponent.csproj** file, add the nuget package reference:
 

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 07/23/2021
+ms.date: 09/28/2021
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -10,11 +10,11 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 # Microsoft Store Policies
 
-**Document version: 7.14**
+**Document version: 7.15**
 
-**Publish date: June 28, 2021**
+**Publish date: September 28, 2021**
 
-**Effective date: July 28, 2021**
+**Effective date: October 28, 2021**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
@@ -64,6 +64,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 - [11.10 Country/Region Specific Requirements](#1110-countryregion-specific-requirements)
 - [11.11 Age Ratings](#1111-age-ratings)
 - [11.12 User Generated Content](#1112-user-generated-content)
+- [11.13 Third Party Digital Storefronts Content](#1113-third-party-digital-storefronts-content)
 
 ## Product Policies
 
@@ -82,7 +83,7 @@ Your product must be fully functional and must provide appropriate functionality
 
 **10.1.3**
 
-Search terms may not exceed seven unique terms and should be relevant to your product.
+Search terms may not exceed seven unique terms and must be relevant to your product. When choosing terms, you must not use irrelevant terms or phrases in an effort to manipulate search results.
 
 **10.1.4**
 
@@ -90,12 +91,19 @@ Your product must have distinct and informative metadata and must provide a valu
 
 **10.1.5**
 
-Products whose primary functionality is to enable acquisition or promotion of digital goods from outside the Store are prohibited.
-
 Your product may, with user consent and after initial download of the primary product, enable acquisition of:
 
 - Other products published by you as long as the other products are also distributed through the Microsoft Store.
 - Add-ons or extensions that enhance the functionality of the product.
+
+**10.1.6**
+
+Products that are standalone storefronts, whose primary purpose is to enable acquisition of digital goods are allowed on PC devices, subject to the following requirements:
+
+- While content offered via your product is not subject to certification, your content must adhere to all applicable Store Policies.  
+- If your product uses, accesses, monetizes access to, or displays content from a third-party service, ensure that you are specifically permitted to do so under the service’s terms of use.
+- Your storefront must offer a comprehensive catalog of content of sufficient size (a minimum of 20 distinct products, excluding downloadable content and in-app products or offers) to provide a unique and valuable user experience.
+- Storefronts that only offer a single game or app, versions of a single game or app, or a single franchise of games or apps are not allowed.
 
 ### 10.2 Security
 
@@ -103,7 +111,8 @@ Your product must not jeopardize or compromise user security, or the security or
 
 **10.2.1**
 
-Products that browse the web must use either the Chromium or the Gecko open source engine. To ensure compatibility and security of user experience they must be updated to be no older than within 2 major versions of those open source projects (for example, if the latest released major version of Chromium is 85, any browser based on Chromium must be on at least Chromium version 83 or higher) ,and known security issues must be patched in a more timely fashion. Any included private or proprietary components, or components not otherwise available under an open source license that affect compatibility of web site experience (such as codecs) shall be licensable on reasonable terms to other browser publishers to achieve compatibility. Compatibility and consistency of web site experience presented to browsers on the same engine shall be the primary test of meeting this engine consistency requirement (including publisher’s own sites). Existing browsers in the Windows Store may continue to use the EdgeHTML engine.
+- Products that browse the web must use either the Chromium or the Gecko open source engine. To ensure compatibility and security of user experience they must be updated to be no older than within 2 major versions of those open source projects (for example, if the latest released major version of Chromium is 85, any browser based on Chromium must be on at least Chromium version 83 or higher),and known security issues must be patched in a more timely fashion. Any included private or proprietary components, or components not otherwise available under an open source license that affect compatibility of web site experience (such as codecs) shall be licensable on reasonable terms to other browser publishers to achieve compatibility. Compatibility and consistency of web site experience presented to browsers on the same engine shall be the primary test of meeting this engine consistency requirement (including publisher’s own sites). Existing browsers in the Windows Store may continue to use the EdgeHTML engine.
+- Products that browse the web that are made available on the Xbox Console must not offer any functionality that would allow a user of the app to download or copy files, aside from those necessary for functionality of the app.
 
 **10.2.2**
 
@@ -275,7 +284,7 @@ All pricing, including sales or discounting, for your digital products or servic
 
 Your product must respect system settings for notifications and remain functional when they are disabled. This includes the presentation of ads and notifications to the customer, which must also be consistent with the customer’s preferences, when provided by Windows Push Notification Service (WNS).
 
-If your product uses WNS or web push to transmits notifications, it must comply with the following requirements:
+If your product uses WINS or web push to transmits notifications, it must comply with the following requirements:
 
 **10.9.1**
 
@@ -336,6 +345,8 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 
 > [!NOTE]
 > Additional requirements for titles which use Xbox Live on PC/Mobile and/or the Creators program on Xbox consoles are available at https://aka.ms/xboxlivepolicy.
+>
+> **February 10, 2022 Policy Note**: For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
 
 **10.13.1**
 
@@ -351,10 +362,11 @@ Game products on Xbox One must not present an alternate friends list obtained ou
 
 **10.13.4**
 
-Products published to Xbox One must not:
+Products published to Xbox consoles must not:
 
 - Include the sale of Xbox game products, Xbox consoles or Xbox console accessories outside the Store.
 - Request or store Microsoft Account usernames or passwords.
+- Enable general browsing of the operating system, file systems or attached physical media file structures.
 
 **10.13.5**
 
@@ -389,7 +401,7 @@ Xbox Live game products must comply with the following requirements for service 
 
 **10.13.10**
 
-Products that emulate a game system are not allowed on any device family.
+Products that emulate a game system or game platform are not allowed on any device family.
 
 **10.13.11**
 
@@ -478,6 +490,15 @@ User Generated Content (UGC) is content that users contribute to an app or produ
 - Provide a means for users to report inappropriate content within the product to the developer for review and removal/disablement if in violation of content guidelines and/or implement a method for proactive detection of inappropriate or harmful UGC.
 - Remove or disable UGC when requested by Microsoft.
 
+### 11.13 Third Party Digital Storefronts Content
+
+If your product is a storefront, or enables access to a storefront, the storefront must:
+
+- Publish and make available a developer and/or publisher terms of service and content guidelines for products listed in your marketplace.
+- Provide a means for users to report inappropriate content, or content that violates your terms of service or content guidelines.
+- Implement a method for review and detection of content that is in violation of your terms or guidelines and take enforcement actions.
+- Comply with all legal and regulatory requirements regarding operations of digital storefronts.
+
 ---
 <sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, the Xbox Store, Microsoft Store for Business, and Microsoft Store for Education.
 
@@ -487,7 +508,7 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 ### Microsoft Store appeal statistics for FY2021
 
-|                                              | Count    |
+| Statistic                                             | Count    |
 |----------------------------------------------|----------|
 | Main Complaint Type 1: Certification Results |      145 |
 | Main Complaint Type 2: Account Terminations  |       74 |

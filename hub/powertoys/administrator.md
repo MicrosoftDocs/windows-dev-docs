@@ -1,5 +1,5 @@
 ---
-title: PowerToys administrator mode for Windows 10
+title: PowerToys administrator mode for Windows
 description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be run in administrator mode as well.
 ms.date: 05/28/2021
 ms.topic: article
@@ -20,7 +20,7 @@ There are two options for PowerToys to support applications running as administr
 
 ## Run as administrator elevated processes explained
 
-Windows applications run in *User mode* by default. To run an application in *Administrative mode* or as an *elevated process* means that app will run with additional access to the operating system.
+Windows applications run in _User mode_ by default. To run an application in _Administrative mode_ or as an _elevated process_ means that app will run with additional access to the operating system.
 
 The simplest way to run an app or program in administrative mode is to right-click the program and select <kbd>Run as administrator</kbd>. If the current user is not an administrator, Windows will ask for the administrator username and password.
 
@@ -30,7 +30,7 @@ If you see this User Account Control prompt, the application is requesting admin
 
 ![Windows elevated permission prompt screenshot](../images/pt-admin-prompt.png)
 
-In the case of an elevated command line, typically the text "Administrator" will be appended to the title bar.
+In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
 ![Windows admin command line screenshot](../images/pt-admin-terminal.png)
 

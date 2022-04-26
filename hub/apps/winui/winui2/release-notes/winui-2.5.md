@@ -8,9 +8,9 @@ ms.topic: article
 
 # Windows UI Library 2.5
 
-WinUI 2.5 is the latest official release of the Windows UI Library (WinUI).
+WinUI 2.5 is the December 2020 release of the Windows UI Library (WinUI).
 
-WinUI is an open source project hosted on GitHub at [Windows UI Library repo](https://aka.ms/winui). Please register all bug reports, feature requests, and community code contributions in this repo.
+WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
 
 WinUI Releases: [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/releases)
 

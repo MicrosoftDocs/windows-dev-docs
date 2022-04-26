@@ -6,7 +6,7 @@ ms.assetid: a3355d78-2a88-4109-8521-830d7cae260a
 ---
 # \<MethodInstantiation> Element (.NET Native)
 
-Applies runtime reflection policy to a constructed generic method.
+Applies runtime reflection policy to a constructed generic method. See important info in **Remarks**.
 
 ## Syntax
 
@@ -70,6 +70,10 @@ None.
 ## Remarks
 
 The `<MethodInstantiation>` element overrides the runtime reflection policy of its corresponding open generic method.
+
+When you encounter a **System.Reflection.MissingRuntimeArtifactException** exception ('Cannot retrieve a MethodInfo for this delegate because the method it targeted [...] was not enabled for metadata using the Dynamic attribute.'), the message provides a url for you to visit, and that url takes you to the [MissingMetadataException troubleshooter](https://go.microsoft.com/fwlink/?LinkID=616868). Fill in the details in the **I reflect on** section, and then use the markup that's generated in the **Preview** section.
+
+If there are no generic parameters, then leave **Comma-separated generic arguments to instantiate the method** blank. In that case you can disregard the **WARNING: The directive below is not complete yet** in the **Preview** section; and the **MethodInstantiation@Arguments** attribute will be empty in the **Preview**, by design. As documented above, the **Arguments** attribute specifies the generic type arguments, and not method parameters.
 
 ## See also
 

@@ -16,7 +16,7 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
 
 <br/>
 
-<table style="border: none !important;">
+<table>
 <colgroup>
 <col width="10%" />
 <col width="23%" />

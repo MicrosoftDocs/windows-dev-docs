@@ -15,7 +15,7 @@ This article lists the mappings that .NET makes between Windows Runtime (WinRT) 
 Most of the types that have the same namespace name and type name in both WinRT and .NET are structures (or types associated with structures, such as enumerations). In WinRT, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types.
 
 > [!NOTE]
-> For a list of mappings between WinRT and .NET types in the context of desktop apps that target .NET 5 and use C#/WinRT, see [.NET mappings of WinRT types in C#/WinRT](../csharp-winrt/net-mappings-of-winrt-types.md).
+> For a list of mappings between WinRT and .NET types in the context of desktop apps that target .NET 5 and use C#/WinRT, see [.NET mappings of WinRT types in C#/WinRT](/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types.md).
 
 ## WinRT types that map to .NET types with the same name and namespace
 

@@ -42,7 +42,7 @@ Button().Content(winrt::box_value(L"Clicked"));
 First, the [**hstring**](/uwp/cpp-ref-for-winrt/hstring) conversion constructor converts the string literal into an **hstring**. Then the overload of **winrt::box_value** that takes an **hstring** is invoked.
 
 ## Examples of unboxing an IInspectable
-In your own functions that expect **IInspectable**, you can use [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) to unbox, and you can use [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) to unbox with a default value.
+In your own functions that expect **IInspectable**, you can use [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) to unbox, and you can use [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) to unbox with a default value. You can also use [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function) to unbox to a **std::optional**.
 
 ```cppwinrt
 void Unbox(winrt::Windows::Foundation::IInspectable const& object)
@@ -50,6 +50,7 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
     hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
     hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
     float floatValue = unbox_value_or<float>(object, 0.f); // Returns 0.0 if object is not a boxed float.
+    std::optional<int> optionalInt = object.try_as<int>(); // Returns std::nullopt if object is not a boxed int.
 }
 ```
 

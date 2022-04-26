@@ -1,19 +1,17 @@
 ﻿---
-ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Provision Windows Device Portal with a custom SSL certificate
 description: Learn how to provision Windows Device Portal with a custom certificate for use in HTTPS communication.
-ms.date: 01/08/2021
+ms.date: 01/28/2022
 ms.topic: article
-keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ms.custom: [19H1, contperf-fy21q3]
 ---
 
 # Provision Windows Device Portal with a custom SSL certificate
 
-In the Windows 10 Creators Update, Windows Device Portal (WDP) added a way for device administrators to install a custom certificate for use in HTTPS communication.
+Windows Device Portal (WDP) provides a way for device administrators to install a custom certificate for use in HTTPS communication.
 
-While you can do this on your own PC, this feature is mostly intended for enterprises that have an existing certificate infrastructure in place.  
+While you can do this on your own PC, this feature is primarily intended for enterprises that have an existing certificate infrastructure in place.
 
 For example, a company might have a certificate authority (CA) that it uses to sign certificates for intranet websites served over HTTPS. This feature stands on top of that infrastructure.
 

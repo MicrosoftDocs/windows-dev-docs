@@ -1,13 +1,14 @@
 ### YamlMime:Hub
-title: Windows technical documentation
-summary: Information for application developers, hardware developers, and IT pros.
+title: Windows technical documentation for developers and IT Pros.
+summary: Information for Windows application developers, hardware developers, and IT pros.
 brand: windows
 metadata:
    title: Windows Documentation | Microsoft Docs
    titleSuffix: ""
-   author: tedhudek
-   ms.author: tedhudek
+   author: GrantMeStrength
+   ms.author: jken
    ms.topic: hub-page
+   ms.custom: intro-hub-or-landing
    uhfHeaderId: "MSDocsHeader-DocsL1"
    
 
@@ -21,10 +22,10 @@ productDirectory:
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Design, develop, and deploy hardware and device drivers for Windows PCs and other devices.
     url: /windows-hardware/drivers/
-  - title: Windows 10 for IT pros
+  - title: Windows client for IT pros
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
-    summary: Evaluate, plan, deploy, secure, and manage devices running Windows 10.
-    url: /windows/windows-10/
+    summary: Evaluate, plan, deploy, secure, and manage devices running Windows 10 and Windows 11.
+    url: /windows/resources/
   - title: Windows Server for IT pros
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Build and deploy connected applications, networks, and web services on Windows Server.
@@ -35,5 +36,5 @@ productDirectory:
     url: /windows/iot/
   - title: Windows Insider Program
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
-    summary: Be the first to see what's next and help shape Windows' future by running Windows 10 Insider Preview Builds and giving feedback.
+    summary: Be the first to see what's next and help shape Windows' future by running Windows 11 and Windows 10 Insider Preview Builds and giving feedback.
     url: /windows-insider/

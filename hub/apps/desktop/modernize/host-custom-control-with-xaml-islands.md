@@ -1,11 +1,11 @@
 ---
 description: This article demonstrates how to host a custom WinRT XAML control in a WPF app by using XAML Islands.
 title: Host a custom WinRT XAML control in a WPF app using XAML Islands
-ms.date: 10/02/2020
+ms.date: 09/15/2021
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, custom controls, user controls, host controls
-ms.author: mcleans
-author: mcleanbyron
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
@@ -332,6 +332,17 @@ The following instructions show you how to package the all the components in the
     5. Close the open dialog boxes.
 
 4. Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.
+
+## Resolve "Cannot find a Resource" error when hosting a WinUI control
+
+If you're hosting a custom control that contains a control from the WinUI library, you may encounter a problem where the control cannot be loaded in a packaged app and debugging the code shows the following error.
+
+![Failed to host WinUI library control](images/xaml-islands/host-custom-control-error.png)
+
+To resolve this error, copy the **App.xbf** file from the build output folder of the WPF project to the **\AppX\\<WPF project\>** build output folder of the packaging project. 
+
+For example, if the WPF project is named **WPFXamlIslandsApp** and targets x86 platform, copy **App.xbf** from **\WPFXamlIslandsApp\bin\x86\Release\netcoreapp3.1** to **\WPFXamlIslandsApp.Pack\bin\x86\Release\AppX\WPFXamlIslandsAPP**.
+    
 
 ## Related topics
 

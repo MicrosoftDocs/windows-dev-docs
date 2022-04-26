@@ -1,5 +1,5 @@
 ---
-title: Speech, voice, and conversation in Windows 10
+title: Speech, voice, and conversation in Windows 11 and Windows 10
 description: This page provides the information for you to get started developing speech-enabled Windows apps.
 ms.topic: article
 ms.date: 09/12/2019
@@ -8,9 +8,9 @@ ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ---
 
-# Speech, voice, and conversation in Windows 10
+# Speech, voice, and conversation in Windows 11 and Windows 10
 
-![Speech hero image](../images/hero-speech-composite-small.png)
+![Speech hero image](images/hero-speech-composite-small.png)
 
 Speech can be an effective, natural, and enjoyable way for people to interact with your Windows applications, complementing, or even replacing, traditional interaction experiences based on mouse, keyboard, touch, controller, or gestures.
 
@@ -22,11 +22,11 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![Universal Windows Platform (UWP)](../images/platform-uwp.png)
+      ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
       **Universal Windows Platform (UWP)**
 
-      Build speech-enabled apps on the modern platform for Windows 10 applications and games, on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Build speech-enabled apps on the modern platform for Windows 10 (and later) applications and games, on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
       [Speech interactions](/windows/uwp/design/input/speech-interactions)
 
@@ -42,7 +42,7 @@ This page provides information on how the various Windows development frameworks
       (not supported in Windows 10 May 2020 Update and newer)
    :::column-end:::
    :::column:::
-      ![Win32 platform apps](../images/platform-win32.png)
+      ![Win32 platform apps](images/platform-win32.png)
 
       **Win32 platform**
 
@@ -55,7 +55,7 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      ![.NET](../images/platform-dotnet.png)
+      ![.NET](images/platform-dotnet.png)
 
       **.NET Framework**
 
@@ -64,7 +64,7 @@ This page provides information on how the various Windows development frameworks
       [System.Speech Programming Guide for .NET Framework](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
-      ![Azure speech services](../images/platform-azure-speech.png)
+      ![Azure speech services](images/platform-azure-speech.png)
 
       **Azure speech services**
 
@@ -128,7 +128,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
    :::column:::
       [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=speech&unscoped_q=speech)
 
-      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10.
+      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10 and later.
    :::column-end:::
    :::column:::
       [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
@@ -137,26 +137,6 @@ Download and run full Windows samples that demonstrate various accessibility fea
    :::column-end:::
 :::row-end:::
 
-## Videos
-
-Various videos covering how to build Windows applications that incorporate speech interactions.
-
-:::row:::
-   :::column:::
-      **Cortana and Speech Platform In Depth**
-   :::column-end:::
-   :::column:::
-      **Cortana Extensibility in Universal Windows Apps**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/3-716/player]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/2-691/player]
-   :::column-end:::
-:::row-end:::
 
 ## Other resources
 

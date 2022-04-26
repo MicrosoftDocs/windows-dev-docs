@@ -59,7 +59,7 @@ For filtering to work, the ListView must have a data source that can be manipula
 </Grid>
 ```
 ## Filtering the data
-[Linq](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) queries allow you to group, order, and select certain items in a collection. For filtering a list, we will be constructing a Linq query that only selects terms that match the user-inputted search query/filtering term, entered in the `FilterByLName` TextBox. The query result can be assigned to an [IEnumerable<T>](/dotnet/api/system.collections.generic.ienumerable-1) collection object. Once we have this collection, we can use it to compare with the original list, removing items that don't match and adding back items that do match (in case of a backspace).
+[Linq](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) queries allow you to group, order, and select certain items in a collection. For filtering a list, we will be constructing a Linq query that only selects terms that match the user-inputted search query/filtering term, entered in the `FilterByLName` TextBox. The query result can be assigned to an [IEnumerable\<T>](/dotnet/api/system.collections.generic.ienumerable-1) collection object. Once we have this collection, we can use it to compare with the original list, removing items that don't match and adding back items that do match (in case of a backspace).
 
 > [!NOTE]
 > In order for the ListView to animate in the most intuitive way when adding and subtracting items, it's important to remove and add items to the ListView's ItemsSource collection itself, rather than create a new collection of filtered objects and assign that to the ListView's ItemsSource property.

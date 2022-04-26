@@ -80,7 +80,7 @@ Here is a quick summary of APIs, and other useful documentation, to help get you
 
 | API | Description |
 |------|---------------|
-| [ApplicationData.LocalSettings](/uwp/api/windows.storage.applicationdata.temporaryfolder) | Gets the application settings container from the local app data store. |
+| [ApplicationData.LocalSettings](/uwp/api/windows.storage.applicationdata.localsettings) | Gets the application settings container from the local app data store. |
 | [ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings) | Gets the application settings container from the roaming app data store. |
 | [ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) | A container for app settings that supports creating, deleting, enumerating, and traversing the container hierarchy. |
 | [Windows.UI.ApplicationSettings Namespace](/uwp/api/windows.ui.applicationsettings) | Provides classes that you'll use to define the app settings that appear in the settings pane of the Windows shell. |

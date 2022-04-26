@@ -2,7 +2,6 @@
 
 title: Windows on ARM documentation
 summary: Windows runs on PCs powered by ARM processors. This page provides the information for you to learn more about the platform and get started developing apps. # < 160 chars
-
 metadata:
   title: Windows on ARM documentation
   description: This page provides the information for you to get started developing ARM64 win32 and UWP apps.
@@ -10,7 +9,7 @@ metadata:
   ms.topic: landing-page
   author: mattwojo
   ms.author: mattwoj
-  ms.date: 06/25/2021
+  ms.date: 03/18/2022
   ms.localizationpriority: medium
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -33,7 +32,7 @@ landingContent:
           - text: Build ARM64 Win32 C++ Apps
             url: https://youtu.be/OZtVBDeVqCE
           - text: Build 2018 Windows 10 on ARM for developers
-            url: https://channel9.msdn.com/Events/Build/2018/BRK2438
+            url: /events/build-2018/brk2438
 
   # Card
   - title: Develop for Windows on ARM
@@ -41,7 +40,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: ARM64EC for Windows 11 apps on ARM
-            url: /windows/uwp/porting/arm64ec 
+            url: /windows/uwp/porting/arm64ec
+          - text:  Understanding Arm64EC ABI and assembly code
+            url: /windows/uwp/porting/arm64ec-abi
           - text: Build ARM64 apps with the SDK
             url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
           - text: Build ARM64 Drivers with the WDK

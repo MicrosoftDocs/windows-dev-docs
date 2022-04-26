@@ -73,8 +73,5 @@ A series of new tutorial videos have been released for [Microsoft HoloLens Cours
 
 ### Narrator and Dev Mode
 
-You might already know that you can use [Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator) to test the screen reading experience of your app. But Narrator also features a developer mode, which gives you a good visual representation of the information exposed to it. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode), then learn more about [Narrator developer mode](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode).
+You might already know that you can use [Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator) to test the screen reading experience of your app. But Narrator also features a developer mode, which gives you a good visual representation of the information exposed to it. Watch the video, then learn more about Narrator developer mode.
 
-### Windows Template Studio
-
-A more detailed overview of the Windows Template Studio is given in [this video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Getting-Started-with-Windows-Template-Studio). When you're ready, [install the extension](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio) or [check out the source code and documentation](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio).

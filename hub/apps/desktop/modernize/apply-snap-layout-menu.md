@@ -1,35 +1,59 @@
 ---
-description: Apply the snap layout menu in your desktop application.
-title: Apply the snap layout menu in desktop apps
+description: Support the snap layouts menu in your desktop application.
+title: Support snap layouts for desktop apps on Windows 11
 ms.topic: article
-ms.date: 08/12/2021
+ms.date: 10/01/2021
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ---
 
-# Apply the Snap Layout Menu in desktop apps for Windows 11
+# Support snap layouts for desktop apps on Windows 11
 
-The Snap Layout Menu is a key feature in Windows 11 to help introduce users to the power of window snapping. With the menu, users can quickly layout their windows to multitask on larger screens and create an entire layout with Guided Snap Assist by simply hovering the mouse over the maximize button or pressing Win + Z​.  
+Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Snap layouts are easily accessible by hovering the mouse over a window's maximize button or pressing Win + Z. After invoking the menu that shows the available layouts, users can click on a zone in a layout to snap a window to that particular zone and then use Snap Assist to finish building an entire layout of windows. Snap layouts are tailored to the current screen size and orientation, including support for three side-by-side windows on large landscape screens and top/bottom stacked windows on portrait screens.
 
 :::image type="content" source="./images/apply-design/snap-layout-menu.png" alt-text="The Notepad app on Windows 11 with rounded corners.":::
 
-On Windows 11, if the application has the maximize caption button available, the system automatically provides the snap layout menu for all inbox apps, including all UWP apps, and most other apps. However, some desktop apps may not have the snap layout menu. This topic describes how to allow the snap layout menu to appear if the system does not provide it automatically.
+If the app's window has the maximize caption button available, the system will automatically show snap layouts when a user hovers the mouse over the window's maximize button. Snap layouts will appear automatically for most apps, but some desktop apps may not show snap layouts. This topic describes how to make sure your app shows the menu with snap layouts if the system does not show it automatically.
 
-## Why doesn't my app have the snap layout menu?
+## Why doesn't my app show the snap layouts menu?
 
-If your application's main window has the maximize caption button available but does not provide the snap layout menu, it may be because you've customized your caption buttons or title bar in a way that prevents it.  
+If your app's main window has the maximize caption button available but does not show snap layouts, it may be because you've customized your caption buttons or title bar in a way that prevents it.
 
 ## How do I fix it?
 
-If you have a custom title bar, you can:​
+If you have a custom title bar, then you can:​
 
-- Use the [Windows App SDK windowing APIs](../../windows-app-sdk/windowing/windowing-overview.md) and have the platform draw and implement the caption buttons for you​.
+- Use the Windows App SDK windowing APIs (see [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md)) and have the platform draw and implement the caption buttons for you​.
 - For Win32 apps, make sure you are responding appropriately to [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) (with a return value of `HTMAXBUTTON` for the maximize/restore button)​.
-- If your app uses [Electron](https://www.electronjs.org/), you can update to the v13 stable release of Electron to enable snap flyouts for your app.
 
-## What if my window has the snap layout menu but isn't snapping properly?  
+    ```cpp
+    LRESULT CALLBACK TestWndProc(HWND window, UINT msg, WPARAM wParam, LPARAM lParam)
+    {
+        switch (msg)
+        {
+            case WM_NCHITTEST:
+            {
+                // Get the point in screen coordinates.
+                // GET_X_LPARAM and GET_Y_LPARAM are defined in windowsx.h
+                POINT point = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
+                // Map the point to client coordinates.
+                ::MapWindowPoints(nullptr, window, &point, 1);
+                // If the point is in your maximize button then return HTMAXBUTTON
+                if (::PtInRect(&m_maximizeButtonRect, point))
+                {
+                    return HTMAXBUTTON;
+                }
+            }
+            break;
+        }
+        return ::DefWindowProcW(window, msg, wParam, lParam);
+    }
+    ```
+- If your app uses [Electron](https://www.electronjs.org/), update to the v13 stable release of Electron to enable snap layouts.
 
-If your application can invoke the snap layout menu but isn't able to snap properly to the snap zones, it may be because your application's minimum size is too large for the snap zone to fit properly.  
+## What if my app's window shows snap layouts but isn't snapping properly?  
 
-Your application should support a minimum width of at most 500epx for snapping to work properly. However, we recommend that you support an even smaller minimum width (330epx or less) as it will be compatible with a larger set of devices and snap layouts.
+If your app can invoke the menu with snap layouts but isn't able to snap properly to the zone sizes, it's likely that your app's minimum window size is too large for the window to fit in the selected zone.
+
+Your app should support a minimum width of at *most* 500 effective pixels (epx) to support snap layouts across the most common screen sizes. However, we recommend that you support an even smaller minimum width (330 epx or less) so that it's compatible with a larger set of devices and snap layouts.

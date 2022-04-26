@@ -16,7 +16,7 @@ The **install** command requires that you specify the exact string to install. I
 
 `winget install [[-q] \<query>] [\<options>]`
 
-![search command](images\install.png)
+![search command](./images/install.png)
 
 ## Arguments
 
@@ -27,11 +27,14 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 | **-?, --help** |  Get additional help on this command. |
 
+> [!NOTE]
+> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to uniquely identify the package you wish to install.
+
 ## Options
 
 The options allow you to customize the install experience to meet your needs.
 
-| <div style="width:100px">Option</div>  | Description |
+| Option  | Description |
 |-------------|-------------|  
 | **-m, --manifest** |  Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a [local YAML file](#local-install). |
 | **--id**    |  Limits the install to the ID of the application.   |  
@@ -40,6 +43,7 @@ The options allow you to customize the install experience to meet your needs.
 | **-v, --version**  |  Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |  
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **--scope**   |  Allows you to specify if the installer should target user or machine scope. |  
+| **-a, --architecture**   |  Select the architecture to install. | 
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
 | **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
@@ -48,6 +52,10 @@ The options allow you to customize the install experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to install to (if supported). |
 | **--force** | Overrides the installer hash check. Not recommended. |
+| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 
 ### Example queries
 
@@ -82,7 +90,13 @@ winget install --id Git.Git -e
 If multiple sources are configured, it is possible to have duplicate entries. Specifying a source is required to further disambiguate.
 
 ```CMD
-winget install --id Git.Git -e -source winget
+winget install --id Git.Git -e --source winget
+```
+
+The **msstore** source uses unique identifiers as the "Id" for packages. These do not require the **exact** query toption. For example:
+
+```CMD
+winget install XP9KHM4BK9FZ7Q -s msstore
 ```
 
 ## Local install
@@ -92,12 +106,23 @@ The **manifest** option enables you to install an application by passing in a YA
 Usage: `winget install --manifest \<path>`
 
 | Option  | Description |
-|-------------|-------------|  
-|  **-m, --manifest** | The path to the manifest of the application to install. |
+|---------|-------------|  
+|  **-m, --manifest** | The path to the manifests of the application to install. |
+
+> [!NOTE]
+> Installing packages from local manifest files may have risks. As an extra measure of precaution this feature needs to be enabled by an administrator. To enable this feature run `winget settings --enable LocalManifestFiles`. To disable this feature run `winget settings --disable LocalManifestFiles`.
 
 ### Log files
 
 The log files for winget unless redirected, will be located in the following folder:  **\%temp%\\AICLI\\*.log**
+
+## License Agreements
+
+Some applications when installed will require the user to agree to the license or other agreements before installing.  When this occurs, the Windows Package Manager will prompt the user to agree to the agreements.  If the user does not agree, the application will not install.  
+
+![Image of agreement](./images/agreements.png)
+
+From the command line, you can auto accept the agreements by passing the following option **--accept-package-agreements** on the command line. This can be beneficial when scripting the Windows Package Manager.
 
 ## Related topics
 

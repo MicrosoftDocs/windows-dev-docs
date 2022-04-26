@@ -39,16 +39,3 @@ These links are useful if you know your users are on a Windows device and you wa
 To use this URI scheme to link directly to your app's Store listing, append your app's Store ID to this link:
 
 `ms-windows-store://pdp/?ProductId=<your app's Store ID>`
-
-## Removing your app from the Microsoft Store
-
-### Delete your app
-
-To completely remove an app **draft** from Partner Center (and release all the names reserved for that app), you can delete your app from the app overview page. Note that if you have already published the app to the Store, you cannot delete it from Partner Center.
-
-### Make your app unavailable
-
-You can stop offering an app to any new customers through from its overview page. After you've made your app unavailable, it will no longer be visible in the Store after several hours. You can make your app available again at any time.
-
-> [!NOTE]
-> Any customers who already have the app will still be able to use and download it.

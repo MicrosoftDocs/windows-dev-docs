@@ -8,6 +8,7 @@ keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ---
+
 # Tutorial: Use Grid and StackPanel to create a simple weather app
 
 Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows 10. This tutorial takes 10-20 minutes.
@@ -15,7 +16,7 @@ Use XAML to create the layout for a simple weather app using the **Grid** and **
 > **Important APIs**: [Grid class](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## Prerequisites
-- Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Click here to learn how to get set up with Visual Studio](../../windows-app-sdk/set-up-your-development-environment.md).
+- Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
 - Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## Step 1: Create a blank app
@@ -114,6 +115,6 @@ And that's it! You've successfully created the layout for a simple weather appli
 If you like, try experimenting with the layout above, and explore different ways you might represent weather data.
 
 ## Related articles
-For an introduction to designing Windows app layouts, see [Introduction to Windows app design](../basics/design-and-ui-intro.md)
 
-To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](./layouts-with-xaml.md)
+- For an introduction to designing Windows app layouts, see [Windows app silhouettes](../basics/app-silhouette.md)
+- To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](./layouts-with-xaml.md)

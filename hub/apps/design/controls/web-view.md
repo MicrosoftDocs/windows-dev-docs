@@ -17,7 +17,7 @@ A web view control embeds a view into your app that renders web content using th
 > **Important APIs**: [WebView class](/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
 > [!IMPORTANT]
-> The `WebView2` control uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. `WebView2` is available as part of the [Windows UI Library 3 (WinUI3)](../../winui/winui3/index.md). For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
+> The `WebView2` control uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. `WebView2` is available as part of the [Windows UI Library 3 (WinUI3)](../../winui/index.md). For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
 
 ## Is this the right control?
 
@@ -30,7 +30,7 @@ Use a web view control to display richly formatted HTML content from a remote we
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/WebView">open the app and see the WebView in action</a>.</p>
+    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/WebView">open the app and see the WebView in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>

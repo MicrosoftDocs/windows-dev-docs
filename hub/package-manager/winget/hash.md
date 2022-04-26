@@ -12,9 +12,9 @@ The **hash** command of the [winget](index.md) tool generates the SHA256 hash fo
 
 ## Usage
 
-`winget hash [-f] \<file> [\<options>]`
+`winget hash [--file] \<file> [\<options>]`
 
-The **hash** sub command can only run on a local file. To use the **hash** sub command, download your installer to a known location. Then pass in the file path as an argument to the **hash** sub command.
+The **hash** sub-command can only run on a local file. To use the **hash** sub-command, download your installer to a known location. Then pass in the file path as an argument to the **hash** sub-command.
 
 ## Arguments
 
@@ -23,7 +23,8 @@ The following arguments are available:
 | Argument  | Description |
 |--------------|-------------|
 | **-f,--file** |  The path to the file to be hashed. |
-| **-m,--msix**  | Specifies that the hash command will also create the SHA 256 SignatureSha256 for use with MSIX installers. |
+| **-m,--msix**  | Specifies that the hash command will also create the SHA-256 SignatureSha256 for use with MSIX installers. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **-?, --help** |  Gets additional help on this command. |
 
 ## Related topics

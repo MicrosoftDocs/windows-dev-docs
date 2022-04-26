@@ -128,12 +128,10 @@ Test your Windows app to ensure that it will operate correctly on devices that r
 
 ### Accessibility
 
-Building accessibility into your apps opens them up to a much wider audience. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), then learn more about [developing apps for accessibility](https://developer.microsoft.com/windows/accessible-apps).
+Building accessibility into your apps opens them up to a much wider audience. Watch the video, then learn more about [developing apps for accessibility](https://developer.microsoft.com/windows/accessible-apps).
 
-### Payments Request API
 
-The Payment Request API helps custoemrs and sellers seamlessly complete the online checkout process. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API), then explore the [Payment Request documentation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API).
 
 ### Windows 10 IoT Core
 
-With Windows 10 IoT Core and the Universal Windows Platform, you can quickly protoype and build projects with vision and component connections, such as this Pet Recognition Door. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core), then learn more about how to [get started with Windows 10 IoT Core](https://developer.microsoft.com/windows/iot).
+With Windows 10 IoT Core and the Universal Windows Platform, you can quickly protoype and build projects with vision and component connections, such as this Pet Recognition Door. Watch the video, then learn more about how to [get started with Windows 10 IoT Core](https://developer.microsoft.com/windows/iot).

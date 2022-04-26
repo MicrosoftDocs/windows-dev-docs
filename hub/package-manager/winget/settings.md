@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # settings command (winget)
 
-The **settings** command of the [winget](index.md) tool allows you to customize your Windows Package Manager client experience. You can change defaults and try out experimental features that are enabled in your client.
+The **settings** command of the [winget](./index.md) tool allows you to customize your Windows Package Manager client experience. You can change defaults and try out experimental features that are enabled in your client.
 
 The **settings** command will launch your default text editor. Windows by default will launch Notepad as an option.  We recommend using a tool like [Visual Studio code](https://code.visualstudio.com/).  
 
@@ -19,7 +19,7 @@ The **settings** command will launch your default text editor. Windows by defaul
 
 Launch your default JSON editing tool: `winget settings`
 
-![Screenshot of the Windows Package Manager Settings.](images\settings.png)
+![Screenshot of the Windows Package Manager Settings.](./images/settings.png)
 
 When you launch the settings for the first time, there will be no settings specified. At the top of the JSON file we provide a [link](https://aka.ms/winget-settings) where you can discover the latest experimental features and settings.
 
@@ -134,6 +134,26 @@ The `downloader` setting controls which code is used when downloading packages. 
     "downloader": "do"
 }
 ```
+
+### logging
+
+The `logging` settings control the level of detail in log files. `--verbose-logs` will override this setting and always creates a verbose log.
+
+
+```json
+"logging": {
+    "level": "verbose"
+}
+```
+
+#### level
+The following logging levels are available. Defaults to `info` if the value is not set or is invalid. 
+
+- verbose
+- info
+- warning
+- error
+- critical
 
 ## Enabling experimental features
 

@@ -25,7 +25,7 @@ This static package graph restriction is lifted with the introduction of the dyn
 
 Although dynamic dependencies enables any app to add a package framework dependency at run time, this feature is primarily intended to be used by unpackaged apps. Packaged apps can still continue to add static dependencies via the [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element in their package manifest.
 
-- Most developers will only use dynamic dependencies to reference the [Windows App SDK](../../../windows-app-sdk/index.md) framework package in an unpackaged app so that the app can call APIs provided by the Windows App SDK runtime. For more information about this scenario, see [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md).
+- Most developers will only use dynamic dependencies to reference the [Windows App SDK](../../../windows-app-sdk/index.md) framework package in an unpackaged app so that the app can call APIs provided by the Windows App SDK runtime. For more information about this scenario, see [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
 - In some cases, developers may want to use dynamic dependencies to reference a different framework package (other than the Windows App SDK framework package) from an unpackaged app, such as the framework package for [WinUI2](../../../winui/winui2/index.md) or the DirectX Runtime. For more information about this scenario, see [Reference framework packages at run time](use-the-dynamic-dependency-api.md).
 
 ## Servicing model for framework packages
@@ -48,8 +48,8 @@ For MSIX-packaged apps that use the [PackageDependency](/uwp/schemas/appxpackage
 
 ## Related topics
 
-- [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md)
+- [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
 - [Use the dynamic dependency API to reference framework packages at run time](use-the-dynamic-dependency-api.md)
-- [Deploy unpackaged apps that use the Windows App SDK](../../../windows-app-sdk/deploy-unpackaged-apps.md)
-- [Run time architecture and deployment scenarios for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
-- [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+- [Windows App SDK deployment guide for unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
+- [Tutorial: Build and deploy an unpackaged app that uses the Windows App SDK](../../../windows-app-sdk/tutorial-unpackaged-deployment.md)

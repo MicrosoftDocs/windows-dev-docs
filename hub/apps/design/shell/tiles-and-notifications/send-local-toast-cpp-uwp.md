@@ -20,21 +20,37 @@ ms.localizationpriority: medium
 
 ## Step 1: Install NuGet package
 
+You can create toast notifications with the Windows Community Toolkit (WCT)'s builder syntax OR with XML. If you prefer the latter, please skip to **Step 2** and refer to the **Without builder syntax** code examples. 
+
 [!INCLUDE [nuget package](includes/nuget-package.md)]
 
-Our code sample will use this package. This package allows you to create toast notifications without using XML.
+Our **Builder syntax** code examples will use this package. This package allows you to create toast notifications without using XML.
 
 
 ## Step 2: Add namespace declarations
+
+#### [Builder syntax](#tab/builder-syntax)
 
 ```cpp
 using namespace Microsoft::Toolkit::Uwp::Notifications;
 ```
 
+#### [Without builder syntax](#tab/xml)
+
+```cpp
+using namespace winrt::Windows::UI::Notifications;
+using namespace Windows::Data::Xml::Dom;
+```
+
+---
 
 ## Step 3: Send a toast
 
 [!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
+
+If you are not using the WCT Notifications library builder syntax, you will instead construct the XML toast template, populate it with text and values, construct the notification, and show it. 
+
+#### [Builder syntax](#tab/builder-syntax)
 
 ```cpp
 // Construct the content and show the toast!
@@ -46,6 +62,36 @@ using namespace Microsoft::Toolkit::Uwp::Notifications;
     ->Show();
 ```
 
+#### [Without builder syntax](#tab/xml)
+
+```cpp
+// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L"\
+    <toast>\
+        <visual>\
+            <binding template=\"ToastGeneric\">\
+                <text></text>\
+                <text></text>\
+            </binding>\
+        </visual>\
+    </toast>");
+
+// Populate with text and values
+doc.DocumentElement().SetAttribute(L"launch", L"action=viewConversation&conversationId=9813");
+doc.SelectSingleNode(L"//text[1]").InnerText(L"Andrew sent you a picture");
+doc.SelectSingleNode(L"//text[2]").InnerText(L"Check this out, Happy Canyon in Utah!");
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+```
+
+---
 
 ## Step 4: Handling activation
 
@@ -79,6 +125,8 @@ void App::OnActivated(IActivatedEventArgs^ e)
 
 The first step in making your notifications actionable is to add some launch args to your notification, so that your app can know what to launch when the user clicks the notification (in this case, we're including some information that later tells us we should open a conversation, and we know which specific conversation to open).
 
+#### [Builder syntax](#tab/builder-syntax)
+
 ```cpp
 // Construct the content and show the toast!
 (ref new ToastContentBuilder())
@@ -91,6 +139,38 @@ The first step in making your notifications actionable is to add some launch arg
     ->Show();
 ```
 
+#### [Without builder syntax](#tab/xml)
+
+```cpp
+// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L"\
+    <toast>\
+        <visual>\
+            <binding template=\"ToastGeneric\">\
+                <text></text>\
+                <text></text>\
+            </binding>\
+        </visual>\
+    </toast>");
+
+// Populate with text and values
+doc.SelectSingleNode(L"//text[1]").InnerText(L"Andrew sent you a picture");
+doc.SelectSingleNode(L"//text[2]").InnerText(L"Check this out, Happy Canyon in Utah!");
+
+// Arguments returned when user taps body of notification
+doc.DocumentElement().SetAttribute(L"launch", L"action=viewConversation&conversationId=9813"); 
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+```
+
+---
 
 
 ## Adding images
@@ -100,6 +180,8 @@ You can add rich content to notifications. We'll add an inline image and a profi
 [!INCLUDE [images note](includes/images-note.md)]
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
+
+#### [Builder syntax](#tab/builder-syntax)
 
 ```cpp
 // Construct the content and show the toast!
@@ -115,13 +197,52 @@ You can add rich content to notifications. We'll add an inline image and a profi
     ->Show();
 ```
 
+#### [Without builder syntax](#tab/xml)
 
+```cpp
+// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L"\
+    <toast>\
+        <visual>\
+            <binding template=\"ToastGeneric\">\
+                <text></text>\
+                <text></text>\
+                <image/>\
+                <image placement=\"appLogoOverride\" hint-crop=\"circle\"/>\
+            </binding>\
+        </visual>\
+    </toast>");
+
+// Populate with text and values
+doc.DocumentElement().SetAttribute(L"launch", L"action=viewConversation&conversationId=9813");
+doc.SelectSingleNode(L"//text[1]").InnerText(L"Andrew sent you a picture");
+doc.SelectSingleNode(L"//text[2]").InnerText(L"Check this out, Happy Canyon in Utah!");
+
+// Inline image
+doc.SelectSingleNode(L"//image[1]").as<XmlElement>().SetAttribute(L"src", L"https://picsum.photos/360/202?image=883");
+
+// Profie (app logo override) image
+doc.SelectSingleNode(L"//image[2]").as<XmlElement>().SetAttribute(L"src", L"ms-appdata:///local/Andrew.jpg");
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+```
+
+---
 
 ## Adding buttons and inputs
 
 You can add buttons and inputs to make your notifications interactive. Buttons can launch your foreground app, a protocol, or your background task. We'll add a reply text box, a "Like" button, and a "View" button that opens the image.
 
 <img src="images/toast-notification.png" width="628" alt="Screenshot of a toast notification with inputs and buttons"/>
+
+#### [Builder syntax](#tab/builder-syntax)
 
 ```cpp
 // Construct the content
@@ -149,6 +270,58 @@ You can add buttons and inputs to make your notifications interactive. Buttons c
     
     ->Show();
 ```
+
+#### [Without builder syntax](#tab/xml)
+
+```cpp
+// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L"\
+    <toast>\
+        <visual>\
+            <binding template=\"ToastGeneric\">\
+                <text></text>\
+                <text></text>\
+                <image/>\
+                <image placement=\"appLogoOverride\" hint-crop=\"circle\"/>\
+            </binding>\
+        </visual>\
+        <actions>\
+            <input\
+                id=\"tbReply\"\
+                type=\"text\"\
+                placeHolderContent=\"Type a reply\"/>\
+            <action\
+                content=\"Reply\"\
+                activationType=\"background\"/>\
+            <action\
+                content=\"Like\"\
+                activationType=\"background\"/>\
+            <action\
+                content=\"View\"\
+                activationType=\"foreground\"/>\
+        </actions>\
+    </toast>");
+
+// Populate with text and values
+doc.DocumentElement().SetAttribute(L"launch", L"action=viewConversation&conversationId=9813");
+...
+
+// Buttons
+doc.SelectSingleNode(L"//action[1]").as<XmlElement>().SetAttribute(L"arguments", L"action=reply&conversationId=9813");
+doc.SelectSingleNode(L"//action[2]").as<XmlElement>().SetAttribute(L"arguments", L"action=like&conversationId=9813");
+doc.SelectSingleNode(L"//action[3]").as<XmlElement>().SetAttribute(L"arguments", L"action=viewImage&imageUrl=https://picsum.photos/364/202?image=883");
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+```
+
+---
 
 The activation of foreground buttons are handled in the same way as the main toast body (your App.xaml.cpp OnActivated will be called).
 
@@ -216,7 +389,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 ## Set an expiration time
 
-In Windows 10, all toast notifications go in Action Center after they are dismissed or ignored by the user, so users can look at your notification after the popup is gone.
+In Windows 10 and 11, all toast notifications go in Action Center after they are dismissed or ignored by the user, so users can look at your notification after the popup is gone.
 
 However, if the message in your notification is only relevant for a period of time, you should set an expiration time on the toast notification so the users do not see stale information from your app. For example, if a promotion is only valid for 12 hours, set the expiration time to 12 hours. In the code below, we set the expiration time to be 2 days.
 
@@ -278,7 +451,7 @@ ToastNotificationManagerCompat::History->Clear();
 
 ## Resources
 
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
+* [Full C# code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
 * [Toast content documentation](adaptive-interactive-toasts.md)
 * [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

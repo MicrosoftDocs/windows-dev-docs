@@ -41,31 +41,9 @@ TVs don't handle extreme color intensities as well as computer monitors do. Avoi
 
 ### *Remember:* You can disable scaling
 
-UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices. Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%. If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080). Take a look at [How to turn off scaling](disable-scaling.md) and [Effective pixels and scaling](/windows/apps/design/basics/design-and-ui-intro#effective-pixels-and-scaling) for information about tailoring your app to look great on Xbox.
-
-If you want to get a glimpse of these practices applied to a UWP app, check out this video!
-</br>
-</br>
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
-
-## Channel 9
-
-The following talks on [Channel 9](https://channel9.msdn.com/) are a great source of information for building amazing apps on Xbox:
-
-- [Building Great Universal Windows Platform (UWP) Apps for Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
-- [Adapt Your App for Xbox One and TV](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP Development 1: Building an Adaptive UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web Apps Beyond the Browser: Cross-Platform Meets Cross Device](https://channel9.msdn.com/Events/Build/2016/B888)
-
-## App Dev on Xbox
-
-The **App Dev on Xbox** event is a great starting point for developers new to building apps on Xbox.
-
-* [Watch the recorded sessions](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [Read the blog posts](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices. Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%. If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080). Take a look at [How to turn off scaling](disable-scaling.md) for information about tailoring your app to look great on Xbox.
 
 ## See also
 
 - [UWP on Xbox One](index.md)
 - [Designing for Xbox and TV](/windows/apps/design/devices/designing-for-tv)
-- [Progressive Web Apps for Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations)

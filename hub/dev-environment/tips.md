@@ -1,6 +1,6 @@
 ---
-title: Workflow and Performance Tips for Windows 10
-description: Tips for improving your development workflow on Windows 10.
+title: Workflow and Performance Tips for Windows
+description: Tips for improving your development workflow on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -16,12 +16,12 @@ ms.date: 07/24/2020
 We've gathered a few tips that we hope will help to make your workflow more efficient and enjoyable. Do you have additional tips to share? File a pull request, using the "Edit" button above, or an issue, using the "Feedback" button below and we may add it to the list.
 
 > [!NOTE]
-> If you are experiencing any performance issues related to developing on Windows 10, such as:
+> If you are experiencing any performance issues related to developing on Windows, such as:
 > - Dev tools (e.g. compilers, linkers, etc.) running slower on Windows than expected.
 > - Runtime platforms (e.g. node, .NET, Python) running slower on Windows than other platforms.
 > - Your apps experiencing file IO/networking/process-creation related perf issues. 
 > 
-> Please let us know by filing an issue in the [Windows Developer (WinDev) Issues repo](https://github.com/microsoft/WinDev)!
+> Please let us know by filing an issue in the [Windows Developer Performance Issues repo](https://github.com/microsoft/Windows-Dev-Performance)!
 
 ## Use shortcuts to open a project in VS Code or Windows File Explorer
 
@@ -39,7 +39,7 @@ The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- i
 
 WSL targets a developer audience with the intent to be used as part of an inner development loop. Let's say that Sam is creating a CI/CD pipeline (Continuous Integration & Continuous Delivery) and wants to test it first on a local machine (laptop) before deploying it to the cloud. Sam can enable WSL (& WSL 2 to improve speed and performance), and then use a genuine Linux Ubuntu instance locally (on the laptop) with whatever Bash commands and tools they prefer. Once the development pipeline is verified locally, Sam can then push that CI/CD pipeline up to the cloud (ie Azure) by making it into a Docker container and pushing the container to a cloud instance where it runs on a production-ready Ubuntu VM.
 
-For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](https://channel9.msdn.com/Shows/Tabs-vs-Spaces/WSL2-Code-faster-on-the-Windows-Subsystem-for-Linux).
+For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](/shows/Tabs-vs-Spaces/WSL2-Code-faster-on-the-Windows-Subsystem-for-Linux).
 
 ## Improve performance speed for WSL by not crossing over file systems
 

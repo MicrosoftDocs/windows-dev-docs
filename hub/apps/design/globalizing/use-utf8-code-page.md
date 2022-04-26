@@ -1,35 +1,25 @@
 ---
-description: Use UTF-8 character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
-title: Use the Windows UTF-8 code page
-template: detail.hbs
-ms.date: 06/12/2019
+description: How to use UTF code pages in Windows apps.
+title: Use UTF-8 code pages in Windows apps
+ms.date: 01/11/2022
 ms.topic: article
-keywords: windows 10, uwp, globalization, localizability, localization
-ms.localizationpriority: medium
+ms.custom: seo-windows-dev
 ---
 
-# Use the UTF-8 code page
+# Use UTF-8 code pages in Windows apps
 
 Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 
 UTF-8 is the universal code page for internationalization and is able to encode the entire Unicode character set. It is used pervasively on the web, and is the default for *nix-based platforms.
-
-> [!NOTE]
-> An encoded character takes between 1 and 4 bytes. UTF-8 encoding supports longer byte sequences, up to 6 bytes, but the biggest code point of Unicode 6.0 (U+10FFFF) only takes 4 bytes.
-
-## -A vs. -W APIs
-  
-Win32 APIs often support both -A and -W variants.
-
--A variants recognize the ANSI code page configured on the system and support `char*`, while -W variants operate in UTF-16 and support `WCHAR`.
-
-Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
 ## Set a process code page to UTF-8
 
 As of Windows Version 1903 (May 2019 Update), you can use the ActiveCodePage property in the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps, to force a process to use UTF-8 as the process code page.
 
 You can declare this property and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8 so legacy code page detection and conversion can be avoided.
+
+> [!NOTE]
+> An encoded character takes between 1 and 4 bytes. UTF-8 encoding supports longer byte sequences, up to 6 bytes, but the biggest code point of Unicode 6.0 (U+10FFFF) only takes 4 bytes.
 
 ## Examples
 
@@ -70,6 +60,14 @@ You can declare this property and target/run on earlier Windows builds, but you 
 
 > [!NOTE]
 > Add a manifest to an existing executable from the command line with `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
+
+## -A vs. -W APIs
+  
+Win32 APIs often support both -A and -W variants.
+
+-A variants recognize the ANSI code page configured on the system and support `char*`, while -W variants operate in UTF-16 and support `WCHAR`.
+
+Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs typically operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
 ## Code page conversion
 

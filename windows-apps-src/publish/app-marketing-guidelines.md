@@ -24,7 +24,7 @@ You can use our [badge generator](https://developer.microsoft.com/store/badges) 
 
 You can also download the complete set of badge images (in PNG and PDF format) from the link below.
 
-[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All Badges.zip) **All badge images**
+[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All%20Badges.zip) **All badge images**
 
 
 ## Device images

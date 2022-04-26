@@ -1,3 +1,4 @@
+
 - name: Windows
   tocHref: /windows/
   topicHref: /windows
@@ -10,35 +11,22 @@
           tocHref: /windows/apps/desktop/
           topicHref: /windows/apps/desktop
           items:
-            - name: Set up your development environment
-              # Topic in different folder
-              topicHref: /windows/apps/windows-app-sdk/set-up-your-development-environment
-              items:
-                - name: Enable your device for development
-                  # Topic in different folder
-                  topicHref: /windows/apps/get-started/enable-your-device-for-development
-                - name: Developer Mode features and debugging
-                  # Topic in different folder
-                  topicHref: /windows/apps/get-started/developer-mode-features-and-debugging
-                - name: Create a developer account
-                  # Topic in different folder
-                  topicHref: /windows/apps/get-started/sign-up
             - name: Get started
               tocHref: /windows/apps/get-started/
-              topicHref: /windows/apps/get-started
-              items:
-                - name: Visual Studio project and item templates for Windows apps
-                  # Topic in different folder
-                  topicHref: /windows/apps/desktop/visual-studio-templates
-            - name: Design and UI
-              tocHref: /windows/apps/design/
+              topicHref: /windows/apps/get-started/get-set-up
+            - name: Design
               topicHref: /windows/apps/design
+            - name: Develop
+              topicHref: /windows/apps/develop
+            - name: Modernize desktop apps
+              tocHref: /windows/apps/desktop/modernize/
+              topicHref: /windows/apps/desktop/modernize/
             - name: Windows App SDK
               tocHref: /windows/apps/windows-app-sdk/
-              topicHref: /windows/apps/windows-app-sdk
+              topicHref: /windows/apps/windows-app-sdk/
             - name: Windows UI Library (WinUI)
               tocHref: /windows/apps/winui/
-              topicHref: /windows/apps/winui
+              topicHref: /windows/apps/winui/
               items:
                 - name: WinUI 3
                   tocHref: /windows/apps/winui/winui3/
@@ -46,26 +34,19 @@
                 - name: WinUI 2
                   tocHref: /windows/apps/winui/winui2/
                   topicHref: /windows/apps/winui/winui2
-            - name: Develop
-              topicHref: /windows/apps/develop
-              # items:
-              #   - name: Accessibility
-              #     # Topic in different folder
-              #     topicHref: /windows/apps/accessibility
-              #   - name: Speech
-              #     # Topic in different folder
-              #     topicHref: /windows/apps/speech
             - name: Modernize desktop apps
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize
-            - name: Package and deploy
+            - name: Deploy
               tocHref: /windows/apps/package-and-deploy/
               topicHref: /windows/apps/package-and-deploy
+            - name: Reference
+              tocHref: /windows/apps/reference/
+              topicHref: /windows/apps/reference
             - name: .NET TraceProcessing
               tocHref: /windows/apps/trace-processing/
               topicHref: /windows/apps/trace-processing/overview
             - name: Latest doc updates
-              tocHref: /windows/apps/whats-new/latest-doc-updates
               topicHref: /windows/apps/whats-new/latest-doc-updates
     - name: Development environment
       tocHref: /windows/dev-environment/

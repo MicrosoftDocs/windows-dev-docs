@@ -1,6 +1,6 @@
 ---
 title: Create random numbers
-description: This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
+description: This example code shows how to create a random number or buffer for use in cryptography in an Windows app.
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 ms.date: 02/08/2017
 ms.topic: article

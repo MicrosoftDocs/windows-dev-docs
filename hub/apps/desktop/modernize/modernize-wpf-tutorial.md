@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to add UWP XAML user interfaces, cre
 title: "Tutorial: Modernize a WPF app"
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
@@ -42,7 +40,7 @@ In the tutorial, you'll enhance Contoso Expenses with new Windows features:
 
 * Migrate an existing WPF app to .NET Core 3.0. This will open up new and important scenarios in the future.
 * Use XAML Islands to host the **InkCanvas** and **MapControl** wrapped controls provided by the Windows Community Toolkit.
-* Use XAML Islands to host any standard UWP XAML control (in this case, a **CalendardView**).
+* Use XAML Islands to host any standard UWP XAML control (in this case, a **CalendarView**).
 * Integrate Adaptive Cards and Windows 10 notifications into the app.
 * Package the app with MSIX and set up a CI/CD pipeline on Azure DevOps so that you can automatically deliver new versions of the app to testers and users as soon as it is available.
 
@@ -85,7 +83,7 @@ The following sections provide background for some of the key concepts discussed
 
 ### Universal Windows Platform (UWP)
 
-In Windows 8, Microsoft introduced a new framework called the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework. 
+In Windows 8, Microsoft introduced a new API set as part of the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework. 
 
 In Windows 10, Microsoft introduced the [Universal Windows Platform (UWP)](/windows/uwp/get-started/universal-application-platform-guide), which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on a Xbox One or on a HoloLens, you’re able to use the same APIs.
 

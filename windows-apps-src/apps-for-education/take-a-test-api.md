@@ -62,7 +62,7 @@ Locks down the device. Also used to unlock the device. The testing web applicati
 * `onError` - [optional] The function to call if the lockdown operation failed. It must be of the form `Function(Boolean currentlockdownstate)`.  
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or later
 
 ---
 
@@ -85,7 +85,7 @@ Determines whether the lockdown context is still applied to the device. The test
 ```
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -106,7 +106,7 @@ Gets details about the platform on which the testing application is running. Thi
     * `model` represents the device model for mobile devices only; null/unused for desktop browsers.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -126,7 +126,7 @@ Gets the list of all processes running on the client machine owned by the user. 
 The list does not include system processes.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -145,7 +145,7 @@ Closes the browser and unlocks the device. The testing application should invoke
 In Windows 10, version 1607, the device must be locked down initially. In later versions, this method closes the browser regardless of whether the device is locked down.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -161,7 +161,7 @@ The testing web application should invoke this to determine if permissive mode i
 * `callback` - The function to invoke when this call completes. It must be in the form: `Function(Boolean permissiveMode)` where `permissiveMode` indicates whether the browser is currently in permissive mode. If it is undefined or null, an error occurred in the get operation.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -178,7 +178,7 @@ The testing web application should invoke this to toggle permissive mode on or o
 * `callback` - The function to invoke when this call completes. It must be in the form: `Function(Boolean permissiveMode)` where `permissiveMode` indicates whether the browser is currently in permissive mode. If it is undefined or null, an error occurred in the set operation.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -191,7 +191,7 @@ Clears the system clipboard. The testing application should invoke this to force
 `void SecureBrowser.security.emptyClipBoard();`
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -210,7 +210,7 @@ Gets the list of MAC addresses for the device. The testing application should in
 It is difficult to rely on source IP addresses to distinguish between end user machines within the testing servers because firewalls/NATs/Proxies are commonly in use at the schools. The MAC addresses allow the app to distinguish end client machines behind a common firewall for diagnostics purposes.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -226,7 +226,7 @@ Gets the time that the testing app was started.
 A DateTime object indicating the time the testing app was started.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or newer
 
 ---
 
@@ -245,7 +245,7 @@ Queries whether a capability is enabled or disabled.
 This function returns either a JavaScript Object or literal with the form: `{<feature>:true|false}`. **true** if the queried capability is enabled, **false** if the capability is not enabled or the capability string is invalid.
 
 **Requirements**
-Windows 10, version 1703
+Windows 10, version 1703 or newer
 
 ---
 
@@ -267,7 +267,7 @@ Enables or disables a specific capability on the browser.
 If the targeted feature is unknown to the browser, this function will pass a value of `undefined` to the callback function.
 
 **Requirements**
-Windows 10, version 1703
+Windows 10, version 1703 or newer
 
 ---
 
@@ -283,7 +283,7 @@ Checks if the current session is logged in remotely.
 **true** if the current session is remote, otherwise **false**.
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or later
 
 ---
 
@@ -302,6 +302,6 @@ Checks if the current session is running within a virtual machine.
 This API check can only detect VM sessions that are running in certain hypervisors that implement the appropriate APIs
 
 **Requirements**  
-Windows 10, version 1709
+Windows 10, version 1709 or later
 
 ---

@@ -5,8 +5,6 @@ ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -1358,7 +1356,7 @@ Share your custom fonts with other Windows applications.
 
 #### XML namespaces
 
-`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/4`
 
 #### Elements and attributes of this extension
 

@@ -2,7 +2,7 @@
 description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 04/04/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -13,11 +13,6 @@ ms.localizationpriority: medium
 ---
 
 # Pivot
-
-> [!Important]
-> The **[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)** control is no longer recommended and could be removed in future releases of the Windows UI Library (WinUI). Note that information and images in this topic might be out of date.
->
-> Please use the **[NavigationView](navigationview.md)** control with the *Top* navigation style (or display mode) instead.
 
 The [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) control enables touch-swiping between a small set of content sections.
 
@@ -46,7 +41,7 @@ The [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) control enables touch-swipi
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Pivot">open the app and see the Pivot control in action</a>.</p>
+    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Pivot">open the app and see the Pivot control in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
@@ -61,13 +56,17 @@ The Pivot control, just like [NavigationView](navigationview.md), underlines the
 
 ## Is this the right control?
 
-To achieve common top navigation and tabs patterns, we recommend using [NavigationView](navigationview.md), which automatically adapts to different screen sizes and allows for greater customization.
+> [!NOTE]
+>The Pivot control is not recommended for [Windows 11 design patterns](../basics/app-silhouette.md). When designing for Windows 11, consider using a [NavigationView](navigationview.md) or [TabView](tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example
 
-However, if your navigation requires touch-swiping, we recommend using Pivot.
+To create a tabbed UI, use a [TabView](tab-view.md) control.
 
-The other key differences between the NavigationView and Pivot controls are the default overflow behavior and the navigation API:
+To achieve common top navigation patterns, we recommend using [NavigationView](navigationview.md), which automatically adapts to different screen sizes and allows for greater customization.
 
-- Pivot carousels overflow items, while NavigationView uses a menu dropdown overflow so that users can see all items.
+Some key differences between the NavigationView and Pivot are listed here:
+
+- Pivot supports touch-swiping to switch between items.
+- Overflow items in a Pivot carousel, while NavigationView uses a menu dropdown overflow so that users can see all items.
 - Pivot handles navigation between content sections, while NavigationView allows for more control over navigation behavior.
 
 ## Use NavigationView instead of Pivot

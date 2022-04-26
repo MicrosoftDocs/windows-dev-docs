@@ -8,9 +8,6 @@ ms.localizationpriority: medium
 
 # source command (winget)
 
-> [!NOTE]
-> The **source** command is currently for internal use only. Additional sources are not supported at this time.
-
 The **source** command of the [winget](index.md) tool manages the repositories accessed by Windows Package Manager. With the **source** command you can **add**, **remove**, **list**, and **update** the repositories.
 
 A source provides the data for you to discover and install applications. Only add a new source if you trust it as a secure location.
@@ -19,7 +16,7 @@ A source provides the data for you to discover and install applications. Only ad
 
 `winget source \<sub command> \<options>`
 
-![Source image](images\source.png)
+![Source image](./images/source.png)
 
 ## Arguments
 
@@ -39,7 +36,8 @@ Source supports the following sub commands for manipulating the sources.
 |  **list** | Enumerates the list of enabled sources. |
 |  **update** | Updates a source. |
 |  **remove** | Removes a source. |
-|  **reset** | Resets **winget** back to the initial configuration.  |
+|  **reset** | Resets **winget** and **msstore** back to the initial configuration. |
+|  **export** |  Export current sources |
 
 ## Options
 
@@ -49,12 +47,16 @@ The  **source** command supports the following options.
 |--------------|-------------|
 |  **-n,--name** | The name to identify the source by. |
 |  **-a,--arg** | The URL or UNC of the source. |
+|  **--force** | Used by **reset** to ensure a reset is desired. |
 |  **-t,--type** | The type of source. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 |  **-?, --help** |  Gets additional help on this command. |
 
 ## add
 
-The **add** sub command adds a new source. This sub command requires the **--name** option and the **name** argument.
+The **add** sub command adds a new source. This sub command requires the **--name** option and the **name** argument. Because the command changes the user access, **Add** requires the user to have administrator privileges.
 
 Usage: `winget source add [-n, --name] \<name> [-a] \<url> [[-t] \<type>]`
 
@@ -111,15 +113,15 @@ usage: `winget source update [-n, --name] \<name>`
 
 ### update all
 
-The **update** sub command by itself will request and update to each repo. For example: `C:\winget update`
+The **update** sub command by itself will request and update to each repo. For example: `winget source update`
 
 ### update source
 
-The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `C:\winget source update --name contoso`
+The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `winget source update --name contoso`
 
 ## remove
 
-The **remove** sub command removes a source. This sub command requires the **--name** option and **name argument** in order to identify the source.
+The **remove** sub command removes a source. This sub command requires the **--name** option and **name argument** in order to identify the source. Because the command changes the user access, **Remove** requires the user to have administrator privileges.
 
 Usage: `winget source remove [-n, --name] \<name>`
 
@@ -127,15 +129,38 @@ For example: `winget source remove --name Contoso`
 
 ## reset
 
-The **reset** sub-command resets the client back to its original configuration. The **reset** sub-command removes all sources and sets the source to the default. This sub command should only be used in rare cases.
+The **reset** sub-command resets the client back to its original configuration. The **reset** sub-command removes all sources and sets the source to the default. This sub command should only be used in rare cases. Because the command changes the user access, **Reset** requires the user to have administrator privileges.
 
-Usage: `winget source reset`
+> [!NOTE]
+> Because the **reset** command will clean up all sources, you must force the action by using the **--force** argument.
 
-For example: `winget source reset`
+Usage: `winget source reset --force`
 
-## Default repository
+## export
 
-Windows Package Manager specifies a default repository. You can identify the repository by using the **list** command. For example: `winget source list`
+The **export** sub-command allows you to export the specific details for a source to a JSON file.
+
+For example:
+
+```CMD
+> winget source export winget
+> {"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
+```
+
+## Default repositories
+
+Windows Package Manager specifies two default repositories. You can identify the repositories by using the **list** command. For example: `winget source list`
+
+* **msstore** - The Microsoft Store catalog.
+* **winget** -  The Windows Package Manager app repository.
+
+## Source agreements
+
+Individual **Sources** may request that the user agree to terms before accessing the repository. Before adding or using the repository, the user must agree to the terms presented.
+
+![Source license image](./images/source-license.png)
+
+If the user does not agree to or acknowleged the agreements, they will not be able to access the source content.
 
 ## Related topics
 

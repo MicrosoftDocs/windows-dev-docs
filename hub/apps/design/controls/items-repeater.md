@@ -54,7 +54,7 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action.</p>
+    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
@@ -169,7 +169,7 @@ This example assumes a **DataTemplateSelector** has been defined that decides be
 When defining a **DataTemplateSelector** to use with **ItemsRepeater** you only need to implement an override for the [**SelectTemplateCore(Object)**](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) method. For more info and examples, see [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector).
 
 > [!NOTE]
-> An alternative to **DataTemplate**s to manage how elements are created in more advanced scenarios is to implement your own [**Windows.UI.Xaml.Controls.IElementFactory**](/uwp/api/windows.ui.xaml.controls.ielementfactory) to use as the **ItemTemplate**.  It will be responsible for generating content when requested.
+> An alternative to **DataTemplate**s to manage how elements are created in more advanced scenarios is to implement your own [**Windows.UI.Xaml.Controls.IElementFactory**](/uwp/api/windows.ui.xaml.ielementfactory?view=winrt-22000&preserve-view=true) to use as the **ItemTemplate**.  It will be responsible for generating content when requested.
 
 ## Configure the data source
 

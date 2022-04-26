@@ -1,11 +1,10 @@
 ---
-description: You can create an expandable tree view by binding the ItemsSource to a hierarchical data source, or you can create and manage TreeViewNode objects yourself.
-title: Tree view
+description: TreeView and data binding in UWP.
+title: TreeViews in UWP Apps
 label: Tree view
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 01/11/2022
 ms.topic: article
-ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
 dev-contact: joyate
@@ -13,10 +12,10 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5, 19H1
+ms.custom: RS5, 19H1, seo-windows-dev
 ---
 
-# TreeView
+# TreeViews in UWP Apps
 
 The XAML [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
@@ -65,7 +64,7 @@ The **TreeView** APIs support the following features:
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TreeView">open the app and see the TreeView in action</a>.</p>
+    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TreeView">open the app and see the TreeView in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>

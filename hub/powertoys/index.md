@@ -1,15 +1,15 @@
 ---
 title: Microsoft PowerToys
-description: Microsoft PowerToys is a set of utilities for customizing Windows 10. Utilities include ColorPicker (click anywhere to grab a color value), FancyZones (shortcuts to position windows into a grid layout), File Explorer Add-ons (preview SVGs or Markdown files), Image Resizer (resize one or many images with a simple right-click), Keyboard Manager (remap keys or create your own shortcuts), PowerRename (bulk rename using search and replace), PowerToys Run (Alt + Space to launch apps), a Shortcut Guide, and more to come.
-ms.date: 12/02/2020
+description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
+ms.date: 12/03/2021
 ms.topic: overview
 ms.localizationpriority: medium
-no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run]
+no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
 ---
 
-# Microsoft PowerToys: Utilities to customize Windows 10
+# Microsoft PowerToys: Utilities to customize Windows
 
-Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows 10 experience for greater productivity.
+Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
@@ -17,21 +17,32 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Processor support
 
 - **x64**: Supported
-- **x86**: In development (see [issue #602](https://github.com/microsoft/PowerToys/issues/602))
 - **ARM**: In development (see [issue #490](https://github.com/microsoft/PowerToys/issues/490))
 
 ## Current PowerToy utilities
 
 The currently available utilities include:
 
+
+### Always on Top
+
+:::row:::
+    :::column:::
+        [![Always on Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
+    :::column-end:::
+    :::column span="2":::
+        [Always on Top](always-on-top.md) enables you to pin windows on top of all other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+    :::column-end:::
+:::row-end:::
+
 ### PowerToys Awake
 
 :::row:::
     :::column:::
-        [![Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+        [![PowerToys Awake screenshot](../images/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
-        [Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its screens.
+        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its screens.
     :::column-end:::
 :::row-end:::
 
@@ -64,7 +75,7 @@ The currently available utilities include:
         [![File Explorer screenshot](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
-        [File Explorer](file-explorer.md) add-ons  enable preview pane rendering in File Explorer to display SVG icons (.svg) and Markdown (.md) file previews. To enable the preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
+        [File Explorer](file-explorer.md) add-ons enable preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
     :::column-end:::
 :::row-end:::
 
@@ -90,6 +101,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Mouse utilities
+
+:::row:::
+    :::column:::
+        [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
+    :::column-end:::
+    :::column span="2":::
+        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
+    :::column-end:::
+:::row-end:::
+
 ### PowerRename
 
 :::row:::
@@ -108,7 +130,7 @@ The currently available utilities include:
         [![PowerToys Run screenshot](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and launch your app instantly - just enter the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well. This PowerToy requires Windows 10 1903 (build 18362) or later.
+        [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well. This PowerToy requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 
@@ -119,28 +141,24 @@ The currently available utilities include:
         [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>?</kbd> and shows the available shortcuts for the current state of the desktop.
+        [Windows key shortcut guide](shortcut-guide.md) appears when a user presses <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop.  You can also change this setting and press and hold <kbd>⊞ Win</kbd>.
     :::column-end:::
 :::row-end:::
 
-## Future PowerToy utilities
-
-Install the pre-release experimental version of PowerToys to try the latest experimental utilities, including:
-
-### Video Conference Mute (Experimental)
+### Video Conference Mute
 
 :::row:::
     :::column:::
         [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
-        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>N</kbd> while on a conference call, regardless of the application that currently has focus. This is only included in the [pre-release/experimental version of PowerToys](https://github.com/microsoft/PowerToys/releases/) and requires Windows 10 1903 (build 18362) or later.
+        [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus. This requires Windows 10 1903 (build 18362) or later.
     :::column-end:::
 :::row-end:::
 
 ## Languages
 
-Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, German, French, Hungarian, Italian, Japanese, Korean, Polish, Portugese, Portugese (Brazil), Russian, Spanish, Turkish.
+Currently, PowerToys is available in the following languages: Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Turkish.
 
 *Note that new elements of the app will often not yet be translated in the first version release.*
 
@@ -148,11 +166,11 @@ Currently, PowerToys is available in the following languages: Chinese (simplifie
 
 In this video, Clint Rutkas (PM for PowerToys) walks through how to install and use the various utilities available, in addition to sharing some tips, info on how to contribute, and more.
 
-> [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
+> [!VIDEO https://docs.microsoft.com/shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
 ## Known issues
 
-Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub.
+Search known issues or file a new issue in the [Issues](https://github.com/microsoft/PowerToys/issues) tab of the PowerToys repository on GitHub. View instructions in the [Report a Bug](reportbug.md) section of these docs.
 
 ## Contribute to PowerToys (Open Source)
 
@@ -161,10 +179,10 @@ PowerToys welcomes your contributions! The PowerToys development team is excited
 - Write a [tech spec](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - Submit a [design concept or recommendation](https://www.microsoft.com/design/inclusive/)
 - [Contribute to documentation](/contribute/)
-- Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/master/src)
-- [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
+- Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/main/src)
+- [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/main/doc/devdocs)
 
-Before starting work on a feature that you would like to contribute, **read the [Contributor's Guide](https://github.com/microsoft/PowerToys/blob/master/CONTRIBUTING.md)**. The PowerToys team will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
+Before starting work on a feature that you would like to contribute, **read the [Contributor's Guide](https://github.com/microsoft/PowerToys/blob/main/CONTRIBUTING.md)**. The PowerToys team will be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort.
 
 ## PowerToys release notes
 
@@ -172,11 +190,11 @@ PowerToys [release notes](https://github.com/microsoft/PowerToys/releases/) are 
 
 ## PowerToys history
 
-Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found [here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
+Inspired by the [Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. An overview of the original PowerToys can be found here: [Using Windows 95 PowerToys](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
 
 ## PowerToys roadmap
 
-PowerToys is a rapid-incubation, open source team aimed at providing power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
+PowerToys is a rapid-incubation, open source team aimed at providing power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
 
 - [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
 - [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)

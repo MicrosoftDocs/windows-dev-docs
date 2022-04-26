@@ -4,8 +4,6 @@ description: Extend your desktop application with UWP projects and Windows Runti
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
