@@ -35,6 +35,6 @@ The [RequestRateAndReviewAppAsync](../monetize/request-ratings-and-reviews.md#sh
 
 Analyze ratings and reviews with the [Reviews](reviews-report.md) report in Partner Center. This helps developers monitor the performance of their app over time. For more details, developers can also analyze ratings and reviews by country, app package, device type, OS, and more.
 
-## Reporting Concerns
+## Reporting concerns
 
 If review has spam, advertising, profanity, or offensive content, find the review on the product page and report it.
