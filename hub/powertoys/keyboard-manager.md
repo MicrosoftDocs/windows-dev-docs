@@ -1,7 +1,7 @@
 ---
 title: PowerToys Keyboard Manager utility for Windows
 description: A utility that enables you to redefine keys on the keyboard
-ms.date: 05/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
@@ -13,7 +13,7 @@ The PowerToys Keyboard Manager enables you to redefine keys on your keyboard.
 
 For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd> on your keyboard. When you press the <kbd>A</kbd> key, a `B` will be inserted.
 
-![PowerToys Keyboard Manger remap keys screenshot](../images/powertoys-keyboard-remap.png)
+![PowerToys Keyboard Manger remap keys screenshot.](../images/powertoys-keyboard-remap.png)
 
 You can exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
@@ -52,7 +52,7 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 | :--- | :--- |
 | `B` | `A` |
 
-![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
+![Keyboard Remap Keys screenshot.](../images/powertoys-keyboard-remap-a-b.png)
 
 ### Key to Shortcut
 
@@ -82,7 +82,7 @@ For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies selected text. To 
 | :--- | :--- |
 | `Alt` + `C` | `Ctrl` + `C` |
 
-![Keyboard Remap Shortcut screenshot](../images/powertoys-keyboard-remap-shortcut.png)
+![Keyboard Remap Shortcut screenshot.](../images/powertoys-keyboard-remap-shortcut.png)
 
 There are a few rules to follow when remapping shortcuts (these rules only apply to the "Shortcut" column):
 
@@ -144,7 +144,7 @@ Orphaning a key means that you mapped it to another key and no longer have anyth
 
 For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To ensure this does not happen by accident, a warning will display for any orphaned keys. To fix this, use <kbd>+</kbd> to create another remapped key that is mapped to result in `A`.
 
-![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
+![PowerToys Keyboard Manager orphaned key.](../images/powertoys-keyboard-remap-orphaned.png)
 
 
 ## Frequently asked questions
@@ -181,7 +181,7 @@ Currently no. We are not aware of an API where we can see the input and which de
 
 Keyboard Manager lists mappings for all known physical keyboard buttons. Some of these mappings may not be available on your keyboard as there may not be a physical key that it corresponds to. For instance, the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
 
-![PowerToys Keyboard Manager List of Keys](../images/pt-key-remap-drop-down.png)
+![PowerToys Keyboard Manager List of Keys.](../images/pt-key-remap-drop-down.png)
 
 
 ## Troubleshooting
@@ -196,10 +196,5 @@ If you have tried to remap a key or shortcut and are having trouble, it could be
 
 - [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special buttons](https://github.com/microsoft/PowerToys/issues/3703)
 - AltGr and Ctrl+Alt gives issues, since AltGr behaves as (L)Ctrl + (R)Alt and remapping one of these keys can break the function.
-
-<!-- [Jay] @crutkas: the following issues are closed...
-- [Caps light indicator not toggling correctly](https://github.com/microsoft/PowerToys/issues/1692)
-- [Remaps not working for FancyZones and Shortcut Guide](https://github.com/microsoft/PowerToys/issues/3079)
--->
 
 See the list of [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).

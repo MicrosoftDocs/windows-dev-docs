@@ -1,7 +1,7 @@
 ---
 title: PowerToys Always on Top utility for Windows
 description: A system-wide utility for Windows that allows you to pin windows to the top of your screen.
-ms.date: 01/06/2021
+ms.date: 04/27/2022
 ms.topic: article
 no-loc: [PowerToys, Windows, Always on Top, Win]
 ---
@@ -10,9 +10,9 @@ no-loc: [PowerToys, Windows, Always on Top, Win]
 
 A system-wide utility for Windows that allows you to pin windows to the top of all your windows.
 
-![AlwaysOnTop screenshot](../images/pt-always-on-top.png)
+![AlwaysOnTop screenshot.](../images/pt-always-on-top.png)
 
-### Toggle windows to be on top
+## Toggle windows to be on top
 
 With the activation / deactivation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the targeted window will be placed above all non-topmost windows and should stay above them, even when the window is deactivated.
 

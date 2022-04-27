@@ -1,7 +1,7 @@
 ---
 title: PowerToys Image Resizer utility for Windows
 description: A Windows shell extension for bulk image-resizing
-ms.date: 05/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
@@ -11,11 +11,11 @@ no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 
 Image Resizer is a Windows shell extension for bulk image-resizing. After installing PowerToys, right-click on one or more selected image files in File Explorer, and then select **Resize pictures** from the menu.
 
-![Image Resizer Demo](../images/powertoys-resize-images.gif)
+![Image Resizer Demo.](../images/powertoys-resize-images.gif)
 
 Image Resizer allows you to resize images by dragging and dropping your selected files with the right mouse button. This way, resized pictures can quickly be saved in a different folder.
 
-![Image Resizer Drag And Drop Demo](../images/powertoys-resize-drag-drop.gif)
+![Image Resizer Drag And Drop Demo.](../images/powertoys-resize-drag-drop.gif)
 
 > [!NOTE]
 > If **Ignore the orientation of pictures** is checked, the width and height of the specified size _may_ be swapped to match the orientation (portrait/landscape) of the current image. In other words: If checked, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
@@ -24,7 +24,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 
 Inside the PowerToys Settings window, on the Image Resizer tab, you can configure the following settings.
 
-![PowerToys Image Resizer Settings](../images/powertoys-imageresize-settings.png)
+![PowerToys Image Resizer Settings.](../images/powertoys-imageresize-settings.png)
 
 ### Sizes
 
@@ -41,7 +41,7 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 
 ### Fallback encoding
 
-The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Metafile (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. **This is not a file type conversion tool, but only works as a fallback for unsupported file formats.**
+The fallback encoder is used when the file cannot be saved in its original format. For example, the Windows Meta File (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image cannot be saved in its original format. Image Resizer enables you to specify what format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. **This is not a file type conversion tool, but only works as a fallback for unsupported file formats.**
 
 ### File
 

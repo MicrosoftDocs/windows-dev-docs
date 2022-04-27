@@ -1,7 +1,7 @@
 ---
 title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 01/03/2022
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 
 FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve the speed of your workflow and restore layouts quickly. FancyZones allows you to define a set of window locations for a desktop that are drag targets for windows. When you drag a window into a zone, the window is resized and repositioned to fill that zone.
 
-![FancyZones in action screenshot](../images/pt-fancy-zones2.png)
+![FancyZones in action screenshot.](../images/pt-fancy-zones2.png)
 
 
 ## Getting started snapping windows
@@ -20,11 +20,11 @@ If two zones are adjacent, a window can be snapped to the sum of their area (rou
 
 It's also possible to snap to any number of zones. First, drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
-![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
+![Two Zones Activation screenshot.](../images/pt-fancyzones-twozones.png)
 
 To snap a window to multiple zones using only the keyboard, first turn on the setting **Override Windows Snap** and select **Move windows based on: Relative position** as shown below. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
 
-![Settings for Snapping to Multiple Zones via Keyboard](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
+![Settings for Snapping to Multiple Zones via Keyboard.](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
 ### Window switching
 
@@ -54,17 +54,17 @@ Launch the zones editor using the button in the PowerToys Settings menu or by pr
 > [!NOTE]
 > Previous to PowerToys v0.39, this shortcut was <kbd>Win</kbd>+<kbd>`</kbd> without Shift. This was updated so that it does not conflict with [Windows Terminal Quake mode](/windows/terminal/tips-and-tricks#quake-mode) shortcut.
 
-![FancyZones Settings UI](../images/pt-fancyzones-settings.png)
+![FancyZones Settings UI.](../images/pt-fancyzones-settings.png)
 
 ### Choose your layout (Layout Editor)
 
 When first launched, the zones editor presents a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the monitor. The selected layout is applied automatically. Double-clicking a layout will apply it and automatically close the editor.
 
-![FancyZones Picker screenshot](../images/pt-fancyzones-picker.png)
+![FancyZones Picker screenshot.](../images/pt-fancyzones-picker.png)
 
 If multiple displays are in use, the editor will detect the available monitors and display them for you to choose between. The chosen monitor will then be the target of the selected layout.
 
-![FancyZones Picker Multiple Monitors](../images/pt-fancyzones-multimon.png)
+![FancyZones Picker Multiple Monitors.](../images/pt-fancyzones-multimon.png)
 
 ### Space around zones
 
@@ -72,7 +72,7 @@ The **Show space around zones** setting enables you to determine what sort of ma
 
 The **Distance to highlight adjacent zones** enables you to set a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.
 
-![FancyZones space around zones screenshot](../images/pt-fancyzones-spacearound.png)
+![FancyZones space around zones screenshot.](../images/pt-fancyzones-spacearound.png)
 
 ### Creating a custom layout
 
@@ -86,13 +86,13 @@ The **Grid** model starts with a three column grid and allows zones to be create
 - To move a divider: click on the thumb and drag.
 - To merge zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
 
-![FancyZones Table Editor Mode](../images/pt-fancyzones-grideditor.png)
+![FancyZones Table Editor Mode.](../images/pt-fancyzones-grideditor.png)
 
 The **Canvas** model starts with a blank layout and supports adding zones that can be dragged and resized similar to windows. Canvas layouts are directly tied to DPI and resolution of the monitor.
 
 Canvas layout also has keyboard support for zone editing. Use the <kbd>arrow</kbd> keys (up, down, left, right) to move a zone by 10 pixels, or <kbd>Ctrl</kbd>+<kbd>arrow</kbd> to move a zone by 1 pixel. Use the <kbd>Shift</kbd>+<kbd>arrow</kbd> keys to resize a zone by 10 pixels (5 per edge), or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>arrow</kbd> to resize a zone by 2 pixels (1 per edge). To switch between the editor and dialog, press the <kbd>Ctrl</kbd>+<kbd>Tab</kbd> keys.
 
-![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
+![FancyZones Window Editor Mode.](../images/pt-fancyzones-canvaseditor.png)
 
 ### Quickly changing between custom layouts
 
@@ -100,7 +100,7 @@ A custom layout can be configured to have a user-defined hotkey to quickly apply
 
 In the demo below, we start with a default template applied to the screen and two custom layouts that we assign hotkeys for. We then use the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[number]</kbd> binding to apply the first custom layout and snap a window to it. Finally, we apply the second custom layout while dragging a window and snap the window to it.
 
-![FancyZones Quick-Swap Layouts settings and usage](../images/pt-fancyzones-quickswap.gif)
+![FancyZones Quick-Swap Layouts settings and usage.](../images/pt-fancyzones-quickswap.gif)
 
 > [!TIP]
 > The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak zones, and exported to share layouts across devices.
@@ -138,4 +138,4 @@ In the demo below, we start with a default template applied to the screen and tw
 | Flash zones when switching layout | The zones will flash when a layout is selected via the shortcut. |
 | Exclude applications from snapping to zones | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
 
-![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
+![FancyZones Settings bottom screenshot.](../images/pt-fancyzones-settings2.png)

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Mouse utilities for Windows
 description: A collection of utilities to expand the range of usage for the mouse and cursor
-ms.date: 10/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows]
@@ -19,7 +19,7 @@ Mouse utilities is a collection of features that enhance mouse and cursor functi
 
 Double press the left <kbd>Ctrl</kbd> key or shake the mouse to activate a spotlight that focuses on the cursor's position. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
-![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
+![Screenshot of Find my mouse.](../images/pt-mouse-utilities-find-my-mouse.gif)
 
 ### Settings
 
@@ -44,7 +44,7 @@ Display visual indicators when the left or right mouse buttons are clicked. By d
 
 ### Settings
 
-![Screenshot of Mouse Highlighter](../images/pt-mouse-highlighter.gif)
+![Screenshot of Mouse Highlighter.](../images/pt-mouse-highlighter.gif)
 
 From the settings menu, the following options can be configured:
 
@@ -61,8 +61,6 @@ From the settings menu, the following options can be configured:
 ## Mouse pointer Crosshairs
 
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
-
-<!-- TODO: image -->
 
 | Setting | Description |
 | :--- | :--- |

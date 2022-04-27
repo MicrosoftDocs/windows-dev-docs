@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 12/03/2021
+ms.date: 04/27/2022
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -28,7 +28,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Always on Top screenshot](../images/pt-always-on-top-menu.png)](always-on-top.md)
+        [![Always on Top screenshot.](../images/pt-always-on-top-menu.png)](always-on-top.md)
     :::column-end:::
     :::column span="2":::
         [Always on Top](always-on-top.md) enables you to pin windows on top of other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
@@ -39,7 +39,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerToys Awake screenshot](../images/pt-awake-menu.png)](awake.md)
+        [![PowerToys Awake screenshot.](../images/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
         [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turns off its screens.
@@ -50,7 +50,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![ColorPicker screenshot](../images/pt-color-picker.png)](color-picker.md)
+        [![ColorPicker screenshot.](../images/pt-color-picker.png)](color-picker.md)
     :::column-end:::
     :::column span="2":::
         [ColorPicker](color-picker.md) is a system-wide color picking utility activated with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. Pick colors from any currently running application, the picker automatically copies the color into your clipboard in a set format.
@@ -62,7 +62,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![FancyZones screenshot](../images/pt-fancy-zones.png)](fancyzones.md)
+        [![FancyZones screenshot.](../images/pt-fancy-zones.png)](fancyzones.md)
     :::column-end:::
     :::column span="2":::
         [FancyZones](fancyzones.md) is a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
@@ -73,7 +73,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![File Explorer screenshot](../images/pt-file-explorer.png)](file-explorer.md)
+        [![File Explorer screenshot.](../images/pt-file-explorer.png)](file-explorer.md)
     :::column-end:::
     :::column span="2":::
         [File Explorer](file-explorer.md) add-ons enable Preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
@@ -84,7 +84,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Image Resizer screenshot](../images/pt-image-resizer.png)](image-resizer.md)
+        [![Image Resizer screenshot.](../images/pt-image-resizer.png)](image-resizer.md)
     :::column-end:::
     :::column span="2":::
         [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a simple right click from File Explorer, resize one or many images instantly. This code is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
@@ -95,7 +95,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Keyboard Manager screenshot](../images/pt-keyboard-manager.png)](keyboard-manager.md)
+        [![Keyboard Manager screenshot.](../images/pt-keyboard-manager.png)](keyboard-manager.md)
     :::column-end:::
     :::column span="2":::
         [Keyboard Manager](keyboard-manager.md) allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts.
@@ -106,7 +106,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Mouse utilities screenshot](../images/pt-mouse-utils.png)](mouse-utilities.md)
+        [![Mouse utilities screenshot.](../images/pt-mouse-utils.png)](mouse-utilities.md)
     :::column-end:::
     :::column span="2":::
         [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor. With Find My Mouse, quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing). Mouse Highlighter displays visual indicators when the left or right mouse buttons are clicked. Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
@@ -117,7 +117,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerRename screenshot](../images/pt-rename.png)](powerrename.md)
+        [![PowerRename screenshot.](../images/pt-rename.png)](powerrename.md)
     :::column-end:::
     :::column span="2":::
         [PowerRename](powerrename.md) enables you to perform bulk renaming, searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. This code is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
@@ -128,7 +128,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![PowerToys Run screenshot](../images/pt-run.png)](run.md)
+        [![PowerToys Run screenshot.](../images/pt-run.png)](run.md)
     :::column-end:::
     :::column span="2":::
         [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
@@ -139,7 +139,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Shortcut Guide screenshot](../images/pt-shortcut-guide.png)](shortcut-guide.md)
+        [![Shortcut Guide screenshot.](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
         [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also change this setting and press and hold <kbd>⊞ Win</kbd>.
@@ -150,7 +150,7 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](video-conference-mute.md)
+        [![Video Conference Mute screenshot.](../images/pt-video-conference-mute.png)](video-conference-mute.md)
     :::column-end:::
     :::column span="2":::
         [Video Conference Mute](video-conference-mute.md) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.

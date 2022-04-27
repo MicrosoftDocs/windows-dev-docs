@@ -1,10 +1,10 @@
 ---
 title: PowerToys PowerRename utility for Windows
 description: A windows shell extension for bulk renaming of files
-ms.date: 12/02/2020
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerRename, Pampalona, Windows, File Explorer, regex]
+no-loc: [PowerRename, Windows, File Explorer, regex]
 ---
 
 # PowerRename utility
@@ -22,14 +22,14 @@ PowerRename is a bulk renaming tool that enables you to:
 
 In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command enables the ability to undo the last change.
 
-![PowerRename Demo](../images/powerrename-demo.gif)
+![PowerRename Demo.](../images/powerrename-demo.gif)
 
 
 ## PowerRename window
 
 After selecting files in Windows File Explorer, right-clicking and selecting **PowerRename** (which will appear only when enabled in PowerToys), the PowerRename window will appear. The number of items you've selected will be displayed, along with search and replace values, a list of options, and a preview window displaying results of the search and replace values you've entered.
 
-![PowerRename Menu screenshot](../images/powerrename-menu.png)
+![PowerRename Menu screenshot.](../images/powerrename-menu.png)
 
 ### Search for
 
@@ -195,7 +195,7 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
   - The default preview will show all selected files, with only files matching the _Search for_ criteria displaying the updated rename value.
   - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
-![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
+![PowerToys PowerRename Filter demo.](../images/powerrename-demo2.gif)
 
 
 ## Settings

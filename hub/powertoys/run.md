@@ -1,10 +1,10 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 05/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, WindowWalker]
+no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
 ---
 
 # PowerToys Run utility
@@ -16,7 +16,7 @@ To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _
 > [!IMPORTANT]
 > PowerToys must be running in the background and Run must be enabled for this utility to work.
 
-![PowerToys Run demo opening apps](../images/pt-powerrun-demo.gif)
+![PowerToys Run demo opening apps.](../images/pt-powerrun-demo.gif)
 
 
 ## Features
@@ -24,7 +24,7 @@ To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! _
 PowerToys Run features include:
 
 - Search for applications, folders or files
-- Search for running processes (previously known as [WindowWalker](https://github.com/betsegaw/windowwalker/))
+- Search for running processes (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
 - Clickable buttons with keyboard shortcuts (such as _Open as administrator_ or _Open containing folder_)
 - Invoke Shell Plugin using `>` (for example, `> Shell:startup` will open the Windows startup folder)
 - Do a simple calculation using calculator
@@ -42,7 +42,7 @@ The following general options are available on the PowerToys Run settings page.
 | :--- | :--- |
 | Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
 | Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut |
-| Ignore shortcuts in Fullscreen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
+| Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
 | Preferred display position | If multiple displays are in use, PowerToys Run can be launched on:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
@@ -53,7 +53,7 @@ The following general options are available on the PowerToys Run settings page.
 
 PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the various available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.
 
-![PowerToys Run Plugin Manager](../images/pt-run-plugin-manager.png)
+![PowerToys Run Plugin Manager.](../images/pt-run-plugin-manager.png)
 
 #### Direct activation commands
 
@@ -123,6 +123,7 @@ The Program plugin allows for program arguments to be added when launching an ap
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
+>
 > - The characters sequence `--`.
 > - A parameter that starts with `-`.
 > - A parameter that starts with `--`.
@@ -197,6 +198,7 @@ The Time and date plugin provides the current time and date or a custom one in d
 > For global queries the first word of the query has to be a complete match.
 
 Examples:
+
 - `time` or `( time` to show the time.
 - `( 3/27/2022` to show all available formats for a date value.
 - `( calendar week::3/27/2022` to show the calendar week for a date value.
@@ -205,11 +207,10 @@ Examples:
 ### Unit converter plugin
 
 > [!NOTE]
-> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
->
-> The names and abbreviations of the units aren't localized yet.
+> The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals. The names and abbreviations of the units aren't localized yet.
 
 The Unit Converter plugin supports the following unit types:
+
 - Acceleration
 - Angle
 - Area
@@ -239,6 +240,7 @@ In the Folder plugin you can filter the results by using some special characters
 The Windows Settings plugin allows you to search for Windows settings. You can search the settings by their name or by their location.
 
 To search by location you can use the following syntax:
+
 - `$ device:` to list all settings with 'device' in the area name.
 - `$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'.
 
@@ -248,6 +250,7 @@ With the Window Walker plugin you can kill the process of a window if it hangs.
 
 > [!NOTE]
 > There are some limitations for the "kill process" feature:
+>
 > - Killing the Explorer process is only allowed if each folder window is running in its own process.
 > - You can only kill elevated processes if you have admin permissions (UAC).
 > - Windows of UWP apps don't know their process until they are searched in non-minimized state.
@@ -257,25 +260,25 @@ With the Window Walker plugin you can kill the process of a window if it hangs.
 
 #### File Explorer setting
 
-If the File Explorer settings in Windows are not set to open each window in a seperate process, you will receive the following message when searching for open Explorer windows:
+If the File Explorer settings in Windows are not set to open each window in a separate process, you will receive the following message when searching for open Explorer windows:
 
-![Explorer Process Info in PowerToys Run](../images/pt-run-explorer-info.png)
+![Explorer Process Info in PowerToys Run.](../images/pt-run-explorer-info.png)
 
 You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. After selecting the message, the "Folder options" window will open.
 
 On the "Folder options" window, you can enable the setting "Launch folder windows in a separate process".
 
-![Folder Options Window](../images/pt-run-folder-options.png)
+![Folder Options Window.](../images/pt-run-folder-options.png)
 
 ### Windows Search settings
 
 If the indexing settings for Windows Search are not set to cover all drives, you will receive the following warning when using the Windows Search plugin:
 
-![PowerToys Run Indexer Warning](../images/pt-run-indexer-warning.png)
+![PowerToys Run Indexer Warning.](../images/pt-run-indexer-warning.png)
 
 You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows settings page with the "Searching Windows" options will open.
 
-![Indexing Settings](../images/pt-run-indexing.png)
+![Indexing Settings.](../images/pt-run-indexing.png)
 
 On the "Searching Windows" page, you can:
 
@@ -283,7 +286,7 @@ On the "Searching Windows" page, you can:
 - Specify folder paths to exclude.
 - Select the "Advanced Search Indexer Settings" (near the bottom of the menu options) to set advanced index settings, add or remove search locations, index encrypted files, etc.
 
-![Advanced Indexing Settings](../images/pt-run-indexing-advanced.png)
+![Advanced Indexing Settings.](../images/pt-run-indexing-advanced.png)
 
 
 ## Known issues

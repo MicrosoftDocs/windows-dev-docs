@@ -1,7 +1,7 @@
 ---
 title: PowerToys Awake utility for Windows
 description: A tool for a Windows computer to stay awake.
-ms.date: 06/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -20,10 +20,9 @@ PowerToys Awake can be used directly from PowerToys Settings or as a standalone 
 
 ## Settings
 
-<!-- [Jay] GUI text should be updated to "PowerToys Awake", then change following text and images accordingly -->
 In the PowerToys Settings view, start PowerToys Awake by using the **Enable Awake** toggle. Once enabled, the application will manage the awakeness state of the computer.
 
-![A screenshot of the Awake settings](../images/pt-awake-settings-menu.png)
+![A screenshot of the Awake settings.](../images/pt-awake-settings-menu.png)
 
 The following Awake states can be selected:
 
@@ -45,7 +44,7 @@ While PowerToys Awake can keep the computer awake indefinitely or temporarily, i
 
 To manage the execution of the tool from the system tray, right-click on the PowerToys Awake icon.
 
-![Awake settings managed from the system tray on Windows](../images/pt-awake-tray.gif)
+![Awake settings managed from the system tray on Windows.](../images/pt-awake-tray.gif)
 
 
 ## Command Line Interface (CLI)

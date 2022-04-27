@@ -1,7 +1,7 @@
 ---
 title: PowerToys Color Picker utility for Windows
 description: A system-wide color picking utility for Windows that enables you to pick colors from the screen and automatically copies the default value to your clipboard.
-ms.date: 05/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 
 A system-wide color picking utility for Windows that enables you to pick colors from any currently running application and can copy it in a configurable format to your clipboard.
 
-![ColorPicker](../images/pt-colorpicker-hex-editor.png)
+![ColorPicker.](../images/pt-colorpicker-hex-editor.png)
 
 ## Getting started
 
@@ -35,10 +35,11 @@ After the Color Picker is activated, hover your mouse cursor over the color you 
 
 The copied color will be stored in your clipboard in the format that is configured in the settings (default: HEX).
 
-![Selecting a Color](../images/pt-colorpicker.gif)
+![Selecting a Color.](../images/pt-colorpicker.gif)
 
 > [!TIP]
 > To select the color of the non-hover state of a element:
+>
 > - Move the mouse pointer close, but not over the element
 > - Zoom in by scrolling the mouse wheel up (image will be frozen)
 > - In the enlarged area, you can pick the color of the element
@@ -51,7 +52,7 @@ The editor also allows you to fine-tune any picked color or get a new similar co
 
 The color in the middle represents your currently selected color from the colors history. By clicking on it, the fine-tuning configuration control will appear, where you can change HSV or RGB values of the current color. Pressing <kbd>Select</kbd> will add newly configured color into the colors history.
 
-![ColorPicker Editor window](../images/pt-colorpicker-editor.gif)
+![ColorPicker Editor window.](../images/pt-colorpicker-editor.gif)
 
 To remove any color from the colors history, right click a color and select **Remove**.
 
@@ -64,7 +65,7 @@ Color Picker has following settings:
 - Format of a copied color (HEX, RGB, etc.)
 - Order and presence of color formats in the editor
 
-![ColorPicker Settings screenshot](../images/pt-colorpicker-settings.png)
+![ColorPicker Settings screenshot.](../images/pt-colorpicker-settings.png)
 
 ## Limitations
 

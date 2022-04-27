@@ -1,7 +1,7 @@
 ---
 title: PowerToys Video Conference Mute utility for Windows
 description: A utility that allows to quickly mute the microphone (audio) and turn off the camera (video) while on a conference call with a single keystroke, regardless of what application has focus.
-ms.date: 03/18/2022
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Video Conference Mute]
@@ -21,11 +21,11 @@ The default shortcuts to use Video Conference Mute are:
 
 When using the microphone and/or camera toggle shortcut keys, you will see a small toolbar letting you know whether your microphone and camera are set to on, off, or not in use. You can set the position of this toolbar in the Video Conference Mute tab of PowerToys settings.
 
-![Audio and Video mute notification screenshot](../images/pt-video-audio-mute-notification.png)
+![Audio and Video mute notification screenshot.](../images/pt-video-audio-mute-notification.png)
 
 To use this module, it must be selected as the _source_ in the apps that are using camera and/or microphone. Go to the settings and select Powertoys VCM.
 
-![VCM selected as source in Skype](../images/pt-vcm-source-in-app.png)
+![VCM selected as source in Skype.](../images/pt-vcm-source-in-app.png)
 
 
 ## Settings
@@ -42,7 +42,7 @@ The Video Conference Mute page in Settings provides the following options:
 | Show toolbar on | Select whether you prefer the toolbar to be displayed on the main monitor only (default) or on all monitors. |
 | Hide toolbar when both camera and microphone are unmuted | A checkbox is available to toggle this option. |
 
-![Video Conference Mute options in PowerToys settings](../images/pt-video-conference-mute-settings.png)
+![Video Conference Mute options in PowerToys settings.](../images/pt-video-conference-mute-settings.png)
 
 
 ## How this works under the hood

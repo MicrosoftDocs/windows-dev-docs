@@ -1,7 +1,7 @@
 ---
 title: PowerToys administrator mode for Windows
 description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be running in administrator mode as well.
-ms.date: 05/28/2021
+ms.date: 04/27/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
@@ -56,9 +56,9 @@ Most apps do not need to run with elevated permission. A common scenario, howeve
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-![Windows elevated permission prompt screenshot](../images/pt-admin-prompt.png)
+![Windows elevated permission prompt screenshot.](../images/pt-admin-prompt.png)
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-![Windows admin command line screenshot](../images/pt-admin-terminal.png)
+![Windows admin command line screenshot.](../images/pt-admin-terminal.png)
 
