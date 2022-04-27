@@ -506,7 +506,7 @@ If your product is a storefront, or enables access to a storefront, the storefro
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store appeal statistics for FY2021
+### Microsoft Store complaint and appeal statistics for FY2021
 
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
