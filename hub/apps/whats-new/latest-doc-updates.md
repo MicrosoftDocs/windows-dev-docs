@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows API and developer documentation
 ms.topic: article
-ms.date: 03/30/2022
+ms.date: 04/28/2022
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
