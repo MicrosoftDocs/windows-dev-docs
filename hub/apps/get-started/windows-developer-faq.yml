@@ -196,7 +196,7 @@ sections:
           No. WinForms is still supported and receives some feature updates as well.
       - question: Is the Windows Runtime (WinRT) deprecated?
         answer: |
-          No. [WinRT](/windows/uwp/winrt-components) refers to a type of API. WinRT is the evolution of COM. Windows App SDK provides most of its functionality through WinRT APIs.
+          No. [WinRT](/windows/uwp/winrt-components) refers to an application binary interface (ABI) that lets you interop between multiple languages. WinRT is the evolution of COM. Windows App SDK provides most of its functionality through WinRT APIs.
   - name: Release notes and roadmaps
     questions:
       - question: Where can I find release notes for Windows App SDK?
