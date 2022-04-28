@@ -167,4 +167,4 @@ Check out our [guide to transitioning between between a Mac and Windows](./mac-t
 - [Tips for improving your workflow](./tips.md)
 - [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
 - [Popular tutorials, courses, and code samples](./tutorials.md)
-- [Microsoft's Game Stack documentation](/gaming/)
+- [Microsoft's Game Dev documentation](/gaming/)
