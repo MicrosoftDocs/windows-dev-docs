@@ -60,6 +60,8 @@ From the settings menu, the following options can be configured:
 
 ## Mouse pointer Crosshairs
 
+![Screenshot of Crosshairs.](../images/pt-mouseutilities-crosshairs.png)
+
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 
 | Setting | Description |
