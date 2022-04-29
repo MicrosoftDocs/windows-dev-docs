@@ -1,17 +1,18 @@
 ---
 title: search Command
 description: Queries the sources for available applications that can be installed
-ms.date: 04/28/2020
+ms.date: 04/27/2022
 ms.topic: overview
 ms.localizationpriority: medium
 ---
 
 # search command (winget)
 
+The **search** command of the [winget](index.md) tool can be used to show all applications available for installation. It can also be used to identify the string or ID needed to install a specific application.
 
-The **search** command of the [winget](index.md) tool queries the sources for available applications that can be installed.  
+For example, the command `winget search vscode` will return all applications available that include "vscode" in the description or tag.
 
-The **search** command can show all applications available, or it can be filtered down to a specific application. The **search** command is used typically to identify the string to use to install a specific application.
+The **search** command includes parameters for filtering down the applications returned to help you identify the specific application you are looking for, including: `--id`, `--name`, `--moniker`, `--tag`, `--command`, or `--source`. See descriptions [below](#search-strings) or use `winget search --help` in your command line.
 
 ## Usage
 
@@ -25,7 +26,7 @@ The following arguments are available.
 
 | Argument  | Description |
  --------------|-------------|
-| **-q,--query** |  The query used to search for an app. |
+| **-q,--query** |  The query flag is the default argument used to search for an app. It does not need to be specified. Entering the command `winget search foo` will default to using `--query` so including it is unnecessary.|
 | **-?, --help** |  Gets additional help on this command. |
 
 > [!NOTE]
@@ -47,24 +48,17 @@ Search strings can be filtered with the following options.
 | **--tag**    |  Limits the search to the tags listed for the application. |
 | **--command**   |   Limits the search to the commands listed for the application. |
 | **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **-e, --exact**  |     Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.  |  
+| **-n, --count**      |  Show no more than specified number of results (between 1 and 1000). |
+| **-s, --source**     |  Find package using the specified [source](source.md) name. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--accept-source-agreements** | Accept all source license agreements and avoid the prompt. |
 
 The string will be treated as a substring. The search by default is also case insensitive. For example, `winget search micro` could return the following:
 
 * Microsoft
 * Microscope
 * MyMicro
-
-## Search options
-
-The search commands supports a number of options or filters to help limit the results.
-
-| Option  | Description |
-|--------------|-------------|
-| **-e, --exact**  |     Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.  |  
-| **-n, --count**      |  Restricts the output of the display to the specified count. |
-| **-s, --source**     |  Restricts the search to the specified [source](source.md) name.  |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 
 ## Searching across multiple sources
 
