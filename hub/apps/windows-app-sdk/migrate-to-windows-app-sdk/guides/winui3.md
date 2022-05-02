@@ -122,13 +122,15 @@ using WinRT;
 public partial class App : Application
 {
     ...
-    public App()
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
-        this.InitializeComponent();
-        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+        m_window = new MainWindow();
+        m_window.Activate();
+        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
     }
 
     public static IntPtr WindowHandle { get; private set; }
+    private Window m_window;
 }
 
 // MainWindow.xaml.cs
