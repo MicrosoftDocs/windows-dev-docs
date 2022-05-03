@@ -46,10 +46,6 @@ For more information about these materials, check out [Materials in Windows 11](
 - Notifications for an *elevated* unpackaged app is not supported. PushNotificationManager::IsSupported will not perform a check for elevated mode. However, we are working on supporting this in a future release.
 
 ### MSIX packaging
-We've introduced a new extension to support creating shortcuts to items in the MSIX package.
-
-**Known limitations for the extension:**
-
 We've enhanced MSIX adding new and extending existing functionality via the extension categories:
 
 - windows.appExecutionAlias
