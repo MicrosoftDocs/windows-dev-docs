@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 03/29/2022
+ms.date: 05/03/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: zafaraj
 author: zaryaf
@@ -20,8 +20,67 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
-## Version 1.1 Preview 2 (1.1.0-preview2)
+## Version 1.1 Preview 3 (1.1.0-preview3)
 This is the latest release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
+
+In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview3 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the updated runtime and MSIX.
+
+> [!NOTE]
+> For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
+
+In addition to all of the [Preview 2](#version-11-preview-2-110-preview2) features, the following sections describe new and updated features, limitations, and known issues for this release.
+
+### WinUI 3
+Mica and Background Acrylic are now available for WinUI 3 applications.
+
+For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md). A sample for applying Mica in C# applications is coming soon.
+
+### Notifications
+
+**Fixed issues:**
+- In 1.1.0-preview1 and 1.1.0-preview2, some unpackaged apps will have seen their app icons incorrectly copied to AppData\LocalMicrosoftWindowsAppSDK. For this release, they will be copied to AppData\Local\Microsoft\WindowsAppSDK instead. To avoid leaking icons, you should manually delete the app icon at the incorrect path after updating to 1.1.0-preview3. 
+- App icon and app display name retrieval for app notifications via Shortcuts is now supported. This app icon will be prioritized over any icon specified in resource files.
+- Support for push notifications for unpackaged apps has been restored (see **Limitations** for noted exception). We've introduced the PushNotificationManager::IsSupported API to check if your app supports push notifications.
+
+**Limitations:**
+- Notifications for an *elevated* unpackaged app is not supported. PushNotificationManager::IsSupported will not perform a check for elevated mode. However, we are working on supporting this in a future release.
+
+### MSIX packaging
+We've introduced a new extension to support creating shortcuts to items in the MSIX package.
+
+**Known limitations for the extension:**
+
+We've enhanced MSIX adding new and extending existing functionality via the extension categories:
+
+- windows.appExecutionAlias
+- windows.customDesktopEventLog
+- windows.dataShortcuts
+- windows.fileTypeAssociation
+- windows.fileTypeAssociation.iconHandler
+- windows.folder
+- windows.shortcut
+
+These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
+
+### Environment manager
+API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
+
+Clarification from 1.1 Preview 1: Automatic removal of any environment variable changes when an app that used environment manager is uninstalled is only available for packaged apps. Additionally, reverting environment variable changes requires installation of the Windows App SDK framework package, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the runtime.
+
+### Other known limitations
+Regressions from 1.1 Preview 2:
+
+- For .NET apps using MRT Core APIs and WinUI apps that *don't* deploy with single-project MSIX:
+  - RESW and image files that were added to the project as Existing Items and  previously automatically included to the PRIResource and Content ItemGroups, respectively, won't be included in those ItemGroups. As a result, these resources won't be indexed during PRI generation, so they won't be available during runtime. 
+    - Workaround: Manually include the resources in the project file and remove them from the None ItemGroup.
+    - Alternative workaround: When available, upgrade your apps' .NET SDK to 6.0.300. See [Version requirements for .NET SDK](/dotnet/core/compatibility/sdk/6.0/vs-msbuild-version) for additional information.
+- For .NET apps that *don't* deploy with single-project MSIX:
+  - If a file is added to the Content ItemGroup twice or more, then there will be a build error.
+    - Workaround: Delete the duplicate inclusion/s or set EnableDefaultContentItems to false in the project file.
+
+Both regressions will be restored in the next stable release.
+## Version 1.1 Preview 2 (1.1.0-preview2)
+This is the second release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
 
 In an existing app using Windows App SDK 1.0 Stable, you can update your Nuget package to 1.1.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)). Additionally, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the updated runtime and MSIX.
 
@@ -34,7 +93,7 @@ In addition to all of the [Preview 1](#version-11-preview-1-110-preview1) featur
 
 **Fixed issues:**
 - An app without package identity sending notifications will now see its app icon in the notification if the icon is a part of the app's resource. If the app resource has no icon, the Windows default app icon is used.
-- A WinUI3 app that's not running can now be background-activated via a notification.
+- A WinUI 3 app that's not running can now be background-activated via a notification.
 
 **Regression from 1.1 Preview 1:** Push notifications support for unpackaged apps. Expected to be restored in the next release. 
 
@@ -64,7 +123,7 @@ For easier programming access to functionality that's implemented in `USER32.dll
 **Known limitations:**
 - Tall titlebar support is available only on Windows 11. We are working to bring this downlevel along with other custom titlebar APIs.
 
-### WinUI
+### WinUI 3
 
 **Fixed issues**:
 - Fixed issue causing C# apps with WebView2 to crash on launch when the C/C++ Runtime (CRT) isn't installed by upgrading the WebView2 SDK from 1020.46 to 1185.39.
@@ -129,7 +188,7 @@ Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send W
 - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
 - Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
 - Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
-- A WinUI3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
+- A WinUI 3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
 
 ### Environment manager
 API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.
@@ -184,9 +243,9 @@ We now support deploying WinUI 3 apps without MSIX packaging. See [Create your f
   - [Package.Current](/uwp/api/windows.applicationmodel.package.current)
 - ListView, CalendarView, and GridView controls are using the incorrect styles, and we're aiming to fix this in the next stable release.
 
-For more info, or to get started developing with WinUI, see:
+For more info, or to get started developing with WinUI 3, see:
 
-- [Windows UI 3 Library (WinUI)](../winui/index.md)
+- [Windows UI Library (WinUI) 3](../winui/index.md)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Other limitations and known issues
@@ -312,14 +371,14 @@ The following sections describe new and updated features, limitations, and known
 
 - Controls have been updated to reflect the latest Windows styles from [WinUI 2.6](../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
 - Single-project MSIX is supported.
-- WinUI package can now target build 17763 and above. See [issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921) for more info.
+- WinUI 3 package can now target build 17763 and above. See [issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921) for more info.
 - In-app toolbar is supported. However, the in-app toolbar and existing Hot Reload/Live Visual Tree support require the upcoming Visual Studio 17.0 Preview 5 release, available later in October.
 
 **Bug fixed**: WebView2Runtime text is now localized.
 
-For more info or to get started developing with WinUI, see:
+For more info or to get started developing with WinUI 3, see:
 
-- [Windows UI 3 Library (WinUI)](../winui/index.md)
+- [Windows UI Library (WinUI) 3](../winui/index.md)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
@@ -374,20 +433,20 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 - Only MSIX packaged apps that are full trust or have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the deployment API to install the main and singleton package dependencies. Support for partial-trust packaged apps will be coming in later releases. 
 - When F5 testing an x86 app which uses the [DeploymentManager.Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) method on an x64 system, ensure that the x64 framework is first installed by running the [WindowsAppRuntimeInstall.exe](https://aka.ms/windowsappsdk/1.0-preview2/msix-installer). Otherwise, you will encounter a **NOT_FOUND** error due to Visual Studio not deploying the x64 framework, which normally occurs through Store deployment or sideloading.
 
-### App Lifecycle
+### App lifecycle
 
 Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by desktop app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself. 
 
 Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK **RegisterForXXXActivation** APIs and must instead register for rich activation via the manifest.
 
-All the constraints for packaged apps also apply to WinUI apps, which are packaged, and there are additional considerations as described below.
+All the constraints for packaged apps also apply to WinUI 3 apps, which are MSIX-packaged, and there are additional considerations as described below.
 
 **Important considerations**:
 
 - Rich activation: [GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
   - _Unpackaged apps_: Fully usable.
   - _Packaged apps_: Usable, but these apps can also use the platform `GetActivatedEventArgs`. Note that the platform defines [Windows.ApplicationModel.AppInstance](/uwp/api/windows.applicationmodel.appinstance) whereas the Windows App SDK defines [Microsoft.Windows.AppLifecycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance). And while UWP apps can use the `ActivatedEventArgs` classes, such as `FileActivatedEventArgs` and `LaunchActivatedEventArgs`, apps that use the Windows App SDK AppLifecycle feature must use the interfaces not the classes (e.g, `IFileActivatedEventArgs`, `ILaunchActivatedEventArgs`, and so on).
-  - _WinUi apps_: WinUI's App.OnLaunched is given a [Microsoft.UI.Xaml.LaunchActivatedEventArgs](/windows/winui/api/microsoft.ui.xaml.launchactivatedeventargs), whereas the platform `GetActivatedEventArgs` returns a [Windows.ApplicationModel.IActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs), and the WindowsAppSDK `GetActivatedEventArgs` returns a [Microsoft.Windows.AppLifecycle.AppActivationArguments](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments) object which can represent a platform `LaunchActivatedEventArgs`.
+  - _WinUI 3 apps_: WinUI 3's App.OnLaunched is given a [Microsoft.UI.Xaml.LaunchActivatedEventArgs](/windows/winui/api/microsoft.ui.xaml.launchactivatedeventargs), whereas the platform `GetActivatedEventArgs` returns a [Windows.ApplicationModel.IActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs), and the WindowsAppSDK `GetActivatedEventArgs` returns a [Microsoft.Windows.AppLifecycle.AppActivationArguments](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments) object which can represent a platform `LaunchActivatedEventArgs`.
   - For more info, see [Rich activation](applifecycle/applifecycle-rich-activation.md).
 
 - Register/Unregister for rich activation
@@ -398,8 +457,8 @@ All the constraints for packaged apps also apply to WinUI apps, which are packag
 - Single/Multi-instancing
   - _Unpackaged apps_: Fully usable.
   - _Packaged apps_: Fully usable.
-  - _WinUI apps_: If an app wants to detect other instances and redirect an activation, it must do so as early as possible, and before initializing any windows, etc. To enable this, the app must define DISABLE_XAML_GENERATED_MAIN, and write a custom Main (C#) or WinMain (C++) where it can do the detection and redirection.
-  - [RedirectActivationToAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) is an async call, and you should not wait on an async call if your app is running in an STA. For Windows Forms and C# WinUI apps, you can declare Main to be async, if necessary. For C++ WinUI and C# WPF apps, you cannot declare Main to be async, so instead you need to move the redirect call to another thread to ensure you don't block the STA. 
+  - _WinUI 3 apps_: If an app wants to detect other instances and redirect an activation, it must do so as early as possible, and before initializing any windows, etc. To enable this, the app must define DISABLE_XAML_GENERATED_MAIN, and write a custom Main (C#) or WinMain (C++) where it can do the detection and redirection.
+  - [RedirectActivationToAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) is an async call, and you should not wait on an async call if your app is running in an STA. For Windows Forms and C# WinUI 3 apps, you can declare Main to be async, if necessary. For C++ WinUI 3 and C# WPF apps, you cannot declare Main to be async, so instead you need to move the redirect call to another thread to ensure you don't block the STA. 
   - For more info, see [App instancing](applifecycle/applifecycle-instancing.md).
 
 - Power/State notifications
@@ -456,9 +515,9 @@ This release of WinUI 3 is focused on building towards 1.0 Stable with bug fixes
 - **New features**: No new features in Preview 1.
 - **Fixed issues**: For the full list of issues addressed in this release, see [our GitHub repo](https://aka.ms/winui3/1.0-preview-release-notes).
 
-For more info or to get started developing with WinUI, see:
+For more info or to get started developing with WinUI 3, see:
 
-- [Windows UI 3 Library (WinUI)](../winui/index.md)
+- [Windows UI Library (WinUI) 3](../winui/index.md)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 
 ### Windowing
@@ -490,13 +549,13 @@ This release brings some new features to the Input API. The noteworthy changes a
 - Updates to [InputCursor](/windows/winui/api/microsoft.ui.input.inputcursor) APIs.
 - [GestureRecognizer](/windows/winui/api/microsoft.ui.input.gesturerecognizer) moved out of experimental to Microsoft.UI.Input.
 - [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint) moved out of experimental to Microsoft.UI.Input.
-- Mouse, touch, and pen input fully supported for WinUI drag and drop.
+- Mouse, touch, and pen input fully supported for WinUI 3 drag and drop.
 
 **Important limitations**:
 
 - This release of Input APIs has known issues with Windows version 1809.  
 - MRT Core is not yet supported by any subtype of [InputCursor](/windows/winui/api/microsoft.ui.input.inputcursor).
-- Direct use of the platform SDK API [Windows.UI.Core.CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation) will not work with WinUI applications.
+- Direct use of the platform SDK API [Windows.UI.Core.CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation) will not work with WinUI 3 applications.
 - PointerPoint properties RawPosition and ContactRectRaw were removed because they referred to non-predicted values, which were the same as the normal values in the OS. Use [Position](/windows/winui/api/microsoft.ui.input.pointerpoint.position) and [ContactRect](/windows/winui/api/microsoft.ui.input.pointerpointproperties.contactrect) instead. Pointer prediction is now handled with the Microsoft.UI.Input.PointerPredictor API object.
 
 ### MRT Core
