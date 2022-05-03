@@ -4,7 +4,7 @@ title: Add an InkToolbar to a Windows app
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP, user interaction, input
-ms.date: 09/24/2020
+ms.date: 05/03/2022
 ms.topic: article
 
 
@@ -723,7 +723,7 @@ You can create a custom toggle (activated through a custom toggle button) to set
 In this example, we define a custom toggle button that enables inking with touch input (by default, touch inking is not enabled).
 
 > [!NOTE]  
-> If you need to support inking with touch, we recommended that you enable it using a CustomToggleButton, with the icon and tooltip specified in this example.
+> If you need to support inking with touch, we recommended that you enable it using a CustomToggleButton, with the icon and [tooltip](../controls/tooltips.md) specified in this example.
 
 Typically, touch input is used for direct manipulation of an object or the app UI. To demonstrate the differences in behavior when touch inking is enabled, we place the InkCanvas within a ScrollViewer container and set the dimensions of the ScrollViewer to be smaller than the InkCanvas. 
 
