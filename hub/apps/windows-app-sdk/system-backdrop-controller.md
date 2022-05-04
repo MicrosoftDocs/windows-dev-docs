@@ -36,25 +36,10 @@ Here's an example of how to set up Mica using C++/WinRT. In Visual Studio, creat
 ...
 namespace winrt
 {
-    namespace MUC
-    {
-        using namespace Microsoft::UI::Composition;
-    }
-
-    namespace MUCSB
-    {
-        using namespace Microsoft::UI::Composition::SystemBackdrops;
-    }
-
-    namespace MUX
-    {
-        using namespace Microsoft::UI::Xaml;
-    }
-
-    namespace WS
-    {
-        using namespace Windows::System;
-    }
+    namespace MUC = Microsoft::UI::Composition;
+    namespace MUCSB = Microsoft::UI::Composition::SystemBackdrops;
+    namespace MUX = Microsoft::UI::Xaml;
+    namespace WS = Windows::System;
 }
 ...
 struct MainWindow : MainWindowT<MainWindow>
