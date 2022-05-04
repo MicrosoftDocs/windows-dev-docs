@@ -27,7 +27,7 @@ get-appxpackage *reunion*
 
 ```
 
-You should see output similar to the following, which may include the `x64` and `x86` architecture of the [Framework package](deployment-architecture.md#framework-package), [Dynamic Dependency Lifetime Manager (DDLM) package](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm), [Main package](deployment-architecture.md#main-package), and [Singleton package](deployment-architecture.md#singleton-package), depending on your computer and the Windows App SDK version.  
+You should see output similar to the following, which will include the `x64`, `x86`, or `ARM64` versions of the Framework package, Dynamic Dependency Lifetime Manager (DDLM) package, Main package, and Singleton package, depending on your computer and Windows App SDK version.  
 
 ```console
 Name              : Microsoft.WindowsAppRuntime.1.0

@@ -3,7 +3,7 @@ title: Content links in text controls
 description: Learn how to use content links to embed rich data in the TextBlock, RichTextBlock, and RichEditBox controls.
 label: Content links
 template: detail.hbs
-ms.date: 03/07/2018
+ms.date: 05/03/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -123,7 +123,7 @@ When the user makes a selection from the people or places picker, the system cre
 The ContentLinkInfo object contains the information used to display, invoke, and manage the content link.
 
 - **DisplayText** – This is the string that is shown when the content link is rendered. In a RichEditBox, the user can edit the text of a content link after it’s created, which alters the value of this property.
-- **SecondaryText** – This string is shown in the ToolTip of a rendered content link.
+- **SecondaryText** – This string is shown in the [tooltip](tooltips.md) of a rendered content link.
   - In a Place content link created by the picker, it contains the address of the location, if available.
 - **Uri** – The link to more information about the subject of the content link. This Uri can open an installed app or a website.
 - **Id** - This is a read-only, per control, counter created by the RichEditBox control. It’s used to track this ContentLinkInfo during actions such as delete or edit. If the ContentLinkInfo is cut and paste back into the control, it will get a new Id. Id values are incremental.

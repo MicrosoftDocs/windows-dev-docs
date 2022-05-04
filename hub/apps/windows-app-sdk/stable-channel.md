@@ -266,7 +266,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 **New Features and updates**
 -  You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for instructions.
 - Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md). 
-- Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](reference-framework-package-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](reference-framework-package-run-time.md#net-wrapper-for-the-bootstrapper-api). 
+- Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](use-windows-app-sdk-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api). 
 - Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see the [deployment guide for packaged apps](deploy-packaged-apps.md).
 
 **Important limitations**
@@ -297,10 +297,23 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 ## Version 0.8
 
-The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.7.
+The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.8.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+
+### Version 0.8.8
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.
+
+> [!NOTE]
+> For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
+
+#### Bug fixes:
+- Fixed touch input issues in TextBox regarding soft keyboard and general interaction. These issues also affected keyboard shortcuts. For more information, see [issue 6291](https://github.com/microsoft/microsoft-ui-xaml/issues/6291) on GitHub. 
+- Fixed issue where an app window would sometimes show as inactive when active.
+- Fixed performance issue caused by UIA (UI Automation) running in external processes.
+- Fixed app stability issue with pen input.
+- Fixed issue where the render of png icons in a Menu are dramatically delayed because of UIA.
 
 ### Version 0.8.7
 

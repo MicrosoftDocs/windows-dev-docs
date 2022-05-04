@@ -69,17 +69,17 @@ This example shows how an unpackaged app can use the following static methods of
 - [RegisterForProtocolActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforprotocolactivation)
 - [RegisterForStartupActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforstartupactivation)
 
-This example also demonstrates how to use the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions to initialize and clean up references to the Windows App SDK framework package. All unpackaged app must do this to use APIs provided by the Windows App SDK. For more information, see [Reference the Windows App SDK framework package at run time](../reference-framework-package-run-time.md).
+This example also demonstrates how to use the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions to initialize and clean up references to the Windows App SDK framework package. All unpackaged app must do this to use APIs provided by the Windows App SDK. For more information, see [Use the Windows App SDK runtime](../use-windows-app-sdk-run-time.md).
 
 > [!NOTE]
 > This example registers associations with three image file types at once. This is convenient, but the outcome is the same as registering each file type individually; registering new image types does not overwrite previous registrations. However, if an app re-registers an already registered file type with a different set of verbs, the previous set of verbs will be overwritten for that file type.
 
 ```c++
-const UINT32 majorMinorVersion{ 0x00010000 };
-PCWSTR versionTag{ L"preview1" };
-const PACKAGE_VERSION minVersion{};
-WCHAR szExePath[MAX_PATH];
-WCHAR szExePathAndIconIndex[MAX_PATH + 8];
+const UINT32 majorMinorVersion{ WINDOWSAPPSDK_RELEASE_MAJORMINOR };
+PCWSTR versionTag{ WINDOWSAPPSDK_RELEASE_VERSION_TAG_W };
+const PACKAGE_VERSION minVersion{ WINDOWSAPPSDK_RUNTIME_VERSION_UINT64 };
+WCHAR szExePath[MAX_PATH]{};
+WCHAR szExePathAndIconIndex[MAX_PATH + 8]{};
 
 int APIENTRY wWinMain(
     _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,

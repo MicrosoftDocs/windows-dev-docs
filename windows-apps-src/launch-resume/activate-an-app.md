@@ -16,6 +16,9 @@ dev_langs:
 
 Learn how to handle app activation by overriding the [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method.
 
+> [!NOTE]
+> For info about handling activation in a desktop app, see [Get activation info for packaged apps](/windows/apps/desktop/modernize/get-activation-info-for-packaged-apps). Also see [AppLifecycle&mdash;rich activation](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppLifecycle/Activation/AppLifecycle%20Activation.md) on GitHub.
+
 ## Override the launch handler
 
 When an app is activated, for any reason, the system sends the [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) event. For a list of activation types, see the [**ActivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) enumeration.

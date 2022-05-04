@@ -40,6 +40,10 @@ items:
           href: get-started/simple-photo-viewer-winiu3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
+        - name: Windows developer FAQ 
+          href: get-started/windows-developer-faq.yml
+        - name: Windows developer glossary 
+          href: get-started/windows-developer-glossary.md
   - name: Setup guides and resources
     items:
         - name: System requirements
@@ -330,19 +334,19 @@ items:
         items:
           - name: Windows App SDK deployment overview
             href: package-and-deploy/deploy-overview.md
-          - name: Deployment guide for fx-dependent apps
+          - name: Deployment guide for framework-dependent apps
             items:
-              - name: "Deployment architecture"
+              - name: "Deployment architecture and overview"
                 href: windows-app-sdk/deployment-architecture.md
-              - name: "Deployment guide for fx-dependent MSIX-packaged apps"
+              - name: "Deployment guide for MSIX-packaged apps"
                 href: windows-app-sdk/deploy-packaged-apps.md
-              - name: "Deployment guide for fx-dependent non-MSIX-packaged apps"
+              - name: "Deploying non-MSIX-packaged apps"
                 items:
-                  - name: "Deployment guide overview"
+                  - name: "Deployment guide for non-MSIX-packaged apps"
                     href: windows-app-sdk/deploy-unpackaged-apps.md
-                  - name: "Reference the Windows App SDK framework package at run time"
-                    href: windows-app-sdk/reference-framework-package-run-time.md
-                  - name: "Tutorial: Build and deploy a non-MSIX packaged app"
+                  - name: "Use the Windows App SDK runtime"
+                    href: windows-app-sdk/use-windows-app-sdk-run-time.md
+                  - name: "Tutorial—Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Check for installed versions of the Windows App SDK runtime"
                 href: windows-app-sdk/check-windows-app-sdk-versions.md

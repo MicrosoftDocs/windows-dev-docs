@@ -67,7 +67,7 @@ Win32 APIs often support both -A and -W variants.
 
 -A variants recognize the ANSI code page configured on the system and support `char*`, while -W variants operate in UTF-16 and support `WCHAR`.
 
-Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
+Until recently, Windows has emphasized "Unicode" -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, -A APIs typically operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.
 
 ## Code page conversion
 
