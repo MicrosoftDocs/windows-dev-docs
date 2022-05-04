@@ -80,7 +80,7 @@ struct MainWindow : MainWindowT<MainWindow>
         {
             // We ensure that there is a Windows.System.DispatcherQueue on the current thread.
             // Always check if one already exists before attempting to create a new one.
-            if (nullptr != winrt::WS::DispatcherQueue::GetForCurrentThread() &&
+            if (nullptr == winrt::WS::DispatcherQueue::GetForCurrentThread() &&
                 nullptr == m_dispatcherQueueController)
             {
                 m_dispatcherQueueController = CreateSystemDispatcherQueueController();
