@@ -122,13 +122,15 @@ using WinRT;
 public partial class App : Application
 {
     ...
-    public App()
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
-        this.InitializeComponent();
-        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+        m_window = new MainWindow();
+        m_window.Activate();
+        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
     }
 
     public static IntPtr WindowHandle { get; private set; }
+    private Window m_window;
 }
 
 // MainWindow.xaml.cs
@@ -277,7 +279,7 @@ When you create a new Windows App SDK project in Visual Studio, the project temp
 
 For a Windows App SDK app that's simple enough (a single-page app), you might be able to simplify it. It might be that you needn't create pages or user controls in your Windows App SDK project&mdash;but instead copy the XAML markup and code-behind of that single page into **MainWindow**. However, there are some things that **MainWindow** doesn't support. **Window** isn't a DependencyObject, so capabilities such as **Resources** and **DataContext** don't exist on it. Neither do events such as **Load** and **Unload**. For more info, and workarounds, see [Visual State Manager, and Page.Resources](#visual-state-manager-and-pageresources).
 
-If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the **App.OnLaunched**, **App::CreateRootFrame**, and **App::OnNavigationFailed** methods from your UWP app. In **App.OnLaunched**, locate the navigation code (the code that creates *rootFrame*, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it).
+If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the **App.OnLaunched** and **App::OnNavigationFailed** methods from your UWP app. In **App.OnLaunched**, locate the navigation code (the code that creates *rootFrame*, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it). You'll also need to migrate the code you've copy-pasted. For a simple code example, see [**Page class**](/windows/winui/api/microsoft.ui.xaml.controls.page#examples).
 
 ## Visual State Manager, and Page.Resources
 

@@ -4,7 +4,7 @@ description: Learn how to implement a Windows UI Library slider control that let
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/03/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -150,7 +150,7 @@ The range direction is the direction you move the slider when you slide it from 
 -   If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
 -   Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
 -   Show tick marks when users need to know the approximate value of the setting.
--   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value tooltip to see the exact value.
+-   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value [tooltip](tooltips.md) to see the exact value.
 -   Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
 
 ### Labels

@@ -40,6 +40,10 @@ items:
           href: get-started/simple-photo-viewer-winiu3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
+        - name: Windows developer FAQ 
+          href: get-started/windows-developer-faq.yml
+        - name: Windows developer glossary 
+          href: get-started/windows-developer-glossary.md
   - name: Setup guides and resources
     items:
         - name: System requirements
@@ -342,7 +346,7 @@ items:
                     href: windows-app-sdk/deploy-unpackaged-apps.md
                   - name: "Use the Windows App SDK runtime"
                     href: windows-app-sdk/use-windows-app-sdk-run-time.md
-                  - name: "Tutorial: Build and deploy a non-MSIX packaged app"
+                  - name: "Tutorial—Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Check for installed versions of the Windows App SDK runtime"
                 href: windows-app-sdk/check-windows-app-sdk-versions.md

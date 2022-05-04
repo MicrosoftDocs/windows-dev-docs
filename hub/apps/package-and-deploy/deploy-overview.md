@@ -42,7 +42,7 @@ If you've chosen to go with a framework-dependent app that uses MSIX-packaging (
 If you've chosen to go with an app that doesn't use MSIX-packaging (see [Deployment overview](/windows/apps/package-and-deploy/)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
 
 * [Windows App SDK deployment guide for sparse or unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
-* [Tutorial: Build and deploy a sparse-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+* [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 
 ## More info about self-contained deployment
 
@@ -55,7 +55,7 @@ See [Windows App SDK deployment guide for self-contained apps](./self-contained-
 * [Windows App SDK deployment guide for MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-packaged-apps)
 * [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
 * [Windows App SDK deployment guide for sparse or unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
-* [Tutorial: Build and deploy a sparse-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+* [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 * [Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md)
 * [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 * [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project)

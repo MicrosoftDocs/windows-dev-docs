@@ -12,7 +12,7 @@ Learn how to use tiles, badges, toasts, and notifications to provide entry point
 
 :::row:::
     :::column:::
-### [Toast notifications](tiles-and-notifications/toast-ux-guidance.md)
+### [Toast notifications](tiles-and-notifications/toast-notifications-overview.md)
 Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.
     :::column-end:::
     :::column:::

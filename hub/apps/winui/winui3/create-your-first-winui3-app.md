@@ -1,9 +1,12 @@
 ---
 title: Create your first WinUI 3 project
 description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
-ms.date: 03/10/2022
 ms.topic: article
+ms.date: 03/10/2022
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk
+ms.author: stwhi
+author: stevewhims
+ms.localizationpriority: medium
 ---
 
 # Create your first WinUI 3 project
@@ -18,7 +21,7 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 
-## Packaged: Create a new project for a packaged C# or C++ WinUI 3 desktop app
+## MSIX-packaged: Create a new project for an MSIX-packaged C# or C++ WinUI 3 desktop app
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
@@ -44,11 +47,11 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. Build and run your solution on your development computer to confirm that the app runs without errors.
 
-## Unpackaged: Create a new project for an unpackaged C# or C++ WinUI 3 desktop app
+## Non-MSIX-packaged: Create a new project for a non-MSIX-packaged C# or C++ WinUI 3 desktop app
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
-1. Download the latest installer for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). This will install the runtime package dependencies required to run and deploy an unpackaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
+1. Download the latest installer for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). This will install the runtime package dependencies required to run and deploy a non-MSIX-packaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
 
 1. **C++**. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) appropriate for the architecture of the target device.
 
@@ -62,7 +65,7 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. In the New Project dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively.
 
-1. You need to start with a packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**. .
+1. You need to start with an MSIX-packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**. .
 
 1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
 
@@ -84,7 +87,13 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. Build and run.
 
-Instead of setting the **WindowsPackageType** project property to *None*, you can use the bootstrapper API (see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) to initialize the [Bootstrapper](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper). For more details on that option, see [Build and deploy an unpackaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+### The bootstrapper API
+
+Setting the `<WindowsPackageType>None</WindowsPackageType>` project property causes the *auto-initializer* to locate and load a version of the Windows App SDK version that's most appropriate for your app.
+
+If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+
+For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper).
 
 ## A look at the code in the project template
 
@@ -130,9 +139,9 @@ To continue your development journey with the Windows App SDK, see [Develop Wind
 * [What is MSIX?](/windows/msix/overview)
 * [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
 * [WinUI 3 project templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio)
-* [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
+* [Windows App SDK deployment guide for framework-dependent non-MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
 * [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist)
 * [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 * [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
-* [Build and deploy an unpackaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+* [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 * [Develop Windows desktop apps](/windows/apps/develop/)
