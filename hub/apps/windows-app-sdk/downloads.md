@@ -24,7 +24,7 @@ This page provides download links to the releases of the [Windows App SDK](index
 > [Download 1.0 Visual Studio 2022 extension for C++](https://aka.ms/windowsappsdk/1.0/1.0.2/vsix-2022-cpp)
 
 > [!div class="button"]
-> [Download 1.0 runtime x64 installer](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0-x64.exe)
+> [Download 1.0 runtime installer for x64](https://aka.ms/windowsappsdk/1.0/latest/windowsappruntimeinstall-1.0-x64.exe)
 
 ### Latest preview
 
@@ -35,7 +35,7 @@ This page provides download links to the releases of the [Windows App SDK](index
 > [Download 1.1 Preview 3 Visual Studio 2022 extension for C++](https://aka.ms/windowsappsdk/1.1/1.1.0-preview3/vsix-2022-cpp)
 
 > [!div class="button"]
-> [Download 1.1 Preview 3 runtime x64 installer](https://aka.ms/windowsappsdk/1.1/1.1.0-preview3/windowsappruntimeinstall-1.1.0-preview3-x64.exe)
+> [Download 1.1 Preview 3 runtime installer for x64](https://aka.ms/windowsappsdk/1.1/1.1.0-preview3/windowsappruntimeinstall-1.1.0-preview3-x64.exe)
 
 For other Windows App SDK downloads, see below.
 
