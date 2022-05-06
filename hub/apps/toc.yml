@@ -138,6 +138,8 @@ items:
                     href: desktop/modernize/apply-rounded-corners.md
                   - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
+                  - name: Support Dark and Light themes
+                    href: desktop/modernize/apply-windows-themes.md
             - name: Call Windows Runtime APIs
               items:
                   - name: Overview
