@@ -22,11 +22,15 @@ The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user in
 
 WinUI 3 is available as part of [the Windows App SDK](../windows-app-sdk/index.md). It includes a VSIX package for Visual Studio 2019 (and later) that provides project and item templates that help you get started building apps with a WinUI-based interface.
 
+[Template Studio for WinUI (C#)](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs) is a Visual Studio 2022 extension that accelerates the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
+
 For more information about the available WinUI project and item templates, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 
 Visual Studio provides a variety of project templates for building UWP apps with C# or C++. To use these project templates, you must include the **Universal Windows Platform development** workload when you install Visual Studio. For the C++ project templates, you must also include the **C++ (v142) Universal Windows Platforms tools** optional component for the **Universal Windows Platform development** workload.
+
+[Template Studio for UWP](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForUWP) is a Visual Studio 2022 extension that accelerates the creation of new .NET UWP apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
 
 ### Project templates for C# and UWP
 
