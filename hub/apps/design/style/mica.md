@@ -124,7 +124,7 @@ By default, NavigationView in Left mode includes the content layer in its conten
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
                 Background="Transparent"
-                Height="40"
+                Height="48"
                 Canvas.ZIndex="1" 
                 Margin="48,8,0,0">
             <StackPanel Orientation="Horizontal">
@@ -259,7 +259,7 @@ To follow the card pattern using a NavigationView you will need to remove the de
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
                 Background="Transparent"
-                Height="40"
+                Height="48"
                 Canvas.ZIndex="1" 
                 Margin="48,8,0,0">
             <StackPanel Orientation="Horizontal">
