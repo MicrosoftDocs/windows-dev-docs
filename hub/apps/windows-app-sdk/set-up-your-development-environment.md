@@ -62,6 +62,8 @@ The [Windows App SDK](index.md) includes Visual Studio project and item template
 
 If you followed the instructions in [Required workloads and components](#required-workloads-and-components) above, then the templates are already installed.
 
+Install [Template Studio for WinUI (C#)](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs) to accelerate the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
+
 ### [Visual Studio 2022 version 17.0](#tab/vs-2022-17-0)
 
 The templates are available by installing a Visual Studio extension (VSIX).

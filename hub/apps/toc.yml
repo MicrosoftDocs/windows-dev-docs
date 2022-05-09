@@ -37,7 +37,7 @@ items:
         - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
         - name: "Tutorial—Create a simple photo viewer with WinUI 3 (C#)"
-          href: get-started/simple-photo-viewer-winiu3.md
+          href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
         - name: Windows developer FAQ 
@@ -138,6 +138,8 @@ items:
                     href: desktop/modernize/apply-rounded-corners.md
                   - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
+                  - name: Support Dark and Light themes
+                    href: desktop/modernize/apply-windows-themes.md
             - name: Call Windows Runtime APIs
               items:
                   - name: Overview
@@ -346,7 +348,7 @@ items:
                     href: windows-app-sdk/deploy-unpackaged-apps.md
                   - name: "Use the Windows App SDK runtime"
                     href: windows-app-sdk/use-windows-app-sdk-run-time.md
-                  - name: "Tutorial: Build and deploy a non-MSIX packaged app"
+                  - name: "Tutorial—Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Check for installed versions of the Windows App SDK runtime"
                 href: windows-app-sdk/check-windows-app-sdk-versions.md

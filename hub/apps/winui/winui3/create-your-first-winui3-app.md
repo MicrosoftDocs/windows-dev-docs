@@ -1,9 +1,12 @@
 ---
 title: Create your first WinUI 3 project
 description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
-ms.date: 03/10/2022
 ms.topic: article
+ms.date: 03/10/2022
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk
+ms.author: stwhi
+author: stevewhims
+ms.localizationpriority: medium
 ---
 
 # Create your first WinUI 3 project
@@ -84,7 +87,13 @@ Links to full installation details are in the steps below. We recommend the Wind
 
 1. Build and run.
 
-Instead of setting the **WindowsPackageType** project property to *None*, you can use the bootstrapper API (see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) to initialize the [Bootstrapper](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper). For more details on that option, see [Build and deploy a non-MSIX-packaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+### The bootstrapper API
+
+Setting the `<WindowsPackageType>None</WindowsPackageType>` project property causes the *auto-initializer* to locate and load a version of the Windows App SDK version that's most appropriate for your app.
+
+If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+
+For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper).
 
 ## A look at the code in the project template
 
@@ -134,5 +143,5 @@ To continue your development journey with the Windows App SDK, see [Develop Wind
 * [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist)
 * [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 * [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
-* [Build and deploy a non-MSIX-packaged app](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+* [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 * [Develop Windows desktop apps](/windows/apps/develop/)

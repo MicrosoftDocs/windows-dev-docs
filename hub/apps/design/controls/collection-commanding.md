@@ -4,7 +4,7 @@ title: Contextual commanding
 ms.assetid: 
 label: Contextual commanding in collections
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/03/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chigy
@@ -273,7 +273,7 @@ In the podcast app, the frequently performed command is the "Favorite" command.
 
 ![Press Ctrl and F to perform an action](images/contextual-command-keyboard.png)
 
-Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a tooltip to teach the user about the shortcut command.
+Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a [tooltip](tooltips.md) to teach the user about the shortcut command.
 
 Your app can respond when the user presses a key using the [KeyDown](/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
 
