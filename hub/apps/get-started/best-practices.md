@@ -109,25 +109,24 @@ TODO
 
 ## Application discovery and management
 
-Application discovery and installation are one of the first interactions that a user will have with your application. A reliable update and uninstall mechanism are important for an consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by end-users:
+Application discovery and installation are one of the first interactions that a user will have with your application. A reliable update and uninstall mechanism are important for a consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by end-users:
  
 - **Application Discovery**  
   - In addition to other platforms, listing your app on [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) can make your app more discoverable for users.   
-  - Consider SEO optimizations to your web site to improve the ranking of your site in the search engine results when users search for your app name. 
+  - Consider SEO (Search Engine Optimization) improvements to your web site to improve the ranking of your site in the search engine results when users search for your app name. 
   - If you are hosting your app at multiple sites and Microsoft Store, it is important to maintain version parity across all hosting platforms to provide a consistent experience.   
 
 - **Installation**  
   - Ensure that your application's installation is error free, transparent, and clean.  
-  - Avoid requiring elevated permissions to install when possible.  
-  - Avoid requiring operating system reboots when possible. 
+  - Avoid requiring elevated permissions to install when possible. Avoid requiring operating system reboots when possible. 
 
 - **Updates**  
   - Deliver a transparent update experience that minimizes the impact to the user and the system.   
   - With MSIX, updating app packages is optimized to ensure that only the essential changed bits of the app are downloaded to update an existing Windows app. 
-  - Windows 10  allows developers to make stronger guarantees around app updates from the Store. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
-  - If you are not using MSIX, consider CDN updates, push notification-based updates, or checking for available updates at app startup or at restart. 
-  - When an MSIX package is uninstalled by the user, all files and folders located under C:\Program Files\WindowsApps\package_name are removed, as well as any redirected writes to AppData or the registry that were captured during the packaging process. Application files should be placed in the AppData directory. Apps can create user files at locations like Documents, which can then be retained by users after the app is uninstalled. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
-  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their application data when they uninstall your application.  
+  - Windows 10 and Windows 11 allow developers to make stronger guarantees around app updates from the Store. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
+  - If you are not using MSIX, consider push notification-based updates or checking for available updates at app startup or at restart. 
+  - When an MSIX is uninstalled by the user, all package installation content is removed, as well as any app configuration information stored in AppData. User created content should be stored in locations like Documents, which can then be retained by users even post app is uninstalled. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
+  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
 
 - **Additional Resources** 
   - [MSIX documentation](/windows/msix/)
