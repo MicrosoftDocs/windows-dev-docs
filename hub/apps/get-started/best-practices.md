@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
-ms.date: 05/02/2022
+ms.date: 05/10/2022
 keywords: windows, win32, desktop development
 ms.author: mikben
 author: matchamatch
@@ -35,7 +35,7 @@ Use the latest common controls to get the benefits of compatibility and accessib
 
 **[Dark and Light themes](/windows/apps/get-started/make-apps-great-for-windows#7-support-dark-and-light-themes)**
 
-Light and Dark themes are a great way to let the user express their personality. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful.
+Light and Dark themes are a great way to let the user express their personality. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes).
 
 **[Iconography and Typography](/windows/apps/get-started/make-apps-great-for-windows#9-use-beautiful-iconography--typography)**
 
@@ -156,17 +156,17 @@ As the Windows OS becomes more resilient to attack, malicious actors are increas
   - This may require separating your code into a regular UI process and a more-secure child process where you can execute especially risky code like parsing untrusted data.
 - Prefer to use languages with **guaranteed memory safety** (such as C#, JavaScript, or Rust), especially for risky code paths (like parsing untrusted data).
 - Use all the provided security mitigations provided by your compiler and toolset (e.g. [see here](https://devblogs.microsoft.com/cppblog/security-features-in-microsoft-visual-c/) for Visual C++).
-- Always use your chosen language or framework’s standard libraries for cryptography and other security-sensitive code. _Do not try to build your own._
+- Always use your chosen language or framework's standard libraries for cryptography and other security-sensitive code. _Do not try to build your own._
 - **Digitally sign all components of your application** – not just the installer, but also the uninstaller (if you have one). Also sign all the EXE, DLL, and other executable files that make up your app.
   - Digital signatures enable the user to **verify the authenticity of your app** and allow Enterprise admins to secure their devices using [Windows Defender Application Control](/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview).
   - Using MSIX packaging is one way to achieve this.
 - Ensure all network communication is over a secure transport, such as SSL.
 - Provide guardrails or other mitigations that can help **protect users from accidentally performing harmful actions**, even when coerced into doing so by attackers.
-  - Simple “Are you sure you want to do _X_? _Yes / No_” dialogs are typically not effective, because users have been conditioned to click “Yes.”
+  - Simple "Are you sure you want to do _X_? _Yes / No_" dialogs are typically not effective, because users have been conditioned to click "Yes."
 
 ### How do I ensure that my app follows appropriate privacy practices?
 
-Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They are demanding more transparency and control over the data collected and used by apps. The simplest way to avoid privacy issues is to not collect or store any personal data, but that’s unrealistic for most apps. Instead, use the following tips to help minimize the privacy impact of your app.
+Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They are demanding more transparency and control over the data collected and used by apps. The simplest way to avoid privacy issues is to not collect or store any personal data, but that's unrealistic for most apps. Instead, use the following tips to help minimize the privacy impact of your app.
 
 **Privacy tips:**
 
@@ -175,7 +175,7 @@ Most modern apps collect and use a large amount of data – including personal d
 - **Consider using technologies such as AppContainer (UWP)** to automatically minimize the amount of data available to your app. If your app is blocked from accessing data, it's impossible for your app to collect it, even accidentally (e.g. due to a bug in your code or a data-hungry 3rd party library).
 - **Ensure you're collecting the least amount of personal data needed** to complete your app's experiences.
   - **Don't collect data "just in case"** – there should be a valid reason for collecting all data, e.g. to improve the customer's experience or to facilitate monetization.
-- **Always get the user’s consent** before collecting and storing personal data and provide the user with an easy way to revert their decision in the future. Avoid "[dark patterns](https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:~:text=Some%20examples%20of%20dark%20pattern%20usage%20include)" such as making the "Yes" button larger or more prominent than the "No" button in a consent dialog.
+- **Always get the user's consent** before collecting and storing personal data and provide the user with an easy way to revert their decision in the future. Avoid "[dark patterns](https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:~:text=Some%20examples%20of%20dark%20pattern%20usage%20include)" such as making the "Yes" button larger or more prominent than the "No" button in a consent dialog.
   - **Consult with applicable regulations** to determine what specific disclosures and consent is required for specified kinds of data. For example, some regions may allow users to view, change, or delete the data you have stored about them.
 - If you must transmit data over the network, **always use secured connections**, e.g. over TLS.
 - **Avoid storing personal data in a centralized location** (e.g. website). If you must store personal data, minimize the amount of data you store, store it only for as long as strictly necessary, and ensure it is securely encrypted.
