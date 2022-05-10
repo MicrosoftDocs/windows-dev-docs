@@ -32,10 +32,10 @@ Design and UI-related downloads for Fluent Design/Windows apps. For additional t
         [Installation instructions](/windows/uwpcommunitytoolkit/getting-started)
     :::column-end:::
     :::column:::
-        ![Windows Template Studio thumbnail](images/windows-template-studio.png)
-        **Windows Template Studio**<br/>
-        Quickly scaffold a UWP app using a wizard-based UI.<br/>
-        [Download](https://aka.ms/wtsinstall)
+        ![Template Studio thumbnail](images/template-studio.png)
+        **Template Studio**<br/>
+        Quickly scaffold apps using a wizard-based UI.<br/>
+        [Installation instructions](https://github.com/microsoft/TemplateStudio#template-studio)
     :::column-end:::
 :::row-end:::
 

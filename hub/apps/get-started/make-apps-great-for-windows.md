@@ -2,7 +2,7 @@
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
-ms.date: 03/16/2022
+ms.date: 05/06/2022
 keywords: windows win32, desktop development
 ms.author: jimwalk
 author: jwmsft
@@ -125,7 +125,7 @@ We support Light and Dark themes, which is a great way to let the user express t
 ![A split image of an app in light theme on the left, and dark theme on the right.](images/great-apps/themes.png)
 
 - The color palette of WinUI is being updated to feel lighter (use WinUI 2.6 or greater). If your apps have hardcoded custom colors, you may need to make updates to match the overall color theory, regardless of technology.
-- If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults.
+- If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults. (For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/apply-windows-themes.md).)
 
 ## 8. Optimize your app's context menu extensions and Share targets
 
