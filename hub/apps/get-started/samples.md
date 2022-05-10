@@ -4,8 +4,8 @@ description: We've published several Github repositories containing sample appli
 ms.topic: article
 ms.date: 03/08/2022
 keywords: windows, win32, desktop development
-ms.author: angzhang
-author: angelazhangmsft
+ms.author: stwhi
+author: stevewhims
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
