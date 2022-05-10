@@ -50,6 +50,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 
 * [Windows Performance Analyzer Intro](https://devblogs.microsoft.com/performance-diagnostics/wpa-intro/)
 
+* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
+
 ### ![PerfView Icon](./images/dotnet-logo.png) PerfView
 
 PerfView is an open source monitoring and analysis tool created by the .NET team for investigating .NET performance issues. Because of its ability to decode .NET symbols and managed memory, it is an ideal choice for managed applications.
