@@ -12,7 +12,7 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-This document identifies a collection of best practices that will help you build great apps that run on Windows and are optimized to delight the ~1.5 billion diverse PC users around the world. These best practices apply to all forms of Windows application development.
+This document provides best practices for building great Windows apps optimized to delight the ~1.5 billion diverse PC users around the world. These best practices apply to all forms of Windows application development.
 
 > [!NOTE]
 > This is a sparse draft that still needs a significant amount of editorial refinement. As the draft content stabilizes in the Word doc, content partners will begin importing that information into this doc, where customer-facing copy will be drafted and finalized.
@@ -133,7 +133,57 @@ Application discovery and installation are one of the first interactions that a 
 
 ## Accessibility
 
-TODO
+Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible, including those with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on). The [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, rather as a mismatched interaction between people and the physical and digital world around them.
+
+**Everyone should have access to the same rooms in a building, whether they need to use the stairs or the elevator.**
+
+> ### For people with disabilities
+>
+> **Accessibility is a responsibility**
+> 
+> More than 1 billion people worldwide experience some form of disability. However, only 1 in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities—whether temporary, situational, or permanent—can affect any of us at any time. 
+>
+> According to the [US Labor Bureau of Statistics](https://www.bls.gov/news.release/disabl.nr0.htm), the US unemployment rate for people with disabilities was at 80%.
+>
+> **Accessibility is an opportunity**
+> 
+> Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers. They also attract and keep top talent. Millennials, who will be 75% of the global workforce by 2020, choose employers who reflect their values. Diversity and inclusion top the list.
+>
+> Adapted from [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4)
+
+Incorporating accessibility into your Windows apps maximizes user engagement, increases product satisfaction, and encourages product loyalty. The people who rely on accessibility features in apps and services represent a lot of spending power and every company should want to be perceived as a creator of accessible apps and services.
+
+Also, if you design and implement accessible experiences from the beginning, you will spend less time and money on bugs. The [US National Institute of Standards and Technology](https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf) states that bug costs increase substantially the later they are addressed in a development cycle.
+
+### Accessibility guidance
+
+For detailed guidance on building accessible Windows apps, see [Accessibility in Windows 11 and Windows 10](../develop/accessibility.md).
+
+### Accessibility testing
+
+Accessibility Insights is a powerful suite of tools for developers to test the accessibility of their apps and services. Here are some tools to leverage in testing accessibility:
+
+1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/).
+
+   Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, etc.
+
+1. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/).
+
+   See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
+
+1. Run Accessibility Insights automated checks in your PRs or CI/CD.
+
+   For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
+
+1. Remind everyone on your team to run FastPass before completing a PR.
+
+   For more details, see [MerlinBot and Accessibility Insights](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/accessibility-insights/accessibility-insights-in-merlinbot).
+
+1. Fix all bugs you find, they all have direct impact on accessibility.
+
+### Accessibility and WinUI
+
+Accessibility is built into every WinUI control. Once usage pre-conditions and properties are defined, the accessibility of each control can be leveraged, and developers can focus on the interaction between controls. Just like using prefabricated bricks to build a house instead of forming and firing each brick and then deciding how they fit together.
 
 ## Security and Privacy
 
