@@ -162,6 +162,10 @@ Before you start the Microsoft Store Certification process, you must exclude the
 - [Make your app localizable](prepare-your-app-for-localization.md)
 - [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 
+## Telemetry
+
+The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. 
+
 ## Downloads
 
 - [Multilingual App Toolkit 4.0 Visual Studio 2017-2019](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
