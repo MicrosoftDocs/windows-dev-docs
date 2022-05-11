@@ -5,7 +5,7 @@ ms.author: mattwoj
 author: mattwojo
 ms.reviewer: visu
 ms.topic: conceptual
-ms.date: 05/10/2022
+ms.date: 05/11/2022
 #Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes memory and uses disk space.
 ---
 
@@ -41,6 +41,8 @@ The [working set](/windows/win32/memory/working-set) of an application – the s
 The amount of memory that an application uses impacts its runtime performance, as well as the responsiveness of the system as a whole. Minimizing the use of memory will help the app to perform better by reducing the CPU costs associated with accessing more memory. Lower memory usage also helps with the system responsiveness, and the app user's experience in general, as the application does not end up displacing other memory content.
 
 Memory displacement can happen as the system attempts to retain in-memory content accessed recently and, if necessary, will trim and page-out content used earlier. When the user switches back to the shell, or another application, and the necessary data is not resident in-memory, the data will need to be read from the disk. The user will likely notice a slowdown due to this process.
+
+There are two key pieces to the memory used by an application: 1) dynamic memory, and 2) file-backed memory. File-backed memory usage comes from binaries and data files, such as databases, used by an application. This is commonly not a significant chunk of an application’s memory usage and often a constant. The more significant source of memory usage and where leaks manifest is dynamic memory.
 
 Dynamic memory corresponds to virtual memory allocated by an application using [memory allocation routines](/cpp/c-runtime-library/memory-allocation). Unlike file-backed memory, which persists across system reboots, dynamic memory only exists for the lifetime of the application. Dynamic memory is a commonly significant source of memory usage and where memory leaks manifest.
 
@@ -102,7 +104,7 @@ A few areas to consider in regard to applying your trace analysis toward updatin
 
 - **Reduce memory usage when in the foreground**: Analyzing the memory trace may help you to identify any unnecessary memory use in the foreground and update your code to reduce or remove that usage.
 
-- **Minimizing work while in the background**: The system has policies to age out pages from the process working sets. Using less memory in the background allows the system to be more efficient by keeping less of the application memory resident.
+- **Minimizing work while in the background**: The system has policies to age out pages from the process working sets. Using less memory in the background allows the system to be more efficient by keeping less of the application memory resident. Learn more about how to [Improve power consumption and battery life by minimizing background work](./power.md), which will also translate into using less memory usage while in the background.
 
 - **Release resources in the background**: At runtime, an application may create some memory caches, as well as creating graphics allocations to support it's UI. These allocations may be able to be freed when the application is minimized or not visible. An application can register for low-memory notifications to take such action, but a better strategy may be to free memory after a period of not being used, when the application concludes it is inactive. This period of disuse can vary by application, so possible indicators of inactive use can range from a handful of minutes to a ½ hour or more. Care should be taken to balance this kind of memory savings with responsiveness. If a cache is expensive to rebuild, the application can choose to retain it for the lifetime of the application.
 
