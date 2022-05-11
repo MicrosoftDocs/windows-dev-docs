@@ -121,10 +121,10 @@ Application discovery and installation are one of the first interactions that a 
 
 - **Updates**  
   - Deliver a transparent update experience that minimizes the impact to the user and the system.   
-  - With MSIX, updating app packages is optimized to ensure that only the essential changed bits of the app are downloaded to update an existing Windows app. 
-  - Windows 10 and Windows 11 allow developers to make stronger guarantees around app updates from the Store. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
+  - Provide an intelligent update mechanism to ensure that only the essential changed bits of the app are downloaded to update an existing Windows app to minimize the network bandwidth required.  
+  - Ensure that you provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
   - Consider push notification-based updates or checking for available updates at app startup or at restart. 
-  - When an MSIX is uninstalled by the user, all package installation content is removed, as well as any app configuration information stored in AppData. User created content should be stored in locations like Documents, which can then be retained by users even post app is uninstalled. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
+  - Ensure that during uninstallation your app removes all binaries and app data. User created content should be stored in locations like Documents, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
   - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
 
 - **Additional Resources** 

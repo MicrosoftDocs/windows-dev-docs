@@ -40,7 +40,7 @@ The following table highlights the development features that are provided by the
 | [App lifecycle: Power management](applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
 | [Push notifications](notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
-| [Deployment](deployment-architecture.md) | Deploy Windows App SDK runtime with your unpackaged and packaged app |
+| [Deployment](/windows/apps/package-and-deploy/deploy-overview) | Deploy Windows App SDK runtime with your unpackaged and packaged app |
 
 ### Windows App SDK release channels
 

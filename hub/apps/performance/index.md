@@ -1,5 +1,5 @@
 ---
-title: Windows app performance and fundamentals overview
+title: Windows app performance overview
 description: Learn about ways to optimize the performance of your Windows apps.
 ms.topic: article
 ms.date: 11/05/2021
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
 ---
 
-# Windows app performance and fundamentals overview
+# Windows app performance overview
 
 Improving your application's performance gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Battery-powered devices last longer. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
@@ -49,6 +49,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 * [Windows Performance Recorder Intro](https://devblogs.microsoft.com/performance-diagnostics/wpr-intro/)
 
 * [Windows Performance Analyzer Intro](https://devblogs.microsoft.com/performance-diagnostics/wpa-intro/)
+
+* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
 
 ### ![PerfView Icon](./images/dotnet-logo.png) PerfView
 
