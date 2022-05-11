@@ -1,8 +1,8 @@
 ---
-title: Windows app performance overview
+title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
 ms.topic: article
-ms.date: 11/05/2021
+ms.date: 05/11/2022
 ms.author: mattwoj
 author: mattwojo
 ms.reviewer: adityar
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
 ---
 
-# Windows app performance overview
+# Windows app performance and fundamentals overview
 
 Improving your application's performance gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Battery-powered devices last longer. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
@@ -40,6 +40,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 
 * [Case Study: Double Performance in under 30 minutes](https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/)
 
+* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
+
 ### ![Windows Performance Analyzer Icon](./images/wpa.png) Windows Performance Toolkit
 
 [Windows Performance Recorder](/windows-hardware/test/wpt/windows-performance-recorder) and [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer) enable detailed monitoring and analysis of your application and the entire system using [Event Tracing for Windows (ETW)](/windows-hardware/test/wpt/event-tracing-for-windows). See the links below on how to get started.
@@ -49,8 +51,6 @@ Visual Studio offers tooling to help you monitor your application and give you i
 * [Windows Performance Recorder Intro](https://devblogs.microsoft.com/performance-diagnostics/wpr-intro/)
 
 * [Windows Performance Analyzer Intro](https://devblogs.microsoft.com/performance-diagnostics/wpa-intro/)
-
-* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
 
 ### ![PerfView Icon](./images/dotnet-logo.png) PerfView
 
@@ -108,4 +108,8 @@ Performance can be a tricky part of your development process without the right g
 |Identifying what to measure|Depending on your workload, environment, and other factors, certain areas of performance may be more of a focus than others. Learn what to measure and when with this doc|
 |Performance Testing Cycle|Step with us through the performance testing lifecycle which includes setting up your test environment, analyzing your results and making product improvements|
 |Understanding the different performance tools|This doc will introduce more performance tooling and go over the use cases and best practices for using them|
+<<<<<<< HEAD
 |Case Studies|A series of end-to-end scenarios and their journeys through the performance testing cycle|
+=======
+|Case Studies|A series of end-to-end scenarios and their journeys through the performance testing cycle|
+>>>>>>> af4e7ddad880afb030f923fdc9cb9fa85250bf56
