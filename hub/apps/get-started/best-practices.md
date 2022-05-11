@@ -12,10 +12,13 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-This document provides best practices for building great Windows apps optimized to delight the ~1.5 billion diverse PC users around the world. These best practices apply to all forms of Windows application development.
+The release of Windows 11 introduces a number of new features and patterns that improve end-user experience. The best practices in this document have been provided directly by members of the Windows development platform product teams in an effort to help you build great Windows apps. Following these best practices will help you reach and delight the ~1.5 billion diverse PC users around the world. 
+
+Unless otherwise noted, the best practices in this guide apply to all versions of Windows, and all forms of Windows application development.
 
 > [!NOTE]
-> This is a sparse draft that still needs a significant amount of editorial refinement. As the draft content stabilizes in the Word doc, content partners will begin importing that information into this doc, where customer-facing copy will be drafted and finalized.
+> This draft is under construction. Editorial objectives: engaging readers with tight actionable copy, minimizing business-speak, consistent tone, formatting, and scope between sections, referring to the reader directly ("you", not "developers"), (possibly) publishing something "good enough" asap to capture feedback and iterate leading up to build.
+
 
 ## User Experience (UX)
 
@@ -104,7 +107,47 @@ For help deciding between performance profiling tools, see [Choosing among Visua
 
 ## Operating System / Hardware Optimization
 
-TODO
+**[Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview)**
+
+Azure Virtual Desktop is a desktop and app virtualization service that runs on the cloud.
+
+[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made especially for Azure Virtual Desktop. Using MSIX app attach can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
+
+**[Windows on ARM](https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm)**
+
+Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing x86 and x64 applications unmodified. 
+
+For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques refer to [Windows on ARM](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](https://docs.microsoft.com/windows/uwp/porting/arm64ec).
+
+
+**[Toast Notifications](https://docs.microsoft.com/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance)**
+
+Toast notifications are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
+
+Following toast notification best practices can help you drive engagement with your app:
+
+ - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
+ - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
+ - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+ - Keep Notification Center tidy by clearing out old notifications.
+ - The Notification Center experience should be consistent for your app.  
+
+For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](https://docs.microsoft.com/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+
+
+**[Push Notifications](https://docs.microsoft.com/windows/apps/windows-app-sdk/notifications/push/push-quickstart)**
+
+Push notifications can be interactive visual notifications or background notifications that handle background tasks like sending profile updates or waking up an app.
+
+- Use raw notifications (shoulder taps) to wake up the app/client rather than always keeping it running to optimize performance on the user’s device.
+- Notification channels are not meant to be used to send advertisements.  
+- Respect `retry-after` headers – this protects our service and ensures notification delivery success.
+- Remove expired/revoked channels from the system. Windows Notification Service (WNS) does not process requests for expired/revoked channels.
+- Avoid sudden, large bursts of requests to WNS. This can lead to throttled responses.
+- Utilize the `MS-CV` header. This will help with end-to-end traceability and diagnostics.
+- Have a back-up mechanism for when notifications don’t work. 
+- Use [Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview) (ANH). ANH gives you access to engagement features like targeting audiences, scheduling notifications, and broadcasting notifications. If you're a Windows-only developer today, using ANH will make it easy for you to transition your notifications infrastructure to other platforms in the future.
+- We do not encourage the use of push notifications for tiles - Windows 11 no longer supports this pattern. 
 
 
 ## Application discovery and management
