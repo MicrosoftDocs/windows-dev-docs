@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
-ms.date: 05/10/2022
+ms.date: 05/11/2022
 keywords: windows, win32, desktop development
 ms.author: mikben
 author: matchamatch
@@ -86,24 +86,46 @@ The most important thing to remember in relation to page layout is that your app
 
   WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see[ High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
 
-## Performance
+## Performance & Fundamentals
 
-Improving the performance of your Windows application will improve its overall user experience. We encourage you to review [What is application performance and why is it important?](/windows/apps/performance/#what-is-application-performance-and-why-is-it-important) to learn more.
+**How can I optimize my app for better performance, memory usage, responsiveness, power consumption, and reliability?**
 
-Application performance considerations include:
+Windows users have come to expect that the applications they run exhibit great fundamentals. This term encompasses a variety of behaviors including:
 
- - CPU usage
- - Memory consumption
- - Power consumption
- - Network and storage utilization
- - Animation performance
+- performance,
+- memory usage,
+- responsiveness,
+- power consumption, and
+- reliability.
 
-Windows users expect applications to be responsive. You should be aware of how your application consumes system resources, and how you might be able to optimize. You can learn more about measuring your applications performance here: [When should you measure application performance?](/windows/apps/performance/introduction#when-should-you-measure-application-performance).
+Flaws in any one of these areas can adversely impact your users' perception of the quality of your application, so we have compiled a list of considerations, tips, and step-by-step testing guidance to help.
 
-There are [several tools available](/windows/apps/performance/#what-tools-can-i-use-to-measure-application-performance) to help you assess the performance of your Windows apps. These tools will help you monitor your app and its source code, and they can even provide detailed event tracing for your entire Windows operating system. They'll also help you analyze the memory management of .NET framework. Measuring and analyzing the performance charactieristics of your application will help you identify performance optimization opportunities.
+Following these guidelines as you design your application and allocate time to measure and test your app’s fundamentals will will help you meet your customer's expectations and ensure that your users have a first-class experience.
 
-For help deciding between performance profiling tools, see [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](/windows/apps/performance/choose-between-tools).
+The following resources will help you incorporate the recommended practices for optimizing performance and fundamentals in your Windows applications.
 
+**To improve your app's performance and fundamentals...**
+
+- [Minimize application memory usage](../performance/disk-memory.md):
+  - Reduce foreground memory usage
+  - Minimize background work
+  - Release resources while in the background
+  - Ensure your application does not leak memory
+
+- [Make efficient use of the disk footprint](../performance/disk-memory.md#efficiently-use-disk-space)
+  - Enable “pay for play” for optional functionality
+  - Ensure any caches are sized efficiently
+  - Implement new experiences in a disk-efficient manner
+  - Optimize individual binary sizes where possible
+
+- [Improve power consumption and battery life by minimizing background work](../performance/power.md)
+  - Do not wake the CPU or use system resources while in the background
+
+- Measure reliability and minimize crashes
+  - Design your app with reliability in mind.
+  - Test for reliability, and proactively monitor for crashes.
+
+To learn more, see the [Performance and Fundamentals overview](/windows/apps/performance/), which will cover questions such as "What is application performance and why is it important?" or "What tools can I use to measure Windows application performance?", as well as linking to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability.
 
 ## Operating System / Hardware Optimization
 
