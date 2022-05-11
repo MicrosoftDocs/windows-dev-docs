@@ -108,8 +108,4 @@ Performance can be a tricky part of your development process without the right g
 |Identifying what to measure|Depending on your workload, environment, and other factors, certain areas of performance may be more of a focus than others. Learn what to measure and when with this doc|
 |Performance Testing Cycle|Step with us through the performance testing lifecycle which includes setting up your test environment, analyzing your results and making product improvements|
 |Understanding the different performance tools|This doc will introduce more performance tooling and go over the use cases and best practices for using them|
-<<<<<<< HEAD
 |Case Studies|A series of end-to-end scenarios and their journeys through the performance testing cycle|
-=======
-|Case Studies|A series of end-to-end scenarios and their journeys through the performance testing cycle|
->>>>>>> af4e7ddad880afb030f923fdc9cb9fa85250bf56
