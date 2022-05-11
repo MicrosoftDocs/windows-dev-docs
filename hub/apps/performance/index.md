@@ -109,4 +109,3 @@ Performance can be a tricky part of your development process without the right g
 |Performance Testing Cycle|Step with us through the performance testing lifecycle which includes setting up your test environment, analyzing your results and making product improvements|
 |Understanding the different performance tools|This doc will introduce more performance tooling and go over the use cases and best practices for using them|
 |Case Studies|A series of end-to-end scenarios and their journeys through the performance testing cycle|
->>>>>>> release-build-2022
