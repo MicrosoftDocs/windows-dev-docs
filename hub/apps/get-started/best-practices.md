@@ -198,27 +198,27 @@ Application discovery and installation are one of the first interactions that a 
 
 ## Accessibility
 
-Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible, including those with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on). The [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, rather as a mismatched interaction between people and the physical and digital world around them.
+***Everyone should have access to the same rooms in a building, whether they need to use the stairs or the elevator.***
 
-**Everyone should have access to the same rooms in a building, whether they need to use the stairs or the elevator.**
+Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible, including those with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on).
+
+In fact, the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.
 
 > ### For people with disabilities
 >
 > **Accessibility is a responsibility**
-> 
-> More than 1 billion people worldwide experience some form of disability. However, only 1 in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities—whether temporary, situational, or permanent—can affect any of us at any time. 
+>
+> More than 1 billion people worldwide experience some form of disability. However, only 1 in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities—whether situational, temporary, or permanent—can affect any of us at any time.
 >
 > According to the [US Labor Bureau of Statistics](https://www.bls.gov/news.release/disabl.nr0.htm), the US unemployment rate for people with disabilities was at 80%.
 >
 > **Accessibility is an opportunity**
-> 
-> Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers. They also attract and keep top talent. Millennials, who will be 75% of the global workforce by 2020, choose employers who reflect their values. Diversity and inclusion top the list.
 >
-> Adapted from [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4)
+> According to the [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4): Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who will be 75% of the global workforce by 2020, typically choose employers who reflect their values. Diversity and inclusion top that list.
 
-Incorporating accessibility into your Windows apps maximizes user engagement, increases product satisfaction, and encourages product loyalty. The people who rely on accessibility features in apps and services represent a lot of spending power and every company should want to be perceived as a creator of accessible apps and services.
+Incorporating accessibility into your Windows apps can maximize user engagement, increase product satisfaction, and encourage product loyalty. In addition, designing and implementing accessible experiences from the beginning, typically results in spending less time and money on bug fixing later. The [US National Institute of Standards and Technology](https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf) states that bug costs increase substantially the later they are addressed in a development cycle.
 
-Also, if you design and implement accessible experiences from the beginning, you will spend less time and money on bugs. The [US National Institute of Standards and Technology](https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf) states that bug costs increase substantially the later they are addressed in a development cycle.
+The people who rely on accessibility features in apps and services represent a lot of spending power and every company should want to be perceived as a creator of accessible apps and services.
 
 ### Accessibility guidance
 
