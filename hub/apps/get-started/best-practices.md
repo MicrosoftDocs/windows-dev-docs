@@ -12,12 +12,10 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-The release of Windows 11 introduces a number of new features and patterns that improve end-user experience. The best practices in this document have been provided directly by members of the Windows development platform product teams in an effort to help you build great Windows apps. Following these best practices will help you reach and delight the ~1.5 billion diverse PC users around the world. 
-
-Unless otherwise noted, the best practices in this guide apply to all versions of Windows, and all forms of Windows application development.
+The release of Windows 11 introduces a number of new features and patterns that improve end-user experience. The best practices in this document have been provided directly by members of the Windows development platform product teams to help you build great Windows apps. Following these best practices will help you reach and delight the ~1.5 billion diverse PC users around the world. 
 
 > [!NOTE]
-> This draft is under construction. Editorial objectives: engaging readers with tight actionable copy, minimizing business-speak, consistent tone, formatting, and scope between sections, referring to the reader directly ("you", not "developers"), (possibly) publishing something "good enough" asap to capture feedback and iterate leading up to build.
+> This draft is under construction. Editorial objectives: engage readers with tight actionable copy, minimize business-speak, maintain consistent tone, formatting, and scope between sections, refer to the reader directly ("you", not "developers"), (possibly) publish something "good enough" asap to capture feedback and iterate leading up to build.
 
 
 ## User Experience (UX)
