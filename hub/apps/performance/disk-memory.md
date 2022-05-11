@@ -42,11 +42,11 @@ The amount of memory that an application uses impacts its runtime performance, a
 
 Memory displacement can happen as the system attempts to retain in-memory content accessed recently and, if necessary, will trim and page-out content used earlier. When the user switches back to the shell, or another application, and the necessary data is not resident in-memory, the data will need to be read from the disk. The user will likely notice a slowdown due to this process.
 
-There are two key pieces to the memory used by an application: 1) dynamic memory, and 2) file-backed memory. File-backed memory usage comes from binaries and data files, such as databases, used by an application. This is commonly not a significant chunk of an application’s memory usage and often a constant. The more significant source of memory usage and where leaks manifest is dynamic memory.
+There are two key pieces to the memory used by an application: 1) dynamic memory, and 2) file-backed memory. File-backed memory usage comes from binaries and data files, such as databases, used by an application. This is commonly not a significant chunk of an application’s memory usage and often a constant. *(Exceptions would be data processing applications, code compilation etc.)* The more significant source of memory usage and where leaks manifest is dynamic memory.
 
 Dynamic memory corresponds to virtual memory allocated by an application using [memory allocation routines](/cpp/c-runtime-library/memory-allocation). Unlike file-backed memory, which persists across system reboots, dynamic memory only exists for the lifetime of the application. Dynamic memory is a commonly significant source of memory usage and where memory leaks manifest.
 
-[Virtual Allocation routines](/windows/win32/memory/allocating-virtual-memory) (`VirtualAlloc`) handle memory allocation requests from a Windows application independent of the application-layer routine used for memory allocation. While not all of the memory allocated by an application can be resident in memory all of the time, analyzing such allocations provides a consistent way to understand the memory usage of an application.
+[Virtual Allocation routines](/windows/win32/memory/allocating-virtual-memory) (`VirtualAlloc`) handle memory allocation requests from a Windows application independent of the application-layer routine used for memory allocation. While not all of the memory allocated by an application may be resident in memory all of the time, analyzing such allocations provides a consistent way to understand the memory usage of an application.
 
 To understand your application's memory usage and find places to make improvements, we recommend capturing a VirtualAllocation trace as described below.
 
@@ -92,7 +92,7 @@ In order to find which of your app's functions have allocated memory that you ma
 
 6. To zoom in to your region of interest in the viewport, select a range, right-click on the graph, and select **Zoom**.
 
-7. Navigate through the Commit Stack to understand which functions have allocated memory. Commit stacks will need symbols loaded. To load symbols, select **Trace** > **Load symbols** from the top navigation menu bar.
+7. Navigate through the Commit Stack to understand which functions have allocated memory. Commit stacks will need [symbols loaded](/windows-hardware/test/wpt/loading-symbols). To load symbols, select **Trace** > **Load symbols** from the top navigation menu bar.
 
     ![Windows Performance Analyzer memory trace screenshot](./images/commit-stack-allocated-memory.png)
 
