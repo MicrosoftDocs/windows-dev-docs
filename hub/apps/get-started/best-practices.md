@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
-ms.date: 05/10/2022
+ms.date: 05/11/2022
 keywords: windows, win32, desktop development
 ms.author: mikben
 author: matchamatch
@@ -12,10 +12,13 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-This document provides best practices for building great Windows apps optimized to delight the ~1.5 billion diverse PC users around the world. These best practices apply to all forms of Windows application development.
+The release of Windows 11 introduces a number of new features and patterns that improve end-user experience. The best practices in this document have been provided directly by members of the Windows development platform product teams in an effort to help you build great Windows apps. Following these best practices will help you reach and delight the ~1.5 billion diverse PC users around the world. 
+
+Unless otherwise noted, the best practices in this guide apply to all versions of Windows, and all forms of Windows application development.
 
 > [!NOTE]
-> This is a sparse draft that still needs a significant amount of editorial refinement. As the draft content stabilizes in the Word doc, content partners will begin importing that information into this doc, where customer-facing copy will be drafted and finalized.
+> This draft is under construction. Editorial objectives: engaging readers with tight actionable copy, minimizing business-speak, consistent tone, formatting, and scope between sections, referring to the reader directly ("you", not "developers"), (possibly) publishing something "good enough" asap to capture feedback and iterate leading up to build.
+
 
 ## User Experience (UX)
 
@@ -83,28 +86,90 @@ The most important thing to remember in relation to page layout is that your app
 
   WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see[ High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
 
-## Performance
+## Performance & Fundamentals
 
-Improving the performance of your Windows application will improve its overall user experience. We encourage you to review [What is application performance and why is it important?](/windows/apps/performance/#what-is-application-performance-and-why-is-it-important) to learn more.
+**How can I optimize my app for better performance, memory usage, responsiveness, power consumption, and reliability?**
 
-Application performance considerations include:
+Windows users have come to expect that the applications they run exhibit great fundamentals. This term encompasses a variety of behaviors including:
 
-- CPU usage
-- Memory consumption
-- Power consumption
-- Network and storage utilization
-- Animation performance
+- performance,
+- memory usage,
+- responsiveness,
+- power consumption, and
+- reliability.
 
-Windows users expect applications to be responsive. You should be aware of how your application consumes system resources, and how you might be able to optimize. You can learn more about measuring your applications performance here: [When should you measure application performance?](/windows/apps/performance/introduction#when-should-you-measure-application-performance).
+Flaws in any one of these areas can adversely impact your users' perception of the quality of your application, so we have compiled a list of considerations, tips, and step-by-step testing guidance to help.
 
-There are [several tools available](/windows/apps/performance/#what-tools-can-i-use-to-measure-application-performance) to help you assess the performance of your Windows apps. These tools will help you monitor your app and its source code, and they can even provide detailed event tracing for your entire Windows operating system. They'll also help you analyze the memory management of .NET framework. Measuring and analyzing the performance charactieristics of your application will help you identify performance optimization opportunities.
+Following these guidelines as you design your application and allocate time to measure and test your app’s fundamentals will will help you meet your customer's expectations and ensure that your users have a first-class experience.
 
-For help deciding between performance profiling tools, see [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](/windows/apps/performance/choose-between-tools).
+The following resources will help you incorporate the recommended practices for optimizing performance and fundamentals in your Windows applications.
 
+**To improve your app's performance and fundamentals...**
+
+- [Minimize application memory usage](../performance/disk-memory.md):
+  - Reduce foreground memory usage
+  - Minimize background work
+  - Release resources while in the background
+  - Ensure your application does not leak memory
+
+- [Make efficient use of the disk footprint](../performance/disk-memory.md#efficiently-use-disk-space)
+  - Enable “pay for play” for optional functionality
+  - Ensure any caches are sized efficiently
+  - Implement new experiences in a disk-efficient manner
+  - Optimize individual binary sizes where possible
+
+- [Improve power consumption and battery life by minimizing background work](../performance/power.md)
+  - Do not wake the CPU or use system resources while in the background
+
+- Measure reliability and minimize crashes
+  - Design your app with reliability in mind.
+  - Test for reliability, and proactively monitor for crashes.
+
+To learn more, see the [Performance and Fundamentals overview](/windows/apps/performance/), which will cover questions such as "What is application performance and why is it important?" or "What tools can I use to measure Windows application performance?", as well as linking to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability.
 
 ## Operating System / Hardware Optimization
 
-TODO
+**[Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview)**
+
+Azure Virtual Desktop is a desktop and app virtualization service that runs on the cloud.
+
+[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made especially for Azure Virtual Desktop. Using MSIX app attach can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
+
+**[Windows on ARM](https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm)**
+
+Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing x86 and x64 applications unmodified. 
+
+For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques refer to [Windows on ARM](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](https://docs.microsoft.com/windows/uwp/porting/arm64ec).
+
+
+**[Toast Notifications](https://docs.microsoft.com/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance)**
+
+Toast notifications are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
+
+Following toast notification best practices can help you drive engagement with your app:
+
+ - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
+ - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
+ - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+ - Keep Notification Center tidy by clearing out old notifications.
+ - The Notification Center experience should be consistent for your app.  
+
+For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](https://docs.microsoft.com/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+
+
+**[Push Notifications](https://docs.microsoft.com/windows/apps/windows-app-sdk/notifications/push/push-quickstart)**
+
+Push notifications can be interactive visual notifications or background notifications that handle background tasks like sending profile updates or waking up an app.
+
+- Use raw notifications (shoulder taps) to wake up the app/client rather than always keeping it running to optimize performance on the user’s device.
+- Notification channels are not meant to be used to send advertisements.  
+- Respect `retry-after` headers – this protects our service and ensures notification delivery success.
+- Remove expired/revoked channels from the system. Windows Notification Service (WNS) does not process requests for expired/revoked channels.
+- Avoid sudden, large bursts of requests to WNS. This can lead to throttled responses.
+- Utilize the `MS-CV` header. This will help with end-to-end traceability and diagnostics.
+- Have a back-up mechanism for when notifications don’t work. 
+- Use [Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview) (ANH). ANH gives you access to engagement features like targeting audiences, scheduling notifications, and broadcasting notifications. If you're a Windows-only developer today, using ANH will make it easy for you to transition your notifications infrastructure to other platforms in the future.
+- We do not encourage the use of push notifications for tiles - Windows 11 no longer supports this pattern. 
 
 
 ## Application discovery and management
@@ -121,10 +186,10 @@ Application discovery and installation are one of the first interactions that a 
 
 - **Updates**  
   - Deliver a transparent update experience that minimizes the impact to the user and the system.   
-  - With MSIX, updating app packages is optimized to ensure that only the essential changed bits of the app are downloaded to update an existing Windows app. 
-  - Windows 10 and Windows 11 allow developers to make stronger guarantees around app updates from the Store. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
+  - Provide an intelligent update mechanism to ensure that only the essential changed bits of the app are downloaded to update an existing Windows app to minimize the network bandwidth required.  
+  - Ensure that you provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
   - Consider push notification-based updates or checking for available updates at app startup or at restart. 
-  - When an MSIX is uninstalled by the user, all package installation content is removed, as well as any app configuration information stored in AppData. User created content should be stored in locations like Documents, which can then be retained by users even post app is uninstalled. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
+  - Ensure that during uninstallation your app removes all binaries and app data. User created content should be stored in locations like Documents, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
   - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
 
 - **Additional Resources** 

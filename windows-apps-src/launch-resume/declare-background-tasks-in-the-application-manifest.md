@@ -207,14 +207,14 @@ This example declares a background task that runs in a new process that gets its
 
 ```xml
 <Package
-    xmlns:uap4="https://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
     ...
     <Applications>
         <Application ...>
             ...
             <Extensions>
                 <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
-                    <BackgroundTasks uap4:SupportsMultipleInstances="True">
+                    <BackgroundTasks uap4:SupportsMultipleInstances="true">
                         <Task Type="timer" />
                     </BackgroundTasks>
                 </Extension>

@@ -1,8 +1,8 @@
 ---
-title: Windows app performance overview
+title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
 ms.topic: article
-ms.date: 11/05/2021
+ms.date: 05/11/2022
 ms.author: mattwoj
 author: mattwojo
 ms.reviewer: adityar
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
 ---
 
-# Windows app performance overview
+# Windows app performance and fundamentals overview
 
 Improving your application's performance gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Battery-powered devices last longer. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
@@ -39,6 +39,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 * [Case Study: Using Visual Studio Profiler to reduce memory allocations in the Windows Terminal console host startup path](https://devblogs.microsoft.com/visualstudio/case-study-using-visual-studio-profiler-to-reduce-memory-allocations-in-the-windows-terminal-console-host-startup-path/)
 
 * [Case Study: Double Performance in under 30 minutes](https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/)
+
+* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
 
 ### ![Windows Performance Analyzer Icon](./images/wpa.png) Windows Performance Toolkit
 
