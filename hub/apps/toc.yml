@@ -216,7 +216,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-      - name: Optimize your app performance
+      - name: Optimize performance & fundamentals
         items:
           - name: Overview
             href: performance/index.md
@@ -224,6 +224,12 @@ items:
             href: performance/introduction.md
           - name: Choosing performance tools
             href: performance/choose-between-tools.md
+          - name: Improve disk and memory use
+            href: performance/disk-memory.md
+          - name: Improve power consumption
+            href: performance/power.md
+          - name: Improve reliability
+            href: performance/reliability.md
       - name: User interface and input
         items:
           - name: Overview
