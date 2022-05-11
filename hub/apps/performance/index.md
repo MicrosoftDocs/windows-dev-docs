@@ -1,5 +1,5 @@
 ---
-title: Windows app performance overview
+title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
 ms.topic: article
 ms.date: 11/05/2021
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
 ---
 
-# Windows app performance overview
+# Windows app performance and fundamentals overview
 
 Improving your application's performance gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Battery-powered devices last longer. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
