@@ -12,7 +12,7 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into five primary sections:
+The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into the following sections:
 
 1. **[User experience](#user-experience-ux)**: Guidance in this section will help you improve the look and feel of your apps.
 2. **[Performance and fundamentals](#performance--fundamentals)**: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
