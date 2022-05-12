@@ -293,7 +293,7 @@ Most modern apps collect and use a large amount of data – including personal d
 
 ## Conclusion
 
-Building applications on Windows gives you access to over a billion devices and users worldwide. Implementing the best practices in this document will help you reduce costs, improve discoverability, maintan accessibility, increase engagement, and reduce risk.
+Building applications on Windows gives you access to over a billion devices and users worldwide. Implementing the best practices in this document will help you reduce costs, reach more users, improve discoverability, maintan accessibility, increase engagement, and reduce risk.
 
 ## Related articles
 
