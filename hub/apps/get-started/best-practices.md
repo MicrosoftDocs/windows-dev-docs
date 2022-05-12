@@ -136,20 +136,20 @@ To learn more, see the [Performance and fundamentals overview](/windows/apps/per
 
 Windows apps can be built, packaged, and delivered in a variety of ways. The best practices in this section will help you optimize these aspects of your application across hardware configurations.
 
-#### **[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) and [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview)**
+#### MSIX app attach and Azure Virtual Desktop
 
-[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for Azure Virtual Desktop (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
+[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
 
-#### **[Windows on ARM](/windows/uwp/porting/apps-on-arm)**
+#### Windows on ARM
 
 Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
 For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on ARM](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](https://docs.microsoft.com/windows/uwp/porting/arm64ec).
 
 
-#### **[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance)**
+#### Toast notifications
 
-Toast notifications are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
+[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance) are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
 
 Following toast notification best practices can help you drive engagement with your app:
 
@@ -162,9 +162,9 @@ Following toast notification best practices can help you drive engagement with y
 For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
 
-#### **[Push notifications](/windows/apps/windows-app-sdk/notifications/push/push-quickstart)**
+#### Push notifications
 
-Push notifications can be interactive visual notifications or background notifications that handle background tasks like sending profile updates or waking up an app.
+[Push notifications](/windows/apps/windows-app-sdk/notifications/push/push-quickstart) can be interactive visual notifications or background notifications that handle background tasks like sending profile updates or waking up an app.
 
 - Use raw notifications (shoulder taps) to wake up the app/client rather than always keeping it running to optimize performance on the user’s device.
 - Notification channels are not meant to be used to send advertisements.  
