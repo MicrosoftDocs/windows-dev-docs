@@ -125,7 +125,7 @@ Windows apps can be built, packaged, and delivered in a variety of ways. The bes
 
 [MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for Azure Virtual Desktop (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
 
-#### **[Windows on ARM](https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm)**
+#### **[Windows on ARM](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm)**
 
 Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
