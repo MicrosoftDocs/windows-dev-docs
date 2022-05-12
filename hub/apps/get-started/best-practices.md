@@ -223,8 +223,6 @@ In fact, the [World Health Organization](https://www.who.int/news-room/fact-shee
 >
 > More than 1 billion people worldwide experience some form of disability. However, only 1 in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities—whether situational, temporary, or permanent—can affect any of us at any time.
 >
-> According to the [US Labor Bureau of Statistics](https://www.bls.gov/news.release/disabl.nr0.htm), the US unemployment rate for people with disabilities was at 80%.
->
 > **Accessibility is an opportunity**
 >
 > According to the [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4): Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who will be 75% of the global workforce by 2020, typically choose employers who reflect their values. Diversity and inclusion top that list.
