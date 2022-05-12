@@ -15,11 +15,11 @@ ms.collection: windows11
 The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into five primary sections:
 
 1. **[User experience](#user-experience-ux)**: Guidance in this section will help you improve the look and feel of your apps.
-2. <a href="#performance--fundamentals">Performance and fundamentals</a>: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
-3. <a href="#operating-system--hardware-optimization">Operating system / hardware optimization</a>: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
-4. <a href="#application-discovery-and-management">Application discovery and management</a>: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
-5. <a href="#accessibility">Accessibility</a>: Guidance in this section will help you build accessible and inclusive experiences.
-6. <a href="#security-and-privacy">Security and privacy</a>: Guidance in this section will help you mitigate security risks and meet your users' privacy needs.
+2. **[Performance and fundamentals](#performance--fundamentals)**: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
+3. **[Operating system / hardware optimization](#operating-system--hardware-optimization)**: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
+4. **[Application discovery and management](#application-discovery-and-management)**: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
+5. **[Accessibility](#accessibility)**: Guidance in this section will help you build accessible and inclusive experiences.
+6. **[Security and privacy](#security-and-privacy)**: Guidance in this section will help you mitigate security risks and meet your users' privacy needs.
 
 
 
