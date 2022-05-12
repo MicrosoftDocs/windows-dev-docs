@@ -12,14 +12,14 @@ ms.collection: windows11
 
 # Windows Application Development - Best Practices
 
-The best practices in this document will help you build great Windows apps that reach and delight the ~1.5 billion diverse PC users around the world. This document is divided into five primary sections:
+The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into five primary sections:
 
-1. <a>User experience</a>: Guidance in this section will help you improve the look and feel of your apps.
-2. <a>Performance and fundamentals</a>: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
-3. <a>Operating system / hardware optimization</a>: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
-4. <a>Application discovery and management</a>: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
-5. <a>Accessibility</a>: Guidance in this section will help you build accessible and inclusive experiences.
-6. <a>Security and privacy</a>: Guidance in this section will help you mitigate security risks and meet your users' privacy needs.
+1. <a href="#user-experience-ux">User experience</a>: Guidance in this section will help you improve the look and feel of your apps.
+2. <a href="#performance--fundamentals">Performance and fundamentals</a>: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
+3. <a href="#operating-system--hardware-optimization">Operating system / hardware optimization</a>: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
+4. <a href="#application-discovery-and-management">Application discovery and management</a>: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
+5. <a href="#accessibility">Accessibility</a>: Guidance in this section will help you build accessible and inclusive experiences.
+6. <a href="#security-and-privacy">Security and privacy</a>: Guidance in this section will help you mitigate security risks and meet your users' privacy needs.
 
 
 
@@ -37,29 +37,29 @@ When applications adhere to Windows styles and standard Windows behaviors, users
 
 Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customer's expectations of a great app experience. The following resources will help you incorporate the latest and recommended Windows application UI/UX patterns into your Windows applications.
 
-##### Common controls
+#### Common controls
 
 Use the latest **[common controls](/windows/apps/get-started/make-apps-great-for-windows#4-use-the-latest-common-controls)** to get the benefits of compatibility and accessibility by default. [WinUI](/windows/apps/winui/) provides new styles for common controls, and the default styles have been updated with new visuals and animations. If you can't use WinUI, you can copy the styles from the [design toolkits](https://www.figma.com/community/file/989931624019688277) and [WinUI Gallery](https://aka.ms/xamlcontrolsgallery).
 
-##### Materials: Acrylic and Mica
+#### Materials: Acrylic and Mica
 
 [Materials](/windows/apps/design/signature-experiences/materials) are visual effects applied to UX surfaces that resemble real life artifacts. [Acrylic](/windows/apps/design/style/acrylic) and [Mica](/windows/apps/design/style/mica) materials are used as base layers beneath interactive UI controls. Use [Acrylic](/windows/apps/design/style/acrylic) for transient surfaces that light-dismiss, like context menus. [Mica](/windows/apps/design/style/mica) is a very performant material that is meant to be used on long-lived UI surfaces like the title bar to communicate the active or inactive state of the app.
 
 More information about Acrylic and Mica materials can be found in [Things you can do to make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows#5-use-the-latest-design-materials-acrylic-and-mica).
 
 
-##### Dark and Light themes
+#### Dark and Light themes
 
 [Dark and Light themes](/windows/apps/get-started/make-apps-great-for-windows#7-support-dark-and-light-themes) are a great way to let the user express their personality. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes).
 
-##### Iconography and typography
+#### Iconography and typography
 
 Windows 11 has [updated icons ("Segoe Fluent Icons")](/windows/apps/design/signature-experiences/iconography), improved support for [animated icons](/windows/apps/design/controls/animated-icon), and a [new UI font ("Segoe UI Variable")](/windows/apps/design/signature-experiences/typography). We recommend that you use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible (not with GDI).
 
 More information about iconography and typography on Windows can be found in [Things you can do to make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows#9-use-beautiful-iconography--typography).
 
 
-##### On-object commanding
+#### On-object commanding
 
 Use [on-object commanding](/windows/apps/design/controls/collection-commanding#creating-context-menus) such as [context menus](/windows/apps/design/controls/menus-and-context-menus), [swipe commands](/windows/apps/design/controls/swipe), and [keyboard shortcuts](/windows/apps/design/input/keyboard-accelerators). It's important to make app commands available in various ways to support all users and input types.
 
@@ -71,7 +71,7 @@ Use [on-object commanding](/windows/apps/design/controls/collection-commanding#c
 
   Anywhere a user can edit text, you should support Cut/Copy/Paste commands and ensure that these commands are exposed by all input types. WinUI text controls do this by default, but you might need to do some extra work if you're not using WinUI.
 
-##### Geometry and app silhouettes
+#### Geometry and app silhouettes
 
 [Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use. Another feature of [Windows 11 app silhouettes](/windows/apps/design/basics/app-silhouette) is the integration of app and title bar content.
 
@@ -83,7 +83,7 @@ Use [on-object commanding](/windows/apps/design/controls/collection-commanding#c
 
   In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](/windows/apps/desktop/modernize/apply-rounded-corners) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
 
-##### **Page layout**
+#### **Page layout**
 
 The most important thing to remember in relation to page layout is that your app window can be resized to many shapes and sizes and run on devices with different DPI and scale settings. Content and commands should not disappear when the app is resized, especially to smaller sizes like `800x600`.
 
@@ -136,18 +136,18 @@ To learn more, see the [Performance and fundamentals overview](/windows/apps/per
 
 Windows apps can be built, packaged, and delivered in a variety of ways. The best practices in this section will help you optimize these aspects of your application across hardware configurations.
 
-##### **[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) and [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview)**
+#### **[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) and [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview)**
 
 [MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for Azure Virtual Desktop (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
 
-##### **[Windows on ARM](/windows/uwp/porting/apps-on-arm)**
+#### **[Windows on ARM](/windows/uwp/porting/apps-on-arm)**
 
 Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
 For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on ARM](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](https://docs.microsoft.com/windows/uwp/porting/arm64ec).
 
 
-##### **[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance)**
+#### **[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance)**
 
 Toast notifications are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
 
@@ -162,7 +162,7 @@ Following toast notification best practices can help you drive engagement with y
 For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
 
-##### **[Push notifications](/windows/apps/windows-app-sdk/notifications/push/push-quickstart)**
+#### **[Push notifications](/windows/apps/windows-app-sdk/notifications/push/push-quickstart)**
 
 Push notifications can be interactive visual notifications or background notifications that handle background tasks like sending profile updates or waking up an app.
 
@@ -181,17 +181,17 @@ Push notifications can be interactive visual notifications or background notific
 
 Application discovery and installation are the first two interactions that a user will have with your application. Reliable installation, update, and uninstallation experiences are important pieces of a consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by end-users:
  
-##### Application discovery
+#### Application discovery
 
   - Listing your app on [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) can make your app more discoverable for users.   
   - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.    
 
-##### Installation
+#### Installation
 
   - Ensure that your application's installation is error free, transparent, and clean.  
   - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.  
 
-##### Updates
+#### Updates
 
   - Deliver a transparent update experience that minimizes the impact to the user and the system.   
   - Ensure that your update mechanism downloads only the essential changed components that need to be updated. This can minimize the network bandwidth required.  
@@ -200,7 +200,7 @@ Application discovery and installation are the first two interactions that a use
   - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
   - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
 
-##### Additional resources
+#### Additional resources
   - [MSIX documentation](/windows/msix/)
   - [Windows Installer Best Practices](/windows/win32/msi/windows-installer-best-practices)
 
@@ -212,7 +212,7 @@ Accessible Windows applications support rich and [inclusive experiences](https:/
 
 In fact, the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.
 
-> ##### For people with disabilities
+> #### For people with disabilities
 >
 > **Accessibility is a responsibility**
 >
@@ -228,7 +228,7 @@ Incorporating accessibility into your Windows apps can maximize user engagement,
 
 For detailed guidance on building accessible Windows apps, see [Accessibility in Windows 11 and Windows 10](../develop/accessibility.md).
 
-##### Accessibility testing
+#### Accessibility testing
 
 **Accessibility Insights** is a powerful suite of tools for developers to test the accessibility of their apps and services. Here are some tools to leverage in testing accessibility:
 
@@ -250,7 +250,7 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 
 5. Fix all bugs you find, they all have direct impact on accessibility.
 
-##### Accessibility and WinUI
+#### Accessibility and WinUI
 
 Accessibility is built into every WinUI control. Once usage pre-conditions and properties are defined, the accessibility of each control can be leveraged, and developers can focus on the interaction between controls. Just like using prefabricated bricks to build a house instead of forming and firing each brick and then deciding how they fit together.
 
@@ -260,7 +260,7 @@ Accessibility is built into every WinUI control. Once usage pre-conditions and p
 
 Malicious actors are always looking for vulnerabilities to exploit. An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your application has no direct security bugs, attackers can use your app to initiate their attacks through phishing and social engineering. The best practices in this section will help you mitigate risks related to security and end-user privacy.
 
-##### Security guidelines
+#### Security guidelines
 
 - Follow the [Security Development Lifecycle](https://www.microsoft.com/securityengineering/sdl/) for all development.
   - **Threat modeling** can help you avoid security flaws.
@@ -287,7 +287,7 @@ Malicious actors are always looking for vulnerabilities to exploit. An insecure 
 
 Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They are demanding more transparency and control over the data collected and used by apps. The simplest way to avoid privacy issues is to not collect or store any personal data, but that's unrealistic for most apps. Instead, use the following tips to help minimize the privacy impact of your app.
 
-##### Privacy guidelines
+#### Privacy guidelines
 
 - **Ensure that your app provides an accurate Privacy Policy.** Ideally, provide both a summary document written for a casual audience (your users) in addition to a long-form legal policy (written for your lawyers).
 - **Familiarize yourself with privacy regulations** in the markets where your app will be available, and ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, etc.
