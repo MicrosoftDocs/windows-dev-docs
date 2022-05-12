@@ -179,6 +179,8 @@ For more information about toast notifications, see [Toast UX Guidance - Windows
 
 ### Application discovery and management
 
+**How do I make my app discoverable and easy to install/update/uninstall?**
+
 Application discovery and installation are the first two interactions that a user will have with your application. Reliable installation, update, and uninstallation experiences are important pieces of a consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by end-users:
  
 #### Application discovery
@@ -273,7 +275,7 @@ Malicious actors are always looking for vulnerabilities to exploit. An insecure 
 
 **How do I ensure that my app follows appropriate privacy practices?**
 
-Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They are demanding more transparency and control over the data collected and used by apps. The simplest way to avoid privacy issues is to not collect or store any personal data, but that's unrealistic for most apps. Instead, use the following tips to help minimize the privacy impact of your app.
+Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They expect transparency and control over the data collected and used by apps. Use the following tips to help meet the privacy needs of your users.
 
 #### Privacy guidelines
 
