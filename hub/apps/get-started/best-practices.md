@@ -14,7 +14,7 @@ ms.collection: windows11
 
 The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into five primary sections:
 
-1. <a href="#user-experience-ux">User experience</a>: Guidance in this section will help you improve the look and feel of your apps.
+1. **[User experience](#user-experience-ux)**: Guidance in this section will help you improve the look and feel of your apps.
 2. <a href="#performance--fundamentals">Performance and fundamentals</a>: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
 3. <a href="#operating-system--hardware-optimization">Operating system / hardware optimization</a>: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
 4. <a href="#application-discovery-and-management">Application discovery and management</a>: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
@@ -232,22 +232,10 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 
 **Accessibility Insights** is a powerful suite of tools for developers to test the accessibility of their apps and services. Here are some tools to leverage in testing accessibility:
 
-1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/).
-
-   Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, etc.
-
-2. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/).
-
-   See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
-
-3. Run Accessibility Insights automated checks in your PRs or CI/CD.
-
-   For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
-
-4. Remind everyone on your team to run FastPass before completing a PR.
-
-   For more details, see [MerlinBot and Accessibility Insights](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/accessibility-insights/accessibility-insights-in-merlinbot).
-
+1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, etc.
+2. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
+3. Run Accessibility Insights automated checks in your PRs or CI/CD.  For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
+4. Remind everyone on your team to run FastPass before completing a PR. For more details, see [MerlinBot and Accessibility Insights](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/accessibility-insights/accessibility-insights-in-merlinbot).
 5. Fix all bugs you find, they all have direct impact on accessibility.
 
 #### Accessibility and WinUI
