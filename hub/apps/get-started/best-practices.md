@@ -63,24 +63,40 @@ More information about iconography and typography on Windows can be found in [Th
 
 Use [on-object commanding](/windows/apps/design/controls/collection-commanding#creating-context-menus) such as [context menus](/windows/apps/design/controls/menus-and-context-menus), [swipe commands](/windows/apps/design/controls/swipe), and [keyboard shortcuts](/windows/apps/design/input/keyboard-accelerators). It's important to make app commands available in various ways to support all users and input types.
 
-- **[Context menu integration](/windows/apps/get-started/make-apps-great-for-windows#context-menus)**: For Windows 11, we improved the behavior of the right-click context menu. If your app creates context menus, you may need to make some changes to ensure that these work well with Windows 11.
+- **[Context menu integration](/windows/apps/get-started/make-apps-great-for-windows#context-menus)**
+ 
+  For Windows 11, we improved the behavior of the right-click context menu. If your app creates context menus, you may need to make some changes to ensure that these work well with Windows 11.
 
-- **Text editing**: Anywhere a user can edit text, you should support Cut/Copy/Paste commands and ensure that these commands are exposed by all input types. WinUI text controls do this by default, but you might need to do some extra work if you're not using WinUI.
+- **Text editing**
+  
+  Anywhere a user can edit text, you should support Cut/Copy/Paste commands and ensure that these commands are exposed by all input types. WinUI text controls do this by default, but you might need to do some extra work if you're not using WinUI.
 
 #### Geometry and app silhouettes
 
 [Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use. Another feature of [Windows 11 app silhouettes](/windows/apps/design/basics/app-silhouette) is the integration of app and title bar content.
 
-- **[Title bar integration](/windows/apps/design/basics/titlebar-design)**: Use the WindowsAppSDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar). You can use these APIs with WinUI 3, Win32, and .NET apps.
-- **[Rounded corners](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**: In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](/windows/apps/desktop/modernize/apply-rounded-corners) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
+- **[Title bar integration](/windows/apps/design/basics/titlebar-design)**
+  Use the WindowsAppSDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar). You can use these APIs with WinUI 3, Win32, and .NET apps.
+
+- **[Rounded corners](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
+  In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](/windows/apps/desktop/modernize/apply-rounded-corners) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
 
 #### **Page layout**
 
 The most important thing to remember in relation to page layout is that your app window can be resized to many shapes and sizes and run on devices with different DPI and scale settings. Content and commands should not disappear when the app is resized, especially to smaller sizes like `800x600`.
 
-- **Responsive layout**:  Use [responsive design techniques](/windows/apps/design/layout/responsive-design) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](/windows/apps/design/input/guidelines-for-panning) to ensure that users can always access your content, no matter how small the app window gets.
-- **[Snap layouts](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**: Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Use the snap layouts menu to test your app in different snap layouts an ensure your app supports different snap sizes (1/2, 1/3, 1/4 screen). If the snap layouts menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](/windows/apps/desktop/modernize/apply-snap-layout-menu) for some steps you can take to enable it.
-- **DPI awareness**: WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see[ High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
+- **Responsive layout**
+  Use [responsive design techniques](/windows/apps/design/layout/responsive-design) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](/windows/apps/design/input/guidelines-for-panning) to ensure that users can always access your content, no matter how small the app window gets.
+
+- **[Snap layouts](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
+  
+  Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Use the snap layouts menu to test your app in different snap layouts an ensure your app supports different snap sizes (1/2, 1/3, 1/4 screen). 
+  
+  If the snap layouts menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](/windows/apps/desktop/modernize/apply-snap-layout-menu) for some steps you can take to enable it.
+
+- **DPI awareness**
+  
+  WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see[ High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
 
 ### Performance & fundamentals
 
