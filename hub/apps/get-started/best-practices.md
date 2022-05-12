@@ -3,7 +3,6 @@ title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
 ms.date: 05/11/2022
-keywords: windows, win32, desktop development
 ms.author: jken
 author: grantmestrength
 ms.localizationpriority: medium
@@ -140,12 +139,11 @@ Windows apps can be built, packaged, and delivered in a variety of ways. The bes
 
 [MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
 
-#### Windows on ARM
+#### Windows on Arm
 
-Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
+Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
-For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on ARM](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](https://docs.microsoft.com/windows/uwp/porting/arm64ec).
-
+For best performance, you should enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
 
 #### Toast notifications
 
