@@ -76,9 +76,11 @@ Use [on-object commanding](/windows/apps/design/controls/collection-commanding#c
 [Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use. Another feature of [Windows 11 app silhouettes](/windows/apps/design/basics/app-silhouette) is the integration of app and title bar content.
 
 - **[Title bar integration](/windows/apps/design/basics/titlebar-design)**
+  
   Use the WindowsAppSDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar). You can use these APIs with WinUI 3, Win32, and .NET apps.
 
 - **[Rounded corners](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
+  
   In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](/windows/apps/desktop/modernize/apply-rounded-corners) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
 
 #### **Page layout**
@@ -86,6 +88,7 @@ Use [on-object commanding](/windows/apps/design/controls/collection-commanding#c
 The most important thing to remember in relation to page layout is that your app window can be resized to many shapes and sizes and run on devices with different DPI and scale settings. Content and commands should not disappear when the app is resized, especially to smaller sizes like `800x600`.
 
 - **Responsive layout**
+  
   Use [responsive design techniques](/windows/apps/design/layout/responsive-design) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](/windows/apps/design/input/guidelines-for-panning) to ensure that users can always access your content, no matter how small the app window gets.
 
 - **[Snap layouts](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
