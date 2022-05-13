@@ -57,6 +57,8 @@ The basic steps to drive latency optimization are:
 
 - [Event Tracing for Windows](/windows-hardware/test/wpt/event-tracing-for-windows)
 
+- [Planning for performance](/windows/uwp/debug-test-perf/planning-and-measuring-performance)
+
 - [Q&A forum](/answers/questions/812324/i-don39t-have-sampled-cpu-usage-data-in-my-profile.html)
 
 - [List of Windows Performance Toolkit (WPA) Graphs](/windows-hardware/test/wpt/list-of-wpa-graphs)
