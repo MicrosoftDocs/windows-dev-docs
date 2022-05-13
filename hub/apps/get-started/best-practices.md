@@ -34,7 +34,7 @@ Windows 11 marks a visual evolution of the Windows operating system that improve
 
 When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals will create a great lasting impression.
 
-Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customer's expectations of a great app experience. The following resources will help you incorporate the latest and recommended Windows application UI/UX patterns into your Windows applications.
+Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customers' expectations of a great app experience. The following resources will help you incorporate the latest and recommended Windows application UI/UX patterns into your Windows applications.
 
 #### Common controls
 
@@ -100,13 +100,28 @@ The most important thing to remember in relation to page layout is that your app
   
   WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see[ High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
 
+#### Toast notifications
+
+[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance) are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
+
+Following toast notification best practices can help you drive engagement with your app:
+
+ - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
+ - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
+ - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+ - Keep Notification Center tidy by clearing out old notifications.
+ - The Notification Center experience should be consistent for your app.  
+
+For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+
+
 ### Performance & fundamentals
 
 **How can I optimize my app for better performance, memory usage, responsiveness, power consumption, and reliability?**
 
 Windows users expect Windows apps to exhibit great performance and fundamentals. This includes **performance**, **memory usage**, **responsiveness**, **power consumption**, and **reliability**.
 
-Following the best practices in this section will help you meet your customer's expectations across these criteria.
+Following the best practices in this section will help you meet your customers' expectations across these criteria.
 
 - [Minimize application memory usage](../performance/disk-memory.md):
   - Reduce foreground memory usage.
@@ -137,27 +152,15 @@ Windows apps can be built, packaged, and delivered in a variety of ways. The bes
 
 #### MSIX app attach and Azure Virtual Desktop
 
-[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
+If you want your app to run best in an enterprise environment, add support for MSIX app attach.
 
-#### Windows on Arm
+[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs for your enterprise.  
 
-Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
+#### Windows on ARM
 
-For best performance, you should enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
+Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
-#### Toast notifications
-
-[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance) are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
-
-Following toast notification best practices can help you drive engagement with your app:
-
- - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
- - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
- - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
- - Keep Notification Center tidy by clearing out old notifications.
- - The Notification Center experience should be consistent for your app.  
-
-For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on ARM](/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](/windows/uwp/porting/arm64ec).
 
 
 #### Push notifications
@@ -184,24 +187,29 @@ Application discovery and installation are the first two interactions that a use
 #### Application discovery
 
   - Listing your app on [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) can make your app more discoverable for users.   
-  - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.    
+  - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.
+  - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to our store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
 
-#### Installation
+#### Installation and uninstallation
 
-  - Ensure that your application's installation is error free, transparent, and clean.  
-  - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.  
+  - Support a per-user install. This will enable users to install more easily and avoid UAC prompts.
+  - Ensure that your application's installation is error free, transparent, and thoughtful about its file management. Your application's installation shouldn't leave any temporary files behind.   
+  - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.
+  - If you're working in an enterprise environment, consider using silent installation.
+  - Ensure your app is listed in the Settings->All Apps list.
+  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
+  - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
+  - Avoid installing or updating system binaries that may require a reboot.   
+
 
 #### Updates
 
-  - Support a per-user install. This will enable users to install more easily and avoid UAC prompts
-  - Ensure your app is listed in the Settings->All Apps list
-  - Support an update mechanism that allows your app to restart when its convenient for the user. Consider using the [Windows App SDK Restart](/windows/win32/api/_recovery/) APIs to manage app behavior. 
-  - Avoid updating system binaries that may require a reboot.   
+  - Support an update mechanism that allows your app to restart when its convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior. 
   - Ensure that your update mechanism downloads only the essential changed components that need to be updated. This can minimize the network bandwidth required.  
   - Ensure that you provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
   - Consider push notification-based updates or checking for available updates at app startup or at restart. 
-  - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
-  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
+
+
 
 #### Additional resources
   - [MSIX documentation](/windows/msix/)
