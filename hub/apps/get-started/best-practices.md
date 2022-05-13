@@ -200,7 +200,7 @@ Application discovery and installation are the first two interactions that a use
 
   - Support a per-user install. This will enable users to install more easily and avoid UAC prompts
   - Ensure your app is listed in the Settings->All Apps list
-  - Support an update mechanism that allows your app to restart when its convenient for the user. Consider using the [Windows App SDK Restart](/windows/win32/api/_recovery/) APIs to manage app behavior. 
+  - Support an update mechanism that allows your app to restart when its convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior. 
   - Avoid updating system binaries that may require a reboot.   
   - Ensure that your update mechanism downloads only the essential changed components that need to be updated. This can minimize the network bandwidth required.  
   - Ensure that you provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
