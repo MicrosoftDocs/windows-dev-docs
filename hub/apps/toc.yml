@@ -40,7 +40,7 @@ items:
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
-        - name: Windows app development - best practices 
+        - name: Windows developer best practices 
           href: get-started/best-practices.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
