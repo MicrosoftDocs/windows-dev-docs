@@ -187,7 +187,8 @@ Application discovery and installation are the first two interactions that a use
 #### Application discovery
 
   - Listing your app on [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) can make your app more discoverable for users.   
-  - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.    
+  - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.
+  - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to our store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
 
 #### Installation
 
