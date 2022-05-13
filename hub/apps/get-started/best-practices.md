@@ -190,23 +190,26 @@ Application discovery and installation are the first two interactions that a use
   - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.
   - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to our store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
 
-#### Installation
+#### Installation and uninstallation
 
+  - Support a per-user install. This will enable users to install more easily and avoid UAC prompts.
   - Ensure that your application's installation is error free, transparent, and thoughtful about its file management. Your application's installation shouldn't leave any temporary files behind.   
   - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.
   - If you're working in an enterprise environment, consider using silent installation.
+  - Ensure your app is listed in the Settings->All Apps list.
+  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
+  - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
+
 
 #### Updates
 
-  - Support a per-user install. This will enable users to install more easily and avoid UAC prompts
-  - Ensure your app is listed in the Settings->All Apps list
   - Support an update mechanism that allows your app to restart when its convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior. 
   - Avoid updating system binaries that may require a reboot.   
   - Ensure that your update mechanism downloads only the essential changed components that need to be updated. This can minimize the network bandwidth required.  
   - Ensure that you provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
   - Consider push notification-based updates or checking for available updates at app startup or at restart. 
-  - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
-  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
+
+
 
 #### Additional resources
   - [MSIX documentation](/windows/msix/)
