@@ -196,6 +196,24 @@ sections:
         answer: |
           Before you start the Microsoft Store Certification process, you must exclude the `<project-name>.qps-ploc.xlf` file from your project. Pseudo language is used to detect potential localizability issues or bugs, but it is not a valid Microsoft Store language. If it is not removed then your app will fail during the Microsoft Store Certification process.
 
+      - question: |
+          What data are you collecting?
+        answer: |
+          The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. 
+          
+          Usage data: This is anonymous information about what features are being used. For example: adding a new language to a MAT-enabled solution.
+
+          Configuration data: This is anonymous information regarding the version of MAT VS installed on and the version of Windows it is being run on.  
+
+          Below is a concrete example of the data collected in the following format, Key / Value / Notes:
+          
+          - AddLanguage / MachineID: xxxx / This is based on a hash of the network adapter NIC. It is not guaranteed to be unique. 
+          - TimeStamp / 2022/01/07T22:04:45.0000000Z / Time event took place. 
+          - MAT_Version / 4.1.02 / Version of MAT installed. 
+          - Languages / fr,es,de/DE / List of languages added to project. 
+          
+          All data is collected using Application Insights and sent to Azure Log analytics. Data is retained for 90 days then deleted.  
+
 
 additionalContent: |
 
