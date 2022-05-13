@@ -14,7 +14,7 @@ ms.collection: windows11
 The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into the following sections:
 
 1. **[User experience](#user-experience-ux)**: Guidance in this section will help you improve the look and feel of your apps.
-2. **[Performance and fundamentals](#performance--fundamentals)**: Guidance in this section will help you improve your app's performance, reliability, and resource utilization. 
+2. **[Performance and fundamentals](#performance--fundamentals)**: Guidance in this section will help you improve your app's performance and resource utilization. 
 3. **[Operating system / hardware optimization](#operating-system--hardware-optimization)**: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
 4. **[Application discovery and management](#application-discovery-and-management)**: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
 5. **[Accessibility](#accessibility)**: Guidance in this section will help you build accessible and inclusive experiences.
