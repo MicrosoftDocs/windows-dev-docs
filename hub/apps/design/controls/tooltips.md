@@ -4,7 +4,7 @@ title: Tooltips
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/03/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -15,7 +15,10 @@ ms.localizationpriority: medium
 ---
 # Tooltips
 
-A tooltip is a short description that is linked to another control or object. Tooltips help users understand unfamiliar objects that aren't described directly in the UI. They display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip disappears after a few seconds, or when the user moves the finger, pointer or keyboard/gamepad focus.
+A tooltip is a popup that contains additional information about another control or object. Tooltips display automatically when the user moves focus to, presses and holds, or hovers the pointer over the associated control. The tooltip disappears when the user moves focus from, stops pressing on, or stops hovering the pointer over the associated control (unless the pointer is moving towards the tooltip).
+
+> [!NOTE]
+> Starting with Windows 11 version 21H2, a tooltip can also be dismissed by pressing the CTRL key.
 
 ![A tooltip](images/controls/tool-tip.png)
 

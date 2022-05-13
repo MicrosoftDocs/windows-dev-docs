@@ -20,6 +20,9 @@ The **list** command also supports filters which can be used to limit your list 
 
 ![Image of list command usage](./images/list.png)
 
+> [!NOTE]
+> If you want to list all apps with available updates use `winget upgrade` (without any arguments).
+
 ## Arguments
 
 The following arguments are available.

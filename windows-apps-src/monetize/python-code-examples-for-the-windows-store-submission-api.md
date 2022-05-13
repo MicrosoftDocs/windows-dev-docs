@@ -2,7 +2,7 @@
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: Use the Python code examples in this section to learn more about using the Microsoft Store submission API.
 title: Python code to submit apps, add-ons, and flights
-ms.date: 07/10/2017
+ms.date: 04/21/2022
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, python
 ms.localizationpriority: medium

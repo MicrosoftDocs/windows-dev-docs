@@ -38,6 +38,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 
 * [Case Study: Using Visual Studio Profiler to reduce memory allocations in the Windows Terminal console host startup path](https://devblogs.microsoft.com/visualstudio/case-study-using-visual-studio-profiler-to-reduce-memory-allocations-in-the-windows-terminal-console-host-startup-path/)
 
+* [Case Study: Double Performance in under 30 minutes](https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/)
+
 ### ![Windows Performance Analyzer Icon](./images/wpa.png) Windows Performance Toolkit
 
 [Windows Performance Recorder](/windows-hardware/test/wpt/windows-performance-recorder) and [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer) enable detailed monitoring and analysis of your application and the entire system using [Event Tracing for Windows (ETW)](/windows-hardware/test/wpt/event-tracing-for-windows). See the links below on how to get started.
@@ -47,6 +49,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 * [Windows Performance Recorder Intro](https://devblogs.microsoft.com/performance-diagnostics/wpr-intro/)
 
 * [Windows Performance Analyzer Intro](https://devblogs.microsoft.com/performance-diagnostics/wpa-intro/)
+
+* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
 
 ### ![PerfView Icon](./images/dotnet-logo.png) PerfView
 

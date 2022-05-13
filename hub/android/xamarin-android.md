@@ -26,7 +26,7 @@ To use this tutorial, you'll need the following:
 > [!NOTE]
 > This guide works with Visual Studio 2022, Visual Studio 2019, and Visual Studio 2017. If you're using Visual Studio 2017, some instructions might be incorrect due to UI differences between versions of Visual Studio.
 
-You will also to have an Android phone or configured emulator in which to run your app. See [Configuring an Android emulator](emulator.md).
+You will also need to have an Android phone or configured emulator in which to run your app. See [Configuring an Android emulator](emulator.md).
 
 ## Create a new Xamarin.Android project
 

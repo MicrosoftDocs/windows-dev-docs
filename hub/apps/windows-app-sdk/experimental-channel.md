@@ -83,7 +83,7 @@ Important limitations:
 For more information, see the following articles:
 
 - [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/framework-packages-overview.md)
-- [Reference the Windows App SDK framework package at run time](reference-framework-package-run-time.md)
+- [Use the Windows App SDK runtime](use-windows-app-sdk-run-time.md)
 
 ### Other limitations and known issues
 

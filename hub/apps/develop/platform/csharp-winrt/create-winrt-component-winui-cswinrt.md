@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # Walkthrough&mdash;Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK
 
 > [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+> When authoring Windows Runtime Components with Windows App SDK and WinUI 3 types, there are currently some bugs and key scenarios that aren't yet supported.
 
 C#/WinRT provides support for authoring components that implement WinUI custom types and custom controls. These components can be consumed from either C# or C++/WinRT applications that use the Windows App SDK. This support is available beginning with C#/WinRT v1.6.1 with some limitations, and is currently in development.
 
@@ -112,7 +112,7 @@ This walkthrough requires the following tools and components:
 
 The following steps show how to consume the component created from the previous section from a C++/WinRT Windows App SDK application. Consuming a C#/WinRT component from C++ currently requires using the single-project **Blank App, Packaged (WinUI 3 in Desktop)** template. Note that C# components can also be referenced from C# packaged apps without class registrations.
 
-Consumption from MSIX-packaged apps that use a separate **Windows Application Packaging (WAP)** project, or from apps that are not MSIX-packaged, is not currently supported. To follow the status of, and provide input on, supporting these scenarios, see [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) on the C#/WinRT Github repo.
+Consumption from MSIX-packaged apps that use a separate **Windows Application Packaging (WAP)** project is not currently supported. To follow the status of, and provide input on, supporting these scenarios, see [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) on the C#/WinRT Github repo.
 
 1. Add a new C++ Windows App SDK application project to your solution. Right-click on your solution in Visual Studio, and select **Add** > **New Project**. Select the C++ **Blank App, Packaged (WinUI 3 in Desktop)** template provided by the Windows App SDK. For this walkthrough, we named the app **CppApp**.
 
@@ -179,7 +179,8 @@ Consumption from MSIX-packaged apps that use a separate **Windows Application Pa
 
 ## Known issues
 
-- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `ARM64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.*
+- Consuming a C# component as a project reference requires `PublishReadyToRun` to be set to `False`. See [Github Issue #1151](https://github.com/microsoft/CsWinRT/issues/1151) for more details.
+- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `ARM64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [Github Issue #1151](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
       
 ## Related topics
 

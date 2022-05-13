@@ -73,7 +73,7 @@
         "apps/windows-app-sdk/preview-experimental-create-winui3-app.md": "get-started",
         "apps/windows-app-sdk/preview-experimental-install.md": "get-started",
         "apps/windows-app-sdk/preview-experimental-unpackaged-tutorial.md": "get-started",
-        "apps/windows-app-sdk/reference-framework-package-run-time.md": "get-started",
+        "apps/windows-app-sdk/use-windows-app-sdk-run-time.md": "get-started",
         "apps/windows-app-sdk/release-channels.md": "get-started",
         "apps/windows-app-sdk/remove-windows-app-sdk-versions.md": "deployment",
         "apps/windows-app-sdk/set-up-your-development-environment.md": "get-started",

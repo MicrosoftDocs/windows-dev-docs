@@ -1,8 +1,8 @@
 ---
-title: Tutorial&mdash;Create a simple photo viewer with WinUI 3 (C#)
+title: Tutorial--Create a simple photo viewer with WinUI 3 (C#)
 description: In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding; and we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: article
-ms.date: 03/20/2022
+ms.date: 04/05/2022
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#
 ms.author: stwhi
 author: stevewhims
@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 ---
 
 # Tutorial&mdash;Create a simple photo viewer with WinUI 3 (C#)
+
+> [!NOTE]
+> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](/windows/apps/get-started/).
 
 In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding; and we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 
@@ -22,7 +25,7 @@ To set up your development computer, see [Install tools for the Windows App SDK]
 
 ## Create a new project
 
-In Visual Studio, create a new C# project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *SimplePhotos*, and uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
+In Visual Studio, create a new C# project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 ## Copy asset files
 
@@ -37,6 +40,8 @@ The app that we'll be building carries image files around with it in the form of
 Back in Visual Studio you'll see that a new **Samples** folder is now a child of **Assets**; and inside **Samples** are several photos. You can hover the mouse pointer over them, and a thumbnail preview will appear for each.
 
 ## Add a GridView control
+
+Our app needs to display rows and columns of photos. In other words, a grid of images. For a UI like that, the main controls to use are [List view and grid view](/windows/apps/design/controls/listview-and-gridview).
 
 1. Open `MainWindow.xaml`. Currently, there's a **Window** element, and within that a **StackPanel** layout panel. Inside the **StackPanel** is a **Button** control, which is hooked up to an event handler method.
 
@@ -64,6 +69,9 @@ For background info about some of the types we've just mentioned, see [Layout pa
 ## The ImageFileInfo model
 
 A *model* (in the sense of models, views, and view models) is a class that to some degree represents a real-world object or concept (such as a bank account). It's an *abstraction* of that real-world thing. In this section we'll be adding to our project a new class called **ImageFileInfo**. **ImageFileInfo** will be a model of an image file, such as a photo. This section will take us a step closer to being able to display photos in the app's user interface (UI).
+
+> [!TIP]
+> In preparation for the code example below, let's introduce the term *observable*. A property that can be dynamically bound to a XAML control (so that the UI updates each time the property value changes) is known as an *observable* property. This idea is based on the software design pattern known as the observer pattern. In the app that we build in this tutorial, the properties of our **ImageFileInfo** model won't change. But even so, we'll show how to make **ImageFileInfo** observable, by having it implement the [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface.
 
 1. Right-click the project node (**SimplePhotos**), and click **Add** > **New Item...**. Under **Visual C# Items** > **Code**, select **Class**. Set the name to *ImageFileInfo.cs*, and click **Add**.
 
@@ -240,7 +248,8 @@ Remember that the **Images** property is an observable collection of **ImageFile
 
 But we haven't yet told the **GridView** anything about the **ImageFileInfo** class. So the best it can do so far is to display the **ToString** value of each **ImageFileInfo** object in the collection. And by default, that's just the type's name. In the next section we'll create a data template to define how we want an **ImageFileInfo** object to be displayed.
 
-I used the term *observable collection* above. A property that can be dynamically bound to a XAML control (so that the UI updates each time the property value changes) is known as an *observable* property. This idea is based on the software design pattern known as the observer pattern. In the app that we build in this tutorial, the number of images and their properties don't change. But it's still convenient, and a good practice, to use data-binding to initially connect the UI to the data.
+> [!TIP]
+> I used the term *observable collection* above. In the app that we build in this tutorial, the number of images doesn't change (and as we've said, neither do the values of the properties of each image, either). But it's still convenient, and a good practice, to use data-binding to initially connect the UI to the data. So that's what we'll do.
 
 ## Add a data template
 

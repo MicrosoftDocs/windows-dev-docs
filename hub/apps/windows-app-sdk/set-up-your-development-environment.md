@@ -32,23 +32,23 @@ While installing Visual Studio, select these workloads and components.
 
 #### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-a)
 
-* On the **Workloads** tab of the installation dialog, select:
-  * **Universal Windows Platform development**
+* On the **Workloads** tab of the installation dialog, select as appropriate:
+  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
     * Then in the **Installation details** pane of the installation dialog for that workload, make sure **C++ (v143) Universal Windows Platform tools** is selected.
-  * **.NET Desktop Development** for C# app development
+  * For C# app development, select **.NET Desktop Development**
     * Then in the **Installation details** pane of the installation dialog, select **Windows App SDK C# Templates** (at the bottom of the list).
-  * **Desktop development with C++** for C++ app development
+  * For C++ app development, select **Desktop development with C++**
     * Then in the **Installation details** pane of the installation dialog,  select **Windows App SDK C++ Templates** (at the bottom of the list).
 
 * On the **Individual components** tab of the installation dialog, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
 ##### [Other Visual Studio versions](#tab/vs-other)
 
-* On the **Workloads** tab of the installation dialog, select:
-  * **Universal Windows Platform development**
+* On the **Workloads** tab of the installation dialog, select as appropriate:
+  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
     * Then in the **Installation details** pane of the installation dialog for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
-  * **.NET Desktop Development** for C# app development
-  * **Desktop development with C++** for C++ app development
+  * For C# app development, select **.NET Desktop Development**
+  * For C++ app development, select **Desktop development with C++**
 
 * On the **Individual components** tab of the installation dialog, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
@@ -61,6 +61,8 @@ The [Windows App SDK](index.md) includes Visual Studio project and item template
 ### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-b)
 
 If you followed the instructions in [Required workloads and components](#required-workloads-and-components) above, then the templates are already installed.
+
+Install [Template Studio for WinUI (C#)](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs) to accelerate the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
 
 ### [Visual Studio 2022 version 17.0](#tab/vs-2022-17-0)
 

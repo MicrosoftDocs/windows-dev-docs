@@ -5,7 +5,7 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 keywords: touch, pointer, input, user interaction
-ms.date: 10/01/2021
+ms.date: 05/03/2022
 ms.topic: article
 
 
@@ -94,7 +94,7 @@ Targeting is optimized through:
 
 - Rocking
 
-    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
+    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a [tooltip](../controls/tooltips.md) or the status bar and is activated when the touch is released.
 
 ## Accuracy
 
