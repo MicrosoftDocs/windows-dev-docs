@@ -138,9 +138,9 @@ Following the best practices in this section will help you meet your customers' 
 - [Improve power consumption and battery life by minimizing background work](../performance/power.md):
   - Do not wake the CPU or use system resources while in the background.
 
-- **Measure reliability and minimize crashes:**
-  - Design your app with reliability in mind.
-  - Test for reliability, and proactively monitor for crashes.
+- [Improve the responsiveness of your app's launch and key interactions](../performance/responsive.md)
+  - Define your key interaction scenarios and add ETW events to measure.
+  - Set goals based on the interaction class associated with user expectations.
 
 To learn more, see the [Performance and fundamentals overview](/windows/apps/performance/), which will cover questions such as "What is application performance and why is it important?" or "What tools can I use to measure Windows application performance?", as well as linking to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability.
 

@@ -5,13 +5,15 @@ ms.author: mattwoj
 author: mattwojo
 ms.reviewer: sandeepp
 ms.topic: conceptual
-ms.date: 05/11/2022
+ms.date: 05/12/2022
 #Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes power by identifying and minimizing the use of system resources and not waking the CPU when my app is in the background.
 ---
 
 # Improve power consumption and battery life by minimizing background work
 
-The most basic principles for improving power consumption are to enure that while your app is in the background, it does not:
+This guide will demonstrate how to improve the way that your Windows application consumes power, offering principles to help you improve overall device performance and battery life.
+
+The most basic principles for improving power consumption are to ensure that while your app is in the background, it does not:
 
 - use system resources,
 - wake the CPU through timers,
