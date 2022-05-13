@@ -33,7 +33,7 @@ The MicaController reacts to the system Light and Dark themes by default. To ove
 - [TintOpacity](/windows/winui/api/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity)
 
 > [!TIP]
-> The code in this section is taken from the [Windows App SDK Win32 Mica sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32). See the GitHub repo for the full code. These examples use [C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/).
+> The code in this section is taken from the [Windows App SDK Win32 Mica sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32). See the GitHub repo for the full code. These examples use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 To enable Mica, you need a reference to the Windows App SDK, a [Compositor](/uwp/api/windows.ui.composition.compositor), and a [DispatcherQueue](/uwp/api/windows.system.dispatcherqueue).
 
