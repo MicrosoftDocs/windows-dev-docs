@@ -13,7 +13,7 @@ ms.collection: windows11
 
 The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into the following sections:
 
-1. **[User experience](#user-experience-ux)**: Guidance in this section will help you improve the look and feel of your apps.
+1. **[User experience](#user-experience-ux)**: Guidance in this section will help you improve the look, feel, and usability of your apps.
 2. **[Performance and fundamentals](#performance--fundamentals)**: Guidance in this section will help you improve your app's performance and resource utilization. 
 3. **[Operating system / hardware optimization](#operating-system--hardware-optimization)**: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.
 4. **[Application discovery and management](#application-discovery-and-management)**: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.
@@ -24,9 +24,9 @@ The best practices in this document will help you build great Windows apps that 
 
 ### User experience (UX)
 
-**How can I make my app look and feel great for users?**
+**How can I improve the look, feel, and usability of my Windows apps?**
 
-Windows 11 marks a visual evolution of the Windows operating system that improves the look and feel of Windows. Our studies show that users have high expectations for Windows apps:
+Windows 11 marks a visual evolution of the Windows operating system that improves the look, feel, and usability of Windows. Our studies show that users have high expectations for Windows apps:
 
  - They expect Windows apps to work with a complete range of inputs.
  - They expect design and interaction patterns that look and feel native on current and future devices.
