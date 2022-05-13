@@ -37,7 +37,7 @@ The MicaController reacts to the system Light and Dark themes by default. To ove
 
 To enable Mica, you need a reference to the Windows App SDK, a [Compositor](/uwp/api/windows.ui.composition.compositor), and a [DispatcherQueue](/uwp/api/windows.system.dispatcherqueue).
 
-This example (from WinMain.cpp) shows how to do the following to set up an unpackaged app:
+This example shows how to do the following to set up an unpackaged app:
 
 - Initialize WinRT.
 - Reference the WindowsAppSDK from an unpackaged app.
@@ -47,14 +47,35 @@ This example (from WinMain.cpp) shows how to do the following to set up an unpac
 - Create the Mica dispatcher queue controller
 - Initialize a WinRT compositor.
 
+> From [WinMain.cpp](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/WinMain.cpp)
+
+
 ```cpp
-int __stdcall WinMain (_In_ HINSTANCE , _In_opt_ HINSTANCE, _In_ PSTR, _In_ int)
+int __stdcall WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE,  _In_ PSTR, _In_ int)
 {
+    // Initialize WinRt Instance
     winrt::init_apartment();
+
     // Enable referencing the WindowsAppSDK from an unpackaged app.
-    // https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/deploy-unpackaged-apps
     Utilities::WindowsAppSDKBootstrapperContext sdkContext;
-    // Register the window class before creating it
+
+    // Register Window class before making the window.
+    MicaWindow::RegisterWindowClass();
+
+    // Mica requires a compositor, which also requires a dispatcher queue.
+    auto controller = Utilities::CreateDispatcherQueueControllerForCurrentThread();
+    auto compositor = winrt::Compositor();
+
+    // Create your window...
+    ...
+}
+```
+
+> From [MicaWindow.cpp](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/MicaWindow.cpp)
+
+```cpp
+void MicaWindow::RegisterWindowClass()
+{
     auto instance = winrt::check_pointer(GetModuleHandleW(nullptr));
     WNDCLASSEX wcex = { sizeof(wcex) };
     wcex.style = CS_HREDRAW | CS_VREDRAW;
@@ -65,14 +86,7 @@ int __stdcall WinMain (_In_ HINSTANCE , _In_opt_ HINSTANCE, _In_ PSTR, _In_ int)
     wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     wcex.lpszClassName = ClassName.c_str();
     wcex.hIconSm = LoadIconW(wcex.hInstance, IDI_APPLICATION);
-    winrt::check_bool(RegisterClassExW(&wcex));
-    // A dispatcher queue is required to be able to create a compositor.
-    auto controller = Utilities::CreateDispatcherQueueControllerForCurrentThread();
-    // Create the compositor required for Mica
-    auto compositor = winrt::Compositor();
-
-    // Create your window...
-    ...
+    winrt::check_bool(RegisterClassExW(&wcex)); // check if the window class was registered successfully
 }
 ```
 
