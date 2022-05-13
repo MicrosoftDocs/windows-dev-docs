@@ -44,8 +44,6 @@ items:
           href: get-started/windows-developer-faq.yml
         - name: Windows developer glossary 
           href: get-started/windows-developer-glossary.md
-        - name: Windows app development - best practices 
-          href: get-started/best-practices.md
   - name: Setup guides and resources
     items:
         - name: System requirements
@@ -62,6 +60,8 @@ items:
               href: desktop/visual-studio-templates.md
             - name: "WinUI 3 templates in Visual Studio"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
+  - name: Windows app development - best practices 
+    href: get-started/best-practices.md
   - name: Design
     href: design/toc.yml
   - name: Develop
