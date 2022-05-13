@@ -24,7 +24,7 @@ The best practices in this document will help you build great Windows apps that 
 
 ### User experience (UX)
 
-**How can I make my app look and feel great for end-users?**
+**How can I make my app look and feel great for users?**
 
 Windows 11 marks a visual evolution of the Windows operating system that improves the look and feel of Windows. Our studies show that users have high expectations for Windows apps:
 
@@ -106,7 +106,7 @@ The most important thing to remember in relation to page layout is that your app
 
 Following toast notification best practices can help you drive engagement with your app:
 
- - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
+ - Notifications should be personalized, actionable, and useful to your users. Try to give your users what they want, not what you want them to know.
  - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
  - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
  - Keep Notification Center tidy by clearing out old notifications.
@@ -153,7 +153,7 @@ Windows apps can be built, packaged, and delivered in a variety of ways. The bes
 
 If you want your app to run best in an enterprise environment, add support for MSIX app attach.
 
-[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs for your enterprise.  
+[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for users, and it can reduce infrastructure costs for your enterprise.  
 
 #### Windows on ARM
 
@@ -181,7 +181,7 @@ For best performance, you should enable your apps to take full advantage of the 
 
 **How do I make my app discoverable and easy to install/update/uninstall?**
 
-Application discovery and installation are the first two interactions that a user will have with your application. Reliable installation, update, and uninstallation experiences are important pieces of a consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by end-users:
+Application discovery and installation are the first two interactions that a user will have with your application. Reliable installation, update, and uninstallation experiences are important pieces of a consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by users:
  
 #### Application discovery
 
@@ -254,7 +254,7 @@ Accessibility is built into every WinUI control. Once usage pre-conditions and p
 
 **How do I ensure that my app is secure?**
 
-Malicious actors are always looking for vulnerabilities to exploit. An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your application has no direct security bugs, attackers can use your app to initiate their attacks through phishing and social engineering. The best practices in this section will help you mitigate risks related to security and end-user privacy.
+Malicious actors are always looking for vulnerabilities to exploit. An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your application has no direct security bugs, attackers can use your app to initiate their attacks through phishing and social engineering. The best practices in this section will help you mitigate risks related to security and user privacy.
 
 #### Security guidelines
 
