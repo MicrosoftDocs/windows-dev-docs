@@ -1,5 +1,5 @@
 ---
-title: Tutorial&mdash;Create a simple photo viewer with WinUI 3 (C#)
+title: Tutorial--Create a simple photo viewer with WinUI 3 (C#)
 description: In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding; and we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: article
 ms.date: 04/05/2022
