@@ -17,7 +17,7 @@ Starting with Windows 10, version 1803, you can write C++/WinRT or C++/CX UWP co
 
 To see one in action, here's a video about Creating a UWP Console App.
 
-> [!VIDEO <https://www.youtube.com/embed/bwvfrguY20s>]
+> [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## Use a UWP Console app template
 
