@@ -28,9 +28,9 @@ The best practices in this document will help you build great Windows apps that 
 
 Windows 11 marks a visual evolution of the Windows operating system that improves the look and feel of Windows. Our studies show that users have high expectations for Windows apps:
 
- - They expect Windows apps to work with a complete range of inputs.
- - They expect design and interaction patterns that look and feel native on current and future devices.
- - They expect support for modern windowing workflows and shell integration points.
+- They expect Windows apps to work with a complete range of inputs.
+- They expect design and interaction patterns that look and feel native on current and future devices.
+- They expect support for modern windowing workflows and shell integration points.
 
 When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals will create a great lasting impression.
 
@@ -106,11 +106,11 @@ The most important thing to remember in relation to page layout is that your app
 
 Following toast notification best practices can help you drive engagement with your app:
 
- - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
- - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
- - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
- - Keep Notification Center tidy by clearing out old notifications.
- - The Notification Center experience should be consistent for your app.  
+- Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
+- Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
+- Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+- Keep Notification Center tidy by clearing out old notifications.
+- The Notification Center experience should be consistent for your app.  
 
 For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
@@ -223,7 +223,7 @@ Accessible Windows applications support rich and [inclusive experiences](https:/
 
 In fact, the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.
 
-> #### For people with disabilities
+> #### Accessibility is good for both people and business
 >
 > **Accessibility is a responsibility**
 >
@@ -233,9 +233,15 @@ In fact, the [World Health Organization](https://www.who.int/news-room/fact-shee
 >
 > According to the [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4): Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who will be 75% of the global workforce by 2020, typically choose employers who reflect their values. Diversity and inclusion top that list.
 
+#### Incorporating accessibility
+
 Incorporating accessibility into your Windows apps can maximize user engagement, increase product satisfaction, and encourage product loyalty. Proactively designing and implementing accessible experiences typically results in reduced development and maintenance costs over the long-term.
 
 For detailed guidance on building accessible Windows apps, see [Accessibility in Windows 11 and Windows 10](../develop/accessibility.md).
+
+#### Accessibility and WinUI
+
+Accessibility is built into every WinUI control. Once usage pre-conditions and properties are defined, the accessibility of each control can be leveraged, and developers can focus on the interaction between controls. Just like using prefabricated bricks to build a house instead of forming and firing each brick and then deciding how they fit together.
 
 #### Accessibility testing
 
@@ -246,10 +252,6 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 3. Run Accessibility Insights automated checks in your PRs or CI/CD.  For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
 4. Remind everyone on your team to run FastPass before completing a PR. For more details, see [MerlinBot and Accessibility Insights](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/accessibility-insights/accessibility-insights-in-merlinbot).
 5. Fix all bugs you find, they all have direct impact on accessibility.
-
-#### Accessibility and WinUI
-
-Accessibility is built into every WinUI control. Once usage pre-conditions and properties are defined, the accessibility of each control can be leveraged, and developers can focus on the interaction between controls. Just like using prefabricated bricks to build a house instead of forming and firing each brick and then deciding how they fit together.
 
 ### Security and privacy
 
