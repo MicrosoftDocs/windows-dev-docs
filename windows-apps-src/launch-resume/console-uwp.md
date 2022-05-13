@@ -10,7 +10,8 @@ ms.localizationpriority: medium
 
 This topic describes how to create a [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) or C++/CX Universal Windows Platform (UWP) console app.
 
-> **Note**  The [Console App (Universal) Project Templates](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) extension does not support Visual Studio 2022. Either Visual Studio 2017 or Visual Studio 2019 is required to install and use these templates.
+> [!NOTE]  
+> The [Console App (Universal) Project Templates](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) extension does not support Visual Studio 2022. Either Visual Studio 2017 or Visual Studio 2019 is required to install and use these templates.
 
 Starting with Windows 10, version 1803, you can write C++/WinRT or C++/CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output, and can use [Universal C Runtime](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) functions such as **printf** and **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you will typically launch them from the command-line.
 
