@@ -34,7 +34,7 @@ Windows 11 marks a visual evolution of the Windows operating system that improve
 
 When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals will create a great lasting impression.
 
-Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customer's expectations of a great app experience. The following resources will help you incorporate the latest and recommended Windows application UI/UX patterns into your Windows applications.
+Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customers' expectations of a great app experience. The following resources will help you incorporate the latest and recommended Windows application UI/UX patterns into your Windows applications.
 
 #### Common controls
 
@@ -121,7 +121,7 @@ For more information about toast notifications, see [Toast UX Guidance - Windows
 
 Windows users expect Windows apps to exhibit great performance and fundamentals. This includes **performance**, **memory usage**, **responsiveness**, **power consumption**, and **reliability**.
 
-Following the best practices in this section will help you meet your customer's expectations across these criteria.
+Following the best practices in this section will help you meet your customers' expectations across these criteria.
 
 - [Minimize application memory usage](../performance/disk-memory.md):
   - Reduce foreground memory usage.
