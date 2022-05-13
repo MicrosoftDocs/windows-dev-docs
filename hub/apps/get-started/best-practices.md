@@ -110,7 +110,6 @@ Following toast notification best practices can help you drive engagement with y
  - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
  - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
  - Keep Notification Center tidy by clearing out old notifications.
- - The Notification Center experience should be consistent for your app.  
 
 For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
