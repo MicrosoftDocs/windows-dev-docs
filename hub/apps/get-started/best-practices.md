@@ -169,7 +169,7 @@ For best performance, you should enable your apps to take full advantage of the 
 - Use raw notifications (shoulder taps) to wake up the app/client rather than always keeping it running to optimize performance on the user’s device.
 - Notification channels are not meant to be used to send advertisements.  
 - Respect `retry-after` headers – this protects our service and ensures notification delivery success.
-- Remove expired/revoked channels from the system. Windows Notification Service (WNS) does not process requests for expired/revoked channels.
+- Remove expired/revoked channels from the system. [Windows Notification Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) (WNS) does not process requests for expired/revoked channels.
 - Avoid sudden, large bursts of requests to WNS. This can lead to throttled responses.
 - Utilize the `MS-CV` header. This will help with end-to-end traceability and diagnostics.
 - Have a back-up mechanism for when notifications don’t work. 
