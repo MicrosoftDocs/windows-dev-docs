@@ -100,6 +100,21 @@ The most important thing to remember in relation to page layout is that your app
   
   WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see[ High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
 
+#### Toast notifications
+
+[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance) are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
+
+Following toast notification best practices can help you drive engagement with your app:
+
+ - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
+ - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
+ - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+ - Keep Notification Center tidy by clearing out old notifications.
+ - The Notification Center experience should be consistent for your app.  
+
+For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+
+
 ### Performance & fundamentals
 
 **How can I optimize my app for better performance, memory usage, responsiveness, power consumption, and reliability?**
@@ -146,20 +161,6 @@ If you want your app to run best in an enterprise environment, add support for M
 Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
 For best performance, you should enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
-
-#### Toast notifications
-
-[Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance) are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center.
-
-Following toast notification best practices can help you drive engagement with your app:
-
- - Notifications should be personalized, actionable, and useful to your end-users. Try to give your users what they want, not what you want them to know.
- - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
- - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
- - Keep Notification Center tidy by clearing out old notifications.
- - The Notification Center experience should be consistent for your app.  
-
-For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
 
 #### Push notifications
