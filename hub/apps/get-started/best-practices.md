@@ -192,7 +192,7 @@ Application discovery and installation are the first two interactions that a use
 
 #### Installation
 
-  - Ensure that your application's installation is error free, transparent, and clean.  
+  - Ensure that your application's installation is error free, transparent, and thoughtful about its file management. Your application's installation shouldn't leave any temporary files behind.   
   - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.  
 
 #### Updates
