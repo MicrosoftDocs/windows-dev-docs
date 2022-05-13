@@ -49,7 +49,7 @@ More information about Acrylic and Mica materials can be found in [Things you ca
 
 #### Dark and Light themes
 
-[Dark and Light themes](/windows/apps/get-started/make-apps-great-for-windows#7-support-dark-and-light-themes) are a great way to let the user express their personality. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes).
+[Dark and Light themes](/windows/apps/get-started/make-apps-great-for-windows#7-support-dark-and-light-themes) give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes).
 
 #### Iconography and typography
 
