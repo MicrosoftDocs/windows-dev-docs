@@ -232,6 +232,8 @@ items:
             href: performance/power.md
           - name: Improve reliability
             href: performance/reliability.md
+          - name: Improve responsiveness
+            href: performance/responsive.md
       - name: User interface and input
         items:
           - name: Overview
