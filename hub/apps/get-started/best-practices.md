@@ -138,7 +138,9 @@ Windows apps can be built, packaged, and delivered in a variety of ways. The bes
 
 #### MSIX app attach and Azure Virtual Desktop
 
-[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs.  
+If you want your app to run best in an enterprise environment, add support for MSIX app attach.
+
+[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for end-users, and it can reduce infrastructure costs for your enterprise.  
 
 #### Windows on ARM
 
