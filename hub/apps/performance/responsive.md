@@ -29,7 +29,7 @@ The basic steps to drive latency optimization are:
 
 | Interaction class label | User perception| Range of delay | Examples | Suggested UI |
 |---|---|---|---|---|
-| Fast | Minimally noticeable delay| 100 - 200 ms | Open app bar, right click menu | |
+| Fast | Minimally noticeable delay| 100 - 200 milliseconds | Open app bar, right click menu | |
 | Interactive | Quick, but not fast | 300 - 500 ms | Exit an app, display cached search results | |
 | Pause | Not quick, but feels responsive | 500 ms - 1 sec | Navigate to a different page, resume the app from a suspended state, display web search results | An entrance animation (e.g. fly in new content) may be used to mask the time taken for this scenario. |
 | Wait | Not quick due to amount of work for scenario | 1 - 3 sec | Launching the app | A spinning/waiting cursor may be used to note progress. Both an exit and entrance animation (e.g. fly old page out, fly new page in) may be used to mask the time taken for this scenario. |
