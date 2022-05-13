@@ -1,21 +1,23 @@
 ---
-title: Power consumption improvements and Windows Application Performance
-description: Improve power consumption and battery life by minimizing the use of system resources and not waking the CPU when your Windows app is in the background.
+title: Responsive interactions and Windows Application Performance
+description: This guide will help you to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.
 ms.author: mattwoj
 author: mattwojo
-ms.reviewer: sandeepp
+ms.reviewer: prrapa
 ms.topic: conceptual
-ms.date: 05/11/2022
-#Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes power by identifying and minimizing the use of system resources and not waking the CPU when my app is in the background.
+ms.date: 05/13/2022
+#Customer intent: As a Windows application developer, I want to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.
 ---
 
-# Improve responsiveness by optimizing latency for launch and interactions
+# Improve the responsiveness of your Windows app
 
-This guide will demonstrate how to improve the responsiveness of your Windows application. Quick, responsive interactions (otherwise known as low-latency interactions) creates a better user experience.
+This guide will help you to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions. Quick, responsive interactions (otherwise known as low-latency interactions) creates a better user experience. Understanding interaction expectations, measuring current durations, and setting goals for improvement depending on the interaction class can lead to significant improvements in your users experience and satisfaction.
 
-Customers can feel when an application launch, menu navigation, or page/content load is slow. They have come to expect a fast, seamless experience and we have
+## Step by step guide to optimizing interactions for responsive behavior
 
- The basic steps to drive latency are:
+Customers can feel when an application launch, menu navigation, or page/content load is slow. They have come to expect a fast, seamless experience and we have shared some steps and guidance to better understand those expectations below.
+
+The basic steps to drive latency optimization are:
 
 1. Define the scenario and add ETW events.
 
