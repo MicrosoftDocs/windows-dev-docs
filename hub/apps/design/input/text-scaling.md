@@ -12,7 +12,7 @@ ms.custom: RS5
 # Text scaling
 
 ![Hero image showing an example of text scaling from 100% to 225%.](images/coretext/text-scaling-news-hero-small.png)  
-*Example of text scaling in Windows 10 (100% to 225%)*
+*Example of text scaling in Windows 11 (100% to 225%)*
 
 ## Overview
 

@@ -153,5 +153,5 @@ Use this template to display a media collection with text overlay.
 - [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
-- [ListView and GridView sample (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Thumbnail images](/windows/uwp/files/thumbnails)

@@ -133,4 +133,53 @@ UWP is a highly customizable platform that uses XAML markup to separate UI (pres
 
 You will not have access to the APIs provided by the **Windows App SDK**. To use the Windows App SDK, you will have to migrate your UWP app to WinUI 3. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md).
 
----
+### [.NET MAUI](#tab/net-maui)
+
+.NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI 3 and the Windows App SDK so apps get the latest user experience on Windows. This gives your apps access to everything you get with WinUI 3 plus the ability to reach to other platforms.
+
+.NET MAUI for Windows is a great choice if:
+- You want to share as much .NET code as possible across mobile and desktop applications.
+- You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.
+- You want to use C# and/or XAML for building cross-platform apps.
+- You're using Blazor for web development and wish to include all or part of that in a mobile or desktop application.
+
+> [!div class="button"]
+> [Get started with .NET MAUI](/dotnet/maui/get-started/installation)
+
+For more information about .NET MAUI, see the following links:
+- [.NET MAUI documentation](/dotnet/maui/)
+- [.NET MAUI on GitHub](https://github.com/dotnet/maui)
+- [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
+- [.NET Conf 2021: Introduction to .NET MAUI](https://www.youtube.com/watch?v=HMYpAw2sl58)
+- [.NET Conf 2021: Building cross-platform native apps with .NET MAUI and Blazor](https://www.youtube.com/watch?v=Dr8L7zXxwLI)
+
+### [React Native for Windows](#tab/rnw)
+
+[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+React Native for Windows brings React Native support to the Windows SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
+
+With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
+
+Here are some reasons to choose React Native for Windows:
+
+- You want to share code across platforms as much as possible, or you have web properties that you want to share code with.
+- Improved developer productivity and inner loop, thanks to fast refresh.
+- Your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.
+- You have experience with and a preference for JavaScript or TypeScript
+- You would like to leverage JavaScript-only libraries on [npmjs.com](https://www.npmjs.com/), and many native libraries too.
+- Your app will use the native controls, visual appearance, animations and colors, and therefore will feel integrated into the design language used in Windows. In addition, React Native for Windows apps do not have to compromise on the set of APIs they can call, as the framework allows you to call platform APIs as well as write your own view managers and native modules.
+- Large and growing community momentum, with lots of [community modules](https://reactnative.directory).
+
+> [!div class="button"]
+> [Get started with React Native for Windows](https://aka.ms/ReactNativeGuideWindows)
+
+For more information about React Native for Windows, see the following links:
+
+- [React Native for Windows repo on GitHub](https://github.com/microsoft/react-native-windows)
+- [Native modules in React Native for Windows](https://aka.ms/RNW-NativeModules)
+- [API reference](https://microsoft.github.io/react-native-windows/docs/Native-API-Reference)
+- [Community modules directory](https://reactnative.directory)
+- [More resources](https://microsoft.github.io/react-native-windows/resources)
+
+
+

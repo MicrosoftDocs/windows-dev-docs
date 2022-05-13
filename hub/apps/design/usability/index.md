@@ -39,7 +39,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Windows apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Windows apps for Windows   Design and build inclusive software with accessibility in mind.</p>
                     </div>
                 </div>
             </div>
