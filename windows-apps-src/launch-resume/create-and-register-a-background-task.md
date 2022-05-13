@@ -25,6 +25,9 @@ Create a background task class and register it to run when your app is not in th
 > [!NOTE]
 > If you use a background task to play media in the background, see [Play media in the background](../audio-video-camera/background-audio.md) for information about improvements in Windows 10, version 1607, that make it much easier.
 
+> [!NOTE]
+> If you are implementing an out-of-process background task in a C# desktop application with .NET 5 or later, use the [C#/WinRT authoring support](/windows/apps/develop/platform/csharp-winrt/authoring) to create a Windows Runtime Component. This applies for apps using the Windows App SDK, WinUI 3, WPF, or WinForms. See the [Background task sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/BgTaskComponent) for an example.
+
 ## Create the Background Task class
 
 You can run code in the background by writing classes that implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This code runs when a specific event is triggered by using, for example, [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) or [**MaintenanceTrigger**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
