@@ -44,7 +44,6 @@ FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd
 If you have applications that are elevated (such as Windows Terminal or Task Manager) and want them snapped with FancyZones, run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
 
 
-
 ## Getting started with the editor
 
 ### Launch zones editor
@@ -130,7 +129,7 @@ In the demo below, we start with a default template applied to the screen and tw
 | Make dragged window transparent | When the zones are activated, the window being dragged is made transparent to improve the zones visibility. |
 | Allow popup windows snapping | This setting can affect all popup windows including notifications. |
 | Allow child windows snapping | |
-| Disable round corners when window is snapped | Works on Windows 11. |
+| Disable round corners when window is snapped | Only for Windows 11. |
 | Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides two Windows Snap keys: <kbd>⊞ Win</kbd>+<kbd>left</kbd> and <kbd>⊞ Win</kbd>+<kbd>right</kbd>. |
 | Move windows based on their position | Allows to use <kbd>⊞ Win</kbd>+<kbd>arrows</kbd> to snap a window based on its position relatively to the zone layout. |
 | Move windows between zones across all monitors | Unchecked: snapping with <kbd>⊞ Win</kbd>+<kbd>arrow</kbd> cycles the window through the zones on the current monitor.<br/>Checked: it cycles the window through all the zones on all monitors. |

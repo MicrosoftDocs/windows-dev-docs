@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows]
 When using PowerToys, you may occasionally experience quirks or issues with one or more of the utilities. To help the development team identify and resolve these issues, we recommend submitting a bug report on the [PowerToys repository](https://github.com/microsoft/PowerToys/issues/new/choose).
 
 > [!NOTE]
-> To reduce the number of duplicate reports filed and increase the priority given to an issue, we encourage you to search the [existing entries](https://github.com/microsoft/PowerToys/issues) for that issue first, and if found, submit information, comment, and up-vote that report instead.
+> To reduce the number of duplicate reports filed and increase the priority given to an issue, we encourage you to search the [existing entries](https://github.com/microsoft/PowerToys/issues) for that issue first. If found: submit information, comment, and up-vote that report instead.
 
 
 ## Bug report form

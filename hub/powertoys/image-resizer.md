@@ -36,8 +36,8 @@ Add new preset sizes. Each size can be configured as Fill, Fit or Stretch. The d
 - **Fit:** Fits the entire image into the specified size. Scales the image proportionally. Does not crop the image.
 - **Stretch:** Fills the entire specified size with the image. Stretches the image disproportionally as needed. Does not crop the image.
 
-> ![TIP]
-> You can leave the width or height empty. The other dimension will be calculated to a value proportional to the original image aspect ratio.
+> [!TIP]
+> You can leave the width or height empty. The dimension will be calculated to a value proportional to the original image aspect ratio.
 
 ### Fallback encoding
 

@@ -15,15 +15,15 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 ## Requirements
 
 - Supported Operating Systems:
-  - Windows 10 v1903 (18362) or newer.
   - Windows 11 (all versions)
+  - Windows 10 v1903 (18362) or newer
 - System architecture
   - x64 architecture currently supported.
-  - ARM support to become available at a later date.
+  - ARM support is being acively worked on.
 - Our installer will install the following runtimes:
-  - .NET Core 3.1.22 Desktop Runtime or a newer 3.1.x runtime (This is needed currently for the Settings application)
-  - .NET 6.0.3 Desktop Runtime or a newer 6.0.x runtime
-  - Microsoft Edge WebView2 Runtime bootstrapper (This will always install the latest version)
+  - [.NET 6.0.4 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer) or a newer 6.0.x runtime
+  - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (This will always install the latest version)
+  - [Windows App SDK Runtime](https://docs.microsoft.com/windows/apps/windows-app-sdk/downloads) 1.0.3. This will install version 1.0.3 if this or newer version is not installed already.
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
