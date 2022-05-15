@@ -164,7 +164,7 @@ Before you start the Microsoft Store Certification process, you must exclude the
 
 ## Telemetry
 
-The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. 
+The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. For more details, see [Multilingual App Toolkit 4.0 FAQ & troubleshooting.](https://docs.microsoft.com/en-us/windows/apps/design/globalizing/mat-faq-troubleshooting).
 
 ## Downloads
 
