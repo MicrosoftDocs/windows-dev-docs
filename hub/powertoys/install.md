@@ -84,6 +84,12 @@ If you have an issue where the MSI is not accessible, you can download the insta
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
+### Clean-up scripts
+
+In case there were problems with uninstalling a version, There is a cleanup script:
+
+- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool
+- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script
 
 ## Community-driven install tools
 

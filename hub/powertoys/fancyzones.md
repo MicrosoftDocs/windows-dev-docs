@@ -83,7 +83,7 @@ The **Grid** model starts with a three column grid and allows zones to be create
 
 - To divide a zone: click your mouse. To rotate the divider: hold down the <kbd>Shift</kbd> key.
 - To move a divider: click on the thumb and drag.
-- To merge zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
+- To merge/delete zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
 
 ![FancyZones Table Editor Mode.](../images/pt-fancyzones-grideditor.png)
 
