@@ -9,10 +9,7 @@ ms.localizationpriority: medium
 # Author Windows Runtime components with C#/WinRT
 
 > [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-> [!NOTE]
-> The C#/WinRT authoring support described in this article is currently in preview. We recommend using .NET 6 or later for authoring scenarios.
+> Authoring Windows Runtime components with C#/WinRT is supported on .NET 6 and later.
 
 The C#/WinRT NuGet package provides support for authoring your own Windows Runtime types and components in C#, and consuming them from any Windows Runtime-compatible language such as [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) or [Rust](/windows/dev-environment/rust/rust-for-windows). C#/WinRT authoring and hosting support requires .NET 6 and Visual Studio 2022, and it is intended to support desktop application scenarios including the [Windows App SDK](/windows/apps/windows-app-sdk/), and [WinUI3](/windows/apps/winui/winui3/).
 

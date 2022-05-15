@@ -108,9 +108,7 @@ For a full, step-by-step walkthrough of adding simple support for the Windows UI
 
 ## Contributing to the Windows UI Library
 
-WinUI is an open source project hosted on GitHub.
-
-We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
+We welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui) on GitHub.
 
 ## Other resources
 

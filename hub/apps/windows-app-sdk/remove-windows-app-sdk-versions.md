@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 As you install updated versions of the Windows App SDK runtime over time, you may want to remove outdated versions from your development computer. In general, you only need the Windows App SDK runtime and extension that you have chosen to reference and require in your application. Unless your application has specific reasons for earlier extensions or runtimes, you may safely remove older versions.
 
-The Windows App SDK runtime includes the [framework](deployment-architecture.md#framework-package), [main](deployment-architecture.md#main-package), [singleton](deployment-architecture.md#singleton-package), and [Dynamic Dependency Lifetime Manager (DDLM)](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm) package. All of these packages can be uninstalled by using **PowerShell** commands. The main, singleton, and DDLM packages can alternatively be uninstalled in **Settings**.
+The Windows App SDK runtime includes the Framework, Main, Singleton, and Dynamic Dependency Lifetime Manager (DDLM) packages. All of these packages can be uninstalled by using **PowerShell** commands. The Main, Singleton, and DDLM packages can alternatively be uninstalled in **Settings**.
 
 > [!IMPORTANT]
 > We recommend that you do not remove Windows App SDK runtime packages from end-user's machines after deployment. Doing so will break other applications that are taking a dependency on those packages.
@@ -43,7 +43,7 @@ remove-appxpackage -Package Microsoft.ProjectReunion.DDLM.8000.144.525.0-x8-p_80
 
 ## Remove main and DDLM packages in Settings
 
-To remove [main](deployment-architecture.md#main-package) and [Dynamic Dependency Lifetime Manager (DDLM)](deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm) packages, you can alternatively use the **Apps & features** page in **Settings**.
+To remove the Main and Dynamic Dependency Lifetime Manager (DDLM) packages, you can alternatively use the **Apps & features** page in **Settings**.
 
 > [!NOTE]
 > The Windows App SDK framework package will not show up in **Apps & features**, and will need to be uninstalled using the **PowerShell** commands described earlier in this article.

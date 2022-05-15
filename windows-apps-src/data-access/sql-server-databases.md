@@ -1,13 +1,14 @@
 ---
 title: Use a SQL Server database in a UWP app
 description: Learn how to connect a UWP app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 06/26/2020
+ms.date: 05/05/2022
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
 
 # Use a SQL Server database in a UWP app
+
 Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace.
 
 In this guide, we'll show you one way to do that. If you install the [Northwind](/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.
@@ -18,7 +19,7 @@ The snippets that appear in this guide are based on this more [complete sample](
 
 ## First, set up your solution
 
-To connect your app directly to a SQL Server database, make sure that the minimum version of your project targets the Fall Creators update.  You can find that information in the properties page of your UWP project.
+To connect your app directly to a SQL Server database, make sure that the minimum version of your project targets the Windows 10 Fall Creators update or newer.  You can find that information in the properties page of your UWP project.
 
 ![Minimum version of the Windows SDK](images/min-version-fall-creators.png)
 
@@ -101,7 +102,7 @@ public class Product : INotifyPropertyChanged
 
 ### Retrieve products from the SQL Server database
 
-Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of ``Product`` instances.
+In the **MainPage.xaml.cs** file of the UWP project, create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of ``Product`` instances.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -114,7 +115,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
     var products = new ObservableCollection<Product>();
     try
     {
-        using (SqlConnection conn = new SqlConnection(connectionString))
+        using (var conn = new SqlConnection(connectionString))
         {
             conn.Open();
             if (conn.State == System.Data.ConnectionState.Open)
@@ -231,14 +232,14 @@ Then, make sure that your SQL Server Browser service is running.
 
 ## Next steps
 
-**Use a light-weight database to store data on the users device**
+### Use a lightweight database to store data on the users device
 
 See [Use a SQLite database in a UWP app](sqlite-databases.md).
 
-**Share code between different apps across different platforms**
+### Share code between different apps across multiple platforms
 
 See [Share code between desktop and UWP](../porting/desktop-to-uwp-migrate.md).
 
-**Add master detail pages with Azure SQL back ends**
+### Add master detail pages with Azure SQL back ends
 
 See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).

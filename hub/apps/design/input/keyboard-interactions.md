@@ -525,9 +525,9 @@ A software keyboard is displayed on screen and used instead of the physical keyb
 
 #### Touch keyboard
 
-![Windows 10 touch keyboard](images/keyboard/default.png)
+![Windows 11 touch keyboard](images/keyboard/default.png)
 
-***Windows 10 Touch Keyboard***
+***Windows 11 Touch Keyboard***
 
 Depending on the device, the touch keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:
 

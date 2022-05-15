@@ -157,9 +157,9 @@ sections:
           The import process performs basic validation before importing. This ensures that the target culture information in the files being imported matches that in the existing .xlf files. Open the .xlf files in the Multilingual Editor and make sure that the culture information matches.
 
       - question: |
-          What if my translator doesn't have Windows 10, and/or Visual Studio and/or the Multilingual App Toolkit installed?
+          What if my translator doesn't have Windows 10, Windows 11 and/or Visual Studio and/or the Multilingual App Toolkit installed?
         answer: |
-          When you select **Output: Mail recipient** in the Export string resources dialog, the email includes a link to download and install the Multilingual App Toolkit (MAT) 4.0. Your translator can still install the MAT 4.0 standalone Multilingual Editor tool even without Windows 10 nor Visual Studio.
+          When you select **Output: Mail recipient** in the Export string resources dialog, the email includes a link to download and install the Multilingual App Toolkit (MAT) 4.0. Your translator can still install the MAT 4.0 standalone Multilingual Editor tool even without Windows 10, Windows 11 nor Visual Studio.
           
           For more details, see [Use the Multilingual App Toolkit 4.0](use-mat.md).
           
@@ -195,6 +195,24 @@ sections:
           My app failed certification to the Microsoft Store
         answer: |
           Before you start the Microsoft Store Certification process, you must exclude the `<project-name>.qps-ploc.xlf` file from your project. Pseudo language is used to detect potential localizability issues or bugs, but it is not a valid Microsoft Store language. If it is not removed then your app will fail during the Microsoft Store Certification process.
+
+      - question: |
+          What data are you collecting?
+        answer: |
+          The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. 
+          
+          Usage data: This is anonymous information about what features are being used. For example: adding a new language to a MAT-enabled solution.
+
+          Configuration data: This is anonymous information regarding the version of MAT VS installed on and the version of Windows it is being run on.  
+
+          Below is a concrete example of the data collected in the following format, Key / Value / Notes:
+          
+          - AddLanguage / MachineID: xxxx / This is based on a hash of the network adapter NIC. It is not guaranteed to be unique. 
+          - TimeStamp / 2022/01/07T22:04:45.0000000Z / Time event took place. 
+          - MAT_Version / 4.1.02 / Version of MAT installed. 
+          - Languages / fr,es,de/DE / List of languages added to project. 
+          
+          All data is collected using Application Insights and sent to Azure Log analytics. Data is retained for 90 days then deleted.  
 
 
 additionalContent: |

@@ -6809,6 +6809,16 @@
       "source_path": "hub/apps/reference/index.md",
       "redirect_url": "/windows/apps/api-reference/index",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/alternate-channel-vapid-webpush.md",
+      "redirect_url": "/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/simple-photo-viewer-winiu3.md",
+      "redirect_url": "/windows/apps/get-started/simple-photo-viewer-winui3",
+      "redirect_document_id": false
     }
   ]
 }

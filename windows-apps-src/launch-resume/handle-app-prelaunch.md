@@ -1,31 +1,32 @@
 ---
 title: Handle app prelaunch
-description: Learn how to handle app prelaunch by overriding the OnLaunched method and calling CoreApplication.EnablePrelaunch(true).
+description: Learn how to handle app prelaunch by overriding the **OnLaunched** method, and calling **CoreApplication.EnablePrelaunch**.
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
-ms.date: 07/05/2018
+ms.date: 04/21/2022
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, windows 11, uwp
 ms.localizationpriority: medium
 ---
+
 # Handle app prelaunch
 
-Learn how to handle app prelaunch by overriding the [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method.
+Learn how to handle app prelaunch by overriding the [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method, and calling **CoreApplication.EnablePrelaunch**.
 
 ## Introduction
 
-When available system resources allow, the startup performance of UWP apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state--which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
+When available system resources allow, the startup performance of UWP apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state&mdash;which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
 
-Prior to Windows 10, apps did not automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt-in to prelaunch behavior by calling [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch). A good place to put this call is within `OnLaunched()` near the location that the `if (e.PrelaunchActivated == false)` check is made.
+Prior to Windows 10, apps didn't automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt in to prelaunch behavior by calling [**CoreApplication.EnablePrelaunch**](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch), and passing `true`. A good place to put this call is within **OnLaunched**, near the location that the `if (e.PrelaunchActivated == false)` check is made.
 
-Whether an app is prelaunched depends on system resources. If the system is experiencing resource pressure, apps are not prelaunched.
+Whether an app is prelaunched depends on system resources. If the system is experiencing resource pressure, then apps are not prelaunched.
 
-Some types of apps may need to change their startup behavior to work well with prelaunch. For example, an app that plays music when its starts up, a game which assumes the user is present and displays elaborate visuals when the app starts up, a messaging app that changes the user's online visibility during startup, can identify when the app was prelaunched and can change their startup behavior as described in the sections below.
+Some types of apps might need to change their startup behavior in order to work well with prelaunch. For example, an app that plays music when it starts up; a game that assumes that the user is present, and displays elaborate visuals when the app starts up; a messaging app that changes the user's online visibility during startup&mdash;all of these can identify when the app was prelaunched, and can change their startup behavior as described in the sections below.
 
-The default templates for XAML Projects (C#, VB, C++) and WinJS accommodate prelaunch in Visual Studio 2015 Update 3.
+The default templates for XAML Projects (C#, VB, C++) accommodate prelaunch.
 
 ## Prelaunch and the app lifecycle
 
-After an app is prelaunched, it will enter the suspended state. (see [Handle app suspend](suspend-an-app.md)).
+After an app is prelaunched, it enters the suspended state. (see [Handle app suspend](suspend-an-app.md)).
 
 ## Detect and handle prelaunch
 
@@ -37,10 +38,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
     // CoreApplication.EnablePrelaunch was introduced in Windows 10 version 1607
     bool canEnablePrelaunch = Windows.Foundation.Metadata.ApiInformation.IsMethodPresent("Windows.ApplicationModel.Core.CoreApplication", "EnablePrelaunch");
 
-    // NOTE: Only enable this code if you are targeting a version of Windows 10 prior to version 1607
-    // and you want to opt-out of prelaunch.
+    // NOTE: Only enable this code if you are targeting a version of Windows 10 prior to version 1607,
+    // and you want to opt out of prelaunch.
     // In Windows 10 version 1511, all UWP apps were candidates for prelaunch.
-    // Starting in Windows 10 version 1607, the app must opt-in to be prelaunched.
+    // Starting in Windows 10 version 1607, the app must opt in to be prelaunched.
     //if ( !canEnablePrelaunch && e.PrelaunchActivated == true)
     //{
     //    return;
@@ -92,11 +93,9 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 
 /// <summary>
-/// Encapsulates the call to CoreApplication.EnablePrelaunch() so that the JIT
-/// won't encounter that call (and prevent the app from running when it doesn't
-/// find it), unless this method gets called. This method should only
-/// be called when the caller determines that we are running on a system that
-/// supports CoreApplication.EnablePrelaunch().
+/// This method should be called only when the caller
+/// determines that we're running on a system that
+/// supports CoreApplication.EnablePrelaunch.
 /// </summary>
 private void TryEnablePrelaunch()
 {
@@ -104,9 +103,10 @@ private void TryEnablePrelaunch()
 }
 ```
 
-Note the `TryEnablePrelaunch()` function, above. The reason the call to `CoreApplication.EnablePrelaunch()` is factored out into this function is because when a method is called, the JIT (just in time compilation) will attempt to compile the entire method. If your app is running on a version of Windows 10 that doesn't support `CoreApplication.EnablePrelaunch()`, then the JIT will fail. By factoring the call into a method that is only called when the app determines that the platform supports `CoreApplication.EnablePrelaunch()`, we avoid that problem.
+> [!IMPORTANT]
+> The **TryEnablePrelaunch** method in the code example above calls **CoreApplication.EnablePrelaunch**. And **TryEnablePrelaunch** is itself called only when the app is running on a version of Windows that supports **CoreApplication.EnablePrelaunch**. In general, if there's any doubt, then you should use a Windows API *only after determining that it is supported by the platform that your code is running on*. And you can do that by means of the [**ApiInformation**](/uwp/api/windows.foundation.metadata.apiinformation) class, as shown in the code example above.
 
-There is also code in the example above that you can uncomment if your app needs to opt-out of prelaunch when running on Windows 10, version 1511. In version 1511, all UWP apps were automatically opted into prelaunch, which may not be appropriate for your app.
+There's also code in the example above that you can uncomment if your app needs to opt out of prelaunch when running on Windows 10, version 1511. In version 1511, all UWP apps were automatically opted in to prelaunch, which might not be appropriate for your app.
 
 ## Use the VisibilityChanged event
 
@@ -172,22 +172,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 }
 ```
 
-## WinJS app guidance
-
-If your WinJS app targets an earlier version of Windows 10, you can handle the prelaunch condition in your [onactivated](/previous-versions/windows/apps/br212679(v=win.10)) handler:
-
-```javascript
-    app.onactivated = function (args) {
-        if (!args.detail.prelaunchActivated) {
-            // TODO: This is not a prelaunch activation. Perform operations which
-            // assume that the user explicitly launched the app such as updating
-            // the online presence of the user on a social network, updating a
-            // what's new feed, etc.
-    	}
-    }
-```
-
-## General Guidance
+## General guidance
 
 -   Apps should not perform long running operations during prelaunch because the app will terminate if it can't be suspended quickly.
 -   Apps should not initiate audio playback from [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) when the app is prelaunched because the app won't be visible and it won't be apparent why there is audio playing.
@@ -197,7 +182,7 @@ If your WinJS app targets an earlier version of Windows 10, you can handle the p
     -   An example performance implication is that you might wait until the user switches to the app to retrieve the current weather information instead of loading it when the app is prelaunched and then need to load it again when the app becomes visible to ensure that the information is current.
 -   If your app clears its Live Tile when launched, defer doing this until the visibility changed event.
 -   Telemetry for your app should distinguish between normal tile activations and prelaunch activations to make it easier to narrow down the scenario if problems occur.
--   If you have Microsoft Visual Studio 2015 Update 1, and Windows 10, Version 1511, you can simulate prelaunch for App your app in Visual Studio 2015 by choosing **Debug** &gt; **Other Debug Targets** &gt; **Debug Windows Universal App PreLaunch**.
+-   If you have Microsoft Visual Studio 2015 Update 1, and Windows 10, Version 1511, then you can simulate prelaunch for App your app in Visual Studio 2015 by choosing **Debug** &gt; **Other Debug Targets** &gt; **Debug Windows Universal App PreLaunch**.
 
 ## Related topics
 

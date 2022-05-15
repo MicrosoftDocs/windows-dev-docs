@@ -4,8 +4,8 @@ description: We've published several Github repositories containing sample appli
 ms.topic: article
 ms.date: 03/08/2022
 keywords: windows, win32, desktop development
-ms.author: angzhang
-author: angelazhangmsft
+ms.author: stwhi
+author: stevewhims
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -20,6 +20,7 @@ Most of the repos below include a collection of several sample apps demonstratin
 
 | Sample apps repo | Description |
 |-------------|-------------|
+| [Template Studio](https://github.com/microsoft/TemplateStudio#template-studio) | Accelerate the creation of apps using a wizard-based UI. |
 | [Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples) | Demonstrates API usage patterns for the Windows App SDK&mdash;the next evolution in the Windows app development platform. |
 | [WinUI Xaml Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery) | Demonstrates all of the Xaml and Windows UI library controls available to make a Fluent Windows app. |
 | [App Model Samples](https://github.com/Microsoft/AppModelSamples) | Contains sample apps that demonstrate the core application activation and lifecycle management infrastructure of various platforms such as the Universal Windows Platform (UWP), Windows Forms (WinForms), and console. |
@@ -28,7 +29,7 @@ Most of the repos below include a collection of several sample apps demonstratin
 | [Desktop Bridge to UWP samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Demonstrates the Desktop Conversion Extensions for converting classic desktop apps (such as Win32, Windows Presentation Foundation, and Windows Forms) and games to UWP apps and games. |
 | [DirectX 12 graphics samples](https://github.com/Microsoft/DirectX-Graphics-Samples) | Demonstrates how to build graphics-intensive apps on Windows using DirectX 12. |
 | [Windows Composition samples](https://github.com/microsoft/WindowsCompositionSamples) | Demonstrates how to use types from the **Windows.UI.Xaml** and **Windows.UI.Composition** namespaces to make beautiful UWP apps. |
-| [Windows 10 samples for IoT](https://github.com/Microsoft/Windows-iotcore-samples) | Sample apps to help you get started with developing for Windows on Devices. |
+| [Windows samples for IoT](https://github.com/Microsoft/Windows-iotcore-samples) | Sample apps to help you get started with developing for Windows on Devices. |
 | [Windows Community Toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit) | A collection of helper functions, custom controls, and app services. It simplifies and demonstrates common developer tasks when building apps for Windows. |
 | [Windows task snippets](https://github.com/Microsoft/Windows-task-snippets) | Ready-to-use snippets of code that accomplish small but useful tasks of interest to UWP app developers. These snippets show simple solutions to common problems, and simple recipes to help you implement new app features. |
 | [Win2D](https://github.com/Microsoft/win2d) | Win2D is an easy-to-use Windows Runtime (WinRT) API for immediate-mode 2D graphics rendering with GPU acceleration. It's available to C# and C++ developers, and it utilizes the power of Direct2D, integrating seamlessly with XAML and **CoreWindow**. |

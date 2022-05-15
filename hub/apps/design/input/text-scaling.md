@@ -4,7 +4,7 @@ title: Text scaling
 label: Text scaling
 template: detail.hbs
 keywords: UWP, text, scaling, accessibility, "ease of access", display, "Make text bigger", user interaction, input
-ms.date: 09/24/2020
+ms.date: 05/03/2022
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -12,7 +12,7 @@ ms.custom: RS5
 # Text scaling
 
 ![Hero image showing an example of text scaling from 100% to 225%.](images/coretext/text-scaling-news-hero-small.png)  
-*Example of text scaling in Windows 10 (100% to 225%)*
+*Example of text scaling in Windows 11 (100% to 225%)*
 
 ## Overview
 
@@ -140,7 +140,7 @@ In this example, we show how to clip text in a TextBlock using the [TextTrimming
 
 ### Use a tooltip
 
-If you clip text, use a tooltip to provide the full text to your users.
+If you clip text, use a [tooltip](../controls/tooltips.md) to provide the full text to your users.
 
 Here, we add a tooltip to a TextBlock that doesn't support text wrapping:
 

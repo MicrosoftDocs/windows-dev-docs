@@ -5,8 +5,6 @@ description: Learn how to support writing and drawing with Windows Ink in a basi
 keywords: ink, inking, tutorial
 ms.date: 07/19/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Tutorial: Support ink in your Windows app
@@ -31,8 +29,8 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 
 ## Prerequisites
 
-* A computer (or a virtual machine) running the current version of Windows 10
-* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* A computer (or a virtual machine) running the current version of Windows 10 or Windows 11
+* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads) or later
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
 * If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  

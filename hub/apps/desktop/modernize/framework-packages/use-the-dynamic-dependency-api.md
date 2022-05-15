@@ -13,7 +13,7 @@ The *dynamic dependency API* enables unpackaged apps (that is, apps that don't u
 Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for framework packages. For more information about these types of references, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages). 
 
 > [!NOTE]
-> Unlike other framework packages, you can't use the dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) in your unpackaged app. Instead, you must use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that is designed to take dependencies on the Windows App SDK framework package. For more information, see [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md).
+> Unlike other framework packages, you can't use the dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) in your unpackaged app. Instead, you must use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that is designed to take dependencies on the Windows App SDK framework package. For more information, see [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
 
 ## Use the dynamic dependency API
 
@@ -75,7 +75,7 @@ When you call this API, you must pass in the dependency ID that was returned whe
 
 When you use the dynamic dependency API in the Windows App SDK to take a dependency on a framework package, this API requires help via another installed package and running process to inform Windows that the framework package is in use, and to block servicing the framework while it is being used. This is called a *lifetime manager* component.
 
-For its framework package, the Windows App SDK provides a lifetime manager component called the [Dynamic Dependency Lifetime Manager (DDLM)](../../../windows-app-sdk/deployment-architecture.md#dynamic-dependency-lifetime-manager-ddlm). However, no other framework packages currently provide a similar lifetime manager component from Microsoft.
+For its framework package, the Windows App SDK provides a lifetime manager component called the [Dynamic Dependency Lifetime Manager (DDLM)](../../../windows-app-sdk/deployment-architecture.md). However, no other framework packages currently provide a similar lifetime manager component from Microsoft.
 
 The dynamic dependency API implementation in Windows 11 (in [appmodel.h](/windows/win32/api/appmodel)) doesn't have this limitation.
 
@@ -84,4 +84,4 @@ The dynamic dependency API implementation in Windows 11 (in [appmodel.h](/window
 * [MSIX framework packages](framework-packages-overview.md)
 * [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
 * [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
-* [Reference the Windows App SDK framework package at run time](../../../windows-app-sdk/reference-framework-package-run-time.md)
+* [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)

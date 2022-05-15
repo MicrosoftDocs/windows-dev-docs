@@ -483,7 +483,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 ![Binding a list view 3](images/xaml-databinding3.png)
 
-For more information about XAML syntax, see [Create a UI with XAML](/windows/apps/design/basics/xaml-basics-ui). For more information about control layout, see [Define layouts with XAML](/windows/apps/design/layout/layouts-with-xaml).
+For more information about XAML syntax, see [Create a UI with XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio). For more information about control layout, see [Define layouts with XAML](/windows/apps/design/layout/layouts-with-xaml).
 
 ## Adding a details view
 

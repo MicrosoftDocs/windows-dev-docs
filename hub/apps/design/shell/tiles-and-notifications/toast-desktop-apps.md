@@ -1,14 +1,14 @@
 ---
 description: Discover the different options desktop apps have for sending toast notifications
-title: Toast notifications from desktop apps
-label: Toast notifications from desktop apps
+title: Activating toast notifications from desktop apps
+label: Activating toast notifications from desktop apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, msix, sparse package, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast
 ms.localizationpriority: medium
 ---
-# Toast notifications from desktop apps
+# Activating toast notifications from desktop apps
 
 Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) to obtain package identity, and classic non-packaged desktop apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for desktop apps due to the different activation schemes.
 

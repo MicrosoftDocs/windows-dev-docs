@@ -31,8 +31,6 @@ In this section you'll find details about the info presented in each of the foll
 -   [Xbox analytics report](xbox-analytics-report.md)
 -   [Insights report](insights-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
--   [Ad campaign report](/windows/uwp/publish/ad-campaign-report)
-
 
 > [!NOTE]
 > You may not see data in all of these reports, depending on your app's specific features and implementation.

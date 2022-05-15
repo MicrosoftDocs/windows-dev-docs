@@ -3,7 +3,7 @@ description: Command bar flyouts give users inline access to your app's most com
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/03/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -131,7 +131,7 @@ When you show contextual commands proactively, only the primary commands should 
 
 To proactively show commands, you typically handle the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) or [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) event to show the command bar flyout. Set the flyout's [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) to **Transient** or **TransientWithDismissOnPointerMoveAway** to open the flyout in its collapsed mode without taking focus.
 
-Starting in the Windows 10 Insider Preview, text controls have a **SelectionFlyout** property. When you assign a flyout to this property, it is automatically shown when text is selected.
+Text controls have a **SelectionFlyout** property. When you assign a flyout to this property, it is automatically shown when text is selected.
 
 ### Show commands reactively
 
@@ -171,7 +171,7 @@ You can populate the PrimaryCommands and SecondaryCommands directly with [AppBar
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is shown in the command bar or the overflow menu.
 
-- App bar buttons used as primary commands are shown in the command bar with only their icon; the text label is not shown. We recommend that you use a tooltip to show a text description of the command, as shown here.
+- App bar buttons used as primary commands are shown in the command bar with only their icon; the text label is not shown. We recommend that you use a [tooltip](tooltips.md) to show a text description of the command, as shown here.
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```

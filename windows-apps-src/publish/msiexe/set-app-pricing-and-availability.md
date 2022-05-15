@@ -24,7 +24,7 @@ It is your responsibility to meet any local legal requirements, even if those re
 Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions.
 
 > [!NOTE]
-> Market selections apply only to new downloads. Existing users can continue to use your app even if you later disable their market, though they will not receive updates released after their market became disabled.
+> Market selections apply only to new downloads. Existing users can continue to use your app even if you later disable their market.
 
 **Pricing**<br>*Required*
 

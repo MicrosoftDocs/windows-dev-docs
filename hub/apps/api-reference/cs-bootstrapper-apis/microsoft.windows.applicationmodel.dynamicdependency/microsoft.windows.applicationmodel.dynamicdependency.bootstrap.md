@@ -1,6 +1,6 @@
 ---
 title: Bootstrap class
-description: TBD
+description: The **Bootstrap** class contains static helper methods that conveniently wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 ms.topic: article
 ms.date: 04/05/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API

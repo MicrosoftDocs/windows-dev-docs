@@ -1,5 +1,5 @@
 ---
-description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows 10 features in those apps.
+description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows features in those apps.
 title: Grant identity to non-packaged desktop apps
 ms.date: 04/23/2020
 ms.topic: article
@@ -10,7 +10,7 @@ ms.custom: RS5
 
 # Grant identity to non-packaged desktop apps
 
-Many Windows 10 extensibility features require [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the OS requires identity so that it can identify the caller of the corresponding API.
+Many Windows extensibility features require [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the OS requires identity so that it can identify the caller of the corresponding API.
 
 In OS releases before Windows 10, version 2004, the only way to grant identity to a desktop app is to [package it in a signed MSIX package](/windows/msix/desktop/desktop-to-uwp-root). For these apps, identity is specified in the package manifest and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
 
@@ -29,7 +29,7 @@ The following features enable non-packaged desktop apps to acquire package ident
 
 ### Sparse packages
 
-A *sparse package* contains a package manifest but no other app binaries and content. The manifest of a sparse package can reference files outside the package in a predetermined external location. This allows applications that are not yet able to adopt MSIX packaging for their entire app to acquire package identity as required by some Windows 10 extensibility features.
+A *sparse package* contains a package manifest but no other app binaries and content. The manifest of a sparse package can reference files outside the package in a predetermined external location. This allows applications that are not yet able to adopt MSIX packaging for their entire app to acquire package identity as required by some Windows extensibility features.
 
 > [!NOTE]
 > A desktop app that uses a sparse package does not receive some benefits of being fully deployed via an MSIX package. These benefits include tamper protection, installation in a locked-down location, and full management by the OS at deployment, run time, and uninstall.

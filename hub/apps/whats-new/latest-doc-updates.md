@@ -2,7 +2,7 @@
 description: Discover the latest additions to the Windows developer docs.
 title: Latest updates to the Windows API and developer documentation
 ms.topic: article
-ms.date: 03/30/2022
+ms.date: 04/28/2022
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
@@ -10,24 +10,28 @@ author: QuinnRadich
 
 # Latest updates to the Windows developer docs
 
-The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of March 30th, 2022.
+The Windows developer docs are regularly updated with new and improved information and content. Here is a summary of changes as of April 28th, 2022.
 
 Note: For information regarding Windows 11, please see [What's cool for developers](https://developer.microsoft.com/windows/windows-for-developers/) and the [Windows Developer Center](https://developer.microsoft.com/windows/).
 
 For the latest Windows Developer Documentation news, or to reach out to us with comments and questions, feel free to find us on Twitter, where our handle is [@WindowsDocs](https://twitter.com/windowsdocs).
 
-Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing to Microsoft docs, please see the [contributor guide](/contribute/).
+**Note** We are looking for feedback regarding our Windows App SDK / WinUI documentation. If you have ten minutes to spare, we would really appreciate hearing your opinion in [this short survey](https://ncv.microsoft.com/eD8q7HoYwr)!
+
+*Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing to Microsoft docs, please see the [contributor guide](/contribute/).*
 
 Highlights this month include:
 
-## Sample apps and tutorials
-
-*  [Tutorial—Create a simple photo viewer with WinUI 3 (C#)](/windows/apps/get-started/simple-photo-viewer-winiu3)
-
 ## Windows App SDK / WinUI
 
-* About migrating from [UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk).
+* [Windows developer FAQ](/windows/apps/get-started/windows-developer-glossary)
+* [Windows developer glossary](/windows/apps/get-started/windows-developer-glossary)
+* Migrating from [UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk)
+* [Page Class updated for WinUI 3](/windows/winui/api/microsoft.ui.xaml.controls.page?view=winui-3.0)
+* [A basic C++/WinRT Windows UI Library 2 example (UWP)](/windows/uwp/cpp-and-winrt-apis/simple-winui-example)
 * [Set up continuous integration for your WinUI 3 app](/windows/apps/package-and-deploy/ci-for-winui3?pivots=winui3-packaged-csharp).
+* [Tutorial—Create a simple photo viewer with WinUI 3 (C#)](/windows/apps/get-started/simple-photo-viewer-winui3)
+* [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 
 ## Other new content
 
@@ -35,7 +39,6 @@ Highlights this month include:
 * [Windows on Arm: Understanding Arm64EC ABI and assembly code](/windows/uwp/porting/arm64ec-abi).
 * [API ref topics for the Microsoft.UI.Win32Interop class](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop).
 * [Bite-sized C++ series](https://github.com/MicrosoftDocs/windows-devdocs-team/tree/main/bite-sized-cpp).
-
 
 ## Updated content
 
