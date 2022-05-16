@@ -269,7 +269,7 @@ Malicious actors are always looking for vulnerabilities to exploit. An insecure 
   - Ideally, your app should support both administrative installs and per-user installs.
   - Using [MSIX packaging](/windows/msix/packaging-tool/tool-overview) is one way to achieve this.
 - [Don't require administrative privileges to _run_ your app.](/windows/win32/win7appqual/standard-user-analyzer--sua--tool-and-standard-user-analyzer-wizard--sua-wizard-)
-  - If there are certain features that need administrative privileges, consider separating them into their own processes to **reduce attack surface**.
+  - If there are certain features that need administrative privileges, [consider separating them](/windows/win32/secauthz/developing-applications-that-require-administrator-privilege) into their own processes to **reduce attack surface**.
 - Consider using techniques such as **AppContainer** (UWP) or **[process attribute flags](/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)** to mitigate risk of vulnerabilities.
   - This may require separating your code into a regular UI process and a more-secure child process where you can execute especially risky code like parsing untrusted data.
 - Prefer to use languages with **guaranteed memory safety** (such as C#, JavaScript, or Rust), especially for risky code paths (like parsing untrusted data).
