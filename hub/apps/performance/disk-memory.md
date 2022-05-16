@@ -140,10 +140,14 @@ A few ways to reduce, or be more efficient with, your disk space include:
 
 - [Windows Performance Analyzer common scenarios](/windows-hardware/test/wpt/windows-performance-analyzer-common-scenarios)
 
+- [Tracelogging](/windows/win32/tracelogging/trace-logging-portal)
+
 - [Event Tracing for Windows](/windows-hardware/test/wpt/event-tracing-for-windows)
 
 - [Memory Footprint Optimization](/windows-hardware/test/wpt/memory-footprint-optimization)
 
 - [Measure memory usage in Visual Studio](/visualstudio/profiling/memory-usage)
+
+- [Planning for performance](/windows/uwp/debug-test-perf/planning-and-measuring-performance)
 
 - [Q&A forum](/answers/questions/679026/performance-monitor-to-log-cpu-amp-memory-usage.html)

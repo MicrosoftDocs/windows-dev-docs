@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
-ms.date: 05/11/2022
+ms.date: 05/16/2022
 ms.author: jken
 author: grantmestrength
 ms.localizationpriority: medium
@@ -113,12 +113,11 @@ Following toast notification best practices can help you drive engagement with y
 
 For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
-
 ### Performance & fundamentals
 
 **How can I optimize my app for better performance, memory usage, responsiveness, power consumption, and reliability?**
 
-Windows users expect Windows apps to exhibit great performance and fundamentals. This includes **performance**, **memory usage**, **responsiveness**, **power consumption**, and **reliability**.
+Windows users expect Windows apps to exhibit great performance and fundamentals. As you design and build your app, it is important to keep in mind optimizing for memory usage, power consumption, responsiveness, reliability, and the impact on long-term sustainability. Allocating time to test and measure your application's fundamentals and performance will ensure that your users have a first-class experience.
 
 Following the best practices in this section will help you meet your customers' expectations across these criteria.
 
@@ -141,7 +140,7 @@ Following the best practices in this section will help you meet your customers' 
   - Define your key interaction scenarios and add ETW events to measure.
   - Set goals based on the interaction class associated with user expectations.
 
-To learn more, see the [Performance and fundamentals overview](/windows/apps/performance/), which will cover questions such as "What is application performance and why is it important?" or "What tools can I use to measure Windows application performance?", as well as linking to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability.
+To learn more, see the [Performance and fundamentals overview](/windows/apps/performance/), which will cover questions such as "What is application performance and why is it important?" or "What tools can I use to measure Windows application performance?", as well as linking to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability--reducing the impact your application will have on our planet.
 
 ### Operating system / hardware optimization
 

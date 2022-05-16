@@ -5,7 +5,7 @@ ms.author: mattwoj
 author: mattwojo
 ms.reviewer: sandeepp
 ms.topic: conceptual
-ms.date: 05/12/2022
+ms.date: 05/16/2022
 #Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes power by identifying and minimizing the use of system resources and not waking the CPU when my app is in the background.
 ---
 
@@ -19,7 +19,7 @@ The most basic principles for improving power consumption are to ensure that whi
 - wake the CPU through timers,
 - wake the CPU by waiting for vsync events.
 
-Being "in the background" means that your app is not visible, nor audible, to the user. There should be few, if any, reasons to wake the CPU or utilize system resources while in the background. Checking whether your app is triggering these events and addressing the cause can significantly improve your app's power consumption, battery life, and impact on sustainability.
+Being "in the background" means that your app is not visible, nor audible, to the user. There should be few, if any, reasons to wake the CPU or utilize system resources while in the background. Checking whether your app is triggering these events and addressing the cause can significantly improve your app's power consumption, battery life, and [reduce the carbon emissions that will result from customers using your app](/windows/apps/performance/#performance-and-sustainability).
 
 To check that the CPU is not waking up to do unnecessary work while your app is not in use, you can capture and analyze a trace using [Windows Performance Analyzer (WPA)](/windows-hardware/test/wpt/windows-performance-analyzer). We will walk through the steps explaining how to do so below.
 

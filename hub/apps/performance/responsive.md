@@ -5,7 +5,7 @@ ms.author: mattwoj
 author: mattwojo
 ms.reviewer: prrapa
 ms.topic: conceptual
-ms.date: 05/13/2022
+ms.date: 05/16/2022
 #Customer intent: As a Windows application developer, I want to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.
 ---
 
@@ -19,9 +19,9 @@ Customers can feel when an application launch, menu navigation, or page/content 
 
 The basic steps to drive latency optimization are:
 
-1. Define the scenario and add ETW events.
+1. Define the scenario and add "Tracelogging" events.
 
-    Make a list of the key interactions that a user will go through while using your app, such as launch, opening a menu, navigating to a new page and rendering content, etc. For each of these interactions, add a start event and stop event to be used for measurement and analysis. Learn more about how to add [Event Tracing for Windows (ETW)](/windows/win32/etw/event-tracing-portal) events.
+    Make a list of the key interactions that a user will go through while using your app, such as launch, opening a menu, navigating to a new page and rendering content, etc. For each of these interactions, add a start event and stop event to be used for measurement and analysis. Learn more about how to add [Tracelogging](/windows/win32/tracelogging/trace-logging-portal), a format for self-describing Event Tracing for Windows (ETW).
 
 2. Set goals based on the interaction class.
 
@@ -49,11 +49,25 @@ The basic steps to drive latency optimization are:
 
     - Enter the command: `wpr -stop Trace.etl`
 
+4. Analyze the trace and find improvement opportunities.
+
+    Analyze the duration of each key interaction supported by your app by opening the trace that you just captured in [Windows Performance Analyzer (WPA)](/windows-hardware/test/wpt/windows-performance-analyzer).
+
+    - To open the trace in WPA, in your command line, enter: `wpa.exe Trace.etl`
+    - Expand the **System Activity** dropdown and double-click on "Generic Events" to open the analysis view.
+    - Choose the event series related to your application and expand the "Provider Name" dropdown until you are able to find the Process, Task Name, and Event name associated with the key interaction you are seeking. The duration of the interaction event will be listed in the **Time** column, as well as in the graph, showing **Duration**, **Start Time**, and **End Time**.
+
+    If the duration from your trace does not meet the interaction class goals (ex: 500ms), identify the key threads for your App (likely the UI thread), and look at the top stacks for CPU usage and waits. *Remember that as you perform the analysis, some issues may not be specific to your own application’s code.
+
+    ![Analysis of trace event duration](../performance/images/responsive-analysis.png)
+
 ## Additional resources
 
 - [Windows Performance Analyzer step-by-step guide](/windows-hardware/test/wpt/wpa-step-by-step-guide)
 
 - [Windows Performance Analyzer: Optimizing Performance and Responsiveness](/windows-hardware/test/wpt/optimizing-performance-and-responsiveness)
+
+- [Tracelogging](/windows/win32/tracelogging/trace-logging-portal)
 
 - [Event Tracing for Windows](/windows-hardware/test/wpt/event-tracing-for-windows)
 
