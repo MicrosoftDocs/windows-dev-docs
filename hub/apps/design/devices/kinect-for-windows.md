@@ -6,7 +6,7 @@ ms.date: 05/16/2022
 ms.topic: article
 ---
 
-# Kinect for windows
+# Kinect for Windows
 
 > [!Note]
 > Manufacturing of the Kinect for Windows has been discontinued. The next generation of Microsoft’s category-defining depth sensor lives on in the Azure Kinect DK, a developer kit with advanced AI sensors for sophisticated computer vision and speech models. For more details please visit the [Azure Kinect website](https://www.azure.com/kinect).
@@ -15,7 +15,7 @@ ms.topic: article
 
 Build desktop applications for Windows 10 or sell your Kinect v2 UWP apps in the Microsoft Store to take advantage of unique Windows Runtime features and expand distribution.
 
-[GET THE KINECT FOR WINDOWS SDK](https://www.microsoft.com/download/details.aspx?id=44561)
+[Get the Kinect for Windows SDK](https://www.microsoft.com/download/details.aspx?id=44561)
 
 :::image type="content" source="images\kinect-studio_800x450.png" alt-text="image of Kinect thermal vision in the sdk.":::
 
@@ -57,19 +57,22 @@ Build desktop applications for Windows 10 or sell your Kinect v2 UWP apps in the
         [NuGet packages](https://go.microsoft.com/fwlink/p/?linkid=507363)<br>
         [Unity Pro packages](https://go.microsoft.com/fwlink/p/?LinkId=513177)
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
         **Kinect for Windows language packs**<br>
         The language packs enable you to add speech recognition to your Kinect for Windows apps.<br>
         [Get the Kinect for Windows language packs v11.0](https://www.microsoft.com/download/details.aspx?id=34809)
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
         **DirectX SDK**<br>
         Because the Windows SDK is the primary developer SDK for Windows, DirectX is now included in it. You can now use the Windows SDK to build great games for Windows.<br>
         [Learn more about the DirectX SDK](https://docs.microsoft.com/windows/win32/directx-sdk--august-2009-)
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
         **Microsoft Speech Platform SDK 11**<br>
         You can use the technologies and tools in the Speech Platform SDK 11 to give applications the ability to recognize spoken words (speech recognition) and to generate synthesized speech (text-to-speech or TTS). Using this SDK, you can give users an effective and natural way to interact with your applications, complementing the use of mice, keyboards, controllers, and gestures.<br>
