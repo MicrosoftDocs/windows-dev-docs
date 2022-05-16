@@ -6,7 +6,7 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android, windows defender, exceptions, configuration, exclusions, %USERPROFILE%, devenv.exe, performance, speed, build, gradle
-ms.date: 04/28/2020
+ms.date: 05/16/2022
 ---
 
 # Add Windows Defender exceptions to speed up Android build performance
@@ -24,7 +24,7 @@ During the Android build process, many files are created on your computer. With 
 Fortunately, Windows Defender has the capability to exclude files, project directories, or file types that you know to be secure from it's antivirus scanning process.
 
 > [!WARNING]
-> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software. 
+> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software.
 > Defining exclusions lowers the protection offered by Defender. You should always evaluate the risks that are associated with implementing exclusions, and only exclude files that you are confident are not malicious.
 
 ## How to add exclusions to Windows Defender
@@ -40,7 +40,7 @@ To add exclusions in the [Windows Defender Security Center](windowsdefender://):
 
 ![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
 
-## Exclusions to consider for Android development 
+## Exclusions to consider for Android development
 
 The following list shows the default location of each Android Studio directory that could be added as an exclusion from Windows Defender real-time scanning:
 

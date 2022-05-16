@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 02/14/2022
+ms.date: 05/16/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -69,7 +69,7 @@ For text input fields handled by an on-screen virtual keyboard input method (or 
 
 For keystrokes that cannot be anticipated by the framework, apps will need to handle the behavior themselves. If this is already implemented in-app, no extra work is required.
 
-As an example, some games may already support movement facilitated via keyboard, through `w` `a` `s` `d` keys, alongside touch input.
+As an example, some games may already support movement facilitated via keyboard, through <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> keys, alongside touch input.
 
 The following are keyboard inputs that developers should consider code updates for when building for Windows 11 devices:
 

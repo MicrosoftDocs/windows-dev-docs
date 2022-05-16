@@ -41,7 +41,7 @@ For a device running an older version of Android, see [Set Up Device for Develop
 
     ![Android Studio Target Device menu](../images/android-target-device-menu.png)
 
-3. Select Run ▷. This will launch the app on your connected device.
+3. Select **▶ Run**. This will launch the app on your connected device.
 
 ## Run your app on a virtual Android device using an emulator
 
@@ -82,7 +82,7 @@ When building and testing a native Android app, we recommend [using Android Stud
 
     ![Android Studio Target Device menu](../images/android-target-device-menu.png)
 
-3. Select Run ▷. This will launch the [Android Emulator](https://developer.android.com/studio/run/emulator).
+3. Select **▶ Run**. This will launch the [Android Emulator](https://developer.android.com/studio/run/emulator).
 
 > [!TIP]
 > Once your app is installed on the emulator device, you can use `Apply Changes` to deploy certain code and resource changes without building a new APK. See the [Android developer guide](https://developer.android.com/studio/run#apply-changes) for more information.
@@ -101,7 +101,7 @@ There are many [Android emulator options](https://www.androidauthority.com/best-
 
 4. You will need to give the device a name, choose the base device type from a drop-down menu, choose a processor, and OS version, along with several other variables for the virtual device. For more information, [Android Device Manager Main Screen](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#main-screen).
 
-5. In the Visual Studio toolbar, choose between **Debug** (attaches to the application process running inside the emulator after your app starts) or **Release** mode (disables the debugger). Then choose a virtual device from the device drop-down menu and select the **Play** button ▷ to run your application in the emulator.
+5. In the Visual Studio toolbar, choose between **Debug** (attaches to the application process running inside the emulator after your app starts) or **Release** mode (disables the debugger). Then choose a virtual device from the device drop-down menu and select the **Play** button ▶ to run your application in the emulator.
 
     ![Visual Studio launch Android Emulator](../images/vs-target-device-menu.png)
 

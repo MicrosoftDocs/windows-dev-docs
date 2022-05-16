@@ -6,7 +6,7 @@ ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: android, windows, xamarin.android, tutorial, xml, axml
-ms.date: 04/28/2020
+ms.date: 05/16/2022
 ---
 
 # Get started developing for Android using Xamarin.Android
@@ -82,7 +82,7 @@ Replace the contents of **activity_main.xml** with the following code.
 
 At this point you can run **TimeChangerAndroid** and see the UI you've created. In the next section, you will add functionality to your UI displaying the current time and enabling the buttons to perform an action.
 
-## Add logic code with C#
+## Add logic code with C\#
 
 Open **MainActivity.cs**. This file contains the code-behind logic that will add functionality to the UI.
 

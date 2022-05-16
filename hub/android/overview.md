@@ -5,7 +5,7 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-ms.date: 10/19/2021
+ms.date: 05/16/2022
 ---
 
 # Overview of Android development on Windows
@@ -57,7 +57,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 - UI code: XAML and .NET (with Visual Studio)
 - Logic code: C#
-- Shares around 60–90% of the logic and UI code across Android, iOS, and Windows device apps. 
+- Shares around 60–90% of the logic and UI code across Android, iOS, and Windows device apps.
 - Uses common user controls like Button, Label, Entry, ListView, StackLayout, Calendar, TabbedPage, etc. Create a Button and Xamarin Forms will figure out how to call the native button for each platform using the Binding Library to call Java or Swift code from C#.
 - Great for simple apps, like internal or Line Of Business (LOB) apps, prototypes or MVPs. Any app that can look somewhat standard or generic, utilizing a simple user interface.
 

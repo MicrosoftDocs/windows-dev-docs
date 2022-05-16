@@ -30,7 +30,7 @@ You will also to have an Android phone or configured emulator in which to run yo
 
 ## Create a new Xamarin.Forms project
 
-Start Visual Studio. Click File > New > Project to create a new project.
+Start Visual Studio. **Click File > New > Project** to create a new project.
 
 In the new project dialog, select the **Mobile App (Xamarin.Forms)** template and click **Next**.
 
@@ -80,7 +80,7 @@ Replace the contents of MainPage.xaml with the following code.
 
 At this point, the UI is complete. TimeChangerForms, however, will not build because the methods **UpButton_Clicked** and **DownButton_Clicked** are referenced in the XAML but not defined anywhere. Even if the app did run, the current time would not be displayed. In the next section, you will fix these errors and add functionality to your UI.
 
-## Add logic code with C#
+## Add logic code with C\#
 
 In the Solution Explorer, right click MainPage.xaml and click **View Code**. This file contains the code behind that will add functionality to the UI.
 

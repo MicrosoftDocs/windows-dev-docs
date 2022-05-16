@@ -2,7 +2,7 @@
 title: Create a PWA or Hybrid web app for Android
 description: Get started developing Android apps using the PWA approach on Windows.
 author: mattwojo
-ms.author: mattwoj 
+ms.author: mattwojo
 manager: jken
 ms.topic: article
 keywords: android on windows, pwa, android, cordova, ionic, phonegap, hybrid web app
@@ -63,7 +63,7 @@ To get started building a PWA or hybrid web app with Ionic, you should first ins
 
 - VS Code for writing your code. [Download VS Code for Windows](https://code.visualstudio.com/). You may also want to install the [WSL Remote Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you prefer to build your app with a Linux command line.
 
-- Windows Terminal for working with your preferred command-line interface (CLI). [Install Windows Terminal from Microsoft Store](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+- Windows Terminal for working with your preferred command-line interface (CLI). [Install Windows Terminal from Microsoft Store](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
 
 - Git for version control. [Download Git](https://git-scm.com/downloads).
 
@@ -178,7 +178,7 @@ To test your Ionic app on an Android device emulator, you must:
 
 1. [Install the required components -- Java Development Kit (JDK), Gradle, and the Android SDK](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#installing-the-requirements).
 
-2. Create an Android Virtual Device (AVD): See the [Android developer guide]](https://developer.android.com/studio/run/managing-avds.html).
+2. Create an Android Virtual Device (AVD): See the [Android developer guide](https://developer.android.com/studio/run/managing-avds.html).
 
 3. Enter the command for Ionic to build and deploy your app to the emulator: `ionic cordova emulate [<platform>] [options]`. In this case, the command should be:
 
