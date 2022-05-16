@@ -26,7 +26,7 @@ If you plan to publish to the Microsoft Store, you'll be asked a few extra quest
 You don't have to sign your application before you submit it to the Store.
 
 >[!IMPORTANT]
-> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S or Windows 11 S. This is a Store requirement. See [Test your Windows app for Windows 10 S or Windows 11 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load"></a>
 
@@ -40,7 +40,7 @@ To distribute your application to other devices without placing it in the Store,
 
 You can [create a certificate](/windows/msix/package/create-certificate-package-signing) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
 
-If you plan to distribute your application onto devices that run Windows 10 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.
+If you plan to distribute your application onto devices that run Windows 10 S or Windows 11 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.
 
 If you create a certificate, you have to install it into the **Trusted Root** or **Trusted People** certificate store on each device that runs your app. If you get a certificate from a popular vendor, you won't have to install anything onto other systems besides your app.  
 
@@ -49,7 +49,7 @@ If you create a certificate, you have to install it into the **Trusted Root** or
 
 To sign your application by using a certificate, see [Sign an application package using SignTool](/windows/msix/package/sign-app-package-using-signtool).
 
-To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
+To sideload your application onto other devices, see [Sideload LOB apps in Windows](/windows/application-management/sideload-apps-in-windows-10).
 
 <a id="transition-users"></a>
 

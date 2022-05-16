@@ -30,7 +30,7 @@ Highlights this month include:
 * [Page Class updated for WinUI 3](/windows/winui/api/microsoft.ui.xaml.controls.page?view=winui-3.0)
 * [A basic C++/WinRT Windows UI Library 2 example (UWP)](/windows/uwp/cpp-and-winrt-apis/simple-winui-example)
 * [Set up continuous integration for your WinUI 3 app](/windows/apps/package-and-deploy/ci-for-winui3?pivots=winui3-packaged-csharp).
-* [Tutorial—Create a simple photo viewer with WinUI 3 (C#)](/windows/apps/get-started/simple-photo-viewer-winiu3)
+* [Tutorial—Create a simple photo viewer with WinUI 3 (C#)](/windows/apps/get-started/simple-photo-viewer-winui3)
 * [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 
 ## Other new content

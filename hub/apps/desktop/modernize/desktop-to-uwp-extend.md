@@ -1,6 +1,6 @@
 ---
 title: Extend your app with Windows UI and components
-description: Extend your desktop application with UWP projects and Windows Runtime components to add modern Windows 10 experiences.
+description: Extend your desktop application with UWP projects and Windows Runtime components to add modern Windows experiences.
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 
 # Extend your desktop app with modern UWP components
 
-Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container. If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime components.
+Some Windows experiences (For example: a touch-enabled UI page) must run inside of a modern app container. If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime components.
 
-In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
+In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
 > The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).

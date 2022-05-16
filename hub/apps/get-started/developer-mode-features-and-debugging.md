@@ -1,6 +1,6 @@
 ---
 title: Developer Mode features and debugging
-description: Learn specifics about the features of developer mode in Windows 10, and informaiton on installation errors.
+description: Learn specifics about the features of developer mode in Windows, and information on installation errors.
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.date: 10/13/2020
 ms.topic: article
@@ -15,7 +15,7 @@ If you're just interested in the basics of installing developer mode on your app
 
 For each device family, additional developer features might be available. These features are available only when Developer Mode is enabled on the device, and might vary depending on your OS version.
 
-This image shows developer features for Windows 10:
+This image shows developer features for Windows:
 
 ![Developer mode options](images/devmode-mob-options.png)
 
@@ -23,8 +23,8 @@ This image shows developer features for Windows 10:
 
 To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal).
 
-
 For device specific setup instructions, see:
+
 - [Device Portal for Desktop](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Device Portal for HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
 - [Device Portal for IoT](/windows/iot-core/manage-your-device/deviceportal)
@@ -38,7 +38,7 @@ If you encounter problems enabling Developer Mode or Device Portal, see the [Kno
 > [!IMPORTANT]
 > As of the latest Windows 10 update, this setting won't be visible, as sideloading is enabled by default. If you are on a previous version of Windows 10, your default settlings will only permit you to run apps from the Microsoft Store, and you must enable Sideloading to install apps from non-Microsoft sources.
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10) and [Microsoft Intune fundamentals](/mem/intune/fundamentals/).
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store, or anyone else who needs to run apps from non-Microsoft sources. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows](/windows/deploy/sideload-apps-in-windows-10) and [Microsoft Intune fundamentals](/mem/intune/fundamentals/).
 
 Device family specific info
 
@@ -85,7 +85,7 @@ In early versions of Windows 10 Mobile, a Crash Dumps option was present in the 
 
 There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Both of the ways listed install only the app package (.appx/.appxbundle); they do not install certificates.
 
--   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](/previous-versions/windows/apps/mt203806(v=vs.140)).
+-   Use the Windows Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](/previous-versions/windows/apps/mt203806(v=vs.140)).
 -   You can use [Device Portal](/windows/uwp/debug-test-perf/device-portal) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](/windows/uwp/debug-test-perf/device-portal#apps-manager)** page in Device Portal to upload an app package (.appx) and install it on the device.
 
 ## Failure to install Developer Mode package
@@ -127,9 +127,9 @@ To fix this issue:
 
 ## Use group policies or registry keys to enable a device
 
-For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows 10 desktop device for development.  Note that these steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.
+For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows desktop device for development.  Note that these steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.
 
-You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home. If you do have Windows 10 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
+You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home or Windows 11 Home. If you do have Windows 10 Home or Windows 11 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
 
 **Use gpedit to enable your device**
 
@@ -178,9 +178,9 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
     PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
     ```
 
-## Upgrade your device from Windows 8.1 to Windows 10
+## Upgrade your device from Windows 8.1 to Windows 10 or Windows 11
 
-When you create or sideload apps on your Windows 8.1 device, you have to install a developer license. If you upgrade your device from Windows 8.1 to Windows 10, this information remains. Run the following command to remove this information from your upgraded Windows 10 device. This step is not required if you upgrade directly from Windows 8.1 to Windows 10, Version 1511 or later.
+When you create or sideload apps on your Windows 8.1 device, you have to install a developer license. If you upgrade your device from Windows 8.1 to Windows 10 or Windows 11, this information remains. Run the following command to remove this information from your upgraded Windows device. This step is not required if you upgrade directly from Windows 8.1 to Windows 10, Version 1511 or later.
 
 **To unregister a developer license**
 

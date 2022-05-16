@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Use Grid and StackPanel to create a simple weather app
 
-Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows 10. This tutorial takes 10-20 minutes.
+Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows. This tutorial takes 10-20 minutes.
 
 > **Important APIs**: [Grid class](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
