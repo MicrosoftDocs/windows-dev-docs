@@ -4,14 +4,13 @@ title: Create custom media transport controls
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Create custom transport controls
-
-
 
 MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Windows app. Here, we demonstrate how to customize the MediaTransportControls template. We'll show you how to work with the overflow menu, add a custom button and modify the slider.
 
@@ -30,6 +29,7 @@ Before starting, you should be familiar with the MediaPlayerElement and the Medi
 **MediaPlayerElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They're provided by the [**MediaTransportControls**](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact) property to specify whether the controls are shown in one row or two.
 
 However, there may be scenarios where you need to further customize the look of the control or change its behavior. Here are some examples:
+
 - Change the icons, slider behavior, and colors.
 - Move less commonly used command buttons into an overflow menu.
 - Change the order in which commands drop out when the control is resized.
@@ -92,6 +92,7 @@ For more info about modifying styles and templates, see [Styling controls](../st
 To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called `CustomMediaTransportControls` is shown in the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls) and the remaining examples on this page.
 
 **To create a new class derived from MediaTransportControls**
+
 1. Add a new class file to your project.
     - In Visual Studio, select Project > Add Class. The Add New Item dialog opens.
     - In the Add New Item dialog, enter a name for the class file, then click Add. (In the Media Transport Controls sample, the class is named `CustomMediaTransportControls`.)
@@ -154,6 +155,7 @@ In the MediaTransportControls template, the command buttons are contained in a [
 To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template.
 
 **To move a command to the overflow menu:**
+
 1. In the control template, find the CommandBar element named `MediaControlsCommandBar`.
 2. Add a [**SecondaryCommands**](/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) section to the XAML for the CommandBar. Put it after the closing tag for the [**PrimaryCommands**](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands).
 
@@ -192,13 +194,14 @@ Because the overflow menu is comprised of text buttons, you must add a text labe
 ```
 
 > [!IMPORTANT]
-> You must still make the button visible and enable it in order to use it in the overflow menu. In this example, the PlaybackRateButton element isn't visible in the overflow menu unless the IsPlaybackRateButtonVisible property is true. It's not enabled unless the IsPlaybackRateEnabled property is true. Setting these properties is shown in the previous section.
+> You must still make the button visible and enable it in order to use it in the overflow menu. In this example, the **PlaybackRateButton** element isn't visible in the overflow menu unless the **IsPlaybackRateButtonVisible** property is **true**. It's not enabled unless the **IsPlaybackRateEnabled** property is **true**. Setting these properties is shown in the previous section.
 
 ### Adding a custom button
 
 One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls), a "rating" button is added to the primary commands.
 
 **To add a custom command button**
+
 1. Create an AppBarButton object and add it to the CommandBar in the control template.
 
 ```xaml
@@ -211,8 +214,7 @@ One reason you might want to customize MediaTransportControls is to add a custom
 
 You must add it to the CommandBar in the appropriate location. (For more information, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
 
-You can also customize the icon for the button. For more information, see the <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> reference.
-    
+You can also customize the icon for the button. For more information, see the [AppBarButton](uwp/api/Windows.UI.Xaml.Controls.AppBarButton) reference.
 
 2. In the [**OnApplyTemplate**](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) override, get the button from the template and register a handler for its [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. This code goes in the `CustomMediaTransportControls` class.
 
@@ -290,6 +292,7 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
   }
 }
 ```
+
 ## Related articles
 
 - [Media playback](media-playback.md)

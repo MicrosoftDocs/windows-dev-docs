@@ -4,7 +4,7 @@ title: Calendar date picker
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Calendar date picker
 
 The calendar date picker is a drop down control that's optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
@@ -44,7 +45,7 @@ For more info about choosing the right control, see the [Date and time controls]
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -76,13 +77,13 @@ The resulting calendar date picker looks like this:
 
 ![Screenshot of a populated Calendar Date Picker with a label that says Calendar.](images/calendar-date-picker-closed.png)
 
-The calendar date picker has an internal [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) for picking a date. A subset of CalendarView properties, like [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) and [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it. 
+The calendar date picker has an internal [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) for picking a date. A subset of CalendarView properties, like [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) and [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it.
 
 However, you can't change the [SelectionMode](/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) of the internal CalendarView to allow multiple selection. If you need to let a user pick multiple dates or need a calendar to be always visible, consider using a calendar view instead of a calendar date picker. See the [Calendar view](calendar-view.md) article for more info on how you can modify the calendar display.
 
 ### Selecting dates
 
-Use the [Date](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date) property to get or set the selected date. By default, the Date property is **null**. When a user selects a date in the calendar view, this property is updated. A user can clear the date by clicking the selected date in the calendar view to deselect it. 
+Use the [Date](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date) property to get or set the selected date. By default, the Date property is **null**. When a user selects a date in the calendar view, this property is updated. A user can clear the date by clicking the selected date in the calendar view to deselect it.
 
 You can set the date in your code like this.
 
@@ -91,6 +92,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 ```
 
 When you set the Date in code, the value is constrained by the [MinDate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.mindate) and [MaxDate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.maxdate) properties.
+
 - If **Date** is smaller than **MinDate**, the value is set to **MinDate**.
 - If **Date** is greater than **MaxDate**, the value is set to **MaxDate**.
 

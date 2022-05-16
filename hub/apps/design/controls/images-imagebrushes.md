@@ -4,18 +4,19 @@ title: Images and image brushes
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Images and image brushes
 
-To display an image, you can use either the **Image** object or the **ImageBrush** object. An Image object renders an image, and an ImageBrush object paints another object with an image. 
+To display an image, you can use either the **Image** object or the **ImageBrush** object. An Image object renders an image, and an ImageBrush object paints another object with an image.
 
 > **Important APIs**: [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source property](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource property](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
 
 ## Are these the right elements?
+
 Use an **Image** element to display a stand-alone image in your app.
 
 Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrush include decorative effects for text, or backgrounds for controls or layout containers.
@@ -23,7 +24,7 @@ Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrus
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -39,8 +40,8 @@ Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrus
 ## Create an image
 
 ### Image
-This example shows how to create an image by using the [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) object.
 
+This example shows how to create an image by using the [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) object.
 
 ```XAML
 <Image Width="200" Source="sunset.jpg" />
@@ -50,7 +51,7 @@ Here's the rendered Image object.
 
 ![Example of an image element](images/image-licorice.jpg)
 
-In this example, the [Source](/uwp/api/windows.ui.xaml.controls.image.source) property specifies the location of the image that you want to display. You can set the Source by specifying an absolute URL (for example, http://contoso.com/myPicture.jpg) or by specifying a URL that is relative to your app packaging structure. For our example, we put the "licorice.jpg" image file in the root folder of our project and declare project settings that include the image file as content.
+In this example, the [Source](/uwp/api/windows.ui.xaml.controls.image.source) property specifies the location of the image that you want to display. You can set the Source by specifying an absolute URL (for example, `http://contoso.com/myPicture.jpg`) or by specifying a URL that is relative to your app packaging structure. For our example, we put the "licorice.jpg" image file in the root folder of our project and declare project settings that include the image file as content.
 
 ### ImageBrush
 
@@ -74,10 +75,10 @@ Here's the Ellipse painted by the ImageBrush.
 
 If you don't set the [Width](/uwp/api/windows.ui.xaml.frameworkelement.width) or [Height](/uwp/api/windows.ui.xaml.frameworkelement.height) values of an **Image**, it is displayed with the dimensions of the image specified by the **Source**. Setting the **Width** and **Height** creates a containing rectangular area in which the image is displayed. You can specify how the image fills this containing area by using the [Stretch](/uwp/api/windows.ui.xaml.controls.image.stretch) property. The Stretch property accepts these values, which the [Stretch](/uwp/api/Windows.UI.Xaml.Media.Stretch) enumeration defines:
 
--   **None**: The image doesn't stretch to fill the output dimensions. Be careful with this Stretch setting: if the source image is larger than the containing area, your image will be clipped, and this usually isn't desirable because you don't have any control over the viewport like you do with a deliberate [Clip](/uwp/api/windows.ui.xaml.uielement.clip).
--   **Uniform**: The image is scaled to fit the output dimensions. But the aspect ratio of the content is preserved. This is the default value.
--   **UniformToFill**: The image is scaled so that it completely fills the output area but preserves its original aspect ratio.
--   **Fill**: The image is scaled to fit the output dimensions. Because the content's height and width are scaled independently, the original aspect ratio of the image might not be preserved. That is, the image might be distorted to completely fill the output area.
+- **None**: The image doesn't stretch to fill the output dimensions. Be careful with this Stretch setting: if the source image is larger than the containing area, your image will be clipped, and this usually isn't desirable because you don't have any control over the viewport like you do with a deliberate [Clip](/uwp/api/windows.ui.xaml.uielement.clip).
+- **Uniform**: The image is scaled to fit the output dimensions. But the aspect ratio of the content is preserved. This is the default value.
+- **UniformToFill**: The image is scaled so that it completely fills the output area but preserves its original aspect ratio.
+- **Fill**: The image is scaled to fit the output dimensions. Because the content's height and width are scaled independently, the original aspect ratio of the image might not be preserved. That is, the image might be distorted to completely fill the output area.
 
 ![An example of stretch settings.](images/image-stretch.jpg)
 
@@ -109,25 +110,26 @@ You can apply an [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) to an ima
 
 Here's the rendered image with an opacity of 0.5 and a black background showing through the partial opacity.
 
-![An Image object with an opacity of .5.](images/image-opacity.jpg)
+![An Image object with an opacity of 0.5.](images/image-opacity.jpg)
 
 ### Image file formats
 
 **Image** and **ImageBrush** can display these image file formats:
 
--   Joint Photographic Experts Group (JPEG)
--   Portable Network Graphics (PNG)
--   bitmap (BMP)
--   Graphics Interchange Format (GIF)
--   Tagged Image File Format (TIFF)
--   JPEG XR
--   icons (ICO)
+- Joint Photographic Experts Group (JPEG)
+- Portable Network Graphics (PNG)
+- bitmap (BMP)
+- Graphics Interchange Format (GIF)
+- Tagged Image File Format (TIFF)
+- JPEG XR
+- icons (ICO)
 
 The APIs for [Image](/uwp/api/Windows.UI.Xaml.Controls.Image), [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) and [BitmapSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource) don't include any dedicated methods for encoding and decoding of media formats. All of the encode and decode operations are built-in, and at most will surface aspects of encode or decode as part of event data for load events. If you want to do any special work with image encode or decode, which you might use if your app is doing image conversions or manipulation, you should use the APIs that are available in the [Windows.Graphics.Imaging](/uwp/api/Windows.Graphics.Imaging) namespace. These APIs are also supported by the Windows Imaging Component (WIC) in Windows.
 
 Starting in Windows 10, version 1607, the **Image** element supports animated GIF images. When you use a **BitmapImage** as the image **Source**, you can access BitmapImage APIs to control playback of the animated GIF image. For more info, see the Remarks on the [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) class page.
 
-> **Note**&nbsp;&nbsp;Animated GIF support is available when your app is compiled for Windows 10, version 1607 and running on version 1607 (or later). When your app is compiled for or runs on previous versions, the first frame of the GIF is shown, but it is not animated.
+> [!Note]
+> Animated GIF support is available when your app is compiled for Windows 10, version 1607 and running on version 1607 (or later). When your app is compiled for or runs on previous versions, the first frame of the GIF is shown, but it is not animated.
 
 For more info about app resources and how to package image sources in an app, see [Defining app resources](/previous-versions/windows/apps/hh965321(v=win.10)).
 
@@ -160,6 +162,6 @@ If you define an Image or ImageBrush using code, use the default constructors, t
 
 ## Related articles
 
--   [Audio, video, and camera](/windows/uwp/audio-video-camera/index)
--   [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image)
--   [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)
+- [Audio, video, and camera](/windows/uwp/audio-video-camera/index)
+- [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image)
+- [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush)

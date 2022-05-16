@@ -3,21 +3,22 @@ title: List view and grid view
 description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
 label: List view and grid view
 template: detail.hbs
-ms.date: 01/28/2022
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # List view and grid view
 
 Most applications manipulate and display sets of data, such as a gallery of images or a set of email messages. The XAML UI framework provides ListView and GridView controls that make it easy to display and manipulate data in your app.
 
 > **Important APIs**: [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Items property](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
-> [!NOTE]  
-> ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality but display data differently. In this article, discussions about *list view* apply to both the ListView and GridView controls, unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the *List* prefix can be replaced with *Grid* for the corresponding grid equivalent (GridView or GridViewItem).
+> [!NOTE]
+> ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality but display data differently. In this article, discussions about _list view_ apply to both the ListView and GridView controls, unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the _List_ prefix can be replaced with _Grid_ for the corresponding grid equivalent (GridView or GridViewItem).
 
 ListView and GridView controls provide many benefits as you work with collections. Both are easy to implement and provide basic UI, interaction, and scrolling while being easily customizable. And both can be bound to existing dynamic data sources or to hard-coded data that's provided in the XAML itself or the code-behind.
 
@@ -43,7 +44,7 @@ It's important to understand the differences between these types of controls bef
 
 ### ListView and GridView
 
-The feature-rich ListView and GridView controls work *out of box*. They require no customization, but they can be customized easily. Each has its own built-in UI and UX and is designed to display nearly any type of collection as is. 
+The feature-rich ListView and GridView controls work _out of box_. They require no customization, but they can be customized easily. Each has its own built-in UI and UX and is designed to display nearly any type of collection as is. 
 
 ### ItemsRepeater
 
@@ -74,36 +75,36 @@ You can add items to the ListView or GridView [Items](/uwp/api/windows.ui.xaml.c
 
 * Option 1: Add items through XAML
 
-    ```xaml
-    <!-- No corresponding C# code is needed for this example. -->
+   ```xaml
+   <!-- No corresponding C# code is needed for this example. -->
 
-    <ListView x:Name="Fruits">
-    <x:String>Apricot</x:String>
-    <x:String>Banana</x:String>
-    <x:String>Cherry</x:String>
-    <x:String>Orange</x:String>
-    <x:String>Strawberry</x:String>
-    </ListView>
-    ```
+   <ListView x:Name="Fruits">
+   <x:String>Apricot</x:String>
+   <x:String>Banana</x:String>
+   <x:String>Cherry</x:String>
+   <x:String>Orange</x:String>
+   <x:String>Strawberry</x:String>
+   </ListView>
+   ```
 
 * Option 2: Add items through code
 
-    ```xaml
-    <StackPanel Name="FruitsPanel"></StackPanel>
-    ```
+   ```xaml
+   <StackPanel Name="FruitsPanel"></StackPanel>
+   ```
 
-    ```csharp
-    // Create a new ListView and add content.
-    ListView Fruits = new ListView();
-    Fruits.Items.Add("Apricot");
-    Fruits.Items.Add("Banana");
-    Fruits.Items.Add("Cherry");
-    Fruits.Items.Add("Orange");
-    Fruits.Items.Add("Strawberry");
+   ```csharp
+   // Create a new ListView and add content.
+   ListView Fruits = new ListView();
+   Fruits.Items.Add("Apricot");
+   Fruits.Items.Add("Banana");
+   Fruits.Items.Add("Cherry");
+   Fruits.Items.Add("Orange");
+   Fruits.Items.Add("Strawberry");
 
-    // Add the ListView to a parent container in the visual tree (which you created in the corresponding XAML file).
-    FruitsPanel.Children.Add(Fruits);
-    ```
+   // Add the ListView to a parent container in the visual tree (which you created in the corresponding XAML file).
+   FruitsPanel.Children.Add(Fruits);
+   ```
 
 Both of these options produce the same list view, as shown here:
 
@@ -115,38 +116,38 @@ You would ordinarily use a ListView or GridView to display data from a source su
 
 * Option 1: Set ItemsSource in code
 
-    Here, the ListView ItemsSource property is set in code directly to an instance of a collection.
+  Here, the ListView ItemsSource property is set in code directly to an instance of a collection.
 
-    ```xaml
-    <StackPanel x:Name="ContactPanel"></StackPanel>
-    ```
+  ```xaml
+  <StackPanel x:Name="ContactPanel"></StackPanel>
+  ```
 
-    ```csharp
-    // Class definition should be provided within the namespace being used, outside of any other classes.
+  ```csharp
+  // Class definition should be provided within the namespace being used, outside of any other classes.
 
-    this.InitializeComponent();
+  this.InitializeComponent();
 
-    // Instead of adding hard coded items to an ObservableCollection as shown here,
-    //the data could be pulled asynchronously from a database or the internet.
-    ObservableCollection<Contact> Contacts = new ObservableCollection<Contact>();
+  // Instead of adding hard coded items to an ObservableCollection as shown here,
+  //the data could be pulled asynchronously from a database or the internet.
+  ObservableCollection<Contact> Contacts = new ObservableCollection<Contact>();
 
-    // You create Contact objects by providing a first name, last name, and company for the Contact constructor.
-    // They are then added to the ObservableCollection Contacts.
-    Contacts.Add(new Contact("John", "Doe", "Contoso, LTD."));
-    Contacts.Add(new Contact("Jane", "Doe", "Fabrikam, Inc."));
-    Contacts.Add(new Contact("Santa", "Claus", "Alpine Ski House"));
+  // You create Contact objects by providing a first name, last name, and company for the Contact constructor.
+  // They are then added to the ObservableCollection Contacts.
+  Contacts.Add(new Contact("John", "Doe", "Contoso, LTD."));
+  Contacts.Add(new Contact("Jane", "Doe", "Fabrikam, Inc."));
+  Contacts.Add(new Contact("Santa", "Claus", "Alpine Ski House"));
 
-    // Create a new ListView (or GridView) for the UI, and add content by setting ItemsSource
-    ListView ContactsLV = new ListView();
-    ContactsLV.ItemsSource = Contacts;
+  // Create a new ListView (or GridView) for the UI, and add content by setting ItemsSource
+  ListView ContactsLV = new ListView();
+  ContactsLV.ItemsSource = Contacts;
 
-    // Add the ListView to a parent container in the visual tree (which you created in the corresponding XAML file)
-    ContactPanel.Children.Add(ContactsLV);
-    ```
+  // Add the ListView to a parent container in the visual tree (which you created in the corresponding XAML file)
+  ContactPanel.Children.Add(ContactsLV);
+  ```
 
 * Option 2: Set ItemsSource in XAML
 
-    You can also bind the ItemsSource property to a collection in the XAML. Here, ItemsSource is bound to a public property named Contacts, which exposes the page's private data collection, named *_contacts*.
+    You can also bind the ItemsSource property to a collection in the XAML. Here, ItemsSource is bound to a public property named Contacts, which exposes the page's private data collection, named `_contacts`.
 
     ```xaml
     <ListView x:Name="ContactsLV" ItemsSource="{x:Bind Contacts}"/>
@@ -285,7 +286,7 @@ When you add items to a ListView or GridView control, it automatically wraps eac
 You can modify the layout of items by adjusting the properties on the items panel, or you can replace the default panel with another panel.
 
 > [!NOTE]
-> If you change ItemsPanel, do *not* disable virtualization. Both ItemsStackPanel and ItemsWrapGrid support virtualization, so these classes are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](/windows/uwp/debug-test-perf/performance-and-xaml-ui).
+> If you change ItemsPanel, do _not_ disable virtualization. Both ItemsStackPanel and ItemsWrapGrid support virtualization, so these classes are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](/windows/uwp/debug-test-perf/performance-and-xaml-ui).
 
 This example shows how to make a ListView control lay out its item containers in a horizontal list by changing the [Orientation](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation) property of ItemsStackPanel.
 
@@ -365,11 +366,11 @@ This table shows the ways a user can interact with a list view, and how you can 
 
 | To enable this interaction: | Use these settings: | Handle this event: | Use this property to get the selected item: |
 | --- |--- |--- |--- |
-| No interaction | [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)="None"<br>[IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled)="False" | N/A | N/A |
-| Single selection | SelectionMode="Single"<br>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)<br>[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) |
-| Multiple selection | SelectionMode="Multiple"<br>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) |
-| Extended selection | SelectionMode="Extended"<br>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) |
-| Click | SelectionMode="None"<br>IsItemClickEnabled="True" | [ItemClick](/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A |
+| No interaction | [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)="None"<br/>[IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled)="False" | N/A | N/A |
+| Single selection | SelectionMode="Single"<br/>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)<br/>[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) |
+| Multiple selection | SelectionMode="Multiple"<br/>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) |
+| Extended selection | SelectionMode="Extended"<br/>IsItemClickEnabled="False" | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) |
+| Click | SelectionMode="None"<br/>IsItemClickEnabled="True" | [ItemClick](/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A |
 
 > [!NOTE]
 > You can enable IsItemClickEnabled to raise an ItemClick event while SelectionMode is also set to **Single**, **Multiple**, or **Extended**. If you do this, the ItemClick event is raised first, and then the SelectionChanged event is raised. In some cases (for example, if you go to another page in the ItemClick event handler), the SelectionChanged event isn't raised and the item isn't selected.
@@ -402,7 +403,6 @@ This table describes keyboard, mouse, and touch interactions when SelectionMode 
 | None | <li>Users can select a single item by using the space bar, mouse clicks, or taps. |
 | Ctrl | <li>Users can deselect a single item by using the space bar, mouse clicks, or taps.<li>By using the arrow keys, users can move the focus independent of the selection. |
 
-
 When SelectionMode is set to **Single**, you can get the selected data item from the [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) property. You can get the index in the collection of the selected item by using the [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) property. If no item is selected, SelectedItem is **null**, and SelectedIndex is -1.
 
 If you try to set an item that's not in the Items collection as SelectedItem, the operation is ignored and SelectedItem is **null**. However, if you try to set SelectedIndex to an index that's out of the range of the items in the list, a System.ArgumentException exception occurs.
@@ -416,7 +416,6 @@ This table describes the keyboard, mouse, and touch interactions when SelectionM
 | None | <li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of their selection. |
 | Shift | <li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key. |
 
-
 ### Extended selection
 
 This table describes the keyboard, mouse, and touch interactions when SelectionMode is set to **Extended**.
@@ -427,10 +426,9 @@ This table describes the keyboard, mouse, and touch interactions when SelectionM
 Ctrl | <li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of the selection. |
 | Shift | <li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key. |
 
-
 When SelectionMode is set to **Multiple** or **Extended**, you can get the selected data items from the [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems) property.
 
-The SelectedIndex, SelectedItem, and SelectedItems properties are synchronized. For example, if you set SelectedIndex to *-1*, SelectedItem is set to **null** and SelectedItems is empty. And if you set SelectedItem to **null**, SelectedIndex is set to *-1* and SelectedItems is empty.
+The SelectedIndex, SelectedItem, and SelectedItems properties are synchronized. For example, if you set SelectedIndex to _-1_, SelectedItem is set to **null** and SelectedItems is empty. And if you set SelectedItem to **null**, SelectedIndex is set to _-1_ and SelectedItems is empty.
 
 In multi-select mode, SelectedItem contains the item that was selected first, and Selectedindex contains the index of the item that was selected first.
 
@@ -488,7 +486,7 @@ You can change a list view so that users click buttons and other items instead o
 
 To enable this behavior:
 
-- Set SelectionMode to *None*.
+- Set SelectionMode to _None_.
 - Set IsItemClickEnabled to **True**.
 - Handle the ItemClick event to do something when users click an item.
 

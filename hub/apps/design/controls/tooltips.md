@@ -4,7 +4,7 @@ title: Tooltips
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -13,6 +13,7 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Tooltips
 
 A tooltip is a popup that contains additional information about another control or object. Tooltips display automatically when the user moves focus to, presses and holds, or hovers the pointer over the associated control. The tooltip disappears when the user moves focus from, stops pressing on, or stops hovering the pointer over the associated control (unless the pointer is moving towards the tooltip).
@@ -68,7 +69,7 @@ When should you use a tooltip? To decide, consider these questions:
 ## Example
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -132,7 +133,7 @@ For broad adjustments, use the [Placement](/uwp/api/windows.ui.xaml.controls.too
 </Image>
 ```
 
-If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the new **PlacementRect** property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there's sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip's owner, and the height and width of the exclusion area. The [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) property will define if ToolTip should draw above, below, left, or right of the PlacementRect. 
+If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the new **PlacementRect** property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there's sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip's owner, and the height and width of the exclusion area. The [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) property will define if ToolTip should draw above, below, left, or right of the PlacementRect.
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

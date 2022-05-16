@@ -11,6 +11,7 @@ dev_langs:
 - csharp
 - cppwinrt
 ---
+
 # Navigation history and backwards navigation for Windows apps
 
 > **Important APIs**: [BackRequested event](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager class](/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto)
@@ -530,7 +531,7 @@ private:
 ```
 
 ### All code added to App class
- 
+
 ```csharp
 // App.xaml.cs
 //

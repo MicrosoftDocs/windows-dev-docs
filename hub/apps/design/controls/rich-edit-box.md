@@ -4,7 +4,7 @@ title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -12,6 +12,7 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Rich edit box
 
 You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to **true**.
@@ -35,16 +36,17 @@ You can use a RichEditBox control to enter and edit rich text documents that con
 ## Is this the right control?
 
 Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
--   If the primary purpose of the multi-line text box is for creating read-only documents (such as blog entries or the contents of an email message), and those documents require rich text, use a [rich text block](./rich-text-block.md) instead.
--   When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
--   For all other scenarios, use a plain text input control.
+
+- If the primary purpose of the multi-line text box is for creating read-only documents (such as blog entries or the contents of an email message), and those documents require rich text, use a [rich text block](./rich-text-block.md) instead.
+- When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
+- For all other scenarios, use a plain text input control.
 
 For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -93,7 +95,6 @@ This example shows how to edit, load, and save a Rich Text Format (.rtf) file in
                  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
 </RelativePanel>
 ```
-
 
 ```csharp
 private async void OpenButton_Click(object sender, RoutedEventArgs e)

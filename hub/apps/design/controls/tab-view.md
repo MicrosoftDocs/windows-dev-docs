@@ -2,12 +2,13 @@
 description: TabView is a flexible way to organize multiple documents in dynamic tabs
 title: Tab View
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # TabView
 
 The TabView control is a way to display a set of tabs and their respective content. TabViews are useful for displaying several pages (or documents) of content while giving a user the capability to rearrange, open, or close new tabs.

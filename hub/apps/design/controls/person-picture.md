@@ -3,7 +3,7 @@ description: Displays the avatar image for a person, if one is available; if not
 title: Person picture control
 template: detail.hbs
 label: Parallax View
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: trestar
@@ -12,6 +12,7 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Person picture control
 
 The person picture control displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph. You can use the control to display a [Contact object](/uwp/api/Windows.ApplicationModel.Contacts.Contact),  an object that manages a person's contact info, or you can manually provide contact information, such as a display name and profile picture.
@@ -51,7 +52,7 @@ The illustration shows person picture control in a list of contacts:
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -195,7 +196,7 @@ If there isn't an image, the control displays the contact's name or initials; if
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+* [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

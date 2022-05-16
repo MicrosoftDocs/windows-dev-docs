@@ -5,7 +5,7 @@ ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -14,9 +14,10 @@ dev_langs:
 - cppwinrt
 - cpp
 ---
+
 # Implement navigation between two pages
 
-Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app. 
+Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app.
 
 > **Important APIs**: [**Windows.UI.Xaml.Controls.Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) class, [**Windows.UI.Xaml.Controls.Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) class, [**Windows.UI.Xaml.Navigation**](/uwp/api/Windows.UI.Xaml.Navigation) namespace
 
@@ -24,23 +25,21 @@ Learn how to use a frame and pages to enable basic peer-to-peer navigation in yo
 
 ## 1. Create a blank app
 
-1.  On the Microsoft Visual Studio menu, choose **File** > **New Project**.
-2.  In the left pane of the **New Project** dialog box, choose the **Visual C#** > **Windows** > **Universal** or the **Visual C++** > **Windows** > **Universal** node.
-3.  In the center pane, choose **Blank App**.
-4.  In the **Name** box, enter **NavApp1**, and then choose the **OK** button.
-    The solution is created, and the project files appear in **Solution Explorer**.
-5.  To run the program, choose **Debug** > **Start Debugging** from the menu, or press F5.
-    A blank page is displayed.
-6.  To stop debugging and return to Visual Studio, exit the app, or click **Stop Debugging** from the menu.
+1. On the Microsoft Visual Studio menu, choose **File** > **New Project**.
+2. In the left pane of the **New Project** dialog box, choose the **Visual C#** > **Windows** > **Universal** or the **Visual C++** > **Windows** > **Universal** node.
+3. In the center pane, choose **Blank App**.
+4. In the **Name** box, enter **NavApp1**, and then choose the **OK** button. The solution is created, and the project files appear in **Solution Explorer**.
+5. To run the program, choose **Debug** > **Start Debugging** from the menu, or press F5. A blank page is displayed.
+6. To stop debugging and return to Visual Studio, exit the app, or click **Stop Debugging** from the menu.
 
 ## 2. Add basic pages
 
 Next, add two pages to the project.
 
-1.  In **Solution Explorer**, right-click the **BlankApp** project node to open the shortcut menu.
-2.  Choose **Add** > **New Item** from the shortcut menu.
-3.  In the **Add New Item** dialog box, choose **Blank Page** in the middle pane.
-4.  In the **Name** box, enter **Page1** (or **Page2**) and press the **Add** button.
+1. In **Solution Explorer**, right-click the **BlankApp** project node to open the shortcut menu.
+2. Choose **Add** > **New Item** from the shortcut menu.
+3. In the **Add New Item** dialog box, choose **Blank Page** in the middle pane.
+4. In the **Name** box, enter **Page1** (or **Page2**) and press the **Add** button.
 5. Repeat steps 1-4 to add the second page.
 
 Now, these files should be listed as part of your NavApp1 project.
@@ -76,12 +75,14 @@ Now, these files should be listed as part of your NavApp1 project.
 
 In Page1.xaml, add the following content:
 
--   A [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element named `pageTitle` as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid). Change the [**Text**](/uwp/api/windows.ui.xaml.controls.textblock.text) property to `Page 1`.
+- A [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element named `pageTitle` as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid). Change the [**Text**](/uwp/api/windows.ui.xaml.controls.textblock.text) property to `Page 1`.
+
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   A [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) element as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) and after the `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
+- A [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) element as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) and after the `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
+
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -113,12 +114,14 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 In Page2.xaml, add the following content:
 
--   A [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element named `pageTitle` as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid). Change the value of the [**Text**](/uwp/api/windows.ui.xaml.controls.textblock.text) property to `Page 2`.
+- A [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element named `pageTitle` as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid). Change the value of the [**Text**](/uwp/api/windows.ui.xaml.controls.textblock.text) property to `Page 2`.
+
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   A [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) element as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) and after the `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
+- A [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) element as a child element of the root [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) and after the `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element.
+
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -299,8 +302,8 @@ Now, build and run the app. Click the link that says "Click to go to page 2". Th
 Before we add more functionality to our app, let's look at how the pages we added provide navigation within our app.
 
 First, a [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) called `rootFrame` is created for the app in the `App.OnLaunched` method in the App.xaml code-behind file. The **Frame** class supports various navigation methods such as [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate), [**GoBack**](/uwp/api/windows.ui.xaml.controls.frame.goback), and [**GoForward**](/uwp/api/windows.ui.xaml.controls.frame.goforward), and properties such as [**BackStack**](/uwp/api/windows.ui.xaml.controls.frame.backstack), [**ForwardStack**](/uwp/api/windows.ui.xaml.controls.frame.forwardstack), and [**BackStackDepth**](/uwp/api/windows.ui.xaml.controls.frame.backstackdepth).
- 
-The [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate) method is used to display content in this **Frame**. By default, this method loads MainPage.xaml. In our example, `Page1` is passed to the **Navigate** method, so the method loads `Page1` in the **Frame**. 
+
+The [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate) method is used to display content in this **Frame**. By default, this method loads MainPage.xaml. In our example, `Page1` is passed to the **Navigate** method, so the method loads `Page1` in the **Frame**.
 
 `Page1` is a subclass of the [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) class. The **Page** class has a read-only **Frame** property that gets the **Frame** containing the **Page**. When the **Click** event handler of the **HyperlinkButton** in `Page1` calls `this.Frame.Navigate(typeof(Page2))`, the **Frame** displays the content of Page2.xaml.
 
@@ -408,7 +411,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**. 
+Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**.
 
 When the **Click** event of the **HyperlinkButton** in `Page1` calls `this.Frame.Navigate(typeof(Page2), name.Text)`, the `name.Text` property is passed to `Page2`, and the value from the event data is used for the message displayed on the page.
 
@@ -416,7 +419,7 @@ When the **Click** event of the **HyperlinkButton** in `Page1` calls `this.Frame
 
 Page content and state is not cached by default, so if you'd like to cache information, you must enable it in each page of your app.
 
-In our basic peer-to-peer example, there is no back button (we demonstrate back navigation in [backwards navigation](navigation-history-and-backwards-navigation.md)), but if you did click a back button on `Page2`, the **TextBox** (and any other field) on `Page1` would be set to its default state. One way to work around this is to use the [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) property to specify that a page be added to the frame's page cache. 
+In our basic peer-to-peer example, there is no back button (we demonstrate back navigation in [backwards navigation](navigation-history-and-backwards-navigation.md)), but if you did click a back button on `Page2`, the **TextBox** (and any other field) on `Page1` would be set to its default state. One way to work around this is to use the [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) property to specify that a page be added to the frame's page cache.
 
 In the constructor of `Page1`, you can set **NavigationCacheMode** to **Enabled** to retains all content and state values for the page until the page cache for the frame is exceeded. Set [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) to [**Required**](/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode) if you want to ignore [**CacheSize**](/uwp/api/windows.ui.xaml.controls.frame.cachesize) limits, which specify the number of pages in the navigation history that can be cached for the frame. However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.
 
@@ -445,5 +448,6 @@ Page1::Page1()
 ```
 
 ## Related articles
-* [Navigation design basics for Windows apps](./navigation-basics.md)
-* [Navigation view](../controls/navigationview.md)
+
+- [Navigation design basics for Windows apps](./navigation-basics.md)
+- [Navigation view](../controls/navigationview.md)

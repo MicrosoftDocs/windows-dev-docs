@@ -48,7 +48,7 @@ Use a BreadcrumbBar when the path taken to the current position is relevant. Thi
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -153,6 +153,7 @@ private void BreadcrumbBar1_ItemClicked(muxc.BreadcrumbBar sender, muxc.Breadcru
     }
 }
 ```
+
 ### Lightweight styling
 
 You can modify the default Style and ControlTemplate to give the control a unique appearance. See the Control Style and Template section of the BreadcrumbBar API docs for a list of the available theme resources. For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling) of the [Styling controls](../style/xaml-styles.md) article.

@@ -4,7 +4,7 @@ title: Calendar view
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Calendar view
 
 A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade. A user can select a single date or a range of dates. It doesn't have a picker surface and the calendar is always visible.
@@ -34,6 +35,7 @@ A calendar view lets a user view and interact with a calendar that they can navi
 > **Platform APIs:**  [CalendarView class](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
 
 ## Is this the right control?
+
 Use a calendar view to let a user pick a single date or a range of dates from an always visible calendar.
 
 If you need to let a user select multiple dates at one time, you must use a calendar view. If you need to let a user pick only a single date and don't need a calendar to be always visible, consider using a [calendar date picker](calendar-date-picker.md) or [date picker](date-picker.md) control.
@@ -43,7 +45,7 @@ For more info about choosing the right control, see the [Date and time controls]
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -95,6 +97,7 @@ You can handle the [SelectedDatesChanged](/uwp/api/windows.ui.xaml.controls.cale
 ### Customizing the calendar view's appearance
 
 The calendar view is composed of both XAML elements defined in the ControlTemplate and visual elements rendered directly by the control.
+
 - The XAML elements defined in the control template include the border that encloses the control, the header, previous and next buttons, and DayOfWeek elements. You can style and re-template these elements like any XAML control.
 - The calendar grid is composed of [CalendarViewDayItem](/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) objects. You can't style or re-template these elements, but various properties are provided to let you to customize their appearance.
 
@@ -116,7 +119,7 @@ Visual State Borders | [FocusBorderBrush](/uwp/api/windows.ui.xaml.controls.cale
 OutofScope | [IsOutOfScopeEnabled](/uwp/api/windows.ui.xaml.controls.calendarview.isoutofscopeenabled), [OutOfScopeBackground](/uwp/api/windows.ui.xaml.controls.calendarview.outofscopebackground), [OutOfScopeForeground](/uwp/api/windows.ui.xaml.controls.calendarview.outofscopeforeground)
 Today | [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendarview.istodayhighlighted), [TodayFontWeight](/uwp/api/windows.ui.xaml.controls.calendarview.todayfontweight), [TodayForeground](/uwp/api/windows.ui.xaml.controls.calendarview.todayforeground)
 
- By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the [NumberOfWeeksInView](/uwp/api/windows.ui.xaml.controls.calendarview.numberofweeksinview) property. The minimum number of weeks to show is 2; the maximum is 8.
+By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the [NumberOfWeeksInView](/uwp/api/windows.ui.xaml.controls.calendarview.numberofweeksinview) property. The minimum number of weeks to show is 2; the maximum is 8.
 
 By default, the year and decade views show in a 4x4 grid. To change the number of rows or columns, call [SetYearDecadeDisplayDimensions](/uwp/api/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions) with the your desired number of rows and columns. This will change the grid for both the year and decade views.
 
@@ -150,6 +153,7 @@ Here are some day items in a calendar. Days 1 and 2 are blacked out. Days 2, 3, 
 A calendar view can contain a large number of CalendarViewDayItem objects. To keep the UI responsive and enable smooth navigation through the calendar, calendar view supports phased rendering. This lets you break up processing of a day item into phases. If a day is moved out of view before all the phases are complete, no more time is used trying to process and render that item.
 
 This example shows phased rendering of a calendar view for scheduling appointments.
+
 - In phase 0, the default day item is rendered.
 - In phase 1, you blackout dates that can't be booked. This includes past dates, Sundays, and dates that are already fully booked.
 - In phase 2, you check each appointment that's booked for the day. You show a green density bar for each confirmed appointment and a blue density bar for each tentative appointment.

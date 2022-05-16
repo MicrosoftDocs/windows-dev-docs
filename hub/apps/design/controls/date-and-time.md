@@ -4,7 +4,7 @@ title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,16 +13,15 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Calendar, date, and time controls
 
- 
+# Calendar, date, and time controls
 
 Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
 
 > **Important APIs**: [CalendarView class](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [TimePicker class](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -67,7 +66,7 @@ The entry point displays placeholder text if a date has not been set; otherwise,
 
 ![Screenshot of a Calendar Date Picker showing an empty select a date text box and then one populated with a calendar beneath it.](images/calendar-date-picker-2-views.png)
 
-- Use a calendar date picker for things like choosing an appointment or departure date. 
+- Use a calendar date picker for things like choosing an appointment or departure date.
 
 ### Date picker
 
@@ -191,8 +190,8 @@ The time picker control supports each of the clock systems specified in the [Win
 
 The date objects used in the XAML date and time controls have a different representation depending on your programming language.
 
-- C# and Visual Basic use the [System.DateTimeOffset](/dotnet/api/system.datetimeoffset) structure that is part of .NET. 
-- C++/CX uses the [Windows::Foundation::DateTime](/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime) structure. 
+- C# and Visual Basic use the [System.DateTimeOffset](/dotnet/api/system.datetimeoffset) structure that is part of .NET.
+- C++/CX uses the [Windows::Foundation::DateTime](/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime) structure.
 
 A related concept is the Calendar class, which influences how dates are interpreted in context. All Windows Runtime apps can use the [Windows.Globalization.Calendar](/uwp/api/Windows.Globalization.Calendar) class. C# and Visual Basic apps can alternatively use the [System.Globalization.Calendar](/dotnet/api/system.globalization.calendar) class, which has very similar functionality. (Windows Runtime apps can use the base .NET Calendar class but not the specific implementations; for example, GregorianCalendar.)
 

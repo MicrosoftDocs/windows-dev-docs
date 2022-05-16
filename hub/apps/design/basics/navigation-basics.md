@@ -5,12 +5,13 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Navigation design basics for Windows apps
 
 ![Navigation basics header](images/nav/navigation-basics-header.jpg)
@@ -106,9 +107,8 @@ We recommend using a flat structure when:
 
 - The pages can be viewed in any order.
 - The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
-- There are less than 8 pages in the group. <br>
+- There are less than 8 pages in the group.<br/>
 (When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
-
     :::column-end:::
 :::row-end:::
 
@@ -128,7 +128,6 @@ We recommend a hierarchical structure when:
 - Pages should be traversed in a specific order.
 - There is a clear parent-child relationship between pages.
 - There are more than 7 pages in the group.
-
     :::column-end:::
 :::row-end:::
 
@@ -237,7 +236,7 @@ Displays a vertical list of links to top-level pages. Use when:
         [**List/details**](../controls/list-details.md)
 
 Displays a list of items. Selecting an item displays its corresponding page in the details section. Use when:
-        
+
 - You expect users to switch between child items frequently.
 - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
 

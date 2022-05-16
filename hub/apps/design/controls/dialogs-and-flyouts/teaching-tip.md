@@ -2,7 +2,7 @@
 description: A teaching tip is a semi-persistent and content-rich flyout that provides contextual information.
 title: Teaching tips
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -48,7 +48,7 @@ Because teaching tip is transient, it would not be the recommended control for p
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -189,7 +189,6 @@ The following example shows a non-targeted tip with the PlacementMargin's Left/T
 ```
 
 ![A sample app with a teaching tip positioned toward, but not fully against, the bottom right corner. The tip title reads "Saving automatically" and the subtitle reads "We save your changes as you go - so you never have to." There is a close button on the top right corner of the teaching tip.](../images/teaching-tip-placement-margin.png)
-
 
 ### Add content
 

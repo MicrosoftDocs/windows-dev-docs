@@ -3,7 +3,7 @@ title: Buttons
 description: Learn how to use a button to give users a way to trigger immediate actions, and learn about specialized buttons for particular tasks.
 label: Buttons
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
@@ -14,6 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Buttons
 
 A button gives the user a way to trigger an immediate action. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.
@@ -70,7 +71,7 @@ Use a **ToggleButton** control when you want the user to be able to immediately 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -142,15 +143,15 @@ You can change how a button raises the **Click** event by changing the [ClickMod
 
 A button's content is usually text. When you design that text, use the following recommendations:
 
--  Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text is a single word that is a verb.
+- Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text is a single word that is a verb.
 
--  Use the default font, unless your brand guidelines tell you to use something different.
+- Use the default font, unless your brand guidelines tell you to use something different.
 
--  For shorter text, avoid narrow command buttons by using a minimum button width of 120px.
+- For shorter text, avoid narrow command buttons by using a minimum button width of 120px.
 
 - For longer text, avoid wide command buttons by limiting text to a maximum length of 26 characters.
 
--  If the button's text content is dynamic (that is, it is [localized](../globalizing/globalizing-portal.md)), consider how the button will be resized and what will happen to controls around it.
+- If the button's text content is dynamic (that is, it is [localized](../globalizing/globalizing-portal.md)), consider how the button will be resized and what will happen to controls around it.
 
 <table>
 <tr>
@@ -398,7 +399,6 @@ A toggle split button is typically used to enable or disable a feature when the 
 > [!NOTE]
 > When invoked with touch, the toggle split button behaves as a drop down button. With other methods of input, a user can toggle and invoke the two halves of the button separately. With touch, both halves of the button invoke the flyout. Therefore, you must include an option in your flyout content to toggle the button on or off.
 
-
 ### Differences with ToggleButton
 
 Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), **ToggleSplitButton** does not have an indeterminate state. As a result, you should keep in mind these differences:
@@ -406,7 +406,6 @@ Unlike [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)
 - **ToggleSplitButton** does not have an **IsThreeState** property or **Indeterminate** event.
 - The [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) property is just a Boolean, not a **Nullable\<bool>**.
 - **ToggleSplitButton** has only the [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
-
 
 ### Example - Toggle split button
 
@@ -519,43 +518,31 @@ private void ApplyListStyle(string listStyle)
 ## Recommendations
 
 - Make sure the purpose and state of a button are clear to the user.
-
 - When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
   - OK/[Do it]/Yes
-    - [Don't do it]/No
-    - Cancel
-
+  - [Don't do it]/No
+  - Cancel
 - Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
-
 - For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](command-bar.md).
-
 
 ### Recommended single-button layout
 
 If your layout requires only one button, it should be either left- or right-aligned based on its container context.
 
-  - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](./dialogs-and-flyouts/index.md) and specify a single button, it will be automatically right-aligned.
-
-    ![A button within a dialog](images/pushbutton_doc_dialog.png)
-
-  - If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
-
-    ![A button within a container](images/pushbutton_doc_container.png)
-
-  - In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
-
-    ![A button on a page](images/pushbutton_doc_page.png)
-
+- Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](./dialogs-and-flyouts/index.md) and specify a single button, it will be automatically right-aligned.
+  ![A button within a dialog](images/pushbutton_doc_dialog.png)
+- If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
+  ![A button within a container](images/pushbutton_doc_container.png)
+- In pages that contain a single button (for example, an **Apply** button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
+  ![A button on a page](images/pushbutton_doc_page.png)
 
 ## Back buttons
 
 The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [Navigation history and backwards navigation for Windows apps](../basics/navigation-history-and-backwards-navigation.md).
 
-
 ## Get the sample code
 
 - [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery): This sample shows all the XAML controls in an interactive format.
-
 
 ## Related articles
 

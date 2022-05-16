@@ -4,7 +4,7 @@ title: Contextual commanding
 ms.assetid: 
 label: Contextual commanding in collections
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chigy
@@ -13,6 +13,7 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Contextual commanding for collections and lists
 
 Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.  
@@ -25,7 +26,7 @@ Many apps contain collections of content in the form of lists, grids, and trees 
 
 Because users can interact with a Windows app using [a broad range of devices and inputs](../devices/index.md), your app should expose commands though both input-agnostic context menus and input-specific accelerators. Including both lets the user quickly invoke commands on content, regardless of input or device type.
 
-This table shows some typical collection commands and ways to expose those commands. 
+This table shows some typical collection commands and ways to expose those commands.
 
 | Command          | Input-agnostic | Mouse accelerator | Keyboard accelerator | Touch accelerator |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
@@ -34,15 +35,15 @@ This table shows some typical collection commands and ways to expose those comma
 | Refresh data     | Context menu   | N/A               | F5 key               | Pull to refresh   |
 | Favorite an item | Context menu   | Hover button      | F, Ctrl+S            | Swipe to favorite |
 
-
 * **In general, you should make all commands for an item available in the item's [context menu](menus-and-context-menus.md).** Context menus are accessible to users regardless of input type, and should contain all of the contextual commands that user can perform.
 
 * **For frequently accessed commands, consider using input accelerators.** Input accelerators let the user perform actions quickly, based on their input device. Input accelerators include:
-	- Swipe-to-action (touch accelerator)
-	- Pull to refresh data (touch accelerator)
-	- Keyboard shortcuts (keyboard accelerator)
-	- Access keys (keyboard accelerator)
-	- Mouse & Pen hover buttons (pointer accelerator)
+
+  * Swipe-to-action (touch accelerator)
+  * Pull to refresh data (touch accelerator)
+  * Keyboard shortcuts (keyboard accelerator)
+  * Access keys (keyboard accelerator)
+  * Mouse & Pen hover buttons (pointer accelerator)
 
 > [!NOTE]
 > Users should be able to access all commands from any type of device. For example, if your app’s commands are only exposed through hover button pointer accelerators, touch users won't be able to access them. At a minimum, use a context menu to provide access to all commands.  
@@ -51,7 +52,7 @@ This table shows some typical collection commands and ways to expose those comma
 
 To demonstrate our commanding recommendations, this article creates a list of podcasts for a podcast app. The example code demonstrate how to enable the user to "favorite" a particular podcast from a list.
 
-Here's the definition for the podcast object we'll be working with: 
+Here's the definition for the podcast object we'll be working with:
 
 ```csharp
 public class PodcastObject : INotifyPropertyChanged
@@ -127,17 +128,18 @@ var favoriteCommand = Application.Current.Resources["favoriteCommand"] as IComma
 favoriteCommand.Execute(PodcastObject);
 ```
 
-
 ## Creating a UserControl to respond to a variety of inputs
 
-When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) for the item and using it to define your items' context menu and event handlers. 
+When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) for the item and using it to define your items' context menu and event handlers.
 
 To create a UserControl in Visual Studio:
+
 1. In the Solution Explorer, right click the project. A context menu appears.
-2. Select **Add > New Item...** <br />The **Add New Item** dialog appears. 
-3. Select UserControl from the list of items. Give it the name you want and click **Add**. Visual Studio will generate a stub UserControl for you. 
+2. Select **Add** > **New Item...**. The **Add New Item** dialog appears.
+3. Select UserControl from the list of items. Give it the name you want and click **Add**. Visual Studio will generate a stub UserControl for you.
 
 In our podcast example, each podcast will be displayed in a list, which will expose a variety of ways to "Favorite" a podcast. The user will be able to perform the following actions to "Favorite" the podcast:
+
 - Invoke a context menu
 - Perform keyboard shortcuts
 - Show a hover button
@@ -148,6 +150,7 @@ In order to encapsulate these behaviors and use the FavoriteCommand, let's creat
 The PodcastUserControl displays the fields of the PodcastObject as TextBlocks, and responds to various user interactions. We will reference and expand upon the PodcastUserControl throughout this article.
 
 **PodcastUserControl.xaml**
+
 ```xaml
 <UserControl
     x:Class="ContextCommanding.PodcastUserControl"
@@ -169,6 +172,7 @@ The PodcastUserControl displays the fields of the PodcastObject as TextBlocks, a
 ```
 
 **PodcastUserControl.xaml.cs**
+
 ```csharp
 public sealed partial class PodcastUserControl : UserControl
 {
@@ -199,6 +203,7 @@ Notice that the PodcastUserControl maintains a reference to the PodcastObject as
 After you have generated some PodcastObjects, you can create a list of podcasts by binding the PodcastObjects to a ListView. The PodcastUserControl objects describe the visualization of the PodcastObjects, and are therefore set using the ListView's ItemTemplate.
 
 **MainPage.xaml**
+
 ```xaml
 <ListView x:Name="ListOfPodcasts"
             ItemsSource="{x:Bind podcasts}">
@@ -240,11 +245,12 @@ The user can invoke context menus using these "context actions":
 
 The [ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a "context action" as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
 
-See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use [menu flyout](menus.md) vs. [command bar flyout](command-bar-flyout.md).
+See [menus and context menus](menus-and-context-menus.md) for help identifying menu versus context menu scenarios and guidance on when to use [menu flyout](menus.md) versus [command bar flyout](command-bar-flyout.md).
 
 For this example, we will use MenuFlyout and will start by adding a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParameter bound to the PodcastObject.
 
 **PodcastUserControl.xaml**
+
 ```xaml
 <UserControl>
     <UserControl.ContextFlyout>
@@ -280,6 +286,7 @@ Your app can respond when the user presses a key using the [KeyDown](/uwp/api/Wi
 This example walks through how to add the KeyDown handler to the PodcastUserControl to favorite a podcast when the user presses Ctrl+S or F. It uses the same command as before.
 
 **PodcastUserControl.xaml.cs**
+
 ```csharp
 // Respond to the F and Ctrl+S keys to favorite the focused item.
 protected override void OnKeyDown(KeyRoutedEventArgs e)
@@ -305,6 +312,7 @@ Users are familiar with right-click context menus, but you may wish to empower u
 In this example, the Favorite command is represented by a button defined directly in the PodcastUserControl. Note that the button in this example uses the same command, FavoriteCommand, as before. To toggle visibility of this button, you can use the VisualStateManager to switch between visual states when the pointer enters and exits the control.
 
 **PodcastUserControl.xaml**
+
 ```xaml
 <UserControl>
     <UserControl.ContextFlyout>
@@ -340,6 +348,7 @@ In this example, the Favorite command is represented by a button defined directl
 The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) and [PointerExited](/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) events on the PodcastUserControl.
 
 **PodcastUserControl.xaml.cs**
+
 ```csharp
 protected override void OnPointerEntered(PointerRoutedEventArgs e)
 {
@@ -436,13 +445,12 @@ The pen input type provides the precision of pointer input. Users can perform co
 
 To optimize your app for pen input, see the [pen and stylus interaction](../input/pen-and-stylus-interactions.md) article.
 
-
 ## Do's and don'ts
 
 * Do make sure that users can access all commands from all types of Windows devices.
-* Do include a context menu that provides access to all the commands available for a collection item. 
+* Do include a context menu that provides access to all the commands available for a collection item.
 * Do provide input accelerators for frequently-used commands. 
-* Do use the [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands. 
+* Do use the [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands.
 
 ## Related topics
 
@@ -453,4 +461,3 @@ To optimize your app for pen input, see the [pen and stylus interaction](../inpu
 * [Pull to refresh](pull-to-refresh.md)
 * [Pen and stylus interaction](../input/pen-and-stylus-interactions.md)
 * [Tailor your app for gamepad and Xbox](../devices/designing-for-tv.md)
-

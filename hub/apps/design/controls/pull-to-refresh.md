@@ -3,7 +3,7 @@ title: Pull-to-refresh
 description: Learn how to implement a pull-to-refresh control that lets a user pull down on a list of data using touch in order to retrieve more data.
 label: Pull-to-refresh
 template: detail.hbs
-ms.date: 03/07/2018
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
@@ -13,6 +13,7 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Pull to refresh
 
 Pull-to-refresh lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on devices with a touch screen. You can use the APIs shown here to implement pull-to-refresh in your app.
@@ -30,7 +31,7 @@ You can also use the [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refre
 ## XAML Controls Gallery examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -193,6 +194,7 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 ## Examples
 
 ### Using a ScrollViewer in a RefreshContainer
+
 > [!NOTE]
 > The Content of a RefreshContainer must be a scrollable control, such as ScrollViewer, GridView, ListView, etc. Setting the Content to a control like Grid will result in undefined behavior.
 

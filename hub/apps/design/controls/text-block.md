@@ -4,7 +4,7 @@ description: Text block is the primary control for displaying read-only text in 
 title: Text block
 label: Text block
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 # Text block
 
 Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
- 
+
  > **Platform APIs**: [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## Is this the right control?
@@ -30,7 +30,7 @@ For more info about choosing the right text control, see the [Text controls](tex
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -62,7 +62,8 @@ There are two properties you can use to add content to a TextBlock: [Text](/uwp/
 
 The most common way to display text is to set the Text property to a string value, as shown in the previous example.
 
-You can also add content by placing inline flow content elements in the TextBox.Inlines property, like this.
+You can also add content by placing inline flow content elements in the **TextBox.Inlines** property, like this.
+
 ```xaml
 <TextBlock>Text can be <Bold>bold</Bold>, <Underline>underlined</Underline>, 
     <Italic>italic</Italic>, or a <Bold><Italic>combination</Italic></Bold>.</TextBlock>
@@ -70,28 +71,30 @@ You can also add content by placing inline flow content elements in the TextBox.
 
 Elements derived from the Inline class, such as Bold, Italic, Run, Span, and LineBreak, enable different formatting for different parts of the text. For more info, see the [Formatting text](#formatting-text) section. The inline Hyperlink element lets you add a hyperlink to your text. However, using Inlines also disables fast path text rendering, which is discussed in the next section.
 
-
 ## Performance considerations
 
 Whenever possible, XAML uses a more efficient code path to layout text. This fast path both decreases overall memory use and greatly reduces the CPU time to do text measuring and arranging. This fast path applies only to TextBlock, so it should be preferred when possible over RichTextBlock.
 
 Certain conditions require TextBlock to fall back to a more feature-rich and CPU intensive code path for text rendering. To keep text rendering on the fast path, be sure to follow these guidelines when setting the properties listed here.
+
 - [Text](/uwp/api/windows.ui.xaml.controls.textblock.text): The most important condition is that the fast path is used only when you set text by explicitly setting the Text property, either in XAML or in code (as shown in the previous examples). Setting the text via TextBlock's Inlines collection (such as `<TextBlock>Inline text</TextBlock>`) will disable the fast path, due to the potential complexity of multiple formats.
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Only the **None**, **CharacterEllipsis**, and **WordEllipsis** values are fast path. The **Clip** value disables the fast path.
 
-> **Note**&nbsp;&nbsp;Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code.md).
+> [!NOTE]
+> Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code.md).
+
 - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various Typography properties are fast path.
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the **BaselineToBaseline** and **MaxHeight** values disable the fast path.
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only **false** is fast path. Setting this property to **true** disables the fast path.
 
 You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) property to **true** during debugging to determine whether text is using fast path rendering. When this property is set to true, the text that is on the fast path displays in a bright green color.
 
->**Tip**&nbsp;&nbsp;This feature is explained in depth in this session from Build 2015- XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML.
-
-
+> [!TIP]
+> This feature is explained in depth in this session from Build 2015 - XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML.
 
 You typically set debug settings in the [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) method override in the code-behind page for App.xaml, like this.
+
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -108,6 +111,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ```
 
 In this example, the first TextBlock is rendered using the fast path, while the second is not.
+
 ```xaml
 <StackPanel>
     <TextBlock Text="This text is on the fast path."/>
@@ -119,14 +123,15 @@ When you run this XAML in debug mode with IsTextPerformanceVisualizationEnabled 
 
 ![Text rendered in debug mode](images/text-block-rendering-performance.png)
 
->**Caution**&nbsp;&nbsp;The color of text that is not on the fast path is not changed. If you have text in your app with its color specified as bright green, it is still displayed in bright green when it's on the slower rendering path. Be careful to not confuse text that is set to green in the app with text that is on the fast path and green because of the debug settings.
+> [!CAUTION]
+> The color of text that is not on the fast path is not changed. If you have text in your app with its color specified as bright green, it is still displayed in bright green when it's on the slower rendering path. Be careful to not confuse text that is set to green in the app with text that is on the fast path and green because of the debug settings.
 
 ## Formatting text
 
 Although the Text property stores plain text, you can apply various formatting options to the TextBlock control to customize how the text is rendered in your app. You can set standard control properties like FontFamily, FontSize, FontStyle, Foreground, and CharacterSpacing to change the look of the text. You can also use inline text elements and Typography attached properties to format your text. These options affect only how the TextBlock displays the text locally, so if you copy and paste the text into a rich text control, for example, no formatting is applied.
 
->**Note**&nbsp;&nbsp;Remember, as noted in the previous section, inline text elements and non-default typography values are not rendered on the fast path.
-
+> [!NOTE]
+> Remember: as noted in the previous section, inline text elements and non-default typography values are not rendered on the fast path.
 
 ### Inline elements
 
@@ -135,6 +140,7 @@ The [Windows.UI.Xaml.Documents](/uwp/api/Windows.UI.Xaml.Documents) namespace pr
 You can display a series of strings in a TextBlock, where each string has different formatting. You can do this by using a Run element to display each string with its formatting and by separating each Run element with a LineBreak element.
 
 Here's how to define several differently formatted text strings in a TextBlock by using Run objects separated with a LineBreak.
+
 ```xaml
 <TextBlock FontFamily="Segoe UI" Width="400" Text="Sample text formatting runs">
     <LineBreak/>
@@ -152,13 +158,14 @@ Here's how to define several differently formatted text strings in a TextBlock b
 </TextBlock>
 ```
 
-Here's the result.
+Here's the result:
 
 ![Text formatted with run elements](images/text-block-run-examples.png)
 
 ### Typography
 
 The attached properties of the [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the TextBlock, or on individual inline text elements. These examples show both.
+
 ```xaml
 <TextBlock Text="Hello, world!"
            Typography.Capitals="SmallCaps"

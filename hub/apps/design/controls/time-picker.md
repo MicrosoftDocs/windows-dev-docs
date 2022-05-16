@@ -4,7 +4,7 @@ title: Time picker
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,8 +13,9 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Time picker
- 
+
 The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
 
 ![Example of time picker](images/time-picker-closed.png)
@@ -35,8 +36,8 @@ The time picker gives you a standardized way to let users pick a time value usin
 
 > **Platform APIs**: [TimePicker class](/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [SelectedTime property](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime)
 
-
 ## Is this the right control?
+
 Use a time picker to let a user pick a single time value.
 
 For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
@@ -44,7 +45,7 @@ For more info about choosing the right control, see the [Date and time controls]
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -88,7 +89,7 @@ By default, the time picker shows a 12-hour clock with an AM/PM selector. You ca
 
 :::image type="content" source="images/date-time/time-picker-clocks.png" alt-text="A time picker 24 hour clock.":::
 
-You can set the [MinuteIncrement](/uwp/api/windows.ui.xaml.controls.timepicker.minuteincrement) property to indicate the time increments shown in the minute picker. For example, 15 specifies that the `TimePicker` minute control displays only the choices 00, 15, 30, 45.
+You can set the [MinuteIncrement](/uwp/api/windows.ui.xaml.controls.timepicker.minuteincrement) property to indicate the time increments shown in the minute picker. For example, 15 specifies that the **TimePicker** minute control displays only the choices 00, 15, 30, 45.
 
 ```xaml
 <TimePicker MinuteIncrement="15"/>
@@ -98,15 +99,15 @@ You can set the [MinuteIncrement](/uwp/api/windows.ui.xaml.controls.timepicker.m
 
 ### Time values
 
-The time picker control has both [Time](/uwp/api/windows.ui.xaml.controls.timepicker.time)/[TimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.timechanged) and [SelectedTime](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime)/[SelectedTimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtimechanged) APIs. The difference between these is that `Time` is not nullable, while `SelectedTime` is nullable.
+The time picker control has both [Time](/uwp/api/windows.ui.xaml.controls.timepicker.time)/[TimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.timechanged) and [SelectedTime](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime)/[SelectedTimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtimechanged) APIs. The difference between these is that `Time` is not nullable, while **SelectedTime** is nullable.
 
-The value of `SelectedTime` is used to populate the time picker and is `null` by default. If `SelectedTime` is `null`, the `Time` property is set to a [TimeSpan](/dotnet/api/system.timespan?view=dotnet-uwp-10.0&preserve-view=true) of 0; otherwise, the `Time` value is synchronized with the `SelectedTime` value. When `SelectedTime` is `null`, the picker is 'unset' and shows the field names instead of a time.
+The value of **SelectedTime** is used to populate the time picker and is **null** by default. If **SelectedTime** is **null**, the **Time** property is set to a [TimeSpan](/dotnet/api/system.timespan?view=dotnet-uwp-10.0&preserve-view=true) of 0; otherwise, the **Time** value is synchronized with the **SelectedTime** value. When **SelectedTime** is **null**, the picker is 'unset' and shows the field names instead of a time.
 
 :::image type="content" source="images/date-time/time-picker-no-selected-time.png" alt-text="A time picker with no time selected.":::
 
 #### Initializing a time value
 
-In code, you can initialize the time properties to a value of type `TimeSpan`:
+In code, you can initialize the time properties to a value of type **TimeSpan**:
 
 ```csharp
 TimePicker timePicker = new TimePicker
@@ -115,24 +116,24 @@ TimePicker timePicker = new TimePicker
 };
 ```
 
-You can set the time value as an attribute in XAML. This is probably easiest if you're already declaring the `TimePicker` object in XAML and aren't using bindings for the time value. Use a string in the form *Hh:Mm* where *Hh* is hours and can be between 0 and 23 and *Mm* is minutes and can be between 0 and 59.
+You can set the time value as an attribute in XAML. This is probably easiest if you're already declaring the **TimePicker** object in XAML and aren't using bindings for the time value. Use a string in the form _Hh:Mm_ where _Hh_ is hours and can be between 0 and 23 and _Mm_ is minutes and can be between 0 and 59.
 
 ```xaml
 <TimePicker SelectedTime="14:15"/>
 ```
 
 > [!NOTE]
-> For important info about date and time values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the *Date and time controls* article.
+> For important info about date and time values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the _Date and time controls_ article.
 
 ### Using the time values
 
 To use the time value in your app, you typically use a data binding to the [SelectedTime](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime) or [Time](/uwp/api/windows.ui.xaml.controls.timepicker.time) property, use the time properties directly in your code, or handle the [SelectedTimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtimechanged) or [TimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.timechanged) event.
 
-> For an example of using a `DatePicker` and `TimePicker` together to update a single `DateTime` value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
+> For an example of using a **DatePicker** and **TimePicker** together to update a single **DateTime** value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
 
-Here, the `SelectedTime` property is used to compare the selected time to the current time.
+Here, the **SelectedTime** property is used to compare the selected time to the current time.
 
-Notice that because the `SelectedTime` property is nullable, you have to explicitly cast it to `DateTime`, like this: `DateTime myTime = (DateTime)(DateTime.Today + checkTimePicker.SelectedTime);`. The `Time` property, however, could be used without a cast, like this: `DateTime myTime = DateTime.Today + checkTimePicker.Time;`.
+Notice that because the **SelectedTime** property is nullable, you have to explicitly cast it to **DateTime**, like this: `DateTime myTime = (DateTime)(DateTime.Today + checkTimePicker.SelectedTime);`. The **Time** property, however, could be used without a cast, like this: `DateTime myTime = DateTime.Today + checkTimePicker.Time;`.
 
 :::image type="content" source="images/date-time/time-picker-check.png" alt-text="A time picker, button, and text label.":::
 

@@ -2,7 +2,7 @@
 title: PackageVersion struct
 description: Represents a version of the Windows App SDK framework package.
 ms.topic: article
-ms.date: 04/05/2022
+ms.date: 05/16/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API
 ms.author: stwhi
 author: stevewhims
@@ -40,6 +40,7 @@ public struct PackageVersion
 * [ToVersion()](#toversion-method)
 
 ## PackageVersion constructors
+
 Initializes a new instance of the **PackageVersion** class.
 
 ```csharp
@@ -51,6 +52,7 @@ public PackageVersion(ulong version);
 ```
 
 ### Parameters
+
 `major` [ushort](/dotnet/api/system.uint16)
 
 The `major` position of a `major.minor.build.revision` sequence.
@@ -72,6 +74,7 @@ The `revision` position of a `major.minor.build.revision` sequence. Defaults to 
 A `major.minor.build.revision` sequence encoded as a (little-endian) **UInt64** (so that the first 16 bits contain the revision, and so on).
 
 ## Build field
+
 Gets or sets the `build` position of a `major.minor.build.revision` sequence.
 
 ```csharp
@@ -79,6 +82,7 @@ public ushort Build;
 ```
 
 ## Major field
+
 Gets or sets the `major` position of a `major.minor.build.revision` sequence.
 
 ```csharp
@@ -86,6 +90,7 @@ public ushort Major;
 ```
 
 ## Minor field
+
 Gets or sets the `minor` position of a `major.minor.build.revision` sequence.
 
 ```csharp
@@ -93,6 +98,7 @@ public ushort Minor;
 ```
 
 ## Revision field
+
 Gets or sets the `revision` position of a `major.minor.build.revision` sequence.
 
 ```csharp
@@ -100,6 +106,7 @@ public ushort Revision;
 ```
 
 ## ToString method
+
 Retrieves the version as a string.
 
 ```csharp
@@ -107,11 +114,13 @@ public override string ToString();
 ```
 
 ### Returns
+
 [string](/dotnet/api/system.string)
 
 The `major.minor.build.revision` sequence encoded as a string.
 
 ## ToVersion method
+
 Retrieves the version as a **UInt64**.
 
 ```csharp
@@ -119,6 +128,7 @@ public ulong ToVersion();
 ```
 
 ### Returns
+
 [ulong](/dotnet/api/system.uint64)
 
 The `major.minor.build.revision` sequence encoded as a (little-endian) **UInt64** (so that the first 16 bits contain the revision, and so on).

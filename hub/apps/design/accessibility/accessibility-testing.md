@@ -4,7 +4,7 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Accessibility testing
 label: Accessibility testing
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -51,7 +51,7 @@ The following image shows the [**Inspect**](/windows/desktop/WinAuto/inspect-obj
 
 ## Test keyboard accessibility
 
-The best way to test your keyboard accessibility is to unplug your mouse or use the On-Screen Keyboard if you are using a tablet device. Test keyboard accessibility navigation by using the _Tab_ key. You should be able to cycle through all interactive UI elements by using _Tab_ key. For composite UI elements, verify that you can navigate among the parts of elements by using the arrow keys. For example, you should be able to navigate lists of items using keyboard keys. Finally, make sure that you can invoke all interactive UI elements with the keyboard once those elements have focus, typically by using the Enter or Spacebar key.
+The best way to test your keyboard accessibility is to unplug your mouse or use the On-Screen Keyboard if you are using a tablet device. Test keyboard accessibility navigation by using the <kbd>Tab</kbd> key. You should be able to cycle through all interactive UI elements by using <kbd>Tab</kbd> key. For composite UI elements, verify that you can navigate among the parts of elements by using the arrow keys. For example, you should be able to navigate lists of items using keyboard keys. Finally, make sure that you can invoke all interactive UI elements with the keyboard once those elements have focus, typically by using the Enter or Spacebar key.
 
 ## Verify the contrast ratio of visible text
 
@@ -74,16 +74,16 @@ Use Narrator to test the screen reading experience for your app.
 
 **Use these steps to test your app using Narrator with a mouse and keyboard:**
 
-1. Start Narrator by pressing _Windows logo key + Ctrl + Enter_. In versions prior to Windows 10 version 1607, use _Windows logo key + Enter_ to start Narrator.
-2. Navigate your app with the keyboard by using the _Tab_ key, the arrow keys, and the _Caps Lock + arrow keys_.
+1. Start Narrator by pressing <kbd>Windows logo key</kbd> + <kbd>Ctrl</kbd> + <kbd>Enter</kbd>. In versions prior to Windows 10 version 1607, use <kbd>Windows logo key</kbd> + <kbd>Enter</kbd> to start Narrator.
+2. Navigate your app with the keyboard by using the <kbd>Tab</kbd> key, the arrow keys, and the <kbd>Caps Lock</kbd> + <kbd>arrow</kbd> keys.
 3. As you navigate your app, listen as Narrator reads the elements of your UI and verify the following:
     - For each control, ensure that Narrator reads all visible content. Also ensure that Narrator reads each control's name, any applicable state (checked, selected, and so on), and the control type (button, check box, list item, and so on).
-    - If the element is interactive, verify that you can use Narrator to invoke its action by pressing _Caps Lock + Enter_.
+    - If the element is interactive, verify that you can use Narrator to invoke its action by pressing <kbd>Caps Lock</kbd> + <kbd>Enter</kbd>.
     - For each table, ensure that Narrator correctly reads the table name, the table description (if available), and the row and column headings.
-4. Press _Caps Lock + Shift + Enter_ to search your app and verify that all of your controls appear in the search list, and that the control names are localized and readable.
-5. Turn off your monitor and try to accomplish main app scenarios by using only the keyboard and Narrator. To get the full list of Narrator commands and shortcuts, press _Caps Lock + F1_.
+4. Press <kbd>Caps Lock</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> to search your app and verify that all of your controls appear in the search list, and that the control names are localized and readable.
+5. Turn off your monitor and try to accomplish main app scenarios by using only the keyboard and Narrator. To get the full list of Narrator commands and shortcuts, press <kbd>Caps Lock</kbd> + <kbd>F1</kbd>.
 
-Starting with Windows 10 version 1607, we introduced a new developer mode in Narrator. Turn on developer mode when Narrator is already running by pressing _Control + Caps Lock + F12_. When developer mode is enabled, the screen will be masked and will highlight only the accessible objects and the associated text that is exposed programmatically to Narrator. This gives a you a good visual representation of the information that is exposed to Narrator.
+Starting with Windows 10 version 1607, we introduced a new developer mode in Narrator. Turn on developer mode when Narrator is already running by pressing <kbd>Control</kbd> + <kbd>Caps Lock</kbd> + <kbd>F12</kbd>. When developer mode is enabled, the screen will be masked and will highlight only the accessible objects and the associated text that is exposed programmatically to Narrator. This gives a you a good visual representation of the information that is exposed to Narrator.
 
 **Use these steps to test your app using Narrator's touch mode:**
 
@@ -91,10 +91,10 @@ Starting with Windows 10 version 1607, we introduced a new developer mode in Nar
 > Narrator automatically enters touch mode on devices that support 4+ contacts. Narrator doesn't support multi-monitor scenarios or multi-touch digitizers on the primary screen.
 
 1. Get familiar with the UI and explore the layout.
-    - **Navigate through the UI by using single-finger swipe gestures.** Use left or right swipes to move between items, and up or down swipes to change the category of items being navigated. Categories include all items, links, tables, headers, and so on. Navigating with single-finger swipe gestures is similar to navigating with _Caps Lock + Arrow_.
-    - **Use tab gestures to navigate through focusable elements.** A three-finger swipe to the right or left is the same as navigating with _Tab_ and _Shift + Tab_ on a keyboard.
+    - **Navigate through the UI by using single-finger swipe gestures.** Use left or right swipes to move between items, and up or down swipes to change the category of items being navigated. Categories include all items, links, tables, headers, and so on. Navigating with single-finger swipe gestures is similar to navigating with <kbd>Caps Lock</kbd> + <kbd>Arrow</kbd>.
+    - **Use tab gestures to navigate through focusable elements.** A three-finger swipe to the right or left is the same as navigating with <kbd>Tab</kbd> and <kbd>Shift</kbd> + <kbd>Tab</kbd> on a keyboard.
     - **Spatially investigate the UI with a single finger.** Drag a single finger up and down, or left and right, to have Narrator read the items under your finger. You can use the mouse as an alternative because it uses the same hit-testing logic as dragging a single finger.
-    - **Read the entire window and all its contents with a three finger swipe up**. This is equivalent to using _Caps Lock + W_.
+    - **Read the entire window and all its contents with a three finger swipe up**. This is equivalent to using <kbd>Caps Lock</kbd> + <kbd>W</kbd>.
 
     If there is important UI that you cannot reach, you may have an accessibility issue.
 

@@ -3,7 +3,7 @@ description: Customize the built-in handwriting view for ink to text input that 
 title: Text input with the handwriting view
 label: Text input with the handwriting view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: sewen
@@ -12,6 +12,7 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Text input with the handwriting view
 
 ![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
@@ -45,7 +46,7 @@ The built-in handwriting view is enabled by default.
 You might want to disable the handwriting view if you already provide equivalent ink-to-text functionality in your application, or your text input experience relies on some kind of formatting or special character (such as a tab) not available through handwriting.
 
 In this example, we disable the handwriting view by setting the [IsHandwritingViewEnabled](/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) ​property of the [TextBox](/uwp/api/windows.ui.xaml.controls.textbox) control to false. All text controls that support the handwriting view support a similar property.
-​
+
 ```xaml
 <TextBox Name="SampleTextBox"​
     Height="50" Width="500" ​
@@ -57,7 +58,7 @@ In this example, we disable the handwriting view by setting the [IsHandwritingVi
 
 ## Specify the alignment of the handwriting view
 
-The handwriting view is located above the underlying text control and sized to accommodate the user's handwriting preferences (see **Settings -> Devices -> Pen & Windows Ink -> Handwriting -> Size of font when writing directly into text field**). The view is also automatically aligned relative to the text control and its location within the app.
+The handwriting view is located above the underlying text control and sized to accommodate the user's handwriting preferences (see **Settings** > **Devices** > **Pen & Windows Ink** > **Handwriting** > **Size of font when writing directly into text field**). The view is also automatically aligned relative to the text control and its location within the app.
 
 The application UI does not reflow to accommodate the larger control, so the system might cause the view to occlude important UI.
 
@@ -93,7 +94,7 @@ If your application already provides robust, custom recognition ​functionality
 
 ## Use handwriting font preferences​
 
-A user can choose from a pre-defined collection of handwriting-based fonts to use when rendering text based on ink recognition (see **Settings -> Devices -> Pen & Windows Ink -> Handwriting -> Font when using handwriting**).
+A user can choose from a pre-defined collection of handwriting-based fonts to use when rendering text based on ink recognition (see **Settings** > **Devices** > **Pen & Windows Ink** > **Handwriting** > **Font when using handwriting**).
 
 > [!NOTE]
 > Users can even create a font based on their own handwriting.
@@ -102,7 +103,7 @@ A user can choose from a pre-defined collection of handwriting-based fonts to us
 Your app can access this setting and use the selected font for the recognized text in the text control.
 
 In this example, we ​listen for the [TextChanged](/uwp/api/windows.ui.xaml.controls.textbox.textchanged) event of a [TextBox](/uwp/api/windows.ui.xaml.controls.textbox) and apply the user's selected font if the text change originated from the HandwritingView (or a default font, if not).
-​
+
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)​
 {​
@@ -310,11 +311,3 @@ private double GetPopupVerticalOffset()​
 As with all XAML framework controls, you can customize both the visual structure and visual behavior of a [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) for your specific requirements.
 
 To see a full example of creating a custom template check out the [Create custom transport controls](./custom-transport-controls.md)​ how-to or the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-​
-​
-​
-​
-​
-​
-​
-​

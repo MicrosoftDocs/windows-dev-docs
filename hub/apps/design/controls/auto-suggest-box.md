@@ -5,7 +5,7 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -13,6 +13,7 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Auto-suggest box
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
@@ -20,7 +21,6 @@ Use an AutoSuggestBox to provide a list of suggestions for a user to select from
 ![An auto suggest box](images/controls-autosuggest-expanded-01.png)
 
 **Get the Windows UI Library**
-
 
 :::row:::
    :::column:::
@@ -45,7 +45,7 @@ For more info about choosing the right text control, see the [Text controls](tex
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -59,6 +59,7 @@ For more info about choosing the right text control, see the [Text controls](tex
 </table>
 
 ## Anatomy
+
 The entry point for the auto-suggest box consists of an optional header and a text box with optional hint text:
 
 ![Example of the entry point for auto-suggest control](images/controls-autosuggest-entrypoint.png)
@@ -97,6 +98,7 @@ If you need to show more than a simple property, handle the [SuggestionChosen](/
 Handle the [QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) event to perform a query action appropriate to your app and show the result to the user.
 
 The QuerySubmitted event occurs when a user commits a query string. The user can commit a query in one of these ways:
+
 - While the focus is in the text box, press Enter or click the query icon. The event args [ChosenSuggestion](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) property is **null**.
 - While the focus is in the suggestion list, press Enter, click, or tap an item. The event args ChosenSuggestion property contains the item that was selected from the list.
 
@@ -160,9 +162,8 @@ Here's an AutoSuggestBox with a 'find' icon.
 
 ## Do's and don'ts
 
--   When using the auto-suggest box to perform searches and no search results exist for the entered text, display a single-line "No results" message as the result so that users know their search request executed:
-
-    ![Example of an auto suggest box with no search results](images/controls-autosuggest-no-results.png)
+- When using the auto-suggest box to perform searches and no search results exist for the entered text, display a single-line "No results" message as the result so that users know their search request executed:
+  ![Example of an auto suggest box with no search results](images/controls-autosuggest-no-results.png)
 
 <!--
 <div class="microsoft-internal-note">

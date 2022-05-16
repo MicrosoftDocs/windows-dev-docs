@@ -2,7 +2,7 @@
 description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: NavigationView
 template: detail.hbs
-ms.date: 08/09/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -21,7 +21,8 @@ dev_langs:
 The NavigationView control provides top-level navigation for your app. It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles.
 
 :::image type="content" source="images/navigation-view-top-style.png" alt-text="top navigation":::
-:::image type="content" source="images/navigation-view-left-style.png" alt-text="left navigation":::<br/>
+:::image type="content" source="images/navigation-view-left-style.png" alt-text="left navigation":::
+
 _NavigationView supports both top and left navigation pane or menu_
 
 **Get the Windows UI Library**
@@ -57,7 +58,7 @@ For other navigation patterns, see [Navigation design basics](../basics/navigati
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
@@ -136,17 +137,20 @@ We recommend _left_ navigation when:
 
 By default, PaneDisplayMode is set to Auto. In Auto mode, the NavigationView adapts between LeftMinimal when the window is narrow, to LeftCompact, and then Left as the window gets wider. For more info, see the [adaptive behavior](#adaptive-behavior) section.
 
-![Left navigation default adaptive behavior](images/displaymode-auto.png)<br/>
+![Left navigation default adaptive behavior](images/displaymode-auto.png)
+
 _NavigationView default adaptive behavior_
 
 ## Anatomy
 
 These images show the layout of the pane, header, and content areas of the control when configured for _top_ or _left_ navigation.
 
-![Top NavigationView layout](images/topnav-anatomy.png)<br/>
+![Top NavigationView layout](images/topnav-anatomy.png)
+
 _Top navigation layout_
 
-![Left NavigationView layout](images/leftnav-anatomy.png)<br/>
+![Left NavigationView layout](images/leftnav-anatomy.png)
+
 _Left navigation layout_
 
 ### Pane
@@ -191,15 +195,16 @@ Here is the detailed pane anatomy for the top and left pane positions.
 1. Settings button (optional)
 
 #### Footer menu items
+
 You can use [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) to place navigation items at the end of the navigation pane, contrasted with the [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) property which places items at the start of the pane.
 
-FooterMenuItems will be displayed before the Settings item by default. The Settings item can still be toggled using the [`IsSettingsVisible`](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible) property.
+FooterMenuItems will be displayed before the Settings item by default. The Settings item can still be toggled using the [**IsSettingsVisible**](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible) property.
 
 Only Navigation items should be placed in FooterMenuItems - any other content that needs to align to the footer of the pane should be placed in [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter).
 
-For an example of how to add FooterMenuItems to your NavigationView, see the [FooterMenuItems class](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems). 
+For an example of how to add FooterMenuItems to your NavigationView, see the [FooterMenuItems class](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems).
 
-The image below shows a NavigationView with Account, Your Cart, and Help navigation items in the footer menu. 
+The image below shows a NavigationView with Account, Your Cart, and Help navigation items in the footer menu.
 
 ![A NavigationView with FooterMenuItems](images/footermenu-leftmode.png)
 
@@ -210,11 +215,11 @@ You can place free-form content in the pane's footer by adding it to the [PaneFo
 :::row:::
     :::column:::
     ![Pane footer top nav](images/navview-freeform-footer-top.png)<br>
-     _Top pane footer_<br>
+     _Top pane footer_
     :::column-end:::
     :::column:::
     ![Pane footer left nav](images/navview-freeform-footer-left.png)<br>
-    _Left pane footer_<br>
+    _Left pane footer_
     :::column-end:::
 :::row-end:::
 
@@ -229,11 +234,11 @@ If both PaneTitle and PaneHeader are set, the content is stacked horizontally ne
 :::row:::
     :::column:::
     ![Pane header top nav](images/navview-freeform-header-top.png)<br>
-     _Top pane header_<br>
+     _Top pane header_
     :::column-end:::
     :::column:::
     ![Pane header left nav](images/navview-freeform-header-left.png)<br>
-    _Left pane header_<br>
+    _Left pane header_
     :::column-end:::
 :::row-end:::
 
@@ -244,11 +249,11 @@ You can place free-form content in the pane by adding it to the [PaneCustomConte
 :::row:::
     :::column:::
     ![Pane custom content top nav](images/navview-freeform-pane-top.png)<br>
-     _Top pane custom content_<br>
+     _Top pane custom content_
     :::column-end:::
     :::column:::
     ![Pane custom content left nav](images/navview-freeform-pane-left.png)<br>
-    _Left pane custom content_<br>
+    _Left pane custom content_
     :::column-end:::
 :::row-end:::
 
@@ -256,7 +261,8 @@ You can place free-form content in the pane by adding it to the [PaneCustomConte
 
 You can add a page title by setting the [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) property.
 
-![Example of NavigationView header area](images/nav-header.png)<br/>
+![Example of NavigationView header area](images/nav-header.png)
+
 _NavigationView header_
 
 The header area is vertically aligned with the navigation button in the left pane position, and lies below the pane in the top pane position. It has a fixed height of 52 px. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
@@ -265,7 +271,8 @@ The header is visible any time the NavigationView is in Minimal display mode. Yo
 
 ### Content
 
-![Example of NavigationView content area](images/nav-content.png)<br/>
+![Example of NavigationView content area](images/nav-content.png)
+
 _NavigationView content_
 
 The content area is where most of the information for the selected nav category is displayed.
@@ -286,7 +293,8 @@ When PaneDisplayMode is set to its default value of **Auto**, the adaptive behav
 
 For more information about window sizes for adaptive behavior, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
-![Left navigation default adaptive behavior](images/displaymode-auto.png)<br/>
+![Left navigation default adaptive behavior](images/displaymode-auto.png)
+
 _NavigationView default adaptive behavior_
 
 ### Minimal
@@ -298,7 +306,8 @@ We recommend this when:
 - You want more space for app content on smaller window widths.
 - Your navigation categories cannot be clearly represented with icons.
 
-![Left navigation minimal adaptive behavior](images/adaptive-behavior-minimal.png)<br/>
+![Left navigation minimal adaptive behavior](images/adaptive-behavior-minimal.png)
+
 _NavigationView "minimal" adaptive behavior_
 
 To configure this behavior, set CompactModeThresholdWidth to the width at which you want the pane to collapse. Here, it's changed from the default of 640 to 1007. You should also set ExpandedModeThresholdWidth to ensure the values don't conflict.
@@ -316,7 +325,8 @@ We recommend this when:
 - It is important to always show all navigation options on screen.
 - Your navigation categories can be clearly represented with icons.
 
-![Left navigation compact adaptive behavior](images/adaptive-behavior-compact.png)<br/>
+![Left navigation compact adaptive behavior](images/adaptive-behavior-compact.png)
+
 _NavigationView "compact" adaptive behavior_
 
 To configure this behavior, set CompactModeThresholdWidth to 0.
@@ -329,7 +339,8 @@ To configure this behavior, set CompactModeThresholdWidth to 0.
 
 To disable the automatic adaptive behavior, set PaneDisplayMode to a value other than Auto. Here, it's set to LeftMinimal, so only the menu button is shown regardless of the window width.
 
-![Left navigation no adaptive behavior](images/adaptive-behavior-none.png)<br/>
+![Left navigation no adaptive behavior](images/adaptive-behavior-none.png)
+
 _NavigationView with PaneDisplayMode set to LeftMinimal_
 
 ```xaml
@@ -425,7 +436,7 @@ This example shows how you can use **NavigationView** with both a top navigation
 
 The example demonstrates a recommended way to set up navigation data that will work for many common scenarios. It also demonstrates how to implement backwards navigation with **NavigationView**'s back button and keyboard navigation.
 
-This code assumes that your app contains pages with the following names to navigate to: *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage*, and *SettingsPage*. Code for these pages is not shown.
+This code assumes that your app contains pages with the following names to navigate to: _HomePage_, _AppsPage_, _GamesPage_, _MusicPage_, _MyContentPage_, and _SettingsPage_. Code for these pages is not shown.
 
 > [!IMPORTANT]
 > The C# version of this example uses a [ValueTuple](/dotnet/api/system.valuetuple) to store information about the app's pages. This struct requires that the minimum version for your app project must be SDK 17763 or greater. If you use the WinUI version of NavigationView to target earlier versions of Windows 10, you can use the [System.ValueTuple NuGet package](https://www.nuget.org/packages/System.ValueTuple/) instead.
@@ -678,7 +689,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> For the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) version of this code example, begin by creating a new project based on the **Blank App (C++/WinRT)** project template, and then add the code in the listing to the indicated source code files. To use the source code exactly as shown in the listing, name your new project *NavigationViewCppWinRT*
+> For the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) version of this code example, begin by creating a new project based on the **Blank App (C++/WinRT)** project template, and then add the code in the listing to the indicated source code files. To use the source code exactly as shown in the listing, name your new project _NavigationViewCppWinRT_
 
 ```cppwinrt
 // MainPage.idl
@@ -1039,13 +1050,14 @@ void MainPage::NavView_ItemInvoked(
 ```
 
 ## Hierarchical navigation
+
 Some apps may have a more complex hierarchical structure that requires more than just a flat list of navigation items. You may want to use top-level navigation items to display categories of pages, with children items displaying specific pages. It is also useful if you have hub-style pages that only link to other pages. For these kinds of cases, you should create a hierarchical NavigationView.
 
 To show a hierarchical list of nested navigation items in the pane, use either the [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems) property or the [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource) property of **NavigationViewItem**.
-Each NavigationViewItem can contain other NavigationViewItems and organizing elements like item headers and separators. 
+Each NavigationViewItem can contain other NavigationViewItems and organizing elements like item headers and separators.
 To show a hierarchical list when using `MenuItemsSource`, set the `ItemTemplate` to be a NavigationViewItem, and bind its `MenuItemsSource` property to the next level of the hierarchy.
 
-Although NavigationViewItem can contain any number of nested levels, we recommend keeping your app's navigation hierarchy shallow. 
+Although NavigationViewItem can contain any number of nested levels, we recommend keeping your app's navigation hierarchy shallow.
 We believe two levels is ideal for usability and comprehension.
 
 NavigationView shows hierarchy in Top, Left, and LeftCompact pane display modes. Here is what an expanded subtree looks like in each of the pane display modes:
@@ -1053,9 +1065,10 @@ NavigationView shows hierarchy in Top, Left, and LeftCompact pane display modes.
 ![NavigationView with Hierarchy](images/navigation-view-hierarchy-labeled.png)
 
 ### Adding a hierarchy of items in markup
+
 Declare app navigation hierarchy in markup.
 
-```Xaml
+```XAML
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 <muxc:NavigationView>
     <muxc:NavigationView.MenuItems>
@@ -1072,9 +1085,10 @@ Declare app navigation hierarchy in markup.
 
 ### Adding a hierarchy of items using data binding
 
-Add a hierarchy of menu items to the NavigationView by 
-* binding the MenuItemsSource property to the hierarchical data
-* defining the item template to be a NavigationViewMenuItem, with its Content set to be the label of the menu item, and its MenuItemsSource property bound to the next level of the hierarchy
+Add a hierarchy of menu items to the NavigationView by:
+
+- binding the MenuItemsSource property to the hierarchical data
+- defining the item template to be a NavigationViewMenuItem, with its Content set to be the label of the menu item, and its MenuItemsSource property bound to the next level of the hierarchy
 
 This example also demonstrates the [Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding) and [Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed) events. These events are raised for a menu item with children.
 
@@ -1444,11 +1458,11 @@ Selected items will draw their selection indicators along their left edge when i
 
 The selected item may not always remain visible. If a child in a collapsed/non-expanded subtree is selected, their first visible ancestor will show as selected. The selection indicator will move back to the selected item if/when the sub-tree is expanded.
 
-For example - in the above image, the Calendar item may be selected by the user, and then the user may collapse its subtree. In this case, the selection indicator would show up underneath the Account item as Account is Calendar's first visible ancestor. The selection indicator will move back to the Calendar item as the user expands the subtree again. 
+For example - in the above image, the Calendar item may be selected by the user, and then the user may collapse its subtree. In this case, the selection indicator would show up underneath the Account item as Account is Calendar's first visible ancestor. The selection indicator will move back to the Calendar item as the user expands the subtree again.
 
 The entire NavigationView will show no more than one selection indicator.
 
-In both Top and Left modes, clicking the arrows on NavigationViewItems will expand or collapse the subtree. Clicking or tapping 
+In both Top and Left modes, clicking the arrows on NavigationViewItems will expand or collapse the subtree. Clicking or tapping
 _elsewhere_ on the NavigationViewItem will trigger the `ItemInvoked` event, and it will also collapse or expand the subtree.
 
 To prevent an item from showing the selection indicator when invoked, set its [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked) property to False, as shown below:
@@ -1650,7 +1664,7 @@ MainPage::MainPage()
 
 ### Keyboarding within hierarchical NavigationView
 
-Users can move focus around the NavigationView using their [keyboard](../input/keyboard-interactions.md). 
+Users can move focus around the NavigationView using their [keyboard](../input/keyboard-interactions.md).
 The arrow keys expose "inner navigation" within the pane and follow the interactions provided in [tree view](./tree-view.md). The key actions change when navigating through the NavigationView or its flyout menu, which is displayed in Top and Left-compact modes of HierarchicalNavigationView. Below are the specific actions that each key can take in a hierarchical NavigationView:
 
 | Key      |      In Left Mode      |  In Top Mode | In Flyout  |
@@ -1662,9 +1676,9 @@ The arrow keys expose "inner navigation" within the pane and follow the interact
 | Space/Enter |If item has children, expands/collapses item and does not change focus.   | If item has children, expands children into a flyout and places focus on first item in flyout. | Invokes/selects item and closes flyout. |
 | Esc | Does nothing. | Does nothing. | Closes flyout.|
 
-The space or enter key always invokes/selects an item.
+The Space or Enter key always invokes/selects an item.
 
-*Note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item. 
+*Note that the items do not need to be visually adjacent, focus will move from the last item in the pane's list to the settings item.
 
 ## NavigationView customization
 
@@ -1682,7 +1696,8 @@ This table shows which theme resource is used in each display mode.
 | Display mode | Theme resource |
 | ------------ | -------------- |
 | Left | NavigationViewExpandedPaneBackground |
-| LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
+| LeftCompact
+LeftMinimal | NavigationViewDefaultPaneBackground |
 | Top | NavigationViewTopPaneBackground |
 
 This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
@@ -1733,10 +1748,9 @@ This example shows how to override the theme resources in App.xaml. When you ove
 
 ### Top whitespace
 
-> The `IsTitleBarAutoPaddingEnabled` property requires the [Windows UI Library](/uwp/toolkits/winui/) 2.2 or later.
+> The **IsTitleBarAutoPaddingEnabled** property requires the [Windows UI Library](/uwp/toolkits/winui/) 2.2 or later.
 
-Some apps choose to [customize their window's title bar](/windows/apps/develop/title-bar), potentially extending their app content into the title bar area. 
-When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](/windows/apps/develop/title-bar#draggable-regions).
+Some apps choose to [customize their window's title bar](/windows/apps/develop/title-bar), potentially extending their app content into the title bar area. When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](/windows/apps/develop/title-bar#draggable-regions).
 
 ![An app extending into the title bar](images/navigation-view-with-titlebar-padding.png)
 
@@ -1749,7 +1763,8 @@ If your app specifies the draggable region by calling the [Window.SetTitleBar](/
 ```
 
 #### Remarks
-To further adjust the position of NavigationView's header area, override the *NavigationViewHeaderMargin* XAML theme resource, for example in your Page resources.
+
+To further adjust the position of NavigationView's header area, override the _NavigationViewHeaderMargin_ XAML theme resource, for example in your Page resources.
 
 ```Xaml
 <Page.Resources>

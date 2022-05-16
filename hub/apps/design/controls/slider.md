@@ -4,7 +4,7 @@ description: Learn how to implement a Windows UI Library slider control that let
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Sliders
 
 A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
@@ -63,7 +64,7 @@ Use a slider if:
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -116,14 +117,14 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## Recommendations
 
--   Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.
--   Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.
--   Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.
--   Disable all associated labels or feedback visuals when you disable the slider.
--   Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.
--   Don't use a slider as a progress indicator.
--   Don't change the size of the slider thumb from the default size.
--   Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.
+- Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.
+- Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.
+- Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.
+- Disable all associated labels or feedback visuals when you disable the slider.
+- Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.
+- Don't use a slider as a progress indicator.
+- Don't change the size of the slider thumb from the default size.
+- Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.
 
 ## Additional usage guidance
 
@@ -131,53 +132,53 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 You can orient your slider horizontally or vertically. Use these guidelines to determine which layout to use.
 
--   Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.
--   If the control is used to seek within media, like in a video app, use a horizontal orientation.
--   When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.
--   If you're still not sure which orientation to use, use the one that best fits your page layout.
+- Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.
+- If the control is used to seek within media, like in a video app, use a horizontal orientation.
+- When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.
+- If you're still not sure which orientation to use, use the one that best fits your page layout.
 
 ### Range direction
 
 The range direction is the direction you move the slider when you slide it from its current value to its max value.
 
--   For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.
--   For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.
--   The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.
+- For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.
+- For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.
+- The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.
 
 ### Steps and tick marks
 
--   Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.
--   If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
--   Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
--   Show tick marks when users need to know the approximate value of the setting.
--   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value [tooltip](tooltips.md) to see the exact value.
--   Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
+- Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.
+- If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
+- Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
+- Show tick marks when users need to know the approximate value of the setting.
+- Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value [tooltip](tooltips.md) to see the exact value.
+- Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
 
 ### Labels
 
--   **Slider labels**
+- **Slider labels**
 
-    The slider label indicates what the slider is used for.
+  The slider label indicates what the slider is used for.
 
-    -   Use a label with no ending punctuation (this is the convention for all control labels).
-    -   Position labels above the slider when the slider is in a form that places most of its labels above their controls.
-    -   Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.
-    -   Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.
--   **Range labels**
+  - Use a label with no ending punctuation (this is the convention for all control labels).
+  - Position labels above the slider when the slider is in a form that places most of its labels above their controls.
+  - Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.
+  - Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.
+- **Range labels**
 
-    The range, or fill, labels describe the slider's minimum and maximum values.
+  The range, or fill, labels describe the slider's minimum and maximum values.
 
-    -   Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.
-    -   Use only one word, if possible, for each label.
-    -   Don't use ending punctuation.
-    -   Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.
--   **Value labels**
+  - Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.
+  - Use only one word, if possible, for each label.
+  - Don't use ending punctuation.
+  - Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.
+- **Value labels**
 
-    A value label displays the current value of the slider.
+  A value label displays the current value of the slider.
 
-    -   If you need a value label, display it below the slider.
-    -   Center the text relative to the control and include the units (such as pixels).
-    -   Since the slider's thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
+  - If you need a value label, display it below the slider.
+  - Center the text relative to the control and include the units (such as pixels).
+  - Since the slider's thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
 
 ### Appearance and interaction
 
@@ -192,5 +193,6 @@ When you're designing a custom slider, consider ways to present all the necessar
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related topics
+
 - [Toggle switches](toggles.md)
 - [Slider class](/uwp/api/Windows.UI.Xaml.Controls.Slider)

@@ -4,7 +4,7 @@ title: Command bar
 label: Command bar
 template: detail.hbs
 op-migration-status: ready
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -14,6 +14,7 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Command bar
 
 Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.
@@ -46,7 +47,7 @@ The CommandBar control is a general-purpose, flexible, light-weight control that
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -74,6 +75,7 @@ Here's the same command bar in its open state. The labels identify the main part
 ![Screenshot showing a command bar in its open state.](images/commandbar-anatomy-open.png)
 
 The command bar is divided into 4 main areas:
+
 - The content area is aligned to the left side of the bar. It is shown if the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property is populated.
 - The primary command area is aligned to the right side of the bar. It is shown if the [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) property is populated.
 - The "see more" \[...\] button is shown on the right of the bar. Pressing the "see more" \[...\] button reveals primary command labels and opens the overflow menu if there are secondary commands. The button will not be visible when no primary command labels or secondary labels are present. To change default behavior, use the [OverflowButtonVisibility](/uwp/api/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility) property.
@@ -82,6 +84,7 @@ The command bar is divided into 4 main areas:
 The layout is reversed when the [FlowDirection](/uwp/api/windows.ui.xaml.frameworkelement.flowdirection) is **RightToLeft**.
 
 ## Create a command bar
+
 This example creates the command bar shown previously.
 
 ```xaml
@@ -106,8 +109,8 @@ This example creates the command bar shown previously.
 ```
 
 ## Commands and content
-The CommandBar control has 3 properties you can use to add commands and content: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands), [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands), and [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content).
 
+The CommandBar control has 3 properties you can use to add commands and content: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands), [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands), and [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content).
 
 ### Commands
 
@@ -121,8 +124,8 @@ You can also add commands to the **SecondaryCommands** collection, which are sho
 
 You can programmatically move commands between the PrimaryCommands and SecondaryCommands as needed.
 
-- *If there is a command that would appear consistently across pages, it's best to keep that command in a consistent location.*
-- *We recommended placing Accept, Yes, and OK commands to the left of Reject, No, and Cancel. Consistency gives users the confidence to move around the system and helps them transfer their knowledge of app navigation from app to app.*
+- If there is a command that would appear consistently across pages, it's best to keep that command in a consistent location.
+- We recommended placing Accept, Yes, and OK commands to the left of Reject, No, and Cancel. Consistency gives users the confidence to move around the system and helps them transfer their knowledge of app navigation from app to app.
 
 ### App bar buttons
 
@@ -212,7 +215,6 @@ When dynamic overflow is enabled, content will not clip because primary commands
 
 When the [ClosedDisplayMode](/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) is **Compact**, the content can be clipped if it is larger than the compact size of the command bar. You should handle the [Opening](/uwp/api/windows.ui.xaml.controls.appbar.opening) and [Closed](/uwp/api/windows.ui.xaml.controls.appbar.closed) events to show or hide parts of the UI in the content area so that they aren't clipped. See the [Open and closed states](#open-and-closed-states) section for more info.
 
-
 ## Open and closed states
 
 The command bar can be open or closed. When it's open, it shows primary command buttons with text labels and it opens the overflow menu  (if there are secondary commands).
@@ -222,6 +224,7 @@ The default direction is up, but if there's not enough space to open the overflo
 A user can switch between these states by pressing the "see more" \[...\] button. You can switch between them programmatically by setting the [IsOpen](/uwp/api/windows.ui.xaml.controls.appbar.isopen) property.
 
 You can use the [Opening](/uwp/api/windows.ui.xaml.controls.appbar.opening), [Opened](/uwp/api/windows.ui.xaml.controls.appbar.opened), [Closing](/uwp/api/windows.ui.xaml.controls.appbar.closing), and [Closed](/uwp/api/windows.ui.xaml.controls.appbar.closed) events to respond to the command bar being opened or closed.
+
 - The Opening and Closing events occur before the transition animation begins.
 - The Opened and Closed events occur after the transition completes.
 
@@ -261,6 +264,7 @@ We recommend avoiding sticky command bars because they don't conform to users' e
 ### Display Mode
 
 You can control how the command bar is shown in its closed state by setting the [ClosedDisplayMode](/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode) property. There are 3 closed display modes to choose from:
+
 - **Compact**: The default mode. Shows content, primary command icons without labels, and the "see more" \[...\] button.
 - **Minimal**: Shows only a thin bar that acts as the "see more" \[...\] button. The user can press anywhere on the bar to open it.
 - **Hidden**: The command bar is not shown when it's closed. This can be useful for showing contextual commands with an inline command bar. In this case, you must open the command bar programmatically by setting the **IsOpen** property or changing the ClosedDisplayMode to **Minimal** or **Compact**.
@@ -299,12 +303,13 @@ Although the Minimal and Hidden modes are useful in some situations, keep in min
 Changing the ClosedDisplayMode to provide more or less of a hint to the user affects the layout of surrounding elements. In contrast, when the CommandBar transitions between closed and open, it does not affect the layout of other elements.
 
 ## Placement
-Command bars can be placed at the top of the app window, at the bottom of the app window, and inline, by embedding them in a layout control such as ```Grid.row```.
+
+Command bars can be placed at the top of the app window, at the bottom of the app window, and inline, by embedding them in a layout control such as `Grid.row`.
 
 ![Example 1 of app bar placement](images/appbar-guidelines-placement-1.png)
 
--   For small handheld devices, we recommend positioning command bars at the bottom of the screen for easy reachability.
--   For devices with larger screens, placing command bars near the top of the window makes them more noticeable and discoverable.
+- For small handheld devices, we recommend positioning command bars at the bottom of the screen for easy reachability.
+- For devices with larger screens, placing command bars near the top of the window makes them more noticeable and discoverable.
 
 Use the [DiagonalSizeInInches](/uwp/api/windows.graphics.display.displayinformation.diagonalsizeininches) API to determine physical screen size.
 

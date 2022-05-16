@@ -1,7 +1,7 @@
 ---
 description: Learn how to use contact cards to let users display and edit contact information, such as names, phone numbers, and addresses.
 title: Contact card
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kele
@@ -10,32 +10,31 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ---
+
 # Contact card
 
 The contact card displays contact information, such as the name, phone number, and address, for a [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (the mechanism Windows uses to represent people and businesses).  The contact card also lets the user edit contact info. You can choose to display a compact contact card, or a full contact card that contains additional information.
 
 > **Important APIs**: [ShowContactCard method](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard),   [ShowFullContactCard method](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard),  [IsShowContactCardSupported method](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported),  [Contact class](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
-There are two ways to display the contact card:  
+There are two ways to display the contact card:
+
 * As a standard contact card that appears in a flyout that is light-dismissable--the contact card dissapears when the user clicks outside of it. 
-* As a full contact card that takes up more space and is not light-dismissable--the user must click **close** to close it. 
+* As a full contact card that takes up more space and is not light-dismissable--the user must click **close** to close it.
 
+    <figure>
+        <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
+        <figcaption>The standard contact card</figcaption>
+    </figure>
 
-<figure>
-    <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
-    <figcaption>The standard contact card</figcaption>
-</figure>
-
-<figure>
-    <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
-    <figcaption>The full contact card</figcaption>
-</figure>
-
+    <figure>
+        <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
+        <figcaption>The full contact card</figcaption>
+    </figure>
 
 ## Is this the right control?
 
-Use the contact card when you want to display contact info for a contact. If you only want to display the contact's name and picture, use the [person picture control](person-picture.md). 
-
+Use the contact card when you want to display contact info for a contact. If you only want to display the contact's name and picture, use the [person picture control](person-picture.md).
 
 <!-- TODO: Add examples back when the contact card has been added. -->
 
@@ -57,9 +56,10 @@ Use the contact card when you want to display contact info for a contact. If you
 
 ## Show a standard contact card
 
-1. Typically, you show a contact card because the user clicked something: a button or perhaps the [person picture control](person-picture.md). We don't want to hide the element. To avoid hiding it, we need to create a [Rect](/uwp/api/windows.foundation.rect) that describes the location and size of the element. 
+1. Typically, you show a contact card because the user clicked something: a button or perhaps the [person picture control](person-picture.md). We don't want to hide the element. To avoid hiding it, we need to create a [Rect](/uwp/api/windows.foundation.rect) that describes the location and size of the element.
 
-    Let's create a utility function that does that for us--we'll use it later.
+    Let's create a utility function that does that for us &mdash; we'll use it later.
+
     ```csharp
     // Gets the rectangle of the element 
     public static Rect GetElementRectHelper(FrameworkElement element) 
@@ -72,7 +72,8 @@ Use the contact card when you want to display contact info for a contact. If you
 
     ```
 
-2. Determine whether you can display the contact card by calling the [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) method. If it's not supported, display an error message. (This example assumes that you'll be showing the contact card in response to a click event .)
+2. Determine whether you can display the contact card by calling the [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) method. If it's not supported, display an error message. (This example assumes that you'll be showing the contact card in response to a click event.)
+
     ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
@@ -88,7 +89,7 @@ Use the contact card when you want to display contact info for a contact. If you
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
-4. Get the [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) object you want to display. This example just creates a simple contact, but your code should retrieve an actual contact. 
+4. Get the [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) object you want to display. This example just creates a simple contact, but your code should retrieve an actual contact.
 
     ```csharp
                 // Retrieve the contact to display
@@ -97,6 +98,7 @@ Use the contact card when you want to display contact info for a contact. If you
                 email.Address = "jsmith@contoso.com"; 
                 contact.Emails.Add(email); 
     ```
+
 5. Show the contact card by calling the  [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard) method. 
 
     ```csharp
@@ -170,10 +172,8 @@ private void onUserClickShowContactCard()
 
 The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the [Contacts and calendar article](/windows/uwp/contacts-and-calendar/index).
 
-
-
-
 ## Related articles
+
 - [Contacts and calendar](/windows/uwp/contacts-and-calendar/index)
 - [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [People picture control](/windows/uwp/controls-and-patterns/person-picture/)

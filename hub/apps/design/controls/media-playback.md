@@ -5,7 +5,7 @@ ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media playback controls
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -31,7 +31,7 @@ Use a media player when you want to play audio or video in your app. To display 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -45,6 +45,7 @@ Use a media player when you want to play audio or video in your app. To display 
 </table>
 
 ## Create a media player
+
 Add media to your app by creating a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) object in XAML and set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaSource](/uwp/api/windows.media.core.mediasource) that points to an audio or video file.
 
 This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) and sets its [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property to the URI of a video file that's local to the app. The **MediaPlayerElement** begins playing when the page loads. To suppress media from starting right away, you can set the [AutoPlay](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) property to **false**.
@@ -57,7 +58,6 @@ This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.media
 
 This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) with the built in transport controls enabled and the [AutoPlay](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) property set to **false.**
 
-
 ```xaml
 <MediaPlayerElement x:Name="mediaPlayerElement"
                     Source="ms-appx:///Videos/video1.mp4"
@@ -67,6 +67,7 @@ This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.media
 ```
 
 ### Media transport controls
+
 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set [AreTransportControlsEnabled](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled) to **true**. To disable them, set **AreTransportControlsEnabled** to **false**. The transport controls are represented by the [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class reference and [Create custom transport controls](custom-transport-controls.md).
 
 The transport controls support single- and double-row layouts. The first example here is a single-row layout, with the play/pause button located to the left of the media timeline. This layout is best reserved for inline media playback and compact screens.
@@ -83,8 +84,8 @@ The double-row controls layout (below) is recommended for most usage scenarios, 
 
 > **Note**&nbsp;&nbsp; [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) does not automatically integrate with the system media transport controls so you must connect them yourself. For more information, see [System Media Transport Controls](/windows/uwp/audio-video-camera/system-media-transport-controls).
 
-
 ### Set the media source
+
 To play files on the network or files embedded with the app, set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property to a [MediaSource](/uwp/api/windows.media.core.mediasource) with the path of the file.
 
 **Tip**  To open files from the internet, you need to declare the **Internet (Client)** capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
@@ -228,23 +229,25 @@ To conserve power and battery life, you should call [DisplayRequest.RequestRelea
 
 Here are some situations when you should release the display request:
 
--   Video playback is paused, for example, by user action, buffering, or adjustment due to limited bandwidth.
--   Playback stops. For example, the video is done playing or the presentation is over.
--   A playback error has occurred. For example, network connectivity issues or a corrupted file.
+- Video playback is paused, for example, by user action, buffering, or adjustment due to limited bandwidth.
+- Playback stops. For example, the video is done playing or the presentation is over.
+- A playback error has occurred. For example, network connectivity issues or a corrupted file.
 
-> **Note**&nbsp;&nbsp; If [MediaPlayerElement.IsFullWindow](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow) is set to true and media is playing, the display will automatically be prevented from deactivating.
+> [!NOTE]
+> If [MediaPlayerElement.IsFullWindow](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow) is set to true and media is playing, the display will automatically be prevented from deactivating.
 
 **To keep the screen active**
 
-1.  Create a global [DisplayRequest](/uwp/api/Windows.System.Display.DisplayRequest) variable. Initialize it to null.
-```csharp
-// Create this variable at a global scope. Set it to null.
-private DisplayRequest appDisplayRequest = null;
-```
+1. Create a global [DisplayRequest](/uwp/api/Windows.System.Display.DisplayRequest) variable. Initialize it to null.
 
-2.  Call [RequestActive](/uwp/api/windows.system.display.displayrequest.requestactive) to notify Windows that the app requires the display to remain on.
+  ```csharp
+  // Create this variable at a global scope. Set it to null.
+  private DisplayRequest appDisplayRequest = null;
+  ```
 
-3.  Call [RequestRelease](/uwp/api/windows.system.display.displayrequest.requestrelease) to release the display request whenever video playback is stopped, paused, or interrupted by a playback error. When your app no longer has any active display requests, Windows saves battery life by dimming the display (and eventually turning it off) when the device is not being used.
+2. Call [RequestActive](/uwp/api/windows.system.display.displayrequest.requestactive) to notify Windows that the app requires the display to remain on.
+
+3. Call [RequestRelease](/uwp/api/windows.system.display.displayrequest.requestrelease) to release the display request whenever video playback is stopped, paused, or interrupted by a playback error. When your app no longer has any active display requests, Windows saves battery life by dimming the display (and eventually turning it off) when the device is not being used.
 
     Each [MediaPlayerElement.MediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) has a [PlaybackSession](/uwp/api/windows.media.playback.mediaplayer.playbacksession) of type [MediaPlaybackSession](/uwp/api/windows.media.playback.mediaplaybacksession) that controls various aspects of media playback such as [PlaybackRate](/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate), [PlaybackState](/uwp/api/windows.media.playback.mediaplaybacksession.playbackstate) and [Position](/uwp/api/windows.media.playback.mediaplaybacksession.position). Here, you use the [PlaybackStateChanged](/uwp/api/windows.media.playback.mediaplaybacksession.playbackstatechanged) event on  [MediaPlayer.PlaybackSession](/uwp/api/windows.media.playback.mediaplayer.playbacksession) to detect situations when you should release the display request. Then, use the [NaturalVideoHeight](/uwp/api/windows.media.playback.mediaplaybacksession.naturalvideoheight) property to determine whether an audio or video file is playing, and keep the screen active only if video is playing.
 
@@ -288,9 +291,11 @@ private DisplayRequest appDisplayRequest = null;
     ```
 
 ### Control the media player programmatically
+
 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) provides numerous properties, methods, and events for controlling audio and video playback through the [MediaPlayerElement.MediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) property. For a full listing of properties, methods, and events, see the [MediaPlayer](/uwp/api/windows.media.playback.mediaplayer) reference page.
 
 ### Advanced media playback scenarios
+
 For more complex media playback scenarios like playing a playlist, switching between audio languages or creating custom metadata tracks set the [MediaPlayerElement.Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaPlaybackItem](/uwp/api/windows.media.playback.mediaplaybackitem) or a [MediaPlaybackList](/uwp/api/windows.media.playback.mediaplaybacklist). See the [Media playback](/windows/uwp/audio-video-camera/media-playback-with-mediasource) page for more information on how to enable various advanced media functionality.
 
 ### Enable full window video rendering
@@ -316,10 +321,10 @@ private void FullWindow_Click(object sender, object e)
 
 Use the [Stretch](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.stretch) property to change how the video content and/or the [PosterSource](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.postersource) fills the container it's in. This resizes and stretches the video depending on the [Stretch](/uwp/api/Windows.UI.Xaml.Media.Stretch) value. The **Stretch** states are similar to picture size settings on many TV sets. You can hook this up to a button and allow the user to choose which setting they prefer.
 
--   [None](/uwp/api/Windows.UI.Xaml.Media.Stretch) displays the native resolution of the content in its original size.
--   [Uniform](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up as much of the space as possible while preserving the aspect ratio and the image content. This can result in horizontal or vertical black bars at the edges of the video. This is similar to wide-screen modes.
--   [UniformToFill](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up the entire space while preserving the aspect ratio. This can result in some of the image being cropped. This is similar to full-screen modes.
--   [Fill](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up the entire space, but does not preserve the aspect ratio. None of image is cropped, but stretching may occur. This is similar to stretch modes.
+- [None](/uwp/api/Windows.UI.Xaml.Media.Stretch) displays the native resolution of the content in its original size.
+- [Uniform](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up as much of the space as possible while preserving the aspect ratio and the image content. This can result in horizontal or vertical black bars at the edges of the video. This is similar to wide-screen modes.
+- [UniformToFill](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up the entire space while preserving the aspect ratio. This can result in some of the image being cropped. This is similar to full-screen modes.
+- [Fill](/uwp/api/Windows.UI.Xaml.Media.Stretch) fills up the entire space, but does not preserve the aspect ratio. None of image is cropped, but stretching may occur. This is similar to stretch modes.
 
 ![Stretch enumeration values](images/image-stretch.jpg)
 
@@ -359,7 +364,6 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 Set the [RealTimePlayback](/uwp/api/windows.media.playback.mediaplayer.realtimeplayback) property to **true** on a [MediaPlayerElement.MediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) to enable the media player element to reduce the initial latency for playback. This is critical for two-way communications apps, and can be applicable to some gaming scenarios. Be aware that this mode is more resource intensive and less power-efficient.
 
 This example creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) and sets [RealTimePlayback](/uwp/api/windows.media.playback.mediaplayer.realtimeplayback) to **true**.
-
 
 ```csharp
 MediaPlayerElement mediaPlayerElement = new MediaPlayerElement();

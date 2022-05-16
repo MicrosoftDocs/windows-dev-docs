@@ -2,7 +2,7 @@
 description: Design the title bar of a desktop app to match the personality of the app.
 title: Windows app title bar
 template: detail.hbs
-ms.date: 12/13/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

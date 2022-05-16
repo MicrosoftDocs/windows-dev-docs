@@ -4,16 +4,15 @@ ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Accessibility overview
 
 This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps.
-
-
 
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>

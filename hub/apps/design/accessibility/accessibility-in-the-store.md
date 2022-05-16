@@ -4,14 +4,13 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Accessibility in the Store
 label: Accessibility in the Store
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Accessibility in the Store  
-
-
 
 Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.
 
@@ -28,11 +27,11 @@ You should declare your app as accessible if you built and tested it for accessi
 
 * Set all the relevant accessibility information for UI elements, including name, role, value, and so on.
 * Implemented full keyboard accessibility, enabling the user to:
-    * Accomplish primary app scenarios by using only the keyboard.
-    * Tab among UI elements in a logical order.
-    * Navigate among UI elements within a control by using the arrow keys.
-    * Use keyboard shortcuts to reach primary app functionality.
-    * Use Narrator touch gestures for Tab and arrow equivalency for devices with no keyboard.
+  * Accomplish primary app scenarios by using only the keyboard.
+  * Tab among UI elements in a logical order.
+  * Navigate among UI elements within a control by using the arrow keys.
+  * Use keyboard shortcuts to reach primary app functionality.
+  * Use Narrator touch gestures for Tab and arrow equivalency for devices with no keyboard.
 * Ensured that your app UI is visually accessible: has a minimum text contrast ratio of 4.5:1, does not rely on color alone to convey information, and so on.
 * Used accessibility testing tools such as [**Inspect**](/windows/desktop/WinAuto/inspect-objects) and [**UIAVerify**](/windows/desktop/WinAuto/ui-automation-verify) to verify your accessibility implementation, and resolved all priority 1 errors reported by such tools.
 * Verified your app’s primary scenarios from end to end by using Narrator, Magnifier, On-Screen Keyboard, a high contrast theme, and adjusted dpi settings.
@@ -41,5 +40,6 @@ See the [Accessibility checklist](accessibility-checklist.md) for a review of th
 
 <span id="related_topics"/>
 
-## Related topics    
+## Related topics
+
 * [Accessibility](accessibility.md)

@@ -4,7 +4,7 @@ title: Guidelines for radio buttons
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -35,12 +35,12 @@ The singular behavior of a RadioButtons group distinguishes it from [check boxes
 > **Platform APIs**: [RadioButton class](/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
 
 > [!IMPORTANT]
-> **RadioButtons vs RadioButton**
+> **RadioButtons versus RadioButton**
 >
 >There are two ways to create radio button groups.
 >
->- Starting with WinUI 2.3, we recommend the **[RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
->- You can use groups of individual **[RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
+>- Starting with WinUI 2.3, we recommend the [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons) control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
+>- You can use groups of individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls. If your app does not use WinUI 2.3 or later, this is the only option.
 
 ## Is this the right control?
 
@@ -81,7 +81,7 @@ If the available options are based on an app's current context, or they can othe
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="The XAML Controls Gallery app icon"></img></td>
 <td>
@@ -102,11 +102,11 @@ In addition to these improvements, the default visual layout of individual radio
 
 ### Navigating a RadioButtons group
 
-The `RadioButtons` control has special navigation behavior that helps keyboard users navigate the list more quickly and more easily.
+The **RadioButtons** control has special navigation behavior that helps keyboard users navigate the list more quickly and more easily.
 
 #### Keyboard focus
 
-The `RadioButtons` control supports two states:
+The **RadioButtons** control supports two states:
 
 - No radio button is selected
 - One radio button is selected
@@ -154,7 +154,7 @@ When a user tabs into the list where a radio button is already selected, the sel
 
 For more information about general keyboard navigation behaviors, see [Keyboard interactions - Navigation](../input/keyboard-interactions.md#navigation).
 
-When an item in a `RadioButtons` group already has focus, the user can use arrow keys for "inner navigation" between the items within the group. The Up and Down arrow keys move to the "next" or "previous" logical item, as defined in your XAML markup. The Left and Right arrow keys move spatially.
+When an item in a **RadioButtons** group already has focus, the user can use arrow keys for "inner navigation" between the items within the group. The Up and Down arrow keys move to the "next" or "previous" logical item, as defined in your XAML markup. The Left and Right arrow keys move spatially.
 
 ##### Navigation within single-column or single-row layouts
 
@@ -187,8 +187,6 @@ In a multi-column, multi-row grid layout, keyboard navigation results in this be
    :::column span="":::
       ![Example of horizontal keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-1.png)
 
-      
-
       The Left and Right arrow keys move focus horizontally between items in a row.
    :::column-end:::
    :::column span="":::
@@ -219,11 +217,11 @@ For more information, see [Keyboard interactions](../input/keyboard-interactions
 
 The RadioButtons group doesn't wrap focus from the first row or column to the last, or from the last row or column to the first. This is because, when users use a screen reader, a sense of boundary and a clear indication of beginning and end is lost, which makes it difficult for users with visual impairment to navigate the list.
 
-The `RadioButtons` control also doesn't support enumeration, because the control is intended to contain a reasonable number of items (see [Is this the right control?](#is-this-the-right-control)).
+The **RadioButtons** control also doesn't support enumeration, because the control is intended to contain a reasonable number of items (see [Is this the right control?](#is-this-the-right-control)).
 
 ### Selection follows focus
 
-When you use the keyboard to navigate between items in a `RadioButtons` group, as focus moves from one item to the next, the newly focused item gets selected and the previously focused item is cleared.
+When you use the keyboard to navigate between items in a **RadioButtons** group, as focus moves from one item to the next, the newly focused item gets selected and the previously focused item is cleared.
 
 :::row:::
    :::column span="":::
@@ -250,7 +248,7 @@ If you use an Xbox gamepad or remote control to move between radio buttons, the 
 
 ## Accessibility behavior
 
-The following table describes how Narrator handles a `RadioButtons` group and what is announced. This behavior depends on how a user has set the Narrator detail preferences.
+The following table describes how Narrator handles a **RadioButtons** group and what is announced. This behavior depends on how a user has set the Narrator detail preferences.
 
 | Action | Narrator announcement |
 |:--|:--|
@@ -264,7 +262,7 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 
 ## Create a WinUI RadioButtons group
 
-The `RadioButtons` control uses a content model similar to an [ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol). This means that you can:
+The **RadioButtons** control uses a content model similar to an [ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol). This means that you can:
 
 - Populate it by adding items directly to the [Items](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.items) collection or by binding data to its [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) property.
 - Use the [SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) or [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem) properties to get and set which option is selected.
@@ -275,7 +273,7 @@ The `RadioButtons` control uses a content model similar to an [ItemsControl](/uw
 >
 >In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
-Here, you declare a simple `RadioButtons` control with three options. The [Header](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.header) property is set to give the group a label, and the `SelectedIndex` property is set to provide a default option.
+Here, you declare a simple **RadioButtons** control with three options. The [Header](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.header) property is set to give the group a label, and the **SelectedIndex** property is set to provide a default option.
 
 ```xaml
 <muxc:RadioButtons Header="Background color"
@@ -320,13 +318,13 @@ private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEve
 
 ### Selection states
 
-A radio button has two states: selected or cleared. When an option is selected in a `RadioButtons` group, you can get its value from the [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem) property, and its location in the collection from the [SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) property. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button group programmatically by setting it `SelectedItem = null`, or `SelectedIndex = -1`. (Setting `SelectedIndex` to any value outside the range of the `Items` collection results in no selection.)
+A radio button has two states: selected or cleared. When an option is selected in a **RadioButtons** group, you can get its value from the [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem) property, and its location in the collection from the [SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) property. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button group programmatically by setting it **SelectedItem = null**, or **SelectedIndex = -1**. (Setting **SelectedIndex** to any value outside the range of the **Items** collection results in no selection.)
 
 ### RadioButtons content
 
-In the previous example, you populated the `RadioButtons` control with simple strings. The control provided the radio buttons, and used the strings as the label for each one.
+In the previous example, you populated the **RadioButtons** control with simple strings. The control provided the radio buttons, and used the strings as the label for each one.
 
-However, you can populate the `RadioButtons` control with any object. Typically, you want the object to provide a string representation that can be used as a text label. In some cases, an image might be appropriate in place of text.
+However, you can populate the **RadioButtons** control with any object. Typically, you want the object to provide a string representation that can be used as a text label. In some cases, an image might be appropriate in place of text.
 
 Here, [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) elements are used to populate the control.
 
@@ -341,13 +339,13 @@ Here, [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) elements are us
 
 :::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="A group radio buttons with symbol icons":::
 
-You can also use individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls to populate the `RadioButtons` items. This is a special case that we discuss later. See [RadioButton controls in a RadioButtons group]().
+You can also use individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls to populate the **RadioButtons** items. This is a special case that we discuss later. See [RadioButton controls in a RadioButtons group]().
 
-A benefit of being able to use any object is that you can bind the `RadioButtons` control to a custom type in your data model. The next section demonstrates this.
+A benefit of being able to use any object is that you can bind the **RadioButtons** control to a custom type in your data model. The next section demonstrates this.
 
 ### Data binding
 
-The `RadioButtons` control supports data binding to its [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) property. This example shows how you can bind the control to a custom data source. The appearance and functionality of this example is the same as the previous background color example, but here, the color brushes are stored in the data model instead of being created in the `SelectionChanged` event handler.
+The **RadioButtons** control supports data binding to its [ItemsSource](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) property. This example shows how you can bind the control to a custom data source. The appearance and functionality of this example is the same as the previous background color example, but here, the color brushes are stored in the data model instead of being created in the **SelectionChanged** event handler.
 
 ```xaml
  <muxc:RadioButtons Header="Background color"
@@ -396,7 +394,7 @@ public sealed partial class MainPage : Page
 
 ### RadioButton controls in a RadioButtons group
 
-You can use individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls to populate the `RadioButtons` items. You might do this to get access to certain properties, like `AutomationProperties.Name`; or you might have existing `RadioButton` code, but want to take advantage of the layout and navigation of `RadioButtons`.
+You can use individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls to populate the **RadioButtons** items. You might do this to get access to certain properties, like **AutomationProperties.Name**; or you might have existing **RadioButton** code, but want to take advantage of the layout and navigation of **RadioButtons**.
 
 ```xaml
 <muxc:RadioButtons Header="Background color">
@@ -406,9 +404,9 @@ You can use individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButt
 </muxc:RadioButtons>
 ```
 
-When you use `RadioButton` controls in a `RadioButtons` group, the `RadioButtons` control knows how to present the `RadioButton`, so you won't end up with two selection circles.
+When you use **RadioButton** controls in a **RadioButtons** group, the **RadioButtons** control knows how to present the **RadioButton**, so you won't end up with two selection circles.
 
-However, there are some behaviors you should be aware of. We recommend that you handle state and events on the individual controls or on `RadioButtons`, but not both, to avoid conflicts.
+However, there are some behaviors you should be aware of. We recommend that you handle state and events on the individual controls or on **RadioButtons**, but not both, to avoid conflicts.
 
 This table shows the related events and properties on both controls.
 
@@ -417,15 +415,15 @@ This table shows the related events and properties on both controls.
 |[Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked), [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) |    [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) |
 |[IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)  | [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) |
 
-If you handle events on an individual `RadioButton`, such as `Checked` or `Unchecked`, and also handle the `RadioButtons.SelectionChanged` event, both events will fire. The `RadioButton` event occurs first, and then the `RadioButtons.SelectionChanged` event occurs, which could result in conflicts.
+If you handle events on an individual **RadioButton**, such as **Checked** or **Unchecked**, and also handle the **RadioButtons.SelectionChanged** event, both events will fire. The **RadioButton** event occurs first, and then the **RadioButtons.SelectionChanged** event occurs, which could result in conflicts.
 
-The `IsChecked`, `SelectedItem`, and `SelectedIndex` properties stay synchronized. A change to one property updates the other two.
+The **IsChecked**, **SelectedItem**, and **SelectedIndex** properties stay synchronized. A change to one property updates the other two.
 
-The [RadioButton.GroupName](/uwp/api/windows.ui.xaml.controls.radiobutton.groupname) property is ignored. The group is created by the `RadioButtons` control.
+The [RadioButton.GroupName](/uwp/api/windows.ui.xaml.controls.radiobutton.groupname) property is ignored. The group is created by the **RadioButtons** control.
 
 ### Defining multiple columns
 
-By default, the `RadioButtons` control arranges its radio buttons vertically in a single column. You can set the [MaxColumns](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.maxcolumns) property to make the control arrange the radio buttons in multiple columns. (When you do this, they are laid out in column-major order, where items fill in from top to bottom, then left to right.)
+By default, the **RadioButtons** control arranges its radio buttons vertically in a single column. You can set the [MaxColumns](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.maxcolumns) property to make the control arrange the radio buttons in multiple columns. (When you do this, they are laid out in column-major order, where items fill in from top to bottom, then left to right.)
 
 ```xaml
 <muxc:RadioButtons Header="RadioButtons in columns" MaxColumns="3">
@@ -446,7 +444,7 @@ By default, the `RadioButtons` control arranges its radio buttons vertically in 
 ## Create your own RadioButton group
 
 > [!Important]
-> Unless you're using an older version of WinUI, we recommend using the WinUI `RadioButtons` control to group `RadioButton` elements.
+> Unless you're using an older version of WinUI, we recommend using the WinUI **RadioButtons** control to group **RadioButton** elements.
 
 Radio buttons work in groups. You can group individual [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) controls in either of two ways:
 
@@ -534,17 +532,17 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-These two groups of `RadioButton` controls look like this:
+These two groups of **RadioButton** controls look like this:
 
 :::image type="content" source="images/radio-button-groups.png" alt-text="Radio buttons in two groups":::
 
 ### Radio button states
 
-A radio button has two states: selected or cleared. When a radio button is selected, its [IsChecked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) property is `true`. When a radio button is cleared, its `IsChecked` property is `false`. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its `IsChecked` property to `false`.
+A radio button has two states: selected or cleared. When a radio button is selected, its [IsChecked](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its **IsChecked** property to **false**.
 
 ### Visuals to consider
 
-The default spacing of individual `RadioButton` controls is different than the spacing provided by a `RadioButtons` group. To apply the `RadioButtons` spacing to individual `RadioButton` controls, use a `Margin` value of `0,0,7,3`, as shown here.
+The default spacing of individual **RadioButton** controls is different than the spacing provided by a **RadioButtons** group. To apply the **RadioButtons** spacing to individual **RadioButton** controls, use a **Margin** value of `0,0,7,3`, as shown here.
 
 ```xaml
 <StackPanel>

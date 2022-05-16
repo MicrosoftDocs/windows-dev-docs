@@ -5,7 +5,7 @@ ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -14,6 +14,7 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Date picker
 
 The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
@@ -47,7 +48,7 @@ For more info about choosing the right date control, see the [Date and time cont
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -94,9 +95,9 @@ Here, only the year is needed, so the day and month fields are hidden.
 
 :::image type="content" source="images/date-time/date-picker-year-only.png" alt-text="A date picker with the day and month fields hidden.":::
 
-The string content of each `ComboBox` in the `DatePicker` is created by a [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting.datetimeformatter). You inform the `DateTimeFormatter` how to format the date value by providing a string that is either a *format template* or a *format pattern*. For more info, see the [DayFormat](/uwp/api/windows.ui.xaml.controls.datepicker.dayformat), [MonthFormat](/uwp/api/windows.ui.xaml.controls.datepicker.monthformat), and [YearFormat](/uwp/api/windows.ui.xaml.controls.datepicker.yearformat) properties.
+The string content of each `ComboBox` in the `DatePicker` is created by a [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting.datetimeformatter). You inform the `DateTimeFormatter` how to format the date value by providing a string that is either a _format template_ or a _format pattern_. For more info, see the [DayFormat](/uwp/api/windows.ui.xaml.controls.datepicker.dayformat), [MonthFormat](/uwp/api/windows.ui.xaml.controls.datepicker.monthformat), and [YearFormat](/uwp/api/windows.ui.xaml.controls.datepicker.yearformat) properties.
 
-Here, a *format pattern* is used to show the month as an integer and abbreviation. You can add literal strings to the format pattern, such as the parentheses around the month abbreviation: `({month.abbreviated})`.
+Here, a _format pattern_ is used to show the month as an integer and abbreviation. You can add literal strings to the format pattern, such as the parentheses around the month abbreviation: `({month.abbreviated})`.
 
 ```xaml
 <DatePicker MonthFormat="{}{month.integer(2)} ({month.abbreviated})" DayVisible="False"/>
@@ -128,7 +129,7 @@ Another possible technique is to define a date that's available as a data object
 > [!NOTE]
 > For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
 
-This example demonstrates setting the `SelectedDate`, `MinYear`, and `MaxYear` properties on different `DatePicker` controls.
+This example demonstrates setting the **SelectedDate**, **MinYear**, and **MaxYear** properties on different **DatePicker** controls.
 
 ```xaml
 <DatePicker x:Name="yearDatePicker" MonthVisible="False" DayVisible="False"/>
@@ -156,9 +157,9 @@ public MainPage()
 
 To use the date value in your app, you typically use a data binding to the [SelectedDate](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate) property, or handle the [SelectedDateChanged](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddatechanged) event.
 
-> For an example of using a `DatePicker` and `TimePicker` together to update a single `DateTime` value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
+> For an example of using a **DatePicker** and **TimePicker** together to update a single **DateTime** value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
 
-Here, you use a `DatePicker` to let a user select their arrival date. You handle the `SelectedDateChanged` event to update a [DateTime](/uwp/api/windows.foundation.datetime) instance named `arrivalDateTime`.
+Here, you use a **DatePicker** to let a user select their arrival date. You handle the **SelectedDateChanged** event to update a [DateTime](/uwp/api/windows.foundation.datetime) instance named `arrivalDateTime`.
 
 ```xaml
 <StackPanel>

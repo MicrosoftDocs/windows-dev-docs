@@ -4,7 +4,7 @@ title: Text controls
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
-ms.date: 10/01/2018
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -12,6 +12,7 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Text controls
 
 Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.
@@ -55,19 +56,19 @@ Use a **RichEditBox** to display and edit text files. You don't use a RichEditBo
 
 There are many ways you can get user input in your app. These questions will help answer whether one of the standard text input boxes or another control is the best fit for getting user input.
 
--   **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](checkbox.md), [drop-down list](lists.md), list box, [radio button](radio-button.md), [slider](slider.md), [toggle switch](toggles.md), [date picker](date-and-time.md), or time picker.
--   **Is there a fairly small set of valid values?** If so, consider a [drop-down list](lists.md) or a list box, especially if the values are more than a few characters long.
--   **Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?** If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.
--   **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [DatePicker](/previous-versions/windows/apps/br211681(v=win.10)) instead of a text input control to accept a date entry.
--   If the data is strictly numeric:
-    -   **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](slider.md).
-    -   **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](slider.md), possibly with an accompanying control.
-    -   **Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?** If so, use a [slider](slider.md).
+- **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](checkbox.md), [drop-down list](lists.md), list box, [radio button](radio-button.md), [slider](slider.md), [toggle switch](toggles.md), [date picker](date-and-time.md), or time picker.
+- **Is there a fairly small set of valid values?** If so, consider a [drop-down list](lists.md) or a list box, especially if the values are more than a few characters long.
+- **Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?** If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.
+- **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [DatePicker](/previous-versions/windows/apps/br211681(v=win.10)) instead of a text input control to accept a date entry.
+- If the data is strictly numeric:
+  - **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](slider.md).
+  - **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](slider.md), possibly with an accompanying control.
+  - **Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?** If so, use a [slider](slider.md).
 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -96,14 +97,15 @@ Password box
 
 See these articles for info and examples specific to each text control.
 
--   [AutoSuggestBox](auto-suggest-box.md)
--   [PasswordBox](password-box.md)
--   [RichEditBox](rich-edit-box.md)
--   [RichTextBlock](rich-text-block.md)
--   [TextBlock](text-block.md)
--   [TextBox](text-box.md)
+- [AutoSuggestBox](auto-suggest-box.md)
+- [PasswordBox](password-box.md)
+- [RichEditBox](rich-edit-box.md)
+- [RichTextBlock](rich-text-block.md)
+- [TextBlock](text-block.md)
+- [TextBox](text-box.md)
 
 ## Font and style guidelines
+
 See these articles for font guidelines:
 
 - [Typography guidelines](../style/typography.md)
@@ -179,28 +181,30 @@ Here's an example of the built-in spell checker:
 
 Use spell checking with text input controls for these two purposes:
 
--   **To auto-correct misspellings**
+- **To auto-correct misspellings**
 
-    The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
+  The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
 
--   **To show alternate spellings**
+- **To show alternate spellings**
 
-    When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
+  When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
 
--   Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
--   Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on if the text box is intended to capture a telephone number or name.
--   Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
+- Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
+- Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on if the text box is intended to capture a telephone number or name.
+- Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
 
 For TextBox and RichEditBox controls, spell checking is turned on by default. You can turn it off by setting the **IsSpellCheckEnabled** property to **false**.
 
 ## Related articles
 
 **For designers**
+
 - [Typography guidelines](../style/typography.md)
 - [Segoe MDL2 icon list and guidelines](../style/segoe-ui-symbol-font.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
 
 **For developers (XAML)**
+
 - [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

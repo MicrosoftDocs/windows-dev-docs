@@ -4,7 +4,7 @@ title: Contrast themes
 label: Contrast design guidelines
 keywords: 
 template: detail.hbs
-ms.date: 12/08/2021
+ms.date: 05/16/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ Contrast themes use a small palette of colors (with a contrast ratio of at least
 > [!NOTE]
 > Don’t confuse contrast themes with light and dark themes, which support a much larger color palette and don't necessarily increase contrast or make things easier to see. For more on light and dark themes, see [Color](../style/color.md).
 
-To see how your app behaves with contrast themes, enable and customize them through the *Settings > Accessibility > Contrast themes* page.
+To see how your app behaves with contrast themes, enable and customize them through the **Settings** > **Accessibility** > **Contrast themes** page.
 
 > [!Tip]
 > You can also press the left-Alt key + Shift key + Print screen (PrtScn on some keyboards) to quickly turn contrast themes on or off. If you have not selected a theme previously, the Aquatic theme is used by default (shown in the following image).
@@ -81,14 +81,14 @@ This table shows the contrast theme colors and their recommended pairings. Each 
 
 | Color swatch | Description |
 |---------|---------|
-|:::image type="icon" source="images/sys-color/aquatic-color-window.png":::|  **SystemColorWindowColor**</br>Background of pages, panes, popups, and windows.<br/><br/>Pair with **SystemColorWindowTextColor**       |
-|:::image type="icon" source="images/sys-color/aquatic-color-windowtext.png"::: | **SystemColorWindowTextColor**</br>Headings, body copy, lists, placeholder text, app and window borders, any UI that can't be interacted with.</br></br>Pair with **SystemColorWindowColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-hotlight.png":::| **SystemColorHotlightColor**</br>Hyperlinks.</br></br>Pair with **SystemColorWindowColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-graytext.png":::|  **SystemColorGrayTextColor**</br>Inactive (disabled) UI.</br></br>Pair with **SystemColorWindowColor**       |
-|:::image type="icon" source="images/sys-color/aquatic-color-highlighttext.png":::| **SystemColorHighlightTextColor**</br>Foreground color for text or UI that is in selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-highlight.png":::| **SystemColorHighlightColor**</br>Background or accent color for UI that is in selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightTextColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-btntext.png":::| **SystemColorButtonTextColor**</br>Foreground color for buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonFaceColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-3dface.png":::| **SystemColorButtonFaceColor**</br>Background color for buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonTextColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-window.png":::|  **SystemColorWindowColor**<br/>Background of pages, panes, popups, and windows.<br/><br/>Pair with **SystemColorWindowTextColor**       |
+|:::image type="icon" source="images/sys-color/aquatic-color-windowtext.png"::: | **SystemColorWindowTextColor**<br/>Headings, body copy, lists, placeholder text, app and window borders, any UI that can't be interacted with.<br/><br/>Pair with **SystemColorWindowColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-hotlight.png":::| **SystemColorHotlightColor**<br/>Hyperlinks.<br/><br/>Pair with **SystemColorWindowColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-graytext.png":::|  **SystemColorGrayTextColor**<br/>Inactive (disabled) UI.<br/><br/>Pair with **SystemColorWindowColor**       |
+|:::image type="icon" source="images/sys-color/aquatic-color-highlighttext.png":::| **SystemColorHighlightTextColor**<br/>Foreground color for text or UI that is in selected, interacted with (hover, pressed), or in progress.<br/><br/>Pair with **SystemColorHighlightColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-highlight.png":::| **SystemColorHighlightColor**<br/>Background or accent color for UI that is in selected, interacted with (hover, pressed), or in progress.<br/><br/>Pair with **SystemColorHighlightTextColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-btntext.png":::| **SystemColorButtonTextColor**<br/>Foreground color for buttons and any UI that can be interacted with.<br/><br/>Pair with **SystemColorButtonFaceColor**        |
+|:::image type="icon" source="images/sys-color/aquatic-color-3dface.png":::| **SystemColorButtonFaceColor**<br/>Background color for buttons and any UI that can be interacted with.<br/><br/>Pair with **SystemColorButtonTextColor**        |
 
 The next table shows how the colors appear when used on a background set to **SystemColorWindowColor**.
 

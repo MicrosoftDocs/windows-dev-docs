@@ -3,7 +3,7 @@ description: Learn how to use a color picker to let users browse through and sel
 title: Color Picker
 label: Color Picker
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,6 +12,7 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Color picker
 
 A color picker is used to browse through and select colors. By default, it lets a user navigate through colors on a color spectrum, or specify a color in either Red-Green-Blue (RGB), Hue-Saturation-Value (HSV), or Hexadecimal textboxes.
@@ -45,7 +46,7 @@ If your app is for drawing or similar tasks using pen, consider using [Inking co
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -241,8 +242,6 @@ Hex values | IsHexInputVisible
 
 <!--
 <div class="microsoft-internal-note">
-<p>
-<p>
 Note: For more info, see the [color picker redlines](https://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.
 </div>
 -->

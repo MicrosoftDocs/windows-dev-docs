@@ -4,7 +4,7 @@ title: Guidelines for flip view controls
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
@@ -12,6 +12,7 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Flip view
 
 Use a flip view for browsing images or other items in a collection, such as photos in an album or items in a product details page, one item at a time. For touch devices, swiping across an item moves through the collection. For a mouse, navigation buttons appear on mouse hover. For a keyboard, arrow keys move through the collection.
@@ -32,7 +33,7 @@ Flip view is best for perusing images in small to medium collections (up to 25 o
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -82,7 +83,7 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-When you add items to a flip view they are automatically placed in a [**FlipViewItem**](/uwp/api/Windows.UI.Xaml.Controls.FlipViewItem) container. To change how an item is displayed you can apply a style to the item container by setting the [**ItemContainerStyle**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) property. 
+When you add items to a flip view they are automatically placed in a [**FlipViewItem**](/uwp/api/Windows.UI.Xaml.Controls.FlipViewItem) container. To change how an item is displayed you can apply a style to the item container by setting the [**ItemContainerStyle**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) property.
 
 When you define the items in XAML, they are automatically added to the Items collection.
 
@@ -110,7 +111,7 @@ stackPanel1.Children.Add(flipView1);
 
 You can also bind the ItemsSource property to a collection in XAML. For more info, see [Data binding with XAML](/windows/uwp/data-binding/data-binding-quickstart).
 
-Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) named `itemsViewSource`. 
+Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) named `itemsViewSource`.
 
 ```xaml
 <Page.Resources>
@@ -131,9 +132,9 @@ Here, the ItemsSource is bound to a [**CollectionViewSource**](/uwp/api/Windows.
 
 By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. The DataTemplate is assigned to the [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) property of the FlipView control.
 
-In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name. 
+In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name.
 
-```XAML
+```xaml
 <FlipView MaxWidth="400" Height="180" BorderBrush="Black" BorderThickness="1"
           ItemsSource="{x:Bind Items, Mode=OneWay}">
     <FlipView.ItemTemplate>
@@ -243,7 +244,6 @@ For a full example showing how to add a context indicator to a FlipView, see [XA
 <tr>
 <th>Bi-directional considerations</th><td>Use standard mirroring for RTL languages. The back and forward controls should be based on the language's direction, so for RTL languages, the right button should navigate backwards and the left button should navigate forward.</td>
 </tr>
-
 </table>
 
 ## Get the sample code

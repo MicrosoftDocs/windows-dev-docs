@@ -3,7 +3,7 @@ description: Menus and context menus display a list of commands or options when 
 title: Menu flyout and menu bar
 label: Menu flyout and menu bar
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 ms.custom: RS5, 19H1
 keywords: windows 10, uwp
@@ -14,6 +14,7 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Menu flyout and menu bar
 
 Menu flyouts are used in menu and context menu scenarios to display a list of commands or options when requested by the user. A menu flyout shows a single, inline, top-level menu that can have menu items and sub-menus. To show a set of multiple top-level menus in a horizontal row, use menu bar (which you typically position at the top of the app window).
@@ -40,16 +41,16 @@ Menu flyouts are used in menu and context menu scenarios to display a list of co
 
 ## Is this the right control?
 
-See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use menu flyout vs. [command bar flyout](command-bar-flyout.md).
+See [menus and context menus](menus-and-context-menus.md) for help identifying menu versus context menu scenarios and guidance on when to use menu flyout versus [command bar flyout](command-bar-flyout.md).
 
 Menu flyouts can be used as menus and context menus to organize commands. To display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](./dialogs-and-flyouts/index.md).
 
-If a particular command will be used frequently and you have the space available, see [collection commanding](collection-commanding.md) for examples on placing a command directly in its own element so that users don't have to go through a menu to get to it. 
+If a particular command will be used frequently and you have the space available, see [collection commanding](collection-commanding.md) for examples on placing a command directly in its own element so that users don't have to go through a menu to get to it.
 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -76,7 +77,7 @@ These objects are for:
 
 This example creates a [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout) and uses the [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) property, a property available to most controls, to show the MenuFlyout as a context menu.
 
-````xaml
+```xaml
 <Rectangle
   Height="100" Width="100">
   <Rectangle.ContextFlyout>
@@ -88,9 +89,9 @@ This example creates a [MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout
     <SolidColorBrush x:Name="rectangleFill" Color="Red" />
   </Rectangle.Fill>
 </Rectangle>
-````
+```
 
-````csharp
+```csharp
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
     // Change the color from red to blue or blue to red.
@@ -103,11 +104,11 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
         rectangleFill.Color = Windows.UI.Colors.Red;
     }
 }
-````
+```
 
 The next example is nearly identical, but instead of using the [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) property to show the [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout) as a context menu, the example uses the [FlyoutBase.ShowAttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) property to show it as a menu.
 
-````xaml
+```xaml
 <Rectangle
   Height="100" Width="100"
   Tapped="Rectangle_Tapped">
@@ -120,9 +121,9 @@ The next example is nearly identical, but instead of using the [ContextFlyout](/
     <SolidColorBrush x:Name="rectangleFill" Color="Red" />
   </Rectangle.Fill>
 </Rectangle>
-````
+```
 
-````csharp
+```csharp
 private void Rectangle_Tapped(object sender, TappedRoutedEventArgs e)
 {
     FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
@@ -140,7 +141,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
         rectangleFill.Color = Windows.UI.Colors.Red;
     }
 }
-````
+```
 
 ## Icons
 
@@ -154,7 +155,7 @@ Don't feel obligated to provide icons for commands that don't have a standard vi
 
 ![Example context menu with icons](images/contextmenu_rs2_icons.png)
 
-````xaml
+```xaml
 <MenuFlyout>
   <MenuFlyoutItem Text="Share" >
     <MenuFlyoutItem.Icon>
@@ -167,11 +168,10 @@ Don't feel obligated to provide icons for commands that don't have a standard vi
   <MenuFlyoutItem Text="Rename" />
   <MenuFlyoutItem Text="Select" />
 </MenuFlyout>
-````
+```
 
 > [!TIP]
 > The size of the icon in a MenuFlyoutItem is 16x16px. If you use SymbolIcon, FontIcon, or PathIcon, the icon automatically scales to the correct size with no loss of fidelity. If you use BitmapIcon, ensure that your asset is 16x16px.  
-
 
 ### Light dismiss
 

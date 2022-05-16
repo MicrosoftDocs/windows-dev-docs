@@ -11,6 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Commanding basics
 
 In a Windows app, *command elements* are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. *Command interfaces* are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.

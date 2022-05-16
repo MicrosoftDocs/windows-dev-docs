@@ -4,7 +4,7 @@ title: Hyperlinks
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Hyperlinks
 
 Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the **Hyperlink** text element and **HyperlinkButton** control.
@@ -21,21 +22,20 @@ Hyperlinks navigate the user to another part of the app, to another app, or laun
 
 ![A hyperlink button](images/controls/hyperlink-button.png)
 
-
 ## Is this the right control?
 
 Use a hyperlink when you need text that responds when selected and navigates the user to more information about the text that was selected.
 
 Choose the right type of hyperlink based on your needs:
 
--   Use an inline **Hyperlink** text element inside of a text control. A Hyperlink element flows with other text elements and you can use it in any InlineCollection. Use a text hyperlink if you want automatic text wrapping and don't necessarily need a large hit target. Hyperlink text can be small and difficult to target, especially for touch.
--   Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
--   Use a **HyperlinkButton** with an [Image](/uwp/api/windows.ui.xaml.controls.image) as its content to make a clickable image.
+- Use an inline **Hyperlink** text element inside of a text control. A Hyperlink element flows with other text elements and you can use it in any InlineCollection. Use a text hyperlink if you want automatic text wrapping and don't necessarily need a large hit target. Hyperlink text can be small and difficult to target, especially for touch.
+- Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
+- Use a **HyperlinkButton** with an [Image](/uwp/api/windows.ui.xaml.controls.image) as its content to make a clickable image.
 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -52,26 +52,27 @@ Choose the right type of hyperlink based on your needs:
 
 This example shows how to use a Hyperlink text element inside of a [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock).
 
-```xml
+```xaml
 <StackPanel Width="200">
     <TextBlock Text="Privacy" Style="{StaticResource SubheaderTextBlockStyle}"/>
     <TextBlock TextWrapping="WrapWholeWords">
         <Span xml:space="preserve"><Run>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Read the </Run><Hyperlink NavigateUri="http://www.contoso.com">Contoso Privacy Statement</Hyperlink><Run> in your browser.</Run> Donec pharetra, enim sit amet mattis tincidunt, felis nisi semper lectus, vel porta diam nisi in augue.</Span>
     </TextBlock>
 </StackPanel>
-
 ```
+
 The hyperlink appears inline and flows with the surrounding text:
 
 ![Example of a hyperlink as a text element](images/controls-hyperlink-element.png) 
 
-> **Tip**&nbsp;&nbsp;When you use a Hyperlink in a text control with other text elements in XAML, place the content in a [Span](/uwp/api/windows.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the Hyperlink and other elements.
+> [!TIP]
+> When you use a Hyperlink in a text control with other text elements in XAML, place the content in a [Span](/uwp/api/windows.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the Hyperlink and other elements.
 
 ## Create a HyperlinkButton
 
 Here's how to use a HyperlinkButton, both with text and with an image.
 
-```xml
+```xaml
 <StackPanel>
     <TextBlock Text="About" Style="{StaticResource TitleTextBlockStyle}"/>
     <HyperlinkButton NavigateUri="http://www.contoso.com">
@@ -82,7 +83,6 @@ Here's how to use a HyperlinkButton, both with text and with an image.
     <HyperlinkButton Content="Acknowledgments" NavigateUri="http://www.contoso.com"/>
     <HyperlinkButton Content="Help" NavigateUri="http://www.contoso.com"/>
 </StackPanel>
-
 ```
 
 The hyperlink buttons with text content appear as marked-up text. The Contoso logo image is also a clickable hyperlink:
@@ -114,16 +114,16 @@ When a user clicks the hyperlink, the value of the NavigateUri property is passe
 
 If you don't want the hyperlink to load content in a default Web browser (and don't want a browser to appear), then don't set a value for NavigateUri. Instead, handle the Click event, and write code that does what you want.
 
-
 **Handle the Click event**
 
 Use the Click event for actions other than launching a URI in a browser, such as navigation within the app. For example, if you want to load a new app page rather than opening a browser, call a [Frame.Navigate](/uwp/api/windows.ui.xaml.controls.frame.navigate) method within your Click event handler to navigate to the new app page. If you want an external, absolute URI to load within a [WebView](/uwp/api/windows.ui.xaml.controls.webview) control that also exists in your app, call [WebView.Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate) as part of your Click handler logic.
 
 You don't typically handle the Click event as well as specifying a NavigateUri value, as these represent two different ways of using the hyperlink element. If your intent is to open the URI in the default browser, and you have specified a value for NavigateUri, don't handle the Click event. Conversely, if you handle the Click event, don't specify a NavigateUri.
 
-There's nothing you can do within the Click event handler to prevent the default browser from loading any valid target specified for NavigateUri; that action takes place automatically (asynchronously) when the hyperlink is activated and can't be canceled from within the Click event handler. 
+There's nothing you can do within the Click event handler to prevent the default browser from loading any valid target specified for NavigateUri; that action takes place automatically (asynchronously) when the hyperlink is activated and can't be canceled from within the Click event handler.
 
 ## Hyperlink underlines
+
 By default, hyperlinks are underlined. This underline is important because it helps meet accessibility requirements. Color-blind users use the underline to distinguish between hyperlinks and other text. If you disable underlines, you should consider adding some other type of formatting difference to distinguish hyperlinks from other text, such as FontWeight or FontStyle.
 
 **Hyperlink text elements**
@@ -135,6 +135,7 @@ You can set the [UnderlineStyle](/uwp/api/windows.ui.xaml.documents.hyperlink.un
 By default, the HyperlinkButton appears as underlined text when you set a string as the value for the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property.
 
 The text does not appear underlined in the following cases:
+
 - You set a [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock) as the value for the Content property, and set the [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) property on the TextBlock.
 - You re-template the HyperlinkButton and change the name of the [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter) template part.
 
@@ -160,10 +161,10 @@ The default color of the hyperlink is the accent color of the system. You can se
 
 ## Recommendations
 
--   Only use hyperlinks for navigation; don't use them for other actions.
--   Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows type ramp](../style/typography.md).
--   Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
--   Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
+- Only use hyperlinks for navigation; don't use them for other actions.
+- Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows type ramp](../style/typography.md).
+- Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
+- Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
 
 ## Get the sample code
 
@@ -175,5 +176,6 @@ The default color of the hyperlink is the accent color of the system. You can se
 - [Guidelines for tooltips](tooltips.md)
 
 **For developers (XAML)**
+
 - [Windows.UI.Xaml.Documents.Hyperlink class](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
 - [Windows.UI.Xaml.Controls.HyperlinkButton class](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)

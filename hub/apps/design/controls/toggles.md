@@ -4,7 +4,7 @@ title: Guidelines for toggle switch controls
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Toggle switches
 
 The toggle switch represents a physical switch that allows users to turn things on or off, like a light switch. Use toggle switch controls to present users with two mutually exclusive options (such as on/off), where choosing an option provides immediate results.
@@ -25,18 +26,18 @@ To create a toggle switch control, you use the  [ToggleSwitch class](/uwp/api/wi
 
 Use a toggle switch for binary operations that take effect right after the user flips the toggle switch.
 
-![Toggle switch, on](images/toggle-switch-on.png)
+![Toggle switch, on.](images/toggle-switch-on.png)
 
-![Toggle switch off](images/toggle-switch-off.png)
+![Toggle switch, off.](images/toggle-switch-off.png)
 
 Think of the toggle switch as a physical power switch for a device: you flip it on or off when you want to enable or disable the action performed by the device.
 
-To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights." 
+To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights."
 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -57,7 +58,7 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 
     ![Toggle switch versus check box](images/toggleswitches02.png)
 
-    In this example, it's clear with the toggle switch that the kitchen lights are set to "On." But with the checkbox, the user needs to think about whether the lights are on now or whether they need to check the box to turn the lights on.
+  In this example, it's clear with the toggle switch that the kitchen lights are set to "On." But with the checkbox, the user needs to think about whether the lights are on now or whether they need to check the box to turn the lights on.
 
 - Use check boxes for optional ("nice to have") items.
 - Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.

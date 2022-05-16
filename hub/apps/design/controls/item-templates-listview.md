@@ -2,24 +2,27 @@
 description: Get item templates that you can use with a ListView control to display single, double, triple, and tabular list items.
 title: Item templates for list view
 template: detail.hbs
-ms.date: 11/03/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ---
+
 # Item templates for list view
 
 This section contains item templates that you can use with a [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types.
 
 To demonstrate data binding, these templates bind **ListViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
-> [!NOTE] 
+> [!NOTE]
 > Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibililty overview](../accessibility/accessibility-overview.md).
 
 ## Single line list item
+
 Use this template to display a list of items with an image and a single line of text.
 
-![single line list item example](images/listitems/singlelineexample.png)
-![single line list item](images/listitems/singlelineicon.png)
+![Single line list item example.](images/listitems/singlelineexample.png)
+![Single line list item.](images/listitems/singlelineicon.png)
+
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.ItemTemplate>
@@ -33,11 +36,12 @@ Use this template to display a list of items with an image and a single line of 
 </ListView>
 ```
 
-## Double line list item 
+## Double line list item
+
 Use this template to display a list of items with an image and two lines of text.
 
-![double line list item with icon example](images/listitems/doublelineexample.png) 
-![double line list item with icon](images/listitems/doublelineicon.png)
+![Double line list item with icon example.](images/listitems/doublelineexample.png) 
+![Double line list item with icon.](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -60,10 +64,11 @@ Use this template to display a list of items with an image and two lines of text
 ```
 
 ## Triple line list item
+
 Use this template to display a list of items with three lines of text.
 
-![triple line list item example](images/listitems/triplelineexample.png)
-![triple line list item](images/listitems/tripleline.png)
+![Triple line list item example.](images/listitems/triplelineexample.png)
+![Triple line list item.](images/listitems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -80,9 +85,11 @@ Use this template to display a list of items with three lines of text.
 ```
 
 ## Table list item
+
 Use this template to display a list of items with text in defined columns.
 
-![table list item example](images/listitems/tablelist.png)
+![Table list item example.](images/listitems/tablelist.png)
+
 ```xaml
 <ListView  ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.HeaderTemplate>
@@ -123,6 +130,7 @@ Use this template to display a list of items with text in defined columns.
 ```
 
 ## Related articles
+
 - [ListView class](/uwp/api/windows.ui.xaml.controls.listview)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)

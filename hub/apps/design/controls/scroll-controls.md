@@ -4,7 +4,7 @@ title: Scroll viewer controls
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: Abarlow, pagildea
@@ -13,9 +13,8 @@ dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Scroll viewer controls
-
-
 
 When there is more UI content to show than you can fit in an area, use the scroll viewer control.
 
@@ -50,7 +49,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -130,7 +129,6 @@ For example, here's how to make the vertical scrollbars always visible for a Lis
 
 For cases where a ScrollViewer is explicit in your XAML, as is shown in the example code, you don't need to use attached property syntax. Just use attribute syntax, for example `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`.
 
-
 ## Do's and don'ts
 
 - Whenever possible, design for vertical scrolling rather than horizontal.
@@ -140,8 +138,6 @@ For cases where a ScrollViewer is explicit in your XAML, as is shown in the exam
 - If the user will scroll through a long passage of text, configure the scroll viewer to scroll vertically only.
 - Use a scroll viewer to contain one object only. Note that the one object can be a layout panel, in turn containing any number of objects of its own.
 - If you need to handle pointer events for a [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
-
-
 
 ## Get the sample code
 

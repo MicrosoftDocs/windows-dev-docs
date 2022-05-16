@@ -37,7 +37,7 @@ The [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) control enables touch-swipi
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>

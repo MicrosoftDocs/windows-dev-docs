@@ -2,7 +2,7 @@
 description: An AnimatedIcon is a control which plays animated images in response to user interaction and visual state changes.
 title: AnimatedIcon
 template: detail.hbs
-ms.date: 06/21/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, winui, uwp
 pm-contact: mamatth
@@ -40,7 +40,7 @@ AnimatedIcon is an [IconElement](/windows/winui/api/microsoft.ui.xaml.controls.i
 
 [AnimatedVisualPlayer](/uwp/api/Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
 
-**Get the Windows UI Library**
+## Get the Windows UI Library
 
 :::row:::
    :::column:::
@@ -75,7 +75,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -92,7 +92,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 
 The following example demonstrates a back button that displays an animated back icon on a [PointerEntered](/windows/winui/api/microsoft.ui.xaml.uielement.pointerentered) event.
 
-- The `AnimatedBackVisualSource` is a class created with the [LottieGen](https://github.com/windows-toolkit/Lottie-Windows/tree/master/LottieGen) command line tool.
+- The **AnimatedBackVisualSource** is a class created with the [LottieGen](https://github.com/windows-toolkit/Lottie-Windows/tree/master/LottieGen) command line tool.
 - The FallbackIconSource is used when animations can't be played, such as on older versions of Windows that don't support Lottie animations.
 - If the user turns animations off in their system settings, AnimatedIcon displays the final frame of the state transition the controls was in.
 
@@ -174,7 +174,7 @@ For example, the [AutoSuggestBox](/windows/winui/api/microsoft.ui.xaml.controls.
 You can define markers in your Lottie file with those state names. You can also define markers as follows:
 
 - Insert "To" between state names. For example, if you define a "NormalToPointerOver" marker, changing the AnimatedIcon state from "Normal" to "PointerOver" will cause it to move to this marker's playback position.
-- Append "_Start" or "_End" to a marker name. For example defining markers "NormalToPointerOver_Start" and "NormalToPointerOver_End" and changing the AnimatedIcon state from "Normal" to "PointerOver" will cause it to jump to the _Start marker's playback position and then animate to the _End playback position.
+- Append "_Start" or "_End" to a marker name. For example defining markers "NormalToPointerOver_Start" and "NormalToPointerOver_End" and changing the AnimatedIcon state from "Normal" to "PointerOver" will cause it to jump to the \_Start marker's playback position and then animate to the \_End playback position.
 
 The exact algorithm used to map AnimatedIcon State changes to marker playback positions:
 
@@ -211,7 +211,7 @@ The following example shows the marker format in a Lottie JSON file. See the [An
 
 The following example is a button that the user clicks to Accept a prompt.
 
-The `MyAcceptAnimation` class is created with the [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool.
+The **MyAcceptAnimation** class is created with the [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen) tool.
 
 The FallbackIconSource will be used rather than the animation when animations can't be played, such as on older versions of Windows that don't support Lottie animations.
 

@@ -4,7 +4,7 @@ title: Semantic zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 08/07/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
@@ -12,24 +12,23 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Semantic zoom
 
- 
-
 Semantic zoom lets the user switch between two different views of the same content so that they can quickly navigate through a large set of grouped data.
- 
-- The zoomed-in view is the main view of the content. This is the main view where you show individual data items. 
-- The zoomed-out view is a higher-level view of the same content. You typically show the group headers for a grouped data set in this view. 
 
-For example, when viewing an address book, the user could zoom out to quickly jump to the letter "W", and zoom in on that letter to see the names associated with it. 
+- The zoomed-in view is the main view of the content. This is the main view where you show individual data items.
+- The zoomed-out view is a higher-level view of the same content. You typically show the group headers for a grouped data set in this view.
+
+For example, when viewing an address book, the user could zoom out to quickly jump to the letter "W", and zoom in on that letter to see the names associated with it.
 
 > **Important APIs**: [SemanticZoom class](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
 **Features**:
 
--   The size of the zoomed-out view is constrained by the bounds of the semantic zoom control.
--   Tapping on a group header toggles views. Pinching as a way to toggle between views can be enabled.
--   Active headers switch between views.
+- The size of the zoomed-out view is constrained by the bounds of the semantic zoom control.
+- Tapping on a group header toggles views. Pinching as a way to toggle between views can be enabled.
+- Active headers switch between views.
 
 ## Is this the right control?
 
@@ -40,7 +39,7 @@ Don't confuse semantic zooming with optical zooming. While they share both the s
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -55,7 +54,7 @@ Don't confuse semantic zooming with optical zooming. While they share both the s
 
 **XAML Controls Gallery**
 
-The SemanticZoom section within the Controls Gallery demonstrates a navigation experience that allows users to quickly zoom in and out of grouped sections of control types. 
+The SemanticZoom section within the Controls Gallery demonstrates a navigation experience that allows users to quickly zoom in and out of grouped sections of control types.
 
 ![example of semantic zoom used in the XAMl Controls Gallery](images/semanticzoom-gallery.gif)
 
@@ -70,16 +69,17 @@ Here's a semantic zoom used in the Photos app. Photos are grouped by month. Sele
 The **SemanticZoom** control doesn't have any visual representation of its own. It's a host control that manages the transition between 2 other controls that provide the views of your content, typically **ListView** or **GridView** controls.  You set the view controls to the [ZoomedInView](/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) and [ZoomedOutView](/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) properties of the SemanticZoom.
 
 The 3 elements you need for a semantic zoom are:
+
 - A grouped data source. (Groups are defined by the GroupStyle definition in the zoomed-in view.)
 - A zoomed-in view that shows the item-level data.
 - A zoomed-out view that shows the group-level data.
 
-Before you use a semantic zoom, you should understand how to use a list view with grouped data. For more info, see [List view and grid view](listview-and-gridview.md). 
+Before you use a semantic zoom, you should understand how to use a list view with grouped data. For more info, see [List view and grid view](listview-and-gridview.md).
 
 > **Note**&nbsp;&nbsp;To define the zoomed-in view and the zoomed-out view of the SemanticZoom control, you can use any two controls that implement the [ISemanticZoomInformation](/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) interface. The XAML framework provides 3 controls that implement this interface: ListView, GridView, and Hub.
- 
+
  This XAML shows the structure of the SemanticZoom control. You assign other controls to the ZoomedInView and ZoomedOutView properties.
- 
+
  ```xaml
 <SemanticZoom>
     <SemanticZoom.ZoomedInView>
@@ -91,12 +91,12 @@ Before you use a semantic zoom, you should understand how to use a list view wit
     </SemanticZoom.ZoomedOutView>
 </SemanticZoom>
  ```
- 
+
 The examples here are taken from the SemanticZoom page of the [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics). You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
   
 **Define the zoomed-in view**
 
-Here's the GridView control for the zoomed-in view. The zoomed-in view should display the individual data items in groups. This example shows how to display the items in a grid with an image and text. 
+Here's the GridView control for the zoomed-in view. The zoomed-in view should display the individual data items in groups. This example shows how to display the items in a grid with an image and text.
 
 ```xaml
 <SemanticZoom.ZoomedInView>
@@ -111,7 +111,7 @@ Here's the GridView control for the zoomed-in view. The zoomed-in view should di
 </SemanticZoom.ZoomedInView>
 ```
  
-The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` resource. The look of the items is defined in the `ZoomedInTemplate` resource. 
+The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` resource. The look of the items is defined in the `ZoomedInTemplate` resource.
 
 ```xaml
 <DataTemplate x:Key="ZoomedInGroupHeaderTemplate" x:DataType="data:ControlInfoDataGroup">
@@ -147,8 +147,8 @@ This XAML defines a ListView control for the zoomed-out view. This example shows
 ```
 
  The look is defined in the `ZoomedOutTemplate` resource.
- 
-```xaml    
+
+```xaml
 <DataTemplate x:Key="ZoomedOutTemplate" x:DataType="wuxdata:ICollectionViewGroup">
     <TextBlock Text="{x:Bind Group.(data:ControlInfoDataGroup.Title)}" 
                Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap"/>
@@ -179,18 +179,16 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## Recommendations
 
--   When using semantic zoom in your app, be sure that the item layout and panning direction don't change based on the zoom level. Layouts and panning interactions should be consistent and predictable across zoom levels.
--   Semantic zoom enables the user to jump quickly to content, so limit the number of pages/screens to three in the zoomed-out mode. Too much panning diminishes the practicality of semantic zoom.
--   Avoid using semantic zoom to change the scope of the content. For example, a photo album shouldn't switch to a folder view in File Explorer.
--   Use a structure and semantics that are essential to the view.
--   Use group names for items in a grouped collection.
--   Use sort ordering for a collection that is ungrouped but sorted, such as chronological for dates or alphabetical for a list of names.
-
+- When using semantic zoom in your app, be sure that the item layout and panning direction don't change based on the zoom level. Layouts and panning interactions should be consistent and predictable across zoom levels.
+- Semantic zoom enables the user to jump quickly to content, so limit the number of pages/screens to three in the zoomed-out mode. Too much panning diminishes the practicality of semantic zoom.
+- Avoid using semantic zoom to change the scope of the content. For example, a photo album shouldn't switch to a folder view in File Explorer.
+- Use a structure and semantics that are essential to the view.
+- Use group names for items in a grouped collection.
+- Use sort ordering for a collection that is ungrouped but sorted, such as chronological for dates or alphabetical for a list of names.
 
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
-
 
 ## Related articles
 

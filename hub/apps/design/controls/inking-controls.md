@@ -3,15 +3,13 @@ description: Learn about the InkCanvas and InkToolbar controls that facilitate
 title: Inking Controls
 label: Inking Controls
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ---
 # Inking controls
-
-
 
 There are two different controls that facilitate inking in Windows apps: [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) and [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
@@ -46,7 +44,7 @@ Pair the InkCanvas with an InkToolbar to provide a UI for activating ink feature
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -118,10 +116,12 @@ Although this is the default configuration, you have complete control over which
 The InkToolbar consists of two distinct groups of button types:
 
 1. A group of "tool" buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.
+
 > [!NOTE]
 > Feature selection is mutually exclusive.
 
 2. A group of "toggle" buttons containing the built-in ruler button. Custom toggles are added here.
+
 > [!NOTE]
 > Features are not mutually exclusive and can be used concurrently with other active tools.
 
@@ -148,7 +148,7 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 
 ![InkToolbar with eraser flyout invoked](images/ink-tools-erase-all-ink.png)
 
- For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
+For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
 ## Do's and don'ts
 

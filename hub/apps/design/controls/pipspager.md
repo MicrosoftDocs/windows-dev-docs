@@ -2,7 +2,7 @@
 description: A PipsPager is a control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.
 title: PipsPager
 template: detail.hbs
-ms.date: 3/8/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, winui, uwp
 pm-contact: gabilka

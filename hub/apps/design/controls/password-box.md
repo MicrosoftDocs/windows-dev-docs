@@ -5,7 +5,7 @@ ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -13,6 +13,7 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Password box
 
 A password box is a text input box that conceals the characters typed into it for the purpose of privacy. A password box looks like a text box, except that it renders placeholder characters in place of the text that has been entered. You can configure the placeholder character.
@@ -44,7 +45,7 @@ For more info about choosing the right text control, see the [Text controls](tex
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -99,6 +100,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
     }
 }
 ```
+
 Here's the result when this code runs and the user enters "Password".
 
 ![Password box with a validation message](images/passwordbox-revealed-validation.png)
@@ -185,12 +187,12 @@ For more info about how to use input scopes, see [Use input scope to change the 
 
 ## Recommendations
 
--   Use a label or placeholder text if the purpose of the password box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
--   Give the password box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
--   Don't put another control right next to a password input box. The password box has a password reveal button for users to verify the passwords they have typed, and having another control right next to it might make users accidentally reveal their passwords when they try to interact with the other control. To prevent this from happening, put some spacing between the password in put box and the other control, or put the other control on the next line.
--   Consider presenting two password boxes for account creation: one for the new password, and a second to confirm the new password.
--   Only show a single password box for logins.
--   When a password box is used to enter a PIN, consider providing an instant response as soon as the last number is entered instead of using a confirmation button.
+- Use a label or placeholder text if the purpose of the password box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
+- Give the password box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
+- Don't put another control right next to a password input box. The password box has a password reveal button for users to verify the passwords they have typed, and having another control right next to it might make users accidentally reveal their passwords when they try to interact with the other control. To prevent this from happening, put some spacing between the password in put box and the other control, or put the other control on the next line.
+- Consider presenting two password boxes for account creation: one for the new password, and a second to confirm the new password.
+- Only show a single password box for logins.
+- When a password box is used to enter a PIN, consider providing an instant response as soon as the last number is entered instead of using a confirmation button.
 
 ## Get the sample code
 

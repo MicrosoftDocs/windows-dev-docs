@@ -2,23 +2,26 @@
 description: Get item templates that you can use with a GridView control to display image galleries, images and text, and images with text overlays.
 title: Item templates for grid view
 template: detail.hbs
-ms.date: 11/03/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ---
+
 # Item templates for grid view
 
 This section contains item templates that you can use with a [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) control. Use these templates to get the look of common app types.
 
 To demonstrate data binding, these templates bind **GridViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
-> [!NOTE] 
+> [!NOTE]
 > Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibililty overview](../accessibility/accessibility-overview.md).
 
 ## Icon and text
+
 Use these templates to display a collection of apps in a grid with an icon and text.
 
-![small icon and text gridview example](images/listitems/icontext.png)
+![Small icon and text gridview example.](images/listitems/icontext.png)
+
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -37,7 +40,8 @@ Use these templates to display a collection of apps in a grid with an icon and t
 </GridView>
 ```
 
-![icon and double line text gridview example](images/listitems/icontext2.png)
+![Icon and double line text gridview example.](images/listitems/icontext2.png)
+
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -60,9 +64,11 @@ Use these templates to display a collection of apps in a grid with an icon and t
 ```
 
 ## Image gallery
+
 Use this template to display a collection of images in a grid with multi-select mode.
 
-![gridview items layout](images/listitems/gridviewitems.png)
+![Gridview items layout.](images/listitems/gridviewitems.png)
+
 ```xaml
 <GridView SelectionMode="Multiple">
     <GridView.ItemTemplate>
@@ -77,10 +83,13 @@ Use this template to display a collection of images in a grid with multi-select 
     </GridView.ItemsPanel>
 </GridView>
 ```
+
 ## Image and text
+
 Use these templates to display a media collection with text underneath.
 
-![square image and text gridview example](images/listitems/imageandtext.png)
+![Square image and text gridview example.](images/listitems/imageandtext.png)
+
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -102,7 +111,8 @@ Use these templates to display a media collection with text underneath.
 </GridView>
 ```
 
-![rectangle image and text gridview example](images/listitems/imageandtext2.png)
+![Rectangle image and text gridview example.](images/listitems/imageandtext2.png)
+
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -125,9 +135,11 @@ Use these templates to display a media collection with text underneath.
 ```
 
 ## Image with text overlay
+
 Use this template to display a media collection with text overlay.
 
-![Image and text overlay gridview example](images/listitems/imageoverlay.png)
+![Image and text overlay gridview example.](images/listitems/imageoverlay.png)
+
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -150,6 +162,7 @@ Use this template to display a media collection with text overlay.
 ```
 
 ## Related articles
+
 - [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)

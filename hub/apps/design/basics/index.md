@@ -6,6 +6,7 @@ ms.date: 09/30/2021
 ms.topic: article
 ms.localizationpriority: medium
 ---
+
 # Design basics for Windows apps
 
 Windows design guidance is a resource to help you design and build beautiful, polished apps. It’s not a list of prescriptive rules - it’s a living document, designed to adapt to our evolving design language as well as the needs of our app-building community.

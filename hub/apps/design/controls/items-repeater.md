@@ -3,11 +3,12 @@ description: ItemsRepeater is a light-weight control to generate and present a c
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # ItemsRepeater
 
 Use an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) to create custom collection experiences using a flexible layout system, custom views, and virtualization.
@@ -50,7 +51,7 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -70,7 +71,8 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 When you use an **ItemsRepeater**, you should provide scrolling functionality by wrapping it in a [**ScrollViewer**](/uwp/api/windows.ui.xaml.controls.scrollviewer) control.
 
 > [!NOTE]
-> If your app will run on earlier versions of Windows - those released *before* Windows 10, version 1809 - then you also need to host the **ScrollViewer** inside the [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
+> If your app will run on earlier versions of Windows - those released _before_ Windows 10, version 1809 - then you also need to host the **ScrollViewer** inside the [ItemsRepeaterScrollHost](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
+
 > ```xaml
 > <muxc:ItemsRepeaterScrollHost>
 >     <ScrollViewer>
@@ -78,6 +80,7 @@ When you use an **ItemsRepeater**, you should provide scrolling functionality by
 >     </ScrollViewer>
 > </muxc:ItemsRepeaterScrollHost>
 > ```
+
 > If your app will only run on recent versions of Windows 10, version 1809 and later - then there is no need to use the [**ItemsRepeaterScrollHost**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
 >
 > Prior to Windows 10, version 1809, **ScrollViewer** did not implement the [**IScrollAnchorProvider**](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) interface that the **ItemsRepeater** needs.  The **ItemsRepeaterScrollHost** enables the **ItemsRepeater** to coordinate with **ScrollViewer** on earlier releases to correctly preserve the visible location of items the user is viewing.  Otherwise, the items might appear to move or disappear suddenly when the items in the list are changed or the app is resized.
@@ -99,17 +102,18 @@ itemsRepeater1.ItemsSource = Items;
 
 You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
-
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
 ```
 
 ### ItemTemplate
+
 To specify how a data item is visualized, set the [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property to a [**DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate) or [**DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector) you have defined. The data template defines how the data is visualized. By default, the item is displayed in the view with a **TextBlock** the uses the string representation of the data object.
 
 However, you typically want to show a more rich presentation of your data by using a template that defines the layout and appearance of one or more controls that you'll use to display an individual item. The controls you use in the template can be bound to the properties of the data object, or have static content defined inline.
 
 #### DataTemplate
+
 In this example, the data object is a simple string. The **DataTemplate** includes an image to the left of the text, and styles the **TextBlock** to display the string in a teal color.
 
 > [!NOTE]
@@ -137,7 +141,8 @@ Here's how the items would appear when displayed with this **DataTemplate**.
 The number of elements used in the **DataTemplate** for an item can have a significant impact on performance if your view displays a large number of items. For more info and examples of how to use **DataTemplate**s to define the look of items in your list, see [Item containers and templates](item-containers-templates.md).
 
 > [!TIP]
-> For convenience when you want to declare the template inline rather than referenced as a static resource, you can specify the **DataTemplate** or **DataTemplateSelector** as the direct child of the **ItemsRepeater**.  It will be assigned as the value of the **ItemTemplate** property. For example, this is valid:
+> For convenience when you want to declare the template inline rather than referenced as a static resource, you can specify the **DataTemplate** or **DataTemplateSelector** as the direct child of the **ItemsRepeater**. It will be assigned as the value of the **ItemTemplate** property. For example, this is valid:
+
 > ```xaml
 > <ItemsRepeater ItemsSource="{x:Bind Items}">
 >     <DataTemplate>
@@ -222,7 +227,6 @@ This list shows available interfaces and when to consider using each one.
     Enables the control to very efficiently recover the existing UI after receiving a hard 'Reset' action as part of an **INotifyCollectionChanged** or **IObservableVector** event. After receiving a reset the control will use the provided unique ID to associate the current data with elements it had already created. Without the key to index mapping the control would have to assume it needs to start over from scratch in creating UI for the data.
 
 The interfaces listed above, other than IKeyIndexMapping, provide the same behavior in ItemsRepeater as they do in ListView and GridView.
-
 
 The following interfaces on an ItemsSource enable special functionality in the ListView and GridView controls, but currently have no effect on an ItemsRepeater:
 
@@ -677,6 +681,7 @@ This example shows how you can display a list of grouped items in a vertical sta
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
+
 The image below shows the basic layout that's created using the above sample as a guideline.
 
 ![Nested layout with items repeater](images/items-repeater-nested-layout.png)
@@ -727,6 +732,7 @@ This next example shows a layout for an app that has various categories that can
 The XAML framework already handles bringing a FrameworkElement into view when it either 1) receives keyboard focus or 2) receives Narrator focus. There may be other cases where you need to explicitly bring an element into view. For example, in response to a user action or to restore the state of the UI after a page navigation.
 
 Bringing a virtualized element into view involves the following:
+
 1. Realize a UIElement for an item
 2. Run the layout to ensure the element has a valid position
 3. Initiate a request to bring the realized element into view
@@ -781,6 +787,7 @@ public class MyPage : Page
 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](../usability/index.md) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](../accessibility/custom-automation-peers.md).
 
 ### Keyboarding
+
 The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
 ![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)

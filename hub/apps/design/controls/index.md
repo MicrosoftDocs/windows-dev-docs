@@ -4,7 +4,7 @@ title: Windows Controls and patterns - Windows app development
 keywords: uwp controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 # Controls for Windows apps
 
-In Windows app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
+In Windows app development, a _control_ is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A _pattern_ is a recipe for combining several controls to make something new.
 
-We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.
+We provide more than 45 controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.
 
 The articles in this section provide design guidance and coding instructions for adding controls & patterns to your Windows app.
 
@@ -28,7 +28,7 @@ General instructions and code examples for adding and styling controls in XAML a
       There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</p>
     :::column-end:::
     :::column:::
-      <p><b><a href="../style/xaml-styles.md">Styling controls</a></b> <br/>
+      <p><b><a href="../style/xaml-styles.md">Styling controls</a></b><br/>
       You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
     :::column-end:::
 :::row-end:::
@@ -53,7 +53,6 @@ Detailed information about specific controls and patterns.
 
 :::row:::
     :::column:::
-
 - [Animated icon (New)](animated-icon.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Auto-suggest box](auto-suggest-box.md)
@@ -125,24 +124,20 @@ Detailed information about specific controls and patterns.
 - [Tree view](tree-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Two-pane view](two-pane-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Web view](web-view.md)
-
     :::column-end:::
 :::row-end:::
-
-
-
 
 ## XAML Controls Gallery
 
 Get the _XAML Controls Gallery_ app from the Microsoft Store to see these controls and the Fluent Design System in action. The app is an interactive companion to this website. When you have it installed, you can use links on individual control pages to launch the app and see the control in action.
 
-<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a>
+[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
 
-<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+[Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
-<img src="images/xaml-controls-gallery.png" alt="XAML Controls Gallery screen" />
+![XAML Controls Gallery screen.](images/xaml-controls-gallery.png)
 
 ## Additional controls
 
-Additional controls for Windows development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
-<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.
+Additional controls for Windows development are available from companies such as [Telerik](https://www.telerik.com), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls"), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps),
+[Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) and [ActiPro](https://www.actiprosoftware.com/products/controls/universal). These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.

@@ -7,11 +7,12 @@ description: Learn how to use Swipe commanding as a touch accelerator for contex
 title: Swipe
 label: Swipe
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Swipe
 
 Swipe commanding is an accelerator for context menus that lets users easily access common menu actions by touch, without needing to change states within the app.
@@ -36,7 +37,7 @@ You should use swipe commanding when you have a potentially large group of items
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -48,7 +49,6 @@ You should use swipe commanding when you have a potentially large group of items
 </td>
 </tr>
 </table>
-
 
 ## How does Swipe work?
 
@@ -198,8 +198,7 @@ The data item is the DataContext of the SwipeControl. In your code, you can acce
 > [!NOTE]
 > Here, the items were added directly to the ListView.Items collection for simplicity, so the item is also deleted the same way. If you instead set the ListView.ItemsSource to a collection, which is more typical, you need to delete the item from the source collection.
 
-In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the 
-[SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) enum values.
+In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) enum values.
 
 - **Auto**
   - In Execute mode, the opened swipe item will remain open when invoked.

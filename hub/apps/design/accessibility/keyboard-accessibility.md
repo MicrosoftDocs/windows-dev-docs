@@ -4,14 +4,13 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Keyboard accessibility
 label: Keyboard accessibility
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Keyboard accessibility  
-
-
 
 If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
 
@@ -19,7 +18,8 @@ If your app does not provide good keyboard access, users who are blind or have m
 <span id="keyboard_navigation_among_ui_elements"/>
 <span id="KEYBOARD_NAVIGATION_AMONG_UI_ELEMENTS"/>
 
-## Keyboard navigation among UI elements  
+## Keyboard navigation among UI elements
+
 To use the keyboard with a control, the control must have focus, and to receive focus (without using a pointer) the control must be accessible in a UI design via tab navigation. By default, the tab order of controls is the same as the order in which they are added to a design surface, listed in XAML, or programmatically added to a container.
 
 In most cases, the default order based on how you defined controls in XAML is the best order, especially because that is the order in which the controls are read by screen readers. However, the default order does not necessarily correspond to the visual order. The actual display position might depend on the parent layout container and certain properties that you can set on the child elements to influence the layout. To be sure your app has a good tab order, test this behavior yourself. Especially if you have a grid metaphor or table metaphor for your layout, the order in which users might read versus the tab order could end up different. That's not always a problem in and of itself. But just make sure to test your app's functionality both as a touchable UI and as a keyboard-accessible UI and verify that your UI makes sense either way.
@@ -110,13 +110,14 @@ XAML
 <span id="keyboard_shortcuts"/>
 <span id="KEYBOARD_SHORTCUTS"/>
 
-## Keyboard shortcuts  
+## Keyboard shortcuts
+
 In addition to implementing keyboard navigation and activation for your app, it is a good practice to implement shortcuts for your app's functionality. Tab navigation provides a good, basic level of keyboard support, but with complex forms you may want to add support for shortcut keys as well. This can make your application more efficient to use, even for people who use both a keyboard and pointing devices.
 
 A *shortcut* is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:
 
-* An *access key* is a shortcut to a piece of UI in your app. Access keys consist of the Alt key plus a letter key.
-* An *accelerator key* is a shortcut to an app command. Your app may or may not have UI that corresponds exactly to the command. Accelerator keys consist of the Ctrl key plus a letter key.
+- An *access key* is a shortcut to a piece of UI in your app. Access keys consist of the Alt key plus a letter key.
+- An *accelerator key* is a shortcut to an app command. Your app may or may not have UI that corresponds exactly to the command. Accelerator keys consist of the Ctrl key plus a letter key.
 
 It is imperative that you provide an easy way for users who rely on screen readers and other assistive technology to discover your app's shortcut keys. Communicate shortcut keys by using tooltips, accessible names, accessible descriptions, or some other form of on-screen communication. At a minimum, shortcut keys should be well documented in your app's Help content.
 
@@ -171,7 +172,8 @@ For more guidance about implementing shortcut keys, see [Shortcut keys](/windows
 <span id="implementing_a_key_event_handler"/>
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
 
-### Implementing a key event handler  
+### Implementing a key event handler
+
 Input events such as the key events use an event concept called *routed events*. A routed event can bubble up through the child elements of a composited control, such that a common control parent can handle events for multiple child elements. This event model is convenient for defining shortcut key actions for a control that contains several composite parts that by design cannot have focus or be part of the tab order.
 
 For example code that shows how to write a key event handler that includes checking for modifiers such as the Ctrl key, see [Keyboard interactions](../input/keyboard-interactions.md).
@@ -180,7 +182,8 @@ For example code that shows how to write a key event handler that includes check
 <span id="keyboard_navigation_for_custom_controls"/>
 <span id="KEYBOARD_NAVIGATION_FOR_CUSTOM_CONTROLS"/>
 
-## Keyboard navigation for custom controls  
+## Keyboard navigation for custom controls
+
 We recommend the use of arrow keys as keyboard shortcuts for navigating among child elements, in cases where the child elements have a spacial relationship to each other. If tree-view nodes have separate sub-elements for handling expand-collapse and node activation, use the left and right arrow keys to provide keyboard expand-collapse functionality. If you have an oriented control that supports directional traversal within the control content, use the appropriate arrow keys.
 
 Generally you implement custom key handling for custom controls by including an override of [**OnKeyDown**](/uwp/api/windows.ui.xaml.controls.control.onkeydown) and [**OnKeyUp**](/uwp/api/windows.ui.xaml.controls.control.onkeyup) methods as part of the class logic.
@@ -256,6 +259,7 @@ Note how only one of the named states adjusts [**Visibility**](/uwp/api/windows.
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 
 ## Keyboard accessibility and Windows Phone
+
 A Windows Phone device typically doesn't have a dedicated, hardware keyboard. However, a Soft Input Panel (SIP) can support several keyboard accessibility scenarios. Screen readers can read text input from the **Text** SIP, including announcing deletions. Users can discover where their fingers are because the screen reader can detect that the user is scanning keys, and it reads the scanned key name aloud. Also, some of the keyboard-oriented accessibility concepts can be mapped to related assistive technology behaviors that don't use a keyboard at all. For example, even though a SIP won't include a Tab key, Narrator supports a touch gesture that's the equivalent of pressing the Tab key, so having a useful tab order through the controls in a UI is still an important accessibility principle. Arrow keys as used for navigating the parts within complex controls are also supported through Narrator touch gestures. Once focus has reached a control that's not for text input, Narrator supports a gesture that invokes that control's action.
 
 Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a SIP won't include Control or Alt keys.
@@ -264,7 +268,7 @@ Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a S
 
 ## Related topics
 
-* [Accessibility](accessibility.md)
-* [Keyboard interactions](../input/keyboard-interactions.md)
-* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+- [Accessibility](accessibility.md)
+- [Keyboard interactions](../input/keyboard-interactions.md)
+- [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

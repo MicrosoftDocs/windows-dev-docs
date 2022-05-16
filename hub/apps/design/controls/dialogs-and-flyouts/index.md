@@ -2,7 +2,7 @@
 description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Dialogs and flyouts
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
@@ -12,19 +12,20 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Dialogs and flyouts
 
 Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
 
-> **Platform APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **Platform APIs**: [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-**Dialogs**
+## Dialogs
 
 ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
 
 Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
 
-**Flyouts**
+## Flyouts
 
 ![Example of a flyout](../images/flyout-example2.png)
 
@@ -40,29 +41,22 @@ Once you've determined that you want to use a dialog or flyout, you need to choo
 
 Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it.
 
-   <p><b>Use a dialog for...</b> <br/>
-<ul>
-<li>Expressing important information that the user <b>must</b> read and acknowledge before proceeding. Examples include:
-<ul>
-  <li>When the user's security might be compromised</li>
-  <li>When the user is about to permanently alter a valuable asset</li>
-  <li>When the user is about to delete a valuable asset</li>
-  <li>To confirm an in-app purchase</li>
-</ul>
+**Use a dialog for:**
 
-</li>
-<li>Error messages that apply to the overall app context, such as a connectivity error.</li>
-<li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
-</ul>
-</p>
+Expressing important information that the user **must** read and acknowledge before proceeding. Examples include:
 
+- When the user's security might be compromised
+- When the user is about to permanently alter a valuable asset
+- When the user is about to delete a valuable asset
+- To confirm an in-app purchase
 
-   <p><b>Use a flyout for...</b> <br/>
-<ul>
-<li>Collecting additional information needed before an action can be completed.</li>
-<li>Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
-<li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
-</ul></p>
+Error messages that apply to the overall app context, such as a connectivity error.Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.
+
+**Use a flyout for:**
+
+- Collecting additional information needed before an action can be completed.
+- Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.
+- Displaying more information, such as details or longer descriptions of an item on the page.
 
 ## Ways to avoid using dialogs and flyouts
 
@@ -72,16 +66,16 @@ Dialogs are frequently used to confirm an action (such as deleting a file) befor
 
 ## How to create a dialog
 
-See the [Dialogs article](dialogs.md). 
+See the [Dialogs article](dialogs.md).
 
 ## How to create a flyout
 
-See the [Flyout article](flyouts.md). 
+See the [Flyout article](flyouts.md).
 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -93,4 +87,3 @@ See the [Flyout article](flyouts.md).
 </td>
 </tr>
 </table>
-

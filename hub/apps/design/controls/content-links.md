@@ -3,7 +3,7 @@ title: Content links in text controls
 description: Learn how to use content links to embed rich data in the TextBlock, RichTextBlock, and RichEditBox controls.
 label: Content links
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -11,6 +11,7 @@ design-contact:
 doc-status: Draft
 ms.localizationpriority: medium
 ---
+
 # Content links in text controls
 
 Content links provide a way to embed rich data in your text controls, which lets a user find and use more information about a person or place without leaving the context of your app.
@@ -25,9 +26,7 @@ When the user prefixes an entry with the at (@) symbol in a RichEditBox, they’
 > [!NOTE]
 > The APIs for content links are spread across the following namespaces: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents, and Windows.UI.Text.
 
-
-
-## Content links in rich edit vs. text block controls
+## Content links in rich edit versus text block controls
 
 There are two distinct ways to use content links:
 
@@ -112,7 +111,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 
 ### Content link colors
 
-The appearance of a content link is determined by its foreground, background, and icon. In a RichEditBox, you can set the [ContentLinkForegroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkForegroundColor) and [ContentLinkBackgroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkBackgroundColor) properties to change the default colors. 
+The appearance of a content link is determined by its foreground, background, and icon. In a RichEditBox, you can set the [ContentLinkForegroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkForegroundColor) and [ContentLinkBackgroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkBackgroundColor) properties to change the default colors.
 
 You can't set the cursor. The cursor is rendered by the RichEditbox based on the type of content link - a [Person](/uwp/api/windows.ui.core.corecursortype) cursor for a person link, or a [Pin](/uwp/api/windows.ui.core.corecursortype) cursor for a place link.
 

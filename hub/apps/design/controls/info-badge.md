@@ -2,7 +2,7 @@
 description: An InfoBadge is a small circle that represents a notification or alert within an app.
 title: InfoBadge
 template: detail.hbs
-ms.date: 09/10/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, winui, uwp
 pm-contact: gabilka
@@ -94,7 +94,7 @@ The icon InfoBadge is an ellipse with a diameter of 16px that holds an icon insi
 
 You should use the icon InfoBadge to send a quick message along with getting the user's attention – for example, to alert the user that something non-blocking has gone wrong, an extra important update is available, or that something specific in the app is currently enabled (such as a countdown timer going).
 
-If you'd like to use a [BitmapIconSource](/windows/winui/api/microsoft.ui.xaml.controls.bitmapiconsource) for the `IconSource` of your InfoBadge, you are responsible for ensuring that the bitmap fits inside of the InfoBadge (either by changing the size of the icon, or changing the size of the InfoBadge).
+If you'd like to use a [BitmapIconSource](/windows/winui/api/microsoft.ui.xaml.controls.bitmapiconsource) for the **IconSource** of your InfoBadge, you are responsible for ensuring that the bitmap fits inside of the InfoBadge (either by changing the size of the icon, or changing the size of the InfoBadge).
 
 ### Numeric InfoBadge
 
@@ -140,10 +140,10 @@ To create a numeric InfoBadge, set the [Value](/windows/winui/api/microsoft.ui.x
 
 :::image type="content" source="images/infobadge/numeric-infobadge.png" alt-text="Numeric InfoBadge":::
 
-In most scenarios, you'll bind the `Value` property of the InfoBadge to a changing integer value in your app's backend so you can easily increment/decrement and show/hide the InfoBadge based on that specific value.
+In most scenarios, you'll bind the **Value** property of the InfoBadge to a changing integer value in your app's backend so you can easily increment/decrement and show/hide the InfoBadge based on that specific value.
 
 > [!NOTE]
-> If both the `Icon` and `Value` properties are set, the `Value` property takes precedence and the InfoBadge appears as a numeric InfoBadge.
+> If both the **Icon** and **Value** properties are set, the **Value** property takes precedence and the InfoBadge appears as a numeric InfoBadge.
 
 ## Preset InfoBadge styles
 
@@ -151,39 +151,39 @@ To help support the most common scenarios in which InfoBadges are used, WinUI pr
 
 The following style presets are available for InfoBadge:
 
-- `AttentionDotInfoBadgeStyle`
-- `AttentionIconInfoBadgeStyle`
-- `AttentionValueInfoBadgeStyle`
+- AttentionDotInfoBadgeStyle
+- AttentionIconInfoBadgeStyle
+- AttentionValueInfoBadgeStyle
 
 :::image type="content" source="images/infobadge/attention-badges.png" alt-text="Attention InfoBadge styles":::
 
-- `InformationalDotInfoBadgeStyle`
-- `InformationalIconInfoBadgeStyle`
-- `InformationalValueInfoBadgeStyle`
+- InformationalDotInfoBadgeStyle
+- InformationalIconInfoBadgeStyle
+- InformationalValueInfoBadgeStyle
 
 :::image type="content" source="images/infobadge/informational-badges.png" alt-text="Informational InfoBadge styles":::
 
-- `SuccessDotInfoBadgeStyle`
-- `SuccessIconInfoBadgeStyle`
-- `SuccessValueInfoBadgeStyle`
+- SuccessDotInfoBadgeStyle
+- SuccessIconInfoBadgeStyle
+- SuccessValueInfoBadgeStyle
 
 :::image type="content" source="images/infobadge/success-badges.png" alt-text="Success InfoBadge styles":::
 
-- `CautionDotInfoBadgeStyle`
-- `CautionIconInfoBadgeStyle`
-- `CautionValueInfoBadgeStyle`
+- CautionDotInfoBadgeStyle
+- CautionIconInfoBadgeStyle
+- CautionValueInfoBadgeStyle
 
 :::image type="content" source="images/infobadge/caution-badges.png" alt-text="Caution InfoBadge styles":::
 
-- `CriticalDotInfoBadgeStyle`
-- `CriticalIconInfoBadgeStyle`
-- `CriticalValueInfoBadgeStyle`
+- CriticalDotInfoBadgeStyle
+- CriticalIconInfoBadgeStyle
+- CriticalValueInfoBadgeStyle
 
 :::image type="content" source="images/infobadge/critical-badges.png" alt-text="Critical InfoBadge styles":::
 
 If a style is set on an InfoBadge and a conflicting property is also set, the property will overwrite the conflicting part of the style, but non-conflicting style elements will stay applied.
 
-For example, if you apply the `CriticalIconInfoBadgeStyle` to an InfoBadge, but also set `InfoBadge.Value = "1"`, you would end up with an InfoBadge that has the "Critical" background color but displays the number 1 inside of it, rather than displaying the preset icon.
+For example, if you apply the CriticalIconInfoBadgeStyle to an InfoBadge, but also set InfoBadge.Value = "1", you would end up with an InfoBadge that has the "Critical" background color but displays the number 1 inside of it, rather than displaying the preset icon.
 
 This example creates an InfoBadge that takes on the color and icon of the _Attention Icon_ preset style.
 
@@ -195,7 +195,7 @@ This example creates an InfoBadge that takes on the color and icon of the _Atten
 
 ## Using an InfoBadge in NavigationView
 
-If you're using a NavigationView in your app, we recommend that you use an InfoBadge in the NavigationView to show app-wide notifications and alerts. To place the InfoBadge on a NavigationViewItem, assign the InfoBadge object to the `NavigationViewItem.InfoBadge` property.
+If you're using a NavigationView in your app, we recommend that you use an InfoBadge in the NavigationView to show app-wide notifications and alerts. To place the InfoBadge on a NavigationViewItem, assign the InfoBadge object to the **NavigationViewItem.InfoBadge** property.
 
 In Left-Expanded mode, the InfoBadge appears right-aligned to the edge of the NavigationViewItem.
 
@@ -357,19 +357,19 @@ An InfoBadge typically displays a transient alert, so it's common to show or hid
 
 You can use either the [Visibility](/uwp/api/windows.ui.xaml.uielement.visibility) property or [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) property to show and hide an InfoBadge based on user actions, program logic, counters, etc.
 
-As with other UIElements, setting `Visibility.Collapsed` will make the InfoBadge not take space in your layout, so it might cause other elements to move around when it's shown and hidden.
+As with other UIElements, setting **Visibility.Collapsed** will make the InfoBadge not take space in your layout, so it might cause other elements to move around when it's shown and hidden.
 
-If elements being repositioned is a concern, you can use the `Opacity` property to show and hide the InfoBadge. `Opacity` is set to `1.0` by default; you can set it to `0` to hide the InfoBadge. When you use the `Opacity` property, InfoBadge will still take up space in the layout even if it is currently hidden.
+If elements being repositioned is a concern, you can use the **Opacity** property to show and hide the InfoBadge. **Opacity** is set to **1.0** by default; you can set it to **0** to hide the InfoBadge. When you use the **Opacity** property, InfoBadge will still take up space in the layout even if it is currently hidden.
 
 ### Change the InfoBadge style
 
-You can change the icon or number displayed in an InfoBadge while it is being shown. Decrementing or incrementing a numeric InfoBadge based on user action can be achieved by changing the value of `InfoBadge.Value`. Changing the icon of an InfoBadge can be achieved by setting `InfoBadge.IconSource` to a new `IconSource` object. When changing icons, ensure that the new icon is the same size as the old icon to avoid a jarring visual effect.
+You can change the icon or number displayed in an InfoBadge while it is being shown. Decrementing or incrementing a numeric InfoBadge based on user action can be achieved by changing the value of **InfoBadge.Value**. Changing the icon of an InfoBadge can be achieved by setting **InfoBadge.IconSource** to a new **IconSource** object. When changing icons, ensure that the new icon is the same size as the old icon to avoid a jarring visual effect.
 
 ### Default behavior
 
-If neither `InfoBadge.Value` nor `InfoBadge.IconSource` are set, the InfoBadge defaults to showing a dot (specifically if `Value` is set to `-1` and `IconSource` is set to `null`, which are the default values). If both the `Value` and `IconSource` properties are set, the InfoBadge will honor the `Value` property and display a number value.
+If neither **InfoBadge.Value** nor **InfoBadge.IconSource** are set, the InfoBadge defaults to showing a dot (specifically if **Value** is set to **-1** and **IconSource** is set to **null**, which are the default values). If both the **Value** and **IconSource** properties are set, the InfoBadge will honor the **Value** property and display a number value.
 
-You can also change the InfoBadge's type while it is being shown. To change the type of InfoBadge, be sure that the current type's corresponding property (`Value` or `IconSource`) is set to its default value (`-1` or `null`), and set the new type's property equal to an appropriate value. To change the type of InfoBadge from numeric or icon to a dot type InfoBadge, make sure that `InfoBadge.Value` is set to `-1` and `InfoBadge.IconSource` is set to `null`.
+You can also change the InfoBadge's type while it is being shown. To change the type of InfoBadge, be sure that the current type's corresponding property (**Value** or **IconSource**) is set to its default value (**-1** or **null**), and set the new type's property equal to an appropriate value. To change the type of InfoBadge from numeric or icon to a dot type InfoBadge, make sure that **InfoBadge.Value** is set to **-1** and **InfoBadge.IconSource** is set to **null**.
 
 Depending on how you've positioned your InfoBadge, be aware that this may cause items to shift as the size and shape of the InfoBadge may change.
 
@@ -388,7 +388,7 @@ If you are using InfoBadge outside of a NavigationView, we recommend the followi
 - The app sends a UIA notification when a significant change has occurred with an existing InfoBadge.
   - The definition of "significant change" is up to you as the individual developer. Examples of this can include: an InfoBadge switching between different types, an InfoBadge changing color to represent its status, or an InfoBadge's value exceeding a certain significant number.
 
-To control what the parent element announces to screenreaders, you can use attached properties of the [AutomationProperties](/uwp/api/windows.ui.xaml.automation.automationproperties) class. For InfoBadge, it's recommended that you set either the `AutomationProperties.FullDescription` or `AutomationProperties.ItemStatus` attached properties on the parent element.
+To control what the parent element announces to screenreaders, you can use attached properties of the [AutomationProperties](/uwp/api/windows.ui.xaml.automation.automationproperties) class. For InfoBadge, it's recommended that you set either the **AutomationProperties.FullDescription** or **AutomationProperties.ItemStatus** attached properties on the parent element.
 
 To send UIA notifications upon the InfoBadge's appearance or dismissal, you can use the [AutomationPeer.RaiseAutomationEvent](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.raiseautomationevent) method.
 

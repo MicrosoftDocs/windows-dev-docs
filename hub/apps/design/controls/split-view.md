@@ -4,7 +4,7 @@ ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: A split view control has an expandable/collapsible pane and a content area.
 label: Split view
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -23,24 +23,23 @@ Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
 ![Microsoft Edge split view example](images/split-view-edge.png)
 
-
  A split view's content area is always visible. The pane can expand and collapse or remain in an open state, and can present itself from either the left side or right side of an app window. The pane has four modes:
 
--   **Overlay**
+- **Overlay**
 
     The pane is hidden until opened. When open, the pane overlays the content area.
 
--   **Inline**
+- **Inline**
 
     The pane is always visible and doesn't overlay the content area. The pane and content areas divide the available screen real estate.
 
--   **CompactOverlay**
+- **CompactOverlay**
 
-    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with `CompactPaneLength`. If the pane is opened, it will overlay the content area.
+    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with **CompactPaneLength**. If the pane is opened, it will overlay the content area.
 
--   **CompactInline**
+- **CompactInline**
 
-    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with `CompactPaneLength`. If the pane is opened, it will reduce the space available for content, pushing the content out of its way.
+    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with **CompactPaneLength**. If the pane is opened, it will reduce the space available for content, pushing the content out of its way.
 
 ## Is this the right control?
 
@@ -51,7 +50,7 @@ If you'd like to build a navigation menu with an expand/collapse button and a li
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -67,6 +66,7 @@ If you'd like to build a navigation menu with an expand/collapse button and a li
 ## Create a split view
 
 Here's a SplitView control with an open Pane appearing inline next to the Content.
+
 ```xaml
 <SplitView IsPaneOpen="True"
            DisplayMode="Inline"
@@ -92,6 +92,7 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related topics
+
 - [Nav pane pattern](navigationview.md)
 - [List view](lists.md)
 - [List/details](list-details.md)

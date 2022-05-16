@@ -4,7 +4,7 @@ title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
@@ -12,11 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Rich text block
 
- 
-
-Rich text blocks provide several features for advanced text layout that you can use when you need support for paragraphs, inline UI elements, or complex text layouts.
+ Rich text blocks provide several features for advanced text layout that you can use when you need support for paragraphs, inline UI elements, or complex text layouts.
 
 > **Platform APIs**: [RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography class](/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
@@ -31,7 +30,7 @@ For more info about choosing the right text control, see the [Text controls](tex
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -49,13 +48,14 @@ For more info about choosing the right text control, see the [Text controls](tex
 The content property of RichTextBlock is the [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) property, which supports paragraph based text via the [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app. However, RichTextBlock provides several unique features that TextBlock doesn't provide. 
 
 RichTextBlock supports:
+
 - Multiple paragraphs. Set the indentation for paragraphs by setting the [TextIndent](/uwp/api/windows.ui.xaml.controls.richtextblock.textindent) property.
 - Inline UI elements. Use an [InlineUIContainer](/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer) to display UI elements, such as images, inline with your text.
 - Overflow containers. Use [RichTextBlockOverflow](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow) elements to create multi-column text layouts.
 
 ### Paragraphs
 
-You use [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) elements to define the blocks of text to display within a RichTextBlock control. Every RichTextBlock should include at least one Paragraph. 
+You use [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) elements to define the blocks of text to display within a RichTextBlock control. Every RichTextBlock should include at least one Paragraph.
 
 You can set the indent amount for all paragraphs in a RichTextBlock by setting the [RichTextBlock.TextIndent](/uwp/api/windows.ui.xaml.controls.richtextblock.textindent) property. You can override this setting for specific paragraphs in a RichTextBlock by setting the [Paragraph.TextIndent](/uwp/api/windows.ui.xaml.documents.paragraph.textindent) property to a different value.
 
@@ -73,7 +73,7 @@ The [InlineUIContainer](/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer) cl
 
 If you want to embed more than one element inline in the same position, consider using a panel as the single InlineUIContainer child, and then place the multiple elements within that panel.
 
-This example shows how to use an InlineUIContainer to insert an image into a RichTextBlock. 
+This example shows how to use an InlineUIContainer to insert an image into a RichTextBlock.
 
 ```xaml
 <RichTextBlock>
@@ -152,14 +152,16 @@ See Typography and Guidelines for fonts.
 [Text controls](text-controls.md)
 
 **For designers**
+
 - [Guidelines for spell checking](text-controls.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
 - [Guidelines for text input](text-controls.md)
 
 **For developers (XAML)**
+
 - [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
-
 **For developers (other)**
+
 - [String.Length property](/dotnet/api/system.string.length)

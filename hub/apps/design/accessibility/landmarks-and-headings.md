@@ -4,7 +4,7 @@ ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
 template: detail.hbs
-ms.date: 01/24/2018
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -38,4 +38,4 @@ Use [AutomationProperties.HeadingLevel](/uwp/api/windows.ui.xaml.automation.auto
 
 For numerous code samples showing how to resolve many common programmatic accessibility issues in Windows desktop apps, see [Code samples for resolving common programmatic accessibility issues in Windows desktop apps](/accessibility-tools-docs/).
 
-These code samples are referenced directly by[ Microsoft Accessibility Insights for Windows](https://github.com/microsoft/accessibility-insights-windows), which can help to spotlight many accessibility issues in UI.
+These code samples are referenced directly by [Microsoft Accessibility Insights for Windows](https://github.com/microsoft/accessibility-insights-windows), which can help to spotlight many accessibility issues in UI.

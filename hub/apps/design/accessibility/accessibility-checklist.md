@@ -4,11 +4,12 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Accessibility checklist
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Accessibility checklist
 
 Provides a checklist to help you ensure that your Windows app is accessible .
@@ -37,8 +38,8 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
     * Windows includes various accessibility tools and settings that users can take advantage of and adjust to their own needs and preferences for reading text. These include:
         * The Magnifier tool, which enlarges a selected area of the UI. You should ensure the layout of text in your app doesn't make it difficult to use Magnifier for reading.
-        * Global scale and resolution settings in **Settings->System->Display->Scale and layout**. Exactly which sizing options are available can vary as this depends on the capabilities of the display device.
-        * Text size settings in **Settings->Ease of access->Display**. Adjust the **Make text bigger** setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating).
+        * Global scale and resolution settings in **Settings** > **System** > **Display** > **Scale and layout**. Exactly which sizing options are available can vary as this depends on the capabilities of the display device.
+        * Text size settings in **Settings** > **Ease of access** > **Display**. Adjust the **Make text bigger** setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating).
         > [!NOTE]
         > The **Make everything bigger** setting lets a user specify their preferred size for text and apps in general on their primary screen only.
 

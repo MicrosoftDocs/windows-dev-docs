@@ -2,7 +2,7 @@
 description: Enables users to view and set ratings that reflect satisfaction with content and services. 
 title: Rating Control
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -11,6 +11,7 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Rating control
 
 The rating control allows users to view and set ratings that reflect degrees of satisfaction with content and services. Users can interact with the rating control with touch, pen, mouse, gamepad or keyboard. The follow guidance shows how to use the rating control's features to provide flexibility and customization.
@@ -38,7 +39,7 @@ The rating control allows users to view and set ratings that reflect degrees of 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -56,6 +57,7 @@ The rating control allows users to view and set ratings that reflect degrees of 
 Perhaps the most common way to use the rating control is to display an average rating while still allowing the user to enter their own rating value. In this scenario, the rating control is initially set to reflect the average satisfaction rating of all users of a particular service or type of content (such as a music, videos, books, etc.). It remains in this state until a user interacts with the control with the goal of individually rating an item. This interaction changes the state of the ratings control to reflect the user's personal satisfaction rating.
 
 #### Initial average rating state
+
 ![Initial Average Rating State](images/rating_rs2_doc_movie_aggregate.png)
 
 #### Representation of user rating once set
@@ -98,12 +100,13 @@ To do this you would do the following:
 
 The rating control has many additional features which can be used. Details for using these features can be found in our reference documentation.
 Here is a non-comprehensive list of additional functionality:
--   Great long list performance
--   Compact sizing for tight UI scenarios
--   Continuous value fill and rating
--   Spacing customization
--   Disable growth animations
--   Customization of the number of stars
+
+- Great long list performance
+- Compact sizing for tight UI scenarios
+- Continuous value fill and rating
+- Spacing customization
+- Disable growth animations
+- Customization of the number of stars
 
 ## Get the sample code
 

@@ -3,7 +3,7 @@ title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.service: #Required; service per approved list.
 ms.topic: overview
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ---
 
 # Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
@@ -12,7 +12,7 @@ In this topic, we describe commanding in Windows applications. Specifically, we 
 
 ![A diagram representing a common usage for a shared command: multiple UI surfaces with a 'favorite' command](images/commanding/generic-commanding.png)
 
-*Share commands across various controls, regardless of device and input type*
+_Share commands across various controls, regardless of device and input type_
 
 ## Important APIs
 
@@ -32,9 +32,9 @@ Commands can operate on a specific context within your app, such as deleting tex
 
 The following image shows two command interfaces (a [CommandBar](command-bar.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
 
-![Expanded Command bar](images/command-bar-flyout-img-expanded.png)<br>*Command bar*
+![Expanded Command bar](images/command-bar-flyout-img-expanded.png)<br/>_Command bar_
 
-![Context menu in the Microsoft Photos gallery](images/context-menu-example.png)<br>*Context menu in the Microsoft Photos gallery*
+![Context menu in the Microsoft Photos gallery](images/context-menu-example.png)<br/>_Context menu in the Microsoft Photos gallery_
 
 ## Command interactions
 
@@ -79,15 +79,15 @@ To bind a control to a shared command resource, you can implement the ICommand i
 
 ## Command experiences using the StandardUICommand class
 
-Derived from [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand) (derived from [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
+Derived from [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand) (derived from [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) for C++ or [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
 
-A [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) provides a quick and consistent way to define common commands such as `Save` or `Delete`. All you have to do is provide the execute and canExecute functions.
+A [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) provides a quick and consistent way to define common commands such as **Save** or **Delete**. All you have to do is provide the execute and canExecute functions.
 
 ### Example
 
 ![StandardUICommand sample](images/commanding/StandardUICommandSampleOptimized.gif)
 
-*StandardUICommandSample*
+_StandardUICommandSample_
 
 | Download the code for this example |
 | -------------------- |
@@ -102,7 +102,7 @@ In this example, we show how to enhance a basic [ListView](listview-and-gridview
 
 The sample UI includes a [ListView](/uwp/api/windows.ui.xaml.controls.listview) of five items. The Delete [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) is bound to a [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
-``` xaml
+```xaml
 <Page
     x:Class="StandardUICommandSample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -226,7 +226,7 @@ The sample UI includes a [ListView](/uwp/api/windows.ui.xaml.controls.listview) 
 
 **Code-behind**
 
-1. First, we define a `ListItemData` class that contains a text string and ICommand for each ListViewItem in our ListView.
+1. First, we define a **ListItemData** class that contains a text string and ICommand for each ListViewItem in our ListView.
 
 ```csharp
 public class ListItemData
@@ -236,7 +236,7 @@ public class ListItemData
 }
 ```
 
-2. In the MainPage class, we define a collection of `ListItemData` objects for the [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). We then populate it with an initial collection of five items (with text and associated [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) Delete).
+2. In the MainPage class, we define a collection of **ListItemData** objects for the [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). We then populate it with an initial collection of five items (with text and associated [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) Delete).
 
 ```csharp
 /// <summary>
@@ -370,7 +370,7 @@ If you need to create a command that isn't defined by the [StandardUICommand](/u
 
 ![XamlUICommand sample](images/commanding/XamlUICommandSampleOptimized.gif)
 
-*XamlUICommandSample*
+_XamlUICommandSample_
 
 | Download the code for this example |
 | -------------------- |
@@ -387,7 +387,7 @@ Many platform controls use the XamlUICommand properties under the covers, just l
 
 The sample UI includes a [ListView](/uwp/api/windows.ui.xaml.controls.listview) of five items. The custom [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) Delete is bound to a [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
-``` xaml
+```xaml
 <Page
     x:Class="XamlUICommand_Sample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -525,7 +525,7 @@ The sample UI includes a [ListView](/uwp/api/windows.ui.xaml.controls.listview) 
 
 **Code-behind**
 
-1. First, we define a `ListItemData` class that contains a text string and ICommand for each ListViewItem in our ListView.
+1. First, we define a **ListItemData** class that contains a text string and ICommand for each ListViewItem in our ListView.
 
 ```csharp
 public class ListItemData
@@ -535,7 +535,7 @@ public class ListItemData
 }
 ```
 
-2. In the MainPage class, we define a collection of `ListItemData` objects for the [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). We then populate it with an initial collection of five items (with text and associated [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)).
+2. In the MainPage class, we define a collection of **ListItemData** objects for the [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). We then populate it with an initial collection of five items (with text and associated [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -620,7 +620,7 @@ The most basic way to support a structured commanding experience is to define an
 
 ![Command interface example](images/commanding/icommand.gif)
 
-*ICommand example*
+_ICommand example_
 
 | Download the code for this example |
 | -------------------- |

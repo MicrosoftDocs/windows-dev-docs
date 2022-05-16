@@ -9,17 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Accessible text requirements  
-
-
-
 
 This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a Universal Windows Platform (UWP) app can have, and best practices for text in graphics.
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
 
-## Contrast ratios  
+## Contrast ratios
+
 Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.
 
 The recommendations for text contrast documented here are based on a web accessibility standard, [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://www.w3.org/TR/WCAG20-TECHS/G18.html). This guidance exists in the *W3C Techniques for WCAG 2.0* specification.
@@ -37,7 +36,8 @@ Use color contrast tools to verify that the visible text contrast ratio is accep
 <span id="text_element_roles"/>
 <span id="TEXT_ELEMENT_ROLES"/>
 
-## Text element roles  
+## Text element roles
+
 A UWP app can use these default elements (commonly called *text elements* or *textedit controls*):
 
 * [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock): role is [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
@@ -53,7 +53,8 @@ In the text models for XAML, there are two elements that are primarily used for 
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 
-## Auto-suggest accessibility  
+## Auto-suggest accessibility
+
 When a user types into an entry field and a list of potential suggestions appears, this type of scenario is called auto-suggest. This is common in the **To:** line of a mail field, the Cortana search box in Windows, the URL entry field in Microsoft Edge, the location entry field in the Weather app, and so on. If you are using a XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox) or the HTML intrinsic controls, then this experience is already hooked up for you by default. To make this experience accessible the entry field and the list must be associated. This is explained in the [Implementing auto-suggest](#implementing_auto-suggest) section.
 
 Narrator has been updated to make this type of experience accessible with a special suggestions mode. At a high level, when the edit field and list are connected properly the end user will:
@@ -88,10 +89,12 @@ If there is no default selection, such as in the Weather app’s location box, t
 ![List with no default selection](images/autosuggest-no-default-selection.png)<br/>
 _Example where there is no default selection_
 
-### XAML implementation  
+### XAML implementation
+
 If you are using the default XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox), then everything is already hooked up for you. If you are making your own auto-suggest experience using a [**TextBox**](/uwp/api/windows.ui.xaml.controls.textbox) and a list then you will need to set the list as [**AutomationProperties.ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) on the **TextBox**. You must fire the **AutomationPropertyChanged** event for the [**ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) property every time you add or remove this property and also fire your own [**SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents) events or [**LayoutInvalidated**](/uwp/api/windows.ui.xaml.automation.peers.automationevents) events depending on your type of scenario, which was explained previously in this article.
 
-### HTML implementation  
+### HTML implementation
+
 If you are using the intrinsic controls in HTML, then the UIA implementation has already been mapped for you. Below is an example of an implementation that is already hooked up for you:
 
 ``` HTML
@@ -124,17 +127,19 @@ Once you've done the obvious, Windows includes various accessibility tools and s
 
 * The Magnifier tool, which enlarges a selected area of the UI. You should ensure the layout of text in your app doesn't make it difficult to use Magnifier for reading.
 * Global scale and resolution settings in **Settings->System->Display->Scale and layout**. Exactly which sizing options are available can vary as this depends on the capabilities of the display device.
-* Text size settings in **Settings->Ease of access->Display**. Adjust the **Make text bigger** setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating). 
+* Text size settings in **Settings->Ease of access->Display**. Adjust the **Make text bigger** setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating).
+
 > [!NOTE]
 > The **Make everything bigger** setting lets a user specify their preferred size for text and apps in general on their primary screen only.
 
-Various text elements and controls have an [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) property. This property has the value **true** by default. When **true**, the size of text in that element can be scaled. The scaling affects text that has a small **FontSize** to a greater degree than it affects text that has a large **FontSize**. You can disable automatic resizing by setting an element's **IsTextScaleFactorEnabled** property to **false**. 
+Various text elements and controls have an [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) property. This property has the value **true** by default. When **true**, the size of text in that element can be scaled. The scaling affects text that has a small **FontSize** to a greater degree than it affects text that has a large **FontSize**. You can disable automatic resizing by setting an element's **IsTextScaleFactorEnabled** property to **false**.
 
 See [Text scaling](../input/text-scaling.md) for more details.
 
 Add the following markup to an app and run it. Adjust the **Text size** setting, and see what happens to each **TextBlock**.
 
 XAML
+
 ```xml
 <TextBlock Text="In this case, IsTextScaleFactorEnabled has been left set to its default value of true."
     Style="{StaticResource BodyTextBlockStyle}"/>
@@ -148,6 +153,7 @@ We don't recommend that you disable text scaling as scaling UI text universally 
 You can also use the [**TextScaleFactorChanged**](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) event and the [**TextScaleFactor**](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) property to find out about changes to the **Text size** setting on the phone. Here’s how:
 
 C#
+
 ```csharp
 {
     ...
@@ -163,9 +169,10 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-The value of **TextScaleFactor** is a double in the range \[1,2.25\]. The smallest text is scaled up by this amount. You might be able to use the value to, say, scale graphics to match the text. But remember that not all text is scaled by the same factor. Generally speaking, the larger text is to begin with, the less it’s affected by scaling.
+The value of **TextScaleFactor** is a double in the range \[1, 2.25\]. The smallest text is scaled up by this amount. You might be able to use the value to, say, scale graphics to match the text. But remember that not all text is scaled by the same factor. Generally speaking, the larger text is to begin with, the less it's affected by scaling.
 
-These types have an **IsTextScaleFactorEnabled** property:  
+These types have an **IsTextScaleFactorEnabled** property:
+
 * [**ContentPresenter**](/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
 * [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) and derived classes
 * [**FontIcon**](/uwp/api/Windows.UI.Xaml.Controls.FontIcon)

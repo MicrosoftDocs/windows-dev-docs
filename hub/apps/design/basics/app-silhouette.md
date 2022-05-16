@@ -2,7 +2,7 @@
 description: A high-level look at app patterns commonly used across our in-box applications.
 title: Windows app silhouettes
 template: detail.hbs
-ms.date: 09/30/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

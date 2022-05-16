@@ -3,7 +3,7 @@ description: Command bar flyouts give users inline access to your app's most com
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -13,6 +13,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Command bar flyout
 
 The command bar flyout lets you provide users with easy access to common tasks by showing commands in a floating toolbar related to an element on your UI canvas.
@@ -55,7 +56,7 @@ To show contextual commands on list items follow the guidance in [Contextual com
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -68,7 +69,7 @@ To show contextual commands on list items follow the guidance in [Contextual com
 </tr>
 </table>
 
-## Proactive vs. reactive invocation
+## Proactive versus reactive invocation
 
 There are typically two ways to invoke a flyout or menu that's associated with an element on your UI canvas: _proactive invocation_ and _reactive invocation_.
 
@@ -172,9 +173,11 @@ You can populate the PrimaryCommands and SecondaryCommands directly with [AppBar
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is shown in the command bar or the overflow menu.
 
 - App bar buttons used as primary commands are shown in the command bar with only their icon; the text label is not shown. We recommend that you use a [tooltip](tooltips.md) to show a text description of the command, as shown here.
-    ```xaml
-    <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
-    ```
+
+  ```xaml
+  <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
+  ```
+
 - App bar buttons used as secondary commands are shown in the menu, with both the label and icon visible.
 
 ## Icons
@@ -212,7 +215,6 @@ Here, an AppBarElementContainer is used to add extra elements to a command bar f
 ![A command bar flyout with complex UI](images/command-bar-flyout-custom-ui.png)
 
 > _An expanded command bar flyout with custom zoom UI in the menu_
-
 
 ```xaml
 <muxc:CommandBarFlyout>
@@ -402,7 +404,6 @@ The [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarfly
 ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
 
 > _An expanded text command bar flyout_
-
 
 ### Available commands
 

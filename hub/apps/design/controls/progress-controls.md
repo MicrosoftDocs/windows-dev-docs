@@ -4,7 +4,7 @@ title: Guidelines for progress controls
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Progress controls
 
 A progress control provides feedback to the user that a long-running operation is underway. It can mean that the user cannot interact with the app when the progress indicator is visible, and can also indicate how long the wait time might be, depending on the indicator used.
@@ -55,12 +56,11 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## Types of progress
 
-There are two controls to show the user that an operation is underway – either through a ProgressBar or through a ProgressRing. Both ProgressBar and ProgressRing have two states that communicate if the user can interact with the application or not. 
+There are two controls to show the user that an operation is underway – either through a ProgressBar or through a ProgressRing. Both ProgressBar and ProgressRing have two states that communicate if the user can interact with the application or not.
 
--   The *determinate* state for both ProgressBar and ProgressRing shows the percentage completed of a task. This should be used during an operation whose duration is known, but its progress should not block the user's interaction with the app.
--   The *indeterminate* state for ProgressBar shows that an operation is underway, does not block user interaction with the app, and its completion time is unknown.
--   The *indeterminate* state for ProgressRing shows that an operation is underway, blocks user interaction with the app, and its completion time is unknown.
-
+- The _determinate_ state for both ProgressBar and ProgressRing shows the percentage completed of a task. This should be used during an operation whose duration is known, but its progress should not block the user's interaction with the app.
+- The _indeterminate_ state for ProgressBar shows that an operation is underway, does not block user interaction with the app, and its completion time is unknown.
+- The _indeterminate_ state for ProgressRing shows that an operation is underway, blocks user interaction with the app, and its completion time is unknown.
 
 Additionally, a progress control is read only and not interactive. Meaning that the user cannot invoke or use these controls directly.
 
@@ -71,11 +71,10 @@ Additionally, a progress control is read only and not interactive. Meaning that 
 | Indeterminate ProgressRing | ![Indeterminate ProgressRing state](images/progressring-indeterminate.gif)|
 | Determinate ProgressRing | ![Determinate ProgressRing state](images/progress-ring.jpg)|
 
-
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -93,54 +92,56 @@ Additionally, a progress control is read only and not interactive. Meaning that 
 It's not always obvious what control or what state (determinate vs indeterminate) to use when trying to show something is happening. Sometimes a task is obvious enough that it doesn't require a progress control at all – and sometimes even if a progress control is used, a line of text is still necessary in order to explain to the user what operation is underway.
 
 ### ProgressBar
--   **Does the control have a defined duration or predictable end?**
+
+- **Does the control have a defined duration or predictable end?**
 
     Use a determinate ProgressBar then, and update the percentage or value accordingly.
 
--   **Can the user continue without having to monitor the operation's progress?**
+- **Can the user continue without having to monitor the operation's progress?**
 
     When a ProgressBar is in use, interaction is non-modal, typically meaning that the user is not blocked by that operation's completion, and can continue to use the app in other ways until that aspect has completed.
 
--   **Keywords**
+- **Keywords**
 
     If your operation falls around these keywords, or if you're showing text that alongside the progress operation that matches these keywords; consider using a ProgressBar:
 
-    - *Loading...*
-    - *Retrieving*
-    - *Working...*
+    - _Loading..._
+    - _Retrieving_
+    - _Working..._
 
 ### ProgressRing
 
--   **Will the operation cause the user to wait to continue?**
+- **Will the operation cause the user to wait to continue?**
 
     If an operation requires all (or a large portion of) interaction with the app to wait until it has been completed, then the indeterminate ProgressRing is the better choice.
 
-    -   **Does the control have a defined duration or predictable end?**
+- **Does the control have a defined duration or predictable end?**
 
     Use a determinate ProgressRing if you want the visual to be a ring instead of a bar, and update the percentage or value accordingly. 
 
--   **Is the app waiting for the user to complete a task?**
+- **Is the app waiting for the user to complete a task?**
 
     If so, use an indeterminate ProgressRing, as they're meant to indicate an unknown wait time for the user.
 
--   **Keywords**
+- **Keywords**
 
     If your operation falls around these keywords, or if you're showing text alongside the progress operation that matches these keywords; consider using a ProgressRing:
 
-    - *Refreshing*
-    - *Signing in...*
-    - *Connecting...*
+    - _Refreshing_
+    - _Signing in..._
+    - _Connecting..._
 
 ### No progress indication necessary
--   **Does the user need to know that something is happening?**
+
+- **Does the user need to know that something is happening?**
 
     For example, if the app is downloading something in the background and the user didn't initiate the download, the user doesn't necessarily need to know about it.
 
--   **Is the operation a background activity that doesn't block user activity and is of minimal (but still some) interest to the user?**
+- **Is the operation a background activity that doesn't block user activity and is of minimal (but still some) interest to the user?**
 
     Use text when your app is performing tasks that don't have to be visible all the time, but you still need to show the status.
 
--   **Does the user only care about the completion of the operation?**
+- **Does the user only care about the completion of the operation?**
 
     Sometimes it's best to show a notice only when the operation is completed, or give a visual that the operation has been completed immediately, and run the finishing touches in the background.
 
@@ -160,7 +161,7 @@ The first example is the determinate ProgressBar. When the duration of the opera
 
 When it is not known how long the operation will take, use an indeterminate ProgressBar. Indeterminate ProgressBars are also good when filling a virtualized list, and creating a smooth visual transition between an indeterminate to determinate ProgressBar.
 
--   **Is the operation in a virtualized collection?**
+- **Is the operation in a virtualized collection?**
 
     If so, do not put a progress indicator on each list item as they appear. Instead, use a ProgressBar and place it at the top of the collection of items being loaded in, to show that the items are being fetched.
 
@@ -214,7 +215,7 @@ Changing the foreground color for the ProgressRing will change the fill color of
 
 Sometimes it's best to just show a brief wait cursor, when the app or operation needs time to think, and you need to indicate to the user that the app or area where the wait cursor is visible should not be interacted with until the wait cursor has disappeared.
 
-```C#
+```CS
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 

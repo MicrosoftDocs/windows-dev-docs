@@ -3,7 +3,7 @@ description: Use data template selectors to customize the styles of your items b
 title: Data template selection
 label: Data template selection
 template: detail.hbs
-ms.date: 10/18/2019
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
@@ -127,5 +127,5 @@ When you use a ListView or GridView with a large data collection, scrolling and 
 
 - _Element reduction per item_ - Keep the number of UI elements in a data template to a reasonable minimum.
 - Container-recycling with heterogeneous collections
-  - Use _the ChoosingItemContainer event_  - This event is a high-performance way to use different data templates for different items. To achieve best performance, you should optimize caching and selecting data templates for your specific data.
+  - Use _the ChoosingItemContainer event_ - This event is a high-performance way to use different data templates for different items. To achieve best performance, you should optimize caching and selecting data templates for your specific data.
   - Use an _item template selector_ - An item template selector (`DataTemplateSelector`) should be avoided in some instances due to its impact on performance.

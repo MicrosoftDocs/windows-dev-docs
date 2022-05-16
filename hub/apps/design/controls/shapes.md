@@ -2,17 +2,17 @@
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: Draw shapes
 description: Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The Path class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
-ms.date: 11/16/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Draw shapes
 
 Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
 
 > **Important APIs**: [Path class](/uwp/api/Windows.UI.Xaml.Shapes.Path), [Windows.UI.Xaml.Shapes namespace](/uwp/api/Windows.UI.Xaml.Shapes), [Windows.UI.Xaml.Media namespace](/uwp/api/Windows.UI.Xaml.Media)
-
 
 Two sets of classes define a region of space in XAML UI: [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) classes and [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) classes. The main difference between these classes is that a **Shape** has a brush associated with it and can be rendered to the screen, and a **Geometry** simply defines a region of space and is not rendered unless it helps contribute information to another UI property. You can think of a **Shape** as a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) with its boundary defined by a **Geometry**. This topic covers mainly the **Shape** classes.
 
@@ -57,7 +57,11 @@ When an [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) is positioned in 
 
 A set of 6 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) elements are part of the control template for the [**ProgressRing**](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) control, and 2 concentric **Ellipse** elements are part of a [**RadioButton**](/uwp/api/Windows.UI.Xaml.Controls.RadioButton).
 
-## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
+<span id="Rectangle"/>
+<span id="rectangle"/>
+<span id="RECTANGLE"/>
+
+## Rectangle
 
 A [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) is a four-sided shape with its opposite sides being equal. To create a basic **Rectangle**, specify a [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), a [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), and a [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill).
 
@@ -159,7 +163,11 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
+<span id="_Polyline"/>
+<span id="_polyline"/>
+<span id="_POLYLINE">
+
+## Polyline
 
 A [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) is similar to a [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) in that the boundary of the shape is defined by a set of points, except the last point in a **Polyline** is not connected to the first point.
 

@@ -4,7 +4,7 @@ title: Check boxes
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,6 +13,7 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Check boxes
 
 A check box is used to select or deselect action items. It can be used for a single item or for a list of multiple items that a user can choose from. The control has three selection states: unselected, selected, and indeterminate. Use the indeterminate state when a collection of sub-choices have both unselected and selected states.
@@ -34,7 +35,6 @@ A check box is used to select or deselect action items. It can be used for a sin
 :::row-end:::
 
 > **Platform APIs:** [CheckBox class](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked event](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
-
 
 ## Is this the right control?
 
@@ -75,7 +75,7 @@ Both **check box** and **radio button** controls let the user select from a list
 
 To assign a label to the checkbox, set the [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) property. The label displays next to the checkbox.
 
-This XAML creates a single check box that is used to agree to terms of service before a form can be submitted. 
+This XAML creates a single check box that is used to agree to terms of service before a form can be submitted.
 
 ```xaml
 <CheckBox x:Name="termsOfServiceCheckBox" 
@@ -92,7 +92,7 @@ checkBox1.Content = "I agree to the terms of service.";
 ### Bind to IsChecked
 
 Use the [IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value.
-However, because IsChecked is a [nullable](/dotnet/api/system.nullable-1) boolean value, you must either use a cast or a value converter to bind it to a boolean property. This depends on the actual binding type you are using and you will find examples below for each possible type. 
+However, because IsChecked is a [nullable](/dotnet/api/system.nullable-1) boolean value, you must either use a cast or a value converter to bind it to a boolean property. This depends on the actual binding type you are using and you will find examples below for each possible type.
 
 In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [IsEnabled](/uwp/api/windows.ui.xaml.controls.control.isenabled) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
 
@@ -135,7 +135,6 @@ If the check box can also be in the **indeterminate** state, we use the binding'
 </StackPanel>
 ```
 
-
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter
 {
@@ -159,7 +158,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### Handle Click and Checked events
 
-To perform an action when the check box state changes, you can handle either the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event, or the [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) and [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked) events. 
+To perform an action when the check box state changes, you can handle either the [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event, or the [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) and [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked) events.
 
 The **Click** event occurs whenever the checked state changes. If you handle the Click event, use the **IsChecked** property to determine the state of the check box.
 
@@ -216,9 +215,9 @@ The CheckBox control inherits from [ToggleButton](/uwp/api/windows.ui.xaml.contr
 
 State | Property | Value
 ------|----------|------
-checked | IsChecked | **true** 
-unchecked | IsChecked | **false** 
-indeterminate | IsChecked | **null** 
+checked | IsChecked | **true**
+unchecked | IsChecked | **false**
+indeterminate | IsChecked | **null**
 
 For the check box to report the indeterminate state, you must set the [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) property to **true**. 
 
@@ -308,22 +307,22 @@ private void SetCheckedState()
 
 ## Do's and don'ts
 
--   Verify that the purpose and current state of the check box is clear.
--   Limit check box text content to no more than two lines.
--   Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.
--   Use the default font unless your brand guidelines tell you to use another.
--   If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.
--   If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](radio-button.md).
--   Don't put two check box groups next to each other. Use group labels to separate the groups.
--   Don't use a check box as an on/off control or to perform a command; instead, use a toggle switch.
--   Don't use a check box to display other controls, such as a dialog box.
--   Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.
--   When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.
--   Don't use the indeterminate state to represent a third state. The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices. So, don't allow users to set an indeterminate state directly. For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:
+- Verify that the purpose and current state of the check box is clear.
+- Limit check box text content to no more than two lines.
+- Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.
+- Use the default font unless your brand guidelines tell you to use another.
+- If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.
+- If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](radio-button.md).
+- Don't put two check box groups next to each other. Use group labels to separate the groups.
+- Don't use a check box as an on/off control or to perform a command; instead, use a toggle switch.
+- Don't use a check box to display other controls, such as a dialog box.
+- Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.
+- When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.
+- Don't use the indeterminate state to represent a third state. The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices. So, don't allow users to set an indeterminate state directly. For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:
 
     ![An indeterminate check box](images/spicyoptions2.png)
 
-    Instead, use a radio button group that has three options.
+  Instead, use a radio button group that has three options.
 
     ![Radio button group with three options: Not spicy, Spicy, and Extra spicy](images/spicyoptions.png)
 
@@ -333,6 +332,6 @@ private void SetCheckedState()
 
 ## Related articles
 
-- [CheckBox class](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [CheckBox class](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)
 - [Radio buttons](radio-button.md)
 - [Toggle switch](toggles.md)

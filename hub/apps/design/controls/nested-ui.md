@@ -3,7 +3,7 @@ title: Nested UI in list items
 description: Learn how to create nested UI in ListView and GridView items to present a user with additional options for taking important actions.
 label: Nested UI in list items
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
@@ -12,9 +12,8 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Nested UI in list items
 
- 
+# Nested UI in list items
 
 Nested UI is a user interface (UI) that exposes nested actionable controls enclosed inside a container that also can take independent focus.
 
@@ -24,29 +23,31 @@ You can use nested UI to present a user with additional options that help accele
 
 In this article, we discuss the creation of nested UI in [ListView](/uwp/api/windows.ui.xaml.controls.listview) and [GridView](/uwp/api/windows.ui.xaml.controls.gridview) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
 
-In this article, we use the terms *list*, *list item*, and *nested UI* as defined here:
-- *List* refers to a collection of items contained in a list view or grid view.
-- *List item* refers to an individual item that a user can take action on in a list.
-- *Nested UI* refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.
+In this article, we use the terms _list_, _list item_, and _nested UI_ as defined here:
+
+- _List_ refers to a collection of items contained in a list view or grid view.
+- _List item_ refers to an individual item that a user can take action on in a list.
+- _Nested UI_ refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.
 
 ![Screenshot showing the parts of a Nested U I.](images/nested-ui-example-1.png)
 
-> NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
+> [!NOTE]
+> ListView and GridView both derive from the [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
 
 ## Primary and secondary actions
 
 When creating UI with a list, consider what actions the user might take from those list items.  
 
 - Can a user click on the item to perform an action?
-    - Typically, clicking a list item initiates an action, but it doesn't have too.
+  - Typically, clicking a list item initiates an action, but it doesn't have too.
 - Is there more than one action the user can take?
-    - For example, tapping an email in a list opens that email. However, there might be other actions, like deleting the email, that the user would want to take without opening it first. It would benefit the user to access this action directly in the list.
+  - For example, tapping an email in a list opens that email. However, there might be other actions, like deleting the email, that the user would want to take without opening it first. It would benefit the user to access this action directly in the list.
 - How should the actions be exposed to the user?
-    - Consider all input types. Some forms of nested UI work great with one method of input, but might not work with other methods.  
+  - Consider all input types. Some forms of nested UI work great with one method of input, but might not work with other methods.  
 
-The *primary action* is what the user expects to happen when they press the list item.
+The _primary action_ is what the user expects to happen when they press the list item.
 
-*Secondary actions* are typically accelerators associated with list items. These accelerators can be for list management or actions related to the list item.
+_Secondary actions_ are typically accelerators associated with list items. These accelerators can be for list management or actions related to the list item.
 
 ## Options for secondary actions
 
@@ -77,7 +78,6 @@ For more info, see [Context menus and flyouts](menus.md).
 If you expect your app to be used frequently with pointer input such as mouse and pen, and want to make secondary actions readily available only to those inputs, then you can show the secondary actions only on hover. This accelerator is visible only when a pointer input is used, so be sure to use the other options to support other input types as well.
 
 ![Nested UI shown on hover](images/nested-ui-hover.png)
-
 
 For more info, see [Mouse interactions](../input/mouse-interactions.md).
 
@@ -142,7 +142,6 @@ You might use a list view because it provides virtualization and optimized scrol
 This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.
 
 ![Screenshot of a complex Nested U I showing a lot of nested elements that the user can interact with.](images/nested-ui-grouping.png)
-
 
 To achieve this UI, set the following properties on your list:
 - [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) to **None**.

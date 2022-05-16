@@ -2,7 +2,7 @@
 title: Bootstrap class
 description: The **Bootstrap** class contains static helper methods that conveniently wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 ms.topic: article
-ms.date: 04/05/2022
+ms.date: 05/16/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API
 ms.author: stwhi
 author: stevewhims
@@ -30,6 +30,7 @@ public class Bootstrap
 * [TryInitialize methods](#tryinitialize-methods)
 
 ## Initialize methods
+
 Initializes the calling process to use Windows App SDK's framework package. Finds a Windows App SDK framework package meeting the criteria provided in the arguments, and makes it available for use by the current process. If multiple packages meet the criteria, then the best candidate is selected.
 
 ```csharp
@@ -39,6 +40,7 @@ public static void Initialize(uint majorMinorVersion, string versionTag, Package
 ```
 
 ### Parameters
+
 `majorMinorVersion` [uint](/dotnet/api/system.uint32)
 
 The major and minor version of the Windows App SDK framework package to load. The version is encoded as `0xMMMMNNNN`, where `M` = Major and `N` = Minor (for example, version 1.2 should be encoded as `0x00010002`).
@@ -52,6 +54,7 @@ The version tag of the Windows App SDK framework package to load (if any). For e
 The minimum version of the Windows App SDK framework package to use. Defaults to a new default instance of **PackageVersion**.
 
 ## Shutdown method
+
 Removes the changes made to the current process by [Initialize](#initialize-methods) or [TryInitialize](#tryinitialize-methods). After **Shutdown** is called, your app can no longer call Windows App SDK APIs, including the [Dynamic dependency API](/windows/windows-app-sdk/api/win32/_dynamicdependency/).
 
 ```csharp
@@ -69,6 +72,7 @@ public static bool TryInitialize(uint majorMinorVersion, string versionTag, Pack
 ```
 
 ### Parameters
+
 `majorMinorVersion` [uint](/dotnet/api/system.uint32)
 
 The major and minor version of the Windows App SDK framework package to load. The version is encoded as `0xMMMMNNNN`, where `M` = Major and `N` = Minor (for example, version 1.2 should be encoded as `0x00010002`).

@@ -2,7 +2,7 @@
 description: An InfoBar is an inline notification for essential app-wide messages.
 title: InfoBar
 template: detail.hbs
-ms.date: 11/30/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, winui, uwp
 pm-contact: gabilka
@@ -83,7 +83,7 @@ article.
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>

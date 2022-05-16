@@ -3,7 +3,7 @@ description: TreeView and data binding in UWP.
 title: TreeViews in UWP Apps
 label: Tree view
 template: detail.hbs
-ms.date: 01/11/2022
+ms.date: 05/16/2022
 ms.topic: article
 pm-contact: predavid
 design-contact: ksulliv
@@ -60,7 +60,7 @@ The **TreeView** APIs support the following features:
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>

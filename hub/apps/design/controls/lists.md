@@ -4,7 +4,7 @@ title: Collections and lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
@@ -13,6 +13,7 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Collections and lists
 
 Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
@@ -42,7 +43,7 @@ One of the scenarios not covered in this article is displaying collections in a 
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">XAML Controls Gallery</th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -66,9 +67,9 @@ Use a list view to:
 - Display a collection that primarily consists of text-based items, where all of the items should have the same visual and interaction behavior.
 - Represent a single or categorized collection of content.
 - Accommodate a variety of use cases, including the following common ones:
-    - Create a list of messages or message log.
-    - Create a contacts list.
-    - Create the list pane in the [list/details pattern](list-details.md). A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.
+  - Create a list of messages or message log.
+  - Create a contacts list.
+  - Create the list pane in the [list/details pattern](list-details.md). A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.
 
 > [!NOTE]
 > If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
@@ -84,6 +85,7 @@ This is a ListView that has been inverted to display a log of messages, with the
 ![Inverted List view](images/listview-inverted-2.png)
 
 ### Related articles
+
 <table>
 <colgroup>
 <col width="50%" />
@@ -135,8 +137,8 @@ Use a grid view to:
 - Display content libraries.
 - Format the two content views associated with [semantic zoom](semantic-zoom.md).
 - Accommodate a variety of use cases, including the following common ones:
-    - Storefront-type user interface (i.e. browsing apps, songs, products)
-    - Interactive photo libraries
+  - Storefront-type user interface (i.e. browsing apps, songs, products)
+  - Interactive photo libraries
 
 > [!NOTE]
 > If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
@@ -194,8 +196,8 @@ Use a flip view to:
 - Display a small to medium (less than 25 items) collection, where the collection is made up of images with little to no metadata.
 - Display items one at a time, and allow the end-user to flip through the items at their own pace.
 - Accommodate a variety of use cases, including the following common ones:
-    - Photo galleries
-    - Product galleries or showcases
+  - Photo galleries
+  - Product galleries or showcases
 
 ### Examples
 
@@ -235,8 +237,8 @@ Use a tree view to:
 
 - Display a collection of nested items whose context and meaning is dependent on a hierarchy or specific organizational chain.
 - Accommodate a variety of use cases, including the following common ones:
-    - File browser
-    - Company organizational chart
+  - File browser
+  - Company organizational chart
 
 ### Examples
 
@@ -303,7 +305,6 @@ The following three examples are all ItemsRepeater controls that are bound to th
 </tbody>
 </table>
 
-
 ## Globalization and localization checklist
 
 <table>
@@ -325,6 +326,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 ## Related articles
 
 **Design and UX Guidelines**
+
 - [List/details](list-details.md)
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
@@ -332,6 +334,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 - [Thumbnail images](/windows/uwp/files/thumbnails)
 
 **API reference**
+
 - [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
