@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization, rtl, ltr
 ms.localizationpriority: medium
 ---
+
 # Design your app for bidirectional text
 
 Design your app to provide bidirectional text support (BiDi) so that you can combine script from right to left (RTL) and left to right (LTR) writing systems, which generally contain different types of alphabets.

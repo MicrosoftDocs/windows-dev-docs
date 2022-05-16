@@ -2,7 +2,7 @@
 description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools.
 title: Use the Multilingual App Toolkit
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
@@ -25,7 +25,7 @@ The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio t
 
 Before you can use the MAT effectively, your app needs to be localizable. Specifically, your project should contain one or more Resources Files (.resw) containing your app's strings in the default language. For details, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). Once you've done that, the toolkit makes adding additional languages quick and easy.
 
-For the value proposition of globalization and localization&mdash;as well as definitions of the terms **globalization**, **localizability**, and **localization**&mdash;see [Globalization and localization](globalizing-portal.md).
+For the value proposition of globalization and localization &mdash; as well as definitions of the terms **globalization**, **localizability**, and **localization** &mdash; see [Globalization and localization](globalizing-portal.md).
 
 Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](prepare-your-app-for-localization.md).
 
@@ -65,7 +65,7 @@ The toolkit does these things in response.
 
 Whenever you add/remove a default language Resources File (.resw), or you add/remove a string inside a default language Resources File (.resw), rebuild the project to re-synchronize the .xlf files. This ensures that the .xlf files contain the union of the strings in the default language.
 
-Installed Translation Providers&mdash;such as the [Microsoft Language Portal](https://www.microsoft.com/Language/) and [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;can be used to translate your app's resources. When a provider supports a specific language, the provider's icon is displayed next to the language name in the Translation Languages dialog.
+Installed Translation Providers &mdash; such as the [Microsoft Language Portal](https://www.microsoft.com/Language/) and [Microsoft Translator](https://www.microsofttranslator.com/) &mdash; can be used to translate your app's resources. When a provider supports a specific language, the provider's icon is displayed next to the language name in the Translation Languages dialog.
 
 In the Translation Languages dialog, any existing .xlf-based languages that are discovered by the toolkit have their selection box pre-checked to indicate that the language is already included the project.
 
@@ -164,7 +164,7 @@ Before you start the Microsoft Store Certification process, you must exclude the
 
 ## Telemetry
 
-The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. For more details, see [Multilingual App Toolkit 4.0 FAQ & troubleshooting.](https://docs.microsoft.com/en-us/windows/apps/design/globalizing/mat-faq-troubleshooting).
+The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. For more details, see [Multilingual App Toolkit 4.0 FAQ & troubleshooting.](https://docs.microsoft.com/windows/apps/design/globalizing/mat-faq-troubleshooting).
 
 ## Downloads
 

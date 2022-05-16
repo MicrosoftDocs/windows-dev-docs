@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, globalization, localization
 ms.localizationpriority: medium
 ---
+
 # NumeralSystem values
 
 This topic lists the values available to the **NumeralSystem** property of various classes in the [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) namespace. These classes contain a **NumeralSystem** property.

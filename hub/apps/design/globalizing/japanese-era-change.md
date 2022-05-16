@@ -2,7 +2,7 @@
 title: Prepare your application for the Japanese era change
 description: Learn about the May 2019 Japanese era change and how to prepare your application.
 ms.assetid: 5A945F9A-8632-4038-ADD6-C0568091EF27
-ms.date: 04/26/2019
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, localizability, localization, japanese, era
 ms.localizationpriority: high
@@ -28,7 +28,7 @@ In the following sections, you will learn what you can do to prepare and test yo
 It is important to test for compatibility problems before the era has changed, and you can do so now using the new era name. To do this, add a registry key for the new era using **Registry Editor**:
 
 1. Navigate to **Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras**.
-2. Select **Edit > New > String Value**, and give it the name **2019 05 01**.
+2. Select **Edit** > **New** > **String Value**, and give it the name **2019 05 01**.
 3. Right-click the key and select **Modify**.
 4. In the **Value data** field, enter **令和_令_Reiwa_R** (you can copy and paste from here to make it easier).
 
@@ -48,7 +48,7 @@ To configure your device to use the Japanese calendar:
 2. From the **Format** dropdown, select **Japanese (Japan)**.
 3. Select **Additional settings**.
 4. Select the **Date** tab.
-5. From the **Calendar type** dropdown, select **和暦** (*wareki*, the Japanese calendar). It should be the second option.
+5. From the **Calendar type** dropdown, select **和暦** (_wareki_, the Japanese calendar). It should be the second option.
 6. Click **OK**.
 7. Click **OK** in the **Region** window.
 
@@ -82,9 +82,9 @@ Your device should now be configured to use the Japanese calendar, and it will r
 
 Now, test out how your application handles the new era. Check places where the date is displayed, such as timestamps and date pickers. Make sure that the era is correct before May 1, 2019 (Heisei, 平成) and after (Reiwa, 令和).
 
-### *Gannen* (元年)
+### _Gannen_ (元年)
 
-The format for the Japanese calendar is generally **&lt;Era name&gt; &lt;Year of era&gt;**. For example, the year 2018 is **Heisei 30** (平成30年).  However, the first year of an era is special; instead of being **&lt;Era name&gt; 1**, it is **&lt;Era name&gt; 元年** (*gannen*). So, the first year of the Heisei era would be 平成元年 (*Heisei gannen*). Make sure that your application properly handles the first year of the new era, and correctly outputs 令和元年.
+The format for the Japanese calendar is generally **&lt;Era name&gt; &lt;Year of era&gt;**. For example, the year 2018 is **Heisei 30** (平成30年).  However, the first year of an era is special; instead of being **&lt;Era name&gt; 1**, it is **&lt;Era name&gt; 元年** (_gannen_). So, the first year of the Heisei era would be 平成元年 (_Heisei gannen_). Make sure that your application properly handles the first year of the new era, and correctly outputs 令和元年.
 
 ## Related APIs
 

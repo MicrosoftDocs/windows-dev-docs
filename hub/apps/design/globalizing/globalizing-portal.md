@@ -5,14 +5,15 @@ title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
+
 # Globalization and localization
 
-Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of system settings for language, region, and culture. You can increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.
+Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of system settings for language, region, and culture. You can increase the potential market for your app by designing it to be readily adaptable, using _globalization_ and _localization_.
 
 This video provides a brief introduction on how to prepare your app for the world: Introduction to globalization and localization.
 
@@ -23,7 +24,7 @@ This video provides a brief introduction on how to prepare your app for the worl
 - Use globalization APIs to display data that are formatted appropriately for the country or region, such as numbers, dates, times, and currencies.
 - Take into account that different cultures have different rules for collating (sorting) text and other data.
 
-Your code needs to function equally well in any of the cultures that you've determined that your app will support. Ideally, your code will function equally well in the context of *any* language, region, or culture. The most efficient way to globalize your app's functions is to use the concept of cultures/locales. A culture/locale is a set of rules and a set of data that are specific to a given language and geographic area. These rules and data include information about the following.
+Your code needs to function equally well in any of the cultures that you've determined that your app will support. Ideally, your code will function equally well in the context of _any_ language, region, or culture. The most efficient way to globalize your app's functions is to use the concept of cultures/locales. A culture/locale is a set of rules and a set of data that are specific to a given language and geographic area. These rules and data include information about the following.
 
 - Character classification
 - Writing system

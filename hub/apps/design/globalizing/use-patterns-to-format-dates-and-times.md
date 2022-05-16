@@ -4,11 +4,12 @@ title: Use patterns to format dates and times
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
-ms.date: 11/09/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
+
 # Use templates and patterns to format dates and times
 
 Use classes in the [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) namespace with custom templates and patterns to display dates and times in exactly the format you wish.
@@ -63,26 +64,26 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 
 Furthermore, a pattern that's correct today might not be correct in the future. Countries or regions might change their calendar systems, which alters a format template. Windows updates the output of formatters based on format templates to accommodate such changes. Therefore, you should only use the pattern syntax under one or more of these conditions.
 
--   You are not dependent on a particular output for a format.
--   You do not need the format to follow some culture-specific standard.
--   You specifically intend the pattern to be invariant across cultures.
--   You intend to localize the actual format pattern string itself.
+- You are not dependent on a particular output for a format.
+- You do not need the format to follow some culture-specific standard.
+- You specifically intend the pattern to be invariant across cultures.
+- You intend to localize the actual format pattern string itself.
 
 Here's a summary of the distinction between format templates and format patterns.
 
 **Format templates, such as "month day"**
 
--   Abstracted representation of a [DateTime](/uwp/api/windows.foundation.datetime?branch=live) format that includes values for the month, day, etc., in any order.
--   Guaranteed to return a valid standard format across all language-region values supported by Windows.
--   Guaranteed to give you a culturally-appropriate formatted string for the given language-region.
--   Not all combinations of components are valid. For example, "dayofweek day" is not valid.
+- Abstracted representation of a [DateTime](/uwp/api/windows.foundation.datetime?branch=live) format that includes values for the month, day, etc., in any order.
+- Guaranteed to return a valid standard format across all language-region values supported by Windows.
+- Guaranteed to give you a culturally-appropriate formatted string for the given language-region.
+- Not all combinations of components are valid. For example, "dayofweek day" is not valid.
 
 **Format patterns, such as "{month.full} {day.integer}"**
 
--   Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order, or whatever specific format pattern you specify.
--   May not correspond to a valid standard format for any language-region pair.
--   Not guaranteed to be culturally appropriate.
--   Any combination of components may be specified, in any order.
+- Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order, or whatever specific format pattern you specify.
+- May not correspond to a valid standard format for any language-region pair.
+- Not guaranteed to be culturally appropriate.
+- Any combination of components may be specified, in any order.
 
 ## Examples
 
@@ -129,10 +130,10 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## Important APIs
 
-* [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
+- [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+- [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+- [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
 
 ## Related topics
 
-* [Date and time formatting sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))
+- [Date and time formatting sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))

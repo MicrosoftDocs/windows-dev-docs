@@ -6,16 +6,15 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
-ms.date: 02/26/2021
+ms.date: 05/16/2022
 ms.topic: article
-
-
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: 
 doc-status: 
 ms.localizationpriority: medium
 ---
+
 # Designing for Mixed Reality
 
 Design your app to look good in Mixed Reality, and take advantage of new input methods.
@@ -28,18 +27,17 @@ Almost all existing UWP apps will run in the Mixed Reality environment as 2D app
 
 ![Mixed Reality view](images/MR-01.png)
 
-Both the HoloLens and Windows Mixed Reality headsets support applications running on the UWP platform, and both support two distinct types of experience. 
+Both the HoloLens and Windows Mixed Reality headsets support applications running on the UWP platform, and both support two distinct types of experience.
 
-### 2D vs. Immersive Experience
+### 2D versus Immersive Experience
 
 An immersive app takes over the entire display visible to the user, placing her at the center of a view created by the app. For example, an immersive game might place the user on the surface of an alien planet, or a tour guide app might place the user in a South American village. Creating an immersive app requires 3D graphics or captured stereographic video. Immersive apps are often developed using a 3rd party game engine such as Unity, or with DirectX.
 
 If you are creating immersive apps, you should visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/mixed-reality) for more information.
 
-A 2D app runs as a traditional flat window within the user's view. On the HoloLens, that means a view pinned to the wall or a point in space in the users own real-world living room or office. In a Windows Mixed Reality headset, the app is pinned to a wall in the [mixed reality home](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (sometimes called the *Cliff House*).
+A 2D app runs as a traditional flat window within the user's view. On the HoloLens, that means a view pinned to the wall or a point in space in the users own real-world living room or office. In a Windows Mixed Reality headset, the app is pinned to a wall in the [mixed reality home](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (sometimes called the _Cliff House_).
 
 ![Multiple apps running in Mixed Reality](images/MR-multiple.png)
-
 
 These 2D apps do not take over the entire view: they are placed within it. Multiple 2D apps can exist in the environment at once.
 
@@ -59,15 +57,13 @@ Other, more natural, input methods are also supported, and these may be particul
 
 Without any extra hardware or coding, apps will use gaze - the vector your user is looking along - as a mouse pointer when working with 2D apps. It is implemented as if a mouse pointer was hovering over something in the virtual scene.
 
-In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a contoller or by giving a voice command. If the user selects a text input field, the software keyboard will appear. 
-
+In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a contoller or by giving a voice command. If the user selects a text input field, the software keyboard will appear.
 
 ![The pop-up keyboard in Mixed Reality](images/MR-keyboard.png)
 
-It's important to note that all these interactions will happen automatically with no extra coding on your part, as a consequence of running on the UWP platform. Input from the HoloLens and Mixed Reality headset will appear as touch input to the 2D app. This means that many UWP apps will run and be usable in Mixed Reality, by default. 
+It's important to note that all these interactions will happen automatically with no extra coding on your part, as a consequence of running on the UWP platform. Input from the HoloLens and Mixed Reality headset will appear as touch input to the 2D app. This means that many UWP apps will run and be usable in Mixed Reality, by default.
 
-That said, with some extra work, the experience can be improved greatly. For example, [voice control](https://developer.microsoft.com/windows/mixed-reality/voice_design) can be especially effective. Both HoloLens and Mixed Reality environments support voice commands for launching and interacting with apps, and including voice support will appear as a natural extension of this approach. See [Speech interactions]( ../input/speech-interactions.md) for more information on adding voice support to your UWP app. 
-
+That said, with some extra work, the experience can be improved greatly. For example, [voice control](https://developer.microsoft.com/windows/mixed-reality/voice_design) can be especially effective. Both HoloLens and Mixed Reality environments support voice commands for launching and interacting with apps, and including voice support will appear as a natural extension of this approach. See [Speech interactions]( ../input/speech-interactions.md) for more information on adding voice support to your UWP app.
 
 ### Selecting the right controller
 
@@ -87,7 +83,6 @@ At other times, you will want to add code to take advantage of the extra informa
 > [!NOTE]
 > In summary: the guiding principal should be to always provide the user with as natural and frictionless an input method as possible.
 
-
 ## 2D App Design considerations: Functionality
 
 When creating a UWP app that will potentially be used on a Mixed Reality platform, there are several things to keep in mind.
@@ -100,8 +95,6 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * A 2D app is automatically given an [app bar](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box)  to allow the user to move and scale them in the virtual environment. The views can be resized vertically, or resized maintaining the same aspect ratio.
 
-
-
 ## 2D app design considerations: UI/UX
 
 * XAML controls which implement the [Fluent Design System](/windows/uwp/design/fluent-design-system/) such as the [Navigation view](../controls/navigationview.md), and effects such as [Acrylic](../style/acrylic.md) all work especially well in 2D Mixed Reality apps.
@@ -110,7 +103,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ![Text displayed in Mixed Reality apps should be large.](images/MR-text.png)
 
-* [Your gaze is your mouse](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). When the user looks at something, it acts as a **touch hover** event, so simply looking at an object may trigger an inadvertent pop-up or other unwanted interaction. You may need to detect if the app is currently running in Mixed Reality and change this behavior. See **Runtime support**, below. 
+* [Your gaze is your mouse](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). When the user looks at something, it acts as a **touch hover** event, so simply looking at an object may trigger an inadvertent pop-up or other unwanted interaction. You may need to detect if the app is currently running in Mixed Reality and change this behavior. See **Runtime support**, below.
 
 * When a user gazes towards something or points with a motion controller, a **touch hover** event will occur. This consists of a **PointerPoint** where **PointerType** is **Touch**, but **IsInContact** is **false**. When some form of commit occurs (for example, gamepad A button is pressed, a clicker device is pressed, a motion controller trigger pressed, or voice recognition heads "Select"), a **touch press** occurs, with the **PointerPoint** having **IsInContact** become **true**. See [Touch interactions](../input/touch-interactions.md) for more information on these input events.
 
@@ -119,7 +112,6 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 * The HoloLens defines the color black as the absence of light. It's simply not rendered, allowing the "real world" so show through. Your application should not use black if this is would cause confusion. In a Mixed Reality headset, black is black.
 
 * The HoloLens does not support color themes in apps, and defaults to blue to ensure the best experience for users. For more advice about selecting colors, you should consult [this topic](https://developer.microsoft.com/windows/mixed-reality/color,_light_and_materials) which discusses the use of color and material in Mixed Reality designs.
-
 
 ## Other points to consider
 
@@ -150,12 +142,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 
 ```
 
-
-
-
-
 ## Related articles
-
 
 * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Building 2D apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)

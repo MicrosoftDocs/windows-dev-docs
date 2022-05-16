@@ -4,7 +4,7 @@ description: Download the Multilingual App Toolkit Editor to help you localize y
 ms.topic: article
 author: karl-bridge-microsoft
 ms.author: kbridge
-ms.date: 10/18/2021
+ms.date: 05/16/2022
 ---
 
 # Multilingual app toolkit 4.0 Editor
@@ -16,7 +16,7 @@ Each of the following downloads contain an .msi installer for the Multilingual A
 - To start the installation immediately, click **Run**.
 - To save the download to your computer for installation at a later time, click **Save**.
 
-> [!Important]
+> [!IMPORTANT]
 > If using Visual Studio 2017 or later, you should also download and install the [Multilingual App Toolkit 4.0 Extension](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308).
 >
 > If using Visual Studio 2015 or Visual Studio 2013, the .msi installers listed here include the Multilingual App Toolkit 4.0 extension.

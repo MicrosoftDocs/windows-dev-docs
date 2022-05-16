@@ -7,6 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
+
 # International fonts
 
 This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.

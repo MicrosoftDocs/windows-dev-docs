@@ -3,11 +3,12 @@ description: Design your app to be global-ready by appropriately formatting date
 title: Globalize your date/time/number formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
+
 # Globalize your date/time/number formats
 
 Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.
@@ -18,7 +19,7 @@ When creating your app, if you think more broadly than a single language and cul
 
 Different regions and cultures use different date and time formats. These include conventions for the order of day and month in the date, for the separation of hours and minutes in the time, and even for what punctuation is used as a separator. In addition, dates may be displayed in various long formats ("Wednesday, March 28, 2012") or short formats ("3/28/12"), which vary across cultures. And, of course, the names and abbreviations for the days of the week and months of the year differ between languages.
 
-You can preview the formats used for different languages. Go to **Settings** > **Time & Language** > **Region & language**, and click **Additional date, time, & regional settings** > **Change date, time, or number formats**. On the **Formats** tab, select a language from the **Format** drop-down and preview the formats in **Examples**.
+You can preview the formats used for different languages. Go to **Settings** > **Time & Language** > **Region & language**, and click **Additional date, time & regional settings** > **Change date, time, or number formats**. On the **Formats** tab, select a language from the **Format** drop-down and preview the formats in **Examples**.
 
 This topic uses the terms "user profile language list", "app manifest language list", and "app runtime language list". For details on exactly what those terms mean and how to access their values, see [Understand user profile languages and app manifest languages](manage-language-and-region.md).
 
@@ -153,21 +154,21 @@ For scenarios where you wish to provide different functionality based solely on 
 
 ## Important APIs
 
-* [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
-* [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
-* [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
+- [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+- [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
+- [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
+- [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
+- [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## Related topics
 
-* [Calendar, date, and time controls](../controls/date-and-time.md)
-* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
-* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
+- [Calendar, date, and time controls](../controls/date-and-time.md)
+- [Understand user profile languages and app manifest languages](manage-language-and-region.md)
+- [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
 
 ## Samples
 
-* [Calendar details and math sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Calendar%20details%20and%20math%20sample%20(Windows%208))
-* [Date and time formatting sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))
-* [Globalization preferences sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208))
-* [Number formatting and parsing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Number%20formatting%20and%20parsing%20sample%20(Windows%208))
+- [Calendar details and math sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Calendar%20details%20and%20math%20sample%20(Windows%208))
+- [Date and time formatting sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))
+- [Globalization preferences sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208))
+- [Number formatting and parsing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Number%20formatting%20and%20parsing%20sample%20(Windows%208))

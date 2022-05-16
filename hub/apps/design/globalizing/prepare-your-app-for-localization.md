@@ -3,7 +3,7 @@ description: A localized app is one that can be localized to other markets, lang
 title: Make your app localizable
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
@@ -25,7 +25,7 @@ Set the default language for your app appropriately in your app package manifest
 
 ## Tailor your images and other file resources for language
 
-Ideally, you will be able to globalize your images&mdash;that is, make them culture-independent. For any images and other file resources where that's not possible, create as many different variants of them as you need and put the appropriate language qualifiers into their file or folder names. To learn more, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast).
+Ideally, you will be able to globalize your images &mdash; that is, make them culture-independent. For any images and other file resources where that's not possible, create as many different variants of them as you need and put the appropriate language qualifiers into their file or folder names. To learn more, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast).
 
 To minimize localization costs, don't put text nor culturally-sensitive material into images to begin with. An image that's appropriate in your own culture might be offensive or misinterpreted in other cultures. Avoid the use of culture-specific images such as mailboxes, which are not common around the world. Avoid religious symbols, animals, political, or gender-specific images. The display of flesh, body parts, or hand gestures can also be a sensitive topic. If you can't avoid all of these, then your images will need to be thoughtfully localized. If you're localizing to a language with a different reading direction than your own, using symmetrical images and effects make it easier to support mirroring.
 
@@ -89,14 +89,14 @@ Optionally, to ensure all resources are installed (not just a subset), you can d
 Disable automatic generation of the .appxbundle by setting the "Generate App Bundle" attribute to “never”:
 
 1. In Visual Studio, right-click the project name
-2. Select **Store** -> **Create app packages...**
+2. Select **Store** > **Create app packages...**
 3. In the **Create Your Packages** dialog, select **I want to create packages to upload to the Microsoft Store using a new app name** and then click **Next**.
 4. In the **Select an app name** dialog, select/create an app name for your package.
 5. In the **Select and Configure Packages** dialog, set **Generate app bundle** to **Never**.
 
 ## Geopolitical awareness
 
-Avoid political offense in maps or when referring to regions. Maps might include controversial regional or national boundaries, and they're a frequent source of political offense. Be careful that any UI used for selecting a nation refers to it as a &quot;country/region&quot;. Listing a disputed territory in a list labeled &quot;countries&quot;&mdash;such as in an address form&mdash;might offend some users.
+Avoid political offense in maps or when referring to regions. Maps might include controversial regional or national boundaries, and they're a frequent source of political offense. Be careful that any UI used for selecting a nation refers to it as a &quot;country/region&quot;. Listing a disputed territory in a list labeled &quot;countries&quot ;&mdash; such as in an address form &mdash; might offend some users.
 
 ## Language- and region-changed events
 
@@ -148,7 +148,7 @@ It is a challenge to "synchronize" the access keys used in accessibility with th
 
 Japanese kanji characters have the property of having more than one reading (pronunciation) depending on the word in which they are used. This leads to problems when you try to sort Japanese named objects, such as application names, files, songs, and so on. Japanese kanji have, in the past, usually been sorted in a machine-understandable order called XJIS. Unfortunately, because this sorting order is not phonetic it is not very useful for humans.
 
-*Furigana* works around this problem by allowing the user or creator to specify the phonetics for the characters they are using. If you use the following procedure to add furigana to your app name, you can ensure that it is sorted in the proper location in the app list. If your app name contains kanji characters and furigana is not provided when the user’s UI language or the sort order is set to Japanese, Windows makes its best effort to generate the appropriate pronunciation. However, there is a possibility for app names containing rare or unique readings to be sorted under a more common reading instead. Therefore, the best practice for Japanese applications (especially those containing kanji characters in their names) is to provide a furigana version of their app name as part of the Japanese localization process.
+_Furigana_ works around this problem by allowing the user or creator to specify the phonetics for the characters they are using. If you use the following procedure to add furigana to your app name, you can ensure that it is sorted in the proper location in the app list. If your app name contains kanji characters and furigana is not provided when the user’s UI language or the sort order is set to Japanese, Windows makes its best effort to generate the appropriate pronunciation. However, there is a possibility for app names containing rare or unique readings to be sorted under a more common reading instead. Therefore, the best practice for Japanese applications (especially those containing kanji characters in their names) is to provide a furigana version of their app name as part of the Japanese localization process.
 
 1. Add "ms-resource:Appname" as the Package Display Name and the Application Display Name.
 2. Create a ja-JP folder under strings, and add two resource files as follows:
