@@ -33,7 +33,7 @@ A PRI file contains actual string resources. Embedded binary and file path resou
 PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.
 
 > [!NOTE]
-> For .NET apps, in Windows App SDK version 0.8 and onward, the **Build Action** file property for resource files in Visual Studio is automatically set, reducing the need for manual project configuration. Version 1.0 introduced [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786). This is fixed in 1.1 Stable, but the fix requires .NET SDK 6.0.300 or higher. If you're using a lower version of the .NET SDK, please continue to use the workaround in the 1.0 Stable release notes.
+> For .NET apps, in Windows App SDK version 0.8 and onward, the **Build Action** file property for resource files in Visual Studio is automatically set, reducing the need for manual project configuration. Version 1.0 introduced [issue 1674](https://github.com/microsoft/WindowsAppSDK/issues/1674). This is fixed in 1.1 Stable, but the fix requires .NET SDK 6.0.300 or higher. If you're using a lower version of the .NET SDK, please continue to use the workaround in the 1.0 Stable release notes.
 
 ## Access app resources with MRT Core
 
