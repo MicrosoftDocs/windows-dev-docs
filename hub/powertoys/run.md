@@ -137,7 +137,7 @@ Visual Studio Code also supports a set of [command line parameters](https://code
 
 `Visual Studio Code -d C:\foo.txt C:\bar.txt`
 
-If the program plugin's option "Include in global result" is not selected, be sure to include the activation phrase, `.` by default, to invoke the plugin's behavior:
+If the program plugin's option "Include in global result" is not selected, include the activation phrase, `.` by default, to invoke the plugin's behavior:
 
 `.Visual Studio Code -- C:\myFolder`
 
