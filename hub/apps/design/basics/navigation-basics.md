@@ -156,7 +156,7 @@ Once you've decided on a page structure, you need to decide how users navigate t
         ![Frame image](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
     :::column-end:::
@@ -167,7 +167,7 @@ With few exceptions, any app that has multiple pages uses a frame. Typically, an
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation**](../controls/navigationview.md)
+        [Top navigation](../controls/navigationview.md)
 
 Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls/navigationview.md) control implements the top navigation pattern.
 
@@ -184,7 +184,7 @@ Use top navigation when:
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Tabs**](../controls/tab-view.md)
+        [Tabs](../controls/tab-view.md)
 
 Displays a horizontal set of tabs and their respective content. The [TabView](../controls/tab-view.md) control is useful for displaying several pages (or documents) while giving the user the capability to rearrange, open, or close tabs.
 
@@ -201,7 +201,7 @@ Use tabs when:
         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Breadcrumb**](../controls/breadcrumbbar.md)
+        [Breadcrumb](../controls/breadcrumbbar.md)
 
 Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls/breadcrumbbar.md) control implements the top navigation pattern.
 
@@ -219,7 +219,7 @@ Use a breadcrumb when:
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls/navigationview.md)
+        [Left navigation](../controls/navigationview.md)
 
 Displays a vertical list of links to top-level pages. Use when:
 
@@ -233,7 +233,7 @@ Displays a vertical list of links to top-level pages. Use when:
         ![List details image](images/nav/thumbnail-list-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**List/details**](../controls/list-details.md)
+        [List/details](../controls/list-details.md)
 
 Displays a list of items. Selecting an item displays its corresponding page in the details section. Use when:
 
@@ -249,7 +249,7 @@ List/details is well suited for email inboxes, contact lists, and data entry.
         ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
-        [**Hyperlinks**](../controls/hyperlinks.md)
+        [Hyperlinks](../controls/hyperlinks.md)
 
 Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
     :::column-end:::

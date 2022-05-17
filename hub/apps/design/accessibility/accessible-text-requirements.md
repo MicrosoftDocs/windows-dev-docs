@@ -4,7 +4,7 @@ ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Accessible text requirements
 label: Accessible text requirements
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -40,14 +40,14 @@ Use color contrast tools to verify that the visible text contrast ratio is accep
 
 A UWP app can use these default elements (commonly called *text elements* or *textedit controls*):
 
-* [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock): role is [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
-* [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox): role is [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
-* [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (and overflow class [**RichTextBlockOverflow**](/uwp/api/windows.ui.xaml.controls.richtextblockoverflow)): role is [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
-* [**RichEditBox**](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox): role is [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock): role is [Text](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox): role is [Edit](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (and overflow class [RichTextBlockOverflow](/uwp/api/windows.ui.xaml.controls.richtextblockoverflow)): role is [Text](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox): role is [Edit](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 
-When a control reports that is has a role of [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType), assistive technologies assume that there are ways for users to change the values. So if you put static text in a [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox), you are misreporting the role and thus misreporting the structure of your app to the accessibility user.
+When a control reports that is has a role of [Edit](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType), assistive technologies assume that there are ways for users to change the values. So if you put static text in a [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox), you are misreporting the role and thus misreporting the structure of your app to the accessibility user.
 
-In the text models for XAML, there are two elements that are primarily used for static text, [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) and [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Neither of these are a [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) subclass, and as such neither of them are keyboard-focusable or can appear in the tab order. But that does not mean that assistive technologies can't or won't read them. Screen readers are typically designed to support multiple modes of reading the content in an app, including a dedicated reading mode or navigation patterns that go beyond focus and the tab order, like a "virtual cursor". So don't put your static text into focusable containers just so that tab order gets the user there. Assistive technology users expect that anything in the tab order is interactive, and if they encounter static text there, that is more confusing than helpful. You should test this out yourself with Narrator to get a sense of the user experience with your app when using a screen reader to examine your app's static text.
+In the text models for XAML, there are two elements that are primarily used for static text, [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) and [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Neither of these are a [Control](/uwp/api/Windows.UI.Xaml.Controls.Control) subclass, and as such neither of them are keyboard-focusable or can appear in the tab order. But that does not mean that assistive technologies can't or won't read them. Screen readers are typically designed to support multiple modes of reading the content in an app, including a dedicated reading mode or navigation patterns that go beyond focus and the tab order, like a "virtual cursor". So don't put your static text into focusable containers just so that tab order gets the user there. Assistive technology users expect that anything in the tab order is interactive, and if they encounter static text there, that is more confusing than helpful. You should test this out yourself with Narrator to get a sense of the user experience with your app when using a screen reader to examine your app's static text.
 
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
@@ -55,7 +55,7 @@ In the text models for XAML, there are two elements that are primarily used for 
 
 ## Auto-suggest accessibility
 
-When a user types into an entry field and a list of potential suggestions appears, this type of scenario is called auto-suggest. This is common in the **To:** line of a mail field, the Cortana search box in Windows, the URL entry field in Microsoft Edge, the location entry field in the Weather app, and so on. If you are using a XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox) or the HTML intrinsic controls, then this experience is already hooked up for you by default. To make this experience accessible the entry field and the list must be associated. This is explained in the [Implementing auto-suggest](#implementing_auto-suggest) section.
+When a user types into an entry field and a list of potential suggestions appears, this type of scenario is called auto-suggest. This is common in the **To:** line of a mail field, the Cortana search box in Windows, the URL entry field in Microsoft Edge, the location entry field in the Weather app, and so on. If you are using a XAML [AutosuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox) or the HTML intrinsic controls, then this experience is already hooked up for you by default. To make this experience accessible the entry field and the list must be associated. This is explained in the [Implementing auto-suggest](#implementing_auto-suggest) section.
 
 Narrator has been updated to make this type of experience accessible with a special suggestions mode. At a high level, when the edit field and list are connected properly the end user will:
 
@@ -65,33 +65,37 @@ Narrator has been updated to make this type of experience accessible with a spec
 * Be able to move Narrator focus to the list
 * Be able to navigate through a suggestion with all other reading modes
 
-![Suggestion list](images/autosuggest-list.png)<br/>
+![Suggestion list](images/autosuggest-list.png)
+
 _Example of a suggestion list_
 
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
 
-### Implementing auto-suggest  
+### Implementing auto-suggest
+
 To make this experience accessible the entry field and the list must be associated in the UIA tree. This association is done with the [UIA_ControllerForPropertyId](/windows/win32/winauto/uiauto-automation-element-propids) property in desktop apps or the [ControlledPeers](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) property in UWP apps.
 
 At a high level there are 2 types of auto-suggest experiences.
 
 **Default selection**  
-If a default selection is made in the list, Narrator looks for a  [**UIA_SelectionItem_ElementSelectedEventId**](/windows/desktop/WinAuto/uiauto-event-ids) event in a desktop app, or the [**AutomationEvents.SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents) event to be fired in a UWP app. Every time the selection changes, when the user types another letter and the suggestions have been updated or when a user navigates through the list, the **ElementSelected** event should be fired.
+If a default selection is made in the list, Narrator looks for a  [UIA_SelectionItem_ElementSelectedEventId](/windows/desktop/WinAuto/uiauto-event-ids) event in a desktop app, or the [AutomationEvents.SelectionItemPatternOnElementSelected](/uwp/api/windows.ui.xaml.automation.peers.automationevents) event to be fired in a UWP app. Every time the selection changes, when the user types another letter and the suggestions have been updated or when a user navigates through the list, the **ElementSelected** event should be fired.
 
-![List with a default selection](images/autosuggest-default-selection.png)<br/>
+![List with a default selection](images/autosuggest-default-selection.png)
+
 _Example where there is a default selection_
 
 **No default selection**  
-If there is no default selection, such as in the Weather app’s location box, then Narrator looks for the desktop [**UIA_LayoutInvalidatedEventId**](/windows/desktop/WinAuto/uiauto-event-ids) event or the UWP [**LayoutInvalidated**](/uwp/api/windows.ui.xaml.automation.peers.automationevents) event to be fired on the list every time the list is updated.
+If there is no default selection, such as in the Weather app’s location box, then Narrator looks for the desktop [UIA_LayoutInvalidatedEventId](/windows/desktop/WinAuto/uiauto-event-ids) event or the UWP [LayoutInvalidated](/uwp/api/windows.ui.xaml.automation.peers.automationevents) event to be fired on the list every time the list is updated.
 
-![List with no default selection](images/autosuggest-no-default-selection.png)<br/>
+![List with no default selection](images/autosuggest-no-default-selection.png)
+
 _Example where there is no default selection_
 
 ### XAML implementation
 
-If you are using the default XAML [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox), then everything is already hooked up for you. If you are making your own auto-suggest experience using a [**TextBox**](/uwp/api/windows.ui.xaml.controls.textbox) and a list then you will need to set the list as [**AutomationProperties.ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) on the **TextBox**. You must fire the **AutomationPropertyChanged** event for the [**ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) property every time you add or remove this property and also fire your own [**SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents) events or [**LayoutInvalidated**](/uwp/api/windows.ui.xaml.automation.peers.automationevents) events depending on your type of scenario, which was explained previously in this article.
+If you are using the default XAML [AutosuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox), then everything is already hooked up for you. If you are making your own auto-suggest experience using a [TextBox](/uwp/api/windows.ui.xaml.controls.textbox) and a list then you will need to set the list as [AutomationProperties.ControlledPeers](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) on the **TextBox**. You must fire the **AutomationPropertyChanged** event for the [ControlledPeers](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) property every time you add or remove this property and also fire your own [SelectionItemPatternOnElementSelected](/uwp/api/windows.ui.xaml.automation.peers.automationevents) events or [LayoutInvalidated](/uwp/api/windows.ui.xaml.automation.peers.automationevents) events depending on your type of scenario, which was explained previously in this article.
 
 ### HTML implementation
 
@@ -113,7 +117,7 @@ If you are using the intrinsic controls in HTML, then the UIA implementation has
 
 ## Text in graphics
 
-Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path), or by using [**Glyphs**](/uwp/api/Windows.UI.Xaml.Documents.Glyphs).
+Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [Image](/uwp/api/Windows.UI.Xaml.Controls.Image) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [AutomationProperties.Name](/dotnet/api/system.windows.automation.automationproperties.name) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [Path](/uwp/api/Windows.UI.Xaml.Shapes.Path), or by using [Glyphs](/uwp/api/Windows.UI.Xaml.Documents.Glyphs).
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
@@ -132,13 +136,11 @@ Once you've done the obvious, Windows includes various accessibility tools and s
 > [!NOTE]
 > The **Make everything bigger** setting lets a user specify their preferred size for text and apps in general on their primary screen only.
 
-Various text elements and controls have an [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) property. This property has the value **true** by default. When **true**, the size of text in that element can be scaled. The scaling affects text that has a small **FontSize** to a greater degree than it affects text that has a large **FontSize**. You can disable automatic resizing by setting an element's **IsTextScaleFactorEnabled** property to **false**.
+Various text elements and controls have an [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) property. This property has the value **true** by default. When **true**, the size of text in that element can be scaled. The scaling affects text that has a small **FontSize** to a greater degree than it affects text that has a large **FontSize**. You can disable automatic resizing by setting an element's **IsTextScaleFactorEnabled** property to **false**.
 
 See [Text scaling](../input/text-scaling.md) for more details.
 
 Add the following markup to an app and run it. Adjust the **Text size** setting, and see what happens to each **TextBlock**.
-
-XAML
 
 ```xml
 <TextBlock Text="In this case, IsTextScaleFactorEnabled has been left set to its default value of true."
@@ -150,9 +152,7 @@ XAML
 
 We don't recommend that you disable text scaling as scaling UI text universally across all apps is an important accessibility experience for users.
 
-You can also use the [**TextScaleFactorChanged**](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) event and the [**TextScaleFactor**](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) property to find out about changes to the **Text size** setting on the phone. Here’s how:
-
-C#
+You can also use the [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) event and the [TextScaleFactor](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) property to find out about changes to the **Text size** setting on the phone. Here’s how:
 
 ```csharp
 {
@@ -173,12 +173,12 @@ The value of **TextScaleFactor** is a double in the range \[1, 2.25\]. The small
 
 These types have an **IsTextScaleFactorEnabled** property:
 
-* [**ContentPresenter**](/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
-* [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) and derived classes
-* [**FontIcon**](/uwp/api/Windows.UI.Xaml.Controls.FontIcon)
-* [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
-* [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
-* [**TextElement**](/uwp/api/Windows.UI.Xaml.Documents.TextElement) and derived classes
+* [ContentPresenter](/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
+* [Control](/uwp/api/Windows.UI.Xaml.Controls.Control) and derived classes
+* [FontIcon](/uwp/api/Windows.UI.Xaml.Controls.FontIcon)
+* [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+* [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+* [TextElement](/uwp/api/Windows.UI.Xaml.Documents.TextElement) and derived classes
 
 <span id="related_topics"/>
 

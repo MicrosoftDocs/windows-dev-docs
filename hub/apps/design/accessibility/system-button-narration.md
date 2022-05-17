@@ -3,7 +3,7 @@ description: "Learn more about: Screen readers and hardware system buttons"
 title: Screen readers and hardware button events
 label: Screen readers and hardware button events
 template: detail.hbs
-ms.date: 02/20/2020
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp, accessibility, narrator, screen reader
 ms.localizationpriority: medium
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Screen-readers, such as [Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
 
-Beginning with Windows 10 version 2004, UWP applications can listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons. Previously, this system button acted only as a modifier for how other hardware buttons reported their events and state.
+Beginning with Windows 10 version 2004, UWP applications can listen for and handle the <kbd>Fn</kbd> hardware system button events in the same way as other hardware buttons. Previously, this system button acted only as a modifier for how other hardware buttons reported their events and state.
 
 > [!NOTE]
 > Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not helpful to blind or vision-impaired users).

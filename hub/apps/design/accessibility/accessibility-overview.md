@@ -4,7 +4,7 @@ ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
-ms.date: 05/16/2022
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -78,7 +78,7 @@ There are several other automation properties available (including the keyboard 
 
 ## Keyboard support
 
-To provide good keyboard support, you must ensure that every part of your application can be used with a keyboard. If your app uses mostly the standard controls and doesn't use any custom controls, you are most of the way there already. The basic XAML control model provides built-in keyboard support including tab navigation, text input, and control-specific support. The elements that serve as layout containers (such as panels) use the layout order to establish a default tab order. That order is often the correct tab order to use for an accessible representation of the UI. If you use [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) and [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) controls to display data, they provide built-in arrow-key navigation. Or if you use a [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) control, it already handles the Spacebar or Enter keys for button activation.
+To provide good keyboard support, you must ensure that every part of your application can be used with a keyboard. If your app uses mostly the standard controls and doesn't use any custom controls, you are most of the way there already. The basic XAML control model provides built-in keyboard support including tab navigation, text input, and control-specific support. The elements that serve as layout containers (such as panels) use the layout order to establish a default tab order. That order is often the correct tab order to use for an accessible representation of the UI. If you use [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox) and [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView) controls to display data, they provide built-in arrow-key navigation. Or if you use a [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) control, it already handles the Spacebar or Enter keys for button activation.
 
 For more info about all the aspects of keyboard support, including tab order and key-based activation or navigation, see [Keyboard accessibility](keyboard-accessibility.md).
 
@@ -88,7 +88,7 @@ For more info about all the aspects of keyboard support, including tab order and
 
 ## Media and captioning
 
-You typically display audiovisual media through a [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) object. You can use **MediaElement** APIs to control the media playback. For accessibility purposes, provide controls that enable users to play, pause, and stop the media as needed. Sometimes, media includes additional components that are intended for accessibility, such as captioning or alternative audio tracks that include narrative descriptions.
+You typically display audiovisual media through a [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) object. You can use **MediaElement** APIs to control the media playback. For accessibility purposes, provide controls that enable users to play, pause, and stop the media as needed. Sometimes, media includes additional components that are intended for accessibility, such as captioning or alternative audio tracks that include narrative descriptions.
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
@@ -120,11 +120,9 @@ When you design your apps, consider how they may be used by people with limited 
 
 In many cases, you can convey essential information by using multiple techniques to widen your audience. For example, you can highlight information using both icon and color information to help users who are color blind, and you can display visual alerts along with sound effects to help users who are hearing impaired.
 
-If necessary, you can provide alternative, accessible user interface elements that completely remove nonessential elements and animations, and provide other simplifications to streamline the user experience. The following code example demonstrates how to display one [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) instance in place of another depending on a user setting.
+If necessary, you can provide alternative, accessible user interface elements that completely remove nonessential elements and animations, and provide other simplifications to streamline the user experience. The following code example demonstrates how to display one [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) instance in place of another depending on a user setting.
 
-XAML
-
-```xml
+```XAML
 <StackPanel x:Name="LayoutRoot" Background="White">
 
   <CheckBox x:Name="ShowAccessibleUICheckBox" Click="ShowAccessibleUICheckBox_Click">
@@ -138,8 +136,6 @@ XAML
 </StackPanel>
 ```
 
-Visual Basic
-
 ```vb
 Private Sub ShowAccessibleUICheckBox_Click(ByVal sender As Object,
     ByVal e As RoutedEventArgs)
@@ -151,8 +147,6 @@ Private Sub ShowAccessibleUICheckBox_Click(ByVal sender As Object,
     End If
 End Sub
 ```
-
-C#
 
 ```csharp
 private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
@@ -185,7 +179,7 @@ For more info about accessibility declarations and publishing your app, see [Acc
 
 ## Assistive technology support in custom controls
 
-When you create a custom control, we recommend that you also implement or extend one or more [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) subclasses to provide accessibility support. In some cases, so long as you use the same peer class as was used by the base control class, the automation support for your derived class is adequate at a basic level. However, you should test this, and implementing a peer is still recommended as a best practice so that the peer can correctly report the class name of your new control class. Implementing a custom automation peer has a few steps involved. For more info, see [Custom automation peers](custom-automation-peers.md).
+When you create a custom control, we recommend that you also implement or extend one or more [AutomationPeer](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) subclasses to provide accessibility support. In some cases, so long as you use the same peer class as was used by the base control class, the automation support for your derived class is adequate at a basic level. However, you should test this, and implementing a peer is still recommended as a best practice so that the peer can correctly report the class name of your new control class. Implementing a custom automation peer has a few steps involved. For more info, see [Custom automation peers](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -193,11 +187,11 @@ When you create a custom control, we recommend that you also implement or extend
 
 ## Assistive technology support in apps that support XAML / Microsoft DirectX interop
 
-Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) or [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
+Microsoft DirectX content that's hosted in a XAML UI (using [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) or [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
 
 ## Related topics
 
-* [**Windows.UI.Xaml.Automation**](/uwp/api/Windows.UI.Xaml.Automation)
+* [Windows.UI.Xaml.Automation](/uwp/api/Windows.UI.Xaml.Automation)
 * [Design for accessibility]()
 * [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [Accessibility](accessibility.md)

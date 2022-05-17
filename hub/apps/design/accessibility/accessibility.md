@@ -4,13 +4,13 @@ ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibility
 label: Accessibility
 template: detail.hbs
-ms.date: 05/16/2022
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# Accessibility  
+# Accessibility
 
 Accessibility is about building experiences that make your Windows application usable by people who use technology in a wide range of environments and approach your UI with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 

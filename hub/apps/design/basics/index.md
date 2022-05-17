@@ -2,7 +2,7 @@
 description: Learn how to design and code a Windows app that's easy to navigate and looks great on a variety of devices and screen sizes.
 title: Design basics
 keywords: uwp app layout, universal windows platform, app design, interface, windows app layout
-ms.date: 09/30/2021
+ms.date: 05/17/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ Windows design guidance is a resource to help you design and build beautiful, po
         :::image type="content" source="images/app-silhouette-hero.png" alt-text="App silhouette hero image":::
     :::column-end:::
     :::column:::
-        [**App Silhouette**](app-silhouette.md)
+        [App Silhouette](app-silhouette.md)
 
 A high-level look at app patterns commonly used across our in-box applications.
     :::column-end:::
@@ -29,7 +29,7 @@ A high-level look at app patterns commonly used across our in-box applications.
         :::image type="content" source="images/signature-experiences-hero.png" alt-text="Signature experiences hero image":::
     :::column-end:::
     :::column:::
-        [**Windows 11 Signature Experiences**](../signature-experiences/signature-experiences.md)
+        [Windows 11 Signature Experiences](../signature-experiences/signature-experiences.md)
 
 See what’s new for Windows 11 design elements.
     :::column-end:::
@@ -42,7 +42,7 @@ See what’s new for Windows 11 design elements.
         :::image type="content" source="images/navigation-basics-hero.png" alt-text="Navigation basics hero image":::
     :::column-end:::
     :::column:::
-        [**Navigation basics**](navigation-basics.md)
+        [Navigation basics](navigation-basics.md)
 
 Navigation in Windows apps is based on a flexible model of navigation structures, navigation elements, and system-level features. This article introduces you to these components and shows you how to use them together to create a good navigation experience.
     :::column-end:::
@@ -53,7 +53,7 @@ Navigation in Windows apps is based on a flexible model of navigation structures
         :::image type="content" source="images/command-basics-hero.png" alt-text="Command basics hero image":::
     :::column-end:::
     :::column:::
-        [**Command basics**](commanding-basics.md)
+        [Command basics](commanding-basics.md)
 
 Command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes the command elements, such as buttons and check boxes, the interactions they support, and the command surfaces (such as command bars and context menus) for hosting them.
     :::column-end:::
@@ -63,7 +63,7 @@ Command elements are the interactive UI elements that enable the user to perform
         :::image type="content" source="images/content-basics-hero.png" alt-text="Content basics hero image":::
     :::column-end:::
     :::column:::
-        [**Content basics**](content-basics.md)
+        [Content basics](content-basics.md)
 
 This article provides some practical tips and examples to help you design the content of your app: Windows spacing rationale, using the type ramp to demonstrate hierarchy, lists and grids, and how to group controls.
     :::column-end:::

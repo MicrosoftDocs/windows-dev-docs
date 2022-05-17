@@ -5,7 +5,7 @@ ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ ms.custom: RS5
 
 # Commanding basics
 
-In a Windows app, *command elements* are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. *Command interfaces* are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.
+In a Windows app, _command elements_ are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. _Command interfaces_ are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.
 
 ## Provide the best command experience
 

@@ -4,7 +4,7 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Accessibility checklist
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 05/16/2022
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -18,19 +18,19 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
 1. Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
 
-    An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) and [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
+    An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) and [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
 
-    You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a [**LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.
+    You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a [LabeledBy](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.
 
     For more info, see [Accessible name](basic-accessibility-information.md#accessible_name) and [Accessible description](basic-accessibility-information.md).
 
 2. Implement keyboard accessibility:
 
-    * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) on some of the UI elements.
+    * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [TabIndex](/uwp/api/windows.ui.xaml.controls.control.tabindex) on some of the UI elements.
     * Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
-    * Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) pattern, keyboard activation is typically available; check the documentation for that control.
+    * Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [Invoke](/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) pattern, keyboard activation is typically available; check the documentation for that control.
     * Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
-    * For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
+    * For any custom controls that you use in your UI, verify that you have implemented these controls with correct [AutomationPeer](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
 
     For more info, see [Keyboard interactions](../input/keyboard-interactions.md).
 
@@ -53,7 +53,7 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
 5. Run accessibility tools, address reported issues, and verify the screen reading experience.
 
-    Use tools such as [**Inspect**](/windows/desktop/WinAuto/inspect-objects) to verify programmatic access, run diagnostic tools such as [**AccChecker**](/windows/desktop/WinAuto/ui-accessibility-checker) to discover common errors, and verify the screen reading experience with Narrator.
+    Use tools such as [Inspect](/windows/desktop/WinAuto/inspect-objects) to verify programmatic access, run diagnostic tools such as [AccChecker](/windows/desktop/WinAuto/ui-accessibility-checker) to discover common errors, and verify the screen reading experience with Narrator.
 
     For more info, see [Accessibility testing](accessibility-testing.md).
 
@@ -65,7 +65,7 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
     For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
 
-## Related topics  
+## Related topics
 
 * [Accessible text requirements](accessible-text-requirements.md)
 * [Text scaling](../input/text-scaling.md)

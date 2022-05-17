@@ -30,7 +30,7 @@ You will also to have an Android phone or configured emulator in which to run yo
 
 ## Create a new Xamarin.Forms project
 
-Start Visual Studio. **Click File > New > Project** to create a new project.
+Start Visual Studio. Click **File** > **New** > **Project** to create a new project.
 
 In the new project dialog, select the **Mobile App (Xamarin.Forms)** template and click **Next**.
 
@@ -189,7 +189,7 @@ namespace TimeChangerForms
 
 ## Run the app
 
-To run the app, press **F5** or click Debug > Start Debugging. Depending on how your [debugger is configured](emulator.md), your app will launch on a device or in an emulator.
+To run the app, press **F5** or click **Debug** > **Start Debugging**. Depending on how your [debugger is configured](emulator.md), your app will launch on a device or in an emulator.
 
 ## Related links
 
