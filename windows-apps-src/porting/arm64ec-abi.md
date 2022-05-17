@@ -10,7 +10,7 @@ ms.reviewer: mattwoj
 
 # Understanding Arm64EC ABI and assembly code
 
-Arm64EC (“Emulation Compatible”) is a new application binary interface (ABI) for building apps for Windows 11 on Arm. For an overview of Arm64EC and how to start building Win32 apps as Arm64EC, see [Using ARM64EC to build apps for Windows 11 on ARM devices](./arm64ec.md).
+Arm64EC (“Emulation Compatible”) is a new application binary interface (ABI) for building apps for Windows 11 on Arm. For an overview of Arm64EC and how to start building Win32 apps as Arm64EC, see [Using Arm64EC to build apps for Windows 11 on Arm devices](./arm64ec.md).
 
 The purpose of this document is to provide a detailed view of the Arm64EC ABI with enough information for an application developer to write and debug code compiled for Arm64EC, including low-level/assembler debugging and writing assembly code targeting the Arm64EC ABI.
 
@@ -43,7 +43,7 @@ This structure must be used to represent the CPU context while executing x64 cod
 
 It also implies that any Arm64 registers which cannot be fitted into the x64 `CONTEXT` must not be used, as their values can be lost anytime an operation using `CONTEXT` occurs (and some can be asynchronous and unexpected, such as the Garbage Collection operation of a Managed Language Runtime, or an APC).
 
-The mapping rules between Arm64EC and x64 registers are represented by the `ARM64EC_NT_CONTEXT` structure in the Windows headers, present in the SDK. This structure is essentially a union of the `CONTEXT` structure, exactly as it is defined for x64, but with an extra Arm64 register overlay.
+The mapping rules between Arm64EC and x64 registers are represented by the `Arm64EC_NT_CONTEXT` structure in the Windows headers, present in the SDK. This structure is essentially a union of the `CONTEXT` structure, exactly as it is defined for x64, but with an extra Arm64 register overlay.
 
 For example, `RCX` maps to `X0`, `RDX` to `X1`, `RSP` to `SP`, `RIP` to `PC`, etc. We can also see how the registers `x13`, `x14`, `x23`, `x24`, `x28`, `v16`-`v31` have no representation and, thus, cannot be used in Arm64EC.
 
@@ -531,7 +531,7 @@ auto pgma =
     (decltype(&GetMachineTypeAttributes))
         GetProcAddress(module_handle, "GetMachineTypeAttributes");
 
-hr = (*pgma)(IMAGE_FILE_MACHINE_ARM64, &MachineAttributes);
+hr = (*pgma)(IMAGE_FILE_MACHINE_Arm64, &MachineAttributes);
 ```
 
 The function pointer value in the `pgma` variable will contain the address of `GetMachineTypeAttributes`’s FFS.
@@ -616,7 +616,7 @@ Writing `fD` in ASM would look something like:
 In the example above:
 
 - Arm64EC uses the same procedure declaration and prolog/epilog macros as Arm64.
-- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `Arm64EC` containing Arm64EC code. This does not happen with `ARMASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_ARM64EC_` is defined and leaves the name unchanged when `_ARM64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
+- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `Arm64EC` containing Arm64EC code. This does not happen with `ArmASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_Arm64EC_` is defined and leaves the name unchanged when `_Arm64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
 - The `pfE` function pointer must first be run through the EC call checker, together with the appropriate Exit Thunk, in case the target function is x64.
 
 ## Generating Entry and Exit Thunks
@@ -686,7 +686,7 @@ The code above does not supply an Exit Thunk (in register x10). This is not poss
 The above code does need an Entry Thunk to address the case when the caller is x64 code. This is how to author the corresponding Entry Thunk, using the macro for custom Entry Thunks:
 
 ```
-    ARM64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
+    Arm64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
     ldr     x9, [x0, 0x18]
     adrp    xip0, __os_arm64x_x64_jump
     ldr     xip0, [xip0, __os_arm64x_x64_jump]
@@ -717,7 +717,7 @@ To generate Arm64EC dynamic code, the process is mostly the same with only two d
 
 - When allocating the memory, use newer `VirtualAlloc2` (instead of `VirtualAlloc` or `VirtualAllocEx`) and provide the `MEM_EXTENDED_PARAMETER_EC_CODE` attribute.
 - When adding function entries:
-  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Am64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
+  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Am64EC, use the `Arm64_RUNTIME_FUNCTION` type instead.
   - Do not use the older `RtlAddFunctionTable` API. Always use the newer `RtlAddGrowableFunctionTable` API instead.
 
 Below is an example of memory allocation:
@@ -744,7 +744,7 @@ Below is an example of memory allocation:
 And an example of adding one unwind function entry:
 
 ```
-ARM64_RUNTIME_FUNCTION FunctionTable[1];
+Arm64_RUNTIME_FUNCTION FunctionTable[1];
 
 FunctionTable[0].BeginAddress = 0;
 FunctionTable[0].Flags = PdataPackedUnwindFunction;

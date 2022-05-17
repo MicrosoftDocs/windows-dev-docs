@@ -80,7 +80,7 @@ This release provides the stability and support to make WinUI 3 suitable for pro
 - SwapChainPanel
 - MRT Core Support
   - This makes apps faster and lighter on startup and provides quicker resource lookup.
-- ARM64 Support
+- Arm64 Support
 - Drag and drop inside and outside of apps
 - RenderTargetBitmap (currently only XAML content - no SwapChainPanel content)
 - Custom cursor support

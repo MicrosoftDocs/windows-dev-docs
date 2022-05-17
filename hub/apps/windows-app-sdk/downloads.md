@@ -57,7 +57,8 @@ Unpackaged or sparse-packaged apps that use the Windows App SDK can use the runt
 | Package type  | Description  |
 |:------------- |:-------------|
 | Installer | The **WindowsAppRuntimeInstall.exe** installer, is available as a separate download beginning with Windows App SDK 1.0.1. It installs the Windows App SDK Runtime which includes the Framework, Main, Singleton and DDLM packages. |
-| Redistributable | The Windows App Runtime Redistributable (**Microsoft.WindowsAppRuntime.Redist**) is a zip file that includes the installer and MSIX packages for all architectures (x64, x86, and ARM64).|
+| Redistributable | The Windows App Runtime Redistributable (**Microsoft.WindowsAppRuntime.Redist**) is a zip file that includes the installer and MSIX packages for all architectures (x64, x86, and Arm64).|
+
 
 To learn more, see the [Windows App SDK release channels](release-channels.md) and the release notes provided below for each version.
 

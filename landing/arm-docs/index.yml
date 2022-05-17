@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
-title: Windows on ARM documentation
-summary: Windows runs on PCs powered by ARM processors. This page provides the information for you to learn more about the platform and get started developing apps. # < 160 chars
+title: Windows on Arm documentation
+summary: Windows runs on PCs powered by Arm processors. This page provides the information for you to learn more about the platform and get started developing apps. # < 160 chars
 metadata:
-  title: Windows on ARM documentation
-  description: This page provides the information for you to get started developing ARM64 win32 and UWP apps.
+  title: Windows on Arm documentation
+  description: This page provides the information for you to get started developing Arm64 win32 and UWP apps.
   ms.service: guidance 
   ms.topic: landing-page
   author: mattwojo
@@ -17,11 +17,11 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
-  - title: About Windows on ARM
+  - title: About Windows on Arm
     linkLists:
       - linkListType: overview
         links:
-          - text: Windows on ARM
+          - text: Windows on Arm
             url: /windows/uwp/porting/apps-on-arm
       - linkListType: learn
         links:        
@@ -29,37 +29,37 @@ landingContent:
             url: /windows/uwp/porting/apps-on-arm-x86-emulation            
       - linkListType: video
         links:
-          - text: Build ARM64 Win32 C++ Apps
+          - text: Build Arm64 Win32 C++ Apps
             url: https://youtu.be/OZtVBDeVqCE
-          - text: Build 2018 Windows 10 on ARM for developers
+          - text: Build 2018 Windows 10 on Arm for developers
             url: /events/build-2018/brk2438
 
   # Card
-  - title: Develop for Windows on ARM
+  - title: Develop for Windows on Arm
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: ARM64EC for Windows 11 apps on ARM
+          - text: Arm64EC for Windows 11 apps on Arm
             url: /windows/uwp/porting/arm64ec
           - text:  Understanding Arm64EC ABI and assembly code
             url: /windows/uwp/porting/arm64ec-abi
-          - text: Build ARM64 apps with the SDK
+          - text: Build Arm64 apps with the SDK
             url: https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/
-          - text: Build ARM64 Drivers with the WDK
+          - text: Build Arm64 Drivers with the WDK
             url: /windows-hardware/drivers/develop/building-arm64-drivers
-          - text: Troubleshoot UWP apps on ARM
+          - text: Troubleshoot UWP apps on Arm
             url: /windows/uwp/porting/apps-on-arm-troubleshooting-arm32
-          - text: Debug on ARM
+          - text: Debug on Arm
             url: /windows-hardware/drivers/debugger/debugging-arm64
       - linkListType: reference
         links:
           - text: Developer resources at Qualcomm Developer Network
             url: https://developer.qualcomm.com/hardware/windows-on-snapdragon/developer-resources
-          - text: Windows on ARM documentation at developer.arm.com
+          - text: Windows on Arm documentation at developer.arm.com
             url: https://developer.arm.com/solutions/os/windows-on-arm
       - linkListType: whats-new
         links:
-          - text: Develop apps for ARM with Snapdragon Developer Kit
+          - text: Develop apps for Arm with Snapdragon Developer Kit
             url: https://developer.qualcomm.com/hardware/windows-on-snapdragon/snapdragon-developer-kit        
 
   # Card
