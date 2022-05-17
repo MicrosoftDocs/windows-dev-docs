@@ -230,8 +230,6 @@ items:
             href: performance/disk-memory.md
           - name: Improve power consumption
             href: performance/power.md
-          - name: Improve reliability
-            href: performance/reliability.md
           - name: Improve responsiveness
             href: performance/responsive.md
       - name: User interface and input
