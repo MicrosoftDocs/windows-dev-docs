@@ -15,15 +15,15 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 ## Requirements
 
 - Supported Operating Systems:
-  - Windows 10 v1903 (18362) or newer.
   - Windows 11 (all versions)
+  - Windows 10 v1903 (18362) or newer
 - System architecture
   - x64 architecture currently supported.
-  - ARM support to become available at a later date.
+  - Arm support is being acively worked on.
 - Our installer will install the following runtimes:
-  - .NET Core 3.1.22 Desktop Runtime or a newer 3.1.x runtime (This is needed currently for the Settings application)
-  - .NET 6.0.3 Desktop Runtime or a newer 6.0.x runtime
-  - Microsoft Edge WebView2 Runtime bootstrapper (This will always install the latest version)
+  - [.NET 6.0.4 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer) or a newer 6.0.x runtime
+  - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (This will always install the latest version)
+  - [Windows App SDK Runtime](/windows/apps/windows-app-sdk/downloads) 1.0.3. This will install version 1.0.3 if this or newer version is not installed already.
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
@@ -84,6 +84,12 @@ If you have an issue where the MSI is not accessible, you can download the insta
 
 In PowerShell, run `.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi` and this will extract the MSI to your desktop.
 
+### Clean-up scripts
+
+In case there were problems with uninstalling a version, There is a cleanup script:
+
+- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool
+- https://github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script
 
 ## Community-driven install tools
 

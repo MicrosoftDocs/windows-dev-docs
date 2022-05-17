@@ -218,7 +218,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## Create a drop down button
 
-> **DropDownButton** requires the [Windows UI Library](/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive).
+> **DropDownButton** requires the [Windows UI Library](/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 A [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard **Button** control with a flyout; only the appearance is different.
 
@@ -279,7 +279,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ## Create a split button
 
  > [!IMPORTANT]
- > **SplitButton** requires the [Windows UI Library](/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive).
+ > **SplitButton** requires the [Windows UI Library](/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 A [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) control has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.
 
@@ -389,7 +389,7 @@ public sealed partial class MainPage : Page
 ## Create a toggle split button
 
 > [!NOTE]
-> **ToggleSplitButton** requires the [Windows UI Library](/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive).
+> **ToggleSplitButton** requires the [Windows UI Library](/uwp/toolkits/winui/) or Windows 10, version 1809 (SDK 17763) or later. To download the latest SDK, see [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk); to download an earlier SDK, see [Windows SDK and emulator archive](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 A [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) control has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
 

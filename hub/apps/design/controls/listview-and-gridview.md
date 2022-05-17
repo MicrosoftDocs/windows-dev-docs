@@ -372,7 +372,7 @@ This table shows the ways a user can interact with a list view, and how you can 
 | Click | SelectionMode="None"<br>IsItemClickEnabled="True" | [ItemClick](/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/A |
 
 > [!NOTE]
-> In Windows 10 and later, you can enable IsItemClickEnabled to raise an ItemClick event while SelectionMode is also set to **Single**, **Multiple**, or **Extended**. If you do this, the ItemClick event is raised first, and then the SelectionChanged event is raised. In some cases (for example, if you go to another page in the ItemClick event handler), the SelectionChanged event isn't raised and the item isn't selected.
+> You can enable IsItemClickEnabled to raise an ItemClick event while SelectionMode is also set to **Single**, **Multiple**, or **Extended**. If you do this, the ItemClick event is raised first, and then the SelectionChanged event is raised. In some cases (for example, if you go to another page in the ItemClick event handler), the SelectionChanged event isn't raised and the item isn't selected.
 
 You can set these properties in XAML or in code, as shown here:
 

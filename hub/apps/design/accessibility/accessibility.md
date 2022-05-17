@@ -19,7 +19,7 @@ Accessibility is about building experiences that make your Windows application u
 | Article | Description |
 |---------|-------------|
 | [Accessibility overview](accessibility-overview.md) | This article is an overview of the concepts and technologies related to accessibility scenarios for Windows apps. |
-| [Designing inclusive software](designing-inclusive-software.md) | Learn about evolving inclusive design with Windows apps for Windows 10.  Design and build inclusive software with accessibility in mind. |
+| [Designing inclusive software](designing-inclusive-software.md) | Learn about evolving inclusive design with Windows apps for Windows.  Design and build inclusive software with accessibility in mind. |
 | [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) | This article is a roadmap for developing accessible Windows apps. |
 | [Accessibility testing](accessibility-testing.md) | Testing procedures to follow to ensure that your Windows app is accessible. |
 | [Accessibility in the Store](accessibility-in-the-store.md) | Describes the requirements for declaring your Windows app as accessible in the Microsoft Store. |

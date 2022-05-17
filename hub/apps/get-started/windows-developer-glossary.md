@@ -32,7 +32,7 @@ C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) AP
 [Dynamic Dependencies](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) makes framework packages accessible to all kinds of apps: packaged and unpackaged.
 
 #### Fluent Design
-[Fluent Design](https://www.microsoft.com/design/fluent/#/) is a design system that lets you create reusable cross-platform user interfaces. 
+[Fluent Design](https://aka.ms/fluent) is a design system that lets you create reusable cross-platform user interfaces. 
 
 #### Hot Reload
 An app development feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-run your apps while developing. See [Write and debug running code with Hot Reload](/visualstudio/debugger/hot-reload).
@@ -104,7 +104,7 @@ The Windows UI Library (WinUI) is the modern native user interface (UX) framewor
 Windows UI Library (WinUI) 2 is tightly integrated with Windows 10 and later SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](/windows/apps/winui/winui2/).
 
 #### WinUI 3
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](/design/fluent/) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/).
+The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/).
 
 #### XAML Islands
 XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands).

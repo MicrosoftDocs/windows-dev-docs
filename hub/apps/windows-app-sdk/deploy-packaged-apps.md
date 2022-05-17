@@ -13,7 +13,6 @@ ms.localizationpriority: medium
 
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-![image](https://user-images.githubusercontent.com/31261191/166337911-fadf8d3e-427f-4d69-af14-be8523208297.png)
 
 This article provides guidance about deploying framework-dependent MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 

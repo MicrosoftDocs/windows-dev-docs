@@ -333,7 +333,7 @@ This resource has the following values.
 | fileStatus    | string    |  The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  An ID that uniquely identifies the package. This value is used by Partner Center.   |     
 | version    |  string   |  The version of the app package. For more information, see [Package version numbering](../publish/package-version-numbering.md).   |   
-| architecture    |  string   |  The architecture of the app package (for example, ARM).   |     
+| architecture    |  string   |  The architecture of the app package (for example, Arm).   |     
 | languages    | array    |  An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](../publish/supported-languages.md).    |     
 | capabilities    |  array   |  An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](../packaging/app-capability-declarations.md).   |     
 | minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
