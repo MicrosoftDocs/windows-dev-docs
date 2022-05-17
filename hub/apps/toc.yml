@@ -40,6 +40,8 @@ items:
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
+        - name: Windows developer best practices 
+          href: get-started/best-practices.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
         - name: Windows developer glossary 
@@ -224,6 +226,12 @@ items:
             href: performance/introduction.md
           - name: Choosing performance tools
             href: performance/choose-between-tools.md
+          - name: Improve disk and memory use
+            href: performance/disk-memory.md
+          - name: Improve power consumption
+            href: performance/power.md
+          - name: Improve responsiveness
+            href: performance/responsive.md
       - name: User interface and input
         items:
           - name: Overview
