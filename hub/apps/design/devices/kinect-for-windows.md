@@ -45,42 +45,31 @@ Build desktop applications for Windows 10 or sell your Kinect v2 UWP apps in the
 
 ## Tools and extensions
 
-:::row:::
-    :::column:::
-        **Windows developer tools**<br>
-        These tools include a free, full-featured Visual Studio Community client, universal app templates, a code editor, a powerful debugger, Windows Mobile emulators, rich language support, and more, all ready to use in production.<br>
-        [Learn more](https://developer.microsoft.com/windows/downloads)
-    :::column-end:::
-    :::column:::
-        **NuGet and Unity Pro add-ons**<br>
-        Install the Kinect SDK 2.0 and use the NuGet packages for a better .NET Framework development experience. You can also take advantage of the Unity Pro packages to build Kinect-based Unity apps.<br>
-        [NuGet packages](https://go.microsoft.com/fwlink/p/?linkid=507363)<br>
-        [Unity Pro packages](https://go.microsoft.com/fwlink/p/?LinkId=513177)
-    :::column-end:::
-:::row-end:::
+#### Windows developer tools
+These tools include a free, full-featured Visual Studio Community client, universal app templates, a code editor, a powerful debugger, Windows Mobile emulators, rich language support, and more, all ready to use in production.<br>
+[Learn more](https://developer.microsoft.com/windows/downloads)
 
-:::row:::
-    :::column:::
-        **Kinect for Windows language packs**<br>
-        The language packs enable you to add speech recognition to your Kinect for Windows apps.<br>
-        [Get the Kinect for Windows language packs v11.0](https://www.microsoft.com/download/details.aspx?id=34809)
-    :::column-end:::
-    :::column:::
-        **DirectX SDK**<br>
-        Because the Windows SDK is the primary developer SDK for Windows, DirectX is now included in it. You can now use the Windows SDK to build great games for Windows.<br>
-        [Learn more about the DirectX SDK](https://docs.microsoft.com/windows/win32/directx-sdk--august-2009-)
-    :::column-end:::
-:::row-end:::
+#### Windows developer tools
+These tools include a free, full-featured Visual Studio Community client, universal app templates, a code editor, a powerful debugger, Windows Mobile emulators, rich language support, and more, all ready to use in production.<br>
+[Learn more](https://developer.microsoft.com/windows/downloads)
 
-:::row:::
-    :::column:::
-        **Microsoft Speech Platform SDK 11**<br>
-        You can use the technologies and tools in the Speech Platform SDK 11 to give applications the ability to recognize spoken words (speech recognition) and to generate synthesized speech (text-to-speech or TTS). Using this SDK, you can give users an effective and natural way to interact with your applications, complementing the use of mice, keyboards, controllers, and gestures.<br>
-        [Microsoft Speech Platform SDK 11](https://www.microsoft.com/download/details.aspx?id=27226)
-    :::column-end:::
-    :::column:::
-        **Kinect Configuration Verifier**<br>
-        Run the Kinect Configuration Verifier tool to check your system for issues and to verify that you’re running the latest driver for your GPU.<br>
-        [Run the Kinect Configuration Verifier](https://go.microsoft.com/fwlink/p/?LinkID=513889)
-    :::column-end:::
-:::row-end:::
+#### NuGet and Unity Pro add-ons
+Install the Kinect SDK 2.0 and use the NuGet packages for a better .NET Framework development experience. You can also take advantage of the Unity Pro packages to build Kinect-based Unity apps.<br>
+[NuGet packages](https://go.microsoft.com/fwlink/p/?linkid=507363)<br>
+[Unity Pro packages](https://go.microsoft.com/fwlink/p/?LinkId=513177)
+
+#### Kinect for Windows language packs
+The language packs enable you to add speech recognition to your Kinect for Windows apps.<br>
+[Get the Kinect for Windows language packs v11.0](https://www.microsoft.com/download/details.aspx?id=34809)
+
+#### DirectX SDK
+Because the Windows SDK is the primary developer SDK for Windows, DirectX is now included in it. You can now use the Windows SDK to build great games for Windows.<br>
+[Learn more about the DirectX SDK](https://docs.microsoft.com/windows/win32/directx-sdk--august-2009-)
+
+#### Microsoft Speech Platform SDK 11
+You can use the technologies and tools in the Speech Platform SDK 11 to give applications the ability to recognize spoken words (speech recognition) and to generate synthesized speech (text-to-speech or TTS). Using this SDK, you can give users an effective and natural way to interact with your applications, complementing the use of mice, keyboards, controllers, and gestures.<br>
+[Microsoft Speech Platform SDK 11](https://www.microsoft.com/download/details.aspx?id=27226)
+
+#### Kinect Configuration Verifier
+Run the Kinect Configuration Verifier tool to check your system for issues and to verify that you’re running the latest driver for your GPU.<br>
+[Run the Kinect Configuration Verifier](https://go.microsoft.com/fwlink/p/?LinkID=513889)
