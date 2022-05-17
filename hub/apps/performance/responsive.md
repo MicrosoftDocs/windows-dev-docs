@@ -19,9 +19,9 @@ Customers can feel when an application launch, menu navigation, or page/content 
 
 The basic steps to drive latency optimization are:
 
-1. Define the scenario and add "Tracelogging" events.
+1. Define the scenario and add "TraceLogging" events.
 
-    Make a list of the key interactions that a user will go through while using your app, such as launch, opening a menu, navigating to a new page and rendering content, etc. For each of these interactions, add a start event and stop event to be used for measurement and analysis. Learn more about how to add [Tracelogging](/windows/win32/tracelogging/trace-logging-portal), a format for self-describing Event Tracing for Windows (ETW).
+    Make a list of the key interactions that a user will go through while using your app, such as launch, opening a menu, navigating to a new page and rendering content, etc. For each of these interactions, add a start event and stop event to be used for measurement and analysis. Learn more about how to add [TraceLogging](/windows/win32/tracelogging/trace-logging-portal), a format for self-describing Event Tracing for Windows (ETW).
 
 2. Set goals based on the interaction class.
 
@@ -67,9 +67,9 @@ The basic steps to drive latency optimization are:
 
 - [Windows Performance Analyzer: Optimizing Performance and Responsiveness](/windows-hardware/test/wpt/optimizing-performance-and-responsiveness)
 
-- [Tracelogging](/windows/win32/tracelogging/trace-logging-portal)
+- [TraceLogging](/windows/win32/tracelogging/trace-logging-portal)
 
-- [Event Tracing for Windows](/windows-hardware/test/wpt/event-tracing-for-windows)
+- [Event Tracing for Windows](/windows/win32/tracelogging/trace-logging-portal)
 
 - [Planning for performance](/windows/uwp/debug-test-perf/planning-and-measuring-performance)
 
