@@ -62,7 +62,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
 
 1. Open the `xaml-basics-starting-points\data-binding` folder and launch the `PhotoLab.sln` file in Visual Studio.
 
-2. Make sure your **Solution Platform** is set to x86 or x64, not ARM, and then run the app. This shows the state of the app with UI placeholders, before bindings have been added.
+2. Make sure your **Solution Platform** is set to x86 or x64, not Arm, and then run the app. This shows the state of the app with UI placeholders, before bindings have been added.
 
     ![Running app with placeholder images and text](images/gallery-with-placeholder-templates.png)
 

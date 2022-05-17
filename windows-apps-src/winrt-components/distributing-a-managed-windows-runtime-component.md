@@ -26,7 +26,7 @@ Your binary files will be installed in app packages, possibly with binary files 
 To decide how to distribute your component, consider how complex it is. An extension SDK or similar package manager is recommended when:
 
 -   Your component consists of multiple files.
--   You provide versions of your component for multiple platforms (x86 and ARM, for example).
+-   You provide versions of your component for multiple platforms (x86 and Arm, for example).
 -   You provide both debug and release versions of your component.
 -   Your component has files and assemblies that are used only at design time.
 

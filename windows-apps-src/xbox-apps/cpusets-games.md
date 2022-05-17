@@ -58,7 +58,7 @@ The other data members provide information that is unlikely to describe CPUs in 
 
 The following are some examples of the type of information gathered from UWP applications running on various types of hardware.
 
-**Table 2. Information returned from a UWP app running on a Microsoft Lumia 950. This is an example of a system that has multiple last level caches. The Lumia 950 features a Qualcomm 808 Snapdragon process that contains a dual core ARM Cortex A57 and quad core ARM Cortex A53 CPUs.**
+**Table 2. Information returned from a UWP app running on a Microsoft Lumia 950. This is an example of a system that has multiple last level caches. The Lumia 950 features a Qualcomm 808 Snapdragon process that contains a dual core Arm Cortex A57 and quad core Arm Cortex A53 CPUs.**
 
   ![Table 2](images/cpusets-table2.png)
 

@@ -23,7 +23,7 @@ See [Gamepad and remote control interactions](../input/gamepad-and-remote-intera
 
 ## Overview
 
-The Universal Windows Platform lets you create delightful experiences across multiple Windows 10 devices.
+The Universal Windows Platform lets you create delightful experiences across multiple Windows devices.
 Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work.
 However, tailoring and optimizing your app to work great on Xbox One and TV screens requires special considerations.
 

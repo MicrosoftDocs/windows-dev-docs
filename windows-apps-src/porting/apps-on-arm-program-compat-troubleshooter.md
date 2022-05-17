@@ -1,15 +1,15 @@
 ---
-title: Program Compatibility Troubleshooter on ARM
-description: Guidance for adjusting compatibility settings if your app isn't working correctly on ARM
+title: Program Compatibility Troubleshooter on Arm
+description: Guidance for adjusting compatibility settings if your app isn't working correctly on Arm
 ms.date: 06/25/2021
 ms.topic: article
-keywords: windows, always connected, compatibility troubleshooter, windows on ARM
+keywords: windows, always connected, compatibility troubleshooter, windows on Arm
 ms.localizationpriority: medium
 ---
 
-# Program Compatibility Troubleshooter on ARM
+# Program Compatibility Troubleshooter on Arm
 
-Emulation to support x86 apps is a new feature created for Windows on ARM64. Sometimes the emulation performs optimizations that don't result in the best experience. You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.
+Emulation to support x86 apps is a new feature created for Windows on Arm64. Sometimes the emulation performs optimizations that don't result in the best experience. You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.
 
 ## Start the Program Compatibility Troubleshooter
 
@@ -30,7 +30,7 @@ All options enable the settings that are applicable and applied on Windows Deskt
 
 You can toggle emulation settings by right-clicking the executable and selecting **Properties**.
 
-On ARM, a section titled **Windows 10 on ARM** will be available in the **Compatibility** tab. Click **Change emulation settings** to launch a second window as here.
+On Arm, a section titled **Windows 10 on Arm** will be available in the **Compatibility** tab. Click **Change emulation settings** to launch a second window as here.
 
 ![Change emulation settings screenshot](images/arm/Capture.png)
 
@@ -45,7 +45,7 @@ Select **Use advanced settings** to choose individual settings as described in t
 | Emulation setting | Result |
 | ----------------- | ----------- |
 | <p id="disable-app-cache">Disable application cache</p> | The operating system will cache compiled blocks of code to reduce emulation overhead on subsequent executions. This setting requires the emulator to recompile all app code at runtime. |
-| <p id="disable-hybrid-exec-mode">Disable hybrid execution mode</p> | Compiled Hybrid Portable Executable (CHPE), binaries are x86 compatible binaries that include native ARM64 code to improve performance, but that may not be compatible with some apps. This setting forces use of x86-only binaries. |
+| <p id="disable-hybrid-exec-mode">Disable hybrid execution mode</p> | Compiled Hybrid Portable Executable (CHPE), binaries are x86 compatible binaries that include native Arm64 code to improve performance, but that may not be compatible with some apps. This setting forces use of x86-only binaries. |
 | Strict self-modifying code support | Enable this to ensure that any self-modifying code is correctly supported in emulation. The most common self-modifying code scenarios are covered by the default emulator behavior. Enabling this option significantly reduces performance of self-modifying  code during execution. |
 | Disable RWX page performance optimization | This optimization improves the performance of code on readable, writable, and executable (RWX) pages, but may be incompatible with some apps. |
 

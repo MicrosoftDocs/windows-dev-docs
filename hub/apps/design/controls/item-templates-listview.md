@@ -126,5 +126,5 @@ Use this template to display a list of items with text in defined columns.
 - [ListView class](/uwp/api/windows.ui.xaml.controls.listview)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
-- [ListView and GridView sample (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Thumbnail images](/windows/uwp/files/thumbnails)

@@ -163,7 +163,7 @@ This is a better way to add events to HTML controls than adding a click event ha
 
 ## Build and run the app
 
-Before you build, change the target platform for all projects to ARM, x64, or x86, as appropriate for your computer.
+Before you build, change the target platform for all projects to Arm, x64, or x86, as appropriate for your computer.
 
 To build and run the solution, choose the F5 key. (If you get a run-time error message stating that SampleComponent is undefined, the reference to the class library project is missing.)
 

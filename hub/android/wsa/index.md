@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 02/14/2022
+ms.date: 05/11/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -193,7 +193,7 @@ To debug an APK using adb:
 
 ### Building Universal APKs
 
-Windows Subsystem for Android utilizes Intel Bridge Technology to emulate ARM applications on x86 based processors. ARM applications will run on ARM based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and ARM64 architectures.
+Windows Subsystem for Android utilizes Intel Bridge Technology to emulate Arm applications on x86 based processors. Arm applications will run on Arm based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and Arm64 architectures.
 
 ## VM lifecycle considerations
 
