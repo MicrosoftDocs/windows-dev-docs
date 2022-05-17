@@ -245,8 +245,7 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, etc.
 2. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
 3. Run Accessibility Insights automated checks in your PRs or CI/CD.  For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
-4. Remind everyone on your team to run FastPass before completing a PR. For more details, see [MerlinBot and Accessibility Insights](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/accessibility-insights/accessibility-insights-in-merlinbot).
-5. Fix all bugs you find, they all have direct impact on accessibility.
+4. Fix all bugs you find, they all have direct impact on accessibility.
 
 ### Security and privacy
 
