@@ -252,7 +252,7 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 
 **How do I ensure that my app is secure?**
 
-Malicious actors are always looking for vulnerabilities to exploit. An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your application has no direct security bugs, attackers can use your app to initiate their attacks through phishing and social engineering. The best practices in this section will help you mitigate risks related to security and user privacy.
+An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your app doesn't have security bugs, attackers can use your app to initiate their attacks through phishing and other forms of social engineering that violate security and privacy boundaries. The best practices in this section will help you mitigate risks related to security and user privacy.
 
 #### Security guidelines
 
