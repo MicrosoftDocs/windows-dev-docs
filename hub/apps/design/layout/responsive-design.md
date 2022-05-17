@@ -9,6 +9,7 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Responsive design techniques
 
 UWP apps use effective pixels to guarantee that your UI will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?

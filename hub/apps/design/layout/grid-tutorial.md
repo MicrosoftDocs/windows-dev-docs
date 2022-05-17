@@ -2,7 +2,7 @@
 description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
 title: Use Grid and StackPanel to create a simple app.
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
@@ -16,10 +16,12 @@ Use XAML to create the layout for a simple weather app using the **Grid** and **
 > **Important APIs**: [Grid class](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## Prerequisites
+
 - Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
 - Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## Step 1: Create a blank app
+
 1. In Visual Studio menu, select **File** > **New Project**.
 2. In the left pane of the **New Project** dialog box, select **Visual C#** > **Windows** > **Universal** or **Visual C++** > **Windows** > **Universal**.
 3. In the center pane, select **Blank App**.
@@ -27,11 +29,12 @@ Use XAML to create the layout for a simple weather app using the **Grid** and **
 5. To run the program, select **Debug** > **Start Debugging** from the menu, or select F5.
 
 ## Step 2: Define a Grid
+
 In XAML a **Grid** is made up of a series of rows and columns. By specifying the row and column of an element within a **Grid**, you can place and space other elements within a user interface. Rows and columns are defined with the **RowDefinition** and **ColumnDefinition** elements.
 
 To start creating a layout, open **MainPage.xaml** by using the **Solution Explorer**, and replace the automatically generated **Grid** element with this code.
 
-```xml
+```xaml
 <Grid>
     <Grid.ColumnDefinitions>
         <ColumnDefinition Width="3*"/>
@@ -51,9 +54,10 @@ To learn about other methods of sizing rows and columns, see [Define layouts wit
 If you run the application now you won't see anything except a blank page, because none of the **Grid** areas have any content. To show the **Grid** let's give it some color.
 
 ## Step 3: Color the Grid
+
 To color the **Grid** we add three **Border** elements, each with a different background color. Each is also assigned to a row and column in the parent **Grid** by using the **Grid.Row** and **Grid.Column** attributes. The values of these attributes default to 0, so you don't need to assign them to the first **Border**. Add the following code to the **Grid** element after the row and column definitions.
 
-```xml
+```xaml
 <Border Background="#2f5cb6"/>
 <Border Grid.Column ="1" Background="#1f3d7a"/>
 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
@@ -66,11 +70,12 @@ If you run the app, the result looks something like this.
 ![Coloring the Grid](images/grid-weather-1.png)
 
 ## Step 4: Organize content by using StackPanel elements
+
 **StackPanel** is the second UI element we'll use to create our weather app. The **StackPanel** is a fundamental part of many basic app layouts, allowing you to stack elements vertically or horizontally.
 
 In the following code, we create two **StackPanel** elements and fill each with three **TextBlocks**. Add these **StackPanel** elements to the **Grid** below the **Border** elements from Step 3. This causes the **TextBlock** elements to render on top of the colored **Grid** we created earlier.
 
-```xml
+```xaml
 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
     <TextBlock Foreground="White" FontSize="25" Text="Today - 64° F"/>
     <TextBlock Foreground="White" FontSize="25" Text="Partially Cloudy"/>
@@ -98,17 +103,17 @@ Download the image below and save it as a PNG named "partially-cloudy".
 
 ![Partially cloudy](images/partially-cloudy.PNG)
 
-In the **Solution Explorer**, right click the **Assets** folder, and select **Add** -> **Existing Item...** Find partially-cloudy.png in the browser that pops up, select it, and click **Add**.
+In the **Solution Explorer**, right click the **Assets** folder, and select **Add** > **Existing Item...** Find partially-cloudy.png in the browser that pops up, select it, and click **Add**.
 
 Next, in **MainPage.xaml**, add the following **Image** element below the StackPanels from Step 4.
 
-```xml
+```xaml
 <Image Margin="20" Source="Assets/partially-cloudy.png"/>
 ```
 
 Because we want the Image in the first row and column, we don't need to set its **Grid.Row** or **Grid.Column** attributes, allowing them to default to "0".
 
-And that's it! You've successfully created the layout for a simple weather application. If you run the application by pressing **F5**, you should see something like this:
+And that's it! You've successfully created the layout for a simple weather application. If you run the application by pressing <kbd>F5</kbd>, you should see something like this:
 
 ![Weather pane sample](images/grid-weather-3.PNG)
 

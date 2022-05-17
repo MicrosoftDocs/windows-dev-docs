@@ -3,40 +3,41 @@ description: You can define a attached layouts for use with containers such as t
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Attached Layouts
 
 A container (for example, Panel) that delegates its layout logic to another object relies on the attached layout object to provide the layout behavior for its child elements.  An attached layout model provides flexibility for an application to alter the layout of items at runtime, or more easily share aspects of layout between different parts of the UI (for example, items in the rows of a table that appear to be aligned within a column).
 
 In this topic, we cover what's involved in creating an attached layout (virtualizing and non-virtualizing), the concepts and classes you'll need to understand, and the trade-offs you'll need to consider when deciding between them.
 
-| **Get the Windows UI Library** |
+| Get the Windows UI Library |
 | - |
 | This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/). |
 
 > **Important APIs**:
 
-> * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](../controls/items-repeater.md)
-> * [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)
->     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
->     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
-> * [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
->     * [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
->     * [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
-> * [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) (Preview)
+> - [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+> - [ItemsRepeater](../controls/items-repeater.md)
+> - [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)
+>   - [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
+>   - [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
+> - [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
+>   - [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
+>   - [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
+> - [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) (Preview)
 
 ## Key Concepts
 
 Performing layout requires that two questions be answered for every element:
 
-1. What ***size*** will this element be?
+1. What **_size_** will this element be?
 
-2. What will the ***position*** of this element be?
+2. What will the **_position_** of this element be?
 
 XAML's layout system, which answers these questions, is briefly covered as part of the discussion of [Custom panels](./custom-panels-overview.md).
 
@@ -49,10 +50,10 @@ Conceptually, XAML's [Panel](/uwp/api/windows.ui.xaml.controls.panel) fills two 
 
 For this reason, a Panel in XAML has often been synonymous with layout, but technically-speaking, does more than just layout.
 
-The [ItemsRepeater](../controls/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
+The [ItemsRepeater](../controls/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children. Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items. Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
 
 > [!NOTE]
-> The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI package.
+> The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object. LayoutPanel is in _Preview_ and is currently available only in the _Prerelease_ drops of the WinUI package.
 
 #### Containers
 
@@ -60,7 +61,7 @@ Conceptually, [Panel](/uwp/api/windows.ui.xaml.controls.panel) is a container of
 
 The concept of **attached layout** makes the distinction between the two roles of container and layout more clear.  If the container delegates its layout logic to another object we would call that object the attached layout as seen in the snippet below. Containers that inherit from [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement), such as the LayoutPanel, automatically expose the common properties that provide input to XAML's layout process (for example, Height and Width).
 
-```xaml
+```XAML
 <LayoutPanel>
     <LayoutPanel.Layout>
         <UniformGridLayout/>
@@ -71,13 +72,13 @@ The concept of **attached layout** makes the distinction between the two roles o
 </LayoutPanel>
 ```
 
-During the layout process the container relies on the attached *UniformGridLayout* to measure and arrange its children.
+During the layout process the container relies on the attached _UniformGridLayout_ to measure and arrange its children.
 
 #### Per-Container State
 
-With an attached layout, a single instance of the layout object may be associated with *many* containers like in the snippet below; therefore, it must not depend on or directly reference the host container.  For example:
+With an attached layout, a single instance of the layout object may be associated with _many_ containers like in the snippet below; therefore, it must not depend on or directly reference the host container.  For example:
 
-```xaml
+```XAML
 <!-- ... --->
 <Page.Resources>
     <ExampleLayout x:Name="exampleLayout"/>
@@ -88,7 +89,7 @@ With an attached layout, a single instance of the layout object may be associate
 <!-- ... --->
 ```
 
-For this situation *ExampleLayout* must carefully consider the state that it uses in its layout calculation and where that state is stored to avoid impacting the layout for elements in one panel with the other.  It would be analogous to a custom Panel whose MeasureOverride and ArrangeOverride logic depends on the values of its *static* properties.
+For this situation _ExampleLayout_ must carefully consider the state that it uses in its layout calculation and where that state is stored to avoid impacting the layout for elements in one panel with the other.  It would be analogous to a custom Panel whose MeasureOverride and ArrangeOverride logic depends on the values of its _static_ properties.
 
 #### LayoutContext
 
@@ -96,7 +97,7 @@ The purpose of the [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcon
 
 Simple, non-virtualizing layouts often do not need to maintain any state, making it a non-issue. A more complex layout, such as Grid, however, may choose to maintain state between the measure and arrange call to avoid re-computing a value.
 
-Virtualizing layouts *often* need to maintain some state between both the measure and arrange as well as between iterative layout passes.
+Virtualizing layouts _often_ need to maintain some state between both the measure and arrange as well as between iterative layout passes.
 
 #### Initializing and Uninitializing Per-Container State
 
@@ -108,7 +109,7 @@ The layout's state object can be stored with and retrieved from the container wi
 
 ### UI Virtualization
 
-UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/uwp/xaml-platform/x-load-attribute). It does not require any special handling in your layout.
+UI virtualization means delaying the creation of a UI object until _when it's needed_. It's a performance optimization. For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/uwp/xaml-platform/x-load-attribute). It does not require any special handling in your layout.
 
 In scrolling-based scenarios such as a list, determining _when needed_ is often based on "will it be visible to a user" which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.
 
@@ -142,11 +143,11 @@ The base [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) type has two deriv
 The approach for creating a non-virtualizing layout should feel familiar to anyone that has created a [Custom Panel](./custom-panels-overview.md).  The same concepts apply.  The primary difference is that a [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) is used to access the [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) collection, and layout may choose to store state.
 
 1. Derive from the base type [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (instead of Panel).
-2. *(Optional)* Define dependency properties that when changed will invalidate the layout.
+2. _(Optional)_ Define dependency properties that when changed will invalidate the layout.
 3. _(**New**/Optional)_ Initialize any state object required by the layout as part of the [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Stash it with the host container by using the [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) provided with the context.
 4. Override the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) and call the [Measure](/uwp/api/windows.ui.xaml.uielement.measure) method on all the children.
 5. Override the [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) and call the [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) method on all the children.
-6. *(**New**/Optional)* Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
+6. _(**New**/Optional)_ Clean up any saved state as part of the [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
 ### Example: A Simple Stack Layout (Varying-Sized Items)
 
@@ -187,7 +188,7 @@ public class MyStackLayout : NonVirtualizingLayout
 }
 ```
 
-```xaml
+```XAML
  <LayoutPanel MaxWidth="196">
     <LayoutPanel.Layout>
         <local:MyStackLayout/>
@@ -216,7 +217,7 @@ Similar to a non-virtualizing layout, the high-level steps for a virtualizing la
 > [!TIP]
 > The value returned by the [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) is used as the size of the virtualized content.
 
-There are two general approaches to consider when authoring a virtualizing layout.  Whether to choose one or the other largely depends on "how will you determine the size of an element".  If its enough to know the index of an item in the data set or the data itself dictates its eventual size, then we'd consider it **data-dependent**.  These are more straightforward to create.  If, however, the only way to determine the size for an item is to create and measure the UI then we'd say it is **content-dependent**.  These are more complex.
+There are two general approaches to consider when authoring a virtualizing layout. Whether to choose one or the other largely depends on "how will you determine the size of an element". If its enough to know the index of an item in the data set or the data itself dictates its eventual size, then we'd consider it **data-dependent**. These are more straightforward to create. If, however, the only way to determine the size for an item is to create and measure the UI then we'd say it is **content-dependent**. These are more complex.
 
 ### The Layout Process
 
@@ -225,11 +226,8 @@ Whether you're creating a data or content-dependent layout, it's important to un
 An (over)simplified view of the steps performed by the framework from start-up to displaying UI on screen is that:
 
 1. It parses the markup.
-
 2. Generates a tree of elements.
-
 3. Performs a layout pass.
-
 4. Performs a render pass.
 
 With UI virtualization, creating the elements that would normally be done in step 2 is delayed or ended early once its been determined that sufficient content has been created to fill the viewport. A virtualizing container (for example, ItemsRepeater) defers to its attached layout to drive this process. It provides the attached layout with a [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) that surfaces the additional information that a virtualizing layout needs.
@@ -291,16 +289,9 @@ The UI for the Xbox Activity Feed uses a repeating pattern where each line has a
 
 The code below walks through what a custom virtualizing UI for the activity feed might be to illustrate the general approach you might take for a **data layout**.
 
-<table>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action with this sample layout.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+If you have the **XAML Controls Gallery** app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action with this sample layout.
+- <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a>
+- <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
 
 #### Implementation
 
@@ -684,7 +675,7 @@ The more accurate the layout can be in its estimations then the less likely a us
 
 ### Layout Corrections
 
-A content-dependent layout should be prepared to rationalize its estimate with reality.  For example, as the user scrolls to the top of the content and the layout realizes the very first element, it may find that the element's anticipated position relative to the element from which it started would cause it to appear somewhere other than the origin of (x:0, y:0). When this occurs, the layout can use the [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) property to set the position it calculated as the new layout origin.  The net result is similar to scroll anchoring in which the scrolling control's viewport is automatically adjusted to account for the content's position as reported by the layout.
+A content-dependent layout should be prepared to rationalize its estimate with reality.  For example, as the user scrolls to the top of the content and the layout realizes the very first element, it may find that the element's anticipated position relative to the element from which it started would cause it to appear somewhere other than the origin of (x:0, y:0). When this occurs, the layout can use the [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) property to set the position it calculated as the new layout origin. The net result is similar to scroll anchoring in which the scrolling control's viewport is automatically adjusted to account for the content's position as reported by the layout.
 
 ![Correcting the LayoutOrigin](images/xaml-attached-layout-origincorrection.png)
 
@@ -696,19 +687,18 @@ If a user drags the thumb very quickly then  its possible for the viewport, from
 
 When the layout discovers its guess is incorrect and/or sees an unexpected viewport shift, it needs to reorient its starting position.  The virtualizing layouts that ship as part of the XAML controls are developed as content-dependent layouts as they place fewer restrictions on the nature of the content that will be shown.
 
-
 ### Example: Simple Virtualizing Stack Layout for Variable-Sized Items
 
 The sample below demonstrates a simple stack layout for variable-sized items that:
 
-* supports UI virtualization,
-* uses estimations to guess the size of unrealized items,
-* is aware of potential discontinuous viewport shifts, and
-* applies layout corrections to account for those shifts.
+- supports UI virtualization,
+- uses estimations to guess the size of unrealized items,
+- is aware of potential discontinuous viewport shifts, and
+- applies layout corrections to account for those shifts.
 
 **Usage: Markup**
 
-```xaml
+```XAML
 <ScrollViewer>
 
   <ItemsRepeater x:Name="repeater" >

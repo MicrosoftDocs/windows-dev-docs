@@ -1,11 +1,12 @@
 ---
 description: Help users be more productive by letting them view independent parts of your app in separate windows.
 title: Show multiple views for an app
-ms.date: 09/24/2020
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Show multiple views for an app
 
 ![Wireframe showing an app with multiple windows](images/multi-view.gif)
@@ -34,7 +35,7 @@ There are different ways that Windows content can be hosted inside an app.
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
-     An app view is the 1:1 pairing of a thread and a window that the app uses to display content. The first view that’s created when your app starts is called the *main view*. Each CoreWindow/ApplicationView operates in its own thread. Having to work on different UI threads can complicate multi-window apps.
+     An app view is the 1:1 pairing of a thread and a window that the app uses to display content. The first view that’s created when your app starts is called the _main view_. Each CoreWindow/ApplicationView operates in its own thread. Having to work on different UI threads can complicate multi-window apps.
 
     The main view for your app is always hosted in an ApplicationView. Content in a secondary window can be hosted in a ApplicationView or in an AppWindow.
 
@@ -57,7 +58,7 @@ There are different ways that Windows content can be hosted inside an app.
 
 ### Make code portable across windowing hosts
 
-When XAML content is displayed in a [CoreWindow](/uwp/api/windows.ui.core.corewindow), there's always an associated [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) and XAML [Window](/uwp/api/windows.ui.xaml.window). You can use APIs on these classes to get information such as the window bounds. To retrieve an instance of these classes, you use the static [CoreWindow.GetForCurrentThread](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method, [ApplicationView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) method, or [Window.Current](/uwp/api/windows.ui.xaml.window.current) property. In addition, there are many classes that use the `GetForCurrentView` pattern to retrieve an instance of the class, such as [DisplayInformation.GetForCurrentView](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview).
+When XAML content is displayed in a [CoreWindow](/uwp/api/windows.ui.core.corewindow), there's always an associated [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) and XAML [Window](/uwp/api/windows.ui.xaml.window). You can use APIs on these classes to get information such as the window bounds. To retrieve an instance of these classes, you use the static [CoreWindow.GetForCurrentThread](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method, [ApplicationView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) method, or [Window.Current](/uwp/api/windows.ui.xaml.window.current) property. In addition, there are many classes that use the **GetForCurrentView** pattern to retrieve an instance of the class, such as [DisplayInformation.GetForCurrentView](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview).
 
 These APIs work because there is only a single tree of XAML content for a CoreWindow/ApplicationView, so the XAML knows the context in which it’s hosted is that CoreWindow/ApplicationView.
 
@@ -89,8 +90,7 @@ This table shows code that does not work correctly across windowing hosts, and t
 > [!NOTE]
 > For XAML content in a DesktopWindowXamlSource, there does exist a CoreWindow/Window on the thread, but it is always invisible and has a size of 1x1. It is still accessible to the app but won’t return meaningful bounds or visibility.
 >
->For XAML content in an AppWindow, there will always be exactly one CoreWindow on the same thread. If you call a `GetForCurrentView` or `GetForCurrentThread` API, that API will return an object that reflects the state of the CoreWindow on the thread, not any of the AppWindows that may be running on that thread.
-
+>For XAML content in an AppWindow, there will always be exactly one CoreWindow on the same thread. If you call a **GetForCurrentView** or **GetForCurrentThread** API, that API will return an object that reflects the state of the CoreWindow on the thread, not any of the AppWindows that may be running on that thread.
 
 ## Do's and don'ts
 

@@ -2,7 +2,7 @@
 description: Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.
 title: Z-depth and shadow for Windows apps
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 05/17/2022
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
@@ -70,7 +70,7 @@ It is often the case that your app's UI uses a popup for scenarios where you nee
 
 ThemeShadow automatically casts shadows when applied to any XAML element in a [Popup](/uwp/api/windows.ui.xaml.controls.primitives.popup). It will cast shadows on the app background content behind it and any other open Popups below it.
 
-To use ThemeShadow with Popups, use the `Shadow` property to apply a ThemeShadow to a XAML element. Then, elevate the element from other elements behind it, for example by using the z component of the `Translation` property.
+To use ThemeShadow with Popups, use the **Shadow** property to apply a ThemeShadow to a XAML element. Then, elevate the element from other elements behind it, for example by using the z component of the **Translation** property.
 For most Popup UI, the recommended default elevation relative to the app background content is 32 effective pixels.
 
 This example shows a Rectangle in a Popup casting a shadow onto the app background content and any other Popups behind it:
@@ -96,7 +96,7 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 Controls based on [Flyout](/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.menuflyout) or [TimePickerFlyout](/uwp/api/windows.ui.xaml.controls.timepickerflyout) automatically use ThemeShadow to cast a shadow.
 
-If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to `false` on the associated FlyoutPresenter:
+If the default shadow doesn't look correct on your control's content then you can disable it by setting the [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) property to **false** on the associated FlyoutPresenter:
 
 ```xaml
 <Flyout>
@@ -111,11 +111,11 @@ If the default shadow doesn't look correct on your control's content then you ca
 ### ThemeShadow in other elements
 
 > [!NOTE]
-> Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, the `Receivers` collection is ignored. However there will be no errors and the shadow continues to function.
+> Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, the **Receivers** collection is ignored. However there will be no errors and the shadow continues to function.
 
 In general we encourage you to think carefully about your use of shadow and limit its use to cases where it introduces meaningful visual hierarchy. However, we do provide a way to cast a shadow from any UI element in case you have advanced scenarios that necessitate it.
 
-To cast a shadow from a XAML element that isn't in a Popup, you must explicitly specify the other elements that can receive the shadow in the `ThemeShadow.Receivers` collection. Receivers cannot be an ancestor of the caster in the visual tree.
+To cast a shadow from a XAML element that isn't in a Popup, you must explicitly specify the other elements that can receive the shadow in the **ThemeShadow.Receivers** collection. Receivers cannot be an ancestor of the caster in the visual tree.
 
 This example shows two Rectangles that cast shadows onto a Grid behind them:
 
@@ -147,7 +147,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the [DropShadow](/uwp/api/windows.ui.composition.dropshadow) class.
 
-> [!TIP] 
+> [!TIP]
 > Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.
 
 ## Which shadow should I use?

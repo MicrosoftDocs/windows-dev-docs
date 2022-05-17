@@ -4,8 +4,6 @@ title: Layout overview for Windows apps
 keywords: uwp app layout, universal windows platform, app design, interface
 ms.date: 01/28/2022
 ms.topic: article
-
-
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
 ---
