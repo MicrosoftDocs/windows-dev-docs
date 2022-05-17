@@ -108,10 +108,10 @@ Following toast notification best practices can help you drive engagement with y
 
  - Notifications should be personalized, actionable, and useful to your users. Try to give your users what they want, not what you want them to know.
  - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
- - Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
- - Keep Notification Center tidy by clearing out old notifications.
+ - Respond to the user's intent. Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+ - Provide a consistent Notification Center experience. Keep Notification Center tidy by clearing out old notifications.
 
-For more information about toast notifications, see [Toast UX Guidance - Windows apps | Microsoft Docs](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+For more information about toast notifications, see [Notifications design basics](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
 ### Performance & fundamentals
 
@@ -163,7 +163,7 @@ For best performance, you should enable your apps to take full advantage of the 
 
 #### Push notifications
 
-[Push notifications](/windows/apps/windows-app-sdk/notifications/push/push-quickstart) can be interactive visual notifications or background notifications that handle background tasks like sending profile updates or waking up an app.
+[Push notifications](/windows/apps/windows-app-sdk/notifications/push/index) allow you send information from your cloud service to your app in a performance-optimized way. Push notifications include raw notifications, badge notifications, and toast notifications sent from your cloud service.
 
 - Use raw notifications (shoulder taps) to wake up the app/client rather than always keeping it running to optimize performance on the user’s device.
 - Notification channels are not meant to be used to send advertisements.  
@@ -199,7 +199,7 @@ Application discovery and installation are the first two interactions that a use
   - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
   - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled.
   - Avoid installing or updating system binaries that may require a reboot.   
-
+  - Integrate with [RestartManager](/windows/win32/rstmgr/about-restart-manager) to save and restore state between OS updates.
 
 #### Updates
 
@@ -237,10 +237,6 @@ In fact, the [World Health Organization](https://www.who.int/news-room/fact-shee
 Incorporating accessibility into your Windows apps can maximize user engagement, increase product satisfaction, and encourage product loyalty. Proactively designing and implementing accessible experiences typically results in reduced development and maintenance costs over the long-term.
 
 For detailed guidance on building accessible Windows apps, see [Accessibility in Windows 11 and Windows 10](../develop/accessibility.md).
-
-#### Accessibility and WinUI
-
-Accessibility is built into every WinUI control. Once usage pre-conditions and properties are defined, the accessibility of each control can be leveraged, and developers can focus on the interaction between controls. Just like using prefabricated bricks to build a house instead of forming and firing each brick and then deciding how they fit together.
 
 #### Accessibility testing
 
