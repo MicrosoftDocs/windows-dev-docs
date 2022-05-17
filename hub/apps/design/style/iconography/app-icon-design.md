@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 ## Design guidance: Metaphor
 
-:::image type="content" source="images/icon-progressive-abstraction.png" alt-text="Several variations on a record player icon, each progressively more abstract.":::
+:::image type="content" source="images/icon-progressive-abstraction.png" alt-text="A diagram that shows several variations on a record player icon, each progressively more abstract.":::
 
 An icon should be a metaphor for its app: a visual representation of the value proposition, functions, and features of the product.
 
@@ -24,7 +24,7 @@ Your icon should illustrate the concept of your app in a singular element using 
 
 When creating your icon, use clear metaphors and leverage concepts that are largely understood - such as an envelope for mail or magnifying glass for search. The key concept should be your icon's focal point; don't dilute your icon by adding decorative elements that don’t support the metaphor. To enhance communication clarity, use no more than two two metaphors in a single icon. If a single metaphor can be used, that’s even better.
 
-:::image type="content" source="images/abstraction-spectrum.png" alt-text="Examples of less and more abstract icons.":::
+:::image type="content" source="images/abstraction-spectrum.png" alt-text="A diagram that shows examples of less and more abstract icons.":::
 
 Literal metaphors are best for articulating the purpose and promise in a clear way. A good test for an effective icon is when users can tell what it represents without a label.
 
@@ -36,7 +36,7 @@ Icons should not include typography as part of the design. Letters and words on 
 
 ### The grid and rounded corners
 
-:::image type="content" source="images/icon-design-grid.png" alt-text="The grid template used for icon design and alignment.":::
+:::image type="content" source="images/icon-design-grid.png" alt-text="A diagram that shows the grid template used for icon design and alignment.":::
 
 Microsoft aligns its icons to a 48x48 grid initially to ensure a balanced icon that takes advantage of the space available, while still maintaining a distinctive shape and silhouette. Aligning your icon's distinctive features to the grid will balance well with the other icons around it.
 
@@ -44,7 +44,7 @@ Microsoft aligns its icons to a 48x48 grid initially to ensure a balanced icon t
 
 ### Silhouette
 
-:::image type="content" source="images/icons-aligned-in-grid.png" alt-text="Several icons aligned within the grid template.":::
+:::image type="content" source="images/icons-aligned-in-grid.png" alt-text="A diagram that shows several icons aligned within the grid template.":::
 
 A visually balanced silhouette allows good icon scalability and also avoids extremes of thick and thin shapes. Use the grid to design a silhouette that’s distinctive, yet legible at small sizes. Use as few shapes with as few corners as possible to distinguish your product while still feeling at home on Windows.
 
@@ -62,7 +62,7 @@ The default angle for gradients is 120 degrees. Start and end points can be adju
 
 ### Monochrome palette
 
-:::image type="content" source="images/create-monochrome-palette.png" alt-text="An image outlining the steps to create a monochrome color palette":::
+:::image type="content" source="images/create-monochrome-palette.png" alt-text="A diagram that outlines the steps to create a monochrome color palette.":::
 
 Create a monochrome palette using the following steps:
 
@@ -73,13 +73,13 @@ Create a monochrome palette using the following steps:
 
 ### Monochrome gradients
 
-:::image type="content" source="images/monochrome-gradients.png" alt-text="An image showing transitions in monochrome gradients":::
+:::image type="content" source="images/monochrome-gradients.png" alt-text="A diagram that shows transitions in monochrome gradients.":::
 
 Monochrome gradients are usually used to give a subtle hint toward an ambient light angle coming from the top left. They should not be treated as a direct light source though. The idea is to give the shapes a little movement without being too dramatic.
 
 ### Analogous palette
 
-:::image type="content" source="images/create-analogous-palette.png" alt-text="An image outlining the steps to create an analogous color palette":::
+:::image type="content" source="images/create-analogous-palette.png" alt-text="A diagram that outlines the steps to create an analogous color palette.":::
 
 Creating an analogous palette is exactly like creating a monochrome palette, but with more colors. The key to this type of palette is not to overdo it. Be thoughtful with your color transitions.
 
@@ -89,7 +89,7 @@ Creating an analogous palette is exactly like creating a monochrome palette, but
 
 ### Analogous gradients
 
-:::image type="content" source="images/analogous-gradients.png" alt-text="An image showing transitions in analogous gradients":::
+:::image type="content" source="images/analogous-gradients.png" alt-text="A diagram showing transitions in analogous gradients.":::
 
 Analogous gradients should be at the same angle as the monochrome, but don't always have to be. Typically lighter hues should be on top left to avoid looking overly dramatic but also to be as consistent as possible with the monochrome.
 
@@ -97,7 +97,7 @@ Analogous gradients should be at the same angle as the monochrome, but don't alw
 
 ### Color contrast
 
-:::image type="content" source="images/contrast-light-dark.png" alt-text="Two versions of the same icon, one in a dark theme and the other in a light theme":::
+:::image type="content" source="images/contrast-light-dark.png" alt-text="A diagram showing two versions of the same icon, one in a dark theme and the other in a light theme.":::
 
 Accessibility is a high priority for Microsoft. App icons are primarily displayed on either light and dark backgrounds but displayed over desktop background images and tints or shades of the system accent color. It is difficult to make an icon 100% accessible on every background, but there are several things you can do to ensure your icon is as accessible as possible.
 
@@ -108,7 +108,7 @@ Accessibility is a high priority for Microsoft. App icons are primarily displaye
 
 ### High contrast
 
-:::image type="content" source="images/high-contrast-light-dark.png" alt-text="Two versions of an icon in high contrast color themes":::
+:::image type="content" source="images/high-contrast-light-dark.png" alt-text="A diagram showing two versions of an icon in high contrast color themes.":::
 
 > [!TIP]
 > Windows 11 no longer requires high contrast assets for app icons.
@@ -117,7 +117,7 @@ High contrast icons are black and white and should be a direct representation of
 
 ### Layering and shadow
 
-:::image type="content" source="images/layer-and-shadow.png" alt-text="{alt-text}":::
+:::image type="content" source="images/layer-and-shadow.png" alt-text="A diagram showing top down and isometric views of an icon.":::
 :::row:::
     :::column:::
         Top/Front facing view.
@@ -137,24 +137,24 @@ Icons are composed of flat objects sitting on top of the layers below it.
 
 ## Shadow construction
 
-All of these values are to be rendered at 48x48 px and scaled up or down from there. If this is not adhered to, shadows will be inconsistant across the icon system.
+All of these values are to be rendered at 48x48 px and scaled up or down from there. If this is not adhered to, shadows will be inconsistent across the icon system.
  There are two types of object shadows both of which have two shadows each. Objects within the same metaphor have a shadow with slightly less blur.
 
 ### Same metaphor
 
-:::image type="content" source="images/shadow-same-metaphor.png" alt-text="Several icons demonstrating how to use shadows to represent a single metaphor with multiple components":::
+:::image type="content" source="images/shadow-same-metaphor.png" alt-text="A diagram showing several icons demonstrating how to use shadows to represent a single metaphor with multiple components.":::
 
 This shadow is used when you have content within a single metaphor that needs some depth. It’s not always necessary to do this, but single object metaphors need some depth to feel like part of the system. the blue on shadow 2 is the only difference.
 
 ### Separate metaphor
 
-:::image type="content" source="images/shadow-separate-metaphor.png" alt-text="Several icons demonstrating how to use shadows to represent a multiple, separate metaphors with multiple components":::
+:::image type="content" source="images/shadow-separate-metaphor.png" alt-text="A diagram showing several icons demonstrating how to use shadows to represent a multiple, separate metaphors with multiple components":::
 
 This shadow is used when you have two objects that overlap each other but are not necessarily part of the same metaphor. The shadow should be masked into the shape below it.
 
 ## Perspective
 
-:::image type="content" source="images/perspective.png" alt-text="Several icons displayed at 3/4 view":::
+:::image type="content" source="images/perspective.png" alt-text="A diagram showing several icons displayed at 3/4 view..":::
 
 The icons on the left are fairly simple; perspective is not recommended, but my be appropriate here. The icon on the right is too complex for perspective, so using it for this icon is not recommended.
 

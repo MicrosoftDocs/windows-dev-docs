@@ -18,7 +18,7 @@ It's the first impression of your app and we want to help make sure it's a great
 
 ## Where do app icons appear?
 
-:::image type="content" source="images/win-11-icon-locations.png" alt-text="An abstract image of the Windows 11 desktop.":::
+:::image type="content" source="images/win-11-icon-locations.png" alt-text="A diagram that shows an abstract image of the Windows 11 desktop.":::
 
 App icons appear in a variety of places in Windows
 

@@ -19,32 +19,26 @@ While handcrafting each icon file will create the best, most consistent user exp
 :::row:::
     :::column:::
         1. Use Visual Studio to open a WinUI or UWP project.
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
         2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
     :::column-end:::
     :::column:::
-        :::image type="content" source="images/package-appmanifest.png" alt-text="View of solution explorer highlighting the Package.appxmanifest file.":::
+        :::image type="content" source="images/package-appmanifest.png" alt-text="A diagram that shows a view of solution explorer highlighting the Package.appxmanifest file.":::
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio displays the Manifest Designer.
+        3. Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            :::image type="content" source="images/manifest-properties.png" alt-text="A view of the properties panel for a Package.ammxmanifest file.":::
+            :::image type="content" source="images/manifest-properties.png" lightbox="images/manifest-properties.png" alt-text="A diagram that shows a view of the properties panel for a Package.ammxmanifest file.":::
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        3. Click the **Visual Assets** tab.
+        4. Click the **Visual Assets** tab.
     :::column-end:::
     :::column:::
-        :::image type="content" source="images/visual-assets-panel.png" alt-text="A view of the visual assets panel.":::
+        :::image type="content" source="images/visual-assets-panel.png" lightbox="images/visual-assets-panel.png" alt-text="A diagram that shows a view of the visual assets panel.":::
     :::column-end:::
 :::row-end:::
 

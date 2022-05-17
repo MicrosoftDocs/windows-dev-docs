@@ -12,19 +12,19 @@ ms.localizationpriority: medium
 
 # Construct your Windows app's icon
 
-:::image type="content" source="images/win-11-icon-locations.png" alt-text="Icon locations in Windows 11":::
+:::image type="content" source="images/win-11-icon-locations.png" alt-text="A diagram that shows several icon locations in Windows 11.":::
 
 Once you've designed your app's icon, you need to create the icon files themselves. Because Windows supports multiple themes, display resolutions, and scale factors, you should provide multiple versions of your icon to make sure it looks great on every device, at any size.
 
 ## Icon sizes (WPF, UWP, WinUI)
 
-:::image type="content" source="images/icon-ramp-full.png" alt-text="The Windows icon size ramp":::
+:::image type="content" source="images/icon-ramp-full.png" alt-text="A diagram that shows the Windows icon size ramp.":::
 
 Windows will display your app icon at a variety of sizes depending on where your icon is being displayed and the user's display scale settings. The following table lists all the possible sizes that Windows may use to display your icon.
 
 ## Icon sizes (Win32)
 
-:::image type="content" source="images/icon-ramp-win32.png" alt-text="The Windows icon size ramp for Win32 icons":::
+:::image type="content" source="images/icon-ramp-win-32.png" alt-text="A diagram that shows the Windows icon size ramp for Win32 icons.":::
 
 Windows ICO files have been around for a long time. There are standard sizes that are used which is a subset of the full set above.
 
