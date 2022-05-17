@@ -3,46 +3,48 @@ ms.assetid:
 title: Support the Surface Dial (and other wheel devices) in your Windows app
 description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your Windows app.
 keywords: dial, radial, tutorial
-ms.date: 09/24/2020
+ms.date: 05/17/2022
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app
 
-![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
-*Surface Dial with Surface Studio and Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
+![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)
 
-This tutorial steps through how to customize the user interaction experiences supported by wheel devices such as the Surface Dial. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated [**RadialController**](/uwp/api/windows.ui.input.radialcontroller) APIs discussed in each step.
+_Surface Dial with Surface Studio and Surface Pen_ (available for purchase at the [Microsoft Store](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
+
+This tutorial steps through how to customize the user interaction experiences supported by wheel devices such as the Surface Dial. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated [RadialController](/uwp/api/windows.ui.input.radialcontroller) APIs discussed in each step.
 
 We focus on the following:
-* Specifying which built-in tools are displayed on the [**RadialController**](/uwp/api/windows.ui.input.radialcontroller) menu
-* Adding a custom tool to the menu
-* Controlling haptic feedback
-* Customizing click interactions
-* Customizing rotation interactions
+
+- Specifying which built-in tools are displayed on the [RadialController](/uwp/api/windows.ui.input.radialcontroller) menu
+- Adding a custom tool to the menu
+- Controlling haptic feedback
+- Customizing click interactions
+- Customizing rotation interactions
 
 For more about implementing these and other features, see [Surface Dial interactions in Windows apps](windows-wheel-interactions.md).
 
 ## Introduction
 
-The Surface Dial is a secondary input device that helps users to be more productive when used together with a primary input device such as pen, touch, or mouse. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access both to system commands and to other, more contextual, tools and functionality. 
+The Surface Dial is a secondary input device that helps users to be more productive when used together with a primary input device such as pen, touch, or mouse. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access both to system commands and to other, more contextual, tools and functionality.
 
-The Dial supports three basic gestures: 
+The Dial supports three basic gestures:
+
 - Press and hold to display the built-in menu of commands.
 - Rotate to highlight a menu item (if the menu is active) or to modify the current action in the app (if the menu is not active).
 - Click to select the highlighted menu item (if the menu is active) or to invoke a command in the app (if the menu is not active).
 
 ## Prerequisites
 
-* A computer (or a virtual machine) running Windows 10 Creators Update or later
-* [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
-* If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
-    * [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
-    * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+- A computer (or a virtual machine) running Windows 10 Creators Update or later
+- [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
+- [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+- A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
+- If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
+  - [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
+  - [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## Set up your devices
 
@@ -58,20 +60,24 @@ The Dial supports three basic gestures:
 
 > [!NOTE]
 > Wheel devices can be configured through the **Wheel** settings:
+>
 > 1. On the **Start** menu, select **Settings**.
-> 2. Select **Devices** > **Wheel**.    
+> 2. Select **Devices** > **Wheel**.
 > ![Wheel settings screen](images/radialcontroller/wheel-settings.png)
 
-Now you’re ready to start this tutorial. 
+Now you’re ready to start this tutorial.
 
 ## Sample code
+
 Throughout this tutorial, we use a sample app to demonstrate the concepts and functionality discussed.
 
-Download this Visual Studio sample and source code from [GitHub](https://github.com/) at [windows-appsample-get-started-radialcontroller sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController):
+<!-- Download this Visual Studio sample and source code from [GitHub](https://github.com/) at [windows-appsample-get-started-radialcontroller sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController): -->
+> [!div class="nextstepaction"]
+> [Download this Visual Studio sample and source code from GitHub at "windows-appsample-get-started-radialcontroller sample"](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
-1. Select the green **Clone or download** button.  
-![Cloning the repo](images/radialcontroller/wheel-clone.png)
-2. If you have a GitHub account, you can clone the repo to your local machine by choosing **Open in Visual Studio**. 
+1. Select the green **Clone or download** button.
+   ![Cloning the repo](images/radialcontroller/wheel-clone.png)
+2. If you have a GitHub account, you can clone the repo to your local machine by choosing **Open in Visual Studio**.
 3. If you don't have a GitHub account, or you just want a local copy of the project, choose **Download ZIP** (you'll have to check back regularly to download the latest updates).
 
 > [!IMPORTANT]
@@ -83,15 +89,16 @@ These objects provide the bulk of the wheel device experience for Windows apps.
 
 | Component | Description |
 | --- | --- |
-| [**RadialController** class](/uwp/api/Windows.UI.Input.RadialController) and related | Represents a wheel input device or accessory such as the Surface Dial. |
-| [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>We do not cover this functionality here, for more information, see the [Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Enables interoperability with a Windows app. |
+| [RadialController class](/uwp/api/Windows.UI.Input.RadialController) and related | Represents a wheel input device or accessory such as the Surface Dial. |
+| [IRadialControllerConfigurationInterop](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [IRadialControllerInterop](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>We do not cover this functionality here, for more information, see the [Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Enables interoperability with a Windows app. |
 
 ## Step 1: Run the sample
 
 After you've downloaded the RadialController sample app, verify that it runs:
-1. Open the sample project in Visual Studio .
+
+1. Open the sample project in Visual Studio.
 2. Set the **Solution Platforms** dropdown to a non-ARM selection.
-3. Press F5 to compile, deploy, and run. 
+3. Press F5 to compile, deploy, and run.
 
 > [!NOTE]
 > Alternatively, you can select **Debug** > **Start debugging** menu item, or select the **Local Machine** Run button shown here:
@@ -107,12 +114,12 @@ Okay, we now have the basic Windows app that we’ll use throughout the rest of 
 
 With the app running and in the foreground, press and hold the Surface Dial to display the **RadialController** menu.
 
-We haven't done any customization for our app yet, so the menu contains a default set of contextual tools. 
+We haven't done any customization for our app yet, so the menu contains a default set of contextual tools.
 
 These images show two variations of the default menu. (There are many others, including just basic system tools when the Windows Desktop is active and no apps are in the foreground, additional inking tools when an InkToolbar is present, and mapping tools when you’re using the Maps app.
 
-| RadialController menu (default)  | RadialController menu (default with media playing)  |
-|---|---|
+| RadialController menu (default) | RadialController menu (default with media playing) |
+|--|--|
 | ![Default RadialController menu](images/radialcontroller/wheel-app-step2-basic-default.png) | ![Default RadialController menu with music](images/radialcontroller/wheel-app-step2-basic-withmusic.png) |
 
 Now we'll start with some basic customization.
@@ -122,7 +129,7 @@ Now we'll start with some basic customization.
 First, let's add the UI for our app:
 
 1. Open the MainPage_Basic.xaml file.
-2. Find the code marked with the title of this step ("\<!-- Step 3: Add controls for wheel input -->").
+2. Find the code marked with the title of this step: `<!-- Step 3: Add controls for wheel input -->`.
 3. Uncomment the following lines.
 
     ```xaml
@@ -152,6 +159,7 @@ First, let's add the UI for our app:
                     Margin="0,0,0,20"
                     HorizontalAlignment="center"/>
     ```
+
 At this point, only the **Initialize sample** button, slider, and toggle switch are enabled. The other buttons are used in later steps to add and remove **RadialController** menu items that provide access to the slider and toggle switch.
 
 ![Basic sample app UI](images/radialcontroller/wheel-app-step3-basicui.png)
@@ -161,17 +169,17 @@ At this point, only the **Initialize sample** button, slider, and toggle switch 
 Now let's add the code required to enable **RadialController** access to our controls.
 
 1. Open the MainPage_Basic.xaml.cs file.
-2. Find the code marked with the title of this step ("// Step 4: Basic RadialController menu customization").
+2. Find the code marked with the title of this step: `// Step 4: Basic RadialController menu customization`.
 3. Uncomment the following lines:
-    - The [Windows.UI.Input](/uwp/api/windows.ui.input) and [Windows.Storage.Streams](/uwp/api/windows.storage.streams) type references are used for functionality in subsequent steps:  
-    
+    - The [Windows.UI.Input](/uwp/api/windows.ui.input) and [Windows.Storage.Streams](/uwp/api/windows.storage.streams) type references are used for functionality in subsequent steps:
+
         ```csharp
         // Using directives for RadialController functionality.
         using Windows.UI.Input;
         ```
 
     - These global objects ([RadialController](/uwp/api/windows.ui.input.radialcontroller), [RadialControllerConfiguration](/uwp/api/windows.ui.input.radialcontrollerconfiguration), [RadialControllerMenuItem](/uwp/api/windows.ui.input.radialcontrollermenuitem)) are used throughout our app.
-    
+
         ```csharp
         private RadialController radialController;
         private RadialControllerConfiguration radialControllerConfig;
@@ -183,7 +191,7 @@ Now let's add the code required to enable **RadialController** access to our con
         ```csharp
         InitializeSampleButton.Click += (sender, args) =>
         { InitializeSample(sender, args); };
-        ``` 
+        ```
 
     - Next, we initialize our [RadialController](/uwp/api/windows.ui.input.radialcontroller) object and set up handlers for the [RotationChanged](/uwp/api/windows.ui.input.radialcontroller.RotationChanged) and [ButtonClicked](/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) events.
 
@@ -203,7 +211,7 @@ Now let's add the code required to enable **RadialController** access to our con
         }
         ```
 
-    - Here, we initialize our custom RadialController menu item. We use [CreateForCurrentView](/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) to get a reference to our [RadialController](/uwp/api/windows.ui.input.radialcontroller) object, we set the rotation sensitivity to "1" by using the [RotationResolutionInDegrees](/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) property, we then create our [RadialControllerMenuItem](/uwp/api/windows.ui.input.radialcontrollermenuitem) by using [CreateFromFontGlyph](/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), we add the menu item to the **RadialController** menu item collection, and finally, we use [SetDefaultMenuItems](/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) to clear the default menu items and leave only our custom tool. 
+    - Here, we initialize our custom RadialController menu item. We use [CreateForCurrentView](/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) to get a reference to our [RadialController](/uwp/api/windows.ui.input.radialcontroller) object, we set the rotation sensitivity to "1" by using the [RotationResolutionInDegrees](/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) property, we then create our [RadialControllerMenuItem](/uwp/api/windows.ui.input.radialcontrollermenuitem) by using [CreateFromFontGlyph](/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), we add the menu item to the **RadialController** menu item collection, and finally, we use [SetDefaultMenuItems](/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) to clear the default menu items and leave only our custom tool.
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -265,17 +273,18 @@ Now let's add the code required to enable **RadialController** access to our con
             ClickToggle.IsOn = !ClickToggle.IsOn;
         }
         ```
+
 4. Now, run the app again.
 5. Select the **Initialize radial controller** button.  
-6. With the app in the foreground, press and hold the Surface Dial to display the menu. Notice that all default tools have been removed (by using the **RadialControllerConfiguration.SetDefaultMenuItems** method), leaving only the custom tool. Here’s the menu with our custom tool. 
+6. With the app in the foreground, press and hold the Surface Dial to display the menu. Notice that all default tools have been removed (by using the **RadialControllerConfiguration.SetDefaultMenuItems** method), leaving only the custom tool. Here’s the menu with our custom tool.
 
-| RadialController menu (custom)  | 
-|---|
-| ![Custom RadialController menu](images/radialcontroller/wheel-app-step3-custom.png) |
+   | RadialController menu (custom)  |
+   |---|
+   | ![Custom RadialController menu](images/radialcontroller/wheel-app-step3-custom.png) |
 
 7. Select the custom tool and try out the interactions now supported through the Surface Dial:
-    * A rotate action moves the slider. 
-    * A click sets the toggle to on or off.
+   - A rotate action moves the slider.
+   - A click sets the toggle to on or off.
 
 Ok, let's hook up those buttons.
 
@@ -284,7 +293,7 @@ Ok, let's hook up those buttons.
 In this step, we hook up the **Add/Remove item** and **Reset RadialController menu** buttons to show how you can dynamically customize the menu.
 
 1. Open the MainPage_Basic.xaml.cs file.
-2. Find the code marked with the title of this step ("// Step 5: Configure menu at runtime").
+2. Find the code marked with the title of this step: `// Step 5: Configure menu at runtime`.
 3. Uncomment the code in the following methods and run the app again, but don't select any buttons (save that for the next step).  
 
     ``` csharp
@@ -325,6 +334,7 @@ In this step, we hook up the **Add/Remove item** and **Reset RadialController me
             new RadialControllerSystemMenuItemKind[] { });
     }
     ```
+
 4. Select the **Remove item** button and then press and hold the Dial to display the menu again.
 
     Notice that the menu now contains the default collection of tools. Recall that, in Step 3, while setting up our custom menu, we removed all the default tools and added just our custom tool. We also noted that, when the menu is set to an empty collection, the default items for the current context are reinstated. (We added our custom tool before removing the default tools.)
@@ -338,25 +348,27 @@ In this step, we hook up the **Add/Remove item** and **Reset RadialController me
     Notice that the menu is back to its original state.
 
 ## Step 6: Customize the device haptics
+
 The Surface Dial, and other wheel devices, can provide users with haptic feedback corresponding to the current interaction (based on either click or rotation).
 
-In this step, we show how you can customize haptic feedback by associating our slider and toggle switch controls and using them to dynamically specify haptic feedback behavior. For this example, the toggle switch must be set to on for feedback to be enabled while the slider value specifies how often the click feedback is repeated. 
+In this step, we show how you can customize haptic feedback by associating our slider and toggle switch controls and using them to dynamically specify haptic feedback behavior. For this example, the toggle switch must be set to on for feedback to be enabled while the slider value specifies how often the click feedback is repeated.
 
 > [!NOTE]
 > Haptic feedback can be disabled by the user in the **Settings** >  **Devices** > **Wheel** page.
 
 1. Open the App.xaml.cs file.
-2. Find the code marked with the title of this step ("Step 6: Customize the device haptics").
-3. Comment the first and third lines ("MainPage_Basic" and "MainPage") and uncomment the second ("MainPage_Haptics").  
+2. Find the code marked with the title of this step: `Step 6: Customize the device haptics`.
+3. Comment the first and third lines ("MainPage_Basic" and "MainPage") and uncomment the second ("MainPage_Haptics").
 
     ``` csharp
     rootFrame.Navigate(typeof(MainPage_Basic), e.Arguments);
     rootFrame.Navigate(typeof(MainPage_Haptics), e.Arguments);
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
+
 4. Open the MainPage_Haptics.xaml file.
-5. Find the code marked with the title of this step ("\<!-- Step 6: Customize the device haptics -->").
-6. Uncomment the following lines. (This UI code simply indicates what haptics features are supported by the current device.)    
+5. Find the code marked with the title of this step: `<!-- Step 6: Customize the device haptics -->`")`.
+6. Uncomment the following lines. (This UI code simply indicates what haptics features are supported by the current device.)
 
     ```xaml
     <StackPanel x:Name="HapticsStack" 
@@ -427,12 +439,13 @@ In this step, we show how you can customize haptic feedback by associating our s
                     IsChecked="{x:Null}" />
     </StackPanel>
     ```
-7. Open the MainPage_Haptics.xaml.cs file
-8. Find the code marked with the title of this step ("Step 6: Haptics customization")
-9. Uncomment the following lines:  
 
-    - The [Windows.Devices.Haptics](/uwp/api/windows.devices.haptics) type reference is used for functionality in subsequent steps.  
-    
+7. Open the MainPage_Haptics.xaml.cs file.
+8. Find the code marked with the title of this step: `Step 6: Haptics customization`.
+9. Uncomment the following lines:
+
+    - The [Windows.Devices.Haptics](/uwp/api/windows.devices.haptics) type reference is used for functionality in subsequent steps.
+
         ```csharp
         using Windows.Devices.Haptics;
         ```
@@ -442,7 +455,7 @@ In this step, we show how you can customize haptic feedback by associating our s
         ```csharp
         radialController.ControlAcquired += (rc_sender, args) =>
         { RadialController_ControlAcquired(rc_sender, args); };
-        ``` 
+        ```
 
     - Next, we define the [ControlAcquired](/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) handler, where we disable default haptic feedback and initialize our haptics UI.
 
@@ -513,7 +526,7 @@ In this step, we show how you can customize haptic feedback by associating our s
         }
         ```
 
-    - In our [RotationChanged](/uwp/api/windows.ui.input.radialcontroller.RotationChanged) and [ButtonClicked](/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) event handlers, we connect the corresponding slider and toggle button controls to our custom haptics. 
+    - In our [RotationChanged](/uwp/api/windows.ui.input.radialcontroller.RotationChanged) and [ButtonClicked](/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) event handlers, we connect the corresponding slider and toggle button controls to our custom haptics.
 
         ```csharp
         // Connect wheel device rotation to slider control.
@@ -556,7 +569,8 @@ In this step, we show how you can customize haptic feedback by associating our s
             }
         }
         ```
-    - Finally, we get the requested **[Waveform](/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback.Waveform)** (if supported) for the haptic feedback. 
+
+    - Finally, we get the requested **[Waveform](/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback.Waveform)** (if supported) for the haptic feedback.
 
         ```csharp
         // Get the requested waveform.
@@ -578,11 +592,12 @@ In this step, we show how you can customize haptic feedback by associating our s
 Now run the app again to try out the custom haptics by changing the slider value and toggle-switch state.
 
 ## Step 7: Define on-screen interactions for Surface Studio and similar devices
-Paired with the Surface Studio, the Surface Dial can provide an even more distinctive user experience. 
 
-In addition to the default press and hold menu experience described, the Surface Dial can also be placed directly on the screen of the Surface Studio. This enables a special "on-screen" menu. 
+Paired with the Surface Studio, the Surface Dial can provide an even more distinctive user experience.
 
-By detecting both the contact location and bounds of the Surface Dial, the system handles occlusion by the device and displays a larger version of the menu that wraps around the outside of the Dial. This same info can also be used by your app to adapt the UI for both the presence of the device and its anticipated usage, such as the placement of the user's hand and arm. 
+In addition to the default press and hold menu experience described, the Surface Dial can also be placed directly on the screen of the Surface Studio. This enables a special "on-screen" menu.
+
+By detecting both the contact location and bounds of the Surface Dial, the system handles occlusion by the device and displays a larger version of the menu that wraps around the outside of the Dial. This same info can also be used by your app to adapt the UI for both the presence of the device and its anticipated usage, such as the placement of the user's hand and arm.
 
 The sample that accompanies this tutorial includes a slightly more complex example that demonstrates some of these capabilities.
 
@@ -591,7 +606,7 @@ To see this in action (you'll need a Surface Studio):
 1. Download the sample on a Surface Studio device (with Visual Studio installed)
 2. Open the sample in Visual Studio
 3. Open the App.xaml.cs file
-4. Find the code marked with the title of this step ("Step 7: Define on-screen interactions for Surface Studio and similar devices")
+4. Find the code marked with the title of this step: `Step 7: Define on-screen interactions for Surface Studio and similar devices")
 5. Comment the first and second lines ("MainPage_Basic" and "MainPage_Haptics") and uncomment the third ("MainPage")  
 
     ``` csharp
@@ -599,13 +614,13 @@ To see this in action (you'll need a Surface Studio):
     rootFrame.Navigate(typeof(MainPage_Haptics), e.Arguments);
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
-6. Run the app and place the Surface Dial in each of the two control regions, alternating between them.    
-![On-screen RadialController](images/radialcontroller/wheel-app-step5-onscreen2.png) 
 
+6. Run the app and place the Surface Dial in each of the two control regions, alternating between them.
+![On-screen RadialController](images/radialcontroller/wheel-app-step5-onscreen2.png)
 
 ## Summary
 
-Congratulations, you've completed the *Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app*! We showed you the basic code required for supporting a wheel device in your Windows apps, and how to provide some of the richer user experiences supported by the **RadialController** APIs.
+Congratulations, you've completed the _Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app_! We showed you the basic code required for supporting a wheel device in your Windows apps, and how to provide some of the richer user experiences supported by the **RadialController** APIs.
 
 ## Related articles
 
@@ -613,18 +628,18 @@ Congratulations, you've completed the *Get Started Tutorial: Support the Surface
 
 ### API reference
 
-- [**RadialController** class](/uwp/api/Windows.UI.Input.RadialController)
-- [**RadialControllerButtonClickedEventArgs** class](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**RadialControllerConfiguration** class](/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
-- [**RadialControllerControlAcquiredEventArgs** class](/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**RadialControllerMenu** class](/uwp/api/Windows.UI.Input.RadialControllerMenu) 
-- [**RadialControllerMenuItem** class](/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
-- [**RadialControllerRotationChangedEventArgs** class](/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**RadialControllerScreenContact** class](/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
-- [**RadialControllerScreenContactContinuedEventArgs** class](/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**RadialControllerScreenContactStartedEventArgs** class](/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**RadialControllerMenuKnownIcon** enum](/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**RadialControllerSystemMenuItemKind** enum](/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [RadialController class](/uwp/api/Windows.UI.Input.RadialController)
+- [RadialControllerButtonClickedEventArgs class](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [RadialControllerConfiguration class](/uwp/api/Windows.UI.Input.RadialControllerConfiguration)
+- [RadialControllerControlAcquiredEventArgs class](/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs)
+- [RadialControllerMenu class](/uwp/api/Windows.UI.Input.RadialControllerMenu)
+- [RadialControllerMenuItem class](/uwp/api/Windows.UI.Input.RadialControllerMenuItem)
+- [RadialControllerRotationChangedEventArgs class](/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs)
+- [RadialControllerScreenContact class](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)
+- [RadialControllerScreenContactContinuedEventArgs class](/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs)
+- [RadialControllerScreenContactStartedEventArgs class](/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [RadialControllerMenuKnownIcon** enum](/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon)
+- [RadialControllerSystemMenuItemKind** enum](/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind)
 
 ### Samples
 
@@ -633,6 +648,7 @@ Congratulations, you've completed the *Get Started Tutorial: Support the Surface
 [RadialController customization](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
 
 #### Other samples
+
 [Coloring Book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
 [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)

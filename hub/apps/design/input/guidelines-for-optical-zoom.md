@@ -4,18 +4,17 @@ title: Guidelines for optical zoom and resizing
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Optical zoom and resizing
-
-
 
 This article describes Windows zooming and resizing elements and provides user experience guidelines for using these interaction mechanisms in your apps.
 
-> **Important APIs**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
+> **Important APIs**: [Windows.UI.Input](/uwp/api/Windows.UI.Input), [Input (XAML)](/uwp/api/Windows.UI.Xaml.Input)
 
 Optical zoom lets users magnify their view of the content within a content area (it is performed on the content area itself), whereas resizing enables users to change the relative size of one or more objects without changing the view of the content area (it is performed on the objects within the content area).
 
@@ -31,37 +30,34 @@ The following diagrams demonstrate the differences between resizing and optical 
 
 ![moving the fingers closer together shrinks an object and moving them apart enlarges it](images/objectresize.png)
 
-**Note**  
-Optical zoom shouldn't be confused with [Semantic Zoom](../controls/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
-
- 
+> [!NOTE]
+> Optical zoom shouldn't be confused with [Semantic Zoom](../controls/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
 
 ## Dos and don'ts
 
-
 Use the following guidelines for apps that support either resizing or optical zooming:
 
--   If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
--   Use snap points to influence zooming and resizing behavior by providing logical points at which to stop the manipulation and ensure a specific subset of content is displayed in the viewport. Provide snap points for common zoom levels or logical views to make it easier for a user to select those levels. For example, photo apps might provide a resizing snap point at 100% or, in the case of mapping apps, snap points might be useful at city, state, and country views.
+- If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
+- Use snap points to influence zooming and resizing behavior by providing logical points at which to stop the manipulation and ensure a specific subset of content is displayed in the viewport. Provide snap points for common zoom levels or logical views to make it easier for a user to select those levels. For example, photo apps might provide a resizing snap point at 100% or, in the case of mapping apps, snap points might be useful at city, state, and country views.
 
-    Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). For JavaScript and HTML, use [**-ms-content-zoom-snap-points**](/previous-versions/hh771895(v=vs.85)).
+  Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). For JavaScript and HTML, use [-ms-content-zoom-snap-points](/previous-versions/hh771895(v=vs.85)).
 
-    There are two types of snap-points:
+  There are two types of snap-points:
 
-    -   Proximity - After the contact is lifted, a snap point is selected if inertia stops within a distance threshold of the snap point. Proximity snap points still allow a zoom or resize to end between snap points.
-    -   Mandatory - The snap point selected is the one that immediately precedes or succeeds the last snap point crossed before the contact was lifted (depending on the direction and velocity of the gesture). A manipulation must end on a mandatory snap point.
--   Use inertia physics. These include the following:
-    -   Deceleration: Occurs when the user stops pinching or stretching. This is similar to sliding to a stop on a slippery surface.
-    -   Bounce: A slight bounce-back effect occurs when a size constraint or boundary is passed.
--   Space controls according to the [Guidelines for targeting](guidelines-for-targeting.md).
--   Provide scaling handles for constrained resizing. Isometric, or proportional, resizing is the default if the handles are not specified.
--   Don't use zooming to navigate the UI or expose additional controls within your app, use a panning region instead. For more info on panning, see [Guidelines for panning](guidelines-for-panning.md).
--   Don't put resizable objects within a resizable content area. Exceptions to this include:
-    -   Drawing applications where resizable items can appear on a resizable canvas or art board.
-    -   Webpages with an embedded object such as a map.
+  - Proximity - After the contact is lifted, a snap point is selected if inertia stops within a distance threshold of the snap point. Proximity snap points still allow a zoom or resize to end between snap points.
+  - Mandatory - The snap point selected is the one that immediately precedes or succeeds the last snap point crossed before the contact was lifted (depending on the direction and velocity of the gesture). A manipulation must end on a mandatory snap point.
+- Use inertia physics. These include the following:
+  - Deceleration: Occurs when the user stops pinching or stretching. This is similar to sliding to a stop on a slippery surface.
+  - Bounce: A slight bounce-back effect occurs when a size constraint or boundary is passed.
+- Space controls according to the [Guidelines for targeting](guidelines-for-targeting.md).
+- Provide scaling handles for constrained resizing. Isometric, or proportional, resizing is the default if the handles are not specified.
+- Don't use zooming to navigate the UI or expose additional controls within your app, use a panning region instead. For more info on panning, see [Guidelines for panning](guidelines-for-panning.md).
+- Don't put resizable objects within a resizable content area. Exceptions to this include:
+  - Drawing applications where resizable items can appear on a resizable canvas or art board.
+  - Webpages with an embedded object such as a map.
 
-    **Note**  
-    In all cases, the content area is resized unless all touch points are within the resizable object.
+> [!Note]
+> In all cases, the content area is resized unless all touch points are within the resizable object.
 
 ## Related articles
 

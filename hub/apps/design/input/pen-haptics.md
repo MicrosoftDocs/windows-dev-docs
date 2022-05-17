@@ -4,7 +4,7 @@ title: Pen interactions and haptic feedback
 label: Pen interactions and haptic feedback
 template: detail.hbs
 keywords: Windows, ink, user interaction, input, pen, haptic, tactile
-ms.date: 09/17/2021
+ms.date: 05/17/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ With Windows 11, a new capability is being introduced that makes the digital pen
 > [!NOTE]
 > When referring to this new feature, "haptic" is used throughout the developer APIs and related documentation, while "tactile" is the friendly name presented to users for setting feedback preferences in Windows Settings.
 
-Haptic feedback experiences supported in Windows 11 include *inking feedback* and *interaction feedback*:
+Haptic feedback experiences supported in Windows 11 include _inking feedback_ and _interaction feedback_:
 
 - Inking feedback simulates the feel of various types of writing or drawing tools (such as pen, marker, pencil, highlighter, and so on) through continuous vibrations while the pen is in contact with the screen. By default, the [Windows Ink Platform](pen-and-stylus-interactions.md) supports haptic feedback for all drawing tools (this topic covers how to provide a custom inking solution beyond the one supported by Windows Ink).
 - Interaction feedback, on the other hand, is direct feedback based on key user actions such as hovering over or clicking a button, responding to the completion of an action, or to draw the user's attention.
@@ -38,7 +38,6 @@ To detect and isolate pen input, you must first register for the [PointerEntered
 The following code shows how to check the pointer device type within a PointerEntered event. For this example, if the input is not from a pen we simply return from the event handler. Otherwise, we check the pen capabilities and configure the haptic feedback.
 
 ```csharp
-
 private void InputObserver_PointerEntered(object sender, PointerRoutedEventArgs e)
 {
     ...
@@ -107,7 +106,7 @@ Inking waveforms play continuously while the pen is in contact with the screen, 
 | BrushContinuous waveform | Continuous haptic signal when user selects brush as inking tool. | Optional |
 | ChiselMarkerContinuous waveform | Continuous haptic signal when user selects chisel marker/highlighter as inking tool. | Optional |
 | EraserContinuous waveform | Continuous haptic signal when user selects eraser as inking tool. | Optional |
-| GalaxyContinuous waveform<br/>(the HID documentation and implementation guide refers to this waveform as *SparkleContinuous*) | Continuous haptic signal for special ink tools, such as a multi-colored brush. | Optional |
+| GalaxyContinuous waveform<br/>(the HID documentation and implementation guide refers to this waveform as _SparkleContinuous_) | Continuous haptic signal for special ink tools, such as a multi-colored brush. | Optional |
 | MarkerContinuous waveform | Continuous haptic signal when user selects marker as inking tool. | Optional |
 | PencilContinuous waveform | Continuous haptic signal when user selects pencil as inking tool. | Optional |
 
@@ -314,4 +313,4 @@ See the [Pen haptics sample](https://nam06.safelinks.protection.outlook.com/?url
 - Get a [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) from pen input: Go from [PointerId](/uwp/api/windows.ui.input.pointerpoint.pointerid) to [PenDevice](/uwp/api/windows.devices.input.pendevice) to [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) (requires both a haptic-capable pen and a device that supports the pen).
 - Check pen haptics capabilities: A [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) exposes properties for pen hardware capabilities, including [IsIntensitySupported](/uwp/api/windows.devices.haptics.simplehapticscontroller.isintensitysupported), [IsPlayCountSupported](/uwp/api/windows.devices.haptics.simplehapticscontroller.isplaycountsupported), [SupportedFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback), and so on.
 - Start and stop haptic feedback: Use the [SendHapticFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback) and [StopFeedback](/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback) methods appropriately.
-- Trigger haptic feedback: Feedback for both *inking feedback* and *interaction feedback*.
+- Trigger haptic feedback: Feedback for both _inking feedback_ and _interaction feedback_.

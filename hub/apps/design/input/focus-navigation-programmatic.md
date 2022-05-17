@@ -3,7 +3,7 @@ description: Learn how to programmatically manage focus navigation with keyboard
 title: Programmatic focus navigation with keyboard, gamepad, and accessibility tools
 label: Programmatic focus navigation
 keywords: keyboard, game controller, remote control, navigation, navigation strategy, input, user interaction, accessibility, usability
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
@@ -11,6 +11,7 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Programmatic focus navigation
 
 ![Keyboard, remote, and D-pad](images/dpad-remote/dpad-remote-keyboard.png)
@@ -20,7 +21,7 @@ To move focus programmatically in your Windows application, you can use either t
 [TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) attempts to change focus from the element with focus to the next focusable element in the specified direction, while [FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) retrieves the element (as a [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject)) that will receive focus based on the specified navigation direction (directional navigation only, cannot be used to emulate tab navigation).
 
 > [!NOTE]
-> We recommend using the [FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) method instead of [FindNextFocusableElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) because FindNextFocusableElement retrieves a UIElement, which returns null if the next focusable element is not a UIElement (such as a Hyperlink object). 
+> We recommend using the [FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) method instead of [FindNextFocusableElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) because FindNextFocusableElement retrieves a UIElement, which returns null if the next focusable element is not a UIElement (such as a Hyperlink object).
 
 ## Find a focus candidate within a scope
 
@@ -121,23 +122,24 @@ Use [FindNextElementOptions](/uwp/api/windows.ui.xaml.input.findnextelementoptio
 
 - [SearchRoot](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - Scope the search for focus navigation candidates to the children of this DependencyObject. Null indicates to start the search from the root of the visual tree.
 
-> [!Important] 
+> [!Important]
 > If one or more transforms are applied to the descendants of **SearchRoot** that place them outside of the directional area, these elements are still considered candidates.
 
 - [ExclusionRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) - Focus navigation candidates are identified using a "fictitious" bounding rectangle where all overlapping objects are excluded from navigation focus. This rectangle is used only for calculations and is never added to the visual tree.
 - [HintRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) - Focus navigation candidates are identified using a "fictitious" bounding rectangle that identifies the elements most likely to receive focus. This rectangle is used only for calculations and is never added to the visual tree.
 - [XYFocusNavigationStrategyOverride](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_XYFocusNavigationStrategyOverride) - The focus navigation strategy used to identify the best candidate element to receive focus.
 
-The following image illustrates some of these concepts. 
+The following image illustrates some of these concepts.
 
 When element B has focus, FindNextElement identifies I as the focus candidate when navigating to the right. The reasons for this are:
+
 - Because of the [HintRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) on A, the starting reference is A, not B
 - C is not a candidate because MyPanel has been specified as the [SearchRoot](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot)
 - F is not a candidate because the [ExclusionRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) overlaps it
 
 ![Custom focus navigation behavior using navigation hints](images/keyboard/navigation-hints.png)
 
-*Custom focus navigation behavior using navigation hints*
+_Custom focus navigation behavior using navigation hints_
 
 ## Navigation focus events
 
@@ -174,6 +176,7 @@ private void OnNoFocusCandidateFound (
 ```
 
 ### GotFocus and LostFocus events
+
 The [UIElement.GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 and [UIElement.LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events are fired when an element gets focus or loses focus, respectively. This event is not fired for [TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
 
@@ -182,7 +185,7 @@ Because these are routed events, they bubble from the focused element up through
 ### GettingFocus and LosingFocus events
 
 The [UIElement.GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) and [UIElement.LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) events fire before the respective [UIElement.GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
-and [UIElement.LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events. 
+and [UIElement.LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) events.
 
 Because these are routed events, they bubble from the focused element up through successive parent objects to the root of the object tree. As this happens before a focus change takes place, you can redirect or cancel the focus change.
 
@@ -201,18 +204,18 @@ These events are fired regardless of the reason for the focus moving (including 
 
 Here is the order of execution for the focus events:
 
-1.  [LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus)
-    If focus is reset back to the losing focus element or [TryCancel](/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) is successful, no further events are fired.
-2.  [GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus)
-    If focus is reset back to the losing focus element or [TryCancel](/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) is successful, no further events are fired.
-3.  [LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+1. [LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus)
+   If focus is reset back to the losing focus element or [TryCancel](/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) is successful, no further events are fired.
+2. [GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus)
+   If focus is reset back to the losing focus element or [TryCancel](/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) is successful, no further events are fired.
+3. [LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
+4. [GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 The following image shows how, when moving to the right from A, the XYFocus chooses B4 as a candidate. B4 then fires the GettingFocus event where the ListView has the opportunity to reassign focus to B3.
 
 ![Changing focus navigation target on GettingFocus event](images/keyboard/focus-events.png)
 
-*Changing focus navigation target on GettingFocus event*
+_Changing focus navigation target on GettingFocus event_
 
 Here, we show how to handle the [GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) event and redirect focus.
 

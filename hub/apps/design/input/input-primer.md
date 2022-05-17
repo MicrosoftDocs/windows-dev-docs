@@ -4,11 +4,12 @@ title: Interaction primer
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.date: 08/03/2021
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Interaction primer
 
 ![windows input types](images/input-interactions/icons-inputdevices03.png)
@@ -21,7 +22,7 @@ Familiarize yourself with each input device type and its behaviors, capabilities
 
 ## Gaze
 
-For **Windows 10 April 2018 Update**, we introduced support for Gaze input using eye and head tracking input devices. 
+For **Windows 10 April 2018 Update**, we introduced support for Gaze input using eye and head tracking input devices.
 
 > [!NOTE]
 > Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech.
@@ -62,13 +63,13 @@ In Windows 10, **Cortana** extensibility lets you handle voice commands from a 
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
+- Xbox
+- HoloLens
 
 ![cortana](images/input-interactions/icons-cortana01.png)
 
@@ -81,7 +82,6 @@ Integrating the basic functionality of your app, and providing a central entry p
 ### More info
 
 [Cortana design guidelines](/cortana/skills/cortana-design-guidelines)
- 
 
 ## Speech
 
@@ -93,13 +93,13 @@ Text-to-speech (also known as TTS, or speech synthesis) is used to inform or dir
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
+- Xbox
+- HoloLens
 
 ![speech](images/input-interactions/icons-speech01.png)
 
@@ -131,24 +131,23 @@ Dictation is typically used when an app doesn't need to understand meaning or in
 
 [Speech design guidelines](./speech-interactions.md)
  
-
 ## Pen
 
 A pen (or stylus) can serve as a pixel precise pointing device, like a mouse, and is the optimal device for digital ink input.
 
 **Note**  There are two types of pen devices: active and passive.
-  -   Passive pens do not contain electronics, and effectively emulate touch input from a finger. They require a basic device display that recognizes input based on contact pressure. Because users often rest their hand as they write on the input surface, input data can become polluted due to unsuccessful palm rejection.
-  -   Active pens contain electronics and can work with complex device displays to provide much more extensive input data (including hover, or proximity data) to the system and your app. Palm rejection is much more robust.
+- Passive pens do not contain electronics, and effectively emulate touch input from a finger. They require a basic device display that recognizes input based on contact pressure. Because users often rest their hand as they write on the input surface, input data can become polluted due to unsuccessful palm rejection.
+- Active pens contain electronics and can work with complex device displays to provide much more extensive input data (including hover, or proximity data) to the system and your app. Palm rejection is much more robust.
 
 When we refer to pen devices here, we are referring to active pens that provide rich input data and are used primarily for precise ink and pointing interactions.
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
 
 ![pen](images/input-interactions/icons-pen01.png)
 
@@ -163,7 +162,6 @@ You should provide pen-specific UI commands, or affordances, to support these in
 ### More info
 
 [Pen design guidelines](./pen-and-stylus-interactions.md)
- 
 
 ## Touch
 
@@ -171,11 +169,11 @@ With touch, physical gestures from one or more fingers can be used to either emu
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
 
 ![touch](images/input-interactions/icons-touch01.png)
 
@@ -191,14 +189,13 @@ Surface Hub devices recognize 100 unique, concurrent touch contacts.
 
 In general, touch is:
 
--   Single user, unless being used with a Microsoft Team device like Surface Hub, where collaboration is emphasized.
--   Not constrained to device orientation.
--   Used for all interactions, including text input (touch keyboard) and inking (app-configured).
+- Single user, unless being used with a Microsoft Team device like Surface Hub, where collaboration is emphasized.
+- Not constrained to device orientation.
+- Used for all interactions, including text input (touch keyboard) and inking (app-configured).
 
 ### More info
 
 [Touch design guidelines](./touch-interactions.md)
- 
 
 ## Touchpad
 
@@ -206,8 +203,8 @@ A touchpad combines both indirect multi-touch input with the precision input of 
 
 ### Device support
 
--   PCs and laptops
--   IoT
+- PCs and laptops
+- IoT
 
 ![touchpad](images/input-interactions/icons-touchpad01.png)
 
@@ -222,7 +219,6 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 ### More info
 
 [Touchpad design guidelines](./touch-interactions.md)
- 
 
 ## Keyboard
 
@@ -230,13 +226,13 @@ A keyboard is the primary input device for text, and is often indispensable to p
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
+- Xbox
+- HoloLens
 
 ![keyboard](images/input-interactions/icons-keyboard01.png)
 
@@ -252,15 +248,14 @@ The touch keyboard is a visual, software keyboard used for text entry with touch
 
 In general, a keyboard is:
 
--   Single user.
--   Not constrained to device orientation.
--   Used for text input, navigation, gameplay, and accessibility.
--   Always available, either proactively or reactively.
+- Single user.
+- Not constrained to device orientation.
+- Used for text input, navigation, gameplay, and accessibility.
+- Always available, either proactively or reactively.
 
 ### More info
 
 [Keyboard design guidelines](./keyboard-interactions.md)
- 
 
 ## Mouse
 
@@ -268,11 +263,11 @@ A mouse is best suited for productivity apps and high-density UI where user inte
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
 
 ![mouse](images/input-interactions/icons-mouse01.png)
 
@@ -287,7 +282,6 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 ### More info
 
 [Mouse design guidelines](./mouse-interactions.md)
- 
 
 ## Gesture
 
@@ -295,10 +289,10 @@ A gesture is any form of user movement that is recognized as input for controlli
 
 ### Device support
 
--   PCs and laptops
--   IoT
--   Xbox
--   HoloLens
+- PCs and laptops
+- IoT
+- Xbox
+- HoloLens
 
 ![gesture](images/input-interactions/icons-gesture01.png)
 
@@ -316,16 +310,15 @@ Manipulation gesture events indicate an ongoing interaction. They start firing w
 
 Because of the convergence of interaction experiences supported by Windows, we recommend also providing mouse-style UI commands or affordances rather than relying solely on support for touch input. For example, use previous and next (or + and -) buttons to let users flip through pages of content, or rotate, resize, and zoom objects.
 
-
 ## Gamepad/Controller
 
 The gamepad/controller is a highly specialized device typically dedicated to playing games. However, it is also used for to emulate basic keyboard input and provides a UI navigation experience very similar to the keyboard.
 
 ### Device support
 
--   PCs and laptops
--   IoT
--   Xbox
+- PCs and laptops
+- IoT
+- Xbox
 
 ![controller](images/input-interactions/icons-controller01.png)
 
@@ -333,31 +326,22 @@ The gamepad/controller is a highly specialized device typically dedicated to pla
 
 Playing games and interacting with a specialized console.
 
-
 ## Multiple inputs
 
 Accommodating as many users and devices as possible and designing your apps to work with as many input types (gesture, speech, touch, touchpad, mouse, and keyboard) as possible maximizes flexibility, usability, and accessibility.
 
 ### Device support
 
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
+- Phones and phablets
+- Tablet
+- PCs and laptops
+- Surface Hub
+- IoT
+- Xbox
+- HoloLens
 
 ![multiple inputs](images/input-interactions/icons-inputdevices03-vertical.png)
 
 ### Typical usage
 
 Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app. However, these combined interactions need to be as intuitive and natural as possible as they can also create a very confusing experience.
-
-
-
-
-
- 
-
- 

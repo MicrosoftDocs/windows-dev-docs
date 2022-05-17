@@ -5,27 +5,26 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.date: 09/24/2020
+ms.date: 05/17/2022
 ms.topic: article
-
-
 ---
+
 # Respond to the presence of the touch keyboard
 
 Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
-### Important APIs
+## Important APIs
 
 - [AutomationPeer](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
 - [InputPane](/uwp/api/Windows.UI.ViewManagement.InputPane)
 
 ![the touch keyboard in default layout mode](images/keyboard/default.png)
 
-<sup>The touch keyboard in default layout mode</sup>
+_The touch keyboard in default layout mode_
 
 The touch keyboard enables text entry for devices that support touch. Windows app text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
-To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) and [Custom automation peers](../accessibility/custom-automation-peers.md).
+To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [AutomationPeer](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) and [Custom automation peers](../accessibility/custom-automation-peers.md).
 
 Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 

@@ -2,14 +2,14 @@
 title: Activate a foreground app with voice commands through Cortana - Cortana UWP design and development
 description: Use voice commands to activate your app to the foreground and execute an action or command within the app.
 ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
-ms.date: 01/28/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: cortana
 ---
 
 # Activate a foreground app with voice commands through Cortana
 
->[!WARNING]
+> [!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
 >
 > See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
@@ -65,16 +65,16 @@ These are the basic steps to add voice-command functionality and integrate Corta
 
 1. Launch Microsoft Visual Studio 2015.
 
-    The Visual Studio 2015 Start page appears.
+   The Visual Studio 2015 Start page appears.
 
 2. On the **File** menu, select **New** > **Project**.
 
-    The **New Project** dialog appears. The left pane of the dialog lets you select the type of templates to display.
+   The **New Project** dialog appears. The left pane of the dialog lets you select the type of templates to display.
 
-3. In the left pane, expand **Installed > Templates > Visual C\# > Windows**, then pick the **Universal** template group. The dialog's center pane displays a list of project templates for Universal Windows Platform (UWP) apps.
+3. In the left pane, expand **Installed** > **Templates** > **Visual C\#** > **Windows**, then pick the **Universal** template group. The dialog's center pane displays a list of project templates for Universal Windows Platform (UWP) apps.
 4. In the center pane, select the **Blank App (Universal Windows)** template.
 
-    The **Blank App** template creates a minimal UWP app that compiles and runs, but contains no user-interface controls or data. You add controls to the app over the course of this tutorial.
+   The **Blank App** template creates a minimal UWP app that compiles and runs, but contains no user-interface controls or data. You add controls to the app over the course of this tutorial.
 
 5. In the **Name** text box, type your project name. For this example, we use "AdventureWorks".
 6. Click **OK** to create the project.
@@ -98,7 +98,7 @@ We recommend that you mark the default language on string resource files (such a
 
 ## Create a VCD file
 
-1. In Visual Studio, right-click your primary project name, select **Add > New Item**. Add an **XML File**.
+1. In Visual Studio, right-click your primary project name, select **Add** > **New Item**. Add an **XML File**.
 2. Type a name for the [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file (for this example, "AdventureWorksCommands.xml"), and click Add.
 3. In **Solution Explorer**, select the [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file.
 4. In the **Properties** window, set **Build action** to **Content**, and then set **Copy to output directory** to **Copy if newer**.
@@ -112,7 +112,7 @@ Add a **VoiceCommands** element with an **xmlns** attribute pointing to `https:/
    You can declare multiple [**CommandSet**](/previous-versions/windows/dn722331(v=win.10)) elements, each with a different [**xml:lang**](/previous-versions/windows/dn722331(v=win.10)) attribute so your app to be used in different markets. For example, an app for the United States might have a [**CommandSet**](/previous-versions/windows/dn722331(v=win.10)) for English and a [**CommandSet**](/previous-versions/windows/dn722331(v=win.10)) for Spanish.
 
    > [!CAUTION]
-   > To activate an app and initiate an action using a voice command, the app must register a VCD file that contains a [**CommandSet**](/previous-versions/windows/dn722331(v=win.10)) with a language that matches the speech language selected by the user for their device. The speech language is located in **Settings > System > Speech > Speech Language**.
+   > To activate an app and initiate an action using a voice command, the app must register a VCD file that contains a [**CommandSet**](/previous-versions/windows/dn722331(v=win.10)) with a language that matches the speech language selected by the user for their device. The speech language is located in **Settings** > **System** > **Speech** > **Speech Language**.
 
 2. Add a **Command** element for each command you want to support. Each **Command** declared in a [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file must include the following information:
 
@@ -205,8 +205,8 @@ In the "app.xaml.cs" file:
 ```csharp
 try
 {
-  // Install the main VCD. 
-  StorageFile vcdStorageFile = 
+  // Install the main VCD.
+  StorageFile vcdStorageFile =
   await Package.Current.InstalledLocation.GetFileAsync(
   @"AdventureWorksCommands.xml");
 

@@ -1,32 +1,30 @@
 ---
 title: Activate a background app in Cortana using voice commands | Cortana UWP design and development
 description: Extend Cortana with features from your app (as a background task) using voice commands.
-
 ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
-ms.date: 09/24/2019
+ms.date: 05/16/2022
 ms.topic: article
-
 keywords: cortana
 ---
 
-# Activate a background app in Cortana using voice commands  
+# Activate a background app in Cortana using voice commands
 
->[!WARNING]
+> [!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
 >
 > See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
 
-In addition to using voice commands within **Cortana** to access system features, you may also extend **Cortana** with features and functionality from your app (as a background task) using voice commands that specify an action or command to run. When an app handles a voice command in the background, it does not take focus. Instead, it returns all feedback and results through the **Cortana** canvas and the **Cortana** voice.  
+In addition to using voice commands within **Cortana** to access system features, you may also extend **Cortana** with features and functionality from your app (as a background task) using voice commands that specify an action or command to run. When an app handles a voice command in the background, it does not take focus. Instead, it returns all feedback and results through the **Cortana** canvas and the **Cortana** voice.
 
 > [!NOTE]
 > **Important APIs**
 >
-> - [**Windows.ApplicationModel.VoiceCommands**](/uwp/api/Windows.ApplicationModel.VoiceCommands)
-> - [**VCD elements and attributes v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+> - [Windows.ApplicationModel.VoiceCommands](/uwp/api/Windows.ApplicationModel.VoiceCommands)
+> - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
-Apps may be activated to the foreground (the app takes focus) or activated in the background (**Cortana** retains focus), depending on the complexity of the interaction. For example, voice commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands (such as listing upcoming trips) may be handled in **Cortana** through a background app.  
+Apps may be activated to the foreground (the app takes focus) or activated in the background (**Cortana** retains focus), depending on the complexity of the interaction. For example, voice commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands (such as listing upcoming trips) may be handled in **Cortana** through a background app.
 
-If you want to activate an app to the foreground using voice commands, see [Activate a foreground app with voice commands through Cortana](cortana-launch-a-foreground-app-with-voice-commands.md).  
+If you want to activate an app to the foreground using voice commands, see [Activate a foreground app with voice commands through Cortana](cortana-launch-a-foreground-app-with-voice-commands.md).
 
 > [!NOTE]
 > A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app via **Cortana**.
@@ -39,19 +37,19 @@ We use a trip planning and management app named **Adventure Works** integrated i
 
 :::image type="content" source="images/cortana/cortana-overview.png" alt-text="Screenshot of Cortana launching foreground app":::
 
-To view an **Adventure Works** trip without **Cortana**, a user would launch the app and navigate to the **Upcoming trips** page.  
+To view an **Adventure Works** trip without **Cortana**, a user would launch the app and navigate to the **Upcoming trips** page.
 
-Using voice commands through **Cortana** to launch your app in the background, the user may instead just say, `Adventure Works, when is my trip to Las Vegas?`. Your app handles the command and **Cortana** displays results along with your app icon and other app info, if provided.  
+Using voice commands through **Cortana** to launch your app in the background, the user may instead just say "Adventure Works, when is my trip to Las Vegas?". Your app handles the command and **Cortana** displays results along with your app icon and other app info, if provided.
 
 :::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Screenshot of Cortana with a basic query and result screen using the AdventureWorks app in the background":::
 
 The following basic steps add voice-command functionality and extend **Cortana** with background functionality from your app using speech or keyboard input.
 
-1. Create an app service (see [**Windows.ApplicationModel.AppService**](/uwp/api/Windows.ApplicationModel.AppService)) that **Cortana** invokes in the background.  
-2. Create a VCD file. The VCD file is an XML document that defines all the spoken commands that the user may say to initiate actions or invoke commands when activating your app. See [**VCD elements and attributes v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2).  
-3. Register the command sets in the VCD file when the app is launched.  
-4. Handle the background activation of the app service and the running of the voice command.  
-5. Display and speak the appropriate feedback to the voice command within **Cortana**.  
+1. Create an app service (see [Windows.ApplicationModel.AppService](/uwp/api/Windows.ApplicationModel.AppService)) that **Cortana** invokes in the background.
+2. Create a VCD file. The VCD file is an XML document that defines all the spoken commands that the user may say to initiate actions or invoke commands when activating your app. See [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2).
+3. Register the command sets in the VCD file when the app is launched.
+4. Handle the background activation of the app service and the running of the voice command.
+5. Display and speak the appropriate feedback to the voice command within **Cortana**.
 
 > [!TIP]
 > **Prerequisites**
@@ -65,90 +63,90 @@ The following basic steps add voice-command functionality and extend **Cortana**
 >
 > See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](speech-interactions.md) for helpful tips on designing a useful and engaging speech-enabled app.
 
-## Create a New Solution with a Primary Project in Visual Studio  
+## Create a New Solution with a Primary Project in Visual Studio
 
-1. Launch Microsoft Visual Studio 2015.  
-    The Visual Studio 2015 Start page appears.  
+1. Launch Microsoft Visual Studio 2015.
+    The Visual Studio 2015 Start page appears.
 
-2. On the **File** menu, select **New** > **Project**.  
-    The **New Project** dialog appears. The left pane of the dialog lets you select the type of templates to display.  
+2. On the **File** menu, select **New** > **Project**.
+    The **New Project** dialog appears. The left pane of the dialog lets you select the type of templates to display.
 
-3. In the left pane, expand **Installed > Templates > Visual C\# > Windows**, then pick the **Universal** template group. The center pane of the dialog displays a list of project templates for Universal Windows Platform (UWP) apps.  
-4. In the center pane, select the **Blank App (Universal Windows)** template.  
-    The **Blank App** template creates a minimal UWP app that compiles and runs. The **Blank App** template includes no user-interface controls or data. You add controls to the app using this page as a guide.  
+3. In the left pane, expand **Installed > Templates > Visual C\# > Windows**, then pick the **Universal** template group. The center pane of the dialog displays a list of project templates for Universal Windows Platform (UWP) apps.
+4. In the center pane, select the **Blank App (Universal Windows)** template.
+    The **Blank App** template creates a minimal UWP app that compiles and runs. The **Blank App** template includes no user-interface controls or data. You add controls to the app using this page as a guide.
 
-5. In the **Name** text box, type your project name. Example: Use `AdventureWorks`.  
-6. Click on the **OK** button to create the project.  
-    Microsoft Visual Studio creates your project and displays it in the **Solution Explorer**.  
+5. In the **Name** text box, type your project name. Example: Use _AdventureWorks_.
+6. Click on the **OK** button to create the project.
+  Microsoft Visual Studio creates your project and displays it in the **Solution Explorer**.
 
-## Add Image Assets to Primary Project and Specify them in the App Manifest  
+## Add Image Assets to Primary Project and Specify them in the App Manifest
 
-UWP apps should automatically select the most appropriate images. The selection is based upon specific settings and device capabilities (high contrast, effective pixels, locale, and so on). You must provide the images and ensure that you use the appropriate naming convention and folder organization within your app project for the different resource versions.  
+UWP apps should automatically select the most appropriate images. The selection is based upon specific settings and device capabilities (high contrast, effective pixels, locale, and so on). You must provide the images and ensure that you use the appropriate naming convention and folder organization within your app project for the different resource versions.
 If you do not provide the recommended resource versions, then the user experience may suffer in the following ways.
 
 - Accessibility
-- Localization  
-- Image quality  
-The resource versions are used to adapt the following changes in the user experience.  
-- User preferences  
-- Abilities  
-- Device type  
-- Location  
+- Localization
+- Image quality
+The resource versions are used to adapt the following changes in the user experience.
+- User preferences
+- Abilities
+- Device type
+- Location
 
-For more detail about image resources for high contrast and scale factors, visit the Guidelines for tile and icon assets page located at [msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).  
+For more detail about image resources for high contrast and scale factors, visit the Guidelines for tile and icon assets page located at [msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).
 
-You must name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.  
+You must name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.
 
-The standard naming convention is `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`.  
-Example: `images/logo.scale-100_contrast-white.png`, which may refer to code using just the root folder and the filename: `images/logo.png`.  
-For more information, visit the How to name resources using qualifiers page located at [msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx](/previous-versions/windows/apps/hh965324(v=win.10)).  
+The standard naming convention is `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`.
+Example: `images/logo.scale-100_contrast-white.png`, which may refer to code using just the root folder and the filename: `images/logo.png`.
+For more information, visit the How to name resources using qualifiers page located at [msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx](/previous-versions/windows/apps/hh965324(v=win.10)).
 
-Microsoft recommends that you mark the default language on string resource files (such as `en-US\resources.resw`) and the default scale factor on images (such as `logo.scale-100.png`), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, Microsoft recommends that you provide assets for 100, 200, and 400 scale factors.  
+Microsoft recommends that you mark the default language on string resource files (such as `en-US\resources.resw`) and the default scale factor on images (such as `logo.scale-100.png`), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, Microsoft recommends that you provide assets for 100, 200, and 400 scale factors.
 
 >[!IMPORTANT]
-> The app icon used in the title area of the **Cortana** canvas is the Square44x44Logo icon specified in the `Package.appxmanifest` file.  
+> The app icon used in the title area of the **Cortana** canvas is the Square44x44Logo icon specified in the _Package.appxmanifest_ file.
 > You may also specify an icon for each entry in the content area of the **Cortana** canvas. Valid image sizes for the results icons are:
 >
 > - 68w x 68h
-> - 68w x 92h  
-> - 280w x 140h  
+> - 68w x 92h
+> - 280w x 140h
 
-The content tile is not validated until a [**VoiceCommandResponse**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object is passed to the [**VoiceCommandServiceConnection**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) class. If you pass a [**VoiceCommandResponse**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object to **Cortana** that includes a content tile with an image that does not adhere to these size ratios, then an exception may occur.  
+The content tile is not validated until a [VoiceCommandResponse](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object is passed to the [VoiceCommandServiceConnection](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) class. If you pass a [VoiceCommandResponse](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object to **Cortana** that includes a content tile with an image that does not adhere to these size ratios, then an exception may occur.
 
-Example: The **Adventure Works** app (`VoiceCommandService\\AdventureWorksVoiceCommandService.cs`) specifies a simple, grey square (`GreyTile.png`) on the [**VoiceCommandContentTile**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) class using the [**TitleWith68x68IconAndText**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType) tile template. The logo variants are located in `VoiceCommandService\\Images`, and are retrieved using the [**GetFileFromApplicationUriAsync**](/uwp/api/Windows.Storage.StorageFile) method.
+Example: The **Adventure Works** app (VoiceCommandService\\AdventureWorksVoiceCommandService.cs) specifies a simple, grey square (GreyTile.png) on the [VoiceCommandContentTile](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) class using the [TitleWith68x68IconAndText](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType) tile template. The logo variants are located in `VoiceCommandService\\Images`, and are retrieved using the [GetFileFromApplicationUriAsync](/uwp/api/Windows.Storage.StorageFile) method.
 
 ```csharp
-var destinationTile = new VoiceCommandContentTile();  
+var destinationTile = new VoiceCommandContentTile();
 
 destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
 destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
     new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png")
-);  
+);
 ```
 
 ## Create an App Service Project
 
-1. Right-click on your Solution name, select **New > Project**.  
-2. Under **Installed > Templates > Visual C\# > Windows > Universal**, select **Windows Runtime Component**. The **Windows Runtime Component** is the component that implements the app service ([**Windows.ApplicationModel.AppService**](/uwp/api/Windows.ApplicationModel.AppService)).  
-3. Type a name for the project and click on the **OK** button.  
-    Example: `VoiceCommandService`.  
-4. In **Solution Explorer**, select the `VoiceCommandService` project and rename the `Class1.cs` file generated by Visual Studio.
-    Example: The **Adventure Works** uses `AdventureWorksVoiceCommandService.cs`.  
-5. Click on the **Yes** button; when asked if you want to rename all occurrences of `Class1.cs`.  
-6. In the `AdventureWorksVoiceCommandService.cs` file:
-    1. Add the following using directive.  
-        `using Windows.ApplicationModel.Background;`  
+1. Right-click on your Solution name, select **New** > **Project**.
+2. Under **Installed** > **Templates** > **Visual C\#** > **Windows** > **Universal**, select **Windows Runtime Component**. The **Windows Runtime Component** is the component that implements the app service ([Windows.ApplicationModel.AppService](/uwp/api/Windows.ApplicationModel.AppService)).
+3. Type a name for the project and click on the **OK** button.
+    Example: _VoiceCommandService_.
+4. In **Solution Explorer**, select the _VoiceCommandService_ project and rename the _Class1.cs_ file generated by Visual Studio.
+    Example: The **Adventure Works** uses _AdventureWorksVoiceCommandService.cs_.
+5. Click on the **Yes** button when asked if you want to rename all occurrences of _Class1.cs_.
+6. In the _AdventureWorksVoiceCommandService.cs_ file:
+    1. Add the following using directive.
+        `using Windows.ApplicationModel.Background;`
     2. When you create a new project, the project name is used as the default root namespace in all files. Rename the namespace to nest the app service code under the primary project.
-        Example: `namespace AdventureWorks.VoiceCommands`.  
-    3. Right-click on the app service project name in Solution Explorer and select **Properties**.  
-    4. On the **Library** tab, update the **Default namespace** field with this same value.  
-        Example: `AdventureWorks.VoiceCommands`).  
-    5. Create a new class that implements the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This class requires a [**Run**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) method, which is the entry point when Cortana recognizes the voice command.  
+        Example: `namespace AdventureWorks.VoiceCommands`.
+    3. Right-click on the app service project name in Solution Explorer and select **Properties**.
+    4. On the **Library** tab, update the **Default namespace** field with this same value.
+        Example: `AdventureWorks.VoiceCommands`).
+    5. Create a new class that implements the [IBackgroundTask](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. This class requires a [Run](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) method, which is the entry point when Cortana recognizes the voice command.
 
-    Example: A basic background task class from the **Adventure Works** app.  
+    Example: A basic background task class from the **Adventure Works** app.
 
-    >[!NOTE]
-    > The background task class itself, as well as all classes in the background task project, must be sealed public classes.  
+    > [!NOTE]
+    > The background task class itself, as well as all classes in the background task project, must be sealed public classes.
 
     ```csharp
     namespace AdventureWorks.VoiceCommands
@@ -191,20 +189,20 @@ destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
         }
       }
     }
-    ```  
+    ```
 
-7. Declare your background task as an **AppService** in the app manifest.  
-    1. In **Solution Explorer**, right-click on the `Package.appxmanifest` file and select **View Code**.  
-    2. Find the [`Application`](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element.  
-    3. Add an [`Extensions`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) element to the [`Application`](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element.  
-    4. Add a [`uap:Extension`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element to the [`Extensions`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) element.  
-    5. Add a `Category` attribute to the `uap:Extension` element and set the value of the `Category` attribute to `windows.appService`.  
-    6. Add an `EntryPoint` attribute to the `uap: Extension` element and set the value of the `EntryPoint` attribute to the name of the class that implements [`IBackgroundTask`](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).  
-        Example: `AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService`.  
-    7. Add a [`uap:AppService`](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) element to the `uap:Extension` element.  
-    8. Add a `Name` attribute to the [`uap:AppService`](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) element and set the value of the `Name` attribute to a name for the app service, in this case `AdventureWorksVoiceCommandService`.  
-    9. Add a second [`uap:Extension`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element to the [`Extensions`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) element.  
-    10. Add a `Category` attribute to this [`uap:Extension`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element and set the value of the `Category` attribute to `windows.personalAssistantLaunch`.  
+7. Declare your background task as an **AppService** in the app manifest.
+    1. In **Solution Explorer**, right-click on the _Package.appxmanifest_ file and select **View Code**.
+    2. Find the [Application](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element.
+    3. Add an [Extensions](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) element to the [Application](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element.
+    4. Add a [uap:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element to the [Extensions](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) element.
+    5. Add a **Category** attribute to the `uap:Extension` element and set the value of the **Category** attribute to **windows.appService**.
+    6. Add an **EntryPoint** attribute to the `uap: Extension` element and set the value of the **EntryPoint** attribute to the name of the class that implements [IBackgroundTask](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
+        Example: **AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService**.
+    7. Add a [uap:AppService](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) element to the `uap:Extension` element.
+    8. Add a **Name** attribute to the [`uap:AppService`](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) element and set the value of the **Name** attribute to a name for the app service, in this case **AdventureWorksVoiceCommandService**.
+    9. Add a second [uap:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element to the [Extensions](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) element.
+    10. Add a **Category** attribute to this [uap:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) element and set the value of the **Category** attribute to **windows.personalAssistantLaunch**.
 
     Example: A manifest from the Adventure Works app.
 
@@ -223,52 +221,52 @@ destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
             <Application>
         <Applications>
     </Package>
-    ```  
+    ```
 
-8. Add this app service project as a reference in the primary project.  
-    1. Right-click on the **References**.  
-    2. Select **Add Reference...**.  
-    3. In the **Reference Manager** dialog, expand **Projects** and select the app service project.  
-    4. Click on the **OK** button.  
+8. Add this app service project as a reference in the primary project.
+    1. Right-click on the **References**.
+    2. Select **Add Reference...**.
+    3. In the **Reference Manager** dialog, expand **Projects** and select the app service project.
+    4. Click on the **OK** button.
 
 ## Create a VCD File
 
-1. In Visual Studio, right-click on your primary project name, select **Add > New Item**. Add an **XML File**.  
-2. Type a name for the [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file.  
+1. In Visual Studio, right-click on your primary project name, select **Add > New Item**. Add an **XML File**.
+2. Type a name for the [VCD](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file.
     Example: `AdventureWorksCommands.xml`.
-3. Click on the **Add** button.  
-4. In **Solution Explorer**, select the [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file.  
-5. In the **Properties** window, set **Build action** to **Content**, and then set **Copy to output directory** to **Copy if newer**.  
+3. Click on the **Add** button.
+4. In **Solution Explorer**, select the [VCD](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file.
+5. In the **Properties** window, set **Build action** to **Content**, and then set **Copy to output directory** to **Copy if newer**.
 
-## Edit the VCD File  
+## Edit the VCD File
 
-1. Add a `VoiceCommands` element with an `xmlns` attribute pointing to `https://schemas.microsoft.com/voicecommands/1.2`.  
-2. For each language supported by your app, create a [`CommandSet`](/previous-versions/windows/dn722331(v=win.10)) element that includes the voice commands supported by your app.  
-    You are able to declare multiple [`CommandSet`](/previous-versions/windows/dn722331(v=win.10)) elements, each with a different [`xml:lang`](/previous-versions/windows/dn722331(v=win.10)) attribute so your app to be used in different markets. For example, an app for the United States might have a [`CommandSet`](/previous-versions/windows/dn722331(v=win.10)) for English and a [`CommandSet`](/previous-versions/windows/dn722331(v=win.10)) for Spanish.  
+1. Add a **VoiceCommands** element with an `xmlns` attribute pointing to `https://schemas.microsoft.com/voicecommands/1.2`.
+2. For each language supported by your app, create a [CommandSet](/previous-versions/windows/dn722331(v=win.10)) element that includes the voice commands supported by your app.
+    You are able to declare multiple [CommandSet](/previous-versions/windows/dn722331(v=win.10)) elements, each with a different [`xml:lang`](/previous-versions/windows/dn722331(v=win.10)) attribute so your app to be used in different markets. For example, an app for the United States might have a [CommandSet](/previous-versions/windows/dn722331(v=win.10)) for English and a [CommandSet](/previous-versions/windows/dn722331(v=win.10)) for Spanish.
 
-    >[!IMPORTANT]
-    > To activate an app and initiate an action using a voice command, the app must register a VCD file that includes a [`CommandSet`](/previous-versions/windows/dn722331(v=win.10)) element with a language that matches the speech language indicated in the device of the user. The speech language is located in **Settings > System > Speech > Speech Language**.  
+    > [!IMPORTANT]
+    > To activate an app and initiate an action using a voice command, the app must register a VCD file that includes a [CommandSet](/previous-versions/windows/dn722331(v=win.10)) element with a language that matches the speech language indicated in the device of the user. The speech language is located in **Settings > System > Speech > Speech Language**.
 
-3. Add a `Command` element for each command you want to support.  
-    Each `Command` declared in a [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file must include this information:  
-    - A `Name` attribute that your application uses to identify the voice command at runtime.  
-    - An `Example` element that includes a phrase describing how a user invokes the command. **Cortana** shows the example when the user says `What can I say?`, `Help`, or taps **See more**.  
-    - A `ListenFor` element that includes the words or phrases that your app recognizes as a command. Each `ListenFor` element may contain references to one or more `PhraseList` elements that contain specific words relevant to the command.  
+3. Add a **Command** element for each command you want to support.
+    Each **Command** declared in a [VCD](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file must include this information:
+    - A **Name** attribute that your application uses to identify the voice command at runtime.
+    - An **Example** element that includes a phrase describing how a user invokes the command. **Cortana** shows the example when the user says "What can I say?", "Help", or taps **See more**.
+    - A **ListenFor** element that includes the words or phrases that your app recognizes as a command. Each **ListenFor** element may contain references to one or more **PhraseList** elements that contain specific words relevant to the command.
 
-       >[!NOTE]
-       > `ListenFor` elements must not be programmatically modified. However, `PhraseList` elements associated with `ListenFor` elements may be programmatically modified. Applications should modify the content of the `PhraseList` element at runtime based on the data set generated as the user uses the app.
-       >
-       > For more information, see [Dynamically modify Cortana VCD phrase lists](cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md).  
+      > [!NOTE]
+      > **ListenFor** elements must not be programmatically modified. However, **PhraseList** elements associated with **ListenFor** elements may be programmatically modified. Applications should modify the content of the **PhraseList** element at runtime based on the data set generated as the user uses the app.
+      >
+      > For more information, see [Dynamically modify Cortana VCD phrase lists](cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md).
 
-    - A `Feedback` element that includes the text for **Cortana** to display and speak as the application is launched.  
+    - A **Feedback** element that includes the text for **Cortana** to display and speak as the application is launched.
 
-A `Navigate` element indicates that the voice command activates the app to the foreground. In this example, the ```showTripToDestination``` command is a foreground task.  
+A **Navigate** element indicates that the voice command activates the app to the foreground. In this example, the `showTripToDestination` command is a foreground task.
 
-A `VoiceCommandService` element indicates that the voice command activates the app in the background. The value of the `Target` attribute of this element should match the value of the `Name` attribute of the [`uap:AppService`](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) element in the package.appxmanifest file. In this example, the `whenIsTripToDestination` and `cancelTripToDestination` commands are background tasks that specify the name of the app service as `AdventureWorksVoiceCommandService`.  
+A **VoiceCommandService** element indicates that the voice command activates the app in the background. The value of the **Target** attribute of this element should match the value of the **Name** attribute of the [uap:AppService](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) element in the package.appxmanifest file. In this example, the **whenIsTripToDestination** and **cancelTripToDestination** commands are background tasks that specify the name of the app service as **AdventureWorksVoiceCommandService**.
 
-For more detail, see the [**VCD elements and attributes v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) reference.  
+For more detail, see the [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) reference.
 
-Example: A portion of the [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file that defines the `en-us` voice commands for the **Adventure Works** app.  
+Example: A portion of the [VCD](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) file that defines the `en-us` voice commands for the **Adventure Works** app.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -308,16 +306,16 @@ Example: A portion of the [**VCD**](/uwp/schemas/voicecommands/voice-command-ele
         <Item>Yosemite National Park</Item>
     </PhraseList>
 </CommandSet>
-```  
+```
 
-## Install the VCD Commands  
+## Install the VCD Commands
 
-Your app must run once to install the VCD.  
+Your app must run once to install the VCD.
 
->[!NOTE]
-> Voice command data is not preserved across app installations. To ensure the voice command data for your app remains intact, consider initializing your VCD file each time your app is launched or activated, or maintain a setting that indicates if the VCD is currently installed.  
+> [!NOTE]
+> Voice command data is not preserved across app installations. To ensure the voice command data for your app remains intact, consider initializing your VCD file each time your app is launched or activated, or maintain a setting that indicates if the VCD is currently installed.
 
-In the `app.xaml.cs` file:  
+In the _app.xaml.cs_ file:
 
 1. Add the following using directive:
 
@@ -325,16 +323,16 @@ In the `app.xaml.cs` file:
    using Windows.Storage;
    ```
 
-2. Mark the `OnLaunched` method with the async modifier.  
+2. Mark the `OnLaunched` method with the async modifier.
 
    ```csharp
    protected async override void OnLaunched(LaunchActivatedEventArgs e)
-   ```  
+   ```
 
-3. Call the [`InstallCommandDefinitionsFromStorageFileAsync`](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager) method in the [`OnLaunched`](/uwp/api/Windows.UI.Xaml.Application) handler to register the voice commands that should be recognized.  
-    Example: The Adventure Works app defines a [`StorageFile`](/uwp/api/Windows.Storage.StorageFile) object.  
-    Example: Call the [`GetFileAsync`](/uwp/api/Windows.Storage.StorageFolder) method to initialize the [`StorageFile`](/uwp/api/Windows.Storage.StorageFile) object with the `AdventureWorksCommands.xml` file.  
-    The [`StorageFile`](/uwp/api/Windows.Storage.StorageFile) object is then passed to [`InstallCommandDefinitionsFromStorageFileAsync`](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager) method.  
+3. Call the [InstallCommandDefinitionsFromStorageFileAsync](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager) method in the [OnLaunched](/uwp/api/Windows.UI.Xaml.Application) handler to register the voice commands that should be recognized.
+    Example: The Adventure Works app defines a [StorageFile](/uwp/api/Windows.Storage.StorageFile) object.
+    Example: Call the [GetFileAsync](/uwp/api/Windows.Storage.StorageFolder) method to initialize the [StorageFile](/uwp/api/Windows.Storage.StorageFile) object with the AdventureWorksCommands.xml file.
+    The [StorageFile](/uwp/api/Windows.Storage.StorageFile) object is then passed to [InstallCommandDefinitionsFromStorageFileAsync](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager) method.
 
    ```csharp
    try {
@@ -354,39 +352,39 @@ In the `app.xaml.cs` file:
     catch (Exception ex) {
         System.Diagnostics.Debug.WriteLine("Installing Voice Commands Failed: " + ex.ToString());
     }
-    ```  
+    ```
 
-## Handle Activation  
+## Handle Activation
 
 Specify how your app responds to subsequent voice command activations.
 
->[!NOTE]
-> You must launch your app at least once after the voice command sets have been installed.  
+> [!NOTE]
+> You must launch your app at least once after the voice command sets have been installed.
 
-1. Confirm that your app was activated by a voice command.  
+1. Confirm that your app was activated by a voice command.
 
-    Override the [`Application.OnActivated`](/uwp/api/Windows.UI.Xaml.Application) event and check whether [**IActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs).[**Kind**](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs) is [**VoiceCommand**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).  
+    Override the [Application.OnActivated](/uwp/api/Windows.UI.Xaml.Application) event and check whether [IActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs).[Kind](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs) is [VoiceCommand](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
 
-2. Determine the name of the command and what was spoken.  
+2. Determine the name of the command and what was spoken.
 
-    Get a reference to a [`VoiceCommandActivatedEventArgs`](/uwp/api/Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs) object from the [**IActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs) and query the [`Result`](/uwp/api/Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs) property for a [`SpeechRecognitionResult`](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) object.  
+    Get a reference to a [VoiceCommandActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs) object from the [IActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs) and query the [Result](/uwp/api/Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs) property for a [SpeechRecognitionResult](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) object.
 
-    To determine what the user said, check the value of [**Text**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) or the semantic properties of the recognized phrase in the [`SpeechRecognitionSemanticInterpretation`](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) dictionary.  
+    To determine what the user said, check the value of [Text](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) or the semantic properties of the recognized phrase in the [SpeechRecognitionSemanticInterpretation](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) dictionary.
 
-3. Take the appropriate action in your app, such as navigating to the desired page.  
+3. Take the appropriate action in your app, such as navigating to the desired page.
 
     >[!NOTE]
     > If you need to refer to your VCD, visit the [Edit the VCD File](#edit-the-vcd-file) section.
 
-    After receiving the speech-recognition result for the voice command, you get the command name from the first value in the [`RulePath`](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) array. Since the VCD file defines more than one possible voice command, you must verify that the value matches the command names in the VCD and take the appropriate action.  
+    After receiving the speech-recognition result for the voice command, you get the command name from the first value in the [RulePath](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) array. Since the VCD file defines more than one possible voice command, you must verify that the value matches the command names in the VCD and take the appropriate action.
 
-    The most common action for an application is to navigate to a page with content relevant to the context of the voice command.  
-    Example: Open the **TripPage** page and pass in the value of the voice command, how the command was input, and the recognized destination phrase (if applicable). Alternatively, the app may send a navigation parameter to the [**SpeechRecognitionResult**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) when navigating to the **TripPage** page.  
+    The most common action for an application is to navigate to a page with content relevant to the context of the voice command.
+    Example: Open the **TripPage** page and pass in the value of the voice command, how the command was input, and the recognized destination phrase (if applicable). Alternatively, the app may send a navigation parameter to the [SpeechRecognitionResult](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) when navigating to the **TripPage** page.
 
-    You are able to find out whether the voice command that launched your app was actually spoken, or whether it was typed in as text, from the [`SpeechRecognitionSemanticInterpretation.Properties`](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) dictionary using the **commandMode** key. The value of that key will be either `voice` or `text`. If the value of the key is `voice`, consider using speech synthesis ([**Windows.Media.SpeechSynthesis**](/uwp/api/Windows.Media.SpeechSynthesis)) in your app to provide the user with spoken feedback.  
+    You are able to find out whether the voice command that launched your app was actually spoken, or whether it was typed in as text, from the [SpeechRecognitionSemanticInterpretation.Properties](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) dictionary using the **commandMode** key. The value of that key will be either **voice** or **text**. If the value of the key is **voice**, consider using speech synthesis ([Windows.Media.SpeechSynthesis](/uwp/api/Windows.Media.SpeechSynthesis)) in your app to provide the user with spoken feedback.
 
-    Use the [**SpeechRecognitionSemanticInterpretation.Properties**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) to find out the content spoken in the `PhraseList` or `PhraseTopic` constraints of a `ListenFor` element. The dictionary key is the value of the `Label` attribute of the `PhraseList` or `PhraseTopic` element.
-    Example: The following code for How to access the value of **{destination}** phrase.  
+    Use the [SpeechRecognitionSemanticInterpretation.Properties](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) to find out the content spoken in the **PhraseList** or **PhraseTopic** constraints of a **ListenFor** element. The dictionary key is the value of the **Label** attribute of the **PhraseList** or **PhraseTopic** element.
+    Example: The following code for How to access the value of **{destination}** phrase.
 
     ```csharp
     /// <summary>
@@ -507,38 +505,38 @@ Specify how your app responds to subsequent voice command activations.
     private string SemanticInterpretation(string interpretationKey, SpeechRecognitionResult speechRecognitionResult) {
         return speechRecognitionResult.SemanticInterpretation.Properties[interpretationKey].FirstOrDefault();
     }
-    ```  
+    ```
 
-## Handle the Voice Command in the App Service  
+## Handle the Voice Command in the App Service
 
-Process the voice command in the app service.  
+Process the voice command in the app service.
 
-1. Add the following using directives to your voice command service file.  
-    Example: `AdventureWorksVoiceCommandService.cs`.  
+1. Add the following using directives to your voice command service file.
+    Example: _AdventureWorksVoiceCommandService.cs_.
 
     ```csharp
         using Windows.ApplicationModel.VoiceCommands;
         using Windows.ApplicationModel.Resources.Core;
         using Windows.ApplicationModel.AppService;
-    ```  
+    ```
 
-2. Take a service deferral so your app service is not terminated while handling the voice command.  
-3. Confirm that your background task is running as an app service activated by a voice command.  
-    1. Cast the [**IBackgroundTaskInstance.TriggerDetails**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) to [**Windows.ApplicationModel.AppService.AppServiceTriggerDetails**](/uwp/api/Windows.ApplicationModel.AppService.AppServiceTriggerDetails).  
-    2. Check that [**IBackgroundTaskInstance.TriggerDetails.Name**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) is the name of the app service in the `Package.appxmanifest` file.  
-4. Use [**IBackgroundTaskInstance.TriggerDetails**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) to create a [**VoiceCommandServiceConnection**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) to **Cortana** to retrieve the voice command.
-5. Register an event handler for [**VoiceCommandServiceConnection**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection).  [**VoiceCommandCompleted**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) to receive notification when the app service is closed due to a user cancellation.  
-6. Register an event handler for the [**IBackgroundTaskInstance.Canceled**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) to receive notification when the app service is closed due to an unexpected failure.  
-7. Determine the name of the command and what was spoken.  
-    1. Use the [**VoiceCommand**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommand).[**CommandName**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommand) property to determine the name of the voice command.  
-    2. To determine what the user said, check the value of [**Text**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) or the semantic properties of the recognized phrase in the [`SpeechRecognitionSemanticInterpretation`](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) dictionary.  
-8. Take the appropriate action in your app service.  
-9. Display and speak the feedback to the voice command using **Cortana**.  
-    1. Determine the strings that you want **Cortana** to display and speak to the user in response to the voice command and create a [`VoiceCommandResponse`](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object. For guidance on how to select the feedback strings that **Cortana** shows and speaks, see [Cortana design guidelines](cortana-design-guidelines.md).  
-    2. Use the [**VoiceCommandServiceConnection**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) instance to report progress or completion to **Cortana** by calling [**ReportProgressAsync**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) or [**ReportSuccessAsync**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) with the `VoiceCommandServiceConnection` object.  
+2. Take a service deferral so your app service is not terminated while handling the voice command.
+3. Confirm that your background task is running as an app service activated by a voice command.
+    1. Cast the [IBackgroundTaskInstance.TriggerDetails](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) to [Windows.ApplicationModel.AppService.AppServiceTriggerDetails](/uwp/api/Windows.ApplicationModel.AppService.AppServiceTriggerDetails).
+    2. Check that [IBackgroundTaskInstance.TriggerDetails.Name](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) is the name of the app service in the _Package.appxmanifest_ file.
+4. Use [IBackgroundTaskInstance.TriggerDetails](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) to create a [VoiceCommandServiceConnection](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) to **Cortana** to retrieve the voice command.
+5. Register an event handler for [VoiceCommandServiceConnection](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection).[VoiceCommandCompleted](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) to receive notification when the app service is closed due to a user cancellation.
+6. Register an event handler for the [IBackgroundTaskInstance.Canceled](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) to receive notification when the app service is closed due to an unexpected failure.
+7. Determine the name of the command and what was spoken.
+    1. Use the [VoiceCommand](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommand).[CommandName](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommand) property to determine the name of the voice command.
+    2. To determine what the user said, check the value of [Text](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) or the semantic properties of the recognized phrase in the [SpeechRecognitionSemanticInterpretation](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation) dictionary.
+8. Take the appropriate action in your app service.
+9. Display and speak the feedback to the voice command using **Cortana**.
+    1. Determine the strings that you want **Cortana** to display and speak to the user in response to the voice command and create a [VoiceCommandResponse](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object. For guidance on how to select the feedback strings that **Cortana** shows and speaks, see [Cortana design guidelines](cortana-design-guidelines.md).
+    2. Use the [VoiceCommandServiceConnection](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) instance to report progress or completion to **Cortana** by calling [ReportProgressAsync](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) or [ReportSuccessAsync](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) with the VoiceCommandServiceConnection object.
 
-    >[!NOTE]
-    > If you need to refer to your VCD, visit the [Edit the VCD File](#edit-the-vcd-file) section.  
+    > [!NOTE]
+    > If you need to refer to your VCD, visit the [Edit the VCD File](#edit-the-vcd-file) section.
 
     ```csharp
     public sealed class VoiceCommandService : IBackgroundTask {
@@ -629,7 +627,7 @@ Process the voice command in the app service.
             destinationTile.TextLine1 = "August 3rd 2015";
             destinationsContentTiles.Add(destinationTile);
             
-            // Create the VoiceCommandResponse from the userMessage and list    
+            // Create the VoiceCommandResponse from the userMessage and list
             // of content tiles.
             var response = VoiceCommandResponse.CreateResponse(
                 userMessage, destinationsContentTiles);
@@ -659,14 +657,14 @@ Process the voice command in the app service.
             await voiceServiceConnection.RequestAppLaunchAsync(response);
         }
     }
-    ```  
+    ```
 
-Once activated, the app service has 0.5 second to call [**ReportSuccessAsync**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection). **Cortana** shows and says a feedback string.  
+Once activated, the app service has 0.5 second to call [ReportSuccessAsync](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection). **Cortana** shows and says a feedback string.
 
 >[!NOTE]
-> You are able to declare a **Feedback** string in the VCD file. The string does not affect the UI text displayed on the Cortana canvas, it only affects the text spoken by **Cortana**.  
+> You are able to declare a **Feedback** string in the VCD file. The string does not affect the UI text displayed on the Cortana canvas, it only affects the text spoken by **Cortana**.
 
-If the app takes longer than 0.5 second to make the call, **Cortana** inserts a hand-off screen, as shown here. **Cortana** displays the hand-off screen until the application calls **ReportSuccessAsync**, or for up to 5 seconds. If the app service does not call **ReportSuccessAsync**, or any of the [`VoiceCommandServiceConnection`](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) methods that provide **Cortana** with information, the user receives an error message and the app service is canceled.  
+If the app takes longer than 0.5 second to make the call, **Cortana** inserts a hand-off screen, as shown here. **Cortana** displays the hand-off screen until the application calls **ReportSuccessAsync**, or for up to 5 seconds. If the app service does not call **ReportSuccessAsync**, or any of the [VoiceCommandServiceConnection](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) methods that provide **Cortana** with information, the user receives an error message and the app service is canceled.
 
 :::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Screenshot of Cortana and a basic query with progress and result screens using the AdventureWorks app in the background":::
 

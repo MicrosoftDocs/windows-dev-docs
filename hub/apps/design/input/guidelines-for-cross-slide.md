@@ -2,15 +2,12 @@
 description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 title: Guidelines for cross-slide
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-ms.date: 10/25/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Guidelines for cross-slide
-
-
-
 
 **Important APIs**
 
@@ -20,15 +17,21 @@ ms.localizationpriority: medium
 
 Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
+<span id="Dos_and_don_ts"/>
+<span id="dos_and_don_ts"/>
+<span id="DOS_AND_DON_TS"/>
 
+## Dos and don'ts
 
 -   Use cross-slide for lists or collections that scroll in a single direction.
 -   Use cross-slide for item selection when the tap interaction is used for another purpose.
 -   Don't use cross-slide for adding items to a queue.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+<span id="Additional_usage_guidance"/>
+<span id="additional_usage_guidance"/>
+<span id="ADDITIONAL_USAGE_GUIDANCE"/>
 
+## Additional usage guidance
 
 Selection and drag are possible only within a content area that is pannable in one direction (vertical or horizontal). For either interaction to work, one panning direction must be locked and the gesture must be performed in the direction perpendicular to the panning direction.
 
@@ -50,7 +53,8 @@ Here are some guidelines to consider when including cross-slide functionality in
 
 Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](/previous-versions/windows/apps/hh465382(v=win.10)).
 
-**Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
+> [!NOTE]
+> In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
 
 :::row:::
    :::column:::
@@ -65,9 +69,10 @@ Use cross-slide for lists or collections that scroll in a single direction. For 
    :::column-end:::
 :::row-end:::
 
-### <span id="selection"></span><span id="SELECTION"></span>
+<span id="selection"/>
+<span id="SELECTION"/>
 
-**Selecting**
+### Selecting
 
 Selection is the marking, without launching or activating, of one or more objects. This action is analogous to a single mouse click, or Shift key and mouse click, on one or more objects.
 
@@ -81,17 +86,17 @@ The cross-slide interaction is supplemented by a press-and-hold timed interactio
 
 The following screen shots demonstrate how the self-revealing animation works.
 
-1.  Press and hold to initiate the animation for the self-revealing interaction. The selected state of the item affects what is revealed by the animation: a check mark if unselected and no check mark if selected.
+1. Press and hold to initiate the animation for the self-revealing interaction. The selected state of the item affects what is revealed by the animation: a check mark if unselected and no check mark if selected.
 
-    ![screen shot showing an unselected state.](images/crossslide-selfreveal1.png)
+   ![screen shot showing an unselected state.](images/crossslide-selfreveal1.png)
 
-2.  Select the item using the swipe gesture (up or down).
+2. Select the item using the swipe gesture (up or down).
 
-    ![screen shot showing the animation for selection.](images/crossslide-selfreveal2.png)
+   ![screen shot showing the animation for selection.](images/crossslide-selfreveal2.png)
 
-3.  The item is now selected. Override the selection behavior using the slide gesture to move the item.
+3. The item is now selected. Override the selection behavior using the slide gesture to move the item.
 
-    ![screen shot showing the animation for drag and drop.](images/crossslide-selfreveal3.png)
+   ![screen shot showing the animation for drag and drop.](images/crossslide-selfreveal3.png)
 
 Use a single tap for selection in applications where it is the only primary action. The cross-slide self-revealing animation is displayed to disambiguate this functionality from the standard tap interaction for activation and navigation.
 
@@ -99,9 +104,9 @@ Use a single tap for selection in applications where it is the only primary acti
 
 The selection basket is a visually distinct and dynamic representation of items that have been selected from the primary list or collection in the application. This feature is useful for tracking selected items and should be used by applications where:
 
--   Items can be selected from multiple locations.
--   Many items can be selected.
--   An action or command relies upon the selection list.
+- Items can be selected from multiple locations.
+- Many items can be selected.
+- An action or command relies upon the selection list.
 
 The content of the selection basket persists across actions and commands. For example, if you select a series of photographs from a gallery, apply a color correction to each photograph, and share the photographs in some fashion, the items remain selected.
 
@@ -113,15 +118,16 @@ The current selection should also be cleared when no selection basket is used an
 
 A queue is not equivalent to the selection basket list and should not be treated as such. The primary distinctions include:
 
--   The list of items in the selection basket is only a visual representation; the items in a queue are assembled with a specific action in mind.
--   Items can be represented only once in the selection basket but multiple times in a queue.
--   The order of items in the selection basket represents the order of selection. The order of items in a queue is directly related to functionality.
+- The list of items in the selection basket is only a visual representation; the items in a queue are assembled with a specific action in mind.
+- Items can be represented only once in the selection basket but multiple times in a queue.
+- The order of items in the selection basket represents the order of selection. The order of items in a queue is directly related to functionality.
 
 For these reasons, the cross-slide selection interaction should not be used to add items to a queue. Instead, items should be added to a queue through a drag action.
 
-### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
+<span id="draganddrop"/>
+<span id="DRAGANDDROP"/>
 
-**Drag**
+### Drag
 
 Use drag to move one or more objects from one location to another.
 
@@ -145,6 +151,3 @@ If more than one object needs to be moved, let users select multiple items and t
 - [Input: Simplified ink sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
 - [Input: Manipulations and gestures sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX touch input sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
- 
-
- 

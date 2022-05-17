@@ -4,7 +4,7 @@ title: Input Method Editor (IME) requirements
 label: Input Method Editor (IME) requirements
 template: detail.hbs
 keywords: ime, input method editor, input, interaction
-ms.date: 07/24/2020
+ms.date: 05/17/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ For an overview of IMEs, see [Input Method Editor (IME)](input-method-editors.md
 
 ## Default IME
 
-A user can select any of their active IMEs (**Settings -> Time & Language -> Language -> Preferred languages -> Language pack - Options**) to be the default IME for their preferred language.
+A user can select any of their active IMEs (**Settings** > **Time & Language** > **Language** > **Preferred languages** > **Language pack - Options**) to be the default IME for their preferred language.
 
 :::image type="content" source="images/IMEs/ime-preferred-languages.png" alt-text="Preferred language setting":::
 
@@ -142,8 +142,9 @@ if (ToUnicode(VK_PACKET, 0, abKbdState, &wch, 1, 0) == 1)
 
 Provide users with search features through the search contract and integration with the search pane.
 
-:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="Search pane and IME suggestions":::<br/>
-*Search pane and IME suggestions*
+:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="Search pane and IME suggestions":::
+
+_Search pane and IME suggestions_
 
 The search pane is a central location for users to perform searches across all of their apps. For IME users, Windows provides a unique search experience that lets compatible IMEs integrate with Windows for greater efficiency and usability.
 
@@ -211,7 +212,9 @@ IME mode icons are defined by a white typographic glyph in a modern typeface whi
 
 To display candidate UI, an IME must set its window to be owned-window, so it can display over the currently running app. Use the [ITfContextView::GetWnd](/windows/win32/api/msctf/nf-msctf-itfcontextview-getwnd) method to retrieve the window to own to. If GetWnd returns an error or a NULLHWND, call the [GetFocus](/windows/win32/api/msctf/nf-msctf-itfthreadmgr-getfocus) function.
 
-`if (FAILED(pView->GetWnd(&parentWndHandle)) || (parentWndHandle == nullptr)) { parentWndHandle = GetFocus(); }`
+```cpp
+if (FAILED(pView->GetWnd(&parentWndHandle)) || (parentWndHandle == nullptr)) { parentWndHandle = GetFocus(); }
+```
 
 ### IME candidate window interaction with light dismiss surfaces
 
@@ -253,17 +256,17 @@ The following steps show how to use InstallShield to create a setup project for 
 - Install Visual Studio.
 - Start Visual Studio.
 - On the **File** menu, point to **New** and select **Project**. The **New Project** dialog opens.
-- In the left pane, navigate to **Templates > Other Project Types > Setup and Deployment**, click **Enable InstallShield Limited Edition**, and click **OK**. Follow the installation instructions.
+- In the left pane, navigate to **Templates** > **Other Project Types** > **Setup and Deployment**, click **Enable InstallShield Limited Edition**, and click **OK**. Follow the installation instructions.
 - Restart Visual Studio.
 - Open the IME solution (.sln) file.
 - In Solution Explorer, right-click the solution, point to **Add**, and select **New Project**. The **Add New Project** dialog opens.
-- In the left tree view control, navigate to **Templates > Other Project Types > InstallShield Limited Edition**.
+- In the left tree view control, navigate to **Templates** > **Other Project Types** > **InstallShield Limited Edition**.
 - In the center window, click **InstallShield Limited Edition Project**.
 - In the **Name** text box, type "SetupIME" and click **OK**.
 - In the **Project Assistant** dialog, click **Application Information**.
 - Fill in your company name and the other fields.
 - Click **Application Files**.
-- In the left pane, right-click the **[INSTALLDIR]** folder, and select **New Folder**. Name the folder "Plugins".
+- In the left pane, right-click the **\<INSTALLDIR>** folder, and select **New Folder**. Name the folder "Plugins".
 - Click **Add Files**. Navigate to your IME DLL and add it to the **Plugins** folder. Repeat this step for the IME dictionary.
 - Right-click the IME DLL and select **Properties**. The **Properties** dialog opens.
 - In the **Properties** dialog, click the **COM & .NET Settings** tab.

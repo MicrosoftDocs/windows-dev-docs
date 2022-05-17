@@ -5,23 +5,25 @@ ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
-ms.date: 02/08/2017
+ms.date: 05/17/2022
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Speech interactions
 
 Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.
 
-**Speech recognition**
+## Speech recognition
+
 Speech recognition converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.
 
-**TTS**
+## TTS
+
 TTS uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
 
-**Other speech-related components:**
+## Other speech-related components
+
 **Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See the [Cortana voice command (VCD) guidelines](/cortana/voice-commands/vcd) if you are exposing app functionality in the **Cortana** UI.
 
 ## Speech interaction design
@@ -32,15 +34,15 @@ These guidelines and recommendations describe how to best integrate both speech 
 
 If you are considering supporting speech interactions in your app:
 
--   What actions can be taken through speech? Can a user navigate between pages, invoke commands, or enter data as text fields, brief notes, or long messages?
--   Is speech input a good option for completing a task?
--   How does a user know when speech input is available?
--   Is the app always listening, or does the user need to take an action for the app to enter listening mode?
--   What phrases initiate an action or behavior? Do the phrases and actions need to be enumerated on screen?
--   Are prompt, confirmation, and disambiguation screens or TTS required?
--   What is the interaction dialog between app and user?
--   Is a custom or constrained vocabulary required (such as medicine, science, or locale) for the context of your app?
--   Is network connectivity required?
+- What actions can be taken through speech? Can a user navigate between pages, invoke commands, or enter data as text fields, brief notes, or long messages?
+- Is speech input a good option for completing a task?
+- How does a user know when speech input is available?
+- Is the app always listening, or does the user need to take an action for the app to enter listening mode?
+- What phrases initiate an action or behavior? Do the phrases and actions need to be enumerated on screen?
+- Are prompt, confirmation, and disambiguation screens or TTS required?
+- What is the interaction dialog between app and user?
+- Is a custom or constrained vocabulary required (such as medicine, science, or locale) for the context of your app?
+- Is network connectivity required?
 
 ## Text input
 
@@ -76,23 +78,23 @@ If recognition is initiated by the user, consider using the built-in recognition
 
 The screens vary depending on the specified constraints:
 
--   Pre-defined grammar (dictation or web search)
+- Pre-defined grammar (dictation or web search)
 
-    -   The **Listening** screen.
-    -   The **Thinking** screen.
-    -   The **Heard you say** screen or the error screen.
--   List of words or phrases, or a SRGS grammar file
+  - The **Listening** screen.
+  - The **Thinking** screen.
+    - The **Heard you say** screen or the error screen.
+- List of words or phrases, or a SRGS grammar file
 
-    -   The **Listening** screen.
-    -   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
-    -   The **Heard you say** screen or the error screen.
+  - The **Listening** screen.
+  - The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
+  - The **Heard you say** screen or the error screen.
 
 On the **Listening** screen you can:
 
--   Customize the heading text.
--   Provide example text of what the user can say.
--   Specify whether the **Heard you say** screen is shown.
--   Read the recognized string back to the user on the **Heard you say** screen.
+- Customize the heading text.
+- Provide example text of what the user can say.
+- Specify whether the **Heard you say** screen is shown.
+- Read the recognized string back to the user on the **Heard you say** screen.
 
 Here is an example of the built-in recognition flow for a speech recognizer that uses a SRGS-defined constraint. In this example, speech recognition is successful.
 
@@ -142,8 +144,8 @@ Constraints, or grammars, define the spoken words and phrases that can be matche
 
 Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device
 
--   The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
--   The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
+- The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
+- The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
 
 > [!NOTE]
 > Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
@@ -154,17 +156,17 @@ These predefined grammars can be used to recognize up to 10 seconds of speech in
 
 A custom grammar is designed and authored by you and is installed with your app. Speech recognition using a custom constraint is performed on the device.
 
--   Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
--   An SRGS grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](https://www.w3.org/TR/speech-grammar/). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
+- Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
+- An SRGS grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](https://www.w3.org/TR/speech-grammar/). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
 
-    Here are some tips for authoring SRGS grammars:
+  Here are some tips for authoring SRGS grammars:
 
-    -   Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.
-    -   Let users know what to say for each app context and enable and disable grammars as needed.
-    -   Design each grammar so users can speak a command in a variety of ways. For example, you can use the **GARBAGE** rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, "give me", "and", "uh", "maybe", and so on.
-    -   Use the [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
-    -   Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.
-    -   Avoid using phrases that sound similar. For example, phrases such as "hello", "bellow", and "fellow" can confuse the recognition engine and result in poor recognition accuracy.
+  - Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.
+  - Let users know what to say for each app context and enable and disable grammars as needed.
+  - Design each grammar so users can speak a command in a variety of ways. For example, you can use the **GARBAGE** rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, "give me", "and", "uh", "maybe", and so on.
+  - Use the [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
+  - Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.
+  - Avoid using phrases that sound similar. For example, phrases such as "hello", "bellow", and "fellow" can confuse the recognition engine and result in poor recognition accuracy.
 
 > [!NOTE]
 > Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
@@ -195,12 +197,12 @@ You should provide media controls to let users pause, or stop, TTS.
 
 You should listen to all TTS strings to ensure they are intelligible and sound natural.
 
--   Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
--   Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
+- Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
+- Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
 
 Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) and [Speech Synthesis Markup Language Reference](/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
-## Other articles in this section 
+## Other articles in this section
 
 | Topic | Description |
 | --- | --- |
@@ -213,12 +215,8 @@ Both issues can be addressed by using SSML instead of plain text as input to the
 
 ## Related articles
 
-* [Speech interactions]()
-* [Cortana interactions](./cortana-interactions.md)
+- [Cortana interactions](cortana-interactions.md)
 
- **Samples**
+**Samples**
 
-* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
-
- 
+- [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

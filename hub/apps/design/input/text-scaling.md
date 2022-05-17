@@ -4,15 +4,17 @@ title: Text scaling
 label: Text scaling
 template: detail.hbs
 keywords: UWP, text, scaling, accessibility, "ease of access", display, "Make text bigger", user interaction, input
-ms.date: 05/03/2022
+ms.date: 05/17/2022
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Text scaling
 
-![Hero image showing an example of text scaling from 100% to 225%.](images/coretext/text-scaling-news-hero-small.png)  
-*Example of text scaling in Windows 11 (100% to 225%)*
+![Hero image showing an example of text scaling from 100% to 225%.](images/coretext/text-scaling-news-hero-small.png)
+
+_Example of text scaling in Windows 11 (100% to 225%)_
 
 ## Overview
 
@@ -22,20 +24,21 @@ To ensure text is as legible as possible for the broadest range of users, Window
 
 ## Support
 
-Universal Windows applications (both standard and PWA), support text scaling by default.
+Universal Windows applications (both standard and PWA) support text scaling by default.
 
-If your Windows application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.  
+If your Windows application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.
 
-DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling, while Win32 support is limited to menus, icons, and toolbars.  
+DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling, while Win32 support is limited to menus, icons, and toolbars.
 
 <!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
 
 ## User experience
 
-Users can adjust text scale with the Make text bigger slider on the Settings -> Ease of Access -> Vision/Display screen.
+Users can adjust text scale with the Make text bigger slider on the **Settings** > **Ease of Access** > **Vision/Display** screen.
 
-![Screenshot of the Ease of Access Vision/Display settings page showing the Make text bigger slider.](images/coretext/text-scaling-settings-100-small.png)  
-*Text scale setting from Settings -> Ease of Access -> Vision/Display screen*
+![Screenshot of the Ease of Access Vision/Display settings page showing the Make text bigger slider.](images/coretext/text-scaling-settings-100-small.png)
+
+_Text scale setting from **Settings** > **Ease of Access** > **Vision/Display** screen_
 
 ## UX guidance
 
@@ -87,14 +90,15 @@ Here's a snippet from a basic UWP app that includes a couple of standard text co
 </Grid>
 ```
 
-![Animation of text scaling 100% to 225%.](images/coretext/text-scaling.gif)  
-*Animated text scaling*
+![Animation of text scaling 100% to 225%.](images/coretext/text-scaling.gif)
+
+_Animated text scaling_
 
 ### Use auto-sizing
 
-Don't specify absolute sizes for your controls. Whenever possible, let the platform resize your controls automatically based on user and device settings.  
+Don't specify absolute sizes for your controls. Whenever possible, let the platform resize your controls automatically based on user and device settings.
 
-In this snippet from the previous example, we use the `Auto` and `*` width values for a set of grid columns and let the platform adjust the app layout based on the size of the elements contained within the grid.
+In this snippet from the previous example, we use the **Auto** and ***** width values for a set of grid columns and let the platform adjust the app layout based on the size of the elements contained within the grid.
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -110,15 +114,16 @@ To ensure the layout of your app is as flexible and adaptable as possible, enabl
 
 If you don't specify text wrapping, the platform uses other methods to adjust the layout, including clipping (see previous example).
 
-Here, we use the `AcceptsReturn` and `TextWrapping` TextBox properties to ensure our layout is as flexible as possible.
+Here, we use the **AcceptsReturn** and **TextWrapping** TextBox properties to ensure our layout is as flexible as possible.
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
-          AcceptsReturn="True" TextWrapping="Wrap" />
+         AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![Animation of text scaling 100% to 225% with text wrapping.](images/coretext/text-scaling-textwrap.gif)  
-*Animated text scaling with text wrapping*
+![Animation of text scaling 100% to 225% with text wrapping.](images/coretext/text-scaling-textwrap.gif)
+
+_Animated text scaling with text wrapping_
 
 ### Specify text trimming behavior
 
@@ -135,8 +140,9 @@ In this example, we show how to clip text in a TextBlock using the [TextTrimming
 </TextBlock>
 ```
 
-![Screenshot of text scaling 100% to 225% with text clipping.](images/coretext/text-scaling-clipping-small.png)  
-*Text scaling with text clipping*
+![Screenshot of text scaling 100% to 225% with text clipping.](images/coretext/text-scaling-clipping-small.png)
+
+_Text scaling with text clipping_
 
 ### Use a tooltip
 
@@ -157,7 +163,7 @@ Here, we add a tooltip to a TextBlock that doesn't support text wrapping:
 
 When using font-based icons for emphasis or decoration, disable scaling on these characters.
 
-Set the [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) property to `false` for most XAML controls.
+Set the [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) property to **false** for most XAML controls.
 
 ### Support text scaling natively
 

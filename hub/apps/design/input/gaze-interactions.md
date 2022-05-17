@@ -4,7 +4,7 @@ description: Learn how to design and optimize your Windows apps to provide the b
 label: Gaze interactions
 template: detail.hbs
 keywords: gaze, eye tracking, head tracking, gaze point, input, user interaction, accessibility, usability
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges 
@@ -12,6 +12,7 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
+
 # Gaze interactions and eye tracking in Windows apps
 
 ![Eye tracking hero](images/gaze/eyecontrolbanner1.png)
@@ -34,7 +35,7 @@ In addition, gaze input offers equally compelling opportunities for both gaming 
 
 ## Privacy
 
-Due to the potentially sensitive personal data collected by eye tracking devices, you are required to declare the `gazeInput` capability in the app manifest of your application (see the following **Setup** section). When declared, Windows automatically prompts users with a consent dialog (when the app is first run), where the user must grant permission for the app to communicate with the eye-tracking device and access this data.
+Due to the potentially sensitive personal data collected by eye tracking devices, you are required to declare the **gazeInput** capability in the app manifest of your application (see the following **Setup** section). When declared, Windows automatically prompts users with a consent dialog (when the app is first run), where the user must grant permission for the app to communicate with the eye-tracking device and access this data.
 
 In addition, if your app collects, stores, or transfers eye tracking data, you must describe this in your app's privacy statement and follow all other requirements for **Personal Information** in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies).
 
@@ -42,19 +43,19 @@ In addition, if your app collects, stores, or transfers eye tracking data, you m
 
 To use the gaze input APIs in your Windows app you'll need to: 
 
-- Specify the `gazeInput` capability in the app manifest.
+- Specify the **gazeInput** capability in the app manifest.
 
-    Open the **Package.appxmanifest** file with the Visual Studio manifest designer, or add the capability manually by selecting **View code**, and inserting the following `DeviceCapability` into the `Capabilities` node:
+  Open the **Package.appxmanifest** file with the Visual Studio manifest designer, or add the capability manually by selecting **View code**, and inserting the following `DeviceCapability` into the `Capabilities` node:
 
-    ```xaml
-    <Capabilities>
-       <DeviceCapability Name="gazeInput" />
-    </Capabilities>
-    ```
+  ```xaml
+  <Capabilities>
+     <DeviceCapability Name="gazeInput" />
+  </Capabilities>
+  ```
 
 - A Windows-compatible eye-tracking device connected to your system (either built-in or peripheral) and turned on.
 
-    See [Get started with eye control in Windows 10](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices ) for a list of supported eye-tracking devices.
+  See [Get started with eye control in Windows 10](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices ) for a list of supported eye-tracking devices.
 
 ## Basic eye tracking
 
@@ -64,7 +65,7 @@ A small ellipse is used to show where the gaze point is within the application v
 
 ![Gaze tracking with timer sample](images/gaze/gaze-input-timed2.gif)
 
-*Gaze tracking with timer sample*
+_Gaze tracking with timer sample_
 
 **Download this sample from [Gaze input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
@@ -225,8 +226,8 @@ A small ellipse is used to show where the gaze point is within the application v
     }
     ```
 
-3. Next, we add our gaze device watcher methods. 
-    
+3. Next, we add our gaze device watcher methods.
+
     In `StartGazeDeviceWatcher`, we call [CreateWatcher](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) and declare the eye-tracking device event listeners ([DeviceAdded](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated), and [DeviceRemoved](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
 
     In `DeviceAdded`, we check the state of the eye-tracking device. If a viable device, we increment our device count and enable gaze tracking. See next step for details.
@@ -491,6 +492,7 @@ A small ellipse is used to show where the gaze point is within the application v
         }
     }
     ```
+
 6. Finally, here are the methods used to manage the gaze focus timer for this app.
 
     `DoesElementContainPoint` checks if the gaze pointer is over the progress bar. If so, it starts the gaze timer and increments the progress bar on each gaze timer tick.

@@ -4,7 +4,7 @@ title: Access keys design guidelines
 label: Access keys design guidelines
 keywords: keyboard, access key, keytip, key tip, accessibility, navigation, focus, text, input, user interaction
 template: detail.hbs
-ms.date: 07/09/2021
+ms.date: 05/16/2022
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
@@ -12,6 +12,7 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Access keys
 
 Access keys are keyboard shortcuts that improve the usability and the accessibility of your Windows applications by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
@@ -21,7 +22,7 @@ The Windows app provides built-in support across platform controls for both keyb
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](../accessibility/keyboard-accessibility.md)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
-See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
+See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts.
 
 To create your own custom keyboard shortcuts, see the [Keyboard events](keyboard-events.md) topic.
 
@@ -44,7 +45,7 @@ _KeyTip badges for access keys in Microsoft Word_
 
 To add an access key to a control, use the **AccessKey property**. The value of this property specifies the access key sequence, the shortcut (if a single alphanumeric), and the Key Tip.
 
-``` xaml
+```xaml
 <Button Content="Accept" AccessKey="A" Click="AcceptButtonClick" />
 ```
 
@@ -52,12 +53,11 @@ To add an access key to a control, use the **AccessKey property**. The value of 
 
 We recommend that you specify access keys wherever appropriate in your UI, and support access keys in all custom controls.
 
-1.  **Access keys make your app more accessible** for users with motor disabilities, including those users who can press only one key at a time or have difficulty using a mouse.
+1. **Access keys make your app more accessible** for users with motor disabilities, including those users who can press only one key at a time or have difficulty using a mouse.
 
     A well-designed keyboard UI is an important aspect of software accessibility. It enables users with vision impairments or who have certain motor disabilities to navigate an app and interact with its features. Such users might not be able to operate a mouse and instead rely on various assistive technologies such as keyboard enhancement tools, on-screen keyboards, screen enlargers, screen readers, and voice input utilities. For these users, comprehensive command coverage is crucial.
 
-2.  **Access keys make your app more usable** for power users who prefer
-    to interact through the keyboard.
+2. **Access keys make your app more usable** for power users who prefer to interact through the keyboard.
 
     Experienced users often have a strong preference for using the keyboard because keyboard-based commands can be entered more quickly and don't require them to remove their hands from the keyboard. For these users, efficiency and consistency are crucial; comprehensiveness is important only for the most frequently used commands.
 
@@ -77,9 +77,9 @@ _Secondary access keys in Microsoft Word_
 
 Access keys can be duplicated for elements in different scopes. In the preceding example, “2” is the access key for Undo in the primary scope, and also “Italics” in the secondary scope.
 
-Here, we show how to define an access key scope.
+Here we show how to define an access key scope.
 
-``` xaml
+```xaml
 <CommandBar x:Name="MainCommandBar" AccessKey="M" >
     <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
     <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
@@ -207,15 +207,15 @@ Avoid collisions by using unique access keys or by scoping commands.
 
 Consider the following when choosing access keys:
 
--   Use a single character to minimize keystrokes and support accelerator keys by default (Alt+AccessKey)
--   Avoid using more than two characters
--   Avoid access keys collisions
--   Avoid characters that are difficult to differentiate from other characters, such as the letter “I” and the number “1” or the letter “O” and the number “0”
--   Use well-known precedents from other popular apps such as Word (“F” for “File”, “H” for “Home”, and so on)
--   Use the first character of the command name, or a character with a close association to the command that helps with recall
-    -   If the first letter is already assigned, use a letter that is as close as possible to the first letter of the command name (“N” for Insert)
-    -   Use a distinctive consonant from the command name (“W” for View)
-    -   Use a vowel from the command name.
+- Use a single character to minimize keystrokes and support accelerator keys by default (Alt+AccessKey)
+- Avoid using more than two characters
+- Avoid access keys collisions
+- Avoid characters that are difficult to differentiate from other characters, such as the letter “I” and the number “1” or the letter “O” and the number “0”
+- Use well-known precedents from other popular apps such as Word (“F” for “File”, “H” for “Home”, and so on)
+- Use the first character of the command name, or a character with a close association to the command that helps with recall
+  - If the first letter is already assigned, use a letter that is as close as possible to the first letter of the command name (“N” for Insert)
+  - Use a distinctive consonant from the command name (“W” for View)
+  - Use a vowel from the command name.
 
 ## Localize access keys
 
@@ -226,6 +226,7 @@ Use the x:Uid extension in markup to apply localized resources as shown here:
 ``` xaml
 <Button Content="Home" AccessKey="H" x:Uid="HomeButton" />
 ```
+
 Resources for each language are added to corresponding String folders in the project:
 
 ![English and Spanish resource string folders](images/accesskeys/resource-string-folders.png)
@@ -238,7 +239,7 @@ Localized access keys are specified in your projects resources.resw file:
 
 _Specify the AccessKey property specified in the resources.resw file_
 
-For more info, see [Translating UI resources ](/previous-versions/windows/apps/hh965329(v=win.10))
+For more info, see [Translating UI resources](/previous-versions/windows/apps/hh965329(v=win.10)).
 
 ## Key Tip positioning
 
@@ -252,20 +253,20 @@ _Example of automatic Key Tip placement_
 
 However, should you need more control over Key Tip positioning, we recommend the following:
 
-1.  **Obvious association principle**: The user can associate the control with the Key Tip easily.
+1. **Obvious association principle**: The user can associate the control with the Key Tip easily.
 
     a.  The Key Tip should be **close** to the element who have the access key (the owner).  
-    b.  The Key Tip should **avoid covering enabled elements** that have access keys.   
-    c.  If a Key Tip can’t be placed close to its owner, it should overlap the owner. 
+    b.  The Key Tip should **avoid covering enabled elements** that have access keys.
+    c.  If a Key Tip can’t be placed close to its owner, it should overlap the owner.
 
-2.  **Discoverability**: The user can discover the control with the Key Tip quickly.
+2. **Discoverability**: The user can discover the control with the Key Tip quickly.
 
     a.  The Key Tip never **overlaps** other Key Tips.  
 
-3.  **Easy scanning:** The user can skim the Key Tips easily.
+3. **Easy scanning:** The user can skim the Key Tips easily.
 
     a.  Key Tips should be **aligned** with each other and with the UI Element.
-    b.  Key Tips should be **grouped** as much as possible. 
+    b.  Key Tips should be **grouped** as much as possible.
 
 ### Relative position
 
@@ -313,7 +314,7 @@ _Set vertical and horizontal Key Tip offsets for a button_
 
 ### Screen edge alignment {#screen-edge-alignment .ListParagraph}
 
-The location of a Key Tip is automatically adjusted based on the screen edge to ensure the Key Tip is fully visible. When this occurs, the distance between the control and Key Tip alignment point might differ from the values specified for the horizontal and vertical offsets .
+The location of a Key Tip is automatically adjusted based on the screen edge to ensure the Key Tip is fully visible. When this occurs, the distance between the control and Key Tip alignment point might differ from the values specified for the horizontal and vertical offsets.
 
 ![Screenshot of Key Tip screen edge alignment](images/accesskeys/keytips-screen-edge.png)
 
@@ -354,8 +355,9 @@ If you specify the AccessKey property on a UIElement or TextElement control, you
 
 ## Related articles
 
-* [Keyboard interactions](keyboard-interactions.md)
-* [Keyboard accelerators](keyboard-accelerators.md)
+- [Keyboard interactions](keyboard-interactions.md)
+- [Keyboard accelerators](keyboard-accelerators.md)
 
 **Samples**
-* [XAML Controls Gallery (aka XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+- [XAML Controls Gallery (aka XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)

@@ -4,14 +4,14 @@ description: Extend Cortana with more flexible and natural voice commands that l
 author: kbridge
 label: Conceptual
 ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
-ms.date: 01/28/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: cortana
 ---
 
 # Support natural language voice commands in Cortana
 
->[!WARNING]
+> [!WARNING]
 > This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename "20H1").
 >
 > See [Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) for how Cortana is transforming modern productivity experiences.
@@ -21,8 +21,8 @@ Extend **Cortana** with more flexible and natural voice commands that let a user
 > [!NOTE]
 > **Important APIs**
 >
-> - [**Windows.ApplicationModel.VoiceCommands**](/uwp/api/Windows.ApplicationModel.VoiceCommands)
-> - [**VCD elements and attributes v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+> - [Windows.ApplicationModel.VoiceCommands](/uwp/api/Windows.ApplicationModel.VoiceCommands)
+> - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
 Using voice commands to extend Cortana with functionality from your app requires the user to specify both the app and the command or function to execute. This is typically accomplished by announcing the app name at the beginning or the end of the voice command. For example, "Adventure Works, add a new trip to Las Vegas."
 

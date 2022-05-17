@@ -5,10 +5,11 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
+
 # Recognize Windows Ink strokes as text and shapes
 
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
@@ -26,7 +27,7 @@ In this example, recognition is initiated when the user clicks a button to indic
 
 **Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
-1. First, we set up the UI (MainPage.xaml). 
+1. First, we set up the UI (MainPage.xaml).
 
    The UI includes a "Recognize" button, an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and a standard [**Canvas**](/uwp/api/windows.ui.xaml.controls.canvas). When the "Recognize" button is pressed, all ink strokes on the ink canvas are analyzed and (if recognized) corresponding shapes and text are drawn on the standard canvas. The original ink strokes are then deleted from the ink canvas.
 
@@ -290,7 +291,7 @@ In this example, recognition is initiated when the user clicks a button to indic
 
 1. First, we set up the UI.
 
-   The UI includes a "Recognize" button, the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and an area to display recognition results.    
+   The UI includes a "Recognize" button, the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and an area to display recognition results.
 
    ```xaml
    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -355,7 +356,7 @@ In this example, recognition is initiated when the user clicks a button to indic
 
 4. Finally, we perform the basic handwriting recognition. For this example, we use the click event handler of the "Recognize" button to perform the handwriting recognition.
 
-   - An [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) stores all ink strokes in an [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) object. The strokes are exposed through the [**StrokeContainer**](/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) property of the **InkPresenter** and retrieved using the [**GetStrokes**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) method. 
+   - An [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) stores all ink strokes in an [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) object. The strokes are exposed through the [**StrokeContainer**](/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) property of the **InkPresenter** and retrieved using the [**GetStrokes**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) method.
 
     ```csharp
     // Get all strokes on the InkCanvas.
@@ -471,16 +472,16 @@ In this example, recognition is initiated when the user clicks a button to indic
 
 The handwriting recognition built into the Windows ink platform includes an extensive subset of locales and languages supported by Windows.
 
-See the [**InkRecognizer.Name**](/uwp/api/windows.ui.input.inking.inkrecognizer.name) property topic for a list of languages supported by the [**InkRecognizer**](/uwp/api/Windows.UI.Input.Inking.InkRecognizer) .
+See the [**InkRecognizer.Name**](/uwp/api/windows.ui.input.inking.inkrecognizer.name) property topic for a list of languages supported by the [**InkRecognizer**](/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
 Your app can query the set of installed handwriting recognition engines and use one of those, or let a user select their preferred language.
 
-**Note**  
-Users can see a list of installed languages by going to **Settings -&gt; Time & Language**. Installed languages are listed under **Languages**.
+> [!NOTE]
+> Users can see a list of installed languages by going to **Settings** > **Time & Language**. Installed languages are listed under **Languages**.
 
 To install new language packs and enable handwriting recognition for that language:
 
-1. Go to **Settings &gt; Time & language &gt; Region & language**.
+1. Go to **Settings** > **Time & language** > **Region & language**.
 2. Select **Add a language**.
 3. Select a language from the list, then choose the region version. The language is now listed on the **Region & language** page.
 4. Click the language and select **Options**.
@@ -594,7 +595,7 @@ The recognition is initiated by the user clicking a button when they are finishe
         }
     }
     ```
-    
+
 4. Update the handwriting recognizer if the recognizer combo box selection changes.
 
    Use the [**InkRecognizerContainer**](/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) to call [**SetDefaultRecognizer**](/uwp/api/windows.ui.input.inking.inkrecognizercontainer.setdefaultrecognizer) based on the selected recognizer from the recognizer combo box.

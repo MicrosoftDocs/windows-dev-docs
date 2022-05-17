@@ -4,13 +4,13 @@ title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Rotation
 
+# Rotation
 
 This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your Windows app.
 
@@ -18,10 +18,9 @@ This article describes the new Windows UI for rotation and provides user experie
 
 ## Dos and don'ts
 
--   Use rotation to help users directly rotate UI elements.
+- Use rotation to help users directly rotate UI elements.
 
 ## Additional usage guidance
-
 
 **Overview of rotation**
 
@@ -29,14 +28,14 @@ Rotation is the touch-optimized technique used by Windows apps to enable users t
 
 Depending on the input device, the rotation interaction is performed using:
 
--   A mouse or active pen/stylus to move the rotation gripper of a selected object.
--   Touch or passive pen/stylus to turn the object in the desired direction using the rotate gesture.
+- A mouse or active pen/stylus to move the rotation gripper of a selected object.
+- Touch or passive pen/stylus to turn the object in the desired direction using the rotate gesture.
 
 **When to use rotation**
 
 Use rotation to help users directly rotate UI elements. The following diagrams show some of the supported finger positions for the rotation interaction.
 
-![diagram demonstrating various finger postures supported by rotation.](images/ux-rotate-positions.png)
+![Diagram demonstrating various finger postures supported by rotation.](images/ux-rotate-positions.png)
 
 **Note**  
 Intuitively, and in most cases, the rotation point is one of the two touch points unless the user can specify a rotation point unrelated to the contact points (for example, in a drawing or layout application). The following images demonstrate how the user experience can be degraded if the rotation point is not constrained in this way.
@@ -53,9 +52,7 @@ In this third picture, the center of rotation has been defined by the applicatio
 In this last picture, the center of rotation has been defined by the application (or set by the user) to be a point in the middle of the left edge of the picture. Again, unless the user has chosen this setting, the illusion of direct manipulation is broken in this case.
 
 ![image showing a rotated picture with the rotation point constrained to the leftmost center of the picture rather than either of the two initial touch points.](images/ux-rotate-points4.png)
-
  
-
 Windows 10 supports three types of rotation: free, constrained, and combined.
 
 <table>
@@ -86,7 +83,6 @@ Windows 10 supports three types of rotation: free, constrained, and combined.
 <strong>Note</strong>  A user interface rail is a feature in which an area around a target constrains movement towards some specific value or location to influence its selection.
 </div>
 <div>
- 
 </div></td>
 </tr>
 </tbody>

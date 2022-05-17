@@ -2,7 +2,7 @@
 title: Deep link from a background app in Cortana to a foreground app - Cortana UWP design and development
 description: Provide deep links from a background app in **Cortana** that launch the app to the foreground in a specific state or context.
 ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
-ms.date: 01/28/2021
+ms.date: 05/16/2022
 ms.topic: article
 keywords: cortana
 ---
@@ -24,7 +24,7 @@ A deep link is displayed by default on the **Cortana** completion screen as show
 :::image type="content" source="images/cortana/cortana-completion-screen-upcomingtrip-small.png" alt-text="Screenshot of Cortana background app completion for an upcoming trip":::
 
 > [!NOTE]
-> **Important APIs**
+> Important APIs
 >
 > - [**Windows.ApplicationModel.VoiceCommands**](/uwp/api/Windows.ApplicationModel.VoiceCommands)
 > - [**VCD elements and attributes v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
@@ -57,7 +57,7 @@ You can provide a launch argument for this link that opens your app in similar c
 
 In this example from AdventureWorksVoiceCommandService.cs of the **AdventureWorks** sample, we pass the specified destination (`destination`) string to the SendCompletionMessageForDestination method, which retrieves all matching trips and provides a deep link to the app.
 
-First, we create a [**VoiceCommandUserMessage**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage) (```userMessage```) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) list object is then created for displaying the collection of result cards on the canvas.
+First, we create a [**VoiceCommandUserMessage**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage) (userMessage) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) list object is then created for displaying the collection of result cards on the canvas.
 
 These two objects are then passed to the [CreateResponse](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) method of the [**VoiceCommandResponse**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object (`response`). We then set the [**AppLaunchArgument**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) property value of the response object to the value of `destination` passsed to this function. When a user taps a content tile on the Cortana canvas, the parameter values are passed to the app through the response object.
 
@@ -72,19 +72,19 @@ Finally, we call the [**ReportSuccessAsync**](/uwp/api/Windows.ApplicationModel.
 private async Task SendCompletionMessageForDestination(string destination)
 {
 ...
-	IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+ IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-	var userMessage = new VoiceCommandUserMessage();
-	var destinationsContentTiles = new List<VoiceCommandContentTile>();
+ var userMessage = new VoiceCommandUserMessage();
+ var destinationsContentTiles = new List<VoiceCommandContentTile>();
 ...
-	var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+ var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
 
-	if (trips.Count() > 0)
-	{
-		response.AppLaunchArgument = destination;
-	}
+ if (trips.Count() > 0)
+ {
+  response.AppLaunchArgument = destination;
+ }
 
-	await voiceServiceConnection.ReportSuccessAsync(response);
+ await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
 
@@ -98,9 +98,9 @@ Like the "Go to &lt;app&gt;" links, you can provide a launch argument to open yo
 
 In this example from AdventureWorksVoiceCommandService.cs of the **AdventureWorks** sample, we pass the specified destination to the SendCompletionMessageForDestination method, which retrieves all matching trips and provides content cards with deep links to the app.
 
-First, we create a  [**VoiceCommandUserMessage**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage) (```userMessage```) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) list object is then created for displaying the collection of result cards on the canvas. 
+First, we create a  [**VoiceCommandUserMessage**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage) (`userMessage`) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) list object is then created for displaying the collection of result cards on the canvas.
 
-These two objects are then passed to the [CreateResponse](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) method of the [**VoiceCommandResponse**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object (```response```). We then set the [**AppLaunchArgument**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) property value to the value of the destination in the voice command.
+These two objects are then passed to the [CreateResponse](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) method of the [**VoiceCommandResponse**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) object (`response`). We then set the [**AppLaunchArgument**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) property value to the value of the destination in the voice command.
 
 Finally, we call the [**ReportSuccessAsync**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) method of the [**VoiceCommandServiceConnection**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection).
 Here, we add two content tiles with different [**AppLaunchArgument**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse) parameter values to a [**VoiceCommandContentTile**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) list used in the [**ReportSuccessAsync**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) call of the [**VoiceCommandServiceConnection**](/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection) object.
@@ -113,80 +113,80 @@ Here, we add two content tiles with different [**AppLaunchArgument**](/uwp/api/W
 /// <param name="destination">The destination specified in the voice command.</param>
 private async Task SendCompletionMessageForDestination(string destination)
 {
-	// If this operation is expected to take longer than 0.5 seconds, the task must
-	// supply a progress response to Cortana before starting the operation, and
-	// updates must be provided at least every 5 seconds.
-	string loadingTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-	await ShowProgressScreen(loadingTripToDestination);
-	Model.TripStore store = new Model.TripStore();
-	await store.LoadTrips();
+    // If this operation is expected to take longer than 0.5 seconds, the task must
+    // supply a progress response to Cortana before starting the operation, and
+    // updates must be provided at least every 5 seconds.
+    string loadingTripToDestination = string.Format(
+        cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
+        destination);
+    await ShowProgressScreen(loadingTripToDestination);
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-	// Query for the specified trip. 
+    // Query for the specified trip. 
     // The destination should be in the phrase list. However, there might be  
     // multiple trips to the destination. We pick the first.
-	IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-	var userMessage = new VoiceCommandUserMessage();
-	var destinationsContentTiles = new List<VoiceCommandContentTile>();
-	if (trips.Count() == 0)
-	{
-		string foundNoTripToDestination = string.Format(
-			   cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
-			   destination);
-		userMessage.DisplayMessage = foundNoTripToDestination;
-		userMessage.SpokenMessage = foundNoTripToDestination;
-	}
-	else
-	{
-		// Set plural or singular title.
-		string message = "";
-		if (trips.Count() > 1)
-		{
-			message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
-		}
-		else
-		{
-			message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
-		}
-		userMessage.DisplayMessage = message;
-		userMessage.SpokenMessage = message;
+    var userMessage = new VoiceCommandUserMessage();
+    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    if (trips.Count() == 0)
+    {
+        string foundNoTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userMessage.DisplayMessage = foundNoTripToDestination;
+        userMessage.SpokenMessage = foundNoTripToDestination;
+    }
+    else
+    {
+        // Set plural or singular title.
+        string message = "";
+        if (trips.Count() > 1)
+        {
+            message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
+        }
+        else
+        {
+            message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
+        }
+        userMessage.DisplayMessage = message;
+        userMessage.SpokenMessage = message;
+        
+        // Define a tile for each destination.
+        foreach (Model.Trip trip in trips)
+        {
+            int i = 1;
+            
+            var destinationTile = new VoiceCommandContentTile();
+            
+            destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+            destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+            
+            destinationTile.AppLaunchArgument = trip.Destination;
+            destinationTile.Title = trip.Destination;
+            if (trip.StartDate != null)
+            {
+                destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+            }
+            else
+            {
+                destinationTile.TextLine1 = trip.Destination + " " + i;
+            }
+            
+            destinationsContentTiles.Add(destinationTile);
+            i++;
+        }
+    }
 
-		// Define a tile for each destination.
-		foreach (Model.Trip trip in trips)
-		{
-			int i = 1;
-			
-			var destinationTile = new VoiceCommandContentTile();
-
-			destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
-			destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
-
-			destinationTile.AppLaunchArgument = trip.Destination;
-			destinationTile.Title = trip.Destination;
-			if (trip.StartDate != null)
-			{
-				destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
-			}
-			else
-			{
-				destinationTile.TextLine1 = trip.Destination + " " + i;
-			}
-
-			destinationsContentTiles.Add(destinationTile);
-			i++;
-		}
-	}
-
-	var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
-
-	if (trips.Count() > 0)
-	{
-		response.AppLaunchArgument = destination;
-	}
-
-	await voiceServiceConnection.ReportSuccessAsync(response);
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+    
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
+    
+    await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
 
