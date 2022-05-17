@@ -186,17 +186,17 @@ Application discovery and installation are the first two interactions that a use
 
   - Listing your app on [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) can make your app more discoverable for users.   
   - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.
-  - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to our store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
+  - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
 
 #### Installation and uninstallation
 
   - Support a per-user install. This will enable users to install more easily and avoid UAC prompts.
   - Ensure that your application's installation is error free, transparent, and thoughtful about its file management. Your application's installation shouldn't leave any temporary files behind.   
   - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.
-  - If you're working in an enterprise environment, consider using silent installation.
-  - Ensure your app is listed in the Settings -> All Apps list.
+  - Support silent installation. This is important for app manageability in enterprise environments.
+  - Ensure your app is listed in the Apps -> Installed Apps list.
   - Consider using MSIX to ensure that users experience a seamless installation, update, and uninstallation experience. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
-  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
+  - For unpackaged apps, ensure that your application can be easily uninstalled through the Apps -> Installed Apps list in Settings. When your application is uninstalled, ensure that Start menu entries, files, directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
   - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled.
   - Avoid installing or updating system binaries that may require a reboot.   
   - Integrate with [RestartManager](/windows/win32/rstmgr/about-restart-manager) to save and restore state between OS updates.
