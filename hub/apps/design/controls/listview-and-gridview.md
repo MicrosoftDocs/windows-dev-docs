@@ -53,9 +53,9 @@ Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) 
 
 ## Examples
 
-| XAML Controls Gallery | &nbsp; |
+| WinUI 2 Gallery | &nbsp; |
 | --- | --- |
-| ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon-sm.png) | If you already have the XAML Controls Gallery app installed, see the [ListView](xamlcontrolsgallery:/item/ListView) and [GridView](xamlcontrolsgallery:/item/GridView) controls in action. If the app isn't already installed: <li>[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)<li>[Get the source code (GitHub)](https://github.com/Microsoft/Xaml-Controls-Gallery) |
+| ![WinUI 2 Gallery](images/xaml-controls-gallery-app-icon-sm.png) | If you already have the WinUI 2 Gallery app installed, see the [ListView](winui2gallery:/item/ListView) and [GridView](winui2gallery:/item/GridView) controls in action. If the app isn't already installed: <li>[Get the WinUI 2 Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)<li>[Get the source code (GitHub)](https://github.com/Microsoft/WinUI-Gallery) |
 
 ## Create a list view or a grid view
 
@@ -596,7 +596,7 @@ ListView and GridView controls support dragging and dropping items within their 
 
 - [XAML ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView): Demonstrates the ListView and GridView controls.
 - [XAML drag and drop sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop): Demonstrates drag and drop with the ListView control.
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery): See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery): See all the XAML controls in an interactive format.
 
 ## Related articles
 

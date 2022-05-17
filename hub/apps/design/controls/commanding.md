@@ -1092,7 +1092,7 @@ Use the following approaches when building commands for your Windows apps:
 
 ## Next steps
 
-For a complete example that demonstrates a [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) implementation, see the [XAML Controls Gallery](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) sample.
+For a complete example that demonstrates a [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) and [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) implementation, see the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) sample.
 
 ## See also
 
@@ -1109,4 +1109,4 @@ For a complete example that demonstrates a [XamlUICommand](/uwp/api/windows.ui.x
 #### Other samples
 
 - [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
-- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery)

@@ -10,7 +10,7 @@ ms.topic: article
 
 The first open-source version of the Windows UI Library – WinUI 2.1 (released April 2019).
 
-WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [XAML Controls Gallery](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gives you samples to explore all the cool new features added to the library.
+WinUI gives you many of the latest Windows UX platform features, including up-to-date Fluent controls and styles, available in a way you can use right away, backward-compatible to Windows 10 Anniversary Update (14393). The [WinUI 2 Gallery](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gives you samples to explore all the cool new features added to the library.
 
 Download the [WinUI 2.1 NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004)
 
@@ -71,13 +71,16 @@ With Windows 10 May 2019 Update, many of our common controls add elevation by us
 
 ## Examples
 
-The Xaml Controls Gallery sample app includes interactive demos and sample code for using WinUI controls.
-
-* Install the XAML Controls Gallery app from the [Microsoft Store](
-https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
-
-* The Xaml Controls Gallery is also [open source on GitHub](
-https://github.com/Microsoft/Xaml-Controls-Gallery)
+> [!TIP]
+> For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
+>
+> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+>
+> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+>
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+>
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ## Documentation
 

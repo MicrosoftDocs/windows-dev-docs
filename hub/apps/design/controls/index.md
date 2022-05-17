@@ -129,18 +129,14 @@ Detailed information about specific controls and patterns.
     :::column-end:::
 :::row-end:::
 
+## WinUI Gallery
 
+Get the _WinUI Gallery_ apps from the Microsoft Store to see these controls and the Fluent Design System in action. The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality. The apps are an interactive companion to this website. When you have them installed, you can use links on individual control pages to launch the app and see the control in action.
 
-
-## XAML Controls Gallery
-
-Get the _XAML Controls Gallery_ app from the Microsoft Store to see these controls and the Fluent Design System in action. The app is an interactive companion to this website. When you have it installed, you can use links on individual control pages to launch the app and see the control in action.
-
-<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a>
-
-<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
-
-<img src="images/xaml-controls-gallery.png" alt="XAML Controls Gallery screen" />
+> [!div class="checklist"]
+>
+> - Get the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> - Get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ## Additional controls
 

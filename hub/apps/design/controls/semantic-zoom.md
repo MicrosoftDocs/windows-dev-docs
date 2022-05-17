@@ -40,24 +40,24 @@ Don't confuse semantic zooming with optical zooming. While they share both the s
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/SemanticZoom">open the app and see the SemanticZoom in action</a>.</p>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/SemanticZoom">open the app and see the SemanticZoom in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-**XAML Controls Gallery**
+**WinUI 2 Gallery**
 
 The SemanticZoom section within the Controls Gallery demonstrates a navigation experience that allows users to quickly zoom in and out of grouped sections of control types. 
 
-![example of semantic zoom used in the XAMl Controls Gallery](images/semanticzoom-gallery.gif)
+![example of semantic zoom used in the WinUI Gallery](images/semanticzoom-gallery.gif)
 
 **Photos app**
 
@@ -92,7 +92,7 @@ Before you use a semantic zoom, you should understand how to use a list view wit
 </SemanticZoom>
  ```
  
-The examples here are taken from the SemanticZoom page of the [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics). You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
+The examples here are taken from the SemanticZoom page of the [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery). You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
   
 **Define the zoomed-in view**
 
@@ -189,7 +189,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 
 ## Related articles

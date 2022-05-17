@@ -60,14 +60,14 @@ The **TreeView** APIs support the following features:
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/TreeView">open the app and see the TreeView in action</a>.</p>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/TreeView">open the app and see the TreeView in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -259,7 +259,7 @@ For example, in a file explorer app, you could use one data template for folders
 Here is an example of how to create and use an item template selector.  For more info, see the [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) class.
 
 > [!NOTE]
-> This code is part of a larger example and won't work on its own. To see the full example, including the code that defines `ExplorerItem`, check out the [Xaml-Controls-Gallery repository](https://github.com/microsoft/Xaml-Controls-Gallery) on GitHub. [TreeViewPage.xaml](https://github.com/microsoft/Xaml-Controls-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml) and [TreeViewPage.xaml.cs](https://github.com/Microsoft/Xaml-Controls-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs) contain the relevant code.
+> This code is part of a larger example and won't work on its own. To see the full example, including the code that defines `ExplorerItem`, check out the [Xaml-Controls-Gallery repository](https://github.com/Microsoft/WinUI-Gallery) on GitHub. [TreeViewPage.xaml](https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml) and [TreeViewPage.xaml.cs](https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs) contain the relevant code.
 
 ```xaml
 <Page.Resources>
