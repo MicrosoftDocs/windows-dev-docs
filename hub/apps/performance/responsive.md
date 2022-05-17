@@ -19,7 +19,7 @@ Customers can feel when an application launch, menu navigation, or page/content 
 
 The basic steps to drive latency optimization are:
 
-1. Define the scenario and add "TraceLogging" events.
+1. Define the scenario and add TraceLogging events.
 
     Make a list of the key interactions that a user will go through while using your app, such as launch, opening a menu, navigating to a new page and rendering content, etc. For each of these interactions, add a start event and stop event to be used for measurement and analysis. Learn more about how to add [TraceLogging](/windows/win32/tracelogging/trace-logging-portal), a format for self-describing Event Tracing for Windows (ETW).
 
