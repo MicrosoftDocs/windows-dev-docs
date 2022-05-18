@@ -167,7 +167,7 @@ Currently Mac and Linux profiles are not included.
 
 ### Will this work on video games?
 
-It depends on how the game accesses your keys. Certain keyboard APIs do not work with Keyboard Manager.
+We suggest that you avoid using Keyboard Manager when playing games as it may affect the game's performance. It will also depend on how the game accesses your keys. Certain keyboard APIs do not work with Keyboard Manager.
 
 ### Will remapping work if I change my input language?
 
@@ -194,6 +194,7 @@ If you have tried to remap a key or shortcut and are having trouble, it could be
 
 ## Known Issues
 
+- Keyboard Manager should not be used when playing video games.  Keyboard Manager interception of keypresses currently will impact the FPS.
 - [Remapping keys like Win, Ctrl, Alt or Shift may break gestures and some special buttons](https://github.com/microsoft/PowerToys/issues/3703)
 - AltGr and Ctrl+Alt gives issues, since AltGr behaves as (L)Ctrl + (R)Alt and remapping one of these keys can break the function.
 
