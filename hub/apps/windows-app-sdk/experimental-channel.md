@@ -39,7 +39,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 
 - **New features**: Support for showing a ContentDialog per window rather than per thread.
 - **Bugs**: For the full list of bugs addressed in this release, see [our GitHub repo](https://aka.ms/winui3/1.0-exp-announcement). 
-- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Controls Gallery app [from GitHub](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
+- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/Microsoft/WinUI-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
 For more information or to get started developing with WinUI, see:
 

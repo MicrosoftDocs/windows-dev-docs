@@ -19,14 +19,14 @@ There are several things to consider when choosing a layout panel:
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, see the <a href="xamlcontrolsgallery:/item/RelativePanel">RelativePanel</a>, <a href="xamlcontrolsgallery:/item/StackPanel">StackPanel</a>, <a href="xamlcontrolsgallery:/item/Grid">Grid</a>, <a href="xamlcontrolsgallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>, and <a href="xamlcontrolsgallery:/item/Canvas">Canvas</a> in action.</p>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, see the <a href="winui2gallery:/item/RelativePanel">RelativePanel</a>, <a href="winui2gallery:/item/StackPanel">StackPanel</a>, <a href="winui2gallery:/item/Grid">Grid</a>, <a href="winui2gallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>, and <a href="winui2gallery:/item/Canvas">Canvas</a> in action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -268,4 +268,4 @@ There are several special-purpose panels that can be used only as an [**ItemsPan
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.

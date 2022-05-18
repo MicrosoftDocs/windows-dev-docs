@@ -75,7 +75,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 - If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
 - See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
-- Use the [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) to evaluate the controls.
+- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) to evaluate the controls.
 
 ### Desktop apps (Win32)
 
@@ -83,7 +83,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ### WebView and other platforms
 
-- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and XAML Controls Gallery can be used to copy the styles.
+- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and WinUI 2 Gallery can be used to copy the styles.
 
 ## 5. Use the latest design materials (Acrylic and Mica)
 

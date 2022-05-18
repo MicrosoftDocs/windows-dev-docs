@@ -640,4 +640,4 @@ public class MyListView : ListView
 
 ### Samples
 
-- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)

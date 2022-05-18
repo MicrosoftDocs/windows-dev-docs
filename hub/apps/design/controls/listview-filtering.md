@@ -132,8 +132,8 @@ Now, as the user types in their filtering terms in the `FilterByLName` TextBox, 
 ## Next steps
 
 ### Get the sample code
-- If you have the XAML Controls Gallery</strong> app installed, click [here](xamlcontrolsgallery:/item/ListView) to open the app and see a more robust, in-depth example of list filtering on the ListView page.
-- Get the [XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT).
+- If you have the WinUI 2 Gallery</strong> app installed, click [here](winui2gallery:/item/ListView) to open the app and see a more robust, in-depth example of list filtering on the ListView page.
+- Get the [WinUI 2 Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT).
 
 ### Related articles
 - [Lists](lists.md)

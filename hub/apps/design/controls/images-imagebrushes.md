@@ -23,14 +23,14 @@ Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrus
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Image">open the app and see the Image in action</a>.</p>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Image">open the app and see the Image in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -149,14 +149,14 @@ For more info about how to design for scaling, see [UX guidelines for layout and
 
 It's typical to specify Image and ImageBrush elements using XAML rather than code. This is because these elements are often the output of design tools as part of a XAML UI definition.
 
-If you define an Image or ImageBrush using code, use the default constructors, then set the relevant source property ([Image.Source](/uwp/api/windows.ui.xaml.controls.image.source) or [ImageBrush.ImageSource](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)). The source properties require a [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (not a URI) when you set them using code. If your source is a stream, use the [SetSourceAsync](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [BitmapImage](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) constructor that takes a URI. You might also consider handling the [ImageOpened](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available. For example code, see [XAML Controls Gallery](/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/).
+If you define an Image or ImageBrush using code, use the default constructors, then set the relevant source property ([Image.Source](/uwp/api/windows.ui.xaml.controls.image.source) or [ImageBrush.ImageSource](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)). The source properties require a [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (not a URI) when you set them using code. If your source is a stream, use the [SetSourceAsync](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [BitmapImage](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) constructor that takes a URI. You might also consider handling the [ImageOpened](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available. For example code, see [WinUI 2 Gallery](/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/).
 
 > [!NOTE]
 > If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [ResourceManager](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) and [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](/previous-versions/windows/apps/jj552947(v=win.10)).
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

@@ -154,11 +154,11 @@ If you want your app to run best in an enterprise environment, add support for M
 
 [MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for users, and it can reduce infrastructure costs for your enterprise.  
 
-#### Windows on ARM
+#### Windows on Arm
 
-Windows can run on ARM devices. ARM PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
+Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified. 
 
-For best performance, you should enable your apps to take full advantage of the energy-efficient ARM processor architecture by either building a full ARM version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on ARM](/windows/uwp/porting/apps-on-arm) and [ARM64EC for Windows 11 apps on ARM](/windows/uwp/porting/arm64ec).
+For best performance, you should enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
 
 
 #### Push notifications
@@ -186,17 +186,17 @@ Application discovery and installation are the first two interactions that a use
 
   - Listing your app on [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) can make your app more discoverable for users.   
   - If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.
-  - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to our store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
+  - Adding your app to the Microsoft Store will also make it available in the Windows Package Manager [WinGet](/windows/package-manager/winget/). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in winget via the [winget repository](/windows/package-manager/package/).
 
 #### Installation and uninstallation
 
   - Support a per-user install. This will enable users to install more easily and avoid UAC prompts.
   - Ensure that your application's installation is error free, transparent, and thoughtful about its file management. Your application's installation shouldn't leave any temporary files behind.   
   - Avoid requiring elevated permissions to install and requiring operating system reboots when possible.
-  - If you're working in an enterprise environment, consider using silent installation.
-  - Ensure your app is listed in the Settings -> All Apps list.
+  - Support silent installation. This is important for app manageability in enterprise environments.
+  - Ensure your app is listed in the Apps -> Installed Apps list.
   - Consider using MSIX to ensure that users experience a seamless installation, update, and uninstallation experience. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes). 
-  - For unpackaged apps, ensure that your application can be easily uninstalled through the Add or Remove Programs control. When your application is uninstalled, ensure that ARP entries, Start menu entries, files and directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
+  - For unpackaged apps, ensure that your application can be easily uninstalled through the Apps -> Installed Apps list in Settings. When your application is uninstalled, ensure that Start menu entries, files, directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.  
   - Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like `Documents`, which can then be retained by users even after the app is uninstalled.
   - Avoid installing or updating system binaries that may require a reboot.   
   - Integrate with [RestartManager](/windows/win32/rstmgr/about-restart-manager) to save and restore state between OS updates.
@@ -245,8 +245,7 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, etc.
 2. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
 3. Run Accessibility Insights automated checks in your PRs or CI/CD.  For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
-4. Remind everyone on your team to run FastPass before completing a PR. For more details, see [MerlinBot and Accessibility Insights](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/accessibility-insights/accessibility-insights-in-merlinbot).
-5. Fix all bugs you find, they all have direct impact on accessibility.
+4. Fix all bugs you find, they all have direct impact on accessibility.
 
 ### Security and privacy
 
