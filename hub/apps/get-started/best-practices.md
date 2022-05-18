@@ -301,4 +301,4 @@ Building applications on Windows gives you access to over a billion devices and 
 ## Related articles
 
 - [Windows Dev Center](https://developer.microsoft.com/windows/)
-- [What's cool in Windows 11](/windows/windows-for-developers/)
+- [What's cool for developers in Windows 11](https://developer.microsoft.com/windows/windows-for-developers/)
