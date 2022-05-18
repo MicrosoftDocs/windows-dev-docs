@@ -90,7 +90,7 @@ The following classes are not supported in desktop apps because they have a **Ge
 | [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
 | [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
 
-The following classes *are* supported in desktop apps; but to retrieve an instance in a desktop app, you use a mechanism that's different from the**GetForCurrentView** or **CreateForCurrentView** methods. This list might not be comprehensive.
+The following classes *are* supported in desktop apps; but to retrieve an instance in a desktop app, you use a mechanism that's different from the **GetForCurrentView** or **CreateForCurrentView** methods. This list might not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
