@@ -1,7 +1,7 @@
 ---
 description: This article describes the WinRT APIs that are not supported for use in desktop apps.
 title: Windows Runtime APIs not supported in desktop apps
-ms.date: 08/16/2021
+ms.date: 05/18/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
@@ -49,7 +49,7 @@ For those classes below that have a COM interface alternative API listed, C# dev
 > [!NOTE]
 > One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
 
-The following classes are not supported in desktop apps because they have a `GetForCurrentView` or `CreateForCurrentView` method. This list may not be comprehensive.
+The following classes are not supported in desktop apps because they have a **GetForCurrentView** or **CreateForCurrentView** method. This list might not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
@@ -63,7 +63,6 @@ The following classes are not supported in desktop apps because they have a `Get
 | [CoreWindowResizeManager](/uwp/api/windows.ui.core.corewindowresizemanager) | None |
 | [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) | Use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) COM interface instead (in shobjidl_core.h). |
 | [DisplayEnhancementOverride](/uwp/api/windows.graphics.display.displayenhancementoverride) | None |
-| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | Instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>Instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3.  |
 | [EdgeGesture](/uwp/api/windows.ui.input.edgegesture) | None |
 | [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview) | None |
 | [HdmiDisplayInformation](/uwp/api/windows.graphics.display.core.hdmidisplayinformation) | None |
@@ -90,6 +89,12 @@ The following classes are not supported in desktop apps because they have a `Get
 | [UserActivityRequestManager](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [IUserActivityRequestManagerInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface insead (in useractivityinterop.h). |
 | [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
 | [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
+
+The following classes *are* supported in desktop apps; but to retrieve an instance in a desktop app, you use a mechanism that's different from the**GetForCurrentView** or **CreateForCurrentView** methods. This list might not be comprehensive.
+
+|  Class  |  Alternative APIs |
+|---------|-------------------|
+| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | To retrieve an instance of **DisplayInformation**, use the [IDisplayInformationStaticsInterop](/windows/win32/api/windows.graphics.display.interop/nn-windows-graphics-display-interop-idisplayinformationstaticsinterop) interface.<br/><br/>Alternatively, instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, you can use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>And, instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, you have the option to use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3.|
 
 ### Classes that implement IInitializeWithWindow
 
