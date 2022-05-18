@@ -98,7 +98,7 @@ The most important thing to remember in relation to page layout is that your app
 
 - **DPI awareness**
   
-  WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see [High DPI Desktop Application Development on Windows](https://docs.microsoft.com/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
+  WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle DPI scaling so you need to do some additional work. Without this work, applications will appear blurry or incorrectly-sized in many common usage scenarios. For information about what is involved in updating a desktop application to render correctly, see [High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows).
 
 #### Toast notifications
 
@@ -152,7 +152,7 @@ Windows apps can be built, packaged, and delivered in a variety of ways. The bes
 
 If you want your app to run best in an enterprise environment, add support for MSIX app attach.
 
-[MSIX app attach](https://docs.microsoft.com/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for users, and it can reduce infrastructure costs for your enterprise.  
+[MSIX app attach](/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for users, and it can reduce infrastructure costs for your enterprise.  
 
 #### Windows on Arm
 
@@ -172,9 +172,8 @@ For best performance, you should enable your apps to take full advantage of the 
 - Avoid sudden, large bursts of requests to WNS. This can lead to throttled responses.
 - Utilize the `MS-CV` header. This will help with end-to-end traceability and diagnostics.
 - Have a back-up mechanism for when notifications don’t work. 
-- Use [Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview) (ANH). ANH gives you access to engagement features like targeting audiences, scheduling notifications, and broadcasting notifications. If you're a Windows-only developer today, using ANH will make it easy for you to transition your notifications infrastructure to other platforms in the future.
-- We do not encourage the use of push notifications for tiles - Windows 11 no longer supports this pattern. 
-
+- Use [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview) (ANH). ANH gives you access to engagement features like targeting audiences, scheduling notifications, and broadcasting notifications. If you're a Windows-only developer today, using ANH will make it easy for you to transition your notifications infrastructure to other platforms in the future.
+- We do not encourage the use of push notifications for tiles - Windows 11 no longer supports this pattern.
 
 ### Application discovery and management
 
