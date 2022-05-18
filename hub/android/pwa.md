@@ -2,7 +2,7 @@
 title: Create a PWA or Hybrid web app for Android
 description: Get started developing Android apps using the PWA approach on Windows.
 author: mattwojo
-ms.author: mattwojo
+ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android on windows, pwa, android, cordova, ionic, phonegap, hybrid web app
