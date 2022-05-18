@@ -167,7 +167,7 @@ Currently Mac and Linux profiles are not included.
 
 ### Will this work on video games?
 
-We do not suggest using Keyboard Manager when playing games as it may affect the game's performance. It will also depend on how the game accesses your keys. Certain keyboard APIs do not work with Keyboard Manager.
+We suggest that you avoid using Keyboard Manager when playing games as it may affect the game's performance. It will also depend on how the game accesses your keys. Certain keyboard APIs do not work with Keyboard Manager.
 
 ### Will remapping work if I change my input language?
 
