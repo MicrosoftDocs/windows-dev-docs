@@ -1,8 +1,8 @@
 ---
-title: Windows app performance overview
+title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
 ms.topic: article
-ms.date: 11/05/2021
+ms.date: 05/16/2022
 ms.author: mattwoj
 author: mattwojo
 ms.reviewer: adityar
@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
 ---
 
-# Windows app performance overview
+# Windows app performance and fundamentals overview
 
-Improving your application's performance gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Battery-powered devices last longer. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
+Improving the performance and fundamentals of your application gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Your app will consume less power, improving battery life and reducing carbon emissions. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
 This page provides an overview of the technologies and development tools for measuring, understanding, and refining the performance of your Windows application. If you are writing a UWP application, be sure to also consult the [UWP Performance](/windows/uwp/debug-test-perf/performance-and-xaml-ui) documentation.
 
@@ -40,6 +40,8 @@ Visual Studio offers tooling to help you monitor your application and give you i
 
 * [Case Study: Double Performance in under 30 minutes](https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/)
 
+* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
+
 ### ![Windows Performance Analyzer Icon](./images/wpa.png) Windows Performance Toolkit
 
 [Windows Performance Recorder](/windows-hardware/test/wpt/windows-performance-recorder) and [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer) enable detailed monitoring and analysis of your application and the entire system using [Event Tracing for Windows (ETW)](/windows-hardware/test/wpt/event-tracing-for-windows). See the links below on how to get started.
@@ -49,8 +51,6 @@ Visual Studio offers tooling to help you monitor your application and give you i
 * [Windows Performance Recorder Intro](https://devblogs.microsoft.com/performance-diagnostics/wpr-intro/)
 
 * [Windows Performance Analyzer Intro](https://devblogs.microsoft.com/performance-diagnostics/wpa-intro/)
-
-* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
 
 ### ![PerfView Icon](./images/dotnet-logo.png) PerfView
 
@@ -88,7 +88,9 @@ Go behind the scenes with developer blogs, written by our performance experts to
 
 ### Performance and Sustainability
 
-Interested in learning how performance engineering intersects with sustainability? 🌍 Check out the [Sustainable Software](https://devblogs.microsoft.com/sustainable-software/) blog.
+Performance engineering intersects directly with the sustainable software movement. Most electrical grids burn fossil fuels to generate electricity. As your application runs on a PC, it consumes incremental power that may be small for a single user but adds up as your user base grows.
+
+Interested in learning how performance engineering intersects with sustainability? 🌍 Check out the [Principles of Green Software Engineering](https://principles.green/) and Microsoft's [Sustainable Software blog](https://devblogs.microsoft.com/sustainable-software/).
 
 * [Measuring Your Application Power and Carbon Impact](https://devblogs.microsoft.com/sustainable-software/measuring-your-application-power-and-carbon-impact-part-1/)
 

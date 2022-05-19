@@ -89,7 +89,7 @@ Elements in the *Value* array contain the following values.
 | market              | string | The ISO 3166 country code of the market in which the desktop application is blocked. |
 | deviceType          | string | One of the following strings that specifies the type of device on which the desktop application is blocked:<p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unknown</strong></li></ul> |
 | blockType            | string | One of the following strings that specifies the type of block found on the device:<p/><ul><li><strong>Potential Sediment</strong></li><li><strong>Temporary Sediment</strong></li><li><strong>Runtime Notification</strong></li></ul><p/><p/>For more information about these block types and what they mean to developers and users, see the description of the [Application blocks report](/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report).  |
-| architecture        | string | The architecture of the device on which the block exists: <p/><ul><li><strong>ARM64</strong></li><li><strong>X86</strong></li></ul> |
+| architecture        | string | The architecture of the device on which the block exists: <p/><ul><li><strong>Arm64</strong></li><li><strong>X86</strong></li></ul> |
 | targetOs            | string | One of the following strings that specifies the Windows 10 OS release on which the desktop application is blocked from running: <p/><ul><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li></ul> |
 | deviceCount         | number | The number of distinct devices that have blocks at the specified aggregation level. |
 

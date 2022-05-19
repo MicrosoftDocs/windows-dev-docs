@@ -191,10 +191,10 @@ Validates that each file's "bitness" in the portable executable header is approp
 
 **Corrective actions**  
 Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest: 
-* If the Target Processor Architecture for your app is Neutral Processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.
-* If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or ARM binary or image types, it will fail the test.
-* If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary. If the package contains ARM binary or image type files, or *only* contains x86 binaries or image type files, it will fail the test.
-* If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test. 
+* If the Target Processor Architecture for your app is Neutral Processor Type, the app package cannot contain x86, x64, or Arm binary or image type files.
+* If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or Arm binary or image types, it will fail the test.
+* If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary. If the package contains Arm binary or image type files, or *only* contains x86 binaries or image type files, it will fail the test.
+* If the Target Processor Architecture for your app is Arm processor type, the app package must only contain Arm binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test. 
 
 ### 5. Supported API test
 Checks the app for the use of any non-compliant APIs. 

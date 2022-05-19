@@ -54,7 +54,7 @@ When the app is instrumented, you're ready to gather events.
 PerfView uses ETW events to help you do all sorts of performance investigations on your app. It also includes a configuration GUI that lets you turn logging for different types of events on or off. PerfView is a free tool and can be downloaded from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=28567). For more information, watch the PerfView tutorial videos.
 
 > [!NOTE]
-> PerfView cannot be used to collect events on ARM systems. To collect events on ARM systems, use Windows Performance Recorder (WPR). For more information, see [Vance Morrison's blog post](/archive/blogs/vancem/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device).
+> PerfView cannot be used to collect events on Arm systems. To collect events on Arm systems, use Windows Performance Recorder (WPR). For more information, see [Vance Morrison's blog post](/archive/blogs/vancem/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device).
 
 You can also invoke PerfView from the command line. To log only the events from your provider, open the Command Prompt window and enter the command:
 

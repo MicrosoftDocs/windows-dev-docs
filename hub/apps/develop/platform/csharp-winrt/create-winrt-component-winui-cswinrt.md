@@ -177,7 +177,8 @@ Consumption from MSIX-packaged apps that use a separate **Windows Application Pa
 
 ## Known issues
 
-- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `ARM64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [Github Issue #1093](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
+- Consuming a C# component as a project reference requires `PublishReadyToRun` to be set to `False`. See [Github Issue #1151](https://github.com/microsoft/CsWinRT/issues/1151) for more details.
+- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `Arm64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [Github Issue #1151](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
       
 ## Related topics
 

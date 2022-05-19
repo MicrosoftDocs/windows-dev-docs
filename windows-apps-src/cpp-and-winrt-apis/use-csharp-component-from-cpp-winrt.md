@@ -120,14 +120,14 @@ You can now build and run the project. Each time you click the button, the numbe
 
 ## Application Minimum Version
 
-The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or higher will enable .NET Standard 2.0 and Windows ARM64 processor support.
+The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or higher will enable .NET Standard 2.0 and Windows Arm64 processor support.
 
 > [!TIP]
-> We recommend using **Application Minimum** versions lower than 16299 to avoid extra build configuration if .NET Standard 2.0 or ARM64 support is not necessary.
+> We recommend using **Application Minimum** versions lower than 16299 to avoid extra build configuration if .NET Standard 2.0 or Arm64 support is not necessary.
 
 ## Configure for Windows 10 Fall Creators Update (10.0; Build 16299)
 
-Follow these steps to enable .NET Standard 2.0 or Windows ARM64 support in the C# projects referenced from your C++/WinRT project.
+Follow these steps to enable .NET Standard 2.0 or Windows Arm64 support in the C# projects referenced from your C++/WinRT project.
 
 In Visual Studio, go to the Solution Explorer and open the shortcut menu for the *CppToCSharpWinRT* project.  Choose **Properties** and set the Universal Windows App Min version to **Windows 10 Fall Creators Update (10.0; Build 16299)** (or higher). Do the same for the *SampleComponent* project.
 
@@ -202,7 +202,7 @@ Reload the project file in Visual Studio. To do this, in the Visual Studio Solut
 
 It is recommended to build and test your application with the C# component built against .NET native. In Visual Studio, open the shortcut menu for the *CppToCSharpWinRT* project and choose **Unload Project** to open `CppToCSharpWinRT.vcxproj` in the text editor.
 
-Next, set the `UseDotNetNativeToolchain` property to `true` in the Release and ARM64 configurations in the C++ project file.
+Next, set the `UseDotNetNativeToolchain` property to `true` in the Release and Arm64 configurations in the C++ project file.
 
 In the Visual Studio Solution Explorer, open the shortcut menu for the *CppToCSharpWinRT* project and choose **Reload Project**.
 
@@ -211,7 +211,7 @@ In the Visual Studio Solution Explorer, open the shortcut menu for the *CppToCSh
 ...
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Platform)'=='ARM64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Platform)'=='Arm64'" Label="Configuration">
     <UseDotNetNativeToolchain Condition="'$(UseDotNetNativeToolchain)'==''">true</UseDotNetNativeToolchain>
   </PropertyGroup>
 ```

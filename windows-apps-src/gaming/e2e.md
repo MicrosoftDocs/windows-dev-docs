@@ -625,7 +625,7 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
 
 #### Havok
 
-Havok's modular suite of tools and technologies help game creators reach new levels of interactivity and immersion. Havok enables highly realistic physics, interactive simulations, and stunning cinematics. Version 2015.1 and higher officially supports UWP in Visual Studio 2015 on x86, 64-bit, and ARM.
+Havok's modular suite of tools and technologies help game creators reach new levels of interactivity and immersion. Havok enables highly realistic physics, interactive simulations, and stunning cinematics. Version 2015.1 and higher officially supports UWP in Visual Studio 2015 on x86, 64-bit, and Arm.
 
 <table>
     <colgroup>
