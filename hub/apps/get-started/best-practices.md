@@ -247,49 +247,47 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 
 ### Security and privacy
 
-**How do I ensure that my app is secure?**
+**How do I ensure that my app is secure and follows appropriate privacy practices?**
 
 An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your app doesn't have security bugs, attackers can use your app to initiate their attacks through phishing and other forms of social engineering that violate security and privacy boundaries. The best practices in this section will help you mitigate risks related to security and user privacy.
 
 #### Security guidelines
 
 - Follow the [Security Development Lifecycle](https://www.microsoft.com/securityengineering/sdl/) for all development.
-  - **Threat modeling** can help you avoid security flaws.
-  - Using **secure libraries, languages, and tools** minimizes implementation flaws.
-  - **Secure defaults** can prevent security issues caused by user error.
+  - Threat modeling can help you avoid security flaws.
+  - Using secure libraries, languages, and tools minimizes implementation flaws.
+  - Secure defaults can prevent security issues caused by user error.
 - Don't require administrative privileges to _install_ your app.
   - Ideally, your app should support both administrative installs and per-user installs.
   - Using [MSIX packaging](/windows/msix/packaging-tool/tool-overview) is one way to achieve this.
 - [Don't require administrative privileges to _run_ your app.](/windows/win32/win7appqual/standard-user-analyzer--sua--tool-and-standard-user-analyzer-wizard--sua-wizard-)
-  - If there are certain features that need administrative privileges, [consider separating them](/windows/win32/secauthz/developing-applications-that-require-administrator-privilege) into their own processes to **reduce attack surface**.
-- Consider using techniques such as **AppContainer** (UWP) or **[process attribute flags](/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)** to mitigate risk of vulnerabilities.
+  - If there are certain features that need administrative privileges, [consider separating them](/windows/win32/secauthz/developing-applications-that-require-administrator-privilege) into their own processes to reduce attack surface.
+- Consider using techniques such as AppContainer (UWP) or [process attribute flags](/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute) to mitigate risk of vulnerabilities.
   - This may require separating your code into a regular UI process and a more-secure child process where you can execute especially risky code like parsing untrusted data.
-- Prefer to use languages with **guaranteed memory safety** (such as C#, JavaScript, or Rust), especially for risky code paths (like parsing untrusted data).
+- Prefer to use languages with guaranteed memory safety (such as C#, JavaScript, or Rust), especially for risky code paths (like parsing untrusted data).
 - Use all security mitigations provided by your compiler and toolset (see [Security Features In Microsoft Visual C++](https://devblogs.microsoft.com/cppblog/security-features-in-microsoft-visual-c/) for Visual C++).
 - Always use your chosen language or framework's standard libraries for cryptography and other security-sensitive code. _Do not try to build your own._
-- **Digitally sign all components of your application** – not just the installer, but also the uninstaller (if you have one). Also sign all the EXE, DLL, and other executable files that make up your app.
-  - Digital signatures enable the user to **verify the authenticity of your app** and allow Enterprise admins to secure their devices using [Windows Defender Application Control](/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview).
+- Digitally sign all components of your application – not just the installer, but also the uninstaller (if you have one). Also sign all the EXE, DLL, and other executable files that make up your app.
+  - Digital signatures enable the user to verify the authenticity of your app and allow Enterprise admins to secure their devices using [Windows Defender Application Control](/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview).
   - Using MSIX packaging is one way to achieve this.
 - Ensure all network communication is over a secure transport, such as SSL.
-- Provide guardrails or other mitigations that can help **protect users from accidentally performing harmful actions**, even when coerced into doing so by attackers.
+- Provide guardrails or other mitigations that can help protect users from accidentally performing harmful actions, even when coerced into doing so by attackers.
   - Simple "Are you sure you want to do _X_? _Yes / No_" dialogs are typically not effective, because users have been conditioned to click "Yes."
-
-**How do I ensure that my app follows appropriate privacy practices?**
 
 Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They expect transparency and control over the data collected and used by apps. Use the following tips to help meet the privacy needs of your users.
 
 #### Privacy guidelines
 
-- **Ensure that your app provides an accurate Privacy Policy.** Ideally, provide both a summary document written for a casual audience (your users) in addition to a long-form legal policy (written for your lawyers).
-- **Familiarize yourself with privacy regulations** in the markets where your app will be available, and ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, etc.
-- **Consider using technologies such as AppContainer (UWP)** to automatically minimize the amount of data available to your app. If your app is blocked from accessing data, it's impossible for your app to collect it, even accidentally (e.g. due to a bug in your code or a data-hungry 3rd party library).
-- **Ensure you're collecting the least amount of personal data needed** to complete your app's experiences.
-  - **Don't collect data "just in case"** – there should be a valid reason for collecting all data, e.g. to improve the customer's experience or to facilitate monetization.
-- **Always get the user's consent** before collecting and storing personal data and provide the user with an easy way to revert their decision in the future. Avoid "[dark patterns](https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:~:text=Some%20examples%20of%20dark%20pattern%20usage%20include)" such as making the "Yes" button larger or more prominent than the "No" button in a consent dialog.
-  - **Consult with applicable regulations** to determine what specific disclosures and consent is required for specified kinds of data. For example, some regions may allow users to view, change, or delete the data you have stored about them.
-- If you must transmit data over the network, **always use secured connections**, e.g. over TLS.
-- **Avoid storing personal data in a centralized location** (e.g. website). If you must store personal data, minimize the amount of data you store, store it only for as long as strictly necessary, and ensure it is securely encrypted.
-- **Verify that any 3rd-party libraries or SDKs you use also have good privacy practices.** Note this is _not_ limited to just advertising SDKs – any library that connects to the internet may impact the privacy of your app's users.
+- Ensure that your app provides an accurate Privacy Policy. Ideally, provide both a summary document written for a casual audience (your users) in addition to a long-form legal policy (written for your lawyers).
+- Familiarize yourself with privacy regulations in the markets where your app will be available, and ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, etc.
+- Consider using technologies such as AppContainer (UWP) to automatically minimize the amount of data available to your app. If your app is blocked from accessing data, it's impossible for your app to collect it, even accidentally (e.g. due to a bug in your code or a data-hungry 3rd party library).
+- Ensure you're collecting the least amount of personal data needed to complete your app's experiences.
+  - Don't collect data "just in case" – there should be a valid reason for collecting all data, e.g. to improve the customer's experience or to facilitate monetization.
+- Always get the user's consent before collecting and storing personal data and provide the user with an easy way to revert their decision in the future. Avoid "[dark patterns](https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:~:text=Some%20examples%20of%20dark%20pattern%20usage%20include)" such as making the "Yes" button larger or more prominent than the "No" button in a consent dialog.
+  - Consult with applicable regulations to determine what specific disclosures and consent is required for specified kinds of data. For example, some regions may allow users to view, change, or delete the data you have stored about them.
+- If you must transmit data over the network, always use secured connections, e.g. over TLS.
+- Avoid storing personal data in a centralized location (e.g. website). If you must store personal data, minimize the amount of data you store, store it only for as long as strictly necessary, and ensure it is securely encrypted.
+- Verify that any 3rd-party libraries or SDKs you use also have good privacy practices. Note this is _not_ limited to just advertising SDKs – any library that connects to the internet may impact the privacy of your app's users.
 
 
 ## Conclusion
