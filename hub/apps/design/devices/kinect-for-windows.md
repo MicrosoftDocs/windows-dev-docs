@@ -17,7 +17,7 @@ Build desktop applications for Windows 10 or sell your Kinect v2 UWP apps in the
 
 [Get the Kinect for Windows SDK](https://www.microsoft.com/download/details.aspx?id=44561)
 
-:::image type="content" source="images\kinect-studio_800x450.png" alt-text="image of Kinect thermal vision in the sdk.":::
+:::image type="content" source="images\kinect-studio-800x450.png" alt-text="image of Kinect thermal vision in the sdk.":::
 
 ## Developer resources
 
