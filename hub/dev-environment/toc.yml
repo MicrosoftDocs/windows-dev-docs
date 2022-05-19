@@ -39,6 +39,8 @@ items:
             href: ../package-manager/winget/show.md
           - name: source command
             href: ../package-manager/winget/source.md
+          - name: tab completion
+            href: ../package-manager/winget/tab-completion.md  
           - name: uninstall command
             href: ../package-manager/winget/uninstall.md
           - name: upgrade command
