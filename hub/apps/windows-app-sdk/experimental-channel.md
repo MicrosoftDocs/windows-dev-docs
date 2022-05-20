@@ -57,7 +57,7 @@ Important limitations:
 - Microsoft does not guarantee the reliability or latency of push notifications.
 - During the private preview, push notification volume is limited to 1 million per month.
 
-For more information, see [Push notifications](notifications/push/index.md).
+For more information, see [Push notifications](notifications/push-notifications/index.md).
 
 ### Windowing 
 
