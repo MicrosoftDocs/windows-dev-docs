@@ -56,11 +56,6 @@ More information about iconography and typography on Windows can be found in [Th
 
 Use [on-object commanding](/windows/apps/design/controls/collection-commanding#creating-context-menus) such as [context menus](/windows/apps/design/controls/menus-and-context-menus), [swipe commands](/windows/apps/design/controls/swipe), and [keyboard shortcuts](/windows/apps/design/input/keyboard-accelerators). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu integration](/windows/apps/get-started/make-apps-great-for-windows#context-menus) guidance. WinUI text controls automatically expose cut/copy/paste commands, but other controls may need extra work to support these commands.
 
-
-- **Text editing**
-  
-  Anywhere a user can edit text, you should support Cut/Copy/Paste commands and ensure that these commands are exposed by all input types. WinUI text controls do this by default, but you might need to do some extra work if you're not using WinUI.
-
 ### Geometry and app silhouettes
 
 [Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use. Another feature of [Windows 11 app silhouettes](/windows/apps/design/basics/app-silhouette) is the integration of app and title bar content.
