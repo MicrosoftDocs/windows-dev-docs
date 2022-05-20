@@ -10,9 +10,6 @@ ms.localizationpriority: medium
 
 # Publish Windows apps and games
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist)
-
 You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. [Sign up today!](https://developer.microsoft.com/store/register)
 
 <br/>

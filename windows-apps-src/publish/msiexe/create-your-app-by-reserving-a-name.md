@@ -10,16 +10,11 @@ ms.localizationpriority: medium
 
 # Create your MSI or EXE app by reserving a new name
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
-
 All apps on the Microsoft Store must have a unique name. The first step toward putting your app on the store is to reserve the name you'd like to use. You can reserve your app's name up to three months before you are ready to publish, even if you have not started to write your app yet. We recommend reserving your name as soon as possible to ensure it will be available when you're ready to publish. Reserved names not used within three months will have the reservation removed.
 
 If you are not sure what you want you app's name to be, you can reserve multiple names. You'll be able to choose the final name when you're ready to publish.
 
 Follow the following steps to reserve your app's name:
-
-
 
 1. Sign in to Partner Center.
 2. MSI or EXE app publishing experience is available in the new Workspace interface and you can click the “Workspaces” button on the top right of the page to toggle to the new interface.

@@ -10,9 +10,6 @@ ms.localizationpriority: medium
 
 # Submit your MSI or EXE app to the Microsoft Store
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
-
 Follow these steps to submit your MSI or EXE  app to the Microsoft Store
 
 | Topic | Description          |

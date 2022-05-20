@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 # Create an app submission for your MSI or EXE app
 
 > [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
+> This section of the documentation describes how to create an MSI or EXE app submission in Partner Center. Alternatively, you can use the Microsoft Store submission [API for MSI or EXE app submissions](store-submission-api.md) to automate app submissions.
 
 Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 
