@@ -38,7 +38,7 @@ Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/
 
 ### Materials: Acrylic and Mica
 
-[Acrylic](/windows/apps/design/style/acrylic) and [Mica](/windows/apps/design/style/mica) are visual [materials](/windows/apps/design/signature-experiences/materials) that give interactive UI controls a distinct occluded style. Use [Acrylic](/windows/apps/design/style/acrylic) to apply a semi-transparent style to transient surfaces like context menus, flyouts, and other elements that can be light-dismissed. Use [Mica](/windows/apps/design/style/mica) to add a subtle tint to long-lived UI surfaces like the title bar.
+[Acrylic](/windows/apps/design/style/acrylic) and [Mica](/windows/apps/design/style/mica) are visual [materials](/windows/apps/design/signature-experiences/materials) that give interactive UI controls a distinct "occluded" visual style. Use [Acrylic](/windows/apps/design/style/acrylic) to apply a semi-transparent style to transient surfaces like context menus, flyouts, and other elements that can be light-dismissed. Use [Mica](/windows/apps/design/style/mica) to add a subtle adaptive tint to long-lived UI surfaces like the title bar.
 
 More information about Acrylic and Mica materials can be found in [Things you can do to make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows#5-use-the-latest-design-materials-acrylic-and-mica).
 
