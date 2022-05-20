@@ -62,7 +62,7 @@ Use [on-object commanding](/windows/apps/design/controls/collection-commanding#c
 
 - **[Title bar integration](/windows/apps/design/basics/titlebar-design)**
   
-  Use the Windows App SDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar) in WinUI 3 apps.
+  Use the Windows App SDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar) in WinUI 3, .NET, WinForms, and WPF apps.
 
 - **[Rounded corners](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
   
