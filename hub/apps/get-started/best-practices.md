@@ -270,6 +270,6 @@ Most modern apps collect and use a large amount of data – including personal d
 
 ## Related articles
 
-- [Create your firrst WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [Windows Developer FAQ](/windows/apps/get-started/windows-developer-faq)
 - [Things you can do to make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows)
