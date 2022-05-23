@@ -28,9 +28,9 @@ This quickstart covers code from the notifications sample apps found on [GitHub]
 > [!div class="button"]
 > [Sample App Code](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
  
-## API details
+## API reference
 
-See the full `Microsoft.Windows.AppNotifications` API details on [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md#api-details)
+For API reference documentation for app notifications, see [Microsoft.Windows.AppNotifications Namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications).
 
 ## Step 1: Add namespace declarations
 
