@@ -25,7 +25,7 @@ When using the microphone and/or camera toggle shortcut keys, you will see a sma
 
 To use this module, it must be selected as the _source_ in the apps that are using camera and/or microphone. Go to the settings and select Powertoys VCM.
 
-![VCM selected as source in Skype.](../images/pt-vcm-source-in-app.png)
+![Video Conference Mute selected as source in Skype.](../images/pt-vcm-source-in-app.png)
 
 
 ## Settings

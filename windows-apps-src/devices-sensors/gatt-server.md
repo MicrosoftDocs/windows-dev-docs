@@ -229,6 +229,17 @@ void _notifyCharacteristic_SubscribedClientsChanged(GattLocalCharacteristic send
 
     // You can also just validate that the list of clients is expected for this app.  
 }
-
 ```
-> Note that an application can get the maximum notification size for a particular client with the MaxNotificationSize property.  Any data larger than the maximum size will be truncated by the system.
+
+> [!NOTE]
+> Your application can get the maximum notification size for a particular client with the **MaxNotificationSize** property. Any data larger than the maximum size will be truncated by the system.
+
+When you handle the [**GattLocalCharacteristic.SubscribedClientsChanged**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattlocalcharacteristic.subscribedclientschanged) event, you can use the process described below to determine full information about the currently subscribed client devices:
+
+* The *args* of the **SubscribedClientsChanged** event is a [**GattLocalCharacteristic**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattlocalcharacteristic) object.
+* Access that object's [**GattLocalCharacteristic.SubscribedClients**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattlocalcharacteristic.subscribedclients) property, which is a collection of [**GattSubscribedClient**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsubscribedclient) objects.
+* Iterate through that collection. For each element, do the following:
+    * Access the [**GattSubscribedClient.Session**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsubscribedclient.session) property, which is a [**GattSession**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession) object.
+    * Access the [**GattSession.DeviceId**](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.deviceid) property, which is a [**BluetoothDeviceId**](/uwp/api/windows.devices.bluetooth.bluetoothdeviceid) object.
+    * Access the [**BluetoothDeviceId.Id**](/uwp/api/windows.devices.bluetooth.bluetoothdeviceid.id) property, which is the device ID string.
+    * Pass the device ID string to [**BluetoothLEDevice.FromIdAsync**](/uwp/api/windows.devices.bluetooth.bluetoothledevice.fromidasync) to retrieve a [**BluetoothLEDevice**](/uwp/api/windows.devices.bluetooth.bluetoothledevice) object. You can get full information about the device from that object.

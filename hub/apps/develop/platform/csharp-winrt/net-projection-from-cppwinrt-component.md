@@ -200,7 +200,7 @@ To distribute the projection assembly for .NET application developers, you can a
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
         <!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
         <file src="..\..\_build\x64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
-        <!--To support x86 and ARM64, build SimpleMathComponent for those other architectures and uncomment the entries below.-->
+        <!--To support x86 and Arm64, build SimpleMathComponent for those other architectures and uncomment the entries below.-->
         <!--<file src="..\..\_build\Win32\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x86\native\SimpleMathComponent.dll" />-->
         <!--<file src="..\..\_build\arm64\Release\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-arm64\native\SimpleMathComponent.dll" />-->
       </files>
@@ -208,7 +208,7 @@ To distribute the projection assembly for .NET application developers, you can a
     ```
 
     > [!NOTE]
-    > **SimpleMathComponent.dll**, the implementation assembly for the component, is architecture-specific. If you're supporting other platforms (for example, x86 or ARM64), then you must first build **SimpleMathComponent** for the desired platforms, and add these assembly files to the appropriate [RID-relative folder](/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders). The projection assembly **SimpleMathProjection.dll** and the component **SimpleMathComponent.winmd** are both architecture-neutral.
+    > **SimpleMathComponent.dll**, the implementation assembly for the component, is architecture-specific. If you're supporting other platforms (for example, x86 or Arm64), then you must first build **SimpleMathComponent** for the desired platforms, and add these assembly files to the appropriate [RID-relative folder](/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders). The projection assembly **SimpleMathProjection.dll** and the component **SimpleMathComponent.winmd** are both architecture-neutral.
 
 4. Save and close the files you just edited.
 

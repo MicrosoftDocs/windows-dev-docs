@@ -152,7 +152,7 @@ The approach for creating a non-virtualizing layout should feel familiar to anyo
 
 ![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
 
-Here is a very basic non-virtualizing stack layout of varying sized items. It lacks any properties to adjust the layout’s behavior. The implementation below illustrates how the layout relies on the context object provided by the container to:
+Here is a very basic non-virtualizing stack layout of varying sized items. It lacks any properties to adjust the layout's behavior. The implementation below illustrates how the layout relies on the context object provided by the container to:
 
 1. Get the count of children, and
 2. Access each child element by index.
@@ -236,7 +236,7 @@ With UI virtualization, creating the elements that would normally be done in ste
 
 **The RealizationRect (i.e. Viewport)**
 
-Scrolling on Windows happens asynchronous to the UI thread. It is not controlled by the framework's layout.  Rather, the interaction and movement occurs in the system's compositor. The advantage of this approach is that panning content can always be done at 60fps.  The challenge, however, is that the "viewport", as seen by the layout, might be slightly out-of-date relative to what is actually visible on screen. If a user scrolls quickly, they may outpace the speed of the UI thread to generate new content and “pan to black”. For this reason, it’s often necessary for a virtualizing layout to generate an additional buffer of prepared elements sufficient to fill an area larger than the viewport. When under heavier load during scrolling the user is still presented with content.
+Scrolling on Windows happens asynchronous to the UI thread. It is not controlled by the framework's layout.  Rather, the interaction and movement occurs in the system's compositor. The advantage of this approach is that panning content can always be done at 60fps.  The challenge, however, is that the "viewport", as seen by the layout, might be slightly out-of-date relative to what is actually visible on screen. If a user scrolls quickly, they may outpace the speed of the UI thread to generate new content and "pan to black". For this reason, it's often necessary for a virtualizing layout to generate an additional buffer of prepared elements sufficient to fill an area larger than the viewport. When under heavier load during scrolling the user is still presented with content.
 
 ![Realization rect](images/xaml-attached-layout-realizationrect.png)
 
@@ -285,22 +285,14 @@ The general approach is for the layout to:
 
 ### Example: Xbox Activity Feed layout
 
-The UI for the Xbox Activity Feed uses a repeating pattern where each line has a wide tile, followed by two narrow tiles that is inverted on the subsequent line. In this layout, the size for every item is a function of the item’s position in the data set and the known size for the tiles (wide vs narrow).
+The UI for the Xbox Activity Feed uses a repeating pattern where each line has a wide tile, followed by two narrow tiles that is inverted on the subsequent line. In this layout, the size for every item is a function of the item's position in the data set and the known size for the tiles (wide vs narrow).
 
 ![Xbox activity feed](images/xaml-attached-layout-activityfeedscreenshot.png)
 
 The code below walks through what a custom virtualizing UI for the activity feed might be to illustrate the general approach you might take for a **data layout**.
 
-<table>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in action with this sample layout.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!TIP]
+> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://www.microsoft.com/p/winui-3-controls-gallery/9P3JFPWWDZRC) or get the source code on  [GitHub](https://github.com/microsoft/WinUI-Gallery).
 
 #### Implementation
 

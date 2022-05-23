@@ -75,7 +75,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 - If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
 - See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
-- Use the [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) to evaluate the controls.
+- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) to evaluate the controls.
 
 ### Desktop apps (Win32)
 
@@ -83,7 +83,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ### WebView and other platforms
 
-- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and XAML Controls Gallery can be used to copy the styles.
+- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and WinUI 2 Gallery can be used to copy the styles.
 
 ## 5. Use the latest design materials (Acrylic and Mica)
 
@@ -176,7 +176,7 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 
 ## 10. Make use of the innovative features available in Windows
 
-People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also ARM-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
+People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
 - Utilize best practices for Notifications and content sharing - [Notifications (Design basics)](/windows/win32/uxguide/mess-notif).

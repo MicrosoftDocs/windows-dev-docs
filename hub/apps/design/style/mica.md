@@ -30,21 +30,6 @@ Mica in dark theme</br>
     :::column-end:::
 :::row-end:::
 
-## Examples
-
-:::row:::
-    :::column span:::
-    ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon.png)
-    :::column-end:::
-    :::column span="2":::
-**XAML Controls Gallery**<br>
-If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Mica">here</a> to open the app and see Mica in action as the backdrop material.
-
-    <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-    <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
-    :::column-end:::
-:::row-end:::
-
 ## When to use Mica
 
 Mica is a material that appears on the backdrop of your application — behind all other content. It is an opaque material that incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
@@ -446,7 +431,7 @@ private void NavigationViewControl_DisplayModeChanged(Microsoft.UI.Xaml.Controls
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

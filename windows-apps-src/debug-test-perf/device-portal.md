@@ -200,7 +200,7 @@ Key | Type | Description
 ----|------|-------------
 S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections.
 D | string | Type of device. This will be in the format "Windows.*", for example, Windows.Xbox or Windows.Desktop
-A | string | Device architecture. This will be ARM, x86, or AMD64.  
+A | string | Device architecture. This will be Arm, x86, or AMD64.  
 T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 
 Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record.

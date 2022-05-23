@@ -131,7 +131,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
       These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10 and later.
    :::column-end:::
    :::column:::
-      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
+      [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery)
 
       This app demonstrates the various Xaml controls supported in the Fluent Design System.
    :::column-end:::

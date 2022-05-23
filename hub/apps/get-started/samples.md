@@ -22,7 +22,7 @@ Most of the repos below include a collection of several sample apps demonstratin
 |-------------|-------------|
 | [Template Studio](https://github.com/microsoft/TemplateStudio#template-studio) | Accelerate the creation of apps using a wizard-based UI. |
 | [Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples) | Demonstrates API usage patterns for the Windows App SDK&mdash;the next evolution in the Windows app development platform. |
-| [WinUI Xaml Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery) | Demonstrates all of the Xaml and Windows UI library controls available to make a Fluent Windows app. |
+| [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery) | Demonstrates all of the Xaml and Windows UI library controls available to make a Fluent Windows app. |
 | [App Model Samples](https://github.com/Microsoft/AppModelSamples) | Contains sample apps that demonstrate the core application activation and lifecycle management infrastructure of various platforms such as the Universal Windows Platform (UWP), Windows Forms (WinForms), and console. |
 | [Windows classic samples](https://github.com/microsoft/Windows-classic-samples) | Demonstrates a wide range of desktop app scenarios, including Win32, Windows Runtime (WinRT), and .NET. |
 | [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) | Demonstrates WinRT API usage patterns for UWP. |

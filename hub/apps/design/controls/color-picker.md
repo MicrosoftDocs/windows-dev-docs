@@ -45,14 +45,14 @@ If your app is for drawing or similar tasks using pen, consider using [Inking co
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the **XAML Controls Gallery** app installed and updated to the latest version, see the <a href="xamlcontrolsgallery:/item/ColorPicker">ColorPicker</a> in action.</p>
+    <p>If you have the **WinUI 2 Gallery** app installed and updated to the latest version, see the <a href="winui2gallery:/item/ColorPicker">ColorPicker</a> in action.</p>
     <ul>
-    <li>If you don't have the XAML Controls Gallery app installed, get it from the <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Microsoft Store</a></li>
-    <li>You can also view, clone, and build the XAML Controls Gallery source code from <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">GitHub</a></li>
+    <li>If you don't have the WinUI 2 Gallery app installed, get it from the <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Microsoft Store</a></li>
+    <li>You can also view, clone, and build the WinUI 2 Gallery source code from <a href="https://github.com/Microsoft/WinUI-Gallery">GitHub</a></li>
     </ul>
 </td>
 </tr>
@@ -232,7 +232,7 @@ Hex values | IsHexInputVisible
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

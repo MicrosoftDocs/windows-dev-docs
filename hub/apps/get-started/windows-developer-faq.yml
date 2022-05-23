@@ -175,7 +175,7 @@ sections:
       - question: Will my users ever have to update Windows to use my Windows App SDK / WinUI 3 app?
         answer: |
           Users who have Windows 10, version 1809 and beyond will be able to install your WinUI 3 / Windows App SDK apps without updating their OS.
-      - question: Can I target ARM64 with my WinUI 3 app?
+      - question: Can I target Arm64 with my WinUI 3 app?
         answer: |
           Yes.
   - name: Deprecations and migrations

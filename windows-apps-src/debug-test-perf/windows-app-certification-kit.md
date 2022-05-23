@@ -39,7 +39,7 @@ During testing, if an installer terminates but leaves active processes or window
 
 **Resolution:** After your installer is complete, manually close any active processes or windows spawned by the installer.
 
-For ARM UWA, or any UWA app that doesn't target the device family desktop or OneCore, a message may appear in the final report that states "Not all tests were run during validation. This may impact your Store submission.". This message does not apply in cases where the user didn't manually deselect tests.
+For Arm UWA, or any UWA app that doesn't target the device family desktop or OneCore, a message may appear in the final report that states "Not all tests were run during validation. This may impact your Store submission.". This message does not apply in cases where the user didn't manually deselect tests.
 
 **Resolution:** n/a
 
