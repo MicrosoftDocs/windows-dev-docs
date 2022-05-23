@@ -13,8 +13,8 @@ ms.localizationpriority: medium
 
 This article shows how to configure an app that's not deployed via MSIX (non-MSIX-packaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Non-MSIX-packaged apps include sparse-packaged, or unpackaged, apps.
 
-> [!IMPORTANT]
-> Beginning in the Windows App SDK 1.0 Preview 3, the default approach to loading the Windows App SDK from a non-MSIX-packaged app is to use *auto-initialization* via the `<WindowsPackageType>None</WindowsPackageType>` project property. That approach is demonstrated in [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app).
+> [!NOTE]
+> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a non-MSIX-packaged app is to use *auto-initialization* via the `<WindowsPackageType>None</WindowsPackageType>` project property. That approach is demonstrated in [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app).
 >
 > If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. That's the approach that this topic demonstrates. For more info, see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time).
 
@@ -88,7 +88,7 @@ Follow these instructions to configure a C# WinUI 3 project that is non-MSIX-pac
     }
     ```
 
-    The bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. In .NET apps that use the Windows App SDK 1.0 Preview 3 or a later release, you can use the [.NET wrapper](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api) for the bootstrapper API. This wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static **Initialize** and **Shutdown** methods of the **Bootstrap** class in the .NET wrapper for the bootstrapper API.
+    The bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. In .NET apps that use the Windows App SDK 1.0 or a later release, you can use the [.NET wrapper](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api) for the bootstrapper API. This wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static **Initialize** and **Shutdown** methods of the **Bootstrap** class in the .NET wrapper for the bootstrapper API.
 
 6. To demonstrate that the Windows App SDK runtime components were loaded properly, add some code that uses the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager) class in the Windows App SDK to load a string resource.
 
