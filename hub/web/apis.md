@@ -11,7 +11,7 @@ ms.date: 01/06/2021
 
 # APIs for web development
 
-This list covers a broad spectrum of APIs from across Microsoft that may interest web developers. Find more web-development-focused tools and services, on the [Web development on Windows overview page](/overview.md).
+This list covers a broad spectrum of APIs from across Microsoft that may interest web developers. Find more web-development-focused tools and services, on the [Web development on Windows overview page](/windows/web/).
 
 - **[Academic Knowledge API](https://azure.microsoft.com/services/cognitive-services/academic-knowledge/)**<br>
 Tap into the wealth of academic content in the Microsoft Academic Graph using the Academic Knowledge API.
