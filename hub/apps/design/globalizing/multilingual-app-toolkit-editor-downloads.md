@@ -7,19 +7,14 @@ ms.author: kbridge
 ms.date: 10/18/2021
 ---
 
-# Multilingual app toolkit 4.0 Editor
+# Multilingual App Toolkit 4.0 Editor
 
-Use the standalone [**Multilingual app toolkit 4.0 Editor**](use-mat.md) with Visual Studio to streamline your localization workflow during app development.
+Use the standalone [**Multilingual App Toolkit 4.0 Editor**](use-mat.md) with Visual Studio to streamline your localization workflow during app development.
 
 Each of the following downloads contain an .msi installer for the Multilingual App Toolkit 4.0 Editor (also known as the Multilingual Editor).
 
 - To start the installation immediately, click **Run**.
 - To save the download to your computer for installation at a later time, click **Save**.
-
-> [!Important]
-> If using Visual Studio 2017 or later, you should also download and install the [Multilingual App Toolkit 4.0 Extension](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308).
->
-> If using Visual Studio 2015 or Visual Studio 2013, the .msi installers listed here include the Multilingual App Toolkit 4.0 extension.
 
 :::row:::
    :::column span="":::
@@ -68,6 +63,11 @@ Each of the following downloads contain an .msi installer for the Multilingual A
    :::column span="":::
    :::column-end:::
 :::row-end:::
+
+> [!Important]
+> If using Visual Studio 2017 or later, you should also download and install the [Multilingual App Toolkit 4.0 Extension](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308).
+>
+> If using Visual Studio 2015 or Visual Studio 2013, the .msi installers listed here include the Multilingual App Toolkit 4.0 extension.
 
 ## Overview
 
