@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 02/03/2022
+ms.date: 05/24/2022
 ms.topic: how-to
 ---
 
@@ -190,7 +190,7 @@ This lets you navigate through your search matches.
 { "command": { "action": "findMatch", "direction": "prev" } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -223,7 +223,7 @@ Without the `target` field, the custom settings file will be opened.
 { "command": { "action": "openSettings", "target": "defaultsFile" }, "keys": "ctrl+alt+," },
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -296,7 +296,7 @@ _This command is not currently bound in the default settings_.
 { "command": { "action": "sendInput", "input": "\u001b[A" }, "keys": "" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -314,7 +314,7 @@ This closes the tab at a given index. If no index is provided, use the focused t
 
 **Command name:** `closeTab`
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -332,7 +332,7 @@ This closes all tabs except for the one at an index. If no index is provided, us
 { "command": "closeOtherTabs" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -350,7 +350,7 @@ This closes the tabs following the tab at an index. If no index is provided, use
 { "command": "closeTabsAfter" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -370,7 +370,7 @@ This makes a copy of the current tab's profile and directory and opens it. This 
 
 ### New tab
 
-This creates a new tab. Without any arguments, this will open the default profile in a new tab. If an action is not specified, the default profile's equivalent setting will be used.
+This creates a new tab. Without any arguments, this will open the default profile in a new tab. If an index is not specified, the default profile's equivalent setting will be used. If the index doesn't map to a profile, the keys are passed directly to the terminal (or ignored if no keys were used to invoke the action).
 
 **Command name:** `newTab`
 
@@ -389,21 +389,18 @@ This creates a new tab. Without any arguments, this will open the default profil
 { "command": { "action": "newTab", "index": 8 }, "keys": "ctrl+shift+9" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `commandline` | Optional | Executable file name as a string | Executable run within the tab. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the tab will open. |
-| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator-preview) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
+| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
 | `tabTitle` | Optional | String | Title of the new tab. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
 | `colorScheme` | Optional | The name of a color scheme as a string | The scheme to use instead of the profile's set `colorScheme` |
 | `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. In order to enter a new tab title and have that title persist, this must be set to true. |
-
-> [!IMPORTANT]
-> The `elevate` property is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Open next tab
 
@@ -417,7 +414,7 @@ This opens the tab to the right of the current one.
 { "command": "nextTab", "keys": "ctrl+tab" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -435,7 +432,7 @@ This opens the tab to the left of the current one.
 { "command": "prevTab", "keys": "ctrl+shift+tab" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -484,7 +481,7 @@ This opens a specific tab depending on the index.
 { "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+alt+9" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -508,7 +505,7 @@ _This command is not currently bound in the default settings_.
 { "command": { "action": "renameTab", "title": null }, "keys": "" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -544,7 +541,7 @@ _This command is not currently bound in the default settings_.
 { "command": { "action": "setTabColor", "color": null }, "keys": "" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -578,7 +575,7 @@ This command moves the tab "backward" and "forward", which is equivalent to "lef
 { "command": { "action": "moveTab", "direction": "forward" } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -602,7 +599,7 @@ This creates a new window. Without any arguments, this will open the default pro
 { "command": "newWindow", "keys": "ctrl+shift+n" },
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -631,7 +628,7 @@ _This command is not currently bound in the default settings_.
 { "command": { "action": "renameWindow", "name": null }, "keys": "" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -709,7 +706,7 @@ This changes focus to a different pane depending on the direction. Setting the `
 { "command": { "action": "moveFocus", "direction": "previous" }, "keys": "ctrl+alt+left" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -751,7 +748,7 @@ This changes the size of the active pane.
 { "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+up" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -790,14 +787,14 @@ This halves the size of the active pane and opens another. Without any arguments
 { "command": { "action": "splitPane", "split": "left" } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `split` | Required | `"vertical"`, `"horizontal"`, `"auto"`, `"up"`, `"right"`, `"down"`, `"left"` | How the pane will split. `"auto"` will split in the direction that provides the most surface area. |
 | `commandline` | Optional | Executable file name as a string | Executable run within the pane. |
 | `startingDirectory` | Optional | Folder location as a string | Directory in which the pane will open. |
-| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator-preview) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
+| `elevate` | Optional | `true`, `false`, `null` | Overrides the [`elevate`](./profile-general.md#automatically-run-as-administrator) property of the profile. When omitted, this action will behave according to the profile's `elevate` setting. When set to `true` or `false`, this action will behave as though the profile was set with `"elevate": true` or `"elevate": false` (respectively). |
 | `tabTitle` | Optional | String | Title of the tab when the new pane is focused. |
 | `index` | Optional | Integer | Profile that will open based on its position in the dropdown (starting at 0). |
 | `profile` | Optional | Profile's name or GUID as a string | Profile that will open based on its GUID or name. |
@@ -805,9 +802,6 @@ This halves the size of the active pane and opens another. Without any arguments
 | `suppressApplicationTitle` | Optional | `true`, `false` | When set to `false`, applications can change the tab title by sending title change messages. When set to `true`, these messages are suppressed. If not provided, the behavior is inherited from the profile's settings. |
 | `splitMode` | Optional | `"duplicate"` | Controls how the pane splits. Only accepts `"duplicate"`, which will duplicate the focused pane's profile into a new pane. |
 | `size` | Optional | Float | Specify how large the new pane should be, as a fraction of the current pane's size. `1.0` would be "all of the current pane", and `0.0` is "None of the parent". Defaults to `0.5`. |
-
-> [!IMPORTANT]
-> The `elevate` property is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -832,49 +826,12 @@ This copies the selected terminal content to your clipboard. If no selection exi
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
 ```
 
-#### Actions
+#### Parameters
 
  | Name | Necessity | Accepts | Description |
  | ---- | --------- | ------- | ----------- |
  | `singleLine` | Optional | `true`, `false` | When `true`, the copied content will be copied as a single line. When `false`, newlines persist from the selected text. |
  | `copyFormatting` | Optional | `true`, `false`, `"all"`, `"none"`, `"html"`, `"rtf"` | When `true`, the color and font formatting of the selected text is also copied to your clipboard. When `false`, only plain text is copied to your clipboard. You can also specify which formats you would like to copy. When `null`, the global `"copyFormatting"` behavior is inherited. |
-
-### Keyboard selection
-
-This modifies an existing selection. If no selection exists, the key chord is sent directly to the terminal.
-
-**Command name:** `updateSelection`
-
-**Default bindings:**
-
-```json
-// Move by character
-{ "command": {"action": "updateSelection", "direction": "left", "mode": "char" }, "keys": "shift+left" },
-{ "command": {"action": "updateSelection", "direction": "right", "mode": "char" }, "keys": "shift+right" },
-{ "command": {"action": "updateSelection", "direction": "up", "mode": "char" }, "keys": "shift+up" },
-{ "command": {"action": "updateSelection", "direction": "down", "mode": "char" }, "keys": "shift+down" },
-
-// Move by word
-{ "command": {"action": "updateSelection", "direction": "left", "mode": "word" }, "keys": "ctrl+shift+left" },
-{ "command": {"action": "updateSelection", "direction": "right", "mode": "word" }, "keys": "ctrl+shift+right" },
-
-// Move by viewport
-{ "command": {"action": "updateSelection", "direction": "left", "mode": "view" }, "keys": "shift+home" },
-{ "command": {"action": "updateSelection", "direction": "right", "mode": "view" }, "keys": "shift+end" },
-{ "command": {"action": "updateSelection", "direction": "up", "mode": "view" }, "keys": "shift+pgup" },
-{ "command": {"action": "updateSelection", "direction": "down", "mode": "view" }, "keys": "shift+pgdn" },
-
-// Move by buffer
-{ "command": {"action": "updateSelection", "direction": "up", "mode": "buffer" }, "keys": "ctrl+shift+home" },
-{ "command": {"action": "updateSelection", "direction": "down", "mode": "buffer" }, "keys": "ctrl+shift+end" },
-```
-
-#### Actions
-
-| Name | Necessity | Accepts | Description |
-| ---- | --------- | ------- | ----------- |
-| `direction` | Required | `"left"`, `"right"`, `"up"`, `"down"` | Direction in which the selection endpoint will move. |
-| `mode` | Required | `"char"`, `"word"`, `"view"`, `"buffer"` | Controls how much the endpoint moves by. |
 
 ### Paste
 
@@ -892,6 +849,21 @@ This inserts the content that was copied onto the clipboard.
 { "command": "paste", "keys": "ctrl+shift+v" },
 { "command": "paste", "keys": "shift+insert" }
 ```
+
+### Select all ([Preview](https://aka.ms/terminal-preview))
+
+This selects all of the content in the text buffer.
+
+**Command name:** `selectAll`
+
+**Default bindings:**
+
+```json
+{ "command": "selectAll", "keys": "ctrl+shift+a" }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
@@ -911,7 +883,7 @@ This scrolls the screen up by the number of rows defined by `"rowsToScroll"`. If
 { "command": "scrollUp", "keys": "ctrl+shift+up" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -929,7 +901,7 @@ This scrolls the screen down by the number of rows defined by `"rowsToScroll"`. 
 { "command": "scrollDown", "keys": "ctrl+shift+down" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -997,7 +969,7 @@ This action can be used to manually clear the terminal buffer. This is useful fo
 { "command": { "action": "clearBuffer", "clear": "all" } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -1022,7 +994,7 @@ This changes the text size by a specified point amount.
 { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+numpad_minus" }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -1041,7 +1013,7 @@ This resets the text size to the default value.
 { "command": "resetFontSize", "keys": "ctrl+numpad_0" }
 ```
 
-### Adjust opacity ([Preview](https://aka.ms/terminal-preview))
+### Adjust opacity
 
 This changes the opacity of the window. If `relative` is set to true, it will adjust the opacity relative to the current opacity. Otherwise, it will set the opacity directly to the given `opacity`
 
@@ -1056,15 +1028,12 @@ This changes the opacity of the window. If `relative` is set to true, it will ad
 { "command": { "action": "adjustOpacity", "relative": false, "opacity": 100 } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `opacity` | Optional | Integer | How opaque the terminal should become or how much the opacity should be changed by, depending on the value of `relative` |
 | `relative` | Optional | Boolean | If true, then adjust the current opacity by the given `opacity` parameter. If false, set the opacity to exactly that value. |
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ### Toggle pixel shader effects
 
@@ -1087,7 +1056,7 @@ Changes the active color scheme.
 
 **Command name:** `setColorScheme`
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -1105,7 +1074,7 @@ ___
 
 ## Buffer exporting
 
-### Export buffer ([Preview](https://aka.ms/terminal-preview))
+### Export buffer
 
 This allows the user to export the text of the buffer to a file. If the file doesn't exist, it will be created. If the file already exists, its contents will be replaced with the Terminal buffer text.
 
@@ -1117,14 +1086,11 @@ This allows the user to export the text of the buffer to a file. If the file doe
 { "command": { "action": "exportBuffer" } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
 | `path` | Optional | String | If provided, then the Terminal will export the buffer contents to the given file. Otherwise, the terminal will open a file picker to choose the file to export to. |
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 ___
 
@@ -1153,7 +1119,7 @@ _This command is not currently bound in the default settings_.
 { "keys": "", "command": { "action": "globalSummon" } }
 ```
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |
@@ -1260,7 +1226,7 @@ This action allows the user to bind multiple sequential actions to one command.
 
 **Command name:** `multipleActions`
 
-#### Actions
+#### Parameters
 
 | Name | Necessity | Accepts | Description |
 | ---- | --------- | ------- | ----------- |

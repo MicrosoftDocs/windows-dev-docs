@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Settings
 description: Learn how to customize appearance settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/08/2021
+ms.date: 05/24/2022
 ms.topic: how-to
 ---
 
@@ -219,5 +219,21 @@ When this is set to `true`, closing a window with multiple tabs open _will_ requ
 :::column span="":::
 ![Windows Terminal confirm close all tabs](./../images/confirm-close-all-tabs.png)
 
-:::column-end:::
-:::row-end:::
+<br />
+
+___
+
+## Use a background image for the entire window ([Preview](https://aka.ms/terminal-preview))
+
+When set to `true`, the background image for the currently focused profile is expanded to encompass the entire window, beneath other panes. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Property name:** `experimental.useBackgroundImageForWindow`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
