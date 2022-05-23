@@ -31,7 +31,7 @@ The handle of the window for which to get the `WindowId`.
 
 ### Returns
 
-[WindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid)
+[WindowId](/windows/winui/api/microsoft.ui.windowid)
 
 The identifier that corresponds to the specified *hwnd*, if the provided *hwnd* is valid. Otherwise, `null`.
 
