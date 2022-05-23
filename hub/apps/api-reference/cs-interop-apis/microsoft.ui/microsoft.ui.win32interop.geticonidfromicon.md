@@ -31,7 +31,7 @@ The handle of the icon for which to get the `IconId`.
 
 ### Returns
 
-[IconId](/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid)
+[IconId](/windows/winui/api/microsoft.ui.iconid)
 
 The icon identifier that corresponds to the specified *hicon*, if the provided *hicon* is valid. Otherwise, `null`.
 
