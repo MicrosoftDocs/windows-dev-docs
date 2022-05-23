@@ -199,7 +199,7 @@ sections:
       - question: |
           What data are you collecting?
         answer: |
-          The Multilingual Application Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. 
+          The Multilingual App Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. 
           
           Usage data: This is anonymous information about what features are being used. For example: adding a new language to a MAT-enabled solution.
 
