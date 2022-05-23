@@ -12,6 +12,8 @@ ms.localizationpriority: medium
 
 # Design guidelines for Windows app icons
 
+Follow these guidelines to create a great app icon for your app that feels at home on Windows.
+
 ## Design guidance: Metaphor
 
 :::image type="content" source="images/icon-progressive-abstraction.png" alt-text="A diagram that shows several variations on a record player icon, each progressively more abstract.":::
@@ -61,8 +63,6 @@ Gradients should be subtle for the most part. Try to limit your gradient ramps t
 The default angle for gradients is 120 degrees. Start and end points can be adjusted accordingly. The important thing is that it’s a smooth transition. Avoid very tight transitions that would feel like reflections or dimension.
 
 ### Monochrome palette
-
-:::image type="content" source="images/create-monochrome-palette.png" alt-text="A diagram that outlines the steps to create a monochrome color palette.":::
 
 Create a monochrome palette using the following steps:
 

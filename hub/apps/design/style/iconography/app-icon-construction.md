@@ -18,13 +18,9 @@ Once you've designed your app's icon, you need to create the icon files themselv
 
 ## Icon sizes (WPF, UWP, WinUI)
 
-:::image type="content" source="images/icon-ramp-full.png" alt-text="A diagram that shows the Windows icon size ramp.":::
-
 Windows will display your app icon at a variety of sizes depending on where your icon is being displayed and the user's display scale settings. The following table lists all the possible sizes that Windows may use to display your icon.
 
 ## Icon sizes (Win32)
-
-:::image type="content" source="images/icon-ramp-win-32.png" alt-text="A diagram that shows the Windows icon size ramp for Win32 icons.":::
 
 Windows ICO files have been around for a long time. There are standard sizes that are used which is a subset of the full set above.
 
