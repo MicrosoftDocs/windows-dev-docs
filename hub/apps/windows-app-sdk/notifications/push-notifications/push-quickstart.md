@@ -28,9 +28,9 @@ This quickstart walks through adding push notifications support to your app. See
 > [!div class="button"]
 > [Sample App Code](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push)
  
-## API details
+## API reference
 
-See the full `Microsoft.Windows.PushNotifications` API details on [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md#api-details)
+For API reference documentation for push notifications, see [Microsoft.Windows.PushNotifications Namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications).
 
 ## Configure your app's identity in Azure Active Directory (AAD)
 
