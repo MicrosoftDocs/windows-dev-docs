@@ -47,5 +47,5 @@ consider registering with the [ID@Xbox](https://www.xbox.com/Developers/id) prog
 
 ## See also
 - [UWP on Xbox One](index.md)
-- [Get started with the Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/creators-program)
+- [Get started with the Xbox Live Creators Program](/gaming/xbox-live/get-started/setup-partner-center/legacy/live-get-started-creators)
 - [DirectX and UWP on Xbox One](https://walbourn.github.io/)
