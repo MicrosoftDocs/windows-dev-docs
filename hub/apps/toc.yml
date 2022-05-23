@@ -278,14 +278,22 @@ items:
                 href: windows-app-sdk/applifecycle/applifecycle-power.md
       - name: "Manage app windows"
         href: windows-app-sdk/windowing/windowing-overview.md
-      - name: "Push notifications"
+      - name: Notifications
         items:
-          - name: "Overview"
-            href: windows-app-sdk/notifications/push/index.md
-          - name: "Quickstart"
-            href: windows-app-sdk/notifications/push/push-quickstart.md
-          - name: "Troubleshooting"
-            href: windows-app-sdk/notifications/push/troubleshooting.md  
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push-notifications/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push-notifications/troubleshooting.md  
+          - name: "App notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/app-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
       - name: Graphics
         items: 
           - name: Overview
