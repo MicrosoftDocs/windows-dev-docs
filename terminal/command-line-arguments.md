@@ -49,7 +49,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
 
 > [!TIP]
-> If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/profile-advanced#suppress-title-changes) option by setting it to `true`.
+> If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/profile-advanced.md#suppress-title-changes) option by setting it to `true`.
 
 ### `Split-pane` command
 
