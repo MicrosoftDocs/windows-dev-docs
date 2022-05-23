@@ -23,12 +23,13 @@ For full details, see the topics below. They describe and demonstrate how to mig
 
 Take particular note of [What's supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported). That topic describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, then consider waiting to migrate.
 
-## Hybrid C/C++ runtime library linkage (hybrid CRT linkage)
+## .NET Upgrade Assistant
 
-In releases 1.0.3 and 1.1 Preview 2 and later, the Windows App SDK uses Hybrid C/C++ runtime library linkage (hybrid CRT linkage). This is a CRT linkage technique that simplifies deployment. Whether you're a C++ application developer or a C++ library developer, here are some resources for learning about hybrid CRT linkage.
+As a next step in assisting you to migrate your Universal Windows Platform (UWP) apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. A preview is now available&mdash;for more info, see [Migrate UWP apps to Windows App SDK with the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-uwp-framework).
 
-* [Hybrid CRT linkage coding guidelines](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md) on GitHub.
-* The hybrid CRT linkage segment of the [WinUI community call](https://www.youtube.com/watch?v=bNHGU6xmUzE&t=977s) from April 20, 2022.
+Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features.
+
+The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assistant) documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of `UWP`.
 
 ## Topics in this section
 
