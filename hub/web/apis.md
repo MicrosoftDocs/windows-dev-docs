@@ -52,7 +52,7 @@ Build intelligent and supported algorithms into apps, websites, and bots to see,
 - **[Computer Vision API](/azure/cognitive-services/computer-vision/)**<br>
 Provides developers with access to advanced algorithms for processing images and returning information.
 
-- **[Content Moderator APIs](/azure/cognitive-services/content-moderator/overview.md)**<br>
+- **[Content Moderator APIs](/azure/cognitive-services/content-moderator/)**<br>
 AI-powered content moderation service which scans text, image, and videos and applies content flags automatically, as well as a Review tool, an online moderator environment for a team of human reviewers.
 
 - **[Face detection API](/azure/cognitive-services/face/)**<br>
