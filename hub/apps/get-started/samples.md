@@ -66,4 +66,4 @@ To make finding specific sample apps easier, you can browse and search a categor
 ## Next steps
 
 - [Best Practices](best-practices.md)
-- [Windows developer FAQ](windows-developer-faq.md)
+- [Windows developer FAQ](windows-developer-faq.yml)
