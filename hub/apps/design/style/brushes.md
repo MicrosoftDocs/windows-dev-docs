@@ -198,7 +198,7 @@ This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 
-For example, this can be used to apply [**effects**](/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
+For example, this can be used to apply [**effects**](/windows/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
 
 For code examples, see [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
