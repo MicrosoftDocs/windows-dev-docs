@@ -187,7 +187,7 @@ The exact algorithm used to map AnimatedIcon State changes to marker playback po
 - Check if "[NewState]" parses to a float. If it does, animated from the current position to the parsed float.
 - Hard cut to playback position 0.0.
 
-The following example shows the marker format in a Lottie JSON file. See the [AnimatedIcon](/windows/uwp/design/motion/animatedicons) guidance for more detail.
+The following example shows the marker format in a Lottie JSON file. See the [AnimatedIcon](/windows/apps/design/controls/animated-icon) guidance for more detail.
 
 ```json
 "markers":[{"tm":0,"cm":"NormalToPointerOver_Start","dr":0},{"tm":9,"cm":"NormalToPointerOver_End","dr":0},
