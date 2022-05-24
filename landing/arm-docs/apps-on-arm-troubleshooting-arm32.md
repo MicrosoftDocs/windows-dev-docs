@@ -3,8 +3,11 @@ title: Troubleshooting Arm32 UWP apps
 description: Common issues with Arm32 apps when running on Arm, and how to fix them.
 ms.date: 06/25/2021
 ms.topic: article
-keywords: windows, always connected, Arm32 apps on Arm, windows 10 on Arm, troubleshooting
-ms.localizationpriority: medium
+ms.prod: windows
+ms.technology: arm
+author: mattwojo
+ms.author: mattwoj
+ms.reviewer: marcs
 ---
 
 # Troubleshooting Arm UWP apps

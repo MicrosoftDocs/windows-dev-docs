@@ -1378,21 +1378,6 @@
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
         - name: Package MacOS app as a PWA
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-    - name: Windows on Arm
-      href: ../porting/apps-on-arm.md
-      items:
-        - name: Arm64EC for Windows 11 apps on Arm
-          href: ../porting/arm64ec.md
-        - name: Understanding Arm64EC ABI
-          href: ../porting/arm64ec-abi.md
-        - name: How x86 emulation works on Arm
-          href: ../porting/apps-on-arm-x86-emulation.md
-        - name: Troubleshooting desktop x86 apps
-          href: ../porting/apps-on-arm-troubleshooting-x86.md
-        - name: Troubleshooting UWP Arm apps
-          href: ../porting/apps-on-arm-troubleshooting-arm32.md
-        - name: Program Compatibility Troubleshooter on Arm
-          href: ../porting/apps-on-arm-program-compat-troubleshooter.md
 - name: Processes and threading
   items:
     - name: Launching, resuming, and background tasks

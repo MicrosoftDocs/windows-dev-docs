@@ -1,0 +1,27 @@
+items:
+- name: Windows App Development
+  href: /windows/apps/desktop/
+- name: Windows on Arm
+  items:
+  - name: Overview
+    href: /windows/arm/overview/
+  - name: Arm64EC for Windows 11 apps on Arm
+    href: /windows/arm/arm64ec/
+  - name: Understanding Arm64EC ABI
+    href: /windows/arm/arm64ec/
+  - name: How x86 emulation works on Arm
+    href: /windows/arm/apps-on-arm-x86-emulation/
+  - name: Debugging on Arm64 Drivers
+    href: /windows-hardware/drivers/debugger/debugging-arm64
+  - name: Build Arm64 Drivers with the WDK
+    href: /windows-hardware/drivers/develop/building-arm64-drivers/
+  - name: Troubleshooting
+    items:
+      - name: Troubleshooting x86 desktop apps on Arm
+        href: /windows/arm/apps-on-arm-troubleshooting-x86/
+      - name: Troubleshooting UWP apps on Arm
+        href: /windows/arm/apps-on-arm-troubleshooting-arm32/
+      - name: Troubleshooting program compatibility on Arm
+        href: /windows/arm/apps-on-arm-program-compat-troubleshooter/
+- name: Set up your dev environment
+  href: /windows/dev-environment/

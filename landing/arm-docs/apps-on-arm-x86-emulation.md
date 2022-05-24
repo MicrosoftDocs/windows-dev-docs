@@ -1,11 +1,13 @@
 ---
 title: How x86 and Arm32 emulation work on Arm
-
 description: Learn how emulation for x86 apps makes the rich ecosystem of existing Win32 apps available on Arm devices.
 ms.date: 06/25/2021
 ms.topic: article
-keywords: windows, arm64, x86, always connected, x86 emulation on Arm
-ms.localizationpriority: medium
+ms.prod: windows
+ms.technology: arm
+author: mattwojo
+ms.author: mattwoj
+ms.reviewer: marcs
 ---
 
 # How x86 emulation works on Arm
