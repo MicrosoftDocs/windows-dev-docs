@@ -10,8 +10,7 @@ ms.localizationpriority: medium
 
 # Manage your MSI or EXE app's store listing
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
+There are several ways to link customers to your app's page in the Microsoft Store.
 
 ## Link to your app's listing
 

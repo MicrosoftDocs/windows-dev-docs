@@ -10,9 +10,6 @@ ms.localizationpriority: medium
 
 # The MSI or EXE app certification process
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
-
 When you finish creating your app's submission and submit it to the Microsoft Store, the submission enters the certification step. This process usually takes 24 hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 24 hours for customers to see the app’s listing.
 
 Your app package will be downloaded from the package URL you specified. Any instructions in the certification notes will be followed. We'll display a message if we detect any errors during preprocessing. During this phase, several tests are conducted to validate your app submission. You’ll be notified if your submission fails any of these tests.

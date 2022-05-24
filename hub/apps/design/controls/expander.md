@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Expander
 
-The [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) control lets you show or hide less important content that's related to a piece of primary content that's always visible. Items contained in the [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) are always visible. The user can expand and collapse the [Content](/uwp/api/microsoft.ui.xaml.controls.expander.content) area, where secondary content is displayed, by interacting with the header. When the content area is expanded, it pushes other UI elements out of the way; it does not overlay other UI. The `Expander` can expand upwards or downwards.
+The [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) control lets you show or hide less important content that's related to a piece of primary content that's always visible. Items contained in the [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) are always visible. The user can expand and collapse the [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) area, where secondary content is displayed, by interacting with the header. When the content area is expanded, it pushes other UI elements out of the way; it does not overlay other UI. The `Expander` can expand upwards or downwards.
 
 Both the `Header` and `Content` areas can contain any content, from simple text to complex UI layouts. For example, you can use the control to show additional options for an item.
 
@@ -34,7 +34,7 @@ Both the `Header` and `Content` areas can contain any content, from simple text 
    :::column-end:::
 :::row-end:::
 
-> **Windows UI Library APIs**: [Expander class](/uwp/api/microsoft.ui.xaml.controls.expander), [Header property](/uwp/api/microsoft.ui.xaml.controls.expander.header), [Content property](/uwp/api/microsoft.ui.xaml.controls.expander.content)
+> **Windows UI Library APIs**: [Expander class](/uwp/api/microsoft.ui.xaml.controls.expander), [Header property](/uwp/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander)
 
 ## Is this the right control?
 
@@ -58,7 +58,7 @@ Use an `Expander` when some primary content should always be visible, but relate
 
 ## Create an Expander
 
-This example shows how to create a simple [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/uwp/api/microsoft.ui.xaml.controls.expander.content) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
+This example shows how to create a simple [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
 
 ```XAML
 <muxc:Expander Header="This text is in the header"
@@ -67,7 +67,7 @@ This example shows how to create a simple [Expander](/uwp/api/microsoft.ui.xaml.
 
 ### Expander content
 
-The [Content](/uwp/api/microsoft.ui.xaml.controls.expander.content) property of an `Expander` can be any type of object, but is typically a string or [UIElement](/uwp/api/windows.ui.xaml.uielement). For more details about setting the `Content` property, see the Remarks section of the [ContentControl](/uwp/api/windows.ui.xaml.controls.contentcontrol#remarks) class.
+The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) property of an `Expander` can be any type of object, but is typically a string or [UIElement](/uwp/api/windows.ui.xaml.uielement). For more details about setting the `Content` property, see the Remarks section of the [ContentControl](/uwp/api/windows.ui.xaml.controls.contentcontrol#remarks) class.
 
 You can use complex, interactive UI as the content of the `Expander`, including nested `Expander` controls in the content of a parent `Expander` as shown here.
 
@@ -79,7 +79,7 @@ You can align content by setting the [HorizontalContentAlignment](/uwp/api/windo
 
 ### Control the size of an Expander
 
-By default, the [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) and [Content](/uwp/api/microsoft.ui.xaml.controls.expander.content) areas automatically size to fit their contents. It's important to use the correct techniques to control the size of the `Expander` to avoid undesirable appearance or behavior.
+By default, the [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) and [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) areas automatically size to fit their contents. It's important to use the correct techniques to control the size of the `Expander` to avoid undesirable appearance or behavior.
 
 #### Width
 

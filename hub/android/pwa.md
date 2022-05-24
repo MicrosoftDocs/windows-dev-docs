@@ -44,7 +44,7 @@ You don't need a framework to create a Hybrid app or PWA, but there are a few po
 
 There are two popular distributions of Cordova:
 
-- [PhoneGap](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c): Support has been discontinued by Adobe.
+- PhoneGap: Support has been discontinued by Adobe.
 
 - [Ionic](https://ionicframework.com/)
 

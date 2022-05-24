@@ -80,7 +80,7 @@ Certain conditions require TextBlock to fall back to a more feature-rich and CPU
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Only the **None**, **CharacterEllipsis**, and **WordEllipsis** values are fast path. The **Clip** value disables the fast path.
 
-> **Note**&nbsp;&nbsp;Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code.md).
+> **Note**&nbsp;&nbsp;Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will also cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
 - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various Typography properties are fast path.
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the **BaselineToBaseline** and **MaxHeight** values disable the fast path.
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only **false** is fast path. Setting this property to **true** disables the fast path.
