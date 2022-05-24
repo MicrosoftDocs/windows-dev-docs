@@ -19,7 +19,7 @@ ms.custom: RS5
 Provide support for tracking a user's gaze, attention, and presence based on the location and movement of their eyes.
 
 > [!NOTE]
-> For gaze input in [Windows Mixed Reality](/windows/mixed-reality/), see [Gaze](/windows/mixed-reality/gaze).
+> For gaze input in [Windows Mixed Reality](/windows/mixed-reality/), see [Gaze]/windows/mixed-reality/mrtk-unity/features/input/gaze).
 
 **Important APIs**: [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview), [GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
