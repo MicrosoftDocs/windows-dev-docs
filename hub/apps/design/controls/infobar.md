@@ -345,7 +345,7 @@ Text in your notification will not be a constant length in all languages. For th
 
 The notification will follow standard mirroring behavior when localized to/from languages that are right to left (RTL) or left to right (LTR). The icon will only mirror if there is directionality.
 
-Please view the guidance for [Adjust layout and fonts, and support RTL](/uwp/design/globalizing/adjust-layout-and-fonts--and-support-rtl) for more information about text localization in your notification.
+Please view the guidance for [Adjust layout and fonts, and support RTL](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl) for more information about text localization in your notification.
 
 ## Related articles
 
