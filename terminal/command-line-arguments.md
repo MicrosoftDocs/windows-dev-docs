@@ -3,7 +3,7 @@ title: Windows Terminal command line arguments
 description: Learn how to create command line arguments for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/15/2021
+ms.date: 05/24/2022
 ms.topic: how-to
 ---
 
@@ -49,7 +49,7 @@ Below is the full list of supported commands and options for the `wt` command li
 | `new-tab`, `nt` | `--tabColor` | Creates a new tab with the tab color assigned. | Hex color as #RGB or #RRGGBB |
 
 > [!TIP]
-> If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/actions.md#actions-6) option by setting it to `true`.
+> If you change the title of a tab in Windows Terminal and want that title to persist, you must enable the [suppressApplicationTitle](./customize-settings/profile-advanced.md#suppress-title-changes) option by setting it to `true`.
 
 ### `Split-pane` command
 
@@ -335,9 +335,9 @@ Execution aliases do not work in WSL distributions. If you want to use wt.exe fr
 ---
 <!-- End tab selectors.  -->
 
-### Tab title
+### Pane title
 
-To open a new terminal instance with custom tab titles, use the `--title` argument. To set the title of each tab when opening two tabs, enter:
+To open a new terminal instance with custom titles for each terminal pane, use the `--title` argument. To set the title of each pane when opening multiple tabs, enter:
 
 <!-- Start tab selectors. -->
 #### [Command Prompt](#tab/windows)
@@ -356,6 +356,32 @@ wt --title tabname1 `; new-tab -p "Ubuntu-18.04" --title tabname2
 
 ```bash
 cmd.exe /c "wt.exe" --title tabname1 \; new-tab -p "Ubuntu-18.04" --title tabname2
+```
+
+Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.
+
+---
+<!-- End tab selectors.  -->
+
+Panes in the same tab can have different titles, which will reflect on the tab title depending on which pane has focus. To name independent panes, you can set the title after splitting the panes by entering:
+
+<!-- Start tab selectors. -->
+#### [Command Prompt](#tab/windows)
+
+```cmd
+wt --title pane1 ; split-pane -p "Command Prompt" --title pane2
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+wt --title pane1 `; split-pane -p "Command Prompt" --title pane2
+```
+
+#### [Linux](#tab/linux)
+
+```bash
+cmd.exe /c "wt.exe" --title pane1 \; split-pane -p "Command Prompt" --title pane2
 ```
 
 Execution aliases do not work in WSL distributions. If you want to use wt.exe from a WSL command line, you can spawn it from CMD directly by running `cmd.exe`. The `/c` option tells CMD to terminate after running and the `\;` forward-slash + semicolon separates commands.

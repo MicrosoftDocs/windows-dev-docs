@@ -45,7 +45,7 @@ This will append `$e]9;9;$P$e\` to your current prompt. When cmd evaluates this 
 Note that the above command will only work for the current `cmd.exe` session. To set the value permanently, AFTER running the above command, you'll want to run
 
 ```cmd
-setx PROMPT %PROMPT%
+setx PROMPT "%PROMPT%"
 ```
 
 #### PowerShell: `powershell.exe` or `pwsh.exe`
@@ -96,6 +96,18 @@ PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(
 
 The `PROMPT_COMMAND` variable in bash tells bash what command to run before displaying the prompt. The `printf` statement is what we're using to append the sequence for setting the working directory with the Terminal. The `$(wslpath -w "$PWD")` bit will invoke the `wslpath` executable to convert the current directory into its Windows-like path. The `${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}` bit is [some bash magic](https://unix.stackexchange.com/a/466100) to make sure we append this command to any existing command (if you've already set `PROMPT_COMMAND` somewhere else.)
 
+#### `zsh`
+
+Add the following lines to the end of your `.zshrc` file:
+
+```zsh
+keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+precmd_functions+=(keep_current_path)
+```
+
+The `precmd_functions` hook tells zsh what commands to run before displaying the prompt. The `printf` statement is what we're using to append the sequence for setting the working directory with the Terminal. The `$(wslpath -w "$PWD")` bit will invoke the `wslpath` executable to convert the current directory into its Windows-like path. Using  `precmd_functions+=` make sure we append the `keep_current_path` function to any existing function already defined for this hook.
 
 > [!NOTE]
 > Don't see your favorite shell here? If you figure it out, feel free to open a PR to contribute a solution for your preferred shell!

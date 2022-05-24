@@ -3,7 +3,7 @@ title: Windows Terminal Troubleshooting
 description: Learn fixes to common obstacles in Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/08/2021
+ms.date: 03/07/2022
 ms.topic: overview
 ---
 
@@ -18,9 +18,9 @@ If you click on the "settings" button in the dropdown, the Terminal will attempt
 > [!TIP]
 > You can also use the settings UI to configure your settings if you are using [Windows Terminal Preview](https://aka.ms/terminal-preview). You can learn how to open the settings UI on the [Actions page](./customize-settings/actions.md#application-level-commands).
 
-## Set your WSL distribution to start in the home `~` directory when launched
+## Set your WSL distribution to start in the home `~` directory when launched in older versions of Windows Terminal
 
-By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL distributions, the file systems are now directly referenced, as of Windows Terminal [version 1.12.3472.0](https://github.com/microsoft/terminal/releases). You can use `/home/<Your Ubuntu Username>` to directly refer to your home folder. For example, the following setting will launch the "Ubuntu-20.04" distribution in its home file path:
+By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<YourUsername>`). This is a Windows path. For WSL distributions running a new version of Windows Terminal, the file systems can enter `~` to set this home path. In older versions of Windows Terminal, you can use `/home/<Your Ubuntu Username>` to directly refer to your home folder. For example, the following setting will launch the "Ubuntu-20.04" distribution in its home file path:
 
 ```json
 {
@@ -30,7 +30,7 @@ By default, the `startingDirectory` of a profile is `%USERPROFILE%` (`C:\Users\<
 }
 ```
 
-If you are using an earlier version of Windows Terminal, WSL may require using the `\\wsl$\` prefix when referring to a distribution's home path for the `startingDirectory` setting. For example, in earlier versions of Windows Terminal the following setting will launch the "Ubuntu-18.04" distribution in its home file path:
+If you are using a very early version of Windows Terminal, WSL may require using the `\\wsl$\` prefix when referring to a distribution's home path for the `startingDirectory` setting. For example, the following setting will launch the "Ubuntu-18.04" distribution in its home file path:
 
 ```json
 {
@@ -119,21 +119,22 @@ Application developers are encouraged to choose either Windows API functions _or
 ### Keyboard service warning
 
 Starting in Windows Terminal 1.5, the Terminal will display a warning if the "Touch Keyboard and Handwriting Panel Service" is disabled. This service is needed by the operating system to properly route input events to the Terminal application (as well as many other applications on Windows). If you see this warning, you can follow these steps to re-enable the service:
+
 1. In the run dialog, run `services.msc`
 
-  ![services.msc in the run dialog](https://user-images.githubusercontent.com/18356694/97891741-c81eed00-1cf4-11eb-9d48-7b94fede5294.png)
+    ![services.msc in the run dialog](https://user-images.githubusercontent.com/18356694/97891741-c81eed00-1cf4-11eb-9d48-7b94fede5294.png)
 
 2. Find the "Touch Keyboard and Handwriting Panel Service"
 
-  ![Touch Keyboard and Handwriting Panel Service in Services.msc](https://user-images.githubusercontent.com/18356694/97891813-e1279e00-1cf4-11eb-91c8-69a5c6da6c3d.png)
+    ![Touch Keyboard and Handwriting Panel Service in Services.msc](https://user-images.githubusercontent.com/18356694/97891813-e1279e00-1cf4-11eb-91c8-69a5c6da6c3d.png)
 
 3. Open the "Properties" for this service
 
-  ![service properties](https://user-images.githubusercontent.com/18356694/97891923-03212080-1cf5-11eb-90cc-821a4fbf16ba.png)
+    ![service properties](https://user-images.githubusercontent.com/18356694/97891923-03212080-1cf5-11eb-90cc-821a4fbf16ba.png)
 
 4. Change the "startup type" to "Automatic"
 
-  ![service startup type](https://user-images.githubusercontent.com/18356694/97892043-25b33980-1cf5-11eb-8833-a2e65a306a79.png)
+    ![service startup type](https://user-images.githubusercontent.com/18356694/97892043-25b33980-1cf5-11eb-8833-a2e65a306a79.png)
 
 5. Hit "Ok", and restart the PC.
 
@@ -164,3 +165,15 @@ To reset your settings back to the original default settings, delete your [setti
 
 > [!IMPORTANT]
 > As of Windows Terminal version 1.10 or greater, you'll also need to delete the `state.json` file in the same directory as the `settings.json` file to fully reset the settings to the defaults.
+
+## Why is Acrylic opacity not making my Windows Terminal background transparent?
+
+You can set the transparency of a terminal window with the [`useAcrylic` property](./customize-settings/profile-appearance.md#transparency). There are a few reasons why your opacity setting may not be working for Acrylic, including:
+
+- As a system-wide policy, acrylic is only enabled for the foreground window. So if you activate any other window than the Terminal, the Terminal's acrylic will turn off.
+- Acrylic doesn't work if your GPU hardware does not support it. If you're running an app in a Virtual Machine (VM) or over remote desktop, acrylic likely will not work.
+- Acrylic can be disabled by the operating system for a number of reasons, like being in power saver (low-battery) mode or when accessing a machine using Remote Desktop.
+
+## Why does my mouse pointer disappear when hovering over a window and typing?
+
+This cursor auto-hiding behavior is by design, but can be disabled in the by searching in Windows Settings for "Mouse settings" > "Additional Mouse Settings" > "Mouse Properties" > "Pointer Options" > Uncheck "Hide pointer while typing". You may need to restart your Windows Terminal in order for this change to take effect.

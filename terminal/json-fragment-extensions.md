@@ -109,8 +109,8 @@ appNamespaceGUID = uuid.uuid5(terminalNamespaceGUID, "Git".encode("UTF-16LE").de
 # Calculate the example GUID for the 'Git Bash' profile
 profileGUID = uuid.uuid5(appNamespaceGUID, "Git Bash".encode("UTF-16LE").decode("ASCII"))
 
-# Output the GUID
-print(profileGUID)
+# Output the GUID as Windows Terminal expects it (enclosed in curly brackets)
+print(f"{{{profileGUID}}}")
 
 ```
 
@@ -127,8 +127,8 @@ terminalNamespaceGUID = uuid.UUID("{2bde4a90-d05f-401c-9492-e40884ead1d8}")
 # Calculate the example GUID for the 'Git Bash' profile
 profileGUID = uuid.uuid5(terminalNamespaceGUID, "Ubuntu".encode("UTF-16LE").decode("ASCII"))
 
-# Output the GUID
-print(profileGUID)
+# Output the GUID as Windows Terminal expects it (enclosed in curly brackets)
+print(f"{{{profileGUID}}}")
 
 ```
 

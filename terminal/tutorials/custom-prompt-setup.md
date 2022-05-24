@@ -40,14 +40,12 @@ To set a Nerd Font for use with Oh My Posh and Terminal Icons, open the Windows 
 
 Oh My Posh enables you to use a full color set to define and render your terminal prompt, including the ability to use built-in themes or create your own custom theme.
 
-If you want to use the same custom prompt themes across both PowerShell and WSL, we recommend installing Oh My Posh using [winget](../../package-manager/winget), the official Windows Package Manager. It's included with Windows 11, but you may need to install it if you're running Windows 10. Then follow the `winget` install instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/windows).
-
 ### Install Oh My Posh for PowerShell
 
-To customize your PowerShell prompt, you can install Oh My Posh using the [PowerShell install-module](/powershell/module/powershellget/install-module). Enter the command:
+To customize your PowerShell prompt, you can install Oh My Posh using [winget](/windows/package-manager/winget). Enter the command:
 
 ```powershell
-Install-Module oh-my-posh -Scope CurrentUser
+winget install oh-my-posh
 ```
 
 This will install:
@@ -55,10 +53,10 @@ This will install:
 - `oh-my-posh.exe`: The Windows executable
 - `themes`: The latest [Oh My Posh themes](https://ohmyposh.dev/docs/themes)
 
-You may also want to enter this command to ensure you have the latest updates: `Update-Module oh-my-posh`.
+To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
 
 > [!NOTE]
-> If you are more familiar with the [Scoop](https://scoop.sh/) installer or [Chocolatey](https://chocolatey.org/) package manager, these can also be used for installing on Windows, just follow the instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/windows).
+> If you are more familiar with the [Scoop](https://scoop.sh/) installer or a manual installation method that allows automation, these can also be used for installing on Windows, just follow the instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/installation/windows).
 
 ### Choose and apply a PowerShell prompt theme
 
@@ -73,8 +71,7 @@ notepad $PROFILE
 Add the following to the end of your PowerShell profile file to set the `paradox` theme. (Replace `paradox` with the theme of your choice.)
 
 ```powershell
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme paradox
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\paradox.omp.json" | Invoke-Expression
 ```
 
 Now, each new PowerShell instance will start by importing Oh My Posh and setting your command line theme.
@@ -88,7 +85,7 @@ Oh My Posh now allows you to customize WSL prompts, just like you would a PowerS
 
 ### Install Oh My Posh for WSL
 
-We recommend installing Oh My Posh for WSL, whether using Bash, Zsh, or something else, by following the [Linux install guide in the Oh My Posh docs](https://ohmyposh.dev/docs/linux).
+We recommend installing Oh My Posh for WSL, whether using Bash, Zsh, or something else, by following the [Linux install guide in the Oh My Posh docs](https://ohmyposh.dev/docs/installation/linux).
 
 Currently the recommended path for customizing WSL prompts with Oh My Posh uses the [Homebrew package manager](https://brew.sh/) for installation. (Homebrew works with WSL now!) When installing Homebrew for Linux, be sure to follow [Next steps](https://docs.brew.sh/Homebrew-on-Linux#install) instructions to add Homebrew to your PATH and to your bash shell profile script.
 
@@ -109,12 +106,12 @@ eval "$(oh-my-posh --init --shell bash --config ~/jandedobbeleer.omp.json)"
 
 You can replace `jandedobbeleer.omp.json` with the name of whichever theme you prefer to use as long as it's copied to your `$Home` folder.
 
-Alternatively, if you are using oh-my-posh in both Windows with PowerShell and with WSL, you can share your PowerShell theme with WSL by pointing to a theme in your Windows user's home folder. In your WSL distribution's `.profile` path, replace ~ with the path: `/mnt/c/Users/<WINDOWSUSERNAME>`. Replacing `<WINDOWSUSERNAME>` with your own Windows username. You may also need to add `$env:POSH_PATH` to your $PATH if you have only installed the Oh My Posh executable for PowerShell.
+Alternatively, if you are using oh-my-posh in both Windows with PowerShell and with WSL, you can share your PowerShell theme with WSL by pointing to a theme in your Windows user's home folder. In your WSL distribution's `.profile` path, replace ~ with the path: `/mnt/c/Users/<WINDOWSUSERNAME>`. Replacing `<WINDOWSUSERNAME>` with your own Windows username.
 
 <!-- To reference the theme directly from it's original folder rather than moving it to $Home, you can use:
 eval "$(oh-my-posh --init --shell bash --config $(brew --prefix oh-my-posh)/themes/jandedobbeleer.omp.json)" -->
 
-You can [customize the Oh My Posh themes](https://ohmyposh.dev/docs/linux#customize) if desired.
+You can [customize the Oh My Posh themes](https://ohmyposh.dev/docs/installation/customize) if desired.
 
 ## Use Terminal-Icons to add missing folder or file icons
 
