@@ -37,7 +37,7 @@ The C#/WinRT NuGet package can be used to both generate C# projections (also cal
 
 ### Generate and distribute an interop assembly
 
-WinRT APIs are defined in Windows Metadata (WinMD) files. The C#/WinRT NuGet package ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) includes the C#/WinRT compiler, **cswinrt.exe**, which you can use to process WinMD files and generate .NET 5+ C# code. C#/WinRT compiles these source files into an interop assembly, similar to how [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index.md) generates headers for the C++ language projection. You can then distribute the C#/WinRT interop assembly along with the implementation assembly for .NET 5+ applications to reference, typically as a NuGet package.
+WinRT APIs are defined in Windows Metadata (WinMD) files. The C#/WinRT NuGet package ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) includes the C#/WinRT compiler, **cswinrt.exe**, which you can use to process WinMD files and generate .NET 5+ C# code. C#/WinRT compiles these source files into an interop assembly, similar to how [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) generates headers for the C++ language projection. You can then distribute the C#/WinRT interop assembly along with the implementation assembly for .NET 5+ applications to reference, typically as a NuGet package.
 
 For more details on how to generate and distribute an interop assembly, see [Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5 and later apps](net-projection-from-cppwinrt-component.md).
 
