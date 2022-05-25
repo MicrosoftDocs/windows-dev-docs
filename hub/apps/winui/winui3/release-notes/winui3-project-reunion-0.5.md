@@ -148,7 +148,7 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
 
-- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/windows/winui/api/microsoft.ui.xaml.application.suspending?preserve-view=true&view=winui-3.0-preview) for more details. 
+- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/uwp/api/windows.ui.xaml.application.suspending) for more details. 
 
 - CoreWindow, ApplicationView, CoreApplicationView, CoreDispatcher and their dependencies are not supported in desktop apps (see below)
 
