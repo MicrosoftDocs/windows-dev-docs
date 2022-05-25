@@ -18,7 +18,7 @@ The C#/WinRT custom type mappings are categorized by types in the Windows SDK or
 - **WinRT types that map to .NET types with the same name and namespace.** These custom mappings are generally for performance or enhancement reasons, and are implemented directly in C#. Most of the types that have the same namespace name and type name in WinRT and .NET are structures (or types associated with structures, such as enumerations). In WinRT, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types (for example, **Windows.UI.Color**).
 
 > [!NOTE]
-> For a list of mappings between WinRT and .NET types in the context of UWP apps, see [.NET mappings of WinRT types in UWP](/windows/apps/develop/platform/winrt-components/net-framework-mappings-of-windows-runtime-types.md).
+> For a list of mappings between WinRT and .NET types in the context of UWP apps, see [.NET mappings of WinRT types in UWP](/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types).
 
 ## Mappings for WinRT types in the Windows SDK
 
