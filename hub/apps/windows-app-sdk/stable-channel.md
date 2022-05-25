@@ -140,33 +140,32 @@ For easier programming access to functionality that's implemented in USER32.dll 
 - Using the `OverlappedPresenter.SetBorderAndTitlebar` API to hide caption buttons and borders would result in a 1px top border when maximized. This has been resolved. See [issue 1693](https://github.com/microsoft/WindowsAppSDK/issues/1693) on GitHub for more info.
 
 **Known limitations:**
-- When using the `AppWindowTitlebar` API to customize the colors of the standard title bar the icon and text is misaligned compared to the standard title bar. See [issue 2459](https://github.com/microsoft/WindowsAppSDK/issues/2459) on GitHub for more info.
-- When solving GitHub [issue 2049](https://github.com/microsoft/WindowsAppSDK/issues/2049) (seen above), we accidentally introduced a bug where, if you apply a `FullScreenPresenter` to an `AppWindow` you’ve retrieved from GetFromWindowId and then try to revert back to the windows previous state by re-applying the default Presenter, you end up with a window that has no Title Bar. If you rely on `FullScreenPresenter` in your app and need a workaround until this bug is serviced, you can use the following code snippet as a template for how to work around the issue:
+- When using the **AppWindowTitlebar** API to customize the colors of the standard title bar, the icon and text is misaligned compared to the standard title bar. For more info, see GitHub [issue 2459](https://github.com/microsoft/WindowsAppSDK/issues/2459).
+- When solving GitHub [issue 2049](https://github.com/microsoft/WindowsAppSDK/issues/2049) (seen above), we introduced the followng bug: if you apply any **AppWindowPresenter** to an **AppWindow** that you've retrieved from **GetFromWindowId**, then change a window style that's being tracked by that Presenter through calling USER32 APIs, and then try to revert back to the window's previous state by re-applying the default Presenter, the result is a window that has no title Bar. If you rely on any Presenter in your app, and use calls to USER32 for changing window styles at the time that a non-default Presenter is applied, then you might need to add a workaround to ensure correct window behavior until this bug is serviced. You can use the following code snippet as a template for how to work around the issue:
 
     ```csharp
-        AppWindow m_appWindow;
-        OverlappedPresenter m_defaultPresenter;
+    AppWindow m_appWindow;
+    OverlappedPresenter m_defaultPresenter;
 
-        private void EnterFullScreen_Click(object sender, RoutedEventArgs e)
-        {
-            // Capture the default presenter.
-            m_defaultPresenter = m_appWindow.Presenter as OverlappedPresenter;
+    private void EnterFullScreen_Click(object sender, RoutedEventArgs e)
+    {
+        // Capture the default presenter.
+        m_defaultPresenter = m_appWindow.Presenter as OverlappedPresenter;
 
-            // Opt in the default overlapped presenter so it can control various aspects of the AppWindow.
-            m_defaultPresenter.IsAlwaysOnTop = m_defaultPresenter.IsAlwaysOnTop;
-            m_defaultPresenter.IsResizable = m_defaultPresenter.IsResizable;
-            m_defaultPresenter.IsMinimizable = m_defaultPresenter.IsMinimizable;
-            m_defaultPresenter.IsMaximizable = m_defaultPresenter.IsMaximizable;
-            m_defaultPresenter.SetBorderAndTitleBar(m_defaultPresenter.HasBorder, m_defaultPresenter.HasTitleBar);
+        // Opt in the default overlapped presenter so it can control various aspects of the AppWindow.
+        m_defaultPresenter.IsAlwaysOnTop = m_defaultPresenter.IsAlwaysOnTop;
+        m_defaultPresenter.IsResizable = m_defaultPresenter.IsResizable;
+        m_defaultPresenter.IsMinimizable = m_defaultPresenter.IsMinimizable;
+        m_defaultPresenter.IsMaximizable = m_defaultPresenter.IsMaximizable;
+        m_defaultPresenter.SetBorderAndTitleBar(m_defaultPresenter.HasBorder, m_defaultPresenter.HasTitleBar);
 
-            m_appWindow.SetPresenter(AppWindowPresenterKind.FullScreen);
-       
-        }
+        m_appWindow.SetPresenter(AppWindowPresenterKind.FullScreen);
+    }
 
-        private void ExitFullScreen_Click(object sender, RoutedEventArgs e)
-        {
-            m_appWindow.SetPresenter(AppWindowPresenterKind.Default);
-        }
+    private void ExitFullScreen_Click(object sender, RoutedEventArgs e)
+    {
+        m_appWindow.SetPresenter(AppWindowPresenterKind.Default);
+    }
     ```
 
 #### C#/WinRT
