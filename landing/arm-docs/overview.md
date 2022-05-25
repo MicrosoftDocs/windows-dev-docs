@@ -37,7 +37,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 :::row:::
     :::column span="":::
-       [![Project Volterra Arm device.](./images/project-volterra-device2.png)](./arm64ec.md)
+       ![Project Volterra Arm device.](./images/project-volterra-device2.png)
     :::column-end:::
     :::column span="2":::
         Microsoft is also working on "Project Volterra" - an exciting new Arm-powered device built by Windows Developers, for Windows developers. Since "Project Volterra" is built on Qualcomm's Snapdragon Compute Platform and sports a powerful Neural Processing Unit (NPU), this will be a great device for AI researchers and developers looking to integrate AI into their apps and experiences. More details about "Project Volterra" will be announced later this year.
@@ -50,7 +50,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 :::row:::
     :::column span="":::
-       [![Arm64EC graphic.](./images/arm64ec.png)](./arm64ec.md)
+       ![Arm64EC graphic.](./images/arm64ec.png)
     :::column-end:::
     :::column span="2":::
         Arm64EC (“Emulation Compatible”) enables you to incrementally build new apps, or port existing apps, to take advantage of native Arm performance where possible, while utilizing existing x64 code & libraries until fully migrated. Learn more:
@@ -74,7 +74,7 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 :::row:::
     :::column:::
-       ![Tools graphic](./images/arm-tools.png)](#tools-that-support-arm-development-on-windows)
+       ![Tools graphic](./images/arm-tools.png)
     :::column-end:::
     :::column span="2":::
         Windows offers a variety of tools and frameworks to support app development targeting Arm64 devices.
