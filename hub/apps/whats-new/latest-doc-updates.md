@@ -27,7 +27,7 @@ Highlights this month include:
 * [Windows developer FAQ](/windows/apps/get-started/windows-developer-glossary)
 * [Windows developer glossary](/windows/apps/get-started/windows-developer-glossary)
 * Migrating from [UWP to the Windows App SDK](/windows/apps/get-started/migrate-from-uwp-to-winappsdk)
-* [Page Class updated for WinUI 3](/windows/winui/api/microsoft.ui.xaml.controls.page?view=winui-3.0)
+* [Page Class updated for WinUI 3](/windows/winui/api/microsoft.ui.xaml.controls.page)
 * [A basic C++/WinRT Windows UI Library 2 example (UWP)](/windows/uwp/cpp-and-winrt-apis/simple-winui-example)
 * [Set up continuous integration for your WinUI 3 app](/windows/apps/package-and-deploy/ci-for-winui3?pivots=winui3-packaged-csharp).
 * [Tutorial—Create a simple photo viewer with WinUI 3 (C#)](/windows/apps/get-started/simple-photo-viewer-winui3)
