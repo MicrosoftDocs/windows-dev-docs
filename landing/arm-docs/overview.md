@@ -21,13 +21,9 @@ Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 1
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
 
-## Build Arm Windows apps using Arm-native Tools, Services, and Devices!
-
-At Build 2022, Microsoft [announced a comprehensive suite of tools, services, and devices](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) to enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
-
 ### Arm developer tools
 
-Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm.
+Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm. See the [announcement from Build 2022](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) about this comprehensive suite of tools, services, and devices that enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
 
 ### Arm developer services
 
@@ -41,18 +37,20 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 :::row:::
     :::column span="":::
-       ![Project Volterra Arm device.](./images/project-volterra-device2.png)](./arm64ec.md)
+       [![Project Volterra Arm device.](./images/project-volterra-device2.png)](./arm64ec.md)
     :::column-end:::
     :::column span="2":::
         Microsoft is also working on "Project Volterra" - an exciting new Arm-powered device built by Windows Developers, for Windows developers. Since "Project Volterra" is built on Qualcomm's Snapdragon Compute Platform and sports a powerful Neural Processing Unit (NPU), this will be a great device for AI researchers and developers looking to integrate AI into their apps and experiences. More details about "Project Volterra" will be announced later this year.
     :::column-end:::
 :::row-end:::
 
+> [!VIDEO https://www.youtube.com/embed/yICVNta8jMU]
+
 ## Arm64EC - Build apps for Windows 11 on Arm
 
 :::row:::
     :::column span="":::
-       ![Arm64EC graphic.](./images/arm64ec.png)](./arm64ec.md)
+       [![Arm64EC graphic.](./images/arm64ec.png)](./arm64ec.md)
     :::column-end:::
     :::column span="2":::
         Arm64EC (“Emulation Compatible”) enables you to incrementally build new apps, or port existing apps, to take advantage of native Arm performance where possible, while utilizing existing x64 code & libraries until fully migrated. Learn more:
@@ -106,8 +104,8 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 - For more information about architectures, see [App package architectures](/windows/msix/package/device-architecture).
 
 ## Additional resources
+
 - [Satya Nadella's Build 2022 keynote announcing "Project Volterra"](https://youtu.be/BmGiJDeIiY0?t=63)
-- [Build 2022 "Project Volterra" Sizzle Video](https://www.youtube.com/watch?v=yICVNta8jMU)
 - [How x86 emulation works on Arm](./apps-on-arm-x86-emulation.md)
 - [Troubleshooting x86 desktop apps](./apps-on-arm-troubleshooting-x86.md)
 - [Troubleshooting ARM UWP apps](./apps-on-arm-troubleshooting-arm32.md)
