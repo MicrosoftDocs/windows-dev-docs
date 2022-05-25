@@ -21,7 +21,9 @@ Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 1
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
 
-At Build 2022, Microsoft announced a comprehensive suite of tools, services, and devices to enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
+## Build Arm Windows apps using Arm-native Tools, Services, and Devices!
+
+At Build 2022, Microsoft [announced a comprehensive suite of tools, services, and devices](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) to enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
 
 ### Arm developer tools
 
@@ -104,7 +106,8 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 - For more information about architectures, see [App package architectures](/windows/msix/package/device-architecture).
 
 ## Additional resources
-
+- [Satya Nadella's Build 2022 keynote announcing "Project Volterra"](https://youtu.be/BmGiJDeIiY0?t=63)
+- [Build 2022 "Project Volterra" Sizzle Video](https://www.youtube.com/watch?v=yICVNta8jMU)
 - [How x86 emulation works on Arm](./apps-on-arm-x86-emulation.md)
 - [Troubleshooting x86 desktop apps](./apps-on-arm-troubleshooting-x86.md)
 - [Troubleshooting ARM UWP apps](./apps-on-arm-troubleshooting-arm32.md)
