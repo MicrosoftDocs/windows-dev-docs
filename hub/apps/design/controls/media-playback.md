@@ -7,7 +7,6 @@ label: Media playback controls
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
@@ -19,32 +18,33 @@ Users expect a basic control set, such as play/pause, skip back, skip forward, w
 
 ![Media player element with transport controls](images/controls/mtc_double_video_inprod.png)
 
-> **Important APIs**: [MediaPlayerElement class](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaTransportControls class](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
-
-> [!Important]
+> [!IMPORTANT]
 > **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10, you need to use the [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) control instead. All recommendations made here apply to MediaElement as well.
 
 ## Is this the right control?
 
 Use a media player when you want to play audio or video in your app. To display a collection of images, use a [Flip view](flipview.md).
 
-## Examples
+## Recommendations
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to open the app and see the <a href="winui2gallery:/item/MediaPlayerElement">MediaPlayerElement</a> or <a href="winui2gallery:/item/MediaPlayer">MediaPlayer</a> in action.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+The media player supports both light and dark themes, but dark theme provides a better experience for most entertainment scenarios. The dark background provides better contrast, in particular for low-light conditions, and limits the control bar from interfering in the viewing experience.
+
+When playing video content, encourage a dedicated viewing experience by promoting full-screen mode over inline mode. The full-screen viewing experience is optimal, and options are restricted in the inline mode.
+
+If you have the screen real estate or are designing for the 10-foot experience, go with the double-row layout. It provides more space for controls than the compact single-row layout and it is easier to navigate using gamepad for 10-foot.
+
+> [!NOTE]
+> Visit the [Designing for Xbox and TV](../devices/designing-for-tv.md) article for more information on optimizing your application for the 10-foot experience.
+
+The default controls have been optimized for media playback, however you have the ability to add custom options you need to the media player in order to provide the best experience for you app. Visit [Create custom transport controls](custom-transport-controls.md) to learn more about adding custom controls.
 
 ## Create a media player
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [MediaPlayerElement class](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaTransportControls class](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the MediaPlayerElement in action](winui2gallery:/item/MediaPlayerElement). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
 Add media to your app by creating a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) object in XAML and set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaSource](/uwp/api/windows.media.core.mediasource) that points to an audio or video file.
 
 This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) and sets its [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property to the URI of a video file that's local to the app. The **MediaPlayerElement** begins playing when the page loads. To suppress media from starting right away, you can set the [AutoPlay](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) property to **false**.
@@ -67,6 +67,7 @@ This XAML creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.media
 ```
 
 ### Media transport controls
+
 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set [AreTransportControlsEnabled](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled) to **true**. To disable them, set **AreTransportControlsEnabled** to **false**. The transport controls are represented by the [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class reference and [Create custom transport controls](custom-transport-controls.md).
 
 The transport controls support single- and double-row layouts. The first example here is a single-row layout, with the play/pause button located to the left of the media timeline. This layout is best reserved for inline media playback and compact screens.
@@ -232,7 +233,8 @@ Here are some situations when you should release the display request:
 -   Playback stops. For example, the video is done playing or the presentation is over.
 -   A playback error has occurred. For example, network connectivity issues or a corrupted file.
 
-> **Note**&nbsp;&nbsp; If [MediaPlayerElement.IsFullWindow](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow) is set to true and media is playing, the display will automatically be prevented from deactivating.
+> [!NOTE]
+> If [MediaPlayerElement.IsFullWindow](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow) is set to true and media is playing, the display will automatically be prevented from deactivating.
 
 **To keep the screen active**
 
@@ -365,18 +367,6 @@ This example creates a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.me
 MediaPlayerElement mediaPlayerElement = new MediaPlayerElement();
 mediaPlayerElement.MediaPlayer.RealTimePlayback = true;
 ```
-
-## Recommendations
-
-The media player supports both light and dark themes, but dark theme provides a better experience for most entertainment scenarios. The dark background provides better contrast, in particular for low-light conditions, and limits the control bar from interfering in the viewing experience.
-
-When playing video content, encourage a dedicated viewing experience by promoting full-screen mode over inline mode. The full-screen viewing experience is optimal, and options are restricted in the inline mode.
-
-If you have the screen real estate or are designing for the 10-foot experience, go with the double-row layout. It provides more space for controls than the compact single-row layout and it is easier to navigate using gamepad for 10-foot.
-
-> **Note**&nbsp;&nbsp; Visit the [Designing for Xbox and TV](../devices/designing-for-tv.md) article for more information on optimizing your application for the 10-foot experience.
-
-The default controls have been optimized for media playback, however you have the ability to add custom options you need to the media player in order to provide the best experience for you app. Visit [Create custom transport controls](custom-transport-controls.md) to learn more about adding custom controls.
 
 ## Get the sample code
 

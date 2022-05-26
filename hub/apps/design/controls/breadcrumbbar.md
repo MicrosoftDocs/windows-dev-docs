@@ -4,10 +4,6 @@ title: BreadcrumbBar
 template: detail.hbs
 ms.date: 04/29/2021
 ms.topic: article
-keywords: windows 10, winui, uwp
-pm-contact: kayang
-design-contact: shurd
-dev-contact: ranjeshj
 ms.custom: 21H1
 ms.localizationpriority: medium
 ---
@@ -18,48 +14,11 @@ A [BreadcrumbBar](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar) p
 
 ![Breadcrumb bar with nodes: Home, Documents, Design, Northwind, Images, Folder1, Folder2, Folder3. The app is resized so that the Breadcrumb crumbles and an ellipsis replaces the leftmost nodes. Then, clicking the ellipsis opens a flyout with the crumbled nodes](images/breadcrumbbar-default.gif)
 
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **BreadcrumbBar** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Windows UI Library APIs:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
-
-> [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
->
->In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
-
 ## Is this the right control?
 
 A breadcrumb bar lets a user keep track of their location when navigating through an app or folders, and lets them quickly jump back to a previous location in the path.
 
 Use a BreadcrumbBar when the path taken to the current position is relevant. This UI is commonly used in folder managers and when a user may navigate many levels deep into an app.
-
-## Examples
-
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/BreadcrumbBar">open the app and see the BreadcrumbBar in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
 
 ## Breadcrumb bar UI
 
@@ -77,12 +36,45 @@ The image below shows the parts of the `BreadcrumbBar` control. You can modify t
 
 :::image type="content" source="images/breadcrumb-bar-anatomy.png" alt-text="An image of a breadcrumb bar with the parts labeled: ellipsis, chevron, breadcrumb bar item, current item, ellipsis flyout, ellipsis drop down item":::
 
-## Create a breadcrumb bar
+## Recommendations
 
-This example shows how to create a breadcrumb bar with the default styling. You can place the breadcrumb bar anywhere in your app UI. You populate the breadcrumbs by setting the [ItemsSource]() property. Here, it's set to an array of strings that are shown in the breadcrumb bar.
+- Use a breadcrumb bar when you have many levels of navigation and expect users to be able to return to any previous level.
+- Don't use a breadcrumb bar if you only have 2 possible levels of navigation. Simple [back navigation](../basics/navigation-history-and-backwards-navigation.md) is sufficient.
+- Show the current location as the last item in the breadcrumb bar. However, you typically don't want to perform any navigation if the user clicks the current item. (If you want to let the user reload the current page or data, consider providing a dedicated 'reload' option.)
+
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+The BreadcrumbBar for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI APIs:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the BreadcrumbBar in action](winui2gallery:/item/BreadcrumbBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
 
 ```xaml
-<muxc:BreadcrumbBar x:Name="BreadcrumbBar1"/>
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:BreadcrumbBar />
+```
+
+## Create a breadcrumb bar
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.button)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the BreadcrumbBar in action](winui3gallery:/item/BreadcrumbBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+
+This example shows how to create a breadcrumb bar with the default styling. You can place the breadcrumb bar anywhere in your app UI. You populate the breadcrumbs by setting the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) property. Here, it's set to an array of strings that are shown in the breadcrumb bar.
+
+```xaml
+<BreadcrumbBar x:Name="BreadcrumbBar1"/>
 ```
 
 ```csharp
@@ -122,14 +114,14 @@ ObservableCollection<StorageFolder> Breadcrumbs =
 ```
 
 ```xaml
-<muxc:BreadcrumbBar x:Name="FolderBreadcrumbBar"
+<BreadcrumbBar x:Name="FolderBreadcrumbBar"
             ItemsSource="{x:Bind Breadcrumbs}">
-    <muxc:BreadcrumbBar.ItemTemplate>
+    <BreadcrumbBar.ItemTemplate>
         <DataTemplate x:DataType="StorageFolder">
             <TextBlock Text="{x:Bind DisplayName}"/>
         </DataTemplate>
-    </muxc:BreadcrumbBar.ItemTemplate>
-</muxc:BreadcrumbBar>
+    </BreadcrumbBar.ItemTemplate>
+</BreadcrumbBar>
 ```
 
 ### ItemClicked
@@ -153,6 +145,7 @@ private void BreadcrumbBar1_ItemClicked(muxc.BreadcrumbBar sender, muxc.Breadcru
     }
 }
 ```
+
 ### Lightweight styling
 
 You can modify the default Style and ControlTemplate to give the control a unique appearance. See the Control Style and Template section of the BreadcrumbBar API docs for a list of the available theme resources. For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling) of the [Styling controls](../style/xaml-styles.md) article.
@@ -169,10 +162,10 @@ This example shows how you could use a breadcrumb bar in a simple file explorer 
              IsItemClickEnabled="True" 
              ItemClick="FolderListView_ItemClick">
       <ListView.Header>
-         <muxc:BreadcrumbBar x:Name="FolderBreadcrumbBar"
+         <BreadcrumbBar x:Name="FolderBreadcrumbBar"
                              ItemsSource="{x:Bind Breadcrumbs}"
                              ItemClicked="FolderBreadcrumbBar_ItemClicked">
-         </muxc:BreadcrumbBar>
+         </BreadcrumbBar>
       </ListView.Header>
       <ListView.ItemTemplate>
          <DataTemplate>
@@ -265,12 +258,6 @@ public readonly struct Crumb
     public override string ToString() => Label;
 }
 ```
-
-## Recommendations
-
-- Use a breadcrumb bar when you have many levels of navigation and expect users to be able to return to any previous level.
-- Don't use a breadcrumb bar if you only have 2 possible levels of navigation. Simple [back navigation](../basics/navigation-history-and-backwards-navigation.md) is sufficient.
-- Show the current location as the last item in the breadcrumb bar. However, you typically don't want to perform any navigation if the user clicks the current item. (If you want to let the user reload the current page or data, consider providing a dedicated 'reload' option.)
 
 ## Related articles
 

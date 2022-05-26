@@ -1,24 +1,16 @@
 ---
-pm-contact: kisai
-design-contact: ksulliv
-dev-contact: Shmazlou
-doc-status: Published
 description: Learn how to use Swipe commanding as a touch accelerator for context menus so that users can perform the same operation on multiple items in quick succession.
 title: Swipe
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+doc-status: Published
 ms.localizationpriority: medium
 ---
 # Swipe
 
 Swipe commanding is an accelerator for context menus that lets users easily access common menu actions by touch, without needing to change states within the app.
-
-> **Windows UI Library APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
->
-> **Platform APIs**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Execute and Reveal light theme](images/light-theme-swipe.png)
 
@@ -33,26 +25,10 @@ You should use swipe commanding when you have a potentially large group of items
 - Saving or downloading
 - Replying
 
-## Examples
-
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/SwipeControl">open the app and see the SwipeControl in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
 
 ## How does Swipe work?
 
-UWP swipe commanding has two modes: [Reveal](/uwp/api/windows.ui.xaml.controls.swipemode) and [Execute](/uwp/api/windows.ui.xaml.controls.swipemode). It also supports four different swipe directions: up, down, left, and right.
+UWP swipe commanding has two modes: [Reveal](/windows/winui/api/microsoft.ui.xaml.controls.swipemode) and [Execute](/windows/winui/api/microsoft.ui.xaml.controls.swipemode). It also supports four different swipe directions: up, down, left, and right.
 
 ### Reveal mode
 
@@ -82,14 +58,55 @@ It may also be used for more destructive actions like deleting an item. However,
 
 Swipe works in all cardinal directions: up, down, left, and right. Each swipe direction can hold its own swipe items or content, but only one instance of a direction can be set at a time on a single swipe-able element.
 
-For example, you cannot have two [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems) definitions on the same SwipeControl.
+For example, you cannot have two [LeftItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.LeftItems) definitions on the same SwipeControl.
 
-## How to create a Swipe command
+## Dos and don'ts
+
+- Don't use swipe in FlipViews or Hubs. The combination may be confusing for the user because of conflicting swipe directions.
+- Don't combine horizontal swipe with horizontal navigation, or vertical swipe with vertical navigation.
+- Do make sure what the user is swiping is the same action, and is consistent across all related items that can be swiped.
+- Do use swipe for the main actions a user will want to perform.
+- Do use swipe on items where the same action is repeated many times.
+- Do use horizontal swiping on wider items, and vertical swiping on taller items.
+- Do use short, concise text labels.
+
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+The SwipeControl for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/windows.UI.Xaml.Controls.ListView)
+> - **WinUI APIs:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the SwipeControl in action](winui2gallery:/item/SwipeControl). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:SwipeControl />
+<muxc:SwipeItem />
+```
+
+## Create a swipe command
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the SwipeControl in action](winui3gallery:/item/SwipeControl). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
 
 Swipe commands have two components that you need to define:
 
-- The [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), which wraps around your content. In a collection, such as a ListView, this sits within your DataTemplate.
-- The swipe menu items, which is one or more [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) objects placed in the swipe control's directional containers: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems), or [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- The [SwipeControl](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol), which wraps around your content. In a collection, such as a ListView, this sits within your DataTemplate.
+- The swipe menu items, which is one or more [SwipeItem](/windows/winui/api/microsoft.ui.xaml.controls.swipeitem) objects placed in the swipe control's directional containers: [LeftItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.TopItems), or [BottomItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.BottomItems)
 
 Swipe content can be placed inline, or defined in the Resources section of your page or app.
 
@@ -116,7 +133,7 @@ Here's a simple example of a SwipeControl wrapped around some text. It shows the
 
 Now we'll take a look at a more complete example of how you would typically use swipe commands in a list. In this example, you'll set up a delete command that uses Execute mode, and a menu of other commands that uses Reveal mode. Both sets of commands are defined in the Resources section of the page. You'll apply the swipe commands to the items in a ListView.
 
-First, create the swipe items, which represent the commands, as page level resources. SwipeItem uses an [IconSource](/uwp/api/windows.ui.xaml.controls.iconsource) as its icon. Create the icons as resources, too.
+First, create the swipe items, which represent the commands, as page level resources. SwipeItem uses an [IconSource](/windows/winui/api/microsoft.ui.xaml.controls.iconsource) as its icon. Create the icons as resources, too.
 
 ```xaml
 <Page.Resources>
@@ -175,7 +192,7 @@ Here's a ListView with the SwipeControl applied in its item DataTemplate. The Le
 
 ## Handle an invoked swipe command
 
-To act on a swipe command, you handle its [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) event. (For more info about a how a user can invoke a command, review the _How does swipe work?_ section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.
+To act on a swipe command, you handle its [Invoked](/windows/winui/api/microsoft.ui.xaml.controls.swipeitem.Invoked) event. (For more info about a how a user can invoke a command, review the _How does swipe work?_ section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.
 
 Here's how to handle the Invoked event on the _delete_ swipe item you created previously.
 
@@ -198,8 +215,8 @@ The data item is the DataContext of the SwipeControl. In your code, you can acce
 > [!NOTE]
 > Here, the items were added directly to the ListView.Items collection for simplicity, so the item is also deleted the same way. If you instead set the ListView.ItemsSource to a collection, which is more typical, you need to delete the item from the source collection.
 
-In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the 
-[SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) enum values.
+In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/windows/winui/api/microsoft.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the 
+[SwipeBehaviorOnInvoked](/windows/winui/api/microsoft.ui.xaml.controls.swipebehavioroninvoked) enum values.
 
 - **Auto**
   - In Execute mode, the opened swipe item will remain open when invoked.
@@ -217,19 +234,9 @@ Here, a _reply_ swipe item is set to close after its invoked.
            BehaviorOnInvoked = "Close"/>
 ```
 
-## Dos and don'ts
-
-- Don't use swipe in FlipViews or Hubs. The combination may be confusing for the user because of conflicting swipe directions.
-- Don't combine horizontal swipe with horizontal navigation, or vertical swipe with vertical navigation.
-- Do make sure what the user is swiping is the same action, and is consistent across all related items that can be swiped.
-- Do use swipe for the main actions a user will want to perform.
-- Do use swipe on items where the same action is repeated many times.
-- Do use horizontal swiping on wider items, and vertical swiping on taller items.
-- Do use short, concise text labels.
-
 ## Get the sample code
 
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

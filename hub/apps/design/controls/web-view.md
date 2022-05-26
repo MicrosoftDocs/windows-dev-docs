@@ -6,7 +6,6 @@ label: Web view
 template: detail.hbs
 ms.date: 03/30/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.custom: contperf-fy21q3
 ms.localizationpriority: medium
 ---
@@ -14,32 +13,25 @@ ms.localizationpriority: medium
 
 A web view control embeds a view into your app that renders web content using the Microsoft Edge Legacy rendering engine. Hyperlinks can also appear and function in a web view control.
 
-> **Important APIs**: [WebView class](/uwp/api/Windows.UI.Xaml.Controls.WebView)
-
 > [!IMPORTANT]
-> The `WebView2` control uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. `WebView2` is available as part of the [Windows UI Library 3 (WinUI3)](../../winui/index.md). For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
+> The `WebView2` control is available as part of the [Windows UI Library 3 (WinUI3)](../../winui/index.md). `WebView2` uses Microsoft Edge (Chromium) as the rendering engine to display web content in apps. For more info, see [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/), [Getting started with WebView2 in WinUI 3 (Preview)](/microsoft-edge/webview2/gettingstarted/winui), and [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) in the WinUI API reference.
 
 ## Is this the right control?
 
 Use a web view control to display richly formatted HTML content from a remote web server, dynamically generated code, or content files in your app package. Rich content can also contain script code and communicate between the script and your app's code.
 
-## Examples
+## Recommendations
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/WebView">open the app and see the WebView in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+- Make sure that the website loaded is formatted correctly for the device and uses colors, typography, and navigation that are consistent with the rest of your app.
+- Input fields should be appropriately sized. Users may not realize that they can zoom in to enter text.
+- If a web view doesn't look like the rest of your app, consider alternative controls or ways to accomplish relevant tasks. If your web view matches the rest of your app, users will see it all as one seamless experience.
 
 ## Create a web view
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [WebView class](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the WebView in action](winui2gallery:/item/WebView). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
 
 **Modify the appearance of a web view**
 
@@ -324,13 +316,6 @@ By default, web view content is hosted on the UI thread on devices in the deskto
 > **Note**&nbsp;&nbsp;There might be performance issues when hosting content on the UI thread on mobile devices, so be sure to test on all target devices when you change DefaultExecutionMode.
 
 A web view that hosts content off the UI thread is not compatible with parent controls that require gestures to propagate up from the web view control to the parent, such as [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView), [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), and other related controls. These controls will not be able to receive gestures initiated in the off-thread web view. In addition, printing off-thread web content is not directly supported – you should print an element with [WebViewBrush](/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) fill instead.
-
-## Recommendations
-
-
--   Make sure that the website loaded is formatted correctly for the device and uses colors, typography, and navigation that are consistent with the rest of your app.
--   Input fields should be appropriately sized. Users may not realize that they can zoom in to enter text.
--   If a web view doesn't look like the rest of your app, consider alternative controls or ways to accomplish relevant tasks. If your web view matches the rest of your app, users will see it all as one seamless experience.
 
 ## Get the sample code
 

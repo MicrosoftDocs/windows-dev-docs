@@ -5,11 +5,7 @@ label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-pm-contact: predavid
-design-contact: kimsea
-dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -17,31 +13,13 @@ ms.localizationpriority: medium
 
 Pull-to-refresh lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on devices with a touch screen. You can use the APIs shown here to implement pull-to-refresh in your app.
 
-> **Important APIs**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
-
 ![pull-to-refresh gif](images/pull-to-refresh.gif)
 
 ## Is this the right control?
 
 Use pull-to-refresh when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on touch-first devices.
 
-You can also use the [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) to create a consistent refresh experience that is invoked in other ways, such as by a refresh button.
-
-## WinUI 2 Gallery examples
-
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/PullToRefresh">open the app and see PullToRefresh in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+You can also use the [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer) to create a consistent refresh experience that is invoked in other ways, such as by a refresh button.
 
 ## Refresh controls
 
@@ -56,7 +34,7 @@ The main control is the **RefreshContainer**, which you place as a wrapper aroun
 
 The default refresh visualization is a circular progress spinner that is used to communicate when a refresh will happen and the progress of the refresh after it is initiated. The refresh visualizer has 5 states.
 
- The distance the user needs to pull down on a list to initiate a refresh is called the _threshold_. The visualizer [State](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.State) is determined by the pull state as it relates to this threshold. The possible values are contained in the [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate) enumeration.
+ The distance the user needs to pull down on a list to initiate a refresh is called the _threshold_. The visualizer [State](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer.State) is determined by the pull state as it relates to this threshold. The possible values are contained in the [RefreshVisualizerState](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizerstate) enumeration.
 
 ### Idle
 
@@ -95,7 +73,7 @@ Visually, the icon is 100% in both size and opacity. In this state, the icon con
 
 When the user releases the visualiser past the threshold, it's in the **Refreshing** state.
 
-When this state is entered, the **RefreshRequested** event is raised. This is the signal to start the app's content refresh. The event args ([RefreshRequestedEventArgs](/uwp/api/windows.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/uwp/api/windows.foundation.deferral) object, which you should take a handle to in the event handler. Then, you should mark the deferral as completed when your code to perform the refresh has completed.
+When this state is entered, the **RefreshRequested** event is raised. This is the signal to start the app's content refresh. The event args ([RefreshRequestedEventArgs](/windows/winui/api/microsoft.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/windows/winui/api/microsoft.foundation.deferral) object, which you should take a handle to in the event handler. Then, you should mark the deferral as completed when your code to perform the refresh has completed.
 
 When the refresh is complete, the visualizer returns to the **Idle** state.
 
@@ -111,11 +89,41 @@ When the user pulls in the refresh direction from a start position where a refre
 
 By default, the user pulls a list from top to bottom to initiate a refresh. If you have a list or grid with a different orientation, you should change the pull direction of the refresh container to match.
 
-The [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) property takes one of these [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) values: **BottomToTop**, **TopToBottom**, **RightToLeft**, or **LeftToRight**.
+The [PullDirection](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer.PullDirection) property takes one of these [RefreshPullDirection](/windows/winui/api/microsoft.ui.xaml.controls.refreshpulldirection) values: **BottomToTop**, **TopToBottom**, **RightToLeft**, or **LeftToRight**.
 
-When you change the pull dircetion, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation) property to override the automatic behavior. In most cases, we recommend leaving the default value of **Auto**.
+When you change the pull direction, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the [RefreshVisualizer.Orientation](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer.Orientation) property to override the automatic behavior. In most cases, we recommend leaving the default value of **Auto**.
+
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+The refresh controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> - **WinUI APIs:** [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see PullToRefresh in action](winui2gallery:/item/PullToRefresh). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in your project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:RefreshContainer />
+```
 
 ## Implement pull-to-refresh
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see PullToRefresh in action](winui3gallery:/item/PullToRefresh). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
 
 To add pull-to-refresh functionality to a list requires just a few steps.
 
@@ -125,14 +133,14 @@ To add pull-to-refresh functionality to a list requires just a few steps.
 
 > [!NOTE]
 > You can instantiate a RefreshVisualizer on its own. However, we recommend that you wrap your content in a RefreshContainer and use the RefreshVisualizer provided by the RefreshContainer.Visualizer property, even for non-touch scenarios. In this article, we assume that the visualizer is always obtained from the refresh container.
-
+>
 > In addition, use the refresh container's RequestRefresh and RefreshRequested members for convenience. `refreshContainer.RequestRefresh()` is equivalent to `refreshContainer.Visualizer.RequestRefresh()`, and either will raise both the RefreshContainer.RefreshRequested event and the RefreshVisualizer.RefreshRequested events.
 
 ### Request a refresh
 
 The refresh container handles touch interactions to let a user refresh content via touch. We recommend that you provide other affordances for non-touch interfaces, like a refresh button or voice control.
 
-To initiate a refresh, call the [RequestRefresh](/uwp/api/windows.ui.xaml.controls.refreshcontainer.RequestRefresh) method.
+To initiate a refresh, call the [RequestRefresh](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer.RequestRefresh) method.
 
 ```csharp
 // See the Examples section for the full code.
@@ -148,7 +156,7 @@ When you call RequestRefresh, the visualizer state goes directly from **Idle** t
 
 To get fresh content when needed, handle the RefreshRequested event. In the event handler, you'll need code specific to your app to get the fresh content.
 
-The event args ([RefreshRequestedEventArgs](/uwp/api/windows.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/uwp/api/windows.foundation.deferral) object. Get a handle to the deferral in the event handler. Then, mark the deferral as completed when your code to perform the refresh has completed.
+The event args ([RefreshRequestedEventArgs](/windows/winui/api/microsoft.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/uwp/api/windows.foundation.deferral) object. Get a handle to the deferral in the event handler. Then, mark the deferral as completed when your code to perform the refresh has completed.
 
 ```csharp
 // See the Examples section for the full code.
@@ -190,9 +198,8 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 }
 ```
 
-## Examples
-
 ### Using a ScrollViewer in a RefreshContainer
+
 > [!NOTE]
 > The Content of a RefreshContainer must be a scrollable control, such as ScrollViewer, GridView, ListView, etc. Setting the Content to a control like Grid will result in undefined behavior.
 
@@ -345,7 +352,7 @@ public class ListItemData
 
 ## Get the sample code
 
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

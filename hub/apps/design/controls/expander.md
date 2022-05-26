@@ -4,70 +4,61 @@ title: Expander
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, winui, uwp
-pm-contact: kayang
-design-contact: jknudsen
-dev-contact: ranjeshj
 ms.custom: 21H1
 ms.localizationpriority: medium
 ---
 
 # Expander
 
-The [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) control lets you show or hide less important content that's related to a piece of primary content that's always visible. Items contained in the [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) are always visible. The user can expand and collapse the [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) area, where secondary content is displayed, by interacting with the header. When the content area is expanded, it pushes other UI elements out of the way; it does not overlay other UI. The `Expander` can expand upwards or downwards.
+The [Expander](/windows/winui/api/microsoft.ui.xaml.controls.expander) control lets you show or hide less important content that's related to a piece of primary content that's always visible. Items contained in the [Header](/windows/winui/api/microsoft.ui.xaml.controls.expander.header) are always visible. The user can expand and collapse the [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander.content) area, where secondary content is displayed, by interacting with the header. When the content area is expanded, it pushes other UI elements out of the way; it does not overlay other UI. The `Expander` can expand upwards or downwards.
 
 Both the `Header` and `Content` areas can contain any content, from simple text to complex UI layouts. For example, you can use the control to show additional options for an item.
 
 ![A collapsed Expander that is expanded and then collapsed. The Header has the text "This text is in the header" and the Content has the text "This is in the content".](images/expander-default.gif)
 
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **Expander** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Windows UI Library APIs**: [Expander class](/uwp/api/microsoft.ui.xaml.controls.expander), [Header property](/uwp/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander)
-
 ## Is this the right control?
 
 Use an `Expander` when some primary content should always be visible, but related secondary content may be hidden until needed. This UI is commonly used when display space is limited and when information or options can be grouped together. Hiding the secondary content until it's needed can also help to focus the user on the most important parts of your app.
 
-## Examples
+## UWP and WinUI 2
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Expander">open the app and see Expander in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+The Expander for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI APIs:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Expander in action](winui2gallery:/item/Expander). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:Expander />
+```
 
 ## Create an Expander
 
-This example shows how to create a simple [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the Expander in action](winui3gallery:/item/Expander). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+
+This example shows how to create a simple [Expander](/windows/winui/api/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/windows/winui/api/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander.content) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
 
 ```XAML
-<muxc:Expander Header="This text is in the header"
+<Expander Header="This text is in the header"
                Content="This is in the content"/>
 ```
 
 ### Expander content
 
-The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) property of an `Expander` can be any type of object, but is typically a string or [UIElement](/uwp/api/windows.ui.xaml.uielement). For more details about setting the `Content` property, see the Remarks section of the [ContentControl](/uwp/api/windows.ui.xaml.controls.contentcontrol#remarks) class.
+The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander.content) property of an `Expander` can be any type of object, but is typically a string or [UIElement](/uwp/api/windows.ui.xaml.uielement). For more details about setting the `Content` property, see the Remarks section of the [ContentControl](/uwp/api/windows.ui.xaml.controls.contentcontrol#remarks) class.
 
 You can use complex, interactive UI as the content of the `Expander`, including nested `Expander` controls in the content of a parent `Expander` as shown here.
 
@@ -79,7 +70,7 @@ You can align content by setting the [HorizontalContentAlignment](/uwp/api/windo
 
 ### Control the size of an Expander
 
-By default, the [Header](/uwp/api/microsoft.ui.xaml.controls.expander.header) and [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander) areas automatically size to fit their contents. It's important to use the correct techniques to control the size of the `Expander` to avoid undesirable appearance or behavior.
+By default, the [Header](/windows/winui/api/microsoft.ui.xaml.controls.expander.header) and [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander.content) areas automatically size to fit their contents. It's important to use the correct techniques to control the size of the `Expander` to avoid undesirable appearance or behavior.
 
 #### Width
 
@@ -90,14 +81,14 @@ Here, a series of related `Expander` controls are placed in a [StackPanel](/uwp/
 ```xaml
 <StackPanel x:Name="ExpanderStack" MaxWidth="600">
     <StackPanel.Resources>
-        <Style TargetType="muxc:Expander">
+        <Style TargetType="Expander">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
     </StackPanel.Resources>
-    <muxc:Expander Header="Choose your crust"> ... </muxc:Expander>
-    <muxc:Expander Header="Choose your sauce"> ... </muxc:Expander>
-    <muxc:Expander Header="Choose your toppings"> ... </muxc:Expander>
+    <Expander Header="Choose your crust"> ... </Expander>
+    <Expander Header="Choose your sauce"> ... </Expander>
+    <Expander Header="Choose your toppings"> ... </Expander>
  </StackPanel>
 ```
 
@@ -116,7 +107,7 @@ When you place a `ScrollViewer` in the `Expander` content, set the height on the
 The following example shows how to create an `Expander` control that contains scrollable text as its content.
 
 ```xaml
-<muxc:Expander Header="Expander with scrollable content">
+<Expander Header="Expander with scrollable content">
     <ScrollViewer MaxHeight="200">
         <Grid>
             <TextBlock TextWrapping="Wrap">
@@ -131,20 +122,20 @@ The following example shows how to create an `Expander` control that contains sc
             </TextBlock>
         </Grid>
     </ScrollViewer>
-</muxc:Expander>
+</Expander>
 ```
 
 :::image type="content" source="images/expander-scrollable.png" alt-text="An Expander with scrollable text as its content":::
 
 ### Expanding and collapsing the content area
 
-By default, the [Expander](/uwp/api/microsoft.ui.xaml.controls.expander) is collapsed and expands downwards.
+By default, the [Expander](/windows/winui/api/microsoft.ui.xaml.controls.expander) is collapsed and expands downwards.
 
--  Set the [IsExpanded](/uwp/api/microsoft.ui.xaml.controls.expander.isexpanded) property to `true` to have the content area initially expanded.
--  Set the [ExpandDirection](/uwp/api/microsoft.ui.xaml.controls.expander.expanddirection) property to [Up](/uwp/api/microsoft.ui.xaml.controls.expanddirection) to make the content expand upward.
+-  Set the [IsExpanded](/windows/winui/api/microsoft.ui.xaml.controls.expander.isexpanded) property to `true` to have the content area initially expanded.
+-  Set the [ExpandDirection](/windows/winui/api/microsoft.ui.xaml.controls.expander.expanddirection) property to [Up](/windows/winui/api/microsoft.ui.xaml.controls.expanddirection) to make the content expand upward.
 
 ```xaml
-<muxc:Expander IsExpanded="True" ExpandDirection="Up">
+<Expander IsExpanded="True" ExpandDirection="Up">
 ```
 
 An `Expander` is expanded or collapsed either programatically by setting the `IsExpanded` property, or by interacting with the `Header`; it cannot be light-dismissed.
@@ -152,23 +143,23 @@ An `Expander` is expanded or collapsed either programatically by setting the `Is
 > [!TIP]
 > Transient UI, such as a `Flyout` or the open drop-down of a `ComboBox`, closes when you click or tap outside of it. This is called _light-dismiss_. The content area of an `Expander` is not considered transient and does not overlay other UI, so it does not support light-dismiss.
 
-You can also handle the [Expanding](/uwp/api/microsoft.ui.xaml.controls.expander.expanding) and [Collapsed](/uwp/api/microsoft.ui.xaml.controls.expander.collapsed) events to take an action when the content is shown or hidden. Here are some examples of these events.
+You can also handle the [Expanding](/windows/winui/api/microsoft.ui.xaml.controls.expander.expanding) and [Collapsed](/windows/winui/api/microsoft.ui.xaml.controls.expander.collapsed) events to take an action when the content is shown or hidden. Here are some examples of these events.
 
 #### Expanding event
 
-In this example, you have a group of expanders and want to have only one open at a time. When the user opens an `Expander`, you handle the [Expanding](/uwp/api/microsoft.ui.xaml.controls.expander.expanding) event and collapse all `Expander` controls in the group other than the one the user clicked.
+In this example, you have a group of expanders and want to have only one open at a time. When the user opens an `Expander`, you handle the [Expanding](/windows/winui/api/microsoft.ui.xaml.controls.expander.expanding) event and collapse all `Expander` controls in the group other than the one the user clicked.
 
 > [!CAUTION]
 > Depending on your app and user experience, it might be a convenience to automatically collapse `Expander` controls when the user expands a different one. However, this also takes control away from the user. If the behavior might be useful, consider making it an option that the user can easily set.
 
 ```xaml
 <StackPanel x:Name="ExpanderStack">
-    <muxc:Expander Header="Choose your crust"
-                   Expanding="Expander_Expanding"> ... </muxc:Expander>
-    <muxc:Expander Header="Choose your sauce"
-                   Expanding="Expander_Expanding"> ... </muxc:Expander>
-    <muxc:Expander Header="Choose your toppings"
-                   Expanding="Expander_Expanding"> ... </muxc:Expander>
+    <Expander Header="Choose your crust"
+                   Expanding="Expander_Expanding"> ... </Expander>
+    <Expander Header="Choose your sauce"
+                   Expanding="Expander_Expanding"> ... </Expander>
+    <Expander Header="Choose your toppings"
+                   Expanding="Expander_Expanding"> ... </Expander>
  </StackPanel>
 ```
 
@@ -192,7 +183,7 @@ private void Expander_Expanding(muxc.Expander sender,
 
 #### Collapsed event
 
-In this example, you handle the [Collapsed](/uwp/api/microsoft.ui.xaml.controls.expander.collapsed) event and populate the `Header` with a summary of options that are selected in the `Content`.
+In this example, you handle the [Collapsed](/windows/winui/api/microsoft.ui.xaml.controls.expander.collapsed) event and populate the `Header` with a summary of options that are selected in the `Content`.
 
 This image shows the `Expander` with the content expanded and options selected.
 
@@ -203,32 +194,32 @@ When collapsed, the selected options are summarized in the header so that the us
 :::image type="content" source="images/expander-collapsed-event-closed.png" alt-text="A collapsed Expander control with selected options summarized in the header":::
 
 ```xaml
-<muxc:Expander IsExpanded="True"
+<Expander IsExpanded="True"
         Expanding="Expander_Expanding"
         Collapsed="Expander_Collapsed">
-    <muxc:Expander.Header>
+    <Expander.Header>
         <Grid>
             <TextBlock Text="Choose your crust"/>
             <TextBlock x:Name="tbCrustSelections"
                        HorizontalAlignment="Right"
                        Style="{StaticResource CaptionTextBlockStyle}"/>
         </Grid>
-    </muxc:Expander.Header>
+    </Expander.Header>
     <StackPanel Orientation="Horizontal">
-        <muxc:RadioButtons x:Name="rbCrustType" SelectedIndex="0">
+        <RadioButtons x:Name="rbCrustType" SelectedIndex="0">
             <x:String>Classic</x:String>
             <x:String>Whole wheat</x:String>
             <x:String>Gluten free</x:String>
-        </muxc:RadioButtons>
-        <muxc:RadioButtons x:Name="rbCrustStyle" SelectedIndex="0" 
+        </RadioButtons>
+        <RadioButtons x:Name="rbCrustStyle" SelectedIndex="0" 
                            Margin="48,0,0,0">
             <x:String>Regular</x:String>
             <x:String>Thin</x:String>
             <x:String>Pan</x:String>
             <x:String>Stuffed</x:String>
-        </muxc:RadioButtons>
+        </RadioButtons>
     </StackPanel>
-</muxc:Expander>
+</Expander>
 ```
 
 ```csharp
@@ -256,76 +247,76 @@ This XAML creates the group of `Expander` controls shown in other parts of this 
 ```xaml
 <StackPanel x:Name="ExpanderStack" MaxWidth="600">
     <StackPanel.Resources>
-        <Style TargetType="muxc:Expander">
+        <Style TargetType="Expander">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
     </StackPanel.Resources>
-    <muxc:Expander IsExpanded="True"
+    <Expander IsExpanded="True"
                    Expanding="Expander_Expanding"
                    Collapsed="Expander_Collapsed">
-        <muxc:Expander.Header>
+        <Expander.Header>
             <Grid>
                 <TextBlock Text="Choose your crust"/>
                 <TextBlock x:Name="tbCrustSelections" 
                            HorizontalAlignment="Right"
         Style="{StaticResource CaptionTextBlockStyle}"/>
             </Grid>
-        </muxc:Expander.Header>
+        </Expander.Header>
         <StackPanel Orientation="Horizontal">
-            <muxc:RadioButtons x:Name="rbCrustType" SelectedIndex="0">
+            <RadioButtons x:Name="rbCrustType" SelectedIndex="0">
                 <x:String>Classic</x:String>
                 <x:String>Whole wheat</x:String>
                 <x:String>Gluten free</x:String>
-            </muxc:RadioButtons>
-            <muxc:RadioButtons x:Name="rbCrustStyle" SelectedIndex="0" 
+            </RadioButtons>
+            <RadioButtons x:Name="rbCrustStyle" SelectedIndex="0" 
                    Margin="48,0,0,0">
                 <x:String>Regular</x:String>
                 <x:String>Thin</x:String>
                 <x:String>Pan</x:String>
                 <x:String>Stuffed</x:String>
-            </muxc:RadioButtons>
+            </RadioButtons>
         </StackPanel>
-    </muxc:Expander>
+    </Expander>
     
-    <muxc:Expander Header="Choose your sauce" Margin="24"
+    <Expander Header="Choose your sauce" Margin="24"
             Expanding="Expander_Expanding">
-        <muxc:RadioButtons SelectedIndex="0" MaxColumns="2">
+        <RadioButtons SelectedIndex="0" MaxColumns="2">
             <x:String>Classic red</x:String>
             <x:String>Garlic</x:String>
             <x:String>Pesto</x:String>
             <x:String>Barbecue</x:String>
-        </muxc:RadioButtons>
-    </muxc:Expander>
+        </RadioButtons>
+    </Expander>
 
-    <muxc:Expander Header="Choose your toppings"
+    <Expander Header="Choose your toppings"
                    Expanding="Expander_Expanding">
         <StackPanel>
-            <muxc:Expander>
-                <muxc:Expander.Header>
+            <Expander>
+                <Expander.Header>
                     <RadioButton GroupName="Toppings" Content="House special"/>
-                </muxc:Expander.Header>
+                </Expander.Header>
                 <TextBlock Text="Cheese, pepperoni, sausage, black olives, mushrooms"
                            TextWrapping="WrapWholeWords"/>
-            </muxc:Expander>
-            <muxc:Expander>
-                <muxc:Expander.Header>
+            </Expander>
+            <Expander>
+                <Expander.Header>
                     <RadioButton GroupName="Toppings" Content="Vegetarian"/>
-                </muxc:Expander.Header>
+                </Expander.Header>
                 <TextBlock Text="Cheese, mushrooms, black olives, green peppers, artichoke hearts"
                            TextWrapping="WrapWholeWords"/>
-            </muxc:Expander>
-            <muxc:Expander>
-                <muxc:Expander.Header>
+            </Expander>
+            <Expander>
+                <Expander.Header>
                     <RadioButton GroupName="Toppings" Content="All meat"/>
-                </muxc:Expander.Header>
+                </Expander.Header>
                 <TextBlock Text="Cheese, pepperoni, sausage, ground beef, salami"
                            TextWrapping="WrapWholeWords"/>
-            </muxc:Expander>
-            <muxc:Expander>
-                <muxc:Expander.Header>
+            </Expander>
+            <Expander>
+                <Expander.Header>
                     <RadioButton GroupName="Toppings" Content="Choose your own"/>
-                </muxc:Expander.Header>
+                </Expander.Header>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel>
                         <CheckBox Content="Cheese"/>
@@ -343,13 +334,13 @@ This XAML creates the group of `Expander` controls shown in other parts of this 
                         <CheckBox Content="Artichoke hearts"/>
                     </StackPanel>
                 </StackPanel>
-            </muxc:Expander>
+            </Expander>
         </StackPanel>
-    </muxc:Expander>
+    </Expander>
 </StackPanel>
 ```
 
 ## Related articles
 
 - [Page layout](../basics/app-silhouette.md)
-- [Expander class](/uwp/api/microsoft.ui.xaml.controls.expander)
+- [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander)

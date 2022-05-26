@@ -4,10 +4,6 @@ title: Pivot
 template: detail.hbs
 ms.date: 04/04/2022
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: yulikl
-design-contact: kimsea
-dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ---

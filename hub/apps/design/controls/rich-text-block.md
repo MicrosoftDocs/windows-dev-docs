@@ -6,19 +6,12 @@ label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: miguelrb
-design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
 # Rich text block
 
- 
-
 Rich text blocks provide several features for advanced text layout that you can use when you need support for paragraphs, inline UI elements, or complex text layouts.
-
-> **Platform APIs**: [RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography class](/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## Is this the right control?
 
@@ -28,36 +21,45 @@ Use a **TextBlock** to display most read-only text in your app. You can use it t
 
 For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Examples
+## Recommendations
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/RichTextBlock">open the app and see the RichTextBlock in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+See Typography and Guidelines for fonts.
+
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [RichTextBlock class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography class](/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the RichTextBlock in action](winui2gallery:/item/RichTextBlock). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Create a rich text block
 
-The content property of RichTextBlock is the [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) property, which supports paragraph based text via the [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app. However, RichTextBlock provides several unique features that TextBlock doesn't provide. 
+> [!div class="checklist"]
+>
+> - **Important APIs:** [RichTextBlock class](/windows/winui/api/microsoft.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/windows/winui/api/microsoft.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/windows/winui/api/microsoft.UI.Xaml.Documents.Paragraph), [Typography class](/windows/winui/api/microsoft.UI.Xaml.Documents.Typography)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the RichTextBlock in action](winui3gallery:/item/RichTextBlock). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+
+The content property of RichTextBlock is the [Blocks](/windows/winui/api/microsoft.ui.xaml.controls.richtextblock.blocks) property, which supports paragraph based text via the [Paragraph](/windows/winui/api/microsoft.UI.Xaml.Documents.Paragraph) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app. However, RichTextBlock provides several unique features that TextBlock doesn't provide. 
 
 RichTextBlock supports:
-- Multiple paragraphs. Set the indentation for paragraphs by setting the [TextIndent](/uwp/api/windows.ui.xaml.controls.richtextblock.textindent) property.
-- Inline UI elements. Use an [InlineUIContainer](/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer) to display UI elements, such as images, inline with your text.
-- Overflow containers. Use [RichTextBlockOverflow](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow) elements to create multi-column text layouts.
+- Multiple paragraphs. Set the indentation for paragraphs by setting the [TextIndent](/windows/winui/api/microsoft.ui.xaml.controls.richtextblock.textindent) property.
+- Inline UI elements. Use an [InlineUIContainer](/windows/winui/api/microsoft.UI.Xaml.Documents.InlineUIContainer) to display UI elements, such as images, inline with your text.
+- Overflow containers. Use [RichTextBlockOverflow](/windows/winui/api/microsoft.UI.Xaml.Controls.RichTextBlockOverflow) elements to create multi-column text layouts.
 
 ### Paragraphs
 
-You use [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) elements to define the blocks of text to display within a RichTextBlock control. Every RichTextBlock should include at least one Paragraph. 
+You use [Paragraph](/windows/winui/api/microsoft.UI.Xaml.Documents.Paragraph) elements to define the blocks of text to display within a RichTextBlock control. Every RichTextBlock should include at least one Paragraph. 
 
-You can set the indent amount for all paragraphs in a RichTextBlock by setting the [RichTextBlock.TextIndent](/uwp/api/windows.ui.xaml.controls.richtextblock.textindent) property. You can override this setting for specific paragraphs in a RichTextBlock by setting the [Paragraph.TextIndent](/uwp/api/windows.ui.xaml.documents.paragraph.textindent) property to a different value.
+You can set the indent amount for all paragraphs in a RichTextBlock by setting the [RichTextBlock.TextIndent](/windows/winui/api/microsoft.ui.xaml.controls.richtextblock.textindent) property. You can override this setting for specific paragraphs in a RichTextBlock by setting the [Paragraph.TextIndent](/windows/winui/api/microsoft.ui.xaml.documents.paragraph.textindent) property to a different value.
 
 ```xaml
 <RichTextBlock TextIndent="12">
@@ -69,7 +71,7 @@ You can set the indent amount for all paragraphs in a RichTextBlock by setting t
 
 ### Inline UI elements
 
-The [InlineUIContainer](/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer) class lets you embed any UIElement inline with your text. A common scenario is to place an Image inline with your text, but you can also use interactive elements, like a Button or CheckBox.
+The [InlineUIContainer](/windows/winui/api/microsoft.UI.Xaml.Documents.InlineUIContainer) class lets you embed any UIElement inline with your text. A common scenario is to place an Image inline with your text, but you can also use interactive elements, like a Button or CheckBox.
 
 If you want to embed more than one element inline in the same position, consider using a panel as the single InlineUIContainer child, and then place the multiple elements within that panel.
 
@@ -89,7 +91,7 @@ This example shows how to use an InlineUIContainer to insert an image into a Ric
 
 ## Overflow containers
 
-You can use a RichTextBlock with [RichTextBlockOverflow](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow) elements to create multi-column or other advanced page layouts. The content for a RichTextBlockOverflow element always comes from a RichTextBlock element. You link RichTextBlockOverflow elements by setting them as the OverflowContentTarget of a RichTextBlock or another RichTextBlockOverflow.
+You can use a RichTextBlock with [RichTextBlockOverflow](/windows/winui/api/microsoft.UI.Xaml.Controls.RichTextBlockOverflow) elements to create multi-column or other advanced page layouts. The content for a RichTextBlockOverflow element always comes from a RichTextBlock element. You link RichTextBlockOverflow elements by setting them as the OverflowContentTarget of a RichTextBlock or another RichTextBlockOverflow.
 
 Here's a simple example that creates a two column layout. See the Examples section for a more complex example.
 
@@ -115,7 +117,7 @@ Although the RichTextBlock stores plain text, you can apply various formatting o
 
 ### Inline elements
 
-The [Windows.UI.Xaml.Documents](/uwp/api/Windows.UI.Xaml.Documents) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak. A typical way to apply formatting to sections of text is to place the text in a Run or Span element, and then set properties on that element.
+The [Microsoft.UI.Xaml.Documents](/windows/winui/api/microsoft.UI.Xaml.Documents) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak. A typical way to apply formatting to sections of text is to place the text in a Run or Span element, and then set properties on that element.
 
 Here's a Paragraph with the first phrase shown in bold, blue, 16pt text.
 
@@ -128,7 +130,7 @@ Here's a Paragraph with the first phrase shown in bold, blue, 16pt text.
 
 ### Typography
 
-The attached properties of the [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the RichTextBlock, or on individual inline text elements, as shown here.
+The attached properties of the [Typography](/windows/winui/api/microsoft.UI.Xaml.Documents.Typography) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the RichTextBlock, or on individual inline text elements, as shown here.
 
 ```xaml
 <RichTextBlock Typography.StylisticSet4="True">
@@ -139,13 +141,9 @@ The attached properties of the [Typography](/uwp/api/Windows.UI.Xaml.Documents.T
 </RichTextBlock>
 ```
 
-## Recommendations
-
-See Typography and Guidelines for fonts.
-
 ## Get the sample code
 
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
@@ -157,9 +155,8 @@ See Typography and Guidelines for fonts.
 - [Guidelines for text input](text-controls.md)
 
 **For developers (XAML)**
-- [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-
+- [TextBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBox)
+- [PasswordBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.PasswordBox)
 
 **For developers (other)**
 - [String.Length property](/dotnet/api/system.string.length)

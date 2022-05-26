@@ -4,10 +4,6 @@ title: PipsPager
 template: detail.hbs
 ms.date: 3/8/2021
 ms.topic: article
-keywords: windows 10, winui, uwp
-pm-contact: gabilka
-design-contact: jknudsen
-dev-contact: ranjeshj
 ms.custom: 21H1
 ms.localizationpriority: medium
 ---
@@ -16,26 +12,11 @@ ms.localizationpriority: medium
 
 The PipsPager control helps users navigate within linearly paginated content using a configurable collection of glyphs, each of which represents a single "page" within a limitless range. The glyphs highlight the current page, and indicate the availability of both preceding and succeeding pages. The control relies on current context and does not support explicit page numbering or a non-linear organization.
 
-**Get the Windows UI Library**
+## What is a pip?
 
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **PipsPager** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
+Pips represent a unit of numerical value, typically rendered as dots. However they can be customized to use other glyphs such as dashes or squares.
 
-   :::column-end:::
-:::row-end:::
-
-> **Windows UI Library APIs:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
-
-> [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
->
->In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
+By default, each solid dot in the PipsPager control represents a page in the content layout. A user can select a dot to navigate to that page in the content.
 
 ## Is this the right control?
 
@@ -43,15 +24,40 @@ Use a PipsPager for content organized in a linear structure, is not explicitly n
 
 This UI is commonly used in apps such as photo viewers and app lists, where display space is limited and the number of potential pages is infinite.
 
-### What is a pip?
+## Recommendations
 
-Pips represent a unit of numerical value, typically rendered as dots. However they can be customized to use other glyphs such as dashes or squares.
+- Common UI patterns for a PipsPager include photo viewers, app lists, carousels, and layouts where display space is limited.
+- For experiences optimized for gamepad input, we recommend against placing UI directly to the left or right of a horizontal PipsPager, and above or below a vertically oriented PipsPager.
+- For experiences optimized for touch input, we recommend integrating the PipsPager with a view control, such as a [FlipView](flipview.md), to take advantage of on-content pagination with touch (the user can also use touch to select individual pips).
 
-By default, each solid dot in the PipsPager control represents a page in the content layout. A user can select a dot to navigate to that page in the content.
+## UWP and WinUI 2
 
-## Examples
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
 
-### Default PipsPager
+The PipsPager for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI APIs:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the PipsPager in action](winui2gallery:/item/PipsPager). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:PipsPager />
+```
+
+## Create a PipsPager
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the PipsPager in action](winui3gallery:/item/PipsPager). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
 
 A default PipsPager is comprised of five visible pips that can be oriented horizontally (default) or vertically.
 
@@ -62,7 +68,7 @@ Wrapping between the first and last items is not supported.
 :::image type="content" source="images/pipspager-default.png" alt-text="A default PipsPager with five horizontal dots, and the first selected.":::
 
 ```xaml
-<muxc:PipsPager x:Name="DefaultPipsPager" />
+<PipsPager x:Name="DefaultPipsPager" />
 ```
 
 ### Horizontal PipsPager with navigation buttons
@@ -80,10 +86,10 @@ Possible values for these properties are:
 :::image type="content" source="images/pipspager-visible-buttons.gif" alt-text="A PipsPager with five horizontal dots and navigation buttons visible based on current page.":::
 
 ```xaml
-<muxc:PipsPager x:Name="VisibleButtonPipsPager"
-  NumberOfPages="5"
-  PreviousButtonVisibility="Visible"
-  NextButtonVisibility="Visible" />
+<PipsPager x:Name="VisibleButtonPipsPager"
+    NumberOfPages="5"
+    PreviousButtonVisibility="Visible"
+    NextButtonVisibility="Visible" />
 ```
 
 ### Vertical PipsPager with navigation buttons visible on pointer over
@@ -97,11 +103,11 @@ The following example demonstrates the [VisibleOnPointerOver](/windows/winui/api
 :::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visiblility based on pointer over and current page.":::
 
 ```xaml
-<muxc:PipsPager x:Name="VerticalPipsPager"
-  NumberOfPages="5"
-  Orientation="Vertical" 
-  PreviousButtonVisibility="VisibleOnPointerOver" 
-  NextButtonVisibility="VisibleOnPointerOver" />
+<PipsPager x:Name="VerticalPipsPager"
+    NumberOfPages="5"
+    Orientation="Vertical" 
+    PreviousButtonVisibility="VisibleOnPointerOver" 
+    NextButtonVisibility="VisibleOnPointerOver" />
 ```
 
 ### Scrolling pips
@@ -117,9 +123,9 @@ By default, a maximum of five pips are visible.
 :::image type="content" source="images/pipspager-max-visible-pips.gif" alt-text="A PipsPager with horizontally scrolling pips.":::
 
 ```xaml
-<muxc:PipsPager x:Name="ScrollingPipsPager"
-  NumberOfPages="20"
-  MaxVisiblePips="10" />
+<PipsPager x:Name="ScrollingPipsPager"
+    NumberOfPages="20"
+    MaxVisiblePips="10" />
 ```
 
 ### Integrate PipsPager with a Collection control
@@ -144,7 +150,7 @@ The following example shows how to bind a PipsPager with a [FlipView](/windows/w
   </FlipView>
 
   <!-- The SelectedPageIndex is bound to the FlipView to keep the two in sync -->
-  <muxc:PipsPager x:Name="FlipViewPipsPager"
+  <PipsPager x:Name="FlipViewPipsPager"
       HorizontalAlignment="Center"
       Margin="0, 10, 0, 0"
       NumberOfPages="{x:Bind Pictures.Count}"
@@ -177,18 +183,12 @@ If you set visibility through the PreviousButtonStyle or NextButtonStyle propert
     </Style>
 </Page.Resources>
 
-<muxc:PipsPager x:Name="CustomNavButtonPipsPager"
-  PreviousButtonStyle="{StaticResource PreviousButtonStyle}"
-  NextButtonStyle="{StaticResource NextButtonStyle}"
-  PreviousButtonVisibility="VisibleOnPointerOver" 
-  NextButtonVisibility="VisibleOnPointerOver" />
+<PipsPager x:Name="CustomNavButtonPipsPager"
+    PreviousButtonStyle="{StaticResource PreviousButtonStyle}"
+    NextButtonStyle="{StaticResource NextButtonStyle}"
+    PreviousButtonVisibility="VisibleOnPointerOver" 
+    NextButtonVisibility="VisibleOnPointerOver" />
 ```
-
-## Recommendations
-
-- Common UI patterns for a PipsPager include photo viewers, app lists, carousels, and layouts where display space is limited.
-- For experiences optimized for gamepad input, we recommend against placing UI directly to the left or right of a horizontal PipsPager, and above or below a vertically oriented PipsPager.
-- For experiences optimized for touch input, we recommend integrating the PipsPager with a view control, such as a [FlipView](flipview.md), to take advantage of on-content pagination with touch (the user can also use touch to select individual pips).
 
 ## Related articles
 
