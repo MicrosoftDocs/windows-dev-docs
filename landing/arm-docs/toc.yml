@@ -8,7 +8,7 @@ items:
   - name: Arm64EC for Windows 11 apps on Arm
     href: /windows/arm/arm64ec/
   - name: Understanding Arm64EC ABI
-    href: /windows/arm/arm64ec/
+    href: /windows/arm/arm64ec-abi/
   - name: How x86 emulation works on Arm
     href: /windows/arm/apps-on-arm-x86-emulation/
   - name: Debugging on Arm64 Drivers
