@@ -550,7 +550,7 @@ Modify the XAML declaration for the InkCanvas and InkToolbar from the first exam
   > [!NOTE]
   > Buttons are added to the toolbar in the order defined by the framework, not the order specified here.
 
-5. [Add](/uwp/api/windows.ui.xaml.dependencyobjectcollection.add) the buttons to the InkToolbar.
+5. Add the buttons to the InkToolbar.
 
   ```csharp
   /// <summary>
