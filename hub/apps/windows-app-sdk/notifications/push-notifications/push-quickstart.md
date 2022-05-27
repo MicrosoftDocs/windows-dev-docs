@@ -131,22 +131,25 @@ The following sample is from the sample packaged app found on [GitHub](https://g
 
 ```cpp
 // cpp-console.cpp
-
+#include "pch.h"
 #include <iostream>
-
+#include <winrt/Microsoft.Windows.PushNotifications.h>
+#include <winrt/Microsoft.Windows.AppLifecycle.h>
+#include <winrt/Windows.Foundation.h>
 #include <wil/result.h>
 #include <wil/cppwinrt.h>
 
-#include <winrt/Windows.ApplicationModel.Background.h>
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Microsoft.Windows.AppLifecycle.h>
-#include <winrt/Microsoft.Windows.PushNotifications.h>
 
-using namespace winrt::Microsoft::Windows::AppLifecycle;
+using namespace winrt;
+using namespace Windows::Foundation;
+
 using namespace winrt::Microsoft::Windows::PushNotifications;
-using namespace winrt::Windows::Foundation;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
 
-// Subscribe to an event which will get signaled whenever a foreground notification arrives.
+winrt::guid remoteId{ "7edfab6c-25ae-4678-b406-d1848f97919a" }; // Replace this with your own Azure AppId
+
+
+
 void SubscribeForegroundEventHandler()
 {
     winrt::event_token token{ PushNotificationManager::Default().PushReceived([](auto const&, PushNotificationReceivedEventArgs const& args)
@@ -255,40 +258,44 @@ The **PushNotificationManager** will attempt to create a Channel URI, retrying a
 
 winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
 {
-    auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(winrt::guid("[Your app's Azure AppId]")) };
+    // To obtain an AAD RemoteIdentifier for your app,
+    // follow the instructions on https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app
+    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
 
-    // Setup the in-progress event handler
+    // Setup the inprogress event handler
     channelOperation.Progress(
         [](auto&& sender, auto&& args)
         {
             if (args.status == PushNotificationChannelStatus::InProgress)
             {
                 // This is basically a noop since it isn't really an error state
-                std::cout << "\nWNS Channel URI request is in progress." << std::endl;
+                std::cout << "Channel request is in progress." << std::endl << std::endl;
             }
             else if (args.status == PushNotificationChannelStatus::InProgressRetry)
             {
                 LOG_HR_MSG(
                     args.extendedError,
-                    "The WNS Channel URI request is in back-off retry mode because of a retryable error! Expect delays in acquiring it. RetryCount = %d",
+                    "The channel request is in back-off retry mode because of a retryable error! Expect delays in acquiring it. RetryCount = %d",
                     args.retryCount);
             }
         });
 
-    auto result{ co_await channelOperation };
+    auto result = co_await channelOperation;
 
     if (result.Status() == PushNotificationChannelStatus::CompletedSuccess)
     {
-        auto channel{ result.Channel() };
+        auto channelUri = result.Channel().Uri();
 
-        std::cout << "\nWNS Channel URI: " << winrt::to_string(channel.Uri().ToString()) << std::endl;
+        std::cout << "channelUri: " << winrt::to_string(channelUri.ToString()) << std::endl << std::endl;
 
-        // It's the caller's responsibility to keep the channel alive
-        co_return channel;
+        auto channelExpiry = result.Channel().ExpirationTime();
+
+        // Caller's responsibility to keep the channel alive
+        co_return result.Channel();
     }
     else if (result.Status() == PushNotificationChannelStatus::CompletedFailure)
     {
-        LOG_HR_MSG(result.ExtendedError(), "We hit a critical non-retryable error with the WNS Channel URI request!");
+        LOG_HR_MSG(result.ExtendedError(), "We hit a critical non-retryable error with channel request!");
         co_return nullptr;
     }
     else
@@ -299,16 +306,16 @@ winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChan
 
 };
 
-winrt::Microsoft::Windows::PushNotifications::PushNotificationChannel RequestChannel()
+PushNotificationChannel RequestChannel()
 {
-    auto task{ RequestChannelAsync() };
-    if (task.wait_for(std::chrono::minutes(5)) != AsyncStatus::Completed)
+    auto task = RequestChannelAsync();
+    if (task.wait_for(std::chrono::seconds(300)) != AsyncStatus::Completed)
     {
         task.Cancel();
         return nullptr;
     }
 
-    auto result{ task.GetResults() };
+    auto result = task.GetResults();
     return result;
 }
 ```
@@ -340,15 +347,14 @@ C# Sample Request:
 
 ```csharp
 //Sample C# Access token request
-var client = new RestClient("https://login.microsoftonline.com/{tenantID}/oauth2/v2.0/token");
-client.Timeout = -1;
-var request = new RestRequest(Method.POST);
+var client = new RestClient("https://login.microsoftonline.com/common/oauth2");
+var request = new RestRequest("/token", Method.Post);
 request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 request.AddParameter("grant_type", "client_credentials");
-request.AddParameter("client_id", "<Azure_App_Registration_AppId_Here>");
-request.AddParameter("client_secret", "<Azure_App_Registration_Secret_Here>");
-request.AddParameter("scope", "https://wns.windows.com/.default");
-IRestResponse response = client.Execute(request);
+request.AddParameter("client_id", "[Your app's Azure AppId]");
+request.AddParameter("client_secret", "[Your app's secret]");
+request.AddParameter("resource", "https://wns.windows.com/");
+RestResponse response = await client.ExecutePostAsync(request);
 Console.WriteLine(response.Content);
 ```
 
@@ -356,13 +362,13 @@ If your request is successful, you will receive a response that contains your to
 
 ```json
 {
-  "token_type": "Bearer",
-  "expires_in": "86399",
-  "ext_expires_in": "86399",
-  "expires_on": "1627681190",
-  "not_before": "1627594490",
-  "resource": "https://wns.windows.com",
-  "access_token": "[your access token]"
+    "token_type":"Bearer",
+    "expires_in":"86399",
+    "ext_expires_in":"86399",
+    "expires_on":"1653771789",
+    "not_before":"1653685089",
+    "resource":"https://wns.windows.com/",
+    "access_token":"[your access token]"
 }
 ```
 
@@ -371,7 +377,7 @@ If your request is successful, you will receive a response that contains your to
 Create an HTTP POST request that contains the access token you obtained in the previous step and the content of the push notification you want to send. The content of the push notification will be delivered to the app.
 
 ```http
-POST /?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy HTTP/1.1
+POST /?token=[The token query string parameter from your channel URL. E.g. AwYAAABa5cJ3...] HTTP/1.1
 Host: dm3p.notify.windows.com
 Content-Type: application/octet-stream
 X-WNS-Type: wns/raw
@@ -382,16 +388,14 @@ Content-Length: 46
 ```
 
 ```csharp
-var client = new RestClient("https://dm3p.notify.windows.com/?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy");
-client.Timeout = -1;
-
-var request = new RestRequest(Method.POST);
+var client = new RestClient("[Your channel URL. E.g. https://wns2-by3p.notify.windows.com/?token=AwYAAABa5cJ3...]");
+var request = new RestRequest();
+request.Method = Method.Post; 
 request.AddHeader("Content-Type", "application/octet-stream");
 request.AddHeader("X-WNS-Type", "wns/raw");
-request.AddHeader("Authorization", "Bearer <AccessToken>");
-request.AddParameter("application/octet-stream", "{ Sync: \"Hello from the Contoso App Service\" }",  ParameterType.RequestBody);
-IRestResponse response = client.Execute(request);
-Console.WriteLine(response.Content);
+request.AddHeader("Authorization", "Bearer [your access token]");
+request.AddBody("Notification body");
+RestResponse response = await client.ExecutePostAsync(request);");
 ```
 
 ### Step 3: Send a cloud-sourced app notification
