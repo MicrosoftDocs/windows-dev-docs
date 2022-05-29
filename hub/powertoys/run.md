@@ -143,8 +143,6 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 ### Calculator plugin
 
-### Calculator plugin
-
 > [!TIP]
 > The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
 
