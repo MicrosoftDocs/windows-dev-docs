@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 04/27/2022
+ms.date: 05/29/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -143,10 +143,13 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 ### Calculator plugin
 
-> [!NOTE]
-> The Calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
+### Calculator plugin
+
+> [!TIP]
+> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
 
 > [!IMPORTANT]
+> Please be aware of the different decimal and thousand delimiters in different locals.
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 The Calculator plugin supports the following operations:
