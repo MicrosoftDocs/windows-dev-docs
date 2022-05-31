@@ -1,10 +1,11 @@
 ---
-description: "Learn more about: .NET Native and Compilation"
+description: Learn more about: ".NET Native and Compilation"
 title: ".NET Native and Compilation"
-ms.date: "03/30/2017"
+ms.date: 03/30/2017
 ms.topic: conceptual
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 ---
+
 # .NET Native and compilation
 
 Windows desktop applications that target .NET Framework are written in a particular programming language and compiled into intermediate language (IL). At run time, a just-in-time (JIT) compiler is responsible for compiling the IL into native code for the local machine just before a method is executed for the first time. In contrast, the .NET Native tool chain converts source code to native code at compile time. This article compares .NET Native with other compilation technologies available for .NET Framework apps, and also provides a practical overview of how .NET Native produces native code that can help you understand why exceptions that occur in code compiled with .NET Native do not occur in JIT-compiled code.
@@ -90,7 +91,6 @@ This enables all the types, as well as all their members, in all the assemblies 
 
 ## See also
 
-- [Metadata and Self-Describing Components](/dotnet/standard/metadata-and-self-describing-components)
-- Inside .NET Native (Channel 9 Video)
+- [Metadata and self-describing components](/dotnet/standard/metadata-and-self-describing-components)
 - [Reflection and .NET Native](reflection-and-net-native.md)
-- [.NET Native General Troubleshooting](net-native-general-troubleshooting.md)
+- [.NET Native general troubleshooting](net-native-general-troubleshooting.md)

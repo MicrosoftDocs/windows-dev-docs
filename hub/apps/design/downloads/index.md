@@ -83,7 +83,7 @@ The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the nex
 
 ![build cast image](images/buildcast.png)
 **BuildCast**<br>
-BuildCast is an end-to-end sample built to showcase the Fluent Design System and Windows. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the Build Amazing Apps with Fluent Design talk. <br>
+BuildCast is an end-to-end sample built to showcase the Fluent Design System and Windows. It permits browsing, downloading, and playback of select video podcasts, including some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the Build Amazing Apps with Fluent Design talk. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Download the BuildCast sample</a> <br><a href="https://github.com/Microsoft/BuildCast">Check out the BuildCast sample on GitHub</a>
 
 ![Lunch Scheduler](images/lunchscheduler.png)
