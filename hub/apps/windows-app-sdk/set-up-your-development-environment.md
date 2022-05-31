@@ -30,7 +30,9 @@ Use these links to install Visual Studio 2022 (recommended) or Visual Studio 201
 
 ### Required workloads and components
 
-While installing Visual Studio, select these workloads and components.
+While installing Visual Studio, you have the option to install the workloads and components you want. After installation, you can open Visual Studio Installer and select **Modify** to add workloads and components.
+
+While installing, select the following workloads and components:
 
 #### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-a)
 
