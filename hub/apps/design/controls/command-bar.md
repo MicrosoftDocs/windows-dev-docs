@@ -65,17 +65,14 @@ Command bars can be placed in the following screen regions on single-view screen
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the CommandBar in action](winui2gallery:/item/CommandBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the CommandBar in action](winui2gallery:/item/CommandBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
@@ -86,7 +83,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [CommandBar class](/windows/winui/api/microsoft.ui.xaml.controls.commandbar), [AppBarButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/winui/api/microsoft.ui.xaml.controls.appbarseparator)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the CommandBar in action](winui3gallery:/item/CommandBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 3 Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 This example creates the command bar shown previously.
 
 ```xaml

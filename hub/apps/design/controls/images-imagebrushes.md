@@ -20,17 +20,14 @@ Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrus
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source property](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource property](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Image control in action](winui2gallery:/item/Image). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see ImageBrushes in action](winui2gallery:/item/Image). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
 
@@ -44,7 +41,7 @@ Starting in Windows 10, version 1607, the **Image** element supports animated GI
 > [!div class="checklist"]
 >
 > - **Important APIs:** [Image class](/windows/winui/api/microsoft.UI.Xaml.Controls.Image), [Source property](/windows/winui/api/microsoft.ui.xaml.controls.image.source), [ImageBrush class](/windows/winui/api/microsoft.UI.Xaml.Media.ImageBrush), [ImageSource property](/windows/winui/api/microsoft.ui.xaml.media.imagebrush.imagesource)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the Image control in action](winui3gallery:/item/Image). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ### Image
 

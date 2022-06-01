@@ -26,10 +26,7 @@ If a particular command will be used frequently and you have the space available
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 MenuBar requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](/uwp/toolkits/winui/).
 
@@ -39,11 +36,11 @@ The MenuFlyout and MenuBar controls for UWP apps are included as part of the Win
 >
 > - **UWP APIs:** [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
 > - **WinUI APIs:** [MenuFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.menuflyout), [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar), [ContextFlyout property](/windows/winui/api/microsoft.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the MenuBar in action](winui2gallery:/item/MenuBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see MenuBar in action](winui2gallery:/item/MenuBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -57,7 +54,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [MenuFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.menuflyout), [ContextFlyout property](/windows/winui/api/microsoft.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the MenuFlyout in action](winui3gallery:/item/MenuFlyout). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To create a menu flyout, you use the [MenuFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/windows/winui/api/microsoft.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) and [MenuFlyoutSeparator](/windows/winui/api/microsoft.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
 
@@ -181,7 +178,7 @@ Light dismiss controls such as menus, context menus, and other flyouts, trap key
 > [!div class="checklist"]
 >
 > - **Important APIs:** [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar). [MenuBarItem class](/windows/winui/api/microsoft.ui.xaml.controls.menubaritem)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the MenuBar in action](winui3gallery:/item/MenuBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 You use the same elements to create menus in a menu bar as in a menu flyout. However, instead of grouping MenuFlyoutItem objects in a MenuFlyout, you group them in a MenuBarItem element. Each MenuBarItem is added to the MenuBar as a top level menu.
 

@@ -25,19 +25,16 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The NumberBox for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **WinUI APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the NumberBox in action](winui2gallery:/item/NumberBox). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see NumberBox in action](winui2gallery:/item/NumberBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -50,7 +47,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the NumberBox in action](winui3gallery:/item/NumberBox). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> - [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
 

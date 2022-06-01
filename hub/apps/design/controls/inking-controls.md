@@ -126,7 +126,7 @@ The InkCanvas and InkToolbar are also used for **Snip & Sketch** in the **Window
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [InkCanvas class](/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar class](/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter class](/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the InkCanvas in action](winui2gallery:/item/InkCanvas). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the InkingControls in action](winui2gallery:/item/InkCanvas). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 Adding an InkCanvas to your app requires just one line of markup:
 

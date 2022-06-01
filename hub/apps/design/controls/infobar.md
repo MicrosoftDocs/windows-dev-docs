@@ -108,19 +108,16 @@ Please view the guidance for [Adjust layout and fonts, and support RTL](/uwp/des
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The InfoBar for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **WinUI APIs:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the InfoBar in action](winui2gallery:/item/InfoBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see InfoBar in action](winui2gallery:/item/InfoBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -133,7 +130,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the InfoBar in action](winui3gallery:/item/InfoBar). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 3 Gallery app and see InfoBar in action](winui3gallery:/item/InfoBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 The XAML below describes an inline InfoBar with the default styling for an informational notification. An info bar can be placed like any other element and will follow base layout behavior. For example, in a vertical StackPanel, the InfoBar will horizontally expand to fill the available width.
 

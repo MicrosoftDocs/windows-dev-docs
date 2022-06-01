@@ -15,8 +15,8 @@ Date and time controls give you standard, localized ways to let a user view and 
 
 > [!div class="checklist"]
 >
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see these controls in action](winui2gallery:/category/DateAndTime). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see these controls in action](winui3gallery:/category/DateAndTime). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see DateAndTime in action](winui2gallery:/item/DateAndTime). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI 3 Gallery app and see DateAndTime in action](winui3gallery:/item/DateAndTime). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Which date or time control should you use?
 

@@ -38,10 +38,7 @@ The read only mode is also the recommended way of using the rating control when 
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The RatingControl for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
@@ -49,11 +46,12 @@ The RatingControl for UWP apps is included as part of the Windows UI Library 2. 
 >
 > - **UWP APIs:** [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 > - **WinUI APIs:** [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the RatingControl in action](winui2gallery:/item/RatingControl). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see RatingControl in action](winui2gallery:/item/RatingControl). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -66,7 +64,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs**: [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the RatingControl in action](winui3gallery:/item/RatingControl). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+> - [Open the WinUI 3 Gallery app and see RatingControl in action](winui3gallery:/item/RatingControl). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ### Editable rating control
 

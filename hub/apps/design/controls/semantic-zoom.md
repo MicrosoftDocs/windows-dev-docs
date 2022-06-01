@@ -55,17 +55,14 @@ Here's a semantic zoom used in the Photos app. Photos are grouped by month. Sele
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [SemanticZoom class](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the SemanticZoom in action](winui2gallery:/item/SemanticZoom). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the SemanticZoom in action](winui2gallery:/item/SemanticZoom). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
 
@@ -74,7 +71,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [SemanticZoom class](/windows/winui/api/microsoft.UI.Xaml.Controls.SemanticZoom), [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/winui/api/microsoft.UI.Xaml.Controls.GridView)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the SemanticZoom in action](winui3gallery:/item/SemanticZoom). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> - [Open the WinUI 3 Gallery app and see the SemanticZoom in action](winui3gallery:/item/SemanticZoom). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 The **SemanticZoom** control doesn't have any visual representation of its own. It's a host control that manages the transition between 2 other controls that provide the views of your content, typically **ListView** or **GridView** controls.  You set the view controls to the [ZoomedInView](/windows/winui/api/microsoft.ui.xaml.controls.semanticzoom.zoomedinview) and [ZoomedOutView](/windows/winui/api/microsoft.ui.xaml.controls.semanticzoom.zoomedoutview) properties of the SemanticZoom.
 
