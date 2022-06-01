@@ -61,7 +61,7 @@ The TeachingTip for UWP apps requires the Windows UI Library 2. For more info, i
 > [!div class="checklist"]
 >
 > - **WinUI APIs:** [TeachingTip class](/windows/winui/api/microsoft.ui.xaml.controls.teachingtip)
-> - [Open the WinUI 2 Gallery app and see the TeachingTip in action](winui2gallery:/item/TeachingTip). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI 2 Gallery app and see the TeachingTip in action](winui2gallery:/item/TeachingTip). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 
@@ -76,7 +76,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [TeachingTip class](/windows/winui/api/microsoft.ui.xaml.controls.teachingtip)
-> - [Open the WinUI 3 Gallery app and see the TeachingTip in action](winui3gallery:/item/TeachingTip). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+> - [Open the WinUI 3 Gallery app and see the TeachingTip in action](winui3gallery:/item/TeachingTip). [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 Here's the XAML for a targeted teaching tip control that demonstrates the default look of the TeachingTip with a title and subtitle.
 Note that the teaching tip can appear anywhere in the element tree or code behind. In this example below, it's located in a ResourceDictionary.
