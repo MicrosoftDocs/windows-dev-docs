@@ -6,10 +6,6 @@ label: Toggle switches
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: kisai
-design-contact: kimsea
-dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -17,9 +13,7 @@ ms.localizationpriority: medium
 
 The toggle switch represents a physical switch that allows users to turn things on or off, like a light switch. Use toggle switch controls to present users with two mutually exclusive options (such as on/off), where choosing an option provides immediate results.
 
-To create a toggle switch control, you use the  [ToggleSwitch class](/uwp/api/windows.ui.xaml.controls.toggleswitch).
-
-> **Platform APIs**: [ToggleSwitch class](/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn property](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled event](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+To create a toggle switch control, you use the  [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch).
 
 ## Is this the right control?
 
@@ -32,22 +26,6 @@ Use a toggle switch for binary operations that take effect right after the user 
 Think of the toggle switch as a physical power switch for a device: you flip it on or off when you want to enable or disable the action performed by the device.
 
 To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights." 
-
-## Examples
-
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to open the app and see the <a href="winui2gallery:/item/ToggleSwitch">ToggleSwitch</a> or <a href="winui2gallery:/item/ToggleButton">ToggleButton</a> in action.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
 
 ## Choosing between toggle switch and check box
 
@@ -63,7 +41,33 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 - Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
 - Use check boxes when the user can select multiple items that are related to a single setting or feature.
 
+## Recommendations
+
+- Use the default On and Off labels when you can; only replace them when it's necessary for the toggle switch to make sense. If you replace them, use a single word that more accurately describes the toggle. In general, if the words "On" and "Off" don't describe the action tied to a toggle switch, you might need a different control.
+- Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
+
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [ToggleSwitch class](/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn property](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled event](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Slider in action](winui2gallery:/item/Slider). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
+
 ## Create a toggle switch
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch), [IsOn property](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.ison), [Toggled event](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.toggled)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ToggleSwitch in action](winui3gallery:/item/ToggleSwitch). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
 
 Here's how to create a simple toggle switch. This XAML creates the toggle switch shown previously.
 
@@ -83,18 +87,19 @@ stackPanel1.Children.Add(lightToggle);
 
 ### IsOn
 
-The switch can be either on or off. Use the [IsOn](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
+The switch can be either on or off. Use the [IsOn](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.ison) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
 
 ```xaml
 <StackPanel Orientation="Horizontal">
     <ToggleSwitch x:Name="ToggleSwitch1" IsOn="True"/>
-    <ProgressRing IsActive="{x:Bind ToggleSwitch1.IsOn, Mode=OneWay}" Width="130"/>
+    <ProgressRing IsActive="{x:Bind ToggleSwitch1.IsOn, Mode=OneWay}" 
+                  Width="130"/>
 </StackPanel>
 ```
 
 ### Toggled
 
-In other cases, you can handle the [Toggled](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled) event to respond to changes in the state.
+In other cases, you can handle the [Toggled](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.toggled) event to respond to changes in the state.
 
 This example shows how to add a Toggled event handler in XAML and in code. The Toggled event is handled to turn a progress ring on or off, and change its visibility.
 
@@ -138,7 +143,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ### On/Off labels
 
-By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [OnContent](/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontent), and [OffContent](/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontent) properties.
+By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [OnContent](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.oncontent), and [OffContent](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.offcontent) properties.
 
 This example replaces the On/Off labels with Show/Hide labels.
 
@@ -148,20 +153,15 @@ This example replaces the On/Off labels with Show/Hide labels.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-You can also use more complex content by setting the [OnContentTemplate](/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontenttemplate) and [OffContentTemplate](/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontenttemplate) properties.
-
-## Recommendations
-
-- Use the default On and Off labels when you can; only replace them when it's necessary for the toggle switch to make sense. If you replace them, use a single word that more accurately describes the toggle. In general, if the words "On" and "Off" don't describe the action tied to a toggle switch, you might need a different control.
-- Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
+You can also use more complex content by setting the [OnContentTemplate](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.oncontenttemplate) and [OffContentTemplate](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.offcontenttemplate) properties.
 
 ## Get the sample code
 
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
-- [ToggleSwitch class](/uwp/api/windows.ui.xaml.controls.toggleswitch)
+- [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch)
 - [Radio buttons](radio-button.md)
 - [Toggle switches](toggles.md)
 - [Check boxes](checkbox.md)

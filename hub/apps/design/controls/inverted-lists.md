@@ -45,7 +45,7 @@ This example shows how to align the list view’s items to the bottom and indica
 </ListView>
 ```
 
-## Do's and don'ts
+## Recommendations
 
 - Align messages from the sender/receiver on opposite sides to make the flow of conversation clear to users.
 - Animate the existing messages out of the way to display the latest message if the user is already at the end of the conversation awaiting the next message.

@@ -29,7 +29,7 @@ Mica is a new material that incorporates theme and desktop wallpaper to paint th
 
 [Usage guidelines](../../../design/style/mica.md)
 
-[API reference](/winui/api/microsoft.ui.xaml.controls.backdropmaterial)
+[API reference](/windows/winui/api/microsoft.ui.xaml.controls.backdropmaterial)
 
 ## Expander
 

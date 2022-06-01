@@ -9,8 +9,9 @@ ms.localizationpriority: medium
 ---
 # System resources for UWP apps and games on Xbox One
 
-UWP apps running on Xbox One share resources with the system and other apps. 
-The resources available to a UWP on Xbox One app depend on whether you submit as an app or as an Xbox Live Creators Program game.
+UWP apps running on Xbox One or Xbox Series X|S share resources with the system and other apps. 
+
+The resources available to a UWP running on the console depend on whether you submit as an app or as an Xbox Live Creators Program game.
 
 * Maximum available memory while running in the foreground:
     * Apps: 1 GB
@@ -32,20 +33,25 @@ Exceeding these limitations will cause memory allocation failures. For more info
     * Apps: share of 45% of the GPU depending on the number of apps and games running on the system.
     * Games: full access to available GPU cycles.
 
-* DirectX support
-    * Apps: DirectX 11 Feature Level 10.
-    * Games: DirectX 12, and DirectX 11 Feature Level 10.
+* DirectX support (Xbox One)
+    * Apps: DirectX 11 Hardware Feature Level 10.1
+    * Games: DirectX 12 with Hardware Feature Level 11.0; DirectX 11 with Hardware Feature Level 10.1.
+
+* DirectX support (Xbox Series X|S)
+    * Apps: DirectX 11 Hardware Feature Level 11.0
+    * Games: DirectX 11 and DirectX 12 with Hardware Feature Level 11.0
 
 * All apps and games must target the x64 architecture in order to be developed or submitted to the store for Xbox.  
 
 For **application development**, resources available may be limited in comparison to a standard PC and can vary based on the number of apps and games running on the system.
 
-For **games development**, Xbox One, like other games consoles, 
+For **games development**, the Xbox One and Xbox Series X|S, like other games consoles, 
 is a specialized piece of hardware that requires a specific hardware-based development kit to access its full potential. 
 If you are working on a game that requires access to the maximum potential of the Xbox One hardware, 
 consider registering with the [ID@Xbox](https://www.xbox.com/Developers/id) program to get access to an Xbox One development kit.
 
 ## See also
 - [UWP on Xbox One](index.md)
-- [Get started with the Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/creators-program)
-- [DirectX and UWP on Xbox One](https://walbourn.github.io/)
+- [Get started with the Xbox Live Creators Program](/gaming/xbox-live/get-started/setup-partner-center/legacy/live-get-started-creators)
+- [DirectX and UWP on Xbox One](https://walbourn.github.io/directx-and-uwp-on-xbox-one/)
+- [DirectX and UWP on Xbox Series X|S](https://walbourn.github.io/directx-and-uwp-on-xbox-series-x-s/)

@@ -474,4 +474,4 @@ New in Creators Update: A custom header that groups multiple notifications toget
 ## Related topics
 
 * [Quickstart: Send a local toast and handle activation](/archive/blogs/tiles_and_toasts/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10)
-* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)
+* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit)

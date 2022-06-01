@@ -1,10 +1,9 @@
 ---
-description: Numberbox is a control that can be used to display and edit numbers.
+description: Number box is a control that can be used to display and edit numbers.
 title: Number box
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -13,72 +12,69 @@ ms.localizationpriority: medium
 
 Represents a control that can be used to display and edit numbers. This supports validation, increment stepping, and computing inline calculations of basic equations, such as multiplication, division, addition, and subtraction.
 
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **NumberBox** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-**Windows UI Library APIs:** [NumberBox class](/uwp/api/microsoft.ui.xaml.controls.NumberBox)
-
-> [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
->
->In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
+![An in-focus input field showing the number 12.](images/numberbox-basic.png)
 
 ## Is this the right control?
 
 You can use a NumberBox control to capture and display mathematic input. If you need an editable text box that accepts more than numbers, use the [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) control. If you need an editable text box that accepts passwords or other sensitive input, see [PasswordBox](/uwp/api/windows.ui.xaml.controls.passwordbox). If you need a text box to enter search terms, see [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox). If you need to enter or edit formatted text, see [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox).
 
-## Examples
+## Recommendations
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/TextBox">open the app and see the NumberBox in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+- `Text` and `Value` make it easy to capture the value of a NumberBox as a String or as a Double without needing to convert the value between types. When programmatically altering the value of a NumberBox, it is recommended to do so through the `Value` property. `Value` will overwrite `Text` in initial set up. After the initial set up, changes to one will be propagated to the other, but consistently making programmatic changes through `Value` helps avoid any conceptual misunderstanding that NumberBox will accept non-numeric characters through `Text`.
+- Use `Header` or `PlaceholderText` to inform users that NumberBox accepts only numerical characters as input. Spelled representation of numbers, such as "one", will not resolve to an accepted value.
 
-### Create a simple NumberBox
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+The NumberBox for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the NumberBox in action](winui2gallery:/item/NumberBox). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:NumberBox />
+```
+
+### Create a NumberBox
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the NumberBox in action](winui3gallery:/item/NumberBox). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
 
 ```xaml
-<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
+<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
-![An in-focus input field showing 0.](images/numberbox-basic.png)
+![An in-focus input field showing the number 12.](images/numberbox-basic.png)
 
 ### Labeling NumberBox
 
 Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `Header` is visible whether or not the NumberBox has a value.
 
 ```xaml
-<muxc:NumberBox Header="Enter a number:"
+<NumberBox Header="Enter a number:"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
 ![A header reading "Enter expression:" above a NumberBox.](images/numberbox-header.png)
 
-`PlaceholderText` is displayed inside the NumberBox and will only appear when `Value` is set to NaN or when the input is cleared by the user.
+`PlaceholderText` is displayed inside the NumberBox and will only appear when `Value` is set to `NaN` or when the input is cleared by the user.
 
 ```xaml
-<muxc:NumberBox PlaceholderText="1+2^2"
+<NumberBox PlaceholderText="1+2^2"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -89,7 +85,7 @@ Use `Header` or `PlaceholderText` if the purpose of the NumberBox isn't clear. `
 Setting the `AcceptsExpression` property to true enables NumberBox to evaluate basic inline expressions such as multiplication, division, addition, and subtraction using standard order of operations. Evaluation is triggered on loss of focus or when the user presses the "Enter" key. Once an expression is evaluated, the original form of the expression is not preserved.
 
 ```xaml
-<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     AcceptsExpression="True" />
 ```
 
@@ -108,7 +104,7 @@ Use the `SpinButtonPlacementMode` property to enable buttons that can be clicked
 Set `SpinButtonPlacementMode` to `Inline` to enable the buttons to appear beside the control.
 
 ```xaml
-<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     SmallChange="10"
     LargeChange="100"
     SpinButtonPlacementMode="Inline" />
@@ -119,7 +115,7 @@ Set `SpinButtonPlacementMode` to `Inline` to enable the buttons to appear beside
 Set `SpinButtonPlacementMode` to `Compact` to enable the buttons to appear as a Flyout only when the NumberBox is in focus.
 
 ```xaml
-<muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
+<NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     SmallChange="10"
     LargeChange="100"
     SpinButtonPlacementMode="Compact" />
@@ -134,7 +130,7 @@ Set `SpinButtonPlacementMode` to `Compact` to enable the buttons to appear as a 
 Setting `ValidationMode` to `InvalidInputOverwritten` will enable NumberBox to overwrite invalid input that is not numerical nor legally formulaic with the last valid value when evaluation is triggered on loss of focus or a press of the "Enter" key.
 
 ```xaml
-<muxc:NumberBox Header="Quantity"
+<NumberBox Header="Quantity"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
     ValidationMode="InvalidInputOverwritten" />
 ```
@@ -145,12 +141,12 @@ With regard to decimal points and commas, the formatting used by a user will be 
 
 ### Formatting input
 
-[Number formatting](/uwp/api/windows.globalization.numberformatting) can be used to format the value of a Numberbox by configuring an instance of a formatting class and assigning it to the `NumberFormatter` property. Decimal, currency, percent, and significant figures are few of the number formatting classes available. Note that rounding is also defined by number formatting properties.
+[Number formatting](/uwp/api/windows.globalization.numberformatting) can be used to format the value of a NumberBox by configuring an instance of a formatting class and assigning it to the `NumberFormatter` property. Decimal, currency, percent, and significant figures are few of the number formatting classes available. Note that rounding is also defined by number formatting properties.
 
 Here is an example of using DecimalFormatter to format a NumberBox's value to have one integer digit, two fraction digits, and round up to the nearest 0.25:
 
 ```xaml
-<muxc:NumberBox  x:Name="FormattedNumberBox"
+<NumberBox  x:Name="FormattedNumberBox"
     Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
 ```
 
@@ -187,13 +183,8 @@ When a NumberBox is cleared of input, `Value` will be set to `NaN` to indicate n
 
 NumberBox uses infix notation to evaluate expressions. In order of precedence, the allowable operators are:
 
-* ^
-* */
-* +-
+- ^
+- */
+- +-
 
 Note that parentheses can be used to override precedence rules.
-
-## Recommendations
-
-* `Text` and `Value` make it easy to capture the value of a NumberBox as a String or as a Double without needing to convert the value between types. When programmatically altering the value of a NumberBox, it is recommended to do so through the `Value` property. `Value` will overwrite `Text` in initial set up. After the initial set up, changes to one will be progrogated to the other, but consistently making programmatic changes through `Value` helps avoid any conceptual misunderstanding that NumberBox will accept non-numeric characters through `Text`.
-* Use `Header` or `PlaceholderText` to inform users that NumberBox accepts only numerical characters as input. Spelled representation of numbers, such as "one", will not resolve to an accepted value.

@@ -206,7 +206,7 @@ WinUI 3 - Project Reunion 0.8 Preview is compatible with PCs running the Windows
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
 
-- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/windows/winui/api/microsoft.ui.xaml.application.suspending) for more details. 
+- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/uwp/api/windows.ui.xaml.application.suspending) for more details. 
 
 - The [UISettings.ColorValuesChanged Event](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
 

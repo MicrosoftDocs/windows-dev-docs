@@ -4,10 +4,6 @@ title: NavigationView
 template: detail.hbs
 ms.date: 08/09/2021
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: yulikl
-design-contact: kimsea
-dev-contact:
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5

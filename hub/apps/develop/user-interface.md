@@ -110,7 +110,7 @@ WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. 
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 3 Controls Gallery app](https://www.microsoft.com/p/winui-3-controls-gallery/9p3jfpwwdzrc)
+- Samples: [WinUI 3 Gallery app](https://www.microsoft.com/store/productId/9P3JFPWWDZRC)
 
 ### [WinUI 2](#tab/winui-2)
 
@@ -137,7 +137,7 @@ WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt?rtc=1)
+- Samples: [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
 
 ### [WPF](#tab/wpf)
 

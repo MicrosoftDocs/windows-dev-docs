@@ -73,7 +73,7 @@ A codebase is typically made up of **UI code**, for creating the user interface 
 
 - UI code: HTML, CSS, JavaScript
 - Logic code: JavaScript
-- PWAs are web apps built with standard patterns to allow them to take advantage of both web and native app features. They can be built without a framework, but a couple of popular frameworks to consider are [Ionic](https://ionicframework.com/docs/intro) and [PhoneGap](https://phonegap.com/about/).
+- PWAs are web apps built with standard patterns to allow them to take advantage of both web and native app features. They can be built without a framework, but a couple of popular frameworks to consider are [Ionic](https://ionicframework.com/docs/intro) and [Apache Cordova](https://cordova.apache.org).
 - PWAs can be installed on a device (Android, iOS, or Windows) and can work offline thanks to the incorporation of a service-worker.
 - PWAs can be distributed and installed without an app store using only a web URL. The Microsoft Store and Google Play Store allow PWAs to be listed, the Apple Store currently does not, though they can still be installed on any iOS device running 12.2 or later.
 - To learn more, check out this [introduction to PWAs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction) on MDN.

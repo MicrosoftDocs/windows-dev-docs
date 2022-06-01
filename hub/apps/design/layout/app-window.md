@@ -89,7 +89,7 @@ Let's take a look at the steps to show content in a new AppWindow.
 
     However, you can show any XAML content in the AppWindow, not just a Frame and Page. For example, you can show just a single control, like [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker), or you can show a [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) that hosts DirectX content.
 
-1. Call the [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) method to attach the XAML content to the AppWindow.
+1. Call the [ElementCompositionPreview.SetAppWindowContent](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) method to attach the XAML content to the AppWindow.
 
     ```csharp
     ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
@@ -200,7 +200,7 @@ In this case, you should use the [UIContext](/uwp/api/windows.ui.uicontext) uniq
 
 **MainPage.xaml.cs**
 
-In `MainPage`, create the Dictionary as a static property. Then, add the page to the Dictionary when you create it, and remove it when the page is closed. You can get the UIContext from the content [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) (`appWindowContentFrame.UIContext`) after you call [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent).
+In `MainPage`, create the Dictionary as a static property. Then, add the page to the Dictionary when you create it, and remove it when the page is closed. You can get the UIContext from the content [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) (`appWindowContentFrame.UIContext`) after you call [ElementCompositionPreview.SetAppWindowContent](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent).
 
 ```csharp
 public sealed partial class MainPage : Page

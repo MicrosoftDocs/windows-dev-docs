@@ -98,8 +98,6 @@ This page provides information on how the various Windows development frameworks
 
       [Microsoft Agent](/windows/win32/lwef/microsoft-agent)
 
-      [Microsoft Speech Application Software Development Kit (SASDK) Version 1.0](https://www.microsoft.com/download/details.aspx?id=2200)
-
       [Microsoft Speech API (SAPI) 5.3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5.4](/previous-versions/windows/desktop/ee125663(v=vs.85))

@@ -10,9 +10,6 @@ ms.localizationpriority: medium
 
 # Specify your MSI or EXE app's properties
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
-
 App properties describe important details about your app including requirements, capabilities, and your contact information.
 
 **Category and Subcategory**<br>*Category is required*

@@ -2,12 +2,8 @@
 description: An AnimatedIcon is a control which plays animated images in response to user interaction and visual state changes.
 title: AnimatedIcon
 template: detail.hbs
-ms.date: 06/21/2021
+ms.date: 03/24/2022
 ms.topic: article
-keywords: windows 10, winui, uwp
-pm-contact: mamatth
-design-contact: albeyih
-dev-contact: ranjeshj
 ms.custom: 20H2
 ms.localizationpriority: medium
 ---
@@ -32,34 +28,13 @@ Do not use an AnimatedIcon if the animation is not triggered by a visual state t
 
 Do not use AnimatedIcon for anything other than an icon, or where the control does not support an IconElement or IconElementSource property. Use AnimatedVisualPlayer instead.
 
-When an animated icon is not required, use [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon), or [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon) instead.
+When an animated icon is not required, use [FontIcon](/windows/winui/api/microsoft.ui.xaml.controls.fonticon), [SymbolIcon](/windows/winui/api/microsoft.ui.xaml.controls.symbolicon), or [BitmapIcon](/windows/winui/api/microsoft.ui.xaml.controls.bitmapicon) instead.
 
 ### Differences between AnimatedIcon and AnimatedVisualPlayer
 
 AnimatedIcon is an [IconElement](/windows/winui/api/microsoft.ui.xaml.controls.iconelement), which can be used anywhere an element or IconElement is required (such as [NavigationViewItem.Icon](/windows/winui/api/microsoft.ui.xaml.controls.navigationviewitem.icon)), and is controlled through a State property.
 
-[AnimatedVisualPlayer](/uwp/api/Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
-
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      The **AnimatedIcon** control requires the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Windows UI Library APIs:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
-
-> [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
->
-> In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
+[AnimatedVisualPlayer](/windows/winui/api/Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
 
 ## Use Lottie to create animated content for an AnimatedIcon
 
@@ -72,21 +47,39 @@ You can also define markers in the animation definition to indicate playback tim
 
 Defining a color property in your Lottie animation named "Foreground" lets you to set the color using the AnimatedIcon.Foreground property.
 
-## Examples
+## Recommendations
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/AnimatedIcon">open the app and see the InfoBar in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+- Please view the UX guidance for [Icons for Windows Apps](/windows/uwp/design/style/icons) to ensure your icons match the design principles.
+- Limit the number of animated icons on a single screen or view. Only animate icons to draw the user's attention to where they need to take action or when they are performing an action.
+
+## UWP and WinUI 2
+
+> [!IMPORTANT]
+>The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
+>
+> This section contains information you need to use the control in a UWP or WinUI 2 app.
+
+The AnimatedIcon for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **WinUI APIs:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
+> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the AnimatedIcon in action](winui2gallery:/item/AnimatedIcon). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+
+<muxc:AnimatedIcon />
+```
+
+## Create an animated icon
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
+> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the AnimatedIcon in action](winui3gallery:/item/AnimatedIcon). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
 
 ### Add an AnimatedIcon to a Button
 
@@ -98,14 +91,14 @@ The following example demonstrates a back button that displays an animated back 
 
 ```xaml
 <Button PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited">
-    <muxc:AnimatedIcon x:Name='BackAnimatedIcon'>
-        <muxc:AnimatedIcon.Source>
+    <AnimatedIcon x:Name='BackAnimatedIcon'>
+        <AnimatedIcon.Source>
             <animatedvisuals:AnimatedBackVisualSource/>
-        </muxc:AnimatedIcon.Source>
-        <muxc:AnimatedIcon.FallbackIconSource>
-            <muxc:SymbolIconSource Symbol='Back'/>
-        </muxc:AnimatedIcon.FallbackIconSource>
-    </muxc:AnimatedIcon>
+        </AnimatedIcon.Source>
+        <AnimatedIcon.FallbackIconSource>
+            <SymbolIconSource Symbol='Back'/>
+        </AnimatedIcon.FallbackIconSource>
+    </AnimatedIcon>
 </Button>
 ```
 
@@ -128,20 +121,20 @@ The NavigationViewItem control automatically sets common states on an AnimatedIc
 For example, the following example shows how to set a custom animation (`GameSettingsIcon`) that was generated by the LottieGen tool:
 
 ```xaml
-<muxc:NavigationView.MenuItems>
-    <muxc:NavigationViewItem Content = "Game Settings">
-        <muxc:NavigationViewItem.Icon>
-            <muxc:AnimatedIcon x:Name='GameSettingsIcon'>
-                <muxc:AnimatedIcon.Source>
+<NavigationView.MenuItems>
+    <NavigationViewItem Content = "Game Settings">
+        <NavigationViewItem.Icon>
+            <AnimatedIcon x:Name='GameSettingsIcon'>
+                <AnimatedIcon.Source>
                     <animatedvisuals:AnimatedSettingsVisualSource/>
-                </muxc:AnimatedIcon.Source>
-                <muxc:AnimatedIcon.FallbackIconSource>
-                    <muxc:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
-                </muxc:AnimatedIcon.FallbackIconSource>
-            </muxc:AnimatedIcon>
-        </muxc:NavigationViewItem.Icon>
-    </muxc:NavigationViewItem>
-</muxc:NavigationView.MenuItems>
+                </AnimatedIcon.Source>
+                <AnimatedIcon.FallbackIconSource>
+                    <FontIconSource FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
+                </AnimatedIcon.FallbackIconSource>
+            </AnimatedIcon>
+        </NavigationViewItem.Icon>
+    </NavigationViewItem>
+</NavigationView.MenuItems>
 ```
 
 ![Animated Settings Gear](images/animated-settings.gif)
@@ -187,7 +180,7 @@ The exact algorithm used to map AnimatedIcon State changes to marker playback po
 - Check if "[NewState]" parses to a float. If it does, animated from the current position to the parsed float.
 - Hard cut to playback position 0.0.
 
-The following example shows the marker format in a Lottie JSON file. See the [AnimatedIcon](/windows/uwp/design/motion/animatedicons) guidance for more detail.
+The following example shows the marker format in a Lottie JSON file. See the [AnimatedIcon](/windows/apps/design/controls/animated-icon) guidance for more detail.
 
 ```json
 "markers":[{"tm":0,"cm":"NormalToPointerOver_Start","dr":0},{"tm":9,"cm":"NormalToPointerOver_End","dr":0},
@@ -219,12 +212,12 @@ If the end user turns off animations in their system settings, AnimatedIcon will
 
 ```xml
 <Button PointerEntered="HandlePointerEntered" PointerExited="HandlePointerExited">
-    <muxc:AnimatedIcon x:Name='AnimatedIcon1'>
+    <AnimatedIcon x:Name='AnimatedIcon1'>
         <local:MyAcceptAnimation/>
-        <muxc:AnimatedIcon.FallbackIconSource>
-            <muxc:SymbolIconSource Symbol='Accept'/>
-        </muxc:AnimatedIcon.FallbackIconSource>
-    </muxc:AnimatedIcon>
+        <AnimatedIcon.FallbackIconSource>
+            <SymbolIconSource Symbol='Accept'/>
+        </AnimatedIcon.FallbackIconSource>
+    </AnimatedIcon>
 </Button>
 ```
 
@@ -239,11 +232,6 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
     AnimatedIcon.SetState(this.StackPaAnimatedIcon1nel1, "Normal");
 }
 ```
-
-## Recommendations
-
-- Please view the UX guidance for [Icons for Windows Apps](/windows/uwp/design/style/icons) to ensure your icons match the design principles.
-- Limit the number of animated icons on a single screen or view. Only animate icons to draw the user's attention to where they need to take action or when they are performing an action.
 
 ## Related articles
 

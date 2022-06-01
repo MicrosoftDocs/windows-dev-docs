@@ -3,8 +3,11 @@ title: Program Compatibility Troubleshooter on Arm
 description: Guidance for adjusting compatibility settings if your app isn't working correctly on Arm
 ms.date: 06/25/2021
 ms.topic: article
-keywords: windows, always connected, compatibility troubleshooter, windows on Arm
-ms.localizationpriority: medium
+ms.prod: windows
+ms.technology: arm
+author: mattwojo
+ms.author: mattwoj
+ms.reviewer: marcs
 ---
 
 # Program Compatibility Troubleshooter on Arm
@@ -15,11 +18,11 @@ Emulation to support x86 apps is a new feature created for Windows on Arm64. Som
 
 You start the [Program Compatibility Troubleshooter](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) manually in the same way on any Windows PC: right-click an executable (.exe) file and select **Troubleshoot compatibility**. This screen appears.
 
-![Screenshot of the Troubleshoot compatibility options.](images/arm/Capture4.png)
+![Screenshot of the Troubleshoot compatibility options.](images/Capture4.png)
 
 If you click on **Troubleshoot program** you will be presented with the following options.
 
-![Screenshot of the What problems do you notice options.](images/arm/Capture5.png)
+![Screenshot of the What problems do you notice options.](images/Capture5.png)
 
 All options enable the settings that are applicable and applied on Windows Desktop PCs. In addition, the first, second, and fourth options apply the [Disable application cache](#disable-app-cache) and [Disable hybrid execution mode](#disable-hybrid-exec-mode) emulation settings.
 
@@ -32,13 +35,13 @@ You can toggle emulation settings by right-clicking the executable and selecting
 
 On Arm, a section titled **Windows 10 on Arm** will be available in the **Compatibility** tab. Click **Change emulation settings** to launch a second window as here.
 
-![Change emulation settings screenshot](images/arm/Capture.png)
+![Change emulation settings screenshot](images/Capture.png)
 
 This window provides two ways to modify emulation settings. You may select a pre-defined group of emulation settings, or you may click the **Use advanced settings** option to enable choosing individual settings.
 
 The grouped emulation settings reduce performance optimizations in favor of quality. Below are some grouped settings that you can select.
 
-![Change emulation settings screenshot2](images/arm/Capture2.png)
+![Change emulation settings screenshot2](images/Capture2.png)
 
 Select **Use advanced settings** to choose individual settings as described in this table.
 
@@ -51,7 +54,7 @@ Select **Use advanced settings** to choose individual settings as described in t
 
 You can also select multi-core settings, as shown here.
 
-![Multi-core settings screenshot](images/arm/Capture3.png)
+![Multi-core settings screenshot](images/Capture3.png)
 
 These settings change the number of memory barriers used to synchronize memory accesses between cores in apps during emulation. **Fast** is the default mode, but the **strict** and **very strict** options will increase the number of barriers. This slows down the app, but reduces the risk of app errors. The **single-core** option removes all barriers but forces all app threads to run on a single core.
 

@@ -292,7 +292,7 @@ The UI for the Xbox Activity Feed uses a repeating pattern where each line has a
 The code below walks through what a custom virtualizing UI for the activity feed might be to illustrate the general approach you might take for a **data layout**.
 
 > [!TIP]
-> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://www.microsoft.com/p/winui-3-controls-gallery/9P3JFPWWDZRC) or get the source code on  [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
 
 #### Implementation
 
