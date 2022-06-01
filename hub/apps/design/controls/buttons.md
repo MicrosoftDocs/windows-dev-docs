@@ -142,7 +142,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [Button class](/windows/winui/api/microsoft.ui.xaml.controls.button), [Click event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click), [Command property](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.command), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content)
-> - [Open the WinUI 3 Gallery app and see the Buttons in action](winui3gallery:/item/Buttons). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+> - [Open the WinUI 3 Gallery app and see the Buttons in action](winui3gallery:/item/Button). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows a button that responds to a click.
 
