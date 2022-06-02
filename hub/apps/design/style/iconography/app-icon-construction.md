@@ -5,7 +5,7 @@ keywords: windows 10, uwp
 author: hickeys
 ms.author: hickeys
 design-contact: judysa
-ms.date: 10/29/2021
+ms.date: 6/2/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -123,17 +123,20 @@ Separate files for all three theme variations (default, light theme, dark theme)
 > [!NOTE]
 > If you do not include the targetsize-*-altform-unplated assets above your icon will scale to a smaller size and will get an undesirable backplate behind the icon on Taskbar and Start.
 
+
 ### Tiles
+
 
 Windows 10 supports four tile sizes: small, medium, wide, and large.
 
 **Default / dark theme (partially required)**
 
-- SmallTile.scale-100.png
-- SmallTile.scale-125.png
-- SmallTile.scale-150.png
-- SmallTile.scale-200.png
-- SmallTile.scale-400.png
+* SmallTile.scale-100.png
+* SmallTile.scale-125.png 
+* SmallTile.scale-150.png
+* SmallTile.scale-200.png
+* SmallTile.scale-400.png
+
 
 - MedTile.scale-100.png
 - MedTile.scale-125.png
@@ -141,11 +144,13 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 - MedTile.scale-200.png
 - MedTile.scale-400.png
 
-- WideTile.scale-100.png
-- WideTile.scale-125.png
-- WideTile.scale-150.png
-- WideTile.scale-200.png
-- WideTile.scale-400.png
+
+* WideTile.scale-100.png
+* WideTile.scale-125.png
+* WideTile.scale-150.png
+* WideTile.scale-200.png
+* WideTile.scale-400.png
+
 
 - LargeTile.scale-100.png
 - LargeTile.scale-125.png
@@ -161,11 +166,13 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 - SmallTile.scale-200_altform-colorful_theme-light.png
 - SmallTile.scale-400_altform-colorful_theme-light.png
 
-- MedTile.scale-100_altform-colorful_theme-light.png
-- MedTile.scale-125_altform-colorful_theme-light.png
-- MedTile.scale-150_altform-colorful_theme-light.png
-- MedTile.scale-200_altform-colorful_theme-light.png
-- MedTile.scale-400_altform-colorful_theme-light.png
+
+* MedTile.scale-100_altform-colorful_theme-light.png
+* MedTile.scale-125_altform-colorful_theme-light.png
+* MedTile.scale-150_altform-colorful_theme-light.png
+* MedTile.scale-200_altform-colorful_theme-light.png
+* MedTile.scale-400_altform-colorful_theme-light.png
+
 
 - WideTile.scale-100_altform-colorful_theme-light.png
 - WideTile.scale-125_altform-colorful_theme-light.png
@@ -173,11 +180,12 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 - WideTile.scale-200_altform-colorful_theme-light.png
 - WideTile.scale-400_altform-colorful_theme-light.png
 
-- LargeTile.scale-100_altform-colorful_theme-light.png
-- LargeTile.scale-125_altform-colorful_theme-light.png
-- LargeTile.scale-150_altform-colorful_theme-light.png
-- LargeTile.scale-200_altform-colorful_theme-light.png
-- LargeTile.scale-400_altform-colorful_theme-light.png
+
+* LargeTile.scale-100_altform-colorful_theme-light.png
+* LargeTile.scale-125_altform-colorful_theme-light.png
+* LargeTile.scale-150_altform-colorful_theme-light.png
+* LargeTile.scale-200_altform-colorful_theme-light.png
+8 LargeTile.scale-400_altform-colorful_theme-light.png
 
 > [!NOTE]
 > Windows 11 does not use the tile assets, but currently at minimum the Medium tile assets at 100% are required to publish to the Microsoft Store. If your app is Windows 10 & 11 compatible it is suggested that you include as many tile assets as possible.
