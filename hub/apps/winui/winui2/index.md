@@ -67,6 +67,9 @@ For details on the Windows UI Library NuGet packages, see [Windows UI Library Nu
 
 ## See also
 
-- [API docs](/windows/winui/api/)
+- [WinUI 2 API docs](/windows/winui/api/)
 - [Source code](https://aka.ms/winui)
-- [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

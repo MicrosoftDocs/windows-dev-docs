@@ -25,7 +25,7 @@ With support for both desktop and UWP apps, you can build with WinUI from the gr
 :::row-end:::
 
 > [!Important]
-> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2](winui2/index.md) and WinUI 3. While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules. 
+> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2](winui2/index.md) and [WinUI 3](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules.
 >
 > See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
 
@@ -49,3 +49,11 @@ The following table highlights some of most significant differences between WinU
 | WinUI 3 is supported only in desktop-based projects. To use WinUI 3, UWP projects can migrate their project type to desktop (see [how to migrate your UWP app to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md)). | WinUI 2 can be incorporated into production UWP apps by installing a NuGet package into a new or existing UWP project. WinUI controls and styles can then be referenced directly in new apps, or by updating "Windows.UI." namespace references to "Microsoft.UI." in existing apps. |
 | WinUI 3 supports the Chromium-based [WebView2](/microsoft-edge/webview2/) control | WinUI 2 supports the [WebView](/windows/uwp/design/controls-and-patterns/web-view) control on all devices, and starting with WinUI 2.7 prerelease, the [WebView2](/microsoft-edge/webview2/) control on Desktop. The WebView2 control will come to a WinUI 2.x stable release in the future. |
 | WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). | WinUI 2 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). |
+
+### See also
+
+- [Windows App SDK](../windows-app-sdk/index.md)
+- [Stable channel release notes for the Windows App SDK](../windows-app-sdk/stable-channel.md)
+- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
+- [WinUI 2 API docs](/windows/winui/api/)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
