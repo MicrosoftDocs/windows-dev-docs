@@ -20,7 +20,7 @@ Windows 10 October 2020 Update introduced theme-aware Start Menu tiles, which se
 
 :::image type="content" source="images/transparent-tile-background.png" alt-text="A diagram that shows a tile image with a transparent background overlayed against a semitransparent gray tile.":::
 
-The easiest way to look great on Live Tiles is to just just display your app's icon against a transparent background. This is the "standard" way to do tiles. To achieve this look, you can either create tile images with transparent backgrounds, or just let Windows display your app's icon on a regular tile.
+The easiest way to look great on Live Tiles is to just display your app's icon against a transparent background. This is the "standard" way to do tiles. To achieve this look, you can either create tile images with transparent backgrounds, or just let Windows display your app's icon on a regular tile.
 
 ## Creating a full bleed tile
 
