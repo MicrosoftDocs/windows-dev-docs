@@ -151,7 +151,7 @@ MicaWindow::MicaWindow(const winrt::Compositor& compositor, const std::wstring& 
 
 ## How to use Mica in Win32 WebView2 apps
 
-The fundamental principles of applying Mica is consistent across most Win32 applications. The process for [WebView2](/microsoft-edge/webview2/) follows the basic steps from the [Win32 instructions shown previously](#how-to-use-mica-in-win32-apps). However, in this case you will need to specify a single threaded process from WinRT's `init_apartment` feature.
+The fundamental principles of applying Mica are consistent across most Win32 applications. The process for [WebView2](/microsoft-edge/webview2/) follows the basic steps from the [Win32 instructions shown previously](#how-to-use-mica-in-win32-apps). However, in this case you will need to specify a single threaded process from WinRT's `init_apartment` feature.
 
 > [!TIP]
 > The code in this section is taken from the [Windows App SDK WebView2 Mica sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-WebView2). See the GitHub repo for the full code.
