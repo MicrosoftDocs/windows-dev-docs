@@ -136,8 +136,10 @@ items:
               items:
                   - name: Overview
                     href: get-started/make-apps-great-for-windows.md
-                  - name: Apply rounded corners in Windows 11
+                  - name: Apply rounded corners on Windows 11
                     href: desktop/modernize/apply-rounded-corners.md
+                  - name: Apply Mica on Windows 11
+                    href: desktop/modernize/apply-mica-win32.md
                   - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
                   - name: Support Dark and Light themes
