@@ -52,7 +52,7 @@ For more information about .NET MAUI, see the following links:
 
 ### [React Native for Windows](#tab/rnw)
 
-[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+[React Native](https://reactnative.dev) is a development platform from Meta which allows building cross-platform apps.
 React Native for Windows brings React Native support to the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
@@ -155,7 +155,7 @@ For more information about .NET MAUI, see the following links:
 
 ### [React Native for Windows](#tab/rnw)
 
-[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+[React Native](https://reactnative.dev) is a development platform from Meta which allows building cross-platform apps.
 React Native for Windows brings React Native support to the Windows SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
