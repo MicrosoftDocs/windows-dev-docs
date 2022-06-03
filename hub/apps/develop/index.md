@@ -28,7 +28,8 @@ The following table highlights the development features that are provided by the
 | [App lifecycle: Rich activation](../windows-app-sdk/applifecycle/applifecycle-rich-activation.md) | Process information about different kinds activations for your app. |
 | [App lifecycle: Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](../windows-app-sdk/windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
-| [Push notifications](../windows-app-sdk/notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
+| [Push notifications](../windows-app-sdk/notifications/push-notifications/index.md) | Send raw notifications and app notifications to your app from the cloud using Azure App Registration identities. |
+| [App notifications](../windows-app-sdk/notifications/app-notifications/index.md) | Deliver messages to your user with app notifications. |
 | [Deployment](../windows-app-sdk/deployment-architecture.md) | Deploy the Windows App SDK runtime with your unpackaged and packaged app |
 
 ## Windows app development features organized by scenario

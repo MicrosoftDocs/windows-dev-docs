@@ -1,61 +1,120 @@
 ---
-description: Learn how to create effective and user-focused notifications that make your users productive and happy.
-title: Toast UX Guidance
-label: Toast UX Guidance
+description: This article provides design guidance to consider as you plan and implement the toast notification experience for your app. 
+title: Notifications design basics
+label: Notifications design basics
 template: detail.hbs
-ms.date: 05/18/2018
+ms.date: 05/10/2022
 ms.topic: article
 keywords: windows 10, uwp, notification, collection, group, ux, ux guidance, guidance, action, toast, action center, noninterruptive, effective notifications, nonintrusive notifications, actionable, manage, organize
 ms.localizationpriority: medium
 ---
-# Toast Notification UX Guidance
-Notifications are a necessary part of modern life; they help users be more productive and engaged with apps and websites, as well as stay current with any updates. However, notifications can quickly turn from useful to overbearing and intrusive if they are not designed in a user-centric way. Your notifications are one right-click away from being turned off, and it's unlikely once they are turned off, they will be turned on again.  So make sure your notifications are respectful of the user's screen space and time, so you can keep this engagement channel open.
+# Notifications design basics
+Drive user engagement with your app by providing personalized, actionable, and useful toast notifications. Toast notifications are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center (called Action Center in Windows 10). This article provides design guidance to consider as you plan and implement the toast notification experience for your app.
 
-> **Important APIs**: [Windows Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+![A screen capture showing a toast notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, "Going". There are two buttons labeled "RSVP" and "Dismiss"](../../images/shell-1x.png)
+   
+## Notifications should be informative and valuable  
 
-We've analyzed our Windows telemetry, as well as other first and third party case studies, to come up with four rules around what makes a great notification story.  We are confident these rules are universally applicable, regardless of the platform, and will help your notifications have a positive impact on your users.
+Design your notifications to have clear intent so the user can quickly understand the purpose of the notification and stay in their flow. Consider the user scenarios your toast notifications are enabling and add elements to your notification that are appropriate for each scenario. Notifications should allow the user to save time, but shouldn't distract or create more work.  
 
-## 1. Actionable notifications
-Actionable notifications allow your users to be productive without opening your app.  While it is great to have app launches, this isn't the only measure of success, and enabling users to take accomplish small tasks without having to go into your app can be a very powerful tool in delighting your users.
+### Choose the right notification UI elements 
 
-![Actionable notification with input text box and buttons to set reminders and respond to the notification](images/actionable-notification-example01.png)
+Consider which UI elements offer the most value to your user scenario. Is the purpose of the notification to allow the user to accomplish a task, or is it simply to get new information? The following section shows some example elements that you can use in your toast notifications. 
 
-Above is an example of a notification that leverages actions. The feeling of finishing tasks is a universally positive feeling, and you can bring that feeling to your app or website by sending notifications that have actionable content in them. Actionable notifications can also help increase productivity, both in enterprise and consumer scenarios, by decreasing the time to action users go through to accomplish these smaller tasks. We recommend including actions that your users regularly take, or things that you are trying to train your users to do.  Some examples include:
-* Liking, favoriting, flagging, or starring content
-* Approving or denying expense reports, time off, permissions, etc.
-* Inline replying to messages, emails, group chats, comments, etc.
-* Completing orders using [pending update](toast-pending-update.md)
-* Setting alerts or reminders for another time, as well as potentially booking time on a calendar
+:::row:::
+    :::column:::
+![A cropped desktop screenshot showing a notification with button elements.](images/buttons-thumbnail.png)
+    :::column-end:::
+    :::column span="2":::
+**Buttons**
 
-Actionable notifications are a very powerful tool to help your users feel productive, accomplish tasks, and have a great and efficient experience with your app or website.  There are lots of opportunities here! If you want help brainstorming ideas, feel free to reach out to the windows notifications team.
+Buttons trigger an immediate action. By adding buttons, the user can complete a task within the notification.  
+    :::column-end:::
+:::row-end:::
 
-## 2. Timing and urgency
-Contrary to how we often think about notifications, real time is not necessarily best! We urge developers to think about the user and if the notification they are sending is urgent information or not. Users can easily be overloaded with too much information and get frustrated if they are being interrupted while they are trying to focus. Windows provides a few options for how to consider the intrusiveness of the notifications you are sending:
+:::row:::
+    :::column:::
+![A cropped desktop screenshot showing a notification with an inline image.](images/inline-image-thumbnail.png)
+    :::column-end:::
+    :::column span="2":::
+**Images**
 
-**Raw notifications:** Using [raw notifications](raw-notification-overview.md) can be beneficial for many reasons, especially when it comes ot minimizing interruptions to the user.  Sending raw notifications will wake your app up in the background, so you can assess whether the notification makes sense to deliver immediately in your app's context. If it is something you feel should be shown to the user right away, you are able to pop a [local toast](send-local-toast.md) from there.  If it is something the user does not need to see right now, you are able to create a [scheduled toast](scheduled-toast.md) that will fire at a later time.
+Images can either be [app logo override](adaptive-interactive-toasts.md?tabs=builder-syntax#app-logo-override), [inline](adaptive-interactive-toasts.md?tabs=builder-syntax#inline-image), or [hero](adaptive-interactive-toasts.md?tabs=builder-syntax#hero-image). By adding images, the user can parse your content more quickly. Examples include adding an app logo override image depicting the sender’s profile image to a chat or email notification.  
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+![A cropped desktop screenshot showing a notification with a quick reply box.](images/inline-reply-thumbnail.png)
+    :::column-end:::
+    :::column span="2":::
+**Quick replies**
+
+Quick reply boxes enable users to respond to messages without opening the app. Examples include adding quick reply boxes to a chat notification.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+![A cropped desktop screenshot showing a notification with a context menu.](images/context-menu-thumbnail.png)
+    :::column-end:::
+    :::column span="2":::
+**Context menu buttons**
+
+Context menu buttons give users more options on right-click on the notification or upon selection of the context menu icon. An example scenario is adding an option to mute a group chat for an hour. 
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+![A cropped desktop screenshot showing a notification with a progress bar.](images/progress-bar-thumbnail.png)
+    :::column-end:::
+    :::column span="2":::
+**Progress bars**
+
+Progress bars communicate status of long-running operations. By adding a progress bar, the user doesn’t have to check back in your app for updates. Examples include communicating a file download or game update with a progress bar notification. 
+    :::column-end:::
+:::row-end:::
+
+To see all of the UI elements that can be used in a notification, see [Toast content](adaptive-interactive-toasts.md).
+
+## Notifications should not be noisy  
+
+Users can easily be overloaded with too much information and get frustrated if they are being interrupted while they are trying to focus. Too many interruptions leads to users turning off this critical communication channel for your app.   
+
+- One method of not interrupting the user but still communicating valuable information is by suppressing the notification, meaning the notification is automatically placed directly into the Notification Center without an alert. 
+- On Windows 11, Focus Sessions allow users to suppress extraneous notifications. You can use the [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) API to detect if the user is in a Focus Session and adjust your app’s notification behavior accordingly.  
 
 
-**Ghost toast:** you can also fire a notification that will skip popping up in the bottom right corner of the screen, and instead send the notification directly to action center. This is accomplished by setting the [SupressPopup property](/uwp/api/windows.ui.notifications.toastnotification.suppresspopup) to True. Although there might be some skepticism around not popping notifications outside of action center, we see a 2-3 times higher engagement for toasts that live in action center over popped toast.  Users are more responsive when they are ready to receive notifications and can control when they are interrupted, which is why content in action center can be so much more effective for noninvasively notifying users.
+## Respond to the user’s intent 
 
-## 3. Clear out the Clutter
-Notifications can persist in Action Center for a fairly long time (default three days).  It is imperative that you make sure the content that lives here is up to date and relevant every time the user opens action center. You are wasting the user's screen space, and taking up slots that could be used for something more up-to-date.  Let's say the user installs your email management app, and receives ten emails and ten notifications along with those emails.  Depending on your desired experience, you might consider clearing those notifications if the user has read the corresponding email, or opened up the app as a way to remove old clutter from action center.
+Just like the design of your notification UI, the behavior when the user clicks on the notification or on UI elements within the notification should be deliberate and consistent, and should engage the user in a clear task or scenario.
 
-We have a series of [ToastNotificationHistory](/uwp/api/windows.ui.notifications.toastnotificationhistory) APIs that enable you to see what content is in action center, as well as manage these notifications. Be respectful of the user's screen space and take care that you are only showing relevant and current content to users.
+- If the user clicks on your notification to launch it, your app should launch in the notification’s context.  
+- If the user clicks on a button in your notification, your app should launch in the context that is appropriate for the button’s action 
+    - However, if the action is intended to be a background task, such as quick reply, your app should not launch.   
 
-## 4. Keeping Organized
-As mentioned previously, the content in Action center does persist for three days.  To help your users pick out the information they are looking for quickly, organize the notifications in action center using [headers](./toast-headers.md) or [collections](/uwp/api/windows.ui.notifications.toastcollection). You can see an example of a header below.
-
-![Toast examples with Headers labeled 'Camping!!'](images/toast-headers-action-center.png)
-
-Group these notifications in a way so that relevant content stays together (i.e. think separating out different sports leagues in a sports app, or sorting messages by group chat). Collections are a more obvious way to group notifications, whereas headers are more subtle, but both allow users to triage and pick out notifications more quickly.
+## Provide a consistent Notification Center experience
 
 
+:::row:::
+    :::column:::
+![A cropped desktop screenshot showing Notification Center with several notifications.](images/notification-center-thumbnail.png)
+    :::column-end:::
+    :::column span="2":::
+        The Notification Center allows the user to view and respond to notifications after they have been displayed, or in the case of silent notifications, after they have been received but not displayed. It's important to keep Notification Center tidy by clearing out old notifications. You should also be sure to provide a consistent experience when removing notifications so the user feels confident they aren't missing information. Following standard conventions for notification removal makes the notification experience predictable and intuitive for users. 
+        
+        The following are some example scenarios that illustrate strategies for clearing out old notifications from Notification Center: 
+        
+        - The user receives 10 new emails, and thus 10 new notifications. The user goes to the email app and views 10 emails, without interacting with the 10 notifications. After the user views the 10 emails, the email app removes the 10 notifications from the Notification Center. This also applies if the user has viewed the 10 emails elsewhere, such as their phone or website. 
+        - The user receives 10 new chat messages from one user, and thus 10 new notifications. The user selects one of these chat notifications, which launches the chat. After the user views the chat, the app removes the 9 remaining notifications from the Notification Center.   
+    :::column-end:::
+:::row-end:::
 
-These four points above are guidance that we have found effective through our own analysis of telemetry, and through first and third party experiments. Keep in mind, however, that these guidelines are just that: guidelines.  We are confident these rules will help increase engagement and productivity of your notifications, but nothing can substitute user-centric thinking, and learning from your own data.  
 
-## Related topics
 
-* [Toast content](adaptive-interactive-toasts.md)
-* [Raw notifications](raw-notification-overview.md)
-* [Pending update](toast-pending-update.md)
-* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+
+
+## Related articles
+
+[Developer guidance for notifications](send-local-toast.md)

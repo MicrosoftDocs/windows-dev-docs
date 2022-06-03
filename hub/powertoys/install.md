@@ -23,7 +23,7 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 - Our installer will install the following runtimes:
   - [.NET 6.0.4 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer) or a newer 6.0.x runtime
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (This will always install the latest version)
-  - [Windows App SDK Runtime](/windows/apps/windows-app-sdk/downloads) 1.0.3. This will install version 1.0.3 if this or newer version is not installed already.
+  - The latest stable version of the [Windows App SDK Runtime](/windows/apps/windows-app-sdk/downloads). This will install the latest stable release if it isn't already installed.
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 

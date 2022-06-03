@@ -11,10 +11,10 @@ ms.localizationpriority: medium
 
 # Push notifications functionality migration
 
-This topic contains migration guidance in the push notifications feature area.
+This topic contains migration guidance in the push notifications feature area. 
 
 > [!IMPORTANT]
-> Only raw push notifications are currently supported.
+> Only raw push notifications and app push notifications are currently supported. Badge push notifications and tile push notifications are not supported. 
 
 ## Summary of API and/or feature differences
 
@@ -23,9 +23,9 @@ Push notifications can be broken down into these four separate stages.
 | Stage | UWP | Windows App SDK|
 |--------|-----|----------------|
 | Identity | Partner Center (MSA) | Azure App Registration (AAD) |
-| Channel request | Synchronous| Asynchronous<br/>Azure App Registration Id<br/>Retry logic built in (up to 5 retries)  |
-| Activation | In-process, PushTrigger\*, COM activation\*  | In-process, PushTrigger\*, COM activation\*, Protocol activation |
-| Sending push notifications | Uses login.live.com endpoint to receive an access token | Uses the `https://login.microsoftonline.com/common/oauth2/token` endpoint for token request |
+| Channel request | Synchronous| Asynchronous<br/>Azure App Registration Id<br/>Azure Tenant Id<br/>Retry logic built in (up to 5 retries)  |
+| Activation | In-process, PushTrigger\*, COM activation\*  | In-process, COM activation |
+| Sending push notifications | Uses login.live.com endpoint to receive an access token | Uses the `https://login.microsoftonline.com/{tenantID}/oauth2/token` endpoint for token request |
 
 \* Supported for Windows 10, version 2004 (10.0; Build 19041), and later.
 
@@ -33,22 +33,18 @@ Push notifications can be broken down into these four separate stages.
 
 In the Windows App SDK, the push notifications feature uses identity from Azure App Registration (AAD), which removes the requirement of having a Package Family Name (PFN) from Partner Center in order to use push notifications.
 
-* For **a UWP app**, you sign up and register the application in [Windows Store Partner Center](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#create-an-app-in-windows-store).
-* For **a Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (AAD)](/windows/apps/windows-app-sdk/notifications/push/push-quickstart#configure-your-apps-identity-in-azure-active-directory).
+* For a **UWP app**, you sign up and register the application in [Windows Store Partner Center](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#create-an-app-in-windows-store).
+* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (AAD)](/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart#configure-your-apps-identity-in-azure-active-directory-aad).
 
 ### Channel requests
 
-Channel request are handled asynchronously, and require the GUID as part of the parameter (you receive the GUID from an AAD app registration). You use the GUID for your identity in place of the PFN that a UWP app uses. In case the request runs into a retryable error, the notification platform will attempt multiple retries.
+Channel request are handled asynchronously, and require the Azure AppID GUID and Azure tenantID (you receive the Azure AppID and tenant ID from an AAD app registration). You use the Azure AppID for your identity in place of the Package Family Name (PFN) that a UWP app uses. In case the request runs into a retryable error, the notification platform will attempt multiple retries.
 
 A Windows App SDK app can check the status of a channel request.
 
-## Activation
+### Activation
 
-Similar to UWP, push notifications in the Windows App SDK support background task activation via [**PushNotificationTrigger**](/uwp/api/windows.applicationmodel.background.pushnotificationtrigger) and COM Activation (see [Support your app with background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks)). Support for this is currently available only for packaged apps.
-
-* **A UWP app**, can be activated via an in-process or out-of-process background task.
-* For a **packaged Windows App SDK app**, background task registration is handled by the Windows App SDK for **PushNotificationTrigger**.
-* If you're migrating from a UWP app to an **unpackaged Windows App SDK app**, then you'll be activated via protocol activation in contrast to activation from a background task.
+See the Windows App SDK registration and activation steps at [Configure your app to receive push notifications](/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart#configure-your-app-to-receive-push-notifications). 
 
 ## Sending push notifications
 
@@ -71,10 +67,9 @@ grant_type=client_credentials&client_id=<AppID_Here>&client_secret=<Client_Secre
 For a **Windows App SDK app** (AAD access token request):
 
 ```http
-POST /common/oauth2/token HTTP/1.1
+POST /{tenantID}/oauth2/v2.0/token Http/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
-Cookie: fpc=Ar4SqAsP2l9DsWjyp3SGu3Gjwv2tAQAAAOe6sNgOAAAA
 Content-Length: 160
 
 grant_type=client_credentials&client_id=<Azure_App_Registration_AppId_Here>&client_secret=<Azure_App_Registration_Secret_Here>&resource=https://wns.windows.com/

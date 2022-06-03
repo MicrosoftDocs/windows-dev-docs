@@ -280,14 +280,22 @@ items:
                 href: windows-app-sdk/applifecycle/applifecycle-power.md
       - name: "Manage app windows"
         href: windows-app-sdk/windowing/windowing-overview.md
-      - name: "Push notifications"
+      - name: Notifications
         items:
-          - name: "Overview"
-            href: windows-app-sdk/notifications/push/index.md
-          - name: "Quickstart"
-            href: windows-app-sdk/notifications/push/push-quickstart.md
-          - name: "Troubleshooting"
-            href: windows-app-sdk/notifications/push/troubleshooting.md  
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push-notifications/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push-notifications/troubleshooting.md  
+          - name: "App notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/app-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
       - name: Graphics
         items: 
           - name: Overview
@@ -385,9 +393,31 @@ items:
             href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
+            items: 
+              - name: "Bootstrapper C++ API"
+                href: api-reference/bootstrapper-cpp-api/index.md
+                items: 
+                  - name: "Constants for use with the Bootstrapper C++ API"
+                    href: api-reference/bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md
+                  - name: "Microsoft::Windows::ApplicationModel namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
+                    items: 
+                      - name: "PackageVersion class"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
+                  - name: "Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                    items: 
+                      - name: "Initialize function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md
+                      - name: "InitializeFailFast function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
+                      - name: "InitializeNoThrow function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
           - name: "Bootstrapper C# APIs"
             href: api-reference/cs-bootstrapper-apis/index.md
             items: 
+              - name: "Constants for use with the Bootstrapper C# APIs"
+                href: api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
               - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
                 href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
                 items: 

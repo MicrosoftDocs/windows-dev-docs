@@ -58,7 +58,35 @@ Because app compatibility is important to Microsoft and to apps that depend on t
 
 The **singleton package** ensures that a single long-running process can handle services that are used across multiple apps, which may be running on different versions of the Windows App SDK. 
 
-The Windows App SDK singleton is needed to enable [push notifications](notifications/push/index.md) for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP [PushNotificationTrigger](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) and [ToastNotificationActionTrigger](/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger) class. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.
+The Windows App SDK singleton is needed to enable [push notifications](notifications/push-notifications/index.md) for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP [PushNotificationTrigger](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) and [ToastNotificationActionTrigger](/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger) class. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.
+
+## Additional requirements for unpackaged apps
+
+### Bootstrapper
+
+The bootstrapper is a library that must be included with your non-MSIX-packaged app. It provides the bootstrapper API (see [Use the Windows App SDK runtime for non-MSIX-packaged apps](use-windows-app-sdk-run-time.md)), which enables unpackaged apps to perform these important tasks:
+
+- Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
+- Find and load the Windows App SDK framework package to the app's package graph.
+
+To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you may [call the bootstrapper API directly in your app's startup code](tutorial-unpackaged-deployment.md) so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+
+The bootstrapper library in the Windows App SDK 1.0 Stable release includes:
+
+- **Microsoft.WindowsAppRuntime.Bootstrap.dll** (C++ and C#) 
+- **Microsoft.WindowsAppRuntime.Bootstrap.Net.dll** (C# wrapper)
+
+### Dynamic Dependency Lifetime Manager (DDLM)
+
+The purpose of the DDLM is to prevent servicing of the Windows App SDK framework package while it is in use by an unpackaged app. It contains a server that must be initialized by the bootstrapper early in an app's startup to provide that functionality.
+
+There is one DDLM for each version and architecture of the Windows App SDK framework package. This means on an `x64` computer, you may have both an `x86` and an `x64` version of the DDLM to support apps of both architectures.
+
+## Additional requirements
+
+* For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
+* For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
+* **C#**. For the .NET 5.0 runtime, see [Download .NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
 ## Related topics
 

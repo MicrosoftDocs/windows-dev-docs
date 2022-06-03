@@ -81,7 +81,7 @@ You can run the installer with no user interaction and suppress all text output 
 WindowsAppRuntimeInstall.exe --quiet
 ```
 
-You can also choose to force update the MSIX packages and shutdown any currently running Windows App SDK processes using the `--force` option. This feature is introduced in 1.1 Preview 2. 
+You can also choose to force update the MSIX packages and shutdown any currently running Windows App SDK processes using the `--force` option. This feature is introduced in 1.1. 
 
 ```console
 WindowsAppRuntimeInstall.exe --force
