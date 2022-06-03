@@ -55,10 +55,7 @@ When the user invokes a command element (such as a button) whose primary role is
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The CommandBarFlyout and MenuBar controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
@@ -66,11 +63,11 @@ The CommandBarFlyout and MenuBar controls for UWP apps are included as part of t
 >
 > - **UWP APIs:** [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [CommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [TextCommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)
 > - **WinUI APIs:** [CommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout), [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar), [TextCommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout)
-> - If you have the **WinUI 2 Gallery** app installed, click here to open the app and see the [MenuBar](winui2gallery:/item/MenuBar) or [CommandBarFlyout](winui2gallery:/item/CommandBarFlyout) in action. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - Open the WinUI 2 Gallery app and see the [MenuBar](winui2gallery:/item/MenuBar) or [CommandBarFlyout](winui2gallery:/item/CommandBarFlyout) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"

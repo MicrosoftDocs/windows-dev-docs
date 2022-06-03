@@ -36,15 +36,6 @@ This section includes setup steps, a guide through the authentication process, i
 |[Bringing existing games to Xbox](development-lanes-landing.md)|Based on what technology your game is built on top of, we can direct you to step-by-step instructions that can expedite the process of bringing your game to Xbox using the UWP.|
 |[UWP features not supported on Xbox](/uwp/extension-sdks/uwp-limitations-on-xbox)|  Describes UWP feature areas that are not yet fully functional on Xbox One.|
 
-## Videos
-
-The following talks on Channel 9 are a great source of information for building amazing apps on Xbox:
-
-* Building Great Universal Windows Platform (UWP) Apps for Xbox
-* Adapt Your App for Xbox One and TV
-* UWP Development 1: Building an Adaptive UI
-* Web Apps Beyond the Browser: Cross-Platform Meets Cross Device
-
 ## See also
 
 - [Automate launching Windows 10 UWP apps](automate-launching-uwp-apps.md)

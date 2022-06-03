@@ -16,8 +16,6 @@ A Windows Hello companion device is a device that can act in conjunction with yo
 
 ## Introduction
 
-> For a video overview, see the Windows Unlock with IoT Devices session from Build 2016 on Channel 9.
-
 > For code samples, see the [Windows Hello companion device framework Github repository](https://github.com/Microsoft/companion-device-framework).
 
 ### Use cases

@@ -43,7 +43,7 @@ The default controls have been optimized for media playback, however you have th
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [MediaPlayerElement class](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaTransportControls class](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the MediaPlayerElement in action](winui2gallery:/item/MediaPlayerElement). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see MediaPlayback in action](winui2gallery:/item/MediaPlayerElement). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 Add media to your app by creating a [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) object in XAML and set the [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) to a [MediaSource](/uwp/api/windows.media.core.mediasource) that points to an audio or video file.
 

@@ -8,7 +8,7 @@ ms.date: 11/10/2021
 # Windows UI Library (WinUI) 2
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../index.md).
+> For more information on building Windows desktop apps with the latest version of WinUI, see [Windows UI Library 3](../index.md).
 
 ![WinUI controls](images/winui-hero1.png)
 
@@ -67,6 +67,9 @@ For details on the Windows UI Library NuGet packages, see [Windows UI Library Nu
 
 ## See also
 
-- [API docs](/windows/winui/api/)
+- [WinUI 2 API docs](/windows/winui/api/)
 - [Source code](https://aka.ms/winui)
-- [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

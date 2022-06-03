@@ -123,7 +123,6 @@ The Program plugin allows for program arguments to be added when launching an ap
 
 > [!NOTE]
 > To input valid search queries, the first element after the program name has to be one of the following possibilities:
->
 > - The characters sequence `--`.
 > - A parameter that starts with `-`.
 > - A parameter that starts with `--`.
