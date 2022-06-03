@@ -45,7 +45,7 @@ The value proposition of moving the Windows App SDK is manifold. Here are some c
 * A single API surface across desktop app platforms.
 * More frequent release cadence that releases separately from Windows.
 * A consistent experience across Windows versions.
-* .NET 5 compatibility.
+* .NET 5+ compatibility.
 * Backward-compatible down to Windows 10, version 1809.
 * Improved runtime environment. See [MSIX container](/windows/msix/msix-container).
 

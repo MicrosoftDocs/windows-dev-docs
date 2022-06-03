@@ -1,6 +1,6 @@
 ---
-description: Build a C# .NET 5 and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
-title: Build a C# .NET 5 app with WinUI 3 and Win32 interop
+description: Build a C# .NET 5+ and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
+title: Build a C# .NET 5+ app with WinUI 3 and Win32 interop
 ms.date: 08/02/2021
 ms.topic: article
 keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
@@ -10,16 +10,16 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Build a C# .NET 5 app with WinUI 3 and Win32 interop
+# Build a C# .NET 5+ app with WinUI 3 and Win32 interop
 
-In this article, we step through how to build a basic **C# .NET 5** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
+In this article, we step through how to build a basic **C# .NET 5+** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 
 ## Prerequisites
 
 1. Set up your development environment and install the latest Windows App SDK VSIX from [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
 2. Test your configuration&mdash;[Create your first WinUI 3 project](create-your-first-winui3-app.md). 
 
-## Basic managed C#/.NET 5 app
+## Basic managed C#/.NET 5+ app
 
 For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of modules loaded in the current process.
 

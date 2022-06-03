@@ -58,11 +58,11 @@ The *dynamic dependencies* feature in the Windows App SDK and in the Windows 11 
 
 For more information, see [Use MSIX framework packages dynamically from your desktop app](framework-packages/index.md).
 
-## .NET 5
+## .NET 6
 
-.NET 5 is the latest major release of .NET Core. This release supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)) as well as Windows Forms and Windows Presentation Foundation (WPF) apps. You can run new and existing Windows desktop apps on .NET 5 and enjoy all the benefits that .NET Core has to offer. 
+.NET 6 is the latest major release of .NET Core. This release supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)) as well as Windows Forms and Windows Presentation Foundation (WPF) apps. You can run new and existing Windows desktop apps on .NET 6 and enjoy all the benefits that .NET Core has to offer. 
 
-For more information, see [What's new in .NET 5](/dotnet/core/dotnet-five).
+For more information, see [What's new in .NET 6](/dotnet/core/whats-new/dotnet-6).
 
 ## Host WinRT XAML controls (XAML Islands)
 
