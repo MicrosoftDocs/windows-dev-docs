@@ -61,21 +61,22 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. This r
 - Fixed issue causing some rounded corners to show a gradient when they should be a solid color. For more information see [issue 6076](https://github.com/microsoft/microsoft-ui-xaml/issues/6076) & [issue 6194](https://github.com/microsoft/microsoft-ui-xaml/issues/6194) on GitHub.
 - Fixed issue where updated styles were missing from generic.xaml.
 - Fixed layout cycle issue causing an app to crash when scrolling to the end of a ListView. For more information see [issue 6218](https://github.com/microsoft/microsoft-ui-xaml/issues/6218) on GitHub.
+- Fixed issue where users are unable to drop an element when drag-and-drop is enabled. For more information see [issue 7008](https://github.com/microsoft/microsoft-ui-xaml/issues/7008) on GitHub.
 
 **Known limitations:**
-- Users are unable to drop an element when drag-and-drop is enabled.
 - When using a custom title bar, the caption controls do not change color on theme change.
 - XAML crashes when a user closes a window while a dialog is open.
 #### Deployment
 **New features:**
 - MSIX-packaged apps can now force deploy the Windows App SDK runtime packages using the [`DeploymentManager.Initialize(DeploymentInitializeOptions) API`](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize#microsoft-windows-applicationmodel-windowsappruntime-deploymentmanager-initialize(microsoft-windows-applicationmodel-windowsappruntime-deploymentinitializeoptions)) or using the --force option with the Windows App Runtime installer.
-- There are additional functional extension categories available for MSIX-packaged apps. Check out the [1.1 Preview 3 release notes](preview-channel.md#msix-packaging) for more details. These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
+- There are additional functional extension categories, UnlockedDEHs, available for MSIX-packaged apps. Check out the [1.1 Preview 3 release notes](preview-channel.md#msix-packaging) for more details. These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
 - Self-contained deployment is supported. Check out the [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview) for the differences between framework-dependent and self-contained deployment, and how to get started.
 - The Bootstrapper API required for apps that don't deploy with MSIX include new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/?branch=release-appsdk-1.1-stable) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Reference the Windows App SDK framework package at run time](use-windows-app-sdk-run-time.md).
 
 **Known limitations:**
 - Running the Windows App Runtime installer (WindowsAppRuntimeInstall.exe) requires sideloading to be enabled. See [issue 2469](https://github.com/microsoft/WindowsAppSDK/issues/2469) on GitHub for more information.
 - Creating an MSIX package through the Visual Studio Project menus can crash Visual Studio in some scenarios. This issue will be fixed in Visual Studio version 17.3 Preview 2 and serviced to 17.2. If you encounter this issue, you can work around it by generating an MSIX from the command line, switching to an unpackaged project, or reverting back to Windows App SDK 1.0.
+- Self-contained applications packaged with MSIX are unsupported on 1809 causing app crash on launch.
 
 #### Elevation
 Apps are now able to run with elevated privilege.
@@ -175,6 +176,7 @@ C# Windows Runtime Components, including WinUI custom controls, are now supporte
 
 - Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See [issue 2492](https://github.com/microsoft/WindowsAppSDK/issues/2492) on GitHub for more information.
 - Using `dotnet build` with a WinAppSDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
+- The default WinAppSDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
 ## Version 1.0
 
 The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.3. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
