@@ -249,7 +249,11 @@ The RadioButtons control for UWP apps is included as part of the Windows UI Libr
 >
 > - **UWP APIs**: [RadioButton class](/uwp/api/windows.ui.xaml.controls.radiobutton), [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
 > - **WinUI APIs**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
-> - [Open the WinUI 2 Gallery app and see the Button in action](winui2gallery:/item/Button). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Button in action](winui2gallery:/item/Button).
+
+[!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 There are two ways to create radio button groups.
 
