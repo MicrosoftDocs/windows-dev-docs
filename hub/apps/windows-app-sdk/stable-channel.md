@@ -305,7 +305,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
 
 #### Bug fixes:
-- Fixed an issue where an app would sometimes crash during a drag and drop operation.
+- Fixed issues causing apps to sometimes crash during a drag and drop operation.
 
 > [!NOTE]
 > Windows App SDK 0.8.9 was not released. The version released directly after 0.8.8 is 0.8.10.
