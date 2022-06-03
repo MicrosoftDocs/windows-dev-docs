@@ -20,17 +20,14 @@ For recommendations on when to use a flyout vs. when to use a dialog (a similar 
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
 APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout), [Button.Flyout property](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Flyout in action](winui2gallery:/item/Flyout). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the Flyout in action](winui2gallery:/item/Flyout). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
 
@@ -39,7 +36,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [Flyout class](/windows/winui/api/microsoft.UI.Xaml.Controls.Flyout), [Button.Flyout property](/windows/winui/api/microsoft.UI.Xaml.Controls.Button.Flyout)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the Flyout in action](winui3gallery:/item/Flyout). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout).
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 Flyouts are attached to specific controls. You can use the [Placement](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](/windows/winui/api/microsoft.UI.Xaml.Controls.Button), provide a [Flyout](/windows/winui/api/microsoft.UI.Xaml.Controls.Button.Flyout) property that you can use to associate a flyout or [context menu](../menus.md).
 

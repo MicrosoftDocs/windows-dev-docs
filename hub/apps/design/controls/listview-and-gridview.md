@@ -51,17 +51,14 @@ Learn more about ItemsRepeater by reading its [Guidelines](./items-repeater.md) 
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the Windows App SDK and [WinUI 3](/windows/apps/winui/winui3), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 APIs for these controls exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Items property](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
-> - If you have the **WinUI 2 Gallery** app installed, click here to open the app and see the [ListView](winui2gallery:/item/ListView) or [GridView](winui2gallery:/item/GridView) in action. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - Open the WinUI 2 Gallery app and see the [ListView](winui2gallery:/item/ListView) or the [GridView](winui2gallery:/item/GridView) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
 
@@ -70,7 +67,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ListView class](/windows/winui/api/microsoft.ui.xaml.controls.listview), [GridView class](/windows/winui/api/microsoft.ui.xaml.controls.gridview), [ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource), [Items property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items)
-> - If you have the **WinUI 3 Gallery** app installed, click here to open the app and see the [ListView](winui3gallery:/item/ListView) or [GridView](winui3gallery:/item/GridtView) in action. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [ListView](winui3gallery:/item/ListView) or the [GridView](winui3gallery:/item/GridView) in action.
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ListView and GridView are both [ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol) types, so they can contain a collection of items of any type. A ListView or GridView control must have items in its [Items](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection before it can display anything on the screen. To populate the view, you can [add items directly to the collection](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) or set the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source.
 

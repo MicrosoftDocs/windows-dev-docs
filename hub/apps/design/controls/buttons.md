@@ -115,10 +115,7 @@ This example uses three buttons, **Save**, **Don't Save**, and **Cancel**, in a 
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
@@ -126,11 +123,11 @@ The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are
 >
 > - **UWP APIs:** [Button class](/uwp/api/windows.ui.xaml.controls.button), [RepeatButton class](/uwp/api/windows.ui.xaml.controls.repeatbutton), [HyperlinkButton class](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton), [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton), [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton), [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton), [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
 > - **WinUI APIs:** [DropDownButton](/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Button in action](winui2gallery:/item/Button). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the Button in action](winui2gallery:/item/Button). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -145,7 +142,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [Button class](/windows/winui/api/microsoft.ui.xaml.controls.button), [Click event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click), [Command property](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.command), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the Button in action](winui3gallery:/item/Button). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Buttons in action](winui3gallery:/item/Button).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows a button that responds to a click.
 
@@ -221,7 +222,11 @@ The button looks like this.
 > [!div class="checklist"]
 >
 > - **Important APIs:** [RepeatButton class](/windows/winui/api/microsoft.ui.xaml.controls.primitives.repeatbutton), [Click event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the RepeatButton in action](xamlcontrolsgallery:/item/RepeatButton). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the RepeatButton in action](winui3gallery:/item/RepeatButton).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 A [RepeatButton](/windows/winui/api/microsoft.ui.xaml.controls.primitives.repeatbutton) control is a button that raises [Click](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click) events repeatedly from the time it's pressed until it's released. Set the [Delay](/windows/winui/api/microsoft.ui.xaml.controls.primitives.repeatbutton.delay) property to specify the time that the **RepeatButton** control waits after it is pressed before it starts repeating the click action. Set the [Interval](/windows/winui/api/microsoft.ui.xaml.controls.primitives.repeatbutton.interval) property to specify the time between repetitions of the click action. Times for both properties are specified in milliseconds.
 
@@ -258,7 +263,11 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 > [!div class="checklist"]
 >
 > - **Important APIs**: [DropDownButton class](/windows/winui/api/microsoft.ui.xaml.controls.button), [Flyout property](/windows/winui/api/microsoft.ui.xaml.controls.button.flyout)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the DropDownButton in action](xamlcontrolsgallery:/item/DropDownButton). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the DropdownButton in action](winui3gallery:/item/DropdownButton).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 A [DropDownButton](/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard **Button** control with a flyout; only the appearance is different.
 
@@ -318,7 +327,11 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 > [!div class="checklist"]
 >
 > - **Important APIs**: [SplitButton class](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton), [Click event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click), [Flyout property](/windows/winui/api/microsoft.ui.xaml.controls.button.flyout)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the SplitButton in action](xamlcontrolsgallery:/item/SplitButton). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the SplitButton in action](winui3gallery:/item/SplitButton).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 A [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton) control has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.
 
@@ -430,7 +443,11 @@ public sealed partial class MainPage : Page
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ToggleSplitButton class](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton), [IsCheckedChanged event](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton.ischeckedchanged), [IsChecked property](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton.ischecked)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ToggleSplitButton in action](xamlcontrolsgallery:/item/ToggleSplitButton). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ToggleSplitButton in action](winui3gallery:/item/ToggleSplitButton).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 A [ToggleSplitButton](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton) control has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.
 

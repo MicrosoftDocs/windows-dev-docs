@@ -20,10 +20,7 @@ The [**Shape**](/windows/winui/api/microsoft.ui.xaml.Shapes.Shape) classes are [
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use shapes in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 APIs for these shapes exist in the [Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes) namespace.
 

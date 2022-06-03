@@ -31,7 +31,7 @@ Use a web view control to display richly formatted HTML content from a remote we
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [WebView class](/uwp/api/Windows.UI.Xaml.Controls.WebView)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the WebView in action](winui2gallery:/item/WebView). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the WebView in action](winui2gallery:/item/WebView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 **Modify the appearance of a web view**
 

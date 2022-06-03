@@ -22,19 +22,16 @@ Use an `Expander` when some primary content should always be visible, but relate
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
->The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The Expander for UWP apps requires the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **WinUI APIs:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Expander in action](winui2gallery:/item/Expander). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the Expander in action](winui2gallery:/item/Expander). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -47,7 +44,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the Expander in action](winui3gallery:/item/Expander). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a simple [Expander](/windows/winui/api/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/windows/winui/api/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander.content) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
 

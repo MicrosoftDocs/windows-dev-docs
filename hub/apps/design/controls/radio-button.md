@@ -241,10 +241,7 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the Windows App SDK and [WinUI 3](/windows/apps/winui/winui3), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 The RadioButtons control for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
@@ -252,7 +249,11 @@ The RadioButtons control for UWP apps is included as part of the Windows UI Libr
 >
 > - **UWP APIs**: [RadioButton class](/uwp/api/windows.ui.xaml.controls.radiobutton), [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
 > - **WinUI APIs**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the Button in action](winui2gallery:/item/Button). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Button in action](winui2gallery:/item/Button).
+
+[!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 There are two ways to create radio button groups.
 
@@ -261,7 +262,7 @@ There are two ways to create radio button groups.
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
 
-To use the code in this article with WinUI 2, use an alias in XAML (we use `muxc`) to represent the Windows UI Library APIs that are included in our project. See [Get Started with WinUI 2](/windows/apps/winui/winui2/getting-started) for more info.
+[!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -274,7 +275,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [RadioButton class](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton), [IsChecked property](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the RadioButtons in action](winui3gallery:/item/RadioButton). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+> - [Open the WinUI 2 Gallery app and see the RadioButton in action](winui2gallery:/item/RadioButton). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 The `RadioButtons` control uses a content model similar to an [ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol). This means that you can:
 

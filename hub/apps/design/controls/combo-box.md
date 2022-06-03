@@ -70,17 +70,14 @@ A list box allows the user to choose either a single item or multiple items from
 
 ## UWP and WinUI 2
 
-> [!IMPORTANT]
-> The information and examples in this article are optimized for apps that use the [Windows App SDK](/windows/apps/windows-app-sdk/) and [WinUI 3](/windows/apps/winui/winui3/), but are generally applicable to UWP apps that use [WinUI 2](/windows/apps/winui/winui2/). See the UWP API reference for platform specific information and examples.
->
-> This section contains information you need to use the control in a UWP or WinUI 2 app.
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [ListBox class](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
-> - If you have the **WinUI 2 Gallery** app installed, click here to [open the app and see the ComboBox in action](winui2gallery:/item/ComboBox). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9MSVH128X2ZT) or get the source code on [GitHub](https://github.com/Microsoft/WinUI-Gallery).
+> - [Open the WinUI 2 Gallery app and see the ComboBox in action](winui2gallery:/item/ComboBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [Windows UI Library 2.2](/windows/apps/winui/winui2/) or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
@@ -89,7 +86,11 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ComboBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [IsEditable property](/windows/winui/api/microsoft.ui.xaml.controls.combobox.iseditable), [Text property](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [ListBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListBox)
-> - If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ComboBox in action](winui3gallery:/item/ComboBox). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 You populate the combo box by adding objects directly to the [Items](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection or by binding the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source. Items added to the ComboBox are wrapped in [ComboBoxItem](/windows/winui/api/microsoft.ui.xaml.controls.comboboxitem) containers.
 

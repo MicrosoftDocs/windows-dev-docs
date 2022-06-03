@@ -132,7 +132,7 @@ Now, as the user types in their filtering terms in the `FilterByLName` TextBox, 
 ## Next steps
 
 ### Get the sample code
-- If you have the WinUI 2 Gallery</strong> app installed, click [here](winui2gallery:/item/ListView) to open the app and see a more robust, in-depth example of list filtering on the ListView page.
+> - [Open the WinUI 2 Gallery app and see the ListView](winui2gallery:/item/ListView) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 - Get the [WinUI 2 Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT).
 
 ### Related articles
