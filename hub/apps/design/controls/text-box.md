@@ -94,7 +94,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [TextBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBox), [Text property](/windows/winui/api/microsoft.ui.xaml.controls.textbox.text)
-> - [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's the XAML for a simple text box with a header and placeholder text.
 

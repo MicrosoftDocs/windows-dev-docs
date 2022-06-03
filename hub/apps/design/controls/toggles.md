@@ -64,7 +64,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch), [IsOn property](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.ison), [Toggled event](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.toggled)
-> - [Open the WinUI 3 Gallery app and see the Slider in action](winui3gallery:/item/Slider). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ToggleSwitch in action](winui3gallery:/item/ToggleSwitch).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's how to create a simple toggle switch. This XAML creates the toggle switch shown previously.
 

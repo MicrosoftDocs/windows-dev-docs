@@ -130,7 +130,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
-> - [Open the WinUI 3 Gallery app and see InfoBar in action](winui3gallery:/item/InfoBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 The XAML below describes an inline InfoBar with the default styling for an informational notification. An info bar can be placed like any other element and will follow base layout behavior. For example, in a vertical StackPanel, the InfoBar will horizontally expand to fill the available width.
 

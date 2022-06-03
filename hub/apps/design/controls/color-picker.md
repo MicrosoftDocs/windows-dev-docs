@@ -55,7 +55,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [ColorPicker class](/windows/winui/api/microsoft.ui.xaml.controls.colorpicker), [Color property](/windows/winui/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged event](/windows/winui/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
-> - [Open the WinUI 3 Gallery app and see the ColorPicker in action](winui3gallery:/item/ColorPicker). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ColorPicker in action](winui3gallery:/item/ColorPicker).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a default color picker in XAML.
 

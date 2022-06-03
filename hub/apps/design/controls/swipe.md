@@ -98,7 +98,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView)
-> - [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery:/item/SwipeControl). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery:/item/SwipeControl).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Swipe commands have two components that you need to define:
 

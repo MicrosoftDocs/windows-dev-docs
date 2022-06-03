@@ -72,7 +72,11 @@ The hyperlink appears inline and flows with the surrounding text:
 > [!div class="checklist"]
 >
 > - **Important APIs**: [HyperlinkButton control](/windows/winui/api/microsoft.UI.Xaml.Controls.HyperlinkButton)
-> - [Open the WinUI 3 Gallery app and see Hyperlinks in action](winui3gallery:/item/HyperlinkButton). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's how to use a HyperlinkButton, both with text and with an image.
 

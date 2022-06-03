@@ -56,7 +56,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [RichEditBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
-> - [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled) property to **false**. For more info, see the [Guidelines for spell checking](text-controls.md) article.
 

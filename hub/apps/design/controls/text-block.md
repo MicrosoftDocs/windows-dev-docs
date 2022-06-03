@@ -40,7 +40,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [TextBlock class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBlock), [Text property](/windows/winui/api/microsoft.ui.xaml.controls.textblock.text), [Inlines property](/windows/winui/api/microsoft.ui.xaml.controls.textblock.inlines)
-> - [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's how to define a simple TextBlock control and set its Text property to a string.
 

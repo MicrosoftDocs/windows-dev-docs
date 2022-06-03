@@ -74,7 +74,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [ToolTip class](/windows/winui/api/microsoft.UI.Xaml.Controls.ToolTip), [ToolTipService class](/windows/winui/api/microsoft.ui.xaml.controls.tooltipservice)
-> - [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 A [ToolTip](/windows/winui/api/microsoft.UI.Xaml.Controls.ToolTip) must be assigned to another UI element that is its owner. The [ToolTipService](/windows/winui/api/microsoft.ui.xaml.controls.tooltipservice) class provides static methods to display a ToolTip.
 

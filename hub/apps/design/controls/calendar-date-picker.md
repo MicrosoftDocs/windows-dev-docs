@@ -45,7 +45,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [CalendarDatePicker class](/windows/winui/api/microsoft.UI.Xaml.Controls.CalendarDatePicker), [Date property](/windows/winui/api/microsoft.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/windows/winui/api/microsoft.ui.xaml.controls.calendardatepicker.datechanged)
-> - [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Calendar"/>

@@ -59,7 +59,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ContentDialog class](/windows/winui/api/microsoft.UI.Xaml.Controls.ContentDialog)
-> - [Open the WinUI 3 Gallery app and see the ContentDialog in action](winui3gallery:/item/ContentDialog). [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ContentDialog in action](winui3gallery:/item/ContentDialog).
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 To create a dialog, you use the [ContentDialog class](/windows/winui/api/microsoft.UI.Xaml.Controls.ContentDialog). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](/windows/winui/api/microsoft.UI.Xaml.Controls.ContentDialog.ShowAsync) method to display it.
 

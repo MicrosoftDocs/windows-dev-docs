@@ -70,7 +70,11 @@ When you use an **ItemsRepeater**, you should provide scrolling functionality by
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer class](/windows/winui/api/microsoft.ui.xaml.controls.scrollviewer)
-> - [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To use an [**ItemsRepeater**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater), you need to give it the data to display by setting the **ItemsSource** property. Then, tell it how to display the items by setting the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property.
 

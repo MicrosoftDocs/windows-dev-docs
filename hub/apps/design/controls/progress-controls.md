@@ -148,7 +148,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive)
-> - Open the WinUI 3 Gallery app and see the [ProgressBar](winui3gallery:/item/ProgressBar) or [ProgressRing](winui3gallery:/item/ProgressRing). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [ProgressBar](winui3gallery:/item/ProgressBar) or [ProgressRing](winui3gallery:/item/ProgressRing).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Both progress controls are rather simple; but some visual features of the controls are not obvious to customize.
 

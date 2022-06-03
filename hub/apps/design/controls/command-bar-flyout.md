@@ -67,7 +67,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [CommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/winui/api/microsoft.ui.xaml.controls.appbarseparator)
-> - [Open the WinUI 3 Gallery app and see the CommandBarFlyout in action](winui3gallery:/item/CommandBarFlyout). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the CommandBarFlyout in action](winui3gallery:/item/CommandBarFlyout).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a command bar flyout and use it both proactively and reactively. When the image is tapped, the flyout is shown in its collapsed mode. When shown as a context menu, the flyout is shown in its expanded mode. In either case, the user can expand or collapse the flyout after it's opened.
 

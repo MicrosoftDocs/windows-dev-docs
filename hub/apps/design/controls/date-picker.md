@@ -48,7 +48,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [DatePicker class](/windows/winui/api/microsoft.UI.Xaml.Controls.DatePicker), [SelectedDate property](/windows/winui/api/microsoft.ui.xaml.controls.datepicker.selecteddate)
-> - [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery:/item/DatePicker). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery:/item/DatePicker).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a simple date picker with a header.
 

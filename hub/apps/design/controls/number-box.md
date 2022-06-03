@@ -47,7 +47,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
-> - [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
 

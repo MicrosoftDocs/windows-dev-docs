@@ -137,7 +137,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [Slider class](/windows/winui/api/microsoft.ui.xaml.controls.slider), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.primitives.rangebase.value), [ValueChanged event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged)
-> - [Open the WinUI 3 Gallery app and see the Slider in action](winui3gallery:/item/Slider). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Slider in action](winui3gallery:/item/Slider).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Here's how to create a slider in XAML.
 

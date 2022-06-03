@@ -74,7 +74,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [CheckBox class](/windows/winui/api/microsoft.ui.xaml.controls.checkbox), [Checked event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/windows/winui/api/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content)
-> - [Open the WinUI 3 Gallery app and see the CheckBox in action](winui3gallery:/item/CheckBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the CheckBox in action](winui3gallery:/item/CheckBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ### Create a simple check box
 

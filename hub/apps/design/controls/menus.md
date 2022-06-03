@@ -54,7 +54,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [MenuFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.menuflyout), [ContextFlyout property](/windows/winui/api/microsoft.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
-> - [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To create a menu flyout, you use the [MenuFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/windows/winui/api/microsoft.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/windows/winui/api/microsoft.ui.xaml.controls.radiomenuflyoutitem) and [MenuFlyoutSeparator](/windows/winui/api/microsoft.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
 
@@ -178,7 +182,11 @@ Light dismiss controls such as menus, context menus, and other flyouts, trap key
 > [!div class="checklist"]
 >
 > - **Important APIs:** [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar). [MenuBarItem class](/windows/winui/api/microsoft.ui.xaml.controls.menubaritem)
-> - [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 You use the same elements to create menus in a menu bar as in a menu flyout. However, instead of grouping MenuFlyoutItem objects in a MenuFlyout, you group them in a MenuBarItem element. Each MenuBarItem is added to the MenuBar as a top level menu.
 

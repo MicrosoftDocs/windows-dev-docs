@@ -76,7 +76,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
-> - [Open the WinUI 3 Gallery app and see the AnimatedIcon in action](winui3gallery:/item/AnimatedIcon). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the AnimatedIcon in action](winui3gallery:/item/AnimatedIcon).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ### Add an AnimatedIcon to a Button
 

@@ -67,7 +67,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [PasswordBox class](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox), [Password property](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox.password), [PasswordChar property](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox.passwordchanged)
-> - [Open the WinUI 3 Gallery app and see PasswordBox in action](winui3gallery:/item/PasswordBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see PasswordBox in action](winui3gallery:/item/PasswordBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Use the [Password](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox.password) property to get or set the contents of the PasswordBox. You can do this in the handler for the [PasswordChanged](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox.passwordchanged) event to perform validation while the user enters the password. Or, you can use another event, like a button [Click](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click), to perform validation after the user completes the text entry.
 

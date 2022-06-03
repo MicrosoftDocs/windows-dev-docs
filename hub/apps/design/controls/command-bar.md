@@ -83,7 +83,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [CommandBar class](/windows/winui/api/microsoft.ui.xaml.controls.commandbar), [AppBarButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/winui/api/microsoft.ui.xaml.controls.appbarseparator)
-> - [Open the WinUI 3 Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 This example creates the command bar shown previously.
 
 ```xaml

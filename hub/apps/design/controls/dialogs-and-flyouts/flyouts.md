@@ -36,7 +36,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [Flyout class](/windows/winui/api/microsoft.UI.Xaml.Controls.Flyout), [Button.Flyout property](/windows/winui/api/microsoft.UI.Xaml.Controls.Button.Flyout)
-> - [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout). [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout).
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 Flyouts are attached to specific controls. You can use the [Placement](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](/windows/winui/api/microsoft.UI.Xaml.Controls.Button), provide a [Flyout](/windows/winui/api/microsoft.UI.Xaml.Controls.Button.Flyout) property that you can use to associate a flyout or [context menu](../menus.md).
 

@@ -86,7 +86,11 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ComboBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [IsEditable property](/windows/winui/api/microsoft.ui.xaml.controls.combobox.iseditable), [Text property](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [ListBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListBox)
-> - [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 You populate the combo box by adding objects directly to the [Items](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection or by binding the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source. Items added to the ComboBox are wrapped in [ComboBoxItem](/windows/winui/api/microsoft.ui.xaml.controls.comboboxitem) containers.
 

@@ -55,7 +55,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [PersonPicture class](/windows/winui/api/microsoft.ui.xaml.controls.personpicture)
-> - [Open the WinUI 3 Gallery app and see PersonPicture in action](winui3gallery:/item/PersonPicture). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see PersonPicture in action](winui3gallery:/item/PersonPicture).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To create a person picture, you use the PersonPicture class. This example creates a PersonPicture control and manually provides the person's display name, profile picture, and initials:
 

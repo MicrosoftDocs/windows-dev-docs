@@ -71,7 +71,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [SemanticZoom class](/windows/winui/api/microsoft.UI.Xaml.Controls.SemanticZoom), [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/winui/api/microsoft.UI.Xaml.Controls.GridView)
-> - [Open the WinUI 3 Gallery app and see the SemanticZoom in action](winui3gallery:/item/SemanticZoom). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see SemanticZoom in action](winui3gallery:/item/SemanticZoom).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 The **SemanticZoom** control doesn't have any visual representation of its own. It's a host control that manages the transition between 2 other controls that provide the views of your content, typically **ListView** or **GridView** controls.  You set the view controls to the [ZoomedInView](/windows/winui/api/microsoft.ui.xaml.controls.semanticzoom.zoomedinview) and [ZoomedOutView](/windows/winui/api/microsoft.ui.xaml.controls.semanticzoom.zoomedoutview) properties of the SemanticZoom.
 

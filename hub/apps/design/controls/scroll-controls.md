@@ -61,7 +61,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [ScrollViewer class](/windows/winui/api/microsoft.UI.Xaml.Controls.ScrollViewer), [ScrollBar class](/windows/winui/api/microsoft.ui.xaml.controls.primitives.scrollbar)
-> - [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To add vertical scrolling to your page, wrap the page content in a scroll viewer.
 

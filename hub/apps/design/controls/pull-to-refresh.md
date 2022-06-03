@@ -120,7 +120,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs**: [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
-> - [Open the WinUI 3 Gallery app and see PullToRefresh in action](winui3gallery:/item/PullToRefresh). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see PullToRefresh in action](winui3gallery:/item/PullToRefresh).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To add pull-to-refresh functionality to a list requires just a few steps.
 

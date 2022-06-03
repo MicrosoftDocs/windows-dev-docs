@@ -49,7 +49,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [TimePicker class](/windows/winui/api/microsoft.UI.Xaml.Controls.TimePicker), [SelectedTime property](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.selectedtime)
-> - [Open the WinUI 3 Gallery app and see the TimePicker in action](winui3gallery:/item/TimePicker). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the TimePicker in action](winui3gallery:/item/TimePicker).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a simple time picker with a header.
 

@@ -67,7 +67,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [ListView class](/windows/winui/api/microsoft.ui.xaml.controls.listview), [GridView class](/windows/winui/api/microsoft.ui.xaml.controls.gridview), [ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource), [Items property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items)
-> - Open the WinUI 3 Gallery app and see the [ListView](winui3gallery:/item/ListView) or the [GridView](winui3gallery:/item/GridView) in action. [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [ListView](winui3gallery:/item/ListView) or the [GridView](winui3gallery:/item/GridView) in action.
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ListView and GridView are both [ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol) types, so they can contain a collection of items of any type. A ListView or GridView control must have items in its [Items](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection before it can display anything on the screen. To populate the view, you can [add items directly to the collection](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) or set the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source.
 

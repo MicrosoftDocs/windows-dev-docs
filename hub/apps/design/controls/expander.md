@@ -44,7 +44,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 > [!div class="checklist"]
 >
 > - **Important APIs:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
-> - [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a simple [Expander](/windows/winui/api/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/windows/winui/api/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/winui/api/microsoft.ui.xaml.controls.expander.content) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
 

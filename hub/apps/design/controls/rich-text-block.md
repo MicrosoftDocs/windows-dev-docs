@@ -43,7 +43,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [RichTextBlock class](/windows/winui/api/microsoft.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow class](/windows/winui/api/microsoft.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph class](/windows/winui/api/microsoft.UI.Xaml.Documents.Paragraph), [Typography class](/windows/winui/api/microsoft.UI.Xaml.Documents.Typography)
-> - [Open the WinUI 3 Gallery app and see the RichTextBlock in action](winui3gallery:/item/RichTextBlock). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the RichTextBlock in action](winui3gallery:/item/RichTextBlock).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 The content property of RichTextBlock is the [Blocks](/windows/winui/api/microsoft.ui.xaml.controls.richtextblock.blocks) property, which supports paragraph based text via the [Paragraph](/windows/winui/api/microsoft.UI.Xaml.Documents.Paragraph) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app. However, RichTextBlock provides several unique features that TextBlock doesn't provide. 
 

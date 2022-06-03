@@ -54,7 +54,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [FlipView class](/windows/winui/api/microsoft.ui.xaml.controls.flipview), [ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemtemplate)
-> - [Open the WinUI 3 Gallery app and see the FlipView in action](winui3gallery:/item/FlipView). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the FlipView in action](winui3gallery:/item/FlipView).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 FlipView is an [ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol), so it can contain a collection of items of any type. To populate the view, add items to the [**Items**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection, or set the [**ItemsSource**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source.
 

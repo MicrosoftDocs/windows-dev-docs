@@ -55,7 +55,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [AutoSuggestBox class](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox), [TextChanged event](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted)
-> - [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery:/item/AutoSuggestBox). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery:/item/AutoSuggestBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 To use an AutoSuggestBox, you need to respond to 3 user actions.
 

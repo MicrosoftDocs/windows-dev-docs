@@ -47,7 +47,11 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 > [!div class="checklist"]
 >
 > - **Important APIs:** [CalendarView class](/windows/winui/api/microsoft.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selecteddateschanged)
-> - [Open the WinUI 3 Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView). [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 This example shows how to create a simple calendar view.
 
