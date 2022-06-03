@@ -173,7 +173,7 @@ The Calculator plugin supports the following operations:
 | Factorial | x! | |
 | Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
 | Random number | rand() | Returns a fractional number between 0 and 1. |
-| Pi | pi | Returns the number of pi. (To simply display pi, a sign is required like so: `+pi`.) |
+| Pi | pi | Returns the number of pi. |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |
 | Tangent | tan( x ) | |
