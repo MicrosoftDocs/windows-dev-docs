@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 05/29/2022
+ms.date: 06/03/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -68,7 +68,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | File searching | `?` | `? road` to find 'roadmap.txt' |
 | Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
-| Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped |
+| Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
 | Time and date| `(` | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
@@ -243,6 +243,15 @@ To search by location you can use the following syntax:
 
 - `$ device:` to list all settings with 'device' in the area name.
 - `$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'.
+
+### Service plugin
+
+The Service plugin lets you search for services and you can start, stop or restart them.
+
+Additional to searching by name of the service you can use the following syntax:
+
+- `!startup:automatic` to list all services with start type 'automatic'.
+- `!status:running` to list all currently running services.
 
 ### Kill a window process
 
