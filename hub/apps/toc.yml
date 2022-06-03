@@ -251,7 +251,7 @@ items:
           - name: "Windows UI Library 3"
             href: winui/winui3/index.md
             items:
-              - name: "Build a C# .NET 6 app with WinUI 3 and Win32 interop"
+              - name: "Build a C# .NET 5+ app with WinUI 3 and Win32 interop"
                 href: winui/winui3/desktop-winui3-app-with-basic-interop.md
               - name: "Build XAML controls with C++/WinRT"
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
