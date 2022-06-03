@@ -5,7 +5,7 @@ keywords: windows 10, uwp
 author: hickeys
 ms.author: hickeys
 design-contact: judysa
-ms.date: 10/29/2021
+ms.date: 6/2/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -30,9 +30,9 @@ When Windows displays your app's icon, it will look for an exact size match firs
 
 | Windows 11 scale factor                 | 100% | 125% | 150% | 200% | 250% | 300% | 400%  |
 |-----------------------------------------|------|------|------|------|------|------|-------|
-| Context menu, title bar, taskbar corner | 16px | 20px | 24px | 32px | 40px | 48px | 64px  |
-| Taskbar, search results, all apps list  | 24px | 30px | 36px | 48px | 60px | 72px | 96px  |
-| Start Menu Pinned apps, Search results  | 32px | 40px | 48px | 64px | 80px | 96px | 256px |
+| Context menu, title bar, system tray | 16px | 20px | 24px | 32px | 40px | 48px | 64px  |
+| Taskbar, search results, Start all apps list  | 24px | 30px | 36px | 48px | 60px | 72px | 96px  |
+| Start pins  | 32px | 40px | 48px | 64px | 80px | 96px | 256px |
 
 > [!NOTE]
 > Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down, never up.
@@ -43,13 +43,13 @@ Icons look best with a transparent background. If your app's branding requires y
 
 ## Complete list of icons and variations
 
-Windows utilizes different icon assets in different UI contexts. The usage has changed a little between Windows 10 & Windows 11. Note there are light theme variations in the case where there are different visuals for dark and light theme.
+Windows utilizes different icon assets in different UI contexts. The usage has changed a little between Windows 10 & Windows 11.
 
 The lists below define the specific filenames Windows expects to contain each corresponding icon.
 
 ### App icon
 
-In Windows 10 and 11, the AppList icon is your app's primary icon. It will be used in several places, including the Taskbar, Start Menu pinned items, the all app list, and the search results list. Windows 11 selects an appropriate icon for the all apps list based on the current scale factor, but Windows 10 uses specific, explicitly defined icons if you provide them.
+In Windows 10 and 11, the AppList icon is your app's primary icon. It will be used in several places, including the Taskbar, Start pins, the all app list, and the search results list. Windows 11 selects an appropriate icon for the all apps list based on the current scale factor, but Windows 10 uses specific, explicitly defined icons if you provide them.
 
 Separate files for all three theme variations (default, light theme, dark theme) are required, even if the icon is the same. If you do not provide these files, your icon will appear on a system icon plate to ensure a minimum contrast ratio.
 
@@ -112,7 +112,7 @@ Separate files for all three theme variations (default, light theme, dark theme)
 - AppList.scale-200.png
 - AppList.scale-400.png
 
-**Light theme (Optional)**
+**Light theme (Windows 10) (Optional)**
 
 - AppList.scale-100_altform-colorful_theme-light.png
 - AppList.scale-125_altform-colorful_theme-light.png
@@ -123,17 +123,20 @@ Separate files for all three theme variations (default, light theme, dark theme)
 > [!NOTE]
 > If you do not include the targetsize-*-altform-unplated assets above your icon will scale to a smaller size and will get an undesirable backplate behind the icon on Taskbar and Start.
 
+
 ### Tiles
+
 
 Windows 10 supports four tile sizes: small, medium, wide, and large.
 
 **Default / dark theme (partially required)**
 
-- SmallTile.scale-100.png
-- SmallTile.scale-125.png
-- SmallTile.scale-150.png
-- SmallTile.scale-200.png
-- SmallTile.scale-400.png
+* SmallTile.scale-100.png
+* SmallTile.scale-125.png 
+* SmallTile.scale-150.png
+* SmallTile.scale-200.png
+* SmallTile.scale-400.png
+
 
 - MedTile.scale-100.png
 - MedTile.scale-125.png
@@ -141,11 +144,13 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 - MedTile.scale-200.png
 - MedTile.scale-400.png
 
-- WideTile.scale-100.png
-- WideTile.scale-125.png
-- WideTile.scale-150.png
-- WideTile.scale-200.png
-- WideTile.scale-400.png
+
+* WideTile.scale-100.png
+* WideTile.scale-125.png
+* WideTile.scale-150.png
+* WideTile.scale-200.png
+* WideTile.scale-400.png
+
 
 - LargeTile.scale-100.png
 - LargeTile.scale-125.png
@@ -161,11 +166,13 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 - SmallTile.scale-200_altform-colorful_theme-light.png
 - SmallTile.scale-400_altform-colorful_theme-light.png
 
-- MedTile.scale-100_altform-colorful_theme-light.png
-- MedTile.scale-125_altform-colorful_theme-light.png
-- MedTile.scale-150_altform-colorful_theme-light.png
-- MedTile.scale-200_altform-colorful_theme-light.png
-- MedTile.scale-400_altform-colorful_theme-light.png
+
+* MedTile.scale-100_altform-colorful_theme-light.png
+* MedTile.scale-125_altform-colorful_theme-light.png
+* MedTile.scale-150_altform-colorful_theme-light.png
+* MedTile.scale-200_altform-colorful_theme-light.png
+* MedTile.scale-400_altform-colorful_theme-light.png
+
 
 - WideTile.scale-100_altform-colorful_theme-light.png
 - WideTile.scale-125_altform-colorful_theme-light.png
@@ -173,11 +180,12 @@ Windows 10 supports four tile sizes: small, medium, wide, and large.
 - WideTile.scale-200_altform-colorful_theme-light.png
 - WideTile.scale-400_altform-colorful_theme-light.png
 
-- LargeTile.scale-100_altform-colorful_theme-light.png
-- LargeTile.scale-125_altform-colorful_theme-light.png
-- LargeTile.scale-150_altform-colorful_theme-light.png
-- LargeTile.scale-200_altform-colorful_theme-light.png
-- LargeTile.scale-400_altform-colorful_theme-light.png
+
+* LargeTile.scale-100_altform-colorful_theme-light.png
+* LargeTile.scale-125_altform-colorful_theme-light.png
+* LargeTile.scale-150_altform-colorful_theme-light.png
+* LargeTile.scale-200_altform-colorful_theme-light.png
+8 LargeTile.scale-400_altform-colorful_theme-light.png
 
 > [!NOTE]
 > Windows 11 does not use the tile assets, but currently at minimum the Medium tile assets at 100% are required to publish to the Microsoft Store. If your app is Windows 10 & 11 compatible it is suggested that you include as many tile assets as possible.

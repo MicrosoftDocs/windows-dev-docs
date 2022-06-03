@@ -136,8 +136,10 @@ items:
               items:
                   - name: Overview
                     href: get-started/make-apps-great-for-windows.md
-                  - name: Apply rounded corners in Windows 11
+                  - name: Apply rounded corners on Windows 11
                     href: desktop/modernize/apply-rounded-corners.md
+                  - name: Apply Mica on Windows 11
+                    href: desktop/modernize/apply-mica-win32.md
                   - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
                   - name: Support Dark and Light themes
@@ -381,6 +383,8 @@ items:
         items: 
           - name: WinRT API reference
             href: /uwp/api/
+          - name: WinUI 2 for UWP API reference
+            href: /windows/winui/api/
           - name: Win32 API reference
             href: /windows/win32/api/
       - name: Windows App SDK API reference
@@ -423,8 +427,6 @@ items:
                     href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
           - name: WinUI API reference
             items: 
-              - name: WinRT APIs for WinUI
-                href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
               - name: "Interop C# APIs for WinUI"
