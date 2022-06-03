@@ -52,7 +52,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. This r
 
 **New features:**
 - Mica and Background Acrylic are now available for WinUI 3 applications.
-  - For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3/XamlControlsGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+  - For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 - First introduced in 1.0.1, we have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 
 **Fixed bugs:**
