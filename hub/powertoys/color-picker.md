@@ -62,9 +62,8 @@ Color Picker has following settings:
 
 - Activation shortcut
 - Behavior of activation shortcut
-- Show the name of the color.
-   - The shown color name will be a high-level representation of the color. Example: Light Green, Green, Dark Green.
 - Format of a copied color (HEX, RGB, etc.)
+- Show the name of the color. The shown color name will be a high-level representation of the color. Example: Light Green, Green, Dark Green.
 - Order and presence of color formats in the editor
 
 ![ColorPicker Settings screenshot.](../images/pt-colorpicker-settings.png)
