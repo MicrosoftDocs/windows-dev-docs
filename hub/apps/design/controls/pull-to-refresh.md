@@ -102,7 +102,7 @@ The refresh controls for UWP apps are included as part of the Windows UI Library
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
-> - **WinUI APIs:** [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
+> - **WinUI 2 Apis:** [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
 > - [Open the WinUI 2 Gallery app and see PullToRefresh in action](winui2gallery:/item/PullToRefresh). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.

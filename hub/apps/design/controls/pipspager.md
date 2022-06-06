@@ -38,7 +38,7 @@ The PipsPager for UWP apps requires the Windows UI Library 2. For more info, inc
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
+> - **WinUI 2 Apis:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
 > - [Open the WinUI 2 Gallery app and see the PipsPager in action](winui2gallery:/item/PipsPager). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]

@@ -129,7 +129,7 @@ The progress controls for UWP apps are included as part of the Windows UI Librar
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ProgressBar class](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive property](/uwp/api/windows.ui.xaml.controls.progressring.isactive)
-> - **WinUI APIs:** [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive)
+> - **WinUI 2 Apis:** [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive)
 > - Open the WinUI 2 Gallery app and see the [ProgressBar](winui2gallery:/item/ProgressBar) or [ProgressRing](winui2gallery:/item/ProgressRing). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).

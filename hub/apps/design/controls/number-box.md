@@ -31,7 +31,7 @@ The NumberBox for UWP apps requires the Windows UI Library 2. For more info, inc
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
+> - **WinUI 2 Apis:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
 > - [Open the WinUI 2 Gallery app and see NumberBox in action](winui2gallery:/item/NumberBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]

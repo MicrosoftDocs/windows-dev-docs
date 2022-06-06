@@ -79,7 +79,7 @@ The SwipeControl for UWP apps is included as part of the Windows UI Library 2. F
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/windows.UI.Xaml.Controls.ListView)
-> - **WinUI APIs:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+> - **WinUI 2 Apis:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
 > - [Open the WinUI 2 Gallery app and see SwipeControl in action](winui2gallery:/item/SwipeControl). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.

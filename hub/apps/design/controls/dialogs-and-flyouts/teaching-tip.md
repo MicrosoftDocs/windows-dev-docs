@@ -60,7 +60,7 @@ The TeachingTip for UWP apps requires the Windows UI Library 2. For more info, i
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [TeachingTip class](/windows/winui/api/microsoft.ui.xaml.controls.teachingtip)
+> - **WinUI 2 Apis:** [TeachingTip class](/windows/winui/api/microsoft.ui.xaml.controls.teachingtip)
 > - [Open the WinUI 2 Gallery app and see the TeachingTip in action](winui2gallery:/item/TeachingTip). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]

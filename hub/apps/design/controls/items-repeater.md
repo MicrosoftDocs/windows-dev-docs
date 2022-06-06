@@ -35,7 +35,7 @@ The ItemsRepeater for UWP apps requires the Windows UI Library 2. For more info,
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> - **WinUI APIs:** [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
+> - **WinUI 2 Apis:** [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
 > - [Open the WinUI 2 Gallery app and see the ItemsRepeater in action](winui2gallery:/item/ItemsRepeater). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]

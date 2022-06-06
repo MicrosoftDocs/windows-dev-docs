@@ -28,7 +28,7 @@ The Expander for UWP apps requires the Windows UI Library 2. For more info, incl
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
+> - **WinUI 2 Apis:** [Expander class](/windows/winui/api/microsoft.ui.xaml.controls.expander), [Header property](/windows/winui/api/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/winui/api/microsoft.ui.xaml.controls.expander.content)
 > - [Open the WinUI 2 Gallery app and see the Expander in action](winui2gallery:/item/Expander). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]

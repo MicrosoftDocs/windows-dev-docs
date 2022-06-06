@@ -114,7 +114,7 @@ The InfoBar for UWP apps requires the Windows UI Library 2. For more info, inclu
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
+> - **WinUI 2 Apis:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
 > - [Open the WinUI 2 Gallery app and see InfoBar in action](winui2gallery:/item/InfoBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]

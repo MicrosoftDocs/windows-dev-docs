@@ -49,7 +49,7 @@ The CommandBarFlyout control for UWP apps is included as part of the Windows UI 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [CommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
-> - **WinUI APIs:** [CommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+> - **WinUI 2 Apis:** [CommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 > - [Open the WinUI 2 Gallery app and see the CommandBarFlyout in action](winui2gallery:/item/CommandBarFlyout). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).

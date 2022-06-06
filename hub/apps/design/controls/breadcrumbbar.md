@@ -50,7 +50,7 @@ The BreadcrumbBar for UWP apps requires the Windows UI Library 2. For more info,
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
+> - **WinUI 2 Apis:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
 > - [Open the WinUI 2 Gallery app and see the BreadcrumbBar in action](winui2gallery:/item/BreadcrumbBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
