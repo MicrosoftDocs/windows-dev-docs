@@ -2,7 +2,7 @@
 title: Create your first WinUI 3 project
 description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 ms.topic: article
-ms.date: 03/10/2022
+ms.date: 06/06/2022
 keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk
 ms.author: stwhi
 author: stevewhims
@@ -13,7 +13,12 @@ ms.localizationpriority: medium
 
 In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 
-Links to full installation details are in the steps below. We recommend the Windows App SDK version 1.0 Stable, but you can choose any version from any of the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels). From that topic, you can follow the links to the release notes for each channel. Be sure to check any *limitations and known issues* in the release notes, since those might affect the results of following along with these steps.
+Links to full installation details are in the steps below. We recommend that you install and target version 1.0 Stable of the Windows App SDK; but you can choose any version from any of the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels). From that topic, you can follow the links to the release notes for each channel.
+
+> [!TIP]
+> No matter what version of the Windows App SDK you choose to install and target (or what version of Visual Studio you use), it's important to check any *limitations and known issues* in the release notes for that version (see [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels)). By knowing about any *limitations and known issues* for your version of the Windows App SDK, you'll be able to work around them should you run into any of them while following along with the steps in this topic.
+>
+> If you encounter any other issues, then you'll likely find info about them in GitHub issues, or on the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions), of the **WindowsAppSDK** GitHub repo; or via an online search.
 
 [!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
