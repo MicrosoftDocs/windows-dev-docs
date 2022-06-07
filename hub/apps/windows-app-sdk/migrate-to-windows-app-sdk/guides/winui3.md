@@ -97,7 +97,7 @@ The steps that you have to follow in a desktop app are described in [Display Win
 > [!NOTE]
 > For new apps, we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
 
-Here's some typical UWP code to display a **MessageDialog**.
+Here's some typical UWP code to display a [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog).
 
 ```csharp
 // In a UWP app
@@ -114,104 +114,29 @@ co_await showDialog.ShowAsync();
 And here's the equivalent code in a Windows App SDK app.
 
 ```csharp
-// In App.xaml.cs in a Windows App SDK app
-...
-using System.Runtime.InteropServices;
-using WinRT;
-...
-public partial class App : Application
-{
-    ...
-    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
-    {
-        m_window = new MainWindow();
-        m_window.Activate();
-        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
-    }
-
-    public static IntPtr WindowHandle { get; private set; }
-    private Window m_window;
-}
-
-// MainWindow.xaml.cs
-...
-using System.Runtime.InteropServices;
-using WinRT;
-...
-public sealed partial class MainWindow : Window
-{
-    ...
-    private static void SetOwnerWindow(object dialog)
-    {
-        WinRT.Interop.InitializeWithWindow.Initialize(dialog, App.WindowHandle);
-    }
-
-    ...
-    var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
-    SetOwnerWindow(showDialog);
-    await showDialog.ShowAsync();
-}
+// MainWindow.xaml.cs in a WinUI 3 app
+var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
+WinRT.Interop.InitializeWithWindow.Initialize(showDialog,
+    WinRT.Interop.WindowNative.GetWindowHandle(this));
+await showDialog.ShowAsync();
 ```
 
 ```cppwinrt
-// pch.h in a Windows App SDK app
+// pch.h in a WinUI 3 app
 ...
 #include <Shobjidl.h>
 #include <microsoft.ui.xaml.window.h>
 #include <winrt/Windows.UI.Popups.h>
 ...
 
-// App.xaml.h
-...
-struct App : AppT<App>
-{
-    ...
-    static HWND WindowHandle() { return m_hWnd; }
-
-private:
-    static HWND m_hWnd;
-};
-...
-
-// App.xaml.cpp
-...
-HWND App::m_hWnd{ 0 };
-...
-void App::OnLaunched(LaunchActivatedEventArgs const&)
-{
-    window = make<MainWindow>();
-    window.Activate();
-
-    auto windowNative{ window.as<::IWindowNative>() };
-    HWND hWnd{ 0 };
-    windowNative->get_WindowHandle(&hWnd);
-    App::m_hWnd = hWnd;
-}
-...
-
-// MainWindow.xaml.h
-...
-#include <App.xaml.h>
-...
-struct MainWindow : MainWindowT<MainWindow>
-{
-  ...
-  private:
-    static void SetOwnerWindow(Windows::Foundation::IInspectable const&);
-};
-...
-
 // MainWindow.xaml.cpp
 ...
-void MainWindow::SetOwnerWindow(IInspectable const& dialog)
-{
-    auto initializeWithWindow{ dialog.as<::IInitializeWithWindow>() };
-    initializeWithWindow->Initialize(App::WindowHandle());
-}
-
-...
 auto showDialog{ Windows::UI::Popups::MessageDialog(L"Message here") };
-SetOwnerWindow(showDialog);
+
+HWND hWnd{ 0 };
+this->try_as<::IWindowNative>()->get_WindowHandle(&hWnd);
+showDialog.as<::IInitializeWithWindow>()->Initialize(hWnd);
+
 co_await showDialog.ShowAsync();
 ```
 
