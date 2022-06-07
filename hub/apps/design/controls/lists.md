@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
 
-> **Important APIs**: [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/winui/api/microsoft.UI.Xaml.Controls.GridView), [FlipView class](/windows/winui/api/microsoft.ui.xaml.controls.flipview), [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
+> **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView), [FlipView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview), [TreeView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview), [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
 
 The controls covered in this article include:
 
@@ -25,7 +25,7 @@ The controls covered in this article include:
 
 Design guidelines, features, and examples are given below for each control.
 
-Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](/windows/winui/api/microsoft.UI.Xaml.DataTemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](./item-containers-templates.md) page.
+Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](./item-containers-templates.md) page.
 
 Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See [Selection modes overview](selection-modes.md) to learn more.
 
@@ -63,7 +63,7 @@ Use a list view to:
   - Create the list pane in the [list/details pattern](list-details.md). A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.
 
 > [!NOTE]
-> If you need to handle pointer events for a [UIElement](/windows/winui/api/microsoft.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation](/windows/winui/api/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation](/windows/winui/api/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
+> If you need to handle pointer events for a [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
 
 ### Examples
 
@@ -102,7 +102,7 @@ Use a grid view to:
   - Interactive photo libraries
 
 > [!NOTE]
-> If you need to handle pointer events for a [**UIElement**](/windows/winui/api/microsoft.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/windows/winui/api/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/windows/winui/api/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
+> If you need to handle pointer events for a [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
 
 ### Examples
 
@@ -223,7 +223,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 
 **API reference**
 
-- [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView)
-- [GridView class](/windows/winui/api/microsoft.UI.Xaml.Controls.GridView)
-- [ComboBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox)
-- [ListBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListBox)
+- [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
+- [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView)
+- [ComboBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox)
+- [ListBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListBox)

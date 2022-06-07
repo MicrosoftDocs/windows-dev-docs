@@ -66,7 +66,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [CommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/winui/api/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/winui/api/microsoft.ui.xaml.controls.appbarseparator)
+> - **Important APIs:** [CommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout), [AppBarButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the CommandBarFlyout in action](winui3gallery:/item/CommandBarFlyout).
@@ -122,7 +122,7 @@ Here's the same command bar flyout in its expanded state showing secondary comma
 
 When you show contextual commands proactively, only the primary commands should be shown by default (the command bar flyout should be collapsed). Place the most important commands in the primary commands collection, and additional commands that would traditionally go in a context menu into the secondary commands collection.
 
-To proactively show commands, you typically handle the [Click](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click) or [Tapped](/windows/winui/api/microsoft.ui.xaml.uielement.tapped) event to show the command bar flyout. Set the flyout's [ShowMode](/windows/winui/api/microsoft.ui.xaml.controls.primitives.flyoutbase.showmode) to **Transient** or **TransientWithDismissOnPointerMoveAway** to open the flyout in its collapsed mode without taking focus.
+To proactively show commands, you typically handle the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) or [Tapped](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tapped) event to show the command bar flyout. Set the flyout's [ShowMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.showmode) to **Transient** or **TransientWithDismissOnPointerMoveAway** to open the flyout in its collapsed mode without taking focus.
 
 Text controls have a **SelectionFlyout** property. When you assign a flyout to this property, it is automatically shown when text is selected.
 
@@ -130,9 +130,9 @@ Text controls have a **SelectionFlyout** property. When you assign a flyout to t
 
 When you show contextual commands reactively, as a context menu, the secondary commands are shown by default (the command bar flyout should be expanded). In this case, the command bar flyout might have both primary and secondary commands, or secondary commands only.
 
-To show commands in a context menu, you typically assign the flyout to the [ContextFlyout](/windows/winui/api/microsoft.ui.xaml.uielement.contextflyout) property of a UI element. This way, opening the flyout is handled by the element, and you don't need to do anything more.
+To show commands in a context menu, you typically assign the flyout to the [ContextFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout) property of a UI element. This way, opening the flyout is handled by the element, and you don't need to do anything more.
 
-If you handle showing the flyout yourself (for example, on a [RightTapped](/windows/winui/api/microsoft.ui.xaml.uielement.righttapped) event), set the flyout's [ShowMode](/windows/winui/api/microsoft.ui.xaml.controls.primitives.flyoutbase.showmode) to **Standard** to open the flyout in its expanded mode and give it focus.
+If you handle showing the flyout yourself (for example, on a [RightTapped](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.righttapped) event), set the flyout's [ShowMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.showmode) to **Standard** to open the flyout in its expanded mode and give it focus.
 
 > [!TIP]
 > For more info about options when showing a flyout and how to control placement of the flyout, see [Flyouts](../controls/dialogs-and-flyouts/flyouts.md).
@@ -146,11 +146,11 @@ When the `AlwaysExpanded` property is set to `true`, the "see more" button is no
 This property only has an effect if the CommandBarFlyout has secondary commands. If there are no secondary commands, the CommandBarFlyout will always be in collapsed mode.
 
 > [!TIP]
-> You can still collapse and expand the CommandBarFlyout programmatically by setting the [IsOpen](/windows/winui/api/microsoft.ui.xaml.controls.primitives.flyoutbase.isopen) property even when the `AlwaysExpanded` property is set to `true`.
+> You can still collapse and expand the CommandBarFlyout programmatically by setting the [IsOpen](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.isopen) property even when the `AlwaysExpanded` property is set to `true`.
 
 ## Commands and content
 
-The CommandBarFlyout control has 2 properties you can use to add commands and content: [PrimaryCommands](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout.primarycommands) and [SecondaryCommands](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout.secondarycommands).
+The CommandBarFlyout control has 2 properties you can use to add commands and content: [PrimaryCommands](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout.primarycommands) and [SecondaryCommands](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout.secondarycommands).
 
 By default, command bar items are added to the **PrimaryCommands** collection. These commands are shown in the command bar and are visible in both the collapsed and expanded modes. Unlike CommandBar, primary commands do not automatically overflow to the secondary commands and might be truncated.
 
@@ -160,7 +160,7 @@ If there are **common commands** (such as Copy, Cut, Paste, Delete, Share or tex
 
 ### App bar buttons
 
-You can populate the PrimaryCommands and SecondaryCommands directly with [AppBarButton](/windows/winui/api/microsoft.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/windows/winui/api/microsoft.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/windows/winui/api/microsoft.UI.Xaml.Controls.AppBarSeparator) controls.
+You can populate the PrimaryCommands and SecondaryCommands directly with [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarSeparator) controls.
 
 The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is shown in the command bar or the overflow menu.
 
@@ -184,7 +184,7 @@ Don't feel obligated to provide icons for commands that don't have a standard vi
 
 You can add other controls to a command bar flyout by wrapping them in an AppBarElementContainer. This lets you add controls like [DropDownButton](buttons.md) or [SplitButton](buttons.md), or add containers like [StackPanel](buttons.md) to create more complex UI.
 
-In order to be added to the primary or secondary command collections of a command bar flyout, an element must implement the [ICommandBarElement](/windows/winui/api/microsoft.ui.xaml.controls.icommandbarelement) interface. [AppBarElementContainer](/windows/winui/api/microsoft.ui.xaml.controls.appbarelementcontainer) is a wrapper that implements this interface so you can add an element to a command bar even if it doesn't implement the interface itself.
+In order to be added to the primary or secondary command collections of a command bar flyout, an element must implement the [ICommandBarElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement) interface. [AppBarElementContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarelementcontainer) is a wrapper that implements this interface so you can add an element to a command bar even if it doesn't implement the interface itself.
 
 Here, an AppBarElementContainer is used to add extra elements to a command bar flyout. A SplitButton is added to the primary commands to allow selection of colors. A StackPanel is added to the secondary commands to allow a more complex layout for zoom controls.
 
@@ -420,7 +420,7 @@ TextCommandBarFlyout can't be customized, and is managed automatically by each t
 
 ### Light dismiss
 
-Light dismiss controls–such as menus, context menus, and other flyouts–trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the [LightDismissOverlayMode](/windows/winui/api/microsoft.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
+Light dismiss controls–such as menus, context menus, and other flyouts–trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the [LightDismissOverlayMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode) property. By default, transient UIs will draw the light dismiss overlay on Xbox (**Auto**) but not other device families. You can choose to force the overlay to be always **On** or always **Off**.
 
 ```xaml
 <CommandBarFlyout LightDismissOverlayMode="Off" /> >
@@ -437,5 +437,5 @@ Light dismiss controls–such as menus, context menus, and other flyouts–trap 
 - [Contextual commanding for collections and lists](collection-commanding.md).
 - [Menus and context menus](menus-and-context-menus.md)
 - [Command bar](command-bar.md)
-- [CommandBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.CommandBar)
+- [CommandBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CommandBar)
 - [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)

@@ -76,13 +76,13 @@ Wrapping between the first and last items is not supported.
 
 The navigation buttons (previous, next) let the user move to an incrementally adjacent page.
 
-By default, the navigation buttons are collapsed. You can control this behavior through the [PreviousButtonVisibility](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.previousbuttonvisibility) and [NextButtonVisibility](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.nextbuttonvisibility) properties.
+By default, the navigation buttons are collapsed. You can control this behavior through the [PreviousButtonVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.previousbuttonvisibility) and [NextButtonVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.nextbuttonvisibility) properties.
 
 Possible values for these properties are:
 
-- [Collapsed](/windows/winui/api/microsoft.ui.xaml.controls.pipspagerbuttonvisibility): The button is not visible to the user and **does not** take up layout space. (Default)
-- [Visible](/windows/winui/api/microsoft.ui.xaml.controls.pipspagerbuttonvisibility): The button is visible and enabled. Each button is automatically hidden when the PipsPager is at the minimum or maximum extent of the content. For example, if the current page is the first page then the previous button is hidden; if the current page is the last page then the next button is hidden. When hidden, the button is not visible but **does** take up layout space.
-- [VisibleOnPointerOver](/windows/winui/api/microsoft.ui.xaml.controls.pipspagerbuttonvisibility): The behavior is the same as Visible *except* that the button is only displayed when the user hovers the pointer cursor over the PipsPager UI, or the user sets keyboard focus on the PipsPager.
+- [Collapsed](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility): The button is not visible to the user and **does not** take up layout space. (Default)
+- [Visible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility): The button is visible and enabled. Each button is automatically hidden when the PipsPager is at the minimum or maximum extent of the content. For example, if the current page is the first page then the previous button is hidden; if the current page is the last page then the next button is hidden. When hidden, the button is not visible but **does** take up layout space.
+- [VisibleOnPointerOver](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility): The behavior is the same as Visible *except* that the button is only displayed when the user hovers the pointer cursor over the PipsPager UI, or the user sets keyboard focus on the PipsPager.
 
 :::image type="content" source="images/pipspager-visible-buttons.gif" alt-text="A PipsPager with five horizontal dots and navigation buttons visible based on current page.":::
 
@@ -99,7 +99,7 @@ The PipsPager can be oriented vertically with no change to behavior or interacti
 
 The top button corresponds to the first button and the bottom button corresponds to the last button in the horizontal view.
 
-The following example demonstrates the [VisibleOnPointerOver](/windows/winui/api/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) setting for the navigation buttons.
+The following example demonstrates the [VisibleOnPointerOver](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) setting for the navigation buttons.
 
 :::image type="content" source="images/pipspager-visible-on-pointer-over.gif" alt-text="A PipsPager with five vertical dots and navigation buttons visiblility based on pointer over and current page.":::
 
@@ -113,7 +113,7 @@ The following example demonstrates the [VisibleOnPointerOver](/windows/winui/api
 
 ### Scrolling pips
 
-If the content consists of a large number of pages ([NumberOfPages](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.numberofpages)), you can use the [MaxVisiblePips](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.maxvisiblepips) property to set the number of visible, interactive pips.
+If the content consists of a large number of pages ([NumberOfPages](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.numberofpages)), you can use the [MaxVisiblePips](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.maxvisiblepips) property to set the number of visible, interactive pips.
 
 If the value of NumberOfPages is greater than the value of MaxVisiblePips, the pips automatically scroll in order to center the selected page in the control. If the NumberOfPages is equal to or less than MaxVisiblePips, no scrolling occurs and the number of pips shown is the same as the value of NumberOfPages.
 
@@ -135,10 +135,10 @@ By default, a maximum of five pips are visible.
 
 A PipsPager is often used in conjunction with collection controls.
 
-The following example shows how to bind a PipsPager with a [FlipView](/windows/winui/api/microsoft.ui.xaml.controls.flipview) and provide another way to navigate through content and indicate the current page.
+The following example shows how to bind a PipsPager with a [FlipView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview) and provide another way to navigate through content and indicate the current page.
 
 > [!NOTE]
-> To use the PipsPager as a page indicator **only** and disable user interactions, set the control's [IsEnabled](/windows/winui/api/microsoft.ui.xaml.controls.control.isenabled) property to false in the control.
+> To use the PipsPager as a page indicator **only** and disable user interactions, set the control's [IsEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.isenabled) property to false in the control.
 
 ```xaml
 <StackPanel>
@@ -161,9 +161,9 @@ The following example shows how to bind a PipsPager with a [FlipView](/windows/w
 
 ### Pip and navigation button customization
 
-The navigation buttons and pips can be customized through the [PreviousButtonStyle](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.previousbuttonstyle), [NextButtonStyle](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.nextbuttonstyle), [SelectedPipStyle](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.selectedpipstyle), and [NormalPipStyle](/windows/winui/api/microsoft.ui.xaml.controls.pipspager.normalpipstyle) properties.
+The navigation buttons and pips can be customized through the [PreviousButtonStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.previousbuttonstyle), [NextButtonStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.nextbuttonstyle), [SelectedPipStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.selectedpipstyle), and [NormalPipStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.normalpipstyle) properties.
 
-If you set visibility through the PreviousButtonStyle or NextButtonStyle properties, these settings take precedence over the PreviousButtonVisibility or NextButtonVisibility properties, respectively (unless they are set to the [PipsPagerButtonVisibility](/windows/winui/api/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) value of Collapsed).
+If you set visibility through the PreviousButtonStyle or NextButtonStyle properties, these settings take precedence over the PreviousButtonVisibility or NextButtonVisibility properties, respectively (unless they are set to the [PipsPagerButtonVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility) value of Collapsed).
 
 :::image type="content" source="images/pipspager-custom-buttons.png" alt-text="A PipsPager with five horizontal dots and custom navigation buttons.":::
 

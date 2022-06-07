@@ -23,7 +23,7 @@ Choose the right type of hyperlink based on your needs:
 
 - Use an inline **Hyperlink** text element inside of a text control. A Hyperlink element flows with other text elements and you can use it in any InlineCollection. Use a text hyperlink if you want automatic text wrapping and don't necessarily need a large hit target. Hyperlink text can be small and difficult to target, especially for touch.
 - Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
-- Use a **HyperlinkButton** with an [Image](/windows/winui/api/microsoft.ui.xaml.controls.image) as its content to make a clickable image.
+- Use a **HyperlinkButton** with an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) as its content to make a clickable image.
 
 ## Recommendations
 
@@ -47,9 +47,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [Hyperlink text element](/windows/winui/api/microsoft.UI.Xaml.Documents.Hyperlink)
+> - **Important APIs**: [Hyperlink text element](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Hyperlink)
 
-This example shows how to use a Hyperlink text element inside of a [TextBlock](/windows/winui/api/microsoft.ui.xaml.controls.textblock).
+This example shows how to use a Hyperlink text element inside of a [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock).
 
 ```xaml
 <StackPanel Width="200">
@@ -65,13 +65,13 @@ The hyperlink appears inline and flows with the surrounding text:
 ![Example of a hyperlink as a text element](images/controls-hyperlink-element.png)
 
 > [!TIP]
-> When you use a Hyperlink in a text control with other text elements in XAML, place the content in a [Span](/windows/winui/api/microsoft.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the Hyperlink and other elements.
+> When you use a Hyperlink in a text control with other text elements in XAML, place the content in a [Span](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span) container and apply the `xml:space="preserve"` attribute to the Span to keep the white space between the Hyperlink and other elements.
 
 ## Create a HyperlinkButton
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [HyperlinkButton control](/windows/winui/api/microsoft.UI.Xaml.Controls.HyperlinkButton)
+> - **Important APIs**: [HyperlinkButton control](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton).
@@ -125,7 +125,7 @@ If you don't want the hyperlink to load content in a default Web browser (and do
 
 ## Handle the Click event
 
-Use the Click event for actions other than launching a URI in a browser, such as navigation within the app. For example, if you want to load a new app page rather than opening a browser, call a [Frame.Navigate](/windows/winui/api/microsoft.ui.xaml.controls.frame.navigate) method within your Click event handler to navigate to the new app page. If you want an external, absolute URI to load within a [WebView](/windows/winui/api/microsoft.ui.xaml.controls.webview2) control that also exists in your app, call [WebView.Navigate](/windows/winui/api/microsoft.ui.xaml.controls.webview2.navigate) as part of your Click handler logic.
+Use the Click event for actions other than launching a URI in a browser, such as navigation within the app. For example, if you want to load a new app page rather than opening a browser, call a [Frame.Navigate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.navigate) method within your Click event handler to navigate to the new app page. If you want an external, absolute URI to load within a [WebView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2) control that also exists in your app, call [WebView.Navigate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2.navigate) as part of your Click handler logic.
 
 You don't typically handle the Click event as well as specifying a NavigateUri value, as these represent two different ways of using the hyperlink element. If your intent is to open the URI in the default browser, and you have specified a value for NavigateUri, don't handle the Click event. Conversely, if you handle the Click event, don't specify a NavigateUri.
 
@@ -137,16 +137,16 @@ By default, hyperlinks are underlined. This underline is important because it he
 
 ### Hyperlink text elements
 
-You can set the [UnderlineStyle](/windows/winui/api/microsoft.ui.xaml.documents.hyperlink.underlinestyle) property to disable the underline. If you do, consider using [FontWeight](/windows/winui/api/microsoft.ui.xaml.documents.textelement.fontweight) or [FontStyle](/windows/winui/api/microsoft.ui.xaml.documents.textelement.fontstyle) to differentiate your link text.
+You can set the [UnderlineStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.hyperlink.underlinestyle) property to disable the underline. If you do, consider using [FontWeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.fontweight) or [FontStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.fontstyle) to differentiate your link text.
 
 ### HyperlinkButton
 
-By default, the HyperlinkButton appears as underlined text when you set a string as the value for the [Content](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content) property.
+By default, the HyperlinkButton appears as underlined text when you set a string as the value for the [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) property.
 
 The text does not appear underlined in the following cases:
 
-- You set a [TextBlock](/windows/winui/api/microsoft.ui.xaml.controls.textblock) as the value for the Content property, and set the [Text](/windows/winui/api/microsoft.ui.xaml.controls.textblock.text) property on the TextBlock.
-- You re-template the HyperlinkButton and change the name of the [ContentPresenter](/windows/winui/api/microsoft.ui.xaml.controls.contentpresenter) template part.
+- You set a [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock) as the value for the Content property, and set the [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text) property on the TextBlock.
+- You re-template the HyperlinkButton and change the name of the [ContentPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentpresenter) template part.
 
 If you need a button that appears as non-underlined text, consider using a standard Button control and applying the built-in `TextBlockButtonStyle` system resource to its Style property.
 
@@ -156,17 +156,17 @@ This section applies only to the Hyperlink text element, not to the HyperlinkBut
 
 ### Input events
 
-Because a Hyperlink is not a [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement), it does not have the set of UI element input events such as Tapped, PointerPressed, and so on. Instead, a Hyperlink has its own Click event, plus the implicit behavior of the system loading any URI specified as the NavigateUri. The system handles all input actions that should invoke the Hyperlink actions and raises the Click event in response.
+Because a Hyperlink is not a [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement), it does not have the set of UI element input events such as Tapped, PointerPressed, and so on. Instead, a Hyperlink has its own Click event, plus the implicit behavior of the system loading any URI specified as the NavigateUri. The system handles all input actions that should invoke the Hyperlink actions and raises the Click event in response.
 
 ### Content
 
-Hyperlink has restrictions on the content that can exist in its [Inlines](/windows/winui/api/microsoft.ui.xaml.documents.span.inlines) collection. Specifically, a Hyperlink only permits [Run](/windows/winui/api/microsoft.ui.xaml.documents.run) and other [Span](/windows/winui/api/microsoft.ui.xaml.documents.span) types that aren't another Hyperlink. [InlineUIContainer](/windows/winui/api/microsoft.ui.xaml.documents.inlineuicontainer) can't be in the Inlines collection of a Hyperlink. Attempting to add restricted content throws an invalid argument exception or XAML parse exception.
+Hyperlink has restrictions on the content that can exist in its [Inlines](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span.inlines) collection. Specifically, a Hyperlink only permits [Run](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.run) and other [Span](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span) types that aren't another Hyperlink. [InlineUIContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.inlineuicontainer) can't be in the Inlines collection of a Hyperlink. Attempting to add restricted content throws an invalid argument exception or XAML parse exception.
 
 ### Hyperlink and theme/style behavior
 
-Hyperlink doesn't inherit from [Control](/windows/winui/api/microsoft.ui.xaml.controls.control), so it doesn't have a [Style](/windows/winui/api/microsoft.ui.xaml.frameworkelement.style) property or a [Template](/windows/winui/api/microsoft.ui.xaml.controls.control.template). You can edit the properties that are inherited from [TextElement](/windows/winui/api/microsoft.ui.xaml.documents.textelement), such as Foreground or FontFamily, to change the appearance of a Hyperlink, but you can't use a common style or template to apply changes. Instead of using a template, consider using common resources for values of Hyperlink properties to provide consistency. Some properties of Hyperlink use defaults from a {ThemeResource} markup extension value provided by the system. This enables the Hyperlink appearance to switch in appropriate ways when the user changes the system theme at run-time.
+Hyperlink doesn't inherit from [Control](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control), so it doesn't have a [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style) property or a [Template](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.template). You can edit the properties that are inherited from [TextElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement), such as Foreground or FontFamily, to change the appearance of a Hyperlink, but you can't use a common style or template to apply changes. Instead of using a template, consider using common resources for values of Hyperlink properties to provide consistency. Some properties of Hyperlink use defaults from a {ThemeResource} markup extension value provided by the system. This enables the Hyperlink appearance to switch in appropriate ways when the user changes the system theme at run-time.
 
-The default color of the hyperlink is the accent color of the system. You can set the [Foreground](/windows/winui/api/microsoft.ui.xaml.documents.textelement.foreground) property to override this.
+The default color of the hyperlink is the accent color of the system. You can set the [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.foreground) property to override this.
 
 ## Get the sample code
 
@@ -176,5 +176,5 @@ The default color of the hyperlink is the accent color of the system. You can se
 
 - [Text controls](text-controls.md)
 - [Guidelines for tooltips](tooltips.md)
-- [Hyperlink class](/windows/winui/api/microsoft.UI.Xaml.Documents.Hyperlink)
-- [HyperlinkButton class](/windows/winui/api/microsoft.UI.Xaml.Controls.HyperlinkButton)
+- [Hyperlink class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Hyperlink)
+- [HyperlinkButton class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton)

@@ -8,7 +8,7 @@ keywords: windows 10, uwp, fluent
 ---
 # Item templates for list view
 
-This section contains item templates that you can use with a [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types.
+This section contains item templates that you can use with a [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types.
 
 To demonstrate data binding, these templates bind **ListViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
@@ -123,7 +123,7 @@ Use this template to display a list of items with text in defined columns.
 ```
 
 ## Related articles
-- [ListView class](/uwp/api/windows.ui.xaml.controls.listview)
+- [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
 - [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

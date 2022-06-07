@@ -63,7 +63,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> - **Important APIs**: [RatingControl class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ratingcontrol)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see RatingControl in action](winui3gallery:/item/RatingControl).

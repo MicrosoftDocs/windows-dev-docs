@@ -55,16 +55,16 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [RichEditBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
+> - **Important APIs:** [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled) property to **false**. For more info, see the [Guidelines for spell checking](text-controls.md) article.
+By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled) property to **false**. For more info, see the [Guidelines for spell checking](text-controls.md) article.
 
-You use the [Document](/windows/winui/api/microsoft.ui.xaml.controls.richeditbox.document) property of the RichEditBox to get its content. The content of a RichEditBox is an [ITextDocument](/windows/desktop/api/tom/nn-tom-itextdocument) object, unlike the RichTextBlock control, which uses [Block](/windows/winui/api/microsoft.UI.Xaml.Documents.Block) objects as its content. The ITextDocument interface provides a way to load and save the document to a stream, retrieve text ranges, get the active selection, undo and redo changes, set default formatting attributes, and so on.
+You use the [Document](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document) property of the RichEditBox to get its content. The content of a RichEditBox is an [ITextDocument](/windows/desktop/api/tom/nn-tom-itextdocument) object, unlike the RichTextBlock control, which uses [Block](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Block) objects as its content. The ITextDocument interface provides a way to load and save the document to a stream, retrieve text ranges, get the active selection, undo and redo changes, set default formatting attributes, and so on.
 
 This example shows how to edit, load, and save a Rich Text Format (.rtf) file in a RichEditBox.
 
@@ -219,5 +219,5 @@ For more info about how to use input scopes, see [Use input scope to change the 
 - [Text controls](text-controls.md)
 - [Guidelines for spell checking](text-controls.md)
 - [Guidelines for text input](text-controls.md)
-- [TextBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBox)
-- [PasswordBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.PasswordBox)
+- [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
+- [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)

@@ -45,7 +45,7 @@ Here are some examples:
 
 ### When should a different control be used?
 
-There are some scenarios where a [ContentDialog](/windows/winui/api/microsoft.UI.Xaml.Controls.ContentDialog), [Flyout](/windows/winui/api/microsoft.UI.Xaml.Controls.Flyout), or [TeachingTip](/windows/winui/api/microsoft.UI.Xaml.Controls.TeachingTip) may be more appropriate to use.
+There are some scenarios where a [ContentDialog](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog), [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout), or [TeachingTip](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TeachingTip) may be more appropriate to use.
 
 - For scenarios where a persistent notification is not needed, e.g. displaying information in context of a specific UI element, a [Flyout](dialogs-and-flyouts/flyouts.md)
 is a better option.
@@ -129,7 +129,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
+> - **Important APIs:** [InfoBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar).
@@ -213,7 +213,7 @@ A custom icon can be set via the IconSource property. By default, an icon will b
 
 ### Add an action button
 
-An additional action button can be added by defining your own button that inherits [ButtonBase](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.ButtonBase) and setting it in the ActionButton property. Custom styling will be applied to action buttons of type [Button](/windows/winui/api/microsoft.UI.Xaml.Controls.Button) and [HyperlinkButton](/windows/winui/api/microsoft.UI.Xaml.Controls.HyperlinkButton) for consistency and accessibility. Aside from the ActionButton property, additional action buttons can be added via custom content and will appear below the message.
+An additional action button can be added by defining your own button that inherits [ButtonBase](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ButtonBase) and setting it in the ActionButton property. Custom styling will be applied to action buttons of type [Button](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button) and [HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton) for consistency and accessibility. Aside from the ActionButton property, additional action buttons can be added via custom content and will appear below the message.
 
 ```xaml
 <InfoBar x:Name="NoInternetNotification"
@@ -296,7 +296,7 @@ XAML content can be added to an InfoBar using the Content property. It will appe
 ### Lightweight styling
 
 You can modify the default Style and ControlTemplate to give the control a unique appearance.
-See the [Control Style and Template](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
+See the [Control Style and Template](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar#control-style-and-template) section of the InfoBar API docs for a list of the available theme resources.
 
 For more info, see the [Light-weight styling section](../style/xaml-styles.md#lightweight-styling)
 of the [Styling controls](../style/xaml-styles.md)

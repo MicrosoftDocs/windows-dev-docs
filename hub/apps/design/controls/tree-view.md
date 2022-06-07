@@ -28,7 +28,7 @@ The **TreeView** APIs support the following features:
 
 - N-level nesting
 - Selection of single or multiple nodes
-- Data binding to the **ItemsSource** property on **TreeView** and [TreeViewItem](/windows/winui/api/microsoft.ui.xaml.controls.treeviewitem)
+- Data binding to the **ItemsSource** property on **TreeView** and [TreeViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem)
 - **TreeViewItem** as the root of the **TreeView** item template
 - Arbitrary types of content in a **TreeViewItem**
 - Drag and drop between tree views
@@ -71,11 +71,11 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 ## Create a tree view
 
-You can create a tree view by binding the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage **TreeViewNode** objects yourself.
+You can create a tree view by binding the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage **TreeViewNode** objects yourself.
 
-To create a tree view, you use a [TreeView](/windows/winui/api/microsoft.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the **TreeView** control's [RootNodes](/windows/winui/api/microsoft.ui.xaml.controls.treeview.rootnodes) collection. Each **TreeViewNode** can then have more nodes added to its [Children](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.children) collection. You can nest tree view nodes to whatever depth you require.
+To create a tree view, you use a [TreeView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode) objects. You create the node hierarchy by adding one or more root nodes to the **TreeView** control's [RootNodes](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.rootnodes) collection. Each **TreeViewNode** can then have more nodes added to its [Children](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.children) collection. You can nest tree view nodes to whatever depth you require.
 
-You can bind a hierarchical data source to the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](/windows/winui/api/microsoft.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](/windows/winui/api/microsoft.ui.xaml.datatemplate) that renders the item.
+You can bind a hierarchical data source to the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) that renders the item.
 
 > [!IMPORTANT]
 > **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-sdk)) or later, or the [Windows UI Library](/uwp/toolkits/winui/).
@@ -122,15 +122,15 @@ See [Tree view using data binding](#tree-view-using-data-binding) for the full c
 
 If you use **TreeView.ItemsSource**, these APIs are available to get the node or data item from the container, and vice versa.
 
-| [TreeViewItem](/windows/winui/api/microsoft.ui.xaml.controls.treeviewitem) | Description |
+| [TreeViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem) | Description |
 | ------------------------------------------------------------------ | ----------- |
-| [TreeView.ItemFromContainer](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemfromcontainer) | Gets the data item for the specified **TreeViewItem** container. |
-| [TreeView.ContainerFromItem](/windows/winui/api/microsoft.ui.xaml.controls.treeview.containerfromitem) | Gets the **TreeViewItem** container for the specified data item. |
+| [TreeView.ItemFromContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemfromcontainer) | Gets the data item for the specified **TreeViewItem** container. |
+| [TreeView.ContainerFromItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.containerfromitem) | Gets the **TreeViewItem** container for the specified data item. |
 
-| [TreeViewNode](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode) | Description |
+| [TreeViewNode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode) | Description |
 | -------------------------------------------------------------- | ----------- |
-| [TreeView.NodeFromContainer](/windows/winui/api/microsoft.ui.xaml.controls.treeview.nodefromcontainer) | Gets the **TreeViewNode** for the specified **TreeViewItem** container. |
-| [TreeView.ContainerFromNode](/windows/winui/api/microsoft.ui.xaml.controls.treeview.containerfromnode) | Gets the **TreeViewItem** container for the specified **TreeViewNode**. |
+| [TreeView.NodeFromContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.nodefromcontainer) | Gets the **TreeViewNode** for the specified **TreeViewItem** container. |
+| [TreeView.ContainerFromNode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.containerfromnode) | Gets the **TreeViewItem** container for the specified **TreeViewNode**. |
 
 ### Manage tree view nodes
 
@@ -167,25 +167,25 @@ End Sub
 
 These APIs are available for managing the data hierarchy of your tree view.
 
-| [TreeView](/windows/winui/api/microsoft.ui.xaml.controls.treeview) | Description |
+| [TreeView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview) | Description |
 | ------------------------------------------------------ | ----------- |
-| [RootNodes](/windows/winui/api/microsoft.ui.xaml.controls.treeview.rootnodes) | A tree view can have one or more root nodes. Add a **TreeViewNode** object to the **RootNodes** collection to create a root node. The **Parent** of a root node is always **null**. The **Depth** of a root node is 0. |
+| [RootNodes](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.rootnodes) | A tree view can have one or more root nodes. Add a **TreeViewNode** object to the **RootNodes** collection to create a root node. The **Parent** of a root node is always **null**. The **Depth** of a root node is 0. |
 
-| [TreeViewNode](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode) | Description |
+| [TreeViewNode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode) | Description |
 | -------------------------------------------------------------- | ----------- |
-| [Children](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.children) | Add **TreeViewNode** objects to the **Children** collection of a parent node to create your node hierarchy. A node is the **Parent** of all nodes in its **Children** collection. |
-| [HasChildren](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.haschildren) | **true** if the node has realized children. **false** indicates an empty folder or an item. |
-| [HasUnrealizedChildren](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Use this property if you're filling nodes as they're expanded. See [Fill a node when it's expanding](#fill-a-node-when-its-expanding) later in this article. |
-| [Depth](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.depth) | Indicates how far from the root node a child node is. |
-| [Parent](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.parent) | Gets the **TreeViewNode** that owns the **Children** collection that this node is part of. |
+| [Children](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.children) | Add **TreeViewNode** objects to the **Children** collection of a parent node to create your node hierarchy. A node is the **Parent** of all nodes in its **Children** collection. |
+| [HasChildren](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.haschildren) | **true** if the node has realized children. **false** indicates an empty folder or an item. |
+| [HasUnrealizedChildren](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Use this property if you're filling nodes as they're expanded. See [Fill a node when it's expanding](#fill-a-node-when-its-expanding) later in this article. |
+| [Depth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.depth) | Indicates how far from the root node a child node is. |
+| [Parent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.parent) | Gets the **TreeViewNode** that owns the **Children** collection that this node is part of. |
 
 The tree view uses the **HasChildren** and **HasUnrealizedChildren** properties to determine whether the expand/collapse icon is shown. If either property is **true**, the icon is shown; otherwise, it's not shown.
 
 ## Tree view node content
 
-You can store the data item that a tree view node represents in its [Content](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.content) property.
+You can store the data item that a tree view node represents in its [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.content) property.
 
-In the previous examples, the content was a simple string value. Here, a tree view node represents the user's **Pictures** folder, so the pictures library [StorageFolder](/windows/winui/api/microsoft.storage.storagefolder) is assigned to the node's **Content** property.
+In the previous examples, the content was a simple string value. Here, a tree view node represents the user's **Pictures** folder, so the pictures library [StorageFolder](/windows/windows-app-sdk/api/winrt/microsoft.storage.storagefolder) is assigned to the node's **Content** property.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -201,14 +201,14 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 > [!NOTE]
 > To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](/windows/uwp/packaging/app-capability-declarations) for more information.
 
-You can provide a [DataTemplate](/windows/winui/api/microsoft.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
+You can provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
 
 > [!NOTE]
-> In Windows 10, version 1803, you have to re-template the **TreeView** control and specify a custom **ItemTemplate** if your content is not a string. In later versions, set the **ItemTemplate** property. For more info, see [TreeView.ItemTemplate](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemtemplate).
+> In Windows 10, version 1803, you have to re-template the **TreeView** control and specify a custom **ItemTemplate** if your content is not a string. In later versions, set the **ItemTemplate** property. For more info, see [TreeView.ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate).
 
 ### Item container style
 
-Whether you use **ItemsSource** or **RootNodes**, the actual element used to display each node – called the "container" – is a [TreeViewItem](/windows/winui/api/microsoft.ui.xaml.controls.treeviewitem) object. You can modify **TreeViewItem** properties to style the container using the **TreeView**'s [ItemContainerStyle](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemcontainerstyle) or [ItemContainerStyleSelector](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemcontainerstyleselector) properties.
+Whether you use **ItemsSource** or **RootNodes**, the actual element used to display each node – called the "container" – is a [TreeViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem) object. You can modify **TreeViewItem** properties to style the container using the **TreeView**'s [ItemContainerStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemcontainerstyle) or [ItemContainerStyleSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemcontainerstyleselector) properties.
 
 This example shows how to change the expanded/collapsed glyphs to orange +/- signs. In the default **TreeViewItem** template, the glyphs are set to use the `Segoe MDL2 Assets` font. You can set the **Setter.Value** property by providing the Unicode character value in the format used by XAML, like this: `Value="&#xE948;"`.
 
@@ -236,13 +236,13 @@ This example shows how to change the expanded/collapsed glyphs to orange +/- sig
 
 ### Item template selectors
 
-By default, the [TreeView](/windows/winui/api/microsoft.ui.xaml.controls.treeview) shows the string representation of the data item for each node. You can set the [ItemTemplate](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemtemplate) property to change what is displayed for all nodes. Or, you can use an [ItemTemplateSelector](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemtemplateselector) to choose a different [DataTemplate](/windows/winui/api/microsoft.ui.xaml.datatemplate) for the tree view items based on the type of item or some other criteria you specify.
+By default, the [TreeView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview) shows the string representation of the data item for each node. You can set the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate) property to change what is displayed for all nodes. Or, you can use an [ItemTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplateselector) to choose a different [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) for the tree view items based on the type of item or some other criteria you specify.
 
 For example, in a file explorer app, you could use one data template for folders, and another for files.
 
 ![Folders and files using different data templates](images/treeview-icons.png)
 
-Here is an example of how to create and use an item template selector.  For more info, see the [DataTemplateSelector](/windows/winui/api/microsoft.ui.xaml.controls.datatemplateselector) class.
+Here is an example of how to create and use an item template selector.  For more info, see the [DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) class.
 
 > [!NOTE]
 > This code is part of a larger example and won't work on its own. To see the full example, including the code that defines `ExplorerItem`, check out the [Xaml-Controls-Gallery repository](https://github.com/Microsoft/WinUI-Gallery) on GitHub. [TreeViewPage.xaml](https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml) and [TreeViewPage.xaml.cs](https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs) contain the relevant code.
@@ -296,12 +296,12 @@ public class ExplorerItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-The type of object passed to the [SelectTemplateCore](/windows/winui/api/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore) method depends on whether you create the tree view by setting the **ItemsSource** property, or by creating and managing **TreeViewNode** objects yourself.
+The type of object passed to the [SelectTemplateCore](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore) method depends on whether you create the tree view by setting the **ItemsSource** property, or by creating and managing **TreeViewNode** objects yourself.
 
 - If **ItemsSource** is set, the object will be of whatever type the data item is. In the previous example, the object was an `ExplorerItem`, so it could be used after a simple cast to `ExplorerItem`: `var explorerItem = (ExplorerItem)item;`.
-- If **ItemsSource** is not set and you manage the tree view nodes yourself, the object passed to **SelectTemplateCore** is a **TreeViewNode**. In this case, you can get the data item from the [TreeViewNode.Content](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.content) property.
+- If **ItemsSource** is not set and you manage the tree view nodes yourself, the object passed to **SelectTemplateCore** is a **TreeViewNode**. In this case, you can get the data item from the [TreeViewNode.Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.content) property.
 
-Here's a data template selector from the [Pictures and Music library tree view](#pictures-and-music-library-tree-view) example shown later. The **SelectTemplateCore** method receives a **TreeViewNode**, which might have either a [StorageFolder](/windows/winui/api/microsoft.storage.storagefolder) or a [StorageFile](/windows/winui/api/microsoft.storage.storagefile) as its content. Based on the content, you can return a default template, or a specific template for the music folder, the picture folder, music files, or picture files.
+Here's a data template selector from the [Pictures and Music library tree view](#pictures-and-music-library-tree-view) example shown later. The **SelectTemplateCore** method receives a **TreeViewNode**, which might have either a [StorageFolder](/windows/windows-app-sdk/api/winrt/microsoft.storage.storagefolder) or a [StorageFile](/windows/windows-app-sdk/api/winrt/microsoft.storage.storagefile) as its content. Based on the content, you can return a default template, or a specific template for the music folder, the picture folder, music files, or picture files.
 
 ```csharp
 protected override DataTemplate SelectTemplateCore(object item)
@@ -357,15 +357,15 @@ Any tree view node that has children can always be expanded or collapsed by clic
 
 There are 2 ways you can expand or collapse a tree view node in your code.
 
-- The [TreeView](/windows/winui/api/microsoft.ui.xaml.controls.treeview) class has the [Collapse](/windows/winui/api/microsoft.ui.xaml.controls.treeview.collapse) and [Expand](/windows/winui/api/microsoft.ui.xaml.controls.treeview.expand) methods. When you call these methods, you pass in the **TreeViewNode** that you want to expand or collapse.
+- The [TreeView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview) class has the [Collapse](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.collapse) and [Expand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.expand) methods. When you call these methods, you pass in the **TreeViewNode** that you want to expand or collapse.
 
-- Each [TreeViewNode](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode) has the [IsExpanded](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.isexpanded) property. You can use this property to check the state of a node, or set it to change the state. You can also set this property in XAML to set the initial state of a node.
+- Each [TreeViewNode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode) has the [IsExpanded](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.isexpanded) property. You can use this property to check the state of a node, or set it to change the state. You can also set this property in XAML to set the initial state of a node.
 
 ### Fill a node when it's expanding
 
 You might need to show a large number of nodes in your tree view, or you might not know ahead of time how many nodes it will have. The **TreeView** control is not virtualized, so you can manage resources by filling each node as it's expanded, and removing the child nodes when it's collapsed.
 
-Handle the [Expanding](/windows/winui/api/microsoft.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The **HasUnrealizedChildren** property indicates whether the node needs to be filled, or if its **Children** collection has already been populated. It's important to remember that the **TreeViewNode** doesn't set this value, you need to manage it in your app code.
+Handle the [Expanding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The **HasUnrealizedChildren** property indicates whether the node needs to be filled, or if its **Children** collection has already been populated. It's important to remember that the **TreeViewNode** doesn't set this value, you need to manage it in your app code.
 
 Here's an example of these APIs in use. See the complete example code at the end of this article for context, including the implementation of **FillTreeNode**.
 
@@ -387,7 +387,7 @@ Private Sub SampleTreeView_Expanding(sender As muxc.TreeView, args As muxc.TreeV
 End Sub
 ```
 
-It's not required, but you might want to also handle the [Collapsed](/windows/winui/api/microsoft.ui.xaml.controls.treeview.collapsed) event and remove the child nodes when the parent node is closed. This can be important if your tree view has many nodes, or if the node data uses a lot of resources. You should consider the performance impact of filling a node each time it's opened versus leaving the children on a closed node. The best option will depend on your app.
+It's not required, but you might want to also handle the [Collapsed](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.collapsed) event and remove the child nodes when the parent node is closed. This can be important if your tree view has many nodes, or if the node data uses a lot of resources. You should consider the performance impact of filling a node each time it's opened versus leaving the children on a closed node. The best option will depend on your app.
 
 Here's an example of a handler for the **Collapsed** event.
 
@@ -408,16 +408,16 @@ End Sub
 
 ### Invoking an item
 
-A user can invoke an action (treating the item like a button) instead of selecting the item. You handle the [ItemInvoked](/windows/winui/api/microsoft.ui.xaml.controls.treeview.iteminvoked) event to respond to this user interaction.
+A user can invoke an action (treating the item like a button) instead of selecting the item. You handle the [ItemInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.iteminvoked) event to respond to this user interaction.
 
 > [!NOTE]
-> Unlike **ListView**, which has the [IsItemClickEnabled](/windows/winui/api/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled) property, invoking an item is always enabled on the tree view. You can still choose whether to handle the event or not.
+> Unlike **ListView**, which has the [IsItemClickEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled) property, invoking an item is always enabled on the tree view. You can still choose whether to handle the event or not.
 
-**[TreeViewItemInvokedEventArgs](/windows/winui/api/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs) class**
+**[TreeViewItemInvokedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs) class**
 
-The **ItemInvoked** event args give you access to the invoked item. The [InvokedItem](/windows/winui/api/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to a **TreeViewNode** and get the data item from the **TreeViewNode.Content** property.
+The **ItemInvoked** event args give you access to the invoked item. The [InvokedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked. You can cast it to a **TreeViewNode** and get the data item from the **TreeViewNode.Content** property.
 
-Here's an example of an **ItemInvoked** event handler. The data item is an [IStorageItem](/windows/winui/api/microsoft.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
+Here's an example of an **ItemInvoked** event handler. The data item is an [IStorageItem](/windows/windows-app-sdk/api/winrt/microsoft.storage.istorageitem), and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.
 
 ```csharp
 private void SampleTreeView_ItemInvoked(muxc.TreeView sender, muxc.TreeViewItemInvokedEventArgs args)
@@ -454,7 +454,7 @@ End Sub
 
 ### Item selection
 
-The **TreeView** control supports both single-selection and multi-selection. By default, selection of nodes is turned off, but you can set the [TreeView.SelectionMode](/windows/winui/api/microsoft.ui.xaml.controls.treeview.selectionmode) property to allow selection of nodes. The [TreeViewSelectionMode](/windows/winui/api/microsoft.ui.xaml.controls.treeviewselectionmode) values are **None**, **Single**, and **Multiple**.
+The **TreeView** control supports both single-selection and multi-selection. By default, selection of nodes is turned off, but you can set the [TreeView.SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectionmode) property to allow selection of nodes. The [TreeViewSelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewselectionmode) values are **None**, **Single**, and **Multiple**.
 
 #### Multiple selection
 
@@ -464,7 +464,7 @@ Selecting or de-selecting a parent node will select or de-select all children un
 
 ![Multiple selection in a tree view](images/treeview-selection.png)
 
-Selected nodes are added to the tree view's [SelectedNodes](/windows/winui/api/microsoft.ui.xaml.controls.treeview.selectednodes) collection. You can call the [SelectAll](/windows/winui/api/microsoft.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.
+Selected nodes are added to the tree view's [SelectedNodes](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectednodes) collection. You can call the [SelectAll](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.
 
 > [!NOTE]
 > If you call **SelectAll**, all realized nodes are selected, regardless of the **SelectionMode**. To provide a consistent user experience, you should only call **SelectAll** if **SelectionMode** is **Multiple**.
@@ -796,7 +796,7 @@ namespace TreeViewTest
 
 This example shows how to create a tree view that shows the contents and structure of the user's **Pictures** and **Music** libraries. The number of items can't be known ahead of time, so each node is filled when it's expanded, and emptied when it's collapsed.
 
-A custom item template is used to display the data items, which are of type [IStorageItem](/windows/winui/api/microsoft.storage.istorageitem).
+A custom item template is used to display the data items, which are of type [IStorageItem](/windows/windows-app-sdk/api/winrt/microsoft.storage.istorageitem).
 
 > [!IMPORTANT]
 > The code in this example requires the **picturesLibrary** and **musicLibrary** capabilities. For more info about file access, see [File access permissions](/windows/uwp/files/file-access-permissions), [Enumerate and query files and folders](/windows/uwp/files/quickstart-listing-files-and-folders), and [Files and folders in the Music, Pictures, and Videos libraries](/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries).
@@ -1337,6 +1337,6 @@ namespace TreeViewTest
 
 ## Related articles
 
-- [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview)
-- [ListView class](/windows/winui/api/microsoft.ui.xaml.controls.listview)
+- [TreeView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview)
+- [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
 - [ListView and GridView](listview-and-gridview.md)

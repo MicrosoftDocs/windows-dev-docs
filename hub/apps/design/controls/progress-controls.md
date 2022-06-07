@@ -147,7 +147,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive)
+> - **Important APIs:** [ProgressBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressring.isactive)
 
 > [!div class="nextstepaction"]
 > Open the WinUI 3 Gallery app and see the [ProgressBar](winui3gallery:/item/ProgressBar) or [ProgressRing](winui3gallery:/item/ProgressRing).
@@ -200,5 +200,5 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## Related articles
 
-- [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar)
-- [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing)
+- [ProgressBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressRing)

@@ -28,20 +28,20 @@ Do not use an AnimatedIcon if the animation is not triggered by a visual state t
 
 Do not use AnimatedIcon for anything other than an icon, or where the control does not support an IconElement or IconElementSource property. Use AnimatedVisualPlayer instead.
 
-When an animated icon is not required, use [FontIcon](/windows/winui/api/microsoft.ui.xaml.controls.fonticon), [SymbolIcon](/windows/winui/api/microsoft.ui.xaml.controls.symbolicon), or [BitmapIcon](/windows/winui/api/microsoft.ui.xaml.controls.bitmapicon) instead.
+When an animated icon is not required, use [FontIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon), [SymbolIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon), or [BitmapIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon) instead.
 
 ### Differences between AnimatedIcon and AnimatedVisualPlayer
 
-AnimatedIcon is an [IconElement](/windows/winui/api/microsoft.ui.xaml.controls.iconelement), which can be used anywhere an element or IconElement is required (such as [NavigationViewItem.Icon](/windows/winui/api/microsoft.ui.xaml.controls.navigationviewitem.icon)), and is controlled through a State property.
+AnimatedIcon is an [IconElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement), which can be used anywhere an element or IconElement is required (such as [NavigationViewItem.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem.icon)), and is controlled through a State property.
 
-[AnimatedVisualPlayer](/windows/winui/api/Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
+[AnimatedVisualPlayer](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AnimatedVisualPlayer) is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.
 
 ## Use Lottie to create animated content for an AnimatedIcon
 
 Defining an animation for an AnimatedIcon begins the same as the process to define an animation for an AnimatedVisualPlayer. You must create, or obtain, the Lottie file for the icon you want to add and run that file through [LottieGen](/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen). LottieGen generates code for a C++/WinRT class that you can then instantiate and use with an AnimatedIcon.
 
 > [!NOTE]
-> The [AutoSuggestBox](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox) control uses the [AnimatedVisuals.AnimatedFindVisualSource](/windows/winui/api/microsoft.ui.xaml.controls.animatedvisuals.animatedfindvisualsource) class, which was generated using the LottieGen tool.
+> The [AutoSuggestBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox) control uses the [AnimatedVisuals.AnimatedFindVisualSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedvisuals.animatedfindvisualsource) class, which was generated using the LottieGen tool.
 
 You can also define markers in the animation definition to indicate playback time positions. You can then set the AnimatedIcon state to these markers. For example, if you have a playback position in the Lottie file marked "PointerOver", you can set the AnimatedIcon state to "PointerOver" and move the animation to that playback position.
 
@@ -75,7 +75,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
+> - **Important APIs:** [AnimatedIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the AnimatedIcon in action](winui3gallery:/item/AnimatedIcon).
@@ -84,7 +84,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 ### Add an AnimatedIcon to a Button
 
-The following example demonstrates a back button that displays an animated back icon on a [PointerEntered](/windows/winui/api/microsoft.ui.xaml.uielement.pointerentered) event.
+The following example demonstrates a back button that displays an animated back icon on a [PointerEntered](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered) event.
 
 - The `AnimatedBackVisualSource` is a class created with the [LottieGen](https://github.com/windows-toolkit/Lottie-Windows/tree/master/LottieGen) command line tool.
 - The FallbackIconSource is used when animations can't be played, such as on older versions of Windows that don't support Lottie animations.
@@ -159,7 +159,7 @@ Once you run your Lottie file through LottieGen you can add the CodeGen output c
 
 Setting the AnimatedIcon state to a new value also sets a playback position in the Lottie animation for the transition from the old state to the new state. These playback positions are also identified with markers in the Lottie file. Specific markers for the start of the transition or the end of the transition can also be defined.
 
-For example, the [AutoSuggestBox](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox) control uses an AnimatedIcon that animates with the following states:
+For example, the [AutoSuggestBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox) control uses an AnimatedIcon that animates with the following states:
 
 - Normal
 - PointerOver

@@ -54,7 +54,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [AutoSuggestBox class](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox), [TextChanged event](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted)
+> - **Important APIs:** [AutoSuggestBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox), [TextChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery:/item/AutoSuggestBox).
@@ -69,9 +69,9 @@ To use an AutoSuggestBox, you need to respond to 3 user actions.
 
 ### Text changed
 
-The [TextChanged](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.textchanged) event occurs whenever the content of the text box is updated. Use the event args [Reason](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) property to determine whether the change was due to user input. If the change reason is **UserInput**, filter your data based on the input. Then, set the filtered data as the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) of the AutoSuggestBox to update the suggestion list.
+The [TextChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.textchanged) event occurs whenever the content of the text box is updated. Use the event args [Reason](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) property to determine whether the change was due to user input. If the change reason is **UserInput**, filter your data based on the input. Then, set the filtered data as the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) of the AutoSuggestBox to update the suggestion list.
 
-To control how items are displayed in the suggestion list, you can use [DisplayMemberPath](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.displaymemberpath) or [ItemTemplate](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemtemplate).
+To control how items are displayed in the suggestion list, you can use [DisplayMemberPath](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.displaymemberpath) or [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate).
 
 - To display the text of a single property of your data item, set the DisplayMemberPath property to choose which property from your object to display in the suggestion list.
 - To define a custom look for each item in the list, use the ItemTemplate property.
@@ -80,20 +80,20 @@ To control how items are displayed in the suggestion list, you can use [DisplayM
 
 When a user navigates through the suggestion list using the keyboard, you need to update the text in the text box to match.
 
-You can set the [TextMemberPath](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.textmemberpath) property to choose which property from your data object to display in the text box. If you specify a TextMemberPath, the text box is updated automatically. You should typically specify the same value for DisplayMemberPath and TextMemberPath so the text is the same in the suggestion list and the text box.
+You can set the [TextMemberPath](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.textmemberpath) property to choose which property from your data object to display in the text box. If you specify a TextMemberPath, the text box is updated automatically. You should typically specify the same value for DisplayMemberPath and TextMemberPath so the text is the same in the suggestion list and the text box.
 
-If you need to show more than a simple property, handle the [SuggestionChosen](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen) event to populate the text box with custom text based on the selected item.
+If you need to show more than a simple property, handle the [SuggestionChosen](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen) event to populate the text box with custom text based on the selected item.
 
 ### Query submitted
 
-Handle the [QuerySubmitted](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted) event to perform a query action appropriate to your app and show the result to the user.
+Handle the [QuerySubmitted](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted) event to perform a query action appropriate to your app and show the result to the user.
 
 The QuerySubmitted event occurs when a user commits a query string. The user can commit a query in one of these ways:
 
-- While the focus is in the text box, press Enter or click the query icon. The event args [ChosenSuggestion](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) property is **null**.
+- While the focus is in the text box, press Enter or click the query icon. The event args [ChosenSuggestion](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) property is **null**.
 - While the focus is in the suggestion list, press Enter, click, or tap an item. The event args ChosenSuggestion property contains the item that was selected from the list.
 
-In all cases, the event args [QueryText](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) property contains the text from the text box.
+In all cases, the event args [QueryText](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) property contains the text from the text box.
 
 Here is a simple AutoSuggestBox with the required event handlers.
 
@@ -141,7 +141,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
 
-By default, the text entry box doesn't have a query button shown. You can set the [QueryIcon](/windows/winui/api/microsoft.ui.xaml.controls.autosuggestbox.queryicon) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a 'find' icon, like this.
+By default, the text entry box doesn't have a query button shown. You can set the [QueryIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.queryicon) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a 'find' icon, like this.
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -160,6 +160,6 @@ Here's an AutoSuggestBox with a 'find' icon.
 
 - [Text controls](text-controls.md)
 - [Spell checking](text-controls.md)
-- [TextBox class](/windows/winui/api/microsoft.ui.xaml.controls.textbox)
-- [Windows.UI.Xaml.Controls PasswordBox class](/windows/winui/api/microsoft.ui.xaml.controls.passwordbox)
+- [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox)
+- [Windows.UI.Xaml.Controls PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox)
 - [String.Length property](/dotnet/api/system.string.length)

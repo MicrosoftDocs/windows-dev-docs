@@ -70,10 +70,10 @@ If the available options are based on an app's current context, or they can othe
 
 There are two ways to create radio button groups: RadioButtons and RadioButton.
 
-- We recommend the **[RadioButtons](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
-- You can use groups of individual **[RadioButton](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton)** controls.
+- We recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
+- You can use groups of individual **[RadioButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton)** controls.
 
-Keyboard access and navigation behavior have been optimized in the [RadioButtons](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons) control. These improvements help both accessibility and keyboard power users move through the list of options more quickly and easily.
+Keyboard access and navigation behavior have been optimized in the [RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons) control. These improvements help both accessibility and keyboard power users move through the list of options more quickly and easily.
 
 In addition to these improvements, the default visual layout of individual radio buttons in a RadioButtons group has been optimized through automated orientation, spacing, and margin settings. This optimization eliminates the requirement to specify these properties, as you might have to do when you use a more primitive grouping control, such as [StackPanel](../layout/layout-panels.md#stackpanel) or [Grid](../layout/layout-panels.md#grid).
 
@@ -243,12 +243,12 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The RadioButtons control for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The RadioButtons control for UWP apps is included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs**: [RadioButton class](/uwp/api/windows.ui.xaml.controls.radiobutton), [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-> - **WinUI 2 Apis**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
+> - **WinUI 2 Apis**: [RadioButtons class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the Button in action](winui2gallery:/item/Button).
@@ -257,7 +257,7 @@ The RadioButtons control for UWP apps is included as part of the Windows UI Libr
 
 There are two ways to create radio button groups.
 
-- Starting with WinUI 2.3, we recommend the **[RadioButtons](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
+- Starting with WinUI 2.3, we recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
 - You can use groups of individual **[RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls.
@@ -274,16 +274,16 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [RadioButton class](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton), [IsChecked property](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/windows/winui/api/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
+> - **Important APIs**: [RadioButtons class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [RadioButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton), [IsChecked property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
 > - [Open the WinUI 2 Gallery app and see the RadioButton in action](winui2gallery:/item/RadioButton). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-The `RadioButtons` control uses a content model similar to an [ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol). This means that you can:
+The `RadioButtons` control uses a content model similar to an [ItemsControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol). This means that you can:
 
-- Populate it by adding items directly to the [Items](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.items) collection or by binding data to its [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) property.
-- Use the [SelectedIndex](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) or [SelectedItem](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem) properties to get and set which option is selected.
-- Handle the [SelectionChanged](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) event to take action when an option is chosen.
+- Populate it by adding items directly to the [Items](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.items) collection or by binding data to its [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.itemssource) property.
+- Use the [SelectedIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex) or [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem) properties to get and set which option is selected.
+- Handle the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) event to take action when an option is chosen.
 
-Here, you declare a simple `RadioButtons` control with three options. The [Header](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.header) property is set to give the group a label, and the `SelectedIndex` property is set to provide a default option.
+Here, you declare a simple `RadioButtons` control with three options. The [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.header) property is set to give the group a label, and the `SelectedIndex` property is set to provide a default option.
 
 ```xaml
 <RadioButtons Header="Background color"
@@ -299,7 +299,7 @@ The result looks like this:
 
 :::image type="content" source="images/radiobuttons-default-group.png" alt-text="A group of three radio buttons" border="false":::
 
-To take an action when the user selects an option, handle the [SelectionChanged](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) event. Here, you change the background color of a [Border](/windows/winui/api/microsoft.ui.xaml.controls.border) element named "ExampleBorder" (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`).
+To take an action when the user selects an option, handle the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) event. Here, you change the background color of a [Border](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border) element named "ExampleBorder" (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`).
 
 ```csharp
 private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -324,11 +324,11 @@ private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEve
 ```
 
 > [!TIP]
-> You can also get the selected item from the [SelectionChangedEventArgs.AddedItems](/windows/winui/api/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems) property. There will only be one selected item, at index 0, so you could get the selected item like this: `string colorName = e.AddedItems[0] as string;`.
+> You can also get the selected item from the [SelectionChangedEventArgs.AddedItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems) property. There will only be one selected item, at index 0, so you could get the selected item like this: `string colorName = e.AddedItems[0] as string;`.
 
 ### Selection states
 
-A radio button has two states: selected or cleared. When an option is selected in a `RadioButtons` group, you can get its value from the [SelectedItem](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem) property, and its location in the collection from the [SelectedIndex](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) property. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button group programmatically by setting it `SelectedItem = null`, or `SelectedIndex = -1`. (Setting `SelectedIndex` to any value outside the range of the `Items` collection results in no selection.)
+A radio button has two states: selected or cleared. When an option is selected in a `RadioButtons` group, you can get its value from the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem) property, and its location in the collection from the [SelectedIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex) property. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button group programmatically by setting it `SelectedItem = null`, or `SelectedIndex = -1`. (Setting `SelectedIndex` to any value outside the range of the `Items` collection results in no selection.)
 
 ### RadioButtons content
 
@@ -336,7 +336,7 @@ In the previous example, you populated the `RadioButtons` control with simple st
 
 However, you can populate the `RadioButtons` control with any object. Typically, you want the object to provide a string representation that can be used as a text label. In some cases, an image might be appropriate in place of text.
 
-Here, [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) elements are used to populate the control.
+Here, [SymbolIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon) elements are used to populate the control.
 
 ```xaml
 <RadioButtons Header="Select an icon option:">
@@ -349,13 +349,13 @@ Here, [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon) elements are us
 
 :::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="A group radio buttons with symbol icons" border="false":::
 
-You can also use individual [RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton) controls to populate the `RadioButtons` items. This is a special case that we discuss later. See [RadioButton controls in a RadioButtons group](#radiobutton-controls-in-a-radiobuttons-group).
+You can also use individual [RadioButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton) controls to populate the `RadioButtons` items. This is a special case that we discuss later. See [RadioButton controls in a RadioButtons group](#radiobutton-controls-in-a-radiobuttons-group).
 
 A benefit of being able to use any object is that you can bind the `RadioButtons` control to a custom type in your data model. The next section demonstrates this.
 
 ### Data binding
 
-The `RadioButtons` control supports data binding to its [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.itemssource) property. This example shows how you can bind the control to a custom data source. The appearance and functionality of this example is the same as the previous background color example, but here, the color brushes are stored in the data model instead of being created in the `SelectionChanged` event handler.
+The `RadioButtons` control supports data binding to its [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.itemssource) property. This example shows how you can bind the control to a custom data source. The appearance and functionality of this example is the same as the previous background color example, but here, the color brushes are stored in the data model instead of being created in the `SelectionChanged` event handler.
 
 ```xaml
 <RadioButtons Header="Background color"
@@ -404,7 +404,7 @@ public sealed partial class MainPage : Page
 
 ### RadioButton controls in a RadioButtons group
 
-You can use individual [RadioButton](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton) controls to populate the `RadioButtons` items. You might do this to get access to certain properties, like `AutomationProperties.Name`; or you might have existing `RadioButton` code, but want to take advantage of the layout and navigation of `RadioButtons`.
+You can use individual [RadioButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton) controls to populate the `RadioButtons` items. You might do this to get access to certain properties, like `AutomationProperties.Name`; or you might have existing `RadioButton` code, but want to take advantage of the layout and navigation of `RadioButtons`.
 
 ```xaml
 <RadioButtons Header="Background color">
@@ -422,18 +422,18 @@ This table shows the related events and properties on both controls.
 
 |RadioButton  |RadioButtons  |
 |---------|---------|
-|[Checked](/windows/winui/api/microsoft.ui.xaml.controls.primitives.togglebutton.checked), [Unchecked](/windows/winui/api/microsoft.ui.xaml.controls.primitives.togglebutton.unchecked), [Click](/windows/winui/api/microsoft.ui.xaml.controls.primitives.buttonbase.click) |    [SelectionChanged](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) |
-|[IsChecked](/windows/winui/api/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked)  | [SelectedItem](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex) |
+|[Checked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked), [Unchecked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.unchecked), [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) |    [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) |
+|[IsChecked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked)  | [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex) |
 
 If you handle events on an individual `RadioButton`, such as `Checked` or `Unchecked`, and also handle the `RadioButtons.SelectionChanged` event, both events will fire. The `RadioButton` event occurs first, and then the `RadioButtons.SelectionChanged` event occurs, which could result in conflicts.
 
 The `IsChecked`, `SelectedItem`, and `SelectedIndex` properties stay synchronized. A change to one property updates the other two.
 
-The [RadioButton.GroupName](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton.groupname) property is ignored. The group is created by the `RadioButtons` control.
+The [RadioButton.GroupName](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton.groupname) property is ignored. The group is created by the `RadioButtons` control.
 
 ### Defining multiple columns
 
-By default, the `RadioButtons` control arranges its radio buttons vertically in a single column. You can set the [MaxColumns](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.maxcolumns) property to make the control arrange the radio buttons in multiple columns. (When you do this, they are laid out in column-major order, where items fill in from top to bottom, then left to right.)
+By default, the `RadioButtons` control arranges its radio buttons vertically in a single column. You can set the [MaxColumns](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.maxcolumns) property to make the control arrange the radio buttons in multiple columns. (When you do this, they are laid out in column-major order, where items fill in from top to bottom, then left to right.)
 
 ```xaml
 <RadioButtons Header="RadioButtons in columns" MaxColumns="3">
@@ -456,10 +456,10 @@ By default, the `RadioButtons` control arranges its radio buttons vertically in 
 > [!Important]
 > We recommend using the `RadioButtons` control to group `RadioButton` elements.
 
-Radio buttons work in groups. You can group individual [RadioButton](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton) controls in either of two ways:
+Radio buttons work in groups. You can group individual [RadioButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton) controls in either of two ways:
 
 - Put them inside the same parent container.
-- Set the [GroupName](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton.GroupName) property on each radio button to the same value.
+- Set the [GroupName](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton.GroupName) property on each radio button to the same value.
 
 In this example, the first group of radio buttons is implicitly grouped by being in the same stack panel. The second group is divided between two stack panels, so `GroupName` is used to explicitly group them into a single group.
 
@@ -548,7 +548,7 @@ These two groups of `RadioButton` controls look like this:
 
 ### Radio button states
 
-A radio button has two states: selected or cleared. When a radio button is selected, its [IsChecked](/windows/winui/api/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked) property is `true`. When a radio button is cleared, its `IsChecked` property is `false`. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its `IsChecked` property to `false`.
+A radio button has two states: selected or cleared. When a radio button is selected, its [IsChecked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked) property is `true`. When a radio button is cleared, its `IsChecked` property is `false`. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its `IsChecked` property to `false`.
 
 ### Visuals to consider
 
@@ -588,5 +588,5 @@ The following images show the preferred spacing of radio buttons in a group.
 - [Check boxes](checkbox.md)
 - [Lists and combo boxes](lists.md)
 - [Sliders](slider.md)
-- [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons)
-- [RadioButton class](/windows/winui/api/microsoft.ui.xaml.controls.radiobutton)
+- [RadioButtons class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)
+- [RadioButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton)

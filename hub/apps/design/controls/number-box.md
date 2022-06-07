@@ -16,7 +16,7 @@ Represents a control that can be used to display and edit numbers. This supports
 
 ## Is this the right control?
 
-You can use a NumberBox control to capture and display mathematic input. If you need an editable text box that accepts more than numbers, use the [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) control. If you need an editable text box that accepts passwords or other sensitive input, see [PasswordBox](/uwp/api/windows.ui.xaml.controls.passwordbox). If you need a text box to enter search terms, see [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox). If you need to enter or edit formatted text, see [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox).
+You can use a NumberBox control to capture and display mathematic input. If you need an editable text box that accepts more than numbers, use the [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox) control. If you need an editable text box that accepts passwords or other sensitive input, see [PasswordBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox). If you need a text box to enter search terms, see [AutoSuggestBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox). If you need to enter or edit formatted text, see [RichEditBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox).
 
 ## Recommendations
 
@@ -46,7 +46,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
+> - **Important APIs:** [NumberBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.NumberBox)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox).
@@ -174,7 +174,7 @@ With regard to decimal points and commas, the formatting used by a user will be 
 
 ### Input Scope
 
-`Number` will be used for the [input scope](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). This input scope is intended for working with digits 0-9. This may be overwritten but alternative InputScope types will not be explicitly supported.
+`Number` will be used for the [input scope](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.InputScopeNameValue). This input scope is intended for working with digits 0-9. This may be overwritten but alternative InputScope types will not be explicitly supported.
 
 ### Not a Number
 

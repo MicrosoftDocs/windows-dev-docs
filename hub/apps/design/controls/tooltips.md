@@ -73,14 +73,14 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [ToolTip class](/windows/winui/api/microsoft.UI.Xaml.Controls.ToolTip), [ToolTipService class](/windows/winui/api/microsoft.ui.xaml.controls.tooltipservice)
+> - **Important APIs:** [ToolTip class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip), [ToolTipService class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the ToolTip in action](winui3gallery:/item/ToolTip).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-A [ToolTip](/windows/winui/api/microsoft.UI.Xaml.Controls.ToolTip) must be assigned to another UI element that is its owner. The [ToolTipService](/windows/winui/api/microsoft.ui.xaml.controls.tooltipservice) class provides static methods to display a ToolTip.
+A [ToolTip](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip) must be assigned to another UI element that is its owner. The [ToolTipService](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice) class provides static methods to display a ToolTip.
 
 In XAML, use the **ToolTipService.Tooltip** attached property to assign the ToolTip to an owner.
 
@@ -88,7 +88,7 @@ In XAML, use the **ToolTipService.Tooltip** attached property to assign the Tool
 <Button Content="New" ToolTipService.ToolTip="Create a new document"/>
 ```
 
-In code, use the [ToolTipService.SetToolTip](/windows/winui/api/microsoft.ui.xaml.controls.tooltipservice.settooltip) method to assign the ToolTip to an owner.
+In code, use the [ToolTipService.SetToolTip](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.settooltip) method to assign the ToolTip to an owner.
 
 ```xaml
 <Button x:Name="submitButton" Content="New"/>
@@ -102,7 +102,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ### Content
 
-You can use any object as the [Content](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content) of a ToolTip. Here's an example of using an [Image](/windows/winui/api/microsoft.ui.xaml.controls.image) in a ToolTip.
+You can use any object as the [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) of a ToolTip. Here's an example of using an [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) in a ToolTip.
 
 ```xaml
 <TextBlock Text="store logo">
@@ -116,7 +116,7 @@ You can use any object as the [Content](/windows/winui/api/microsoft.ui.xaml.con
 
 By default, a ToolTip is displayed centered above the pointer. The placement is not constrained by the app window, so the ToolTip might be displayed partially or completely outside of the app window bounds.
 
-For broad adjustments, use the [Placement](/windows/winui/api/microsoft.ui.xaml.controls.tooltip.placement) property or **ToolTipService.Placement** attached property to specify whether the ToolTip should draw above, below, left, or right of the pointer. You can set the [VerticalOffset](/windows/winui/api/microsoft.ui.xaml.controls.tooltip.verticaloffset) or [HorizontalOffset](/windows/winui/api/microsoft.ui.xaml.controls.tooltip.horizontaloffset) properties to change the distance between the pointer and the ToolTip. Only one of the two offset values will influence the final position - VerticalOffset when Placement is Top or Bottom, HorizontalOffset when Placement is Left or Right.
+For broad adjustments, use the [Placement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placement) property or **ToolTipService.Placement** attached property to specify whether the ToolTip should draw above, below, left, or right of the pointer. You can set the [VerticalOffset](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.verticaloffset) or [HorizontalOffset](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.horizontaloffset) properties to change the distance between the pointer and the ToolTip. Only one of the two offset values will influence the final position - VerticalOffset when Placement is Top or Bottom, HorizontalOffset when Placement is Left or Right.
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -129,7 +129,7 @@ For broad adjustments, use the [Placement](/windows/winui/api/microsoft.ui.xaml.
 </Image>
 ```
 
-If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the **PlacementRect** property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there's sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip's owner, and the height and width of the exclusion area. The [Placement](/windows/winui/api/microsoft.ui.xaml.controls.tooltip.placement) property will define if ToolTip should draw above, below, left, or right of the PlacementRect.
+If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the **PlacementRect** property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there's sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip's owner, and the height and width of the exclusion area. The [Placement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placement) property will define if ToolTip should draw above, below, left, or right of the PlacementRect.
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -147,4 +147,4 @@ If a ToolTip obscures the content it is referring to, you can adjust its placeme
 
 ## Related articles
 
-- [ToolTip class](/windows/winui/api/microsoft.UI.Xaml.Controls.ToolTip)
+- [ToolTip class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip)

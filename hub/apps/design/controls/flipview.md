@@ -53,20 +53,20 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [FlipView class](/windows/winui/api/microsoft.ui.xaml.controls.flipview), [ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemtemplate)
+> - **Important APIs**: [FlipView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview), [ItemsSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the FlipView in action](winui3gallery:/item/FlipView).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-FlipView is an [ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol), so it can contain a collection of items of any type. To populate the view, add items to the [**Items**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection, or set the [**ItemsSource**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source.
+FlipView is an [ItemsControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol), so it can contain a collection of items of any type. To populate the view, add items to the [**Items**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items) collection, or set the [**ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source.
 
-By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](/windows/winui/api/microsoft.ui.xaml.datatemplate) to define the layout of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. You assign the DataTemplate to the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the FlipView.
+By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) to define the layout of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. You assign the DataTemplate to the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the FlipView.
 
 ### Add items to the Items collection
 
-You can add items to the [**Items**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection using XAML or code. You typically add items this way if you have a small number of items that don't change and are easily defined in XAML, or if you generate the items in code at run time. Here's a flip view with items defined inline.
+You can add items to the [**Items**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items) collection using XAML or code. You typically add items this way if you have a small number of items that don't change and are easily defined in XAML, or if you generate the items in code at run time. Here's a flip view with items defined inline.
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -87,13 +87,13 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-When you add items to a flip view they are automatically placed in a [**FlipViewItem**](/windows/winui/api/microsoft.UI.Xaml.Controls.FlipViewItem) container. To change how an item is displayed you can apply a style to the item container by setting the [**ItemContainerStyle**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle) property. 
+When you add items to a flip view they are automatically placed in a [**FlipViewItem**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.FlipViewItem) container. To change how an item is displayed you can apply a style to the item container by setting the [**ItemContainerStyle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle) property. 
 
 When you define the items in XAML, they are automatically added to the Items collection.
 
 ### Set the items source
 
-You typically use a flip view to display data from a source such as a database or the Internet. To populate a flip view from a data source, you set its [**ItemsSource**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a collection of data items.
+You typically use a flip view to display data from a source such as a database or the Internet. To populate a flip view from a data source, you set its [**ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a collection of data items.
 
 Here, the flip view's ItemsSource is set in code directly to an instance of a collection.
 
@@ -115,7 +115,7 @@ stackPanel1.Children.Add(flipView1);
 
 You can also bind the ItemsSource property to a collection in XAML. For more info, see [Data binding with XAML](/windows/uwp/data-binding/data-binding-quickstart).
 
-Here, the ItemsSource is bound to a [**CollectionViewSource**](/windows/winui/api/microsoft.UI.Xaml.Data.CollectionViewSource) named `itemsViewSource`. 
+Here, the ItemsSource is bound to a [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.CollectionViewSource) named `itemsViewSource`. 
 
 ```xaml
 <Page.Resources>
@@ -134,7 +134,7 @@ Here, the ItemsSource is bound to a [**CollectionViewSource**](/windows/winui/ap
 
 ### Specify the look of the items
 
-By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](/windows/winui/api/microsoft.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. The DataTemplate is assigned to the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the FlipView control.
+By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. The DataTemplate is assigned to the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the FlipView control.
 
 In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name. 
 
@@ -167,7 +167,7 @@ Here's what the layout defined by the data template looks like.
 
 ### Set the orientation of the flip view
 
-By default, the flip view flips horizontally. To make the it flip vertically, use a stack panel with a vertical orientation as the flip view's [**ItemsPanel**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemspanel).
+By default, the flip view flips horizontally. To make the it flip vertically, use a stack panel with a vertical orientation as the flip view's [**ItemsPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel).
 
 This example shows how to use a stack panel with a vertical orientation as the ItemsPanel of a FlipView.
 
@@ -210,7 +210,7 @@ The following image shows a PipsPager used with a small photo gallery (we recomm
 
 :::image type="content" source="images/pipspager-flipview-example.png" alt-text="A PipsPager with five horizontal dots underneath a FlipView photo album. The third dot is selected, which indicates the third page of content.":::
 
-This code snippet shows how to bind a PipsPager with a [FlipView](/windows/winui/api/microsoft.ui.xaml.controls.flipview).
+This code snippet shows how to bind a PipsPager with a [FlipView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview).
 
 ```xaml
 <StackPanel>
@@ -245,4 +245,4 @@ For a full example showing how to add a context indicator to a FlipView, see [XA
 
 - [Guidelines for lists](lists.md)
 - [PipsPager](pipspager.md)
-- [**FlipView class**](/windows/winui/api/microsoft.UI.Xaml.Controls.FlipView)
+- [**FlipView class**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.FlipView)
