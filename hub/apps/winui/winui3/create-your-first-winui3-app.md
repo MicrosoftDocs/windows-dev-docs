@@ -75,15 +75,28 @@ Links to full installation details are in the steps below. We recommend that you
 1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
 
    ```xml
-   <WindowsPackageType>None</WindowsPackageType>
+   <Project ...>
+     ...
+     <PropertyGroup>
+       ...
+       <WindowsPackageType>None</WindowsPackageType>
+     </PropertyGroup> 
+     ...
+   </Project>
    ```
-
-    :::image type="content" source="images/winui-csharp-unpackaged-proj.png" alt-text="Visual Studio 2019 - C# Project file with WindowsPackageType set to None highlighted":::
 
 1. **C++**. In your C++ project (`.vcxproj`) file, set the *AppxPackage* property to *false*:
 
    ```xml
-    <AppxPackage>false</AppxPackage>
+   <Project ...>
+     ...
+     <PropertyGroup>
+       ...
+       <AppxPackage>false</AppxPackage>
+       ...
+     </PropertyGroup> 
+     ...
+   </Project>
    ```
 
 1. **C#**. To start a C# app from Visual Studio (either **Debugging** or **Without Debugging**), select the *Unpackaged* launch profile from the **Start** drop-down. If the *Package* profile is selected, then you'll see a deployment error in Visual Studio. This step isn't necessary if you start the application (`.exe`) from the command line or from Windows File Explorer.
