@@ -10,21 +10,21 @@ ms.localizationpriority: medium
 ---
 # ItemsRepeater
 
-Use an [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) to create custom collection experiences using a flexible layout system, custom views, and virtualization.
+Use an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) to create custom collection experiences using a flexible layout system, custom views, and virtualization.
 
-Unlike [ListView](/windows/winui/api/microsoft.ui.xaml.controls.listview), [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a comprehensive end-user experience – it has no default UI and provides no policy around focus, selection, or user interaction. Instead, it's a building block that you can use to create your own unique collection-based experiences and custom controls. While it has no built-in policy, it enables you to attach policy to build the experience you require. For example, you can define the layout to use, the keyboarding policy, the selection policy, etc.
+Unlike [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview), [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) does not provide a comprehensive end-user experience – it has no default UI and provides no policy around focus, selection, or user interaction. Instead, it's a building block that you can use to create your own unique collection-based experiences and custom controls. While it has no built-in policy, it enables you to attach policy to build the experience you require. For example, you can define the layout to use, the keyboarding policy, the selection policy, etc.
 
-You can think of [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) conceptually as a data-driven panel, rather than as a complete control like ListView. You specify a collection of data items to be displayed, an item template that generates a UI element for each data item, and a layout that determines how the elements are sized and positioned. Then, ItemsRepeater produces child elements based on the data source, and displays them as specified by the item template and layout. The items displayed do not need to be homogenous because ItemsRepeater can load content to represent the data items based on criteria you specify in a data template selector.
+You can think of [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) conceptually as a data-driven panel, rather than as a complete control like ListView. You specify a collection of data items to be displayed, an item template that generates a UI element for each data item, and a layout that determines how the elements are sized and positioned. Then, ItemsRepeater produces child elements based on the data source, and displays them as specified by the item template and layout. The items displayed do not need to be homogenous because ItemsRepeater can load content to represent the data items based on criteria you specify in a data template selector.
 
 ## Is this the right control?
 
-Use an [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) to create custom displays for collections of data. While it can be used to present a basic set of items, you might often use it as the display element in the template of a custom control.
+Use an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) to create custom displays for collections of data. While it can be used to present a basic set of items, you might often use it as the display element in the template of a custom control.
 
-If you need an out-of-the-box control to display data in a list or grid with minimal customization, consider using a [ListView](/windows/winui/api/microsoft.ui.xaml.controls.listview) or [GridView](/windows/winui/api/microsoft.ui.xaml.controls.gridview).
+If you need an out-of-the-box control to display data in a list or grid with minimal customization, consider using a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) or [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview).
 
-ItemsRepeater does not have a built-in Items collection. If you need to provide an Items collection directly, rather than binding to a separate data source, then you're likely in need of a more high-policy experience and should use [ListView](/windows/winui/api/microsoft.ui.xaml.controls.listview) or [GridView](/windows/winui/api/microsoft.ui.xaml.controls.gridview).
+ItemsRepeater does not have a built-in Items collection. If you need to provide an Items collection directly, rather than binding to a separate data source, then you're likely in need of a more high-policy experience and should use [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) or [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview).
 
-[ItemsControl](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol) and ItemsRepeater both enable customizable collection experiences, but ItemsRepeater supports virtualizing UI layouts, while ItemsControl does not. We recommend using ItemsRepeater instead of ItemsControl, whether its for just presenting a few items from data or building a custom collection control.
+[ItemsControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol) and ItemsRepeater both enable customizable collection experiences, but ItemsRepeater supports virtualizing UI layouts, while ItemsControl does not. We recommend using ItemsRepeater instead of ItemsControl, whether its for just presenting a few items from data or building a custom collection control.
 
 ## UWP and WinUI 2
 
@@ -35,7 +35,7 @@ The ItemsRepeater for UWP apps requires the Windows UI Library 2. For more info,
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> - **WinUI APIs:** [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
+> - **WinUI 2 Apis:** [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
 > - [Open the WinUI 2 Gallery app and see the ItemsRepeater in action](winui2gallery:/item/ItemsRepeater). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
@@ -48,12 +48,12 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 ## Scrolling with ItemsRepeater
 
-[**ItemsRepeater**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) does not derive from [**Control**](/windows/winui/api/microsoft.ui.xaml.controls.control), so it doesn't have a control template. Therefore, it doesn't contain any built-in scrolling like a ListView or other collection controls do.
+[**ItemsRepeater**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) does not derive from [**Control**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control), so it doesn't have a control template. Therefore, it doesn't contain any built-in scrolling like a ListView or other collection controls do.
 
-When you use an **ItemsRepeater**, you should provide scrolling functionality by wrapping it in a [**ScrollViewer**](/windows/winui/api/microsoft.ui.xaml.controls.scrollviewer) control.
+When you use an **ItemsRepeater**, you should provide scrolling functionality by wrapping it in a [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) control.
 
 > [!NOTE]
-> If your app will run on earlier versions of Windows - those released *before* Windows 10, version 1809 - then you also need to host the **ScrollViewer** inside the [**ItemsRepeaterScrollHost**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
+> If your app will run on earlier versions of Windows - those released *before* Windows 10, version 1809 - then you also need to host the **ScrollViewer** inside the [**ItemsRepeaterScrollHost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeaterscrollhost). 
 > ```xaml
 > <muxc:ItemsRepeaterScrollHost>
 >     <ScrollViewer>
@@ -61,26 +61,26 @@ When you use an **ItemsRepeater**, you should provide scrolling functionality by
 >     </ScrollViewer>
 > </muxc:ItemsRepeaterScrollHost>
 > ```
-> If your app will only run on recent versions of Windows 10, version 1809 and later - then there is no need to use the [**ItemsRepeaterScrollHost**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
+> If your app will only run on recent versions of Windows 10, version 1809 and later - then there is no need to use the [**ItemsRepeaterScrollHost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
 >
-> Prior to Windows 10, version 1809, **ScrollViewer** did not implement the [**IScrollAnchorProvider**](/windows/winui/api/microsoft.ui.xaml.controls.iscrollanchorprovider) interface that the **ItemsRepeater** needs.  The **ItemsRepeaterScrollHost** enables the **ItemsRepeater** to coordinate with **ScrollViewer** on earlier releases to correctly preserve the visible location of items the user is viewing.  Otherwise, the items might appear to move or disappear suddenly when the items in the list are changed or the app is resized.
+> Prior to Windows 10, version 1809, **ScrollViewer** did not implement the [**IScrollAnchorProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iscrollanchorprovider) interface that the **ItemsRepeater** needs.  The **ItemsRepeaterScrollHost** enables the **ItemsRepeater** to coordinate with **ScrollViewer** on earlier releases to correctly preserve the visible location of items the user is viewing.  Otherwise, the items might appear to move or disappear suddenly when the items in the list are changed or the app is resized.
 
 ## Create an ItemsRepeater
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer class](/windows/winui/api/microsoft.ui.xaml.controls.scrollviewer)
+> - **Important APIs**: [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-To use an [**ItemsRepeater**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater), you need to give it the data to display by setting the **ItemsSource** property. Then, tell it how to display the items by setting the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property.
+To use an [**ItemsRepeater**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater), you need to give it the data to display by setting the **ItemsSource** property. Then, tell it how to display the items by setting the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property.
 
 ### ItemsSource
 
-To populate the view, set the [**ItemsSource**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to a collection of data items. Here, the **ItemsSource** is set in code directly to an instance of a collection.
+To populate the view, set the [**ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to a collection of data items. Here, the **ItemsSource** is set in code directly to an instance of a collection.
 
 ```csharp
 ObservableCollection<string> Items = new ObservableCollection<string>();
@@ -98,7 +98,7 @@ You can also bind the **ItemsSource** property to a collection in XAML. For more
 
 ### ItemTemplate
 
-To specify how a data item is visualized, set the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property to a [**DataTemplate**](/windows/winui/api/microsoft.ui.xaml.datatemplate) or [**DataTemplateSelector**](/windows/winui/api/microsoft.ui.xaml.controls.datatemplateselector) you have defined. The data template defines how the data is visualized. By default, the item is displayed in the view with a **TextBlock** the uses the string representation of the data object.
+To specify how a data item is visualized, set the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property to a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) or [**DataTemplateSelector**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) you have defined. The data template defines how the data is visualized. By default, the item is displayed in the view with a **TextBlock** the uses the string representation of the data object.
 
 However, you typically want to show a more rich presentation of your data by using a template that defines the layout and appearance of one or more controls that you'll use to display an individual item. The controls you use in the template can be bound to the properties of the data object, or have static content defined inline.
 
@@ -146,7 +146,7 @@ The number of elements used in the **DataTemplate** for an item can have a signi
 
 #### DataTemplateSelector
 
-The items you display in your view do not need to be of the same type. You can provide the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property with a [**DataTemplateSelector**](/windows/winui/api/microsoft.ui.xaml.controls.datatemplateselector) to select different **DataTemplate**s based on criteria you specify.
+The items you display in your view do not need to be of the same type. You can provide the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) property with a [**DataTemplateSelector**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) to select different **DataTemplate**s based on criteria you specify.
 
 This example assumes a **DataTemplateSelector** has been defined that decides between two different **DataTemplate**s to represent a Large and Small item.
 
@@ -159,14 +159,14 @@ This example assumes a **DataTemplateSelector** has been defined that decides be
 </ItemsRepeater>
 ```
 
-When defining a **DataTemplateSelector** to use with **ItemsRepeater** you only need to implement an override for the [**SelectTemplateCore(Object)**](/windows/winui/api/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) method. For more info and examples, see [**DataTemplateSelector**](/windows/winui/api/microsoft.ui.xaml.controls.datatemplateselector).
+When defining a **DataTemplateSelector** to use with **ItemsRepeater** you only need to implement an override for the [**SelectTemplateCore(Object)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) method. For more info and examples, see [**DataTemplateSelector**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector).
 
 > [!NOTE]
 > An alternative to **DataTemplate**s to manage how elements are created in more advanced scenarios is to implement your own [**Windows.UI.Xaml.Controls.IElementFactory**](/windows/winui/api/microsoft.ui.xaml.controls.ielementfactory) to use as the **ItemTemplate**.  It will be responsible for generating content when requested.
 
 ## Configure the data source
 
-Use the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to specify the collection to use to generate the content of items. You can set the ItemsSource to any type that implements **IEnumerable**. Additional collection interfaces implemented by your data source determine what functionality is available to the ItemsRepeater to interact with your data.
+Use the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemssource) property to specify the collection to use to generate the content of items. You can set the ItemsSource to any type that implements **IEnumerable**. Additional collection interfaces implemented by your data source determine what functionality is available to the ItemsRepeater to interact with your data.
 
 This list shows available interfaces and when to consider using each one.
 
@@ -208,7 +208,7 @@ This list shows available interfaces and when to consider using each one.
 
     The Platform.Collections.Vector\<T> uses IObservableVector\<T> and has this same limitation. If support for a 'Move' action is required then use the **INotifyCollectionChanged** interface.  The .NET ObservableCollection\<T> class uses **INotifyCollectionChanged**.
 
-- [IKeyIndexMapping](/windows/winui/api/microsoft.ui.xaml.controls.ikeyindexmapping)
+- [IKeyIndexMapping](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ikeyindexmapping)
 
   - When a unique identifier can be associated with each item.  Recommended when using 'Reset' as the collection change action.
 
@@ -219,9 +219,9 @@ The interfaces listed above, other than IKeyIndexMapping, provide the same behav
 
 The following interfaces on an ItemsSource enable special functionality in the ListView and GridView controls, but currently have no effect on an ItemsRepeater:
 
-- [ISupportIncrementalLoading](/windows/winui/api/microsoft.ui.xaml.data.isupportincrementalloading)
-- [IItemsRangeInfo](/windows/winui/api/microsoft.ui.xaml.data.iitemsrangeinfo)
-- [ISelectionInfo](/windows/winui/api/microsoft.ui.xaml.data.iselectioninfo)
+- [ISupportIncrementalLoading](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading)
+- [IItemsRangeInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.iitemsrangeinfo)
+- [ISelectionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.iselectioninfo)
 
 > [!TIP]
 > We want your feedback! Let us know what you think on the [Windows UI Library GitHub project](https://github.com/Microsoft/microsoft-ui-xaml/issues). Consider adding your thoughts on existing proposals such as [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374): Add incremental loading support for ItemsRepeater.
@@ -259,13 +259,13 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 ## Change the layout of items
 
-Items shown by the [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) are arranged by a [Layout](/windows/winui/api/microsoft.ui.xaml.controls.layout) object that manages the sizing and positioning of its child elements. When used with an ItemsRepeater, the Layout object enables UI virtualization. The layouts provided are [StackLayout](/windows/winui/api/microsoft.ui.xaml.controls.stacklayout) and [UniformGridLayout](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout). By default, ItemsRepeater uses a StackLayout with vertical orientation.
+Items shown by the [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) are arranged by a [Layout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layout) object that manages the sizing and positioning of its child elements. When used with an ItemsRepeater, the Layout object enables UI virtualization. The layouts provided are [StackLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout) and [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout). By default, ItemsRepeater uses a StackLayout with vertical orientation.
 
 ### StackLayout
 
-[StackLayout](/windows/winui/api/microsoft.ui.xaml.controls.stacklayout) arranges elements into a single line that you can orient horizontally or vertically.
+[StackLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout) arranges elements into a single line that you can orient horizontally or vertically.
 
-You can set the [Spacing](/windows/winui/api/microsoft.ui.xaml.controls.stacklayout.spacing) property to adjust the amount of space between items. Spacing is applied in the direction of the layout's [Orientation](/windows/winui/api/microsoft.ui.xaml.controls.stacklayout.orientation).
+You can set the [Spacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout.spacing) property to adjust the amount of space between items. Spacing is applied in the direction of the layout's [Orientation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout.orientation).
 
 ![Stack layout spacing](images/stack-layout.png)
 
@@ -282,22 +282,22 @@ This example shows how to set the ItemsRepeater.Layout property to a StackLayout
 
 ### UniformGridLayout
 
-The [UniformGridLayout](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout) positions elements sequentially in a wrapping layout. Items are layed out in order from left-to-right when the [Orientation](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.orientation) is **Horizontal**, and layed out top-to-bottom when the Orientation is **Vertical**. Every item is sized equally.
+The [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout) positions elements sequentially in a wrapping layout. Items are layed out in order from left-to-right when the [Orientation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.orientation) is **Horizontal**, and layed out top-to-bottom when the Orientation is **Vertical**. Every item is sized equally.
 
 ![Uniform grid layout spacing](images/uniform-grid-layout.png)
 
 The number of items in each row of a horizontal layout is influenced by the minimum item width. The number of items in each column of a vertical layout is influenced by the minimum item height.
 
-- You can explicitly provide a minimum size to use by setting the [MinItemHeight](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight) and [MinItemWidth](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth) properties.
+- You can explicitly provide a minimum size to use by setting the [MinItemHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight) and [MinItemWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth) properties.
 - If you don't specify a minimum size, the measured size of the first item is considered the minimum size per item.
 
-You can also set minimum spacing for the layout to include between rows and columns by setting the [MinColumnSpacing](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing) and [MinRowSpacing](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing) properties.
+You can also set minimum spacing for the layout to include between rows and columns by setting the [MinColumnSpacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing) and [MinRowSpacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing) properties.
 
 ![Uniform grid sizing and spacing](images/uniform-grid-sizing-spacing.png)
 
-After the number of items in a row or column has been determined based on the item's minimum size and spacing, there might be unused space left after the last item in the row or column (as illustrated in the previous image). You can specify whether any extra space is ignored, used to increase the size of each item, or used to create extra space between the items. This is controlled by the [ItemsStretch](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) and [ItemsJustification](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) properties.
+After the number of items in a row or column has been determined based on the item's minimum size and spacing, there might be unused space left after the last item in the row or column (as illustrated in the previous image). You can specify whether any extra space is ignored, used to increase the size of each item, or used to create extra space between the items. This is controlled by the [ItemsStretch](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) and [ItemsJustification](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) properties.
 
-You can set the [ItemsStretch](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) property to specify how the item size is increased to fill the unused space.
+You can set the [ItemsStretch](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) property to specify how the item size is increased to fill the unused space.
 
 This list shows the available values. The definitions assume the default **Orientation** of **Horizontal**.
 
@@ -309,7 +309,7 @@ This image shows the effect of the **ItemsStretch** values in a horizontal layou
 
 ![Uniform grid item stretch](images/uniform-grid-item-stretch.png)
 
-When **ItemsStretch** is **None**, you can set the [ItemsJustification](/windows/winui/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) property to specify how extra space is used to align the items.
+When **ItemsStretch** is **None**, you can set the [ItemsJustification](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) property to specify how extra space is used to align the items.
 
 This list shows the available values. The definitions assume the default **Orientation** of **Horizontal**.
 
@@ -343,15 +343,15 @@ This example shows how to set the **ItemsRepeater.Layout** property to a **Unifo
 
 ## Lifecycle events
 
-When you host items in an [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater), you might need to take some action when an item is shown or stops being shown, such as start an asynchronous download of some content, associate the element with a mechanism to track selection, or stop some background task.
+When you host items in an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater), you might need to take some action when an item is shown or stops being shown, such as start an asynchronous download of some content, associate the element with a mechanism to track selection, or stop some background task.
 
 In a virtualizing control, you cannot rely on Loaded/Unloaded events because the element might not be removed from the live visual tree when it's recycled. Instead, other events are provided to manage the lifecycle of elements. This diagram shows the lifecycle of an element in an ItemsRepeater, and when the related events are raised.
 
 ![Life cycle event diagram](images/items-repeater-lifecycle.png)
 
-- [**ElementPrepared**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.elementprepared) occurs each time an element is made ready for use. This occurs for both a newly created element as well as an element that already exists and is being re-used from the recycle queue.
-- [**ElementClearing**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.elementclearing) occurs immediately each time an element has been sent to the recycle queue, such as when it falls outside the range of realized items.
-- [**ElementIndexChanged**](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.elementindexchanged
+- [**ElementPrepared**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.elementprepared) occurs each time an element is made ready for use. This occurs for both a newly created element as well as an element that already exists and is being re-used from the recycle queue.
+- [**ElementClearing**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.elementclearing) occurs immediately each time an element has been sent to the recycle queue, such as when it falls outside the range of realized items.
+- [**ElementIndexChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.elementindexchanged
 ) occurs for each realized UIElement where the index for the item it represents has changed. For example, when another item is added or removed in the data source, the index for items that come after in the ordering receive this event.
 
 This example shows how you could use these events to attach a custom selection service to track item selection in a custom control that uses ItemsRepeater to display items.
@@ -418,11 +418,11 @@ private void OnElementClearing(ItemsRepeater sender, ElementClearingEventArgs ar
 
 ## Sorting, Filtering and Resetting the Data
 
-When you perform actions such as filtering or sorting your data set, you traditionally may have compared the previous set of data to the new data, then issued granular change notifications via [INotifyCollectionChanged](/windows/winui/api/microsoft.ui.xaml.interop.inotifycollectionchanged). However, it is often easier to completely replace the old data with the new data and trigger a collection change notification using the [Reset](/windows/winui/api/microsoft.ui.xaml.interop.notifycollectionchangedaction) action instead.
+When you perform actions such as filtering or sorting your data set, you traditionally may have compared the previous set of data to the new data, then issued granular change notifications via [INotifyCollectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.inotifycollectionchanged). However, it is often easier to completely replace the old data with the new data and trigger a collection change notification using the [Reset](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.notifycollectionchangedaction) action instead.
 
 Typically, a reset causes a control to release existing child elements and start over, building the UI from the beginning at scroll position 0 as it has no awareness of exactly how the data has changed during the reset.
 
-However, if the collection assigned as the ItemsSource supports unique identifiers by implementing the [IKeyIndexMapping](/windows/winui/api/microsoft.ui.xaml.controls.ikeyindexmapping) interface, then the ItemsRepeater can quickly identify:
+However, if the collection assigned as the ItemsSource supports unique identifiers by implementing the [IKeyIndexMapping](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ikeyindexmapping) interface, then the ItemsRepeater can quickly identify:
 
 - reusable UIElements for data that existed both before and after the reset
 - previously visible items that were removed
@@ -564,12 +564,12 @@ public class MyItemsSource : IReadOnlyList<ItemBase>, IKeyIndexMapping, INotifyC
 
 ## Create a custom collection control
 
-You can use the [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) to create a custom collection control complete with its own type of control to present each item.
+You can use the [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) to create a custom collection control complete with its own type of control to present each item.
 
 > [!NOTE]
 > This is similar to using **ItemsControl**, but instead of deriving from **ItemsControl** and putting an **ItemsPresenter** in the control template, you derive from **Control** and insert an **ItemsRepeater** in the control template. The custom collection control "has an" **ItemsRepeater** versus "is an" **ItemsControl**. This implies that you must also explicitly choose which properties to expose, rather than which inherited properties to not support.
 
-This example shows how to place an [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) in the template of a custom control named _MediaCollectionView_ and expose its properties.
+This example shows how to place an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) in the template of a custom control named _MediaCollectionView_ and expose its properties.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -637,7 +637,7 @@ public sealed class MediaCollectionView : Control
 
 ## Display grouped items
 
-You can nest an [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) in the [ItemTemplate](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) of another ItemsRepeater to create nested virtualizing layouts. The framework will make efficient use of resources by minimizing unnecessary realization of elements that aren't visible or near the current viewport.
+You can nest an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) in the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) of another ItemsRepeater to create nested virtualizing layouts. The framework will make efficient use of resources by minimizing unnecessary realization of elements that aren't visible or near the current viewport.
 
 This example shows how you can display a list of grouped items in a vertical stack. The outer ItemsRepeater generates each group. In the template for each group, another ItemsRepeater generates the items.
 
@@ -771,16 +771,16 @@ public class MyPage : Page
 
 ## Enable Accessibility
 
-[ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](../usability/index.md) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](../accessibility/custom-automation-peers.md).
+[ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](../usability/index.md) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](../accessibility/custom-automation-peers.md).
 
 ### Keyboarding
 The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
 ![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-The ItemsRepeater's [XYFocusKeyboardNavigation mode](/windows/winui/api/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
+The ItemsRepeater's [XYFocusKeyboardNavigation mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
 
-The ItemsRepeater does automatically ensure that the default tab order for its items (whether virtualized or not) follows the same order that the items are given in the data. By default the ItemsRepeater has its [TabFocusNavigation](/windows/winui/api/microsoft.ui.xaml.uielement.tabfocusnavigation) property set to [Once](/windows/winui/api/microsoft.ui.xaml.input.keyboardnavigationmode) instead of the common default of _Local_.
+The ItemsRepeater does automatically ensure that the default tab order for its items (whether virtualized or not) follows the same order that the items are given in the data. By default the ItemsRepeater has its [TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tabfocusnavigation) property set to [Once](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.keyboardnavigationmode) instead of the common default of _Local_.
 
 > [!NOTE]
 > The ItemsRepeater does not automatically remember the last focused item.  This means that when a user is using Shift+Tab they may be taken to the last realized item.
@@ -791,7 +791,7 @@ You need to manage setting the appropriate automation properties, such as values
 
 In some custom layouts there may not be an obvious sequence to the visual order.  Users minimally expect that the values for the PositionInSet and SizeOfSet properties used by screen readers will match the order the items appear in the data (offset by 1 to match natural counting versus being 0-based).
 
-The best way to achieve this is by having the automation peer for the item control implement the [GetPositionInSetCore](/windows/winui/api/microsoft.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) and [GetSizeOfSetCore](/windows/winui/api/microsoft.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) methods and report the position of the item in the data set represented by the control. The value is only computed at run-time when accessed by an assistive technology and keeping it up-to-date becomes a non-issue. The value matches the data order.
+The best way to achieve this is by having the automation peer for the item control implement the [GetPositionInSetCore](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.getpositioninsetcore) and [GetSizeOfSetCore](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.getsizeofsetcore) methods and report the position of the item in the data set represented by the control. The value is only computed at run-time when accessed by an assistive technology and keeping it up-to-date becomes a non-issue. The value matches the data order.
 
 This example shows how you could do this when presenting a custom control called _CardControl_.
 
@@ -830,5 +830,5 @@ internal sealed class CardControl : CardControlBase
 ## Related articles
 
 - [Lists](lists.md)
-- [ItemsRepeater](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
-- [ScrollViewer](/windows/winui/api/microsoft.ui.xaml.controls.scrollviewer)
+- [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
+- [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)

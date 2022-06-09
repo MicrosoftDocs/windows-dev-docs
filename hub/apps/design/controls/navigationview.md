@@ -34,7 +34,7 @@ _NavigationView supports both top and left navigation pane or menu_
    :::column-end:::
 :::row-end:::
 
-> **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)
+> **Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview)
 >
 > **Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
@@ -151,15 +151,15 @@ You can use the PaneDisplayMode property to position the pane above the content 
 
 The NavigationView pane can contain:
 
-- [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) objects. Navigation items for navigating to specific pages.
-- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) objects. Separators for grouping navigation items. Set the [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) property to 0 to render the separator as space.
-- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) objects. Headers for labeling groups of items.
-- An optional [AutoSuggestBox](auto-suggest-box.md) control to allow for app-level search. Assign the control to the [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) property.
-- An optional entry point for [app settings](../app-settings/guidelines-for-app-settings.md). To hide the settings item, set the [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) property to **false**.
+- [NavigationViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem) objects. Navigation items for navigating to specific pages.
+- [NavigationViewItemSeparator](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitemseparator) objects. Separators for grouping navigation items. Set the [Opacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.opacity) property to 0 to render the separator as space.
+- [NavigationViewItemHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitemheader) objects. Headers for labeling groups of items.
+- An optional [AutoSuggestBox](auto-suggest-box.md) control to allow for app-level search. Assign the control to the [NavigationView.AutoSuggestBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.autosuggestbox) property.
+- An optional entry point for [app settings](../app-settings/guidelines-for-app-settings.md). To hide the settings item, set the [IsSettingsVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible) property to **false**.
 
 The left pane also contains:
 
-- A menu button to toggle the pane opened and closed. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property.
+- A menu button to toggle the pane opened and closed. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property.
 
 The NavigationView has a back button that is placed in the top left-hand corner of the pane. However, it does not automatically handle backwards navigation and add content to the back stack. To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
 
@@ -216,9 +216,9 @@ You can place free-form content in the pane's footer by adding it to the [PaneFo
 
 #### Pane title and header
 
-You can place text content in the pane header area by setting the [PaneTitle](/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) property. It takes a string and shows the text next to the menu button.
+You can place text content in the pane header area by setting the [PaneTitle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.PaneTitle) property. It takes a string and shows the text next to the menu button.
 
-To add non-text content, such as an image or logo, you can place any element in the pane's header by adding it to the [PaneHeader](/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) property.
+To add non-text content, such as an image or logo, you can place any element in the pane's header by adding it to the [PaneHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.PaneHeader) property.
 
 If both PaneTitle and PaneHeader are set, the content is stacked horizontally next to the menu button, with the PaneTitle closest to the menu button.
 
@@ -235,7 +235,7 @@ If both PaneTitle and PaneHeader are set, the content is stacked horizontally ne
 
 #### Pane content
 
-You can place free-form content in the pane by adding it to the [PaneCustomContent](/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent) property.
+You can place free-form content in the pane by adding it to the [PaneCustomContent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.PaneCustomContent) property.
 
 :::row:::
     :::column:::
@@ -250,14 +250,14 @@ You can place free-form content in the pane by adding it to the [PaneCustomConte
 
 ### Header
 
-You can add a page title by setting the [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) property.
+You can add a page title by setting the [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.header) property.
 
 ![Example of NavigationView header area](images/nav-header.png)<br/>
 _NavigationView header_
 
 The header area is vertically aligned with the navigation button in the left pane position, and lies below the pane in the top pane position. It has a fixed height of 52 px. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
 
-The header is visible any time the NavigationView is in Minimal display mode. You may choose to hide the header in other modes, which are used on larger window widths. To hide the header, set the [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) property to **false**.
+The header is visible any time the NavigationView is in Minimal display mode. You may choose to hide the header in other modes, which are used on larger window widths. To hide the header, set the [AlwaysShowHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.AlwaysShowHeader) property to **false**.
 
 ### Content
 
@@ -270,7 +270,7 @@ We recommend 12px margins for your content area when NavigationView is in **Mini
 
 ## Adaptive behavior
 
-By default, the NavigationView automatically changes its display mode based on the amount of screen space available to it. The [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) and [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) properties specify the breakpoints at which the display mode changes. You can modify these values to customize the adaptive display mode behavior.
+By default, the NavigationView automatically changes its display mode based on the amount of screen space available to it. The [CompactModeThresholdWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.compactmodethresholdwidth) and [ExpandedModeThresholdWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.expandedmodethresholdwidth) properties specify the breakpoints at which the display mode changes. You can modify these values to customize the adaptive display mode behavior.
 
 ### Default
 
@@ -343,7 +343,7 @@ We recommend using top navigation on large window sizes and left navigation on s
 - You have a set of equally important top-level navigation categories to be displayed together, such that if one category in this set doesn't fit on screen, you collapse to left navigation to give them equal importance.
 - You wish to preserve as much content space as possible in small window sizes.
 
-This example shows how to use a [VisualStateManager](/uwp/api/Windows.UI.Xaml.VisualStateManager) and [AdaptiveTrigger.MinWindowWidth](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property to switch between Top and LeftMinimal navigation.
+This example shows how to use a [VisualStateManager](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.VisualStateManager) and [AdaptiveTrigger.MinWindowWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.adaptivetrigger.minwindowwidth) property to switch between Top and LeftMinimal navigation.
 
 ![Example of top or left adaptive behavior 1](images/navigation-top-to-left.png)
 
@@ -380,7 +380,7 @@ This example shows how to use a [VisualStateManager](/uwp/api/Windows.UI.Xaml.Vi
 
 ## Navigation
 
-The NavigationView doesn't perform any navigation tasks automatically. When the user taps on a navigation item, the NavigationView shows that item as selected and raises an [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event. If the tap results in a new item being selected, a [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event is also raised.
+The NavigationView doesn't perform any navigation tasks automatically. When the user taps on a navigation item, the NavigationView shows that item as selected and raises an [ItemInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.ItemInvoked) event. If the tap results in a new item being selected, a [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.SelectionChanged) event is also raised.
 
 You can handle either event to perform tasks related to the requested navigation. Which one you should handle depends on the behavior you want for your app. Typically, you navigate to the requested page and update the NavigationView header in response to these events.
 
@@ -392,14 +392,14 @@ All navigation items are part of the same selection model, whether they are a pa
 
 ### Backwards navigation
 
-NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically. When the user taps the back button, the [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) event is raised. You handle this event to perform backwards navigation. For more info and code examples, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).
+NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically. When the user taps the back button, the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.BackRequested) event is raised. You handle this event to perform backwards navigation. For more info and code examples, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).
 
 In Minimal or Compact mode, the NavigationView Pane is open as a flyout. In this case, clicking the back button will close the Pane and raise the **PaneClosing** event instead.
 
 You can hide or disable the back button by setting these properties:
 
-- [IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): use to show and hide the back button. This property takes a value of the [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible) enumeration, and is set to **Auto** by default. When the button is collapsed, no space is reserved for it in the layout.
-- [IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): use to enable or disable the back button. You can data bind this property to the [CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback) property of your navigation frame. **BackRequested** is not raised if **IsBackEnabled** is **false**.
+- [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.IsBackButtonVisible): use to show and hide the back button. This property takes a value of the [NavigationViewBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewbackbuttonvisible) enumeration, and is set to **Auto** by default. When the button is collapsed, no space is reserved for it in the layout.
+- [IsBackEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.IsBackEnabled): use to enable or disable the back button. You can data bind this property to the [CanGoBack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.cangoback) property of your navigation frame. **BackRequested** is not raised if **IsBackEnabled** is **false**.
 
 :::row:::
     :::column:::
@@ -1013,7 +1013,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 The C# and C++/WinRT code shown above is designed so that you can use the same XAML markup for both versions. However, there is another way of implementing the C++/WinRT version described in this section, which you may prefer.
 
-Below is an alternative version of the **NavView_ItemInvoked** handler. The technique in this version of the handler involves you first storing (in the tag of the [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page. There's no need for the mapping variable named `_pages` that you see in examples above; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type. Also see [Boxing and unboxing values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+Below is an alternative version of the **NavView_ItemInvoked** handler. The technique in this version of the handler involves you first storing (in the tag of the [**NavigationViewItem**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page. There's no need for the mapping variable named `_pages` that you see in examples above; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type. Also see [Boxing and unboxing values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(
@@ -1681,7 +1681,7 @@ This table shows which theme resource is used in each display mode.
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
 | Top | NavigationViewTopPaneBackground |
 
-This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
+This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries).
 
 > [!IMPORTANT]
 > This code shows how to use the [Windows UI Library](/uwp/toolkits/winui/) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
@@ -1736,7 +1736,7 @@ When NavigationView is the root element in apps that extend into the title bar *
 
 ![An app extending into the title bar](images/navigation-view-with-titlebar-padding.png)
 
-If your app specifies the draggable region by calling the [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) method and you would prefer to have the back and menu buttons draw closer to the top of your app window, set [IsTitleBarAutoPaddingEnabled](/uwp/api/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) to **false**.
+If your app specifies the draggable region by calling the [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) method and you would prefer to have the back and menu buttons draw closer to the top of your app window, set [IsTitleBarAutoPaddingEnabled](/uwp/api/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) to **false**.
 
 ![App extending into the title bar without extra padding](images/navigation-view-no-titlebar-padding.png)
 
@@ -1753,11 +1753,11 @@ To further adjust the position of NavigationView's header area, override the *Na
 </Page.Resources>
 ```
 
-This theme resource modifies the margin around [NavigationView.Header](/uwp/api/windows.ui.xaml.controls.navigationview.header).
+This theme resource modifies the margin around [NavigationView.Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.header).
 
 ## Related topics
 
-- [NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)
+- [NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview)
 - [List/details](list-details.md)
 - [Navigation basics](../basics/navigation-basics.md)
 - [Fluent Design overview](../index.md)

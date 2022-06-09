@@ -136,7 +136,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [Slider class](/windows/winui/api/microsoft.ui.xaml.controls.slider), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.primitives.rangebase.value), [ValueChanged event](/windows/winui/api/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged)
+> - **Important APIs**: [Slider class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.value), [ValueChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the Slider in action](winui3gallery:/item/Slider).
@@ -162,7 +162,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-You get and set the value of the slider from the [Value](/windows/winui/api/microsoft.ui.xaml.controls.primitives.rangebase.value) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [ValueChanged](/windows/winui/api/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event.
+You get and set the value of the slider from the [Value](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.value) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [ValueChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -181,4 +181,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## Related topics
 - [Toggle switches](toggles.md)
-- [Slider class](/windows/winui/api/microsoft.UI.Xaml.Controls.Slider)
+- [Slider class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Slider)

@@ -11,11 +11,11 @@ pm-contact: anawish
 
 # Data template selection: Styling items based on their properties
 
-The customized design of collections controls are managed by a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate). Data templates define how each item should be laid out and styled, and that markup is applied to every item in the collection. This article explains how to use a [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) to apply different data templates on a collection and select which data template to use, based on certain item properties or values of your choosing.
+The customized design of collections controls are managed by a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate). Data templates define how each item should be laid out and styled, and that markup is applied to every item in the collection. This article explains how to use a [DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) to apply different data templates on a collection and select which data template to use, based on certain item properties or values of your choosing.
 
-> **Important APIs**: [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector), [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
+> **Important APIs**: [DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector), [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate)
 
-[DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) is a class that enables custom template selection logic. It lets you define rules that specify which data template to use for certain items in a collection. To implement this logic, you create a subclass of DataTemplateSelector in your code-behind and define the logic that determines which data template to use for which category of items (for example, items of a certain type or items with a certain property value, etc). You declare an instance of this class in the Resources section of your XAML file, along with the definitions of the data templates you'll be using. You identify these resources with an `x:Key` value, which lets you reference them in your XAML.
+[DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) is a class that enables custom template selection logic. It lets you define rules that specify which data template to use for certain items in a collection. To implement this logic, you create a subclass of DataTemplateSelector in your code-behind and define the logic that determines which data template to use for which category of items (for example, items of a certain type or items with a certain property value, etc). You declare an instance of this class in the Resources section of your XAML file, along with the definitions of the data templates you'll be using. You identify these resources with an `x:Key` value, which lets you reference them in your XAML.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Certain elements of the visual display of a list item can be controlled by using
 
 ## When to use a DataTemplateSelector
 
-You should create a [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) when you want to use multiple data templates in one collection control. A `DataTemplateSelector` gives you the flexibility to make certain items stand out, while still keeping items in a similar layout. There are many use cases in which a DataTemplateSelector is helpful, and a few scenarios in which it is better to re-think the control and strategy that you're using.
+You should create a [DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) when you want to use multiple data templates in one collection control. A `DataTemplateSelector` gives you the flexibility to make certain items stand out, while still keeping items in a similar layout. There are many use cases in which a DataTemplateSelector is helpful, and a few scenarios in which it is better to re-think the control and strategy that you're using.
 
 Collection controls are typically bound to a collection of items that are all of one type. However, even though items may be of the same type, they may have different values for certain properties or represent different meanings. Certain items also may be more important than others, or one item may be particularly important or different and has a need to visually stand out. In these situations, a DataTemplateSelector will be very helpful.
 
@@ -49,7 +49,7 @@ When you create a data template selector, you define the template selection logi
 
 ### Code-behind component
 
-To use a data template selector, you first create a subclass of [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) (a class that derives from it) in your code-behind. In your class, you declare each template as a property of the class. Then, you override the [SelectTemplateCore](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore) method to include your own template selection logic.
+To use a data template selector, you first create a subclass of [DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) (a class that derives from it) in your code-behind. In your class, you declare each template as a property of the class. Then, you override the [SelectTemplateCore](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore) method to include your own template selection logic.
 
 Here is an example of a simple `DataTemplateSelector` subclass called `MyDataTemplateSelector`.
 
@@ -73,7 +73,7 @@ public class MyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-The `MyDataTemplateSelector` class derives from the `DataTemplateSelector` class and first defines two [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) objects: `Normal` and `Accent`. These are empty declarations for now, but will be "filled in" with markup in the XAML file.
+The `MyDataTemplateSelector` class derives from the `DataTemplateSelector` class and first defines two [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) objects: `Normal` and `Accent`. These are empty declarations for now, but will be "filled in" with markup in the XAML file.
 
 The `SelectTemplateCore` method takes in an item object (i.e. each collection item), and is overridden with rules on which `DataTemplate` to return under which circumstances. In this case, if the item is an odd number, it receives the `Accent` data template, while if it is an even number it receives the `Normal` data template.
 

@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Breadcrumb Bar
 
-A [BreadcrumbBar](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar) provides the direct path of pages or folders to the current location. It is often used for situations where the user's navigation trail (in a file system or menu system) needs to be persistently visible and the user may need to go back to a previous location.
+A [BreadcrumbBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar) provides the direct path of pages or folders to the current location. It is often used for situations where the user's navigation trail (in a file system or menu system) needs to be persistently visible and the user may need to go back to a previous location.
 
 ![Breadcrumb bar with nodes: Home, Documents, Design, Northwind, Images, Folder1, Folder2, Folder3. The app is resized so that the Breadcrumb crumbles and an ellipsis replaces the leftmost nodes. Then, clicking the ellipsis opens a flyout with the crumbled nodes](images/breadcrumbbar-default.gif)
 
@@ -50,7 +50,7 @@ The BreadcrumbBar for UWP apps requires the Windows UI Library 2. For more info,
 
 > [!div class="checklist"]
 >
-> - **WinUI APIs:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
+> - **WinUI 2 Apis:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
 > - [Open the WinUI 2 Gallery app and see the BreadcrumbBar in action](winui2gallery:/item/BreadcrumbBar). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
@@ -65,14 +65,14 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.button)
+> - **Important APIs:** [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the BreadcrumbBar in action](winui3gallery:/item/BreadcrumbBar).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-This example shows how to create a breadcrumb bar with the default styling. You can place the breadcrumb bar anywhere in your app UI. You populate the breadcrumbs by setting the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) property. Here, it's set to an array of strings that are shown in the breadcrumb bar.
+This example shows how to create a breadcrumb bar with the default styling. You can place the breadcrumb bar anywhere in your app UI. You populate the breadcrumbs by setting the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) property. Here, it's set to an array of strings that are shown in the breadcrumb bar.
 
 ```xaml
 <BreadcrumbBar x:Name="BreadcrumbBar1"/>
@@ -85,9 +85,9 @@ BreadcrumbBar1.ItemsSource =
 
 ### ItemsSource
 
-The breadcrumb bar does not have an `Items` property, it only has an [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) property. This means you can't populate the breadcrumbs in XAML or by adding them directly to an `Items` collection in code. Instead, you create a collection and connect the `ItemsSource` property to it in code or using data binding.
+The breadcrumb bar does not have an `Items` property, it only has an [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) property. This means you can't populate the breadcrumbs in XAML or by adding them directly to an `Items` collection in code. Instead, you create a collection and connect the `ItemsSource` property to it in code or using data binding.
 
-You can set the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) to a collection of any type of data to suit the needs of your app. The data items in the collection are used both to display the breadcrumb in the bar, and to navigate when an item in the breadcrumb bar is clicked. In the examples on this page, we create a simple `struct` (named `Crumb`) that contains a label to display in the breadcrumb bar and a data object that holds information used for navigation.
+You can set the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemssource) to a collection of any type of data to suit the needs of your app. The data items in the collection are used both to display the breadcrumb in the bar, and to navigate when an item in the breadcrumb bar is clicked. In the examples on this page, we create a simple `struct` (named `Crumb`) that contains a label to display in the breadcrumb bar and a data object that holds information used for navigation.
 
 ```csharp
 public readonly struct Crumb
@@ -105,7 +105,7 @@ public readonly struct Crumb
 
 ### ItemTemplate
 
-By default, the breadcrumb bar displays the string representation of each item in the collection. If the data items in your collection don't have an appropriate `ToString` override, you can use the [ItemTemplate](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar.itemtemplate) property to specify a data template that defines how the items are shown in the breadcrumb bar.
+By default, the breadcrumb bar displays the string representation of each item in the collection. If the data items in your collection don't have an appropriate `ToString` override, you can use the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemtemplate) property to specify a data template that defines how the items are shown in the breadcrumb bar.
 
 For example, if your breadcrumb collection was a list of [StorageFolder](/uwp/api/windows.storage.storagefolder) objects, you could provide a data template and bind to the [DisplayName](/uwp/api/windows.storage.storagefolder.displayname) property like this.
 
@@ -127,9 +127,9 @@ ObservableCollection<StorageFolder> Breadcrumbs =
 
 ### ItemClicked
 
-Handle the [ItemClicked](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar.itemclicked) event to navigate to the item the user has clicked in the breadcrumb bar. The current location is typically shown as the last item in the breadcrumb bar, so you should include a check in your event handler if you don't want to reload the current location.
+Handle the [ItemClicked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemclicked) event to navigate to the item the user has clicked in the breadcrumb bar. The current location is typically shown as the last item in the breadcrumb bar, so you should include a check in your event handler if you don't want to reload the current location.
 
-This example checks the [Index](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbaritemclickedeventargs.index) to see whether the clicked [Item](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbaritemclickedeventargs.item) is the last item in the collection, which is the current location. If it is, no navigation occurs.
+This example checks the [Index](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbaritemclickedeventargs.index) to see whether the clicked [Item](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbaritemclickedeventargs.item) is the last item in the collection, which is the current location. If it is, no navigation occurs.
 
 ```csharp
 // Breadcrumbs is set as BreadcrumbBar1.ItemsSource.
@@ -264,4 +264,4 @@ public readonly struct Crumb
 
 - [Navigation design basics](../basics/navigation-basics.md)
 - [NavigationView](./navigationview.md)
-- [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
+- [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar)

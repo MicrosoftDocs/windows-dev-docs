@@ -85,14 +85,14 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [ComboBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [IsEditable property](/windows/winui/api/microsoft.ui.xaml.controls.combobox.iseditable), [Text property](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox), [ListBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListBox)
+> - **Important APIs**: [ComboBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [IsEditable property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [ListBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListBox)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-You populate the combo box by adding objects directly to the [Items](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.items) collection or by binding the [ItemsSource](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source. Items added to the ComboBox are wrapped in [ComboBoxItem](/windows/winui/api/microsoft.ui.xaml.controls.comboboxitem) containers.
+You populate the combo box by adding objects directly to the [Items](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items) collection or by binding the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property to a data source. Items added to the ComboBox are wrapped in [ComboBoxItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxitem) containers.
 
 Here's a simple combo box with items added in XAML.
 
@@ -123,18 +123,18 @@ ObservableCollection<FontFamily> fonts = new ObservableCollection<FontFamily>()
 
 ### Item selection
 
-Like ListView and GridView, ComboBox is derived from [Selector](/windows/winui/api/microsoft.ui.xaml.controls.primitives.selector), so you can get the user's selection in the same standard way.
+Like ListView and GridView, ComboBox is derived from [Selector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector), so you can get the user's selection in the same standard way.
 
-You can get or set the combo box's selected item by using the [SelectedItem](/windows/winui/api/microsoft.ui.xaml.controls.primitives.selector.selecteditem) property, and get or set the index of the selected item by using the [SelectedIndex](/windows/winui/api/microsoft.ui.xaml.controls.primitives.selector.selectedindex) property.
+You can get or set the combo box's selected item by using the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) property, and get or set the index of the selected item by using the [SelectedIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex) property.
 
-To get the value of a particular property on the selected data item, you can use the [SelectedValue](/windows/winui/api/microsoft.ui.xaml.controls.primitives.selector.selectedvalue) property. In this case, set the [SelectedValuePath](/windows/winui/api/microsoft.ui.xaml.controls.primitives.selector.selectedvaluepath) to specify which property on the selected item to get the value from.
+To get the value of a particular property on the selected data item, you can use the [SelectedValue](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedvalue) property. In this case, set the [SelectedValuePath](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedvaluepath) to specify which property on the selected item to get the value from.
 
 > [!TIP]
 > If you set SelectedItem or SelectedIndex to indicate the default selection, an exception occurs if the property is set before the combo box Items collection is populated. Unless you define your Items in XAML, it's best to handle the combo box Loaded event, and set SelectedItem or SelectedIndex in the Loaded event handler.
 
-You can bind to these properties in XAML, or handle the [SelectionChanged](/windows/winui/api/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) event to respond to selection changes.
+You can bind to these properties in XAML, or handle the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) event to respond to selection changes.
 
-In the event handler code, you can get the selected item from the [SelectionChangedEventArgs.AddedItems](/windows/winui/api/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems) property. You can get the previously selected item (if any) from the [SelectionChangedEventArgs.RemovedItems](/windows/winui/api/microsoft.ui.xaml.controls.selectionchangedeventargs.removeditems) property. The AddedItems and RemovedItems collections each contain only 1 item because combo box does not support multiple selection.
+In the event handler code, you can get the selected item from the [SelectionChangedEventArgs.AddedItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems) property. You can get the previously selected item (if any) from the [SelectionChangedEventArgs.RemovedItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.removeditems) property. The AddedItems and RemovedItems collections each contain only 1 item because combo box does not support multiple selection.
 
 This example shows how to handle the SelectionChanged event, and also how to bind to the selected item.
 
@@ -185,7 +185,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 By default, the SelectionChanged event occurs when a user clicks, taps, or presses Enter on an item in the list to commit their selection, and the combo box closes. Selection doesn't change when the user navigates the open combo box list with the keyboard arrow keys.
 
-To make a combo box that "live updates" while the user is navigating the open list with the arrow keys (like a Font selection drop-down), set [SelectionChangedTrigger](/windows/winui/api/microsoft.ui.xaml.controls.combobox.selectionchangedtrigger) to [Always](/windows/winui/api/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger). This causes the SelectionChanged event to occur when focus changes to another item in the open list.
+To make a combo box that "live updates" while the user is navigating the open list with the arrow keys (like a Font selection drop-down), set [SelectionChangedTrigger](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.selectionchangedtrigger) to [Always](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger). This causes the SelectionChanged event to occur when focus changes to another item in the open list.
 
 #### Selected item behavior change
 
@@ -207,7 +207,7 @@ In SDK 17763 and later, the value of the SelectedItem property (and therefore, S
 
 Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the "w" key to bring "Washington" into view for quick selection. The text search is not case-sensitive.
 
-You can set the [IsTextSearchEnabled](/windows/winui/api/microsoft.ui.xaml.controls.combobox.istextsearchenabled) property to **false** to disable this functionality.
+You can set the [IsTextSearchEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.istextsearchenabled) property to **false** to disable this functionality.
 
 ## Make a combo box editable
 
@@ -216,7 +216,7 @@ You can set the [IsTextSearchEnabled](/windows/winui/api/microsoft.ui.xaml.contr
 
 By default, a combo box lets the user select from a pre-defined list of options. However, there are cases where the list contains only a subset of valid values, and the user should be able to enter other values that aren't listed. To support this, you can make the combo box editable.
 
-To make a combo box editable, set the [IsEditable](/windows/winui/api/microsoft.ui.xaml.controls.combobox.iseditable) property to **true**. Then, handle the [TextSubmitted](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user.
+To make a combo box editable, set the [IsEditable](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable) property to **true**. Then, handle the [TextSubmitted](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user.
 
 By default, the SelectedItem value is updated when the user commits custom text. You can override this behavior by setting **Handled** to **true** in the TextSubmitted event args. When the event is marked as handled, the combo box will take no further action after the event and will stay in the editing state. SelectedItem will not be updated.
 
@@ -232,7 +232,7 @@ A "recently used names" chooser lets the user enter custom strings. The 'Recentl
 
 ### Text submitted
 
-You can handle the [TextSubmitted](/windows/winui/api/microsoft.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user. In the event handler, you will typically validate that the value entered by the user is valid, then use the value in your app. Depending on the situation, you might also add the value to the combo box's list of options for future use.
+You can handle the [TextSubmitted](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox) event to work with the value entered by the user. In the event handler, you will typically validate that the value entered by the user is valid, then use the value in your app. Depending on the situation, you might also add the value to the combo box's list of options for future use.
 
 The TextSubmitted event occurs when these conditions are met:
 
@@ -320,6 +320,6 @@ bool IsValid(string Text)
 
 - [Text controls](text-controls.md)
 - [Guidelines for spell checking](text-controls.md#guidelines-for-spell-checking)
-- [TextBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBox)
-- [PasswordBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.PasswordBox)
+- [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
+- [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

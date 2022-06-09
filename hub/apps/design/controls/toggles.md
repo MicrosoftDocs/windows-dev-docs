@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 The toggle switch represents a physical switch that allows users to turn things on or off, like a light switch. Use toggle switch controls to present users with two mutually exclusive options (such as on/off), where choosing an option provides immediate results.
 
-To create a toggle switch control, you use the  [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch).
+To create a toggle switch control, you use the  [ToggleSwitch class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch).
 
 ## Is this the right control?
 
@@ -63,7 +63,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch), [IsOn property](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.ison), [Toggled event](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.toggled)
+> - **Important APIs**: [ToggleSwitch class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch), [IsOn property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.ison), [Toggled event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.toggled)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the ToggleSwitch in action](winui3gallery:/item/ToggleSwitch).
@@ -88,7 +88,7 @@ stackPanel1.Children.Add(lightToggle);
 
 ### IsOn
 
-The switch can be either on or off. Use the [IsOn](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.ison) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
+The switch can be either on or off. Use the [IsOn](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.ison) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
 
 ```xaml
 <StackPanel Orientation="Horizontal">
@@ -100,7 +100,7 @@ The switch can be either on or off. Use the [IsOn](/windows/winui/api/microsoft.
 
 ### Toggled
 
-In other cases, you can handle the [Toggled](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.toggled) event to respond to changes in the state.
+In other cases, you can handle the [Toggled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.toggled) event to respond to changes in the state.
 
 This example shows how to add a Toggled event handler in XAML and in code. The Toggled event is handled to turn a progress ring on or off, and change its visibility.
 
@@ -144,7 +144,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ### On/Off labels
 
-By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [OnContent](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.oncontent), and [OffContent](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.offcontent) properties.
+By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [OnContent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.oncontent), and [OffContent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.offcontent) properties.
 
 This example replaces the On/Off labels with Show/Hide labels.
 
@@ -154,7 +154,7 @@ This example replaces the On/Off labels with Show/Hide labels.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-You can also use more complex content by setting the [OnContentTemplate](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.oncontenttemplate) and [OffContentTemplate](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch.offcontenttemplate) properties.
+You can also use more complex content by setting the [OnContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.oncontenttemplate) and [OffContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.offcontenttemplate) properties.
 
 ## Get the sample code
 
@@ -162,7 +162,7 @@ You can also use more complex content by setting the [OnContentTemplate](/window
 
 ## Related articles
 
-- [ToggleSwitch class](/windows/winui/api/microsoft.ui.xaml.controls.toggleswitch)
+- [ToggleSwitch class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch)
 - [Radio buttons](radio-button.md)
 - [Toggle switches](toggles.md)
 - [Check boxes](checkbox.md)

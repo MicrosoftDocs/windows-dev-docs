@@ -36,7 +36,7 @@ Context menus have the following characteristics:
 
 - Are attached to a single element and display secondary commands.
 - Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).
-- Are associated with an element via its [ContextFlyout](/windows/winui/api/microsoft.ui.xaml.uielement.contextflyout) property.
+- Are associated with an element via its [ContextFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout) property.
 
 In cases where your context menu will include common commands (such as Copy, Cut, Paste, Delete, Share, or text selection commands), use [command bar flyout](command-bar-flyout.md) and group these common commands together as primary commands so that they will be shown as a single, horizontal row in the context menu.
 
@@ -49,7 +49,7 @@ Menus have the following characteristics:
 - Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.
 - Are usually attached to a button or a parent menu item.
 - Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).
-- Are associated with an element via its [Flyout](/windows/winui/api/microsoft.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](/windows/winui/api/microsoft.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) properties, or grouped in a menu bar at the top of the app window.
+- Are associated with an element via its [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout) or [FlyoutBase.AttachedFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) properties, or grouped in a menu bar at the top of the app window.
 
 When the user invokes a command element (such as a button) whose primary role is to present additional commands, use [menu flyout](menus.md) to host a single top-level menu to be shown inline as a flyout attached to the on-canvas UI element. Each MenuFlyout can host menu items and sub-menus. For apps that might need more organization or grouping, use a [menu bar](menus.md) as a quick and simple way to show a set of multiple top-level menus in a horizontal row. 
 
@@ -57,12 +57,12 @@ When the user invokes a command element (such as a button) whose primary role is
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The CommandBarFlyout and MenuBar controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The CommandBarFlyout and MenuBar controls for UWP apps are included as part of the Windows UI Library 2. For more info, including installation instructions, see [Windows UI Library](/windows/apps/winui/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [CommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [TextCommandBarFlyout class](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)
-> - **WinUI APIs:** [CommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout), [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar), [TextCommandBarFlyout class](/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+> - **WinUI 2 Apis:** [CommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout), [MenuBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar), [TextCommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout)
 > - Open the WinUI 2 Gallery app and see the [MenuBar](winui2gallery:/item/MenuBar) or [CommandBarFlyout](winui2gallery:/item/CommandBarFlyout) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).

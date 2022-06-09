@@ -48,7 +48,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [TimePicker class](/windows/winui/api/microsoft.UI.Xaml.Controls.TimePicker), [SelectedTime property](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.selectedtime)
+> - **Important APIs:** [TimePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TimePicker), [SelectedTime property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the TimePicker in action](winui3gallery:/item/TimePicker).
@@ -72,7 +72,7 @@ The resulting time picker looks like this:
 
 ### Formatting the time picker
 
-By default, the time picker shows a 12-hour clock with an AM/PM selector. You can set the [ClockIdentifier](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.clockidentifier) property to "24HourClock" to show a 24-hour clock instead.
+By default, the time picker shows a 12-hour clock with an AM/PM selector. You can set the [ClockIdentifier](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.clockidentifier) property to "24HourClock" to show a 24-hour clock instead.
 
 ```xaml
 <TimePicker Header="24HourClock" SelectedTime="18:21" ClockIdentifier="24HourClock"/>
@@ -80,7 +80,7 @@ By default, the time picker shows a 12-hour clock with an AM/PM selector. You ca
 
 :::image type="content" source="images/date-time/time-picker-clocks.png" alt-text="A time picker 24 hour clock.":::
 
-You can set the [MinuteIncrement](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.minuteincrement) property to indicate the time increments shown in the minute picker. For example, 15 specifies that the `TimePicker` minute control displays only the choices 00, 15, 30, 45.
+You can set the [MinuteIncrement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.minuteincrement) property to indicate the time increments shown in the minute picker. For example, 15 specifies that the `TimePicker` minute control displays only the choices 00, 15, 30, 45.
 
 ```xaml
 <TimePicker MinuteIncrement="15"/>
@@ -90,7 +90,7 @@ You can set the [MinuteIncrement](/windows/winui/api/microsoft.ui.xaml.controls.
 
 ### Time values
 
-The time picker control has both [Time](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.time)/[TimeChanged](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.timechanged) and [SelectedTime](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.selectedtime)/[SelectedTimeChanged](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.selectedtimechanged) APIs. The difference between these is that `Time` is not nullable, while `SelectedTime` is nullable.
+The time picker control has both [Time](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.time)/[TimeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.timechanged) and [SelectedTime](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime)/[SelectedTimeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtimechanged) APIs. The difference between these is that `Time` is not nullable, while `SelectedTime` is nullable.
 
 The value of `SelectedTime` is used to populate the time picker and is `null` by default. If `SelectedTime` is `null`, the `Time` property is set to a [TimeSpan](/dotnet/api/system.timespan?view=dotnet-uwp-10.0&preserve-view=true) of 0; otherwise, the `Time` value is synchronized with the `SelectedTime` value. When `SelectedTime` is `null`, the picker is 'unset' and shows the field names instead of a time.
 
@@ -118,7 +118,7 @@ You can set the time value as an attribute in XAML. This is probably easiest if 
 
 ### Using the time values
 
-To use the time value in your app, you typically use a data binding to the [SelectedTime](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.selectedtime) or [Time](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.time) property, use the time properties directly in your code, or handle the [SelectedTimeChanged](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.selectedtimechanged) or [TimeChanged](/windows/winui/api/microsoft.ui.xaml.controls.timepicker.timechanged) event.
+To use the time value in your app, you typically use a data binding to the [SelectedTime](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime) or [Time](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.time) property, use the time properties directly in your code, or handle the [SelectedTimeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtimechanged) or [TimeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.timechanged) event.
 
 > For an example of using a `DatePicker` and `TimePicker` together to update a single `DateTime` value, see [Calendar, date, and time controls - Use a date picker and time picker together](./date-and-time.md#use-a-date-picker-and-time-picker-together).
 
