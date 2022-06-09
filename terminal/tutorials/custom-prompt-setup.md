@@ -53,6 +53,10 @@ This will install:
 - `oh-my-posh.exe`: The Windows executable
 - `themes`: The latest [Oh My Posh themes](https://ohmyposh.dev/docs/themes)
 
+You will need to agree to the source terms and may run into the instance that more than one package is available. In this case, select package ID that you wish to use and re-enter the command: `winget install <package ID>`.
+
+![Screenshot of winget install oh my posh packages.](../images/oh-my-posh-winget.png)
+
 To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
 
 > [!NOTE]
