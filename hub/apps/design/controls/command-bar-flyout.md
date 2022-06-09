@@ -438,4 +438,4 @@ Light dismiss controls–such as menus, context menus, and other flyouts–trap 
 - [Menus and context menus](menus-and-context-menus.md)
 - [Command bar](command-bar.md)
 - [CommandBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CommandBar)
-- [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)
+- [CommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout)

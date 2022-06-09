@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Expander
 
-The [Expander](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander) control lets you show or hide less important content that's related to a piece of primary content that's always visible. Items contained in the [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header) are always visible. The user can expand and collapse the [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.content) area, where secondary content is displayed, by interacting with the header. When the content area is expanded, it pushes other UI elements out of the way; it does not overlay other UI. The `Expander` can expand upwards or downwards.
+The [Expander](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander) control lets you show or hide less important content that's related to a piece of primary content that's always visible. Items contained in the [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header) are always visible. The user can expand and collapse the [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) area, where secondary content is displayed, by interacting with the header. When the content area is expanded, it pushes other UI elements out of the way; it does not overlay other UI. The `Expander` can expand upwards or downwards.
 
 Both the `Header` and `Content` areas can contain any content, from simple text to complex UI layouts. For example, you can use the control to show additional options for an item.
 
@@ -43,14 +43,14 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [Expander class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander), [Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.content)
+> - **Important APIs:** [Expander class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander), [Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header), [Content property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the Expander in action](winui3gallery:/item/Expander).
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-This example shows how to create a simple [Expander](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.content) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
+This example shows how to create a simple [Expander](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander) with the default styling. The [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.header) property defines the element that is always visible. The [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) property defines the element that can be collapsed and expanded. This example creates an `Expander` that looks like the previous illustration.
 
 ```XAML
 <Expander Header="This text is in the header"
@@ -59,7 +59,7 @@ This example shows how to create a simple [Expander](/windows/windows-app-sdk/ap
 
 ### Expander content
 
-The [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.expander.content) property of an `Expander` can be any type of object, but is typically a string or [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement). For more details about setting the `Content` property, see the Remarks section of the [ContentControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol#remarks) class.
+The [Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) property of an `Expander` can be any type of object, but is typically a string or [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement). For more details about setting the `Content` property, see the Remarks section of the [ContentControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol#remarks) class.
 
 You can use complex, interactive UI as the content of the `Expander`, including nested `Expander` controls in the content of a parent `Expander` as shown here.
 
