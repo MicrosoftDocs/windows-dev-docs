@@ -1,19 +1,19 @@
 ---
-title: Create your first WinUI 3 project
+title: Create your first WinUI 3 (Windows App SDK) project
 description: In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 ms.topic: article
-ms.date: 06/06/2022
-keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk
+ms.date: 06/10/2022
+keywords: windows 11, windows 10, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, app sdk, Windows App SDK, WinUI 3
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Create your first WinUI 3 project
+# Create your first WinUI 3 (Windows App SDK) project
 
-In this topic we'll see how to use Visual Studio to create a new project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
+In this topic we'll see how to use Visual Studio to create a new [Windows App SDK](/windows/apps/windows-app-sdk/) project for a C# .NET or C++ app that has a [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/) user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.
 
-Links to full installation details are in the steps below. We recommend that you install and target version 1.0 Stable of the Windows App SDK; but you can choose any version from any of the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels). From that topic, you can follow the links to the release notes for each channel.
+Links to full installation details are in the steps below. We recommend that you install and target the latest Stable release of the Windows App SDK (see [Stable channel release notes](/windows/apps/windows-app-sdk/stable-channel)).
 
 > [!TIP]
 > No matter what version of the Windows App SDK you choose to install and target (or what version of Visual Studio you use), it's important to check any *limitations and known issues* in the release notes for that version (see [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels)). By knowing about any *limitations and known issues* for your version of the Windows App SDK, you'll be able to work around them should you run into any of them while following along with the steps in this topic.
@@ -23,6 +23,8 @@ Links to full installation details are in the steps below. We recommend that you
 [!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
 ## Key concepts
+
+Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a non-packaged project. But please come back later to read more about it.
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 
