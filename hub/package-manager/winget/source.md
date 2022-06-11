@@ -1,22 +1,29 @@
 ---
-title: source Command
-description: Manages the repositories accessed by Windows Package Manager.
-ms.date: 04/28/2020
-ms.topic: overview
+title: The winget source command
+description: Learn how to use the winget source command and subcommands to manage the repositories Windows Package Manager accesses.
+ms.date: 06/10/2022
+ms.topic: reference
 ms.localizationpriority: medium
+ms.custom: kr2b-contr-experiment
 ---
 
-# source command (winget)
+# The winget source command
 
-The **source** command of the [winget](index.md) tool manages the repositories accessed by Windows Package Manager. With the **source** command you can **add**, **remove**, **list**, and **update** the repositories.
+The [winget](index.md) tool **source** command manages the repositories Windows Package Manager accesses. With the **source** command, you can **add**, **remove**, **list**, and **update** the repositories.
 
-A source provides the data for you to discover and install applications. Only add a new source if you trust it as a secure location.
+A source repository provides the data for you to discover and install applications. Only add a new source if you trust it as a secure location.
+
+Windows Package Manager specifies the following two default repositories, which you can list by using `winget source list`.
+
+- **msstore** - The Microsoft Store catalog.
+- **winget** -  The Windows Package Manager app repository.
 
 ## Usage
 
-`winget source \<sub command> \<options>`
-
-![Source image](./images/source.png)
+```cmd
+winget source <subcommand> <options>`
+```
+:::image type="content" source="images/source.png" alt-text="Screenshot showing help for the source command.":::
 
 ## Arguments
 
@@ -26,19 +33,6 @@ The following arguments are available.
 |--------------|-------------|
 | **-?, --help** |  Gets additional help on this command. |
 
-## Sub commands
-
-Source supports the following sub commands for manipulating the sources.
-
-| Sub command  | Description |
-|--------------|-------------|
-|  **add** |  Adds a new source. |
-|  **list** | Enumerates the list of enabled sources. |
-|  **update** | Updates a source. |
-|  **remove** | Removes a source. |
-|  **reset** | Resets **winget** and **msstore** back to the initial configuration. |
-|  **export** |  Export current sources |
-
 ## Options
 
 The  **source** command supports the following options.
@@ -47,121 +41,156 @@ The  **source** command supports the following options.
 |--------------|-------------|
 |  **-n,--name** | The name to identify the source by. |
 |  **-a,--arg** | The URL or UNC of the source. |
-|  **--force** | Used by **reset** to ensure a reset is desired. |
+|  **--force** | Used by **reset** to ensure that a reset is desired. |
 |  **-t,--type** | The type of source. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Accepts the source license agreement, and avoids the prompt. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--verbose-logs** | Overrides the logging setting and creates a verbose log. |
 |  **-?, --help** |  Gets additional help on this command. |
 
-## add
+## Subcommands
 
-The **add** sub command adds a new source. This sub command requires the **--name** option and the **name** argument. Because the command changes the user access, **Add** requires the user to have administrator privileges.
+The **source** command supports the following subcommands for manipulating the sources.
 
-Usage: `winget source add [-n, --name] \<name> [-a] \<url> [[-t] \<type>]`
+| Subcommand  | Description |
+|--------------|-------------|
+|  **add** |  Adds a new source. |
+|  **list** | Enumerates the list of enabled sources. |
+|  **update** | Updates a source. |
+|  **remove** | Removes a source. |
+|  **reset** | Resets **winget** and **msstore** back to the initial configuration. |
+|  **export** |  Exports current sources. |
 
-Example:  `winget source add --name Contoso  https://www.contoso.com/cache`
+### add
 
-The **add** sub command also supports the optional **type** parameter. The **type** parameter communicates to the client what type of repository it is connecting to. The following types are supported.
+The **add** subcommand adds a new source. This subcommand requires the **--name** and **-arg** options. Because the command changes user access, using **add** requires administrator privileges.
+
+Usage:
+
+```cmd
+winget source add [-n, --name] <name> [-a] <url> [[-t] <type>]
+```
+
+For example,  `winget source add --name Contoso https://www.contoso.com/cache` adds the Contoso repository at URL `https://www.contoso.com/cache`.
+
+#### Optional type parameter
+
+The **add** subcommand supports the optional **type** parameter, which tells the client what type of repository it is connecting to. The following type is supported.
 
 | Type  | Description |
 |--------------|-------------|
-| **Microsoft.PreIndexed.Package** | The type of source \<default>. |
+| **Microsoft.PreIndexed.Package** | The default source type. |
 
-## list
+### list
 
-the **list** sub command enumerates the currently enabled sources. This sub-command also provides details on a specific source.
+The **list** subcommand enumerates the currently enabled sources, or provides details on a specific source.
 
-Usage: `winget source list [-n, --name] \<name>`
+Usage:
 
-### list all
-
-The **list** sub-command by itself will reveal the complete list of supported sources. For example:
-
-```CMD
-> C:\winget source list
-> Name   Arg
-> -----------------------------------------
-> winget https://winget.azureedge.net/cache
-
+```cmd
+winget source list [[-n, --name] <name>]
 ```
 
-### list source details
+#### list all
 
-In order to get complete details on the source, pass in the name used to identify the source. For example:
+The **list** subcommand by itself, `winget source list`, provides the complete list of supported sources:
 
-```CMD
-> C:\winget source list --name contoso  
-> Name   : contoso  
-> Type   : Microsoft.PreIndexed.Package  
-> Arg    : https://pkgmgr-int.azureedge.net/cache  
-> Data   : AppInstallerSQLiteIndex-int_g4ype1skzj3jy  
-> Updated: 2020-4-14 17:45:32.000
+```output
+Name   Arg
+-----------------------------------------
+winget https://winget.azureedge.net/cache
 ```
 
-**Name** displays the name to identify the source by.
-**Type** displays the type of repo.
-**Arg** displays the URL or path used by the source.
-**Data** displays the optional package name used if appropriate.
-**Updated** displays the last date and time the source was updated.
+#### list source details
 
-## update
+To get complete details about a source, pass in the name of the source. For example:
 
-The **update** sub command forces an update to an individual source or for all.
+```cmd
+winget source list --name Contoso
+```
 
-usage: `winget source update [-n, --name] \<name>`
+Returns the following output:
 
-### update all
+```output
+Name   : Contoso  
+Type   : Microsoft.PreIndexed.Package  
+Arg    : https://pkgmgr-int.azureedge.net/cache  
+Data   : AppInstallerSQLiteIndex-int_g4ype1skzj3jy  
+Updated: 2020-4-14 17:45:32.000
+```
 
-The **update** sub command by itself will request and update to each repo. For example: `winget source update`
+- `Name` is the name of the source.
+- `Type` is the type of repo.
+- `Arg` is the URL or path the source uses.
+- `Data` is the optional package name, if appropriate.
+- `Updated` is the last date and time the source was updated.
 
-### update source
+### update
 
-The **update** sub command combined with the **--name** option can direct and update to an individual source. For example:  `winget source update --name contoso`
+The **update** subcommand forces an update to an individual source, or to all sources.
 
-## remove
+Usage:
 
-The **remove** sub command removes a source. This sub command requires the **--name** option and **name argument** in order to identify the source. Because the command changes the user access, **Remove** requires the user to have administrator privileges.
+```cmd
+winget source update [[-n, --name] <name>]
+```
 
-Usage: `winget source remove [-n, --name] \<name>`
+#### update all
 
-For example: `winget source remove --name Contoso`
+The **update** subcommand by itself, `winget source update`, requests updates to all repos.
 
-## reset
+#### update source
 
-The **reset** sub-command resets the client back to its original configuration. The **reset** sub-command removes all sources and sets the source to the default. This sub command should only be used in rare cases. Because the command changes the user access, **Reset** requires the user to have administrator privileges.
+The **update** subcommand with the **--name** option directs an update to the named source. For example: `winget source update --name Contoso` forces an update to the Contoso repository.
 
-> [!NOTE]
-> Because the **reset** command will clean up all sources, you must force the action by using the **--force** argument.
+### remove
 
-Usage: `winget source reset --force`
+The **remove** subcommand removes a source. This subcommand requires the **--name** option to identify the source. Because the command changes user access, using **remove** requires administrator privileges.
 
-## export
+Usage:
 
-The **export** sub-command allows you to export the specific details for a source to a JSON file.
+```cmd
+winget source remove [-n, --name] <name>
+```
+
+For example: `winget source remove --name Contoso` removes the Contoso repository.
+
+### reset
+
+The **reset** subcommand resets the client back to its original configuration, and removes all sources except the default. Only use this subcommand in rare cases. Because the command changes user access, using **reset** requires administrator privileges.
+
+Because the **reset** command removes all sources, you must force the action by using the **--force** option.
+
+Usage:
+
+```cmd
+winget source reset --force
+```
+
+### export
+
+The **export** sub-command exports the specific details for a source to a JSON file.
 
 For example:
 
-```CMD
-> winget source export winget
-> {"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
+```cmd
+winget source export winget
 ```
 
-## Default repositories
+Returns the following output:
 
-Windows Package Manager specifies two default repositories. You can identify the repositories by using the **list** command. For example: `winget source list`
-
-* **msstore** - The Microsoft Store catalog.
-* **winget** -  The Windows Package Manager app repository.
+```output
+{"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
+```
 
 ## Source agreements
 
-Individual **Sources** may request that the user agree to terms before accessing the repository. Before adding or using the repository, the user must agree to the terms presented.
+An individual **source** might request that the user agrees to the terms presented before adding or using the repository. If a user doesn't accept or acknowledge the agreement, they won't be able to access the source.
 
-![Source license image](./images/source-license.png)
+You can use the **--accept-source-agreements** option to accept the source license agreement and avoid the prompt.
 
-If the user does not agree to or acknowleged the agreements, they will not be able to access the source content.
+:::image type="content" source="images/source-license.png" alt-text="Screenshot showing a source license prompt.":::
 
 ## Related topics
 
-* [Use the winget tool to install and manage applications](index.md)
+- [Use the winget tool to install and manage applications](index.md)

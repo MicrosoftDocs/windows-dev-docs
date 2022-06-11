@@ -1,31 +1,28 @@
 ---
 title: Binary validation errors
-description: Provides additional information about binary validation errors reported by the Windows Package Manager service.
-ms.date: 05/25/2021
-ms.topic: overview
+description: Learn about binary validation errors that the Windows Package Manager service reports, and how to address them.
+ms.date: 06/10/2022
+ms.topic: troubleshooting
 ms.localizationpriority: medium
+ms.custom: kr2b-contr-experiment
 ---
 
 # Binary validation errors
 
-If your [pull request fails](winget-validation.md) to pass the **Installers Scan** test and is given the **Binary-Validation-Error** label, this indicates that your application failed to install on all environments. This article provides more background and guidance about this error.
+This article provides background and guidance about binary validation errors. If [pull request validation](winget-validation.md) fails the **Installers Scan** test with a **Binary-Validation-Error** label, it means that your application failed to install on all environments.
 
-## Understanding the Installers Scan test
+## Understand the Installers Scan test
 
-Windows Package Manager goes to great lengths to create an excellent user experience when installing applications. In order to do this, we must ensure that all applications install on PCs without errors regardless of environment.
+To provide an excellent application installation user experience, the Windows Package Manager must ensure that all applications install on PCs without errors, regardless of environment. One key test is to ensure that all applications install without warnings on various popular antivirus configurations. Windows provides the built-in Microsoft Defender antivirus program, but many enterprise customers and users use other antivirus software.
 
-To that end, a key test we use for the Windows Package Manager is to ensure that all installers will install without warnings on a variety of popular antivirus configurations. While Windows provides Microsoft Defender as a built-in antivirus program, many enterprise customers and users employ a wide range of antivirus software.
+Each submission to the Windows Package Manager is run through several antivirus programs. These programs all have different virus detection algorithms for identifying [potentially unwanted applications (PUA)](/windows/security/threat-protection/intelligence/criteria) and malware.
 
-Therefore, each submission to the Windows Package Manager will be run through several antivirus programs. These programs all have different virus detection algorithms for identifying [Potentially unwanted application (PUA)](/windows/security/threat-protection/intelligence/criteria) and malware.  
+## Address binary validation errors
 
-If an application fails validation, Microsoft will first attempt to verify that the flagged software is not a false positive with the antivirus vendors. In many cases, after notification and validation, the antivirus vendor will update their algorithm and the application will pass.
+If an application fails validation, Microsoft first attempts to verify with the antivirus vendor whether the flagged software is a false positive. In many cases, after notification and validation, the antivirus vendor updates their algorithm, and the application passes.
 
-## What to do if you see the Binary-Validation-Error label
+In some cases, the antivirus vendor can't determine whether the detected code anomaly is a false positive. In this case, the application can't be added to the Windows Package Manager repository. The pull request is rejected with a **Binary-Validation-Error** label.
 
-In some cases, the code anomaly detected is not able to be determined to be a false positive by the antivirus vendors. In this case the application cannot be added to the Windows Package Manager repository, and the pull request will be rejected with a **Binary-Validation-Error** label.
+If you get a **Binary-Validation-Error** label on your pull request, update your software to remove the code detected as PUA.
 
-If the **Binary-Validation-Error** label is applied to your pull request, update your software to remove the code detected as PUA.
-
-## What if I cannot remove that code?
-
-Occasionally, genuine tools used for debugging and low-level activities will appear as PUA to the antivirus vendors. This is because the code necessary to do the debugging will have a similar signature to unwanted software. Even though this is a legitimate use of that coding practice, unfortunately we are unable to allow those applications into the Windows Package Manager repository.
+Sometimes, genuine tools used for debugging and low-level activities appear as PUA to antivirus software. This is because the necessary debugging code has a similar signature to unwanted software. Even though this coding practice is legitimate, the Windows Package Manager repository unfortunately can't allow these applications.
