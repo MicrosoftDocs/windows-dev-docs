@@ -246,9 +246,10 @@ To search by location you can use the following syntax:
 
 ### Service plugin
 
-The Service plugin lets you search for services and you can start, stop or restart them.
+The Service plugin lets you search, start, stop and restart Windows services directly from the PowerToys Run search screen.
 
-Additional to searching by name of the service you can use the following syntax:
+To search for Windows services, [enable the plugin](#plugin-manager), open PowerToys Run and enter the name of the service.
+Additionally, you can use the following syntax:
 
 - `!startup:automatic` to list all services with start type 'automatic'.
 - `!status:running` to list all currently running services.
