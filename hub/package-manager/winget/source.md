@@ -21,10 +21,8 @@ Windows Package Manager specifies the following two default repositories, which 
 ## Usage
 
 ```cmd
-winget source <subcommand> <options>`
+winget source <subcommand> <options>
 ```
-:::image type="content" source="images/source.png" alt-text="Screenshot showing help for the source command.":::
-
 ## Arguments
 
 The following arguments are available.
@@ -32,6 +30,10 @@ The following arguments are available.
 | Argument  | Description |
 |--------------|-------------|
 | **-?, --help** |  Gets additional help on this command. |
+
+The following image shows **help** for the **source** command:
+
+:::image type="content" source="images/source.png" alt-text="Screenshot showing help for the source command.":::
 
 ## Options
 
@@ -63,7 +65,7 @@ The **source** command supports the following subcommands for manipulating the s
 
 ### add
 
-The **add** subcommand adds a new source. This subcommand requires the **--name** and **-arg** options. Because the command changes user access, using **add** requires administrator privileges.
+The **add** subcommand adds a new source. This subcommand requires the **--name** and **--arg** options. Because the command changes user access, using **add** requires administrator privileges.
 
 Usage:
 
@@ -185,7 +187,7 @@ Returns the following output:
 
 ## Source agreements
 
-An individual **source** might request that the user agrees to the terms presented before adding or using the repository. If a user doesn't accept or acknowledge the agreement, they won't be able to access the source.
+An individual **source** might request that the user agree to the terms presented before adding or using the repository. If a user doesn't accept or acknowledge the agreement, they won't be able to access the source.
 
 You can use the **--accept-source-agreements** option to accept the source license agreement and avoid the prompt.
 
