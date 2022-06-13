@@ -252,6 +252,9 @@ For further troubleshooting steps relating to the Windows Subsystem for Android 
 
 For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
 
+> [!NOTE]
+> Currently in Windows Subsystem for Android, Bluetooth functionality, such as scanning for BLE devices, is not supported.
+
 ## Additional resources
 
 - [Install mobile apps and the Amazon Appstore](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c)
