@@ -18,13 +18,13 @@ Some Windows Runtime (WinRT) APIs are not supported in desktop apps. For more in
 
 There are several options for .NET projects:
 
-* Starting in .NET 5, you can specify the Target Framework Moniker (TFM) in your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
+* Starting in .NET 6, you can specify the Target Framework Moniker (TFM) in your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.
 * For earlier versions of .NET, you can install the [`Microsoft.Windows.SDK.Contracts`](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.
-* If your project multi-targets .NET 5 (or later) and earlier versions of .NET, you can configure the project file to use both options.
+* If your project multi-targets .NET 6 (or later) and earlier versions of .NET, then you can configure the project file to use both options.
 
-### .NET 5 and later: Use the Target Framework Moniker option
+### .NET 6 and later: Use the Target Framework Moniker option
 
-This option is supported only in projects that use .NET 5 (or a later release) and target Windows 10, version 1809 or a later OS release. By specifying a Windows OS version-specific TFM in the project file, a reference is added to the appropriate [Windows SDK targeting package](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref). For more background info about this scenario, see the blog post [Calling Windows APIs in .NET 5](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+This option is supported only in projects that use .NET 6 (or later) and target Windows 10, version 1809 or a later OS release. By specifying a Windows OS version-specific TFM in the project file, a reference is added to the appropriate [Windows SDK targeting package](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref). For more background info about this scenario, see the blog post [Calling Windows APIs in .NET](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. Your project file will look similar to this.
 
@@ -57,9 +57,9 @@ This option is supported only in projects that use .NET 5 (or a later release) a
 
 3. Save your changes and close the project file.
 
-#### WinRT APIs not supported in .NET 5 or later
+#### WinRT APIs not supported in .NET 6 or later
 
-In .NET 5 and later, there are several Windows Runtime (WinRT) APIs in the **Windows.UI** namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (**Microsoft.UI**) namespace (for example, [**Microsoft.UI.Text**](/windows/winui/api/microsoft.ui.text)). The following WinRT APIs are *not* supported on .NET 5 and later:
+In .NET 6 and later, there are several Windows Runtime (WinRT) APIs in the **Windows.UI** namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (**Microsoft.UI**) namespace (for example, [**Microsoft.UI.Text**](/windows/winui/api/microsoft.ui.text)). The following WinRT APIs are *not* supported on .NET 6 and later:
 
 * [**Windows.UI.Colors**](/uwp/api/Windows.UI.Colors) class
 * [**Windows.UI.ColorHelper**](/uwp/api/Windows.UI.ColorHelper) class
@@ -108,7 +108,7 @@ Use this option if your app uses .NET Core 3.x or .NET Framework. This option is
 
 ### Configure projects that multi-target different versions of .NET
 
-If your project multi-targets .NET 5 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), you can configure the project file to use the Target Framework Moniker (TFM) to automatically pull in the WinRT API references for .NET 5 and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
+If your project multi-targets .NET 6 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), then you can configure the project file to use the Target Framework Moniker (TFM) to automatically pull in the WinRT API references for .NET 6 (or later), and use the `Microsoft.Windows.SDK.Contracts` NuGet package for earlier versions.
 
 1. With your project open in Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**. The following example demonstrates a project file for an app that uses .NET Core 3.1.
 
@@ -127,17 +127,17 @@ If your project multi-targets .NET 5 (or later) and earlier versions (including 
 
 2. Replace the **TargetFramework** element in the file with a **TargetFrameworks** element (note the plural). In this element, specify the Target Framework Monikers (TFMs) for all the versions of .NET you want to target, separated by semi-colons. 
 
-    * For .NET 5 or later, use one of the following Target Framework Monikers (TFMs):
+    * For .NET 6 or later, use one of the following Target Framework Monikers (TFMs):
         * **net5.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
         * **net5.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
         * **net5.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
     * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
     * For .NET Framework, use **net46**.
 
-    The following example demonstrates how to multi-target .NET Core 3.1 and .NET 5 (for Windows 10, version 2004).
+    The following example demonstrates how to multi-target .NET Core 3.1 and .NET 6 (for Windows 10, version 2004).
 
     ```xml
-    <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net6.0-windows10.0.19041.0</TargetFrameworks>
     ```
 
 3. After the **PropertyGroup** element, add a **PackageReference** element that includes a conditional statement that installs the `Microsoft.Windows.SDK.Contracts` NuGet package for any versions of .NET Core 3.x or .NET Framework that your app targets. The **PackageReference** element must be a child of an **ItemGroup** element. The following example demonstrates how to do this for .NET Core 3.1.

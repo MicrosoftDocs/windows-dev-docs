@@ -28,7 +28,7 @@ To learn more about the packages your MSIX-packaged app may need when it uses th
 ## Prerequisites
 
 * For MSIX-packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
-* **C#**. .NET 5 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
+* **C#**. .NET 6 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ## Deploy the Windows App SDK framework package
 

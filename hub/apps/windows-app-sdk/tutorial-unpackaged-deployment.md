@@ -43,7 +43,7 @@ Follow these instructions to configure a C# WinUI 3 project that is non-MSIX-pac
 2. Next, configure your project.
 
     1. In **Solution Explorer**, right-click your project and choose **Edit Project File**.
-    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
+    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
 
         ```xml
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>

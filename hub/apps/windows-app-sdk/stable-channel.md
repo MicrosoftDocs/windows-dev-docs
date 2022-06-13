@@ -423,7 +423,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 #### Other limitations and known issues
 
 - **No support for Any CPU build configuration**: When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
-- **Upgrading from .NET 5 to .NET 6**: When upgrading in the Visual Studio UI, you may run into build errors. As a workaround, manually update your project file's TargetFrameworkPackage to the below:
+- **Upgrading from .NET 5 to .NET 6**: When upgrading in the Visual Studio UI, you might run into build errors. As a workaround, manually update your project file's `TargetFrameworkPackage` to the below:
 
     ```xml 
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework> 
@@ -487,7 +487,7 @@ This is a servicing release of the Windows App SDK that includes several perform
     ...
  ```
 
-This version of the Windows SDK projection will be available in an upcoming .NET 6 and .NET 5 servicing release. After that .NET SDK update is available, you should remove the `<WindowsSdkPackageVersion>` property from your project file. 
+This version of the Windows SDK projection will be available in an upcoming .NET 6 servicing release. After that .NET SDK update is available, you should remove the `<WindowsSdkPackageVersion>` property from your project file. 
 
 If you don't set this property, then you'll see an error like: `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.6 or greater."`
 
@@ -495,7 +495,7 @@ If you don't set this property, then you'll see an error like: `"Error: This ver
 
 This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release. 
 
-To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (either .NET SDK 5.0.404 or later, or .NET SDK 5.0.210 or later). You can now download the latest .NET 5 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0). If you do not have the minimum required version of the .NET SDK installed, you will see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
+To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)). If you don't have the minimum required version of the .NET SDK installed, then you''ll see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
 
 #### Bug Fixes
 For a detailed list of the performance improvements, see the [C#/WinRT 1.4.1 release notes](https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1). 
@@ -605,7 +605,7 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
-- [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
+- [Build a C# .NET app with WinUI 3 and Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
 **DWriteCore**

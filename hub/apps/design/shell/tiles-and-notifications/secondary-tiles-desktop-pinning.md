@@ -28,12 +28,12 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
 ## Initialize and pin a secondary tile using the IInitializeWithWindow interface
 
-### [C# (.NET 5 or later)](#tab/csharpnet5)
+### [C# (.NET 6 or later)](#tab/csharpnet6)
 
 > [!NOTE]
-> This section is for WinUI 3; and for WPF/WinForms with .NET 5 or later.
+> This section is for WinUI 3; and for WPF/WinForms with .NET 6 or later.
 
-1. In the project file, set the **TargetFramework** property to a value that gives you access to the Windows Runtime APIs (see [.NET 5 and later: Use the Target Framework Moniker option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option)). That includes access to the **WinRT.Interop** namespace (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp#available-via-target-framework-moniker)). For example:
+1. In the project file, set the **TargetFramework** property to a value that gives you access to the Windows Runtime APIs (see [.NET 6 and later: Use the Target Framework Moniker option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-6-and-later-use-the-target-framework-moniker-option)). That includes access to the **WinRT.Interop** namespace (see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp#available-via-target-framework-moniker)). For example:
 
     ```xml
     <PropertyGroup>

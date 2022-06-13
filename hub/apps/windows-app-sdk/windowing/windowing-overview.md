@@ -60,7 +60,7 @@ These [**AppWindowPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.w
 
 The [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class is available for *any* top-level **HWND** in your app. That means that when you're working with a UI framework you can continue to use that framework's entry point for creating a window, and attaching its content. And once you've created a window, you can use the windowing interop functions provided in the Windows App SDK to access the corresponding **AppWindow** and its methods, properties, and events.
 
-**C#**. .NET wrappers for the windowing interop functions are implemented as methods of the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class. Also see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+**C#**. .NET wrappers for the windowing interop functions are implemented as methods of the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) class. Also see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 **C++**. The interop functions are defined in the [winrt/Microsoft.ui.interop.h](/windows/windows-app-sdk/api/win32/winrt-microsoft.ui.interop/) header file.
 
@@ -76,7 +76,7 @@ Some of the benefits of using **AppWindow** even when working with a UI framewor
 
 This code example demonstrates how to retrieve an [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from a WinUI 3 window. To use the example, create a new **Blank App, Packaged (WinUI 3 in Desktop)** project, and paste the code in.
 
-**C#**. The code example uses the **WinRT.Interop.WindowNative** and the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) classes (see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)). Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
+**C#**. The code example uses the **WinRT.Interop.WindowNative** and the [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop) classes (see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)). Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
 
 For additional details on how to work with **AppWindow**, see the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
@@ -148,6 +148,6 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 ## Related topics
 
 * [Windowing functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
 * [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
 * [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)
