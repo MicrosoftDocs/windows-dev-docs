@@ -11,7 +11,7 @@ ms.custom: kr2b-contr-experiment
 
 The [winget](index.md) tool **source** command refers to the repositories that Windows Package Manager accesses. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
 
-A source repository provides the data for you to discover and install applications. Only add a new source if you trust it as a secure location.
+A source repository provides the data for you to discover and install applications. Only use sources that you trust as secure locations.
 
 Windows Package Manager specifies the following two default repositories, which you can list by using `winget source list`.
 
@@ -52,7 +52,7 @@ The  **source** command supports the following options.
 
 ## Subcommands
 
-The **source** command supports the following subcommands for manipulating the sources.
+The **source** command supports the following subcommands.
 
 | Subcommand  | Description |
 |--------------|-------------|
