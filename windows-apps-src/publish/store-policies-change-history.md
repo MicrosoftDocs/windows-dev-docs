@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 04/15/2021
+ms.date: 06/13/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -25,9 +25,57 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </thead>
 <tbody>
 </tr>
+
+<tr class="even">
+<td>June 16, 2022</td>
+<td><a href="/windows/uwp/publish/store-policies">7.16</a></td>
+<td>
+<p>Update to 10.1.1 requirements for product search terms.</p>
+
+<p>Update to 10.1.1 with new policies pertaining to product metadata including title or name, icon, screenshots, descriptions.</p>
+
+<p>Update to 10.2.2 adding clarifying language to current policy.</p>
+
+<p>Update to 10.2.9, to add in a requirement that installer binary products (.msi or .exe) must be digitally signed with a code signing certificate that chains up to a certificate issued by a Certificate Authority (CA) that is part of the Microsoft Trusted Root Program.</p>
+
+<p>Update to 10.8.7 to prohibit charging fees in the Store for open-source or other software that is generally available for free and restrict irrationally high pricing.</p>
+
+<p>Update to 10.13.1 to remove requirement that games submitted via the Creators program must use XBL.</p>
+
+<p>New 11.3.3 added policy prohibiting products whose intent is to provide content related to information, news, or current events in the real world from disseminating misinformation.</p>
+
+<p>Update to 11.11 to add reference to use of International Age Rating Coalition (IARC) questionnaire during product submission to garner appropriate product rating.</p>
+
+
+</td>
+</tr>
+
+
+<tr class="odd">
+<td>September 28, 2021</td>
+<td><a href="/windows/uwp/publish/store-policy-7-15">7.15</a></td>
+<td>
+<p>Update to 10.1.3 requirements for product search terms.</p>
+<p>Update to 10.1.5, removing prohibition on products whose primary functionality is to enable acquisition of digital goods from outside the Store.</p>
+<p>New 10.1.6 policy allowing products that are standalone digital storefronts on PC devices.</p>
+<p>Update to 10.2.1 regarding web browser requirements on console. </p>
+<p>Update to 10.13.4, prohibiting products that enable general browsing of the operating system, file systems or attached physical media file structures</p>
+<p>Update to 10.13.10, added game platform.</p>
+<p>New 11.13, added Third Party Digital Storefronts content policy. </p>
+</td>
+</tr>
+<tr class="even">
+<td>July 30, 2021</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
+<td>
+<p><b>Note</b>: The below updates were added to version 7.14 of the Store Policies on July 30, 2021. </p>
+<p>Update to 10.2.4, updated to require exception for dependency on non-Microsoft drivers or NT services.  </p>
+<p>Update to 10.14 to include application name.  </p>
+</td>
+</tr>
 <tr class="odd">
 <td>June 28, 2021</td>
-<td><a href="/windows/uwp/publish/store-policies">7.14</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-14">7.14</a></td>
 <td>
 <p>Update to 10.1.5 to allow specific additional products, adds-ons or extensions to be available from within your product.</p>
 <p>Update to 10.2, incorporating product safety testing and other product safety requirements previously included in policy 11.3.</p>
@@ -44,7 +92,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <p>Update to 10.8.6 requirements regarding usage of Microsoft recurring billing API for subscriptions of digital goods and services.</p>
 <p>Update to 10.9 requirements for notifications.</p>
 <p>Removed 10.11 mobile voice plan policy.</p>
-<p>Remove 10.12 Edge extensions policy.  Microsoft Edge Add-ons policies can be found <a href="https://aka.ms/edgedeveloperpolicies">here</a>.</p>
+<p>Remove 10.12 Edge extensions policy.  Microsoft Edge Add-ons policies can be found <a href="/microsoft-edge/extensions-chromium/store-policies/developer-policies">here</a>.</p>
 <p>Update to 11.3.2, relocating the product safety testing and other product safety requirements to 10.2.</p>
 </td>
 </tr>
@@ -70,7 +118,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 <tr class="even">
 <td>March 5, 2019</td>
-<td>7.11</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-11">7.11</a></td>
 <td><p>Updated 10.1.1 to add ownership requirements for publishing web apps.</p>
 <p>Added 10.1.5 to republish software promotion and distribution requirements.</p>
 <p>Updated 10.8.3 to apply only where apps require financial account information.</p>
