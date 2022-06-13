@@ -6825,6 +6825,10 @@
       "redirect_url": "/windows/apps/get-started/simple-photo-viewer-winui3",
       "redirect_document_id": false
     },
+      "source_path": "hub/package-manager/package/windows-package-manager-policies-change-history.md",
+      "redirect_url": "/windows/package-manager/package/windows-package-manager-policies",
+      "redirect_document_id": false
+    },
     {
       "source_path": "windows-apps-src/porting/arm64ec.md",
       "redirect_url": "/windows/arm/arm64ec",
