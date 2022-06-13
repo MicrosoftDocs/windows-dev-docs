@@ -9,9 +9,9 @@ ms.custom: kr2b-contr-experiment
 
 # Troubleshoot Windows Package Manager failures
 
-This article shows you how to get more information about failed pull requests. When Windows Package Manager processes manifest files in a pipeline, it [displays labels](winget-validation.md#pull-request-labels) to communicate validation progress. If validation fails, you can investigate the labels to understand the failure better.
+This article shows you how to get more information about failed Windows Package Manager manifest validation in a pipeline. Pull request processing [displays labels](winget-validation.md#pull-request-labels) to communicate validation progress. If validation fails, you can investigate the labels to understand the failure better.
 
-To investigate pull request failure, take the following steps:
+To investigate validation pull request failure, take the following steps:
 
 1. A pull request failure appears at the bottom of the web page with the string **Some checks were not successful**. Select the **Details** link next to a failed validation to go to the Azure Pipelines page.
 

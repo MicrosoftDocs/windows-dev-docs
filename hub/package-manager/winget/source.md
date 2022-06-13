@@ -1,7 +1,7 @@
 ---
 title: The winget source command
-description: Learn how to use the winget source command and subcommands to manage the repositories Windows Package Manager accesses.
-ms.date: 06/10/2022
+description: Use the winget source command and subcommands to list and manage the repositories Windows Package Manager accesses.
+ms.date: 06/13/2022
 ms.topic: reference
 ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
@@ -9,7 +9,7 @@ ms.custom: kr2b-contr-experiment
 
 # The winget source command
 
-The [winget](index.md) tool **source** command manages the repositories Windows Package Manager accesses. With the **source** command, you can **add**, **remove**, **list**, and **update** the repositories.
+The [winget](index.md) tool **source** command refers to the repositories that Windows Package Manager accesses. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
 
 A source repository provides the data for you to discover and install applications. Only add a new source if you trust it as a secure location.
 
@@ -70,7 +70,7 @@ The **add** subcommand adds a new source. This subcommand requires the **--name*
 Usage:
 
 ```cmd
-winget source add [-n, --name] <name> [-a] <url> [[-t] <type>]
+winget source add [-n, --name] <name> [-a, --arg] <url> [[-t, --type] <type>]
 ```
 
 For example,  `winget source add --name Contoso https://www.contoso.com/cache` adds the Contoso repository at URL `https://www.contoso.com/cache`.
@@ -171,7 +171,7 @@ winget source reset --force
 
 ### export
 
-The **export** sub-command exports the specific details for a source to a JSON file.
+The **export** sub-command exports the specific details for a source to JSON output.
 
 For example:
 
@@ -185,7 +185,7 @@ Returns the following output:
 {"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
 ```
 
-## Source agreements
+## Source agreement
 
 An individual **source** might request that the user agree to the terms presented before adding or using the repository. If a user doesn't accept or acknowledge the agreement, they won't be able to access the source.
 

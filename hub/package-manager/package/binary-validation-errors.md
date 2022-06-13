@@ -1,7 +1,7 @@
 ---
 title: Binary validation errors
 description: Learn about binary validation errors that the Windows Package Manager service reports, and how to address them.
-ms.date: 06/10/2022
+ms.date: 06/13/2022
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
