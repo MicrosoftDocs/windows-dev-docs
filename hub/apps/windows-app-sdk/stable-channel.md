@@ -31,7 +31,19 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.1
 
-The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.0. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.1. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.1.1
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.1 release.
+
+#### Bug fixes
+
+- Fixed issue causing apps to sometimes crash during a drag and drop operation. For more information see [issue 7002](https://github.com/microsoft/microsoft-ui-xaml/issues/7002) on GitHub.
+- Fixed issue causing the title bar to disappear when switching AppWindowPresenterKind from FullScreen to Default.
+- Fixed issue where Bootstrapper APIs like `ApiInformation.IsPropertyPresent` and `ApiInformation.IsMethodPresent` would cause unhandled exceptions in apps without MSIX-packaging. For more information see [issue 2382](https://github.com/microsoft/WindowsAppSDK/issues/2382) on GitHub.
+- Fixed issue causing app freeze when maximizing application with pen input.
+
 ### Version 1.1 Stable
 
 The following sections describe new and updated features, limitations, and known issues for 1.1 Stable.
@@ -142,7 +154,7 @@ For easier programming access to functionality that's implemented in USER32.dll 
 
 **Known limitations:**
 - When using the **AppWindowTitlebar** API to customize the colors of the standard title bar, the icon and text is misaligned compared to the standard title bar. For more info, see GitHub [issue 2459](https://github.com/microsoft/WindowsAppSDK/issues/2459).
-- When solving GitHub [issue 2049](https://github.com/microsoft/WindowsAppSDK/issues/2049) (seen above), we introduced the followng bug: if you apply any **AppWindowPresenter** to an **AppWindow** that you've retrieved from **GetFromWindowId**, then change a window style that's being tracked by that Presenter through calling USER32 APIs, and then try to revert back to the window's previous state by re-applying the default Presenter, the result is a window that has no title Bar. If you rely on any Presenter in your app, and use calls to USER32 for changing window styles at the time that a non-default Presenter is applied, then you might need to add a workaround to ensure correct window behavior until this bug is serviced. You can use the following code snippet as a template for how to work around the issue:
+- When solving GitHub [issue 2049](https://github.com/microsoft/WindowsAppSDK/issues/2049) (seen above), we introduced the following bug: if you apply any **AppWindowPresenter** to an **AppWindow** that you've retrieved from **GetFromWindowId**, then change a window style that's being tracked by that Presenter through calling USER32 APIs, and then try to revert back to the window's previous state by re-applying the default Presenter, the result is a window that has no title bar. If you rely on any Presenter in your app, and use calls to USER32 for changing window styles at the time that a non-default Presenter is applied, then you might need to add a workaround to ensure correct window behavior until this bug is serviced. You can use the following code snippet as a template for how to work around the issue:
 
     ```csharp
     AppWindow m_appWindow;
