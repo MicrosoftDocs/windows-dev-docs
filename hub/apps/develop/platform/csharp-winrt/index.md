@@ -19,9 +19,9 @@ For additional information, see the [C#/WinRT GitHub repo](https://aka.ms/cswinr
 
 ## Motivation for C#/WinRT
 
-[.NET Core](/dotnet/core/) is the focus for the .NET platform, and .[NET 5](/dotnet/core/dotnet-five) is the latest major release. It is an open-source, cross-platform runtime that can be used to build device, cloud, and IoT applications.
+[.NET](/dotnet/fundamentals/) (previously known as .NET Core) is an open-source, cross-platform runtime that can be used to build device, cloud, and IoT applications.
 
-Previous versions of .NET Framework and .NET Core had built-in knowledge of WinRT, a Windows-specific technology. To support the portability and efficiency goals of .NET 6+, we [lifted the WinRT projection support out of the .NET compiler and runtime](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed) and moved it into the C#/WinRT toolkit. The goal of C#/WinRT is to provide parity with the built-in WinRT support provided by earlier versions of the C# compiler and .NET runtime. For details, see [.NET mappings of Windows Runtime types](net-mappings-of-winrt-types.md).
+Previous versions of .NET Framework and .NET Core had built-in knowledge of WinRT&mdash;a Windows-specific technology. To support the portability and efficiency goals of .NET 6+, we lifted the WinRT projection support out of the .NET compiler and runtime and moved it into the C#/WinRT toolkit (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)). The goal of C#/WinRT is to provide parity with the built-in WinRT support provided by earlier versions of the C# compiler and .NET runtime. For details, see [.NET mappings of Windows Runtime types](net-mappings-of-winrt-types.md).
 
 C#/WinRT also supports components in the [Windows App SDK](/windows/apps/windows-app-sdk/), including WinUI 3. The Windows App SDK lifts native Microsoft UI controls and other native components out of the operating system. This enables app developers to use the latest controls and components on Windows 10, version 1809, and later releases.
 
