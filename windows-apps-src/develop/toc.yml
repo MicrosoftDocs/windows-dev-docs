@@ -557,23 +557,6 @@
                           href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
                         - name: Download the CAB file for an error in your desktop application
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
-                - name: Xbox One games and Xbox Live
-                  items:
-                    - name: Get Xbox Live analytics data
-                      href: ../monetize/get-xbox-live-analytics.md
-                      items:
-                        - name: Get Xbox Live achievements data
-                          href: ../monetize/get-xbox-live-achievements-data.md
-                        - name: Get Xbox Live health data
-                          href: ../monetize/get-xbox-live-health-data.md
-                        - name: Get Xbox Live Game Hub data
-                          href: ../monetize/get-xbox-live-game-hub-data.md
-                        - name: Get Xbox Live club data
-                          href: ../monetize/get-xbox-live-club-data.md
-                        - name: Get Xbox Live multiplayer data
-                          href: ../monetize/get-xbox-live-multiplayer-data.md
-                        - name: Get Xbox Live concurrent usage data
-                          href: ../monetize/get-xbox-live-concurrent-usage-data.md
             - name: Respond to reviews
               href: ../monetize/respond-to-reviews-using-windows-store-services.md
               items:
