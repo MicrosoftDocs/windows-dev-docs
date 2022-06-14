@@ -181,6 +181,18 @@ C# Windows Runtime Components, including WinUI custom controls, are now supporte
 
 The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.3. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
 
+### Version 1.0.4
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.
+
+#### Bug fixes
+
+- Fixed issue causing AppBars, when used as Page.TopAppBar or Page.BottomAppBar to not render on screen.
+- Fixed issue where apps with a package name of 12 characters or less that use a WinUI control from MUXControls.dll will immediately crash. For more information, see [issue 6360](https://github.com/microsoft/microsoft-ui-xaml/issues/6360) on GitHub.
+- Fixed touch input issues causing problems with keyboard shortcuts and other scenarios. For more information, see [issue 6291](https://github.com/microsoft/microsoft-ui-xaml/issues/6291) on GitHub.
+- Fixed issue causing apps packaged with MSIX or deployed as self-contained to fail to deploy.
+- Fixed issue causing apps to sometimes crash during a drag and drop operation. For more information see [issue 7002](https://github.com/microsoft/microsoft-ui-xaml/issues/7002) on GitHub.
+
 ### Version 1.0.3
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.
@@ -442,7 +454,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 ## Version 0.8
 
-The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.8.
+The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.10.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
