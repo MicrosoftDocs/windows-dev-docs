@@ -200,7 +200,7 @@ If your application is written in C# with .NET 6 or later, then follow these ste
 
     ```xml
     <PropertyGroup>
-      <!-- You can also target other versions of the Windows SDK and .NET, e.g. "net5.0-windows10.0.19041.0" -->
+      <!-- You can also target other versions of the Windows SDK and .NET, e.g. "net6.0-windows10.0.19041.0" -->
       <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     </PropertyGroup>
     ```

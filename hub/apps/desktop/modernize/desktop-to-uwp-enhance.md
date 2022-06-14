@@ -42,15 +42,15 @@ This option is supported only in projects that use .NET 6 (or later) and target 
 
 2. Leaving all other settings as they are, replace the value of the **TargetFramework** element with one of the following strings:
 
-    * **net5.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
-    * **net5.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
-    * **net5.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
-    * **net5.0-windows10.0.22000.0**: If your app targets Windows 11.
+    * **net6.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
+    * **net6.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
+    * **net6.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
+    * **net6.0-windows10.0.22000.0**: If your app targets Windows 11.
 
     For example, the following element is for a project that targets Windows 10, version 2004.
 
     ```xml
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     ```
     
     In later versions of .NET, you can replace the value with the relevant version, for example **net6.0-windows10.0.19041.0**.
@@ -76,7 +76,7 @@ The **TargetPlatformMinVersion** can be overridden to be less than the **TargetP
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
   </PropertyGroup>
 </Project>
@@ -128,9 +128,9 @@ If your project multi-targets .NET 6 (or later) and earlier versions (including 
 2. Replace the **TargetFramework** element in the file with a **TargetFrameworks** element (note the plural). In this element, specify the Target Framework Monikers (TFMs) for all the versions of .NET you want to target, separated by semi-colons. 
 
     * For .NET 6 or later, use one of the following Target Framework Monikers (TFMs):
-        * **net5.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
-        * **net5.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
-        * **net5.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
+        * **net6.0-windows10.0.17763.0**: If your app targets Windows 10, version 1809.
+        * **net6.0-windows10.0.18362.0**: If your app targets Windows 10, version 1903.
+        * **net6.0-windows10.0.19041.0**: If your app targets Windows 10, version 2004.
     * For .NET Core 3.x, use **netcoreapp3.0** or **netcoreapp3.1**.
     * For .NET Framework, use **net46**.
 
@@ -156,7 +156,7 @@ If your project multi-targets .NET 6 (or later) and earlier versions (including 
     <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
       <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;net6.0-windows10.0.19041.0</TargetFrameworks>
         <UseWPF>true</UseWPF>
       </PropertyGroup>
       <ItemGroup>
