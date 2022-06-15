@@ -30,7 +30,7 @@ The current release of the single-project MSIX feature supports [WinUI 3 templat
 
 ### Limitations
 
-Single-project MSIX only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, you must continue using a Windows Application Packaging Project in your solution.
+Single-project MSIX supports only a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, you must continue using a Windows Application Packaging Project in your solution.
 
 ## Install the single-project MSIX packaging tools
 
@@ -210,6 +210,10 @@ There's a full example in the form of [a GitHub Action that builds a WinUI 3 sin
 
 > [!NOTE]
 > Single-project MSIX doesn't currently support producing MSIX bundles (see [Bundling MSIX packages](/windows/msix/package/bundling-overview)). It produces only a single MSIX. But you can bundle `.msix` files into an MSIX bundle by using the [MSIX Bundler](https://github.com/marketplace/actions/msix-bundler) GitHub Action.
+
+## How packaged desktop apps run on Windows
+
+For a deeper dive on what happens to files and registry entries when you create a Windows app package for your desktop application, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
 
 ## Provide feedback
 
