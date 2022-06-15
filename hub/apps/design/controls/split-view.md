@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 A split view control has an expandable/collapsible pane and a content area.
 
-> **Important APIs**: [SplitView class](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **Important APIs**: [SplitView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.SplitView)
 
 Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 

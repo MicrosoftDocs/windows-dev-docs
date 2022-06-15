@@ -22,7 +22,7 @@ TextBox has a number of features that can simplify text entry. It comes with a f
 
 ## Is this the right control?
 
-Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](/windows/winui/api/microsoft.ui.xaml.controls.textbox.text) property to get and set the text in a TextBox.
+Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text) property to get and set the text in a TextBox.
 
 You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [TextBlock](text-block.md) instead.
 
@@ -93,7 +93,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [TextBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBox), [Text property](/windows/winui/api/microsoft.ui.xaml.controls.textbox.text)
+> - **Important APIs:** [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox).
@@ -121,7 +121,7 @@ Here's the text box that results from this XAML.
 
 ### Use a text box for data input in a form
 
-It's common to use a text box to accept data input on a form, and use the [Text](/windows/winui/api/microsoft.ui.xaml.controls.textbox.text) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](/windows/winui/api/microsoft.ui.xaml.controls.textbox.textchanged) or [TextChanging](/windows/winui/api/microsoft.ui.xaml.controls.textbox.textchanging) event if you need to do something when the text changes.
+It's common to use a text box to accept data input on a form, and use the [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged) or [TextChanging](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanging) event if you need to do something when the text changes.
 
 This example shows how to get and set the current content of a text box.
 
@@ -135,9 +135,9 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-You can add a [Header](/windows/winui/api/microsoft.ui.xaml.controls.textbox.header) (or label) and [PlaceholderText](/windows/winui/api/microsoft.ui.xaml.controls.textbox.placeholdertext) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](/windows/winui/api/microsoft.ui.xaml.controls.textbox.headertemplate) property instead of Header. *For design info, see Guidelines for labels*.
+You can add a [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.header) (or label) and [PlaceholderText](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.placeholdertext) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.headertemplate) property instead of Header. *For design info, see Guidelines for labels*.
 
-You can restrict the number of characters the user can type by setting the [MaxLength](/windows/winui/api/microsoft.ui.xaml.controls.textbox.maxlength) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](/windows/winui/api/microsoft.ui.xaml.controls.textbox.paste) event to modify pasted text if this is important for your app.
+You can restrict the number of characters the user can type by setting the [MaxLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.maxlength) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.paste) event to modify pasted text if this is important for your app.
 
 The text box includes a clear all button ("X") that appears when text is entered in the box. When a user clicks the "X", the text in the text box is cleared. It looks like this.
 
@@ -166,7 +166,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 ### Make a text box read-only
 
-You can make a text box read-only by setting the [IsReadOnly](/windows/winui/api/microsoft.ui.xaml.controls.textbox.isreadonly) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.
+You can make a text box read-only by setting the [IsReadOnly](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.isreadonly) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.
 
 You can make a TextBox read-only by setting the IsReadOnly property to true. For example, you might have a TextBox for a user to enter comments that is enabled only under certain conditions. You can make the TextBox read-only until the conditions are met. If you need only to display text, consider using a TextBlock or RichTextBlock instead.
 
@@ -178,15 +178,15 @@ IsEnabled
 
 There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.
 
-- To let the text box allow and display the newline or return characters, set the [AcceptsReturn](/windows/winui/api/microsoft.ui.xaml.controls.textbox.acceptsreturn) property to **true**.
-- To enable text wrapping, set the [TextWrapping](/windows/winui/api/microsoft.ui.xaml.controls.textbox.textwrapping) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
+- To let the text box allow and display the newline or return characters, set the [AcceptsReturn](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.acceptsreturn) property to **true**.
+- To enable text wrapping, set the [TextWrapping](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textwrapping) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
 
 > [!NOTE]
 > TextBox and RichEditBox don't support the **WrapWholeWords** value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.
 
-A multi-line text box will continue to grow vertically as text is entered unless it's constrained by its [Height](/windows/winui/api/microsoft.ui.xaml.frameworkelement.height) or [MaxHeight](/windows/winui/api/microsoft.ui.xaml.frameworkelement.maxheight) property, or by a parent container. You should test that a multi-line text box doesn't grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
+A multi-line text box will continue to grow vertically as text is entered unless it's constrained by its [Height](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.height) or [MaxHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.maxheight) property, or by a parent container. You should test that a multi-line text box doesn't grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
 
-Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](/windows/winui/api/microsoft.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) to **Auto** on the embedded ScrollViewer, as shown here.
+Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) to **Auto** on the embedded ScrollViewer, as shown here.
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -210,9 +210,9 @@ Here's what the text box looks like after text is added.
 
 ### Format the text display
 
-Use the [TextAlignment](/windows/winui/api/microsoft.ui.xaml.controls.textbox.textalignment) property to align text within a text box. To align the text box within the layout of the page, use the [HorizontalAlignment](/windows/winui/api/microsoft.ui.xaml.frameworkelement.horizontalalignment) and [VerticalAlignment](/windows/winui/api/microsoft.ui.xaml.frameworkelement.verticalalignment) properties.
+Use the [TextAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textalignment) property to align text within a text box. To align the text box within the layout of the page, use the [HorizontalAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment) and [VerticalAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.verticalalignment) properties.
 
-While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard [Control](/windows/winui/api/microsoft.UI.Xaml.Controls.Control) properties like [FontFamily](/windows/winui/api/microsoft.ui.xaml.controls.control.fontfamily), [FontSize](/windows/winui/api/microsoft.ui.xaml.controls.control.fontsize), [FontStyle](/windows/winui/api/microsoft.ui.xaml.controls.control.fontstyle), [Background](/windows/winui/api/microsoft.ui.xaml.controls.control.background), [Foreground](/windows/winui/api/microsoft.ui.xaml.controls.control.foreground), and [CharacterSpacing](/windows/winui/api/microsoft.ui.xaml.controls.control.characterspacing) to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.
+While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard [Control](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Control) properties like [FontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontfamily), [FontSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontsize), [FontStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontstyle), [Background](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.background), [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground), and [CharacterSpacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.characterspacing) to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.
 
 This example shows a read-only text box with several properties set to customize the appearance of the text.
 
@@ -256,15 +256,15 @@ Paste | the clipboard contains text.
 Select all | the TextBox contains text.
 Undo | text has been changed.
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/winui/api/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui2gallery:/item/RichEditBox">WinUI 2 Gallery</a>. For design info, see Guidelines for [context menus](menus.md).
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui2gallery:/item/RichEditBox">WinUI 2 Gallery</a>. For design info, see Guidelines for [context menus](menus.md).
 
 ### Select, copy, and paste
 
-You can get or set the selected text in a text box using the [SelectedText](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectedtext) property. Use the [SelectionStart](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionstart) and [SelectionLength](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionlength) properties, and the [Select](/windows/winui/api/microsoft.ui.xaml.controls.textbox.select) and [SelectAll](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectall) methods, to manipulate the text selection. Handle the [SelectionChanged](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionchanged) event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the [SelectionHighlightColor](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionhighlightcolor) property.
+You can get or set the selected text in a text box using the [SelectedText](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectedtext) property. Use the [SelectionStart](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionstart) and [SelectionLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionlength) properties, and the [Select](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.select) and [SelectAll](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectall) methods, to manipulate the text selection. Handle the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionchanged) event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the [SelectionHighlightColor](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionhighlightcolor) property.
 
-TextBox supports copy and paste by default. You can provide custom handling of the [Paste](/windows/winui/api/microsoft.ui.xaml.controls.textbox.paste) event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the [Paste](/windows/winui/api/microsoft.ui.xaml.controls.textbox.paste) event.
+TextBox supports copy and paste by default. You can provide custom handling of the [Paste](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.paste) event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the [Paste](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.paste) event.
 
-Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the [SelectionLength](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionlength) and [SelectionStart](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionstart) properties are shown in two text blocks. This is done using the [SelectionChanged](/windows/winui/api/microsoft.ui.xaml.controls.textbox.selectionchanged) event.
+Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the [SelectionLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionlength) and [SelectionStart](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionstart) properties are shown in two text blocks. This is done using the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionchanged) event.
 
 ```xaml
 <StackPanel>
@@ -298,11 +298,11 @@ To help users to enter data using the touch keyboard, or Soft Input Panel (SIP),
 
 The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
 
-For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](/windows/winui/api/microsoft.ui.xaml.controls.textbox.inputscope) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
+For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputscope) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
 
 > **Important**&nbsp;&nbsp;The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
 
-Other properties that affect the touch keyboard are [IsSpellCheckEnabled](/windows/winui/api/microsoft.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](/windows/winui/api/microsoft.ui.xaml.controls.textbox.istextpredictionenabled), and [PreventKeyboardDisplayOnProgrammaticFocus](/windows/winui/api/microsoft.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
+Other properties that affect the touch keyboard are [IsSpellCheckEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.istextpredictionenabled), and [PreventKeyboardDisplayOnProgrammaticFocus](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
 
 For more info and examples, see [Use input scope to change the touch keyboard](../input/use-input-scope-to-change-the-touch-keyboard.md) and the property documentation.
 
@@ -316,6 +316,6 @@ For more info and examples, see [Use input scope to change the touch keyboard](.
 - [Guidelines for spell checking](text-controls.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
 - [Guidelines for text input](text-controls.md)
-- [TextBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.TextBox)
-- [PasswordBox class](/windows/winui/api/microsoft.UI.Xaml.Controls.PasswordBox)
+- [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
+- [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

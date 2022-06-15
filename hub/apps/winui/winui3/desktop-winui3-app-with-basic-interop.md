@@ -1,6 +1,6 @@
 ---
-description: Build a C# .NET 5 and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
-title: Build a C# .NET 5 app with WinUI 3 and Win32 interop
+description: Build a C# .NET and C++ desktop (Win32) application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
+title: Build a C# .NET app with WinUI 3 and Win32 interop
 ms.date: 08/02/2021
 ms.topic: article
 keywords: windows 10, windows 11, uwp, COM, win32, winui, interop
@@ -10,35 +10,24 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Build a C# .NET 5 app with WinUI 3 and Win32 interop
+# Build a C# .NET app with WinUI 3 and Win32 interop
 
-In this article, we step through how to build a basic **C# .NET 5** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
+In this article, we step through how to build a basic **C# .NET** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 
 ## Prerequisites
 
-1. Set up your development environment and install the latest Windows App SDK VSIX from [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
-2. Test your configuration&mdash;[Create your first WinUI 3 project](create-your-first-winui3-app.md). 
+1. Set up your development environment as described in [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
+2. Test your configuration by following along with the steps in [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
-## Basic managed C#/.NET 5 app
+## Basic managed C#/.NET app
 
 For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of modules loaded in the current process.
 
-We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)), but before we start, lets have a look at the structure and content of the template app.
-
-### The application solution
-
-By default, the Visual Studio Solution for an app contains two projects: The application itself, and another for creating an [MSIX](/windows/msix) app package (see [WinUI 3 templates in Visual Studio](winui-project-templates-in-visual-studio.md) for more details).
-
-:::image type="content" source="images/build-basic/solution-explorer-pinvoke.png" alt-text="Screenshot of the Visual Studio Solution Explorer showing the file structure of the initial template app.":::<br/>*Solution Explorer showing the file structure of the initial template app.*
-
-> [!NOTE]
-> At this time, only packaged apps can be deployed using the [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md).
->
-> [Deploying unpackaged apps that use the Windows App SDK](../../windows-app-sdk/deploy-unpackaged-apps.md) is supported in the [Experimental release channel for the Windows App SDK](../../windows-app-sdk/experimental-channel.md).
+We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)). Also see [WinUI 3 templates in Visual Studio](winui-project-templates-in-visual-studio.md).
 
 ### The MainWindow.xaml file
 
-With WinUI 3, you can now create instances of the [Window](/windows/winui/api/microsoft.ui.xaml.window) class in XAML markup.
+With WinUI 3, you can create instances of the [Window](/windows/winui/api/microsoft.ui.xaml.window) class in XAML markup.
 
 The XAML [Window](/windows/winui/api/microsoft.ui.xaml.window) class has been extended to support desktop windows, turning it into an abstraction of each of the low-level window implementations used by the UWP and desktop app models. Specifically, CoreWindow for UWP and window handles (or HWNDs) for Win32.
 

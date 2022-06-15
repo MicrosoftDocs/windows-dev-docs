@@ -3,7 +3,7 @@ title: System requirements for Windows app development
 description: This article provides information about minimum system requirements for tools required for developing Windows apps.
 ms.topic: article
 ms.date: 07/26/2021
-keywords: windows win32, windows app development, Windows App SDK 
+keywords: windows win32, windows app development, Windows App SDK
 ms.author: zafaraj
 author: zaryaf
 ms.localizationpriority: medium
@@ -48,9 +48,7 @@ The Windows App SDK has these system requirements:
 
 - Windows SDK version 2004 (build 19041) and later. This is installed with Visual Studio 2019 and Visual Studio 2022 by default.
 
-- Building .NET apps also requires:
-  - .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
-  - .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
+- Building .NET apps also requires .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)).
 
 ### Visual Studio support for WinUI 3 tools
 

@@ -1,17 +1,17 @@
 ---
-title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5 and later apps
-description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET 5 or later projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET 5 or later applications.
+title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
+description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
 ms.date: 11/19/2021
 ms.topic: article
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
 ---
 
-# Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET 5 and later apps
+# Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 
-In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET 5 or later projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET 5 or later applications.
+In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
 
-In .NET 5 and later, consumption of Windows metadata (WinMD) files is no longer supported (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)). Instead, the C#/WinRT tool can be used to generate a projection assembly for any WinMD file, which then enables consumption of WinRT components from .NET 5 and later applications. A projection assembly is also known as an interop assembly. This walkthrough shows you how to do the following:
+In .NET 6 and later, consumption of Windows metadata (WinMD) files is no longer supported (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)). Instead, the C#/WinRT tool can be used to generate a projection assembly for any WinMD file, which then enables consumption of WinRT components from .NET applications. A projection assembly is also known as an interop assembly. This walkthrough shows you how to do the following:
 
 * Use the [C#/WinRT package](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) to generate a C# projection from a C++/WinRT component.
 * Distribute the component, along with the projection assembly, as a NuGet package.
@@ -22,7 +22,7 @@ In .NET 5 and later, consumption of Windows metadata (WinMD) files is no longer 
 This walkthrough and the corresponding sample require the following tools and components:
 
 * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) (or Visual Studio 2019) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
-* [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0) or [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0).
+* [.NET 6.0 SDK](https://dotnet.microsoft.com/download/) or later.
 
 **Visual Studio 2019** only. The [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), which gives you C++/WinRT project templates in Visual Studio. The project templates are built in to Visual Studio 2022.
 
@@ -174,7 +174,7 @@ To distribute the projection assembly for .NET application developers, you can a
     > [!NOTE]
     > If you prefer generating a package separately, then you can also choose to run the `nuget.exe` tool from the command line. For more information about creating a NuGet package, see [Create a package using the nuget.exe CLI](/nuget/create-packages/creating-a-package).
 
-3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties, and paste the following code. The snippet below is an example NuGet spec for distributing **SimpleMathComponent** to multiple target frameworks. Note that projection assembly, **SimpleMathProjection.dll**, is specified instead of **SimpleMathComponent.winmd** for the target `lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll`. This behavior is new in .NET 5 and later, and is enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be distributed, and will be loaded at runtime.
+3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties, and paste the following code. The snippet below is an example NuGet spec for distributing **SimpleMathComponent** to multiple target frameworks. Note that projection assembly, **SimpleMathProjection.dll**, is specified instead of **SimpleMathComponent.winmd** for the target `lib\net6.0-windows10.0.19041.0\SimpleMathProjection.dll`. This behavior is new in .NET 6 and later, and is enabled by C#/WinRT. The implementation assembly, `SimpleMathComponent.dll`, must also be distributed, and will be loaded at runtime.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

@@ -1025,9 +1025,12 @@ new ToastContentBuilder()
 <toast scenario="incomingCall" launch="app-defined-string">
 
     ...
-
+    <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
+    <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
+    <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
 </toast>
 ```
+
 
 ---
 

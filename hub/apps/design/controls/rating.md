@@ -45,7 +45,7 @@ The RatingControl for UWP apps is included as part of the Windows UI Library 2. 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-> - **WinUI APIs:** [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> - **WinUI 2 Apis:** [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 > - [Open the WinUI 2 Gallery app and see RatingControl in action](winui2gallery:/item/RatingControl). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 
@@ -63,7 +63,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [RatingControl class](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> - **Important APIs**: [RatingControl class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ratingcontrol)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see RatingControl in action](winui3gallery:/item/RatingControl).

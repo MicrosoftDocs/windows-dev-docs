@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.
 
-> **Important APIs**: [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged interface](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Important APIs**: [ICommand interface](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged interface](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged)
 
 ![Use a variety of inputs to perform the Favorite command](images/contextual-command-add-favorites.png)
 
@@ -86,13 +86,13 @@ public class PodcastObject : INotifyPropertyChanged
 }
 ```
 
-Notice that the PodcastObject implements [INotifyPropertyChanged](/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) to respond to property changes when the user toggles the IsFavorite property.
+Notice that the PodcastObject implements [INotifyPropertyChanged](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.INotifyPropertyChanged) to respond to property changes when the user toggles the IsFavorite property.
 
 ## Defining commands with the ICommand interface
 
-The [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand) helps you to define a command that's  available for multiple input types. For example, instead of writing the same code for a delete command in two different event handlers, one for when the user presses the Delete key and one for when the user right clicks "Delete" in a context menu, you can implement your delete logic once, as an [ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand),  and then make it available to different input types.
+The [ICommand interface](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand) helps you to define a command that's  available for multiple input types. For example, instead of writing the same code for a delete command in two different event handlers, one for when the user presses the Delete key and one for when the user right clicks "Delete" in a context menu, you can implement your delete logic once, as an [ICommand](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand),  and then make it available to different input types.
 
-We need to define the ICommand that represents the "Favorite" action. We will use the command's [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.
+We need to define the ICommand that represents the "Favorite" action. We will use the command's [Execute](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand.Execute) method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -119,7 +119,7 @@ To use the same command with multiple collections and elements, you can store th
 </Application.Resources>
 ```
 
-To execute the command, you call its [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) method.
+To execute the command, you call its [Execute](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand.Execute) method.
 
 ```csharp
 // Favorite the item using the defined command
@@ -130,7 +130,7 @@ favoriteCommand.Execute(PodcastObject);
 
 ## Creating a UserControl to respond to a variety of inputs
 
-When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) for the item and using it to define your items' context menu and event handlers.
+When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a [UserControl](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.UserControl) for the item and using it to define your items' context menu and event handlers.
 
 To create a UserControl in Visual Studio:
 1. In the Solution Explorer, right click the project. A context menu appears.
@@ -143,7 +143,7 @@ In our podcast example, each podcast will be displayed in a list, which will exp
 - Show a hover button
 - Perform a swipe gesture
 
-In order to encapsulate these behaviors and use the FavoriteCommand, let's create a new [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl) named "PodcastUserControl" to represent a podcast in the list.
+In order to encapsulate these behaviors and use the FavoriteCommand, let's create a new [UserControl](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.UserControl) named "PodcastUserControl" to represent a podcast in the list.
 
 The PodcastUserControl displays the fields of the PodcastObject as TextBlocks, and responds to various user interactions. We will reference and expand upon the PodcastUserControl throughout this article.
 
@@ -238,7 +238,7 @@ The user can invoke context menus using these "context actions":
 
 ### ContextFlyout
 
-The [ContextFlyout property](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a "context action" as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
+The [ContextFlyout property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a "context action" as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
 
 See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use [menu flyout](menus.md) vs. [command bar flyout](command-bar-flyout.md).
 
@@ -259,7 +259,7 @@ For this example, we will use MenuFlyout and will start by adding a ContextFlyou
 
 ```
 
-Note that you can also use the [ContextRequested](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) event to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
+Note that you can also use the [ContextRequested](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextRequested) event to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
 
 ## Creating input accelerators
 
@@ -275,7 +275,7 @@ In the podcast app, the frequently performed command is the "Favorite" command.
 
 Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a [tooltip](tooltips.md) to teach the user about the shortcut command.
 
-Your app can respond when the user presses a key using the [KeyDown](/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
+Your app can respond when the user presses a key using the [KeyDown](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
 
 This example walks through how to add the KeyDown handler to the PodcastUserControl to favorite a podcast when the user presses Ctrl+S or F. It uses the same command as before.
 
@@ -337,7 +337,7 @@ In this example, the Favorite command is represented by a button defined directl
 </UserControl>
 ```
 
-The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) and [PointerExited](/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) events on the PodcastUserControl.
+The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.PointerEnteredEvent) and [PointerExited](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.PointerExitedEvent) events on the PodcastUserControl.
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -442,12 +442,12 @@ To optimize your app for pen input, see the [pen and stylus interaction](../inpu
 * Make sure that users can access all commands from all types of Windows devices.
 * Include a context menu that provides access to all the commands available for a collection item.
 * Provide input accelerators for frequently-used commands.
-* Use the [ICommand interface](/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands.
+* Use the [ICommand interface](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand) to implement commands.
 
 ## Related topics
 
 * [Command design basics for Windows apps](../basics/commanding-basics.md)
-* [ICommand Interface](/uwp/api/Windows.UI.Xaml.Input.ICommand)
+* [ICommand Interface](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand)
 * [Menus and context menus](menus-and-context-menus.md)
 * [Swipe](swipe.md)
 * [Pull to refresh](pull-to-refresh.md)

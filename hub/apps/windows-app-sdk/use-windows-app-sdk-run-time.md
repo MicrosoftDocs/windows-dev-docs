@@ -79,18 +79,44 @@ This function removes the changes to the current process that were made by a cal
 
 This function also shuts down the Dynamic Dependency Lifetime Manager (DDLM) so that Windows can service the framework package as necessary.
 
-<!-- TODO for 1.1: ## C++ wrapper for the bootstrapper API
-
-A C++ wrapper for the bootstrapper API is available starting in Windows App SDK 1.1. -->
-
 ## .NET wrapper for the bootstrapper API
 
 Although you can call the C/C++ bootstrapper API directly from .NET apps, that requires the use of [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions) to call the functions. In Windows App SDK 1.0 and later releases, a .NET wrapper for the bootstrapper API is available in the `Microsoft.WindowsAppRuntime.Bootstrap.Net.dll` assembly. That assembly provides an easier and more natural API for .NET developers to access the bootstrapper's functionality. The **Bootstrap** class provides static **Initialize**, **TryInitialize**, and **Shutdown** functions that wrap calls to the [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [**MddBootstrapShutdown**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions for most common scenarios. For an example that demonstrates how to use the .NET wrapper for the bootstrapper API, see the C# instructions in [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 For more information about the .NET wrapper for the bootstrapper API, see these resources:
 
+- [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/).
 - [Section 6.1.4](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md#614-microsoftwindowsapplicationmodeldynamicdependency-c) of the dynamic dependencies specification.
 - [Bootstrap.cs](https://github.com/microsoft/WindowsAppSDK/blob/main/dev/Bootstrap/CS/Microsoft.WindowsAppRuntime.Bootstrap.Net/Bootstrap.cs): The open source implementation of the .NET wrapper for the bootstrapper API.
+
+## C++ wrapper for the bootstrapper API
+
+A C++ wrapper for the bootstrapper API is available starting in Windows App SDK 1.1.
+
+See [Bootstrapper C++ API](/windows/apps/api-reference/bootstrapper-cpp-api/).
+
+## Declare OS compatibility in your application manifest
+
+To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior, you should include a [side-by-side application manifest](/windows/win32/sbscs/application-manifests) with your non-MSIX-packaged app (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build).
+
+If you don't already have a side-by-side application manifest in your project, then add a new XML file to your project, and name it `app.manifest`. Add to it the **compatibility** element and the child elements shown in the following example. These values control the quirks level for the components running in your app's process.
+
+Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows that you're targeting (must be 10.0.17763.0 or a later release). Note that setting a higher value means that older versions of Windows won't run your app properly because every Windows release knows only of versions before it. So if you want your app to run on Windows 10, version 1809 (10.0; Build 17763), then you should either leave the 10.0.17763.0 value as is, or add multiple **maxversiontested** elements for the different values that your app supports.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+        <application>
+            <!-- Windows 10, version 1809 (10.0; Build 17763) -->
+            <maxversiontested Id="10.0.17763.0"/>
+            <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+        </application>
+    </compatibility>
+</assembly>
+```
+
+The side-by-side application manifest must exist in the same directory as the executable file for your desktop app; and by convention it should have the same name as your app's executable file, with the `.manifest` extension appended to it. For example, if your app's executable name is `ContosoPhotoStore`, then the application manifest filename should be `ContosoPhotoStore.exe.manifest`.
 
 ## Related topics
 

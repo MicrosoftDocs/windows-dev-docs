@@ -23,7 +23,7 @@ For more info about choosing the right control, see the [Date and time controls]
 
 ## Examples
 
-The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open. You can specify a startup view by setting the [DisplayMode](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.displaymode) property.
+The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open. You can specify a startup view by setting the [DisplayMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.displaymode) property.
 
 ![The 3 views of a calendar view](images/calendar-view-3-views.png)
 
@@ -46,7 +46,7 @@ We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the 
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [CalendarView class](/windows/winui/api/microsoft.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selecteddateschanged)
+> - **Important APIs:** [CalendarView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView).
@@ -65,9 +65,9 @@ The resulting calendar view looks like this:
 
 ### Selecting dates
 
-By default, the [SelectionMode](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selectionmode) property is set to **Single**. This lets a user pick a single date in the calendar. Set SelectionMode to **None** to disable date selection.
+By default, the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmode) property is set to **Single**. This lets a user pick a single date in the calendar. Set SelectionMode to **None** to disable date selection.
 
-Set SelectionMode to **Multiple** to let a user select multiple dates. You can select multiple dates programmatically by adding [DateTime](/dotnet/api/system.datetime)/[DateTimeOffset](/dotnet/api/system.datetimeoffset) objects to the [SelectedDates](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selecteddates) collection, as shown here:
+Set SelectionMode to **Multiple** to let a user select multiple dates. You can select multiple dates programmatically by adding [DateTime](/dotnet/api/system.datetime)/[DateTimeOffset](/dotnet/api/system.datetimeoffset) objects to the [SelectedDates](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddates) collection, as shown here:
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -76,7 +76,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 A user can deselect a selected date by clicking or tapping it in the calendar grid.
 
-You can handle the [SelectedDatesChanged](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selecteddateschanged) event to be notified when the [SelectedDates](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selecteddates) collection has changed.
+You can handle the [SelectedDatesChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged) event to be notified when the [SelectedDates](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddates) collection has changed.
 
 > [!NOTE]
 > For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
@@ -86,9 +86,9 @@ You can handle the [SelectedDatesChanged](/windows/winui/api/microsoft.ui.xaml.c
 The calendar view is composed of both XAML elements defined in the ControlTemplate and visual elements rendered directly by the control.
 
 - The XAML elements defined in the control template include the border that encloses the control, the header, previous and next buttons, and DayOfWeek elements. You can style and re-template these elements like any XAML control.
-- The calendar grid is composed of [CalendarViewDayItem](/windows/winui/api/microsoft.UI.Xaml.Controls.CalendarViewDayItem) objects. You can't style or re-template these elements, but various properties are provided to let you to customize their appearance.
+- The calendar grid is composed of [CalendarViewDayItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarViewDayItem) objects. You can't style or re-template these elements, but various properties are provided to let you to customize their appearance.
 
-This diagram shows the elements that make up the month view of the calendar. For more info, see the Remarks on the [CalendarViewDayItem](/windows/winui/api/microsoft.UI.Xaml.Controls.CalendarViewDayItem) class.
+This diagram shows the elements that make up the month view of the calendar. For more info, see the Remarks on the [CalendarViewDayItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarViewDayItem) class.
 
 ![The elements of a calendar month view](images/calendar-view-month-elements.png)
 
@@ -96,19 +96,19 @@ This table lists the properties you can change to modify the appearance of calen
 
 Element | Properties
 --------|-----------
-DayOfWeek | [DayOfWeekFormat](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.dayofweekformat)
-CalendarItem | [CalendarItemBackground](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.calendaritembackground), [CalendarItemBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.calendaritemborderbrush), [CalendarItemBorderThickness](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.calendaritemborderthickness), [CalendarItemForeground](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.calendaritemforeground)
-DayItem | [DayItemFontFamily](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.dayitemfontfamily), [DayItemFontSize](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.dayitemfontsize), [DayItemFontStyle](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.dayitemfontstyle), [DayItemFontWeight](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.dayitemfontweight), [HorizontalDayItemAlignment](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.horizontaldayitemalignment), [VerticalDayItemAlignment](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.verticaldayitemalignment), [CalendarViewDayItemStyle](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemstyle)
-MonthYearItem (in the year and decade views, equivalent to DayItem) | [MonthYearItemFontFamily](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.monthyearitemfontfamily), [MonthYearItemFontSize](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.monthyearitemfontsize), [MonthYearItemFontStyle](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.monthyearitemfontstyle), [MonthYearItemFontWeight](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.monthyearitemfontweight)
-FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily), [FirstOfMonthLabelFontSize](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontsize), [FirstOfMonthLabelFontStyle](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle), [FirstOfMonthLabelFontWeight](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontweight), [HorizontalFirstOfMonthLabelAlignment](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment), [VerticalFirstOfMonthLabelAlignment](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment), [IsGroupLabelVisible](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.isgrouplabelvisible)
-FirstofYearDecadeLabel (in the year and decade views, equivalent to FirstOfMonthLabel) | [FirstOfYearDecadeLabelFontFamily](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily), [FirstOfYearDecadeLabelFontSize](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize), [FirstOfYearDecadeLabelFontStyle](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle), [FirstOfYearDecadeLabelFontWeight](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)
-Visual State Borders | [FocusBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.focusborderbrush), [HoverBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.hoverborderbrush), [PressedBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.pressedborderbrush), [SelectedBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selectedborderbrush), [SelectedForeground](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selectedforeground), [SelectedHoverBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selectedhoverborderbrush), [SelectedPressedBorderBrush](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.selectedpressedborderbrush)
-OutofScope | [IsOutOfScopeEnabled](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.isoutofscopeenabled), [OutOfScopeBackground](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.outofscopebackground), [OutOfScopeForeground](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.outofscopeforeground)
-Today | [IsTodayHighlighted](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.istodayhighlighted), [TodayFontWeight](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.todayfontweight), [TodayForeground](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.todayforeground)
+DayOfWeek | [DayOfWeekFormat](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayofweekformat)
+CalendarItem | [CalendarItemBackground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritembackground), [CalendarItemBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderbrush), [CalendarItemBorderThickness](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderthickness), [CalendarItemForeground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemforeground)
+DayItem | [DayItemFontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontfamily), [DayItemFontSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontsize), [DayItemFontStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontstyle), [DayItemFontWeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontweight), [HorizontalDayItemAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontaldayitemalignment), [VerticalDayItemAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticaldayitemalignment), [CalendarViewDayItemStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemstyle)
+MonthYearItem (in the year and decade views, equivalent to DayItem) | [MonthYearItemFontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontfamily), [MonthYearItemFontSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontsize), [MonthYearItemFontStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontstyle), [MonthYearItemFontWeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontweight)
+FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily), [FirstOfMonthLabelFontSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontsize), [FirstOfMonthLabelFontStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle), [FirstOfMonthLabelFontWeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontweight), [HorizontalFirstOfMonthLabelAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment), [VerticalFirstOfMonthLabelAlignment](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment), [IsGroupLabelVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isgrouplabelvisible)
+FirstofYearDecadeLabel (in the year and decade views, equivalent to FirstOfMonthLabel) | [FirstOfYearDecadeLabelFontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily), [FirstOfYearDecadeLabelFontSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize), [FirstOfYearDecadeLabelFontStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle), [FirstOfYearDecadeLabelFontWeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)
+Visual State Borders | [FocusBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.focusborderbrush), [HoverBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.hoverborderbrush), [PressedBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.pressedborderbrush), [SelectedBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedborderbrush), [SelectedForeground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedforeground), [SelectedHoverBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedhoverborderbrush), [SelectedPressedBorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedpressedborderbrush)
+OutofScope | [IsOutOfScopeEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isoutofscopeenabled), [OutOfScopeBackground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopebackground), [OutOfScopeForeground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopeforeground)
+Today | [IsTodayHighlighted](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.istodayhighlighted), [TodayFontWeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayfontweight), [TodayForeground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayforeground)
 
- By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the [NumberOfWeeksInView](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.numberofweeksinview) property. The minimum number of weeks to show is 2; the maximum is 8.
+ By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the [NumberOfWeeksInView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.numberofweeksinview) property. The minimum number of weeks to show is 2; the maximum is 8.
 
-By default, the year and decade views show in a 4x4 grid. To change the number of rows or columns, call [SetYearDecadeDisplayDimensions](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions) with the your desired number of rows and columns. This will change the grid for both the year and decade views.
+By default, the year and decade views show in a 4x4 grid. To change the number of rows or columns, call [SetYearDecadeDisplayDimensions](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions) with the your desired number of rows and columns. This will change the grid for both the year and decade views.
 
 Here, the year and decade views are set to show in a 3x4 grid.
 
@@ -116,7 +116,7 @@ Here, the year and decade views are set to show in a 3x4 grid.
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-By default, the minimum date shown in the calendar view is 100 years prior to the current date, and the maximum date shown is 100 years past the current date. You can change the minimum and maximum dates that the calendar shows by setting the [MinDate](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.mindate) and [MaxDate](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.maxdate) properties.
+By default, the minimum date shown in the calendar view is 100 years prior to the current date, and the maximum date shown is 100 years past the current date. You can change the minimum and maximum dates that the calendar shows by setting the [MinDate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.mindate) and [MaxDate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.maxdate) properties.
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -125,11 +125,11 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ### Updating calendar day items
 
-Each day in the calendar is represented by a [CalendarViewDayItem](/windows/winui/api/microsoft.UI.Xaml.Controls.CalendarViewDayItem) object. To access an individual day item and use its properties and methods, handle the [CalendarViewDayItemChanging](/windows/winui/api/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemchanging) event and use the Item property of the event args to access the CalendarViewDayItem.
+Each day in the calendar is represented by a [CalendarViewDayItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarViewDayItem) object. To access an individual day item and use its properties and methods, handle the [CalendarViewDayItemChanging](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemchanging) event and use the Item property of the event args to access the CalendarViewDayItem.
 
-You can make a day not selectable in the calendar view by setting its [CalendarViewDayItem.IsBlackout](/windows/winui/api/microsoft.ui.xaml.controls.calendarviewdayitem.isblackout) property to **true**.
+You can make a day not selectable in the calendar view by setting its [CalendarViewDayItem.IsBlackout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.isblackout) property to **true**.
 
-You can show contextual information about the density of events in a day by calling the [CalendarViewDayItem.SetDensityColors](/windows/winui/api/microsoft.ui.xaml.controls.calendarviewdayitem.setdensitycolors) method. You can show from 0 to 10 density bars for each day, and set the color of each bar.
+You can show contextual information about the density of events in a day by calling the [CalendarViewDayItem.SetDensityColors](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.setdensitycolors) method. You can show from 0 to 10 density bars for each day, and set the color of each bar.
 
 Here are some day items in a calendar. Days 1 and 2 are blacked out. Days 2, 3, and 4 have various density bars set.
 

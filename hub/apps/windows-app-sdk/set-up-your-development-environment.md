@@ -2,7 +2,7 @@
 title: Install tools for the Windows App SDK
 description: Configure your development computer by installing the appropriate tools to develop apps for Windows by using the Windows App SDK.
 ms.topic: how-to
-ms.date: 05/26/2022
+ms.date: 06/10/2022
 keywords: windows win32, windows app development, Windows App SDK, stable
 ms.author: stwhi
 author: stevewhims
@@ -37,22 +37,24 @@ While installing, select the following workloads and components:
 #### [Visual Studio 2022 version 17.1 and later](#tab/vs-2022-17-1-a)
 
 * On the **Workloads** tab of the installation dialog box, select as appropriate:
-  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
-    * Then in the **Installation details** pane of the installation dialog box for that workload, make sure **C++ (v143) Universal Windows Platform tools** is selected.
-  * For C# app development, select **.NET Desktop Development**
+ 
+  * For C# app development using the Windows App SDK, select **.NET Desktop Development**.
     * Then in the **Installation details** pane of the installation dialog box, select **Windows App SDK C# Templates** (at the bottom of the list).
-  * For C++ app development, select **Desktop development with C++**
-    * Then in the **Installation details** pane of the installation dialog box,  select **Windows App SDK C++ Templates** (at the bottom of the list).
+  * For C++ app development using the Windows App SDK, select **Desktop development with C++**
+    * Then in the **Installation details** pane of the installation dialog box, select **Windows App SDK C++ Templates** (at the bottom of the list).
+ * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
+    * Then in the **Installation details** pane of the installation dialog box for that workload, make sure **C++ (v143) Universal Windows Platform tools** is selected.
 
 * On the **Individual components** tab of the installation dialog box, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 
 #### [Other Visual Studio versions](#tab/vs-other)
 
 * On the **Workloads** tab of the installation dialog box, select as appropriate:
-  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**
+
+  * For C# app development using the Windows App SDK, select **.NET Desktop Development**.
+  * For C++ app development using the Windows App SDK, select **Desktop development with C++**.
+  * For Universal Windows Platform (UWP) app development, select **Universal Windows Platform development**.
     * Then in the **Installation details** pane of the installation dialog box for that workload, make sure either **C++ (v143) Universal Windows Platform tools** (for Visual Studio 2022) or **C++ (v142) Universal Windows Platform tools** (for Visual Studio 2019) is selected.
-  * For C# app development, select **.NET Desktop Development**
-  * For C++ app development, select **Desktop development with C++**
 
 * On the **Individual components** tab of the installation dialog box, in the **SDKs, libraries, and frameworks** section, make sure **Windows 10 SDK (10.0.19041.0)** is selected.
 

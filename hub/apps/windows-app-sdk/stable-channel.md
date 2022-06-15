@@ -31,7 +31,19 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.1
 
-The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.0. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.1. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.1.1
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.1 release.
+
+#### Bug fixes
+
+- Fixed issue causing apps to sometimes crash during a drag and drop operation. For more information see [issue 7002](https://github.com/microsoft/microsoft-ui-xaml/issues/7002) on GitHub.
+- Fixed issue causing the title bar to disappear when switching AppWindowPresenterKind from FullScreen to Default.
+- Fixed issue where Bootstrapper APIs like `ApiInformation.IsPropertyPresent` and `ApiInformation.IsMethodPresent` would cause unhandled exceptions in apps without MSIX-packaging. For more information see [issue 2382](https://github.com/microsoft/WindowsAppSDK/issues/2382) on GitHub.
+- Fixed issue causing app freeze when maximizing application with pen input.
+
 ### Version 1.1 Stable
 
 The following sections describe new and updated features, limitations, and known issues for 1.1 Stable.
@@ -142,7 +154,7 @@ For easier programming access to functionality that's implemented in USER32.dll 
 
 **Known limitations:**
 - When using the **AppWindowTitlebar** API to customize the colors of the standard title bar, the icon and text is misaligned compared to the standard title bar. For more info, see GitHub [issue 2459](https://github.com/microsoft/WindowsAppSDK/issues/2459).
-- When solving GitHub [issue 2049](https://github.com/microsoft/WindowsAppSDK/issues/2049) (seen above), we introduced the followng bug: if you apply any **AppWindowPresenter** to an **AppWindow** that you've retrieved from **GetFromWindowId**, then change a window style that's being tracked by that Presenter through calling USER32 APIs, and then try to revert back to the window's previous state by re-applying the default Presenter, the result is a window that has no title Bar. If you rely on any Presenter in your app, and use calls to USER32 for changing window styles at the time that a non-default Presenter is applied, then you might need to add a workaround to ensure correct window behavior until this bug is serviced. You can use the following code snippet as a template for how to work around the issue:
+- When solving GitHub [issue 2049](https://github.com/microsoft/WindowsAppSDK/issues/2049) (seen above), we introduced the following bug: if you apply any **AppWindowPresenter** to an **AppWindow** that you've retrieved from **GetFromWindowId**, then change a window style that's being tracked by that Presenter through calling USER32 APIs, and then try to revert back to the window's previous state by re-applying the default Presenter, the result is a window that has no title bar. If you rely on any Presenter in your app, and use calls to USER32 for changing window styles at the time that a non-default Presenter is applied, then you might need to add a workaround to ensure correct window behavior until this bug is serviced. You can use the following code snippet as a template for how to work around the issue:
 
     ```csharp
     AppWindow m_appWindow;
@@ -180,6 +192,18 @@ C# Windows Runtime Components, including WinUI custom controls, are now supporte
 ## Version 1.0
 
 The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.3. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.0.4
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.
+
+#### Bug fixes
+
+- Fixed issue causing AppBars, when used as Page.TopAppBar or Page.BottomAppBar to not render on screen.
+- Fixed issue where apps with a package name of 12 characters or less that use a WinUI control from MUXControls.dll will immediately crash. For more information, see [issue 6360](https://github.com/microsoft/microsoft-ui-xaml/issues/6360) on GitHub.
+- Fixed touch input issues causing problems with keyboard shortcuts and other scenarios. For more information, see [issue 6291](https://github.com/microsoft/microsoft-ui-xaml/issues/6291) on GitHub.
+- Fixed issue causing apps packaged with MSIX or deployed as self-contained to fail to deploy.
+- Fixed issue causing apps to sometimes crash during a drag and drop operation. For more information see [issue 7002](https://github.com/microsoft/microsoft-ui-xaml/issues/7002) on GitHub.
 
 ### Version 1.0.3
 
@@ -423,7 +447,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 #### Other limitations and known issues
 
 - **No support for Any CPU build configuration**: When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
-- **Upgrading from .NET 5 to .NET 6**: When upgrading in the Visual Studio UI, you may run into build errors. As a workaround, manually update your project file's TargetFrameworkPackage to the below:
+- **Upgrading from .NET 5 to .NET 6**: When upgrading in the Visual Studio UI, you might run into build errors. As a workaround, manually update your project file's `TargetFrameworkPackage` to the below:
 
     ```xml 
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework> 
@@ -442,7 +466,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 ## Version 0.8
 
-The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.8.
+The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.10.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
@@ -487,7 +511,7 @@ This is a servicing release of the Windows App SDK that includes several perform
     ...
  ```
 
-This version of the Windows SDK projection will be available in an upcoming .NET 6 and .NET 5 servicing release. After that .NET SDK update is available, you should remove the `<WindowsSdkPackageVersion>` property from your project file. 
+This version of the Windows SDK projection will be available in an upcoming .NET 6 servicing release. After that .NET SDK update is available, you should remove the `<WindowsSdkPackageVersion>` property from your project file. 
 
 If you don't set this property, then you'll see an error like: `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.6 or greater."`
 
@@ -495,7 +519,7 @@ If you don't set this property, then you'll see an error like: `"Error: This ver
 
 This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release. 
 
-To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (either .NET SDK 5.0.404 or later, or .NET SDK 5.0.210 or later). You can now download the latest .NET 5 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0). If you do not have the minimum required version of the .NET SDK installed, you will see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
+To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)). If you don't have the minimum required version of the .NET SDK installed, then you''ll see an error like `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater."`
 
 #### Bug Fixes
 For a detailed list of the performance improvements, see the [C#/WinRT 1.4.1 release notes](https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1). 
@@ -605,7 +629,7 @@ To see WinUI 3 controls and features in action, you can clone and build the WinU
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
-- [WinUI 3 desktop apps and basic Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
+- [Build a C# .NET app with WinUI 3 and Win32 interop](../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [WinUI 3 API Reference](/windows/winui/api)
 
 **DWriteCore**
@@ -641,7 +665,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 - Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
 
-- .NET apps must target build 18362 or higher: Your TFM must be set to net5.0-windows10.0.18362 or higher, and your packaging project's must be set to 18362 or higher. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- .NET apps must target build 18362 or higher: Your TFM must be set to net6.0-windows10.0.18362 or higher, and your packaging project's must be set to 18362 or higher. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 - You may encounter a crash when switching frequently between light and dark mode.
 
@@ -685,7 +709,7 @@ This release supports all [stable channel features](release-channels.md#features
 This release has the following limitations and known issues:
 
 - **Desktop apps (C# or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net6.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 [!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 

@@ -172,7 +172,7 @@ public sealed partial class MainPage : Page
 
 The XAML date controls support each of the calendar systems supported by Windows. These calendars are specified in the [Windows.Globalization.CalendarIdentifiers](/uwp/api/Windows.Globalization.CalendarIdentifiers) class. Each control uses the correct calendar for your app's default language, or you can set the **CalendarIdentifier** property to use a specific calendar system.
 
-The time picker control supports each of the clock systems specified in the [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) class. You can set the [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
+The time picker control supports each of the clock systems specified in the [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) class. You can set the [ClockIdentifier](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.clockidentifier) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
 
 ### DateTime and Calendar values
 
@@ -198,7 +198,7 @@ A related concept is the Calendar class, which influences how dates are interpre
 
 ### For developers (XAML)
 
-- [CalendarView class](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
-- [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)
-- [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)
-- [TimePicker class](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
+- [CalendarView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView)
+- [CalendarDatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarDatePicker)
+- [DatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.DatePicker)
+- [TimePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TimePicker)

@@ -28,7 +28,7 @@ You should use swipe commanding when you have a potentially large group of items
 
 ## How does Swipe work?
 
-UWP swipe commanding has two modes: [Reveal](/windows/winui/api/microsoft.ui.xaml.controls.swipemode) and [Execute](/windows/winui/api/microsoft.ui.xaml.controls.swipemode). It also supports four different swipe directions: up, down, left, and right.
+UWP swipe commanding has two modes: [Reveal](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode) and [Execute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode). It also supports four different swipe directions: up, down, left, and right.
 
 ### Reveal mode
 
@@ -58,7 +58,7 @@ It may also be used for more destructive actions like deleting an item. However,
 
 Swipe works in all cardinal directions: up, down, left, and right. Each swipe direction can hold its own swipe items or content, but only one instance of a direction can be set at a time on a single swipe-able element.
 
-For example, you cannot have two [LeftItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.LeftItems) definitions on the same SwipeControl.
+For example, you cannot have two [LeftItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.LeftItems) definitions on the same SwipeControl.
 
 ## Dos and don'ts
 
@@ -79,7 +79,7 @@ The SwipeControl for UWP apps is included as part of the Windows UI Library 2. F
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/windows.UI.Xaml.Controls.ListView)
-> - **WinUI APIs:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+> - **WinUI 2 Apis:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
 > - [Open the WinUI 2 Gallery app and see SwipeControl in action](winui2gallery:/item/SwipeControl). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.
@@ -97,7 +97,7 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/winui/api/microsoft.UI.Xaml.Controls.ListView)
+> - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery:/item/SwipeControl).
@@ -106,8 +106,8 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 Swipe commands have two components that you need to define:
 
-- The [SwipeControl](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol), which wraps around your content. In a collection, such as a ListView, this sits within your DataTemplate.
-- The swipe menu items, which is one or more [SwipeItem](/windows/winui/api/microsoft.ui.xaml.controls.swipeitem) objects placed in the swipe control's directional containers: [LeftItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.TopItems), or [BottomItems](/windows/winui/api/microsoft.ui.xaml.controls.swipecontrol.BottomItems)
+- The [SwipeControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol), which wraps around your content. In a collection, such as a ListView, this sits within your DataTemplate.
+- The swipe menu items, which is one or more [SwipeItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem) objects placed in the swipe control's directional containers: [LeftItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.TopItems), or [BottomItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.BottomItems)
 
 Swipe content can be placed inline, or defined in the Resources section of your page or app.
 
@@ -134,7 +134,7 @@ Here's a simple example of a SwipeControl wrapped around some text. It shows the
 
 Now we'll take a look at a more complete example of how you would typically use swipe commands in a list. In this example, you'll set up a delete command that uses Execute mode, and a menu of other commands that uses Reveal mode. Both sets of commands are defined in the Resources section of the page. You'll apply the swipe commands to the items in a ListView.
 
-First, create the swipe items, which represent the commands, as page level resources. SwipeItem uses an [IconSource](/windows/winui/api/microsoft.ui.xaml.controls.iconsource) as its icon. Create the icons as resources, too.
+First, create the swipe items, which represent the commands, as page level resources. SwipeItem uses an [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource) as its icon. Create the icons as resources, too.
 
 ```xaml
 <Page.Resources>
@@ -193,7 +193,7 @@ Here's a ListView with the SwipeControl applied in its item DataTemplate. The Le
 
 ## Handle an invoked swipe command
 
-To act on a swipe command, you handle its [Invoked](/windows/winui/api/microsoft.ui.xaml.controls.swipeitem.Invoked) event. (For more info about a how a user can invoke a command, review the _How does swipe work?_ section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.
+To act on a swipe command, you handle its [Invoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem.Invoked) event. (For more info about a how a user can invoke a command, review the _How does swipe work?_ section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.
 
 Here's how to handle the Invoked event on the _delete_ swipe item you created previously.
 
@@ -216,8 +216,8 @@ The data item is the DataContext of the SwipeControl. In your code, you can acce
 > [!NOTE]
 > Here, the items were added directly to the ListView.Items collection for simplicity, so the item is also deleted the same way. If you instead set the ListView.ItemsSource to a collection, which is more typical, you need to delete the item from the source collection.
 
-In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/windows/winui/api/microsoft.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the 
-[SwipeBehaviorOnInvoked](/windows/winui/api/microsoft.ui.xaml.controls.swipebehavioroninvoked) enum values.
+In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the 
+[SwipeBehaviorOnInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipebehavioroninvoked) enum values.
 
 - **Auto**
   - In Execute mode, the opened swipe item will remain open when invoked.

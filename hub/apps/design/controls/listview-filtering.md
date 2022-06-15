@@ -10,7 +10,7 @@ pm-contact: anawish
 ---
 
 # Filtering collections and lists through user input
-If your collection displays many items or is heavily tied to user interaction, filtering is a useful feature to implement. Filtering using the method described in this article can be implemented to most collection controls, including [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview), and [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true). Many types of user input can be used to filter a collection - such as checkboxes, radio buttons, and sliders - but this article will be focusing on taking text-based user input and using it to update a ListView in real time, according to the user's search. 
+If your collection displays many items or is heavily tied to user interaction, filtering is a useful feature to implement. Filtering using the method described in this article can be implemented to most collection controls, including [ListView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview), and [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true). Many types of user input can be used to filter a collection - such as checkboxes, radio buttons, and sliders - but this article will be focusing on taking text-based user input and using it to update a ListView in real time, according to the user's search. 
 
 > [!NOTE]
 > This article will focus on filtering with a ListView. Please be aware that the filtering method can also be applied to other collections controls such as GridView, ItemsRepeater, or TreeView.

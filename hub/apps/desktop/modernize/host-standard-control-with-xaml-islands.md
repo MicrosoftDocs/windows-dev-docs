@@ -20,7 +20,7 @@ This topic shows how to build a C# Windows Presentation Foundation (WPF) app (ta
 The process for hosting a UWP XAML control in a WPF app is similar for a Windows Forms app.
 
 > [!IMPORTANT]
-> Using XAML Islands (wrapped controls or [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. XAML Islands are not supported in apps that target .NET 5, or in apps that target any version of the .NET Framework.
+> Using XAML Islands (wrapped controls or [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. XAML Islands are not supported in apps that target .NET, or in apps that target any version of the .NET Framework.
 
 ## Recommended components
 
