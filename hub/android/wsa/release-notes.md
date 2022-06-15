@@ -13,6 +13,33 @@ ms.date: 04/27/2022
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
+## Build 2204.40000.19.0
+May 20, 2022
+
+- Windows Subsystem for Android updated to Android 12.1
+- Advanced networking on by default for newer x64 Windows builds
+- Updated Windows Subsystem for Android Settings app: redesigned UX and diagnostics data viewer added
+- Simpleperf CPU profiler recording now works with Windows Subsystem for Android 
+- Windows taskbar now shows which Android apps are using microphone and location
+- Improvements to Android app notifications appearing as Windows notifications
+- Reduced flicker when apps are restored from minimized state
+- Apps are not restarted when devices come out of connected standby on recent Windows builds
+- New video hardware decoding (VP8 and VP9)
+- Fixes for on-screen keyboard in apps
+- Fixes for full screen Android apps and auto-hidden Windows taskbar
+- Windows Subsystem for Android updated with Chromium WebView 100
+- Added support for Android NetworkLocationProvider in addition to GpsLocationProvider
+- Improved general stability, performance, and reliability
+
+Known Issues:
+
+- Instability with camera on ARM devices 
+- Instability printing via Android apps
+- Some apps rendered at lower resolutions may lay out incorrectly
+- Some VPNs may not work with Advanced Networking. If you use a VPN and find Android apps do not have network connectivity, please disable Advanced Networking in the Windows Subsystem for Android Settings app
+- Some apps that were previously available might be missing from the experience, fail to launch, or function incorrectly for various known issues. We’re working with our partners to address these issues as soon as possible. 
+
+
 ## Build 2203.40000.3.0
 March 22, 2022.
 
