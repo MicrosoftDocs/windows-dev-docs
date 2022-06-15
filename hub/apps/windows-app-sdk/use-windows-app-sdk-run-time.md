@@ -95,7 +95,7 @@ A C++ wrapper for the bootstrapper API is available starting in Windows App SDK 
 
 See [Bootstrapper C++ API](/windows/apps/api-reference/bootstrapper-cpp-api/).
 
-### Declare OS compatibility in your application manifest
+## Declare OS compatibility in your application manifest
 
 To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior, you should include a [side-by-side application manifest](/windows/win32/sbscs/application-manifests) with your non-MSIX-packaged app (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build).
 
