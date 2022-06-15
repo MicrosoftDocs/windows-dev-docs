@@ -43,6 +43,8 @@ The following general options are available on the PowerToys Run settings page.
 | Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
 | Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut |
 | Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
+| Delay search | Add a delay to wait for more input before executing a search |
+| Search delay (ms) | How many milliseconds to wait before executing the search |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
 | Preferred display position | If multiple displays are in use, PowerToys Run can be launched on:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
