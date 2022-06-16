@@ -6874,6 +6874,11 @@
       "source_path": "windows-apps-src/porting/arm64ec-abi.md",
       "redirect_url": "/windows/arm/arm64ec-abi",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push/push-quickstart.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart",
+      "redirect_document_id": true
     }
   ]
 }
