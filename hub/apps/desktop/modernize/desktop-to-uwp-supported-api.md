@@ -42,14 +42,12 @@ The following WinRT classes are not supported in desktop apps.
 
 ### Classes with an XxxForCurrentView method
 
-Many WinRT classes have a static `GetForCurrentView` method or `CreateForCurrentView` method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These `XxxForCurrentView` methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) class, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of these other classes with `XxxForCurrentView` methods are supported either. Note that some unsupported `XxxForCurrentView` methods will not only return **null**, but will also throw exceptions.
-
-For those classes below that have a COM interface alternative API listed, C# developers can consume these WinRT COM interfaces (see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md)).
+Many WinRT classes have a static **GetForCurrentView** or **CreateForCurrentView** method, such as [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). These **XxxForCurrentView** methods have an implicit dependency on the [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) type, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of the **XxxForCurrentView** methods are supported in desktop apps either. Some unsupported **XxxForCurrentView** methods not only return `null`, but also throw exceptions.
 
 > [!NOTE]
-> One exception to this is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which is supported in desktop apps and can be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). This method can be used to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread, and if that thread has a foreground window, that object will produce events.
+> One exception is [CoreInputView.GetForCurrentView](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview), which *is* supported in desktop apps, and *can* be used even without a [CoreWindow](/uwp/api/windows.ui.core.corewindow). You can use that method to get a [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread; and if that thread has a foreground window, then that object will produce events.
 
-The following classes are not supported in desktop apps because they have a **GetForCurrentView** or **CreateForCurrentView** method. This list might not be comprehensive.
+The following classes *are* supported in desktop apps; but to retrieve an instance of one in a desktop app, you use a mechanism that's different from the **GetForCurrentView** or **CreateForCurrentView** methods. For the classes below that have a COM interface listed as the alternative API, C# developers can also consume those WinRT COM interfaces (see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md)). This list might not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
@@ -63,6 +61,7 @@ The following classes are not supported in desktop apps because they have a **Ge
 | [CoreWindowResizeManager](/uwp/api/windows.ui.core.corewindowresizemanager) | None |
 | [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) | Use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) COM interface instead (in shobjidl_core.h). |
 | [DisplayEnhancementOverride](/uwp/api/windows.graphics.display.displayenhancementoverride) | None |
+| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | To retrieve an instance of **DisplayInformation**, use the [IDisplayInformationStaticsInterop](/windows/win32/api/windows.graphics.display.interop/nn-windows-graphics-display-interop-idisplayinformationstaticsinterop) interface.<br/><br/>Alternatively, instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, you can use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>And, instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, you have the option to use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3.|
 | [EdgeGesture](/uwp/api/windows.ui.input.edgegesture) | None |
 | [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview) | None |
 | [HdmiDisplayInformation](/uwp/api/windows.graphics.display.core.hdmidisplayinformation) | None |
@@ -90,11 +89,30 @@ The following classes are not supported in desktop apps because they have a **Ge
 | [UIViewSettings](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [IUIViewSettingsInterop](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in uiviewsettingsinterop.h). |
 | [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
 
-The following classes *are* supported in desktop apps; but to retrieve an instance in a desktop app, you use a mechanism that's different from the **GetForCurrentView** or **CreateForCurrentView** methods. This list might not be comprehensive.
+The following classes are *not* supported in desktop apps because they don't provide an alternative to their **GetForCurrentView** or **CreateForCurrentView** method. This list might not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
-| [DisplayInformation](/uwp/api/windows.graphics.display.displayinformation) | To retrieve an instance of **DisplayInformation**, use the [IDisplayInformationStaticsInterop](/windows/win32/api/windows.graphics.display.interop/nn-windows-graphics-display-interop-idisplayinformationstaticsinterop) interface.<br/><br/>Alternatively, instead of the [LogicalDpi](/uwp/api/windows.graphics.display.displayinformation.logicaldpi) property, you can use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property and listen for changes on the [XamlRoot.Changed](/uwp/api/windows.ui.xaml.xamlroot.changed) event (the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property is provided in WinUI 3).<br/><br/>And, instead of the [RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel) property, you have the option to use the [XamlRoot.RasterizationScale](/windows/winui/api/microsoft.ui.xaml.xamlroot.rasterizationscale) property provided by WinUI 3.|
+| [AppCapture](/uwp/api/windows.media.capture.appcapture) | None |
+| [BrightnessOverride](/uwp/api/windows.graphics.display.brightnessoverride) | None |
+| [ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) | None |
+| [CoreInputView](/uwp/api/windows.ui.viewmanagement.core.coreinputview) | None |
+| [CoreWindowResizeManager](/uwp/api/windows.ui.core.corewindowresizemanager) | None |
+| [DisplayEnhancementOverride](/uwp/api/windows.graphics.display.displayenhancementoverride) | None |
+| [EdgeGesture](/uwp/api/windows.ui.input.edgegesture) | None |
+| [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview) | None |
+| [HdmiDisplayInformation](/uwp/api/windows.graphics.display.core.hdmidisplayinformation) | None |
+| [HolographicKeyboardPlacementOverridePreview](/uwp/api/windows.applicationmodel.preview.holographic.holographickeyboardplacementoverridepreview) | None |
+| [KeyboardDeliveryInterceptor](/uwp/api/windows.ui.input.keyboarddeliveryinterceptor) | None |
+| [LockApplicationHost](/uwp/api/windows.applicationmodel.lockscreen.lockapplicationhost) | None |
+| [MouseDevice](/uwp/api/windows.devices.input.mousedevice) | None |
+| [PointerVisualizationSettings](/uwp/api/windows.ui.input.pointervisualizationsettings) | None |
+| [ProtectionPolicyManager](/uwp/api/windows.security.enterprisedata.protectionpolicymanager) | None |
+| [SearchPane](/uwp/api/windows.applicationmodel.search.searchpane) | None |
+| [SettingsPane](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
+| [SystemNavigationManager](/uwp/api/windows.ui.core.systemnavigationmanager) | None |
+| [SystemNavigationManagerPreview](/uwp/api/windows.ui.core.preview.systemnavigationmanagerpreview) | None |
+| [WebAuthenticationBroker](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see [this GitHub issue](https://github.com/microsoft/ProjectReunion/issues/398). |
 
 ### Classes that implement IInitializeWithWindow
 
