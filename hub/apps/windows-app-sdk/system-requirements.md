@@ -4,8 +4,8 @@ description: This article provides information about minimum system requirements
 ms.topic: article
 ms.date: 07/26/2021
 keywords: windows win32, windows app development, Windows App SDK
-ms.author: zafaraj
-author: zaryaf
+ms.author: stwhi
+author: whims
 ms.localizationpriority: medium
 ---
 

@@ -871,7 +871,7 @@ These title bar properties can be transparent:
 
 All other color properties will continue to ignore the alpha channel. If `ExtendsContentIntoTitleBar` is set to `false`, the alpha channel is always ignored for all `AppWindowTitleBar` color properties.
 
-Reference: [Colors.Transparent](/windows/windows-app-sdk/api/winrt/microsoft.ui.colors), [ColorHelper](/windows/windows-app-sdk/api/winrt/microsoft.ui.colorhelper)
+Reference: [Colors.Transparent](/windows/windows-app-sdk/api/winrt/microsoft.ui.colors.transparent), [ColorHelper](/windows/windows-app-sdk/api/winrt/microsoft.ui.colorhelper)
 
 ### [WinUI 3](#tab/winui3)
 

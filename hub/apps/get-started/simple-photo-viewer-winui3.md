@@ -47,7 +47,7 @@ Our app needs to display rows and columns of photos. In other words, a grid of i
 
     The main window of any app represents the view that you see first when you run the app. In the app we'll be building, the main window's job is to load the photos from the **Samples** folder, and to display a tiled view of those images together with various info about them.
 
-1. Replace the **StackPanel** and **Button** markup with the **Grid** layout panel and the [**GridView**](/windows/winui/api/microsoft.ui.xaml.controls.gridview) control shown in the listing below.
+1. Replace the **StackPanel** and **Button** markup with the **Grid** layout panel and the [**GridView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview) control shown in the listing below.
 
     ```xaml
     <Window ...>
@@ -244,7 +244,7 @@ In this section we'll add a new property to the **MainWindow** class. The proper
 
 You can build and run now if you like (to confirm you've followed the steps ok), but there's not much to see in the window at this stage. That's because what we've done so far is to ask the **GridView** to render a collection of objects of type **ImageFileInfo**; and the **GridView** doesn't quite know how to do that yet.
 
-Remember that the **Images** property is an observable collection of **ImageFileInfo** objects. And the last line of **GetItemsAsync** is `ImageGridView.ItemsSource = Images;`, which tells the **GridView** (which is named *ImageGridView*) that the source of its items ([**ItemsSource**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource)) is the **Images** property. And the job of the **GridView** is then to display those items.
+Remember that the **Images** property is an observable collection of **ImageFileInfo** objects. And the last line of **GetItemsAsync** is `ImageGridView.ItemsSource = Images;`, which tells the **GridView** (which is named *ImageGridView*) that the source of its items ([**ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource)) is the **Images** property. And the job of the **GridView** is then to display those items.
 
 But we haven't yet told the **GridView** anything about the **ImageFileInfo** class. So the best it can do so far is to display the **ToString** value of each **ImageFileInfo** object in the collection. And by default, that's just the type's name. In the next section we'll create a data template to define how we want an **ImageFileInfo** object to be displayed.
 
@@ -275,7 +275,7 @@ To begin with, let's use a sketch-like placeholder data template. That will serv
     </Grid>
     ```
 
-    To the layout root, we've added a simple [**DataTemplate**](/windows/winui/api/microsoft.ui.xaml.datatemplate) resource, and given it a key of `ImageGridView_ItemTemplate`. And we've used that same key to set the [**ItemTemplate**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) of the **GridView**. Items controls such as **GridView** have an **ItemTemplate** property (just like they have the **ItemsSource** property that we saw earlier). An item template is a data template; and it's used for displaying each item in the collection.
+    To the layout root, we've added a simple [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) resource, and given it a key of `ImageGridView_ItemTemplate`. And we've used that same key to set the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) of the **GridView**. Items controls such as **GridView** have an **ItemTemplate** property (just like they have the **ItemsSource** property that we saw earlier). An item template is a data template; and it's used for displaying each item in the collection.
 
     For more info, see [Item containers and templates](/windows/apps/design/controls/item-containers-templates).
 
@@ -296,7 +296,7 @@ To begin with, let's use a sketch-like placeholder data template. That will serv
 
     For more info, see [Alignment, margin, padding](/windows/apps/design/layout/alignment-margin-padding).
 
-1. We want the data template to display each photo's image, name, file type, dimensions, and rating. So we'll be adding, respectively, an [**Image**](/windows/winui/api/microsoft.ui.xaml.controls.image) control, some [**TextBlock**](/windows/winui/api/microsoft.ui.xaml.controls.textblock) controls, and a [**RatingControl**](/windows/winui/api/microsoft.ui.xaml.controls.ratingcontrol) control. We'll lay out the text inside [**StackPanel**](/windows/winui/api/microsoft.ui.xaml.controls.stackpanel) layout panels. The **Image** will, initially, display the project's sketch-like Microsoft Store logo as a placeholder.
+1. We want the data template to display each photo's image, name, file type, dimensions, and rating. So we'll be adding, respectively, an [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control, some [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock) controls, and a [**RatingControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ratingcontrol) control. We'll lay out the text inside [**StackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) layout panels. The **Image** will, initially, display the project's sketch-like Microsoft Store logo as a placeholder.
 
 1. After all those edits, here's how the data template looks:
 
@@ -342,11 +342,11 @@ Build the project now, and run the app to see the **GridView** control with the 
 
 ## Edit the item container's style
 
-Another concept related to items controls such as **GridView** is the *item container*. An item container is a *content control* that displays an item as the value of its [**Content**](/windows/winui/api/microsoft.ui.xaml.controls.contentcontrol.content) property. An items control creates as many item containers as it needs in order to display the items that are visible on the screen at any time.
+Another concept related to items controls such as **GridView** is the *item container*. An item container is a *content control* that displays an item as the value of its [**Content**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) property. An items control creates as many item containers as it needs in order to display the items that are visible on the screen at any time.
 
 Being a control, an item container has a style and a control template. Its style and control template determine how the item container looks in its various states (such as selection, pointer over, and focus). And, as we've seen, the item template (which is a data template) determines how the item itself looks.
 
-For **GridView**, the type of its item containers is [**GridViewItem**](/windows/winui/api/microsoft.ui.xaml.controls.gridviewitem).
+For **GridView**, the type of its item containers is [**GridViewItem**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridviewitem).
 
 So in this section we'll focus on designing the item container's style. And for that we'll be creating a **Style** resource for **GridViewItem**, and then setting that as the **ItemContainerStyle** of the ***GridView**. In the style, we'll set the **Background** and **Margin** properties of the item container to give it a gray background and a bit of a margin around the outside of it.
 
@@ -364,7 +364,7 @@ So in this section we'll focus on designing the item container's style. And for 
         </Grid.Resources>
     ```
 
-1. Next, we use the `ImageGridView_ItemContainerStyle` key to set the [**ItemContainerStyle**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle) of the **GridView**.
+1. Next, we use the `ImageGridView_ItemContainerStyle` key to set the [**ItemContainerStyle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle) of the **GridView**.
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -391,7 +391,7 @@ You might be wondering whether it's best to center the **GridView** itself, or t
     </GridView>
     ```
 
-1. And now we'll set its [**HorizontalAlignment**](/windows/winui/api/microsoft.ui.xaml.frameworkelement.horizontalalignment) property to *Center*.
+1. And now we'll set its [**HorizontalAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment) property to *Center*.
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -410,7 +410,7 @@ Build and run now, and experiment with adjusting the width of the window. You ca
 
 Items controls lay out their item containers inside what's known as an *items panel*. We can define what kind of panel is used, and set properties on that panel, by editing the **GridView**'s *items panel template*. So that's what we'll do in this section.
 
-1. In `MainWindow.xaml`, add an **ItemsPanelTemplate** resource to our resource dictionary. The items panel is of type [**ItemsWrapGrid**](/windows/winui/api/microsoft.ui.xaml.controls.itemswrapgrid), and we're setting its **HorizontalAlignment** property to **Center**.
+1. In `MainWindow.xaml`, add an **ItemsPanelTemplate** resource to our resource dictionary. The items panel is of type [**ItemsWrapGrid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemswrapgrid), and we're setting its **HorizontalAlignment** property to **Center**.
 
     ```xaml
     <Grid>
@@ -423,7 +423,7 @@ Items controls lay out their item containers inside what's known as an *items pa
         </Grid.Resources>
     ```
 
-1. Next, we use the `ImageGridView_ItemsPanelTemplate` key to set the [**ItemsPanel**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemspanel) of the **GridView**.
+1. Next, we use the `ImageGridView_ItemsPanelTemplate` key to set the [**ItemsPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel) of the **GridView**.
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -442,7 +442,7 @@ Now it's time to move our sketch to a higher level of fidelity; and that means r
 
 The technique we'll use to display the photos in the `Assets\Samples` folder involves updating the **GridView**'s items progressively. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview). But in a nutshell, the **GridView** will let us know (by way of an event) when one of its item containers is ready to display its item. And then we'll keep track of which phase of its update lifecycle the item container is in so that we can determine when it's ready to display photo data.
 
-1. In `MainWindow.xaml.cs`, add a new method to **MainWindow** named **ImageGridView_ContainerContentChanging**. This is an event-handling method, and the event it handles is [**ContainerContentChanging**](/windows/winui/api/microsoft.ui.xaml.controls.listviewbase.containercontentchanging). We also need to provide the implementation of the **ShowImage** method that **ImageGridView_ContainerContentChanging** depends on. Here's the code to add to your project:
+1. In `MainWindow.xaml.cs`, add a new method to **MainWindow** named **ImageGridView_ContainerContentChanging**. This is an event-handling method, and the event it handles is [**ContainerContentChanging**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.containercontentchanging). We also need to provide the implementation of the **ShowImage** method that **ImageGridView_ContainerContentChanging** depends on. Here's the code to add to your project:
 
     ```csharp
     private void ImageGridView_ContainerContentChanging(
@@ -537,7 +537,7 @@ If you build and run the app now, instead of placeholders you'll see real photos
 > [!TIP]
 > You'll find that there are some things (usually related to dynamically-generated UI) that you can't do in XAML markup. But in general if you *can* do something in markup, then that's preferable. It gives a slightly cleaner separation between the *view* that the XAML markup represents and the *model* (or *view model*) that the imperative code represents. And that tends to improve workflow in tooling and between team members.
 
-We're currently using imperative code to associate the **GridView**'s [**ItemsSource**](/windows/winui/api/microsoft.ui.xaml.controls.itemscontrol.itemssource)) property with **MainWindow**'s **Images** property. But we can do that in markup instead.
+We're currently using imperative code to associate the **GridView**'s [**ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource)) property with **MainWindow**'s **Images** property. But we can do that in markup instead.
 
 1. In `MainWindow.cs`, delete (or comment-out) the last line of **GetItemsAsync**, which is `ImageGridView.ItemsSource = Images;`.
 

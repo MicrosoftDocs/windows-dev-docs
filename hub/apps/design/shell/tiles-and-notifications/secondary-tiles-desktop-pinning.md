@@ -141,7 +141,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
             Windows::UI::StartScreen::TileSize::Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/winui/api/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
     ```cppwinrt
     auto windowNative{ this->try_as<::IWindowNative>() };

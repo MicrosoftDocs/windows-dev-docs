@@ -25,7 +25,7 @@ public static IntPtr GetMonitorFromDisplayId(DisplayId displayId);
 
 ### Parameters
 
-`displayId` [DisplayId](/windows/winui/api/microsoft.ui.displayid)
+`displayId` [DisplayId](/windows/windows-app-sdk/api/winrt/microsoft.ui.displayid)
 
 The identifier for the display.
 

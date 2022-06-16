@@ -27,11 +27,11 @@ We're going to build our example app from the initial template application (see 
 
 ### The MainWindow.xaml file
 
-With WinUI 3, you can create instances of the [Window](/windows/winui/api/microsoft.ui.xaml.window) class in XAML markup.
+With WinUI 3, you can create instances of the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class in XAML markup.
 
-The XAML [Window](/windows/winui/api/microsoft.ui.xaml.window) class has been extended to support desktop windows, turning it into an abstraction of each of the low-level window implementations used by the UWP and desktop app models. Specifically, CoreWindow for UWP and window handles (or HWNDs) for Win32.
+The XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class has been extended to support desktop windows, turning it into an abstraction of each of the low-level window implementations used by the UWP and desktop app models. Specifically, CoreWindow for UWP and window handles (or HWNDs) for Win32.
 
-The following code shows the MainWindow.xaml file from the initial template app, which uses the [Window](/windows/winui/api/microsoft.ui.xaml.window) class as the root element for the app.
+The following code shows the MainWindow.xaml file from the initial template app, which uses the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class as the root element for the app.
 
 ```xaml
 <Window
@@ -65,9 +65,9 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ### Code
 
-1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/winui/api/microsoft.ui.xaml.window) using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)).
+1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)).
 
-   This method is called from the app's [**OnLaunched**](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
+   This method is called from the app's [**OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
 
    :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/app.xaml.cs" id="OnLaunched":::
 
@@ -81,7 +81,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/app.xaml.cs" id="SetWindowDetails" highlight="3,8,11":::
 
-1. In the MainWindow.xaml file, we use a [ContentDialog](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog) with a [ScrollViewer](/windows/winui/api/microsoft.ui.xaml.controls.scrollviewer) to display a list of all the modules loaded for the current process.
+1. In the MainWindow.xaml file, we use a [ContentDialog](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) with a [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) to display a list of all the modules loaded for the current process.
 
    :::code language="xaml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/MainWindow.xaml" range="10-19":::
 

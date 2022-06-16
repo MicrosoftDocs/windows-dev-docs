@@ -30,7 +30,7 @@ Highlights this month include:
 * [Apply Mica in Win32 desktop apps](/windows/apps/desktop/modernize/apply-mica-win32)
 * [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes)
 * [Support for WinUI 3 Gallery](https://apps.microsoft.com/store/detail/winui-3-gallery/9P3JFPWWDZRC)
-* [Page Class updated for WinUI 3](/windows/winui/api/microsoft.ui.xaml.controls.page)
+* [Page Class updated for WinUI 3](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page)
 * [A basic C++/WinRT Windows UI Library 2 example (UWP)](/windows/uwp/cpp-and-winrt-apis/simple-winui-example)
 * [Set up continuous integration for your WinUI 3 app](/windows/apps/package-and-deploy/ci-for-winui3?pivots=winui3-packaged-csharp).
 * [Tutorial—Create a simple photo viewer with WinUI 3 (C#)](/windows/apps/get-started/simple-photo-viewer-winui3)

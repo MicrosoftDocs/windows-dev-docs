@@ -48,7 +48,7 @@ The TreeView for UWP apps is included as part of the Windows UI Library 2. For m
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
-> - **WinUI 2 Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](//windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
+> - **WinUI 2 Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
 > - [Open the WinUI 2 Gallery app and see the TreeView in action](winui2gallery:/item/TreeView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles, templates, and features for all controls.

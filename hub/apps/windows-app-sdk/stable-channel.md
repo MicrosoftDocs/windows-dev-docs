@@ -4,8 +4,8 @@ description: Provides information about the stable release channel for the Windo
 ms.topic: article
 ms.date: 03/31/2022
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: gabilka
+author: gabbybilka
 ms.localizationpriority: medium
 ---
 
@@ -334,16 +334,16 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 These are the input APIs that support WinUI and provide a lower level API surface for developers to achieve more advanced input interactions.
 
 **New Features**
-- Pointer APIs: [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint), [PointerPointProperties](/windows/winui/api/microsoft.ui.input.pointerpointproperties), and [PointerEventArgs](/windows/winui/api/microsoft.ui.input.pointereventargs) to support retrieving pointer event information with XAML input APIs.
-- [InputPointerSource API](/windows/winui/api/microsoft.ui.input.inputpointersource): Represents an object that is registered to report pointer input, and provides pointer cursor and input event handling for XAML's SwapChainPanel API.
-- [Cursor API](/windows/winui/api/microsoft.ui.input.inputcursor): Allows developers to change the cursor bitmap.
-- [GestureRecognizer API](/windows/winui/api/microsoft.ui.input.gesturerecognizer): Allows developers to recognize certain gestures such as drag, hold, and click when given pointer information.
+- Pointer APIs: [PointerPoint](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint), [PointerPointProperties](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties), and [PointerEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs) to support retrieving pointer event information with XAML input APIs.
+- [InputPointerSource API](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersource): Represents an object that is registered to report pointer input, and provides pointer cursor and input event handling for XAML's SwapChainPanel API.
+- [Cursor API](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputcursor): Allows developers to change the cursor bitmap.
+- [GestureRecognizer API](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturerecognizer): Allows developers to recognize certain gestures such as drag, hold, and click when given pointer information.
 
 **Important limitations**
-- All [PointerPoint](/windows/winui/api/microsoft.ui.input.pointerpoint) static factory functions have been removed: **GetCurrentPoint**, **GetCurrentPointTransformed**, **GetIntermediatePoints**, and **GetIntermediatePointsTransformed**.
-- The Windows App SDK doesn't support retrieving **PointerPoint** objects with pointer IDs. Instead, you can use the **PointerPoint** member function **GetTransformedPoint** to retrieve a transformed version of an existing **PointerPoint** object. For intermediate points, you can use the **PointerEventArgs** member functions [**GetIntermediatePoints**](/windows/winui/api/microsoft.ui.input.pointereventargs.getintermediatepoints) and **GetTransformedIntermediatePoints**. 
+- All [PointerPoint](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint) static factory functions have been removed: **GetCurrentPoint**, **GetCurrentPointTransformed**, **GetIntermediatePoints**, and **GetIntermediatePointsTransformed**.
+- The Windows App SDK doesn't support retrieving **PointerPoint** objects with pointer IDs. Instead, you can use the **PointerPoint** member function **GetTransformedPoint** to retrieve a transformed version of an existing **PointerPoint** object. For intermediate points, you can use the **PointerEventArgs** member functions [**GetIntermediatePoints**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs.getintermediatepoints) and **GetTransformedIntermediatePoints**. 
 - Direct use of the platform SDK API [**Windows.UI.Core.CoreDragOperation**](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation) will not work with WinUI applications.
-- **PointerPoint** properties **RawPosition** and **ContactRectRaw** were removed because they referred to non-predicted values, which were the same as the normal values in the OS. Use [**Position**](/en-us/windows/winui/api/microsoft.ui.input.pointerpoint.position) and [**ContactRect**](/windows/winui/api/microsoft.ui.input.pointerpointproperties.contactrect) instead. Pointer prediction is now handled with the **Microsoft.UI.Input.PointerPredictor** API object.
+- **PointerPoint** properties **RawPosition** and **ContactRectRaw** were removed because they referred to non-predicted values, which were the same as the normal values in the OS. Use [**Position**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint.position) and [**ContactRect**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties.contactrect) instead. Pointer prediction is now handled with the **Microsoft.UI.Input.PointerPredictor** API object.
 
 #### App Lifecycle
 
@@ -360,7 +360,7 @@ All the constraints for packaged apps also apply to WinUI apps, which are packag
 - Rich activation: [GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
   - _Unpackaged apps_: Fully usable.
   - _Packaged apps_: Usable, but these apps can also use the platform `GetActivatedEventArgs`. Note that the platform defines [Windows.ApplicationModel.AppInstance](/uwp/api/windows.applicationmodel.appinstance) whereas the Windows App SDK defines [Microsoft.Windows.AppLifecycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance). And while UWP apps can use the `ActivatedEventArgs` classes, such as `FileActivatedEventArgs` and `LaunchActivatedEventArgs`, apps that use the Windows App SDK AppLifecycle feature must use the interfaces not the classes (e.g, `IFileActivatedEventArgs`, `ILaunchActivatedEventArgs`, and so on).
-  - _WinUi apps_: WinUI's App.OnLaunched is given a [Microsoft.UI.Xaml.LaunchActivatedEventArgs](/windows/winui/api/microsoft.ui.xaml.launchactivatedeventargs), whereas the platform `GetActivatedEventArgs` returns a [Windows.ApplicationModel.IActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs), and the WindowsAppSDK `GetActivatedEventArgs` returns a [Microsoft.Windows.AppLifecycle.AppActivationArguments](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments) object which can represent a platform `LaunchActivatedEventArgs`.
+  - _WinUi apps_: WinUI's App.OnLaunched is given a [Microsoft.UI.Xaml.LaunchActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.launchactivatedeventargs), whereas the platform `GetActivatedEventArgs` returns a [Windows.ApplicationModel.IActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs), and the WindowsAppSDK `GetActivatedEventArgs` returns a [Microsoft.Windows.AppLifecycle.AppActivationArguments](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments) object which can represent a platform `LaunchActivatedEventArgs`.
   - For more info, see [Rich activation](applifecycle/applifecycle-rich-activation.md).
 
 - Register/Unregister for rich activation
@@ -457,7 +457,7 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 -  **Subsequent language VSIX fails to install into Visual Studio 2019 when multiple versions of Visual Studio 2019 are installed.** If you have multiple versions of Visual Studio 2019 installed (e.g. Release and Preview) and then install the Windows App SDK VSIX for both C++ *and* C#, the second installation will fail. To resolve, uninstall the Single-project MSIX Packaging Tools for Visual Studio 2019 after the first language VSIX. View [this feedback](https://developercommunity.visualstudio.com/t/Installation-of-a-VSIX-into-both-Release/1582487?entry=myfeedback) for additional information about this issue.
 
-- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
+- An alternative to [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (for resuming execution on the dispatcher queue thread) is to use the [resume_foreground](https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555) helper function in the [Windows Implementation Library (WIL)](https://github.com/microsoft/wil):
 
     1. Add a reference to your project to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
     2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
@@ -530,10 +530,10 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 #### Bug fixes
 
-- Fixed issue that was causing WinUI apps using [pointer input](/windows/winui/api/microsoft.ui.xaml.input.pointer) to crash. 
+- Fixed issue that was causing WinUI apps using [pointer input](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer) to crash. 
 - Fixed issue causing the title bar buttons (min, max, close) to not have rounded corners on Windows 11. 
 - Fixed issue causing the resizing layout options to not appear when hovering over maximize/restore button on Windows 11. 
-- Fixed issue causing a crashing exception where creating a [PointCollection](/windows/winui/api/microsoft.ui.xaml.media.pointcollection) object. For more information, see [issue 971](https://github.com/microsoft/CsWinRT/issues/971) on Github. 
+- Fixed issue causing a crashing exception where creating a [PointCollection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.pointcollection) object. For more information, see [issue 971](https://github.com/microsoft/CsWinRT/issues/971) on Github. 
 
 The limitations and known issues for version 0.8 also apply to version 0.8.5, unless marked otherwise in the [section below](#limitations).
 
@@ -543,7 +543,7 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 #### Bug fixes
 
-- Fixes for custom title bars so that [ContentDialog](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog) doesn't cover it up, and the title bar buttons are rounded.
+- Fixes for custom title bars so that [ContentDialog](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) doesn't cover it up, and the title bar buttons are rounded.
 - Fix for a crash in image processing when the display scale is changed.
 - Fixes clipping bugs where UI disappear or clipped incorrectly
 
@@ -571,7 +571,7 @@ This is a servicing release of the Windows App SDK that includes more critical b
 - Icons/images always load at their 100% scale value rather than based on the monitor scale value
 - Garbage collection of **EventSource\<T\>** causes subsequent failure to unsubscribe handlers (see [GitHub issue](https://github.com/microsoft/CsWinRT/issues/842) for more details)
 - Security fix – see [CVE-2021-34533](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-34533) for more details.
-- [SwapChainPanel.CompositionScaleChanged](/windows/winui/api/microsoft.ui.xaml.controls.swapchainpanel.compositionscalechanged) sometimes returning incorrect CompositionScale values after changing display scale
+- [SwapChainPanel.CompositionScaleChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel.compositionscalechanged) sometimes returning incorrect CompositionScale values after changing display scale
 
 The limitations and known issues for version 0.8 also apply to version 0.8.2, unless marked otherwise in the [section below](#limitations).
 
@@ -618,7 +618,7 @@ This release includes many bug fixes and improved stabilization across WinUI 3. 
 
     Use `Windows.Graphics.IGeometrySource2D` and `Windows.Graphics.IGeometrySource2DInterop` instead.
 
-- All types in the `Microsoft.System` namespace have been moved to the `Microsoft.UI.Dispatching` namespace, including the [DispatcherQueue class](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue).
+- All types in the `Microsoft.System` namespace have been moved to the `Microsoft.UI.Dispatching` namespace, including the [DispatcherQueue class](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue).
 
 - The `AcrylicBrush.BackgroundSource` property has been removed, since `HostBackdrop` is not supported as a `BackgroundSource` in WinUI 3.
 

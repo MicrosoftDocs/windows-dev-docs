@@ -25,7 +25,7 @@ public static IntPtr GetWindowFromWindowId(WindowId windowId);
 
 ### Parameters
 
-`windowId` [WindowId](/windows/winui/api/microsoft.ui.windowid)
+`windowId` [WindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid)
 
 The identifier for the window.
 

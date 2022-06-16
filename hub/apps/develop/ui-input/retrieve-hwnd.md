@@ -19,7 +19,7 @@ There are several reasons to retrieve the **HWND** for a window in your WinUI 3,
 
 ## WinUI 3 with C#
 
-The C# code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/winui/api/microsoft.ui.xaml.window) object. This example calls the **GetWindowHandle** method on the **WinRT.Interop.WindowNative** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+The C# code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. This example calls the **GetWindowHandle** method on the **WinRT.Interop.WindowNative** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 ```csharp
 // MainWindow.xaml.cs
@@ -32,7 +32,7 @@ private async void myButton_Click(object sender, RoutedEventArgs e)
 
 ## WinUI 3 with C++
 
-The C++/WinRT code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/winui/api/microsoft.ui.xaml.window) object. This example calls the [**IWindowNative::get_WindowHandle**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) method.
+The C++/WinRT code below shows how to retrieve the window handle (HWND) for a WinUI 3 [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. This example calls the [**IWindowNative::get_WindowHandle**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle) method.
 
 ```cppwinrt
 // pch.h

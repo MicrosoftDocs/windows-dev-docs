@@ -25,7 +25,7 @@ public static IntPtr GetIconFromIconId(IconId iconId);
 
 ### Parameters
 
-`iconId` [IconId](/windows/winui/api/microsoft.ui.iconid)
+`iconId` [IconId](/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid)
 
 The identifier for the icon.
 

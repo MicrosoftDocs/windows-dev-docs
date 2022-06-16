@@ -91,7 +91,7 @@ You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](/windows/w
 
 >**Tip**&nbsp;&nbsp;This feature is explained in depth in this session from Build 2015- XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML.
 
-You typically set debug settings in the [OnLaunched](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) method override in the code-behind page for App.xaml, like this.
+You typically set debug settings in the [OnLaunched](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) method override in the code-behind page for App.xaml, like this.
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)

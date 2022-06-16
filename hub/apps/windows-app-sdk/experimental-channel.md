@@ -4,8 +4,8 @@ description: Learn about the latest experimental releases of the Windows App SDK
 ms.topic: article
 ms.date: 11/16/2021
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
-ms.author: zafaraj
-author: zaryaf
+ms.author: gabilka
+author: gabbybilka
 ms.localizationpriority: medium
 ---
 
