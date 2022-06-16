@@ -91,9 +91,9 @@ See [Bootstrapper C++ API](/windows/apps/api-reference/bootstrapper-cpp-api/).
 
 ## Declare OS compatibility in your application manifest
 
-To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior, you should include a [side-by-side application manifest](/windows/win32/sbscs/application-manifests) with your non-MSIX-packaged app (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build).
+To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior (and potential crashes), you can include a side-by-side application manifest with your non-MSIX-packaged app. See [Application manifests](/windows/win32/sbscs/application-manifests) (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build). This might be an issue if you're adding Windows App SDK support to an existing app, rather than creating a new one via a Visual Studio project template.
 
-If you don't already have a side-by-side application manifest in your project, then add a new XML file to your project, and name it `app.manifest`. Add to it the **compatibility** element and the child elements shown in the following example. These values control the quirks level for the components running in your app's process.
+If you don't already have a side-by-side application manifest in your project, then add a new XML file to your project, and name it as recommended in [Application manifests](/windows/win32/sbscs/application-manifests). Add to the file the **compatibility** element and the child elements shown in the following example. These values control the quirks level for the components running in your app's process.
 
 Replace the **Id** attribute of the **maxversiontested** element with the version number of Windows that you're targeting (must be 10.0.17763.0 or a later release). Note that setting a higher value means that older versions of Windows won't run your app properly because every Windows release knows only of versions before it. So if you want your app to run on Windows 10, version 1809 (10.0; Build 17763), then you should either leave the 10.0.17763.0 value as is, or add multiple **maxversiontested** elements for the different values that your app supports.
 
@@ -109,8 +109,6 @@ Replace the **Id** attribute of the **maxversiontested** element with the versio
     </compatibility>
 </assembly>
 ```
-
-The side-by-side application manifest must exist in the same directory as the executable file for your desktop app; and by convention it should have the same name as your app's executable file, with the `.manifest` extension appended to it. For example, if your app's executable name is `ContosoPhotoStore`, then the application manifest filename should be `ContosoPhotoStore.exe.manifest`.
 
 ## Related topics
 
