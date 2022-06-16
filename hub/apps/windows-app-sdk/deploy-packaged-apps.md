@@ -11,9 +11,6 @@ ms.localizationpriority: medium
 
 # Windows App SDK deployment guide for framework-dependent MSIX-packaged apps 
 
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This article provides guidance about deploying framework-dependent MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 
 ## Overview
