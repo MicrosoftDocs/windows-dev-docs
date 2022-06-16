@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 09/28/2021
+ms.date: 06/09/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -10,11 +10,11 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 # Microsoft Store Policies
 
-**Document version: 7.15**
+**Document version: 7.16**
 
-**Publish date: September 28, 2021**
+**Publish date: June 16, 2022**
 
-**Effective date: October 28, 2021**
+**Effective date: July 16, 2022**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
@@ -75,7 +75,22 @@ If you have feedback on the policies, please let us know by commenting in [our f
 
 **10.1.1**
 
-All aspects of your product should accurately describe the functions, features and any important limitations of your product, including required or supported input devices. The value proposition of your product must be clear during the first run experience. Your product may not use a name or icon similar to that of other products, and may not claim to be from a company, government body, or other entity if you do not have permission to make that representation. Products submitted as web apps must be published by the domain or website owner.
+- All aspects of your product, including metadata, should accurately describe the functions, features, user experience and any important limitations of your product, including required or supported input devices.
+
+- Your product must not in any way attempt to mislead customers as to its actual features, functionality, or relationship to other products.
+
+- Your product title or name must be unique and must not contain marketing or descriptive text, including extraneous use of keywords.
+
+- Your product must not use a name, images, or any other metadata that is the same as that of other products unless the product is also published by you.
+
+- The value proposition of your product must be clear during the first run experience.
+
+- Your product should be listed in the most appropriate category and genre based on the features and functionality it offers.
+
+- Products submitted as web apps must be published by the domain or website owner.
+
+- Your product must not claim to be from a company, government body, or other entity if you do not have permission to make that representation.
+
 
 **10.1.2**
 
@@ -94,16 +109,22 @@ Your product must have distinct and informative metadata and must provide a valu
 Your product may, with user consent and after initial download of the primary product, enable acquisition of:
 
 - Other products published by you as long as the other products are also distributed through the Microsoft Store.
+
 - Add-ons or extensions that enhance the functionality of the product.
+
 
 **10.1.6**
 
 Products that are standalone storefronts, whose primary purpose is to enable acquisition of digital goods are allowed on PC devices, subject to the following requirements:
 
-- While content offered via your product is not subject to certification, your content must adhere to all applicable Store Policies.  
+- While content offered via your product is not subject to certification, your content must adhere to all applicable Store Policies.
+
 - If your product uses, accesses, monetizes access to, or displays content from a third-party service, ensure that you are specifically permitted to do so under the service’s terms of use.
+
 - Your storefront must offer a comprehensive catalog of content of sufficient size (a minimum of 20 distinct products, excluding downloadable content and in-app products or offers) to provide a unique and valuable user experience.
+
 - Storefronts that only offer a single game or app, versions of a single game or app, or a single franchise of games or apps are not allowed.
+
 
 ### 10.2 Security
 
@@ -112,11 +133,13 @@ Your product must not jeopardize or compromise user security, or the security or
 **10.2.1**
 
 - Products that browse the web must use either the Chromium or the Gecko open source engine. To ensure compatibility and security of user experience they must be updated to be no older than within 2 major versions of those open source projects (for example, if the latest released major version of Chromium is 85, any browser based on Chromium must be on at least Chromium version 83 or higher),and known security issues must be patched in a more timely fashion. Any included private or proprietary components, or components not otherwise available under an open source license that affect compatibility of web site experience (such as codecs) shall be licensable on reasonable terms to other browser publishers to achieve compatibility. Compatibility and consistency of web site experience presented to browsers on the same engine shall be the primary test of meeting this engine consistency requirement (including publisher’s own sites). Existing browsers in the Windows Store may continue to use the EdgeHTML engine.
+
 - Products that browse the web that are made available on the Xbox Console must not offer any functionality that would allow a user of the app to download or copy files, aside from those necessary for functionality of the app.
+
 
 **10.2.2**
 
-Your product must not attempt to change or extend its described functionality through any form of dynamic inclusion of code that is in violation of Store Policies. Your product should not, for example, download a remote script and subsequently execute that script in a manner that is not consistent with the described functionality.
+Your product must not attempt to fundamentally change or extend its described functionality or introduce features or functionality that are in violation of Store Policies through any form of dynamic inclusion of code. Your product should not, for example, download a remote script and subsequently execute that script in a manner that is not consistent with the described functionality.
 
 **10.2.3**
 
@@ -150,11 +173,19 @@ You are required to use supported methods and must obtain user consent to change
 Non-gaming products may submit an HTTPS-enabled download URL (direct link) to the product’s installer binaries. Products submitted in this manner are subject to the following requirements:
 
 - The installer binary may only be .msi or .exe.
+
+- The binary and all of its Portable Executable (PE) files must be digitally signed with a code signing certificate that chains up to a certificate issued by a Certificate Authority (CA) that is part of the [Microsoft Trusted Root Program](/security/trusted-root/participants-list).
+
 - You must submit a versioned download URL in Partner Center. The binary associated with that URL must not change after submission.
-- Whenever you have an updated binary to distribute, you must provide an updated versioned download URL in Partner Center associated with the updated binary. You are responsible for maintaining and updating the download URL. 
+
+- Whenever you have an updated binary to distribute, you must provide an updated versioned download URL in Partner Center associated with the updated binary. You are responsible for maintaining and updating the download URL.
+
 - Initiating the install must not display an installation user interface (i.e., silent install is required), however User Account Control (UAC) dialog is allowed.
+
 - The installer is a standalone installer and is not a downloader stub/web installer that downloads bits when run.
-- Your product may only be made available to PC devices.  
+
+- Your product may only be made available to PC devices.
+
 
 ### 10.3 Product is Testable
 
@@ -278,7 +309,12 @@ Non-game products made available on PC devices may either use a secure third-par
 
 **10.8.7**
 
-All pricing, including sales or discounting, for your digital products or services shall comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
+In cases where you determine the pricing for your product or in-app purchases, all pricing, including sales or discounting, for your digital products or services must:
+
+- Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
+
+- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.
+
 
 ### 10.9 Notifications
 
@@ -350,7 +386,8 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 
 **10.13.1**
 
-Game products, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, that target Xbox One must use Xbox Live services through either the  [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) or [ID@Xbox](https://www.xbox.com/Developers/id) program.
+Game products that target Xbox consoles, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, must use Xbox Live services through the ID@Xbox program. Optionally, you may publish your game product to console without integration of Xbox Live Services through the [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) program.
+
 
 **10.13.2**
 
@@ -365,8 +402,11 @@ Game products on Xbox One must not present an alternate friends list obtained ou
 Products published to Xbox consoles must not:
 
 - Include the sale of Xbox game products, Xbox consoles or Xbox console accessories outside the Store.
+
 - Request or store Microsoft Account usernames or passwords.
+
 - Enable general browsing of the operating system, file systems or attached physical media file structures.
+
 
 **10.13.5**
 
@@ -439,6 +479,10 @@ Your product must not contain any content that facilitates or glamorizes the fol
 
 Your product must not: (a) pose a safety risk to, nor result in discomfort, injury or any other harm to end users or to any other person or animal; or (b) pose a risk of or result in damage to real or personal property.
 
+**11.3.3**
+
+If your product is intended to provide content related to information, news, or current events in the real world, it must not use or distribute false or deceptive images, video, and/or text, or other content that may cause harm pertaining to individuals, entities, or matters of public concern.
+
 ### 11.4 Defamatory, Libelous, Slanderous and Threatening
 
 Your product must not contain any content that is defamatory, libelous, slanderous, or threatening.
@@ -476,7 +520,7 @@ China
 
 ### 11.11 Age Ratings
 
-You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the rating questionnaire to obtain the appropriate rating.
+You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the International Age Rate Coalition (IARC) rating questionnaire during submission to obtain the appropriate rating.
 
 **11.11.3**
 
