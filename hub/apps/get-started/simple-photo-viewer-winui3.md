@@ -501,7 +501,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 
     If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
 
-    Now that we've set an `x:DataType`, we can use `x:Bind` data-binding expressions in the data template to bind to properies of the data type we specified (**ImageFileInfo**, in this case).
+    Now that we've set an `x:DataType`, we can use `x:Bind` data-binding expressions in the data template to bind to properties of the data type we specified (**ImageFileInfo**, in this case).
 
 1. In the data template, find the first **TextBlock** element (the one with its **Text** currently set to *ImageTitle*). Replace its **Text** value as shown below.
 
