@@ -21,6 +21,9 @@ Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 1
 
 For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.
 
+...
+> [!VIDEO https://www.youtube.com/embed/yICVNta8jMU]
+
 ### Arm developer tools
 
 Microsoft is working to deliver an Arm-native developer toolset that includes Arm-native Visual Studio 2022, VSCode, VC++ toolchain, classic .NET Framework, modern .NET, and Java. Microsoft is also working with several 3rd parties and open-source communities to port common tools, runtimes, frameworks and libraries to natively target Windows on Arm. See the [announcement from Build 2022](https://blogs.windows.com/windowsdeveloper/2022/05/24/create-next-generation-experiences-at-scale-with-windows/) about this comprehensive suite of tools, services, and devices that enable developers to build and port apps that natively target Arm just as easily as when targeting x64.
@@ -43,8 +46,6 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
         Microsoft is also working on "Project Volterra" - an exciting new Arm-powered device built by Windows Developers, for Windows developers. Since "Project Volterra" is built on Qualcomm's Snapdragon Compute Platform and sports a powerful Neural Processing Unit (NPU), this will be a great device for AI researchers and developers looking to integrate AI into their apps and experiences. More details about "Project Volterra" will be announced later this year.
     :::column-end:::
 :::row-end:::
-
-> [!VIDEO https://www.youtube.com/embed/yICVNta8jMU]
 
 ## Arm64EC - Build apps for Windows 11 on Arm
 
@@ -77,10 +78,10 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
        ![Tools graphic](./images/arm-tools.png)
     :::column-end:::
     :::column span="2":::
-        Windows offers a variety of tools and frameworks to support app development targeting Arm64 devices.
-        - The new Arm-native **Visual Studio** including **Visual C++**, **.NET & .NET Framework** and **Java** will start previewing in mid-Jun 2022, and will enable developers to natively build and debug Arm apps on Arm-based devices. Learn more in the [blog announcement](https://devblogs.microsoft.com/visualstudio/).
+        Windows offers a variety of tools and frameworks to support app development for Arm, on Arm.
+        - The new **[Arm-native Visual Studio](/visualstudio/install/visual-studio-on-arm-devices)** includes **Visual C++**, **.NET & .NET Framework** and **Java** and will enable developers to natively build and debug Arm apps on Arm-based devices. Learn more in the [blog announcement](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/).
         - **Visual Studio Code** natively supports Arm and [can be installed on Arm devices](https://code.visualstudio.com/#alt-downloads). The [VS Code C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) also offers C++ IntelliSense and build support for developing Windows apps that run natively on Arm64 devices.
-        - [**.NET 6** already supports Arm](/dotnet/core/whats-new/dotnet-6#arm64-support), both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 Preview, and .NET 6 Arm64 SDK.
+        - [**.NET 6** already supports Arm](/dotnet/core/whats-new/dotnet-6#arm64-support), both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 Preview, and the latest [.NET 7 Preview](https://dotnet.microsoft.com/download/dotnet/7.0) Arm64 SDK. Learn more about .NET 7 support for Arm on the [.NET Blog](https://devblogs.microsoft.com/dotnet/).
         - **.NET 6 Arm64 SDK:** By default, if you `dotnet run` a .NET 6 app with the Arm64 SDK, it will run as Arm64. The `dotnet-runtimeinfo` tool can be used to discover the environment that .NET is running on. See the [.NET 6 blog announcement on Arm64 support](https://devblogs.microsoft.com/dotnet/announcing-net-6/#windows-arm64) to learn more.
     :::column-end:::
 :::row-end:::

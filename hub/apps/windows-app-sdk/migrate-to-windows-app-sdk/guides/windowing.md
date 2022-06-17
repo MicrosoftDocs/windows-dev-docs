@@ -17,7 +17,7 @@ This topic contains guidance related to window management, including migrating f
 
 * [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 * [**Windows.UI.Core.CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property
-* [**Microsoft.UI.Window.DispatcherQueue**](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) property
+* [**Microsoft.UI.Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property
 
 ## Summary of API and/or feature differences
 
@@ -197,17 +197,17 @@ When migrating size changed event-handling code, you should switch to using the 
 
 When you create a new UWP project in Visual Studio, the project template provides you with a **MainPage** class. For your app, you might have renamed that class (and/or added more pages and user controls). The project template also provides you with navigation code in the methods of the **App** class.
 
-When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
+When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 
-However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could a new page item to the project (**WinUI** > **Blank Page (WinUI 3)**), and name it `MainPage.xaml`, or some other name. That would add to your project a new class of type [**Microsoft.UI.Xaml.Controls.Page**](/windows/winui/api/microsoft.ui.xaml.controls.page). Then, for info about adding navigation code to the project, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
+However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could a new page item to the project (**WinUI** > **Blank Page (WinUI 3)**), and name it `MainPage.xaml`, or some other name. That would add to your project a new class of type [**Microsoft.UI.Xaml.Controls.Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page). Then, for info about adding navigation code to the project, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
 
 For Windows App SDK apps that are simple enough, you needn't create pages or user controls, and you can copy your XAML markup and code-behind into **MainWindow**. But for info about exceptions to that workflow, see [Visual State Manager, and Page.Resources](winui3.md#visual-state-manager-and-pageresources).
 
 ## Change CoreWindow.Dispatcher to Window.DispatcherQueue
 
-Some use cases for UWP's [**Windows.UI.Core.CoreWindow**](/uwp/api/windows.ui.core.corewindow) class migrate to the Windows App SDK's [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window).
+Some use cases for UWP's [**Windows.UI.Core.CoreWindow**](/uwp/api/windows.ui.core.corewindow) class migrate to the Windows App SDK's [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window).
 
-For example, if you're using the [**Windows.UI.Core.CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property in your UWP app, then the solution is *not* to migrate to the [**Microsoft.UI.Xaml.Window.Dispatcher**](/windows/winui/api/microsoft.ui.xaml.window.dispatcher) property (which always returns null). Instead, migrate to the [**Microsoft.UI.Xaml.Window.DispatcherQueue**](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) property, which returns a [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue).
+For example, if you're using the [**Windows.UI.Core.CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property in your UWP app, then the solution is *not* to migrate to the [**Microsoft.UI.Xaml.Window.Dispatcher**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcher) property (which always returns null). Instead, migrate to the [**Microsoft.UI.Xaml.Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property, which returns a [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue).
 
 For more info, and code examples, see [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](threading.md#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
 

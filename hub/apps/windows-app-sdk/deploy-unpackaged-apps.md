@@ -23,7 +23,7 @@ Non-MSIX-packaged apps also have extra runtime requirements. You must initialize
 
 * [Download the latest installer & MSIX packages](downloads.md).
 * For non-MSIX-packaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
-* **C#**. .NET 5 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
+* **C#**. .NET 6 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ### Additional prerequisites 
 

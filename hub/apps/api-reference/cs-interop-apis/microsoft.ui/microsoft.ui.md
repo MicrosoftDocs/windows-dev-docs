@@ -13,7 +13,7 @@ ms.localizationpriority: low
 
 Provides to desktop application developers C# interop classes whose methods wrap and represent several interoperability functions. These include methods of C# classes representing the [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) function, for example.
 
-These C# interop classes are available in .NET 5 and later as part of the [Windows App SDK](/windows/apps/windows-app-sdk/).
+These C# interop classes are available in .NET as part of the [Windows App SDK](/windows/apps/windows-app-sdk/).
 
 ## Classes
 
@@ -22,4 +22,4 @@ These C# interop classes are available in .NET 5 and later as part of the [Windo
 ## See also
 
 * [Interop C# APIs for WinUI](../index.md)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

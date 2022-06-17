@@ -4,8 +4,8 @@ description: This article provides a walkthrough for building and deploying an u
 ms.topic: article
 ms.date: 05/24/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: gabilka
+author: gabbybilka
 ms.localizationpriority: medium
 ---
 
@@ -132,15 +132,15 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 2. Next, configure your project.
 
     1. In **Solution Explorer**, right-click your project and choose **Edit Project File**.
-    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
+    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
 
         ```xml
-        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
         ```
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
@@ -216,15 +216,15 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
 2. Next, configure your project.
 
     1. In **Solution Explorer**, right-click your project and choose **Edit Project File**.
-    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-5-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
+    2. Replace the value of the **TargetFramework** element with a [Target Framework Moniker](../desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option). For example, use the following if your app targets Windows 10, version 2004.
 
         ```xml
-        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
         ```
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET 5 project is **AnyCPU**, but WinUI 3 does not support this platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.

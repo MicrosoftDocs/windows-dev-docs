@@ -8,12 +8,6 @@ ms.localizationpriority: medium
 
 # Windows App SDK deployment overview
 
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-> [!IMPORTANT]
-> The self-contained feature described in this topic is available only in Windows App SDK 1.1 Preview 1.
-
 There are two ways in which you can deploy the Windows App SDK.
 
 * **Framework-dependent**. Your app depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Framework-dependent deployment is the default deployment mode of the Windows App SDK for its efficient use of machine resources and serviceability.

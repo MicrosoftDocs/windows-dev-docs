@@ -37,7 +37,7 @@ new ToastContentBuilder()
     .AddArgument("conversationId", 9813)
     .AddText("Andrew sent you a picture")
     .AddText("Check this out, The Enchantments in Washington!")
-    .Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 5, your TFM must be net5.0-windows10.0.17763.0 or greater
+    .Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 6 (or later), then your TFM must be net6.0-windows10.0.17763.0 or greater
 ```
 
 Try running this code and you should see the notification appear!

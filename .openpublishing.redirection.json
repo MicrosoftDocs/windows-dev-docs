@@ -1,6 +1,41 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-analytics.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-achievements-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-health-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-game-hub-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-club-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-multiplayer-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-concurrent-usage-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/debug-test-perf/device-portal-hololens.md",
       "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal",
       "redirect_document_id": false
@@ -6844,6 +6879,11 @@
       "source_path": "windows-apps-src/porting/arm64ec-abi.md",
       "redirect_url": "/windows/arm/arm64ec-abi",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push/push-quickstart.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart",
+      "redirect_document_id": true
     }
   ]
 }

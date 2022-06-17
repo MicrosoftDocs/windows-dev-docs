@@ -75,7 +75,7 @@ For UWP apps, all packages must target a version of Windows 10 or Windows 11 sup
 
 The versions currently supported range from: 
 - Minimum: 10.0.10240.0
-- Maximum: 10.0.17763.1
+- Maximum: 10.0.22621.0
 
 
 ## StoreManifest XML file

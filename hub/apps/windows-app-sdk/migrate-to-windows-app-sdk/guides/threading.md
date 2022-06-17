@@ -62,7 +62,7 @@ if (this->Dispatcher().HasThreadAccess())
 }
 ```
 
-Instead, in your Windows App SDK app, you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) class. And the corresponding methods or properties that take or return a **DispatcherQueue**, such as the [**DependencyObject.DispatcherQueue**](/windows/winui/api/microsoft.ui.xaml.dependencyobject.dispatcherqueue) and [**Microsoft.UI.Xaml.Window.DispatcherQueue**](/windows/winui/api/microsoft.ui.xaml.window.dispatcherqueue) properties. For example, you'll be calling **DependencyObject.DispatcherQueue** when you retrieve the **DispatcherQueue** belonging to a [**Microsoft.UI.Xaml.Controls.Page**](/windows/winui/api/microsoft.ui.xaml.controls.page) (most XAML objects are **DependencyObject**s).
+Instead, in your Windows App SDK app, you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) class. And the corresponding methods or properties that take or return a **DispatcherQueue**, such as the [**DependencyObject.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcherqueue) and [**Microsoft.UI.Xaml.Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) properties. For example, you'll be calling **DependencyObject.DispatcherQueue** when you retrieve the **DispatcherQueue** belonging to a [**Microsoft.UI.Xaml.Controls.Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) (most XAML objects are **DependencyObject**s).
 
 ```csharp
 // MainPage.xaml.cs in a Windows App SDK app
@@ -123,7 +123,7 @@ void MainPage::NotifyUser(std::wstring strMessage)
 }
 ```
 
-In your Windows App SDK app, use the [Microsoft.UI.Dispatching.DispatcherQueue.TryEnqueue](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue.tryenqueue)) method instead. It adds to the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) a task that will be executed on the thread associated with the **DispatcherQueue**.
+In your Windows App SDK app, use the [Microsoft.UI.Dispatching.DispatcherQueue.TryEnqueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue)) method instead. It adds to the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) a task that will be executed on the thread associated with the **DispatcherQueue**.
 
 ```csharp
 // MainPage.xaml.cs in a Windows App SDK app
@@ -183,7 +183,7 @@ winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&, RoutedEventAr
 In your Windows App SDK app:
 
 * Instead of **winrt::resume_foreground**, you'll need to use **wil::resume_foreground** (from the [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil)).
-* And instead of **CoreDispatcher**, you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/winui/api/microsoft.ui.dispatching.dispatcherqueue) class, as described in [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
+* And instead of **CoreDispatcher**, you'll need to use the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) class, as described in [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
 
 So first add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package.
 

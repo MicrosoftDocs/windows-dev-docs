@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 02/16/2022
+ms.date: 06/15/2022
 ms.topic: article
 keywords: windows 10, uwp, title bar
 doc-status: Draft
@@ -64,9 +64,9 @@ You can use AppWindow APIs with any UI framework that the Windows App SDK suppor
 > [!div class="checklist"]
 >
 > - **Applies to**: WinUI 3 desktop apps
-> - **Important APIs**: [Microsoft.UI.Xaml.Window class](/windows/winui/api/microsoft.ui.xaml.window), [Window.ExtendsContentIntoTitleBar property](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar), [Window.SetTitleBar method](/windows/winui/api/microsoft.ui.xaml.window.settitlebar)
+> - **Important APIs**: [Microsoft.UI.Xaml.Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [Window.ExtendsContentIntoTitleBar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar), [Window.SetTitleBar method](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar)
 
-Windowing functionality in [WinUI 3](/windows/apps/develop) is through the [Microsoft.UI.Xaml.Window](/windows/winui/api/microsoft.ui.xaml.window) class, which is based on the Win32 HWND model. The Window class includes APIs that let you replace the standard title bar with your own custom content.
+Windowing functionality in [WinUI 3](/windows/apps/develop) is through the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, which is based on the Win32 HWND model. The Window class includes APIs that let you replace the standard title bar with your own custom content.
 
 WinUI 3 is also part of the Windows App SDK, so both the Window class and the AppWindow class are available to customize the title bar. You can pass the window handle of the XAML Window to the AppWindow object and use the AppWindow functionality in conjunction with the Window APIs (see the Windows App SDK tab). However, title bar customization with AppWindow is supported only on Windows 11.
 
@@ -214,7 +214,7 @@ To use a custom window icon, call one of the [AppWindow.SetIcon](/windows/window
 
 - `SetIcon(IconId)`
 
-  If you already have a handle to an icon (`HICON`) from one of the [Icon functions](/windows/win32/menurc/icon-functions) like [CreateIcon](/windows/win32/api/winuser/nf-winuser-createicon), you can use the [GetIconIdFromIcon](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon) interop API to get an [IconId](/windows/winui/api/microsoft.ui.iconid). You can then pass the `IconId` to the [SetIcon(IconId)](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon#Microsoft_UI_Windowing_AppWindow_SetIcon_Microsoft_UI_IconId_) method to set your window icon.  
+  If you already have a handle to an icon (`HICON`) from one of the [Icon functions](/windows/win32/menurc/icon-functions) like [CreateIcon](/windows/win32/api/winuser/nf-winuser-createicon), you can use the [GetIconIdFromIcon](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon) interop API to get an [IconId](/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid). You can then pass the `IconId` to the [SetIcon(IconId)](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon#Microsoft_UI_Windowing_AppWindow_SetIcon_Microsoft_UI_IconId_) method to set your window icon.  
 
   ```csharp
   m_AppWindow.SetIcon(iconId));
@@ -226,7 +226,7 @@ To use a custom window icon, call one of the [AppWindow.SetIcon](/windows/window
 
 By default, the title bar shows the app's display name as the window title. The display name is set in the `Package.appxmanifest` file.
 
-To replace the title with custom text, set the [Window.Title](/windows/winui/api/microsoft.ui.xaml.window.title) property to a text value, as shown here.
+To replace the title with custom text, set the [Window.Title](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.title) property to a text value, as shown here.
 
 ```csharp
 public MainWindow()
@@ -357,7 +357,7 @@ private AppWindow GetAppWindowForCurrentWindow()
 
 ### [WinUI 3](#tab/winui3)
 
-This example shows how to set the [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) property to `true`.
+This example shows how to set the [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) property to `true`.
 
 ```csharp
 public MainWindow()
@@ -438,7 +438,7 @@ This example shows the XAML for a custom title bar UI without interactive conten
 
 ### [WinUI 3](#tab/winui3)
 
-You specify the drag region by calling the [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) method and passing in a [UIElement](/windows/winui/api/microsoft.ui.xaml.uielement) that defines the drag region. (The `UIElement` is typically a panel that contains other elements.) The `ExtendsContentIntoTitleBar` property must be set to `true` in order for the call to `SetTitleBar` to have any effect.
+You specify the drag region by calling the [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) method and passing in a [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) that defines the drag region. (The `UIElement` is typically a panel that contains other elements.) The `ExtendsContentIntoTitleBar` property must be set to `true` in order for the call to `SetTitleBar` to have any effect.
 
 Here's how to set a `Grid` of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page.
 
@@ -726,11 +726,11 @@ private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
 > For WinUI 3, use [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke) to call the native [GetDpiForMonitor](/windows/win32/api/shellscalingapi/nf-shellscalingapi-getdpiformonitor) function, as shown in the preceding example.
 
 > [!TIP]
-> You can get the height of the system TitleBar (`int titleBarHeight = appWindow.TitleBar.Height;`) and use that to set the height of your custom title bar and drag regions. However, the [design guidance](/windows/apps/design/basics/titlebar-design) recommends setting the title bar height to 48px if you add other controls. In this case, the height of the system title bar will not match your content, so instead, use the [ActualHeight](/windows/winui/api/microsoft.ui.xaml.frameworkelement.actualheight) of the title bar element to set the drag region height.
+> You can get the height of the system TitleBar (`int titleBarHeight = appWindow.TitleBar.Height;`) and use that to set the height of your custom title bar and drag regions. However, the [design guidance](/windows/apps/design/basics/titlebar-design) recommends setting the title bar height to 48px if you add other controls. In this case, the height of the system title bar will not match your content, so instead, use the [ActualHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualheight) of the title bar element to set the drag region height.
 
 ### [WinUI 3](#tab/winui3)
 
-The element passed to [SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) supports the same system interactions as the standard title bar, including drag, double-click to resize, and right-click to show the window context menu. As a result, all pointer input (mouse, touch, pen, and so on) is handled by the system. It is no longer recognized by the title bar element and its child elements. The rectangular area occupied by the title bar element acts as the title bar for pointer purposes, even if the element is blocked by another element, or the element is transparent. However, keyboard input is recognized and child elements can receive keyboard focus.
+The element passed to [SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) supports the same system interactions as the standard title bar, including drag, double-click to resize, and right-click to show the window context menu. As a result, all pointer input (mouse, touch, pen, and so on) is handled by the system. It is no longer recognized by the title bar element and its child elements. The rectangular area occupied by the title bar element acts as the title bar for pointer purposes, even if the element is blocked by another element, or the element is transparent. However, keyboard input is recognized and child elements can receive keyboard focus.
 
 This means that you can't interact with elements in the title bar area except through keyboard input and focus. We don't recommend this because it presents discoverability and accessibility issues.
 
@@ -871,7 +871,7 @@ These title bar properties can be transparent:
 
 All other color properties will continue to ignore the alpha channel. If `ExtendsContentIntoTitleBar` is set to `false`, the alpha channel is always ignored for all `AppWindowTitleBar` color properties.
 
-Reference: [Colors.Transparent](/windows/winui/api/microsoft.ui.colors), [ColorHelper](/windows/winui/api/microsoft.ui.colorhelper)
+Reference: [Colors.Transparent](/windows/windows-app-sdk/api/winrt/microsoft.ui.colors.transparent), [ColorHelper](/windows/windows-app-sdk/api/winrt/microsoft.ui.colorhelper)
 
 ### [WinUI 3](#tab/winui3)
 
@@ -935,11 +935,11 @@ Handle an event to determine the activation state of the window, and update your
 - **Win32**: Listen and respond to the [WM_ACTIVATE](/windows/win32/inputdev/wm-activate) message.
 - **WPF**: Handle [Window.Activated](/dotnet/api/system.windows.window.activated), [Window.Deactivated](/dotnet/api/system.windows.window.deactivated).
 - **WinForms**: Handle [Form.Activated](/dotnet/api/system.windows.forms.form.activated), [Form.Deactivate](/dotnet/api/system.windows.forms.form.deactivate).
-- **WinUI 3 with Windows App SDK title bar APIs**: Handle [Window.Activated](/windows/winui/api/microsoft.ui.xaml.window.activated) (See the WinUI 3 tab).
+- **WinUI 3 with Windows App SDK title bar APIs**: Handle [Window.Activated](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activated) (See the WinUI 3 tab).
 
 ### [WinUI 3](#tab/winui3)
 
-Handle the [Window.Activated](/windows/winui/api/microsoft.ui.xaml.window.activated) event to determine the activation state of the window, and update your title bar UI as needed.
+Handle the [Window.Activated](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activated) event to determine the activation state of the window, and update your title bar UI as needed.
 
 ```csharp
 public MainWindow()
@@ -1006,7 +1006,7 @@ m_AppWindow.TitleBar.ResetToDefault();
 
 ### [WinUI 3](#tab/winui3)
 
-You can call [SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) to switch to a new title bar element while your app is running. You can also pass `null` as the parameter to `SetTitleBar` and set [ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `false` to revert to the default system title bar.
+You can call [SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) to switch to a new title bar element while your app is running. You can also pass `null` as the parameter to `SetTitleBar` and set [ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `false` to revert to the default system title bar.
 
 ### [UWP/WinUI 2](#tab/winui2)
 
@@ -1080,7 +1080,7 @@ private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
 
 ### [WinUI 3](#tab/winui3)
 
-WinUI 3 does not provide any APIs to support full screen mode. A WinUI 3 app can use Windows App SDK APIs for this, but the XAML [Window](/windows/winui/api/microsoft.ui.xaml.window) does not hide the title bar in this case.
+WinUI 3 does not provide any APIs to support full screen mode. A WinUI 3 app can use Windows App SDK APIs for this, but the XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) does not hide the title bar in this case.
 
 ### [UWP/WinUI 2](#tab/winui2)
 

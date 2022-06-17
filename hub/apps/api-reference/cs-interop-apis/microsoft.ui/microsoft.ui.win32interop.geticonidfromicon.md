@@ -31,7 +31,7 @@ The handle of the icon for which to get the `IconId`.
 
 ### Returns
 
-[IconId](/windows/winui/api/microsoft.ui.iconid)
+[IconId](/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid)
 
 The icon identifier that corresponds to the specified *hicon*, if the provided *hicon* is valid. Otherwise, `null`.
 
@@ -45,4 +45,4 @@ The icon identifier that corresponds to the specified *hicon*, if the provided *
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

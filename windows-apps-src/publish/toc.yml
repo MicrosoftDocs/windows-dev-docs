@@ -125,6 +125,8 @@
   items:
     - name: Ratings, Reviews, and Responses
       href: msiexe/ratings-reviews-performance.md
+    - name: Analyze your app's performance
+      href: msiexe/analyze-app-performance.md
 - name: Publish your PWA app to the Microsoft Store
   href: pwa/overview.md
   items:

@@ -24,11 +24,11 @@ You need to set your window's *handle* (**HWND**) on a **MessageDialog**, and on
 
 To use **DataTransferManager** APIs, you need to associate them with your window.
 
-For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
+For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
 
 You may need to refactor your Visual State Manager and **Page.Resources** XAML markup.
 
-In the Windows App SDK, the [**AcrylicBrush**](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
+In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 ## Change Windows.UI.Xaml.Window.Current to App.Window
 
@@ -178,7 +178,7 @@ ContentDialog unsupportedFilesDialog{};
 co_await unsupportedFilesDialog.ShowAsync();
 ```
 
-In your Windows App SDK app, you just need to also set the dialog's [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. Here's how.
+In your Windows App SDK app, you just need to also set the dialog's [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. Here's how.
 
 ```csharp
 // MainPage.xaml.cs in a Windows App SDK app
@@ -200,17 +200,17 @@ co_await unsupportedFilesDialog.ShowAsync();
 
 In a UWP project, by default there will be navigation code in the methods of the **App** class, even if your app is simple enough that it has only one **Page**.
 
-When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
+When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 
 For a Windows App SDK app that's simple enough (a single-page app), you might be able to simplify it. It might be that you needn't create pages or user controls in your Windows App SDK project&mdash;but instead copy the XAML markup and code-behind of that single page into **MainWindow**. However, there are some things that **MainWindow** doesn't support. **Window** isn't a DependencyObject, so capabilities such as **Resources** and **DataContext** don't exist on it. Neither do events such as **Load** and **Unload**. For more info, and workarounds, see [Visual State Manager, and Page.Resources](#visual-state-manager-and-pageresources).
 
-If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the **App.OnLaunched** and **App::OnNavigationFailed** methods from your UWP app. In **App.OnLaunched**, locate the navigation code (the code that creates *rootFrame*, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it). You'll also need to migrate the code you've copy-pasted. For a simple code example, see [**Page class**](/windows/winui/api/microsoft.ui.xaml.controls.page#examples).
+If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the **App.OnLaunched** and **App::OnNavigationFailed** methods from your UWP app. In **App.OnLaunched**, locate the navigation code (the code that creates *rootFrame*, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it). You'll also need to migrate the code you've copy-pasted. For a simple code example, see [**Page class**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page#examples).
 
 ## Visual State Manager, and Page.Resources
 
 Also see [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation). If you *do* have a UWP app that's simple enough where you can copy your XAML markup and code-behind into **MainWindow**, then bear in mind these exceptions.
 
-Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml)). You have these two options, though:
+Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml)). You have these two options, though:
 
 * Add a **UserControl** item to the project, and migrate your markup and code-behind to that. Then place an instance of that user control in **MainWindow**.
 * Add a **Page** item to the project, and migrate your markup and code-behind to that. Then add code to your **App** class to navigate to that **Page** on startup, as described in [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation).
@@ -228,7 +228,7 @@ In addition, you won't be able to copy a `<Page.Resources>` element over to **Ma
 
 ## AcrylicBrush.BackgroundSource property
 
-The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
+The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 So if you're accessing the **AcrylicBrush.BackgroundSource** property in the source code of your UWP app (whether that's in XAML markup or in imperative code), then remove that code when migrating your app to the Windows App SDK.
 

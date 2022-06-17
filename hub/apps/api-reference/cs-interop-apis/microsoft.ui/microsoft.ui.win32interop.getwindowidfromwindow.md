@@ -31,7 +31,7 @@ The handle of the window for which to get the `WindowId`.
 
 ### Returns
 
-[WindowId](/windows/winui/api/microsoft.ui.windowid)
+[WindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid)
 
 The identifier that corresponds to the specified *hwnd*, if the provided *hwnd* is valid. Otherwise, `null`.
 
@@ -45,4 +45,4 @@ The identifier that corresponds to the specified *hwnd*, if the provided *hwnd* 
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

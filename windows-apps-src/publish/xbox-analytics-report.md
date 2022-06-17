@@ -16,6 +16,9 @@ The **Xbox analytics** report in [Partner Center](https://partner.microsoft.com/
 You can view the **Xbox analytics** report from the left navigation menu for your game by expanding **Analyze** and selecting **Xbox analytics**.  You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline.
 
 
+> [!NOTE]
+> The Microsoft Store Analytics API for Xbox is no longer available.
+
 ## Overview tab
 
 The sections on the **Overview** tab shows info about who your players are and how they're engaging with Xbox Live features.

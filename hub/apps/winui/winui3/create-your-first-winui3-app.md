@@ -125,7 +125,7 @@ When the Windows operating system (OS) runs an app, the OS begins execution in t
 
 ### The App class
 
-The app as a whole is represented by a class that's typically called simply **App**. That class is defined in **App.xaml** and in its code-behind file(s) (`App.xaml.cs`, or `App.xaml.h` and `.cpp`). **App** is derived from the WinUI 3 [**Microsoft.UI.Xaml.Application**](/windows/winui/api/microsoft.ui.xaml.application) class.
+The app as a whole is represented by a class that's typically called simply **App**. That class is defined in **App.xaml** and in its code-behind file(s) (`App.xaml.cs`, or `App.xaml.h` and `.cpp`). **App** is derived from the WinUI 3 [**Microsoft.UI.Xaml.Application**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application) class.
 
 The generated code in the entry point creates an instance of **App**, and sets it running.
 
@@ -135,11 +135,11 @@ Another interesting method of **App** is **OnLaunched**. In there we create and 
 
 ### The MainWindow class
 
-The main window displayed by the app is of course represented by the **MainWindow** class. That class is defined in **MainWindow.xaml** and in its code-behind file(s) (`MainWindow.xaml.cs`, or `MainWindow.xaml.h` and `.cpp`). **MainWindow** is derived from the WinUI 3 [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window) class.
+The main window displayed by the app is of course represented by the **MainWindow** class. That class is defined in **MainWindow.xaml** and in its code-behind file(s) (`MainWindow.xaml.cs`, or `MainWindow.xaml.h` and `.cpp`). **MainWindow** is derived from the WinUI 3 [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class.
 
 The constructor of **MainWindow** calls its own **InitializeComponent** method. Again, its job is to turn the XAML markup inside **MainWindow.xaml** into a graph of user interface (UI) objects.
 
-In **MainWindow.xaml** you'll see the basic layout of **MainWindow**. At the layout root is a dynamic panel called a [**Microsoft.UI.Xaml.Controls.StackPanel**](/windows/winui/api/microsoft.ui.xaml.controls.stackpanel). For more info about layout panels, see [Layout panels](/windows/apps/design/layout/layout-panels).
+In **MainWindow.xaml** you'll see the basic layout of **MainWindow**. At the layout root is a dynamic panel called a [**Microsoft.UI.Xaml.Controls.StackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel). For more info about layout panels, see [Layout panels](/windows/apps/design/layout/layout-panels).
 
 Inside that **StackPanel** is a [**Microsoft.UI.Xaml.Controls.Button**](/uwp/api/windows.ui.xaml.controls.button). And that **Button** uses the markup `Click="myButton_Click"` to declaratively hook up an event handler method for the [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event.
 

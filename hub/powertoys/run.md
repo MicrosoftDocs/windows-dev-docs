@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 04/27/2022
+ms.date: 06/03/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -43,6 +43,8 @@ The following general options are available on the PowerToys Run settings page.
 | Activation shortcut | Define the keyboard shortcut to show/hide PowerToys Run |
 | Use centralized keyboard hook | Try this setting if there are issues with the keyboard shortcut |
 | Ignore shortcuts in full-screen mode | When in full-screen (F11), PowerToys Run won't be engaged with the shortcut |
+| Delay search | Add a delay to wait for more input before executing a search |
+| Search delay (ms) | How many milliseconds to wait before executing the search |
 | Maximum number of results | Maximum number of results shown without scrolling |
 | Clear the previous query on launch | When launched, previous searches will not be highlighted |
 | Preferred display position | If multiple displays are in use, PowerToys Run can be launched on:<br />- Primary display<br />- Display with mouse cursor<br />- Display with focused window |
@@ -62,23 +64,23 @@ The plugins can be activated with a direct activation command so that PowerToys 
 > [!TIP]
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
-| Plug-in                   | Direct activation command | Example                                                                                                                                                                                                                                                                                              |
-|:--------------------------|:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Calculator                | `=`                       | `= 2+2`                                                                                                                                                                                                                                                                                              |
-| File searching            | `?`                       | `? road` to find 'roadmap.txt'                                                                                                                                                                                                                                                                       |
-| Installed programs        | `.`                       | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.)                                                                                                                                                         |
-| Registry keys             | `:`                       | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key.                                                                                                                                                                                                                                         |
-| Windows services          | `!`                       | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped.                                                                                                                                                                                                              |
-| Shell command             | `>`                       | `> ping localhost` to do a ping query.                                                                                                                                                                                                                                                               |
-| Time and date             | `(`                       | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'.                                                                                                                                        |
-| Time zones                | `&`                       | `& Newfoundland` shows the current time in the time zone of Newfoundland.                                                                                                                                                                                                                            |
-| Unit converter            | `%%`                      | `%% 10 ft in m` to calculate the number of meters in 10 feet.                                                                                                                                                                                                                                        |
-| URI-handler               | `//`                      | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are supported.                                                                                                              |
-| Visual Studio Code        | `{`                       | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths.                                                                                                                                                                    |
-| Web search                | `??`                      | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine.                                                                                                                                                         |
-| Windows settings          | `$`                       | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
-| Windows Terminal profiles | `_`                       | `_ powershell` to list all profiles that contains 'powershell' in their name.                                                                                                                                                                                                                        |
-| Window Walker             | `<`                       | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process.                                                                                                                                                                                              |
+| Plug-in | Direct activation command | Example |
+| :--- | :--- | :--- |
+| Calculator | `=` | `= 2+2` |
+| File searching | `?` | `? road` to find 'roadmap.txt' |
+| Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
+| Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
+| Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
+| Shell command | `>` | `> ping localhost` to do a ping query. |
+| Time and date| `(` | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
+| Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
+| Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
+| URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are supported. |
+| Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
+| Web search | `??` | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
+| Windows settings | `$` | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
+| Windows Terminal profiles | `_` | `_ powershell` to list all profiles that contains 'powershell' in their name. |
+| Window Walker | `<` | `< outlook` to find all open windows that contain 'outlook' in their name or the name of their process. |
 
 
 ## Using PowerToys Run
@@ -142,10 +144,11 @@ If the program plugin's option "Include in global result" is not selected, inclu
 
 ### Calculator plugin
 
-> [!NOTE]
-> The Calculator plugin respects the number format settings of your system. Please be aware of the different decimal and thousand delimiters in different locals.
+> [!TIP]
+> The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, you can change the behavior for the query input and the result output in the [plugin manager](#plugin-manager).
 
 > [!IMPORTANT]
+> Please be aware of the different decimal and thousand delimiters in different locals.
 > If your system's number format uses the comma (`,`) as the decimal delimiter, you have to write a space between the number(s) and comma(s) on operations with multiple parameters. The input has to look like this: `min( 1,2 , 3 , 5,7)` or `min( 1.2 , 3 , 5.7)`.
 
 The Calculator plugin supports the following operations:
@@ -172,7 +175,7 @@ The Calculator plugin supports the following operations:
 | Factorial | x! | |
 | Sign | sign( -x ) | A number that indicates the sign of value:<br />- `-1` if number is less than zero.<br />- `0` if number is zero.<br />- `1` if number is greater than zero. |
 | Random number | rand() | Returns a fractional number between 0 and 1. |
-| Pi | pi | Returns the number of pi. (To simply display pi, a sign is required like so: `+pi`.) |
+| Pi | pi | Returns the number of pi. |
 | Sine | sin( x ) | |
 | Cosine | cos( x ) | |
 | Tangent | tan( x ) | |
@@ -242,6 +245,16 @@ To search by location you can use the following syntax:
 
 - `$ device:` to list all settings with 'device' in the area name.
 - `$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'.
+
+### Service plugin
+
+The Service plugin lets you search, start, stop and restart Windows services directly from the PowerToys Run search screen.
+
+To search for Windows services, [enable the plugin](#plugin-manager), open PowerToys Run and enter the name of the service.
+Additionally, you can use the following syntax:
+
+- `!startup:automatic` to list all services with start type 'automatic'.
+- `!status:running` to list all currently running services.
 
 ### Kill a window process
 

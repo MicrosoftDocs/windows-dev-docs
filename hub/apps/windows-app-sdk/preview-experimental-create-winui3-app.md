@@ -102,7 +102,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 
 ### [C# with earlier releases](#tab/csharp-earlier)
 
-To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Experimental and earlier releases:
+To create a WinUI 3 desktop app with C# and .NET using Windows App SDK 1.0 Experimental or earlier releases:
 
 1. In Visual Studio, select **File** -> **New** -> **Project**.
 

@@ -25,7 +25,7 @@ public static IntPtr GetWindowFromWindowId(WindowId windowId);
 
 ### Parameters
 
-`windowId` [WindowId](/windows/winui/api/microsoft.ui.windowid)
+`windowId` [WindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid)
 
 The identifier for the window.
 
@@ -45,4 +45,4 @@ The window handle that corresponds to the specified *windowId*, if the provided 
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

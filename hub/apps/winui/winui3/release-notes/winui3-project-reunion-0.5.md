@@ -31,7 +31,7 @@ Once you've set up your development environment, see [WinUI 3 templates in Visua
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
 - [Create your first WinUI 3 project](../create-your-first-winui3-app.md)
-- [Build a basic WinUI 3 desktop app](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
+- [Build a C# .NET app with WinUI 3 and Win32 interop](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
@@ -68,7 +68,7 @@ If you created an app with an earlier preview or release version of WinUI 3, you
 
 This release provides the stability and support to make WinUI 3 suitable for production apps that can ship to the Microsoft Store. It includes support and forward compatibility for most features introduced in past previews:
 
-- Ability to create desktop apps with WinUI, including [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0) for Win32 apps
+- Ability to create desktop apps with WinUI, including [.NET](https://github.com/dotnet/core/blob/main/release-notes/6.0/README.md) for Win32 apps
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView updates](/windows/uwp/design/controls-and-patterns/tab-view)
 - Dark theme updates
@@ -89,7 +89,7 @@ This release provides the stability and support to make WinUI 3 suitable for pro
   - Live Visual Tree, Hot Reload, Live Property Explorer and similar tools
   - Intellisense for WinUI 3
 - Improvements required for open source migration
-- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
+- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
 - VirtualSurfaceImageSource support
 - In-app acrylic
 
@@ -123,7 +123,7 @@ WinUI 3 - Project Reunion 0.5 is compatible with PCs running the Windows 10 Octo
 ### Developer tools
 
 - Only C# and C++/WinRT apps are supported
-- Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
+- Desktop apps support .NET 6 (and later) and C# 9, and must be packaged in an MSIX app
 - No XAML Designer support
 - New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible)
 - Unpackaged desktop deployment is not supported
