@@ -539,7 +539,7 @@ If you build and run the app now, instead of placeholders you'll see real photos
 
 We're currently using imperative code to associate the **GridView**'s [**ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource)) property with **MainWindow**'s **Images** property. But we can do that in markup instead.
 
-1. In `MainWindow.cs`, delete (or comment-out) the last line of **GetItemsAsync**, which is `ImageGridView.ItemsSource = Images;`.
+1. In `MainWindow.xaml.cs`, delete (or comment-out) the last line of **GetItemsAsync**, which is `ImageGridView.ItemsSource = Images;`.
 
 1. And then in `MainWindow.xaml`, find the **GridView** named *ImageGridView*, and add an **ItemsSource** attribute like this. You can use IntelliSense to make this change if you like.
 
