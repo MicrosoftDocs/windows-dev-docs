@@ -442,9 +442,12 @@ Now it's time to move our sketch to a higher level of fidelity; and that means r
 
 The technique we'll use to display the photos in the `Assets\Samples` folder involves updating the **GridView**'s items progressively. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview). But in a nutshell, the **GridView** will let us know (by way of an event) when one of its item containers is ready to display its item. And then we'll keep track of which phase of its update lifecycle the item container is in so that we can determine when it's ready to display photo data.
 
-1. In `MainWindow.xaml.cs`, add a new method to **MainWindow** named **ImageGridView_ContainerContentChanging**. This is an event-handling method, and the event it handles is [**ContainerContentChanging**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.containercontentchanging). We also need to provide the implementation of the **ShowImage** method that **ImageGridView_ContainerContentChanging** depends on. Here's the code to add to your project:
+1. In `MainWindow.xaml.cs`, add a new method to **MainWindow** named **ImageGridView_ContainerContentChanging**. This is an event-handling method, and the event it handles is [**ContainerContentChanging**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.containercontentchanging). We also need to provide the implementation of the **ShowImage** method that **ImageGridView_ContainerContentChanging** depends on. Paste the `using` directive and the two method implementations into `MainWindow.xaml.cs`:
 
     ```csharp
+    ...
+    using Microsoft.UI.Xaml.Controls;
+    ...
     private void ImageGridView_ContainerContentChanging(
         ListViewBase sender,
         ContainerContentChangingEventArgs args)
