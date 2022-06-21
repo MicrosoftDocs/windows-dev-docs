@@ -145,7 +145,8 @@ The following sections describe different categories of ms-settings URIs used to
 | AutoPlay | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
 | Connected Devices | ms-settings:connecteddevices |
-| Default camera | ms-settings:camera (**Deprecated in Windows 10, version 1809 and later**) |
+| Default camera | ms-settings:camera (**Behavior deprecated in Windows 10, version 1809 and later**) |
+| Camera settings | ms-settings:camera (**Behavior introduced in Windows 11, Build 22000 and later**) |
 | Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
 | Pen & Windows Ink | ms-settings:pen |
 | Printers & scanners | ms-settings:printers |
