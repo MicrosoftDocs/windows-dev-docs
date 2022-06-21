@@ -817,6 +817,37 @@ LeftPaddingColumn.Width = new GridLength(CaptionButtonOcclusionWidthLeft);
 > [!IMPORTANT]
 > See important information in the [_Interactive content_](#interactive-content) section about how display scaling affects these values.
 
+##### Tall title bar support for custom title bars
+
+When you add interactive content like a search box or person picture in the title bar, we recommend that you increase the height of your title bar to provide more room for these elements. A taller title bar also makes touch manipulation easier. The [AppWindowTitleBar.PreferredHeightOption](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.preferredheightoption) property gives you the option of increasing your title bar height from the standard height, which is the default, to a taller height. When you select `Tall` title bar mode, the caption buttons that the system draws as an overlay in the client area are rendered taller with their min/max/close glyphs centered. If you haven't specified a drag region, the system will draw one that extends the width of your window and the height determined by the `PreferredHeightOption` value that you set.
+
+The [AppWindowTitleBar.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property must be `true` for the `PreferredHeightOption` property to take effect. If you set the `PreferredHeightOption` before setting `ExtendsContentIntoTitlebar` to `true`, the proprty is silently ignored until you set `ExtendsContentIntoTitlebar` to `true`, at which point it takes effect.
+
+This example shows how you can set the `PreferredHeightOption` property.
+
+```csharp
+bool isTallTitleBar = true;
+
+// A taller title bar is only supported when drawing a fully custom title bar
+if (AppWindowTitleBar.IsCustomizationSupported() && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
+{
+       if (isTallTitleBar)
+       {
+            // Choose a tall title bar to provide more room for interactive elements 
+            // like search box or person picture controls.
+            m_AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
+       }
+       else
+       {
+            _mainAppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Standard;
+       }
+       // Recalculate the drag region for the custom title bar 
+       // if you explicitly defined new draggable areas.
+       SetDragRegionForCustomTitleBar(_m_AppWindow);
+}
+```
+
+
 #### [WinUI 3](#tab/winui3)
 
 The system reserves the upper-left or upper-right corner of the app window for the system caption buttons (minimize, maximize/restore, close). The system retains control of the caption button area to guarantee that minimum functionality is provided for dragging, minimizing, maximizing, and closing the window. The system draws the Close button in the upper-right for left-to-right languages and the upper-left for right-to-left languages.
