@@ -127,7 +127,8 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](https://microsoft.github.io/windows-docs-rs/doc/windows/Foundation/Diagnostics/struct.LoggingActivity.html) constructor, like this.
+To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](/uwp/api/windows.foundation.diagnostics.loggingactivity) constructor, like this.
+
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
