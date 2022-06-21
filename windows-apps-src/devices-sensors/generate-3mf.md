@@ -22,7 +22,7 @@ This guide describes the structure of the 3D Manufacturing Format document and h
 
 The 3D Manufacturing Format is a set of conventions for using XML to describe the appearance and structure of 3D models for the purpose of manufacturing (3D printing). It defines a set of parts (some required and some optional) and their relationships, with the goal of providing all necessary information to a 3D manufacturing device. A data set that adheres to the 3D Manufacturing Format can be saved as a file with the .3mf extension.
 
-In Windows 10, the [**Printing3D3MFPackage**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) class in the **Windows.Graphics.Printing3D** namespace is analogous to a single .3mf file, and other classes map to the particular XML elements in the file. This guide describes how each of the main parts of a 3MF document can be created and set programmatically, how the 3MF Materials Extension can be utilized, and how a **Printing3D3MFPackage** object can be converted and saved as a .3mf file. For more information on the standards of 3MF or the 3MF Materials Extension, see the [3MF Specification](https://3mf.io/what-is-3mf/3mf-specification/).
+In Windows 10, the [**Printing3D3MFPackage**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) class in the **Windows.Graphics.Printing3D** namespace is analogous to a single .3mf file, and other classes map to the particular XML elements in the file. This guide describes how each of the main parts of a 3MF document can be created and set programmatically, how the 3MF Materials Extension can be utilized, and how a **Printing3D3MFPackage** object can be converted and saved as a .3mf file. For more information on the standards of 3MF or the 3MF Materials Extension, see the [3MF Specification](https://3mf.io/specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -37,7 +37,7 @@ The **Printing3D3MFPackage** class represents a complete 3MF document, and at th
 
 ## Metadata
 
-The model part of a 3MF document can hold metadata in the form of key/value pairs of strings stored in the **Metadata** property. There are a number of predefined names of metadata, but other pairs can be added as part of an extension (described in more detail in the [3MF specification](https://3mf.io/what-is-3mf/3mf-specification/)). It is up to the receiver of the package (a 3D manufacturing device) to determine whether and how to handle metadata, but it is good practice to include as much basic info as possible in the 3MF package:
+The model part of a 3MF document can hold metadata in the form of key/value pairs of strings stored in the **Metadata** property. There are a number of predefined names of metadata, but other pairs can be added as part of an extension (described in more detail in the [3MF specification](https://3mf.io/specification/)). It is up to the receiver of the package (a 3D manufacturing device) to determine whether and how to handle metadata, but it is good practice to include as much basic info as possible in the 3MF package:
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMetadata":::
 

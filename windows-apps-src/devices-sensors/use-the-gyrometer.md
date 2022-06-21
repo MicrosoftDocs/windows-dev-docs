@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 **Sample**
 
--   For a more complete implementation, see the [gyrometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
+-   For a more complete implementation, see the [gyrometer sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/Gyrometer).
 
 Learn how to use the gyrometer to detect changes in user movement.
 
