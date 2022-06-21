@@ -106,7 +106,6 @@ The following additional methods are available for use by developer accounts wit
 |---------------|--------------------|
 | General analytics |  <ul><li>[Get Xbox Live analytics data](get-xbox-live-analytics.md)</li></ul> |
 
-
 ### Methods for hardware and drivers
 
 Developer accounts that belong to the [Windows hardware dashboard program](/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) have access to an additional set of methods for retrieving analytics data for hardware and drivers. For more information, see [Hardware dashboard API](/windows-hardware/drivers/dashboard/dashboard-api).
