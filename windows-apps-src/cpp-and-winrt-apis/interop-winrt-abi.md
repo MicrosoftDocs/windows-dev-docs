@@ -101,7 +101,7 @@ int main()
 }
 ```
 
-The implementations of the **as** functions call [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). If you want lower-level conversions that only call [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
+The implementations of the **as** functions call [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)). If you want lower-level conversions that only call [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref), then you can use the [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) and [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) helper functions. This next code example adds these lower-level conversions to the code example above.
 
 > [!IMPORTANT]
 > When interoperating with ABI types it's critical that the ABI type used corresponds to the default interface of the C++/WinRT object. Otherwise, invocations of methods on the ABI type will actually end up calling methods in the same vtable slot on the default interface with very unexpected results. Note that [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) does not protect against this at compile time since it uses **void\*** for all ABI types and assumes that the caller has been careful not to mis-match the types. This is to avoid requiring C++/WinRT headers to reference ABI headers when ABI types may never be used.
@@ -315,7 +315,7 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 ## Interoperating with the ABI's GUID struct
 
-[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) is projected as [**winrt::guid**](/uwp/cpp-ref-for-winrt/guid). For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
+**GUID** (`/previous-versions/aa373931(v%3Dvs.80)`) is projected as [**winrt::guid**](/uwp/cpp-ref-for-winrt/guid). For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, there are automatic conversions between **winrt::guid** and **GUID** as long as you include `unknwn.h` (implicitly included by <windows.h> and many other header files) before you include any C++/WinRT headers.
 
 If you don't do that, then you can hard-`reinterpret_cast` between them. For the table that follows, assume these declarations.
 

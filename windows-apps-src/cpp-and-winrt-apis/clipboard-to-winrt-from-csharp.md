@@ -272,7 +272,7 @@ namespace winrt::SDKTemplate::implementation
 }
 ```
 
-For strings, C# uses **System.String**. See the **MainPage.NotifyUser** method for an example. In our IDL, we declare a string with **String**, and when the `cppwinrt.exe` tool generates C++/WinRT code for us, it uses the [**winrt::hstring**](/uw/cpp-ref-for-winrt/hstring) type. Any time we come across a string in C# code, we'll port that to **winrt::hstring**. For more info, see [String handling in C++/WinRT](./strings.md).
+For strings, C# uses **System.String**. See the **MainPage.NotifyUser** method for an example. In our IDL, we declare a string with **String**, and when the `cppwinrt.exe` tool generates C++/WinRT code for us, it uses the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. Any time we come across a string in C# code, we'll port that to **winrt::hstring**. For more info, see [String handling in C++/WinRT](./strings.md).
 
 For an explanation of the `const&` parameters in the method signatures, see [Parameter-passing](./concurrency.md#parameter-passing).
 
