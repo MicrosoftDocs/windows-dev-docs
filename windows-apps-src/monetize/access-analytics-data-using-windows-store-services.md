@@ -100,13 +100,11 @@ The following analytics methods are available for use by developer accounts that
 
 ### Methods for Xbox Live services
 
-The following additional methods are available for use by developer accounts with games that use [Xbox Live services](/gaming/xbox-live/developer-program-overview.md).
+The following additional methods are available for use by developer accounts with games that use [Xbox Live services](/gaming/xbox-live/developer-program-overview.md). The Microsoft Store Analytics API for Xbox is no longer available.
 
 | Scenario       | Methods      |
 |---------------|--------------------|
-| General analytics |  <ul><li>[Get Xbox Live analytics data](../publish/xbox-analytics-report.md)</li><li>[Get Xbox Live achievements data](../publish/xbox-analytics-report.md)</li><li>[Get Xbox Live concurrent usage data](../publish/xbox-analytics-report.md)</li></ul> |
-| Health analytics |  <ul><li>[Get Xbox Live health data](../publish/xbox-analytics-report.md)</li></ul> |
-| Community analytics |  <ul><li>[Get Xbox Live Game Hub data](../publish/xbox-analytics-report.md)</li><li>[Get Xbox Live club data](../publish/xbox-analytics-report.md)</li><li>[Get Xbox Live multiplayer data](../publish/xbox-analytics-report.md)</li></ul>  |
+| General analytics |  <ul><li>[Get Xbox Live analytics data](get-xbox-live-analytics.md)</li></ul> |
 
 ### Methods for hardware and drivers
 

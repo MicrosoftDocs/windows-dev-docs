@@ -454,8 +454,6 @@
           items:
             - name: Notification channel types
               href: shell/tiles-and-notifications/channel-types.md
-            - name: Alternate channels with Webpush and VAPID
-              href: ./shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
             - name: Periodic notifications
               href: shell/tiles-and-notifications/periodic-notification-overview.md
 - name: Input and interactions

@@ -23,14 +23,14 @@ To apply Mica to a Win32 app for Windows 11, you need to use the [Windows App SD
 
 ## How to use Mica in Win32 Apps
 
-To use mica in your app, you use the [MicaController](/windows/winui/api/microsoft.ui.composition.systembackdrops.micacontroller) class. This class manages both the rendering of the system backdrop material as well as the handling of system policy for the mica material.
+To use mica in your app, you use the [MicaController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller) class. This class manages both the rendering of the system backdrop material as well as the handling of system policy for the mica material.
 
 The MicaController reacts to the system Light and Dark themes by default. To override this behavior, you can pass the following properties to the MicaController:
 
-- [FallbackColor](/windows/winui/api/microsoft.ui.composition.systembackdrops.micacontroller.fallbackcolor)
-- [LuminosityOpacity](/windows/winui/api/microsoft.ui.composition.systembackdrops.micacontroller.luminosityopacity)
-- [TintColor](/windows/winui/api/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor)
-- [TintOpacity](/windows/winui/api/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity)
+- [FallbackColor](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.fallbackcolor)
+- [LuminosityOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.luminosityopacity)
+- [TintColor](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor)
+- [TintOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity)
 
 > [!TIP]
 > The code in this section is taken from the [Windows App SDK Win32 Mica sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32). See the GitHub repo for the full code. These examples use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
@@ -182,4 +182,4 @@ For a full demonstration of the **WebView2Window class** and its integration wit
 
 ## Related articles
 
-[BackdropMaterial class](/windows/winui/api/microsoft.ui.xaml.controls.backdropmaterial), [Materials](../../design/signature-experiences/materials.md), [Layering and Elevation](../../design/signature-experiences/layering.md), [Windows App SDK Mica samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica)
+[BackdropMaterial class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.backdropmaterial), [Materials](../../design/signature-experiences/materials.md), [Layering and Elevation](../../design/signature-experiences/layering.md), [Windows App SDK Mica samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica)

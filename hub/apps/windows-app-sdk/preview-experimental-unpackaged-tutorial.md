@@ -4,8 +4,8 @@ description: This article provides a walkthrough for building and deploying an u
 ms.topic: article
 ms.date: 05/24/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: gabilka
+author: gabbybilka
 ms.localizationpriority: medium
 ---
 

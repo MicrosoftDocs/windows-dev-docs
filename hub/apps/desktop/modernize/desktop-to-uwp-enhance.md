@@ -59,7 +59,7 @@ This option is supported only in projects that use .NET 6 (or later) and target 
 
 #### WinRT APIs not supported in .NET 6 or later
 
-In .NET 6 and later, there are several Windows Runtime (WinRT) APIs in the **Windows.UI** namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (**Microsoft.UI**) namespace (for example, [**Microsoft.UI.Text**](/windows/winui/api/microsoft.ui.text)). The following WinRT APIs are *not* supported on .NET 6 and later:
+In .NET 6 and later, there are several Windows Runtime (WinRT) APIs in the **Windows.UI** namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (**Microsoft.UI**) namespace (for example, [**Microsoft.UI.Text**](/windows/windows-app-sdk/api/winrt/microsoft.ui.text)). The following WinRT APIs are *not* supported on .NET 6 and later:
 
 * [**Windows.UI.Colors**](/uwp/api/Windows.UI.Colors) class
 * [**Windows.UI.ColorHelper**](/uwp/api/Windows.UI.ColorHelper) class

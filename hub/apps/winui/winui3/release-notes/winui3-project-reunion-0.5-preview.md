@@ -125,7 +125,7 @@ The following features and capabilities were introduced in WinUI 3 Previews 1-4 
   - Live Visual Tree, Hot Reload, Live Property Explorer and similar tools
   - Intellisense for WinUI 3
 - Improvements required for open source migration
-- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
+- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
 - VirtualSurfaceImageSource support
 
 For more information on both the benefits of WinUI 3 and the WinUI roadmap, see the [Windows UI Library Roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) on GitHub.

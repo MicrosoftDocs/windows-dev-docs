@@ -19,7 +19,7 @@ This topic contains migration guidance in the application lifecycle area.
 ## Important APIs
 
 * [**AppInstance**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class
-* [**Application.OnLaunched**](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) method
+* [**Application.OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) method
 * [**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) method
 * [**ExtendedActivationKind**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind) enum
 
@@ -184,7 +184,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ### Single-instancing in Application.OnLaunched
 
-An alternative to using **Main** or **wWinMain** is to perform your single-instancing logic in the [**Application.OnLaunched**](/windows/winui/api/microsoft.ui.xaml.application.onlaunched) method of your **App** class.
+An alternative to using **Main** or **wWinMain** is to perform your single-instancing logic in the [**Application.OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) method of your **App** class.
 
 > [!IMPORTANT]
 > Doing this work in **Application.OnLaunched** can simplify your app. However, a lot depends on what else your app is doing. If you're going to end up redirecting, and then terminating the current instance, then you'll want to avoid doing any throwaway work (or even work that needs explicitly undoing). In cases like that, **Application.OnLaunched** might be too late, and you might prefer to do the work in your app's **Main** or **wWinMain** function.
@@ -276,7 +276,7 @@ To register the file type association, build the app, launch it, and close it.
 The difference comes in the imperative code. In a UWP app, you implement **App::OnFileActivated** in order to handle file activation. But in a Windows App SDK app, you write code in **App::OnLaunched** to check the extended activation kind ([**ExtendedActivationKind**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind)) of the activated event args ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)), and see whether the activation is a file activation.
 
 > [!NOTE]
-> Don't use the [**Microsoft.UI.Xaml.LaunchActivatedEventArgs**](/windows/winui/api/microsoft.ui.xaml.launchactivatedeventargs) object passed to **App::OnLaunched** to determine the activation kind, because it reports "Launch" unconditionally.
+> Don't use the [**Microsoft.UI.Xaml.LaunchActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.launchactivatedeventargs) object passed to **App::OnLaunched** to determine the activation kind, because it reports "Launch" unconditionally.
 
 If your app has navigation, then you'll already have navigation code in **App::OnLaunched**, and you might want to re-use that logic. For more info, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
 

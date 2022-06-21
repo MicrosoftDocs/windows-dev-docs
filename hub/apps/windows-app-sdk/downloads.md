@@ -4,8 +4,8 @@ description: Downloads for the Windows App SDK, including the VSIX, installer, a
 ms.topic: article
 ms.date: 05/23/2022
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: stwhi
+author: whims
 ms.localizationpriority: medium
 ---
 
