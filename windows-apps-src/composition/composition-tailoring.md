@@ -106,7 +106,7 @@ The API can be added to existing code in a few easy steps.
     }
     ```
 
-Full example code can be found on the [Windows UI Github repo](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities).
+Full example code can be found on the [Windows UI Github repo](https://github.com/microsoft/WindowsCompositionSamples/blob/master/SampleGallery/Samples/SDK%2015063/CompCapabilities/CompCapabilities.xaml 15063/CompCapabilities).
 
 ## Fast vs. slow effects
 
