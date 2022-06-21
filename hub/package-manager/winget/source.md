@@ -1,7 +1,7 @@
 ---
 title: The winget source command
 description: Use the winget source command and subcommands to list and manage the repositories Windows Package Manager accesses.
-ms.date: 06/13/2022
+ms.date: 06/22/2022
 ms.topic: reference
 ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
@@ -9,9 +9,9 @@ ms.custom: kr2b-contr-experiment
 
 # The winget source command
 
-The [winget](index.md) tool **source** command refers to the repositories that Windows Package Manager accesses. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
+The [winget](index.md) tool **source** command allows you to manage sources for Windows Package Manager. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
 
-A source repository provides the data for you to discover and install applications. Only use sources that you trust as secure locations.
+A source repository provides the data for you to discover and install applications. Only use secure, trusted source locations.
 
 Windows Package Manager specifies the following two default repositories, which you can list by using `winget source list`.
 
@@ -34,21 +34,6 @@ The following arguments are available.
 The following image shows **help** for the **source** command:
 
 :::image type="content" source="images/source.png" alt-text="Screenshot showing help for the source command.":::
-
-## Options
-
-The  **source** command supports the following options.
-
-| Option  | Description |
-|--------------|-------------|
-|  **-n,--name** | The name to identify the source by. |
-|  **-a,--arg** | The URL or UNC of the source. |
-|  **--force** | Used by **reset** to ensure that a reset is desired. |
-|  **-t,--type** | The type of source. |
-| **--accept-source-agreements** | Accepts the source license agreement, and avoids the prompt. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--verbose-logs** | Overrides the logging setting and creates a verbose log. |
-|  **-?, --help** |  Gets additional help on this command. |
 
 ## Subcommands
 
@@ -184,6 +169,21 @@ Returns the following output:
 ```output
 {"Arg":"https://winget.azureedge.net/cache","Data":"Microsoft.Winget.Source_8wekyb3d8bbwe","Identifier":"Microsoft.Winget.Source_8wekyb3d8bbwe","Name":"winget","Type":"Microsoft.PreIndexed.Package"}
 ```
+
+## Options
+
+The  **source** command supports the following options.
+
+| Option  | Description |
+|--------------|-------------|
+|  **-n,--name** | The name to identify the source by. |
+|  **-a,--arg** | The URL or UNC of the source. |
+|  **--force** | Used by **reset** to ensure that a reset is desired. |
+|  **-t,--type** | The type of source. |
+| **--accept-source-agreements** | Accepts the source license agreement, and avoids the prompt. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--verbose-logs** | Overrides the logging setting and creates a verbose log. |
+|  **-?, --help** |  Gets additional help on this command. |
 
 ## Source agreement
 

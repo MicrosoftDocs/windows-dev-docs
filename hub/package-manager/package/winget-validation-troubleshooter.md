@@ -1,17 +1,17 @@
 ---
-title: Troubleshoot Windows Package Manager failures
+title: Troubleshoot submissions to the Windows Package Manager Repository
 description: Learn how to troubleshoot submission errors for Windows Package Manager by investigating pull request failure labels.
-ms.date: 06/13/2022
+ms.date: 06/21/2022
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
 ---
 
-# Troubleshoot Windows Package Manager failures
+# Troubleshoot submissions to the Windows Package Manager Repository
 
-This article shows you how to get more information about failed Windows Package Manager manifest validation in a pipeline. Pull request processing [displays labels](winget-validation.md#pull-request-labels) to communicate validation progress. If validation fails, you can investigate the labels to understand the failure better.
+This article shows you how to investigate failures during processing of your pull requests. The Windows Package Manager validation pipeline [displays labels](winget-validation.md#pull-request-labels) to communicate validation progress. If validation fails, you can use the label to investigate the reason for the failure.
 
-To investigate validation pull request failures, take the following steps:
+To investigate pull request failures, take the following steps:
 
 1. A pull request failure appears at the bottom of the web page with the string **Some checks were not successful**. Select the **Details** link next to a failed validation to go to the Azure Pipelines page.
 

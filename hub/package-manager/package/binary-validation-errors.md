@@ -1,7 +1,7 @@
 ---
 title: Binary validation errors
 description: Learn about binary validation errors that the Windows Package Manager service reports, and how to address them.
-ms.date: 06/13/2022
+ms.date: 06/22/2022
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ms.custom: kr2b-contr-experiment
@@ -15,7 +15,7 @@ This article provides background and guidance about binary validation errors. If
 
 To provide an excellent application installation user experience, the Windows Package Manager must ensure that all applications install on PCs without errors, regardless of environment. One key test is to ensure that all applications install without warnings on various popular antivirus configurations. Windows provides the built-in Microsoft Defender antivirus program, but many enterprise customers and users use other antivirus software.
 
-Each submission to the Windows Package Manager is run through several antivirus programs. These programs all have different virus detection algorithms for identifying [potentially unwanted applications (PUA)](/windows/security/threat-protection/intelligence/criteria) and malware.
+Each submission to the Windows Package Manager Repository is run through several antivirus programs. These programs all have different virus detection algorithms for identifying [potentially unwanted applications (PUA)](/windows/security/threat-protection/intelligence/criteria) and malware.
 
 ## Address binary validation errors
 
