@@ -831,7 +831,7 @@ Click Run Selected. Further documentation on each test is available by right cli
 
 ## Resources
 
-- [ACPI 5.0 specification](https://uefi.org/specifications)
+- [ACPI 5.0 specification](http://acpi.info/spec.htm)
 - [Asl.exe (Microsoft ASL Compiler)](/windows-hardware/drivers/bringup/microsoft-asl-compiler)
 - [Windows.Devices.Gpio](/uwp/api/Windows.Devices.Gpio)
 - [Windows.Devices.I2c](/uwp/api/Windows.Devices.I2c)

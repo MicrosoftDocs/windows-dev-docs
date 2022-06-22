@@ -59,7 +59,7 @@ In your `OnLoadClick` method, use the [**FileOpenPicker**](/uwp/api/Windows.Stor
 At this point, you are able to load a 3D data file into your app's memory. However, 3D geometry data can come in many different formats, and not all are efficient for 3D printing. Windows 10 uses the 3D Manufacturing Format (.3mf) file type for all 3D printing tasks.
 
 > [!NOTE]  
-> The .3mf file type offers more functionality than is covered in this tutorial. To learn more about 3MF and the features it provides to producers and consumers of 3D products, see the [3MF Specification](https://3mf.io/specification/). To learn how to utilize these features with Windows 10 APIs, see the [Generate a 3MF package](./generate-3mf.md) tutorial.
+> The .3mf file type offers more functionality than is covered in this tutorial. To learn more about 3MF and the features it provides to producers and consumers of 3D products, see the [3MF Specification](https://3mf.io/what-is-3mf/3mf-specification/). To learn how to utilize these features with Windows 10 APIs, see the [Generate a 3MF package](./generate-3mf.md) tutorial.
 
 The [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) app can open files of most popular 3D formats and save them as .3mf files. In this example, where the file type could vary, a very simple solution is to open the 3D Builder app and prompt the user to save the imported data as a .3mf file and then reload it.
 

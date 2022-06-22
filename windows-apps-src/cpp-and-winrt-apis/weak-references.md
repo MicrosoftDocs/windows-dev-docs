@@ -142,7 +142,7 @@ For general info about event-handling, see [Handle events by using delegates in 
 
 The previous section highlighted potential lifetime issues in the areas of coroutines and concurrency. But, if you handle an event with an object's member function, or from within a lambda function inside an object's member function, then you need to think about the relative lifetimes of the event recipient (the object handling the event) and the event source (the object raising the event). Let's look at some code examples.
 
-The code listing below first defines a simple **EventSource** class, which raises a generic event that's handled by any delegates that have been added to it. This example event happens to use the [**Windows::Foundation::EventHandler**](/uwp/api/windows.foundation.eventhandler-1) delegate type, but the issues and remedies here apply to any and all delegate types.
+The code listing below first defines a simple **EventSource** class, which raises a generic event that's handled by any delegates that have been added to it. This example event happens to use the [**Windows::Foundation::EventHandler**](/uwp/api/windows.foundation.eventhandler) delegate type, but the issues and remedies here apply to any and all delegate types.
 
 Then, the **EventRecipient** class provides a handler for the **EventSource::Event** event in the form of a lambda function.
 
