@@ -1,7 +1,7 @@
 ---
 description: This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](./intro-to-using-cpp-with-winrt.md) objects.
 title: Interop between C++/WinRT and C++/CX
-ms.date: 10/09/2018
+ms.date: 06/22/2022
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, C++/CX
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ Before reading this topic, you'll need the info in the topic [Move to C++/WinRT 
 - Port the entire project in one pass. The simplest option for a project that's not too large. If you have a Windows Runtime component project, then this strategy is your only option.
 - Port the project gradually (the size or complexity of your codebase might make this necessary). But this strategy calls for you to follow a porting process in which for a time C++/CX and C++/WinRT code exists side by side in the same project. For a XAML project, at any given time, your XAML page types must be *either* all C++/WinRT *or* all C++/CX.
 
-This interop topic is relevant for that *second* strategy&mdash;for cases when you need to port your project gradually. This topic shows you two helper functions that you can use to convert a C++/CX object into a C++/WinRT object (and vice versa) within the same project.
+This interop topic is relevant for that *second* strategy&mdash;for cases when you need to port your project gradually. This topic shows you various forms of pairs of helper functions that you can use to convert a C++/CX object (and other types) into a C++/WinRT object (and vice versa) within the same project.
 
 These helper functions will be very useful as you port your code gradually from C++/CX to C++/WinRT. Or you might just choose to use both the C++/WinRT and C++/CX language projections in the same project, whether you're porting or not, and use these helper functions to interoperate between the two.
 
@@ -22,9 +22,9 @@ After reading this topic, for info and code examples showing how to support PPL 
 
 ## The **from_cx** and **to_cx** functions
 
-Here's a source code listing of a header file named `interop_helpers.h`, containing two conversion helper functions. As you gradually port your project, there will be parts still in C++/CX, and parts that you've ported to C++/WinRT. You can use these helper functions to convert objects to and from C++/CX and C++/WinRT in your project at the boundary points between those two parts.
+Here's a source code listing of a header file named `interop_helpers.h`, containing various conversion helper functions. As you gradually port your project, there will be parts still in C++/CX, and parts that you've ported to C++/WinRT. You can use these helper functions to convert objects (and other types) to and from C++/CX and C++/WinRT in your project at the boundary points between those two parts.
 
-The sections that follow the code listing explain the two functions, and how to create and use the header file in your project.
+The sections that follow the code listing explain the helper functions, and how to create and use the header file in your project.
 
 ```cppwinrt
 // interop_helpers.h
@@ -35,8 +35,11 @@ T from_cx(Platform::Object^ from)
 {
     T to{ nullptr };
 
-    winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
-        ->QueryInterface(winrt::guid_of<T>(), winrt::put_abi(to)));
+    if (from != nullptr)
+    {
+        winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
+            ->QueryInterface(winrt::guid_of<T>(), winrt::put_abi(to)));
+    }
 
     return to;
 }
@@ -45,6 +48,26 @@ template <typename T>
 T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 {
     return safe_cast<T^>(reinterpret_cast<Platform::Object^>(winrt::get_abi(from)));
+}
+
+inline winrt::hstring from_cx(Platform::String^ const& from)
+{
+    return reinterpret_cast<winrt::hstring&>(const_cast<Platform::String^&>(from));
+}
+
+inline Platform::String^ to_cx(winrt::hstring const& from)
+{
+    return reinterpret_cast<Platform::String^&>(const_cast<winrt::hstring&>(from));
+}
+
+inline winrt::guid from_cx(Platform::Guid const& from)
+{
+    return reinterpret_cast<winrt::guid&>(const_cast<Platform::Guid&>(from));
+}
+
+inline Platform::Guid to_cx(winrt::guid const& from)
+{
+    return reinterpret_cast<Platform::Guid&>(const_cast<winrt::guid&>(from));
 }
 ```
 
@@ -58,9 +81,9 @@ The **to_cx** helper function converts a C++/WinRT object to an equivalent C++/C
 
 ### The `interop_helpers.h` header file
 
-To use the two helper functions in your project, follow these steps.
+To use the helper functions in your project, follow these steps.
 
-- Add a new **Header File (.h)** item to your project and name it `interop_helpers.h`.
+- Add a new **Header File (.h)** item to your project, and name it `interop_helpers.h`.
 - Replace the contents of `interop_helpers.h` with the code listing above.
 - Add these includes to `pch.h`.
 
@@ -148,7 +171,8 @@ In this section, you can create an example C++/WinRT project that demonstrates h
 - Create a **Visual C++** \> **Windows Universal** \> **Core App (C++/WinRT)** project.
 - In project properties, **C/C++** \> **General** \> **Consume Windows Runtime Extension** \> **Yes (/ZW)**.
 - Add `interop_helpers.h` to the project. For instructions on doing that, see the [**from_cx** and **to_cx** functions](#the-from_cx-and-to_cx-functions) section above.
-- Replace the contents of `App.cpp` with the code listing below, build, and run.
+- Replace the contents of `App.cpp` with the code listing below.
+- Build and run.
 
 `WINRT_ASSERT` is a macro definition, and it expands to [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
