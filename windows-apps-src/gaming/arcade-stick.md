@@ -164,7 +164,7 @@ Sometimes you might want to determine when a button transitions from pressed to 
 
 ## Run the InputInterfacing sample
 
-The [InputInterfacingUWP sample _(github)_](https://github.com/microsoft/Xbox-ATG-Samples/tree/main/UWPSamples/System/InputInterfacingUWP) demonstrates how to use arcade sticks and different kinds of input devices in tandem, as well as how these input devices behave as UI navigation controllers.
+The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) demonstrates how to use arcade sticks and different kinds of input devices in tandem, as well as how these input devices behave as UI navigation controllers.
 
 ## See also
 

@@ -191,7 +191,7 @@ If your title allows gamers to communicate using voice and send text messages to
 
 People who do not have microphones attached to their gaming device can still have a voice conversation with someone who is speaking. They are able to type text into the chat window and have those messages converted into voice. It also allows someone who can't hear very well to read the transcribed text messages from the person they're having a voice chat with.
 
-For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](/gaming/gdk/_content/gc/accessibility/accessibility-overview) in the Xbox Live service. For more information, see [Game Chat 2 Overview](/gaming/gdk/_content/gc/chat/overviews/game-chat2/game-chat-2-overview).
+For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### Sound feedback
 
@@ -258,7 +258,7 @@ Here are some external sites that provide additional information about game acce
 ### Other references used
 * [Color Blind Awareness, a Community Interest Company](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [How to do subtitles well&mdash;a blog article on Gamasutra by Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation for All Programme](https://doga.no/en/tools/inclusive-design/cases/nordan-windows/)
+* [Innovation for All Programme](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [Epilepsy foundation](https://www.epilepsy.com/)
 
 ### Related links

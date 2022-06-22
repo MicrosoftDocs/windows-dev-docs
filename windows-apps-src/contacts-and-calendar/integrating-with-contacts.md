@@ -179,7 +179,7 @@ Override the [Application.OnActivated](/uwp/api/windows.ui.xaml.application.onac
 
 In the code behind file of the page, override the [Page.OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) method. The contact card passes this method the name of operation and the ID of the user.
 
-To start a video or audio call, see this sample: VoIP sample (`https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP`). You'll find the complete API in the [WIndows.ApplicationModel.Calls](/uwp/api/windows.applicationmodel.calls) namespace.
+To start a video or audio call, see this sample: [VoIP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). You'll find the complete API in the [WIndows.ApplicationModel.Calls](/uwp/api/windows.applicationmodel.calls) namespace.
 
 To facilitate messaging, see the [Windows.ApplicationModel.Chat](/uwp/api/windows.applicationmodel.chat) namespace.
 
