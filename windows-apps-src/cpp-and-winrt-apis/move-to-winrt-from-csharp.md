@@ -124,9 +124,9 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | Category | C# | C++/WinRT | See also |
 | -------- | -- | --------- | -------- |
 |Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](./clipboard-to-winrt-from-csharp.md#button_click)|
-|Access a data member|`this.variable`|`this->variable`||
+|Access a data member|`this.variable`|`this->variable`|&nbsp;|
 |<a name="id_async_action"></a>Async action|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** interface](/uwp/api/windows.foundation.iasyncaction), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
-|<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
+|<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation-1), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
 |<a name="id_fire_and_forget"></a>Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click), [Fire and forget](./concurrency-2.md#fire-and-forget)|
 |Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
@@ -138,7 +138,7 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |Parameter declaration for a method|`MyType`|`MyType const&`|[Parameter-passing](./concurrency.md#parameter-passing)|
 |Parameter declaration for an async method|`MyType`|`MyType`|[Parameter-passing](./concurrency.md#parameter-passing)|
 |Call a static method|`T.Method()`|`T::Method()`||
-|Strings|`string`, or **System.String**|[**winrt::hstring**](/uw/cpp-ref-for-winrt/hstring)|[String handling in C++/WinRT](./strings.md)|
+|Strings|`string`, or **System.String**|[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)|[String handling in C++/WinRT](./strings.md)|
 |String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
 |Inferred (or deduced) type|`var`|`auto`|[Porting the **BuildClipboardFormatsOutputString** method](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|

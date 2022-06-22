@@ -250,7 +250,7 @@ This update also adds support for [**get_strong**](/uwp/cpp-ref-for-winrt/implem
 
 #### Support for deferred destruction and safe QI during destruction
 
-It's not uncommon in the destructor of a runtime class object to call a method that temporarily bumps the reference count. When the reference count returns to zero, the object destructs a second time. In a XAML application, you might need to perform a [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (QI) in a destructor, in order to call some cleanup implementation up or down the hierarchy. But the object's reference count has already reached zero, so that QI constitutes a reference count bounce, too.
+It's not uncommon in the destructor of a runtime class object to call a method that temporarily bumps the reference count. When the reference count returns to zero, the object destructs a second time. In a XAML application, you might need to perform a [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) (QI) in a destructor, in order to call some cleanup implementation up or down the hierarchy. But the object's reference count has already reached zero, so that QI constitutes a reference count bounce, too.
 
 This update adds support for debouncing the reference count, ensuring that once it reaches zero it can never be resurrected; while still allowing you to QI for any temporary that you require during destruction. This procedure is unavoidable in certain XAML applications/controls, and C++/WinRT is now resilient to it.
 
