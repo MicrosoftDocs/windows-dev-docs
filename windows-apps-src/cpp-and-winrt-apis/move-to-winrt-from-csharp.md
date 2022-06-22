@@ -124,7 +124,7 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | Category | C# | C++/WinRT | See also |
 | -------- | -- | --------- | -------- |
 |Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](./clipboard-to-winrt-from-csharp.md#button_click)|
-|Access a data member|`this.variable`|`this->variable`||
+|Access a data member|`this.variable`|`this->variable`|&nbsp;|
 |<a name="id_async_action"></a>Async action|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** interface](/uwp/api/windows.foundation.iasyncaction), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
 |<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation-1), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
 
