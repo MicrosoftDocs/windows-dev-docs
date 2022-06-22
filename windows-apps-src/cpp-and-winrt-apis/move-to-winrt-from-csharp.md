@@ -127,7 +127,6 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |Access a data member|`this.variable`|`this->variable`|&nbsp;|
 |<a name="id_async_action"></a>Async action|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** interface](/uwp/api/windows.foundation.iasyncaction), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
 |<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation-1), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
-
 |<a name="id_fire_and_forget"></a>Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click), [Fire and forget](./concurrency-2.md#fire-and-forget)|
 |Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
