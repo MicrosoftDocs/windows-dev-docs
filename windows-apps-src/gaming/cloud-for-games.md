@@ -68,7 +68,7 @@ Learn how other developers have implemented cloud solutions in their games.
     </tr>
     <tr>
         <td><a href="https://www.halowaypoint.com/">343 Industries</a></td>
-        <td><b>Halo 5: Guardians</b> implemented <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan Companies</a> as its social gameplay platform by using Azure Cosmos DB (via DocumentDB API), which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
+   <td><b>Halo 5: Guardians</b> implemented Halo: Spartan Companies as its social gameplay platform by using Azure Cosmos DB (via DocumentDB API), which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
         <td>
             <ul>
                 <li>Scalable data-tier to handle groups creation/management for multiplayer gameplay
@@ -84,7 +84,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="http://www.illyriad.co.uk/">Illyriad Games</a></td>
         <td>Illyriad Games created <b>Age of Ascent</b>, a massively multiplayer online (MMO) epic 3D space game that can be played on devices that have modern browsers. So this game can be played on PCs, laptops, mobile phones and other mobile devices without plug-ins. The game uses ASP.NET Core, HTML5, WebGL, and Azure.</td>
         <td>
             <ul>
@@ -98,7 +98,7 @@ Learn how other developers have implemented cloud solutions in their games.
             <ul>
                 <li>Building games with Service Fabric: Age of Ascent MMO game (video)
                 <li>Manage game components as microservices using Azure Service Fabric (video) 
-                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview with Age of Ascent developers (video)</a>
+             <li><a href="https://www.youtube.com/watch?v=XaN-eXkIEbM">Interview with Age of Ascent developers (video)</a>
             </ul>
         </td>
     </tr>
@@ -146,7 +146,6 @@ Learn how other developers have implemented cloud solutions in their games.
 
 * Hitman and Azure: Create game features like Elusive Target that are only possible using cloud
 * [Azure as the secret sauce for Hitcents, Game Troopers and InnoSpark](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
-* [Game startups on Bizspark program using Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
 ## How to design your cloud backend

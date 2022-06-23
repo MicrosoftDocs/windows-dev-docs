@@ -181,11 +181,10 @@ When configuring your app to support resource packs for different DirectX featur
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **Note**  In your code, load the texture directly by name (or path below the feature level directory). Do not include either the feature level directory name or the suffix. For example, load "textures\\coolsign.dds", not "dxfl-dx11\\textures\\coolsign.dds" or "textures\\coolsign\_dxfl-dx11.dds".
+> [!NOTE]
+> > In your code, load the texture directly by name (or path below the feature level directory). Do not include either the feature level directory name or the suffix. For example, load "textures\\coolsign.dds", not "dxfl-dx11\\textures\\coolsign.dds" or "textures\\coolsign\_dxfl-dx11.dds".
 
-     
-
--   Now, use the [**ResourceManager**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) to locate the file that matches current DirectX feature level. The **ResourceManager** returns a [**ResourceMap**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap), which you query with [**ResourceMap::GetValue**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue) (or [**ResourceMap::TryGetValue**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.trygetvalue)) and a supplied [**ResourceContext**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext). This returns a [**ResourceCandidate**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate) that most closely matches the DirectX feature level that was specified by calling [**SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue).
+-   Now use the [**ResourceManager**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) to locate the file that matches current DirectX feature level. The **ResourceManager** returns a [**ResourceMap**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap), which you query with [**ResourceMap::GetValue**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue) (or [**ResourceMap::TryGetValue**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue)) and a supplied [**ResourceContext**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext). This returns a [**ResourceCandidate**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate) that most closely matches the DirectX feature level that was specified by calling [**SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue).
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.

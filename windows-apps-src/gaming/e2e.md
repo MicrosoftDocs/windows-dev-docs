@@ -88,7 +88,7 @@ Throughout this guide, you'll find deep links to relevant documentation&mdash;or
     </tr>
     <tr>
         <td>Mixer Interactive documentation</td>
-        <td><a href="https://dev.mixer.com/reference/interactive/index.html">Add interactivity to your game</a></td>
+        <td>Add interactivity to your game</td>
     </tr>
 </table>
 
@@ -599,7 +599,7 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     </tr>
     <tr>
         <td>Mixer SDK for Unity reference documentation</td>
-        <td><a href="https://dev.mixer.com/reference/interactive/csharp/index.html">API reference for Mixer Unity plugin</a></td>
+        <td>API reference for Mixer Unity plugin</td>
     </tr>
     <tr>
         <td>Publish your Unity game to Microsoft Store</td>

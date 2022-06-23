@@ -313,7 +313,7 @@ The [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.co
 
 - A Bitmap is created named `m_levelBitmap`, taking the current DPI into account using **CreateBitmap**.
 - `m_levelBitmap` is set as our 2D render target using [**ID2D1DeviceContext::SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget).
-- The Bitmap is cleared with every pixel made black using [**ID2D1RenderTarget::Clear**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear).
+- The Bitmap is cleared with every pixel made black using [**ID2D1RenderTarget::Clear**](/windows/win32/direct2d/id2d1rendertarget-clear).
 - [**ID2D1RenderTarget::BeginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) is called to initiate drawing. 
 - **DrawText** is called to draw the text stored in `m_titleString`, `m_bodyString`, and `m_actionString` in the approperiate rectangle using the corresponding **ID2D1SolidColorBrush**.
 - [**ID2D1RenderTarget::EndDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-enddraw) is called to stop all drawing operations on `m_levelBitmap`.
