@@ -21,8 +21,6 @@ Starting with Windows 11, Build 22000, the URI `ms-settings:camera` launches the
 In the following example, the [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) class is used to retrieve the symbolic link name for the first video capture device on the current machine, if one exists. Next, [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) is called to launch the Windows Settings app. The `ms-settings:camera` Uri specifies that the camera settings page should be shown. The optional query string parameter `cameraId` is set to the symbolic link name for the camera, escaped with a call to [Url.EscapeDataString](/dotnet/api/system.uri.escapedatastring), to specify that the settings for the associated camera should be shown. 
 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/LaunchCameraSettings/cs/MainPage.xaml.cs" id="SnippetLaunchCameraSettings":::
-
 ```csharp
 private async void LaunchSettingsPage_Click(object sender, RoutedEventArgs e)
 {
