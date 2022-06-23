@@ -2,7 +2,7 @@
 title: User interface migration (including WinUI 3)
 description: This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 ms.topic: article
-ms.date: 09/16/2021
+ms.date: 06/23/2022
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, Windows UI Library, WinUI
 ms.author: stwhi
 author: stevewhims
@@ -44,7 +44,7 @@ var width = Window.Current.Bounds.Width;
 auto width{ Window::Current().Bounds().Width };
 ```
 
-Your Windows App SDK app can add its own notion of a *current*, or *main* window by using a public static property on your *App** class.
+Your Windows App SDK app can add its own notion of a *current*, or *main* window by using a public static property on your **App** class.
 
 ```csharp
 // App.xaml.cs in a Windows App SDK app
@@ -148,11 +148,33 @@ Here's some typical UWP code that calls **ShowShareUI**.
 
 ```csharp
 // In a UWP app
+var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView();
+
+dataTransferManager.DataRequested += (sender, args) =>
+{
+    args.Request.Data.Properties.Title = "In a UWP app...";
+    args.Request.Data.SetText("...display the user interface for sharing content with another app.");
+    args.Request.Data.RequestedOperation =
+        Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+};
+
 Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
 ```
 
 ```cppwinrt
 // In a UWP app
+#include <winrt/Windows.ApplicationModel.DataTransfer.h>
+...
+auto dataTransferManager{ Windows::ApplicationModel::DataTransfer::DataTransferManager::GetForCurrentView() };
+
+dataTransferManager.DataRequested([](Windows::ApplicationModel::DataTransfer::DataTransferManager const& /* sender */,
+    Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs const& args)
+    {
+        args.Request().Data().Properties().Title(L"In a UWP app...");
+        args.Request().Data().SetText(L"...display the user interface for sharing content with another app.");
+        args.Request().Data().RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation::Copy);
+    });
+
 Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
 ```
 
