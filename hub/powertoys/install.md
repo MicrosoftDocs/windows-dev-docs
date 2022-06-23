@@ -18,8 +18,7 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
   - Windows 11 (all versions)
   - Windows 10 v1903 (18362) or newer
 - System architecture
-  - x64 architecture currently supported.
-  - Arm support is being acively worked on.
+  - x64 and arm architecture are currently supported.
 - Our installer will install the following runtimes:
   - [.NET 6.0.4 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer) or a newer 6.0.x runtime
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (This will always install the latest version)
