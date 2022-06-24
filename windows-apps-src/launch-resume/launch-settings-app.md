@@ -146,7 +146,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Bluetooth | ms-settings:bluetooth |
 | Connected Devices | ms-settings:connecteddevices |
 | Default camera | ms-settings:camera (**Behavior deprecated in Windows 10, version 1809 and later**) |
-| Camera settings | ms-settings:camera (**Behavior introduced in Windows 11, build 22000 and later**) Append the query string parameter `cameraId` set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see [Launch the camera settings page](/windows/uwp/audio-video-camera/camera/launch-camera-settings).|
+| Camera settings | ms-settings:camera (**Behavior introduced in Windows 11, build 22000 and later**) Append the query string parameter `cameraId` set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see [Launch the camera settings page](/windows/uwp/audio-video-camera/launch-camera-settings).|
 | Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
 | Pen & Windows Ink | ms-settings:pen |
 | Printers & scanners | ms-settings:printers |
