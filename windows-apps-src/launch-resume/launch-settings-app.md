@@ -339,7 +339,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
 | Storage recommendations | ms-settings:storagerecommendations |
-
+ 
 ### Time and language
 
 |Settings page| URI |
