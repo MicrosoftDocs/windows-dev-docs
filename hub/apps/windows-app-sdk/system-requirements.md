@@ -5,7 +5,7 @@ ms.topic: article
 ms.date: 06/24/2022
 keywords: windows win32, windows app development, Windows App SDK
 ms.author: stwhi
-author: whims
+author: stevewhims
 ms.localizationpriority: medium
 ---
 
