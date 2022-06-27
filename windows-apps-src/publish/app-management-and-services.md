@@ -85,7 +85,7 @@ Depending on your app's package type and its specific requirements, you can also
 
 -   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview).
 
--   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](/azure/app-service-mobile/).
+-   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](/azure/developer/mobile-apps/).
 
 -   **Microsoft Push Notifications Service (MPNS)** can be used with previously published .xap packages for Windows Phone. You can send a limited number of unauthenticated notifications without doing any configuration here, although we recommend using authenticated notifications to avoid throttling limits. If you're using MPNS, you'll need to upload a certificate to the field provided on the **WNS/MPNS** page. For more info, see [Setting up an authenticated web service to send push notifications for Windows Phone 8](/previous-versions/windows/apps/ff941099(v=vs.105)).
  
