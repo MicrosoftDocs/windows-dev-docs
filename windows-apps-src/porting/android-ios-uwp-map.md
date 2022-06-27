@@ -42,7 +42,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <td align="left"><strong>User interface markup language.</strong> <br><br>A markup language that renders and describes a UI and its components. Each platform provides an editor for both visual and markup editing.<br/></td>
 <td align="left"><strong>XML layouts</strong>, edited using <strong>Android Studio</strong> or <strong>Eclipse</strong>.</td>
 <td align="left"><strong>XIB</strong> and <strong>Storyboards</strong> edited using <strong>Interface Builder</strong> inside Xcode.</td>
-<td align="left"><strong><a href="/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>, edited using <strong><a href="/visualstudio/xaml-tools/designing-xaml-in-visual-studio">Microsoft Visual Studio and Blend for Visual Studio</a></strong>.<br/><br/><a href="/windows/uwp/xaml-platform/index">XAML platform</a><br/><br/><a href="/windows/uwp/design/basics/xaml-basics-ui">Create a UI with XAML</a><br/><br/><a href="/windows/uwp/layout/layouts-with-xaml">Define Layouts with XAML</a></td>
+<td align="left"><strong><a href="/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>, edited using <strong><a href="/visualstudio/xaml-tools/designing-xaml-in-visual-studio">Microsoft Visual Studio and Blend for Visual Studio</a></strong>.<br/><br/><a href="/windows/uwp/xaml-platform/index">XAML platform</a><br/><br/><a href="/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio?view=vs-2022">Create a UI with XAML</a><br/><br/><a href="/windows/uwp/layout/layouts-with-xaml">Define Layouts with XAML</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>Built-in user interface controls.</strong> <br><br>Reusable UI elements provided by the platform such as buttons, list controls, and text controls.</td>
@@ -164,7 +164,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <td align="left"><strong>Voice.</strong> <br><br>Speech recognition for speech input, and additional voice capabilities.</td>
 <td align="left">Speech input can be provided by any app which implements a <strong>RecognizerIntent</strong>, such as <strong>Google Voice Search</strong>. The <strong>SpeechRecognizer</strong> class allows apps to use Google's speech recognition API.</td>
 <td align="left">Apps can use the <strong>SFSpeechRecognizer</strong> class to implement speech input and speech recognition.</td>
-<td align="left">You can use the <strong><a href="/windows/uwp/input-and-devices/speech-recognition">speech recognition</a></strong> API to interact with your app in the foreground. You can use speech-based <strong><a href="/windows/uwp/input-and-devices/cortana-interactions">Cortana interactions</a></strong> to launch apps in the foreground or background, and to ​interact with background apps.<br/><br/><a href="/windows/uwp/input-and-devices/speech-interactions">Speech interactions</a></td>
+<td align="left">You can use the <strong><a href="/windows/uwp/input-and-devices/speech-recognition">speech recognition</a></strong> API to interact with your app in the foreground. You can use speech-based <strong><a href="/windows/apps/design/input/cortana-interactions">Cortana interactions</a></strong> to launch apps in the foreground or background, and to ​interact with background apps.<br/><br/><a href="/windows/uwp/input-and-devices/speech-interactions">Speech interactions</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Custom user inputs.</strong> <br><br>Handling keyboard, mouse, stylus and other inputs.</td>
@@ -631,7 +631,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <td align="left"><strong>Drag and drop.</strong> <br><br>Dragging and dropping content between apps.</td>
 <td align="left">Drag and drop can be implemented within a single application by using the <strong>Android drag/drop framework</strong>.</td>
 <td align="left">No high-level drag and drop APIs are provided by iOS.</td>
-<td align="left">You can implement dragging and dropping in your app to enable app-to-app, desktop-to-app, and app-to-desktop drag and drop capabilities. You implement drag and drop support in the UIElement class with the <strong><a href="/uwp/api/windows.ui.xaml.uielement.allowdrop">AllowDrop</a></strong>, and <strong><a href="/uwp/api/windows.ui.xaml.uielement.candrag">CanDrag</a></strong> properties, and the <strong><a href="/uwp/api/windows.ui.xaml.uielement.dragover">DragOver</a></strong>, and <strong><a href="/uwp/api/windows.ui.xaml.uielement.drop">Drop</a></strong> events.<br/><br/><a href="/windows/uwp/app-to-app/drag-and-drop">Drag and drop</a></td>
+<td align="left">You can implement dragging and dropping in your app to enable app-to-app, desktop-to-app, and app-to-desktop drag and drop capabilities. You implement drag and drop support in the UIElement class with the <strong><a href="/uwp/api/windows.ui.xaml.uielement.allowdrop">AllowDrop</a></strong>, and <strong><a href="/uwp/api/windows.ui.xaml.uielement.candrag">CanDrag</a></strong> properties, and the <strong><a href="/uwp/api/windows.ui.xaml.uielement.dragover">DragOver</a></strong>, and <strong><a href="/uwp/api/windows.ui.xaml.uielement.drop">Drop</a></strong> events.<br/><br/><a href="/windows/apps/design/input/drag-and-drop">Drag and drop</a></td>
 </tr>
 </tbody>
 </table>
