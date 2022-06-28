@@ -98,7 +98,7 @@ On Arm64EC, call checkers are not optional. However, CFG is still optional, as i
 
 Below is a summary table of the call checker usage on Classic Arm64, x64 and Arm64EC noting the fact that an Arm64EC binary can have two options depending on the architecture of the code.
 
-|Binary  |Code   |Uprotected indirect call |CFG protected indirect call|
+|Binary  |Code   |Unprotected indirect call |CFG protected indirect call|
 |--------------|---------|---------------|------------------------------------------------------------|
 |x64           |x64      |no call checker| `__guard_check_icall_fptr` or `__guard_dispatch_icall_fptr`|
 |Arm64 Classic |Arm64    |no call checker| `__guard_check_icall_fptr`|
@@ -106,6 +106,8 @@ Below is a summary table of the call checker usage on Classic Arm64, x64 and Arm
 | |Arm64EC |`__os_arm64x_check_icall`| `__os_arm64x_check_icall_cfg`|
 
 Independently of the ABI, having CFG enabled code (code with reference to the CFG call-checkers), does not imply CFG protection at runtime. CFG protected binaries can run down-level, on systems not supporting CFG: the call-checker is initialized with a no-op helper at compile time. A process may also have CFG disabled by configuration. When CFG is disabled (or OS support is not present) on previous ABIs the OS will simply not update the call-checker when the binary is loaded. On Arm64EC, if CFG protection is disabled, the OS will set `__os_arm64x_check_icall_cfg` the same as `__os_arm64x_check_icall`, which will still provide the needed target architecture check in all cases, but not CFG protection.
+
+As with CFG in Classic Arm64, the call to the target function (`x11`) must immediately follow the call to the Call Checker. The address of the Call Checker must be placed in a volatile register and neither it, nor the address of the target function, should ever be copied to another register or spilled to memory.
 
 ### Stack Checkers
 
@@ -334,6 +336,8 @@ Additional considerations for Exit Thunks:
 
 - The compiler will name them not by the function name they translate from->to, but rather the signature they address. This makes it easier to find redundancies.
 - The Exit Thunk is called with the register `x9` carrying the address of the target (x64) function. This is set by the call checker and passes through the Exit Thunk, undisturbed, into the emulator.
+
+After rearranging the parameters, the Exit Thunk then calls into the emulator via `__os_arm64x_dispatch_call_no_redirect`.
 
 It is worth, at this point, reviewing the function of the call checker, and detail about its own custom ABI. This is what an indirect call to `fB` would look like:
 
