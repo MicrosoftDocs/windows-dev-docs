@@ -45,7 +45,7 @@ To enable, set which you would like enabled to **On**.
 ### Enabling Preview Pane in File Explorer on Windows
 
 > [!NOTE]
-> There is an advanced setting in Windows that may be unchecked. If previewers don't seem to work, including ones like jpeg images, please verify this setting is checked. Open Explorer's Folder options, go to tab "View", then under "Advanced settings" check **Show preview handlers in preview pane**.
+> There is an advanced setting in Windows that might be turned off. If preview handlers (including ones like jpeg images) don't seem to work, please verify this setting is turned on. Open Explorer's Folder options, go to tab "View", then under "Advanced settings" check **Show preview handlers in preview pane**.
 
 #### Enabling in Windows 11
 Open Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
