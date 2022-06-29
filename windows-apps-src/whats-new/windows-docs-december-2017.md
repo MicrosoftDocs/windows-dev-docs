@@ -62,7 +62,7 @@ All developers who have joined the Dev Center Insider program can now use subscr
 
 We've added some new guidance on how to use color in your apps for the best possible user experience. This includes API usage scenarios as well as general guidance about UI design and accessibility. We've also updated the list of user accent colors available on Xbox. [Check out the updated Color article here.](/windows/apps/design/style/color)
 
-![universal windows color palette](/images/colors.png)
+![universal windows color palette](/hub/apps/design/basics/images/colors.png)
 
 ### Data access guides
 
@@ -76,7 +76,7 @@ We've added a new article on [how to construct forms in your apps](/windows/apps
 
 ### Intro to app design
 
-The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. [Our new introduction](/windows/apps/design/basics/design-and-ui-intro) provides an overview of the universal design features that are included in every UWP app, and how you can use the docs to build user interfaces (UI) that scale beautifully across a range of devices.
+The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. [Our new introduction](/windows/uwp/get-started/) provides an overview of the universal design features that are included in every UWP app, and how you can use the docs to build user interfaces (UI) that scale beautifully across a range of devices.
 
 
 ### Request ratings and reviews
