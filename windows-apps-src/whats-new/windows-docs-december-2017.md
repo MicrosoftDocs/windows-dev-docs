@@ -62,7 +62,7 @@ All developers who have joined the Dev Center Insider program can now use subscr
 
 We've added some new guidance on how to use color in your apps for the best possible user experience. This includes API usage scenarios as well as general guidance about UI design and accessibility. We've also updated the list of user accent colors available on Xbox. [Check out the updated Color article here.](/windows/apps/design/style/color)
 
-![universal windows color palette](../images/colors.png)
+![universal windows color palette](/windows-apps-src/whats-new/images/colors.png)
 
 ### Data access guides
 
