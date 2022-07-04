@@ -79,8 +79,12 @@ new ToastContentBuilder()
 
 Here is a visual representation of the toast's content:
 
-![toast notification structure](images/adaptivetoasts-structure.jpg)
+![An screenshot of a toast notification with labels for the attribution area at the top showing the app icon and and app name Notifications Visualizer. The middle part of the toast is labeled as the visual area, which includes three lines of text. The bottom section of the toast is labeled as the action area and contains two buttons labeled Accept and Decline. ](images/toast-content-structure.png)
 
+
+## Attribution area
+
+The attribution area is at the top of the toast notification. Starting with Windows 11, your app's name and icon are displayed in this area. The attribution area also includes a close button that allows the user to quickly dismiss the notification and an ellipses menu that allows the user to quickly disable notifications for your app or go to the Windows Settings page for notifications. The attribution area is configured by the shell and can't be overridden in the toast XML payload.
 
 ## Visual
 
@@ -88,18 +92,12 @@ Each toast must specify a visual, where you must provide a generic toast binding
 
 For all attributes supported in the visual section and its child elements, [see the schema documentation](toast-schema.md#toastvisual).
 
-Your app's identity on the toast notification is conveyed via your app icon. However, if you use the app logo override, we will display your app name beneath your lines of text.
-
-| App identity for normal toast | App identity with appLogoOverride |
-| -- | -- |
-| <img src="images/adaptivetoasts-withoutapplogooverride.jpg" alt="notification without appLogoOverride" width="364"/> | <img alt="notification with appLogoOverride" src="images/adaptivetoasts-withapplogooverride.jpg" width="364"/> |
-
-
 ## Text elements
 
 Each toast must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](toast-schema.md#adaptivetext).
 
-<img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
+
+![A screenshot of a toast notification with three lines of text. The top line of text is bold.](images/toast-content-text-elements.png)
 
 Since the Windows 10 Anniversary Update, you can control how many lines of text are displayed by using the **HintMaxLines** property on the text. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third **AdaptiveText**).
 
@@ -116,7 +114,6 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-
     <visual>
         <binding template="ToastGeneric">
             <text hint-maxLines="1">Adaptive Tiles Meeting</text>
@@ -124,87 +121,16 @@ new ToastContentBuilder()
             <text>10:00 AM - 10:30 AM</text>
         </binding>
     </visual>
-
 </toast>
 ```
 
 ---
-
-
-## App logo override
-
-By default, your toast will display your app's logo. However, you can override this logo with your own [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) image. For example, if this is a notification from a person, we recommend overriding the app logo with a picture of that person.
-
-<img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
-
-You can use the **HintCrop** property to change the cropping of the image. For example, **Circle** results in a circle-cropped image. Otherwise, the image is square. Image dimensions are 48x48 pixels at 100% scaling. We generally recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. 
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddAppLogoOverride(new Uri("https://picsum.photos/48?image=883"), NotificationAppLogoCrop.Circle);
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
-        </binding>
-    </visual>
-
-</toast>
-```
-
----
-
-
-
-## Hero image
-
-**New in Anniversary Update**: Toasts can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Action Center. Image dimensions are 364x180 pixels at 100% scaling.
-
-<img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddHeroImage(new Uri("https://picsum.photos/364/180?image=1043"));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <image placement="hero" src="https://picsum.photos/364/180?image=1043"/>
-        </binding>
-    </visual>
-
-</toast>
-```
-
----
-
 
 ## Inline image
 
-You can provide a full-width inline-image that appears when you expand the toast.
+By default, images are displayed inline, after any text elements, filling the full width of the visual area.
 
-<img alt="Toast with additional image" src="images/toast-additionalimage.jpg" width="364"/>
+![A screenshot of a toast notification showing the default image placement, inline, filling the full width of the visual area.](images/toast-content-inline-image.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -218,19 +144,114 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <image src="https://picsum.photos/360/202?image=1043" />
-        </binding>
-    </visual>
-
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <image src="https://picsum.photos/360/202?image=1043"/>
+      <text>Featured image of the day.</text>
+    </binding>
+  </visual>
 </toast>
 ```
 
 ---
+
+
+## App logo override
+
+Specifying a placement value of appLogoOverride will cause the image to be displayed in a square on the left side of the visual area. The name of this property reflects the behavior in previous versions of Windows, where the image would replace the default app logo image. In Windows 11, the app logo is displayed in the attribution area, so it is not overridden by the appLogoOverride image placement.
+
+Image dimensions are 48x48 pixels at 100% scaling. We generally recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. 
+
+![A screenshot of a toast notification showing the app logo override image placement in a square on the left side of the visual area of the toast.](images/toast-content-applogooverride.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddAppLogoOverride(new Uri("https://picsum.photos/360/202?image=1043"), NotificationAppLogoCrop.Circle);
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride"  src="https://picsum.photos/360/202?image=1043"/>
+      <text>Featured image of the day.</text>
+    </binding>
+  </visual>
+</toast>
+```
+
+---
+
+## Hint crop
+
+Microsoft style guidelines recommend representing profile pictures with a circular image to provide a consistent representation of people across apps and the shell. Set the **HintCrop** property to **Circle** to render the image with a circular crop.  
+
+![A screenshot of a toast notification showing the app logo override image placement cropped into a circle on the left side of the visual area of the toast.](images/toast-content-hint-crop.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddAppLogoOverride(new Uri("https://picsum.photos/48?image=883"), NotificationAppLogoCrop.Circle);
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+      <text>Matt sent you a friend request</text>
+      <text>Hey, wanna dress up as wizards and ride around on hoverboards?</text>
+    </binding>
+  </visual>
+</toast>
+```
+
+---
+
+## Hero image
+
+**New in Anniversary Update**: Toasts can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Action Center. Image dimensions are 364x180 pixels at 100% scaling.
+
+![A screenshot of a toast notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
+
+#### [Builder syntax](#tab/builder-syntax)
+
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddHeroImage(new Uri("https://picsum.photos/364/180?image=1043"));
+```
+
+#### [XML](#tab/xml)
+
+```xml
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <image placement="hero" src="https://picsum.photos/360/202?image=1043"/>
+      <text>Mary Anne</text>
+      <text>Check out where we camped last night!</text>
+    </binding>
+  </visual>
+</toast>
+```
+
+---
+
+
 
 
 ## Image size restrictions
@@ -252,11 +273,13 @@ If an image exceeds the file size, or fails to download, or times out, the image
 
 ## Attribution text
 
-**New in Anniversary Update**: If you need to reference the source of your content, you can use attribution text. This text is always displayed at the bottom of your notification, along with your app's identity or the notification's timestamp.
+**New in Anniversary Update**: If you need to reference the source of your content, you can use attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.
 
 On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).
 
-<img alt="Toast with attribution text" src="images/toast-attributiontext.jpg" width="364"/>
+
+![A screenshot of a toast notification showing the attribution text "via SMS" below the other lines of text in the visual area of the toast.](images/toast-content-attribution-text.png)
+
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -270,15 +293,15 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    <visual>
-        <binding template="ToastGeneric">
-            ...
-            <text placement="attribution">Via SMS</text>
-        </binding>
-    </visual>
-
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <image src="https://picsum.photos/360/202?image=1043"/>
+      <text>Mary Anne</text>
+      <text>Check out where we camped last night!</text>
+      <text placement="attribution">Via SMS</text>
+    </binding>
+  </visual>
 </toast>
 ```
 
@@ -287,9 +310,9 @@ new ToastContentBuilder()
 
 ## Custom timestamp
 
-**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Action Center.
+**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notifications Center.
 
-<img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
+![Screenshot of a notification in the Notifications Center with a custom timestamp](images/toast-content-custom-timestamp.png)
 
 To learn more about using a custom timestamp, please see [custom timestamps on toasts](custom-timestamps-on-toasts.md).
 
@@ -305,8 +328,14 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+<toast displayTimestamp="2022-07-01T19:45:00Z">  
+  <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+      <text>Matt sent you a friend request</text>
+      <text>Hey, wanna dress up as wizards and ride around on hoverboards?</text>
+    </binding>
+  </visual>
 </toast>
 ```
 
@@ -317,7 +346,7 @@ new ToastContentBuilder()
 
 **New in Creators Update**: You can provide a progress bar on your toast notification to keep the user informed of the progress of operations such as downloads.
 
-<img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
+![A screenshot of a toast notification showing a progress bar.](images/toast-content-progress-bar.png)
 
 To learn more about using a progress bar, please see [Toast progress bar](toast-progress-bar.md).
 
@@ -326,7 +355,7 @@ To learn more about using a progress bar, please see [Toast progress bar](toast-
 
 **New in Creators Update**: You can group notifications under headers within Action Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
 
-<img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
+![A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled "Camping!".](images/toast-content-headers.png)
 
 To learn more about using headers, please see [Toast headers](toast-headers.md).
 
@@ -344,7 +373,9 @@ Note that any adaptive content must be contained within an [**AdaptiveGroup**](.
 
 Here's an example where columns and some advanced adaptive text elements are used. Since the text elements are within an **AdaptiveGroup**, they support all the rich adaptive styling properties.
 
-<img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
+
+
+![A screenshot of a toast notification showing groups of text elements aligned to the left and right of the visual area of the toast.](images/toast-content-columns.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -398,10 +429,8 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-
     <visual>
         <binding template="ToastGeneric">
-            ...
             <group>
                 <subgroup>
                     <text hint-style="base">52 attendees</text>
@@ -414,7 +443,6 @@ new ToastContentBuilder()
             </group>
         </binding>
     </visual>
-
 </toast>
 ```
 
@@ -437,7 +465,7 @@ Buttons can perform the following different actions...
 > [!NOTE]
 > You can only have up to 5 buttons (including context menu items which we discuss later).
 
-<img alt="notification with actions, example 1" src="images/adaptivetoasts-xmlsample02.jpg" width="364"/>
+![A screenshot of a toast notification showing a line of text followed a row with two buttons defined by action elements".](images/toast-content-buttons.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -458,24 +486,22 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <action
-            content="See more details"
-            arguments="action=viewDetails&amp;contentId=351"
-            activationType="foreground"/>
-
-        <action
-            content="Remind me later"
-            arguments="action=remindlater&amp;contentId=351"
-            activationType="background"/>
-
-    </actions>
-
+<toast>  
+  <visual>
+    <binding template="ToastGeneric">
+      <text>New product in stock!</text>
+    </binding>
+  </visual>
+  <actions>
+    <action
+      content="See more details"
+      arguments="action=viewDetails&amp;contentId=351"
+      activationType="foreground"/>
+    <action
+      content="Remind me later"
+      arguments="action=remindlater&amp;contentId=351"
+      activationType="background"/>
+   </actions>
 </toast>
 ```
 
@@ -489,7 +515,7 @@ You can add icons to your buttons. These icons are white transparent 16x16 pixel
 > [!NOTE]
 > For accessibility, be sure to include a contrast-white version of the icon (a black icon for white backgrounds), so that when the user turns on High Contrast White mode, your icon is visible. Learn more on the [toast accessiblity page](tile-toast-language-scale-contrast.md).
 
-<img src="images\adaptivetoasts-buttonswithicons.png" width="364" alt="Toast that has buttons with icons"/>
+![Screenshot of a toast notification that uses buttons with icons.](images/toast-content-button-icons.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -507,20 +533,29 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-        
+<toast launch="app-defined-string">  
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Return books to the library</text>
+    </binding>
+  </visual>
+  <actions>
+        <action
+            content="Accept"
+            imageUri="Assets/Icons/accept.png"
+            arguments="accept"
+            activationType="background"/>
+        <action
+            content="Snooze"
+            imageUri="Assets/Icons/snooze.png"
+            arguments="snooze"
+            activationType="background"/>
         <action
             content="Dismiss"
-            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
+            imageUri="Assets/Icons/dismiss.png"
             arguments="dismiss"
             activationType="background"/>
-
     </actions>
-
 </toast>
 ```
 
@@ -563,6 +598,7 @@ new ToastContentBuilder()
 
 
 <img alt="notification with buttons with colors" src="images/toast-button-with-colors.png" width="364"/>
+![A screenshot of a notification with three buttons, the two left buttons are green with icons for starting a video call or starting an audio call. The third button is red and has an icon for rejecting the call.](images/toast-content-button-colors.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -573,17 +609,20 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string" useButtonStyle="true">
-
-    ...
-
-    <actions>
+<toast scenario="incomingCall" launch="app-defined-string" useButtonStyle="true">  
+  <visual>
+    <binding template="ToastGeneric">
+            <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
+    <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
+    <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
+        </binding>  </visual>
+  <actions>
         
-        <action
+      <action
             content=""
             hint-toolTip="Answer Video Call"
             hint-buttonStyle="Success"
-            imageUri="Assets/Icons/VideoCall.png"
+            imageUri="Assets/Icons/video.png"
             activationType="foreground"
             arguments="videoId" />
 
@@ -591,7 +630,7 @@ new ToastContentBuilder()
             content=""
             hint-toolTip="Answer Phone Call"
             hint-buttonStyle="Success"
-            imageUri="Assets/Icons/PhoneCall.png"
+            imageUri="Assets/Icons/call.png"
             activationType="foreground"
             arguments="answerId" />
 
@@ -599,12 +638,10 @@ new ToastContentBuilder()
             content=""
             hint-toolTip="Hang Up"
             hint-buttonStyle="Critical"
-            imageUri="Assets/Icons/HangUp.png"
+            imageUri="Assets/Icons/hangup.png"
             activationType="background"
             arguments="hangupId" />
-
     </actions>
-
 </toast>
 ```
 
@@ -628,7 +665,7 @@ To learn how to implement this, see [Toast pending update](toast-pending-update.
 
 The additional context menu actions you add (such as "Mute group chat for 1 hour") appear above the two default system entries.
 
-![Toast with context menu](images/toast-contextmenu.png)
+![Toast with context menu](images/toast-content-context-menu.png)
 
 
 #### [Builder syntax](#tab/builder-syntax)
@@ -654,9 +691,17 @@ ToastContent content = new ToastContent()
 
 ```xml
 <toast launch="app-defined-string">
-
-    ...
-
+    <header
+        id="6289"
+        title="Camping!!"
+        arguments="action=openConversation&amp;id=6289"/>
+    <visual>
+        <binding template="ToastGeneric">
+            <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+            <text>Camping this weekend?</text>
+      
+        </binding>
+  </visual>
     <actions>
 
         <action
@@ -665,7 +710,6 @@ ToastContent content = new ToastContent()
             arguments="action=muteId"/>
 
     </actions>
-
 </toast>
 ```
 
@@ -687,6 +731,7 @@ Inputs are specified within the Actions region of the toast region of the toast,
 To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The icon for the button should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
+![A screenshot of a toast notification with a profile picture and some lines of text. A text box for typing directly into the toast is included as well as a button to send the reply.](images/toast-content-text-box.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -708,22 +753,22 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <input id="textBox" type="text" placeHolderContent="Type a reply"/>
-
-        <action
-            content="Send"
-            arguments="action=reply&amp;convId=9318"
-            activationType="background"
-            hint-inputId="textBox"
-            imageUri="Assets/Reply.png"/>
-
+    <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+      <text>Andrew Bares</text>
+      <text>Shall we meet up at 8?</text>
+    </binding>
+  </visual>
+<actions>
+    <input id="textBox" type="text" placeHolderContent="Type a reply"/>
+    <action
+        content="Send"
+        arguments="action=reply&amp;convId=9318"
+        activationType="background"
+        hint-inputId="textBox"
+        imageUri="Assets/Reply.png"/>
     </actions>
-
 </toast>
 ```
 
@@ -735,7 +780,7 @@ new ToastContentBuilder()
 
 You also can have one (or many) inputs with normal buttons displayed below the inputs.
 
-<img alt="notification with text and input actions" src="images/adaptivetoasts-xmlsample04.jpg" width="364"/>
+![A screenshot of a toast notification showing a line of text, a text box, and a row with two buttons labeled "Reply" and "Video call".](images/toast-content-input-with-buttons.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -759,25 +804,24 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <input id="textBox" type="text" placeHolderContent="Type a reply"/>
-
-        <action
-            content="Reply"
-            arguments="action=reply&amp;threadId=9218"
-            activationType="background"/>
-
-        <action
-            content="Video call"
-            arguments="action=videocall&amp;threadId=9218"
-            activationType="foreground"/>
-
-    </actions>
-
+    <visual>
+    <binding template="ToastGeneric">
+      <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+      <text>Andrew Bares</text>
+      <text>Shall we meet up at 8?</text>
+    </binding>
+  </visual>
+  <actions>
+    <input id="textBox" type="text" placeHolderContent="Type a reply"/>
+    <action
+        content="Reply"
+        arguments="action=reply&amp;threadId=9218"
+        activationType="background"/>
+    <action
+        content="Video call"
+        arguments="action=videocall&amp;threadId=9218"
+        activationType="foreground"/>
+  </actions>
 </toast>
 ```
 
@@ -788,7 +832,7 @@ new ToastContentBuilder()
 
 In addition to text boxes, you can also use a selection menu.
 
-<img alt="notification with selection input and actions" src="images/adaptivetoasts-xmlsample06.jpg" width="364"/>
+![A screenshot of a toast notification showing a line of text, a selection input with "Lunch" as the selected item, and a row with two buttons labeled "Reserve" and "Call restaurant".](images/toast-content-selection-input.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -814,22 +858,28 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-
-        <input id="time" type="selection" defaultInput="lunch">
-            <selection id="breakfast" content="Breakfast" />
-            <selection id="lunch" content="Lunch" />
-            <selection id="dinner" content="Dinner" />
-        </input>
-
-        ...
-
+<toast launch="app-defined-string">  
+  <visual>
+    <binding template="ToastGeneric">
+       <text>4th coffee?</text>
+      <text>When do you plan to come in tomorrow?</text>
+    </binding>
+  </visual>
+  <actions>
+    <input id="time" type="selection" defaultInput="lunch">
+        <selection id="breakfast" content="Breakfast" />
+        <selection id="lunch" content="Lunch" />
+        <selection id="dinner" content="Dinner" />
+    </input>
+    <action
+        content="Reserve"
+        arguments="action=reply&amp;threadId=9218"
+        activationType="background"/>
+    <action
+        content="Call restaurant"
+        arguments="action=videocall&amp;threadId=9218"
+        activationType="foreground"/>
     </actions>
-
 </toast>
 ```
 
@@ -842,6 +892,7 @@ new ToastContentBuilder()
 Using a selection menu and two buttons, we can create a reminder notification that utilizes the system snooze and dismiss actions. Make sure to set the scenario to Reminder for the notification to behave like a reminder.
 
 <img alt="reminder notification" src="images/adaptivetoasts-xmlsample07.jpg" width="364"/>
+![A screenshot of a toast with lines of text describing the time and location of a meeting. A selection box has "15 minutes" selected and there are buttons labeled Snooze and Dismiss.](images/toast-content-snooze-dismiss.png)
 
 We link the Snooze button to the selection menu input using the **SelectionBoxId** property on the toast button.
 
@@ -873,26 +924,29 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="reminder" launch="app-defined-string">
-   
-    ...
-    
+<toast>
+    <visual>
+        <binding template="ToastGeneric">
+            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+            <text>Conf Room 2001 / Building 135</text>
+            <text>10:00 AM - 10:30 AM</text>
+        </binding>
+    </visual>
     <actions>
-     
+     
         <input id="snoozeTime" type="selection" defaultInput="15">
             <selection id="1" content="1 minute"/>
             <selection id="15" content="15 minutes"/>
             <selection id="60" content="1 hour"/>
             <selection id="240" content="4 hours"/>
             <selection id="1440" content="1 day"/>
-        </input>
- 
-        <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-        <action activationType="system" arguments="dismiss" content=""/>
-     
-    </actions>
-   
+        </input>
+ 
+        <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+        <action activationType="system" arguments="dismiss" content=""/>
+     
+    </actions>
 </toast>
 ```
 
@@ -1009,7 +1063,7 @@ new ToastContentBuilder()
 ### Incoming calls
 Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
 
-![Incoming call toast notification](images/toast-incoming-call.png)
+![Incoming call toast notification](images/toast-content-button-colors.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -1022,12 +1076,39 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="incomingCall" launch="app-defined-string">
-
-    ...
-    <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
+<toast scenario="incomingCall" launch="app-defined-string" useButtonStyle="true">  
+  <visual>
+    <binding template="ToastGeneric">
+            <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
     <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
     <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
+        </binding>  </visual>
+  <actions>
+        
+      <action
+            content=""
+            hint-toolTip="Answer Video Call"
+            hint-buttonStyle="Success"
+            imageUri="Assets/Icons/video.png"
+            activationType="foreground"
+            arguments="videoId" />
+
+        <action
+            content=""
+            hint-toolTip="Answer Phone Call"
+            hint-buttonStyle="Success"
+            imageUri="Assets/Icons/call.png"
+            activationType="foreground"
+            arguments="answerId" />
+
+        <action
+            content=""
+            hint-toolTip="Hang Up"
+            hint-buttonStyle="Critical"
+            imageUri="Assets/Icons/hangup.png"
+            activationType="background"
+            arguments="hangupId" />
+    </actions>
 </toast>
 ```
 
@@ -1042,7 +1123,7 @@ new ToastContentBuilder()
 Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority toast notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.
 
 
-![Important toast notification](images/important-toast-notification.png)
+![A screenshot of an urgent toast notification that has an exclamation point in the attribution area next to the app name. The image also shows the system-initiated toast notification that provides buttons for the user to allow or disallow urgent notifications from the app.](images/toast-content-urgent.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -1055,7 +1136,13 @@ Important notifications allow users to have more control over what 1st party and
 ```xml
 <toast scenario="urgent" launch="app-defined-string">
 
-    ...
+    <visual>
+        <binding template="ToastGeneric">
+            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+            <text>Conf Room 2001 / Building 135</text>
+            <text>10:00 AM - 10:30 AM</text>
+        </binding>
+    </visual>
 
 </toast>
 ```
