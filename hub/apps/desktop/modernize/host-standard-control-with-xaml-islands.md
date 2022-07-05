@@ -303,6 +303,8 @@ The following instructions show you how to package all the components in the sol
 
 1. Build and run the packaging project. Confirm that the WPF app runs, and that the UWP control(s) display as expected.
 
+1. For info about distributing/deploying the package, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview). 
+
 ## Related topics
 
 * [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands)
