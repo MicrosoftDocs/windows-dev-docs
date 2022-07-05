@@ -25,7 +25,7 @@ From *Account settings*, select **Tenants** (under *Organizational profile*).
 
 :::image type="content" source="images/partner-center-account-settings-tenants.png" alt-text="From the *Account settings* menu in Partner Center, select *Tenants*":::
 
-## Associate your Partner Center account with your organization’s existing Azure AD tenant
+## Associate an existing Azure AD tenant with your Partner Center account
 
 If your organization already uses Azure AD, follow these steps to link your Partner Center account.
 
@@ -48,7 +48,7 @@ If your organization already uses Azure AD, follow these steps to link your Part
 
 To add and manage Partner Center account users in your tenant, sign in to Partner Center as a user in the same tenant who has the **Manager** role.
 
-## Create a new Azure AD to associate with your Partner Center account
+## Create a new Azure AD tenant to associate with your Partner Center account
 
 If you need to set up a new Azure AD to link with your Partner Center account, follow these steps.
 
