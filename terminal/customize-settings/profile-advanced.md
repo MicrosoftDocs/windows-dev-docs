@@ -3,7 +3,7 @@ title: Windows Terminal Advanced Profile Settings
 description: Learn how to customize the advanced profile settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/24/2022
+ms.date: 07/06/2022
 ms.topic: how-to
 ---
 
@@ -149,6 +149,38 @@ When `bellStyle` is set to `"all"` or `"audible"`, this allows you to choose the
 
 ___
 
+## Scroll marks ([Preview](https://aka.ms/terminal-preview))
+
+The following settings modify how scroll marks behave in Windows Terminal.
+
+### Experimental automatically add scroll marks ([Preview](https://aka.ms/terminal-preview))
+
+Automatically marks prompts when set to `true`. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Property name:** `experimental.autoMarkPrompts`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Experimental show marks on scrollbar ([Preview](https://aka.ms/terminal-preview))
+
+Displays marks on the scrollbar when set to `true`. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Property name:** `experimental.showMarksOnScrollbar`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+___
+
 ## Experimental text rendering engine
 
 Enables use of the experimental text rendering engine for the profile. This is an experimental feature and its continued existence is not guaranteed. A new instance of the profile needs to be opened in order for this setting to take effect.
@@ -165,7 +197,7 @@ Enables use of the experimental text rendering engine for the profile. This is a
 
 ___
 
-## VT passthrough mode ([Preview](https://aka.ms/terminal-preview))
+## VT passthrough mode
 
 When set to true, directs the PTY for this connection to use pass-through mode instead of the original Conhost PTY simulation engine. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -176,9 +208,6 @@ When set to true, directs the PTY for this connection to use pass-through mode i
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 

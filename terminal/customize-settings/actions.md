@@ -3,7 +3,7 @@ title: Windows Terminal Actions
 description: Learn how to create custom actions for Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/24/2022
+ms.date: 07/06/2022
 ms.topic: how-to
 ---
 
@@ -823,7 +823,8 @@ This copies the selected terminal content to your clipboard. If no selection exi
 
 // In defaults.json
 { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
-{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" }
+{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" },
+{ "command": { "action": "copy", "singleLine": false }, "keys": "enter" }
 ```
 
 #### Parameters
@@ -850,7 +851,7 @@ This inserts the content that was copied onto the clipboard.
 { "command": "paste", "keys": "shift+insert" }
 ```
 
-### Select all ([Preview](https://aka.ms/terminal-preview))
+### Select all
 
 This selects all of the content in the text buffer.
 
@@ -860,6 +861,48 @@ This selects all of the content in the text buffer.
 
 ```json
 { "command": "selectAll", "keys": "ctrl+shift+a" }
+```
+
+### Mark mode ([Preview](https://aka.ms/terminal-preview))
+
+This toggles mark mode. Mark mode is a mode where you can use the keyboard to create a selection at the cursor's position in the terminal.
+
+**Command name:** `markMode`
+
+**Default bindings:**
+
+```json
+{ "command": "markMode", "keys": "ctrl+shift+m" },
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Switch selection marker ([Preview](https://aka.ms/terminal-preview))
+
+When modifying a selection using the keyboard, you are moving one end of the selection around. You can use this action to switch to the other selection marker.
+
+**Command name:** `switchSelectionEndpoint`
+
+**Default bindings:**
+
+```json
+{ "command": "switchSelectionEndpoint" },
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Toggle block selection ([Preview](https://aka.ms/terminal-preview))
+
+Makes the exisiting selection a block selection, meaning that the selected area is a rectangle, as opposed to wrapping to the beginning and end of each line.
+
+**Command name:** `toggleBlockSelection`
+
+**Default bindings:**
+
+```json
+{ "command": "toggleBlockSelection" },
 ```
 
 > [!IMPORTANT]
@@ -1067,6 +1110,78 @@ Changes the active color scheme.
 ```json
 { "command": { "action": "setColorScheme", "colorScheme": "Campbell" }, "keys": "" }
 ```
+
+### Experimental add scroll mark ([Preview](https://aka.ms/terminal-preview))
+
+Adds a scroll mark to the text buffer. If there's a selection, the mark is placed at the selection, otherwise it's placed at the cursor row. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Command name:** `addMark`
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `color` | Optional | String, in hex format: `"#rgb"` or `"#rrggbb"` | The color of the mark. |
+
+**Example binding:**
+
+```json
+{ "command": { "action": "addMark", "color": "#ff00ff" } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Experimental scroll to mark ([Preview](https://aka.ms/terminal-preview))
+
+Scrolls to the scroll mark in the given direction. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Command name:** `scrollToMark`
+
+#### Parameters
+
+| Name | Necessity | Accepts | Description |
+| ---- | --------- | ------- | ----------- |
+| `direction` | Required | `"first"`, `"previous"`, `"next"`, `"last"` | The direction in which to scroll. |
+
+**Example binding:**
+
+```json
+{ "command": { "action": "scrollToMark", "direction": "previous" } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Experimental clear mark ([Preview](https://aka.ms/terminal-preview))
+
+Clears scroll mark at the current position, either at a selection if there is one or at the cursor position. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Command name:** `clearMark`
+
+**Example binding:**
+
+```json
+{ "command": { "action": "clearMark" } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
+
+### Experimental clear all marks ([Preview](https://aka.ms/terminal-preview))
+
+Clears all scroll marks in the text buffer. This is an experimental feature, and its continued existence is not guaranteed.
+
+**Command name:** `clearAllMarks`
+
+**Example binding:**
+
+```json
+{ "command": { "action": "clearAllMarks" } }
+```
+
+> [!IMPORTANT]
+> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
 
 <br />
 
