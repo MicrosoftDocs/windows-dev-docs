@@ -3,7 +3,7 @@ title: Windows Terminal Appearance Settings
 description: Learn how to customize appearance settings within Windows Terminal.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 05/24/2022
+ms.date: 07/06/2022
 ms.topic: how-to
 ---
 
@@ -223,7 +223,7 @@ When this is set to `true`, closing a window with multiple tabs open _will_ requ
 
 ___
 
-## Use a background image for the entire window ([Preview](https://aka.ms/terminal-preview))
+## Use a background image for the entire window
 
 When set to `true`, the background image for the currently focused profile is expanded to encompass the entire window, beneath other panes. This is an experimental feature, and its continued existence is not guaranteed.
 
@@ -234,6 +234,3 @@ When set to `true`, the background image for the currently focused profile is ex
 **Accepts:** `true`, `false`
 
 **Default value:** `false`
-
-> [!IMPORTANT]
-> This feature is only available in [Windows Terminal Preview](https://aka.ms/terminal-preview).
