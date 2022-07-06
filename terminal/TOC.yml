@@ -30,6 +30,8 @@
       href: command-palette.md
     - name: Search
       href: search.md
+    - name: Selection
+      href: selection.md
     - name: Panes
       href: panes.md
     - name: Dynamic profiles
