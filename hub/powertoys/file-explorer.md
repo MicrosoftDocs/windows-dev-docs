@@ -1,7 +1,7 @@
 ---
 title: PowerToys File Explorer add-ons utility for Windows
 description: A File Explorer add-on that enables different preview pane and thumbnail renderers for different file types.
-ms.date: 04/27/2022
+ms.date: 07/06/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Monaco]
@@ -30,7 +30,7 @@ Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerTo
 
 ### Enabling PowerToys Thumbnail previews
 
-To enable, set which you would like enabled to **On**.
+To enable preview support, set the extension to **On**.
 
 ## Preview Pane previewers in PowerToys
 
@@ -38,7 +38,7 @@ Preview Pane is an existing feature in the Windows File Explorer which allows yo
 
 ### Enabling PowerToys Preview Pane previewers
 
-To enable, set which you would like enabled to **On**.
+To enable preview support, set the extension to **On**.
 
 ![PowerToys Settings Enable File Explorer screenshot.](../images/powertoys-settings-fileexplorer.png)
 
