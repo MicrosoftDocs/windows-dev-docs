@@ -45,8 +45,8 @@ Regardless of being in mark mode, you can expand an existing selection using the
 | Key binding | Result |
 | ----------- | ------ |
 | <kbd>Shift</kbd> + Arrow keys | Expand by character in the specified direction |
-| <kbd>Ctrl</kbd> + <kbd>Left</kbd> | Expand to the beginning of the previous or existing word |
-| <kbd>Ctrl</kbd> + <kbd>Right</kbd> | Expand to the end of the next or existing word |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd> | Expand to the beginning of the previous or existing word |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | Expand to the end of the next or existing word |
 | <kbd>Shift</kbd> + <kbd>Home</kbd> | Expand to the beginning of the line |
 | <kbd>Shift</kbd> + <kbd>End</kbd> | Expand to the end of the line |
 | <kbd>Shift</kbd> + <kbd>Pgup</kbd> | Expand up by a page (viewport) |
