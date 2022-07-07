@@ -75,7 +75,7 @@ If your app is an MSIX-packaged app or Sparse-packaged app:
         <!--Register COM CLSID-->    
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----AppNotificationActivated">
+            <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----AppNotificationActivated:">
               <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" />
             </com:ExeServer>
           </com:ComServer>
