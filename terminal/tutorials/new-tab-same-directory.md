@@ -84,6 +84,16 @@ function prompt
 }
 ```
 
+#### MINGW
+
+For MINGW, Git Bash and Cygwin, you need to modify the `PROMT_COMMAND` for WSL: replace `wslpath` with `cygpath`.
+
+Add the following line to the end of your `.bashrc` file:
+
+```bash
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w $PWD`"'
+```
+
 ### WSL
 
 #### `bash`
@@ -110,7 +120,8 @@ precmd_functions+=(keep_current_path)
 The `precmd_functions` hook tells zsh what commands to run before displaying the prompt. The `printf` statement is what we're using to append the sequence for setting the working directory with the Terminal. The `$(wslpath -w "$PWD")` bit will invoke the `wslpath` executable to convert the current directory into its Windows-like path. Using  `precmd_functions+=` make sure we append the `keep_current_path` function to any existing function already defined for this hook.
 
 > [!NOTE]
-> Don't see your favorite shell here? If you figure it out, feel free to open a PR to contribute a solution for your preferred shell!
+> Don't see your favorite shell here? If you figure it out, feel free to [open a PR](https://github.com/MicrosoftDocs/terminal/edit/main/TerminalDocs/tutorials/new-tab-same-directory.md)
+> to contribute a solution for your preferred shell!
 
 ## Using actions to duplicate the path
 
