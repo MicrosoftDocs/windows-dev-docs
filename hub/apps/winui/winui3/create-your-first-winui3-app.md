@@ -56,6 +56,9 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 ## Non-MSIX-packaged: Create a new project for a non-MSIX-packaged C# or C++ WinUI 3 desktop app
 
+> [!IMPORTANT]
+> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a non-MSIX-packaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
+
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
 1. Download the latest installer for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). This will install the runtime package dependencies required to run and deploy a non-MSIX-packaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
