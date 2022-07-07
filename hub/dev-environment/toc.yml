@@ -171,6 +171,8 @@ items:
           href: ../android/wsa/index.md
         - name: Release notes for WSA
           href:  ../android/wsa/release-notes.md
+        - name: Preview program for WSA
+          href: ../android/wsa/preview-program.md
         - name: Native Android
           href: ../android/native-android.md
         - name: Cross-platform
@@ -212,7 +214,7 @@ items:
         - name: VS Code
           href: https://code.visualstudio.com/docs
         - name: Visual Studio
-          href: /visualstudio/windows/?view=vs-2019
+          href: /visualstudio/windows/
         - name: Azure
           href: /azure/?product=featured
         - name: .NET
