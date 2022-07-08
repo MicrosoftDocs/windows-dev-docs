@@ -23,7 +23,7 @@ See [Gamepad and remote control interactions](../input/gamepad-and-remote-intera
 
 ## Overview
 
-The Universal Windows Platform lets you create delightful experiences across multiple Windows 10 devices.
+The Universal Windows Platform lets you create delightful experiences across multiple Windows devices.
 Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work.
 However, tailoring and optimizing your app to work great on Xbox One and TV screens requires special considerations.
 
@@ -63,7 +63,7 @@ Now that you know the principles of good UWP app design for the 10-foot experien
 
 | Feature        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
-| [UI element sizing](#ui-element-sizing)  | The Universal Windows Platform uses [scaling and effective pixels](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) to scale the UI according to the viewing distance. Understanding sizing and applying it across your UI will help optimize your app for the 10-foot environment.  |
+| [UI element sizing](#ui-element-sizing)  | The Universal Windows Platform uses [scaling and effective pixels](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) to scale the UI according to the viewing distance. Understanding sizing and applying it across your UI will help optimize your app for the 10-foot environment.  |
 |  [TV-safe area](#tv-safe-area) | The UWP will automatically avoid displaying any UI in TV-unsafe areas (areas close to the edges of the screen) by default. However, this creates a "boxed-in" effect in which the UI looks letterboxed. For your app to be truly immersive on TV, you will want to modify it so that it extends to the edges of the screen on TVs that support it. |
 | [Colors](#colors)  |  The UWP supports color themes, and an app that respects the system theme will default to **dark** on Xbox One. If your app has a specific color theme, you should consider that some colors don't work well for TV and should be avoided. |
 | [Sound](../style/sound.md)    | Sounds play a key role in the 10-foot experience, helping to immerse and give feedback to the user. The UWP provides functionality that automatically turns on sounds for common controls when the app is running on Xbox One. Find out more about the sound support built into the UWP and learn how to take advantage of it.    |

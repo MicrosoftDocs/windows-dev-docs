@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 This guide shows you how to convert street addresses to geographic locations (geocoding) and convert geographic locations to street addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class in the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace.
 
 > [!TIP]
-> To learn more about using maps in your app, download the [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) sample from the [Windows universal samples repo](hhttps://github.com/Microsoft/Windows-universal-samples) on GitHub.
+> To learn more about using maps in your app, download the [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) sample from the [Windows universal samples repo](https://github.com/Microsoft/Windows-universal-samples) on GitHub.
 
 The classes involved in geocoding and reverse geocoding are organized as follows.
 
@@ -121,7 +121,7 @@ town = Redmond
 * [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [Design guidelines for maps](./display-maps.md)
-* [Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* Video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [**MapLocationFinder** class](/uwp/api/Windows.Services.Maps.MapLocationFinder)
 * [**FindLocationsAsync** method](/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)

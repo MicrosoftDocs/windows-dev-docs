@@ -63,7 +63,7 @@ Your app’s packages must comply with these requirements.
 
 | App package property | Requirement                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Package size         | .msixbundle or .appxbundle: 25 GB maximum per bundle <br>.msix or .appx packages targeting Windows 10: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
+| Package size         | .msixbundle or .appxbundle: 25 GB maximum per bundle <br>.msix or .appx packages targeting Windows 10 or Windows 11: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
 | Block map hashes     | SHA2-256 algorithm                                                   |
 
 > [!IMPORTANT]
@@ -71,11 +71,11 @@ Your app’s packages must comply with these requirements.
 
 ## Supported versions
 
-For UWP apps, all packages must target a version of Windows 10 supported by the Store. The versions your package supports must be indicated in the **MinVersion** and **MaxVersionTested** attributes of the [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element of the app manifest.
+For UWP apps, all packages must target a version of Windows 10 or Windows 11 supported by the Store. The versions your package supports must be indicated in the **MinVersion** and **MaxVersionTested** attributes of the [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element of the app manifest.
 
 The versions currently supported range from: 
 - Minimum: 10.0.10240.0
-- Maximum: 10.0.17763.1
+- Maximum: 10.0.22621.0
 
 
 ## StoreManifest XML file

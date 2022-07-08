@@ -9,14 +9,14 @@ ms.custom: RS5
 ---
 # Alignment, margin, padding
 
-In UWP apps, most user interface (UI) elements inherit from the [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) class. Every FrameworkElement has dimensions, alignment, margin, and padding properties, which influence layout behavior. The following guidance provides an overview of how to use these layout properties to make sure your app's UI is legible and easy to use in any context.
+In XAML apps, most user interface (UI) elements inherit from the [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) class. Every FrameworkElement has dimensions, alignment, margin, and padding properties, which influence layout behavior. The following guidance provides an overview of how to use these layout properties to make sure your app's UI is legible and easy to use in any context.
 
 ## Dimensions (Height, Width)
 Proper sizing ensures all content is clear and legible. Users shouldn’t have to scroll or zoom to decipher primary content.
 
 ![diagram showing dimensions](images/dimensions.svg)
 
-- [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) and [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) specify the size of an element. The default values are mathematically NaN (Not A Number). You can set fixed values measured in [effective pixels](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), or you can use **Auto** or [proportional sizing](layout-panels.md#grid) for fluid behavior.
+- [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) and [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) specify the size of an element. The default values are mathematically NaN (Not A Number). You can set fixed values measured in [effective pixels](screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), or you can use **Auto** or [proportional sizing](layout-panels.md#grid) for fluid behavior.
 
 - [**ActualHeight**](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) and [**ActualWidth**](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) are read-only properties that provide the size of an element at runtime. If fluid layouts grow or shrink, then the values change in a [**SizeChanged**](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) event. Note that a [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) will not change the ActualHeight and ActualWidth values.
 
@@ -58,7 +58,7 @@ Margin and padding properties keep UI from looking too cluttered or too sparse, 
 - Margin values are constrained last, so be careful with margins because containers can clip or constrain elements. A Margin value could be the cause of an element not appearing to render; with a Margin applied, an element's dimension can be constrained to 0.
 
 ### Padding
-[**Padding**](/uwp/api/windows.ui.xaml.frameworkelement.padding) controls the amount of space between the inner border of an element and its child content or elements. A positive Padding value decreases the content area of the element. 
+[**Padding**](/uwp/api/windows.ui.xaml.frameworkelement.margin?view=winrt-22000&preserve-view=true#margin-and-padding) controls the amount of space between the inner border of an element and its child content or elements. A positive Padding value decreases the content area of the element. 
 
 Unlike Margin, Padding is not a property of FrameworkElement. There are several classes which each define their own Padding property:
 
@@ -91,7 +91,7 @@ You don't have to set each property value individually on a control. It's typica
 ## General recommendations
 - Only apply measurement values to certain key elements and use fluid layout behavior for the other elements. This provides for [responsive UI](responsive-design.md) when the window width changes.
 
-- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When UWP uses [effective pixels and scaling](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
+- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When XAML uses [effective pixels and scaling](screen-sizes-and-breakpoints-for-responsive-design.md) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
 
 - For small window widths (less than 640 pixels), we recommend 12 epx gutters, and for larger window widths, we recommend 24 epx gutters.
 

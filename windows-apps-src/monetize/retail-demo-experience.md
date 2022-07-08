@@ -353,7 +353,7 @@ namespace MyCompany.MyApp
 
 ## Related links
 
-* [Store and retrieve app data](../design/app-settings/store-and-retrieve-app-data.md)
+* [Store and retrieve app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
 * [How to create and consume an app service](../launch-resume/how-to-create-and-consume-an-app-service.md)
-* [Localizing app contents](../design/globalizing/globalizing-portal.md)
+* [Localizing app contents](/windows/apps/design/globalizing/globalizing-portal)
 * [Retail demo experience (RDX)](/windows-hardware/customize/desktop/retail-demo-experience)

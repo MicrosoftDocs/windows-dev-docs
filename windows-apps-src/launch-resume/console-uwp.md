@@ -2,15 +2,16 @@
 title: Create a Universal Windows Platform console app
 description: This topic describes how to write a UWP app that runs in a console window.
 keywords: console uwp
-ms.date: 08/02/2018
+ms.date: 05/13/2022
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Create a Universal Windows Platform console app
 
 This topic describes how to create a [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) or C++/CX Universal Windows Platform (UWP) console app.
+
+> [!NOTE]  
+> The [Console App (Universal) Project Templates](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) extension does not support Visual Studio 2022. Either Visual Studio 2017 or Visual Studio 2019 is required to install and use these templates.
 
 Starting with Windows 10, version 1803, you can write C++/WinRT or C++/CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output, and can use [Universal C Runtime](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) functions such as **printf** and **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you will typically launch them from the command-line.
 
@@ -18,7 +19,7 @@ To see one in action, here's a video about Creating a UWP Console App.
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
-## Use a UWP Console app template 
+## Use a UWP Console app template
 
 To create a UWP console app, first install the **Console App (Universal) Project Templates**, available from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). The installed templates are then available under **New Project** > **Installed** > **Other Languages** > **Visual C++** > **Windows Universal** as **Console App C++/WinRT (Universal Windows)** and **Console App C++/CX (Universal Windows)**.
 
@@ -47,7 +48,7 @@ int __cdecl main()
     }
 
     // Keep the console window alive in case you want to see console output when running from within Visual Studio
-	  wprintf(L"Press 'Enter' to continue: ");
+    wprintf(L"Press 'Enter' to continue: ");
     getchar();
 }
 ```
@@ -71,7 +72,7 @@ The template also adds the `Subsystem="console"` capability to the Package.appxm
   ...
   <Applications>
     <Application Id="App"
-	  ...
+    ...
       desktop4:Subsystem="console" 
       desktop4:SupportsMultipleInstances="true" 
       iot2:Subsystem="console" 

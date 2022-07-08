@@ -19,8 +19,6 @@ Use a background task to update your app's live tile with fresh content.
 
 Here's a video that shows how to add live tiles to your apps.
 
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Updating-a-live-tile-from-a-background-task/player" width="720" height="405" allowFullScreen="true" frameBorder="0"></iframe>
-
 ## Create the background task project  
 
 To enable a live tile for your app, add a new Windows Runtime component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
@@ -254,7 +252,7 @@ To debug the background task, set a breakpoint in the task’s Run method. In th
 * [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager)
 * [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Guidelines and checklist for tiles and badges](../design/shell/tiles-and-notifications/creating-tiles.md)
+* [Guidelines and checklist for tiles and badges](/windows/apps/design/shell/tiles-and-notifications/creating-tiles)
 
  
 

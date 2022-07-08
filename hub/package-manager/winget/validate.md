@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # validate command (winget)
 
-The **validate** command of the [winget](index.md) tool validates a [manifest](../package/manifest.md) for submitting software to the **Microsoft Community Package Manifest Repository** on GitHub. The manifest must be a YAML file that follows the [specification](https://github.com/microsoft/winget-pkgs/YamlSpec.md).
+The **validate** command of the [winget](index.md) tool validates a [manifest](../package/manifest.md) for submitting software to the **Microsoft Community Package Manifest Repository** on GitHub. The manifest must be a YAML file that follows the [specification](https://github.com/microsoft/winget-pkgs/blob/master/AUTHORING_MANIFESTS.md).
 
 ## Usage
 
@@ -21,6 +21,7 @@ The following arguments are available.
 | Argument  | Description |
 |--------------|-------------|
 | **--manifest** |  the path to the manifest to be validated. |
+| **--verbose-logs** | Used to override the logging setting and create a verbose log. |
 | **-?, --help** |  get additional help on this command |
 
 ## Related topics

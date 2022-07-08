@@ -3,10 +3,9 @@ metadata:
   description: Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
   title: Frequently-asked questions about C++/WinRT
   ms.date: 04/23/2019
-  ms.topic: article
+  ms.topic: faq
   keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
   ms.localizationpriority: medium
-    
 title: Frequently-asked questions about C++/WinRT
 summary: |
   Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
@@ -73,10 +72,13 @@ sections:
           Only if the runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps). For full details on the purpose and consequences of declaring constructor(s) in IDL, see [Runtime class constructors](author-apis.md#runtime-class-constructors).
           
       - question: |
+          Why is the compiler giving me a "C3779: consume_Something: function that returns 'auto' cannot be used before it is defined" error?
+        answer: |
+          You're consuming an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), and the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
+
+      - question: |
           Why is the linker giving me a "LNK2019: Unresolved external symbol" error?
         answer: |
-          If the unresolved symbol is an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), then the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
-          
           If the unresolved symbol is a Windows Runtime free function, such as [RoInitialize](/windows/desktop/api/roapi/nf-roapi-roinitialize), then you'll need to explicitly link the [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella library in your project. The C++/WinRT projection depends on some of these free (non-member) functions and entry points. If you use one of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) project templates for your application, then `WindowsApp.lib` is linked for you automatically. Otherwise, you can use project link settings to include it, or do it in source code.
           
           ```cppwinrt
@@ -84,6 +86,9 @@ sections:
           ```
 
           It's important that you resolve any linker errors that you can by linking **WindowsApp.lib** instead of an alternative static-link library, otherwise your application won't pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (meaning that it consequently won't be possible for your application to be successfully ingested into the Microsoft Store).
+
+          **Relatively rare**: if the unresolved symbol is an API from the Windows namespace headers for the C++/WinRT projection (in the **winrt** namespace), then the API is forward-declared in a header that you've included, but its definition is in a header that you haven't yet included. Include the header named for the API's namespace, and rebuild. For more info, see [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers).
+
       - question: |
           Why am I getting a "class not registered" exception?
         answer: |
@@ -210,7 +215,7 @@ sections:
       - question: |
           How do I turn a string into a type (for navigation, for example)?
         answer: |
-          At the end of the [Navigation view code example](../design/controls-and-patterns/navigationview.md#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
+          At the end of the [Navigation view code example](/windows/apps/design/controls/navigationview#code-example) (which is mostly in C#), there's a C++/WinRT code snippet showing how to do this.
           
       - question: |
           How do I resolve ambiguities with GetCurrentTime and/or TRY?

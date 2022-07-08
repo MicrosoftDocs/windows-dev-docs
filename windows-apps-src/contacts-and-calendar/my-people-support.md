@@ -8,6 +8,9 @@ ms.localizationpriority: medium
 ---
 # Adding My People support to an application
 
+> [!IMPORTANT]
+> My people is no longer supported in Windows 11.
+
 > [!Note]
 > As of the Windows 10 May 2019 Update (version 1903), new Windows 10 installations will no longer show ‘People in the taskbar’ by default. Customers can enable the feature by right-clicking on the taskbar and pressing “Show People on the taskbar.” Developers are discouraged from adding My People support to their applications, and should visit the [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/) for more information about optimizing apps for Windows 10.
 
@@ -26,7 +29,7 @@ There are three things you need to do to enable your application to use the My P
 
 1. [Declare support for the shareTarget activation contract in your application manifest.](./my-people-sharing.md#declaring-support-for-the-share-contract)
 2. [Annotate the contacts that the users can share to using your app.](./my-people-sharing.md#annotating-contacts)
-3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](../design/layout/show-multiple-views.md).
+3.	Support multiple instances of your application running at the same time. Users must be able to interact with a full version of your application while using it in a contact panel.  They may even use it in multiple contact panels at once.  To support this, your application needs to be able to run multiple views simultaneously. To learn how to do this, see the article ["show multiple views for an app"](/windows/apps/design/layout/show-multiple-views).
 
 When you’ve done this, your application will appear in the contact panel for annotated contacts.
 
@@ -176,7 +179,7 @@ The ContactPanel object also allows you to set the background color of the conta
 
 ## Supporting notification badging
 
-If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) and expressive [My People notifications](./my-people-notifications.md).
+If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) and expressive [My People notifications](./my-people-notifications.md).
 
 ![People notification badging](images/my-people-badging.png)
 
@@ -248,7 +251,6 @@ async Task PinMultipleContacts(Contact[] contacts)
 ## See also
 + [My People sharing](my-people-sharing.md)
 + [My People notificatons](my-people-notifications.md)
-+ [Channel 9 video on adding My People support to an application](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [My People integration sample](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager class documentation](/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)

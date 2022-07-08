@@ -1,27 +1,33 @@
 ---
-title: Troubleshooting submissions to Windows Package Manager 
-description: Provides additional help for how to troubleshooting submission errors for Windows Package Manager.
-ms.date: 05/25/2021
-ms.topic: overview
+title: Troubleshoot submissions to the Windows Package Manager Repository
+description: Learn how to troubleshoot submission errors for Windows Package Manager by investigating pull request failure labels.
+ms.date: 06/21/2022
+ms.topic: troubleshooting
 ms.localizationpriority: medium
+ms.custom: kr2b-contr-experiment
 ---
 
-# Troubleshooting submissions to Windows Package Manager
+# Troubleshoot submissions to the Windows Package Manager Repository
 
-When Windows Package Manager is processing the manifest files in the pipeline, it [displays labels](winget-validation.md). If your pull request fails then then you may need to investigate to understand the failure better.  
+This article shows you how to investigate failures during processing of your pull requests. The Windows Package Manager validation pipeline [displays labels](winget-validation.md#pull-request-labels) to communicate validation progress. If validation fails, you can use the label to investigate the reason for the failure.
 
-This article walks you through how you can get more information on your pull request failure.
+To investigate pull request failures, take the following steps:
 
-## Walkthrough of investigating a failure
+1. A pull request failure appears at the bottom of the web page with the string **Some checks were not successful**. Select the **Details** link next to a failed validation to go to the Azure Pipelines page.
 
-1. When a pull request fails, it indicates the failure at the bottom of the web page. It will indicate a failure with the string **Some checks were not successful**. Click the **Details** link.
-    ![Screenshot of a pull request failure](.\images\some-checks-were-not-successful.png).
+   :::image type="content" source="images/some-checks-were-not-successful.png" alt-text="Screenshot of a pull request failure.":::
 
-2. After you click **Details**, you will go to an Azure Pipelines page. Click the link with the string **0 errors / 0 warnings**.
-    ![Screenshot of the Azure Pipelines page](.\images\details.png).
+1. On the Azure Pipelines page, select the **0 errors / 0 warnings** link.
 
-3. The next page lists the job that failed. In the following screenshot, the failed job is **Manifest Content Validation**. Click the failed job.
-    ![Screenshot of the error details](.\images\manifest-content-validation.PNG).
+   :::image type="content" source="images/details.png" alt-text="Screenshot of the Azure Pipelines page.":::
 
-4. The next page displays the output for the failed job. You can use this information to debug the issue. In the following example, the failure was during **Installation Validation** task. The output should help you identify the change that needs to be made to fix the manifest.
-    ![Screenshot of the failed job output](.\images\installation-validation.png).
+1. On the next page, select the failed job.
+
+   :::image type="content" source="images/fix-manifest-content-validation.png" alt-text="Screenshot of the error details.":::
+
+1. The next page shows the output for the failed job. The output should help you identify the change you need to make to fix the manifest.
+
+   In the following example, the failure was during the **Installation Validation** task.
+
+   :::image type="content" source="images/fix-installation-validation.png" alt-text="Screenshot of the failed job output.":::
+

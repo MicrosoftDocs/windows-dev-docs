@@ -1,15 +1,16 @@
 ---
 title: WinUI 2.5 Release Notes
 description: Release notes for WinUI 2.5, including new features and bug fixes.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 12/01/2020
 ms.topic: article
 ---
 
 # Windows UI Library 2.5
 
-WinUI 2.5 is the latest official release of the Windows UI Library (WinUI).
+WinUI 2.5 is the December 2020 release of the Windows UI Library (WinUI).
 
-WinUI is an open source project hosted on GitHub at [Windows UI Library repo](https://aka.ms/winui). Please register all bug reports, feature requests, and community code contributions in this repo.
+WinUI is hosted in the [Windows UI Library repo](https://aka.ms/winui) on GitHub where we welcome bug reports, feature requests, and community code contributions.
 
 WinUI Releases: [GitHub release page](https://github.com/microsoft/microsoft-ui-xaml/releases)
 
@@ -62,17 +63,16 @@ The following image shows a NavigationView with *Account*, *Your Cart*, and *Hel
 
 ## Samples
 
-The **XAML Controls Gallery** sample app includes examples of each of these WinUI features and controls.
-
-If you have the **XAML Controls Gallery** app installed and updated to the latest version:
-
-- See the [InfoBar](xamlcontrolsgallery:/item/InfoBar) in action.
-- See the [ProgressRing](xamlcontrolsgallery:/item/ProgressRing) in action.
-- See the [NavigationView](xamlcontrolsgallery:/item/NavigationView) in action.
-
-If you don't have the XAML Controls Gallery app installed, get it from the [Microsoft Store](https://aka.ms/xamlgalleryapp).
-
-You can also view, clone, and build the XAML Controls Gallery source code from [GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery).
+> [!TIP]
+> For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
+>
+> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+>
+> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+>
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+>
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ## Other updates
 

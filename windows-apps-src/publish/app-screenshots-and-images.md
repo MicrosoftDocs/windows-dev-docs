@@ -15,7 +15,7 @@ You can provide [screenshots](#screenshots), [logos](#store-logos), [trailers](#
 
 During the [app submission process](app-submissions.md), you provide these art assets in the [Store listings](create-app-store-listings.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
 
-The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../design/style/app-icons-and-logos.md).
+The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](/windows/apps/design/style/app-icons-and-logos).
 
 ## Screenshots
 
@@ -57,7 +57,7 @@ You can provide these images as .png files (no greater than 50 MB), each of whic
 
 ### 2:3 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
-This is used as the main logo image for customers on Windows 10 and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially-curated collections.
+This is used as the main logo image for customers on Windows 10, Windows 11, and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browsing the Store. This image may also be used in search results or in editorially-curated collections.
 
 This image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
 
@@ -66,22 +66,22 @@ This image should include your app’s name, and any text on the image should me
 
 ### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
 
-This image may appear in various Store pages for Windows 10 (including Xbox), and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
+This image may appear in various Store pages for Windows 10, Windows 11, and Xbox devices, and if you don't provide the **2:3 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
 
 > [!NOTE]
 > If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
 
 ### 1:1 App tile icon (300 x 300 pixels)
 
-This image is required for proper display on Windows Phone 8.1 and earlier. If your previously-published app supports Windows Phone 8.1 or earlier, and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10 if your app only has packages targeting Windows Phone 8.1 or earlier.)
+This image is required for proper display on Windows Phone 8.1 and earlier. If your previously-published app supports Windows Phone 8.1 or earlier, and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10 or Windows 11 if your app only has packages targeting Windows Phone 8.1 or earlier.)
 
-If your submission *only* includes UWP packages, you don’t need to provide this image (unless you check the box for  **For customers on Windows 10 and Xbox, display uploaded logo images instead of the images from my packages**, as described in the next section).
+If your submission *only* includes UWP packages, you don’t need to provide this image (unless you check the box for  **For customers on Windows 10 or Windows 11 and Xbox, display uploaded logo images instead of the images from my packages**, as described in the next section).
 
 ### Display only uploaded logo images in the Store
 
-You have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store for customers on Windows 10 (including Xbox). (If your previously-published app supports earlier OS versions, those customers may still see images from your packages.)
+You have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10, Windows 11, and Xbox devices and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store for customers on those platforms. (If your previously-published app supports earlier OS versions, those customers may still see images from your packages.)
 
-To have the Store use only the images you upload (for customers on Windows 10, including Xbox), and not use any images from your packages, check the box that says **For customers on Windows 10 and Xbox, display uploaded logo images instead of the images from my packages**.
+To have the Store use only the images you upload (for customers on Windows 10, Windows 11, and Xbox devices), and not use any images from your packages, check the box that says **For customers on Windows 10, Windows 11, and Xbox devices, display uploaded logo images instead of the images from my packages**.
 
 When you check this box, a new section called **Store display images** appears. Here, you can upload 3 images, including the **1:1 app tile icon (300 x 300 pixels)** size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
 
@@ -175,7 +175,7 @@ For H.264 Mezzanine files, we recommend the following:
 
 ### Windows 10 and Xbox image (16:9 Super hero art)
 
-In the **Windows 10 and Xbox image** section, the **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** image is used in various layouts in the Microsoft Store on all Windows 10 device types (including Xbox). We recommend providing this image, regardless of which OS versions or device types your app targets.
+In the **Windows 10 or Windows 11 and Xbox image** section, the **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** image is used in various layouts in the Microsoft Store on all Windows 10, Windows 11, and Xbox devices. We recommend providing this image, regardless of which OS versions or device types your app targets.
 
 This image is *required* for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later (which includes Xbox), it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). It may also be used to feature your app in promotional layouts throughout the Store. Note that this image must not include the product's title or other text.
 

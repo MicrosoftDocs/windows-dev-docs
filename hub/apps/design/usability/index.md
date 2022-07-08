@@ -22,7 +22,7 @@ Accessibility is about making your app usable by people who have limitations tha
 [Accessibility portal](../accessibility/accessibility.md)
 
 <!--
-<ul class="panelContent cardsH" style="margin-left: 1px">
+<ul class="panelContent cardsH">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -39,7 +39,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Windows apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Windows apps for Windows   Design and build inclusive software with accessibility in mind.</p>
                     </div>
                 </div>
             </div>
@@ -175,16 +175,16 @@ App settings let you the user customize your app, optimizing it for their indivi
 
 :::row:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Best practices for creating and displaying app settings.</p>
+        <h3><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></h3>
+        <p>Best practices for creating and displaying app settings.</p>
     :::column-end:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">How to store and retrieve local, roaming, and temporary app data.</p>
+        <h3><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></h3>
+        <p>How to store and retrieve local, roaming, and temporary app data.</p>
     :::column-end:::
 :::row-end:::
 
-<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
+<!-- <ul class="panelContent cardsH">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -220,26 +220,26 @@ No matter how well you’ve designed your app, some users will need a little ext
 
 :::row:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Applications can be complex, and providing effective help for your users can greatly improve their experience.</p>
+        <h3><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></h3>
+        <p>Applications can be complex, and providing effective help for your users can greatly improve their experience.</p>
     :::column-end:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/instructional-ui.md">Instructional UI</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
+        <h3><a href="../in-app-help/instructional-ui.md">Instructional UI</a></h3>
+        <p>Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/in-app-help.md">In-app help</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
+        <h3><a href="../in-app-help/in-app-help.md">In-app help</a></h3>
+        <p>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
     :::column-end:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/external-help.md">External help</a></h3>
-        <p style="margin-top: 0px; margin-bottom: 50px">Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
+        <h3><a href="../in-app-help/external-help.md">External help</a></h3>
+        <p>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
     :::column-end:::
 :::row-end:::
 
-<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
+<!-- <ul class="panelContent cardsH">
     <li>
         <div class="cardSize">
             <div class="cardPadding">

@@ -4,11 +4,7 @@ title: Flyout controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
-pm-contact: yulikl
-design-contact: kimsea
-dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -16,51 +12,41 @@ ms.localizationpriority: medium
 
 A flyout is a light dismiss container that can show arbitrary UI as its content. Flyouts can contain other flyouts or context menus to create a nested experience.
 
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](../images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Platform APIs:** [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-
 ## Is this the right control?
 
 * Don't use a flyout instead of [tooltip](../tooltips.md) or [context menu](../menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.
 
 For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see [Dialogs and flyouts](index.md).
 
-## Examples
+## UWP and WinUI 2
 
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> or <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in action.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-##  How to create a flyout
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
 
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout), [Button.Flyout property](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout)
+> - [Open the WinUI 2 Gallery app and see the Flyout in action](winui2gallery:/item/Flyout). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-Flyouts are attached to specific controls. You can use the [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), provide a [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) property that you can use to associate a flyout or [context menu](../menus.md).
+We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
+
+## Create a flyout
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout), [Button.Flyout property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Flyout in action](winui3gallery:/item/Flyout).
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
+
+Flyouts are attached to specific controls. You can use the [Placement](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button), provide a [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout) property that you can use to associate a flyout or [context menu](../menus.md).
 
 This example creates a simple flyout that displays some text when the button is pressed.
-````xaml
+
+```xaml
 <Button Content="Click me">
   <Button.Flyout>
      <Flyout>
@@ -68,13 +54,13 @@ This example creates a simple flyout that displays some text when the button is 
      </Flyout>
   </Button.Flyout>
 </Button>
-````
+```
 
-If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_) method to show the flyout.
+If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_) method to show the flyout.
 
 This example adds a simple flyout to an image. When the user taps the image, the app shows the flyout.
 
-````xaml
+```xaml
 <Image Source="Assets/cliff.jpg" Width="50" Height="50"
   Margin="10" Tapped="Image_Tapped">
   <FlyoutBase.AttachedFlyout>
@@ -83,18 +69,18 @@ This example adds a simple flyout to an image. When the user taps the image, the
     </Flyout>
   </FlyoutBase.AttachedFlyout>
 </Image>
-````
+```
 
-````csharp
+```csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
     FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
-````
+```
 
 The previous examples defined their flyouts inline. You can also define a flyout as a static resource and then use it with multiple elements. This example creates a more complicated flyout that displays a larger version of an image when its thumbnail is tapped.
 
-````xaml
+```xaml
 <!-- Declare the shared flyout as a resource. -->
 <Page.Resources>
     <Flyout x:Key="ImagePreviewFlyout" Placement="Right">
@@ -104,9 +90,9 @@ The previous examples defined their flyouts inline. You can also define a flyout
             MaxHeight="400" MaxWidth="400" Stretch="Uniform"/>
     </Flyout>
 </Page.Resources>
-````
+```
 
-````xaml
+```xaml
 <!-- Assign the flyout to each element that shares it. -->
 <StackPanel>
     <Image Source="Assets/cliff.jpg" Width="50" Height="50"
@@ -122,21 +108,22 @@ The previous examples defined their flyouts inline. You can also define a flyout
            FlyoutBase.AttachedFlyout="{StaticResource ImagePreviewFlyout}"
            DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
 </StackPanel>
-````
+```
 
-````csharp
+```csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
     FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
-````
+```
 
 ## Style a flyout
-To style a Flyout, modify its [FlyoutPresenterStyle](/uwp/api/Windows.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle). This example shows a paragraph of wrapping text and makes the text block accessible to a screen reader.
+
+To style a Flyout, modify its [FlyoutPresenterStyle](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle). This example shows a paragraph of wrapping text and makes the text block accessible to a screen reader.
 
 ![Accessible flyout with wrapping text](../images/flyout-wrapping-text.png)
 
-````xaml
+```xaml
 <Flyout>
   <Flyout.FlyoutPresenterStyle>
     <Style TargetType="FlyoutPresenter">
@@ -149,11 +136,11 @@ To style a Flyout, modify its [FlyoutPresenterStyle](/uwp/api/Windows.UI.Xaml.Co
   </Flyout.FlyoutPresenterStyle>
   <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
 </Flyout>
-````
+```
 
 ## Styling flyouts for 10-foot experiences
 
-Light dismiss controls like flyout trap keyboard and gamepad focus inside their transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox draw an overlay that dims the contrast and visibility of out of scope UI. This behavior can be modified with the [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) property. By default, flyouts will draw the light dismiss overlay on Xbox but not other device families, but apps can choose to force the overlay to be always **On** or always **Off**.
+Light dismiss controls like flyout trap keyboard and gamepad focus inside their transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox draw an overlay that dims the contrast and visibility of out of scope UI. This behavior can be modified with the [`LightDismissOverlayMode`](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) property. By default, flyouts will draw the light dismiss overlay on Xbox but not other device families, but apps can choose to force the overlay to be always **On** or always **Off**.
 
 ![Flyout with dimming overlay](../images/flyout-smoke.png)
 
@@ -162,21 +149,24 @@ Light dismiss controls like flyout trap keyboard and gamepad focus inside their 
 ```
 
 ## Light dismiss behavior
+
 Flyouts can be closed with a quick light dismiss action, including
--    Tap outside the flyout
--    Press the Escape keyboard key
--    Press the hardware or software system Back button
--    Press the gamepad B button
+
+- Tap outside the flyout
+- Press the Escape keyboard key
+- Press the hardware or software system Back button
+- Press the gamepad B button
 
 When dismissing with a tap, this gesture is typically absorbed and not passed on to the UI underneath. For example, if there's a button visible behind an open flyout, the user's first tap dismisses the flyout but does not activate this button. Pressing the button requires a second tap.
 
 You can change this behavior by designating the button as an input pass-through element for the flyout. The flyout will close as a result of the light dismiss actions described above and will also pass the tap event to its designated `OverlayInputPassThroughElement`. Consider adopting this behavior to speed up user interactions on functionally similar items. If your app has a favorites collection and each item in the collection includes an attached flyout, it's reasonable to expect that users may want to interact with multiple flyouts in rapid succession.
 
-[!NOTE] Be careful not to designate an overlay input pass-through element which results in a destructive action. Users have become habituated to discreet light dismiss actions which do not activate primary UI. Close, Delete or similarly destructive buttons should not activate on light dismiss to avoid unexpected and disruptive behavior.
+> [!NOTE]
+> Be careful not to designate an overlay input pass-through element which results in a destructive action. Users have become habituated to discreet light dismiss actions which do not activate primary UI. Close, Delete, or similarly destructive buttons should not activate on light dismiss to avoid unexpected and disruptive behavior.
 
 In the following example, all three buttons inside FavoritesBar will be activated on the first tap.
 
-````xaml
+```xaml
 <Page>
     <Page.Resources>
         <Flyout x:Name="TravelFlyout" x:Key="TravelFlyout"
@@ -203,8 +193,9 @@ In the following example, all three buttons inside FavoritesBar will be activate
         </ScrollViewer>
     </Grid>
 </Page>
-````
-````csharp
+```
+
+```csharp
 private void Folder2_Click(object sender, RoutedEventArgs e)
 {
      Flyout flyout = new Flyout();
@@ -212,14 +203,15 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
      ...
      flyout.ShowAt(sender as FrameworkElement);
 {
-````
+```
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
+
 - [Tooltips](../tooltips.md)
 - [Menus and context menu](../menus.md)
-- [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-- [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+- [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
+- [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog)

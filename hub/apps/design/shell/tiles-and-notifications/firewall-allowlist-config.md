@@ -3,22 +3,22 @@ description: Many enterprises use firewalls to block unwanted traffic. This doc 
 title: Adding WNS Traffic to the Firewall Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 05/20/2019
+ms.date: 06/30/2021
 ms.topic: article
 keywords: windows 10, uwp, WNS, windows notifications service, notification, windows, firewall, troubleshooting, IP, traffic, enterprise, network, IPv4, VIP, FQDN, public IP address
 ms.localizationpriority: medium
 ---
-# Enterprise Firewall and Proxy Configurations to Support WNS Traffic
+# Enterprise Firewall Configurations to Support WNS Traffic
 
 ## Background
-Many enterprises use firewalls to block unwanted network traffic and ports; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped under certain network configurations. To avoid this, network admins can add the list of approved WNS FQDNs or VIPs to their exemption list to allow the WNS traffic to pass through the firewall. Below are more details on how and what to add, as well as support for different proxy types.
+Many enterprises use firewalls to block unwanted network traffic and ports; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped under certain network configurations. To avoid this, network admins can add the list of approved WNS FQDNs or VIPs to their exemption list to allow the WNS traffic to pass through the firewall.
 
 ## Proxy Support
 
 > [!Note]
-> WNS Push Notifications on Windows doesn't support all proxies currently. For best results, the connection to WNS must be a direct connection.
+> WNS Push Notifications *does not* support proxies. For best results, the connection to WNS must be a direct connection, however, VPN interfaces can be used. 
 
-We are actively investigating different network configurations, proxies, and firewalls. We will update this page with more details on common enterprise scenarios and WNS support soon.
+We welcome any feedback about proxy support. Please direct your feedback to [https://aka.ms/windowsappsdk](https://aka.ms/windowsappsdk) and file an issue for tracking interest in proxy support for WNS. Feel free to add the "area-Notifications" label to your issue for quicker visibility with the notifications team.
 
 
 ## What information should be added to the allowlist

@@ -118,7 +118,7 @@ If you open the MainPage.xaml file, in **XAML** view, you'll see the XAML code t
 ...
 ```
 
-You can edit this XAML manually, or return to Blend to continue working on it there. Blend makes it fun to create interesting user interfaces, and the ability to animate them using a graphical tool can dramatically speed up development time. For more info about animations, see [Animations overview](../design/motion/xaml-animation.md).
+You can edit this XAML manually, or return to Blend to continue working on it there. Blend makes it fun to create interesting user interfaces, and the ability to animate them using a graphical tool can dramatically speed up development time. For more info about animations, see [Animations overview](/windows/apps/design/motion/xaml-animation).
 
 **Note**  For info about animations for <span class="legacy-term">UWP apps using JavaScript and HTML</span>, see [Animating your UI (HTML)](/previous-versions/windows/apps/hh465165(v=win.10)).
 

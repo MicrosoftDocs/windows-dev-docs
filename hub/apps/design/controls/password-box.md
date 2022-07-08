@@ -7,9 +7,6 @@ label: Password box
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
-pm-contact: miguelrb
-design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -17,23 +14,9 @@ ms.localizationpriority: medium
 
 A password box is a text input box that conceals the characters typed into it for the purpose of privacy. A password box looks like a text box, except that it renders placeholder characters in place of the text that has been entered. You can configure the placeholder character.
 
+![Password box focus state typing text](images/passwordbox-focus-typing.png)
+
 By default, the password box provides a way for the user to view their password by holding down a reveal button. You can disable the reveal button, or provide an alternate mechanism to reveal the password, such as a check box.
-
-**Get the Windows UI Library**
-
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      Windows UI Library 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md). WinUI is a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see [Windows UI Library](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
-
-   :::column-end:::
-:::row-end:::
-
-> **Platform APIs**: [PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [Password property](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## Is this the right control?
 
@@ -41,21 +24,16 @@ Use a **PasswordBox** control to collect a password or other private data, such 
 
 For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Examples
+## Recommendations
 
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/PasswordBox">open the app and see the PasswordBox in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+- Use a label or placeholder text if the purpose of the password box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
+- Give the password box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
+- Don't put another control right next to a password input box. The password box has a password reveal button for users to verify the passwords they have typed, and having another control right next to it might make users accidentally reveal their passwords when they try to interact with the other control. To prevent this from happening, put some spacing between the password in put box and the other control, or put the other control on the next line.
+- Consider presenting two password boxes for account creation: one for the new password, and a second to confirm the new password.
+- Only show a single password box for logins.
+- When a password box is used to enter a PIN, consider providing an instant response as soon as the last number is entered instead of using a confirmation button.
+
+## Examples
 
 The password box has several states, including these notable ones.
 
@@ -71,9 +49,31 @@ Pressing the "reveal" button on the right gives a peek at the password text bein
 
 ![Password box text revealed](images/passwordbox-text-reveal.png)
 
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [PasswordBox class](/uwp/api/windows.ui.xaml.controls.passwordbox), [Password property](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> - [Open the WinUI 2 Gallery app and see PasswordBox in action](winui2gallery:/item/PasswordBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](/windows/apps/winui/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+
 ## Create a password box
 
-Use the [Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password) property to get or set the contents of the PasswordBox. You can do this in the handler for the [PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged) event to perform validation while the user enters the password. Or, you can use another event, like a button [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), to perform validation after the user completes the text entry.
+> [!div class="checklist"]
+>
+> - **Important APIs:** [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox), [Password property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.password), [PasswordChar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordchanged)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see PasswordBox in action](winui3gallery:/item/PasswordBox).
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+Use the [Password](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.password) property to get or set the contents of the PasswordBox. You can do this in the handler for the [PasswordChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordchanged) event to perform validation while the user enters the password. Or, you can use another event, like a button [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click), to perform validation after the user completes the text entry.
 
 Here's the XAML for a password box control that demonstrates the default look of the PasswordBox. When the user enters a password, you check to see if it's the literal value, "Password". If it is, you display a message to the user.
 
@@ -105,7 +105,7 @@ Here's the result when this code runs and the user enters "Password".
 
 ### Password character
 
-You can change the character used to mask the password by setting the [PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar) property. Here, the default bullet is replaced with a pound sign.
+You can change the character used to mask the password by setting the [PasswordChar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordchar) property. Here, the default bullet is replaced with a pound sign.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="300" PasswordChar="#"/>
@@ -117,7 +117,7 @@ The result looks like this.
 
 ### Headers and placeholder text
 
-You can use the [Header](/uwp/api/windows.ui.xaml.controls.passwordbox.header) and [PlaceholderText](/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) properties to provide context for the PasswordBox. This is especially useful when you have multiple boxes, such as on a form to change a password.
+You can use the [Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.header) and [PlaceholderText](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.placeholdertext) properties to provide context for the PasswordBox. This is especially useful when you have multiple boxes, such as on a form to change a password.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
@@ -127,7 +127,7 @@ You can use the [Header](/uwp/api/windows.ui.xaml.controls.passwordbox.header) a
 
 ### Maximum length
 
-Specify the maximum number of characters that the user can enter by setting the [MaxLength](/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength) property. There is no property to specify a minimum length, but you can check the password length, and perform any other validation, in your app code.
+Specify the maximum number of characters that the user can enter by setting the [MaxLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.maxlength) property. There is no property to specify a minimum length, but you can check the password length, and perform any other validation, in your app code.
 
 ## Password reveal mode
 
@@ -139,17 +139,15 @@ The PasswordBox has a built-in button that the user can press to display the pas
 
 By default, the password reveal button (or "peek" button) is shown. The user must continuously press the button to view the password, so that a high level of security is maintained.
 
-The value of the [PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) property is not the only factor that determines whether a password reveal button is visible to the user. Other factors include whether the control is displayed above a minimum width, whether the PasswordBox has focus, and whether the text entry field contains at least one character. The password reveal button is shown only when the PasswordBox receives focus for the first time and a character is entered. If the PasswordBox loses focus and then regains focus, the reveal button is not shown again unless the password is cleared and character entry starts over.
-
-> **Caution**&nbsp;&nbsp;Prior to Windows 10, the password reveal button was not shown by default. If the security of your app requires that the password is always obscured, be sure to set PasswordRevealMode to Hidden.
+The value of the [PasswordRevealMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.passwordrevealmode) property is not the only factor that determines whether a password reveal button is visible to the user. Other factors include whether the control is displayed above a minimum width, whether the PasswordBox has focus, and whether the text entry field contains at least one character. The password reveal button is shown only when the PasswordBox receives focus for the first time and a character is entered. If the PasswordBox loses focus and then regains focus, the reveal button is not shown again unless the password is cleared and character entry starts over.
 
 ### Hidden and Visible modes
 
-The other [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) enumeration values, **Hidden** and **Visible**, hide the password reveal button and let you programmatically manage whether the password is obscured.
+The other [PasswordRevealMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordrevealmode) enumeration values, **Hidden** and **Visible**, hide the password reveal button and let you programmatically manage whether the password is obscured.
 
-To always obscure the password, set PasswordRevealMode to Hidden. Unless you need the password to be always obscured, you can provide a custom UI to let the user toggle the PasswordRevealMode between Hidden and Visible. For example, you can use a check box to toggle whether the password is obscured, as shown in the following example. You can also use other controls, like [ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton), to let the user switch modes.
+To always obscure the password, set PasswordRevealMode to Hidden. Unless you need the password to be always obscured, you can provide a custom UI to let the user toggle the PasswordRevealMode between Hidden and Visible. For example, you can use a check box to toggle whether the password is obscured, as shown in the following example. You can also use other controls, like [ToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton), to let the user switch modes.
 
-This example shows how to use a [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) to let a user switch the reveal mode of a PasswordBox.
+This example shows how to use a [CheckBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox) to let a user switch the reveal mode of a PasswordBox.
 
 ```xaml
 <StackPanel Width="200">
@@ -185,18 +183,9 @@ To help users to enter data using the touch keyboard, or Soft Input Panel (SIP),
 
 For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../input/use-input-scope-to-change-the-touch-keyboard.md).
 
-## Recommendations
-
--   Use a label or placeholder text if the purpose of the password box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
--   Give the password box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
--   Don't put another control right next to a password input box. The password box has a password reveal button for users to verify the passwords they have typed, and having another control right next to it might make users accidentally reveal their passwords when they try to interact with the other control. To prevent this from happening, put some spacing between the password in put box and the other control, or put the other control on the next line.
--   Consider presenting two password boxes for account creation: one for the new password, and a second to confirm the new password.
--   Only show a single password box for logins.
--   When a password box is used to enter a PIN, consider providing an instant response as soon as the last number is entered instead of using a confirmation button.
-
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
@@ -205,6 +194,6 @@ For more info about how to use input scopes, see [Use input scope to change the 
 - [Guidelines for spell checking](text-controls.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
 - [Guidelines for text input](text-controls.md)
-- [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox class](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox)
+- [class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox)
 - [String.Length property](/dotnet/api/system.string.length)

@@ -1,11 +1,9 @@
 ---
 description: This article demonstrates different ways to integrate a packaged desktop app with File Explorer by using package extensions.
 title: Integrate a packaged desktop app with File Explorer
-ms.date: 02/08/2021
+ms.date: 05/03/2022
 ms.topic: article
 keywords: windows 10, uwp
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -168,7 +166,7 @@ When a user right-clicks on a file or folder, this function displays a message b
 
 - You can change the [GetTitle](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iexplorercommand-gettitle) function to customize the label of the entry in the context menu.
 - You can change the [GetIcon](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iexplorercommand-geticon) function to customize the icon displayed near the entry in the context menu.
-- You can change the [GetTooltip](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iexplorercommand-gettooltip) function to customize the tooltip which is displayed when you hover the entry in the context menu.
+- You can change the [GetTooltip](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iexplorercommand-gettooltip) function to customize the [tooltip](../../design/controls/tooltips.md) which is displayed when you hover the entry in the context menu.
 
 ### Register the Shell extension
 

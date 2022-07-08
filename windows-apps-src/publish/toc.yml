@@ -18,12 +18,16 @@
       href: ../publish/add-users-groups-and-azure-ad-applications.md
     - name: Set roles and custom permissions
       href: ../publish/set-custom-permissions-for-account-users.md
+- name: Partner Center workspaces
+  href: partner-center-workspaces.md
 - name: Publish an MSIX app to the Microsoft Store
   items:
     - name: App submissions
       href: app-submissions.md
     - name: Create your app by reserving a name
       href: ../publish/create-your-app-by-reserving-a-name.md
+    - name: Manage app names
+      href: ../publish/manage-app-names.md
     - name: Set app pricing and availability
       href: ../publish/set-app-pricing-and-availability.md
       items:
@@ -95,12 +99,16 @@
   items: 
     - name: Create an app submission for your MSI or EXE app
       href: msiexe/app-submissions.md
+    - name: Manage app names
+      href: ../publish/manage-app-names.md
     - name: Create your MSI or EXE app by reserving a new name
       href: msiexe/create-your-app-by-reserving-a-name.md
     - name: Set pricing and availability for your MSI or EXE app
       href: msiexe/set-app-pricing-and-availability.md
     - name: Specify your MSI or EXE app's properties
       href: msiexe/enter-app-properties.md
+    - name: Age ratings
+      href: msiexe/age-ratings.md
     - name: Provide package details for your MSI or EXE app
       href: msiexe/provide-package-details.md
     - name: Create app Store listings for your MSI or EXE app
@@ -109,11 +117,23 @@
       href: msiexe/manage-submission-options.md
     - name: The MSI or EXE app certification process
       href: msiexe/the-app-certification-process.md
+    - name: Publish update for your EXE or MSI app on the Store
+      href: msiexe/update-your-app.md
+    - name: Microsoft Store Submission API for MSI or EXE app 
+      href: msiexe/store-submission-api.md
+- name: Analyze your MSI or EXE app's performance
+  items:
+    - name: Ratings, Reviews, and Responses
+      href: msiexe/ratings-reviews-performance.md
+    - name: Analyze your app's performance
+      href: msiexe/analyze-app-performance.md
 - name: Publish your PWA app to the Microsoft Store
   href: pwa/overview.md
   items:
     - name: Create your PWA by reserving a name
       href: pwa/create-your-app-by-reserving-a-name.md
+    - name: Manage app names
+      href: ../publish/manage-app-names.md
     - name: Turn your website into a high quality PWA
       href: pwa/turn-your-website-pwa.md
     - name: Publish your PWA to the Microsoft Store
@@ -136,8 +156,6 @@
   items:
     - name: View app identity details
       href: ../publish/view-app-identity-details.md
-    - name: Manage app names
-      href: ../publish/manage-app-names.md
     - name: Generate preinstall packages for OEMs
       href: ../publish/generate-preinstall-packages-for-oems.md
 - name: Attract and promote
@@ -184,6 +202,8 @@
       href: ../publish/usage-report.md
     - name: Health report
       href: ../publish/health-report.md
+    - name: Ratings and reviews in the Microsoft Store
+      href: ../publish/ratings-and-reviews.md
     - name: Ratings report
       href: ../publish/ratings-report.md
     - name: Reviews report
@@ -211,3 +231,7 @@
       href: ../publish/store-developer-code-of-conduct.md
     - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
       href: https://aka.ms/disclosurepolicypdf
+    - name: Microsoft Store complaint and appeal statistics for FY2021
+      href: ../publish/store-policies.md#microsoft-store-complaint-and-appeal-statistics-for-fy2021
+    - name: Microsoft Edge Add-ons store developer policies
+      href: /microsoft-edge/extensions-chromium/store-policies/developer-policies

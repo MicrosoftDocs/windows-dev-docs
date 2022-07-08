@@ -31,7 +31,7 @@ You can create a Windows desktop app using React Native for Windows by following
 2. You can use this command with the Node Package Executor (NPX) to create a React Native project without the need to install locally or globally install additional tools. The  command will generate a React Native app in the directory specified by `<projectName>`.
 
     ```powershell
-    npx react-native init <projectName> --template react-native@^0.63.2
+    npx react-native init <projectName>
     ```
 
 3. Switch to the project directory and run the following command to install the React Native for Windows packages:
@@ -53,7 +53,7 @@ You can create a Windows desktop app using React Native for Windows by following
   - Workloads: Universal Windows Platform development & Desktop development with C++.
   - Individual Components: Development activities & Node.js development support.
 
-- Open the solution file in the application folder in Visual Studio (e.g., AwesomeProject/windows/AwesomeProject.sln if you used AwesomeProject as <projectName>).
+- Open the solution file in the application folder in Visual Studio (e.g., AwesomeProject/windows/AwesomeProject.sln if you used AwesomeProject as \<projectName>).
 
 - Select the Debug configuration and the x64 platform from the combo box controls to the left of the Run button and underneath the Team and Tools menu item.
 

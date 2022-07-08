@@ -1,12 +1,12 @@
 ### YamlMime:Hub
-title: Windows app developer documentation
+title: Windows app development documentation
 summary: Learn how to design, develop, and deploy apps and solutions for Windows PCs and other devices.
 brand: windows
 metadata:
-   title: Windows developer documentation
+   title: Windows development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
-   author: mcleanbyron
-   ms.author: mcleans
+   ms.author: stwhi
+   author: stevewhims
    ms.topic: hub-page
    ms.date: 06/16/2021
    ms.localizationpriority: medium
@@ -15,31 +15,45 @@ metadata:
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Download Visual Studio and the Windows SDK
+   - title: App development options
+     itemType: overview
+     url: ./get-started/index.md
+   - title: Create your first WinUI 3 project
+     itemType: quickstart
+     url: ./winui/winui3/create-your-first-winui3-app.md
+   - title: What is the Windows App SDK?
+     itemType: concept
+     url: ./windows-app-sdk/index.md
+   - title: Windows App SDK Release Notes
+     itemType: whats-new 
+     url: ./windows-app-sdk/stable-channel.md
+   - title: Download Visual Studio
      itemType: download
      url: https://developer.microsoft.com/windows/downloads
    - title: Download the Windows App SDK
      itemType: download
-     url: https://aka.ms/projectreunion/vsixdownload
-   - title: Online training for Windows app developers
-     itemType: learn
-     url: /learn/browse/?products=windows
+     url: https://aka.ms/windowsappsdk/stable-vsix
    - title: Windows Subsystem for Linux and other tools
      itemType: overview
      url: ../dev-environment/index.md
+   - title: Online training for Windows app developers
+     itemType: learn
+     url: /learn/browse/?products=windows
 
 productDirectory:
-  title: Develop desktop apps for Windows
+  title: Dive into developing apps for Windows
   items:
   - title: Get started
     imageSrc: https://docs.microsoft.com/media/common/i_get-started.svg
     links:
-      - url: ./windows-app-sdk/set-up-your-development-environment.md
-        text: Set up your development environment
       - url: ./get-started/index.md
-        text: Get started developing apps
-      - url: ./windows-app-sdk/get-started.md
-        text: Build apps with the Windows App SDK 
+        text: Overview of app development options
+      - url: ./windows-app-sdk/set-up-your-development-environment.md
+        text: Install tools for the Windows App SDK
+      - url: ./winui/winui3/create-your-first-winui3-app.md
+        text: Create your first WinUI 3 project
+      - url: ./get-started/samples.md
+        text: Sample apps for Windows
   - title: Design
     imageSrc: https://docs.microsoft.com/media/common/i_design.svg
     links:
@@ -47,26 +61,32 @@ productDirectory:
         text: Design and code your app UI
       - url: ./design/basics/index.md
         text: Design basics for Windows apps
+      - url: ./design/signature-experiences/design-principles.md
+        text: Windows 11 design principles
       - url: ./design/downloads/index.md
         text: Design toolkits
   - title: Develop
     imageSrc: https://docs.microsoft.com/media/common/i_code-samples.svg
     links:
-      - url: features-and-technologies.md
+      - url: ./develop/index.md
         text: Windows development features
       - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
         text: Windows App SDK features
       - url: ./winui/index.md
         text: Windows UI Library (WinUI)
+      - url: ./desktop/modernize/index.md
+        text: Modernize your desktop apps
   - title: Deploy
     imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
     links:
+      - url: ./package-and-deploy/index.md
+        text: Deployment architecture
+      - url: ./windows-app-sdk/deployment-architecture.md
+        text: Windows App SDK deployment guide 
       - url: /windows/msix
-        text: Package desktop apps using MSIX
+        text: Package apps using MSIX
       - url: /windows/msix/desktop/managing-your-msix-deployment-overview
         text: Manage your MSIX deployment
-      - url: windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md
-        text: Deploy apps that use the Windows App SDK
 
 tools:
   title: Develop for other Windows device platforms
@@ -98,4 +118,4 @@ additionalContent:
         - title: .NET
           summary: Engage with .NET open source projects including .NET Core, WPF, Windows Forms, and much more.
           url: https://github.com/microsoft/dotnet
-  footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](https://aka.ms/OneDevMinute) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"
+  footer: "[@WindowsDocs on Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute on YouTube](/shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

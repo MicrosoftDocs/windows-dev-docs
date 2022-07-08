@@ -1,6 +1,6 @@
 ---
-title: Workflow and Performance Tips for Windows 10
-description: Tips for improving your development workflow on Windows 10.
+title: Workflow and Performance Tips for Windows
+description: Tips for improving your development workflow on Windows.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
@@ -16,12 +16,12 @@ ms.date: 07/24/2020
 We've gathered a few tips that we hope will help to make your workflow more efficient and enjoyable. Do you have additional tips to share? File a pull request, using the "Edit" button above, or an issue, using the "Feedback" button below and we may add it to the list.
 
 > [!NOTE]
-> If you are experiencing any performance issues related to developing on Windows 10, such as:
+> If you are experiencing any performance issues related to developing on Windows, such as:
 > - Dev tools (e.g. compilers, linkers, etc.) running slower on Windows than expected.
 > - Runtime platforms (e.g. node, .NET, Python) running slower on Windows than other platforms.
 > - Your apps experiencing file IO/networking/process-creation related perf issues. 
 > 
-> Please let us know by filing an issue in the [Windows Developer (WinDev) Issues repo](https://github.com/microsoft/WinDev)!
+> Please let us know by filing an issue in the [Windows Developer Performance Issues repo](https://github.com/microsoft/Windows-Dev-Performance)!
 
 ## Use shortcuts to open a project in VS Code or Windows File Explorer
 
@@ -39,7 +39,7 @@ The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- i
 
 WSL targets a developer audience with the intent to be used as part of an inner development loop. Let's say that Sam is creating a CI/CD pipeline (Continuous Integration & Continuous Delivery) and wants to test it first on a local machine (laptop) before deploying it to the cloud. Sam can enable WSL (& WSL 2 to improve speed and performance), and then use a genuine Linux Ubuntu instance locally (on the laptop) with whatever Bash commands and tools they prefer. Once the development pipeline is verified locally, Sam can then push that CI/CD pipeline up to the cloud (ie Azure) by making it into a Docker container and pushing the container to a cloud instance where it runs on a production-ready Ubuntu VM.
 
-For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](https://channel9.msdn.com/Shows/Tabs-vs-Spaces/WSL2-Code-faster-on-the-Windows-Subsystem-for-Linux).
+For more ways to use WSL, check out this [Tabs vs Spaces episode on WSL 2](/shows/Tabs-vs-Spaces/WSL2-Code-faster-on-the-Windows-Subsystem-for-Linux).
 
 ## Improve performance speed for WSL by not crossing over file systems
 
@@ -61,7 +61,7 @@ You can improve your build speed by updating your Windows Defender settings to a
 
 ## Share your tips
 
-Do you have tips for to help other developers using Windows improve their workflow? Please [submit a pull request](https://github.com/MicrosoftDocs/windows-uwp/edit/docs/hub/dev-environment/overview.md) adding your tip to the page or [file an issue](https://github.com/MicrosoftDocs/windows-uwp/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%207779352b-7b4e-dad8-7c1b-b9aba2c5e561%0A*%20Version%20Independent%20ID%3A%20a5b81b80-87a1-b6e2-8936-baf6c1a0b9c5%0A*%20Content%3A%20%5BSet%20up%20your%20Windows%2010%20development%20environment%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fdev-environment%2Foverview)%0A*%20Content%20Source%3A%20%5Bhub%2Fdev-environment%2Foverview.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fwindows-uwp%2Fblob%2Fdocs%2Fhub%2Fdev-environment%2Foverview.md)%0A*%20Product%3A%20**dev-environment**%0A*%20Technology%3A%20**windows-nodejs**) if you'd like use to add a tip on a particular topic.
+Do you have tips for to help other developers using Windows improve their workflow? Please [submit a pull request](https://github.com/MicrosoftDocs/windows-uwp/edit/docs/hub/dev-environment/tips.md) adding your tip to the page or [file an issue](https://github.com/MicrosoftDocs/windows-uwp/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%207779352b-7b4e-dad8-7c1b-b9aba2c5e561%0A*%20Version%20Independent%20ID%3A%20a5b81b80-87a1-b6e2-8936-baf6c1a0b9c5%0A*%20Content%3A%20%5BSet%20up%20your%20Windows%2010%20development%20environment%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fdev-environment%2Ftips)%0A*%20Content%20Source%3A%20%5Bhub%2Fdev-environment%2Ftips.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fwindows-uwp%2Fblob%2Fdocs%2Fhub%2Fdev-environment%2Ftips.md)%0A*%20Product%3A%20**dev-environment**%0A*%20Technology%3A%20**windows-nodejs**) if you'd like use to add a tip on a particular topic.
 
 Do you have performance-related issues that you would like us to address? File it in the new [WinDev Issues repo](https://github.com/microsoft/windev).
 

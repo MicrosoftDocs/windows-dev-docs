@@ -13,13 +13,13 @@ ms.date: 03/30/2021
 
 This guide will walk through installing React on a Linux distribution (ie. Ubuntu) running on the Windows Subsystem for Linux (WSL) using the [create-react-app](https://github.com/facebook/create-react-app) toolchain.
 
-We recommend following these instructions if you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server or use Docker containers. If you are brand new to React and just interested in learning, you may want to consider [installing with create-react-app directly on Window](./react-on-windows.md).
+We recommend following these instructions if you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server or use Docker containers. If you are brand new to React and just interested in learning, you may want to consider [installing with create-react-app directly on Windows](./react-on-windows.md).
 
 For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Windows (desktop apps), see the [React overview](./react-overview.md).
 
 ## Prerequisites
 
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+)
+- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
 - [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
 - [Install Node.js on WSL 2](./nodejs-on-wsl.md): These instructions use Node Version Manager (nvm) for installation, you will need a recent version of NodeJS to run create-react-app, as well as a recent version of Node Package Manager (npm). For exact version requirements, see the [Create React App website](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app).
 

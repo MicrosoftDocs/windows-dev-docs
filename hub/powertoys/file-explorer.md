@@ -1,29 +1,60 @@
 ---
-title: PowerToys File Explorer utility for Windows 10
-description: A File Explorer add on that enables Markdown and SVG previews
-ms.date: 05/28/2021
+title: PowerToys File Explorer add-ons utility for Windows
+description: A File Explorer add-on that enables different preview pane and thumbnail renderers for different file types.
+ms.date: 07/06/2022
 ms.topic: article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, File Explorer]
+no-loc: [PowerToys, Windows, File Explorer, Monaco]
 ---
 
 # File Explorer add-ons utility
 
 File Explorer add-ons currently include:
 
-- Preview Pane rendering of SVG icons (.svg)
-- Preview Pane rendering of Markdown files (.md)
+- Preview Pane rendering for:
+  - SVG icons (.svg)
+  - Markdown files (.md)
+  - Source code files (.cs, .cpp, .rs, ...)
+  - PDF files (.pdf)
+  - G-code files (.gcode)
+- Thumbnail preview for:
+  - SVG icons (.svg)
+  - PDF files (.pdf)
+  - G-code files (.gcode)
+  - STL files (.stl)
 
-## Preview Pane
 
-Preview Pane is an existing feature in the Windows File Explorer which shows a lightweight, rich, read-only preview of the file's contents in the view's reading pane. PowerToys adds two extensions, Markdown and SVG.
+## Thumbnail preview
 
-## Enabling Preview Pane
+Showing thumbnails is a built-in Windows feature. For thumbnail preview, PowerToys adds multiple extensions: SVG, PDF, G-code and STL.
 
-To enable, first ensure that "Enable SVG preview", "Enable SVG thumbnails", and "Enable Markdown preview" are all set to On in the PowerToys Settings.
+### Enabling PowerToys Thumbnail previews
 
-![PowerToys Settings Enable File Explorer screenshot](../images/powertoys-settings-fileexplorer.png)
+To enable preview support, set the extension to **On**.
 
-Next, open Windows File Explorer, select the **View** tab in the File Explorer ribbon, then select `Preview Pane`.
+## Preview Pane previewers in PowerToys
 
-![PowerToys Preview Pane Demo](../images/powertoys-fileexplorer.gif)
+Preview Pane is an existing feature in the Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, and G-code. In addition to those, PowerToys also adds support for source code files (for more than 150 file extensions).
+
+### Enabling PowerToys Preview Pane previewers
+
+To enable preview support, set the extension to **On**.
+
+![PowerToys Settings Enable File Explorer screenshot.](../images/powertoys-settings-fileexplorer.png)
+
+### Enabling Preview Pane in File Explorer on Windows
+
+> [!NOTE]
+> There is an advanced setting in Windows that might be turned off. If preview handlers (including ones like jpeg images) don't seem to work, please verify this setting is turned on. Open Explorer's Folder options, go to tab "View", then under "Advanced settings" check **Show preview handlers in preview pane**.
+
+#### Enabling in Windows 11
+Open Windows File Explorer, select the **View** menu in the File Explorer ribbon. Hover over **Show**, and then select **Preview pane**.
+
+![PowerToys Preview Pane demo for Windows 11.](../images/powertoys-fileexplorer-win11.gif)
+
+#### Enabling in Windows 10
+
+Open Windows File Explorer, select the **View** tab in the File Explorer ribbon, and then select **Preview Pane**.
+
+![PowerToys Preview Pane demo for Windows 10.](../images/powertoys-fileexplorer.gif)
+

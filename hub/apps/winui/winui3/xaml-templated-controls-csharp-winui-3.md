@@ -1,20 +1,25 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C#.
-title: Templated XAML controls for WinUI 3 apps with C#
+title: Build XAML controls with C#
 ms.date: 03/05/2021
 ms.topic: article
-keywords: windows 10, uwp, custom control, templated control, winui
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, custom control, templated control
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Templated XAML controls for WinUI 3 apps with C#
+# Build XAML controls with C#
 
 This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
-Before following the steps in this article, you should make sure your development environment is configured to create WinUI 3 apps. For setup information, see [Get started with WinUI 3 for desktop apps](./get-started-winui3-for-desktop.md).
+To create standalone WinUI 3 components in C# for consumption from both C# and C++/WinRT apps, see the article [Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK application](../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md).
+
+## Prerequisites
+
+1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
+2. Follow the instructions on how to [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -121,4 +126,8 @@ Build and run the app and you will see the templated control, with the backgroun
 
 ![Templated control result](images/winui-templated-control-result.png)
 
+## See also
 
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

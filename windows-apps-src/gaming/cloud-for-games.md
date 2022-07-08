@@ -61,14 +61,14 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
         <td>
             <ul>
-                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent Games and Microsoft built the cloud game solution</a>
-                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">Building Games with Service Fabric: Details about Tencent's implementation (video)</a>
+                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent Games and Microsoft built the cloud game solution</a></li>
+                <li>Building Games with Service Fabric: Details about Tencent's implementation (video)</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td><a href="https://www.halowaypoint.com/">343 Industries</a></td>
-        <td><b>Halo 5: Guardians</b> implemented <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan Companies</a> as its social gameplay platform by using Azure Cosmos DB (via DocumentDB API), which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
+   <td><b>Halo 5: Guardians</b> implemented Halo: Spartan Companies as its social gameplay platform by using Azure Cosmos DB (via DocumentDB API), which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
         <td>
             <ul>
                 <li>Scalable data-tier to handle groups creation/management for multiplayer gameplay
@@ -84,7 +84,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="http://www.illyriad.co.uk/">Illyriad Games</a></td>
         <td>Illyriad Games created <b>Age of Ascent</b>, a massively multiplayer online (MMO) epic 3D space game that can be played on devices that have modern browsers. So this game can be played on PCs, laptops, mobile phones and other mobile devices without plug-ins. The game uses ASP.NET Core, HTML5, WebGL, and Azure.</td>
         <td>
             <ul>
@@ -96,9 +96,9 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
         <td>
             <ul>
-                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Building games with Service Fabric: Age of Ascent MMO game (video)</a>
-                <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Manage game components as microservices using Azure Service Fabric (video)</a> 
-                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview with Age of Ascent developers (video)</a>
+                <li>Building games with Service Fabric: Age of Ascent MMO game (video)
+                <li>Manage game components as microservices using Azure Service Fabric (video) 
+             <li><a href="https://www.youtube.com/watch?v=XaN-eXkIEbM">Interview with Age of Ascent developers (video)</a>
             </ul>
         </td>
     </tr>
@@ -135,7 +135,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
         <td>
             <ul>
-                <li><a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">How Crime Coast MMO game used Azure Cloud Services</a>
+                <li>How Crime Coast MMO game used Azure Cloud Services
             </ul>
         </td>
     </tr> 
@@ -144,9 +144,8 @@ Learn how other developers have implemented cloud solutions in their games.
     
 ### Other links
 
-* [Hitman and Azure: Create game features like Elusive Target that are only possible using cloud](https://channel9.msdn.com/Series/Hitman)
+* Hitman and Azure: Create game features like Elusive Target that are only possible using cloud
 * [Azure as the secret sauce for Hitcents, Game Troopers and InnoSpark](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
-* [Game startups on Bizspark program using Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
 ## How to design your cloud backend
@@ -214,9 +213,9 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 ## Learning resources
 
 * //build 2016: [CodeLabs &mdash; Use Microsoft Azure App Service and Microsoft SQL Azure backend to save game score in Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //build 2017: [Delivering world-class game experiences using Microsoft Azure: Lessons learned from titles like Halo, Hitman, and Walking Dead (video)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* //build 2017: Delivering world-class game experiences using Microsoft Azure: Lessons learned from titles like Halo, Hitman, and Walking Dead (video)
 * Reusable set of building blocks, projects, services, and best practices designed to support common gaming workloads using Azure on GitHub: [Building blocks for gaming on Azure](https://github.com/MicrosoftDX/nether)
-* [Gaming Services on Azure (videos)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
+* Gaming Services on Azure (videos)
 
 ## Tools and other useful links
 
@@ -236,7 +235,7 @@ We are constantly innovating and adding new features. For more information, see 
 
 ## Related links
 
-* [Windows 10 game development guide](./e2e.md)
+* [Windows game development guide](./e2e.md)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

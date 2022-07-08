@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.
 
-For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../design/globalizing/prepare-your-app-for-localization.md).
+For info to help make your app suitable for customers around the world, see [Guidelines for globalization](/windows/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app) and [Make your app localizable](/windows/apps/design/globalizing/prepare-your-app-for-localization).
 
 > [!NOTE]
 > Although this topic refers to apps, market selection for add-on submissions uses the same process.
@@ -226,193 +226,186 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Latvia</td>
   </tr>
   <tr>
-    <td>Lebanon</td>
     <td>Lesotho</td>
     <td>Liberia</td>
     <td>Libya</td>
+    <td>Liechtenstein</td>
   </tr>
   <tr>
-    <td>Liechtenstein</td>
     <td>Lithuania</td>
     <td>Luxembourg</td>
     <td>Macao SAR</td>
+    <td>North Macedonia</td>
   </tr>
   <tr>
-    <td>North Macedonia</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
+    <td>Maldives</td>
   </tr>
   <tr>
-    <td>Maldives</td>
     <td>Mali</td>
     <td>Malta</td>
     <td>Marshall Islands</td>
+    <td>Martinique</td>
   </tr>
   <tr>
-    <td>Martinique</td>
     <td>Mauritania</td>
     <td>Mauritius</td>
     <td>Mayotte</td>
+    <td>Mexico *</td>
   </tr>
   <tr>
-    <td>Mexico *</td>
     <td>Micronesia</td>
     <td>Moldova</td>
     <td>Monaco</td>
+    <td>Mongolia</td>
   </tr>
   <tr>
-    <td>Mongolia</td>
     <td>Montenegro</td>
     <td>Montserrat</td>
     <td>Morocco</td>
+    <td>Mozambique</td>
   </tr>
   <tr>
-    <td>Mozambique</td>
     <td>Myanmar</td>
     <td>Namibia</td>
     <td>Nauru</td>
+    <td>Nepal</td>
   </tr>
   <tr>
-    <td>Nepal</td>
     <td>Netherlands *</td>
     <td>New Caledonia</td>
     <td>New Zealand *</td>
+    <td>Nicaragua</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
     <td>Niger</td>
     <td>Nigeria</td>
     <td>Niue</td>
+    <td>Norfolk Island</td>
   </tr>
   <tr>
-    <td>Norfolk Island</td>
     <td>Northern Mariana Islands</td>
     <td>Norway *</td>
     <td>Oman</td>
+    <td>Pakistan</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
     <td>Palau</td>
     <td>Palestinian Authority</td>
     <td>Panama</td>
+    <td>Papua New Guinea</td>
   </tr>
   <tr>
-    <td>Papua New Guinea</td>
     <td>Paraguay</td>
     <td>Peru</td>
     <td>Philippines</td>
+    <td>Pitcairn Islands</td>
   </tr>
   <tr>
-    <td>Pitcairn Islands</td>
     <td>Poland *</td>
     <td>Portugal *</td>
     <td>Qatar</td>
+    <td>Réunion</td>
   </tr>
   <tr>
-    <td>Réunion</td>
     <td>Romania</td>
     <td>Russia *</td>
     <td>Rwanda</td>
+    <td>Saint Barthélemy</td>
   </tr>
   <tr>
-    <td>Saint Barthélemy</td>
     <td>Saint Helena, Ascension and Tristan da Cunha</td>
     <td>Saint Kitts and Nevis</td>
     <td>Saint Lucia</td>
+    <td>Saint Martin (French Part)</td>
   </tr>
   <tr>
-    <td>Saint Martin (French Part)</td>
     <td>Saint Pierre and Miquelon</td>
     <td>Saint Vincent and the Grenadines</td>
     <td>Samoa</td>
+    <td>San Marino</td>
   </tr>
   <tr>
-    <td>San Marino</td>
     <td>São Tomé and Príncipe</td>
     <td>Saudi Arabia *</td>
     <td>Senegal</td>
+    <td>Serbia</td>
   </tr>
   <tr>
-    <td>Serbia</td>
     <td>Seychelles</td>
     <td>Sierra Leone</td>
     <td>Singapore *</td>
+    <td>Sint Maarten (Dutch Part)</td>
   </tr>
   <tr>
-    <td>Sint Maarten (Dutch Part)</td>
     <td>Slovakia *</td>
     <td>Slovenia</td>
     <td>Solomon Islands</td>
+    <td>Somalia</td>
   </tr>
   <tr>
-    <td>Somalia</td>
     <td>South Africa *</td>
     <td>South Georgia and the South Sandwich Islands</td>
     <td>Spain *</td>
+    <td>Sri Lanka</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
     <td>Suriname</td>
     <td>Svalbard and Jan Mayen</td>
     <td>Swaziland</td>
+    <td>Sweden *</td>
   </tr>
   <tr>
-    <td>Sweden *</td>
     <td>Switzerland *</td>
     <td>Taiwan *</td>
     <td>Tajikistan</td>
+    <td>Tanzania</td>
   </tr>
   <tr>
-    <td>Tanzania</td>
     <td>Thailand</td>
     <td>Timor-Leste</td>
     <td>Togo</td>
+    <td>Tokelau</td>
   </tr>
   <tr>
-    <td>Tokelau</td>
     <td>Tonga</td>
     <td>Trinidad and Tobago</td>
     <td>Tunisia</td>
+    <td>Turkey *</td>
   </tr>
   <tr>
-    <td>Turkey *</td>
     <td>Turkmenistan</td>
     <td>Turks and Caicos Islands</td>
     <td>Tuvalu</td>
+    <td>U.S. Minor Outlying Islands</td>
   </tr>
   <tr>
-    <td>U.S. Minor Outlying Islands</td>
     <td>U.S. Virgin Islands</td>
     <td>Uganda</td>
     <td>Ukraine</td>
+    <td>United Arab Emirates *</td>
   </tr>
   <tr>
-    <td>United Arab Emirates *</td>
     <td>United Kingdom *</td>
     <td>United States *</td>
     <td>Uruguay</td>
+    <td>Uzbekistan</td>
   </tr>
   <tr>
-    <td>Uzbekistan</td>
     <td>Vanuatu</td>
     <td>Vatican City</td>
     <td>Venezuela</td>
+    <td>Vietnam</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
     <td>Wallis and Futuna</td>
     <td>Yemen</td>
     <td>Zambia</td>
-  </tr>
-  <tr>
     <td>Zimbabwe</td>
-    <td></td>
-    <td></td>
-    <td></td>
   </tr>
 </table>
-
 
 ## Price considerations for specific markets
 

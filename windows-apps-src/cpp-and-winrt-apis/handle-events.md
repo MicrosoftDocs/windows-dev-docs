@@ -14,9 +14,9 @@ This topic shows how to register and revoke event-handling delegates using [C++/
 > [!NOTE]
 > For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-## Using Visual Studio 2019 to add an event handler
+## Using Visual Studio to add an event handler
 
-A convenient way of adding an event handler to your project is by using the XAML Designer user interface (UI) in Visual Studio 2019. With your XAML page open in the XAML Designer, select the control whose event you want to handle. Over in the property page for that control, click on the lightning-bolt icon to list all of the events that are sourced by that control. Then, double-click on the event that you want to handle; for example, *OnClicked*.
+A convenient way of adding an event handler to your project is by using the XAML Designer user interface (UI) in Visual Studio. With your XAML page open in the XAML Designer, select the control whose event you want to handle. Over in the property page for that control, click on the lightning-bolt icon to list all of the events that are sourced by that control. Then, double-click on the event that you want to handle; for example, *OnClicked*.
 
 The XAML Designer adds the appropriate event handler function prototype (and a stub implementation) to your source files, ready for you to replace with your own implementation.
 
@@ -121,7 +121,7 @@ The syntax of the function call operator is also helpful to see. It tells you wh
 >
 >  As you can see, the delegate needs to be declared to take an **IInspectable** as the sender, and an instance of the [KeyRoutedEventArgs class](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) as the args.
 >
-> To take another example, let's look at the [Popup.Closed event](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Its delegate type is [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). So, your delegate will take an **IInspectable** as the sender, and another **IInspectable** (because that's the **EventHandler**'s type parameter ) as the args.
+> To take another example, let's look at the [Popup.Closed event](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Its delegate type is [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler-1). So, your delegate will take an **IInspectable** as the sender, and another **IInspectable** (because that's the **EventHandler**'s type parameter ) as the args.
 
 If you're not doing much work in your event handler, then you can use a lambda function instead of a member function. Again, it may not be obvious from the code example below, but a **RoutedEventHandler** delegate is being constructed from a lambda function which, again, needs to match the syntax of the function call operator that we discussed above.
 

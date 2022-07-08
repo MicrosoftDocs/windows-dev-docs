@@ -56,7 +56,7 @@ if (supportsCustomAudio)
 contentBuilder.Show();
 ```
 
-Supported audio file types include...
+Supported audio file types include:
 
 - .aac
 - .flac
@@ -64,6 +64,17 @@ Supported audio file types include...
 - .mp3
 - .wav
 - .wma
+
+Supported audio file sources:
+
+- ms-appx:///
+- ms-resource
+
+**Not** supported audio file sources:
+
+ - ms-appdata
+ - http://, https://
+ - C:/, F:/, etc.
 
 
 ## Send the notification

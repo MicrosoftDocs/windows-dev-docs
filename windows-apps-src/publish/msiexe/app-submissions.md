@@ -11,16 +11,16 @@ ms.localizationpriority: medium
 # Create an app submission for your MSI or EXE app
 
 > [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
+> This section of the documentation describes how to create an MSI or EXE app submission in Partner Center. Alternatively, you can use the Microsoft Store submission [API for MSI or EXE app submissions](store-submission-api.md) to automate app submissions.
 
 Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 
 You can start your submission when your app is complete and ready to publish, or you can start entering info before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
 
 > [!NOTE]
-> You must have an active developer account in Partner Center in order to submit apps to the Microsoft Store.
+> You must have an active developer account in Partner Center in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
 
-After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make  whatever changes are needed, whether you're providing new packages or just changing details such as What’s new or Description. To create a new submission for a published app, click Update next to the most recent submission shown on its Overview page. You can also remove an app from the Store if you need to (and then make it available again later if you'd like).
+After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make  whatever changes are needed, whether you're providing new packages or just changing details such as What’s new or Description. To create a new submission for a published app, click Update next to the most recent submission shown on its Overview page. 
 
 ## App submission checklist
 
@@ -81,7 +81,6 @@ Here are the details that you will need when creating your app submission. Requi
 | **Language**                | Required | At least one language is required. |
 | **Architecture**            | Required |       |
 | **Installer parameters**    | Required | Support for silent install is required. Other parameters are optional. |
-| **Let Microsoft decide...** |          | If selected, Microsoft will automatically make this app available to any appropriate future device families. |
 
 ## Store listings page
 
@@ -94,10 +93,9 @@ Each language has a separate store listing page. One listing page is required. I
 | **App features**                   |          | Character limit: 200 per feature; Feature limit: 20. |
 | **Screenshots**                    | Required | Required: 1; Recommended: 4+; Maximum: 10<br>For more information see [Create app Store listings for your MSI or EXE app](create-app-store-listings.md). |
 | **Store logos**                    | Required | 1:1 Box art required, 2:3 Poster art recommended<br>For more information see [Create app Store listings for your MSI or EXE app](create-app-store-listings.md).  |
-| **Sort title**                     |          | Character limit: 255    |
 | **Short description**              |          | Character limit: 1,000  |
 | **Additional system requirements** |          | Character limit: 200 characters per requirement; Requirements limit: 11 for each of minimum and recommended hardware. |
 | **Search terms**                   |          | Character limit: 30 per term; Term limit: 7; Maximum of 21 unique words total among all terms. |
 | **Copyright and trademark info**   |          | Character limit: 200    |
-| **Additional license terms**       | Required | Character limit: 10,000 |
+| **Applicable license terms**       | Required | Character limit: 10,000 |
 | **Developed by**                   |          | Character limit: 255    |

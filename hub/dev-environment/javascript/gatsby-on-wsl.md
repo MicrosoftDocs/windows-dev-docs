@@ -5,14 +5,13 @@ author: mattwojo
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: Gatsby.js, Gatsby, Node.js web app, windows 10, microsoft, node on windows, node on wsl, nodejs with vs code, install gatsby on Windows, wsl, NodeJS on Windows Subsystem for Linux
 ms.localizationpriority: medium
 ms.date: 03/30/2021
 ---
 
 # Get started with Gatsby.js on Windows
 
-A guide to help you install the Gatsby.js web framework and get up and running on Windows 10.
+A guide to help you install the Gatsby.js web framework and get up and running on Windows.
 
 Gatsby.js is a static site generator framework based on React.js, as opposed to being server-rendered like Next.js. A static site generator generates static HTML on build time. It doesn’t require a server. Next.js generates HTML on runtime (each time a new request comes in), requiring a server to run. Gatsby also dictates how to handle data in your app (with GraphQL), whereas Next.js leaves that decision up to you.
 
@@ -22,7 +21,7 @@ To learn more about React and other JavaScript frameworks based on React, see th
 
 This guide assumes that you've already completed the steps to set up your Node.js development environment, including:
 
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+)
+- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
 - [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
 - [Install Node.js on WSL 2](./nodejs-on-wsl.md): This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension.
 
@@ -51,10 +50,10 @@ To create a Gatsby.js project:
 
     Open the WSL terminal integrated in VS Code (**View > Terminal**). Make sure that the terminal path is pointed to your project directory (ie. `~/GatsbyProjects/my-gatsby-app$`). Then try running a development instance of your new app using: `gatsby develop`
 
-7. Once your new Gatsby project finishes compiling, your terminal will display that "You can now view gatsby-starter-default in the browser. [http://localhost:8000/](http://localhost:8000/)." Select this localhost link to view your new project built in a web browser.
+7. Once your new Gatsby project finishes compiling, your terminal will display that "You can now view gatsby-starter-default in the browser. `http://localhost:8000/`." Select this localhost link to view your new project built in a web browser.
 
 > [!NOTE]
-> You'll notice that your terminal output also let's you know that you can "View GraphiQL, an in-browser IDE, to explore your site's data and schema: [http://localhost:8000/___graphql](http://localhost:8000/___graphql)." GraphQL consolidates your APIs into a self-documenting IDE (GraphiQL) built into Gatsby. In addition to exploring your site's data and schema, you can perform GraphQL operations such as queries, mutations, and subscriptions. For more info, see [Introducing GraphiQL](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/).
+> You'll notice that your terminal output also let's you know that you can "View GraphiQL, an in-browser IDE, to explore your site's data and schema: `http://localhost:8000/___graphql`." GraphQL consolidates your APIs into a self-documenting IDE (GraphiQL) built into Gatsby. In addition to exploring your site's data and schema, you can perform GraphQL operations such as queries, mutations, and subscriptions. For more info, see [Introducing GraphiQL](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/).
 
 8. Open the `src/pages/index.js` file in your VS Code editor. Find the page title `<h1 >Hi people</h1>` and change it to `<h1 >Hi (Your Name)!</h1>`. With your web browser still open to localhost:8000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
 

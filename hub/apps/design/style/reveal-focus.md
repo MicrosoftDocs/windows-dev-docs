@@ -2,7 +2,7 @@
 description: Reveal Focus is a lighting effect that animates the border of focusable elements when the user moves gamepad or keyboard focus to them.
 title: Reveal Focus
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 03/25/2022
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chphilip
@@ -16,9 +16,6 @@ ms.localizationpriority: medium
 
 Reveal Focus is a lighting effect for [10-foot experiences](../devices/designing-for-tv.md), such as Xbox One and television screens. It animates the border of focusable elements, such as buttons, when the user moves gamepad or keyboard focus to them. It's turned off by default, but it's simple to enable. 
 
-(For the Reveal Highlight effect, a lighting affect that highlights interactive elements, see the [Reveal Highlight article](./index.md).)
-
-
 > **Important APIs**: [Application.FocusVisualKind property](/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## How it works
@@ -31,14 +28,14 @@ This is especially helpful in 10-foot scenarios where the user might not be payi
 ## Examples
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RevealFocus">open the app and see Reveal Focus in action</a>.</p>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/RevealFocus">open the app and see Reveal Focus in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -162,11 +159,10 @@ Another way to customize Reveal Focus is to opt out of the system-provided focus
 
 ## Reveal Focus and the Fluent Design System
 
-Reveal Focus is a Fluent Design System component that adds light to your app. To learn more about the Fluent Design system and its other components, see the [Fluent Design overview](/windows/apps/fluent-design-system).
+Reveal Focus is a Fluent Design System component that adds light to your app. To learn more about the Fluent Design system and its other components, see the [Fluent Design overview](../index.md).
 
 ## Related articles
 
-- [Reveal Highlight](./index.md)
 - [Designing for Xbox and TV](../devices/designing-for-tv.md)
 - [Gamepad and remote control interactions](../input/gamepad-and-remote-interactions.md)
 - [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)

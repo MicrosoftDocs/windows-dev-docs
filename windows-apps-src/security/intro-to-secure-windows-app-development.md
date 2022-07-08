@@ -268,7 +268,7 @@ To ensure authorized access to web services, they must require authentication ev
 
 The **apps** that these developers create then access the API through the proxy offered by Azure API Management. The proxy both provides a layer of obscurity, hiding the actual end-point of the API on the publisher/administrator’s server and can also include additional logic like API translation to ensure the exposed API is kept consistent when a call to one API is redirected to another. It can also use IP filtering to block API calls originating from a specific IP domain or set of domains. Azure API Management also keeps its web services secure by using a set of public keys, called API keys, to authenticate and authorize each API call. When authorization fails, access to the API and the functionality it supports is blocked.
 
-Azure API Management can also reduce the number of API calls to a service (a procedure called throttling) to optimizes the performance of the web service. To learn more, review [Azure API Management](https://azure.microsoft.com/services/api-management/) and [Azure API Management at AzureCon 2015.](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313)
+Azure API Management can also reduce the number of API calls to a service (a procedure called throttling) to optimizes the performance of the web service. To learn more, review [Azure API Management](https://azure.microsoft.com/services/api-management/) and Azure API Management at AzureCon 2015.
 
 ## 4 Data-at-rest security methods
 
@@ -334,7 +334,17 @@ private PasswordCredential GetCredentialFromLocker()
     PasswordCredential credential = null;
 
     var vault = new PasswordVault();
-    var credentialList = vault.FindAllByResource(resourceName);
+
+    IReadOnlyList<PasswordCredential> credentialList = null;
+
+    try
+    {
+        credentialList = vault.FindAllByResource(resourceName);
+    }
+    catch(Exception)
+    {
+        return null;
+    }
 
     if (credentialList.Count == 1)
     {
@@ -474,7 +484,7 @@ When the data arrives on the device, the Windows app model provides more control
 
 -   [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
 -   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
--   [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Device lockdown with Azure login](https://github.com/microsoft/Windows-universal-samples/tree/main/archived/DeviceLockdownAzureLogin)
 -   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
 -   [Smart cards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)

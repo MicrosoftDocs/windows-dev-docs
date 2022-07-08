@@ -1,17 +1,17 @@
 ---
-title: Windows Defender security settings
+title: Add Windows Defender exceptions for Android
 description: Learn how to improve performance speed and build times by updating Windows Defender settings to exclude checking specified file types.
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
-keywords: android, windows, windows defender, settings, configuration, exclusions, %USERPROFILE%, devenv.exe, performance, speed, build, gradle
+keywords: android, windows defender, exceptions, configuration, exclusions, %USERPROFILE%, devenv.exe, performance, speed, build, gradle
 ms.date: 04/28/2020
 ---
 
-# Update Windows Defender settings to improve performance
+# Add Windows Defender exceptions to speed up Android build performance
 
-This guide covers how to set up exclusions in your Windows Defender security settings in order to improve your build times and the overall performance speed of your Windows machine.
+This guide covers how to set up exclusions in your Windows Defender security settings in order to improve your build times when developing Android apps using a Windows machine.
 
 ## Windows Defender Overview
 
@@ -24,11 +24,12 @@ During the Android build process, many files are created on your computer. With 
 Fortunately, Windows Defender has the capability to exclude files, project directories, or file types that you know to be secure from it's antivirus scanning process.
 
 > [!WARNING]
-> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software.
+> To ensure that your computer is safe from malicious software, you should not completely disable real-time scanning or your Windows Defender antivirus software. 
+> Defining exclusions lowers the protection offered by Defender. You should always evaluate the risks that are associated with implementing exclusions, and only exclude files that you are confident are not malicious.
 
-## Add exclusions to Windows Defender
+## How to add exclusions to Windows Defender
 
-To improve your Android build speed, add exclusions in the [Windows Defender Security Center](windowsdefender://) by:
+To add exclusions in the [Windows Defender Security Center](windowsdefender://):
 
 1. Select the Windows menu **Start** button
 2. Enter **Windows Security**
@@ -39,9 +40,9 @@ To improve your Android build speed, add exclusions in the [Windows Defender Sec
 
 ![Windows Defender Add Exclusion screenshot](../images/windows-defender-exclusions.png)
 
-## Recommended exclusions
+## Exclusions to consider for Android development 
 
-The following list shows the default location of each Android Studio directory recommended to add as an exclusion from Windows Defender real-time scanning:
+The following list shows the default location of each Android Studio directory that could be added as an exclusion from Windows Defender real-time scanning:
 
 - Gradle cache: `%USERPROFILE%\.gradle`
 - Android Studio projects: `%USERPROFILE%\AndroidStudioProjects`
@@ -56,7 +57,9 @@ Additional exclusions you may want to consider include:
 - Visual Studio build process: `msbuild.exe`
 - JetBrains directory: `%LOCALAPPDATA%\JetBrains\<Transient directory (folder)>`
 
-For more information on adding antivirus scanning exclusions, including how to customize directory locations for Group Policy controlled environments, see the [Antivirus Impact](https://developer.android.com/studio/intro/studio-config#antivirus-impact) section of the Android Studio documentation.
+For more information on adding antivirus scanning exclusions, including how to customize directory locations for Group Policy controlled environments, see the Antivirus Impact section of the [Android Studio documentation](https://developer.android.com/studio/intro/studio-config#antivirus-impact).
+
+Please remember that adding exclusions lowers the protection offered by Defender. You should always evaluate the risks that are associated with implementing exclusions, and only exclude files that you are confident are not malicious.
 
 > [!Note]
 > Daniel Knoodle has set up a GitHub repo with recommended scripts to add [Windows Defender exclusions for Visual Studio 2017](https://gist.github.com/dknoodle/5a66b8b8a3f2243f4ca5c855b323cb7b#file-windows-defender-exclusions-vs-2017-ps1-L10).

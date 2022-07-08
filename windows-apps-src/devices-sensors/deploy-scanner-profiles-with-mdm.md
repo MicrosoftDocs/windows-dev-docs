@@ -11,10 +11,10 @@ ms.localizationpriority: medium
 
 **Note**  This feature requires Windows 10 Mobile or later.
 
-Barcode scanner profiles can be deployed with an MDM server. To deploy the profiles, use *OemProfile* in the [EnterpriseExtFileSystem CSP](/windows/client-management/mdm/enterpriseextfilessystem-csp) to place them into the \\Data\\SharedData\\OEM\\Public\\Profile folder. These scanner profiles can then be used by driver manufacturers to configure settings that are not exposed through the API surface.
+Barcode scanner profiles can be deployed with an MDM server. To deploy the profiles, use *OemProfile* in the [EnterpriseExtFileSystem CSP](/windows/client-management/mdm/enterpriseextfilesystem-csp) to place them into the \\Data\\SharedData\\OEM\\Public\\Profile folder. These scanner profiles can then be used by driver manufacturers to configure settings that are not exposed through the API surface.
 
 Microsoft does not define the specifics of a scanner profile or how to implement them.
 
 ## Related topics
-- [EnterpriseExtFileSystem CSP](/windows/client-management/mdm/enterpriseextfilessystem-csp)
+- [EnterpriseExtFileSystem CSP](/windows/client-management/mdm/enterpriseextfilesystem-csp)
 - [Barcode scanner device support](./pos-device-support.md#barcode-scanner)

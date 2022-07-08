@@ -5,12 +5,11 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
+
 # Pen interactions and Windows Ink in Windows apps
 
 ![Hero image of the Surface Pen.](images/ink/hero-small.png)  
@@ -25,13 +24,9 @@ Optimize your Windows app for pen input to provide both standard [**pointer devi
 
 :::row:::
    :::column:::
-      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
-
       *Using ink in your Windows app*
    :::column-end:::
    :::column:::
-      <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
-
       *Use Windows Pen and Ink to build more engaging enterprise apps*
    :::column-end:::
 :::row-end:::
@@ -490,6 +485,7 @@ For a full example of this functionality, see the [Complex ink sample](https://g
 - [Get started: Support ink in your Windows app](./ink-walkthrough.md)
 - [Handle pointer input](handle-pointer-input.md)
 - [Identify input devices](identify-input-devices.md)
+- [Ink Serialized Format (ISF) Specification](https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf).
 
 ### APIs
 

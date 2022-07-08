@@ -79,7 +79,7 @@ You can now use your performance goals to influence your app's design. Using the
 -   For [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) and [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
 -   Declare UI in the form of markup, which the framework can load and re-use in chunks, rather than constructing it imperatively in code.
 -   Delay creating UI elements until the user needs them. See the [**x:Load**](../xaml-platform/x-load-attribute.md) attribute.
--   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](../design/motion/xaml-animation.md). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
+-   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](/windows/apps/design/motion/xaml-animation). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
 -   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync) method.
 
 **CPU, memory, and power**
@@ -127,7 +127,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) constructor, like this.
+To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](/uwp/api/windows.foundation.diagnostics.loggingactivity) constructor, like this.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -172,8 +172,8 @@ For more info, see these resources and profiling tools.
 -   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
 -   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
 -   [Analyze performance using Visual Studio diagnostic tools](/visualstudio/profiling/profiling-feature-tour)
--   The //build/ session [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
--   The //build/ session [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
+-   The //build/ session XAML Performance
+-   The //build/ session New XAML Tools in Visual Studio 2015
 
 ## Respond to the performance test results
 

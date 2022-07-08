@@ -1,12 +1,14 @@
 ---
 title: My People notifications
 description: Explains how to create and use My People notifications, a new kind of toast.
-ms.date: 10/25/2017
+ms.date: 01/24/2022
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # My People notifications
+
+> [!IMPORTANT]
+> My People is no longer supported in Windows 11.
 
 My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 
@@ -33,7 +35,7 @@ As an alternative to generic toast notifications, you can now send notifications
 ![rainbow spritesheet](images/shoulder-tap-rainbow-spritesheet.png)
 
 ## Notification parameters
-My People notifications use the [toast notification](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
+My People notifications use the [toast notification](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
 
 ```xml
 experienceType="shoulderTap"
@@ -75,7 +77,7 @@ In addition, the top-level toast node must include the **hint-people** parameter
 In addition to the second binding and payload, you must include another payload in the first binding for the fallback toast. The notification will use this if it is forced to revert to a regular toast (explained further at the [end of this article](#falling-back-to-toast)).
 
 ## Creating the notification
-You can create a My People notification template just like you would a [toast notification](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
+You can create a My People notification template just like you would a [toast notification](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 Here's an example of how to create a My People notification with a static image payload:
 
@@ -147,5 +149,5 @@ If a My People notification falls back to toast, the second My-People-specific b
 ## See also
 + [My People Notifications Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Adding My People support](my-people-support.md)
-+ [Adaptive toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [Adaptive toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
 + [ToastNotification Class](/uwp/api/windows.ui.notifications.toastnotification)

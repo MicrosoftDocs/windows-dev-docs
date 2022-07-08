@@ -180,7 +180,7 @@ Here are some basic guidelines to consider when designing closed captions and su
 
 *	Select simple readable font.
 *	Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
-*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](../design/accessibility/accessible-text-requirements.md).)
+*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](/windows/apps/design/accessibility/accessible-text-requirements).)
 * Display short sentences on screen, maximum 38 characters per line and maximum 2-3 lines at any one time. (Remember not to give the game away by displaying the text before event occurs.)
 *	Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
 *	Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
@@ -191,7 +191,7 @@ If your title allows gamers to communicate using voice and send text messages to
 
 People who do not have microphones attached to their gaming device can still have a voice conversation with someone who is speaking. They are able to type text into the chat window and have those messages converted into voice. It also allows someone who can't hear very well to read the transcribed text messages from the person they're having a voice chat with.
 
-For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
+For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](/gaming/gdk/_content/gc/accessibility/accessibility-overview) in the Xbox Live service. For more information, see [Game Chat 2 Overview](/gaming/gdk/_content/gc/chat/overviews/game-chat2/game-chat-2-overview).
 
 ### Sound feedback
 
@@ -258,11 +258,11 @@ Here are some external sites that provide additional information about game acce
 ### Other references used
 * [Color Blind Awareness, a Community Interest Company](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [How to do subtitles well&mdash;a blog article on Gamasutra by Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation for All Programme](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [Innovation for All Programme](https://doga.no/en/tools/inclusive-design/cases/nordan-windows/)
 * [Epilepsy foundation](https://www.epilepsy.com/)
 
 ### Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive/)
 * [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Developing accessible UWP apps](../design/accessibility/accessibility.md)
+* [Developing accessible UWP apps](/windows/apps/design/accessibility/accessibility)
 * [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)

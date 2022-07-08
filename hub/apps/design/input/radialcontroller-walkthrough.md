@@ -36,12 +36,12 @@ The Dial supports three basic gestures:
 
 ## Prerequisites
 
-* A computer (or a virtual machine) running Windows 10 Creators Update, or newer
+* A computer (or a virtual machine) running Windows 10 Creators Update or later
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
 * If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
-    * [Get set up](/windows/apps/get-started/get-set-up)
+    * [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
     * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## Set up your devices
@@ -90,7 +90,7 @@ These objects provide the bulk of the wheel device experience for Windows apps.
 
 After you've downloaded the RadialController sample app, verify that it runs:
 1. Open the sample project in Visual Studio .
-2. Set the **Solution Platforms** dropdown to a non-ARM selection.
+2. Set the **Solution Platforms** dropdown to a non-Arm selection.
 3. Press F5 to compile, deploy, and run. 
 
 > [!NOTE]
@@ -602,9 +602,6 @@ To see this in action (you'll need a Surface Studio):
 6. Run the app and place the Surface Dial in each of the two control regions, alternating between them.    
 ![On-screen RadialController](images/radialcontroller/wheel-app-step5-onscreen2.png) 
 
-    Here's a video of this sample in action:  
-
-    <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
 ## Summary
 

@@ -384,6 +384,7 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 >
 > **February 10, 2022 Policy Note**: For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
 
+
 **10.13.1**
 
 Game products that target Xbox consoles, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, must use Xbox Live services through the ID@Xbox program. Optionally, you may publish your game product to console without integration of Xbox Live Services through the [Xbox Live Creators](https://go.microsoft.com/fwlink/?linkid=844722) program.

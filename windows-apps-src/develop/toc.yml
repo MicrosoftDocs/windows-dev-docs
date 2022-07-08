@@ -69,6 +69,8 @@
           href: ../audio-video-camera/connect-to-remote-cameras.md
         - name: Get a preview frame
           href: ../audio-video-camera/get-a-preview-frame.md
+        - name: Launch the camera settings page
+          href: ../audio-video-camera/launch-camera-settings.md
     - name: Media playback
       href: ../audio-video-camera/media-playback.md
       items:
@@ -299,7 +301,7 @@
           href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
         - name: Testing and debugging tools for PLM
           href: ../debug-test-perf/testing-debugging-plm.md
-        - name: Test with the Microsoft Emulator for Windows 10
+        - name: Test with the Microsoft Emulator for Windows
           href: ../debug-test-perf/test-with-the-emulator.md
         - name: Test Surface Hub apps using Visual Studio
           href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
@@ -557,23 +559,6 @@
                           href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
                         - name: Download the CAB file for an error in your desktop application
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
-                - name: Xbox One games and Xbox Live
-                  items:
-                    - name: Get Xbox Live analytics data
-                      href: ../monetize/get-xbox-live-analytics.md
-                      items:
-                        - name: Get Xbox Live achievements data
-                          href: ../monetize/get-xbox-live-achievements-data.md
-                        - name: Get Xbox Live health data
-                          href: ../monetize/get-xbox-live-health-data.md
-                        - name: Get Xbox Live Game Hub data
-                          href: ../monetize/get-xbox-live-game-hub-data.md
-                        - name: Get Xbox Live club data
-                          href: ../monetize/get-xbox-live-club-data.md
-                        - name: Get Xbox Live multiplayer data
-                          href: ../monetize/get-xbox-live-multiplayer-data.md
-                        - name: Get Xbox Live concurrent usage data
-                          href: ../monetize/get-xbox-live-concurrent-usage-data.md
             - name: Respond to reviews
               href: ../monetize/respond-to-reviews-using-windows-store-services.md
               items:
@@ -777,8 +762,10 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: Concurrency and asynchronous operations
           href: ../cpp-and-winrt-apis/concurrency.md
-        - name: More advanced concurrency and asynchrony
+        - name: Advanced concurrency and asynchrony
           href: ../cpp-and-winrt-apis/concurrency-2.md
+        - name: A completion source sample
+          href: ../cpp-and-winrt-apis/concurrency-3.md
         - name: XAML controls; bind to a property
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: XAML items controls; bind to a collection
@@ -815,28 +802,20 @@
           href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: A simple C++/WinRT WinUI example
           href: ../cpp-and-winrt-apis/simple-winui-example.md
-        - name: C++ language
-          items:
-            - name: Value categories, and references
-              href: ../cpp-and-winrt-apis/cpp-value-categories.md
+        - name: Windows Runtime components (C++/WinRT)
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: Use a C# component in a C++/WinRT app
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
         - name: Native debug visualization
           href: ../cpp-and-winrt-apis/natvis.md
-    - name: C#/WinRT
-      items:
-        - name: Overview
-          href: ../csharp-winrt/index.md
-        - name: .NET mappings of WinRT types in C#/WinRT
-          href: ../csharp-winrt/net-mappings-of-winrt-types.md
-        - name: "Walkthrough: Generate a .NET 5.0 projection from a C++/WinRT component"
-          href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
-        - name: "Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT"
-          href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
-        - name: "Diagnose component errors"
-          href: ../csharp-winrt/authoring-diagnostics.md
-        - name: "Agile objects"
-          href: ../csharp-winrt/agile-objects.md
+        - name: C++/WinRT configuration macros
+          href: ../cpp-and-winrt-apis/macros.md
+        - name: Naming conventions
+          href: ../cpp-and-winrt-apis/naming.md
+        - name: C++ language
+          items:
+            - name: Value categories, and references
+              href: ../cpp-and-winrt-apis/cpp-value-categories.md
     - name: .NET Native
       items:
         - name: Overview
@@ -1350,7 +1329,7 @@
               href: ../porting/getting-started-animation.md
             - name: "Getting started: What next?"
               href: ../porting/getting-started-what-next.md
-        - name: Setting up your Mac with Windows 10
+        - name: Setting up your Mac with Windows
           href: ../porting/setting-up-your-mac-with-windows-10.md
     - name: Move from Windows Phone Silverlight to UWP
       href: ../porting/wpsl-to-uwp-root.md
@@ -1373,7 +1352,7 @@
           href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
         - name: "Case study: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
-    - name: Convert your web app to a PWA on Windows 10
+    - name: Convert your web app to a PWA on Windows
       href: /microsoft-edge/progressive-web-apps
       items:
         - name: Package Windows 7 app as a PWA
@@ -1384,17 +1363,6 @@
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
         - name: Package MacOS app as a PWA
           href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-    - name: Windows 10 on ARM
-      href: ../porting/apps-on-arm.md
-      items:
-        - name: How x86 emulation works on ARM
-          href: ../porting/apps-on-arm-x86-emulation.md
-        - name: Troubleshooting desktop x86 apps
-          href: ../porting/apps-on-arm-troubleshooting-x86.md
-        - name: Troubleshooting UWP ARM apps
-          href: ../porting/apps-on-arm-troubleshooting-arm32.md
-        - name: Program Compatibility Troubleshooter on ARM
-          href: ../porting/apps-on-arm-program-compat-troubleshooter.md
 - name: Processes and threading
   items:
     - name: Launching, resuming, and background tasks

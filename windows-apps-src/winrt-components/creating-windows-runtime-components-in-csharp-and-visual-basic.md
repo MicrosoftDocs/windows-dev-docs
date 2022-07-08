@@ -17,6 +17,9 @@ You can use managed code to create your own Windows Runtime types and package th
 
 If you are creating a component for use only in UWP apps that are written in Visual Basic or C#, and the component does not contain UWP controls, then consider using the **Class Library** template instead of the **Windows Runtime Component** project template in Microsoft Visual Studio. There are fewer restrictions on a simple class library.
 
+> [!NOTE]
+> For C# developers writing desktop apps in .NET 6 or later, use C#/WinRT to author a Windows Runtime component. See [Author Windows Runtime components with C#/WinRT](/windows/apps/develop/platform/csharp-winrt/authoring).
+
 ## Declaring types in Windows Runtime components
 
 Internally, the Windows Runtime types in your component can use any .NET functionality that's allowed in a UWP app. For more info, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).

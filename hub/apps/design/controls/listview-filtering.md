@@ -10,7 +10,7 @@ pm-contact: anawish
 ---
 
 # Filtering collections and lists through user input
-If your collection displays many items or is heavily tied to user interaction, filtering is a useful feature to implement. Filtering using the method described in this article can be implemented to most collection controls, including [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview), and [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true). Many types of user input can be used to filter a collection - such as checkboxes, radio buttons, and sliders - but this article will be focusing on taking text-based user input and using it to update a ListView in real time, according to the user's search. 
+If your collection displays many items or is heavily tied to user interaction, filtering is a useful feature to implement. Filtering using the method described in this article can be implemented to most collection controls, including [ListView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview), and [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true). Many types of user input can be used to filter a collection - such as checkboxes, radio buttons, and sliders - but this article will be focusing on taking text-based user input and using it to update a ListView in real time, according to the user's search. 
 
 > [!NOTE]
 > This article will focus on filtering with a ListView. Please be aware that the filtering method can also be applied to other collections controls such as GridView, ItemsRepeater, or TreeView.
@@ -59,7 +59,7 @@ For filtering to work, the ListView must have a data source that can be manipula
 </Grid>
 ```
 ## Filtering the data
-[Linq](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) queries allow you to group, order, and select certain items in a collection. For filtering a list, we will be constructing a Linq query that only selects terms that match the user-inputted search query/filtering term, entered in the `FilterByLName` TextBox. The query result can be assigned to an [IEnumerable<T>](/dotnet/api/system.collections.generic.ienumerable-1) collection object. Once we have this collection, we can use it to compare with the original list, removing items that don't match and adding back items that do match (in case of a backspace).
+[Linq](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) queries allow you to group, order, and select certain items in a collection. For filtering a list, we will be constructing a Linq query that only selects terms that match the user-inputted search query/filtering term, entered in the `FilterByLName` TextBox. The query result can be assigned to an [IEnumerable\<T>](/dotnet/api/system.collections.generic.ienumerable-1) collection object. Once we have this collection, we can use it to compare with the original list, removing items that don't match and adding back items that do match (in case of a backspace).
 
 > [!NOTE]
 > In order for the ListView to animate in the most intuitive way when adding and subtracting items, it's important to remove and add items to the ListView's ItemsSource collection itself, rather than create a new collection of filtered objects and assign that to the ListView's ItemsSource property.
@@ -132,8 +132,8 @@ Now, as the user types in their filtering terms in the `FilterByLName` TextBox, 
 ## Next steps
 
 ### Get the sample code
-- If you have the XAML Controls Gallery</strong> app installed, click [here](xamlcontrolsgallery:/item/ListView) to open the app and see a more robust, in-depth example of list filtering on the ListView page.
-- Get the [XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT).
+> - [Open the WinUI 2 Gallery app and see the ListView](winui2gallery:/item/ListView) in action. [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+- Get the [WinUI 2 Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT).
 
 ### Related articles
 - [Lists](lists.md)

@@ -4,8 +4,6 @@ title: Create hosted apps
 ms.date: 04/23/2020
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -20,7 +18,7 @@ The hosted apps feature is supported by several elements and attributes in the p
 
 ## Define a host
 
-The *host* is the main executable or runtime process for the hosted app. Currently, the only supported hosts are desktop apps (.NET or C++ desktop) that have *package identity*. UWP apps are not supported as hosts at this time. There are several ways for a desktop app to have package identity:
+The *host* is the main executable or runtime process for the hosted app. Currently, the only supported hosts are desktop apps (.NET or C++ desktop) that have *package identity*. There are several ways for a desktop app to have package identity:
 
 * The most common way to grant package identity to a desktop app is by [packaging it in an MSIX package](/windows/msix).
 * In some cases, you may alternatively choose to grant package identity by creating a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). This option is useful if you are unable to adopt MSIX packaging for deploying your desktop app.
@@ -48,7 +46,7 @@ Make note of these important details about the following elements.
 
 | Element              | Details |
 |----------------------|-------|
-| [**uap10:Extension**](/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | The `windows.hostRuntime` category declares a package-wide extension that defines the runtime information to be used when activating a hosted app. A hosted app will run with the definitions declared in the extension. When using the host app declared in the previous example, a hosted app will run as the executable **PyScriptEngine.exe** at the **mediumIL** trust level.<br/><br/>The **Executable**, **uap10:RuntimeBehavior**, and **uap10:TrustLevel** attributes specify the name of the host process binary in the package and how the hosted apps will run. For example, a hosted app using the attributes in the previous example will run as the executable PyScriptEngine.exe at mediumIL trust level. |
+| [**uap10:Extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-package-extension) | The `windows.hostRuntime` category declares a package-wide extension that defines the runtime information to be used when activating a hosted app. A hosted app will run with the definitions declared in the extension. When using the host app declared in the previous example, a hosted app will run as the executable **PyScriptEngine.exe** at the **mediumIL** trust level.<br/><br/>The **Executable**, **uap10:RuntimeBehavior**, and **uap10:TrustLevel** attributes specify the name of the host process binary in the package and how the hosted apps will run. For example, a hosted app using the attributes in the previous example will run as the executable PyScriptEngine.exe at mediumIL trust level. |
 | [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | The **Id** attribute declares the unique identifier of this specific host app in the package. A package can have multiple host apps, and each must have a **uap10:HostRuntime** element with a unique **Id**.
 
 ## Declare a hosted app

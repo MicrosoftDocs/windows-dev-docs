@@ -78,7 +78,7 @@ These are some of the app folders you will commonly use:
 
 - **LocalState**: For data local to the current device. When the device is backed up, data in this directory is saved in a backup image in OneDrive. If the user resets or replaces the device, the data will be restored. Access this folder with `Windows.Storage.ApplicationData.Current.LocalFolder.` Save local data that you don't want backed up to OneDrive in the **LocalCacheFolder**, which you can access with `Windows.Storage.ApplicationData.Current.LocalCacheFolder`.
 
-- **RoamingState**: For data that should be replicated on all devices where the app is installed. Windows limits the amount of data that will roam, so only save user settings and small files here. Access the roaming folder with `Windows.Storage.ApplicationData.Current.RoamingFolder`.
+- **RoamingState**: Data stored here no longer roam (as of Windows 11), but the folder is still available. Access the roaming folder with `Windows.Storage.ApplicationData.Current.RoamingFolder`. The recommended replacement is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
 
 - **TempState**: For data that may be deleted when the app isn't running. Access this folder with `Windows.Storage.ApplicationData.Current.TemporaryFolder`.
 
@@ -123,9 +123,7 @@ Here is a quick summary of APIs, and other useful documentation, to help get you
 | [Files, folders, and libraries](../files/index.md) | Conceptual docs. |
 | [Create, write, and read a file](../files/quickstart-reading-and-writing-files.md) | Covers creating, reading, and writing text, binary data, and streams. |
 | [Getting started storing app data locally](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | In addition to covering best practices for saving local data, covers  the purpose of the LocalSettings and LocalCache folder. |
-| [Getting Started with Roaming App Data](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | A two-part series about how to use roaming app data. |
-| [Guidelines for roaming application data](../design/app-settings/store-and-retrieve-app-data.md) | Follow these data roaming guidelines when you design your app. |
-| [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md) | Provides an overview of the various app data stores such as the local, roaming, and temporary folders. See the [Roaming data](../design/app-settings/store-and-retrieve-app-data.md#roaming-data) section for guidelines and additional information about writing data that roams between devices. |
+| [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data) | Provides an overview of the various app data stores such as the local, roaming, and temporary folders. |
 | [File access permissions](../files/file-access-permissions.md) | Information about which file system locations your app can access. |
 | [Open files and folders with a picker](../files/quickstart-using-file-and-folder-pickers.md) | Shows how to access files and folders by letting the user decide via a picker UI. |
 | [Windows.Storage.Streams](/uwp/api/windows.storage.streams) | Types used to read and write streams. |

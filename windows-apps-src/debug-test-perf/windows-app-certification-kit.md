@@ -39,7 +39,7 @@ During testing, if an installer terminates but leaves active processes or window
 
 **Resolution:** After your installer is complete, manually close any active processes or windows spawned by the installer.
 
-For ARM UWA, or any UWA app that doesn't target the device family desktop or OneCore, a message may appear in the final report that states "Not all tests were run during validation. This may impact your Store submission.". This message does not apply in cases where the user didn't manually deselect tests.
+For Arm UWA, or any UWA app that doesn't target the device family desktop or OneCore, a message may appear in the final report that states "Not all tests were run during validation. This may impact your Store submission.". This message does not apply in cases where the user didn't manually deselect tests.
 
 **Resolution:** n/a
 
@@ -75,9 +75,10 @@ For Desktop Bridge Apps using Windows SDK Version 10.0.15063 please ignore any f
 > [!IMPORTANT]
 > The Windows App Certification Kit must be run within the context of an active user session.
 
+1. Open a command window with admin rights ("Run as administrator").
 1. In the command window, navigate to the directory that contains the Windows App Certification Kit.
 
-    **Note**   The default path is C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
+    **Note**   The default path is C:\\Program Files (x86)\\Windows Kits\\10\\App Certification Kit\\.
 
 2. Enter the following commands in this order to test an app that is already installed on your test computer:
 

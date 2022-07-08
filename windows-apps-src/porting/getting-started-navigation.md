@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 iOS provides the **UINavigationController** class to help with in-app navigation: you can push and pop views to create the hierarchy of **UIViewControllers** that define your app.
 
-In contrast, a Windows 10 app containing multiple views takes more of a web-site approach to navigation. You can imagine your users hopping from page to page as they click on controls to work their way through the app. For more info, see [Navigation design basics](../design/basics/navigation-basics.md).
+In contrast, a Windows 10 app containing multiple views takes more of a web-site approach to navigation. You can imagine your users hopping from page to page as they click on controls to work their way through the app. For more info, see [Navigation design basics](/windows/apps/design/basics/navigation-basics).
 
 One of the ways to manage this navigation in a Windows 10 app is to use the [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) class. The following walkthrough shows you how to try this out.
 
@@ -73,7 +73,7 @@ public BlankPage()
 
 You can also get or set the **Frame** class's [**CacheSize**](/uwp/api/windows.ui.xaml.controls.frame.cachesize) property to manage how many pages in the navigation history can be cached.
 
-For more info about navigation, see [Navigation](../design/basics/navigation-basics.md) and [XAML personality animations sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208)).
+For more info about navigation, see [Navigation](/windows/apps/design/basics/navigation-basics) and [XAML personality animations sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208)).
 
 **Note**  For info about navigation for UWP apps using JavaScript and HTML, see [Quickstart: Using single-page navigation](/previous-versions/windows/apps/hh452768(v=win.10)).
  

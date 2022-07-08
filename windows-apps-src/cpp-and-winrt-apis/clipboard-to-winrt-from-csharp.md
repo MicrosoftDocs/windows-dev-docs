@@ -272,7 +272,7 @@ namespace winrt::SDKTemplate::implementation
 }
 ```
 
-For strings, C# uses **System.String**. See the **MainPage.NotifyUser** method for an example. In our IDL, we declare a string with **String**, and when the `cppwinrt.exe` tool generates C++/WinRT code for us, it uses the [**winrt::hstring**](/uw/cpp-ref-for-winrt/hstring) type. Any time we come across a string in C# code, we'll port that to **winrt::hstring**. For more info, see [String handling in C++/WinRT](./strings.md).
+For strings, C# uses **System.String**. See the **MainPage.NotifyUser** method for an example. In our IDL, we declare a string with **String**, and when the `cppwinrt.exe` tool generates C++/WinRT code for us, it uses the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. Any time we come across a string in C# code, we'll port that to **winrt::hstring**. For more info, see [String handling in C++/WinRT](./strings.md).
 
 For an explanation of the `const&` parameters in the method signatures, see [Parameter-passing](./concurrency.md#parameter-passing).
 
@@ -773,7 +773,7 @@ Apart from those items, just follow the same guidance that you did previously to
 - Construct C++/WinRT objects on the stack, not on the heap.
 - Replace calls to property get accessors with function-call syntax (`()`).
 
-A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [Why is the linker giving me a "LNK2019: Unresolved external symbol" error?](./faq.yml#why-is-the-linker-giving-me-a--lnk2019--unresolved-external-symbol--error-).
+A very common cause of compiler/linker errors is forgetting to include the C++/WinRT Windows namespace header files that you need. For more info about one possible error, see [C3779: Why is the compiler giving me a "consume_Something: function that returns 'auto' cannot be used before it is defined" error?](./faq.yml#why-is-the-compiler-giving-me-a--c3779--consume-something--function-that-returns--auto--cannot-be-used-before-it-is-defined--error-).
 
 If you want to follow along with the walkthrough and port **DisplayToast** yourself, then you can compare your results to the code in the C++/WinRT version in the ZIP of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code that you downloaded.
 
@@ -900,7 +900,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-It's an important and interesting method, because here's where our collection of **Scenario** objects is assigned to the UI. The C# code builds a [**System.Collections.Generic.List**](/dotnet/api/system.collections.generic.list-1) of **Scenario** objects, and assigns that to the [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property of a **ListBox** (which is an items control). And, in C#, we use [string interpolation](/dotnet/csharp/language-reference/tokens/interpolated) to build the title for each **Scenario** object (note the use of the The `$` special character).
+It's an important and interesting method, because here's where our collection of **Scenario** objects is assigned to the UI. The C# code builds a [**System.Collections.Generic.List**](/dotnet/api/system.collections.generic.list-1) of **Scenario** objects, and assigns that to the [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property of a **ListBox** (which is an items control). And, in C#, we use [string interpolation](/dotnet/csharp/language-reference/tokens/interpolated) to build the title for each **Scenario** object (note the use of the `$` special character).
 
 In C++/WinRT, we'll make **OnNavigatedTo** a public method of **MainPage**. And we'll add a stub **ListBox** element to the XAML so that a build will succeed. After the code listing, we'll examine some of the details.
 
@@ -1253,7 +1253,7 @@ fire_and_forget CopyFiles::CopyButton_Click(IInspectable const&, RoutedEventArgs
 
 Let's look at the other aspects of the ported code that are noteworthy.
 
-In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) object, and two lines later we access that object's [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) property. The return type of that property implements an **IVector** of strings. And on that **IVector**, we call the [IVector<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall) method. The interesting aspect is the value that we're passing to that method, where an array is expected. Here's the line of code.
+In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker) object, and two lines later we access that object's [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) property. The return type of that property implements an **IVector** of strings. And on that **IVector**, we call the [IVector\<T>.ReplaceAll(T[])](/uwp/api/windows.foundation.collections.ivector-1.replaceall) method. The interesting aspect is the value that we're passing to that method, where an array is expected. Here's the line of code.
 
 ```cppwinrt
 filePicker.FileTypeFilter().ReplaceAll({ L"*" });
@@ -1273,7 +1273,7 @@ Next, consider this line of C# code.
 dataPackage.SetStorageItems(storageItems);
 ```
 
-C# is able to implicitly convert the **IReadOnlyList<StorageFile>** represented by *storageItems* into the **IEnumerable<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView<StorageFile>** to **IIterable<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
+C# is able to implicitly convert the **IReadOnlyList\<StorageFile>** represented by *storageItems* into the **IEnumerable\<IStorageItem>** expected by [**DataPackage.SetStorageItems**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setstorageitems). But in C++/WinRT we need to explicitly convert from **IVectorView\<StorageFile>** to **IIterable\<IStorageItem>**. And so we have another example of the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function in action.
 
 ```cppwinrt
 dataPackage.SetStorageItems(storageItems.as<IVectorView<IStorageItem>>());

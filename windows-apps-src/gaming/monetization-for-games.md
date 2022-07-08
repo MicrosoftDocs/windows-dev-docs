@@ -195,7 +195,7 @@ The Vungle SDK for Windows offer video ads in apps and games. To download the SD
 
 #### Smaato
 
-Smaato enables banner ads to be incorporated into UWP apps and games. Download the [SDK](https://www.smaato.com/resources/sdks/) and for more info, see the [documentation](https://wiki.smaato.com/display/SPX/Windows+Phone).
+Smaato enables banner ads to be incorporated into UWP apps and games. Download the [SDK](https://www.smaato.com/resources/sdks/) and for more info, see the [documentation](https://developers.smaato.com/publishers/?_ga=2.99600542.1486058893.1655998537-855372014.1655998537).
 
 #### AdDuplex
 
@@ -224,6 +224,6 @@ Choose from several types of campaigns that can help increase your gamer base.
 * [Getting paid](/partner-center/marketplace-get-paid)
 * [Account types, locations, and fees](../publish/account-types-locations-and-fees.md)
 * [Analytics](../publish/analytics.md)
-* [Globalization and localization](../design/globalizing/globalizing-portal.md)
+* [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
 * [Implement a trial version of your app](../monetize/implement-a-trial-version-of-your-app.md)
 * [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md)

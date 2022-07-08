@@ -34,7 +34,7 @@ When you engage with a **UserActivity** by calling [UserActivity.CreateSession](
 
 A [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) is the unit of user engagement in Windows. It has three parts: a URI used to activate the app the activity belongs to, visuals, and metadata that describes the activity.
 
-1. The [ActivationUri](/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) is used to resume the application with a specific context. Typically, this link takes the form of protocol handler for a scheme (for example, “my-app://page2?action=edit”) or of an AppUriHandler (for example, http://constoso.com/page2?action=edit).
+1. The [ActivationUri](/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) is used to resume the application with a specific context. Typically, this link takes the form of protocol handler for a scheme (for example, “my-app://page2?action=edit”) or of an AppUriHandler (for example, `http://contoso.com/page2?action=edit`).
 2. [VisualElements](/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) exposes a class that allows the user to visually identify an activity with a title, description, or Adaptive Card elements.
 3. Finally, [Content](/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [https://schema.org](https://schema.org) data.
 
@@ -173,5 +173,5 @@ You can use the [UserActivity](/uwp/api/windows.applicationmodel.useractivities)
 * [Adaptive cards](/adaptive-cards/)
 * [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](./handle-uri-activation.md)
-* [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](/events/connect-2017/b111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

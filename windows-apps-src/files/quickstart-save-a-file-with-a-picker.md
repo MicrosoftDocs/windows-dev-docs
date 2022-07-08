@@ -68,31 +68,31 @@ Set properties on the file picker object that are relevant to your users and you
 
     ```cs
     Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
-        if (file != null)
+    if (file != null)
+    {
+        // Prevent updates to the remote version of the file until
+        // we finish making changes and call CompleteUpdatesAsync.
+        Windows.Storage.CachedFileManager.DeferUpdates(file);
+        // write to file
+        await Windows.Storage.FileIO.WriteTextAsync(file, file.Name);
+        // Let Windows know that we're finished changing the file so
+        // the other app can update the remote version of the file.
+        // Completing updates may require Windows to ask for user input.
+        Windows.Storage.Provider.FileUpdateStatus status =
+            await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+        if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
         {
-            // Prevent updates to the remote version of the file until
-            // we finish making changes and call CompleteUpdatesAsync.
-            Windows.Storage.CachedFileManager.DeferUpdates(file);
-            // write to file
-            await Windows.Storage.FileIO.WriteTextAsync(file, file.Name);
-            // Let Windows know that we're finished changing the file so
-            // the other app can update the remote version of the file.
-            // Completing updates may require Windows to ask for user input.
-            Windows.Storage.Provider.FileUpdateStatus status =
-                await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
-            if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
-            {
-                this.textBlock.Text = "File " + file.Name + " was saved.";
-            }
-            else
-            {
-                this.textBlock.Text = "File " + file.Name + " couldn't be saved.";
-            }
+            this.textBlock.Text = "File " + file.Name + " was saved.";
         }
         else
         {
-            this.textBlock.Text = "Operation cancelled.";
+            this.textBlock.Text = "File " + file.Name + " couldn't be saved.";
         }
+    }
+    else
+    {
+        this.textBlock.Text = "Operation cancelled.";
+    }
     ```
 
 The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](quickstart-reading-and-writing-files.md).

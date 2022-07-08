@@ -1,17 +1,17 @@
 ---
 title: WinUI Release Notes
 description: Index of WinUI release notes.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 
-
-ms.date: 07/15/2020
+ms.date: 09/14/2021
 ms.topic: article
 ---
 
-# Windows UI Library 2.x Release Notes
+# Windows UI Library 2 Release Notes
 
-The Windows UI Library (WinUI) is an open source project hosted on GitHub. All new releases are built from the [Windows UI Library GitHub repo](https://aka.ms/winui).
+The Windows UI Library (WinUI) is hosted on [GitHub](https://aka.ms/winui).
 
-We also welcome bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
+We encourage you to file bug reports, feature requests and community code contributions in the [Windows UI Library repo](https://aka.ms/winui).
 
 WinUI includes two NuGet packages:
 
@@ -23,13 +23,16 @@ You can download and use WinUI packages in your app using the NuGet package mana
 
 ## Examples
 
-The Xaml Controls Gallery sample app includes interactive demos and sample code for using WinUI controls.
-
-* Install the XAML Controls Gallery app from the [Microsoft Store](
-https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
-
-* The Xaml Controls Gallery is also [open source on GitHub](
-https://github.com/Microsoft/Xaml-Controls-Gallery)
+> [!TIP]
+> For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
+>
+> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+>
+> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+>
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+>
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ## Documentation
 
@@ -43,6 +46,8 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 
 | Microsoft.UI.Xaml NuGet Version | Type | Release date | Release notes | Highlights |
 | --- | --- | --- | --- | --- |
+| [2.7](winui-2.7.md) | stable | September 2021 | [Release Notes](winui-2.7.md) | [InfoBadge](winui-2.7.md#infobadge), [Horizontal Orientation in ColorPicker](winui-2.7.md#horizontal-orientation-in-colorpicker) |
+| [2.6](winui-2.6.md) | stable | June 2021 | [Release Notes](winui-2.6.md) | [Mica](winui-2.6.md#mica), [Expander](winui-2.6.md#expander), [BreadcrumbBar](winui-2.6.md#breadcrumbbar), [ImageIcon](winui-2.6.md#imageicon), [AnimatedIcon](winui-2.6.md#animatedicon), [PipsPager](winui-2.6.md#pipspager) |
 | [2.5](winui-2.5.md) | stable | December 2020 | [Release Notes](winui-2.5.md) | [InfoBar](winui-2.5.md#infobar), [Determinate ProgressRing](winui-2.5.md#determinate-progressring), [NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |
 | [2.4](winui-2.4.md) | stable | May 2020 | [Release Notes](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush), [ProgressRing](winui-2.4.md#progressring), [TabView updates](winui-2.4.md#tabview-updates), [Dark theme updates to TextBox family of controls](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls), [Hierarchical navigation](winui-2.4.md#hierarchical-navigation)  |
 | [2.3](winui-2.3.md) | stable | November 2019 | [Release Notes](winui-2.3.md) | [Progress Bar Visual Refresh](winui-2.3.md#progress-bar-visual-refresh), [NumberBox](winui-2.3.md#numberbox), [RadioButtons](winui-2.3.md#radiobuttons) |
@@ -52,4 +57,4 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 
 ### Windows UI Library 3 Preview 4 (February 2021)
 
-For information on trying out early previews of WinUI 3 see [Windows UI Library 3 Preview 4 (February 2021)](../../winui3/index.md).
+For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see  [Windows UI Library 3](../../index.md).

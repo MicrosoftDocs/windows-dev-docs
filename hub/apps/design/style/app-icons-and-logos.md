@@ -69,7 +69,7 @@ Because app icon assets are bitmaps and bitmaps don't scale well, we recommend p
 
 "How do I specify images for my app's listing in the Microsoft Store?"
 
-By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](/windows/uwp/publish/app-screenshots-and-images)). However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store. (Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.
+By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](/windows/uwp/publish/app-screenshots-and-images)). However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store. (Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.
 
 ![Specifying Store logos during the app submission process](images/app-icons/storelogodisplay.png)
 
@@ -247,7 +247,7 @@ Here are the size recommendations for target-based assets, at 100% scale:
 
 
 ## More about splash screen assets
-For more info about splash screens, see [Windows app splash screens](/windows/uwp/launch-resume/splash-screens.md).
+For more info about splash screens, see [Windows app splash screens](/windows/uwp/launch-resume/splash-screens).
 
 ## More about badge logo assets
 

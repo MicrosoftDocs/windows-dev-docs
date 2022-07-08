@@ -1,10 +1,8 @@
 ---
-ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 01/08/2021
+ms.date: 01/28/2022
 ms.topic: article
-keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +25,7 @@ Each device family provides a version of the WDP, but features and setup vary ba
 
 These are the basic steps for all devices.
 
-1. Enable Developer Mode and Device Portal on your device (configured in the Settings app).
+1. Enable Developer Mode and Device Portal on your device (Settings -> Privacy & security -> For developers).
 
 2. Connect your device and PC through a local network or with USB.
 
@@ -35,18 +33,18 @@ These are the basic steps for all devices.
 
 The following table includes device-specific details for the WDP.
 
+> [!NOTE]
+> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
+
 Device family | On by default? | HTTP | HTTPS | USB | Instructions |
 --------------|----------------|------|-------|-----|--------------|
 Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Set up Windows Device Portal on a Desktop device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
 Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
-HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | http://127.0.0.1:10080 | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
+HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | `http://127.0.0.1:10080` | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
 IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT](/windows/iot-core/manage-your-device/DevicePortal) |
-Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080 | [Device Portal for Mobile](device-portal-mobile.md) |
+Phone | Enable inside Dev Mode | 80| 443 | `http://127.0.0.1:10080` | [Device Portal for Mobile](device-portal-mobile.md) |
 
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
-
-> [!NOTE]
-> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
 
 ## Features
 
@@ -69,9 +67,9 @@ The Apps manager provides install/uninstall and management functionality for app
 
 ![Device Portal Apps manager page](images/device-portal/WDP_AppsManager2.png)
 
-* **Deploy apps**: Deploy packaged apps from local, network, or web hosts and register loose files from network shares.
-* **Installed apps**: Use the dropdown menu to remove or start apps that are installed on the device.
-* **Running apps**: Get information about the apps that are currently running and close them as necessary.
+- **Deploy apps**: Deploy packaged apps from local, network, or web hosts and register loose files from network shares.
+- **Installed apps**: Use the dropdown menu to remove or start apps that are installed on the device.
+- **Running apps**: Get information about the apps that are currently running and close them as necessary.
 
 #### Install (sideload) an app
 
@@ -166,7 +164,7 @@ For more details on using ETW logging, see the [Use Device Portal to view debug 
 
 ### Performance tracing
 
-The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) traces from the host device.
+The [Windows Performance Toolkit](/windows-hardware/test/wpt/) includes the Performance tracing page, which allows you for view the  [Windows Performance Recorder (WPR)](/windows-hardware/test/wpt/#windows-performance-recorder) traces from the host device.
 
 ![Device Portal performance tracing page](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -175,7 +173,7 @@ The Performance tracing page allows you for view the [Windows Performance Record
 
 To stop the trace, click **Stop**. Stay on this page until the trace file (.ETL) has finished downloading.
 
-Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
+Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](/windows-hardware/test/wpt/#windows-performance-analyzer).
 
 ### Device manager
 
@@ -202,7 +200,7 @@ Key | Type | Description
 ----|------|-------------
 S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections.
 D | string | Type of device. This will be in the format "Windows.*", for example, Windows.Xbox or Windows.Desktop
-A | string | Device architecture. This will be ARM, x86, or AMD64.  
+A | string | Device architecture. This will be Arm, x86, or AMD64.  
 T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 
 Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record.

@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to add UWP XAML user interfaces, cre
 title: "Tutorial: Modernize a WPF app"
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
@@ -16,7 +14,7 @@ There are many ways to [modernize](index.md) existing desktop apps by integratin
 
 * .NET Core 3
 * UWP XAML controls with XAML Islands
-* Adaptive Cards and Windows 10 notifications
+* Adaptive Cards and Windows notifications
 * MSIX deployment
 
 This tutorial requires the following development skills:
@@ -42,8 +40,8 @@ In the tutorial, you'll enhance Contoso Expenses with new Windows features:
 
 * Migrate an existing WPF app to .NET Core 3.0. This will open up new and important scenarios in the future.
 * Use XAML Islands to host the **InkCanvas** and **MapControl** wrapped controls provided by the Windows Community Toolkit.
-* Use XAML Islands to host any standard UWP XAML control (in this case, a **CalendardView**).
-* Integrate Adaptive Cards and Windows 10 notifications into the app.
+* Use XAML Islands to host any standard UWP XAML control (in this case, a **CalendarView**).
+* Integrate Adaptive Cards and Windows notifications into the app.
 * Package the app with MSIX and set up a CI/CD pipeline on Azure DevOps so that you can automatically deliver new versions of the app to testers and users as soon as it is available.
 
 ## Prerequisites
@@ -58,7 +56,7 @@ Make sure you install the following workloads and optional features with Visual 
 
 * .NET Desktop development
 * Universal Windows Platform development
-* Windows 10 SDK (10.0.18362.0 or later)
+* Windows SDK (10.0.18362.0 or later)
 
 ## Get the Contoso Expenses sample app
 
@@ -85,11 +83,11 @@ The following sections provide background for some of the key concepts discussed
 
 ### Universal Windows Platform (UWP)
 
-In Windows 8, Microsoft introduced a new framework called the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework. 
+In Windows 8, Microsoft introduced a new API set as part of the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework. 
 
 In Windows 10, Microsoft introduced the [Universal Windows Platform (UWP)](/windows/uwp/get-started/universal-application-platform-guide), which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on a Xbox One or on a HoloLens, you’re able to use the same APIs.
 
-Going forward, most new Windows 10 features are exposed via WinRT APIs, including features such as Timeline, Project Rome, and Windows Hello.
+Going forward, most new Windows features are exposed via WinRT APIs, including features such as Timeline, Project Rome, and Windows Hello.
 
 ### MSIX packaging
 
@@ -102,7 +100,7 @@ For more information, see these articles:
 
 ### XAML Islands
 
-Starting in Windows 10, version 1903, you can host UWP controls in non-UWP desktop apps using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing desktop apps with the latest Windows 10 UI features that are only available via UWP controls. This means that you can use UWP features such as Windows Ink and controls that support the Fluent Design System in your existing WPF, Windows Forms, and C++ Win32 apps.
+Starting in Windows 10, version 1903, you can host UWP controls in non-UWP desktop apps using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing desktop apps with the latest Windows UI features that are only available via UWP controls. This means that you can use UWP features such as Windows Ink and controls that support the Fluent Design System in your existing WPF, Windows Forms, and C++ Win32 apps.
 
 For more information, see [UWP controls in desktop applications (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). This tutorial guides you through the process of using two different types of XAML Island controls:
 

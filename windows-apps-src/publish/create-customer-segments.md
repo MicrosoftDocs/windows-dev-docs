@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Create customer segments
 
-There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in [Partner Center](https://partner.microsoft.com/dashboard) by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
+There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in [Partner Center](https://partner.microsoft.com/dashboard) by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 or Windows 11 customers who meet the demographic or revenue criteria that you choose.
 
 For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Microsoft Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. 
 
@@ -22,7 +22,7 @@ Things to keep in mind about customer segments:
 - After you save a segment, it takes 24 hours before you’ll be able to use it for [targeted push notifications](send-push-notifications-to-your-apps-customers.md).
 - Segment results are refreshed daily, so you may see the total count of customers in a segment change from day to day as customers drop in or out of the segment criteria.
 - Most segment attributes are calculated using all historical data, although there are some exceptions. For example, **App acquisition date**, **Campaign ID**, **Store page view date**, and **Referrer URI domain** are limited to the last 90 days of data.
-- Segments only include customers who acquired your app on Windows 10 while signed in with a valid Microsoft account. 
+- Segments only include customers who acquired your app on Windows 10 or Windows 11 while signed in with a valid Microsoft account. 
 - Segments do not include any customers who are younger than 17 years old.
 
 ## To create a customer segment
@@ -54,7 +54,7 @@ Things to keep in mind about customer segments:
 
 The **App statistics** section on the segment provides some info about your app, as well as the size of the segment you just created.
 
-Note that **Available app customers** does not reflect the actual number of customers who have acquired your app, but only the number of customers that are available to be included in segments (that is, customers that we can determine meet age requirements, have acquired your app on Windows 10, and who are associated with a valid Microsoft account).
+Note that **Available app customers** does not reflect the actual number of customers who have acquired your app, but only the number of customers that are available to be included in segments (that is, customers that we can determine meet age requirements, have acquired your app on Windows 10 or Windows 11, and who are associated with a valid Microsoft account).
 
 If you view the results and **Customers in this segment** says **Small**, the segment doesn't include enough customers and the segment is marked as inactive. Inactive segments can't be used for notifications or other features. You might be able to activate and use a segment by doing one of the following:
 

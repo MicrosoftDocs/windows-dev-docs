@@ -99,7 +99,7 @@ The Product must not contain or enable malware as defined by the Microsoft crite
 
 The Product may contain fully integrated middleware (such as third-party cross-platform engines and third-party analytics services).
 
-The Product may depend on non-integrated software (such as another Product, module, or service) to deliver its primary functionality, subject to the following requirements:
+The Product may depend on non-integrated software (such as another Product, module, or service) to deliver its primary functionality.
 
 ### 1.3 Product is Testable
 
@@ -162,7 +162,7 @@ If the Product declares the use of capabilities, then the capabilities the Produ
 
 ### 1.7 Localization
 
-If the Product you should provide localized all languages that it supports. The experience provided by a product must be reasonably similar in all languages that it supports.
+You should localize your Product for all languages that it supports. The experience provided by a product must be reasonably similar in all languages that it supports.
 
 ### 1.8 Financial Transactions
 

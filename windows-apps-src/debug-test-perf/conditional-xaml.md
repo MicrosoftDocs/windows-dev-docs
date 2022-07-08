@@ -142,7 +142,7 @@ With both namespaces defined, you can set the Text property twice as long as you
            contract5Present:Text="Hello, Fall Creators Update"/>
 ```
 
-Here's another example that sets the background of a button. The [Acrylic material](../design/style/acrylic.md) feature is available starting with the Fall Creators Update, so you’ll use Acrylic for the background when the app runs on the Fall Creators Update. It's not available on earlier versions, so in those cases, you set the background to red.
+Here's another example that sets the background of a button. The [Acrylic material](/windows/apps/design/style/acrylic) feature is available starting with the Fall Creators Update, so you’ll use Acrylic for the background when the app runs on the Fall Creators Update. It's not available on earlier versions, so in those cases, you set the background to red.
 
 ```xaml
 <Button Content="Button"
@@ -241,5 +241,5 @@ When the app runs on the Fall Creators Update, you use a ColorPicker to let the 
 
 - [Guide to UWP apps](../get-started/universal-application-platform-guide.md)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-- [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 video)
+- API Contracts
 - [Programming with extension SDKs](/uwp/extension-sdks/device-families-overview)

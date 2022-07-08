@@ -197,7 +197,7 @@ Within a project, the XAML is written as a .xaml file, and you use the language 
 
 ## Resource dictionaries
 
-Creating a <xref:Windows.UI.Xaml.ResourceDictionary> is a common task that is usually accomplished by authoring a resource dictionary as an area of a XAML page or a separate XAML file. Resource dictionaries and how to use them is a larger conceptual area that is outside the scope of this topic. For more info see [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).
+Creating a <xref:Windows.UI.Xaml.ResourceDictionary> is a common task that is usually accomplished by authoring a resource dictionary as an area of a XAML page or a separate XAML file. Resource dictionaries and how to use them is a larger conceptual area that is outside the scope of this topic. For more info see [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary).
 
 ## XAML and XML
 
@@ -227,7 +227,7 @@ Depending on your own role in the development process, you might not interact wi
 
 ## Optimize your XAML for load performance
 
-Here are some tips for defining UI elements in XAML using best practices for performance. Many of these tips relate to using XAML resources, but are listed here in the general XAML overview for convenience. For more info about XAML resources see [ResourceDictionary and XAML resource references](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). For some more tips on performance, including XAML that purposely demonstrates some of the poor performance practices that you should avoid in your XAML, see [Optimize your XAML markup](../debug-test-perf/optimize-xaml-loading.md).
+Here are some tips for defining UI elements in XAML using best practices for performance. Many of these tips relate to using XAML resources, but are listed here in the general XAML overview for convenience. For more info about XAML resources see [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary). For some more tips on performance, including XAML that purposely demonstrates some of the poor performance practices that you should avoid in your XAML, see [Optimize your XAML markup](../debug-test-perf/optimize-xaml-loading.md).
 
 - If you use the same color brush often in your XAML, define a <xref:Windows.UI.Xaml.Media.SolidColorBrush> as a resource rather than using a named color as an attribute value each time.
 - If you use the same resource on more than one UI page, consider defining it in <xref:Windows.UI.Xaml.Application.Resources%2A> rather than on each page. Conversely, if only one page uses a resource, don't define it in **Application.Resources** and instead define it only for the page that needs it. This is good both for XAML factoring while designing your app and for performance during XAML parsing.

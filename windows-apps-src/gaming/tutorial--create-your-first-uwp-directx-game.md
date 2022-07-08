@@ -3,7 +3,7 @@ title: Create a DirectX Universal Windows Platform (UWP) game
 description: In this set of tutorials, you'll learn how to use DirectX and [C++/WinRT](../cpp-and-winrt-apis/index.md) to create the basic Universal Windows Platform (UWP) sample game named **Simple3DGameDX**.
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: DirectX sample game, sample game, Universal Windows Platform (UWP), Direct3D 11 game
-ms.date: 06/24/2020
+ms.date: 01/28/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 In this set of tutorials, you'll learn how to use DirectX and [C++/WinRT](../cpp-and-winrt-apis/index.md) to create the basic Universal Windows Platform (UWP) sample game named **Simple3DGameDX**. The gameplay takes place in a simple first-person 3D shooting gallery.
 
 > [!NOTE]
-> The link from which you can download the **Simple3DGameDX** sample game itself is [Direct3D sample game](/samples/microsoft/windows-universal-samples/simple3dgamedx/). The C++/WinRT source code is in the folder named `cppwinrt`. For info about other UWP sample apps, see [Get UWP app samples](../get-started/get-app-samples.md).
+> The link from which you can download the **Simple3DGameDX** sample game itself is [Direct3D sample game](/samples/microsoft/windows-universal-samples/simple3dgamedx/). The C++/WinRT source code is in the folder named `cppwinrt`. For info about other UWP sample apps, see [Sample applications for Windows development](/windows/apps/get-started/samples).
 
 These tutorials cover all of the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.
 
@@ -27,7 +27,7 @@ To learn about the basic concepts and components of a UWP DirectX game, and to b
 
 For this tutorial, you need to be familiar with these subjects.
 
-- [C++/WinRT](../cpp-and-winrt-apis/index.md). C++/WinRT is a standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows APIs.
+- [C++/WinRT](../cpp-and-winrt-apis/index.md). C++/WinRT is a standard modern C++17 language projection for Windows APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows APIs.
 - Basic linear algebra and Newtonian physics concepts.
 - Basic graphics programming terminology.
 - Basic Windows programming concepts.

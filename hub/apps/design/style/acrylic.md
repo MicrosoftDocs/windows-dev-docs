@@ -34,10 +34,6 @@ Acrylic in dark theme
 
  The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design overview](/windows/apps/fluent-design-system).
 
- ## Video summary
-
-> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev002/player]
-
 ## Examples
 
 :::row:::
@@ -45,11 +41,11 @@ Acrylic in dark theme
 ![Some image](images/xaml-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-**XAML Controls Gallery**<br>
-If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**WinUI 2 Gallery**<br>
+If you have the WinUI 2 Gallery app installed, click <a href="winui2gallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
-<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -241,7 +237,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](../shell/title-bar.md).
+In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](/windows/apps/develop/title-bar).
 
 ## Do's and don'ts
 * Do use acrylic on transient surfaces.
@@ -259,7 +255,7 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

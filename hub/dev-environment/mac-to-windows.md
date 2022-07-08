@@ -19,6 +19,9 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 
 ## Keyboard shortcuts
 
+> [!TIP]
+> You can use [PowerToys Keyboard Manager](/windows/powertoys/keyboard-manager) to map Windows shortcuts to the shortcuts you use on a Mac.
+
 | **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Copy | Command+C | Ctrl+C |
@@ -44,7 +47,10 @@ For app development, the nearest equivalent to Xcode would be [Visual Studio](ht
 
 ## Trackpad shortcuts
 
-Note: Some of these shortcuts require a "Precision Trackpad", such as the trackpad on Surface devices and some other third party laptops.
+> [!NOTE]
+> Some of these shortcuts require a "Precision Trackpad", such as the trackpad on Surface devices and some other third-party laptops. 
+> 
+> Trackpad options are configurable on both platforms.
 
  **Operation** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
@@ -58,8 +64,6 @@ Note: Some of these shortcuts require a "Precision Trackpad", such as the trackp
 | Open Cortana / Action center | Two finger slide from right | Three finger tap |
 | Open extra information | Three finger tap | N/A |
 |Show launchpad / start an app | Pinch with four fingers | Tap with four fingers |
-
-Note: Trackpad options are configurable on both platforms.
 
 ## Command-line shells and terminals
 
@@ -84,7 +88,7 @@ Windows has two primary command-line shells:
 
 ### Linux shells
 
-Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](/windows/wsl/install-win10). Linux distributions that can be installed on Windows with WSL include:
+Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide](/windows/wsl/install). Linux distributions that can be installed on Windows with WSL include:
 
 1. [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
 2. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
@@ -92,7 +96,7 @@ Windows Subsystem for Linux (WSL) can now be installed to support running a Linu
 4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
 5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
 
-Just to name a few. Find more in the [WSL install docs](/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools).
+Just to name a few. Find more in the [WSL install docs](/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://aka.ms/wslstore).
 
 ## Windows Terminals
 

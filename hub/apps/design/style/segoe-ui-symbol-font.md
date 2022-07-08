@@ -59,7 +59,7 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe M
 
 
 ## How do I get this font?
-* On Windows 10: There's nothing you need to do, the font comes with Windows.
+* On Windows: There's nothing you need to do, the font comes with Windows.
 * On a Mac, you need to download and install the font: <a href="https://aka.ms/SegoeFonts">Get the Segoe UI and MDL2 icon fonts</a>
 
 ## Icon list
@@ -84,7 +84,7 @@ The following table of glyphs displays unicode points prefixed from E7-  to E9-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
  <tr>
   <td>Glyph</td>
   <td>Unicode point</td>
@@ -2423,7 +2423,7 @@ The following table of glyphs displays unicode points prefixed from EA-  to EC-.
 [Back to top](#icon-list)
 
 </br>
- <table style="background-color: white; color: black">
+ <table>
  <tr>
   <td>Glyph</td>
   <td>Unicode point</td>
@@ -3618,7 +3618,7 @@ The following table of glyphs displays unicode points prefixed from ED-  to EF-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
  <tr>
   <td>Glyph</td>
   <td>Unicode point</td>
@@ -4153,7 +4153,7 @@ The following table of glyphs displays unicode points prefixed from F0-  to F2-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
  <tr>
   <td>Glyph</td>
   <td>Unicode point</td>
@@ -4784,7 +4784,7 @@ The following table of glyphs displays unicode points prefixed from F3-  to F5-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
  <tr>
   <td>Glyph</td>
   <td>Unicode point</td>
@@ -5295,7 +5295,7 @@ The following table of glyphs displays unicode points prefixed from F6-  to F8-.
 [Back to top](#icon-list)
 
 </br>
-<table style="background-color: white; color: black">
+<table>
  <tr>
   <td>Glyph</td>
   <td>Unicode point</td>

@@ -5,8 +5,6 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
-ms.author: mcleans
-author: mcleanbyron
 ms.localizationpriority: medium
 ---
 
@@ -28,7 +26,7 @@ If you plan to publish to the Microsoft Store, you'll be asked a few extra quest
 You don't have to sign your application before you submit it to the Store.
 
 >[!IMPORTANT]
-> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S. This is a Store requirement. See [Test your Windows app for Windows 10  S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S or Windows 11 S. This is a Store requirement. See [Test your Windows app for Windows 10 S or Windows 11 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load"></a>
 
@@ -42,7 +40,7 @@ To distribute your application to other devices without placing it in the Store,
 
 You can [create a certificate](/windows/msix/package/create-certificate-package-signing) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
 
-If you plan to distribute your application onto devices that run Windows 10 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.
+If you plan to distribute your application onto devices that run Windows 10 S or Windows 11 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.
 
 If you create a certificate, you have to install it into the **Trusted Root** or **Trusted People** certificate store on each device that runs your app. If you get a certificate from a popular vendor, you won't have to install anything onto other systems besides your app.  
 
@@ -51,7 +49,7 @@ If you create a certificate, you have to install it into the **Trusted Root** or
 
 To sign your application by using a certificate, see [Sign an application package using SignTool](/windows/msix/package/sign-app-package-using-signtool).
 
-To sideload your application onto other devices, see [Sideload LOB apps in Windows 10](/windows/application-management/sideload-apps-in-windows-10).
+To sideload your application onto other devices, see [Sideload LOB apps in Windows](/windows/application-management/sideload-apps-in-windows-10).
 
 <a id="transition-users"></a>
 
@@ -159,6 +157,6 @@ private void RemoveDesktopApp()
 
 ## Next steps
 
-Have questions? Ask us on Stack Overflow. Our team monitors these [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Have questions? Ask us on our [Tech Community](https://aka.ms/msixcommunity).
 
 If you encounter issues publishing your application to the Store, this [blog post](/archive/blogs/appconsult/preparing-a-desktop-bridge-application-for-the-store-submission) contains some useful tips.

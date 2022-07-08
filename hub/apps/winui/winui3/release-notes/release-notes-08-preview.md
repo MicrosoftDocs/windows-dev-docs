@@ -1,20 +1,21 @@
 ---
 title: WinUI 3 Project Reunion 0.8 Preview (April 2021)
 description: Overview of WinUI 3 Project Reunion 0.8 Preview.
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
 ms.date: 05/25/2021
 ms.topic: article
 ---
 
 # Overview and release notes: Windows UI Library 3 - Project Reunion 0.8 Preview (May 2021)
 
-Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [Visual Studio project templates](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
+Windows UI Library (WinUI) 3 is a native user experience (UX) framework for building modern Windows apps.  It ships independently from the Windows operating system as a part of [Project Reunion](../../../windows-app-sdk/index.md) (now called the **Windows App SDK**). The 0.8 Preview release provides [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to help you start building apps with a WinUI 3-based user interface.
 
 **WinUI 3 - Project Reunion 0.8 Preview** is a pre-release version of WinUI 3 that includes bug fixes, general improvements, and experimental features - some of which will be stabilized for the Windows App SDK 0.8 stable release in June 2021.
 
 > [!Important]
 > This preview release is intended for early evaluation and to gather feedback from the developer community. It should **NOT** be used for production apps.
 >
-> If you're looking to ship a production app using Project Reunion and WinUI 3, see [Overview and release notes: WinUI 3 - Project Reunion 0.5](../index.md).
+> If you're looking to ship a production app using Project Reunion and WinUI 3, see [Overview and release notes: WinUI 3 - Project Reunion 0.5](/windows/apps/winui/).
 >
 > Please use the [WinUI GitHub repo](https://github.com/microsoft/microsoft-ui-xaml) to provide feedback and log suggestions and issues.
 
@@ -25,22 +26,21 @@ Windows UI Library (WinUI) 3 is a native user experience (UX) framework for buil
 
 This version of WinUI 3 is available as part of the Project Reunion 0.8 Preview. To install, see:
 
-**[Installation instructions for Project Reunion 0.8 Preview](../../../windows-app-sdk/set-up-your-development-environment.md)**
+**[Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)**
 
-Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use Project Reunion](../../../windows-app-sdk/deploy-apps-that-use-the-windows-app-sdk.md). The Project Reunion VSIX includes [WinUI Project Templates](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
+Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use the Windows App SDK](../../../package-and-deploy/index.md#use-the-windows-app-sdk). The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the [WinUI 3 Controls Gallery](#winui-3-controls-gallery) from GitHub, or download it from the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
 
-Once you've set up your development environment, see [WinUI 3 project templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates. 
+Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio project and item templates. 
 
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
-- [Get started with WinUI 3 for desktop apps](../get-started-winui3-for-desktop.md)
-- [Build a basic WinUI 3 app for desktop](../desktop-build-basic-winui3-app.md)
-- [Build a basic WinUI 3 app for UWP](../get-started-winui3-for-uwp.md)
+- [Create your first WinUI 3 project](../create-your-first-winui3-app.md)
+- [Build a C# .NET app with WinUI 3 and Win32 interop](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
 
-Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2.x. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
+Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
@@ -66,7 +66,7 @@ The table below shows the compatibility of Visual Studio 2019 versions with WinU
 
 ## Updating your existing WinUI 3 app
 
-If you created an app with an earlier preview or stable version of WinUI 3, you can update the project to use WinUI 3 - Project Reunion 0.8 Preview. For instructions, see [Update existing projects to the latest release of Project Reunion](../../../project-reunion/update-existing-projects-to-the-latest-release.md).
+If you created an app with an earlier preview or stable version of WinUI 3, you can update the project to use WinUI 3 - Project Reunion 0.8 Preview. For instructions, see [Update existing projects to the latest release of Project Reunion](../../../windows-app-sdk/update-existing-projects-to-the-latest-release.md).
 
 
 ## Major changes introduced in this release
@@ -129,7 +129,7 @@ The following features and capabilities were introduced in past WinUI 3 preview 
 > [!NOTE]
 > Some of the following features will continue to be a part of WinUI 3 previews, but may not be a part of the next supported release. These features are marked as experimental and will throw a warning when used in an app. APIs that are a part of the WinUI 2.6 pre-release are also marked as experimental in this release.
 
-- Ability to create desktop apps with WinUI, including [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0) for Win32 apps
+- Ability to create desktop apps with WinUI, including [.NET](https://github.com/dotnet/core/blob/main/release-notes/6.0/README.md) for Win32 apps
 - Preview-level support for building UWP apps
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView updates](/windows/uwp/design/controls-and-patterns/tab-view)
@@ -142,7 +142,7 @@ The following features and capabilities were introduced in past WinUI 3 preview 
 - SwapChainPanel
 - MRT Core Support
   - This makes apps faster and lighter on startup and provides quicker resource lookup.
-- ARM64 Support
+- Arm64 Support
 - Drag and drop inside and outside of apps
 - RenderTargetBitmap (currently only XAML content - no SwapChainPanel content)
 - Custom cursor support
@@ -151,7 +151,7 @@ The following features and capabilities were introduced in past WinUI 3 preview 
   - Live Visual Tree, Hot Reload, Live Property Explorer and similar tools
   - Intellisense for WinUI 3
 - Improvements required for open source migration
-- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
+- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
 - VirtualSurfaceImageSource support
 - In-app acrylic
 - Multi-window support in desktop apps
@@ -180,14 +180,14 @@ WinUI 3 - Project Reunion 0.8 Preview is compatible with PCs running the Windows
 
 ### Developer tools
 
-- Only C# and C++/WinRT apps are supported
-- Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
-- No XAML Designer support
-- New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible)
-- Unpackaged desktop deployment is not supported
+- Only C# and C++/WinRT apps are supported.
+- Desktop apps support .NET 6 (and later) and C# 9, and must be packaged in an MSIX app.
+- No XAML Designer support.
+- New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible).
+- Unpackaged desktop deployment is not supported.
 - When running a desktop app using F5, make sure that you are running the packaging project. Hitting F5 on the app project will run an unpackaged app, which WinUI 3 does not yet support.
 
-### Missing Platform Features
+### Missing platform features
 
 - Xbox support
 - HoloLens support
@@ -206,7 +206,7 @@ WinUI 3 - Project Reunion 0.8 Preview is compatible with PCs running the Windows
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
 
-- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/windows/winui/api/microsoft.ui.xaml.application.suspending) for more details. 
+- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/uwp/api/windows.ui.xaml.application.suspending) for more details. 
 
 - The [UISettings.ColorValuesChanged Event](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
 
@@ -267,3 +267,9 @@ After cloning, ensure that you switch to the **winui3** branch in your local Git
 ```
 git checkout winui3
 ```
+
+## See also
+
+- [Windows App SDK](../../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

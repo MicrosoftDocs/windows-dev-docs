@@ -10,12 +10,11 @@ ms.localizationpriority: medium
 
 # Manage your MSI or EXE app's store listing
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
+There are several ways to link customers to your app's page in the Microsoft Store.
 
 ## Link to your app's listing
 
-The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format `https://www.microsoft.com/store/apps/<your app's Store ID>`. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.
+The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format `https://apps.microsoft.com/store/detail/<your app's Store ID>`. When a customer clicks this link, it opens the web-based listing page for your app.
 
 Your app's Store ID is also shown in this section. This Store ID can be used to [generate Store badges](https://developer.microsoft.com/store/badges) or otherwise identify your app.
 
@@ -39,16 +38,3 @@ These links are useful if you know your users are on a Windows device and you wa
 To use this URI scheme to link directly to your app's Store listing, append your app's Store ID to this link:
 
 `ms-windows-store://pdp/?ProductId=<your app's Store ID>`
-
-## Removing your app from the Microsoft Store
-
-### Delete your app
-
-To completely remove an app **draft** from Partner Center (and release all the names reserved for that app), you can delete your app from the app overview page. Note that if you have already published the app to the Store, you cannot delete it from Partner Center.
-
-### Make your app unavailable
-
-You can stop offering an app to any new customers through from its overview page. After you've made your app unavailable, it will no longer be visible in the Store after several hours. You can make your app available again at any time.
-
-> [!NOTE]
-> Any customers who already have the app will still be able to use and download it.

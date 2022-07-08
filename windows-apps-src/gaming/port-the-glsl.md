@@ -7,10 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp, games, glsl, port
 ms.localizationpriority: medium
 ---
+
 # Port the GLSL
-
-
-
 
 **Important APIs**
 
@@ -50,8 +48,8 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants).
 
-Instructions
-------------
+## Instructions
+
 ### Step 1: Port the vertex shader
 
 In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors. These two vectors contain the vertex position and its color. The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization. The vertex color is copied to a varying variable for interpolation during rasterization, as well.
@@ -148,13 +146,14 @@ The color for the pixel at the position is written to the render target. Now, le
 
 ## Previous step
 
-
 [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
-Next step
----------
+
+## Next step
+
 [Draw to the screen](draw-to-the-screen.md)
-Remarks
--------
+
+## Remarks
+
 Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax), [Introduction to Buffers in Direct3D 11](/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro), and [How to: Create a Constant Buffer](/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
 
 -   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.

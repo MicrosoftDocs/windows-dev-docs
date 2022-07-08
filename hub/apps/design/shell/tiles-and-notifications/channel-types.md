@@ -77,6 +77,10 @@ PushNotificationChannel channel =
 
 Alternate channels enable apps to send push notifications without registering to the Microsoft Store or creating push channels outside of the primary one used for the app. 
  
+ > [!NOTE]
+> As of July 1, 2021 applications that want to use the web push channel or the alternate channel to send browser based notifications through WNS will need to be onboarded to the Microsoft Store.
+ 
+ 
 ### What do alternate channels enable?
 -   Send raw push notifications to a Windows running on any Windows device. Alternate channels only allow for raw notifications (however you can still wake up a background task to locally show toast or tile notifications).
 -   Allows apps to create multiple raw push channels for different features within the app. An app can create up to 1000 alternate channels, and each one is valid for 30 days. Each of these channels can be managed or revoked separately by the app.

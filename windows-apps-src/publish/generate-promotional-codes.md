@@ -35,7 +35,7 @@ Be aware of the following policies for promotional codes:
 -   You must follow the requirements defined in the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including section **3k. Promotional Codes**.
 
 > [!NOTE]
-> You can use promotional codes even if your app is unavailable to customers (that is, if you have selected **Make this product available but not discoverable in the Store** with the **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device** option in your submission's [Discoverability](choose-visibility-options.md#discoverability) section). With this option, customers must be on Windows 10 (including Xbox) in order to acquire your product with a promotional code.
+> You can use promotional codes even if your app is unavailable to customers (that is, if you have selected **Make this product available but not discoverable in the Store** with the **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device** option in your submission's [Discoverability](choose-visibility-options.md#discoverability) section). With this option, customers must be on Windows 10 or Windows 11 (including Xbox) in order to acquire your product with a promotional code.
 
 
 ## Order promotional codes
@@ -92,7 +92,7 @@ After you distribute a promotional code (or its redeemable URL) to a customer, t
 > [!IMPORTANT]
 > We recommend that you don't distribute promotional codes to your customers until your product has completed the publishing process (even if you have selected **Make this product available but not discoverable in the Store**). Customers will see an error if they try to use a promotional code for a product which hasn't been published yet.
 
-After the customer clicks **Redeem**, the Microsoft Store will open to the overview page for the app (if they are on a Windows 10 or Windows 8.1 device), where they can click **Install** to download and install the app for free. If the customer is on a computer or device that does not have the Microsoft Store installed, the link will launch the Microsoft Store web page for the app. The code will be applied to the customer's Microsoft account, so they can later download the app on a Windows device (that is associated with the same Microsoft account) for free.
+After the customer clicks **Redeem**, the Microsoft Store will open to the overview page for the app (if they are on a Windows 10 or Windows 11 device), where they can click **Install** to download and install the app for free. If the customer is on a computer or device that does not have the Microsoft Store installed, the link will launch the Microsoft Store web page for the app. The code will be applied to the customer's Microsoft account, so they can later download the app on a Windows device (that is associated with the same Microsoft account) for free.
 
 > [!NOTE]
 > In some cases, a customer may see a **Buy** button instead of **Install**, even though the app was successfully redeemed via the promotional code. The customer can click **Buy** to install the app for no charge.

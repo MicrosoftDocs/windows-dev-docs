@@ -37,5 +37,5 @@ The XAML 2009 specification notes other XAML language-level primitives such as *
 
 * [XAML overview](xaml-overview.md)
 * [XAML syntax guide](xaml-syntax-guide.md)
-* [Storyboarded animations](../design/motion/storyboarded-animations.md)
+* [Storyboarded animations](/windows/apps/design/motion/storyboarded-animations)
  

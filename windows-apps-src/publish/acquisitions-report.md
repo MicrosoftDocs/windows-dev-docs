@@ -14,7 +14,7 @@ The **Acquisitions** report in [Partner Center](https://partner.microsoft.com/da
 
 You can view this data in Partner Center, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 device.
+In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 or Windows 11 device.
 
 > [!IMPORTANT]
 > The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](/partner-center/payout-statement). In the **Reserved** section, click the **Download reserved transactions** link.
@@ -54,14 +54,14 @@ In the **App daily** view, when the **30D** time period is selected, you may see
 
 ## Installs
 
-The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices (including Xbox One consoles) over the selected period of time. The total number is shown, along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
+The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 or Windows 11 devices (including Xbox One consoles) over the selected period of time. The total number is shown, along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
 
 The install total includes:
--   **Installs on multiple Windows 10 devices.** For example, if the same customer installs your app on two Windows 10 PCs and one Xbox One console, that counts as three installs.
+-   **Installs on multiple Windows 10 or Windows 11 devices.** For example, if the same customer installs your app on two Windows 10 or Windows 11 PCs and one Xbox One console, that counts as three installs.
 -   **Reinstalls.** For example, if a customer installs your app today, uninstalls your app tomorrow, and then reinstalls your app next month, that counts as two installs.
 
 The install total does not include or reflect:
--   **Installs on non-Windows 10 devices.** If your app supports earlier OS versions such as Windows 8.x or Windows Phone 8.x, we don't count any installs on those devices.
+-   **Installs on non-Windows 10 or Windows 11 devices.** If your app supports earlier OS versions such as Windows 8.x or Windows Phone 8.x, we don't count any installs on those devices.
 -   **Uninstalls.** When a customer uninstalls your app from their device, we don’t subtract that from the total number of installs.
 -   **Updates.** For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install.
 -   **Preinstalls.** If a customer buys a device that has your app preinstalled, we don’t count that as an install.
@@ -75,7 +75,7 @@ The install total does not include or reflect:
 The **Acquisition funnel** shows you how many customers completed each step of the funnel, from viewing the Store page to using the app, along with the conversion rate. This data can help you identify areas where you might want to invest more to increase your acquisitions, installs, or usage.
 
 > [!IMPORTANT]
-> The **Acquisition funnel** shows data only for customers on Windows 10 (including Xbox) over the last 90 days.
+> The **Acquisition funnel** shows data only for customers on Windows 10 or Windows 11 (including Xbox) over the last 90 days.
 
 The steps in the funnel are:
 

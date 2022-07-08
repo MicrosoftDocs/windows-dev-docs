@@ -36,7 +36,7 @@ While it works on all Windows devices, the TwoPaneView control is designed to he
 > **Windows UI Library APIs:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
 > [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -96,7 +96,7 @@ The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) doesn't have 
 
 Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](../layout/layouts-with-xaml.md) and [Layout panels](../layout/layout-panels.md) for more info about creating an adaptive UI.
 
-This example creates the the simple picture/info app UI shown previously in the _Examples_ section. When the app is spanned across dual-screens, the picture and the info are shown on separate screens. On a single screen, the content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
+This example creates the simple picture/info app UI shown previously in the _Examples_ section. When the app is spanned across dual-screens, the picture and the info are shown on separate screens. On a single screen, the content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
 
 ![Small image of example app spanned on dual-screens](images/two-pane-view/tpv-left-right.png)
 
@@ -192,7 +192,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### Pane sizing
 
-On a single screen, the size of the panes is determined by the [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/uwp/api/windows.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../layout/layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
+On a single screen, the size of the panes is determined by the [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../layout/layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
 
 By default, `Pane1Length` is set to `Auto` and it sizes itself to fit its content. `Pane2Length` is set to `*` and it uses all the remaining space.
 
@@ -217,7 +217,7 @@ If you set a pane to use auto sizing, you can control the size by setting the he
 
 ### Display in wide or tall mode
 
-On a single screen, the two-pane view's display [Mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) is determined by the [MinWideModeWidth](/uwp/api/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth) and [MinTallModeHeight](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight) properties. Both properties have a default value of 641px, the same as [NavigationView.CompactThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth).
+On a single screen, the two-pane view's display [Mode](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mode) is determined by the [MinWideModeWidth](/uwp/api/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth) and [MinTallModeHeight](/uwp/api/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight) properties. Both properties have a default value of 641px, the same as [NavigationView.CompactThresholdWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.compactmodethresholdwidth).
 
 This table shows how the Height and Width of the TwoPaneView determine which display mode is used.
 
@@ -298,7 +298,7 @@ When there's only enough space to display one pane, you can move the content of 
 
 Remember that the `MinWideModeWidth` and `MinTallModeHeight` properties determine when the display mode changes, so you can change when the content is moved between panes by adjusting the values of these properties.
 
-Here's the `ModeChanged` event handler code that moves the content between `Pane1` and `Pane2`. It also sets a [VisualState](/uwp/api/windows.ui.xaml.visualstate) to constrain the width of the image in Wide mode.
+Here's the `ModeChanged` event handler code that moves the content between `Pane1` and `Pane2`. It also sets a [VisualState](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstate) to constrain the width of the image in Wide mode.
 
 ```csharp
 private void TwoPaneView_ModeChanged(Microsoft.UI.Xaml.Controls.TwoPaneView sender, object args)

@@ -7,18 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, games, sample, directx, structure
 ms.localizationpriority: medium
 ---
+
 # Marble Maze application structure
-
-
-
 
 The structure of a DirectX Universal Windows Platform (UWP) app differs from that of a traditional desktop application. Instead of working with handle types such as [HWND](/windows/desktop/WinProg/windows-data-types) and functions such as [CreateWindow](/windows/desktop/api/winuser/nf-winuser-createwindowa), the Windows Runtime provides interfaces such as [Windows::UI::Core::ICoreWindow](/uwp/api/Windows.UI.Core.ICoreWindow) so that you can develop UWP apps in a more modern, object-oriented manner. This section of the documentation shows how the Marble Maze app code is structured.
 
 > [!NOTE]
 > The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](https://github.com/microsoft/Windows-appsample-marble-maze).
 
- 
-## 
 Here are some of the key points that this document discusses for when you structure your game code:
 
 -   In the initialization phase, set up the runtime and library components that your game uses, and load game-specific resources.
@@ -408,7 +404,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze doesn't distinguish between cold starting—that is, starting for the first time without a prior suspend event—and resuming from a suspended state. This is recommended design for all UWP apps.
 
-For more info about application data, see [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md).
+For more info about application data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 
 ##  Next steps
 

@@ -15,9 +15,9 @@ This article describes how to troubleshoot potential issues that you might encou
 
   **Resolution:** The build output window isn't updated until the build completes. Build times may be up to several minutes, so you might experience a delay in seeing the updates.
 
-- **Issue:** Your app's retail build time for ARM has increased.
+- **Issue:** Your app's retail build time for Arm has increased.
 
-  **Resolution:** When you deploy an app to your ARM device, the .NET Native infrastructure is invoked. This compilation performs a large number of optimizations while ensuring that non-static semantics such as reflection continue to work. In addition, the portion of .NET Framework that the app uses is statically linked in for optimal performance and has to be compiled into native code as well. This is why compilation takes longer.
+  **Resolution:** When you deploy an app to your Arm device, the .NET Native infrastructure is invoked. This compilation performs a large number of optimizations while ensuring that non-static semantics such as reflection continue to work. In addition, the portion of .NET Framework that the app uses is statically linked in for optimal performance and has to be compiled into native code as well. This is why compilation takes longer.
 
   However, compilation times are still within a minute of standard compilation for most apps on a standard development machine.  Typically, just generating native images for .NET Framework on a standard development machine takes several minutes.  Even with all the optimizations to improve the generated code and with including .NET Framework, app build times are typically a minute or two.
 

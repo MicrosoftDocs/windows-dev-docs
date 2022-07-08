@@ -65,7 +65,7 @@ For more information, see [Modernize your desktop app using the Visual layer](/w
 ## Additional resources
 
 * [**Full reference documentation for the API**](/uwp/api/Windows.UI.Composition)
-* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)
-* [Windows.UI.Composition Sample Gallery](https://www.microsoft.com/store/apps/9pp1sb5wgnww)
+* Advanced UI and Composition samples in the [Windows Composition Samples GitHub](https://github.com/microsoft/WindowsCompositionSamples/tree/UniversalWindowsPlatform)
+* [Windows.UI.Composition Sample Gallery](https://www.microsoft.com/en-us/p/windows-composition-samples/9n1h8czhbpxb)
 * [@windowsui Twitter feed ](https://twitter.com/windowsui)
 * Read Kenny Kerr's MSDN Article on this API: [Graphics and Animation - Windows Composition Turns 10](/archive/msdn-magazine/2015/windows-10-special-issue/graphics-and-animation-windows-composition-turns-10)

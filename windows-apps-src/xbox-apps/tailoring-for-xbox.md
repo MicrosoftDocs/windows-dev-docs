@@ -10,17 +10,17 @@ ms.localizationpriority: medium
 
 By default, all UWP apps will run on Xbox One without any extra effort on your part. However, if want your app to shine, delight your customers, and compete with the best app experiences on Xbox, you should follow the practices below.
   > [!NOTE]
-  > Before you start, take a look at the design guidelines laid out in [Designing for Xbox and TV](../design/devices/designing-for-tv.md).   
+  > Before you start, take a look at the design guidelines laid out in [Designing for Xbox and TV](/windows/apps/design/devices/designing-for-tv).   
 
 ## To build the best experiences for Xbox One
 
 ### *Do:* Turn off mouse mode
 
-Xbox users love their controllers. To optimize for controller input, [disable mouse mode](how-to-disable-mouse-mode.md) and enable directional navigation (also known as [XY focus navigation and interaction](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)). Watch out for focus traps and inaccessible UI.
+Xbox users love their controllers. To optimize for controller input, [disable mouse mode](how-to-disable-mouse-mode.md) and enable directional navigation (also known as [XY focus navigation and interaction](/windows/apps/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)). Watch out for focus traps and inaccessible UI.
 
 ### *Do:* Draw a focus rectangle that is appropriate for a 10-foot experience
 
-Most Xbox users are sitting across the living room from their TV, so keep in mind that the standard focus rectangle is hard to see from ten feet away. To ensure that the UI element with the input focus is clearly visible to the user at all times, follow the [Focus visual](../design/input/gamepad-and-remote-interactions.md#focus-visual) guidelines. In XAML you will get this behavior for free when your app runs on Xbox, but HTML apps will need to use a custom CSS style.
+Most Xbox users are sitting across the living room from their TV, so keep in mind that the standard focus rectangle is hard to see from ten feet away. To ensure that the UI element with the input focus is clearly visible to the user at all times, follow the [Focus visual](/windows/apps/design/input/gamepad-and-remote-interactions#focus-visual) guidelines. In XAML you will get this behavior for free when your app runs on Xbox, but HTML apps will need to use a custom CSS style.
 
 ###	*Do:* Integrate with the SystemMediaTransportControls class
 
@@ -31,41 +31,19 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### *Consider:* Draw to the edge of the screen
 
-Many TVs cut off the edges of the display, so all of your app's important content should be displayed within the [TV-safe area](../design/devices/designing-for-tv.md#tv-safe-area). UWP uses *overscan* to keep the content within the TV-safe area, but  this default behavior can draw an obvious border around your app. To provide the best experience, turn off the default behavior and follow the instructions at [How to draw UI to the edge of the screen](turn-off-overscan.md).
+Many TVs cut off the edges of the display, so all of your app's important content should be displayed within the [TV-safe area](/windows/apps/design/devices/designing-for-tv#tv-safe-area). UWP uses *overscan* to keep the content within the TV-safe area, but  this default behavior can draw an obvious border around your app. To provide the best experience, turn off the default behavior and follow the instructions at [How to draw UI to the edge of the screen](turn-off-overscan.md).
 > [!IMPORTANT]
   > If you disable overscan, it's your responsibility to make sure that interactive elements and text remain within the TV-safe area. 
 
 ###	*Consider:* Use TV-safe colors
 
-TVs don't handle extreme color intensities as well as computer monitors do. Avoid high-intensity colors in your app so that users don't see odd banded effects or a washed-out image. Also, be aware that differences between TVs mean that colors that look great on *your* TV might look very different to your users. Read [Colors](../design/devices/designing-for-tv.md#colors) to understand how to make your app look great to everybody!
+TVs don't handle extreme color intensities as well as computer monitors do. Avoid high-intensity colors in your app so that users don't see odd banded effects or a washed-out image. Also, be aware that differences between TVs mean that colors that look great on *your* TV might look very different to your users. Read [Colors](/windows/apps/design/devices/designing-for-tv#colors) to understand how to make your app look great to everybody!
 
 ### *Remember:* You can disable scaling
 
-UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices. Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%. If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080). Take a look at [How to turn off scaling](disable-scaling.md) and [Effective pixels and scaling](../design/basics/design-and-ui-intro.md#effective-pixels-and-scaling) for information about tailoring your app to look great on Xbox.
-
-If you want to get a glimpse of these practices applied to a UWP app, check out this video!
-</br>
-</br>
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
-
-## Channel 9
-
-The following talks on [Channel 9](https://channel9.msdn.com/) are a great source of information for building amazing apps on Xbox:
-
-- [Building Great Universal Windows Platform (UWP) Apps for Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
-- [Adapt Your App for Xbox One and TV](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP Development 1: Building an Adaptive UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web Apps Beyond the Browser: Cross-Platform Meets Cross Device](https://channel9.msdn.com/Events/Build/2016/B888)
-
-## App Dev on Xbox
-
-The **App Dev on Xbox** event is a great starting point for developers new to building apps on Xbox.
-
-* [Watch the recorded sessions](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [Read the blog posts](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices. Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%. If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080). Take a look at [How to turn off scaling](disable-scaling.md) for information about tailoring your app to look great on Xbox.
 
 ## See also
 
 - [UWP on Xbox One](index.md)
-- [Designing for Xbox and TV](../design/devices/designing-for-tv.md)
-- [Progressive Web Apps for Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [Designing for Xbox and TV](/windows/apps/design/devices/designing-for-tv)

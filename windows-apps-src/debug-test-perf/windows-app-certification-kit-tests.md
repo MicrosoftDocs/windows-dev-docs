@@ -86,7 +86,7 @@ This test was implemented as per Store policy.
 
 ### Test details
 
-For Windows Phone 8.1 apps the test verifies the total number of .appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
+For Windows Phone 8.1 apps the test verifies the total number of .appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as Arm or neutral.
 
 For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
 
@@ -182,7 +182,7 @@ Enable the /SAFESEH option in the linker command when you build your app. This o
 
 **Remarks**
 
-The test is not performed on 64-bit binaries or ARM chipset binaries because they don't store exception handler addresses on the stack.
+The test is not performed on 64-bit binaries or Arm chipset binaries because they don't store exception handler addresses on the stack.
 
 ### <span id="binscope-3"></span>Data Execution Prevention
 
@@ -581,20 +581,20 @@ Consider removing the special use capability if your app doesn't require it. Add
 
 ### Background
 
-Ensures that the components that ship in an app conform to the UWP type system.
+Ensures that the components that ship in an app conform to the Windows Runtime type system.
 
 ### Test Details
 
-Verifies that the **.winmd** files in the package conform to UWP rules.
+Verifies that the **.winmd** files in the package conform to Windows Runtime rules.
 
 ### Corrective Actions
 
--   **ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.
--   **Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.
--   **Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
--   **Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.
--   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.
--   **Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.
+-   **ExclusiveTo attribute test:** Ensure that Windows Runtime classes don't implement interfaces that are marked as ExclusiveTo another class.
+-   **Type location test:** Ensure that the metadata for all Windows Runtime types is located in the winmd file that has the longest namespace-matching name in the app package.
+-   **Type name case-sensitivity test:** Ensure that all Windows Runtime types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
+-   **Type name correctness test:** Ensure there are no Windows Runtime types in the global namespace or in the Windows top-level namespace.
+-   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the Windows Runtime specifications.
+-   **Properties test:** ensure that all properties on a Windows Runtime class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on Windows Runtime types.
 
 ## Package Sanity tests
 
@@ -614,15 +614,15 @@ Validates that each file's "bitness" in the PE header is appropriate when cross-
 
 Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest:
 
--   If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.
+-   If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or Arm binary or image type files.
 
--   If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or ARM binary or image types, it will fail the test.
+-   If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or Arm binary or image types, it will fail the test.
 
 -   If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary.
 
-    However, if the package contains ARM binary or image type files, or only contains x86 binaries or image type files, it will fail the test.
+    However, if the package contains Arm binary or image type files, or only contains x86 binaries or image type files, it will fail the test.
 
--   If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test.
+-   If the Target Processor Architecture for your app is Arm processor type, the app package must only contain Arm binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test.
 
 ### Supported Directory Structure test
 

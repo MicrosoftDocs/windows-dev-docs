@@ -1,19 +1,17 @@
 ---
-title: Setup a development environment on Windows 10
-description: A guide to help you setup your development environment on Windows and install your prefered tools and code languages. 
+title: Setup a development environment on Windows
+description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
 author: mattwojo 
 ms.author: mattwoj 
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Set up windows, Dev Environment, Dev tools, development paths, Microsoft, Windows, Developer, Tips, Performance, WSL, terminal, nodejs, python
-ms.localizationpriority: medium
-ms.date: 06/01/2021
+ms.date: 02/24/2022
 ---
 
-# Set up your development environment on Windows 10
+# Set up your development environment on Windows
 
-This guide will help you get started with installing and setting up the languages and tools you need to develop on Windows or Windows Subsystem for Linux.
+Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
 
 ## Development paths
 
@@ -36,7 +34,7 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
         **[Get started with Windows Desktop](../apps/index.yml)**<br>
-        Get started building desktop apps for Windows 10 using UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
+        Get started building desktop apps for Windows using the Windows App SDK, UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.
     :::column-end:::
 :::row-end:::
 
@@ -52,22 +50,32 @@ This guide will help you get started with installing and setting up the language
         Get started building apps using C# and .NET Core.
     :::column-end:::
     :::column:::
-       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
-        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
-        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
+       [![F# icon](../images/fsharp-logo.png)](/dotnet/fsharp/)<br>
+        **[Get started with F#](/dotnet/fsharp/)**<br>
+        Get started building apps using F# and .NET Core.
     :::column-end:::
     :::column:::
-       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
-        **[Get started with PowerShell](/powershell/)**<br>
-        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Get started with Rust](./rust/index.yml)**<br>
+        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
-        **[Get started with Rust](./rust/index.yml)**<br>
-        Get started programming with Rust&mdash;including how to set up Rust for Windows by consuming the *windows* crate.
+       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
+        **[Get started with PowerShell](/powershell/)**<br>
+        Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.
+    :::column-end:::
+    :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker Desktop for Windows](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.
+    :::column-end:::
+    :::column:::
+       [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
+        **[Get started with Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**<br>
+        Get started with Blazor, a client-side UI framework within ASP.NET Core. Use HTML, CSS, and C# (rather than JavaScript) to create UI components and single page applications for the web.
     :::column-end:::
 :::row-end:::
 
@@ -90,8 +98,8 @@ This guide will help you get started with installing and setting up the language
     :::column:::
        [![Windows Package Manager icon](../images/winget.png)](../package-manager/index.md)<br>
         **[Windows Package Manager](../package-manager/index.md)**<br>
-        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows 10.<br>
-        [Install Windows Package Manager (public preview)](../package-manager/winget/index.md#install-winget)
+        Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
+        [Install Windows Package Manager](../package-manager/winget/index.md#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
@@ -132,15 +140,16 @@ This guide will help you get started with installing and setting up the language
 ## Run Windows and Linux
 
 Windows Subsystem for Linux (WSL) allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. WSL enables you to use BASH and will provide the kind of environment most familiar to Mac users.
-- Learn more in the [WSL docs](/windows/wsl) or via [WSL videos on Channel 9](https://channel9.msdn.com/Search?term=wsl&lang-en=true).
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
+Learn more in the [WSL docs](/windows/wsl).
+
+> [!VIDEO https://docs.microsoft.com/shows/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
 You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
 
-Learn more in the [Windows Terminal docs](/windows/terminal) or via [Windows Terminal videos on Channel 9](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true).
+Learn more in the [Windows Terminal docs](/windows/terminal).
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
+> [!VIDEO https://docs.microsoft.com/shows/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
 ## Transitioning between Mac and Windows
 
@@ -158,4 +167,4 @@ Check out our [guide to transitioning between between a Mac and Windows](./mac-t
 - [Tips for improving your workflow](./tips.md)
 - [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
 - [Popular tutorials, courses, and code samples](./tutorials.md)
-- [Microsoft's Game Stack documentation](/gaming/)
+- [Microsoft's Game Dev documentation](/gaming/)

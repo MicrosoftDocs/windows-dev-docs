@@ -17,7 +17,6 @@ If you are an iOS developer wondering how to expand your user base to include Wi
 
 Today, Windows is running on a huge number of devices. The UWP provides developers with a set of modern APIs, designed to create beautifully responsive user interfaces across devices as diverse as desktop computers, games consoles and holographic displays. With one Visual Studio solution, and with user interface controls that are smart enough to automatically optimize themselves for multiple platforms , you'll often find that you are writing less code and running it on more hardware.
 
-> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
 | Topic | Description |
 |-------|-------------|
@@ -29,4 +28,4 @@ Today, Windows is running on a huge number of devices. The UWP provides develope
 
 **For designers and developers**
 * [Building Universal Windows apps for all Windows devices](../get-started/universal-application-platform-guide.md)
-* [Download design assets for UWP apps](../design/downloads/index.md)
+* [Download design assets for UWP apps](/windows/apps/design/downloads/index)

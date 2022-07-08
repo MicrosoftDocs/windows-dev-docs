@@ -19,7 +19,7 @@ ms.date: 03/04/2021
 
 In the [Overview of developing on Windows with Rust](overview.md) topic, we demonstrated a simple app that outputs a *Hello, world!* message. But not only can you use Rust *on* Windows, you can also write apps *for* Windows using Rust.
 
-Rust for Windows is the latest language projection for Windows. It's currently in preview form, and you can see it develop from version to version in its [change log](https://github.com/microsoft/windows-rs/blob/master/docs/changelog.md).
+You can find all of the latest updates in the [Release log of the Rust for Windows repo](https://github.com/microsoft/windows-rs/releases) on GitHub. 
 
 Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via [the *windows* crate](https://crates.io/crates/windows) (*crate* is Rust's term for a binary or a library, and/or the source code that builds into one).
 
@@ -31,17 +31,15 @@ As a Rust developer, you'll use Cargo (Rust's package management tool)&mdash;alo
 
 Similar to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/), [Rust for Windows](https://github.com/microsoft/windows-rs) is an open source language projection developed on GitHub. Use the [Rust for Windows](https://github.com/microsoft/windows-rs) repo if you have questions about Rust for Windows, or if you wish to report issues with it.
 
-The Rust for Windows repo also has [some simple examples](https://github.com/microsoft/windows-rs/tree/master/examples) that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's [Minesweeper](https://github.com/robmikh/minesweeper-rs).
+The Rust for Windows repo also has [some simple examples](https://github.com/microsoft/windows-samples-rs) that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's [Minesweeper](https://github.com/robmikh/minesweeper-rs).
 
 ## Contribute to Rust for Windows
 
 [Rust for Windows](https://github.com/microsoft/windows-rs) welcomes your contributions!
 
-* Identify and fix bugs in the [source code](https://github.com/microsoft/windows-rs/tree/master/src)
-
 ## Rust documentation for the Windows API
 
-Rust for Windows benefits from the polished toolchain that Rust developers enjoy. But if having the entire Windows API at your fingertips seems a little daunting, there's also [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/).
+Rust for Windows benefits from the polished toolchain that Rust developers enjoy. But if having the entire Windows API at your fingertips seems a little daunting, there's also [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/windows/).
 
 This resource essentially documents how the Windows APIs and types are projected into idiomatic Rust. Use it to browse or search for the APIs you need to know about, and that you need to know how to call.
 
@@ -57,6 +55,6 @@ The next topic is the [RSS reader tutorial](rss-reader-rust-for-windows.md), whe
 * [Documentation for the *windows* crate](https://docs.rs/windows/0.3.1/windows/)
 * [Win32 metadata](https://github.com/microsoft/win32metadata)
 * [Making Win32 APIs more accessible to more languages](https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/)
-* [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/)
+* [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/windows/)
 * [Rust for Windows](https://github.com/microsoft/windows-rs)
 * [Minesweeper sample app](https://github.com/robmikh/minesweeper-rs)

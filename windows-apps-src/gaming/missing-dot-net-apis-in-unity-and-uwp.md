@@ -14,7 +14,7 @@ When building a UWP game using .NET, you may find that some APIs that you might 
 
 Additionally, some game engines use different flavors of .NET that aren't fully compatible with .NET for UWP, such as Unity's Mono. So when you're writing your game, everything might work fine in the editor, but when you go to build for UWP, you might get errors like this: **The type or namespace 'Formatters' does not exist in the namespace 'System.Runtime.Serialization' (are you missing an assembly reference?)**
 
-Fortunately, Unity provides some of these missing APIs as extension methods and replacement types, which are described in [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). However, if the functionality you need is not here, [.NET for Windows 8.x apps overview](/previous-versions/windows/apps/br230302(v=vs.140)) discusses ways you can convert your code to use WinRT or .NET for Windows Runtime APIs. (It discusses Windows 8, but is applicable to Windows 10 UWP apps as well.)
+Fortunately, Unity provides some of these missing APIs as extension methods and replacement types, which are described in [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-missingtypes.html). However, if the functionality you need is not here, [.NET for Windows 8.x apps overview](/previous-versions/windows/apps/br230302(v=vs.140)) discusses ways you can convert your code to use WinRT or .NET for Windows Runtime APIs. (It discusses Windows 8, but is applicable to Windows 10 UWP apps as well.)
 
 ## .NET Standard
 
@@ -32,7 +32,7 @@ The **Scripting Runtime Version** is what the Unity scripting backend uses which
 
 Often with new .NET releases, more APIs are added to .NET Standard which might allow you to use the same code across standalone and UWP. For example, the [System.Runtime.Serialization.Json](/dotnet/api/system.runtime.serialization.json) namespace was introduced in .NET Standard 2.0. If you set the **Scripting Runtime Version** to **.NET 3.5 Equivalent** (which targets an earlier version of the .NET Standard), you will get an error when trying to use the API; switch it to **.NET 4.6 Equivalent** (which supports .NET Standard 2.0), and the API will work.
 
-The **Scripting Backend** can be **.NET** or **IL2CPP**. For this topic, we assume you have chosen **.NET**, since that's where the problems discussed here arise. See [Scripting Backends](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html) for more information.
+The **Scripting Backend** can be **.NET** or **IL2CPP**. For this topic, we assume you have chosen **.NET**, since that's where the problems discussed here arise. See [Scripting Backends](https://docs.unity3d.com/Manual/scripting-backends.html) for more information.
 
 Finally, you should set the **Api Compatibility Level** to the version of .NET that you want your game to run on. This should match the **Scripting Runtime Version**.
 
@@ -139,6 +139,6 @@ In the case of **System.Net.Mail**, use the [Windows.ApplicationModel.Email](/uw
 
 ## See also
 
-* [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/2018.4/Documentation/Manual/windowsstore-missingtypes.html)
 * [.NET for UWP apps overview](/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP porting guides](https://unity3d.com/partners/microsoft/porting-guides)

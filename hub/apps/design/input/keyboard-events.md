@@ -5,10 +5,8 @@ ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down
-ms.date: 03/29/2017
+ms.date: 07/09/2021
 ms.topic: article
-
-
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
@@ -41,12 +39,12 @@ By default, the tab sequence of controls is the order in which they appear in th
 
 ## Keyboard event handlers
 
-
 An input event handler implements a delegate that provides the following information:
 
--   The sender of the event. The sender reports the object where the event handler is attached.
--   Event data. For keyboard events, that data will be an instance of [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs). The delegate for handlers is [**KeyEventHandler**](/uwp/api/windows.ui.xaml.input.keyeventhandler). The most relevant properties of **KeyRoutedEventArgs** for most handler scenarios are [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) and possibly [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus).
--   [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource). Because the keyboard events are routed events, the event data provides **OriginalSource**. If you deliberately allow events to bubble up through an object tree, **OriginalSource** is sometimes the object of concern rather than sender. However, that depends on your design. For more information about how you might use **OriginalSource** rather than sender, see the "Keyboard Routed Events" section of this topic, or [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+- The sender of the event. The sender reports the object where the event handler is attached.
+- Event data. For keyboard events, that data will be an instance of [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs). The delegate for handlers is [**KeyEventHandler**](/uwp/api/windows.ui.xaml.input.keyeventhandler). The most relevant properties of **KeyRoutedEventArgs** for most handler scenarios are [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) and possibly [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus).
+- [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource). Because the keyboard events are routed events, the event data provides **OriginalSource**. If you deliberately allow events to bubble up through an object tree, **OriginalSource** is sometimes the object of concern rather than sender. However, that depends on your design. For more information about how you might use **OriginalSource** rather than sender, see the "Keyboard Routed Events" section of this topic, or [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+
 
 ### Attaching a keyboard event handler
 
@@ -90,18 +88,21 @@ void MyProject::MainPage::Grid_KeyUp(
 
 All keyboard events use [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) for event data, and **KeyRoutedEventArgs** contains the following properties:
 
--   [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
--   [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Handled**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (inherited from [**RoutedEventArgs**](/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
+- [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+- [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
+- [**Handled**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+- [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (inherited from [**RoutedEventArgs**](/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### Key
+### Virtual keys
 
 The [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) event is raised if a key is pressed. Likewise, [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) is raised if a key is released. Usually, you listen to the events to process a specific key value. To determine which key is pressed or released, check the [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) value in the event data. **Key** returns a [**VirtualKey**](/uwp/api/Windows.System.VirtualKey) value. The **VirtualKey** enumeration includes all the supported keys.
 
 ### Modifier keys
 
-Modifier keys are keys such as Ctrl or Shift that users typically press in combination with other keys. Your app can use these combinations as keyboard shortcuts to invoke app commands.
+Modifier keys are keys such as Ctrl or Shift that users typically press in combination with other keys. Your app can use these combinations as custom keyboard shortcuts to invoke app commands.
+
+> [!NOTE]
+> For built-in keyboard shortcuts, see [Access keys](access-keys.md) and [Keyboard accelerators](keyboard-accelerators.md).
 
 You can detect shortcut key combinations in the [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) and [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) event handlers. When a keyboard event occurs for a non-modifier key, you can then check whether a modifier key is in the pressed state.
 
@@ -114,7 +115,7 @@ The following examples implement this second method while also including stub co
 
 ### Shortcut keys example
 
-The following example demonstrates how to implement shortcut keys. In this example, users can control media playback using Play, Pause, and Stop buttons or Ctrl+P, Ctrl+A, and Ctrl+S keyboard shortcuts. The button XAML shows the shortcuts by using tooltips and [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) properties in the button labels. This self-documentation is important to increase the usability and accessibility of your app. For more info, see [Keyboard accessibility](../accessibility/keyboard-accessibility.md).
+The following example demonstrates how to implement a set of custom shortcut keys. In this example, users can control media playback using Play, Pause, and Stop buttons or Ctrl+P, Ctrl+A, and Ctrl+S keyboard shortcuts. The button XAML shows the shortcuts by using tooltips and [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) properties in the button labels. This self-documentation is important to increase the usability and accessibility of your app. For more info, see [Keyboard accessibility](../accessibility/keyboard-accessibility.md).
 
 Note also that the page sets input focus to itself when it is loaded. Without this step, no control has initial input focus, and the app does not raise input events until the user sets the input focus manually (for example, by tabbing to or clicking a control).
 

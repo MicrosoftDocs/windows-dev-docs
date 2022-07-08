@@ -91,7 +91,7 @@ ingestionConnection.close()
 
 
 import http.client, json, requests, time
-
+from azure.storage.blob import BlobClient
 accessToken = ""  # Your access token
 applicationId = ""  # Your application ID
 appSubmissionRequestJson = "";  # Your submission request JSON
@@ -137,10 +137,10 @@ print(updateSubmissionResponse.status)
 print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
 updateSubmissionResponse.read()
 
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
+# Upload images and packages in a zip file.
+blob_client = BlobClient.from_blob_url(fileUploadUrl)
+with open(zipFilePath, "rb") as data:
+    blob_client.upload_blob(data, blob_type="BlockBlob")
 
 # Commit submission
 ingestionConnection.request("POST", "/v1.0/my/applications/{0}/submissions/{1}/commit".format(applicationId, submissionId), "", headers)
@@ -170,7 +170,7 @@ ingestionConnection.close()
 
 
 import http.client, json, requests, time
-
+from azure.storage.blob import BlobClient
 accessToken = ""  # Your access token
 inAppProductId = ""  # Your in-app-product ID
 updateSubmissionRequestBody = "";  # Your in-app-product submission request JSON
@@ -216,10 +216,10 @@ print(updateSubmissionResponse.status)
 print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
 updateSubmissionResponse.read()
 
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
+# Upload images and packages in a zip file.
+blob_client = BlobClient.from_blob_url(fileUploadUrl)
+with open(zipFilePath, "rb") as data:
+    blob_client.upload_blob(data, blob_type="BlockBlob")
 
 # Commit submission
 ingestionConnection.request("POST", "/v1.0/my/inappproducts/{0}/submissions/{1}/commit".format(inAppProductId, submissionId), "", headers)
@@ -249,7 +249,7 @@ ingestionConnection.close()
 
 
 import http.client, json, requests, time, zipfile
-
+from azure.storage.blob import BlobClient
 accessToken = ""  # Your access token
 applicationId = ""  # Your application ID
 flightId = ""  # Your flight ID
@@ -296,10 +296,10 @@ print(updateSubmissionResponse.status)
 print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
 updateSubmissionResponse.read()
 
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
+# Upload images and packages in a zip file.
+blob_client = BlobClient.from_blob_url(fileUploadUrl)
+with open(zipFilePath, "rb") as data:
+    blob_client.upload_blob(data, blob_type="BlockBlob")
 
 # Commit submission
 ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/commit".format(applicationId, flightId, submissionId), "", headers)

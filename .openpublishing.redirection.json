@@ -1,6 +1,41 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-analytics.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-achievements-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-health-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-game-hub-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-club-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-multiplayer-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/monetize/get-xbox-live-concurrent-usage-data.md",
+      "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/debug-test-perf/device-portal-hololens.md",
       "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal",
       "redirect_document_id": false
@@ -12,9 +47,9 @@
     },
     {
       "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
-      "redirect_url": "/windows/uwp/get-started/get-app-samples",
-      "redirect_document_id": true
-    },
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },  
     {
       "source_path": "windows-apps-src/home.md",
       "redirect_url": "/windows/uwp/",
@@ -222,7 +257,12 @@
     },
     {
       "source_path": "windows-apps-src/maps-and-location/controls-map.md",
-      "redirect_url": "/windows/uwp/maps-and-location/display-maps#map-control",
+      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/maps-and-location/display-maps#map-control",
+      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
       "redirect_document_id": false
     },
     {
@@ -626,6 +666,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/whats-new/windows-11-build-22000-apis.md",
+      "redirect_url": "/windows/apps/whats-new/windows-11-build-22000",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/accessibility/accessibility-checklist.md",
       "redirect_url": "/windows/uwp/design/accessibility/accessibility-checklist",
       "redirect_document_id": true
@@ -922,8 +967,8 @@
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/design/style/xaml-resource-dictionary",
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/controls-and-patterns/rich-edit-box.md",
@@ -4987,42 +5032,42 @@
     },
     {
       "source_path": "windows-apps-src/publish/tax-details-for-paid-apps.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/tax-details-marketplace",
+      "redirect_url": "/partner-center/tax-details-marketplace",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/getting-paid-apps.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/marketplace-get-paid",
+      "redirect_url": "/partner-center/marketplace-get-paid",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/setting-up-your-payout-account-and-tax-forms.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/set-up-your-payout-account ",
+      "redirect_url": "/partner-center/set-up-your-payout-account ",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/payout-summary.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/payout-statement",
+      "redirect_url": "/partner-center/payout-statement",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/understand-irs-tax-forms.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/understand-irs-tax-forms",
+      "redirect_url": "/partner-center/understand-irs-tax-forms",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/payment-thresholds-methods-and-timeframes.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/payment-thresholds-methods-timeframes",
+      "redirect_url": "/partner-center/payment-thresholds-methods-timeframes",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/mobile-operator-billing.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/mobile-operator-billing",
+      "redirect_url": "/partner-center/mobile-operator-billing",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/publish/vat-info.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/vat-info",
+      "redirect_url": "/partner-center/vat-info",
       "redirect_document_id": false
     },
     {
@@ -5032,7 +5077,7 @@
     },
     {
       "source_path": "windows-apps-src/publish/manage-account-settings-and-profile.md",
-      "redirect_url": "https://docs.microsoft.com/partner-center/partner-center-account-setup",
+      "redirect_url": "/partner-center/partner-center-account-setup",
       "redirect_document_id": false
     },
     {
@@ -5081,6 +5126,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/features-and-technologies.md",
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/features-and-technologies.md",
+      "redirect_url": "/windows/apps/develop/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/speech.md",
+      "redirect_url": "/windows/apps/develop/speech",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/accessibility.md",
+      "redirect_url": "/windows/apps/develop/accessibility",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
@@ -5106,8 +5171,18 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/project-reunion/get-started-with-project-reunion.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/get-started.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/get-started",
+      "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/get-started.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
       "redirect_document_id": false
     },
     {
@@ -5171,6 +5246,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/build-apps-for-windows.md",
+      "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3-winui2-comparison.md",
+      "redirect_url": "/windows/apps/winui/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/desktop-build-basic-winui3-app.md",
+      "redirect_url": "/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/winui/reference/iwindownative.md",
       "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
       "redirect_document_id": false
@@ -5181,6 +5271,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/release-notes/index.md",
+      "redirect_url": "/windows/apps/winui/winui3/release-notes/release-notes-08-preview",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/winui/winui3/get-started-winui3-for-desktop.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false
@@ -5188,6 +5283,56 @@
     {
       "source_path": "hub/apps/winui/winui3/get-started-winui3-for-uwp.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/winui-2.6.md",
+      "redirect_url": "/windows/apps/winui/winui2/release-notes/winui-2.6",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/index.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md",
+      "redirect_url": "/windows/apps/api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop",
       "redirect_document_id": false
     },
     {
@@ -6627,8 +6772,118 @@
     },
     {
       "source_path": "hub/apps/fluent-design-system.md",
-      "redirect_url": "/hub/apps/design/index",
+      "redirect_url": "/windows/apps/design/index",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/windows-template-studio/index.md",
+      "redirect_url": "/windows/apps/design/downloads/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/package-and-deploy/deploy-apps-that-use-the-windows-app-sdk.md",
+      "redirect_url": "/windows/apps/package-and-deploy/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/page-layout.md",
+      "redirect_url": "/windows/apps/design/basics/app-silhouette",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-app-samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/whats-new/build2021-docs.md",
+      "redirect_url": "/windows/apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/title-bar.md",
+      "redirect_url": "/windows/apps/develop/title-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/index.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/uwp/csharp-winrt/net-mappings-of-winrt-types.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/net-projection-from-cppwinrt-component.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/net-projection-from-cppwinrt-component",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/create-windows-runtime-component-cswinrt.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/authoring-diagnostics.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/authoring-diagnostics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/csharp-winrt/agile-objects.md",
+      "redirect_url": "/windows/apps/develop/platform/csharp-winrt/agile-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/reference/index.md",
+      "redirect_url": "/windows/apps/api-reference/index",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "landing/arm-docs/index.yml",
+      "redirect_url": "/windows/arm/overview",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/alternate-channel-vapid-webpush.md",
+      "redirect_url": "/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/simple-photo-viewer-winiu3.md",
+      "redirect_url": "/windows/apps/get-started/simple-photo-viewer-winui3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/package-manager/package/windows-package-manager-policies-change-history.md",
+      "redirect_url": "/windows/package-manager/package/windows-package-manager-policies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/arm64ec.md",
+      "redirect_url": "/windows/arm/arm64ec",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/apps-on-arm.md",
+      "redirect_url": "/windows/arm/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/arm64ec-abi.md",
+      "redirect_url": "/windows/arm/arm64ec-abi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push/push-quickstart.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart",
+      "redirect_document_id": true
     }
   ]
 }

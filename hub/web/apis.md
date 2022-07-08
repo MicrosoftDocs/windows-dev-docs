@@ -11,7 +11,7 @@ ms.date: 01/06/2021
 
 # APIs for web development
 
-This list covers a broad spectrum of APIs from across Microsoft that may interest web developers. Find more web-development-focused tools and services, on the [Web development on Windows 10 overview page](/overview.md).
+This list covers a broad spectrum of APIs from across Microsoft that may interest web developers. Find more web-development-focused tools and services, on the [Web development on Windows overview page](/windows/web/).
 
 - **[Academic Knowledge API](https://azure.microsoft.com/services/cognitive-services/academic-knowledge/)**<br>
 Tap into the wealth of academic content in the Microsoft Academic Graph using the Academic Knowledge API.
@@ -52,7 +52,7 @@ Build intelligent and supported algorithms into apps, websites, and bots to see,
 - **[Computer Vision API](/azure/cognitive-services/computer-vision/)**<br>
 Provides developers with access to advanced algorithms for processing images and returning information.
 
-- **[Content Moderator APIs](/azure/cognitive-services/content-moderator/overview.md)**<br>
+- **[Content Moderator APIs](/azure/cognitive-services/content-moderator/)**<br>
 AI-powered content moderation service which scans text, image, and videos and applies content flags automatically, as well as a Review tool, an online moderator environment for a team of human reviewers.
 
 - **[Face detection API](/azure/cognitive-services/face/)**<br>
@@ -82,7 +82,7 @@ Use Microsoft Graph to integrate with the chat-based Microsoft Teams workspace. 
 - **[Personalizer APIs](/azure/cognitive-services/personalizer/)**<br>
 Enable your application to choose the best experience to show to your users, learning from their real-time behavior.
 
-- **[Power BI Embedded](https://azure.microsoft.com/en-us/services/power-bi-embedded/)**<br>
+- **[Power BI Embedded](https://azure.microsoft.com/services/power-bi-embedded/)**<br>
 With Power BI Embedded, you can integrate Power BI reports right into your web or mobile applications.
 
 - **[QnA Maker](/azure/cognitive-services/QnAMaker/)**<br>

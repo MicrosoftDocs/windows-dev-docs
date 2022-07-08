@@ -23,11 +23,13 @@ When you [upload your app's packages](upload-app-packages.md), the [**Package/Pr
 
 ## Create your app by reserving a new name
 
-Reserving a name is the first step in creating an app in Partner Center. 
+Reserving a name is the first step in creating an app in Partner Center.
 
-1.  From the **Overview** page, click **Create a new app**.
-2.  In the text box, enter the name that you want to use, and then select **Check availability**. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
-3.  Click **Reserve product name**.
+1. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
+2. Click **New product**.
+3. Choose your app's type.
+4. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
+5. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.
 
 The name is now reserved for you, and you can start working on your [submission](app-submissions.md) whenever you're ready. 
 

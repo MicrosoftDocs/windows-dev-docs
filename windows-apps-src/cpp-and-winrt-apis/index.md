@@ -1,7 +1,7 @@
 ---
 description: C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library.
 title: C++/WinRT
-ms.date: 04/18/2019
+ms.date: 01/28/2022
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
@@ -15,15 +15,15 @@ C++/WinRT is for any developer interested in writing beautiful and fast code for
 
 ## The case for C++/WinRT
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
+> [!VIDEO https://www.youtube.com/embed/rJxQnhiK4TQ]
 
-The C++ programming language is used both in the enterprise *and* independent software vendor (ISV) segments for applications where high levels of correctness, quality, and performance are valued. For example: systems programming; resource-constrained embedded and mobile systems; games and graphics; device drivers; and industrial, scientific, and medical applications, to name but some.
+The C++ programming language is used both in the enterprise and independent software vendor (ISV) segments for applications where high levels of correctness, quality, and performance are valued. For example: systems programming; resource-constrained embedded and mobile systems; games and graphics; device drivers; and industrial, scientific, and medical applications, to name but some.
 
 From a language point of view, C++ has always been about authoring and consuming abstractions that are both type-rich and lightweight. But the language has changed radically since the raw pointers, raw loops, and painstaking memory allocation and releasing of C++98. Modern C++ (from C++11 onward) is about clear expression of ideas, simplicity, readability, and a much lower likelihood of introducing bugs.
 
-For authoring and consuming Windows Runtime APIs using C++, there is C++/WinRT. This is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live).
+For authoring and consuming Windows APIs using C++, there is C++/WinRT. This is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl).
 
-You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have. C++/WinRT makes it extremely easy to call Windows Runtime APIs in any C++ application, from Win32 to UWP.
+You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have. C++/WinRT makes it extremely easy to call Windows APIs in any C++ application, from Win32 to the Windows AppSDK to UWP.
 
 C++/WinRT performs better and produces smaller binaries than any other language option for the Windows Runtime. It even outperforms handwritten code using the ABI interfaces directly. That's because the abstractions use modern C++ idioms that the Visual C++ compiler is designed to optimize. This includes magic statics, empty base classes, **strlen** elision, as well as many newer optimizations in the latest version of Visual C++ targeted specifically at improving the performance of C++/WinRT.
 
@@ -57,7 +57,8 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Author events](./author-events.md) | This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
 | [Collections with C++/WinRT](./collections.md) | C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections. |
 | [Concurrency and asynchronous operations](./concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
-| [More advanced concurrency and asynchrony](./concurrency-2.md) | More advanced scenarios with concurrency and asynchrony in C++/WinRT. |
+| [Advanced concurrency and asynchrony](./concurrency-2.md) | Advanced scenarios with concurrency and asynchrony in C++/WinRT. |
+| [A completion source sample](./concurrency-3.md) | Shows how you can author and consume your own completion source class. |
 | [XAML controls; bind to a C++/WinRT property](./binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md) | This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls. |
@@ -75,9 +76,12 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Agile objects](./agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
 | [Diagnosing direct allocations](./diag-direct-alloc.md) | This topic goes in-depth on a C++/WinRT 2.0 feature that helps you diagnose the mistake of creating an object of implementation type on the stack, rather than using the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers, as you should. |
 | [Extension points for your implementation types](./details-about-destructors.md) | These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods. |
-| [A simple C++/WinRT Windows UI Library example](./simple-winui-example.md) | This topic walks you through the process of adding simple support for WinUI within a C++/WinRT project. |
+| [A basic C++/WinRT Windows UI Library 2 example (UWP)](./simple-winui-example.md) | This topic walks you through the process of adding basic support for the [Windows UI Library (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT UWP project. Specifically, this topic deals with WinUI 2, which is for UWP apps. |
 | [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) | This topic shows how to use C++/WinRT to create and consume a Windows Runtime component&mdash;a component that's callable from a Universal Windows app built using any Windows Runtime language. |
+| [Authoring a C# Windows Runtime component for use from a C++/WinRT app](../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md) | This topic walks you through the process of adding a simple C# component to your C++/WinRT project. |
 | [Visual Studio native debug visualization (natvis) for C++/WinRT](./natvis.md) | The [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types. This provides you an experience similar to C# debugging. |
+| [Configuration macros](./macros.md) | This topic describes the C++/WinRT configuration macros. |
+| [C++/WinRT naming conventions](./naming.md) | This topic explains naming conventions that C++/WinRT has established. |
 
 ### Topics about the C++ language
 

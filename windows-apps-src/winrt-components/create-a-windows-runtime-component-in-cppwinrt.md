@@ -28,6 +28,19 @@ The Windows Runtime component that you'll build in this topic contains a runtime
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](../cpp-and-winrt-apis/consume-apis.md) and [Author APIs with C++/WinRT](../cpp-and-winrt-apis/author-apis.md).
 
+## Naming best practice for Windows Runtime component dlls
+
+> [!IMPORTANT]
+> This section describes the naming convention that we recommend you use for the `.dll` file (DLL) that you build your Windows Runtime component into. It's all about the activation sequence that C++/WinRT follows when you consume a runtime class from a Windows Runtime component.
+
+When activating a class factory, C++/WinRT first tries a call to [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory). If that fails, then C++/WinRT tries to find a DLL to load directly. Windows Runtime activation is always based on a fully-qualified class name. The logic is to remove the class name (from that fully-qualified class name), and then look for a DLL named for the full namespace that remains. If that's not found, remove the most-specific segment name, and repeat.
+
+So for example if the class being activated has a fully-qualified name of **Contoso.Instruments.ThermometerWRC.Thermometer**, and **RoGetActivationFactory** fails, then we'll first look for a `Contoso.Instruments.ThermometerWRC.dll`. If that's not found, then we'll look for `Contoso.Instruments.dll`, and then for `Contoso.dll`.
+
+When a DLL is found (in that sequence), we'll use that DLL's [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) entry point to try to obtain the factory directly (rather than indirectly via the **RoGetActivationFactory** function that we first attempted). Even so, the end result is indistinguishable to the caller and to the DLL.
+
+This process is completely automatic&mdash;no registration or tooling is needed. If you're authoring a Windows Runtime component, then you just need to use a naming convention for your DLLs that works with the process just described. And if you're consuming a Windows Runtime component and it's not named correctly, then you have the option to rename it as described.
+
 ## Create a Windows Runtime component (ThermometerWRC)
 
 Begin by creating a new project in Microsoft Visual Studio. Create a **Windows Runtime Component (C++/WinRT)** project, and name it *ThermometerWRC* (for "thermometer Windows Runtime component"). Make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK. Naming the project *ThermometerWRC* will give you the easiest experience with the rest of the steps in this topic. 
@@ -84,7 +97,7 @@ namespace winrt::ThermometerWRC::implementation
 }
 ```
 
-You'll also need to delete the `static_assert` from both files.
+You'll see a `static_assert` at the top of `Thermometer.h` and `Thermometer.cpp`, which you'll need to remove. Now the project will build.
 
 If any warnings prevent you from building, then either resolve them or set the project property **C/C++** > **General** > **Treat Warnings As Errors** to **No (/WX-)**, and build the project again.
 

@@ -67,7 +67,7 @@ First we create the device. We get a list of the feature levels the device suppo
 
 After creating the Direct3D 11 device and context, we can take advantage of COM pointer functionality to get the most recent version of the interfaces, which include additional capability and are always recommended.
 
-> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Microsoft Store game is required to support. (Your game's ARM packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
+> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Microsoft Store game is required to support. (Your game's Arm packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
 
  
 
@@ -119,7 +119,7 @@ Direct3D 11 includes a device API called DirectX graphics infrastructure (DXGI).
 
 The Direct3D device implements a COM interface for DXGI. First we need to get that interface and use it to request the DXGI adapter hosting the device. Then we use the DXGI adapter to create a DXGI factory.
 
-> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). You should use [**Microsoft::WRL::ComPtr**](/cpp/windows/comptr-class) smart pointers instead. Then just call the [**As()**](/previous-versions/br230426(v=vs.140)) method, supplying an empty COM pointer of the correct interface type.
+> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)). You should use [**Microsoft::WRL::ComPtr**](/cpp/windows/comptr-class) smart pointers instead. Then just call the [**As()**](/previous-versions/br230426(v=vs.140)) method, supplying an empty COM pointer of the correct interface type.
 
  
 

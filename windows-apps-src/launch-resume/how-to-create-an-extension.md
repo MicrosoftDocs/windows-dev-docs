@@ -121,11 +121,11 @@ The meaning of the `<uap3:AppExtension>` attributes are as follows:
 |**Description** | Can be used from your host app to describe the extension to the user. It is queryable from, and can use, the [new resource management system](../app-resources/using-mrt-for-converted-desktop-apps-and-games.md) (`ms-resource:TokenName`) for localization. The localized content is loaded from the app extension package, not the host app. | |
 |**PublicFolder**|The name of a folder, relative to the package root, where you can share content with the extension host. By convention the name is "Public", but you can use any name that matches a folder in your extension.| :heavy_check_mark: |
 
-`<uap3:Properties>` is an optional element that contains custom metadata that hosts can read at runtime. In the code sample, the extension is implemented as an app service so host needs a way to get the name of that app service so it can call it. The name of the app service is defined in the <Service> element, which we defined (we could have called it anything we wanted). The host in the code sample looks for this property at runtime to learn the name of the app service.
+`<uap3:Properties>` is an optional element that contains custom metadata that hosts can read at runtime. In the code sample, the extension is implemented as an app service so host needs a way to get the name of that app service so it can call it. The name of the app service is defined in the \<Service> element, which we defined (we could have called it anything we wanted). The host in the code sample looks for this property at runtime to learn the name of the app service.
 
 ## Decide how you will implement the extension.
 
-The [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808) demonstrates how to use the public folder that is shared between the host and the extensions. In that example, the extension is implemented by a Javascript file that is stored in the public folder, which the host invokes. That approach has the advantage of being lightweight, does not require compilation, and can support making the default landing page that provides instructions for the extension and a link to the host app's Microsoft Store page. See the [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample) for details. Specifically, see the **InvertImageExtension** project and `InvokeLoad()` in ExtensionManager.cs in the **ExtensibilitySample** project.
+The Build 2016 session about app extensions demonstrates how to use the public folder that is shared between the host and the extensions. In that example, the extension is implemented by a Javascript file that is stored in the public folder, which the host invokes. That approach has the advantage of being lightweight, does not require compilation, and can support making the default landing page that provides instructions for the extension and a link to the host app's Microsoft Store page. See the [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample) for details. Specifically, see the **InvertImageExtension** project and `InvokeLoad()` in ExtensionManager.cs in the **ExtensibilitySample** project.
 
 In this example, we'll use an app service to implement the extension. App services have the following advantages:
 
@@ -413,7 +413,7 @@ This topic provides an introduction to app extensions. The key things to note ar
 ## Related topics
 
 * [Introduction to App Extensions](/windows/msix/)
-* [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808)
+* Build 2016 session about app extensions
 * [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
 * [How to create and consume an app service](how-to-create-and-consume-an-app-service.md).

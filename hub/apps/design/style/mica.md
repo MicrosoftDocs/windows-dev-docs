@@ -2,7 +2,7 @@
 description: Learn to use Mica, an opaque, dynamic material that incorporates theme and desktop wallpaper to delight users and create visual hierarchy. 
 title: Mica material
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 06/30/2021
 ms.topic: article
 keywords: windows 11, uwp
 pm-contact: gabilka
@@ -30,26 +30,11 @@ Mica in dark theme</br>
     :::column-end:::
 :::row-end:::
 
-## Examples
-
-:::row:::
-    :::column span:::
-    ![XAML Controls Gallery](images/xaml-controls-gallery-app-icon.png)
-    :::column-end:::
-    :::column span="2":::
-**XAML Controls Gallery**<br>
-If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Mica">here</a> to open the app and see Mica in action as the backdrop material.
-
-    <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-    <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
-    :::column-end:::
-:::row-end:::
-
 ## When to use Mica
 
 Mica is a material that appears on the backdrop of your application — behind all other content. It is an opaque material that incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
 
-We recommend you use and apply Mica as the base layer of your app, prioritizing application and visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](/windows/apps/design/signature-experiences/layering-elevation) and [App layering with Mica](#app-layering-with-mica).
+We recommend you use and apply Mica as the base layer of your app, prioritizing application and visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](../signature-experiences/layering.md) and [App layering with Mica](#app-layering-with-mica).
 
 ## Usability and adaptability
 
@@ -87,10 +72,10 @@ Card pattern content layer<br/>
     :::column-end:::
 :::row-end:::
 
-Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](/windows/apps/design/signature-experiences/layering-elevation) system we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the LayerFillColorDefaultBrush, a low-opacity solid color, as its background. Our recommended content layer patterns are:
+Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](../signature-experiences/layering.md) system we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the LayerFillColorDefaultBrush, a low-opacity solid color, as its background. Our recommended content layer patterns are:
 
 * Standard pattern: A contiguous background for large areas that need a distinct hierarchial differentiation from the base layer. The LayerFillColorDefaultBrush should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
-* Card pattern: Segmented cards for apps that are designed with multiple sectioned and discontinuous UI components. For the definition of the card UI using the LayerFillColorDefaultBrush, see [Layering and Elevation](/windows/apps/design/signature-experiences/layering-elevation) guidance.
+* Card pattern: Segmented cards for apps that are designed with multiple sectioned and discontinuous UI components. For the definition of the card UI using the LayerFillColorDefaultBrush, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
 
 To give your app's window a seamless look, Mica should be visible in the title bar if you choose to apply the material to your app. You can show Mica in the title bar by extending your app into the non-client area and creating a transparent custom title bar. The below examples showcase common implementations of the layering strategy with [NavigationView](../controls/navigationview.md) where Mica is visible in the title bar area. Each of these examples use and require the same [title bar code-behind](#title-bar-code-behind):
 
@@ -234,7 +219,7 @@ By default, NavigationView in Top mode includes the content layer in its content
 
 ![NavigationView in standard pattern with custom title bar in Left mode](images/materials/mica-left-card.png)
 
-To follow the card pattern using a NavigationView you will need to remove the default content layer by overriding the background and border theme resources. Then, you can create the cards in the content area of the control. This example creates several cards, extends Mica into the title bar area, and creates a custom title bar. For more information on card UI, see [Layering and Elevation](/windows/apps/design/signature-experiences/layering-elevation) guidance.
+To follow the card pattern using a NavigationView you will need to remove the default content layer by overriding the background and border theme resources. Then, you can create the cards in the content area of the control. This example creates several cards, extends Mica into the title bar area, and creates a custom title bar. For more information on card UI, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
 
 ```xaml
 <Page
@@ -332,7 +317,7 @@ To follow the card pattern using a NavigationView you will need to remove the de
 
 The previous three app layout XAML pages use the below code-behind to create a custom title bar adaptive to app state and visibility.
 
-For more information see [Title bar customization](../shell/title-bar.md).
+For more information see [Title bar customization](/windows/apps/develop/title-bar).
 
 ```csharp
 public MainPage()
@@ -446,8 +431,8 @@ private void NavigationViewControl_DisplayModeChanged(Microsoft.UI.Xaml.Controls
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
-[BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial), [NavigationView](../controls/navigationview.md), [Materials](/windows/apps/design/signature-experiences/materials), [Layering and Elevation](/windows/apps/design/signature-experiences/layering-elevation)
+[BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial), [NavigationView](../controls/navigationview.md), [Materials](../signature-experiences/materials.md), [Layering and Elevation](../signature-experiences/layering.md)

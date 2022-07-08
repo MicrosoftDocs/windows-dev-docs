@@ -2,7 +2,7 @@
 description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
 title: Microsoft Store marketing guidelines for apps
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
-ms.date: 10/31/2018
+ms.date: 5/13/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -20,11 +20,11 @@ We’ve created special promotional badges to help you drive more customers to y
 
 ## Badge generator and images
 
-You can use our [badge generator](https://developer.microsoft.com/store/badges) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.
+You can use our [badge generator](https://apps.microsoft.com/store/app-badge) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.
 
 You can also download the complete set of badge images (in PNG and PDF format) from the link below.
 
-[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All Badges.zip) **All badge images**
+[![Download button](images/downloadbutton.png)](https://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All%20Badges.zip) **All badge images**
 
 
 ## Device images
@@ -35,7 +35,7 @@ To promote your app, you may want to show how it looks when running on a Windows
 
 ## License to Microsoft Marks
 
-*Microsoft Marks* means the *Microsoft badge* described on the [badge generator](https://developer.microsoft.com/store/badges) page. To use these badges, you must:
+*Microsoft Marks* means the *Microsoft badge* described on the [badge generator](https://apps.microsoft.com/store/app-badge) page. To use these badges, you must:
 
 -   Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](https://www.microsoftaffiliates.com/).
 

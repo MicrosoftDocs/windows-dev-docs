@@ -3,7 +3,7 @@ title: Guidelines for thumbnail images in UWP apps
 description: Learn how to use thumbnail images to help users preview files as they browse in a Universal Windows Platform (UWP) app.
 label: Thumbnail images
 template: detail.hbs
-ms.date: 12/19/2018
+ms.date: 3/25/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -95,7 +95,7 @@ Here are examples showing how retrieved thumbnail images differ depending on fil
 <tr>
 <tr>
 <td>Picture</td>
-<td>The thumbnail image uses the original aspect ratio of the file. <br />
+<td>The thumbnail image uses a uniform, wide aspect ratio of about .7 (190 x 130 if the preferred size is 190). <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
 <td>The thumbnail is cropped to a square aspect ratio. <br />
 <img src="images/thumbnail-pic-doclistmusic-modes.png" alt="Picture thumbnail in documents, music, or list modes"/></td>
@@ -161,4 +161,4 @@ Otherwise, no thumbnail is retrieved.</td>
 - [StorageItemThumbnail class](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
 - [StorageFile class](/uwp/api/windows.storage.storagefile)
 - [File and folder thumbnail sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [List and grid view](../design/controls-and-patterns/lists.md)
+- [List and grid view](/windows/apps/design/controls/lists)

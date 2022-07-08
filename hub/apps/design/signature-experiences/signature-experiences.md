@@ -50,7 +50,7 @@ Signature experiences are the design elements Windows 11 uses to express its vis
     :::column-end:::
     :::column span="2":::
         **Materials**<br><br>
-        [Materials] visual effects that make UI surfaces resemble real life artifacts. Windows 11 uses materials to keep the UI connected to its environment. Materials bring surfaces to life and help us distinguish between focused and unfocused applications.
+        [Materials](materials.md) are visual effects that make UI surfaces resemble real life artifacts. Windows 11 uses materials to keep the UI connected to its environment. Materials bring surfaces to life and help us distinguish between focused and unfocused applications.
     :::column-end:::
 :::row-end:::
 
@@ -60,7 +60,7 @@ Signature experiences are the design elements Windows 11 uses to express its vis
     :::column-end:::
     :::column span="2":::
         **Iconography**<br><br>
-        [Iconography] is a set of visual images and symbols that help users understand and navigate your app. Windows 11 iconography has evolved in concert with our design language. Every glyph in our system icon font has been redesigned to embrace a softer geometry and more modern metaphors.  
+        [Iconography](iconography.md) is a set of visual images and symbols that help users understand and navigate your app. Windows 11 iconography has evolved in concert with our design language. Every glyph in our system icon font has been redesigned to embrace a softer geometry and more modern metaphors.  
     :::column-end:::
 :::row-end:::
 
@@ -70,6 +70,16 @@ Signature experiences are the design elements Windows 11 uses to express its vis
     :::column-end:::
     :::column span="2":::
         **Typography**<br><br>
-        As the visual representation of language, [typography’s](typography.md) main task is to communicate information. The Windows 11 type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.
+        As the visual representation of language, [typography's](typography.md) main task is to communicate information. The Windows 11 type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        :::image type="content" source="images/motion-resourceful.gif" alt-text="An animated image that shows several examples of motion in the Windows UI.":::
+    :::column-end:::
+    :::column span="2":::
+        **Motion**<br><br>
+        [Motion](motion.md) describes the way the interface animates and responds to user interaction. Motion in Windows is reactive, direct, and context appropriate. It provides feedback to user input and reinforces spatial paradigms that support way-finding.  
     :::column-end:::
 :::row-end:::

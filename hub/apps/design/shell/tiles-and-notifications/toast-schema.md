@@ -225,7 +225,7 @@ TextStacking specifies the vertical alignment of content.
 
 
 ## AdaptiveProgressBar
-New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or newer.
+New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or later.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -454,7 +454,7 @@ Specify audio to be played when the Toast notification is received.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Src** | uri | false | The media file to play in place of the default sound. Only ms-appx and ms-appdata are supported. |
+| **Src** | uri | false | The media file to play in place of the default sound. Only ms-appx and ms-resource are supported. All else (ms-appdata, http, C:\, etc.) is not supported.|
 | **Loop** | boolean | false | Set to true if the sound should repeat as long as the Toast is shown; false to play only once (default). |
 | **Silent** | boolean | false | True to mute the sound; false to allow the toast notification sound to play (default). |
 
@@ -474,4 +474,4 @@ New in Creators Update: A custom header that groups multiple notifications toget
 ## Related topics
 
 * [Quickstart: Send a local toast and handle activation](/archive/blogs/tiles_and_toasts/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10)
-* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)
+* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit)

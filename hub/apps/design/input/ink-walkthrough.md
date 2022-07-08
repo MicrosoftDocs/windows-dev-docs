@@ -3,10 +3,8 @@ ms.assetid:
 title: Support ink in your Windows app
 description: Learn how to support writing and drawing with Windows Ink in a basic Universal Windows Platform (UWP) app by following this step by step tutorial.
 keywords: ink, inking, tutorial
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Tutorial: Support ink in your Windows app
@@ -31,12 +29,12 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 
 ## Prerequisites
 
-* A computer (or a virtual machine) running the current version of Windows 10
-* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* A computer (or a virtual machine) running the current version of Windows 10 or Windows 11
+* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads) or later
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
 * If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
-    * [Get set up](/windows/apps/get-started/get-set-up)
+    * [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
     * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
 
@@ -71,7 +69,7 @@ These objects provide the bulk of the inking experience for Windows apps.
 
 After you've downloaded the RadialController sample app, verify that it runs:
 1. Open the sample project in Visual Studio.
-2. Set the **Solution Platforms** dropdown to a non-ARM selection.
+2. Set the **Solution Platforms** dropdown to a non-Arm selection.
 3. Press F5 to compile, deploy, and run.  
 
    > [!NOTE]
@@ -390,9 +388,12 @@ Here's the same flowchart after shape recognition.
 
 ## Step 7: Save and load ink
 
-So, you're done doodling and you like what you see, but think you might like to tweak a couple of things later? You can save your ink strokes to an Ink Serialized Format (ISF) file and load them for editing whenever the inspiration strikes. 
+So, you're done doodling and you like what you see, but think you might like to tweak a couple of things later? You can save your ink strokes to an Ink Serialized Format (ISF) file and load them for editing whenever the inspiration strikes.
 
 The ISF file is a basic GIF image that includes additional metadata describing ink-stroke properties and behaviors. Apps that are not ink enabled can ignore the extra metadata and still load the basic GIF image (including alpha-channel background transparency).
+
+> [!NOTE]
+> The Ink Serialized Format (ISF) Specification can be downloaded from the [Microsoft Download Center](https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf).
 
 In this step, we hook up the **Save** and **Load** buttons located beside the ink toolbar.
 

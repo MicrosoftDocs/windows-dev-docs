@@ -18,12 +18,20 @@
       href: signature-experiences/iconography.md
     - name: Typography
       href: signature-experiences/typography.md
+    - name: Motion
+      href: signature-experiences/motion.md
 - name: Design basics
   items:
     - name: Overview
       href: basics/index.md
-    - name: Intro to app design
-      href: basics/design-and-ui-intro.md
+    - name: App Silhouette
+      href: basics/app-silhouette.md
+    - name: App title bar
+      href: basics/titlebar-design.md
+    - name: Content basics
+      href: basics/content-basics.md
+    - name: Commanding Basics
+      href: basics/commanding-basics.md
     - name: Navigation basics
       items:
         - name: Overview
@@ -32,24 +40,11 @@
           href: basics/navigate-between-two-pages.md
         - name: Navigation history and backwards navigation
           href: basics/navigation-history-and-backwards-navigation.md
-    - name: Command basics
-      href: basics/commanding-basics.md
-    - name: Content basics
-      href: basics/content-basics.md
-    - name: Tutorials
-      items:
-        - name: Create a user interface
-          href: basics/xaml-basics-ui.md
-        - name: Create an adaptive layout
-          href: basics/xaml-basics-adaptive-layout.md
-        - name: Style a control
-          href: basics/xaml-basics-style.md
+
 - name: Layout
   items:
     - name: Overview
       href: layout/index.md
-    - name: Page layout
-      href: layout/page-layout.md
     - name: Screen sizes and breakpoints
       href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
     - name: Responsive design techniques
@@ -58,12 +53,12 @@
       href: layout/layouts-with-xaml.md
     - name: Show multiple views
       items:
-          - name: Show multiple views
-            href: layout/show-multiple-views.md
-          - name: Use AppWindow
-            href: layout/app-window.md
-          - name: Use ApplicationView
-            href: layout/application-view.md
+        - name: Show multiple views
+          href: layout/show-multiple-views.md
+        - name: Use AppWindow
+          href: layout/app-window.md
+        - name: Use ApplicationView
+          href: layout/application-view.md
     - name: Alignment, margin, and padding
       href: layout/alignment-margin-padding.md
     - name: Panels
@@ -94,7 +89,7 @@
       href: controls/index.md
     - name: Intro to controls and events
       href: controls/controls-and-events-intro.md
-    - name: Intro to commanding
+    - name: Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand
       href: controls/commanding.md
     - name: Basic input
       items:
@@ -244,6 +239,8 @@
           href: controls/tooltips.md
         - name: Info bar
           href: controls/infobar.md
+        - name: Info badge
+          href: controls/info-badge.md
     - name: Text
       items:
         - name: Overview
@@ -279,11 +276,19 @@
     - name: Icons
       items:
         - name: Overview
-          href: style/icons.md
-        - name: App icons and logos
-          href: style/app-icons-and-logos.md
+          href: style/iconography/overview.md
+        - name: Design guidelines for Windows app icons
+          href: style/iconography/app-icon-design.md
+        - name: Construct your Windows app's icon
+          href: style/iconography/app-icon-construction.md
+        - name: Construction guidelines for Windows 10 icons
+          href: style/iconography/live-tile-icons.md  
+        - name: Create icons using Visual Studio's asset generation tool
+          href: style/iconography/visual-studio-asset-generation.md  
         - name: Segoe MDL2 icons
           href: style/segoe-ui-symbol-font.md
+        - name: Segoe Fluent Icons
+          href: style/segoe-fluent-icons-font.md
     - name: Acrylic
       href: style/acrylic.md
     - name: Mica
@@ -336,8 +341,12 @@
           href: motion/key-frame-and-easing-function-animations.md
 - name: Shell
   items:
+    - name: Overview
+      href: shell/index.md
     - name: Toast notifications
       items:
+        - name: Overview
+          href: shell/tiles-and-notifications/toast-notifications-overview.md
         - name: UX guidance
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: Send local toast
@@ -350,6 +359,8 @@
               href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
             - name: Other apps
               href: shell/tiles-and-notifications/send-local-toast-other-apps.md
+            - name: Activating toast notifications from desktop apps
+              href: shell/tiles-and-notifications/toast-desktop-apps.md
         - name: Toast content
           items:
             - name: Content
@@ -386,18 +397,26 @@
       items:
         - name: Overview
           href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
+        - name: Quickstart Sending a push notification (XAML)
+          href: shell/tiles-and-notifications/quickstart-send-push-notification.md
         - name: WNS Priorities
           href: shell/tiles-and-notifications/wns-notification-priorities.md
         - name: Allowlisting WNS Traffic
           href: shell/tiles-and-notifications/firewall-allowlist-config.md
         - name: Code generated by the push notification wizard
           href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
+        - name: How to request, create, and save a notification channel
+          href: shell/tiles-and-notifications/request-create-save-notification-channel.md
+        - name: Push notification service request and response headers
+          href: shell/tiles-and-notifications/push-request-response-headers.md
+        - name: Troubleshooting push notifications
+          href: shell/tiles-and-notifications/troubleshoot-notifications.md
+        - name: Raw Notification Overview
+          href: shell/tiles-and-notifications/raw-notification-overview.md
     - name: Taskbar
       items:
         - name: Pin your app to the taskbar
           href: shell/pin-to-taskbar.md
-    - name: Title bar
-      href: shell/title-bar.md
     - name: Live Tiles
       href: shell/tiles-and-notifications/creating-tiles.md
       items:
@@ -428,17 +447,15 @@
           href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
     - name: Misc
       items:
-      - name: Notifications Visualizer
-        href: shell/tiles-and-notifications/notifications-visualizer.md
-      - name: Notification delivery methods
-        href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
-        items:
-          - name: Notification channel types
-            href: shell/tiles-and-notifications/channel-types.md
-          - name: Alternate channels with Webpush and VAPID
-            href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
-          - name: Periodic notifications
-            href: shell/tiles-and-notifications/periodic-notification-overview.md
+        - name: Notifications Visualizer
+          href: shell/tiles-and-notifications/notifications-visualizer.md
+        - name: Notification delivery methods
+          href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
+          items:
+            - name: Notification channel types
+              href: shell/tiles-and-notifications/channel-types.md
+            - name: Periodic notifications
+              href: shell/tiles-and-notifications/periodic-notification-overview.md
 - name: Input and interactions
   items:
     - name: Overview
@@ -452,6 +469,8 @@
     - name: Pen and Windows Ink
       href: input/pen-and-stylus-interactions.md
       items:
+        - name: "Pen interactions and haptic (tactile) feedback"
+          href: input/pen-haptics.md
         - name: "Tutorial: Add Inking support to your app"
           href: input/ink-walkthrough.md
         - name: Recognize ink strokes
@@ -471,12 +490,12 @@
           href: input/access-keys.md
         - name: Keyboard Accelerators
           href: input/keyboard-accelerators.md
+        - name: Keyboard events
+          href: input/keyboard-events.md
         - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
           href: input/focus-navigation.md
         - name: Programmatic focus navigation
           href: input/focus-navigation-programmatic.md
-        - name: Keyboard events
-          href: input/keyboard-events.md
         - name: Respond to the presence of the touch keyboard
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: Use input scope to change the touch keyboard
@@ -556,6 +575,8 @@
   items:
     - name: Overview
       href: devices/index.md
+    - name: Kinect for Windows
+      href: devices/kinect-for-windows.md
     - name: Designing for Xbox and TV
       href: devices/designing-for-tv.md
     - name: Mixed Reality
@@ -626,9 +647,11 @@
           href: globalizing/design-for-bidi-text.md
         - name: Use the Multilingual App Toolkit 4.0
           href: globalizing/use-mat.md
+        - name: Download Multilingual App Toolkit 4.0
+          href: globalizing/multilingual-app-toolkit-editor-downloads.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
           href: globalizing/mat-faq-troubleshooting.yml
-        - name: Use the UTF-8 code page
+        - name: Use UTF-8 code pages in Windows apps
           href: globalizing/use-utf8-code-page.md
         - name: Prepare your application for the Japanese era change
           href: globalizing/japanese-era-change.md
@@ -642,5 +665,5 @@
           href: in-app-help/in-app-help.md
         - name: External help
           href: in-app-help/external-help.md
-- name: Design toolkits
+- name: Design toolkits and samples for Windows apps
   href: downloads/index.md

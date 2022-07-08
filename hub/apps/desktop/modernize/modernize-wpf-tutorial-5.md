@@ -3,8 +3,6 @@ description: This tutorial demonstrates how to package and deploy the app using 
 title: Package and deploy with MSIX
 ms.topic: article
 ms.date: 01/23/2020
-ms.author: mcleans
-author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
@@ -45,7 +43,7 @@ Visual Studio 2019 provides an easy way to package a desktop application by usin
 
 6. In the list of projects, select **ContosoExpenses.Core** and click **OK**.
 
-7. Expand the **Applications** node and confirm that the the **ContosoExpense.Core** project is referenced and highlighted in bold. This means that it will be used as a starting point for the package.
+7. Expand the **Applications** node and confirm that the **ContosoExpense.Core** project is referenced and highlighted in bold. This means that it will be used as a starting point for the package.
 
 8. Right-click the **ContosoExpenses.Package** project and choose **Set As Startup Project**.
 

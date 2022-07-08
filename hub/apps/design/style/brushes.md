@@ -198,13 +198,13 @@ This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 
-For example, this can be used to apply [**effects**](/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
+For example, this can be used to apply [**effects**](/windows/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
 
 For code examples, see [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## Brushes as XAML resources
 
-You can declare any brush to be a keyed XAML resource in a XAML resource dictionary. This makes it easy to replicate the same brush values as applied to multiple elements in a UI. The brush values are then shared and applied to any case where you reference the brush resource as a [{StaticResource}](/uwp/xaml-platform/staticresource-markup-extension) usage in your XAML. This includes cases where you have a XAML control template that references the shared brush, and the control template is itself a keyed XAML resource.
+You can declare any brush to be a keyed XAML resource in a XAML resource dictionary. This makes it easy to replicate the same brush values as applied to multiple elements in a UI. The brush values are then shared and applied to any case where you reference the brush resource as a [{StaticResource}](/windows/uwp/xaml-platform/staticresource-markup-extension) usage in your XAML. This includes cases where you have a XAML control template that references the shared brush, and the control template is itself a keyed XAML resource.
 
 ## Brushes in code
 

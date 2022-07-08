@@ -42,7 +42,7 @@ For an example of the caching behavior, see the [Troubleshooting](#troubleshooti
 
 ## Troubleshooting
 
-The debug visualizer uses the Visual Studio C++ Expression Evaluator to invoke the exported **WINRT_abi_val** function to obtain property values. Normally, the visualizer can catch unhandled exceptions, and degrade gracefully, displaying "<Object uninitialized or information unavailable>" in Visual Studio **Watch** windows.
+The debug visualizer uses the Visual Studio C++ Expression Evaluator to invoke the exported **WINRT_abi_val** function to obtain property values. Normally, the visualizer can catch unhandled exceptions, and degrade gracefully, displaying "\<Object uninitialized or information unavailable>" in Visual Studio **Watch** windows.
 
 That's useful when the visualizer tries to evaluate a local variable outside of its lifetime scope (for example, before construction). HIn some contexts, such as unit tests, an unhandled exception filter is installed. This can cause the process to terminate when the C++ expression evaluator faults. To prevent faulting, the visualizer makes several [VirtualQuery](/windows/win32/api/memoryapi/nf-memoryapi-virtualquery) calls in **WINRT_abi_val**.
 

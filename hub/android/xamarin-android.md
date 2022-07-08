@@ -5,7 +5,7 @@ author: hickeys
 ms.author: hickeys 
 manager: jken
 ms.topic: article
-keywords: android, windows, xamarin.android, tutorial, xaml
+keywords: android, windows, xamarin.android, tutorial, xml, axml
 ms.date: 04/28/2020
 ---
 
@@ -19,14 +19,14 @@ In this article, you will create a simple Android app using Xamarin.Android and 
 
 To use this tutorial, you'll need the following:
 
-- Windows 10
+- Windows 11 or Windows 10
 - [Visual Studio 2019: Community, Professional, or Enterprise](https://visualstudio.microsoft.com/downloads/) (see note)
 - The "Mobile development with .NET" workload for Visual Studio 2019
 
 > [!NOTE]
-> This guide will work with Visual Studio 2017 or 2019. If you are using Visual Studio 2017, some instructions may be incorrect due to UI differences between the two versions of Visual Studio.
+> This guide works with Visual Studio 2022, Visual Studio 2019, and Visual Studio 2017. If you're using Visual Studio 2017, some instructions might be incorrect due to UI differences between versions of Visual Studio.
 
-You will also to have an Android phone or configured emulator in which to run your app. See [Configuring an Android emulator](emulator.md).
+You will also need to have an Android phone or configured emulator in which to run your app. See [Configuring an Android emulator](emulator.md).
 
 ## Create a new Xamarin.Android project
 
@@ -40,7 +40,7 @@ In the New Cross Platform App dialog, select **Blank App**. In the **Minimum And
 
 Xamarin will create a new solution with a single project named **TimeChangerAndroid**.
 
-## Create a UI with XAML
+## Create a UI with Android XML
 
 In the **Resources\layout** directory of your project, open **activity_main.xml**. The XML in this file defines the first screen a user will see when opening TimeChanger.
 

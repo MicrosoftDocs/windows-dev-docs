@@ -47,7 +47,7 @@ To create a back button, use the [Button](../controls/buttons.md) control with t
 </Page>
 ```
 
-If your app has a top [CommandBar](../controls/command-bar.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
+If your app has a top [CommandBar](../controls/command-bar.md), the Button control that is 44epx in height will not align with 48epx AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48epx bounds.
 
 ![Back button on top command bar](images/back-nav/command-bar.png)
 
@@ -86,7 +86,7 @@ This backwards navigation design guidance is applicable to all devices, but your
 To optimize your UI:
 
 - **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
-- **[Tablet Mode](https://support.microsoft.com/windows/use-your-pc-like-a-tablet-4fbfcca5-f058-814a-4f80-a12e703d7c34)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
+- **[Tablet Mode](/windows-hardware/design/device-experiences/continuum)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
 - **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
 
 If your app will run on Xbox, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of the button. If you use a [NavigationView](../controls/navigationview.md) control, it will automatically toggle the back button's visibility when your app is running on Xbox.
@@ -96,7 +96,7 @@ We recommend handling the following events (in addition to the back button Click
 | Event | Input |
 | --- | --- |
 | [CoreDispatcher.AcceleratorKeyActivated](/uwp/api/windows.ui.core.coredispatcher.acceleratorkeyactivated) | Alt+Left arrow,<br/>VirtualKey.GoBack |
-| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | Windows + Backspace,<br/>Gamepad B button,<br/>Tablet Mode back button,<br/>Hardware back button |
+| [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) | Windows + Backspace,<br/>Gamepad B button,<br/>Tablet Mode back button,<br/>Hardware back button |
 | [CoreWindow.PointerPressed](/uwp/api/windows.ui.core.corewindow.pointerpressed) | VirtualKey.XButton1<br/>(Such as the back button found on some mice.) |
 
 ## Code examples
@@ -349,7 +349,7 @@ private:
 
 Windows devices provide various ways that the system can pass a back navigation request to your app. Some common ways are the B button on a gamepad, the Windows key + Backspace key shortcut, or the system back button in Tablet Mode; the exact options available depend on the device.
 
-You can support system provided back requests from hardware and software system back keys by registering a listener for the [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) event.
+You can support system provided back requests from hardware and software system back keys by registering a listener for the [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
 
 Here's the code added to the `App` class to support system provided back requests. (This assumes that the previous code to support the back button has already been added.) You can see all the `App` code together at the end of the Code examples section.
 
@@ -431,7 +431,7 @@ private:
 
 #### System back behavior for backward compatibility
 
-Previously, UWP apps used [SystemNavigationManager.AppViewBackButtonVisibility](/uwp/api/windows.ui.core.systemnavigationmanager.appviewbackbuttonvisibility) to show or hide a system back button for backwards navigation. (This button raises a [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) event.) This API will continue to be supported to ensure backward compatibility, but we no longer recommend using the back button exposed by `AppViewBackButtonVisibility`. Instead, you should provide your own in-app back button as described in this article.
+Previously, UWP apps used [SystemNavigationManager.AppViewBackButtonVisibility](/uwp/api/windows.ui.core.systemnavigationmanager.appviewbackbuttonvisibility) to show or hide a system back button for backwards navigation. (This button raises a [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.) This API will continue to be supported to ensure backward compatibility, but we no longer recommend using the back button exposed by `AppViewBackButtonVisibility`. Instead, you should provide your own in-app back button as described in this article.
 
 If you continue to use [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI renders the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
 
@@ -783,38 +783,38 @@ If you choose to provide your own back stack navigation, the experience should b
 </thead>
 <tbody>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>Page to page, different peer groups</strong></td>
-<td style="vertical-align:top;"><strong>Yes</strong>
+<td><strong>Page to page, different peer groups</strong></td>
+<td><strong>Yes</strong>
 <p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two and the back to group one." /></p>
 <p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two then on to group three and back to group two." /></p></td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>
+<td><strong>Page to page, same peer group, no on-screen navigation element</strong>
 <p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as <a href="/windows/apps/design/controls/navigationview">NavigationView</a>) that provides direct navigation to both pages.</p></td>
-<td style="vertical-align:top;"><strong>Yes</strong>
+<td><strong>Yes</strong>
 <p>In the following illustration, the user navigates between two pages in the same peer group, and the navigation should be added to the navigation history.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>Page to page, same peer group, with an on-screen navigation element</strong>
+<td><strong>Page to page, same peer group, with an on-screen navigation element</strong>
 <p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as <a href="/windows/apps/design/controls/navigationview">NavigationView</a>.</p></td>
-<td style="vertical-align:top;"><strong>It depends</strong>
+<td><strong>It depends</strong>
 <p>Yes, add to the navigation history, with two notable exceptions. If you expect users of your app to switch between pages in the peer group frequently, or if you wish to preserve the navigational hierarchy, then do not add to the navigation history. In this case, when the user presses back, go back to the last page before the user navigated to the current peer group. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;"><strong>Show a transient UI</strong>
+<td><strong>Show a transient UI</strong>
 <p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
-<td style="vertical-align:top;"><strong>No</strong>
+<td><strong>No</strong>
 <p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
 <p><img src="images/back-nav/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;"><strong>Enumerate items</strong>
+<td><strong>Enumerate items</strong>
 <p>The app displays content for an on-screen item, such as the details for the selected item in list/details list.</p></td>
-<td style="vertical-align:top;"><strong>No</strong>
+<td><strong>No</strong>
 <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>
 </tr>

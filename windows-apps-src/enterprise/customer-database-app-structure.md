@@ -6,7 +6,6 @@ ms.date: 05/07/2018
 ms.topic: article
 
 
-ms.localizationpriority: med
 ---
 # Customer database app structure
 

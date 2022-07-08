@@ -33,7 +33,7 @@ Together, these elements declare the identity of your app, establishing the "pac
 The following values are additional values that refer to your app's package family, but are not included in your manifest.
 
 -   **Package Family Name (PFN)**: This value is used with certain Windows APIs.
--   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
+-   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview).
 
 
 ## Link to your app's listing
