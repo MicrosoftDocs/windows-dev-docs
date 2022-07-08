@@ -120,7 +120,20 @@ The Windows System Commands plugin provides a set of system level actions that c
 
 _*) This command may take some time to provide the results._
 
-### Program parameters
+### Program plugin
+
+The program plugin can launch both classic Win32 programs and installed UWP applications. While UWP apps are automatically discoverable because they're always installed in a system-wide predefined directory, Win32 programs may not always be picked up by the program plugin (although the Windows Search plugin may find the program instead, keeping the `.exe` extension).
+
+The way the plugin looks for programs to search for is by looking for shortcut files (`.lnk`, `.url`) in the following predefined search directories (may vary depending on system language and the drive letter on which the system is installed):
+
+- **Start menu of the current user** – `%APPDATA%\Microsoft\Windows\Start Menu`
+- **Start menu of all users** – `C:\ProgramData\Microsoft\Windows\Start Menu`
+- **Desktop of the current user** – `%USERPROFILE%\Desktop`
+- **Desktop of all users** – `C:\Users\Public\Public Desktop`
+
+Most installers for Windows software automatically place a shortcut in one or more of those directories, or do so by default unless opted out of by the user. If you would like to launch programs that didn't place such shortcuts during installation, such as ones without installers, you must manually create a shortcut and place it inside one of those directories.
+
+#### Program parameters
 
 The Program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 
