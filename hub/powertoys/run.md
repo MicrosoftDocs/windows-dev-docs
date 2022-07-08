@@ -122,18 +122,7 @@ _*) This command may take some time to provide the results._
 
 ### Program plugin
 
-The **Program** plugin can launch classic Win32 programs and installed UWP applications. While UWP apps are automatically discoverable because they're always installed in a system-wide predefined directory, Win32 programs may not always be picked up by the program plugin (although the Windows **Search** plugin may find the program instead, keeping the `.exe` extension).
-
-This plugin uses shortcut files (`.lnk`, `.url`) to search for programs. The following predefined directories are checked for such shortcut files:
-
-- **Start menu of the current user** – `%APPDATA%\Microsoft\Windows\Start Menu`
-- **Start menu of all users** – `C:\ProgramData\Microsoft\Windows\Start Menu`
-- **Desktop of the current user** – `%USERPROFILE%\Desktop`
-- **Desktop of all users** – `C:\Users\Public\Public Desktop`
-
-**These search directory paths may vary depending on system language and the drive letter on which the system is installed.*
-
-Windows software installers will often place a shortcut in one or more of those directories by default, unless opted out of by the user. If you prefer to launch programs without shortcuts added during installation, you must manually create a shortcut and place it inside one of those directories.
+The **Program** plugin can launch software applications (such as Win32 or packaged programs). The plugin works by scanning common install locations, like the start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as `.lnk` or `.url`). On occasion, a program may not be found by the program plugin scan and you may want to manually create a shortcut in the directory containing the program you want to access.
 
 #### Program parameters
 
