@@ -65,7 +65,7 @@ function prompt {
 
 #### PowerShell with posh-git
 
-If you're using posh-git, then that will already modify your prompt. In that case, you'll want to only add the necessary output to the already modified prompt. The following example is a lightly modified version of this example from [the ConEmu docs](https://conemu.github.io/en/ShellWorkDir.html#PowerShellPoshGit):
+If you're using [posh-git](https://github.com/dahlbyk/posh-git), then that will already modify your prompt. In that case, you'll want to only add the necessary output to the already modified prompt. The following example is a lightly modified version of this example from [the ConEmu docs](https://conemu.github.io/en/ShellWorkDir.html#PowerShellPoshGit):
 
 ```powershell
 function prompt
@@ -83,6 +83,21 @@ function prompt
   $prompt
 }
 ```
+
+#### PowerShell with Starship
+
+If you're using [Starship](http://starship.rs/), then that will already modify your prompt. In that case, you'll want to only add the necessary output to the already modified prompt.
+
+```powershell
+function Invoke-Starship-PreCommand {
+  $loc = $($executionContext.SessionState.Path.CurrentLocation);
+  $prompt = "$([char]27)]9;12$([char]7)"
+  if ($loc.Provider.Name -eq "FileSystem")
+  {
+    $prompt += "$([char]27)]9;9;`"$($loc.Path)`"$([char]7)"
+  }
+  $host.ui.Write($prompt)
+}
 
 #### MINGW
 
