@@ -3,7 +3,7 @@ title: Windows Terminal tips and tricks
 description: In this page, you will find tips and tricks to help improve your Windows Terminal experience.
 author: cinnamon-msft
 ms.author: cinnamon
-ms.date: 10/08/2021
+ms.date: 07/08/2022
 ms.topic: how-to
 ---
 
@@ -129,6 +129,24 @@ Navigating to the parent directory with a key binding may also be helpful.
 ```
 
 You can also use this functionality to run builds or test scripts.
+
+## Focus mode
+
+"Focus mode" hides the title bar and tabs normally located at the top of Windows Terminal, letting you focus only on the terminal content. It is similar to ["Zen mode"](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_zen-mode) in Visual Studio Code. 
+
+To enter focus mode, open the [command pallette](./command-palette.md) using `Ctrl` + `Shift` + `p`, enter "focus mode", and select "Toggle focus mode."  To exit focus mode, repeat these same steps.
+
+To set focus mode to launch every time you start Windows Terminal, open the **Settings** (`Ctrl` + `,`) and select the **Startup** tab. Under **Launch mode**, select **Focus** (or **Maximized focus**, which is focus mode with your terminal window maximized). Select **Save** before exiting. The next time you launch the Windows Terminal, it will open up in focus mode. To stop Windows Terminal from launching in focus mode, follow these same steps, but select **Default** from the list of **Launch mode** options.
+
+To add a shortcut key (or keybinding) for entering focus mode, open the  `settings.json` file (`Ctrl` + `Shift` + `,`). Inside your `settings.json` file, find the [`"actions":`](./customize-settings/actions.md) section and add the following command:
+
+```json
+{ "command": "toggleFocusMode", "keys": "ctrl+f12" }
+```
+
+Replace "ctrl+f12" with the shortcut / keybinding of your choice, but be sure not to repeat any existing keybindings from the Actions list. You can also see a list of Actions with associated keybindings, and **+ Add new** bindings, in the **Actions** tab of the Windows Terminal **Settings** dashboard. Remember to **Save** after making any changes. You can now toggle focus mode using the "action" shortcut key that you created. (In the case of our example, `Shift` + `F12`).
+
+To learn more about this command, see [`toggleFocusMode`](/windows/terminal/customize-settings/actions#toggle-focus-mode). 
 
 ## Quake mode
 
