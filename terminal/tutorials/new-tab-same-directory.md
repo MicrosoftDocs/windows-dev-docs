@@ -8,7 +8,7 @@ ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to open tabs in the same working directory as my current tab.
 ---
 
-# Tutorial: Opening a tab/pane in the same directory in Windows Terminal
+# Tutorial: Opening a tab or pane in the same directory in Windows Terminal
 
 Typically, the "new tab" and "split pane" actions will always open a new tab/pane in whatever the `startingDirectory` is for that profile. However, on other platforms, it's common for new tabs to automatically use the working directory of the current tab as the starting directory for a new tab. This allows the user to quickly multitask in a single directory. 
 
@@ -99,16 +99,6 @@ function Invoke-Starship-PreCommand {
   $host.ui.Write($prompt)
 }
 
-#### MINGW
-
-For MINGW, Git Bash and Cygwin, you need to modify the `PROMT_COMMAND` for WSL: replace `wslpath` with `cygpath`.
-
-Add the following line to the end of your `.bashrc` file:
-
-```bash
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w $PWD`"'
-```
-
 ### WSL
 
 #### `bash`
@@ -147,6 +137,16 @@ end
 ```
 
 This function will be called whenever the current path is changed to confirm the current session is opened by Windows Terminal (verifying $WT_SESSION) and sending Operating System Command (OSC 9;9;), with the Windows equivalent path (`wslpath -w`) of current path.
+
+#### MINGW
+
+For MINGW, Git Bash and Cygwin, you need to modify the `PROMT_COMMAND` for WSL: replace `wslpath` with `cygpath`.
+
+Add the following line to the end of your `.bashrc` file:
+
+```bash
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w $PWD`"'
+```
 
 > [!NOTE]
 > Don't see your favorite shell here? If you figure it out, feel free to [open a PR](https://github.com/MicrosoftDocs/terminal/edit/main/TerminalDocs/tutorials/new-tab-same-directory.md)
