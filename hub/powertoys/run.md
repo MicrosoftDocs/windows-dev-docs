@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 06/03/2022
+ms.date: 07/08/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -122,16 +122,18 @@ _*) This command may take some time to provide the results._
 
 ### Program plugin
 
-The program plugin can launch both classic Win32 programs and installed UWP applications. While UWP apps are automatically discoverable because they're always installed in a system-wide predefined directory, Win32 programs may not always be picked up by the program plugin (although the Windows Search plugin may find the program instead, keeping the `.exe` extension).
+The **Program** plugin can launch classic Win32 programs and installed UWP applications. While UWP apps are automatically discoverable because they're always installed in a system-wide predefined directory, Win32 programs may not always be picked up by the program plugin (although the Windows **Search** plugin may find the program instead, keeping the `.exe` extension).
 
-The way the plugin looks for programs to search for is by looking for shortcut files (`.lnk`, `.url`) in the following predefined search directories (may vary depending on system language and the drive letter on which the system is installed):
+This plugin uses shortcut files (`.lnk`, `.url`) to search for programs. The following predefined directories are checked for such shortcut files:
 
 - **Start menu of the current user** – `%APPDATA%\Microsoft\Windows\Start Menu`
 - **Start menu of all users** – `C:\ProgramData\Microsoft\Windows\Start Menu`
 - **Desktop of the current user** – `%USERPROFILE%\Desktop`
 - **Desktop of all users** – `C:\Users\Public\Public Desktop`
 
-Most installers for Windows software automatically place a shortcut in one or more of those directories, or do so by default unless opted out of by the user. If you would like to launch programs that didn't place such shortcuts during installation, such as ones without installers, you must manually create a shortcut and place it inside one of those directories.
+**These search directory paths may vary depending on system language and the drive letter on which the system is installed.*
+
+Windows software installers will often place a shortcut in one or more of those directories by default, unless opted out of by the user. If you prefer to launch programs without shortcuts added during installation, you must manually create a shortcut and place it inside one of those directories.
 
 #### Program parameters
 
