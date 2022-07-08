@@ -313,7 +313,11 @@ In cases where you determine the pricing for your product or in-app purchases, a
 
 - Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
 
-- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.
+- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product. 
+
+
+> [!NOTE]
+> Enforcement of the the open-source section of Policy 10.8.7 will be delayed until Microsoft has clarified the intent of the policy, .
 
 
 ### 10.9 Notifications
