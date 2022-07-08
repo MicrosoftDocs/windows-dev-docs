@@ -19,11 +19,11 @@ A single Azure AD tenant can be associated with multiple Partner Center accounts
 
 You can access the **Tenants** page in Partner Center by selecting the gear icon at the corner of the dashboard.
 
-:::image type="content" source="images/partner-center-gear-menu-account-settings.png" alt-text="From Microsoft Partner Center, open the *Gear* menu and select *Account settings*":::
+:::image type="content" source="images/partner-center-gear-menu-account-settings.png" alt-text="Screenshot showing *Account settings* option from the the *Gear* menu of Microsoft Partner Center.":::
 
 From *Account settings*, select **Tenants** (under *Organizational profile*).
 
-:::image type="content" source="images/partner-center-account-settings-tenants.png" alt-text="From the *Account settings* menu in Partner Center, select *Tenants*":::
+:::image type="content" source="images/partner-center-account-settings-tenants.png" alt-text="Screenshot showing *Tenants* option from *Account settings* menu in Partner Center.":::
 
 ## Associate an existing Azure AD tenant with your Partner Center account
 
@@ -33,11 +33,11 @@ If your organization already uses Azure AD, follow these steps to link your Part
 
 1.  Select **Associate Azure AD with your Partner Center account**.
 
-    :::image type="content" source="images/partner-center-connect-aad.png" alt-text="Select the option to *Associate Azure AD with your Partner Center account*":::
+    :::image type="content" source="images/partner-center-connect-aad.png" alt-text="Screenshot showing option to *Associate Azure AD with your Partner Center account*.":::
 
 1.  A the Microsoft Partner Center sign in page, enter the Azure AD credentials for the tenant that you want to associate.
 
-    :::image type="content" source="images/partner-center-signin-aad-credentials.png" alt-text="Sign in to Microsoft Partner Center with the Azure AD credentials for your tenant":::
+    :::image type="content" source="images/partner-center-signin-aad-credentials.png" alt-text="Screenshot showing Microsoft Partner Center sign-in dialog where you should sign in using Azure AD credentials for your tenant.":::
 
 1.  Review the organization and domain name for your Azure AD tenant. To complete the association, select **Confirm**.
 
@@ -54,18 +54,18 @@ If you need to set up a new Azure AD to link with your Partner Center account, f
 
 1.  From [Partner Center](https://partner.microsoft.com/dashboard), select the gear icon (near the upper right corner of the dashboard) and then select **Account settings**. In the **Settings** menu, select **Tenants**.
 
-    :::image type="content" source="images/partner-center-account-settings-tenants.png" alt-text="From the *Account settings* menu in Partner Center, select *Tenants*":::
+    :::image type="content" source="images/partner-center-account-settings-tenants.png" alt-text="Screenshot showing *Tenants* option in *Account settings* menu on Partner Center.":::
 
 1.  From *Tenants*, select **Create new Azure AD**.
 
-    :::image type="content" source="images/partner-center-create-new-azuread.png" alt-text="Select the option to *Create new Azure AD*":::
+    :::image type="content" source="images/partner-center-create-new-azuread.png" alt-text="Screenshot showing option to *Create new Azure AD* from the Partner Center *Tenants* settings.":::
 
 1.  Enter the directory information for your new Azure AD:
     - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.
     - **Contact email**: An email address where we can contact you about your account if necessary.
     - **Global administrator user account info**: The first name, last name, username, and password that you want to use for the new global administrator account.
     
-    :::image type="content" source="images/partner-center-create-new-azuread-form.png" alt-text="Enter the directory and global admin user account info to create a new Azure AD":::
+    :::image type="content" source="images/partner-center-create-new-azuread-form.png" alt-text="Screenshot showing form to *Create a new Azure Active Directory* including field to specify directory information and global admin user account.":::
 
     > [!TIP]
     > Before you click on *Create* to confirm the new domain, please make a note of the new *User name* and *Password* created offline as we do not currently support email notifications for this.
@@ -86,7 +86,7 @@ Any user who has the **Manager** role for a Partner Center account can associate
 
 You can associate multiple Azure AD tenants to a single Partner Center account. To associate a new tenant, select **Associate another Azure AD tenant**, then follow the steps indicated above. Note that you will be prompted for your credentials in the Azure AD tenant that you want to associate.
 
-:::image type="content" source="images/partner-center-connect-aad.png" alt-text="Select the option to *Associate Azure AD with your Partner Center account*":::
+:::image type="content" source="images/partner-center-signin-aad-credentials.png" alt-text="Screenshot showing Microsoft Partner Center sign-in dialog where you should sign in using Azure AD credentials for your tenant.":::
 
 ### Remove an Azure AD tenant from your Partner Center account
 
@@ -97,7 +97,7 @@ Any user who has the **Manager** role for a Partner Center account can remove Az
 
 To remove a tenant, find its name on the **Tenants** page (in **Account settings**), then select **Remove**. You’ll be prompted to confirm that you want to remove the tenant. Once you do so, no users in that tenant will be able to sign into the Partner Center account, and any permissions you have configured for those users will be removed.
 
-:::image type="content" source="images/partner-center-account-settings-tenants-remove-aad.png" alt-text="Open your Partner Center tenant *Account settings* and select the *Remove* option for the tenant you wish to remove":::
+:::image type="content" source="images/partner-center-account-settings-tenants-remove-aad.png" alt-text="Screenshot showing *Remove* option in Partner Center tenant settings.":::
 
 > [!TIP]
 > You can’t remove a tenant if you are currently signed into Partner Center using an account in the same tenant. To remove a tenant, you must sign in to Partner Center as an **Manager** for another tenant that is associated with the account. If there is only one tenant associated with the account, that tenant can only be removed after signing in with the Microsoft account that opened the account.
