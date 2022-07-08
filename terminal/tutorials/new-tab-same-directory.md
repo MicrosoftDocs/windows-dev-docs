@@ -103,7 +103,7 @@ function Invoke-Starship-PreCommand {
 
 #### `bash`
 
-Add the following line to the end of your `.bashrc` file:
+Add the following line to the end of your `.bash_profile` config file:
 
 ```bash
 PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
