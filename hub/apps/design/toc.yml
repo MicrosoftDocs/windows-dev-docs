@@ -665,5 +665,17 @@
           href: in-app-help/in-app-help.md
         - name: External help
           href: in-app-help/external-help.md
+- name: Windows widgets
+  items:
+  - name: Windows widgets design overview
+    href: widgets/widgets-design-overview.md
+  - name: Widgets design fundamentals
+    href: widgets/widgets-design-fundamentals.md
+  - name: Widget states and built-in UI components
+    href: widgets/widgets-states-and-ui.md
+  - name: Widget interaction design guidance
+    href: widgets/widget-interaction-design.md
+  - name: Create a widget template with the Adaptive Card Designer
+    href: widgets/widgets-create-a-template.md
 - name: Design toolkits and samples for Windows apps
   href: downloads/index.md

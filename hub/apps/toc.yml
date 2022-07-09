@@ -324,6 +324,12 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Windows widgets
+        items:
+        - name: Overview
+          href: develop/widgets/widgets-overview.md
+        - name: Implement a widget provider in a win32 app
+          href: develop/widgets/implement-widget-provider-win32.md
       - name: Platform
         items:
         - name: C#/WinRT

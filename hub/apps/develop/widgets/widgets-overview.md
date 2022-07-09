@@ -21,35 +21,24 @@ Windows Widgets are small UI containers that display text and graphics from an a
 Widget content is refreshed dynamically throughout the day to provide the user with current and interesting content that can be consumed at a glance. Widgets provide basic interactive features that allow the user to launch the associated app or web service for deeper engagement. Widgets are not intended to replace apps and websites.  |
 | Widget provider | A widget provider is a Windows app or web service that provides content to be displayed in the widget. The widget provider owns the content, layout, and interactive elements of the widget.  |
 
-## Implementing a Windows Widget for your app or service
 
-A widget implementation has three primary components:
-
-### Widget UI templates 
+### Widget design guidance 
 
 The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere the Windows Widget design principles to help ensure that the Widget Board provides a consistent and familiar experience for all widgets.
 
-For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](widget-states-and-ui.md).
+For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](../../design/widgets/widgets-states-and-ui.mdwidget-states-and-ui.md).
 
-To get started designing widgets for Windows, see [Design for Windows Widgets](widgets-design.md).
+To get started designing widgets for Windows, see [Design for Windows Widgets](../../design/widgets/widgets-design-overview.md).
 
-### Widget service provider
+### Widget service providers
 
-Widgets encourage discovery and engagement with your app or service by presenting current information that is focused, glanceable, and reflects the user's interest. The Adaptive Cards format enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget service provider that responds to requests from the Widget Board and provides the data for your widget, in JSON format.
+The Adaptive Cards format used by Windows widgets enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget service provider that responds to requests from the widget board and provides the both the visual template and the associated data for your widget, in JSON format.
 
-Windows Widgets currently support three different ways to implement you widget service provider. The method you choose depends on the type of app or service your widget is supporting.
+Currently you can implement widget providers either through a Win32 desktop app or a Progressive Web App (PWA). For more information see:
 
-| Service provider technology | Description |
-|-----------------------------|-------------|
-| UWP App Service    | TBD |
-| COM server     | TBD |
-| Web service     | TBD |
-
-To get started implementing your widget service provider, see [Service providers for Windows Widgets](widgets-service-providers.md).
+* [Implement a widget provider (Win32 apps)](implement-widget-provider-win32.md)
+* [Implement a widget provider (PWA)](tbd)
 
 ## Related articles
 
 * [Widgets design overview](../../design/widgets/widgets-design-overview)
-* [Implement a widget provider (Win32 apps)](implement-widget-provider-win32.md)
-* [Implement a widget provider (Progressive Web apps)](tbd)
-* [Debug widgets](tbd) 
