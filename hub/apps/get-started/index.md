@@ -35,6 +35,7 @@ WinUI 3 also serves as the basis for cross-platform technologies that provide gr
 .NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI 3 and the Windows App SDK so apps get the latest user experience on Windows. This gives your apps access to everything you get with WinUI 3 plus the ability to reach to other platforms.
 
 .NET MAUI for Windows is a great choice if:
+
 - You want to share as much .NET code as possible across mobile and desktop applications.
 - You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.
 - You want to use C# and/or XAML for building cross-platform apps.
@@ -44,11 +45,13 @@ WinUI 3 also serves as the basis for cross-platform technologies that provide gr
 > [Get started with .NET MAUI](/dotnet/maui/get-started/installation)
 
 For more information about .NET MAUI, see the following links:
+
 - [.NET MAUI documentation](/dotnet/maui/)
 - [.NET MAUI on GitHub](https://github.com/dotnet/maui)
 - [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
-- [.NET Conf 2021: Introduction to .NET MAUI](https://www.youtube.com/watch?v=HMYpAw2sl58)
-- [.NET Conf 2021: Building cross-platform native apps with .NET MAUI and Blazor](https://www.youtube.com/watch?v=Dr8L7zXxwLI)
+- [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
+- [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
+- [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
 
 ### [React Native for Windows](#tab/rnw)
 
@@ -82,7 +85,7 @@ For more information about React Native for Windows, see the following links:
 
 ## Other app types
 
-For more information about the app types you can choose from, see the following tabs. 
+For more information about the app types you can choose from, see the following tabs.
 
 ### [Win32](#tab/cpp-win32)
 

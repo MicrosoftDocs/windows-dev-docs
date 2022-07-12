@@ -34,6 +34,7 @@ Most of the repos below include several sample apps that demonstrate specific AP
 | [Windows Community Toolkit](https://github.com/windows-toolkit/WindowsCommunityToolkit) | A collection of helper functions, custom controls, and app services. It simplifies and demonstrates common developer tasks when building apps for Windows. |
 | [Windows task snippets](https://github.com/Microsoft/Windows-task-snippets) | Ready-to-use snippets of code that accomplish small but useful tasks of interest to UWP app developers. These snippets show simple solutions to common problems, and simple recipes to help you implement new app features. |
 | [Win2D](https://github.com/Microsoft/win2d) | Win2D is an easy-to-use Windows Runtime (WinRT) API for immediate-mode 2D graphics rendering with GPU acceleration. It's available to C# and C++ developers, and it utilizes the power of Direct2D, integrating seamlessly with XAML and `CoreWindow`. |
+| [.NET MAUI](https://github.com/dotnet/maui-samples) | .NET MAUI is a cross-platform framework for creating mobile and desktop apps with C# and XAML. Using .NET MAUI, you can develop apps that can run on Android, iOS, iPadOS, macOS, and Windows from a single shared codebase. These are also available in the [Samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui). |
 
 ## Using the sample apps repos
 
