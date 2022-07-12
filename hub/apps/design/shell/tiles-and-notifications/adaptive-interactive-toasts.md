@@ -17,7 +17,8 @@ Adaptive and interactive toast notifications let you create flexible notificatio
 
 ## Getting started
 
-**Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 7.0.0 of the NuGet package.
+You can define a notification's content using XML or the `Microsoft.Toolkit.Uwp.Notifications` builder syntax. To use XML, follow the **XML** sample tabs below and reference the [toast notification XML schema](/uwp/schemas/tiles/toastschema/schema-root). To use the `Microsoft.Toolkit.Uwp.Notification` C# builder syntax, install the NuGet package [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), follow the **Builder syntax** sample tabs below and reference the [toast content schema](toast-schema.md). The C# samples provided in this article use version 7.0.0 of the NuGet package.
+
 
 **Install Notifications Visualizer.** This free Windows app helps you design interactive toast notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
@@ -114,13 +115,13 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-    <visual>
-        <binding template="ToastGeneric">
-            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
-            <text>Conf Room 2001 / Building 135</text>
-            <text>10:00 AM - 10:30 AM</text>
-        </binding>
-    </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+      <text>Conf Room 2001 / Building 135</text>
+      <text>10:00 AM - 10:30 AM</text>
+    </binding>
+  </visual>
 </toast>
 ```
 
@@ -222,7 +223,7 @@ new ToastContentBuilder()
 
 ## Hero image
 
-**New in Anniversary Update**: Toasts can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Action Center. Image dimensions are 364x180 pixels at 100% scaling.
+**New in Anniversary Update**: Toasts can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
 
 ![A screenshot of a toast notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
 
@@ -310,7 +311,7 @@ new ToastContentBuilder()
 
 ## Custom timestamp
 
-**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notifications Center.
+**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notification Center.
 
 ![Screenshot of a notification in the Notifications Center with a custom timestamp](images/toast-content-custom-timestamp.png)
 
@@ -353,7 +354,7 @@ To learn more about using a progress bar, please see [Toast progress bar](toast-
 
 ## Headers
 
-**New in Creators Update**: You can group notifications under headers within Action Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
+**New in Creators Update**: You can group notifications under headers within Notification Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
 
 ![A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled "Camping!".](images/toast-content-headers.png)
 
@@ -429,20 +430,22 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-    <visual>
-        <binding template="ToastGeneric">
-            <group>
-                <subgroup>
-                    <text hint-style="base">52 attendees</text>
-                    <text hint-style="captionSubtle">23 minute drive</text>
-                </subgroup>
-                <subgroup>
-                    <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
-                    <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
-                </subgroup>
-            </group>
-        </binding>
-    </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Reminder: Windows Launch Party</text>
+      <text>4:00 PM, 10/21/2021</text>
+      <group>
+        <subgroup>
+          <text hint-style="base">52 attendees</text>
+          <text hint-style="captionSubtle">23 minute drive</text>
+        </subgroup>
+        <subgroup>
+          <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
+          <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
+        </subgroup>
+      </group>
+    </binding>
+  </visual>
 </toast>
 ```
 
@@ -573,20 +576,19 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-
-    ...
-
-    <actions>
-        
-        <action
-            content=""
-            hint-toolTip="Dismiss"
-            imageUri="Assets/NotificationButtonIcons/Dismiss.png"
-            arguments="dismiss"
-            activationType="background"/>
-
-    </actions>
-
+  <visual>
+    <binding template="ToastGeneric">
+      <text>New update available.</text> 
+    </binding>
+  </visual>
+  <actions> 
+   <action
+     content=""
+     hint-toolTip="Dismiss"
+     imageUri="Assets/NotificationButtonIcons/dismiss.png"
+     arguments="dismiss"
+     activationType="background"/>
+  </actions>
 </toast>
 ```
 
@@ -612,35 +614,33 @@ new ToastContentBuilder()
 <toast scenario="incomingCall" launch="app-defined-string" useButtonStyle="true">  
   <visual>
     <binding template="ToastGeneric">
-            <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
-    <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
-    <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
-        </binding>  </visual>
-  <actions>
-        
-      <action
-            content=""
-            hint-toolTip="Answer Video Call"
-            hint-buttonStyle="Success"
-            imageUri="Assets/Icons/video.png"
-            activationType="foreground"
-            arguments="videoId" />
-
-        <action
-            content=""
-            hint-toolTip="Answer Phone Call"
-            hint-buttonStyle="Success"
-            imageUri="Assets/Icons/call.png"
-            activationType="foreground"
-            arguments="answerId" />
-
-        <action
-            content=""
-            hint-toolTip="Hang Up"
-            hint-buttonStyle="Critical"
-            imageUri="Assets/Icons/hangup.png"
-            activationType="background"
-            arguments="hangupId" />
+      <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
+      <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
+      <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
+    </binding>  
+  </visual>
+  <actions> 
+    <action
+      content=""
+      hint-toolTip="Answer Video Call"
+      hint-buttonStyle="Success"
+      imageUri="Assets/Icons/video.png"
+      activationType="foreground"
+      arguments="videoId" />
+    <action
+      content=""
+      hint-toolTip="Answer Phone Call"
+      hint-buttonStyle="Success"
+      imageUri="Assets/Icons/call.png"
+      activationType="foreground"
+      arguments="answerId" />
+    <action
+      content=""
+      hint-toolTip="Hang Up"
+      hint-buttonStyle="Critical"
+      imageUri="Assets/Icons/hangup.png" 
+      activationType="background"
+      arguments="hangupId" />
     </actions>
 </toast>
 ```
@@ -691,24 +691,21 @@ ToastContent content = new ToastContent()
 
 ```xml
 <toast launch="app-defined-string">
-    <header
-        id="6289"
-        title="Camping!!"
-        arguments="action=openConversation&amp;id=6289"/>
+  <header
+    id="6289"
+    title="Camping!!"
+    arguments="action=openConversation&amp;id=6289"/>
     <visual>
-        <binding template="ToastGeneric">
-            <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
-            <text>Camping this weekend?</text>
-      
-        </binding>
-  </visual>
+      <binding template="ToastGeneric">
+        <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+        <text>Camping this weekend?</text>
+      </binding>
+    </visual>
     <actions>
-
-        <action
-            placement="contextMenu"
-            content="Mute group chat for 1 hour"
-            arguments="action=muteId"/>
-
+      <action
+        placement="contextMenu"
+        content="Mute group chat for 1 hour"
+        arguments="action=muteId"/>
     </actions>
 </toast>
 ```
@@ -728,9 +725,8 @@ Inputs are specified within the Actions region of the toast region of the toast,
 
 ### Quick reply text box
 
-To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The icon for the button should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
+To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
-<img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 ![A screenshot of a toast notification with a profile picture and some lines of text. A text box for typing directly into the toast is included as well as a button to send the reply.](images/toast-content-text-box.png)
 
 #### [Builder syntax](#tab/builder-syntax)
@@ -753,22 +749,22 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-    <visual>
+  <visual>
     <binding template="ToastGeneric">
       <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
       <text>Andrew Bares</text>
       <text>Shall we meet up at 8?</text>
     </binding>
   </visual>
-<actions>
+  <actions>
     <input id="textBox" type="text" placeHolderContent="Type a reply"/>
     <action
-        content="Send"
-        arguments="action=reply&amp;convId=9318"
-        activationType="background"
-        hint-inputId="textBox"
-        imageUri="Assets/Reply.png"/>
-    </actions>
+      content="Send"
+      arguments="action=reply&amp;convId=9318"
+      activationType="background"
+      hint-inputId="textBox"
+      imageUri="Assets/Reply.png"/>
+  </actions>
 </toast>
 ```
 
@@ -804,7 +800,7 @@ new ToastContentBuilder()
 
 ```xml
 <toast launch="app-defined-string">
-    <visual>
+  <visual>
     <binding template="ToastGeneric">
       <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
       <text>Andrew Bares</text>
@@ -814,13 +810,13 @@ new ToastContentBuilder()
   <actions>
     <input id="textBox" type="text" placeHolderContent="Type a reply"/>
     <action
-        content="Reply"
-        arguments="action=reply&amp;threadId=9218"
-        activationType="background"/>
+      content="Reply"
+      arguments="action=reply&amp;threadId=9218"
+      activationType="background"/>
     <action
-        content="Video call"
-        arguments="action=videocall&amp;threadId=9218"
-        activationType="foreground"/>
+      content="Video call"
+      arguments="action=videocall&amp;threadId=9218"
+      activationType="foreground"/>
   </actions>
 </toast>
 ```
@@ -861,25 +857,25 @@ new ToastContentBuilder()
 <toast launch="app-defined-string">  
   <visual>
     <binding template="ToastGeneric">
-       <text>4th coffee?</text>
+      <text>4th coffee?</text>
       <text>When do you plan to come in tomorrow?</text>
     </binding>
   </visual>
   <actions>
     <input id="time" type="selection" defaultInput="lunch">
-        <selection id="breakfast" content="Breakfast" />
-        <selection id="lunch" content="Lunch" />
-        <selection id="dinner" content="Dinner" />
+      <selection id="breakfast" content="Breakfast" />
+      <selection id="lunch" content="Lunch" />
+      <selection id="dinner" content="Dinner" />
     </input>
     <action
-        content="Reserve"
-        arguments="action=reply&amp;threadId=9218"
-        activationType="background"/>
+      content="Reserve"
+      arguments="action=reply&amp;threadId=9218"
+      activationType="background"/>
     <action
-        content="Call restaurant"
-        arguments="action=videocall&amp;threadId=9218"
-        activationType="foreground"/>
-    </actions>
+      content="Call restaurant"
+      arguments="action=videocall&amp;threadId=9218"
+      activationType="foreground"/>
+  </actions>
 </toast>
 ```
 
@@ -925,28 +921,24 @@ new ToastContentBuilder()
 
 ```xml
 <toast>
-    <visual>
-        <binding template="ToastGeneric">
-            <text hint-maxLines="1">Adaptive Tiles Meeting</text>
-            <text>Conf Room 2001 / Building 135</text>
-            <text>10:00 AM - 10:30 AM</text>
-        </binding>
-    </visual>
-    <actions>
-     
-        <input id="snoozeTime" type="selection" defaultInput="15">
-            <selection id="1" content="1 minute"/>
-            <selection id="15" content="15 minutes"/>
-            <selection id="60" content="1 hour"/>
-            <selection id="240" content="4 hours"/>
-            <selection id="1440" content="1 day"/>
-        </input>
- 
-        <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-        <action activationType="system" arguments="dismiss" content=""/>
-     
-    </actions>
+  <visual>
+    <binding template="ToastGeneric">
+      <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+      <text>Conf Room 2001 / Building 135</text>
+      <text>10:00 AM - 10:30 AM</text>
+    </binding>
+  </visual>
+  <actions>
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+    <action activationType="system" arguments="dismiss" content=""/>
+  </actions>
 </toast>
 ```
 
@@ -1079,36 +1071,34 @@ new ToastContentBuilder()
 <toast scenario="incomingCall" launch="app-defined-string" useButtonStyle="true">  
   <visual>
     <binding template="ToastGeneric">
-            <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
-    <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
-    <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
-        </binding>  </visual>
+      <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
+      <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
+      <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
+    </binding>  
+  </visual>
   <actions>
-        
-      <action
-            content=""
-            hint-toolTip="Answer Video Call"
-            hint-buttonStyle="Success"
-            imageUri="Assets/Icons/video.png"
-            activationType="foreground"
-            arguments="videoId" />
-
-        <action
-            content=""
-            hint-toolTip="Answer Phone Call"
-            hint-buttonStyle="Success"
-            imageUri="Assets/Icons/call.png"
-            activationType="foreground"
-            arguments="answerId" />
-
-        <action
-            content=""
-            hint-toolTip="Hang Up"
-            hint-buttonStyle="Critical"
-            imageUri="Assets/Icons/hangup.png"
-            activationType="background"
-            arguments="hangupId" />
-    </actions>
+    <action
+      content=""
+      hint-toolTip="Answer Video Call"
+      hint-buttonStyle="Success"
+      imageUri="Assets/Icons/video.png"
+      activationType="foreground"
+      arguments="videoId" />
+    <action
+      content=""
+      hint-toolTip="Answer Phone Call"
+      hint-buttonStyle="Success"
+      imageUri="Assets/Icons/call.png"
+      activationType="foreground"
+      arguments="answerId" />
+    <action
+      content=""
+      hint-toolTip="Hang Up"
+      hint-buttonStyle="Critical"
+      imageUri="Assets/Icons/hangup.png"
+      activationType="background"
+      arguments="hangupId" />
+  </actions>
 </toast>
 ```
 
