@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 06/09/2022
+ms.date: 06/13/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -313,7 +313,11 @@ In cases where you determine the pricing for your product or in-app purchases, a
 
 - Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
 
-- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.
+- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product. 
+
+
+> [!NOTE]
+> **Updated July 11, 2022:** The policy change, announced on June 16, 2022, to 10.8.7 (Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.) will not be going into effect on July 16, 2022.  We have determined it could be perceived differently than intended, so we are revising this policy change to provide greater clarity.
 
 
 ### 10.9 Notifications
@@ -381,6 +385,8 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 
 > [!NOTE]
 > Additional requirements for titles which use Xbox Live on PC/Mobile and/or the Creators program on Xbox consoles are available at https://aka.ms/xboxlivepolicy.
+>
+> **February 10, 2022 Policy Note**: For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
 
 
 **10.13.1**
@@ -549,16 +555,17 @@ If your product is a storefront, or enables access to a storefront, the storefro
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store complaint and appeal statistics for FY2021
+### Microsoft Store complaint and appeal statistics for FY2022
 
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
-| Main Complaint Type 1: Certification Results |      145 |
-| Main Complaint Type 2: Account Terminations  |       74 |
-| Main Complaint Type 3: Enforcement Appeal    |       66 |
-| Other Types Of Complaints                    |      144 |
-| Total Complaints                             |      429 |
-| Overturned Complaints                        |       46 |
+| App and/or Account Enforcement Action Appeals |      1,978 |
+| Complaints about Technological Issues  |       117 |
+| Regulatory Compliance Complaints    |       0 |
+| Questions about certification, policy, submission, and technical help                    |      1,683 |
+| Miscellaneous | 265 |
+| Total Issues                              |      4,043 |
+| Overturned decisions                        |       1,557 |
 | Average Processing Time                      | 2.9 days |
 
 ### See also

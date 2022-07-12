@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/28/2021
+ms.date: 06/13/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
