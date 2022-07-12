@@ -16,6 +16,9 @@ ms.custom: template-quickstart
 
 In this quickstart, you will create a desktop Windows application that sends and receives local app notifications, also known as toast notifications, using the [Windows App SDK](../../index.md).
 
+> [!IMPORTANT]
+> Notifications for an elevated (admin) app is currently not supported.
+
 ## Prerequisites
 
 - [Set up your development environment](../../set-up-your-development-environment.md)
