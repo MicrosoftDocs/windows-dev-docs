@@ -21,7 +21,7 @@ App notifications in the [Windows App SDK](../../index.md) are messages that you
 
 The app notifications support in the Windows App SDK currently has these limitations:
 
-- Notifications for an elevated (admin) app is currently not supported.
+- Notifications for an elevated (admin) app are currently not supported.
 
 ## Next steps
 
