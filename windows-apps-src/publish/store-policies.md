@@ -555,16 +555,17 @@ If your product is a storefront, or enables access to a storefront, the storefro
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store complaint and appeal statistics for FY2021
+### Microsoft Store complaint and appeal statistics for FY2022
 
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
-| Main Complaint Type 1: Certification Results |      145 |
-| Main Complaint Type 2: Account Terminations  |       74 |
-| Main Complaint Type 3: Enforcement Appeal    |       66 |
-| Other Types Of Complaints                    |      144 |
-| Total Complaints                             |      429 |
-| Overturned Complaints                        |       46 |
+| App and/or Account Enforcement Action Appeals |      1,978 |
+| Complaints about Technological Issues  |       117 |
+| Regulatory Compliance Complaints    |       0 |
+| Questions about certification, policy, submission, and technical help                    |      1,683 |
+| Miscellaneous | 265 |
+| Total Issues                              |      4,043 |
+| Overturned decisions                        |       1,557 |
 | Average Processing Time                      | 2.9 days |
 
 ### See also
