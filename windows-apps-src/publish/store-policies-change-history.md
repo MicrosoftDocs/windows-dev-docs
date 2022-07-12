@@ -53,7 +53,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 <tr class="odd">
 <td>September 28, 2021</td>
-<td><a href="/windows/uwp/publish/store-policy-7-15">7.15</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-15">7.15</a></td>
 <td>
 <p>Update to 10.1.3 requirements for product search terms.</p>
 <p>Update to 10.1.5, removing prohibition on products whose primary functionality is to enable acquisition of digital goods from outside the Store.</p>
