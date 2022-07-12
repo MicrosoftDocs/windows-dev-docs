@@ -317,7 +317,7 @@ In cases where you determine the pricing for your product or in-app purchases, a
 
 
 > [!NOTE]
-> **Updated July 11, 2022:** The policy change, announced June 16, 2022, to 10.8.7 (Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.) will not be going into effect on July 16, 2022.  We have determined it could be perceived differently than intended, so we are revising this policy change to provide greater clarity.
+> **Updated July 11, 2022:** The policy change, announced on June 16, 2022, to 10.8.7 (Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.) will not be going into effect on July 16, 2022.  We have determined it could be perceived differently than intended, so we are revising this policy change to provide greater clarity.
 
 
 ### 10.9 Notifications
