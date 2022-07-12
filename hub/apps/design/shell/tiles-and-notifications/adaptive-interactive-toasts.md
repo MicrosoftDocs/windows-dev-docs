@@ -85,7 +85,7 @@ Here is a visual representation of the toast's content:
 
 ## Attribution area
 
-The attribution area is at the top of the toast notification. Starting with Windows 11, your app's name and icon are displayed in this area. The attribution area also includes a close button that allows the user to quickly dismiss the notification and an ellipses menu that allows the user to quickly disable notifications for your app or go to the Windows Settings page for notifications. The attribution area is configured by the shell and can't be overridden in the toast XML payload.
+The attribution area is at the top of the toast notification. Starting with Windows 11, your app's name and icon are displayed in this area. The attribution area also includes a close button that allows the user to quickly dismiss the notification and an ellipses menu that allows the user to quickly disable notifications for your app or go to the Windows Settings page for your app's notifications. The attribution area is configured by the shell and can't be overridden in the toast XML payload, although your app can add items to the attribution area context menu. For more information see [Context menu actions](#context-menu-actions).
 
 ## Visual
 
