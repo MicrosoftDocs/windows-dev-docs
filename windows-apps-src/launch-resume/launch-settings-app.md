@@ -2,7 +2,7 @@
 title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app using the ms-settings URI scheme.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 02/10/2022
+ms.date: 07/11/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -16,9 +16,9 @@ dev_langs:
 
 **Important APIs**
 
--   [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
--   [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
--   [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
+- [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Learn how to launch the Windows Settings app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 
@@ -66,37 +66,46 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 
 The following sections describe different categories of ms-settings URIs used to open various pages of the Settings app:
 
-* [Accounts](#accounts)
-* [Apps](#apps)
-* [Cortana](#cortana)
-* [Devices](#devices)
-* [Ease of access](#ease-of-access)
-* [Extras](#extras)
-* [Gaming](#gaming)
-* [Home page](#home-page)
-* [Mixed reality](#mixed-reality)
-* [Network and internet](#network-and-internet)
-* [Personalization](#personalization)
-* [Phone](#phone)
-* [Privacy](#privacy)
-* [Surface Hub](#surface-hub)
-* [System](#system)
-* [Time and language](#time-and-language)
-* [Update and security](#update-and-security)
-* [User accounts](#user-accounts)
+- [Accounts](#accounts)
+- [Apps](#apps)
+- [Control Center](#control-center)
+- [Cortana](#cortana)
+- [Devices](#devices)
+- [Ease of access](#ease-of-access)
+- [Extras](#extras)
+- [Family Group](#family-group)
+- [Gaming](#gaming)
+- [Home page](#home-page)
+- [Mixed reality](#mixed-reality)
+- [Network and internet](#network-and-internet)
+- [Personalization](#personalization)
+- [Phone](#phone)
+- [Privacy](#privacy)
+- [Search](#search)
+- [Surface Hub](#surface-hub)
+- [System](#system)
+- [Time and language](#time-and-language)
+- [Update and security](#update-and-security)
+- [User accounts](#user-accounts)
 
 > [!NOTE]
 > Whether a settings page is available varies by Windows SKU. The notes column also captures additional requirements that must be met for a page to be available.
 
 <!-- TODO: 
-* ms-settings:controlcenter
-* ms-settings:holographic
-* ms-settings:keyboard-advanced
-* ms-settings:regionlanguage-adddisplaylanguage (crashed)
-* ms-settings:regionlanguage-setdisplaylanguage (crashed)
-* ms-settings:signinoptions-launchpinenrollment
-* ms-settings:storagecleanup
-* ms-settings:update-security -->
+* ms-settings:controlcenter (not working on 07/11/2022)
+* ms-settings:holographic (not working on 07/11/2022)
+* ms-settings:keyboard-advanced (not working on 07/11/2022)
+* ms-settings:regionlanguage-adddisplaylanguage (Goes to Language and Region page - 07/11/2022)
+* ms-settings:regionlanguage-setdisplaylanguage (Goes to Language and Region page - 07/11/2022)
+* ms-settings:signinoptions-launchpinenrollment (not working on 07/11/2022)
+* ms-settings:storagecleanup (not working on 07/11/2022)
+* ms-settings:update-security (not working on 07/11/2022) 
+* ms-settings:advanced-apps (not working on 07/11/2022)
+* ms-settings:gaming-xboxnetworking (not working on 07/11/2022) 
+* ms-settings:datausage (Goes to Network & internet page - 07/11/2022) 
+* ms-settings:personalization-textinput (not working on 07/11/2022)
+* ms-settings:sound-defaultoutputdevices (not working on 07/11/2022)
+* ms-settings:sound-defaultinputdevices (not working on 07/11/2022) -->
 
 ### Accounts
 
@@ -107,7 +116,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Family & other people | ms-settings:otherusers |
 | Set up a kiosk | ms-settings:assignedaccess |
 | Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-| Sync your settings | ms-settings:sync |
+| Sync your settings | ms-settings:backup |
 | Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | Your info | ms-settings:yourinfo |
 
@@ -124,6 +133,12 @@ The following sections describe different categories of ms-settings URIs used to
 | Startup apps | ms-settings:startupapps |
 | Video playback | ms-settings:videoplayback |
 
+### Control Center
+
+|Settings page| URI |
+|-------------|-----|
+| Control center | ms-settings:controlcenter |
+
 ### Cortana
 
 |Settings page| URI |
@@ -134,9 +149,8 @@ The following sections describe different categories of ms-settings URIs used to
 | Searching Windows | ms-settings:cortana-windowssearch |
 | Talk to Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
 
-
-> [!NOTE] 
-> This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case. 
+> [!NOTE]
+> This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case.
 
 ### Devices
 
@@ -184,6 +198,12 @@ The following sections describe different categories of ms-settings URIs used to
 |-------------|-----|
 | Extras | ms-settings:extras (only available if "settings apps" are installed, for example, by a 3rd party) |
 
+### Family Group
+
+|Settings page| URI |
+|-------------|-----|
+| Family Group | ms-settings:family-group |
+
 ### Gaming
 
 |Settings page| URI |
@@ -193,7 +213,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Game Mode | ms-settings:gaming-gamemode |
 | Playing a game full screen | ms-settings:quietmomentsgame |
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
-
 
 ### Home page
 
@@ -218,6 +237,7 @@ The following sections describe different categories of ms-settings URIs used to
 
 |Settings page| URI |
 |-------------|-----|
+| Network & internet | ms-settings:network-status |
 | Advanced settings | ms-settings:network-advancedsettings |
 | Airplane mode | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Cellular & SIM | ms-settings:network-cellular |
@@ -228,7 +248,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Mobile hotspot | ms-settings:network-mobilehotspot |
 | Proxy | ms-settings:network-proxy |
 | VPN | ms-settings:network-vpn |
-| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) | 
+| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
 | Wi-Fi provisioning | ms-settings:wifi-provisioning |
 
 ### Personalization
@@ -293,6 +313,14 @@ The following sections describe different categories of ms-settings URIs used to
 | Tasks | ms-settings:privacy-tasks |
 | Videos | ms-settings:privacy-videos |
 | Voice activation | ms-settings:privacy-voiceactivation |
+
+### Search
+
+|Settings page| URI |
+|-------------|-----|
+| Search | ms-settings:search |
+| Search more details | ms-settings:search-moredetails |
+| Search Permissions | ms-settings:search-permissions |
 
 ### Surface Hub
 
@@ -382,26 +410,6 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Provisioning | ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package) |
-|Repair token | ms-settings:workplace-repairtoken |
+| Repair token | ms-settings:workplace-repairtoken |
 | Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package) |
 | Windows Anywhere | ms-settings:windowsanywhere (device must be Windows Anywhere-capable) |
-
-### Control Center
-
-|Settings page| URI |
-|-------------|-----|
-| Control center | ms-settings:controlcenter |
-
-### Family Group
-
-|Settings page| URI |
-|-------------|-----|
-| Family Group | ms-settings:family-group |
-
-### Search
-
-|Settings page| URI |
-|-------------|-----|
-| Search | ms-settings:search |
-| Search more details | ms-settings:search-moredetails |
-| Search Permissions | ms-settings:search-permissions |
