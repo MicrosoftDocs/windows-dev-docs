@@ -313,9 +313,6 @@ class ToastWithAvatar
 
     public static bool SendToast()
     {
-        // The ScenarioIdToken uniquely identify a scenario and is used to route the response received when the user clicks on a toast to the correct scenario.
-        var ScenarioIdToken = Common.MakeScenarioIdToken(ScenarioId);
-
         var xmlPayload = new string($@"
                 <toast>    
                     <visual>    
