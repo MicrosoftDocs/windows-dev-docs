@@ -1055,7 +1055,7 @@ new ToastContentBuilder()
 ### Incoming calls
 Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
 
-![Incoming call toast notification](images/toast-content-button-colors.png)
+![Incoming call toast notification](images/toast-content-incoming-call.png)
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -1068,36 +1068,39 @@ new ToastContentBuilder()
 #### [XML](#tab/xml)
 
 ```xml
-<toast scenario="incomingCall" launch="app-defined-string" useButtonStyle="true">  
+<toast scenario="incomingCall" launch="app-defined-string">
   <visual>
     <binding template="ToastGeneric">
       <text hint-callScenarioCenterAlign = "true">Andrew Bares</text>
       <text hint-callScenarioCenterAlign = "true">Incoming Call - Mobile</text>
       <image hint-crop="circle" src="https://unsplash.it/100?image=883"/>
-    </binding>  
+    </binding>
   </visual>
-  <actions>
+  <actions>  
     <action
-      content=""
-      hint-toolTip="Answer Video Call"
-      hint-buttonStyle="Success"
-      imageUri="Assets/Icons/video.png"
+      content="Text reply"
+      hint-toolTip="Text reply"
+      imageUri="Assets/Icons/message.png"
       activationType="foreground"
-      arguments="videoId" />
+      arguments="textId" />
     <action
-      content=""
-      hint-toolTip="Answer Phone Call"
-      hint-buttonStyle="Success"
-      imageUri="Assets/Icons/call.png"
+      content="Reminder"
+      hint-toolTip="Reminder"
+      imageUri="Assets/Icons/reminder.png"
       activationType="foreground"
-      arguments="answerId" />
+      arguments="reminderId" />
     <action
-      content=""
-      hint-toolTip="Hang Up"
-      hint-buttonStyle="Critical"
-      imageUri="Assets/Icons/hangup.png"
+      content="Ignore"
+      hint-toolTip="Ignore"
+      imageUri="Assets/Icons/dismiss.png"
       activationType="background"
-      arguments="hangupId" />
+      arguments="IgnoreId" />
+    <action
+      content="Answer"
+      hint-toolTip="Answer"
+      imageUri="Assets/Icons/call.png"
+      activationType="background"
+      arguments="answerId" />
   </actions>
 </toast>
 ```
