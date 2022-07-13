@@ -95,11 +95,11 @@ protected override Size MeasureOverride(Size availableSize)
     if (aspectratio > 1)
     {
         rowcount = maxrc;
-        colcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        colcount = (maxrc > 2 && Children.Count <= maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
     } 
     else 
     {
-        rowcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        rowcount = (maxrc > 2 && Children.Count <= maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
         colcount = maxrc;
     }
 
@@ -135,9 +135,8 @@ However, the panel itself can't return a [**Size**](/uwp/api/Windows.Foundation.
 // That can happen to height if the panel is close to the root of main app window.
 // In this case, base the height of a cell on the max height from desired size
 // and base the height of the panel on that number times the #rows.
-
 Size LimitUnboundedSize(Size input)
-
+{
     if (Double.IsInfinity(input.Height))
     {
         input.Height = maxcellheight * colcount;
@@ -152,7 +151,7 @@ Size LimitUnboundedSize(Size input)
 ```CSharp
 protected override Size ArrangeOverride(Size finalSize)
 {
-     int count = 1
+     int count = 1;
      double x, y;
      foreach (UIElement child in Children)
      {
@@ -183,20 +182,35 @@ It's typical that the input *finalSize* and the [**Size**](/uwp/api/Windows.Foun
 You could compile and use this panel just as it is now. However, we'll add one more refinement. In the code just shown, the logic puts the extra row or column on the side that's longest in aspect ratio. But for greater control over the shapes of cells, it might be desirable to choose a 4x3 set of cells instead of 3x4 even if the panel's own aspect ratio is "portrait." So we'll add an optional dependency property that the panel consumer can set to control that behavior. Here's the dependency property definition, which is very basic:
 
 ```CSharp
-public static readonly DependencyProperty UseOppositeRCRatioProperty =
-   DependencyProperty.Register("UseOppositeRCRatio", typeof(bool), typeof(BoxPanel), null);
-
-public bool UseSquareCells
+// Property
+public Orientation Orientation
 {
-    get { return (bool)GetValue(UseOppositeRCRatioProperty); }
-    set { SetValue(UseOppositeRCRatioProperty, value); }
+    get { return (Orientation)GetValue(OrientationProperty); }
+    set { SetValue(OrientationProperty, value); }
+}
+
+// Dependency Property Registration
+public static readonly DependencyProperty OrientationProperty =
+        DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(BoxPanel), new PropertyMetadata(null, OnOrientationChanged));
+
+// Changed callback so we invalidate our layout when the property changes.
+private static void OnOrientationChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+{
+    if (dependencyObject is BoxPanel panel)
+    {
+        panel.InvalidateMeasure();
+    }
 }
 ```
 
-And here's how using `UseOppositeRCRatio` impacts the measure logic. Really all it's doing is changing how `rowcount` and `colcount` are derived from `maxrc` and the true aspect ratio, and there are corresponding size differences for each cell because of that. When `UseOppositeRCRatio` is **true**, it inverts the value of the true aspect ratio before using it for row and column counts.
+And below is how using `Orientation` impacts the measure logic in `MeasureOverride`. Really all it's doing is changing how `rowcount` and `colcount` are derived from `maxrc` and the true aspect ratio, and there are corresponding size differences for each cell because of that. When `Orientation` is **Vertical** (default), it inverts the value of the true aspect ratio before using it for row and column counts for our "portrait" rectangle layout.
 
 ```CSharp
-if (UseSquareCells) { aspectratio = 1 / aspectratio;}
+// Get an aspect ratio from availableSize, decides whether to trim row or column.
+aspectratio = availableSize.Width / availableSize.Height;
+
+// Transpose aspect ratio based on Orientation property.
+if (Orientation == Orientation.Vertical) { aspectratio = 1 / aspectratio; }
 ```
 
 ## The scenario for BoxPanel
