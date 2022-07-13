@@ -61,7 +61,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
-1. Download the latest installer for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). This will install the runtime package dependencies required to run and deploy a non-MSIX-packaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
+1. Download and run the latest *installer* for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). That will install the runtime package dependencies required to run and deploy a non-MSIX-packaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
 
 1. **C++**. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) appropriate for the architecture of the target device.
 
@@ -75,7 +75,10 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 1. In the New Project dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively.
 
-1. You need to start with an MSIX-packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**. .
+1. You need to start with an MSIX-packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**.
+
+    > [!NOTE]
+    > Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the installer in the previous step. To do that, in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Updates**. And if necessary update the reference to the *Microsoft.WindowsAppSDK* NuGet package. You can see which version is installed on the **Installed** tab.
 
 1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
 
