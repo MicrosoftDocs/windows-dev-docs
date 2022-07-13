@@ -64,6 +64,8 @@ If your app is an MSIX-packaged app or Sparse-packaged app:
 <!--package.appxmanifest-->
 
 <Package
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10">
   ...
   <Applications>
     <Application>
@@ -150,9 +152,9 @@ namespace CsUnpackagedAppNotifications
             m_isRegistered = false;
 
             // When adding new a scenario, be sure to add its notification handler here.
-            c_map = new Dictionary<int, Action<AppNotificationActivatedEventArgs>>();
-            c_map.Add(ToastWithAvatar.ScenarioId, ToastWithAvatar.NotificationReceived);
-            c_map.Add(ToastWithTextBox.ScenarioId, ToastWithTextBox.NotificationReceived);
+            c_map = new Dictionary<string, Action<AppNotificationActivatedEventArgs>>();
+            c_map.Add(ToastWithAvatar.ScenarioIdToken, ToastWithAvatar.NotificationReceived);
+            c_map.Add(ToastWithTextBox.ScenarioIdToken, ToastWithTextBox.NotificationReceived);
         }
 
         ~NotificationManager()
@@ -180,6 +182,11 @@ namespace CsUnpackagedAppNotifications
                 AppNotificationManager.Default.Unregister();
                 m_isRegistered = false;
             }
+        }
+
+        private void OnNotificationInvoked(AppNotificationManager sender, AppNotificationActivatedEventArgs args)
+        {
+            // TODO
         }
 
         public void ProcessLaunchActivationArgs(AppNotificationActivatedEventArgs notificationActivatedEventArgs)
@@ -300,7 +307,8 @@ Construct your app notification using an XML string and then call `Show`. For mo
 // ToastWithAvatar.cs
 class ToastWithAvatar
 {
-    public const int ScenarioId = 1;
+    // The ScenarioIdToken uniquely identify a scenario and is used to route the response received when the user clicks on a toast to the correct scenario.
+    public const string ScenarioIdToken = "ToastWithAvatarScenario";
     public const string ScenarioName = "Local Toast with Avatar Image";
 
     public static bool SendToast()
@@ -308,21 +316,22 @@ class ToastWithAvatar
         // The ScenarioIdToken uniquely identify a scenario and is used to route the response received when the user clicks on a toast to the correct scenario.
         var ScenarioIdToken = Common.MakeScenarioIdToken(ScenarioId);
 
-        var xmlPayload = new string(
-            "<toast>"
-                "<visual>"
-                    "<binding template = \"ToastGeneric\">"
-                        "<image placement = \"appLogoOverride\" hint-crop=\"circle\" src = \"" + App.GetFullPathToAsset("Square150x150Logo.png") + "\"/>"
-                        "<text>" + ScenarioName + "</text>"
-                        "<text>This is an example message using XML</text>"
-                    "</binding>"
-                "</visual>"
-                "<actions>"
-                    "<action "
-                        "content = \"Open App\" "
-                        "arguments = \"action=OpenApp&amp;" + ScenarioIdToken + "\"/>"
-                "</actions>"
-            "</toast>" );
+        var xmlPayload = new string($@"
+                <toast>    
+                    <visual>    
+                        <binding template=""ToastGeneric"">    
+                            <image placement = ""appLogoOverride"" hint-crop=""circle"" src = ""{App.GetFullPathToAsset("Square150x150Logo.png")}""/>
+                            <text>{ScenarioName}</text>
+                            <text>This is an example message using XML</text>    
+                        </binding>
+                    </visual>
+    
+                    <actions>    
+                        <action     
+                            content = ""Open App""    
+                            arguments = ""action=OpenApp&amp;{ScenarioIdToken}""/>    
+                    </actions>    
+                </toast>");
 
         var toast = new AppNotification(xmlPayload);
         AppNotificationManager.Default.Show(toast);
