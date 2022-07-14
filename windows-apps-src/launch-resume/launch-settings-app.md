@@ -116,7 +116,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Family & other people | ms-settings:otherusers |
 | Set up a kiosk | ms-settings:assignedaccess |
 | Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-| Sync your settings | ms-settings:backup |
+| Sync your settings | ms-settings:sync<br>ms-settings:backup (**Backup page deprecated in Windows 11**) |
 | Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | Your info | ms-settings:yourinfo |
 
@@ -367,6 +367,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Storage | ms-settings:storagesense |
 | Storage Sense | ms-settings:storagepolicies |
 | Storage recommendations | ms-settings:storagerecommendations |
+| Disks & volumes | ms-settings:disksandvolumes |
 
 ### Time and language
 
@@ -388,7 +389,7 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Activation | ms-settings:activation |
-| Backup | ms-settings:backup |
+| Backup | ms-settings:backup (page removed in Windows 11; opens Sync) |
 | Delivery Optimization | ms-settings:delivery-optimization </br> ms-settings:delivery-optimization-activity </br> ms-settings:delivery-optimization-advanced|
 | Find My Device | ms-settings:findmydevice |
 | For developers | ms-settings:developers |
