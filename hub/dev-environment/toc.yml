@@ -168,19 +168,17 @@ items:
         - name: Overview
           href: ../android/overview.md
         - name: Windows Subsystem for Android™️
-          href: ../android/wsa/index.md
-        - name: Release notes for WSA
-          href:  ../android/wsa/release-notes.md
-        - name: Preview program for WSA
-          href: ../android/wsa/preview-program.md
+          items:
+            - name: Overview
+              href: ../android/wsa/index.md
+            - name: Release notes
+              href:  ../android/wsa/release-notes.md
+            - name: Preview program
+              href: ../android/wsa/preview-program.md
         - name: Native Android
           href: ../android/native-android.md
         - name: Cross-platform
           items:
-            - name: Xamarin Native
-              href: ../android/xamarin-android.md
-            - name: Xamarin Forms
-              href: ../android/xamarin-forms.md
             - name: React Native
               href: ../dev-environment/javascript/react-native-for-android.md
             - name: PWA (Ionic, PhoneGap, Cordova)
