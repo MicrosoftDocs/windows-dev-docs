@@ -10,9 +10,9 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 # Microsoft Store Policies
 
-**Document version: 7.16**
+**Document version: 7.16.1**
 
-**Publish date: June 16, 2022**
+**Publish date: July 18, 2022**
 
 **Effective date: July 16, 2022**
 
