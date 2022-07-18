@@ -14,7 +14,7 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Publish date: July 18, 2022**
 
-**Effective date: July 16, 2022**
+**Effective date: August 18, 2022**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
