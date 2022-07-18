@@ -104,7 +104,7 @@ The following additional methods are available for use by developer accounts wit
 
 | Scenario       | Methods      |
 |---------------|--------------------|
-| General analytics |  <ul><li>[Get Xbox Live analytics data](get-xbox-live-analytics.md)</li></ul> |
+| General analytics |  <ul><li>[Get Xbox Live analytics data](../publish/xbox-analytics-report.md)</li></ul> |
 
 ### Methods for hardware and drivers
 
