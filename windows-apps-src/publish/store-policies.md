@@ -313,11 +313,7 @@ In cases where you determine the pricing for your product or in-app purchases, a
 
 - Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
 
-- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product. 
-
-
-> [!NOTE]
-> **Updated July 11, 2022:** The policy change, announced on June 16, 2022, to 10.8.7 (Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.) will not be going into effect on July 16, 2022.  We have determined it could be perceived differently than intended, so we are revising this policy change to provide greater clarity.
+- Not be priced irrationally high relative to the features and functionality provided by your product. 
 
 
 ### 10.9 Notifications
@@ -472,7 +468,7 @@ Metadata and other content you submit to accompany your product may contain only
 
 ### 11.2 Content Including Names, Logos, Original and Third Party
 
-All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law.
+All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law. Reporting infringement complaints can be done via our online form: [Report intellectual property infringement](https://www.microsoft.com/legal/intellectualproperty/infringement).
 
 ### 11.3 Risk of Harm
 

@@ -26,6 +26,16 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <tbody>
 </tr>
 
+
+<tr class="odd">
+<td>July 13, 2022</td>
+<td><a href="/windows/uwp/publish/store-policies">7.17</a></td>
+<td>
+<p>Update to 10.8.7 to remove language related to open-source or other free software.</p>
+<p>Update to 11.2 adding a link to Microsoft’s online infringement reporting form.</p>
+</td>
+</tr>
+
 <tr class="even">
 <td>June 16, 2022</td>
 <td><a href="/windows/uwp/publish/store-policies">7.16</a></td>
