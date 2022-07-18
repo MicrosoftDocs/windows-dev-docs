@@ -46,6 +46,7 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 
 | Microsoft.UI.Xaml NuGet Version | Type | Release date | Release notes | Highlights |
 | --- | --- | --- | --- | --- |
+| [2.8](winui-2.8.md) | stable | July 2022 | [Release Notes](winui-2.8.md) | [WebView2](winui-2.8.md#whats-new) |
 | [2.7](winui-2.7.md) | stable | September 2021 | [Release Notes](winui-2.7.md) | [InfoBadge](winui-2.7.md#infobadge), [Horizontal Orientation in ColorPicker](winui-2.7.md#horizontal-orientation-in-colorpicker) |
 | [2.6](winui-2.6.md) | stable | June 2021 | [Release Notes](winui-2.6.md) | [Mica](winui-2.6.md#mica), [Expander](winui-2.6.md#expander), [BreadcrumbBar](winui-2.6.md#breadcrumbbar), [ImageIcon](winui-2.6.md#imageicon), [AnimatedIcon](winui-2.6.md#animatedicon), [PipsPager](winui-2.6.md#pipspager) |
 | [2.5](winui-2.5.md) | stable | December 2020 | [Release Notes](winui-2.5.md) | [InfoBar](winui-2.5.md#infobar), [Determinate ProgressRing](winui-2.5.md#determinate-progressring), [NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |
