@@ -38,7 +38,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 <tr class="even">
 <td>June 16, 2022</td>
-<td><a href="/windows/uwp/publish/store-policies">7.16</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-16">7.16</a></td>
 <td>
 <p>Update to 10.1.1 requirements for product search terms.</p>
 
