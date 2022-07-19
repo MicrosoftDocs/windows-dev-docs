@@ -667,8 +667,8 @@
           href: in-app-help/external-help.md
 - name: Windows widgets
   items:
-  - name: Windows widgets design overview
-    href: widgets/widgets-design-overview.md
+  - name: Overview
+    href: widgets/
   - name: Widgets design fundamentals
     href: widgets/widgets-design-fundamentals.md
   - name: Widget states and built-in UI components
