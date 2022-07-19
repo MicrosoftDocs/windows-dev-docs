@@ -18,8 +18,7 @@ Windows Widgets are small UI containers that display text and graphics from an a
 | Term | Definition |
 |------|------------|
 | Widgets board | The Widgets Board is a Windows 11 system application that is displayed over the desktop when the user clicks the Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. The Widgets Board displays installed widgets and manages the layout the widgets are displayed on the board. |
-| Widget | A widget is an [Adaptive Card](https://adaptivecards.io/) that presents important content or actions from an app or service. It allows users to access desired information instantly without the need to launch the associated app or website. 
-Widget content is refreshed dynamically throughout the day to provide the user with current and interesting content that can be consumed at a glance. Widgets provide basic interactive features that allow the user to launch the associated app or web service for deeper engagement. Widgets are not intended to replace apps and websites.  |
+| Widget | A widget is an [Adaptive Card](https://adaptivecards.io/) that presents important content or actions from an app or service. It allows users to access desired information instantly without the need to launch the associated app or website. Widget content is refreshed dynamically throughout the day to provide the user with current and interesting content that can be consumed at a glance. Widgets provide basic interactive features that allow the user to launch the associated app or web service for deeper engagement. Widgets are not intended to replace apps and websites.  |
 | Widget provider | A widget provider is a Windows app or web service that provides content to be displayed in the widget. The widget provider owns the content, layout, and interactive elements of the widget.  |
 
 
