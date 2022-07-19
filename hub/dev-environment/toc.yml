@@ -64,7 +64,7 @@ items:
           - name: Repository policies
             href: ../package-manager/package/windows-package-manager-policies.md
           - name: Repository policies change history
-            href: ../package-manager/package/windows-package-manager-policies-change-history.md
+            href: ../package-manager/package/windows-package-manager-policies.md
   - name: PowerToys
     items:
       - name: Overview
