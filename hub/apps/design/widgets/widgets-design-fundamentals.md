@@ -1,8 +1,8 @@
 ---
-author: drewbat
+author: drewbatgit
 description: Learn about the fundamentals of designing the UI for a Windows widget.
 title: Widget design fundamentals
-ms.author: drewbatgit
+ms.author: drewbat
 ms.date: 01/19/2022
 ms.topic: article
 keywords: windows 11, widgets
@@ -57,14 +57,14 @@ The Web Content Accessibility Guidelines (WCAG) 2.0 level AA requires a contrast
 
 ![A diagram of a widget with guidelines indicating the margins. Next to this is a diagram of a widget where the area inside the margins is colored blue to show the content area.](./images/widgets-margins.png)
 
-Each widget has a 16px margin around it and a 48px attribution area where content cannot be placed in. [TBD: is "attribution area" a term of art? We should either define this or maybe call it something intuitive like the title bar. I guess it depends on the content requirements] The only component that can live in the right side margin and bottom margin are the pagination dots <LINK>. [TBD - update image to show pagination dots]
+Each widget has a 16px margin around it and a 48px attribution area where content cannot be placed in. [TBD: is "attribution area" a term of art? We should either define this or maybe call it something intuitive like the title bar. I guess it depends on the content requirements] The only component that can live in the right side margin and bottom margin are the [pagination dots](tbd). [TBD - update image to show pagination dots]
 
 
-![Two widget examples side by side. The left example has a highly saturated color background image and text in a dark font. The image is marked with a red X to indicate that the low contrast makes the text unreadable. The right image has a desaturated color background and text in a dark black font. The image is marked with a green check to indicate that the high contrast makes the text legible.](./images/widgets-gutters.png)
+![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pix[el gutters between the rows.](./images/widgets-gutters.png)
 
-For widgets that use the container style [TBD Link](tbd), the gutter between each element is 4px. And the containers should touch the edges of the margins. Your content should also use spacing and sizing values of multiples of 4px [Multiples of Four Px](https://docs.microsoft.com/en-us/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.  [TBD - update to site-relative link for public docs]
+For widgets that use the container style [TBD Link](tbd), the gutter between each element is 4px. And the containers should touch the edges of the margins. Your content should also use spacing and sizing values of multiples of 4px [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.  [TBD - update to site-relative link for public docs]
  
-You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](https://docs.microsoft.com/en-us/windows/apps/design/basics/content-basics ) when designing your content. [TBD - update to site-relative link for public docs]
+You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics ) when designing your content. [TBD - update to site-relative link for public docs]
 
 ## Typography
 

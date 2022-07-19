@@ -1,8 +1,8 @@
 ---
-author: drewbat
+author: drewbatgit
 description: Learn how to support your app with Windows widgets, displayed on the widgets board built into Windows 11.
 title: Windows Widgets
-ms.author: drewbatgit
+ms.author: drewbat
 ms.date: 07/19/2022
 ms.topic: article
 keywords: windows 11, widgets
@@ -27,7 +27,7 @@ Widget content is refreshed dynamically throughout the day to provide the user w
 
 The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere the Windows Widget design principles to help ensure that the Widget Board provides a consistent and familiar experience for all widgets.
 
-For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](../../design/widgets/widgets-states-and-ui.mdwidget-states-and-ui.md).
+For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](widgets-states-and-ui.mdwidget-states-and-ui.md).
 
 
 ## Widget principles
@@ -71,7 +71,7 @@ Content should dynamically refresh based on available context. It is up to date 
 
 ## In this section
 
-[Widget states and UI](widgets\widgets-states-and-ui.md)
+[Widget states and UI](widgets-states-and-ui.md)
 [Widget design fundamentals](widgets-design-fundamentals.md)
 [Widget interaction design](widgets-interaction-design.md)
-[Create a widget template with the Adaptive Card Designer](design\widgets\widgets-create-a-template.md)
+[Create a widget template with the Adaptive Card Designer](widgets-create-a-template.md)
