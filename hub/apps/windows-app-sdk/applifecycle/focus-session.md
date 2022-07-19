@@ -18,7 +18,6 @@ Windows 11 introduced the Focus feature which helps users minimize distractions 
 Before accessing the properties of the **FocusSessionManager**, make sure it's supported on the current device by checking the [IsSupported](/uwp/api/windows.ui.shell.focussessionmanager.issupported) property. After verifying that the feature is supported you can determine if a Focus session is currently active by checking the [IsFocusActive](/uwp/api/windows.ui.shell.focussessionmanager.isfocusactive) property.
 
 #### [C#](#tab/csharp)
-
 ```csharp
 private void UpdateStatusBar(string message)
 {
@@ -37,7 +36,6 @@ private void UpdateStatusBar(string message)
 ```
 
 #### [C++/WinRT](#tab/cppwinrt)
-
 ```cpp
 // MainPage.h
 Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
@@ -64,6 +62,7 @@ void MainPage::UpdateStatusBar(winrt::hstring const& message)
 
 You can subscribe to be notified when the Focus session state on the device changes by registering for the [IsFocusActiveChanged](/uwp/api/windows.ui.shell.focussessionmanager.isfocusactivechanged) event. In the following example **SetAnimatedGifAutoPlay** is an app-implemented helper method that changes whether the app auto-plays animated gifs based on the current Focus session state.
 
+#### [C#](#tab/csharp)
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -89,7 +88,6 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 ```
 
 #### [C++/WinRT](#tab/cppwinrt)
-
 ```cpp
 // MainPage.h
 void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&);
