@@ -71,7 +71,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    :::code language="csharp" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/app.xaml.cs" id="OnLaunched":::
 
-1. We then call a `SetWindowDetails` method, passing the Window handle and preferred dimensions.
+1. We then call a `SetWindowDetails` method, passing the Window handle and preferred dimensions. Remember to add the `using static PInvoke.User32;` directive.
 
    In this method:
 
@@ -85,7 +85,6 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    :::code language="xaml" source="samples/WinUI-3-basic-win32-interop/WinUI-3-basic-win32-interop/MainWindow.xaml" range="10-19":::
 
-1. In the MainWindow.xaml.cs code-behind file, add the `using static PInvoke.User32;` directive.
 1. We then replace the `MyButton_Click` event handler with the following code.
 
    Here, we get a reference to the current process by calling [GetCurrentProcess](/dotnet/api/system.diagnostics.process.getcurrentprocess). We then iterate through the collection of [Modules](/dotnet/api/system.diagnostics.process.modules) and append the filename of each [ProcessModule](/dotnet/api/system.diagnostics.processmodule) to our display string.
