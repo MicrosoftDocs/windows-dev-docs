@@ -37,11 +37,19 @@ private void UpdateStatusBar(string message)
 
 #### [C++/WinRT](#tab/cppwinrt)
 ```cpp
-// MainPage.h
-Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
+// pch.h
+...
+#include <winrt/Windows.UI.Shell.h>
 
-// MainPage.cpp
-void MainPage::UpdateStatusBar(winrt::hstring const& message)
+
+// MainWindow.xaml.h
+...
+Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
+void UpdateStatusBar(winrt::hstring const& message);
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::UpdateStatusBar(winrt::hstring const& message)
 {
     auto focusActive = false;
     if (Windows::UI::Shell::FocusSessionManager::IsSupported())
@@ -89,27 +97,36 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 
 #### [C++/WinRT](#tab/cppwinrt)
 ```cpp
-// MainPage.h
+// pch.h
+...
+#include <winrt/Windows.UI.Shell.h
+#include <winrt/Windows.UI.Xaml.Navigation.h>
+
+// MainWindow.xaml.h
+...
 void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&);
+
 Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
 winrt::event_token m_focusStateChangedToken;
+
 void OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender, Windows::Foundation::IInspectable const&);
 
-// MainPage.cpp
-void MainPage::OnNavigatedTo(NavigationEventArgs const&)
+// MainWindow.xaml.cpp
+...
+void MainWindow::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&)
 {
     if (Windows::UI::Shell::FocusSessionManager::IsSupported())
     {
-        
+
         m_focusStateChangedToken = m_focusSessionManager.IsFocusActiveChanged(
-            { get_weak(), &MainPage::OnFocusStateChanged });
+            { get_weak(), &MainWindow::OnFocusStateChanged });
 
         SetAnimatedGifAutoPlay(true);
     }
 }
 
-void MainPage::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender,
-    Windows::Foundation::IInspectable const&)
+void MainWindow::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender,
+        Windows::Foundation::IInspectable const&)
 {
     auto temp = m_focusSessionManager.IsFocusActive();
     SetAnimatedGifAutoPlay(m_focusSessionManager.IsFocusActive());
