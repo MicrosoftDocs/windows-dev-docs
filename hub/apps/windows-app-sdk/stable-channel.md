@@ -31,7 +31,16 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.1
 
-The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.2. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.3. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.1.3
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.1 release.
+
+#### Bug fixes
+- Fixed related set of issues where XAML crashes when including a ProgressBar, ProgressRing, PipsPager, PersonPicture, or Expander control in the first page of your app. For more information see [issue 7164](https://github.com/microsoft/microsoft-ui-xaml/issues/7164) on GitHub.
+- Fixed issue causing the x64 installer to fail to install the Windows App SDK runtime. For more information see [issue 2713](https://github.com/microsoft/WindowsAppSDK/issues/2713) on GitHub.
+- Fixed issue causing the WindowsAppRuntime to fail to install if a higher version of the runtime is installed. For more information see [discussion 2708](https://github.com/microsoft/WindowsAppSDK/discussions/2708) on GitHub.
 
 ### Version 1.1.2
 
