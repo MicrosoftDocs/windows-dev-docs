@@ -31,7 +31,7 @@ Adhering to these policies should help you make choices that enhance your produc
 
 Your products are crucial to the experience of hundreds of millions of customers. We can’t wait to see what you create and are thrilled to help deliver your products to the world.
 
-If you have feedback on the policies, please let us know by commenting in [our forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). We will consider every comment.
+If you have feedback on the policies, please let us know by commenting in [our forum](/answers/topics/partner-center-general.html). We will consider every comment.
 
 ## Table of Contents
 
