@@ -2751,11 +2751,11 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
     <td>eb05</td>
     <td>PieSingle</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eb0f.png" width="32" height="32" alt="StockDown" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eb11.png" width="32" height="32" alt="StockDown" /></td>
     <td>eb0f</td>
     <td>StockDown</td>
   </tr>
-   <tr><td><img src="images/glyphs/segoe-fluent-icons/eb11.png" width="32" height="32" alt="StockUp" /></td>
+   <tr><td><img src="images/glyphs/segoe-fluent-icons/eb0f.png" width="32" height="32" alt="StockUp" /></td>
     <td>eb11</td>
     <td>StockUp</td>
   </tr>
