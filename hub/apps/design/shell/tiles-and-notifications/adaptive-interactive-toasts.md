@@ -599,7 +599,6 @@ new ToastContentBuilder()
 **New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **useButtonStyle** attribute to the toast XML element and the **hint-buttonStyle** attribute to the action XML element as seen below.
 
 
-<img alt="notification with buttons with colors" src="images/toast-button-with-colors.png" width="364"/>
 ![A screenshot of a notification with three buttons, the two left buttons are green with icons for starting a video call or starting an audio call. The third button is red and has an icon for rejecting the call.](images/toast-content-button-colors.png)
 
 #### [Builder syntax](#tab/builder-syntax)
