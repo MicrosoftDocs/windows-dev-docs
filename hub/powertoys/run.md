@@ -68,12 +68,12 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | :--- | :--- | :--- |
 | Calculator | `=` | `= 2+2` |
 | File searching | `?` | `? road` to find 'roadmap.txt' |
-| Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
+| Installed programs | `*` | `* code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
 | OneNote | `o:` | `o: powertoys` to search your local OneNote notebooks for pages containing "powertoys" |
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
 | Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
-| Time and date| `(` | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
+| Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
 | URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are supported. |
@@ -139,9 +139,9 @@ Visual Studio Code also supports a set of [command line parameters](https://code
 
 `Visual Studio Code -d C:\foo.txt C:\bar.txt`
 
-If the program plugin's option "Include in global result" is not selected, include the activation phrase, `.` by default, to invoke the plugin's behavior:
+If the program plugin's option "Include in global result" is not selected, include the activation phrase, `*` by default, to invoke the plugin's behavior:
 
-`.Visual Studio Code -- C:\myFolder`
+`*Visual Studio Code -- C:\myFolder`
 
 ### Calculator plugin
 
@@ -202,10 +202,10 @@ The Time and date plugin provides the current time and date or a custom one in d
 
 Examples:
 
-- `time` or `( time` to show the time.
-- `( 3/27/2022` to show all available formats for a date value.
-- `( calendar week::3/27/2022` to show the calendar week for a date value.
-- `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
+- `time` or `) time` to show the time.
+- `) 3/27/2022` to show all available formats for a date value.
+- `) calendar week::3/27/2022` to show the calendar week for a date value.
+- `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 ### Unit converter plugin
 
