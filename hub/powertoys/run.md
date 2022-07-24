@@ -68,7 +68,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | :--- | :--- | :--- |
 | Calculator | `=` | `= 2+2` |
 | File searching | `?` | `? road` to find 'roadmap.txt' |
-| Installed programs | `*` | `* code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
+| Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
 | OneNote | `o:` | `o: powertoys` to search your local OneNote notebooks for pages containing "powertoys" |
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
 | Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
@@ -139,9 +139,9 @@ Visual Studio Code also supports a set of [command line parameters](https://code
 
 `Visual Studio Code -d C:\foo.txt C:\bar.txt`
 
-If the program plugin's option "Include in global result" is not selected, include the activation phrase, `*` by default, to invoke the plugin's behavior:
+If the program plugin's option "Include in global result" is not selected, include the activation phrase, `.` by default, to invoke the plugin's behavior:
 
-`*Visual Studio Code -- C:\myFolder`
+`.Visual Studio Code -- C:\myFolder`
 
 ### Calculator plugin
 
