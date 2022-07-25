@@ -498,7 +498,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 1. To do that, add an `x:DataType` value to the template, like this:
 
     ```xaml
-    <DataTemplate x:Key="ImageGridView_DefaultItemTemplate"
+    <DataTemplate x:Key="ImageGridView_ItemTemplate"
                   x:DataType="local:ImageFileInfo">
         ...
     ```
