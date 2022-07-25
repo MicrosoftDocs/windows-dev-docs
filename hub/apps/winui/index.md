@@ -48,7 +48,7 @@ The following table highlights some of most significant differences between WinU
 | WinUI 3 supports C# (.NET 6 and later) and C++ for desktop apps. | WinUI 2 supports C# and Visual Basic (.NET Native), and C++ apps. |
 | WinUI 3 is supported only in desktop-based projects. To use WinUI 3, UWP projects can migrate their project type to desktop (see [how to migrate your UWP app to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md)). | WinUI 2 can be incorporated into production UWP apps by installing a NuGet package into a new or existing UWP project. WinUI controls and styles can then be referenced directly in new apps, or by updating "Windows.UI." namespace references to "Microsoft.UI." in existing apps. |
 | WinUI 3 supports the Chromium-based [WebView2](/microsoft-edge/webview2/) control | WinUI 2 supports the [WebView](/windows/uwp/design/controls-and-patterns/web-view) control on all devices, and starting with WinUI 2.7 prerelease, the [WebView2](/microsoft-edge/webview2/) control on Desktop. The WebView2 control will come to a WinUI 2.x stable release in the future. |
-| WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). | WinUI 2 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). |
+| WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). | WinUI 2.0 - 2.7 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). WinUI 2.8 and later works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763). |
 
 ### See also
 
