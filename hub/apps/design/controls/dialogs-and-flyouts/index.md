@@ -4,19 +4,13 @@ title: Dialogs and flyouts
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
-pm-contact: yulikl
-design-contact: kimsea
-dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
 # Dialogs and flyouts
 
 Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
-
-> **Platform APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 **Dialogs**
 
@@ -40,29 +34,21 @@ Once you've determined that you want to use a dialog or flyout, you need to choo
 
 Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it.
 
-   <p><b>Use a dialog for...</b> <br/>
-<ul>
-<li>Expressing important information that the user <b>must</b> read and acknowledge before proceeding. Examples include:
-<ul>
-  <li>When the user's security might be compromised</li>
-  <li>When the user is about to permanently alter a valuable asset</li>
-  <li>When the user is about to delete a valuable asset</li>
-  <li>To confirm an in-app purchase</li>
-</ul>
+**Use a dialog for...**
 
-</li>
-<li>Error messages that apply to the overall app context, such as a connectivity error.</li>
-<li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
-</ul>
-</p>
+- Expressing important information that the user **must** read and acknowledge before proceeding. Examples include:
+  - When the user's security might be compromised
+  - When the user is about to permanently alter a valuable asset
+  - When the user is about to delete a valuable asset
+  - To confirm an in-app purchase
+- Error messages that apply to the overall app context, such as a connectivity error.
+- Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.
 
+**Use a flyout for...**
 
-   <p><b>Use a flyout for...</b> <br/>
-<ul>
-<li>Collecting additional information needed before an action can be completed.</li>
-<li>Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
-<li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
-</ul></p>
+- Collecting additional information needed before an action can be completed.
+- Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.
+- Displaying more information, such as details or longer descriptions of an item on the page.
 
 ## Ways to avoid using dialogs and flyouts
 
@@ -70,27 +56,18 @@ Consider the importance of the information you want to share: is it important en
 
 Dialogs are frequently used to confirm an action (such as deleting a file) before executing it. If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time.
 
+## Examples
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog), [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
+
+> - If you have the **WinUI 3 Gallery** app installed, click here to open the app and see the [ContentDialog](winui3gallery:/item/ContentDialog) or [Flyout](winui3gallery:/item/Flyout) in action. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+
 ## How to create a dialog
 
-See the [Dialogs article](dialogs.md). 
+See the [Dialogs article](dialogs.md).
 
 ## How to create a flyout
 
-See the [Flyout article](flyouts.md). 
-
-## Examples
-
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> or <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in action.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
+See the [Flyout article](flyouts.md).

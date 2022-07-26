@@ -11,10 +11,6 @@ ms.localizationpriority: medium
 
 # Windows App SDK deployment guide for framework-dependent MSIX-packaged apps 
 
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-![image](https://user-images.githubusercontent.com/31261191/166337911-fadf8d3e-427f-4d69-af14-be8523208297.png)
-
 This article provides guidance about deploying framework-dependent MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 
 ## Overview
@@ -29,7 +25,7 @@ To learn more about the packages your MSIX-packaged app may need when it uses th
 ## Prerequisites
 
 * For MSIX-packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
-* **C#**. .NET 5 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
+* **C#**. .NET 6 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ## Deploy the Windows App SDK framework package
 
@@ -70,7 +66,7 @@ For MSIX-packaged apps *not* distributed through the Store, the developer is res
 You should call the Deployment API after your app's process is initialized, but before your app uses Windows App SDK runtime features that use the Singleton package (e.g., Push Notifications). The main methods of the Deployment API are the static [GetStatus](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.getstatus) and [Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) methods of the [DeploymentManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager) class.
 
 - The **GetStatus** method returns the current deployment status of the Windows App SDK runtime that is currently loaded. Use this method to identify if there is work required to install Windows App SDK runtime packages before the current app can use Windows App SDK features.
-- The **Initialize** method verifies whether all required packages are present to a minimum version needed by the Windows App SDK runtime that's currently loaded. If any package dependencies are missing, the method attempts to register those missing packages. In Windows App SDK 1.1 Preview 2 and later, the **Initialize** method also supports the option to force-deploy the Windows App SDK runtime packages. That shuts down any processes for the *Main* and *Singleton* runtime packages, and thus interrupts their services (for example, Push Notifications will not deliver notifications during this time).
+- The **Initialize** method verifies whether all required packages are present to a minimum version needed by the Windows App SDK runtime that's currently loaded. If any package dependencies are missing, the method attempts to register those missing packages. Beginning in Windows App SDK 1.1, the **Initialize** method also supports the option to force-deploy the Windows App SDK runtime packages. That shuts down any processes for the *Main* and *Singleton* runtime packages, and thus interrupts their services (for example, Push Notifications will not deliver notifications during this time).
 
 ### Deployment API sample 
 

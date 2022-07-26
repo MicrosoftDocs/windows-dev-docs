@@ -1,5 +1,5 @@
 ---
-description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows 10 features in those apps.
+description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows features in those apps.
 title: Grant identity to non-packaged desktop apps
 ms.date: 04/23/2020
 ms.topic: article
@@ -10,7 +10,7 @@ ms.custom: RS5
 
 # Grant identity to non-packaged desktop apps
 
-Many Windows 10 extensibility features require [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the OS requires identity so that it can identify the caller of the corresponding API.
+Many Windows extensibility features require [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the operating system (OS) requires identity so that it can identify the caller of the corresponding API.
 
 In OS releases before Windows 10, version 2004, the only way to grant identity to a desktop app is to [package it in a signed MSIX package](/windows/msix/desktop/desktop-to-uwp-root). For these apps, identity is specified in the package manifest and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
 
@@ -29,7 +29,7 @@ The following features enable non-packaged desktop apps to acquire package ident
 
 ### Sparse packages
 
-A *sparse package* contains a package manifest but no other app binaries and content. The manifest of a sparse package can reference files outside the package in a predetermined external location. This allows applications that are not yet able to adopt MSIX packaging for their entire app to acquire package identity as required by some Windows 10 extensibility features.
+A *sparse package* contains a package manifest but no other app binaries and content. The manifest of a sparse package can reference files outside the package in a predetermined external location. This allows applications that are not yet able to adopt MSIX packaging for their entire app to acquire package identity as required by some Windows extensibility features.
 
 > [!NOTE]
 > A desktop app that uses a sparse package does not receive some benefits of being fully deployed via an MSIX package. These benefits include tamper protection, installation in a locked-down location, and full management by the OS at deployment, run time, and uninstall.
@@ -51,7 +51,7 @@ Make sure the package manifest includes these items:
 * The **MinVersion** attribute of the [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element should be set to `10.0.19000.0` or a later version.
 * The **TrustLevel=mediumIL** and **RuntimeBehavior=Win32App** attributes of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element declare that the desktop app associated with the sparse package will run similar to a standard unpackaged desktop app, without registry and file system virtualization and other run time changes.
 
-The following example shows the complete contents of a sparse package manifest (AppxManifest.xml). This manifest includes a `windows.sharetarget` extension, which requires package identity.
+The following example shows the complete contents of a sparse package manifest (`AppxManifest.xml`). This manifest includes a `windows.sharetarget` extension, which requires package identity.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -125,7 +125,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ### Add the package identity metadata to your desktop application manifest
 
-You must also include a [side-by-side application manifest](/windows/win32/sbscs/application-manifests) with your desktop app and include an [**msix**](/windows/win32/sbscs/application-manifests#msix) element with attributes that declare the identity attributes of your app. The values of these attributes are used by the OS to determine your app's identity when the executable is launched.
+You must also include a side-by-side application manifest with your desktop app. See [Application manifests](/windows/win32/sbscs/application-manifests) (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build). In that file, include an [**msix**](/windows/win32/sbscs/application-manifests#msix) element with attributes that declare the identity attributes of your app. The values of these attributes are used by the OS to determine your app's identity when the executable is launched.
 
 The following example shows a side-by-side application manifest with an **msix** element.
 
@@ -145,8 +145,6 @@ The attributes of the **msix** element must match these values in the package ma
 
 * The **packageName** and **publisher** attributes must match the **Name** and **Publisher** attributes in the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in your package manifest, respectively.
 * The **applicationId** attribute must match the **Id** attribute of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element in your package manifest.
-
-The side-by-side application manifest must exist in the same directory as the executable file for your desktop app, and by convention it should have the same name as your app's executable file with the `.manifest` extension appended to it. For example, if your app's executable name is `ContosoPhotoStore`, the application manifest filename should be `ContosoPhotoStore.exe.manifest`.
 
 ## Register your sparse package at run time
 

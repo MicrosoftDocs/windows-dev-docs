@@ -53,7 +53,7 @@ To install Next.js, which includes installing next, react, and react-dom:
 
     Open the WSL terminal integrated in VS Code (**View > Terminal**). Make sure that the terminal path is pointed to your project directory (ie. `~/NextProjects/my-next-app$`). Then try running a development instance of your new Next.js app using: `npm run dev`
 
-6. The local development server will start and once your project pages are done building, your terminal will display "compiled successfully - ready on [http://localhost:3000](http://localhost:3000)". Select this localhost link to open your new Next.js app in a web browser.
+6. The local development server will start and once your project pages are done building, your terminal will display "compiled successfully - ready on `http://localhost:3000`". Select this localhost link to open your new Next.js app in a web browser.
 
     ![Your Next.js app running in localhost:3000](../../images/next-app.png)
 

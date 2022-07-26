@@ -94,7 +94,7 @@ function basics2() {
 }
 ```
 
-Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](/scripting/jswinrt/using-the-windows-runtime-in-javascript). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
+Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](#using-the-windows-runtime-from-javascript-and-managed-code). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
 
 In similar fashion, .NET provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Windows Runtime components with C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET support for UWP apps and the Windows Runtime](/dotnet/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime).
 
@@ -163,7 +163,7 @@ This is a better way to add events to HTML controls than adding a click event ha
 
 ## Build and run the app
 
-Before you build, change the target platform for all projects to ARM, x64, or x86, as appropriate for your computer.
+Before you build, change the target platform for all projects to Arm, x64, or x86, as appropriate for your computer.
 
 To build and run the solution, choose the F5 key. (If you get a run-time error message stating that SampleComponent is undefined, the reference to the class library project is missing.)
 

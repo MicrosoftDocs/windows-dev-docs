@@ -11,12 +11,6 @@ ms.localizationpriority: medium
 
 # Using a SystemBackdropController with WinUI 3 XAML
 
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-> [!IMPORTANT]
-> The feature described in this topic is available in the [Windows App SDK version 1.1 Preview 3](/windows/apps/windows-app-sdk/preview-channel#version-11-preview-3-110-preview3).
-
 The **Microsoft.UI.Composition.SystemBackdrops.MicaController** and **Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController** types can be used with a **Microsoft.UI.Xaml.Window** as a compatible **Microsoft.UI.Composition.ICompositionSupportsSystemBackdrop** target. We just need to ensure that the following 3 pieces are wired up:
 
 1. An available **Windows.System.DispatcherQueue** on the main XAML thread.

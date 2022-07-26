@@ -14,6 +14,7 @@ Design your app to provide bidirectional text support (BiDi) so that you can com
 Right-to-left writing systems, such as those used in the Middle East, Central and South Asia, and in Africa, have unique design requirements. These writing systems require bidirectional text support (BiDi). BiDi support is the ability to input and display text layout in either right to left (RTL) or left to right (LTR) order.
 
 A total of nine BiDi languages are included with Windows.
+
 - Two fully localized languages. Arabic, and Hebrew.
 - Seven Language Interface Packs for emerging markets. Persian, Urdu, Dari, Central Kurdish, Sindhi, Punjabi (Pakistan), and Uyghur.
 
@@ -30,7 +31,7 @@ Four elements influence BiDi design decisions in Windows.
 
 ## Feature design overview
 
-Windows supports the four BiDi design elements. Let's look at some of the major relevant features in Windows, and provide some context around how they affect your app.
+Windows supports the four BiDi design elements. Let's look at some of the major relevant features of (prior versions of) Windows, and provide some context around how they affect your app.
 
 ### Navigate in the direction that feels natural
 

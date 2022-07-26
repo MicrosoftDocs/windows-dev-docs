@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 02/14/2022
+ms.date: 07/01/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -28,6 +28,10 @@ This guide can help you test and debug your Android app on Windows:
 - Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
 - [Test and debug](#test-and-debug) your app on a Windows 11 device.
 - [Troubleshoot and find answers](#troubleshooting-issues).
+
+## Preview Program
+
+The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](/windows/android/wsa/preview-program).
 
 ## Set up your development environment
 
@@ -193,7 +197,7 @@ To debug an APK using adb:
 
 ### Building Universal APKs
 
-Windows Subsystem for Android utilizes Intel Bridge Technology to emulate ARM applications on x86 based processors. ARM applications will run on ARM based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and ARM64 architectures.
+Windows Subsystem for Android utilizes Intel Bridge Technology to emulate Arm applications on x86 based processors. Arm applications will run on Arm based processors natively. The emulation layer will induce a performance overhead – for optimal performance, submit your application for both the x86-64 and Arm64 architectures.
 
 ## VM lifecycle considerations
 
@@ -251,6 +255,9 @@ If you encounter issues specific to the Amazon Appstore on Windows, try the foll
 For further troubleshooting steps relating to the Windows Subsystem for Android Settings app or to leave feedback using Feedback Hub, see [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/d6062afd-98a1-4018-a7c8-6b3b680a2ea5).
 
 For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
+
+> [!NOTE]
+> Currently in Windows Subsystem for Android, Bluetooth functionality, such as scanning for BLE devices, is not supported.
 
 ## Additional resources
 

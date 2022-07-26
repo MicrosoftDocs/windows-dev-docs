@@ -31,7 +31,7 @@ The handle of the display monitor for which to get the `DisplayId`.
 
 ### Returns
 
-[DisplayId](/windows/winui/api/microsoft.ui.displayid)
+[DisplayId](/windows/windows-app-sdk/api/winrt/microsoft.ui.displayid)
 
 The display monitor identifier that corresponds to the specified *hmonitor*, if the provided *hmonitor* is valid. Otherwise, `null`.
 
@@ -45,4 +45,4 @@ The display monitor identifier that corresponds to the specified *hmonitor*, if 
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

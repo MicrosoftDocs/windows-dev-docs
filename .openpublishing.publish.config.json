@@ -11,7 +11,7 @@
       "xref_query_tags": [
         "/uwp/api"
       ],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "ZonePivotGroups": "Toc",
         "Conceptual": "Content",

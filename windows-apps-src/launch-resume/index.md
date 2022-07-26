@@ -2,7 +2,7 @@
 title: Launching, resuming, and background tasks
 description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
-ms.date: 10/04/2017
+ms.date: 05/16/2022
 ms.topic: article
 keywords: windows 10, uwp, background task, app service, connected devices, remote systems
 ms.localizationpriority: medium
@@ -92,7 +92,7 @@ The [Background tasks](support-your-app-with-background-tasks.md) section shows 
 | [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. |
 | [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)       | Create and register a background task that runs in the same process as your foreground app. |
 | [Create and register an out-of-process background task](create-and-register-a-background-task.md)           | Create and register a background task that that runs in a separate process from your app, and register it to run when your app is not in the foreground. |
-| [Create and register a COM background task for a winmain app](create-and-register-a-winmain-background-task.md) | Create a COM background task that can run in your main process or out-of-process when your packaged winmain app may not be running. |
+| [Create and register a COM background task for a Win32 app](create-and-register-a-winmain-background-task.md) | Create a COM background task that can run in your main process or out-of-process when your packaged Win32 app may not be running. |
 | [Port an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md) | Learn how to port an out-of-process background task to an in-process background task that runs in the same process as your foreground app.|
 | [Debug a background task](debug-a-background-task.md)                                                       | Learn how to debug a background task, including background task activation and debug tracing in the Windows event log. |
 | [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md) | Enable the use of background tasks by declaring them as extensions in the app manifest. |

@@ -36,7 +36,7 @@ InfoBadge is built into [NavigationView](navigationview.md), but can also be pla
 > **Windows UI Library APIs:** [InfoBadge class](/uwp/api/microsoft.ui.xaml.controls.infobadge)
 
 > [!TIP]
-> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/uwp/api/windows.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> Throughout this document, we use the **muxc** alias in XAML to represent the Windows UI Library APIs that we have included in our project. We have added this to our [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) element: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >In the code-behind, we also use the **muxc** alias in C# to represent the Windows UI Library APIs that we have included in our project. We have added this **using** statement at the top of the file: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -60,17 +60,17 @@ Examples of inappropriate InfoBadge usage:
 - To indicate an urgent matter on a page within the app that needs to be addressed before continuing to use the app. For this scenario, use a [ContentDialog](dialogs-and-flyouts/dialogs.md).
 - Appearing in an app with no way for the user to dismiss the InfoBadge. For a persistent alert like this, use the [InfoBar control](infobar.md).
 - Using the InfoBadge as a permanent way of bringing the user's focus to an area, without a way for the user to dismiss the InfoBadge.
-- Using an InfoBadge as a regular icon or image in your app. Instead, use an appropriate [IconSource](/uwp/api/windows.ui.xaml.controls.iconsource) or [Image](images-imagebrushes.md).
+- Using an InfoBadge as a regular icon or image in your app. Instead, use an appropriate [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource) or [Image](images-imagebrushes.md).
 
 <table>
-<th align="left">XAML Controls Gallery<th>
+<th align="left">WinUI 2 Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/InfoBadge">open the app and see the InfoBadge in action</a>.</p>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/InfoBadge">open the app and see the InfoBadge in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -94,7 +94,7 @@ The icon InfoBadge is an ellipse with a diameter of 16px that holds an icon insi
 
 You should use the icon InfoBadge to send a quick message along with getting the user's attention – for example, to alert the user that something non-blocking has gone wrong, an extra important update is available, or that something specific in the app is currently enabled (such as a countdown timer going).
 
-If you'd like to use a [BitmapIconSource](/windows/winui/api/microsoft.ui.xaml.controls.bitmapiconsource) for the `IconSource` of your InfoBadge, you are responsible for ensuring that the bitmap fits inside of the InfoBadge (either by changing the size of the icon, or changing the size of the InfoBadge).
+If you'd like to use a [BitmapIconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapiconsource) for the `IconSource` of your InfoBadge, you are responsible for ensuring that the bitmap fits inside of the InfoBadge (either by changing the size of the icon, or changing the size of the InfoBadge).
 
 ### Numeric InfoBadge
 
@@ -317,13 +317,13 @@ This image shows a hierarchical NavigationView with its PaneDisplayMode set to T
 
 ## Using an InfoBadge in another control
 
-You might want to show alerts or notifications on elements within your app other than NavigationView. You might have a [ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem) that needs special attention, or a menu item that displays a notification. In these cases, you can integrate InfoBadge directly into your UI with other controls.
+You might want to show alerts or notifications on elements within your app other than NavigationView. You might have a [ListViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitem) that needs special attention, or a menu item that displays a notification. In these cases, you can integrate InfoBadge directly into your UI with other controls.
 
-InfoBadge is a [UIElement](/uwp/api/windows.ui.xaml.uielement) and therefore cannot be used as a shared resource.
+InfoBadge is a [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) and therefore cannot be used as a shared resource.
 
-To do this, use InfoBadge as you would any other control – simply add the InfoBadge markup where you'd like it to appear. Since InfoBadge inherits from [Control](/windows/winui/api/microsoft.ui.xaml.controls.control), it has all the built-in positioning properties, such as margin, alignment, padding, and more, which you can use to position your InfoBadge exactly where you want it.
+To do this, use InfoBadge as you would any other control – simply add the InfoBadge markup where you'd like it to appear. Since InfoBadge inherits from [Control](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control), it has all the built-in positioning properties, such as margin, alignment, padding, and more, which you can use to position your InfoBadge exactly where you want it.
 
-If you place an InfoBadge inside of another control, such as a [Button](/uwp/api/windows.ui.xaml.controls.button) or a [ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem), it will likely get cropped if you position it to extend beyond the bounding box of the parent control. If your InfoBadge is inside of another control, it should not be positioned past the corners of the control's overall bounding box.
+If you place an InfoBadge inside of another control, such as a [Button](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button) or a [ListViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitem), it will likely get cropped if you position it to extend beyond the bounding box of the parent control. If your InfoBadge is inside of another control, it should not be positioned past the corners of the control's overall bounding box.
 
 ### Example: Placing an InfoBadge inside another control
 
@@ -355,7 +355,7 @@ An InfoBadge typically displays a transient alert, so it's common to show or hid
 
 ### Showing and hiding an InfoBadge
 
-You can use either the [Visibility](/uwp/api/windows.ui.xaml.uielement.visibility) property or [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) property to show and hide an InfoBadge based on user actions, program logic, counters, etc.
+You can use either the [Visibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.visibility) property or [Opacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.opacity) property to show and hide an InfoBadge based on user actions, program logic, counters, etc.
 
 As with other UIElements, setting `Visibility.Collapsed` will make the InfoBadge not take space in your layout, so it might cause other elements to move around when it's shown and hidden.
 
@@ -388,9 +388,9 @@ If you are using InfoBadge outside of a NavigationView, we recommend the followi
 - The app sends a UIA notification when a significant change has occurred with an existing InfoBadge.
   - The definition of "significant change" is up to you as the individual developer. Examples of this can include: an InfoBadge switching between different types, an InfoBadge changing color to represent its status, or an InfoBadge's value exceeding a certain significant number.
 
-To control what the parent element announces to screenreaders, you can use attached properties of the [AutomationProperties](/uwp/api/windows.ui.xaml.automation.automationproperties) class. For InfoBadge, it's recommended that you set either the `AutomationProperties.FullDescription` or `AutomationProperties.ItemStatus` attached properties on the parent element.
+To control what the parent element announces to screenreaders, you can use attached properties of the [AutomationProperties](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) class. For InfoBadge, it's recommended that you set either the `AutomationProperties.FullDescription` or `AutomationProperties.ItemStatus` attached properties on the parent element.
 
-To send UIA notifications upon the InfoBadge's appearance or dismissal, you can use the [AutomationPeer.RaiseAutomationEvent](/uwp/api/windows.ui.xaml.automation.peers.automationpeer.raiseautomationevent) method.
+To send UIA notifications upon the InfoBadge's appearance or dismissal, you can use the [AutomationPeer.RaiseAutomationEvent](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.raiseautomationevent) method.
 
 The InfoBadge comes at a default size that meets accessibility requirements. Developers can customize many aspects of the InfoBadge including its height/width/color, etc. but it's important that the default InfoBadge adheres to our accessibility guidelines for size and color.
 

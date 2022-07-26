@@ -42,7 +42,7 @@ When we created the Visual Studio project for Marble Maze, we started with an ex
 
 
 
-One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Setting Compiler Options](/cpp/build/reference/setting-compiler-options) for more info about how to set compiler options in Visual Studio.
+One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Compiler and Linker options (C++/CX)](/cpp/cppcx/compiler-and-linker-options-c-cx) for more info about how to set compiler options in Visual Studio.
 
 > **Caution**   The **/ZW** option is not compatible with options such as **/clr**. In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
 

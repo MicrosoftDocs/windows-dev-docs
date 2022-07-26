@@ -5,6 +5,7 @@ ms.date: 04/27/2022
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
+adobe-target: true
 ---
 
 # Microsoft PowerToys: Utilities to customize Windows
@@ -17,7 +18,7 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Processor support
 
 - **x64**: Supported
-- **ARM**: In development (see [issue #490](https://github.com/microsoft/PowerToys/issues/490))
+- **Arm**: Supported
 
 ## Current PowerToy utilities
 

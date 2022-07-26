@@ -38,7 +38,7 @@ Once you've set up your development environment, see [WinUI 3 templates in Visua
 For more information about getting started with building a WinUI 3 app, see the following articles:
 
 - [Create your first WinUI 3 project](../create-your-first-winui3-app.md)
-- [Build a basic WinUI 3 app for desktop](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
+- [Build a C# .NET app with WinUI 3 and Win32 interop](/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 
@@ -129,7 +129,7 @@ The following features and capabilities were introduced in past WinUI 3 preview 
 > [!NOTE]
 > Some of the following features will continue to be a part of WinUI 3 previews, but may not be a part of the next supported release. These features are marked as experimental and will throw a warning when used in an app. APIs that are a part of the WinUI 2.6 pre-release are also marked as experimental in this release.
 
-- Ability to create desktop apps with WinUI, including [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0) for Win32 apps
+- Ability to create desktop apps with WinUI, including [.NET](https://github.com/dotnet/core/blob/main/release-notes/6.0/README.md) for Win32 apps
 - Preview-level support for building UWP apps
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView updates](/windows/uwp/design/controls-and-patterns/tab-view)
@@ -142,7 +142,7 @@ The following features and capabilities were introduced in past WinUI 3 preview 
 - SwapChainPanel
 - MRT Core Support
   - This makes apps faster and lighter on startup and provides quicker resource lookup.
-- ARM64 Support
+- Arm64 Support
 - Drag and drop inside and outside of apps
 - RenderTargetBitmap (currently only XAML content - no SwapChainPanel content)
 - Custom cursor support
@@ -151,7 +151,7 @@ The following features and capabilities were introduced in past WinUI 3 preview 
   - Live Visual Tree, Hot Reload, Live Property Explorer and similar tools
   - Intellisense for WinUI 3
 - Improvements required for open source migration
-- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
+- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
 - VirtualSurfaceImageSource support
 - In-app acrylic
 - Multi-window support in desktop apps
@@ -180,14 +180,14 @@ WinUI 3 - Project Reunion 0.8 Preview is compatible with PCs running the Windows
 
 ### Developer tools
 
-- Only C# and C++/WinRT apps are supported
-- Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
-- No XAML Designer support
-- New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible)
-- Unpackaged desktop deployment is not supported
+- Only C# and C++/WinRT apps are supported.
+- Desktop apps support .NET 6 (and later) and C# 9, and must be packaged in an MSIX app.
+- No XAML Designer support.
+- New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible).
+- Unpackaged desktop deployment is not supported.
 - When running a desktop app using F5, make sure that you are running the packaging project. Hitting F5 on the app project will run an unpackaged app, which WinUI 3 does not yet support.
 
-### Missing Platform Features
+### Missing platform features
 
 - Xbox support
 - HoloLens support
@@ -206,7 +206,7 @@ WinUI 3 - Project Reunion 0.8 Preview is compatible with PCs running the Windows
 - XAML Islands is not supported in this release
 - Using WinUI 3 directly in an existing non-WinUI desktop app has the following limitation: The currently available path for migrating an existing app is to add a **new** WinUI 3 project to your solution, and adjust or refactor your logic as needed.
 
-- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/windows/winui/api/microsoft.ui.xaml.application.suspending) for more details. 
+- Application.Suspending is not called in desktop apps. See API reference documentation on the [Application.Suspending Event](/uwp/api/windows.ui.xaml.application.suspending) for more details. 
 
 - The [UISettings.ColorValuesChanged Event](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) and [AccessibilitySettings.HighContrastChanged Event](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) are no longer supported in desktop apps. This may cause issues if you are using it to detect changes in Windows themes. 
 

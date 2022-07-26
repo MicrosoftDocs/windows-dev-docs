@@ -30,7 +30,7 @@ Download the Windows App SDK | There are several packages and release channels f
 Feature | Description
 :------ | :------
 WinUI | [WinUI 2.8](/windows/apps/winui/winui2/) and [WinUI 3](/windows/apps/winui/winui3/) are versions of the new Windows UI Library. Which version you use depends on the tools you are using: for example, WinUI 2.8 supports UWP apps. 
-InfoBadge control | An [InfoBadge](/windows/winui/api/microsoft.ui.xaml.controls.infobadge) is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot. InfoBadge is built into [NavigationView](/windows/apps/design/controls/navigationview) but can also be placed as a standalone element in the XAML tree, allowing you to place InfoBadge into any control or piece of UI of your choosing. </br> If you have the [XAML Controls Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT) installed, [click here to open the app and see the InfoBadge in action](xamlcontrolsgallery:/item/InfoBadge).
+InfoBadge control | An [InfoBadge](/windows/winui/api/microsoft.ui.xaml.controls.infobadge) is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot. InfoBadge is built into [NavigationView](/windows/apps/design/controls/navigationview) but can also be placed as a standalone element in the XAML tree, allowing you to place InfoBadge into any control or piece of UI of your choosing. </br> If you have the [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT) installed, [click here to open the app and see the InfoBadge in action](winui2gallery:/item/InfoBadge).
 ColorPicker control | [The new orientation property of the ColorPicker control](/windows/apps/design/controls/color-picker?#specify-the-layout-direction) allows you to control where the editing controls display relative to the color spectrum.
 
 
@@ -63,4 +63,4 @@ The [Family Notes](https://github.com/Microsoft/Windows-appsample-familynotes) h
 * Start and stop haptic feedback: start and stop feedback using variations of SendHapticFeedback and StopFeedback API
 * Trigger both inking and interaction haptic feedback: the code shows how to trigger inking feedback for inking scenarios and interaction feedback for user interactions
 
-[The XAML Controls Gallery](/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/) has been updated to showcase the latest additions to the Windows UI Library in WinUI 2.7.
+[The WinUI 2 Gallery](/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/) has been updated to showcase the latest additions to the Windows UI Library in WinUI 2.7.

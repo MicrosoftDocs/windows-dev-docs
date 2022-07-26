@@ -29,7 +29,7 @@ Mica is a new material that incorporates theme and desktop wallpaper to paint th
 
 [Usage guidelines](../../../design/style/mica.md)
 
-[API reference](/winui/api/microsoft.ui.xaml.controls.backdropmaterial)
+[API reference](/windows/winui/api/microsoft.ui.xaml.controls.backdropmaterial)
 
 ## Expander
 
@@ -126,13 +126,16 @@ A new `SplitButtonCommandBarStyle` provides the ability to apply the look and fe
 
 ## Samples
 
-The **XAML Controls Gallery** sample app includes examples of each of these WinUI features and controls.
-
-If you have the **XAML Controls Gallery** app installed and updated to the latest version, [see the controls in action](xamlcontrolsgallery:).
-
-If you don't have the XAML Controls Gallery app installed, get it from the [Microsoft Store](https://aka.ms/xamlgalleryapp).
-
-You can also view, clone, and build the XAML Controls Gallery source code from [GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery).
+> [!TIP]
+> For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
+>
+> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+>
+> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+>
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+>
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ## Other updates
 

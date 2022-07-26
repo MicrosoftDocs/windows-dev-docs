@@ -44,7 +44,6 @@ FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd
 If you have applications that are elevated (such as Windows Terminal or Task Manager) and want them snapped with FancyZones, run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
 
 
-
 ## Getting started with the editor
 
 ### Launch zones editor
@@ -84,7 +83,7 @@ The **Grid** model starts with a three column grid and allows zones to be create
 
 - To divide a zone: click your mouse. To rotate the divider: hold down the <kbd>Shift</kbd> key.
 - To move a divider: click on the thumb and drag.
-- To merge zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
+- To merge/delete zones: select a zone and hold the left mouse button and drag the mouse until multiple zones are selected, release the button and a popup menu will show up. Click "Merge" and they will become one big zone. This is how a zone would be deleted, by merging it into another zone.
 
 ![FancyZones Table Editor Mode.](../images/pt-fancyzones-grideditor.png)
 
@@ -103,8 +102,7 @@ In the demo below, we start with a default template applied to the screen and tw
 ![FancyZones Quick-Swap Layouts settings and usage.](../images/pt-fancyzones-quickswap.gif)
 
 > [!TIP]
-> The settings for the zone layouts and monitors are saved in file `%LocalAppData%\Microsoft\PowerToys\FancyZones\zones-settings.json`. This can be manually changed to tweak zones, and exported to share layouts across devices.
-
+> The settings for your custom zone layouts are saved in the file `%LocalAppData%\Microsoft\PowerToys\FancyZones\custom-layouts.json`. This file can be manually changed to tweak zones, and exported to share layouts across devices. Other json files in the same directory can be modified to alter settings for monitors, layout hotkeys, etc. Be warned that editing these files is not recommended as it may cause other issues with FancyZones functionality. 
 
 ## Settings
 
@@ -130,7 +128,7 @@ In the demo below, we start with a default template applied to the screen and tw
 | Make dragged window transparent | When the zones are activated, the window being dragged is made transparent to improve the zones visibility. |
 | Allow popup windows snapping | This setting can affect all popup windows including notifications. |
 | Allow child windows snapping | |
-| Disable round corners when window is snapped | Works on Windows 11. |
+| Disable round corners when window is snapped | Only for Windows 11. |
 | Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides two Windows Snap keys: <kbd>⊞ Win</kbd>+<kbd>left</kbd> and <kbd>⊞ Win</kbd>+<kbd>right</kbd>. |
 | Move windows based on their position | Allows to use <kbd>⊞ Win</kbd>+<kbd>arrows</kbd> to snap a window based on its position relatively to the zone layout. |
 | Move windows between zones across all monitors | Unchecked: snapping with <kbd>⊞ Win</kbd>+<kbd>arrow</kbd> cycles the window through the zones on the current monitor.<br/>Checked: it cycles the window through all the zones on all monitors. |

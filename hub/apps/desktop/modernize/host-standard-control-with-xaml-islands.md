@@ -20,7 +20,7 @@ This topic shows how to build a C# Windows Presentation Foundation (WPF) app (ta
 The process for hosting a UWP XAML control in a WPF app is similar for a Windows Forms app.
 
 > [!IMPORTANT]
-> Using XAML Islands (wrapped controls or [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. XAML Islands are not supported in apps that target .NET 5, or in apps that target any version of the .NET Framework.
+> Using XAML Islands (wrapped controls or [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. XAML Islands are not supported in apps that target .NET, or in apps that target any version of the .NET Framework.
 
 ## Recommended components
 
@@ -302,6 +302,8 @@ The following instructions show you how to package all the components in the sol
 1. Right-click the project node for the packaging project that you just added, and click **Set as Startup project**.
 
 1. Build and run the packaging project. Confirm that the WPF app runs, and that the UWP control(s) display as expected.
+
+1. For info about distributing/deploying the package, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview). 
 
 ## Related topics
 

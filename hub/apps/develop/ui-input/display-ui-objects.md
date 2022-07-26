@@ -51,12 +51,12 @@ These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_
 
 The next sections contain code examples to display a [**FolderPicker**](/uwp/api/windows.storage.pickers.fileopenpicker). But it's the same technique to display any of the APIs listed above.
 
-### WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
+### WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)
 
 > [!NOTE]
-> The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 5 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+> The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 6 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
-The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c). Then, to set the owner window for the UI object that you want to display, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call WinRT COM interop interfaces from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c). Then, to set the owner window for the UI object that you want to display, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 ```csharp
 // MainWindow.xaml.cs
@@ -107,7 +107,7 @@ The [**Windows.ApplicationModel.DataTransfer.DataTransferManager**](/uwp/api/win
 
 In a desktop app, instead of calling the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) method, you call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow), as shown in the code examples below.
 
-### WinUI 3 with C# (also WPF/WinForms with .NET 5 or later)
+### WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)
 
 ```csharp
 // MainWindow.xaml.cs
@@ -205,14 +205,14 @@ The [**Windows.Security.Credentials.UI.UserConsentVerifier**](/uwp/api/windows.s
 
 In a desktop app, instead of calling the [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) method:
 
-* **C#**. Call the **RequestVerificationForWindowAsync** method of the **Windows.Security.Credentials.UI.UserConsentVerifierInterop** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+* **C#**. Call the **RequestVerificationForWindowAsync** method of the **Windows.Security.Credentials.UI.UserConsentVerifierInterop** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 * **C++/WinRT**. Call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow).
 
 For more info, and code examples, see [**UserConsentVerifier**](/uwp/api/windows.security.credentials.ui.userconsentverifier).
 
 ## For classes that implement other interop interfaces
 
-These interfaces have **XxxForWindow** methods, which let you set an owner window handle (HWND). You can use these interfaces directly from C++/WinRT. Versions of the interfaces also exist in the form of C# classes&mdash;for more details, see [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+These interfaces have **XxxForWindow** methods, which let you set an owner window handle (HWND). You can use these interfaces directly from C++/WinRT. Versions of the interfaces also exist in the form of C# classes&mdash;for more details, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
 
 * [**IAccountsSettingsPaneInterop**](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop)
 * [**IDragDropManagerInterop**](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop)
@@ -234,4 +234,4 @@ These interfaces have **XxxForWindow** methods, which let you set an owner windo
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 * [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

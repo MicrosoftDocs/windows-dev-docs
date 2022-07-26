@@ -29,7 +29,7 @@ For more information, see [Windows App SDK](../../windows-app-sdk/index.md).
 
 ## Windows UI Library
 
-The Windows UI Library (WinUI) is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows 10. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.
+The Windows UI Library (WinUI) is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.
 
 You can use WinUI in the following ways in desktop apps:
 
@@ -58,11 +58,11 @@ The *dynamic dependencies* feature in the Windows App SDK and in the Windows 11 
 
 For more information, see [Use MSIX framework packages dynamically from your desktop app](framework-packages/index.md).
 
-## .NET 5
+## .NET
 
-.NET 5 is the latest major release of .NET Core. This release supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)) as well as Windows Forms and Windows Presentation Foundation (WPF) apps. You can run new and existing Windows desktop apps on .NET 5 and enjoy all the benefits that .NET Core has to offer. 
+.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
 
-For more information, see [What's new in .NET 5](/dotnet/core/dotnet-five).
+For more information, see [What's new in .NET 6](/dotnet/core/whats-new/dotnet-6).
 
 ## Host WinRT XAML controls (XAML Islands)
 
@@ -72,7 +72,7 @@ For more information, see [WinRT XAML controls in desktop apps](xaml-islands.md)
 
 ## Use the Visual layer in desktop apps
 
-You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows 10 (and later) UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
+You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
 
 For more information, see [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md).
 

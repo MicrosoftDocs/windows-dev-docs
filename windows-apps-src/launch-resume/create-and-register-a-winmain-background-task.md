@@ -1,30 +1,30 @@
 ---
-title: Create and register a winmain background task
-description: Create a COM background task that can run in your main process or out-of-process when your packaged winmain app may not be running.
+title: Create and register a win32 background task
+description: Create a COM background task that can run in your main process or out-of-process when your packaged Win32 app may not be running.
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
-ms.date: 03/27/2020
+ms.date: 05/16/2022
 ms.topic: article
-keywords: windows 10, desktop bridge, sparse signed packaged, winmain, background task
+keywords: windows 10, desktop bridge, sparse signed packaged, win32, background task
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 ---
 
-# Create and register a winmain COM background task
+# Create and register a Win32 COM background task
 
 > [!TIP]
 > The BackgroundTaskBuilder.SetTaskEntryPointClsid method is available starting in Windows 10, version 2004.
 
 > [!NOTE]
-> This scenario is only applicable to packaged WinMain apps. UWP applications will encounter errors trying to implement this scenario.
+> This scenario is only applicable to packaged Win32 apps. UWP applications will encounter errors trying to implement this scenario.
 
 **Important APIs**
 
 -   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
 -   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
-Create a COM background task class and register it to run in your full trust packaged winmain app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
+Create a COM background task class and register it to run in your full trust packaged Win32 app in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. This topic demonstrates how to create and register a background task that can run in your foreground app process or another process.
 
 ## Create the Background Task class
 
@@ -32,7 +32,7 @@ You can run code in the background by writing classes that implement the [**IBac
 
 The following steps show you how to write a new class that implements the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface and add it to your main process.
 
-1.  [**See these instructions**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged WinMain application solution. This is required to use the IBackgroundTask and related APIs.
+1.  [**See these instructions**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) to reference WinRT APIs in your packaged Win32 application solution. This is required to use the IBackgroundTask and related APIs.
 2.  In that new class, implement the [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) interface. The [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
 > [!NOTE]
@@ -259,7 +259,7 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ## Add the support code to instantiate the COM class
 
-In order for the background task to be activated into a full trust winmain application, the background task class must have support code such that COM understands how to start the app process if it is not running, and then understanding which instance of the process is currently the server for handling new activations for that background task.
+In order for the background task to be activated into a full trust Win32 application, the background task class must have support code such that COM understands how to start the app process if it is not running, and then understanding which instance of the process is currently the server for handling new activations for that background task.
 
 1.  COM needs to understand how to launch the app process if it is not running already. The app process that hosts the background task code needs to be declared in the package manifest. The following sample code shows how the **SampleTask** is hosted inside **SampleBackgroundApp.exe**. When the background task is launched when no process is running, **SampleBackgroundApp.exe** will be launched with process arguments **"-StartSampleTaskServer"**.
 
@@ -432,7 +432,7 @@ for (auto const& task : allTasks)
 The background task trigger controls when the background task will run. For a list of possible triggers, see the [**Windows.ApplicationModel.Background**](/uwp/api/windows.applicationmodel.background) Namespace.
 
 > [!NOTE]
-> Only a subset of triggers are supported for packaged winmain background tasks.
+> Only a subset of triggers are supported for packaged Win32 background tasks.
 
 For example, this code creates a new background task and sets it to run it on a 15-minute recurring [**TimeTrigger**]():
 
@@ -512,10 +512,10 @@ catch (...)
 
 ## Bringing it all together
 
-The following code samples show the complete code required to run and register your COM winmain background task:
+The following code samples show the complete code required to run and register your COM Win32 background task:
 
 <details>
-<summary>Complete winmain app package manifest</summary>
+<summary>Complete Win32 app package manifest</summary>
 <p>
 
 ```xml
@@ -1040,9 +1040,9 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 ## Remarks
 
-Unlike UWP apps that can run background tasks in modern standby, WinMain apps cannot run code from the lower power phases of modern standby. See [Modern Standby](/windows-hardware/design/device-experiences/modern-standby) to learn more.
+Unlike UWP apps that can run background tasks in modern standby, Win32 apps cannot run code from the lower power phases of modern standby. See [Modern Standby](/windows-hardware/design/device-experiences/modern-standby) to learn more.
 
-[!NOTE] Download the [WinMain COM background task sample](https://github.com/microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTaskWinMainComSample) to see similar code examples in the context of a complete Desktop Bridge app that uses background tasks.
+[!NOTE] Download the [Win32 COM background task sample](https://github.com/microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTaskWinMainComSample) to see similar code examples in the context of a complete Desktop Bridge app that uses background tasks.
     
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 

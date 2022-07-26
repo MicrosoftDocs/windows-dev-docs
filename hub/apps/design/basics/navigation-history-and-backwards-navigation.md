@@ -86,7 +86,7 @@ This backwards navigation design guidance is applicable to all devices, but your
 To optimize your UI:
 
 - **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
-- **[Tablet Mode (Windows 10 only)](/windows-hardware/design/device-experiences/continuum)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
+- **[Tablet Mode](/windows-hardware/design/device-experiences/continuum)**: A hardware or software back button might be present on tablets, but we recommend drawing an in-app back button for clarity.
 - **Xbox/TV**: Do not draw a back button; it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
 
 If your app will run on Xbox, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of the button. If you use a [NavigationView](../controls/navigationview.md) control, it will automatically toggle the back button's visibility when your app is running on Xbox.
@@ -96,7 +96,7 @@ We recommend handling the following events (in addition to the back button Click
 | Event | Input |
 | --- | --- |
 | [CoreDispatcher.AcceleratorKeyActivated](/uwp/api/windows.ui.core.coredispatcher.acceleratorkeyactivated) | Alt+Left arrow,<br/>VirtualKey.GoBack |
-| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | Windows + Backspace,<br/>Gamepad B button,<br/>Tablet Mode back button (Windows 10 only),<br/>Hardware back button |
+| [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) | Windows + Backspace,<br/>Gamepad B button,<br/>Tablet Mode back button,<br/>Hardware back button |
 | [CoreWindow.PointerPressed](/uwp/api/windows.ui.core.corewindow.pointerpressed) | VirtualKey.XButton1<br/>(Such as the back button found on some mice.) |
 
 ## Code examples
@@ -347,9 +347,9 @@ private:
 
 ### Handle system back requests
 
-Windows devices provide various ways that the system can pass a back navigation request to your app. Some common ways are the B button on a gamepad, the Windows key + Backspace key shortcut, or the system back button in Tablet Mode (Windows 10 only); the exact options available depend on the device.
+Windows devices provide various ways that the system can pass a back navigation request to your app. Some common ways are the B button on a gamepad, the Windows key + Backspace key shortcut, or the system back button in Tablet Mode; the exact options available depend on the device.
 
-You can support system provided back requests from hardware and software system back keys by registering a listener for the [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) event.
+You can support system provided back requests from hardware and software system back keys by registering a listener for the [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
 
 Here's the code added to the `App` class to support system provided back requests. (This assumes that the previous code to support the back button has already been added.) You can see all the `App` code together at the end of the Code examples section.
 
@@ -431,7 +431,7 @@ private:
 
 #### System back behavior for backward compatibility
 
-Previously, UWP apps used [SystemNavigationManager.AppViewBackButtonVisibility](/uwp/api/windows.ui.core.systemnavigationmanager.appviewbackbuttonvisibility) to show or hide a system back button for backwards navigation. (This button raises a [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) event.) This API will continue to be supported to ensure backward compatibility, but we no longer recommend using the back button exposed by `AppViewBackButtonVisibility`. Instead, you should provide your own in-app back button as described in this article.
+Previously, UWP apps used [SystemNavigationManager.AppViewBackButtonVisibility](/uwp/api/windows.ui.core.systemnavigationmanager.appviewbackbuttonvisibility) to show or hide a system back button for backwards navigation. (This button raises a [SystemNavigationManager.BackRequested](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.) This API will continue to be supported to ensure backward compatibility, but we no longer recommend using the back button exposed by `AppViewBackButtonVisibility`. Instead, you should provide your own in-app back button as described in this article.
 
 If you continue to use [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the system UI renders the system back button inside the title bar. (The appearance and user interactions for the back button are unchanged from previous builds.)
 

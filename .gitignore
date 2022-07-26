@@ -84,3 +84,4 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+.markdownlint.json

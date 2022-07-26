@@ -90,7 +90,7 @@ These objects provide the bulk of the wheel device experience for Windows apps.
 
 After you've downloaded the RadialController sample app, verify that it runs:
 1. Open the sample project in Visual Studio .
-2. Set the **Solution Platforms** dropdown to a non-ARM selection.
+2. Set the **Solution Platforms** dropdown to a non-Arm selection.
 3. Press F5 to compile, deploy, and run. 
 
 > [!NOTE]

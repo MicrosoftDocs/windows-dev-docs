@@ -23,7 +23,7 @@ Before starting, you should be familiar with the MediaPlayerElement and the Medi
 > The examples in this topic are based on the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls). You can download the sample to view and run the completed code.
 
 > [!NOTE]
-> **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10 you will need to use [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. All of the examples on this page work with **MediaElement** as well.
+> **MediaPlayerElement** is only available in Windows 10, version 1607 and later. If you are developing an app for an earlier version of Windows 10 you will need to use [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. All of the examples on this page work with **MediaElement** as well.
 
 ## When should you customize the template?
 

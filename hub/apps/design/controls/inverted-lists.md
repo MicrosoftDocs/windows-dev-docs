@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 You can use a list view to present a conversation in a chat experience with items that are visually distinct to represent the sender/receiver.  Using different colors and horizontal alignment to separate messages from the sender/receiver helps the user quickly orient themselves in a conversation.
 
-> **Important APIs**:  [ListView class](/uwp/api/windows.ui.xaml.controls.listview), [ItemsStackPanel class](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), [ItemsUpdatingScrollMode property](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
+> **Important APIs**:  [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview), [ItemsStackPanel class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel), [ItemsUpdatingScrollMode property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
  
 You will typically need to present the list such that it appears to grow from the bottom up instead of from the top down.  When a new message arrives and is added to the end, the previous messages slide up to make room drawing the user’s attention to the latest arrival.  However, if a user has scrolled up to view previous replies then the arrival of a new message must not cause a visual shift that would disrupt their focus.
 
@@ -26,7 +26,7 @@ You will typically need to present the list such that it appears to grow from th
 
 ## Create an inverted list
 
-To create an inverted list, use a list view with an [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) as its items panel. On the ItemsStackPanel, set the [ItemsUpdatingScrollMode](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode) to [KeepLastItemInView](/uwp/api/windows.ui.xaml.controls.itemsupdatingscrollmode).
+To create an inverted list, use a list view with an [ItemsStackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel) as its items panel. On the ItemsStackPanel, set the [ItemsUpdatingScrollMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode) to [KeepLastItemInView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsupdatingscrollmode).
 
 > [!IMPORTANT]
 > The **KeepLastItemInView** enum value is available starting with Windows 10, version 1607. You can't use this value when your app runs on earlier versions of Windows 10.
@@ -45,7 +45,7 @@ This example shows how to align the list view’s items to the bottom and indica
 </ListView>
 ```
 
-## Do's and don'ts
+## Recommendations
 
 - Align messages from the sender/receiver on opposite sides to make the flow of conversation clear to users.
 - Animate the existing messages out of the way to display the latest message if the user is already at the end of the conversation awaiting the next message.

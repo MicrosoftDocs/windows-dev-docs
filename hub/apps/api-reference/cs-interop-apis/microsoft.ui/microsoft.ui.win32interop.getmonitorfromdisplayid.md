@@ -25,7 +25,7 @@ public static IntPtr GetMonitorFromDisplayId(DisplayId displayId);
 
 ### Parameters
 
-`displayId` [DisplayId](/windows/winui/api/microsoft.ui.displayid)
+`displayId` [DisplayId](/windows/windows-app-sdk/api/winrt/microsoft.ui.displayid)
 
 The identifier for the display.
 
@@ -45,4 +45,4 @@ The display monitor handle that corresponds to the specified *displayId*, if the
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
 * [Manage app windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)
-* [Call interop APIs from a .NET 5+ app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)

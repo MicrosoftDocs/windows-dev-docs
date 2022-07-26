@@ -2,16 +2,13 @@
 description: The Pricing and availability page for your MSI or EXE app lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
 title: Set pricing and availability for your MSI or EXE app
 ms.assetid: B9B8C1B6-ADEF-4089-A004-317C70C54A32
-ms.date: 06/24/2021
+ms.date: 05/17/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, msi, exe, unpackaged, unpackaged app, desktop app, traditional desktop app, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
 ---
 
 # Set pricing and availability for your MSI or EXE app
-
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
 
 The Availability page of the app submission process lets you declare how, when, and where your app will be available to customers, pricing model of your app and whether you'll offer a free trial. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
@@ -25,6 +22,15 @@ Keep in mind that even if you select all markets, local laws and restrictions or
 
 > [!NOTE]
 > Market selections apply only to new downloads. Existing users can continue to use your app even if you later disable their market.
+
+**Discoverability**<br>*Required
+
+The selections in the Discoverability section indicate how customers can discover and acquire your app.
+
+:::image type="content" source="../images/set-app-discovery.png" lightbox="../images/set-app-discovery.png" alt-text="A screenshot of the Partner Center page where you can configure your app's discoverability settings.":::
+
+- **Make this product available and discoverable in the Store** - This is the default option. Leave this option selected if you want your app to be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.
+- **Make this product available but not discoverable in the Store** - When you select this option, your app can’t be found in the Store by customers searching or browsing; the only way to get to your app’s listing is by a direct link.
 
 **Pricing**<br>*Required*
 

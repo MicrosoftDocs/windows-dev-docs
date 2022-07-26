@@ -7,11 +7,8 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Compute pipeline
-
-
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
 
 The Direct3D compute pipeline is designed to handle calculations that can be done mostly in parallel with the graphics pipeline. There are only a few steps in the compute pipeline, with data flowing from input to output through the programmable compute shader stage.
 
@@ -52,9 +49,4 @@ Output data from the compute shader, which can be highly varied, can be synchron
 
 ## <span id="related-topics"></span>Related topics
 
-
 [Direct3D Graphics Learning Guide](index.md)
-
- 
-
- 

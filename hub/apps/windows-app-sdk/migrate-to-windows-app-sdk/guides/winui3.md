@@ -2,7 +2,7 @@
 title: User interface migration (including WinUI 3)
 description: This topic shows how to migrate your user interface (UI) code, including migrating to the [Windows UI Library (WinUI) 3](/windows/apps/winui/).
 ms.topic: article
-ms.date: 09/16/2021
+ms.date: 06/23/2022
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, Windows UI Library, WinUI
 ms.author: stwhi
 author: stevewhims
@@ -24,11 +24,11 @@ You need to set your window's *handle* (**HWND**) on a **MessageDialog**, and on
 
 To use **DataTransferManager** APIs, you need to associate them with your window.
 
-For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
+For **ContentDialog** and **Popup**, you need to set their [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property.
 
 You may need to refactor your Visual State Manager and **Page.Resources** XAML markup.
 
-In the Windows App SDK, the [**AcrylicBrush**](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
+In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 ## Change Windows.UI.Xaml.Window.Current to App.Window
 
@@ -44,7 +44,7 @@ var width = Window.Current.Bounds.Width;
 auto width{ Window::Current().Bounds().Width };
 ```
 
-Your Windows App SDK app can add its own notion of a *current*, or *main* window by using a public static property on your *App** class.
+Your Windows App SDK app can add its own notion of a *current*, or *main* window by using a public static property on your **App** class.
 
 ```csharp
 // App.xaml.cs in a Windows App SDK app
@@ -97,7 +97,7 @@ The steps that you have to follow in a desktop app are described in [Display Win
 > [!NOTE]
 > For new apps, we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
 
-Here's some typical UWP code to display a **MessageDialog**.
+Here's some typical UWP code to display a [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog).
 
 ```csharp
 // In a UWP app
@@ -114,104 +114,29 @@ co_await showDialog.ShowAsync();
 And here's the equivalent code in a Windows App SDK app.
 
 ```csharp
-// In App.xaml.cs in a Windows App SDK app
-...
-using System.Runtime.InteropServices;
-using WinRT;
-...
-public partial class App : Application
-{
-    ...
-    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
-    {
-        m_window = new MainWindow();
-        m_window.Activate();
-        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
-    }
-
-    public static IntPtr WindowHandle { get; private set; }
-    private Window m_window;
-}
-
-// MainWindow.xaml.cs
-...
-using System.Runtime.InteropServices;
-using WinRT;
-...
-public sealed partial class MainWindow : Window
-{
-    ...
-    private static void SetOwnerWindow(object dialog)
-    {
-        WinRT.Interop.InitializeWithWindow.Initialize(dialog, App.WindowHandle);
-    }
-
-    ...
-    var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
-    SetOwnerWindow(showDialog);
-    await showDialog.ShowAsync();
-}
+// MainWindow.xaml.cs in a WinUI 3 app
+var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
+WinRT.Interop.InitializeWithWindow.Initialize(showDialog,
+    WinRT.Interop.WindowNative.GetWindowHandle(this));
+await showDialog.ShowAsync();
 ```
 
 ```cppwinrt
-// pch.h in a Windows App SDK app
+// pch.h in a WinUI 3 app
 ...
 #include <Shobjidl.h>
 #include <microsoft.ui.xaml.window.h>
 #include <winrt/Windows.UI.Popups.h>
 ...
 
-// App.xaml.h
-...
-struct App : AppT<App>
-{
-    ...
-    static HWND WindowHandle() { return m_hWnd; }
-
-private:
-    static HWND m_hWnd;
-};
-...
-
-// App.xaml.cpp
-...
-HWND App::m_hWnd{ 0 };
-...
-void App::OnLaunched(LaunchActivatedEventArgs const&)
-{
-    window = make<MainWindow>();
-    window.Activate();
-
-    auto windowNative{ window.as<::IWindowNative>() };
-    HWND hWnd{ 0 };
-    windowNative->get_WindowHandle(&hWnd);
-    App::m_hWnd = hWnd;
-}
-...
-
-// MainWindow.xaml.h
-...
-#include <App.xaml.h>
-...
-struct MainWindow : MainWindowT<MainWindow>
-{
-  ...
-  private:
-    static void SetOwnerWindow(Windows::Foundation::IInspectable const&);
-};
-...
-
 // MainWindow.xaml.cpp
 ...
-void MainWindow::SetOwnerWindow(IInspectable const& dialog)
-{
-    auto initializeWithWindow{ dialog.as<::IInitializeWithWindow>() };
-    initializeWithWindow->Initialize(App::WindowHandle());
-}
-
-...
 auto showDialog{ Windows::UI::Popups::MessageDialog(L"Message here") };
-SetOwnerWindow(showDialog);
+
+HWND hWnd{ 0 };
+this->try_as<::IWindowNative>()->get_WindowHandle(&hWnd);
+showDialog.as<::IInitializeWithWindow>()->Initialize(hWnd);
+
 co_await showDialog.ShowAsync();
 ```
 
@@ -223,11 +148,33 @@ Here's some typical UWP code that calls **ShowShareUI**.
 
 ```csharp
 // In a UWP app
+var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView();
+
+dataTransferManager.DataRequested += (sender, args) =>
+{
+    args.Request.Data.Properties.Title = "In a UWP app...";
+    args.Request.Data.SetText("...display the user interface for sharing content with another app.");
+    args.Request.Data.RequestedOperation =
+        Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+};
+
 Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
 ```
 
 ```cppwinrt
 // In a UWP app
+#include <winrt/Windows.ApplicationModel.DataTransfer.h>
+...
+auto dataTransferManager{ Windows::ApplicationModel::DataTransfer::DataTransferManager::GetForCurrentView() };
+
+dataTransferManager.DataRequested([](Windows::ApplicationModel::DataTransfer::DataTransferManager const& /* sender */,
+    Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs const& args)
+    {
+        args.Request().Data().Properties().Title(L"In a UWP app...");
+        args.Request().Data().SetText(L"...display the user interface for sharing content with another app.");
+        args.Request().Data().RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation::Copy);
+    });
+
 Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
 ```
 
@@ -253,7 +200,7 @@ ContentDialog unsupportedFilesDialog{};
 co_await unsupportedFilesDialog.ShowAsync();
 ```
 
-In your Windows App SDK app, you just need to also set the dialog's [XamlRoot](/windows/winui/api/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. Here's how.
+In your Windows App SDK app, you just need to also set the dialog's [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. Here's how.
 
 ```csharp
 // MainPage.xaml.cs in a Windows App SDK app
@@ -275,17 +222,17 @@ co_await unsupportedFilesDialog.ShowAsync();
 
 In a UWP project, by default there will be navigation code in the methods of the **App** class, even if your app is simple enough that it has only one **Page**.
 
-When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
+When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 
 For a Windows App SDK app that's simple enough (a single-page app), you might be able to simplify it. It might be that you needn't create pages or user controls in your Windows App SDK project&mdash;but instead copy the XAML markup and code-behind of that single page into **MainWindow**. However, there are some things that **MainWindow** doesn't support. **Window** isn't a DependencyObject, so capabilities such as **Resources** and **DataContext** don't exist on it. Neither do events such as **Load** and **Unload**. For more info, and workarounds, see [Visual State Manager, and Page.Resources](#visual-state-manager-and-pageresources).
 
-If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the **App.OnLaunched** and **App::OnNavigationFailed** methods from your UWP app. In **App.OnLaunched**, locate the navigation code (the code that creates *rootFrame*, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it). You'll also need to migrate the code you've copy-pasted. For a simple code example, see [**Page class**](/windows/winui/api/microsoft.ui.xaml.controls.page#examples).
+If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the **App.OnLaunched** and **App::OnNavigationFailed** methods from your UWP app. In **App.OnLaunched**, locate the navigation code (the code that creates *rootFrame*, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it). You'll also need to migrate the code you've copy-pasted. For a simple code example, see [**Page class**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page#examples).
 
 ## Visual State Manager, and Page.Resources
 
 Also see [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation). If you *do* have a UWP app that's simple enough where you can copy your XAML markup and code-behind into **MainWindow**, then bear in mind these exceptions.
 
-Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/winui/api/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml)). You have these two options, though:
+Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](/windows/apps/design/layout/layouts-with-xaml)). You have these two options, though:
 
 * Add a **UserControl** item to the project, and migrate your markup and code-behind to that. Then place an instance of that user control in **MainWindow**.
 * Add a **Page** item to the project, and migrate your markup and code-behind to that. Then add code to your **App** class to navigate to that **Page** on startup, as described in [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation).
@@ -303,7 +250,7 @@ In addition, you won't be able to copy a `<Page.Resources>` element over to **Ma
 
 ## AcrylicBrush.BackgroundSource property
 
-The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
+The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 So if you're accessing the **AcrylicBrush.BackgroundSource** property in the source code of your UWP app (whether that's in XAML markup or in imperative code), then remove that code when migrating your app to the Windows App SDK.
 

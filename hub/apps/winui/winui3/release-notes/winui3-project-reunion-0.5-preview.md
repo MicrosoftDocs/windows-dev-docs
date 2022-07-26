@@ -104,7 +104,7 @@ Below is a list of user-facing bugs that the team has fixed since Preview 3. The
 
 The following features and capabilities were introduced in WinUI 3 Previews 1-4 and continue to be supported in WinUI 3 - Project Reunion 0.5 Preview.
 
-- Ability to create desktop apps with WinUI, including [.NET 5](https://github.com/dotnet/core/tree/master/release-notes/5.0) for Win32 apps
+- Ability to create desktop apps with WinUI, including [.NET](https://github.com/dotnet/core/blob/main/release-notes/6.0/README.md) for Win32 apps
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView updates](/windows/uwp/design/controls-and-patterns/tab-view)
 - Dark theme updates
@@ -116,7 +116,7 @@ The following features and capabilities were introduced in WinUI 3 Previews 1-4 
 - SwapChainPanel
 - MRT Core Support
   - This makes apps faster and lighter on startup and provides quicker resource lookup.
-- ARM64 Support
+- Arm64 Support
 - Drag and drop inside and outside of apps
 - RenderTargetBitmap (currently only XAML content - no SwapChainPanel content)
 - Custom cursor support
@@ -125,7 +125,7 @@ The following features and capabilities were introduced in WinUI 3 Previews 1-4 
   - Live Visual Tree, Hot Reload, Live Property Explorer and similar tools
   - Intellisense for WinUI 3
 - Improvements required for open source migration
-- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/winui/api/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/winui/api/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
+- Custom titlebar capabilities: new [Window.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) and [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) APIs that allow developers to create custom title bars in desktop apps.
 - VirtualSurfaceImageSource support
 
 For more information on both the benefits of WinUI 3 and the WinUI roadmap, see the [Windows UI Library Roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) on GitHub.
@@ -151,7 +151,7 @@ WinUI 3 - Project Reunion 0.5 Preview is compatible with PCs running the Windows
 ### Developer tools
 
 - Only C# and C++/WinRT apps are supported
-- Desktop apps support .NET 5 and C# 9, and must be packaged in an MSIX app
+- Desktop apps support .NET 6 (and later) and C# 9, and must be packaged in an MSIX app
 - UWP apps support .NET Native and C# 7.3
 - Developer tools and Intellisense may not work properly in Visual Studio.
 - No XAML Designer support
@@ -212,7 +212,7 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 - For C# UWP apps:
 
-  The WinUI 3 framework is a set of WinRT components which can be used from C++ (using C++/WinRT) or C#. When using C#, there are two versions of .NET, depending on the app model: when using WinUI 3 in a UWP app you’re using .NET Native; when using in a desktop app you’re using .NET 5 (and C#/WinRT).
+  The WinUI 3 framework is a set of WinRT components which can be used from C++ (using C++/WinRT) or C#. When using C#, there are two versions of .NET, depending on the app model: when using WinUI 3 in a UWP app, you're using .NET Native; when using in a desktop app, you're using .NET 6 or later (and C#/WinRT).
 
   When using C# for a WinUI 3 app in UWP, there are a few API namespace differences compared to C# in a WinUI 3 desktop app or a C# WinUI 2 app: some types are in a `Microsoft` namespace rather than a `System` namespace. For example, rather than the `INotifyPropertyChanged` interface being in the `System.ComponentModel`  namespace, it’s in the `Microsoft.UI.Xaml.Data` namespace. 
 

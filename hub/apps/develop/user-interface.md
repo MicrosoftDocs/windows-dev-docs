@@ -73,12 +73,12 @@ The table below shows a brief summary of a few main capabilities between these U
 
 | Capability   | WinUI 3   | WinUI 2/UWP      | WPF    | WinForms      |
 |--------------|-----------|------------------|--------|---------------|
-| Languages supported   | C#/.NET 5, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
+| Languages supported   | C#/.NET 6 and later, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
 | Devices supported   | PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon | All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
 | Inputs supported    | All Windows 10 inputs supported      | All Windows 10 inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
 | Windows OS version supported | Windows 10 version 1809 and higher  | Windows 10 version 1703 and higher    | Windows XP and higher     | Windows XP and higher   |
 | WebView support   | Chromium-based WebView2         | Non-chromium WebView       | WebView2 support coming soon   | WebView2 support coming soon     |
-| Open Source   | Coming soon       | Yes     | Yes (.NET 5 version only)      | Yes (.NET 5 version only)   |
+| Open Source   | Coming soon       | Yes     | Yes (.NET 6 and later only)      | Yes (.NET 6 and later only)   |
 
 For more information about each of these UI frameworks, see the information on the following tabs.
 
@@ -110,7 +110,7 @@ WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. 
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 3 Controls Gallery app](https://www.microsoft.com/p/winui-3-controls-gallery/9p3jfpwwdzrc)
+- Samples: [WinUI 3 Gallery app](https://www.microsoft.com/store/productId/9P3JFPWWDZRC)
 
 ### [WinUI 2](#tab/winui-2)
 
@@ -137,13 +137,13 @@ WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt?rtc=1)
+- Samples: [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
 
 ### [WPF](#tab/wpf)
 
 ### WPF
 
-The Windows Presentation Framework (WPF) is an app model for building desktop apps with .NET 5 or .NET framework.  It's an [open source platform](https://github.com/dotnet/wpf) that is maintained by both the Windows and .NET teams.
+The Windows Presentation Framework (WPF) is an app model for building desktop apps with .NET 6 (and later) or .NET framework. It's an [open source platform](https://github.com/dotnet/wpf) that is maintained by both the Windows and .NET teams.
 
 The UI framework that ships within WPF provides controls, styles, and capabilities that are supported downlevel through Windows XP.
 

@@ -4,8 +4,8 @@ description: Learn about the latest experimental releases of the Windows App SDK
 ms.topic: article
 ms.date: 11/16/2021
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
-ms.author: zafaraj
-author: zaryaf
+ms.author: gabilka
+author: gabbybilka
 ms.localizationpriority: medium
 ---
 
@@ -39,7 +39,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 
 - **New features**: Support for showing a ContentDialog per window rather than per thread.
 - **Bugs**: For the full list of bugs addressed in this release, see [our GitHub repo](https://aka.ms/winui3/1.0-exp-announcement). 
-- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Controls Gallery app [from GitHub](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
+- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/Microsoft/WinUI-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
 For more information or to get started developing with WinUI, see:
 
@@ -57,7 +57,7 @@ Important limitations:
 - Microsoft does not guarantee the reliability or latency of push notifications.
 - During the private preview, push notification volume is limited to 1 million per month.
 
-For more information, see [Push notifications](notifications/push/index.md).
+For more information, see [Push notifications](notifications/push-notifications/index.md).
 
 ### Windowing 
 
@@ -88,11 +88,9 @@ For more information, see the following articles:
 ### Other limitations and known issues
 
 - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net6.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 - **C# apps using 1.0 Experimental must use one of the following .NET SDKs**: 
-	- .NET 5 SDK version 5.0.400 or later if you're using Visual Studio 2019 version 16.11
-	- .NET 5 SDK version 5.0.302 or later if you're using Visual Studio 2019 version 16.10
-	- .NET 5 SDK version 5.0.205 or later if you're using Visual Studio 2019 version 16.9
+	- .NET 6 SDK or later (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)).
 
 ## Version 0.8 Preview (0.8.0-preview)
 
@@ -150,7 +148,7 @@ For more more information, see [Manage resources with MRT Core](mrtcore/mrtcore-
 ### Limitations and known issues
 
 - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net5.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net6.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 ### Samples
 

@@ -484,7 +484,7 @@ When the data arrives on the device, the Windows app model provides more control
 
 -   [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
 -   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
--   [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Device lockdown with Azure login](https://github.com/microsoft/Windows-universal-samples/tree/main/archived/DeviceLockdownAzureLogin)
 -   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
 -   [Smart cards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)

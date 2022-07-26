@@ -17,7 +17,7 @@ These articles help you create a flexible UI that looks great on different scree
 :::row:::
     :::column:::
 ### [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
-Learn about screen sizes across the Windows 10 ecosystem and how to design for breakpoints.
+Learn about screen sizes across the Windows ecosystem and how to design for breakpoints.
     :::column-end:::
     :::column:::
 ### [Responsive design techniques](responsive-design.md)

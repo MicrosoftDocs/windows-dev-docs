@@ -40,6 +40,8 @@ items:
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
+        - name: Windows developer best practices 
+          href: get-started/best-practices.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
         - name: Windows developer glossary 
@@ -134,8 +136,10 @@ items:
               items:
                   - name: Overview
                     href: get-started/make-apps-great-for-windows.md
-                  - name: Apply rounded corners in Windows 11
+                  - name: Apply rounded corners on Windows 11
                     href: desktop/modernize/apply-rounded-corners.md
+                  - name: Apply Mica on Windows 11
+                    href: desktop/modernize/apply-mica-win32.md
                   - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
                   - name: Support Dark and Light themes
@@ -146,7 +150,7 @@ items:
                     href: desktop/modernize/desktop-to-uwp-enhance.md
                   - name: APIs not supported in desktop apps
                     href: desktop/modernize/desktop-to-uwp-supported-api.md
-                  - name: Call interop APIs from a .NET 5+ app
+                  - name: Call interop APIs from a .NET app
                     href: desktop/modernize/winrt-com-interop-csharp.md
             - name: Use MSIX framework packages from your desktop app
               items:
@@ -216,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: Grant identity to non-packaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-      - name: Optimize your app performance
+      - name: Optimize performance & fundamentals
         items:
           - name: Overview
             href: performance/index.md
@@ -224,6 +228,12 @@ items:
             href: performance/introduction.md
           - name: Choosing performance tools
             href: performance/choose-between-tools.md
+          - name: Improve disk and memory use
+            href: performance/disk-memory.md
+          - name: Improve power consumption
+            href: performance/power.md
+          - name: Improve responsiveness
+            href: performance/responsive.md
       - name: User interface and input
         items:
           - name: Overview
@@ -241,7 +251,7 @@ items:
           - name: "Windows UI Library 3"
             href: winui/winui3/index.md
             items:
-              - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
+              - name: "Build a C# .NET app with WinUI 3 and Win32 interop"
                 href: winui/winui3/desktop-winui3-app-with-basic-interop.md
               - name: "Build XAML controls with C++/WinRT"
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
@@ -256,6 +266,28 @@ items:
                 href: winui/winui2/getting-started.md
               - name: "NuGet package list"
                 href: winui/winui2/nuget-packages.md
+              - name: "Release notes"
+                items: 
+                  - name: "Release notes"
+                    href:  winui/winui2/release-notes/index.md
+                  - name: "WinUI 2.8"
+                    href: winui/winui2/release-notes/winui-2.8.md
+                  - name: "WinUI 2.7"
+                    href: winui/winui2/release-notes/winui-2.7.md
+                  - name: "WinUI 2.6"
+                    href: winui/winui2/release-notes/winui-2.6.md
+                  - name: "WinUI 2.5"
+                    href: winui/winui2/release-notes/winui-2.5.md
+                  - name: "WinUI 2.4"
+                    href: winui/winui2/release-notes/winui-2.4.md
+                  - name: "WinUI 2.3"
+                    href: winui/winui2/release-notes/winui-2.3.md
+                  - name: "WinUI 2.2"
+                    href: winui/winui2/release-notes/winui-2.2.md
+                  - name: "WinUI 2.1"
+                    href: winui/winui2/release-notes/winui-2.1.md
+                  - name: "WinUI 2.0"
+                    href: winui/winui2/release-notes/winui-2.0.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview
@@ -270,14 +302,22 @@ items:
                 href: windows-app-sdk/applifecycle/applifecycle-power.md
       - name: "Manage app windows"
         href: windows-app-sdk/windowing/windowing-overview.md
-      - name: "Push notifications"
+      - name: Notifications
         items:
-          - name: "Overview"
-            href: windows-app-sdk/notifications/push/index.md
-          - name: "Quickstart"
-            href: windows-app-sdk/notifications/push/push-quickstart.md
-          - name: "Troubleshooting"
-            href: windows-app-sdk/notifications/push/troubleshooting.md  
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push-notifications/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push-notifications/troubleshooting.md  
+          - name: "App notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/app-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
       - name: Graphics
         items: 
           - name: Overview
@@ -365,6 +405,8 @@ items:
         items: 
           - name: WinRT API reference
             href: /uwp/api/
+          - name: WinUI 2 for UWP API reference
+            href: /windows/winui/api/
           - name: Win32 API reference
             href: /windows/win32/api/
       - name: Windows App SDK API reference
@@ -373,9 +415,31 @@ items:
             href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
+            items: 
+              - name: "Bootstrapper C++ API"
+                href: api-reference/bootstrapper-cpp-api/index.md
+                items: 
+                  - name: "Constants for use with the Bootstrapper C++ API"
+                    href: api-reference/bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md
+                  - name: "Microsoft::Windows::ApplicationModel namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
+                    items: 
+                      - name: "PackageVersion class"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
+                  - name: "Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                    items: 
+                      - name: "Initialize function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md
+                      - name: "InitializeFailFast function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
+                      - name: "InitializeNoThrow function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
           - name: "Bootstrapper C# APIs"
             href: api-reference/cs-bootstrapper-apis/index.md
             items: 
+              - name: "Constants for use with the Bootstrapper C# APIs"
+                href: api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
               - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
                 href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
                 items: 
@@ -385,8 +449,6 @@ items:
                     href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
           - name: WinUI API reference
             items: 
-              - name: WinRT APIs for WinUI
-                href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
               - name: "Interop C# APIs for WinUI"

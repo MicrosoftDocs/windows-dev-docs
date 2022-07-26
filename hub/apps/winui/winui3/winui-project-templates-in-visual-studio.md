@@ -20,7 +20,7 @@ You can use these WinUI 3 project templates to start creating an app.
 
 ### Blank App, Packaged (WinUI 3 in Desktop)
 
-This project template creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI 3 library that you can use to start building your UI. For more information about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
+This project template creates a desktop .NET (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI 3 library that you can use to start building your UI. For more information about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
 The features of this project template vary between [versions of the Windows App SDK extension](../../windows-app-sdk/downloads.md).
 
@@ -33,7 +33,7 @@ The features of this project template vary between [versions of the Windows App 
 
 ### Blank App, Packaged with WAP (WinUI 3 in Desktop)
 
-This project template is available in [version 1.0 Preview 1 and later releases](../../windows-app-sdk/downloads.md). It creates a desktop .NET 5 (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI 3 library that you can use to start building your UI. For more info about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
+This project template is available in [version 1.0 Preview 1 and later releases](../../windows-app-sdk/downloads.md). It creates a desktop .NET (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the **Microsoft.UI.Xaml.Window** class in the WinUI 3 library that you can use to start building your UI. For more info about using this project template, see [Create your first WinUI 3 project](create-your-first-winui3-app.md).
 
 The solution also includes a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview). You can optionally install the [single-project MSIX packaging tools extension for Visual Studio](../../windows-app-sdk/single-project-msix.md) and combine the packaging project settings into your application project so you no longer need to maintain a separate packaging project.
 
@@ -47,7 +47,7 @@ You can use these WinUI 3 project templates to build components that can be load
 
 | Template | Language | Description |
 |----------|----------|-------------|
-| Class Library (WinUI 3 in Desktop) | C# only | Creates a .NET 5 managed class library (DLL) in C# that can be used by other .NET 5 desktop apps with a WinUI 3-based user interface.  |
+| Class Library (WinUI 3 in Desktop) | C# only | Creates a .NET managed class library (DLL) in C# that can be used by other .NET desktop apps with a WinUI 3-based user interface.  |
 | [Experimental] Class Library (WinUI 3 in UWP)  | C# only | Creates a managed class library (DLL) in C# that can be used by other UWP apps with a WinUI 3-based user interface. |
 | Windows Runtime Component (WinUI 3) | C++ | Creates a [Windows Runtime component](/windows/uwp/winrt-components/) written in C++/WinRT that can be consumed by any UWP or desktop app with a WinUI 3-based user interface, regardless of the programming language in which the app is written. |
 | [Experimental] Windows Runtime Component (WinUI 3 in UWP) | C# | Creates a [Windows Runtime component](/windows/uwp/winrt-components/) written in C# that can be consumed by any UWP app with a WinUI 3-based user interface, regardless of the programming language in which the app is written. |

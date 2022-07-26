@@ -10,9 +10,6 @@ ms.localizationpriority: medium
 
 # Create app Store listings for your MSI or EXE app
 
-> [!NOTE]
-> MSI and EXE support in the Microsoft Store is currently in a limited public preview phase. As the size of the preview expands, we'll be adding new participants from the wait list. To join the wait list, click [here](https://aka.ms/storepreviewwaitlist).
-
 The Store listings section of the app submission process is where you provide the text and images that customers will see when they view your app's listing in the Microsoft Store.
 
 Many of the fields in a Store listing are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the Store listings step to be considered complete is a text description and at least one screenshot.

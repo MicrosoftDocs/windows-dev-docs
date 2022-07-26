@@ -192,15 +192,15 @@ Many **StoreContext** members (and members of other related types that are acces
 
 To configure a **StoreContext** object in a desktop application that uses the Desktop Bridge, follow these steps.
 
-#### For .NET 5 or later
+#### For .NET 6 or later
 
-If your application is written in C# with .NET 5 or later, follow these steps.
+If your application is written in C# with .NET 6 or later, then follow these steps.
 
-1. Make sure that the `TargetFramework` property in the project file is [set to a specific Windows SDK version to access the Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-and-later-use-the-target-framework-moniker-option), which provides access to the **WinRT.Interop** namespace. For example:
+1. Make sure that the `TargetFramework` property in the project file is [set to a specific Windows SDK version to access the Windows Runtime APIs](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-6-and-later-use-the-target-framework-moniker-option), which provides access to the **WinRT.Interop** namespace. For example:
 
     ```xml
     <PropertyGroup>
-      <!-- You can also target other versions of the Windows SDK and .NET, e.g. "net5.0-windows10.0.19041.0" -->
+      <!-- You can also target other versions of the Windows SDK and .NET, e.g. "net6.0-windows10.0.19041.0" -->
       <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     </PropertyGroup>
     ```
@@ -221,7 +221,7 @@ If your application is written with an earlier version of .NET or in C++, follow
 
 1. Do one of the following to enable your app to access the [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface:
  
-    * If your application is written in a managed language such as C# or Visual Basic (prior to .NET 5), declare the **IInitializeWithWindow** interface in your app's code with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute as shown in the following C# example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
+    * If your application is written in a managed language such as C# or Visual Basic (prior to .NET 6), then declare the **IInitializeWithWindow** interface in your app's code with the [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) attribute as shown in the following C# example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
 
         ```csharp
         [ComImport]
@@ -233,7 +233,7 @@ If your application is written with an earlier version of .NET or in C++, follow
         }
         ```
 
-    * If your application is written in C++, add a reference to the `shobjidl.h` header file in your code. This header file contains the declaration of the **IInitializeWithWindow** interface.
+    * If your application is written in C++, then add a reference to the `shobjidl.h` header file in your code. This header file contains the declaration of the **IInitializeWithWindow** interface.
 
 2. Get a [StoreContext](/uwp/api/windows.services.store.storecontext) object by using the [GetDefault](/uwp/api/windows.services.store.storecontext.getdefault) method (or [GetForUser](/uwp/api/windows.services.store.storecontext.getforuser) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article, and cast this object to an [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) object. Then, call the [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) method, and pass the handle of the window that you want to be the owner for any modal dialogs that are shown by **StoreContext** methods. The following C# example shows how to pass the handle of your app's main window to the method. Also see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd) and [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 

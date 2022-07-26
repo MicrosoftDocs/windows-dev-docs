@@ -39,22 +39,14 @@ Design and UI-related downloads for Fluent Design/Windows apps. For additional t
     :::column-end:::
 :::row-end:::
 
-## XAML Controls Gallery
+## WinUI Gallery
 
-:::row:::
-    :::column:::
-        ![Xaml Controls Gallery](images/xaml-controls-gallery.png)
-    :::column-end:::
-    :::column:::
-        **XAML Controls Gallery**
+Get the _WinUI Gallery_ apps from the Microsoft Store to see XAML controls and the Fluent Design System in action. The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality. The apps are an interactive companion to this website. When you have them installed, you can use links on individual control pages to launch the app and see the control in action.
 
-This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project.
-
-[Download the XAML Controls Gallery sample](https://github.com/microsoft/Xaml-Controls-Gallery/archive/refs/heads/master.zip)
-[Check out the XAML Controls Gallery sample on GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery)
-[Download the XAML Controls Gallery app from the Store](https://www.microsoft.com/store/apps/9msvh128x2zt)
-    :::column-end:::
-:::row-end:::
+> [!div class="checklist"]
+>
+> - Get the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> - Get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
 ## Fonts
 
@@ -91,7 +83,7 @@ The Van Arsdel, Ltd. end-to-end Windows sample app was built to showcase the nex
 
 ![build cast image](images/buildcast.png)
 **BuildCast**<br>
-BuildCast is an end-to-end sample built to showcase the Fluent Design System and Windows. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the Build Amazing Apps with Fluent Design talk. <br>
+BuildCast is an end-to-end sample built to showcase the Fluent Design System and Windows. It permits browsing, downloading, and playback of select video podcasts, including some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the Build Amazing Apps with Fluent Design talk. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Download the BuildCast sample</a> <br><a href="https://github.com/Microsoft/BuildCast">Check out the BuildCast sample on GitHub</a>
 
 ![Lunch Scheduler](images/lunchscheduler.png)

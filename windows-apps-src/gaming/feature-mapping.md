@@ -54,7 +54,7 @@ Direct3D 11 introduced Shader Model 5, which requires Direct3D feature level 11\
 
 ## Replace XNAMath and D3DXMath
 
-Code using XNAMath (or D3DXMath) should be migrated to [DirectXMath](/windows/desktop/dxmath/directxmath-portal). DirectXMath includes types that are portable across x86, x64, and ARM. See [Code Migration from the XNA Math Library](/windows/desktop/dxmath/pg-xnamath-migration).
+Code using XNAMath (or D3DXMath) should be migrated to [DirectXMath](/windows/desktop/dxmath/directxmath-portal). DirectXMath includes types that are portable across x86, x64, and Arm. See [Code Migration from the XNA Math Library](/windows/desktop/dxmath/pg-xnamath-migration).
 
 Note that DirectXMath float types are convenient for use with shaders. For example [**XMFLOAT4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) and [**XMFLOAT4X4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) conveniently align data for constant buffers.
 

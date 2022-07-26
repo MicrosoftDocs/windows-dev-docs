@@ -23,7 +23,7 @@ Non-MSIX-packaged apps also have extra runtime requirements. You must initialize
 
 * [Download the latest installer & MSIX packages](downloads.md).
 * For non-MSIX-packaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
-* **C#**. .NET 5 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
+* **C#**. .NET 6 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ### Additional prerequisites 
 
@@ -42,7 +42,7 @@ Non-MSIX-packaged apps also have extra runtime requirements. You must initialize
 
 Non-MSIX-packaged apps have two options to deploy the Windows App SDK runtime:
 
-- **[Option 1: Use the Installer](#option-1-use-the-installer)**: The silent installer distributes all Windows App SDK MSIX packages. A separate installer is available for each of the `X64`,`X86` and `ARM64` architectures.
+- **[Option 1: Use the Installer](#option-1-use-the-installer)**: The silent installer distributes all Windows App SDK MSIX packages. A separate installer is available for each of the `X64`,`X86` and `Arm64` architectures.
 - **[Option 2: Install the packages directly](#option-2-deploy-windows-app-sdk-runtime-packages-directly)**: You can have your existing setup or MSI tool carry and install the MSIX packages for the Windows App SDK.
 
 ### Option 1: Use the Installer
@@ -81,7 +81,7 @@ You can run the installer with no user interaction and suppress all text output 
 WindowsAppRuntimeInstall.exe --quiet
 ```
 
-You can also choose to force update the MSIX packages and shutdown any currently running Windows App SDK processes using the `--force` option. This feature is introduced in 1.1 Preview 2. 
+You can also choose to force update the MSIX packages and shutdown any currently running Windows App SDK processes using the `--force` option. This feature is introduced in 1.1. 
 
 ```console
 WindowsAppRuntimeInstall.exe --force
@@ -136,7 +136,7 @@ For an example that demonstrates how your setup program can install the MSIX pac
 
 - **Installing the Windows App SDK Runtime system-wide**: System-wide install alters the machine for all users, including new users that are added in the future. If the app is running elevated and the user doing the installation has admin privileges, then the installer will register the MSIX packages system-wide by calling the [ProvisionPackageForAllUsersAsync](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync). If system-wide registration is not successful, the installation will be performed for the current user doing the installation only. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.
 
-- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the `x86`, `x64` and `ARM64` architectures. Each version of the installer includes the MSIX packages for that specific architecture. For example, if you run the x86 WindowsAppRuntimeInstall.exe on an x64 or ARM64 device, the installer will deploy the packages for that device architecture. 
+- **Architectures redistributed by the Windows App SDK installer**: The Windows App SDK installer is available in the `x86`, `x64` and `Arm64` architectures. Each version of the installer includes the MSIX packages for that specific architecture. For example, if you run the x86 WindowsAppRuntimeInstall.exe on an x64 or Arm64 device, the installer will deploy the packages for that device architecture. 
 
 - **All Windows App SDK MSIX packages are already installed on the computer**: MSIX packages are installed to a system-wide location with only one copy on disk. If an app attempts installation of the Windows App SDK when all the MSIX package dependencies are already installed on the machine, then the installation is not performed.
 

@@ -104,7 +104,7 @@ The following example shows how the **Audio::CreateResources** method creates th
 
 We specify 48000 as the input sample rate. We chose this sample rate because it represented a balance between audio quality and the amount of required CPU processing. A greater sample rate would have required more CPU processing without having a noticeable quality benefit. 
 
-Finally, we specify **AudioCategory_GameMedia** as the audio stream category so that users can listen to music from a different application as they play the game. When a music app is playing, Windows mutes any voices that are created by the **AudioCategory\_GameMedia** option. The user still hears gameplay sounds because they are created by the **AudioCategory\_GameEffects** option. For more info about audio categories, see [AUDIO\_STREAM\_CATEGORY](/windows/desktop/api/audiosessiontypes/ne-audiosessiontypes-_audio_stream_category).
+Finally, we specify **AudioCategory_GameMedia** as the audio stream category so that users can listen to music from a different application as they play the game. When a music app is playing, Windows mutes any voices that are created by the **AudioCategory\_GameMedia** option. The user still hears gameplay sounds because they are created by the **AudioCategory\_GameEffects** option. For more info about audio categories, see [AUDIO\_STREAM\_CATEGORY](/windows/win32/api/audiosessiontypes/ne-audiosessiontypes-audio_stream_category).
 
 ```cpp
 // This sample plays the equivalent of background music, which we tag on the  
@@ -322,7 +322,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-The **MediaStreamer::Initialize** method then obtains the complete output media format from Media Foundation using [IMFSourceReader::GetCurrentMediaType](/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getcurrentmediatype) and calls the [MFCreateWaveFormatExFromMFMediaType](/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) method to convert the Media Foundation audio media type to a [WAVEFORMATEX](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) structure. The **WAVEFORMATEX** structure defines the format of waveform-audio data. Marble Maze uses this structure to create the source voices and to apply the low-pass filter to the marble rolling sound.
+The **MediaStreamer::Initialize** method then obtains the complete output media format from Media Foundation using [IMFSourceReader::GetCurrentMediaType](/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getcurrentmediatype) and calls the [MFCreateWaveFormatExFromMFMediaType](/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) method to convert the Media Foundation audio media type to a [WAVEFORMATEX](/windows/win32/api/mmeapi/ns-mmeapi-waveformatex) structure. The **WAVEFORMATEX** structure defines the format of waveform-audio data. Marble Maze uses this structure to create the source voices and to apply the low-pass filter to the marble rolling sound.
 
 ```cpp
 // Get the complete WAVEFORMAT from the Media Type.
@@ -340,7 +340,7 @@ CoTaskMemFree(waveFormat);
 ```
 
 > [!IMPORTANT]
-> The [MFCreateWaveFormatExFromMFMediaType](/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) method uses **CoTaskMemAlloc** to allocate the [WAVEFORMATEX](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) object. Therefore, make sure that you call **CoTaskMemFree** when you are finished using this object.
+> The [MFCreateWaveFormatExFromMFMediaType](/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) method uses **CoTaskMemAlloc** to allocate the [WAVEFORMATEX](/windows/win32/api/mmeapi/ns-mmeapi-waveformatex) object. Therefore, make sure that you call **CoTaskMemFree** when you are finished using this object.
 
  
 
@@ -396,7 +396,7 @@ The following table shows the relationship between each of these values, the fil
 
 The following example shows how the **Audio::CreateResources** method creates the source voice for the background music. The [XAUDIO2\_SEND\_DESCRIPTOR](/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_send_descriptor) structure defines the target destination voice from another voice and specifies whether a filter should be used. Marble Maze calls the **Audio::SetSoundEffectFilter** method to use the filters to change the sound of the ball as it rolls. The [XAUDIO2\_VOICE\_SENDS](/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_voice_sends) structure defines the set of voices to receive data from a single output voice. Marble Maze sends data from the source voice to the mastering voice (for the dry, or unaltered, portion of a playing sound) and to the two submix voices that implement the wet, or reverberant, portion of a playing sound.
 
-The [IXAudio2::CreateSourceVoice](/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createsourcevoice) method creates and configures a source voice. It takes a [WAVEFORMATEX](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) structure that defines the format of the audio buffers that are sent to the voice. As mentioned previously, Marble Maze uses the PCM format.
+The [IXAudio2::CreateSourceVoice](/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createsourcevoice) method creates and configures a source voice. It takes a [WAVEFORMATEX](/windows/win32/api/mmeapi/ns-mmeapi-waveformatex) structure that defines the format of the audio buffers that are sent to the voice. As mentioned previously, Marble Maze uses the PCM format.
 
 ```cpp
 XAUDIO2_SEND_DESCRIPTOR descriptors[3];

@@ -112,7 +112,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 Using the **GraphicsCaptureItem**, you will create a [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) with your D3D device, supported pixel format (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**), number of desired frames (which can be any integer), and frame size. The **ContentSize** property of the **GraphicsCaptureItem** class can be used as the size of your frame:
 
 > [!NOTE]
-> On systems with Windows HD color enabled, the content pixel format might not necessarily be **DXGI\_FORMAT\_B8G8R8A8\_UNORM**. To avoid pixel overclipping (i.e. the captured content looks washed out) when capturing HDR content, consider using **DXGI\_FORMAT\_R16G16B16A16\_FLOAT** for every component in the capturing pipeline, including the [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool), the target destination such as [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm). Depends on the need, additional processing such as saving to HDR content format or HDR-to-SDR tone mapping might be required. This article will focus on SDR content capturing. For more information, please see [Using DirectX with high dynamic range Displays and Advanced Color](/windows/win32/direct3darticles/high-dynamic-range).
+> On systems with Windows HD color enabled, the content pixel format might not necessarily be **DXGI\_FORMAT\_B8G8R8A8\_UNORM**. To avoid pixel overclipping (i.e. the captured content looks washed out) when capturing HDR content, consider using **DXGI\_FORMAT\_R16G16B16A16\_FLOAT** for every component in the capturing pipeline, including the [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool), the target destination such as [CanvasBitmap](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm). Depends on the need, additional processing such as saving to HDR content format or HDR-to-SDR tone mapping might be required. This article will focus on SDR content capturing. For more information, please see [Using DirectX with high dynamic range Displays and Advanced Color](/windows/win32/direct3darticles/high-dynamic-range).
 
 ```csharp
 private GraphicsCaptureItem _item;
@@ -229,7 +229,7 @@ The underlying Direct3D surface will always be the size specified when creating 
 
 ## Take a screenshot
 
-In our example, we convert each **Direct3D11CaptureFrame** into a [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), which is part of the [Win2D APIs](https://microsoft.github.io/Win2D/html/Introduction.htm).
+In our example, we convert each **Direct3D11CaptureFrame** into a [CanvasBitmap](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), which is part of the [Win2D APIs](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
 ```csharp
 // Convert our D3D11 surface into a Win2D object.

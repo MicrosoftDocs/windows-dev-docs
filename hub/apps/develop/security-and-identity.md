@@ -34,7 +34,7 @@ The following articles provide information about features available via Win32 (C
 | Article | Description |
 |---------|-------------|
 | [Security and identity](/windows/win32/security) | Learn about the breadth of security features available to Windows apps via Win32 APIs. |
-| [Authentication](/win32/secauthn/authentication-portal) | Learn about authentication features available via Win32 APIs. |
+| [Authentication](/windows/win32/secauthn/authentication-portal) | Learn about authentication features available via Win32 APIs. |
 | [Cryptography](/windows/win32/seccng/cng-portal) | Learn about cryptography features available via Win32 APIs. |
 
 ## .NET features

@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/28/2021
+ms.date: 06/13/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -25,9 +25,45 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </thead>
 <tbody>
 </tr>
+
+
+<tr class="odd">
+<td>July 18, 2022</td>
+<td><a href="/windows/uwp/publish/store-policies">7.16.1</a></td>
+<td>
+<p>Update to 10.8.7 to remove language related to open-source or other free software.</p>
+<p>Update to 11.2 adding a link to Microsoft’s online infringement reporting form.</p>
+</td>
+</tr>
+
+<tr class="even">
+<td>June 16, 2022</td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-16">7.16</a></td>
+<td>
+<p>Update to 10.1.1 requirements for product search terms.</p>
+
+<p>Update to 10.1.1 with new policies pertaining to product metadata including title or name, icon, screenshots, descriptions.</p>
+
+<p>Update to 10.2.2 adding clarifying language to current policy.</p>
+
+<p>Update to 10.2.9, to add in a requirement that installer binary products (.msi or .exe) must be digitally signed with a code signing certificate that chains up to a certificate issued by a Certificate Authority (CA) that is part of the Microsoft Trusted Root Program.</p>
+
+<p>Update to 10.8.7 to prohibit charging fees in the Store for open-source or other software that is generally available for free and restrict irrationally high pricing.</p>
+
+<p>Update to 10.13.1 to remove requirement that games submitted via the Creators program must use XBL.</p>
+
+<p>New 11.3.3 added policy prohibiting products whose intent is to provide content related to information, news, or current events in the real world from disseminating misinformation.</p>
+
+<p>Update to 11.11 to add reference to use of International Age Rating Coalition (IARC) questionnaire during product submission to garner appropriate product rating.</p>
+
+
+</td>
+</tr>
+
+
 <tr class="odd">
 <td>September 28, 2021</td>
-<td><a href="/windows/uwp/publish/store-policies">7.15</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-15">7.15</a></td>
 <td>
 <p>Update to 10.1.3 requirements for product search terms.</p>
 <p>Update to 10.1.5, removing prohibition on products whose primary functionality is to enable acquisition of digital goods from outside the Store.</p>

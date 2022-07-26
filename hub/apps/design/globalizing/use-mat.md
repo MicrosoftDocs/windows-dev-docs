@@ -127,7 +127,7 @@ These third party providers offer localization services, and may be able to assi
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
 - [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
-- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
+- [SDL](https://www.rws.com/)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]
@@ -135,7 +135,7 @@ These third party providers offer localization services, and may be able to assi
 
 #### Option 3. Use the integrated translation services
 
-Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources. For this service, you'll need an Azure account subscription, as described in [Microsoft Translator Moves to the Azure portal](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898-microsoft-translator-moves-to-the-azure-portal).
+Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources. For this service, you'll need an Azure account subscription, as described in [Microsoft Translator Moves to the Azure portal](/azure/cognitive-services/translator/quickstart-translator).
 
 To access the translation services inside Visual Studio, select and right-click one or more .xlf files in Solution Explorer and click **Generate machine translations**.
 
@@ -161,6 +161,10 @@ Before you start the Microsoft Store Certification process, you must exclude the
 - [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
 - [Make your app localizable](prepare-your-app-for-localization.md)
 - [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
+
+## Telemetry
+
+The Multilingual App Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. For more details, see [Multilingual App Toolkit 4.0 FAQ & troubleshooting](/windows/apps/design/globalizing/mat-faq-troubleshooting).
 
 ## Downloads
 

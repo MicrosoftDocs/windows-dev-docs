@@ -19,7 +19,7 @@ ms.date: 03/04/2021
 
 In the [Overview of developing on Windows with Rust](overview.md) topic, we demonstrated a simple app that outputs a *Hello, world!* message. But not only can you use Rust *on* Windows, you can also write apps *for* Windows using Rust.
 
-Rust for Windows is the latest language projection for Windows. It's currently in preview form, and you can see it develop from version to version in its [change log](https://github.com/microsoft/windows-rs/blob/master/docs/changelog.md).
+You can find all of the latest updates in the [Release log of the Rust for Windows repo](https://github.com/microsoft/windows-rs/releases) on GitHub. 
 
 Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via [the *windows* crate](https://crates.io/crates/windows) (*crate* is Rust's term for a binary or a library, and/or the source code that builds into one).
 
@@ -36,8 +36,6 @@ The Rust for Windows repo also has [some simple examples](https://github.com/mic
 ## Contribute to Rust for Windows
 
 [Rust for Windows](https://github.com/microsoft/windows-rs) welcomes your contributions!
-
-* Identify and fix bugs in the [source code](https://github.com/microsoft/windows-rs/tree/master/src)
 
 ## Rust documentation for the Windows API
 

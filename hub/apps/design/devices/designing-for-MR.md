@@ -110,7 +110,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ![Text displayed in Mixed Reality apps should be large.](images/MR-text.png)
 
-* [Your gaze is your mouse](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). When the user looks at something, it acts as a **touch hover** event, so simply looking at an object may trigger an inadvertent pop-up or other unwanted interaction. You may need to detect if the app is currently running in Mixed Reality and change this behavior. See **Runtime support**, below. 
+* [Your gaze is your mouse](/windows/mixed-reality/design/gaze-and-commit). When the user looks at something, it acts as a **touch hover** event, so simply looking at an object may trigger an inadvertent pop-up or other unwanted interaction. You may need to detect if the app is currently running in Mixed Reality and change this behavior. See **Runtime support**, below. 
 
 * When a user gazes towards something or points with a motion controller, a **touch hover** event will occur. This consists of a **PointerPoint** where **PointerType** is **Touch**, but **IsInContact** is **false**. When some form of commit occurs (for example, gamepad A button is pressed, a clicker device is pressed, a motion controller trigger pressed, or voice recognition heads "Select"), a **touch press** occurs, with the **PointerPoint** having **IsInContact** become **true**. See [Touch interactions](../input/touch-interactions.md) for more information on these input events.
 
@@ -123,7 +123,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 ## Other points to consider
 
-* Although the [Desktop Bridge](/windows/msix/desktop/source-code-overview) can help bring existing (Win32) desktop apps to Windows 10 and the Microsoft Store, it cannot create apps that run on HoloLens at this time. As of Windows 10 version 1903, Win32 Desktop apps can run on Mixed Reality headsets.
+* Although the [Desktop Bridge](/windows/msix/desktop/source-code-overview) can help bring existing (Win32) desktop apps to Windows and the Microsoft Store, it cannot create apps that run on HoloLens at this time. As of Windows 10 version 1903, Win32 Desktop apps can run on Mixed Reality headsets.
 
 ## Runtime support
 

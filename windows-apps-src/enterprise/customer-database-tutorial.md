@@ -2,7 +2,7 @@
 title: Create a customer database application
 description: Create a customer database application, and learn how to implement basic enterprise app functions.
 keywords: enterprise, tutorial, customer, data, create read update delete, REST, authentication
-ms.date: 05/07/2018
+ms.date: 06/15/2022
 ms.topic: article
 
 ---
@@ -26,7 +26,7 @@ The starting point for this tutorial is a single-page app with minimal UI and fu
 After you've cloned/downloaded the repo, you can edit the project by opening **CustomerDatabaseTutorial.sln** with Visual Studio.
 
 > [!NOTE]
-> Check out the [full Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) to see the app this tutorial was based on.
+> This tutorial is based on the [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) which has recently been updated to make use of WinUI and the Windows App SDK. Until this tutorial and code are updated, there will be differences between the two samples.
 
 ## Part 1: Code of Interest
 

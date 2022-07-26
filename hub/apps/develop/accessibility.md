@@ -154,7 +154,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 :::row-end:::
 :::row:::
    :::column span="2":::
-      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
+      [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery)
 
       This app demonstrates the various Xaml controls supported in the Fluent Design System.
    :::column-end:::

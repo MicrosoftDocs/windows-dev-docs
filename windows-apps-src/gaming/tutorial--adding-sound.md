@@ -184,7 +184,7 @@ For more info on why we use the Source Reader, go to [Source Reader](/windows/de
 #### Describe the data format of the audio stream
 
 1. Use [IMFSourceReader::GetCurrentMediaType](/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getcurrentmediatype) to get the current media type for the stream.
-2. Use [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) to convert the current audio media type to a [WAVEFORMATEX](/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) buffer, using the results of the earlier operation as input. This structure specifies the data format of the wave audio stream that is used after audio is loaded. 
+2. Use [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) to convert the current audio media type to a [WAVEFORMATEX](/windows/win32/api/mmeapi/ns-mmeapi-waveformatex) buffer, using the results of the earlier operation as input. This structure specifies the data format of the wave audio stream that is used after audio is loaded. 
 
 The __WAVEFORMATEX__ format can be used to describe the PCM buffer. As compared to the [WAVEFORMATEXTENSIBLE](/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible) structure, it can only be used to describe a subset of audio wave formats. For more info about the differences between __WAVEFORMATEX__ and __WAVEFORMATEXTENSIBLE__, see [Extensible Wave-Format Descriptors](/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
 

@@ -20,6 +20,10 @@ For an overview of the dynamic dependencies feature and guidance about using it 
 |  [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md) | Describes how to use dynamically take a dependency on the Windows App SDK framework package in an unpackaged app at run time. This scenario enables unpackaged apps to use Windows App SDK features.   |
 |  [Reference framework packages at run time](use-the-dynamic-dependency-api.md) | Describes how to use the *dynamic dependency API* to dynamically take a dependency on different framework packages (other than the Windows App SDK framework package) in an unpackaged app at run time. |
 
+## How packaged desktop apps run on Windows
+
+For a deeper dive on what happens to files and registry entries when you create a Windows app package for your desktop application, see [Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+
 ## Related topics
 
 - [Windows App SDK deployment guide for unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)

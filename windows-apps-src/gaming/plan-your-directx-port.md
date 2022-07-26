@@ -46,7 +46,7 @@ The lifecycle of a UWP app is very different from a desktop app. You'll need to 
 
 [DirectXMath](/windows/desktop/dxmath/ovw-xnamath-progguide) can be used as a replacement for D3DXMath and XNAMath, and it can come in handy if you need a math library. DirectXMath has fast, portable data types, and types that are aligned and packed for use with shaders.
 
-Native libraries such as the [Interlocked API](/windows/desktop/Sync/what-s-new-in-synchronization) have been expanded to support ARM intrinsics. If your game uses interlocked APIs, you can keep using them in DirectX 11 and UWP.
+Native libraries such as the [Interlocked API](/windows/desktop/Sync/what-s-new-in-synchronization) have been expanded to support Arm intrinsics. If your game uses interlocked APIs, you can keep using them in DirectX 11 and UWP.
 
 Our templates and code samples use new C++ features that you might not be familiar with yet. For example, asynchronous methods are used with [**lambda expressions**](/cpp/cpp/lambda-expressions-in-cpp) to load Direct3D resources without blocking the UI thread.
 

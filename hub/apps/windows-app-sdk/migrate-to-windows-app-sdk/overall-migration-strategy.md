@@ -30,7 +30,7 @@ For example, we'll see certain UI scenarios where you'll need to track your main
 > Also see [Windows Runtime APIs not supported in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-supported-api). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
 
 We'd love to hear your feeback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
-* For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion in the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
+* For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion on the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
 * For feedback about missing or incorrect information in this migration guide, use the **This page** button.
 
 ## Why migrate to the Windows App SDK?
@@ -45,7 +45,7 @@ The value proposition of moving the Windows App SDK is manifold. Here are some c
 * A single API surface across desktop app platforms.
 * More frequent release cadence that releases separately from Windows.
 * A consistent experience across Windows versions.
-* .NET 5 compatibility.
+* .NET compatibility.
 * Backward-compatible down to Windows 10, version 1809.
 * Improved runtime environment. See [MSIX container](/windows/msix/msix-container).
 

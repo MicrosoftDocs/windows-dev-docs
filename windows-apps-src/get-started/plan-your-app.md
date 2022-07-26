@@ -142,7 +142,6 @@ Of course, you can take advantage of a number of touch interactions, like rotate
 **Personalization**
 
 -   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](/windows/apps/design/app-settings/guidelines-for-app-settings).
--   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](/windows/apps/design/app-settings/store-and-retrieve-app-data) and see [Guidelines for roaming application data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
 -   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
 
 **Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.

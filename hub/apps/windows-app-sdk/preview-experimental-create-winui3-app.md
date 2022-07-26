@@ -14,7 +14,6 @@ ms.custom: 19H1
 
 The [Windows App SDK](index.md) includes WinUI 3 project templates that enable you to create desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
-
 **Using the Windows App SDK Stable version**: To build a WinUI 3 app using the stable version of the Windows App SDK, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 
 ## Prerequisites
@@ -103,7 +102,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 
 ### [C# with earlier releases](#tab/csharp-earlier)
 
-To create a WinUI 3 desktop app with C# and .NET 5 using Windows App SDK 1.0 Experimental and earlier releases:
+To create a WinUI 3 desktop app with C# and .NET using Windows App SDK 1.0 Experimental or earlier releases:
 
 1. In Visual Studio, select **File** -> **New** -> **Project**.
 
@@ -300,13 +299,18 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
 4. Create a new app using the ["Blank App, Packaged (WinUI 3 in Desktop)"](#instructions-for-winui-3-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
 
-5. Add this property to the project file:
+5. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
 
    ```xml
-   <WindowsPackageType>None</WindowsPackageType>
+   <Project ...>
+     ...
+     <PropertyGroup>
+       ...
+       <WindowsPackageType>None</WindowsPackageType>
+     </PropertyGroup> 
+     ...
+   </Project>
    ```
-
-    :::image type="content" source="../winui/winui3/images/winui-csharp-unpackaged-proj.png" alt-text="Visual Studio 2019 - C# Project file with WindowsPackageType set to None highlighted":::
 
 6. Delete package.appxmanifest from project. 
 

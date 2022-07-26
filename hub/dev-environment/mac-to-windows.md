@@ -96,7 +96,7 @@ Windows Subsystem for Linux (WSL) can now be installed to support running a Linu
 4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
 5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
 
-Just to name a few. Find more in the [WSL install docs](/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools).
+Just to name a few. Find more in the [WSL install docs](/windows/wsl/install-win10#install-your-linux-distribution-of-choice) and install them directly from the [Microsoft Store](https://aka.ms/wslstore).
 
 ## Windows Terminals
 
