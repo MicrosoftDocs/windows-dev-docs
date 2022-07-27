@@ -5,7 +5,7 @@ ms.topic: article
 ms.date: 07/18/2022
 keywords: AppLifecycle, Windows, ApplicationModel, focus
 ms.author: drewbat
-author: drewbaygit
+author: drewbatgit
 ms.localizationpriority: medium
 ---
 
