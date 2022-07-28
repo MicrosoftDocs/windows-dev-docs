@@ -26,20 +26,20 @@ Widgets provide three sizes for the user to choose from. It is recommended that 
 
 ### Small
 
-The widget principles *glanceable* and *focused* become more important in design decisions made for the small size widget. The small size widget should not try to force all of the functionality that could comfortably fit in a large widget. Focus on one user interaction or piece of key information that can be surfaced here with one touch target. 
+The widget principles *glanceable* and *focused* become more important in design decisions made for the small size widget. The small size widget should not try to force all of the functionality that could comfortably fit in a large widget. Focus on one user interaction or piece of key information that can be surfaced here with 1 touch target. 
 
 ### Medium
 
-The medium size widget allows more room compared to the small, and so more functionality or additional information can be included. The medium widget could also provide the same focused experience as the small widget, but provide 2 or 3 touch targets.
+The medium size widget allows more room compared to the small, and so more functionality or additional information can be included. The medium widget could also provide the same focused experience as the small widget, but provide 2-3 touch targets.
 
 ### Large  
 
-Large sizes allow for more information to be presented, but the content should still be focused and easily consumable. Alternatively, a large size card could highlight one image or topic and have a more immersive experience. The large size should have no more than 3 or 4 touch targets.
+Large sizes allow for more information to be presented, but the content should still be focused and easily consumable. Alternatively, a large size card could highlight one image or topic and have a more immersive experience. The large size should have no more than 3-4 touch targets.
 
 
 ## Color and theming
 
-![Three example widget templates demonstrating the light theme. The first is an empty widget with a white backgroud. The second is an empty widget with a light gradient background. The third is a widget with an image background. All three have the word "text" in dark font to demonstrate the contrast with the light background. ](./images/widgets-color-theme-1.png)
+![Three example widget templates demonstrating the light theme. The first is an empty widget with a white backgronud. The second is an empty widget with a light gradient background. The third is a widget with an image background. All three have the word "text" in dark font to demonstrate the contrast with the light background. ](./images/widgets-color-theme-1.png)
 
 ![Three example widget templates demonstrating the dark theme. The first is an empty widget with a black backgroud. The second is an empty widget with a dark gradient background. The third is a widget with an image background. All three have the word "text" in a light font to demonstrate the contrast with the dark background.](./images/widgets-color-theme-2.png)
 
@@ -57,14 +57,13 @@ The Web Content Accessibility Guidelines (WCAG) 2.0 level AA requires a contrast
 
 ![A diagram of a widget with guidelines indicating the margins. Next to this is a diagram of a widget where the area inside the margins is colored blue to show the content area.](./images/widgets-margins.png)
 
-Each widget has a 16px margin around it and a 48px attribution area where content cannot be placed in. [TBD: is "attribution area" a term of art? We should either define this or maybe call it something intuitive like the title bar. I guess it depends on the content requirements] The only component that can live in the right side margin and bottom margin are the [pagination dots](tbd). [TBD - update image to show pagination dots]
+Each widget has a 16px margin around it and a 48px [Attribution area](widgets-states-and-ui.md#attribution-area) in which content cannot be placed. The only component that can live in the right side margin and bottom margin are the pagination dots.
 
+![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pixel gutters between the rows.](./images/widgets-gutters.png)
 
-![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pix[el gutters between the rows.](./images/widgets-gutters.png)
-
-For widgets that use the container style [TBD Link](tbd), the gutter between each element is 4px. And the containers should touch the edges of the margins. Your content should also use spacing and sizing values of multiples of 4px [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.  [TBD - update to site-relative link for public docs]
+For widgets that use the container style [TBD Link](tbd), the gutter between each element is 4px. And the containers should touch the edges of the margins. Your content should also use spacing and sizing values of [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.
  
-You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics ) when designing your content. [TBD - update to site-relative link for public docs]
+You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics ) when designing your content.
 
 ## Typography
 

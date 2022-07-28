@@ -19,14 +19,14 @@ When a widget is displayed on the Widget Board, there are several different stat
 
 ![A screenshot of a widget in the default state](./images/widgets-default-state.png)
 
-The default state is what the widget looks like when it is running normally. This is the primary user experience for your widget. You design the layout for your widget's default state. Although the UI of your widget's default state may change in response to user configuration, your widget's default state should be fully implemented and should not be empty before user configuration. If your widget requires the user to sign-in, you may want to implement a signed-out state, described below. For design guidance for creating the default state for your widget, see [Link TBD](tbd). 
+The default state is what the widget looks like when it is running normally. This is the primary user experience for your widget. You design the layout for your widget's default state. Although the UI of your widget's default state may change in response to user configuration, your widget's default state should be fully implemented and should not be empty before user configuration. If your widget requires the user to sign-in, you may want to implement a signed-out state, described below. For design guidance for creating the default state for your widget, see [Widget design fundamentals](widgets-design-fundamentals.md). 
 
 **DO**
 
 - When in the default, active state a widget should feel personal and connected to user.
 - Widgets should show engaging content that brings the user value in the current moment.
 - Give the user the ability to start interacting with widget right away.
-- Provide a UI that reflects the UI of your app or service, while staying within the design contstraints for widgets, in order to maximize consistency and to lessen the learning curve. 
+- Provide a UI that reflects the UI of your app or service, while staying within the design constraints for widgets, in order to maximize consistency and to lessen the learning curve. 
 - Consider using the user’s location to pre-populate the data for content like sports and suggested calendars to add instead of generic data.
 - Allow ample breathing space between elements. 
 
@@ -39,7 +39,7 @@ Aim for comfortable information density and healthy negative space within each w
 
 Consider adding moments of surprise + delight to your widgets to elevate the experience. For example, for the Family or Calendar widgets you could highlight a child’s birthday via different visual treatments. 
 
-This is the state with the most design flexibility. Use these guidelines, [widget principles](widgets-design-overview), [design fundamentals](widgets-design-fundamentals), and [interaction](widgets-interaction-design.md) to design how you want to layout your content.
+This is the state with the most design flexibility. Use the guidelines in this articles as well as [Widget principles](index.md#widget-principles), [Widget design fundamentals](widgets-design-fundamentals.md), and [Widget interaction design guidance](widgets-interaction-design.md) to design how you want to layout your content.
 
 
 ### Signed-out state (for widgets that require authentication)
