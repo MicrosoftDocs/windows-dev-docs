@@ -16,6 +16,9 @@ ms.custom: template-quickstart
 
 In this quickstart, you will create a desktop Windows application that sends and receives local app notifications, also known as toast notifications, using the [Windows App SDK](../../index.md).
 
+> [!IMPORTANT]
+> Notifications for an elevated (admin) app is currently not supported.
+
 ## Prerequisites
 
 - [Set up your development environment](../../set-up-your-development-environment.md)
@@ -75,7 +78,7 @@ If your app is an MSIX-packaged app or Sparse-packaged app:
         <!--Register COM CLSID-->    
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----AppNotificationActivated">
+            <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----AppNotificationActivated:">
               <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" />
             </com:ExeServer>
           </com:ComServer>

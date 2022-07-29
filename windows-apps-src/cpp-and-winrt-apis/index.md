@@ -15,7 +15,7 @@ C++/WinRT is for any developer interested in writing beautiful and fast code for
 
 ## The case for C++/WinRT
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
+> [!VIDEO https://www.youtube.com/embed/rJxQnhiK4TQ]
 
 The C++ programming language is used both in the enterprise and independent software vendor (ISV) segments for applications where high levels of correctness, quality, and performance are valued. For example: systems programming; resource-constrained embedded and mobile systems; games and graphics; device drivers; and industrial, scientific, and medical applications, to name but some.
 

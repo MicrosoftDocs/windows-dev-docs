@@ -98,7 +98,7 @@ On Arm64EC, call checkers are not optional. However, CFG is still optional, as i
 
 Below is a summary table of the call checker usage on Classic Arm64, x64 and Arm64EC noting the fact that an Arm64EC binary can have two options depending on the architecture of the code.
 
-|Binary  |Code   |Uprotected indirect call |CFG protected indirect call|
+|Binary  |Code   |Unprotected indirect call |CFG protected indirect call|
 |--------------|---------|---------------|------------------------------------------------------------|
 |x64           |x64      |no call checker| `__guard_check_icall_fptr` or `__guard_dispatch_icall_fptr`|
 |Arm64 Classic |Arm64    |no call checker| `__guard_check_icall_fptr`|
@@ -106,6 +106,8 @@ Below is a summary table of the call checker usage on Classic Arm64, x64 and Arm
 | |Arm64EC |`__os_arm64x_check_icall`| `__os_arm64x_check_icall_cfg`|
 
 Independently of the ABI, having CFG enabled code (code with reference to the CFG call-checkers), does not imply CFG protection at runtime. CFG protected binaries can run down-level, on systems not supporting CFG: the call-checker is initialized with a no-op helper at compile time. A process may also have CFG disabled by configuration. When CFG is disabled (or OS support is not present) on previous ABIs the OS will simply not update the call-checker when the binary is loaded. On Arm64EC, if CFG protection is disabled, the OS will set `__os_arm64x_check_icall_cfg` the same as `__os_arm64x_check_icall`, which will still provide the needed target architecture check in all cases, but not CFG protection.
+
+As with CFG in Classic Arm64, the call to the target function (`x11`) must immediately follow the call to the Call Checker. The address of the Call Checker must be placed in a volatile register and neither it, nor the address of the target function, should ever be copied to another register or spilled to memory.
 
 ### Stack Checkers
 
@@ -135,7 +137,7 @@ For the variadic specific case, Arm64EC follows a calling convention very simila
 
 In the following example: `pt_nova_function` below takes parameters in a non-variadic form, therefore following the Classic Arm64 calling convention. It then calls `pt_va_function` with the exact same parameters but in a variadic call instead.
 
-```
+```cpp
 struct three_char {
     char a;
     char b;
@@ -222,7 +224,7 @@ A common misconception is that calling conventions can be converted by following
 
 Consider the following function:
 
-```
+```cpp
 int fJ(int a, int b, int c, int d);
 ```
 
@@ -234,7 +236,7 @@ Parameter assignment will occur as follows:
 
 Now consider a different function:
 
-```
+```cpp
 int fK(int a, double b, int c, double d);
 ```
 
@@ -254,7 +256,7 @@ When compiling Arm64EC code, the compiler will generate an Entry Thunk for each 
 
 Consider the following example:
 
-```
+```cpp
 struct SC {
     char a;
     char b;
@@ -334,6 +336,8 @@ Additional considerations for Exit Thunks:
 
 - The compiler will name them not by the function name they translate from->to, but rather the signature they address. This makes it easier to find redundancies.
 - The Exit Thunk is called with the register `x9` carrying the address of the target (x64) function. This is set by the call checker and passes through the Exit Thunk, undisturbed, into the emulator.
+
+After rearranging the parameters, the Exit Thunk then calls into the emulator via `__os_arm64x_dispatch_call_no_redirect`.
 
 It is worth, at this point, reviewing the function of the call checker, and detail about its own custom ABI. This is what an indirect call to `fB` would look like:
 
@@ -525,7 +529,7 @@ For these cases, when code obtains a pointer to a given function, either by `Get
 
 Consider the following example (error handling omitted for brevity):
 
-```
+```cpp
 auto module_handle = 
     GetModuleHandleW(L"api-ms-win-core-processthreads-l1-1-7.dll");
 
@@ -574,7 +578,7 @@ Windows SDK headers and the C compiler can simplify the job of authoring Arm64EC
 
 Consider the example of an equivalent to the following function `fD` that must be authored in Assembly (ASM). This function can be called by both Arm64EC and x64 code and the `pfE` function pointer may point at either Arm64EC or x64 code as well.
 
-```
+```cpp
 typedef int (PF_E)(int, double);
 
 extern PF_E * pfE;
@@ -625,7 +629,7 @@ In the example above:
 
 The next step is to generate the Entry Thunk for `fD` and the Exit Thunk for `pfE`. The C compiler can perform this task with minimal effort, using the `_Arm64XGenerateThunk` compiler keyword.
 
-```
+```cpp
 void _Arm64XGenerateThunk(int);
 
 int fD2(int i, double d) {
@@ -724,7 +728,7 @@ To generate Arm64EC dynamic code, the process is mostly the same with only two d
 
 Below is an example of memory allocation:
 
-```
+```cpp
     MEM_EXTENDED_PARAMETER Parameter = { 0 };
     Parameter.Type = MemExtendedParameterAttributeFlags;
     Parameter.ULong64 = MEM_EXTENDED_PARAMETER_EC_CODE;
@@ -745,7 +749,7 @@ Below is an example of memory allocation:
 
 And an example of adding one unwind function entry:
 
-```
+```cpp
 Arm64_RUNTIME_FUNCTION FunctionTable[1];
 
 FunctionTable[0].BeginAddress = 0;
