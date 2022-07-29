@@ -106,7 +106,7 @@ private async void DisplayDeleteFileDialog()
     }
     else
     {
-        // The user clicked the CLoseButton, pressed ESC, Gamepad B, or the system back button.
+        // The user clicked the CloseButton, pressed ESC, Gamepad B, or the system back button.
         // Do nothing.
     }
 }

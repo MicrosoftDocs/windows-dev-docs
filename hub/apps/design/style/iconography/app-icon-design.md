@@ -24,7 +24,7 @@ An icon should be a metaphor for its app: a visual representation of the value p
 
 Your icon should illustrate the concept of your app in a singular element using simple forms.
 
-When creating your icon, use clear metaphors and leverage concepts that are largely understood - such as an envelope for mail or magnifying glass for search. The key concept should be your icon's focal point; don't dilute your icon by adding decorative elements that don’t support the metaphor. To enhance communication clarity, use no more than two two metaphors in a single icon. If a single metaphor can be used, that’s even better.
+When creating your icon, use clear metaphors and leverage concepts that are largely understood - such as an envelope for mail or magnifying glass for search. The key concept should be your icon's focal point; don't dilute your icon by adding decorative elements that don’t support the metaphor. To enhance communication clarity, use no more than two metaphors in a single icon. If a single metaphor can be used, that’s even better.
 
 :::image type="content" source="images/abstraction-spectrum.png" alt-text="A diagram that shows examples of less and more abstract icons.":::
 

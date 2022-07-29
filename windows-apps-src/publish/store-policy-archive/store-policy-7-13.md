@@ -469,6 +469,6 @@ User Generated Content (UGC) is content that users contribute to an app or produ
 
 ### See also
 
-- [Change history for Microsoft Store Policies](../store-policies-change-history.md)
-- [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
+- [Change history for Microsoft Store Policies](store-policies-change-history.md)
+- [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
 - [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)

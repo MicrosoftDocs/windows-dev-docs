@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 05/11/2022
+ms.date: 07/01/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -28,6 +28,10 @@ This guide can help you test and debug your Android app on Windows:
 - Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
 - [Test and debug](#test-and-debug) your app on a Windows 11 device.
 - [Troubleshoot and find answers](#troubleshooting-issues).
+
+## Preview Program
+
+The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](/windows/android/wsa/preview-program).
 
 ## Set up your development environment
 

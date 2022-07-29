@@ -26,13 +26,13 @@ You can download and use WinUI packages in your app using the NuGet package mana
 > [!TIP]
 > For more info, design guidance, and code examples, see [Design and code Windows apps](../../../design/index.md).
 >
-> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
+> The **WinUI 2 Gallery** app includes interactive examples of most WinUI 2 controls, features, and functionality.
 >
-> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
+> If the gallery app is installed already, click [**WinUI 2 Gallery**](winui2gallery:) to open it.
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If not installed, download the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
 >
-> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
+> You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (select the *winui2* branch).
 
 ## Documentation
 
@@ -46,6 +46,7 @@ Version history for the main [Microsoft.UI.Xaml NuGet package](https://www.nuget
 
 | Microsoft.UI.Xaml NuGet Version | Type | Release date | Release notes | Highlights |
 | --- | --- | --- | --- | --- |
+| [2.8](winui-2.8.md) | stable | July 2022 | [Release Notes](winui-2.8.md) | [WebView2](winui-2.8.md#whats-new) |
 | [2.7](winui-2.7.md) | stable | September 2021 | [Release Notes](winui-2.7.md) | [InfoBadge](winui-2.7.md#infobadge), [Horizontal Orientation in ColorPicker](winui-2.7.md#horizontal-orientation-in-colorpicker) |
 | [2.6](winui-2.6.md) | stable | June 2021 | [Release Notes](winui-2.6.md) | [Mica](winui-2.6.md#mica), [Expander](winui-2.6.md#expander), [BreadcrumbBar](winui-2.6.md#breadcrumbbar), [ImageIcon](winui-2.6.md#imageicon), [AnimatedIcon](winui-2.6.md#animatedicon), [PipsPager](winui-2.6.md#pipspager) |
 | [2.5](winui-2.5.md) | stable | December 2020 | [Release Notes](winui-2.5.md) | [InfoBar](winui-2.5.md#infobar), [Determinate ProgressRing](winui-2.5.md#determinate-progressring), [NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |

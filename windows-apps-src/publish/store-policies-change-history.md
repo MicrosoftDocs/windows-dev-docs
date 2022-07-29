@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/28/2021
+ms.date: 06/13/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -26,9 +26,19 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <tbody>
 </tr>
 
+
+<tr class="odd">
+<td>July 18, 2022</td>
+<td><a href="/windows/uwp/publish/store-policies">7.16.1</a></td>
+<td>
+<p>Update to 10.8.7 to remove language related to open-source or other free software.</p>
+<p>Update to 11.2 adding a link to Microsoft’s online infringement reporting form.</p>
+</td>
+</tr>
+
 <tr class="even">
 <td>June 16, 2022</td>
-<td><a href="/windows/uwp/publish/store-policies">7.16</a></td>
+<td><a href="/windows/uwp/publish/store-policy-archive/store-policy-7-16">7.16</a></td>
 <td>
 <p>Update to 10.1.1 requirements for product search terms.</p>
 

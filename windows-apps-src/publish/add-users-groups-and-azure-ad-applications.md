@@ -86,7 +86,7 @@ The users you invited will get an email invitation to join your account, and a n
 If you need to resend an invitation, find the user on your **Users** page and select their email address (or the text that says **Invitation pending**). Then, at the bottom of the page, click **Resend invitation**.
 
 > [!IMPORTANT]
-> Outside users that you invite to join your Partner Center account can be assigned the same roles and permissions as other users. However, outside users will not be able to perform certain tasks in Visual Studio, such as associating an app with the Store, or creating packages to upload to the Store. If a user needs to perform those tasks, choose **Create new users** instead of **Invite outside users**. (If you don’t want to add these users to your existing Azure AD tenant, you can [create a new tenant](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account), then create new user accounts for them in that tenant.) 
+> Outside users that you invite to join your Partner Center account can be assigned the same roles and permissions as other users. However, outside users will not be able to perform certain tasks in Visual Studio, such as associating an app with the Store, or creating packages to upload to the Store. If a user needs to perform those tasks, choose **Create new users** instead of **Invite outside users**. (If you don’t want to add these users to your existing Azure AD tenant, you can [create a new tenant](../publish/associate-azure-ad-with-partner-center.md#create-a-new-azure-ad-tenant-to-associate-with-your-partner-center-account), then create new user accounts for them in that tenant.) 
 
 
 ### Changing a user's directory password

@@ -61,6 +61,7 @@ The [**Microsoft.UI.Win32Interop**](/windows/apps/api-reference/cs-interop-apis/
 |WinRT COM interop interface|C# interop class|
 |-|-|
 |[**IAccountsSettingsPaneInterop**](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop)|(**Windows.UI.ApplicationSettings**) **AccountsSettingsPaneInterop**|
+|[**IDisplayInformationStaticsInterop**](/windows/win32/api/windows.graphics.display.interop/nn-windows-graphics-display-interop-idisplayinformationstaticsinterop)|Introduced with TFM `net6.0-windows10.0.22621.0` and .NET 6.0.7.<br/><br/>(**Windows.Graphics.Display**) **DisplayInformationInterop**|
 |[**IDragDropManagerInterop**](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop)|(**Windows.ApplicationModel.DataTransfer.DragDrop.Core**) **DragDropManagerInterop**|
 |[**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow)|(**WinRT.Interop**) **InitializeWithWindow**|
 |[**IInputPaneInterop**](/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop)|(**Windows.UI.ViewManagement**) **InputPaneInterop**|
