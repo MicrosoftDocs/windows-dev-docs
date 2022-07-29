@@ -80,7 +80,7 @@ winget upgrade --all
 
 To identify which apps are in need of an update, simply use **upgrade** without any arguments to show all available upgrades. 
 
-In the example below, you will see **winget upgrade** identifies that an update is available for JanDeDobbeleer.OhMyPosh The user then uses **upgrade** to update the application.
+In the example below, you will see **winget upgrade** identifies that an update is available for *JanDeDobbeleer.OhMyPosh*. The user then uses **upgrade** to update the application.
 
 ![Animation demonstrating list and upgrade commands](./images/upgrade.gif)
 
