@@ -2,7 +2,7 @@
 title: Build desktop Windows apps with the Windows App SDK 
 description: Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 ms.topic: article
-ms.date: 10/07/2021
+ms.date: 07/29/2022
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
