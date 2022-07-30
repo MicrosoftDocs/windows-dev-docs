@@ -13,10 +13,17 @@ FancyZones is a window manager utility for arranging and snapping windows into e
 
 ![FancyZones in action screenshot.](../images/pt-fancy-zones2.png)
 
+## Snapping to a zone
 
-## Getting started snapping windows
+First, drag the window.  By default, you'll also need to press and hold the <kbd>Shift</kbd> key (This setting can be disabled via Settings). You'll see the zones appear with the one under your mouse highlighted.
+
+## Snapping to multiple zones
+
+### Snapping to two zones by edge hovering
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
+
+### Snapping to multiple zones with Control
 
 It's also possible to snap to any number of zones. First, drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
