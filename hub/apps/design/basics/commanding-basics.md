@@ -122,7 +122,7 @@ If a command is constantly needed for users to complete core scenarios, put it o
     :::column span="2":::
 **Command bars and menu bars**
 
-[Command bars](../controls/command-bar.md help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a [MenuBar](../controls/menus.md#create-a-menu-bar) can also be used when the functionality in your app is too complex for a command bar).
+[Command bars](../controls/command-bar.md) help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a [MenuBar](../controls/menus.md#create-a-menu-bar) can also be used when the functionality in your app is too complex for a command bar).
     :::column-end:::
 :::row-end:::
 
