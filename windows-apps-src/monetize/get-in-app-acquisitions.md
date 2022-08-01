@@ -124,33 +124,69 @@ Elements in the *Value* array contain the following values.
 | acquisitionType     | string  | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
 | acquisitionQuantity | integer | The number of acquisitions that occurred.                        |
 
+### Request and Response example
 
-### Response example
+The following code snippet demonstrates an example request and JSON response body for those request.
 
-The following example demonstrates an example JSON response body for this request.
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId=9NBLGGGZ5QDR
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2015-01-02",
-      "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso add-on 7",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso Demo",
-      "deviceType": "Phone",
-      "orderName": "",
-      "storeClient": "Windows Phone Store (client)",
-      "osVersion": "Windows Phone 8.1",
-      "market": "GB",
-      "gender": "m",
-      "ageGroup": "50orover",
-      "acquisitionType": "iap",
-      "acquisitionQuantity": 1
-    }
-  ],
-  "@nextLink": "inappacquisitions?applicationId=9NBLGGGZ5QDR&inAppProductId=&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1",
-  "TotalCount": 33677
+    "Value": [
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "inAppProductName": "Deluxe Collector's Edition",
+            "addonProductId": "9NBLGGAAGZDQ",
+            "date": "2022-07-29",
+            "acquisitionQuantity": 1,
+            "purchasePriceUSDAmount": 18.12,
+            "purchasePriceLocalAmount": 18.12,
+            "purchaseTaxUSDAmount": 1.13,
+            "purchaseTaxLocalAmount": 1.13
+        },
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "inAppProductName": "Episode 4",
+            "addonProductId": "9NAAAAAAAAAQ",
+            "date": "2017-01-07",
+            "acquisitionQuantity": 1,
+            "purchasePriceUSDAmount": 4.147206,
+            "purchasePriceLocalAmount": 3.99,
+            "purchaseTaxUSDAmount": 0.686004,
+            "purchaseTaxLocalAmount": 0.66
+        },
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "inAppProductName": "Deluxe Collector's Edition",
+            "addonProductId": "9NALGGGZ5QDQ",
+            "date": "2018-04-01",
+            "acquisitionQuantity": 1,
+            "purchasePriceUSDAmount": 1.99,
+            "purchasePriceLocalAmount": 1.99,
+            "purchaseTaxUSDAmount": 0.0,
+            "purchaseTaxLocalAmount": 0.0
+        },
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "inAppProductName": "Strategy Guide Episode 4",
+            "addonProductId": "9NBLGGGZ5QDQ",
+            "date": "2021-11-25",
+            "acquisitionQuantity": 1,
+            "purchasePriceUSDAmount": 1.31902922876179,
+            "purchasePriceLocalAmount": 150.0,
+            "purchaseTaxUSDAmount": 0.114315866492689,
+            "purchaseTaxLocalAmount": 13.0
+        },
+    ],
+    "TotalCount": 4,
+    "DataFreshnessTimestamp": "2022-07-29T05:54:00"
 }
 ```
 

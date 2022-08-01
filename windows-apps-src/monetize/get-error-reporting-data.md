@@ -99,36 +99,104 @@ Elements in the *Value* array contain the following values.
 | deviceCount     | number | The number of unique devices that correspond to this error for the specified aggregation level.  |
 | eventCount      | number | The number of events that are attributed to this error for the specified aggregation level.      |
 
+> [!NOTE]
+> This method can only retrieve errors that occurred in the last 30 days.
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippet demonstrates an example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=07/02/2022&endDate=07/20/2022&top=10&skip=0&filter=market eq 'US'&groupby=failureName,failureHash,symbol,osVersion,eventType,market,deviceType,packageName,packageVersion,osRelease&orderby=date
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2017-03-09",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso Demo",
-      "failureName": "APPLICATION_FAULT_8013150a_StoreWrapper.ni.DLL!70475e55",
-      "failureHash": "5a6b2170-1661-ed47-24d7-230fed0077af",
-      "symbol": "storewrapper_ni!70475e55",
-      "osVersion": "Windows 10",
-      "osRelease": "Version 1507",
-      "eventType": "crash",
-      "market": "US",
-      "deviceType": "PC",
-      "packageName": "",
-      "packageVersion": "0.0.0.0",
-      "deviceCount": 0.0,
-      "eventCount": 1.0
-    }
-  ],
-  "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&aggregationLevel=week&startDate=2017/03/01&endDate=2016/02/01&top=1&skip=1",
-  "TotalCount": 21
+    "Value": [
+        {
+            "date": "2022-07-21",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "failureName": "APPLICATION_HANG_BlockedOn_FileIO_Microsoft.Contoso Demo!CEServices.InternalLiveTileUpdaterRuntime_dfffffff_Microsoft.Contoso Demo!unknown_error_in_application",
+            "failureHash": "c21da75f-ea4d-538b-cfec-73654ef810b9",
+            "symbol": "Microsoft.Contoso Demo!unknown_error_in_application",
+            "osVersion": "6.3.9600",
+            "osRelease": "RTM",
+            "osArchitecture": null,
+            "eventType": "hang",
+            "market": "US",
+            "deviceType": "PC",
+            "praid": null,
+            "packageName": "microsoft.Contoso Demo_2.5.2.34894_x86__8wekyb3d8bbwe",
+            "packageVersion": "2.5.2.34894",
+            "ram": null,
+            "massStorage": null,
+            "cpu": null,
+            "cpuManufacturer": null,
+            "cpuFamilyName": null,
+            "sandboxId": null,
+            "deviceCount": 6.0,
+            "eventCount": 1.05263157894737
+        },
+        {
+            "date": "2022-07-21",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "failureName": "APPLICATION_HANG_BlockedOn_FileIO_Microsoft.Contoso Demo!CEServices.InternalLiveTileUpdaterRuntime_dfffffff_Microsoft.Contoso Demo!unknown_error_in_application",
+            "failureHash": "c21da75f-ea4d-538b-cfec-73654ef810b9",
+            "symbol": "Microsoft.Contoso Demo!unknown_error_in_application",
+            "osVersion": "6.3.9600",
+            "osRelease": "RTM",
+            "osArchitecture": null,
+            "eventType": "hang",
+            "market": "US",
+            "deviceType": "Unknown",
+            "praid": null,
+            "packageName": "microsoft.Contoso Demo_2.5.2.34894_x86__8wekyb3d8bbwe",
+            "packageVersion": "2.5.2.34894",
+            "ram": null,
+            "massStorage": null,
+            "cpu": null,
+            "cpuManufacturer": null,
+            "cpuFamilyName": null,
+            "sandboxId": null,
+            "deviceCount": 7.14285714285714,
+            "eventCount": 1.05263157894737
+        },
+        {
+            "date": "2022-07-21",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "failureName": "APPLICATION_HANG_Microsoft.Contoso Demo!CEServices.InternalLiveTileUpdaterRuntime_dfffffff_twinapi.appcore.dll!WaitCoalesced",
+            "failureHash": "233e04bb-7a3d-eb28-c316-1120aa9defc0",
+            "symbol": "twinapi.appcore.dll!WaitCoalesced",
+            "osVersion": "6.3.9600",
+            "osRelease": "RTM",
+            "osArchitecture": null,
+            "eventType": "hang",
+            "market": "US",
+            "deviceType": "PC",
+            "praid": null,
+            "packageName": "microsoft.Contoso Demo_2.5.2.34894_x86__8wekyb3d8bbwe",
+            "packageVersion": "2.5.2.34894",
+            "ram": null,
+            "massStorage": null,
+            "cpu": null,
+            "cpuManufacturer": null,
+            "cpuFamilyName": null,
+            "sandboxId": null,
+            "deviceCount": 6.0,
+            "eventCount": 8.94736842105263
+        }
+    ],
+    "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2022/07/02&endDate=2022/07/21&top=10&skip=10&groupby=failureName,failureHash,symbol,osVersion,eventType,market,deviceType,packageName,packageVersion,osRelease&filter=market eq 'US'&orderby=date",
+    "TotalCount": 443
 }
-
 ```
 
 ## Related topics

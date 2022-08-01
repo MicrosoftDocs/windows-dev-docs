@@ -93,31 +93,73 @@ Objects in the *Value* array contain the following values.
 | UserCount       | string | The number of users who performed the funnel step specified by the *MetricType* value.             |
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/funnel?applicationId=9NBLGGGZ5QDR
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "MetricType": "PageView",
-      "UserCount": 100
-    },
-    {
-      "MetricType": "Acquisition",
-      "UserCount": 80
-    },
-    {
-      "MetricType": "Install",
-      "UserCount": 50
-    },
-    {
-      "MetricType": "Usage",
-      "UserCount": 10
-    }
-  ],
-  "TotalCount": 4
+    "Value": [
+        {
+            "MetricType": "PageView",
+            "UserCount": 6214
+        },
+        {
+            "MetricType": "Acqusition",
+            "UserCount": 1502
+        },
+        {
+            "MetricType": "Usage",
+            "UserCount": 606
+        },
+        {
+            "MetricType": "Install",
+            "UserCount": 977
+        }
+    ],
+    "TotalCount": 4
+}
+```
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/funnel?applicationId=9NBLGGGZ5QDR&startDate=12/19/2021&endDate=12/21/2021&filter=market eq 'US' and gender eq 'm'
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+{
+    "Value": [
+        {
+            "MetricType": "PageView",
+            "UserCount": 10
+        },
+        {
+            "MetricType": "Acqusition",
+            "UserCount": 8
+        },
+        {
+            "MetricType": "Usage",
+            "UserCount": 5
+        },
+        {
+            "MetricType": "Install",
+            "UserCount": 3
+        }
+    ],
+    "TotalCount": 4
 }
 ```
 
