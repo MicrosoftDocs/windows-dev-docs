@@ -568,18 +568,6 @@ Numbers as reported on 8/1/2022
 | Average Processing Time                      | 2.9 days |
 
 
-**Edge Addons**
-
-| Statistic                                             | Count    |
-|----------------------------------------------|----------|
-| App and/or Account Enforcement Action Appeals |      42 |
-| Complaints about Technological Issues  |       27 |
-| Regulatory Compliance Complaints    |       0 |
-| Questions about certification, policy, submission, and technical help                    |      76 |
-| Miscellaneous | 15 |
-| Total Issues                              |      160 |
-| Overturned decisions                        |       8 |
-| Average Processing Time                      | 3.6 days |
 
 
 
