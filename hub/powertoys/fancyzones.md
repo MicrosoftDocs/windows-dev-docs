@@ -11,11 +11,11 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 
 FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve the speed of your workflow and restore layouts quickly. FancyZones allows you to define a set of window locations for a desktop that are drag targets for windows. When you drag a window into a zone, the window is resized and repositioned to fill that zone.
 
-![FancyZones in action screenshot.](../images/pt-fancy-zones2.png)
-
-## Snapping to a zone
+## Snapping to a single zone
 
 First, drag the window.  By default, you'll also need to press and hold the <kbd>Shift</kbd> key (This setting can be disabled via Settings). You'll see the zones appear with the one under your mouse highlighted.
+
+![FancyZones in action screenshot.](../images/pt-fancy-zones2.png)
 
 ## Snapping to multiple zones
 
@@ -23,11 +23,13 @@ First, drag the window.  By default, you'll also need to press and hold the <kbd
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
 
-### Snapping to multiple zones with Control
+### Snapping to multiple zones with the mouse
 
 It's also possible to snap to any number of zones. First, drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
 ![Two Zones Activation screenshot.](../images/pt-fancyzones-twozones.png)
+
+### Snapping to multiple zones with keyboard
 
 To snap a window to multiple zones using only the keyboard, first turn on the setting **Override Windows Snap** and select **Move windows based on: Relative position** as shown below. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
 
