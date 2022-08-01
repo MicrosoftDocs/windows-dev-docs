@@ -554,8 +554,6 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 Numbers as reported on 8/1/2022
 
-**Apps & Games**
-
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
 | App and/or Account Enforcement Action Appeals |      2,802 |
@@ -566,9 +564,6 @@ Numbers as reported on 8/1/2022
 | Total Issues                              |      7,496 |
 | Overturned decisions                        |       2,106 |
 | Average Processing Time                      | 2.9 days |
-
-
-
 
 
 ### See also
