@@ -39,7 +39,7 @@ New Rust projects default to using Git. So also add the individual component **G
 Next, [install Rust from the Rust website](https://www.rust-lang.org/tools/install). The website detects that you're running Windows, and it offers you 64- and 32-bit installers of the `rustup` tool for Windows, as well as instructions on installing Rust to the [Windows Subsystem for Linux (WSL)](/windows/wsl/about).
 
 > [!TIP]
-> Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the `rustup` installer for 64-bit Windows. You'll then be all set to write apps *for* Windows using Rust.
+> Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the `rustup` installer for 64-bit Windows. Please note to install msvc toolchain. You can do so by running the command `rustup default stable-msvc`. You'll then be all set to write apps *for* Windows using Rust.
 
 When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section&mdash;[Install Visual Studio Code](#install-visual-studio-code)). And you're not yet set up to call Windows APIs. But you could launch a command prompt (`cmd.exe`), and perhaps issue the command `cargo --version`. If you see a version number printed, then that confirms that Rust installed correctly.
 
