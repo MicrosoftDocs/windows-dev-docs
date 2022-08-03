@@ -1,7 +1,7 @@
 ---
 title: settings command
 description: Provides customizations for the Windows Package Manager.
-ms.date: 05/05/2021
+ms.date: 08/02/2022
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ The **settings** command will launch your default text editor. Windows by defaul
 >[!NOTE]
 >You can easily install Visual Studio Code by typing `winget install Microsoft.VisualStudioCode`
 
-## Usage
+## Use the winget settings command
 
 Launch your default JSON editing tool: `winget settings`
 
@@ -51,7 +51,7 @@ We have also defined a schema for the settings file. This allows you to use TAB 
 
 The following settings are available for the 1.0 release of the Windows Package Manager.
 
-### source
+### source settings
 
 The `source` settings involve configuration to the WinGet source.
 
@@ -70,7 +70,7 @@ A positive integer represents the update interval in minutes. The check for upda
 
 To manually update the source use `winget source update`.
 
-### visual
+### visual settings
 
 The `visual` settings involve visual elements that are displayed by WinGet
 
@@ -88,7 +88,7 @@ Color of the progress bar that WinGet displays when not specified by arguments.
 - retro
 - rainbow
 
-### installBehavior
+### installBehavior settings
 
 The `installBehavior` settings affect the default behavior of installing and upgrading (where applicable) packages.
 
@@ -101,7 +101,8 @@ The `disableInstallNotes` behavior affects whether installation notes are shown 
     },
 ```
 
-### portablePackageUserRoot
+### portablePackageUserRoot setting
+
 The `portablePackageUserRoot` setting affects the default root directory where packages are installed to under `User` scope. This setting only applies to packages with the `portable` installer type. Defaults to `%LOCALAPPDATA%/Microsoft/WinGet/Packages/` if value is not set or is invalid.
 
 > Note: This setting value must be an absolute path.
@@ -112,7 +113,8 @@ The `portablePackageUserRoot` setting affects the default root directory where p
     },
 ```
 
-### portablePackageMachineRoot
+### portablePackageMachineRoot setting
+
 The `portablePackageMachineRoot` setting affects the default root directory where packages are installed to under `Machine` scope. This setting only applies to packages with the `portable` installer type. Defaults to `%PROGRAMFILES%/WinGet/Packages/` if value is not set or is invalid.
 
 > Note: This setting value must be an absolute path.
@@ -123,7 +125,7 @@ The `portablePackageMachineRoot` setting affects the default root directory wher
     },
 ```
 
-#### preferences and requirements
+### preferences and requirements settings
 
 Some of the settings are duplicated under `preferences` and `requirements`. 
 
@@ -156,7 +158,7 @@ The `locale` behavior affects the choice of installer based on installer locale.
 },
 ```
 
-### architectures
+#### architectures
 
 The `architectures` behavior affects what architectures will be selected when installing a package. The matching parameter is `--architecture`. Note that only architectures compatible with your system can be selected.
 
@@ -168,7 +170,7 @@ The `architectures` behavior affects what architectures will be selected when in
     },
 ```
 
-## uninstallBehavior
+### uninstallBehavior
 
 The `uninstallBehavior` settings affect the default behavior of uninstalling (where applicable) packages.
 
@@ -182,7 +184,7 @@ The `purgePortablePackage` behavior affects the default behavior for uninstallin
     },
 ```
 
-### telemetry
+### telemetry settings
 
 The `telemetry` settings control whether winget writes ETW events that may be sent to Microsoft on a default installation of Windows.
 
@@ -198,7 +200,7 @@ See [details on telemetry](https://github.com/microsoft/winget-cli/blob/master/R
 
 If set to true, the `telemetry.disable` setting will prevent any event from being written by the program.
 
-### network
+### network settings
 
 The `network` settings influence how winget uses the network to retrieve packages and metadata.
 
@@ -214,7 +216,7 @@ The `downloader` setting controls which code is used when downloading packages. 
 }
 ```
 
-### logging
+### logging settings
 
 The `logging` settings control the level of detail in log files. `--verbose-logs` will override this setting and always creates a verbose log.
 
@@ -226,6 +228,7 @@ The `logging` settings control the level of detail in log files. `--verbose-logs
 ```
 
 #### level
+
 The following logging levels are available. Defaults to `info` if the value is not set or is invalid. 
 
 - verbose
