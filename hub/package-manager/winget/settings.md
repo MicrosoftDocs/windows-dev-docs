@@ -19,11 +19,33 @@ The **settings** command will launch your default text editor. Windows by defaul
 
 Launch your default JSON editing tool: `winget settings`
 
-![Screenshot of the Windows Package Manager Settings.](./images/settings.png)
-
 When you launch the settings for the first time, there will be no settings specified. At the top of the JSON file we provide a [link](https://aka.ms/winget-settings) where you can discover the latest experimental features and settings.
 
+The code snippet below is an example of what your settings file should look like if you would like to enable or modify some of these experimental features and settings.
+
+```json
+{
+    "$schema": "https://aka.ms/winget-settings.schema.json",
+
+    // For documentation on these settings, see: https://aka.ms/winget-settings
+    "experimentalFeatures": {
+	  "dependencies": true,
+	  "directMSI": false,
+	  "zipInstall": false,
+    },
+    "visual": {
+        "progressBar": "rainbow"
+    },
+    "source": {
+        "autoUpdateIntervalInMinutes": 5
+    },
+}
+```
+
 We have also defined a schema for the settings file. This allows you to use TAB to discover settings and syntax if your JSON editor supports JSON schemas.
+
+> [!NOTE]
+> Experimental features are only available in preview builds. Instructions for obtaining a preview build can be found in the [GitHub repository](https://github.com/microsoft/winget-cli).
 
 ## Updating settings
 
