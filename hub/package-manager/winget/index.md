@@ -95,6 +95,7 @@ The **winget** tool supports the following types of installers:
 * APPX
 * MSIX
 * BURN
+* PORTABLE
 
 ## Scripting winget
 
