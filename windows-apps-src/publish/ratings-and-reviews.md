@@ -1,7 +1,7 @@
 ---
 description: Prompt users for ratings and reviews, and analyze reviews provided by users
 title: Ratings and reviews in the Microsoft Store
-ms.date: 04/13/2022
+ms.date: 08/03/2022
 ms.topic: article
 ms.author: hickeys
 author: hickeys
