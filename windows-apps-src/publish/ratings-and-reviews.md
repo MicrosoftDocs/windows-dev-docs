@@ -17,9 +17,9 @@ Users can rate and review any products they’ve purchased or rented in the Micr
 
 Users can rate an app, game, movie or TV show on a scale of one to five stars. The rating score is calculated based on a product’s recent ratings to give users insight to the current product experience.
 
-The count of ratings includes most recent ratings submitted for the app, which are used to calculate the app's rating score. It’s visible on the product page and in search results.
+The total lifetime count of ratings includes all ratings submitted since the app was published to the Microsoft Store. It’s visible on the product page and in search results.
 
-The count of ratings and rating score are specific to a user’s country and type of device.
+The total count of ratings and rating score are specific to a user’s country and type of device.
 
 ## Reviews
 
