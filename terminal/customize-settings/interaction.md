@@ -45,7 +45,7 @@ ___
 
 ## Remove trailing white-space in rectangular selection
 
-When this is set to `true` and you copy text in a rectangular (block) selection to the clipboard, trailing white-spaces are removed from each line. When it's set to `false`, the white-spaces are preserved, ensuring that all lines have the same length. To copy text in a rectangular (block) selection, hold down the <kbd>Alt</kbd> key, right-click, and drag your mouse over the text area you want to select. This can be useful for selecting text columns, etc.
+When this is set to `true` and you copy text in a rectangular (block) selection to the clipboard, trailing white-spaces are removed from each line. When it's set to `false`, the white-spaces are preserved, ensuring that all lines have the same length. To copy text in a rectangular (block) selection, hold down the <kbd>Alt</kbd> key, click and drag your mouse over the text area you want to select. This can be useful for selecting text columns, etc.
 
 **Property name:** `trimBlockSelection`
 
