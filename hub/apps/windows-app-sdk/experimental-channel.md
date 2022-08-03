@@ -21,12 +21,53 @@ The experimental channel provides releases of the Windows App SDK that include [
 - For documentation on experimental releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
 **Experimental channel releases:**
+- [Version 1.2 Experimental](#version-12-experimental-120-experimental1)
 - [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
 - [Version 0.8 Preview](#version-08-preview-080-preview)
 
-## Version 1.0 Experimental (1.0.0-experimental1)
+## Version 1.2 Experimental (1.2.0-experimental1)
 
 This is the latest release of the experimental channel. It supports all [experimental channel features](release-channels.md#features-available-by-release-channel).
+
+To download, retarget your WinAppSDK NuGet version to `1.2.220721.1-experimental1`.
+
+### Input & Composition
+First introduced in Windows App SDK 0.8, there are several experimental classes in the
+[Microsoft.UI.Input.Experimental](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.experimental) & [Microsoft.UI.Composition.Experimental](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.experimental) namespaces.
+
+New to this release:
+- [InputPointerSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersource) has a new static factory, GetforWindowId.
+
+### Content
+New to this release, the experimental classes in the Microsoft.UI.Content namespace provide the building blocks of interactive content. These are low level primitives that can be assembled into content to provide the interactive experience for an end user. The content defines the structure for: rendering output with animations, processing input on different targets, providing accessibility representation, and handling host state changes.
+
+Notable APIs:
+- `ContentIsland` - brings together Output, Input, and Accessibility and provides the abstraction for interactive content. A custom visual tree can be constructed and made interactive with these APIs.
+- `DesktopChildSiteBridge` - enables a `ContentIsland` to be connected into a HWND-based hierarchy.
+
+Check out the [sample on GitHub](https://aka.ms/windowsappsdk/1.2/1.2.0-experimental1/content-islands-sample) for more information.
+
+### Dispatching
+[DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) now dispatches as reentrant. Previously, no more than a single [DispatcherQueueHandler](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuehandler) callback could be active on a single thread at a time. Now, if a handler starts a nested message pump, additional callbacks dispatch as reentrant. This matches Win32 behavior around window messages and nested message pumps.
+
+### Notifications
+Registering app display name and icon for app notification is now supported. Check out the [spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md) for additional information.
+
+### WinUI 3
+
+- Controls and styles are up to date with the [WinUI 2.8](../winui/winui2/release-notes/winui-2.8.md) release.
+- UWP is no longer supported in the experimental releases.
+
+### Other limitations and known issues
+
+- Apps need to be rebuilt after updating to Windows App SDK 1.2-experimental1 due to a breaking change introduced in the ABI.
+- Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See [issue 2492](https://github.com/microsoft/WindowsAppSDK/issues/2492) on GitHub for more information.
+- Using `dotnet build` with a WinAppSDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
+- The default WinAppSDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
+
+## Version 1.0 Experimental (1.0.0-experimental1)
+
+This release supports all [experimental channel features](release-channels.md#features-available-by-release-channel).
 
 > [!div class="button"]
 > [Download](https://aka.ms/windowsappsdk/experimental-vsix)
