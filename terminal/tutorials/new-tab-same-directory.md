@@ -3,12 +3,12 @@ title: Opening a tab/pane in the same directory
 description: In this tutorial, you learn how to configure your shell to allow Windows Terminal to open tabs in the same path.
 author: zadjii-msft
 ms.author: migrie
-ms.date: 11/18/2021
+ms.date: 07/08/2022
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to open tabs in the same working directory as my current tab.
 ---
 
-# Tutorial: Opening a tab/pane in the same directory in Windows Terminal
+# Tutorial: Opening a tab or pane in the same directory in Windows Terminal
 
 Typically, the "new tab" and "split pane" actions will always open a new tab/pane in whatever the `startingDirectory` is for that profile. However, on other platforms, it's common for new tabs to automatically use the working directory of the current tab as the starting directory for a new tab. This allows the user to quickly multitask in a single directory. 
 
@@ -65,7 +65,7 @@ function prompt {
 
 #### PowerShell with posh-git
 
-If you're using posh-git, then that will already modify your prompt. In that case, you'll want to only add the necessary output to the already modified prompt. The following example is a lightly modified version of this example from [the ConEmu docs](https://conemu.github.io/en/ShellWorkDir.html#PowerShellPoshGit):
+If you're using [posh-git](https://github.com/dahlbyk/posh-git), then that will already modify your prompt. In that case, you'll want to only add the necessary output to the already modified prompt. The following example is a lightly modified version of this example from [the ConEmu docs](https://conemu.github.io/en/ShellWorkDir.html#PowerShellPoshGit):
 
 ```powershell
 function prompt
@@ -84,11 +84,26 @@ function prompt
 }
 ```
 
+#### PowerShell with Starship
+
+If you're using [Starship](http://starship.rs/), then that will already modify your prompt. In that case, you'll want to only add the necessary output to the already modified prompt.
+
+```powershell
+function Invoke-Starship-PreCommand {
+  $loc = $($executionContext.SessionState.Path.CurrentLocation);
+  $prompt = "$([char]27)]9;12$([char]7)"
+  if ($loc.Provider.Name -eq "FileSystem")
+  {
+    $prompt += "$([char]27)]9;9;`"$($loc.Path)`"$([char]7)"
+  }
+  $host.ui.Write($prompt)
+}
+
 ### WSL
 
 #### `bash`
 
-Add the following line to the end of your `.bashrc` file:
+Add the following line to the end of your `.bash_profile` config file:
 
 ```bash
 PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
@@ -109,8 +124,33 @@ precmd_functions+=(keep_current_path)
 
 The `precmd_functions` hook tells zsh what commands to run before displaying the prompt. The `printf` statement is what we're using to append the sequence for setting the working directory with the Terminal. The `$(wslpath -w "$PWD")` bit will invoke the `wslpath` executable to convert the current directory into its Windows-like path. Using  `precmd_functions+=` make sure we append the `keep_current_path` function to any existing function already defined for this hook.
 
+#### Fish
+
+If you're using [Fish shell](https://fishshell.com/), add the following lines to the end of your config file located at `~/.config/fish/config.fish`:
+
+```bash
+function storePathForWindowsTerminal --on-variable PWD
+    if test -n "$WT_SESSION"
+      printf "\e]9;9;%s\e\\" (wslpath -w "$PWD")
+    end
+end
+```
+
+This function will be called whenever the current path is changed to confirm the current session is opened by Windows Terminal (verifying $WT_SESSION) and sending Operating System Command (OSC 9;9;), with the Windows equivalent path (`wslpath -w`) of current path.
+
+#### MINGW
+
+For MINGW, Git Bash and Cygwin, you need to modify the `PROMT_COMMAND` for WSL: replace `wslpath` with `cygpath`.
+
+Add the following line to the end of your `.bashrc` file:
+
+```bash
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w $PWD`"'
+```
+
 > [!NOTE]
-> Don't see your favorite shell here? If you figure it out, feel free to open a PR to contribute a solution for your preferred shell!
+> Don't see your favorite shell here? If you figure it out, feel free to [open a PR](https://github.com/MicrosoftDocs/terminal/edit/main/TerminalDocs/tutorials/new-tab-same-directory.md)
+> to contribute a solution for your preferred shell!
 
 ## Using actions to duplicate the path
 
