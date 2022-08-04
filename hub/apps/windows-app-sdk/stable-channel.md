@@ -209,9 +209,10 @@ C# Windows Runtime Components, including WinUI custom controls, are now supporte
 - Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See [issue 2492](https://github.com/microsoft/WindowsAppSDK/issues/2492) on GitHub for more information.
 - Using `dotnet build` with a WinAppSDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
 - The default WinAppSDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
+
 ## Version 1.0
 
-The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.3. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.0.x lineage of the stable channel of the Windows App SDK is version 1.0.4. 1.0.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
 
 ### Version 1.0.4
 
@@ -486,16 +487,25 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 ## Version 0.8
 
-The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.11.
+The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.12.
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name **Project Reunion**. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use **Project Reunion** when referring to an existing asset or a specified earlier release.
+
+### Version 0.8.12
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.
+
+> [!NOTE]
+> For C# developers, one of the following .NET SDK versions is required: 5.0.213, 5.0.407, 6.0.104, 6.0.202 (or later). To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
+
+#### Bug fixes:
+- Fixed issue where apps with [SwapChainPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel) or [WebView2](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2) would unpredictably crash due to an access violation.
 
 ### Version 0.8.11
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.
 
 > [!NOTE]
-> For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
+> For C# developers, one of the following .NET SDK versions is required: 5.0.213, 5.0.407, 6.0.104, 6.0.202 (or later). To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
 
 #### Bug fixes:
 - Fixed regression causing the lost focus event to fire when selecting text using mouse.
