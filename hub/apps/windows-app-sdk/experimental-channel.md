@@ -29,7 +29,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 
 This is the latest release of the experimental channel. It supports all [experimental channel features](release-channels.md#features-available-by-release-channel).
 
-To download, retarget your WinAppSDK NuGet version to `1.2.220721.1-experimental1`.
+To download, retarget your WinAppSDK NuGet version to `1.2.220727.1-experimental1`.
 
 ### Input & Composition
 First introduced in Windows App SDK 0.8, there are several experimental classes in the
