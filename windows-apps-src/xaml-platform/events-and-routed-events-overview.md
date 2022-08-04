@@ -213,7 +213,7 @@ The Windows Runtime with C#, Microsoft Visual Basic or C++/CX supports the conce
 - [**ManipulationInertiaStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
 - [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
 - [**ManipulationStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
-- [**NoFocusCandidateFound**](/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
+- [**NoFocusCandidateFound**](/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
 - [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)
 - [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
 - [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered)
@@ -291,7 +291,7 @@ A small number of UI elements support *commanding*. Commanding uses input-relate
 For purposes of defining custom events, how you add the event and what that means for your class design is highly dependent on which programming language you are using.
 
 - For C# and Visual Basic, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
-    - For the event handler it's a good idea to use [**System.EventHandler\<TEventArgs>**](/dotnet/api/system.eventhandler-1) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler\<T>**](/uwp/api/windows.foundation.eventhandler).
+    - For the event handler it's a good idea to use [**System.EventHandler\<TEventArgs>**](/dotnet/api/system.eventhandler-1) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler\<T>**](/uwp/api/windows.foundation.eventhandler-1).
     - Don't base your event data class on [**System.EventArgs**](/dotnet/api/system.eventargs) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
     - If you are using custom accessors, see [Custom events and event accessors in Windows Runtime components](/previous-versions/windows/apps/hh972883(v=vs.140)).
     - If you're not clear on what the standard .NET event pattern is, see [Defining Events for Custom Silverlight Classes](/previous-versions/windows/). This is written for Microsoft Silverlight but it's still a good summation of the code and concepts for the standard .NET event pattern.
