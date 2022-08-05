@@ -5,7 +5,7 @@ ms.topic: article
 ms.date: 11/16/2021
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.author: stwhi
-author: whims
+author: stevewhims
 ms.localizationpriority: medium
 ---
 
