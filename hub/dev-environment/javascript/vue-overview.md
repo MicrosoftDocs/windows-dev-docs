@@ -34,6 +34,7 @@ Vue.js is focused only on the view layer, so may require additional tools to cre
 - [Vue CLI](https://cli.vuejs.org): a standard toolkit for rapid Vue.js development with out-of-the-box support for Babel, PostCSS, TypeScript, ESLint, etc.
 - [Nuxt.js](./nuxtjs-on-wsl.md): A framework to make server-side rendered Vue.js apps possible. Server-side rendering can improve SEO and make user interfaces more responsive.
 - [Vue extension pack for VS Code](https://marketplace.visualstudio.com/items?itemName=mubaidr.vuejs-extension-pack): Adds syntax highlighting, code formatting, and code snippets to your .vue files.
+- [Quasar](https://quasar.dev/): SPA, SSR, PWA, Mobile app, Desktop app Vue.js 2 and 3 with Material Design Framework components.
 - [Vuetify](https://vuetifyjs.com/): A Vue UI library offering Material Design Framework components.
 - [Vuesion](https://github.com/vuesion/vuesion): A Vue boilerplate for production-ready Progressive Web Apps (PWAs).
 - [Storybook](https://storybook.js.org/): A development and testing environment for Vue user interface components.
