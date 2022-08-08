@@ -794,7 +794,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 ## {x:Bind} and {Binding} feature comparison
 
-> [!div class="mx-tdCol2BreakAll"]
+> [!div class="mx-tdBreakAll"]
 > | Feature | {x:Bind} | {Binding} | Notes |
 > |---------|----------|-----------|-------|
 > | Path is the default property | `{x:Bind a.b.c}` | `{Binding a.b.c}` | |
