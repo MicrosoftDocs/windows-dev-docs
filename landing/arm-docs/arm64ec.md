@@ -1,47 +1,89 @@
 ---
 title: Arm64EC for Windows 11 apps on Arm
 description: Learn how Arm64EC empowers you to build and incrementally update apps that benefit from native performance on Arm devices, without interrupting your current x64 functionality.
-ms.date: 04/19/2022
-ms.topic: article
+ms.date: 08/08/2022
+ms.topic: overview
 ms.prod: windows
 ms.technology: arm
 author: marswe
 ms.author: marcs
 ---
 
-# Using Arm64EC to build apps for Windows 11 on Arm devices
+# Arm64EC - Build and port apps for native performance on Arm
 
-Arm64EC (“Emulation Compatible”) is a new application binary interface (ABI) for building apps for Windows 11 on Arm. With Arm64EC, you can build new Arm64 native apps or incrementally transition existing apps to take advantage of the native speed and performance possible with Arm64-powered devices, including better power consumption, battery life, and accelerated AI & ML workloads.
+Arm64EC (“Emulation Compatible”) enables you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI & ML workloads.
 
-ARM64EC uses the latest Windows SDK and remote-targeting with Visual Studio and the ARM64EC built tools. Even if your app relies on existing dependencies or plugins that don't yet support Arm, ARM64EC is interoperable with x64 and allows you to mix and match Arm64EC and x64 as needed - with Arm64EC code running natively, while x64 code runs using emulation that comes built-in with Windows 11.
+Arm64EC is a new application binary interface (ABI) for apps running on Arm devices with Windows 11. It is a Windows 11 feature that requires the use of the Windows 11 SDK and is not available on Windows 10 on Arm.
 
-You can read more about Arm64EC on the [Windows Developer blog](https://aka.ms/arm64ecannounceblog).
+## Interoperability
 
-## Get started building Win32 apps as Arm64EC
+Code built as Arm64EC is interoperable with x64 code running under emulation within the same process.  The Arm64EC code in the process runs with native performance, while any x64 code runs using emulation that comes built-in with Windows 11. Even if your app relies on existing dependencies or plugins that don't yet support Arm, you can start to rebuild parts of your app as Arm64EC to gain the benefits of native performance.
 
-To start building Win32 apps as Arm64EC, you'll need to install these prerequisites:
+Arm64EC guarantees interoperability with x64 by following x64 software conventions including calling convention, stack usage, data structure layout, and preprocessor definitions. However, Arm64EC code is not compatible with code built as Arm64, which uses a different set of software conventions.
 
-- The latest [Windows Insider SDK build](https://aka.ms/windowsinsidersdk) available through the Windows Insider program.
-- [Visual Studio Preview (version 16.11 preview 2 or later)](https://visualstudio.microsoft.com/vs/preview/).
+The Windows 11 on Arm operating system itself relies heavily on Arm64EC's interoperability to enable running x64 applications.  Most operating system code loaded by an x64 app running on Windows 11 on Arm will have been compiled as Arm64EC, enabling native performance for that code without the application knowing. 
 
-Once the Windows Insider SDK and Visual Studio Preview have been installed, follow these steps to add the Arm64EC platform.
+An x64 or Arm64EC process can load and call into both x64 and Arm64EC binaries, whereas an Arm64 process can only load Arm64 binaries.  Both architectures can load [Arm64X binaries](./arm64x-pe.md) as those contain code for both x64 and Arm64.
 
-1. In the Visual Studio Installer, add the Arm64EC tools by searching under **Individual components** and selecting the **MSVC v142 - VS 2019 C++ Arm64EC build tools** checkbox, currently marked as experimental.
+|Process architecture |x64 binary |Arm64EC binary |Arm64 binary |
+|---|---|---|---|
+|**x64/Arm64EC** |✔ |✔ |❌ |
+|**Arm64** |❌ |❌ |✔ |
 
-    ![Visual Studio Installer Arm64EC checkbox screenshot](./images/arm64ec-vs-installer.png)
+✔ = Supported,
+❌ = Not supported
 
-2. With the tools and SDK installed, create a new C++ project or open an existing one.
+Similarly, at build time, Arm64EC binaries can link in both x64 and Arm64EC libs, while Arm64 processes can only link in Arm64 libs. 
 
-    > [!NOTE]
-    > If your project is using an older SDK or older version of MSVC, you'll need to retarget the solution to use the latest version of each.
+|PE architecture |x64 lib |Arm64EC lib |Arm64 lib |
+|---|---|---|---|
+|**Arm64EC** |✔ |✔ |❌ |
+|**Arm64** |❌ |❌ |✔ |
 
-3. To add the Arm64EC platform:
-    - In the **Build** menu, select **Configuration Manager**.
-    - In the **Active solution platform** box, select **`<New…>`** to create a new platform.
-    - Select **Arm64EC**, Copy settings from **x64**, and check the **Create new project platforms** checkbox.
+✔ = Supported,
+❌ = Not supported
 
-    ![Visual Studio Installer New Arm64EC Platform screenshot](./images/arm64ec-vs-new-platform.png)
+For more detail about how the Arm64EC ABI enables interoperability, see [Understanding Arm64EC ABI and assembly code](./arm64ec-abi.md).
 
-    You can choose to leave parts of the solution as x64 as needed. However, the more code built as Arm64EC, the more code that will run with native performance on Windows 11 on Arm. For any external dependencies, ensure that your project links against the x64 or Arm64EC versions of those projects.
+## Use Arm64EC to make an existing app faster on Windows 11 on Arm
 
-4. With the new solution platform in place, select **Build** in Visual Studio to start building Arm64EC binaries.  
+Arm64EC enables to you to **incrementally** transition the code in your existing app from emulated to native. At each step along the way, your application continues to run well without the need to be recompiled all at once.
+
+![Example graph showing incremental update effects on Arm performance using Arm64EC](./images/arm64ec-incremental-update.png)
+
+The image above shows a simplified example of a fully-emulated x86 workload taking some amount of time that is then incrementally improved using Arm64EC:
+
+1. Starting as a fully emulated x64 workload
+2. After recompiling the most CPU-intensive parts as Arm64EC
+3. After continuing to recompile more x64 modules over time
+4. Ending result of a fully native Arm64EC app
+
+By recompiling the modules that take the most time or are the most CPU-intensive from x64 to Arm64EC, the resulting workload receives the most improvement for the least amount of effort each step of the way.
+
+## App dependencies
+
+When using Arm64EC to rebuild an application, you will want to use Arm64EC versions of dependencies but you can also rely on x64 versions of dependencies. Arm64 versions of dependencies won't be usable.
+
+Any x64 code, including code from dependencies, in an Arm64EC process will run under emulation in your app. Prioritizing the most CPU-intensive dependencies to transition from x64 to Arm64EC will have the greatest impact toward improving your app's performance.
+
+## Identifying Arm64EC binaries and apps
+
+Apps running on Windows 11 on Arm will interact with Arm64EC binaries as though they are x64 binaries. The app does not need to know to what extent the code in the binary has been recompiled as Arm64EC.  
+
+For developers interested in identifying these binaries, you can see them in a developer command prompt using `link /dump /headers`.
+
+```powershell
+File Type: EXECUTABLE IMAGE
+FILE HEADER VALUES
+    8664 machine (x64) (ARM64X)
+```
+
+The combination of (x64) and (ARM64X) indicates that some portion of the binary has been recompiled as Arm64EC, even though the binary still appears to be x64. A binary with a machine header that contains (ARM64) and (ARM64X) is an [Arm64X PE file](./arm64x-pe.md) that can be loaded into both x64 and Arm64 apps.
+
+Windows **Task Manager** can also be used to identify if an app has been compiled as Arm64EC. In the **Details** tab of Task manager, the **Architecture** column will show **ARM64 (x64 compatible)** for applications whose main executable has been partially or completely compiled as Arm64EC.
+
+![Screenshot of Task Manager showing ARM64 (x64 compatible) in Architecture details.](./images/arm64ec-task-manager.png)
+
+## Next steps
+
+See [Get started with Arm64EC](./arm64ec-build.md) to learn how to build or update Win32 apps using Arm64EC.
