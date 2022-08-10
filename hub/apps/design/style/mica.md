@@ -1,10 +1,10 @@
 ---
-description: Learn to use Mica, an opaque, dynamic material that incorporates theme and desktop wallpaper to delight users and create visual hierarchy. 
+description: Learn to use Mica and Mica Alt, opaque, dynamic materials that incorporate theme and desktop wallpaper to delight users and create visual hierarchy. 
 title: Mica material
 template: detail.hbs
 ms.date: 06/30/2021
 ms.topic: article
-keywords: windows 11, uwp
+keywords: windows 11
 pm-contact: gabilka
 design-contact: shurd
 dev-contact: jevansa, adibpa
@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 
 # Mica material
 
-Mica is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization.
+_Mica_ is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization. Mica is available for UWP apps that use WinUI 2 and apps that use Windows App SDK 1.1 or higher, while running on Windows version 22000 or later .
+
+_Mica Alt_ is a variant of Mica, with stronger tinting of the user's desktop background color. You can apply Mica Alt to your application's backdrop to provide a deeper visual hierarchy than Mica, especially when creating an application with a tabbed title bar. Mica Alt is available for apps that use Windows App SDK 1.1 or higher.
 
 ![hero image](images/materials/mica-header.png)
-
-> **Important APIs**: [BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial)
 
 :::row:::
     :::column:::
@@ -30,34 +30,24 @@ Mica in dark theme</br>
     :::column-end:::
 :::row-end:::
 
-## When to use Mica
+## When to use Mica or Mica Alt
 
-Mica is a material that appears on the backdrop of your application — behind all other content. It is an opaque material that incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
+Mica and Mica Alt are materials that appear on the backdrop of your application — behind all other content. Each material is opaque and incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
 
-We recommend you use and apply Mica as the base layer of your app, prioritizing application and visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](../signature-experiences/layering.md) and [App layering with Mica](#app-layering-with-mica).
+We recommend that you apply Mica or Mica Alt as the base layer of your app, and prioritize visibility in the title bar area. For more specific layering guidance see [Layering and Elevation](../signature-experiences/layering.md) and [App layering with Mica](#app-layering-with-mica).
 
 ## Usability and adaptability
 
-Mica automatically adapts its appearance for a wide variety of devices and contexts. Mica is designed for performance as it only captures the background wallpaper once to create its visualization.
+The Mica materials automatically adapt their appearance for a wide variety of devices and contexts. They are designed for performance as they capture the background wallpaper only once to create their visualizations.
 
-In High Contrast mode, users continue to see the familiar background color of their choosing in place of Mica. In addition, Mica will appear as a solid fallback color (SolidBackgroundFillColorBase):
+In High Contrast mode, users continue to see the familiar background color of their choosing in place of Mica or Mica Alt. In addition, the Mica materials will appear as a solid fallback color (SolidBackgroundFillColorBase for Mica, SolidBackgroundFillColorBaseAlt for Mica Alt) when:
 
-* When the user turns off transparency in Settings > Personalization > Color.
-* When Battery Saver mode is activated.
-* When the app runs on low-end hardware.
-* When an app window on desktop deactivates.
-* When the Windows app is running on Xbox or HoloLens.
-* When the Windows version is below 22000.
-
-## How to use Mica
-
-Mica can be applied with the BackdropMaterial class. We recommend that you set the BackdropMaterial attached property on a XAML element that is the root of your XAML content, as it will apply to the entire content region (such as a Window). If your app has a Frame that navigates multiple pages, you should set this property on the Frame. Otherwise, you should set this property on the Page of your app.
-
-```xaml
-<Page muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
-    <TextBlock>Hello world</TextBlock>
-</Page>
-```
+* the user turns off transparency in Settings > Personalization > Color.
+* Battery Saver mode is activated.
+* the app runs on low-end hardware.
+* an app window on desktop deactivates.
+* the Windows app is running on Xbox or HoloLens.
+* the Windows version is below 22000.
 
 ## App layering with Mica
 
@@ -72,7 +62,7 @@ Card pattern content layer<br/>
     :::column-end:::
 :::row-end:::
 
-Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](../signature-experiences/layering.md) system we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the LayerFillColorDefaultBrush, a low-opacity solid color, as its background. Our recommended content layer patterns are:
+Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer [Layering and Elevation](../signature-experiences/layering.md) system, we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the LayerFillColorDefaultBrush, a low-opacity solid color, as its background. Our recommended content layer patterns are:
 
 * Standard pattern: A contiguous background for large areas that need a distinct hierarchial differentiation from the base layer. The LayerFillColorDefaultBrush should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).
 * Card pattern: Segmented cards for apps that are designed with multiple sectioned and discontinuous UI components. For the definition of the card UI using the LayerFillColorDefaultBrush, see [Layering and Elevation](../signature-experiences/layering.md) guidance.
@@ -82,6 +72,19 @@ To give your app's window a seamless look, Mica should be visible in the title b
 * Standard pattern in Left NavigationView.
 * Standard pattern in Top NavigationView.
 * Card pattern in Left NavigationView.
+
+
+## How to use Mica
+
+> **Important APIs**: [BackdropMaterial class](/uwp/api/microsoft.ui.xaml.controls.backdropmaterial)
+
+Mica can be applied with the BackdropMaterial class. We recommend that you set the BackdropMaterial attached property on a XAML element that is the root of your XAML content, as it will apply to the entire content region (such as a Window). If your app has a Frame that navigates multiple pages, you should set this property on the Frame. Otherwise, you should set this property on the Page of your app.
+
+```xaml
+<Page muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+    <TextBlock>Hello world</TextBlock>
+</Page>
+```
 
 ### Standard pattern in Left NavigationView
 
