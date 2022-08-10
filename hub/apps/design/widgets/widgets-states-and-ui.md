@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 ## Widget states
 
-When a widget is displayed on the Widget Board, there are several different states that it can be in, depending on the current state of the Widget Board and your app or service, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app or service while others are built into the Widgets Board. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.
+When a widget is displayed on the Widget Board, there are several different states that it can be in, depending on the current state of the Widget Board and your app, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app while others are built into the Widgets Board. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.
 
 ### Default state
 
@@ -26,7 +26,7 @@ The default state is what the widget looks like when it is running normally. Thi
 - When in the default, active state a widget should feel personal and connected to user.
 - Widgets should show engaging content that brings the user value in the current moment.
 - Give the user the ability to start interacting with widget right away.
-- Provide a UI that reflects the UI of your app or service, while staying within the design constraints for widgets, in order to maximize consistency and to lessen the learning curve. 
+- Provide a UI that reflects the UI of your app, while staying within the design constraints for widgets, in order to maximize consistency and to lessen the learning curve. 
 - Consider using the user’s location to pre-populate the data for content like sports and suggested calendars to add instead of generic data.
 - Allow ample breathing space between elements. 
 
