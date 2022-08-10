@@ -40,10 +40,6 @@ items:
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
-        - name: Build Windows apps with .NET MAUI
-          href: windows-dotnet-maui/index.md
-        - name: "Build your first .NET MAUI app for Windows"
-          href: windows-dotnet-maui/walkthrough-first-app.md
         - name: Windows developer best practices 
           href: get-started/best-practices.md
         - name: Windows developer FAQ 
@@ -292,6 +288,14 @@ items:
                     href: winui/winui2/release-notes/winui-2.1.md
                   - name: "WinUI 2.0"
                     href: winui/winui2/release-notes/winui-2.0.md
+      - name: .NET MAUI for Windows
+        items:
+          - name: Overview
+            href: windows-dotnet-maui/index.md
+          - name: "Build your first .NET MAUI app for Windows"
+            href: windows-dotnet-maui/walkthrough-first-app.md
+          - name: "Integrate a .NET MAUI app with the Graph API"
+            href: windows-dotnet-maui/tutorial-graph-api.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview
