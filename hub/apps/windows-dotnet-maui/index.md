@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 Building apps for Windows with .NET MAUI provides the following benefits:
 
 - **Native on Windows**: .NET MAUI creates a [WinUI](../winui/winui3/index.md) app when targeting Windows. This means that your .NET MAUI app will provide the same user experience on Windows as your Windows App SDK applications.
-- **Cross-platform**: Take your Windows apps to [[all platforms](/dotnet/maui/supported-platforms), including Android, iOS, macOS, and Samsung Tizen devices.
+- **Cross-platform**: Take your Windows apps to [all platforms](/dotnet/maui/supported-platforms), including Android, iOS, macOS, and Samsung Tizen devices.
 - **Simplicity**: Develop in a [single shared project](/dotnet/maui/fundamentals/single-project) that can target every platform supported by .NET MAUI.
 - **Hot Reload**: Save time while debugging with [.NET Hot Reload](/visualstudio/debugger/hot-reload) and [XAML Hot Reload](/dotnet/maui/xaml/hot-reload) support in .NET MAUI. Make edits while the app is running and the changes are automatically applied.
 - **Native APIs**: .NET MAUI provides [cross-platform APIs](/dotnet/maui/platform-integration/) for native features on each platform. For native APIs that are not available in .NET MAUI's cross-platform APIs, you can [invoke platform-specific code](/dotnet/maui/platform-integration/invoke-platform-code).
