@@ -40,6 +40,10 @@ items:
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
+        - name: Build Windows apps with .NET MAUI
+          href: windows-dotnet-maui/index.md
+        - name: "Build your first .NET MAUI app for Windows"
+          href: windows-dotnet-maui/walkthrough-first-app.md
         - name: Windows developer best practices 
           href: get-started/best-practices.md
         - name: Windows developer FAQ 
