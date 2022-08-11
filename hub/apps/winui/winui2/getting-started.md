@@ -8,7 +8,7 @@ keywords: windows 10, windows 11, Windows App SDK, Windows app development platf
 
 # Getting started with the Windows UI 2 Library
 
-[Windows UI Library 2.7](release-notes/winui-2.7.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
+[Windows UI Library 2.8](release-notes/winui-2.8.md) is the latest stable version of WinUI that can be used for building production UWP applications (and desktop applications using [XAML Islands](../../desktop/modernize/xaml-islands.md)).
 
 The library is available as a NuGet package that can be added to any new or existing Visual Studio project.
 
