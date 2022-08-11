@@ -131,7 +131,7 @@
                 "graphics-concepts/*.md": "stwhi",
                 "launch-resume/*.md": "aashcraft",
                 "maps-and-location/*.md": "hickeys",
-                "monetize/*.*": "hickeys",
+                "monetize/*.md": "hickeys",
                 "monetize/code/*.*": "hickeys",
                 "networking/*.md": "stwhi",
                 "packaging/*.md": "drewbat",
