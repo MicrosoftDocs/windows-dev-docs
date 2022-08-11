@@ -46,7 +46,7 @@ Login to your Azure account and create a new [**AAD App Registration**](https://
 1. Push notifications require the multi-tenant option, so select that. 
     1. For more information about tenants, see [Who can sign in to your app?](/azure/active-directory/develop/single-and-multi-tenant-apps#who-can-sign-in-to-your-app).
 1. Select *Register*
-1. Take note of your **Application (client) ID**, as this is your **Azure AppId** that you will be using during activation registration, channel request, and access token request.
+1. Take note of your **Application (client) ID**, as this is your **Azure AppId** that you will be using during activation registration and access token request.
 1. Take note of your **Directory (tenant) ID**, as this is your **Azure TenantId** that you will be using when requesting an access token.
 
 > [!IMPORTANT]
@@ -146,7 +146,7 @@ using namespace Windows::Foundation;
 using namespace winrt::Microsoft::Windows::PushNotifications;
 using namespace winrt::Microsoft::Windows::AppLifecycle;
 
-winrt::guid remoteId{ "7edfab6c-25ae-4678-b406-d1848f97919a" }; // Replace this with your own Azure AppId
+winrt::guid objectId{ "7edfab6c-25ae-4678-b406-d1848f97919a" }; // Replace this with your own Azure ObjectId
 
 
 
@@ -186,9 +186,9 @@ int main()
                 {
                     std::cout << "\nThere was an error obtaining the WNS Channel URI" << std::endl;
     
-                    if (remoteId == winrt::guid { "00000000-0000-0000-0000-000000000000" })
+                    if (objectId == winrt::guid { "00000000-0000-0000-0000-000000000000" })
                     {
-                        std::cout << "\nThe remoteId has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup a remote id" << std::endl;
+                        std::cout << "\nThe ObjectID has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup an ObjectID" << std::endl;
                     }
                 }
     
@@ -248,7 +248,7 @@ WNS Channel URIs are the HTTP endpoints for sending push notifications. Each cli
 > WNS Channel URIs expire after 30 days.
 
 ```cpp
-auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(winrt::guid("[Your app's Azure AppId]")) };
+auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(winrt::guid("[Your app's Azure ObjectID]")) };
 ```
 
 The **PushNotificationManager** will attempt to create a Channel URI, retrying automatically for no more than 15 minutes. Create an event handler to wait for the call to complete. Once the call is complete, if it was successful, register the URI with the WNS  server.
@@ -260,7 +260,7 @@ winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChan
 {
     // To obtain an AAD RemoteIdentifier for your app,
     // follow the instructions on https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app
-    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
+    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(objectID);
 
     // Setup the inprogress event handler
     channelOperation.Progress(
