@@ -2,7 +2,7 @@
 title: Create a multi-instance Universal Windows App
 description: This topic describes how to write UWP apps that support multi-instancing.
 keywords: multi-instance uwp
-ms.date: 09/21/2018
+ms.date: 08/10/2022
 ms.topic: article
 
 
@@ -36,7 +36,7 @@ Both templates add `SupportsMultipleInstances` to the `package.appxmanifest` fil
     <Application Id="App"
       ...
       desktop4:SupportsMultipleInstances="true"
-	  iot2:SupportsMultipleInstances="true">
+      iot2:SupportsMultipleInstances="true">
       ...
     </Application>
   </Applications>
@@ -50,7 +50,7 @@ Both templates add `SupportsMultipleInstances` to the `package.appxmanifest` fil
 
 To see it in action, watch this video about Creating multi-instance UWP apps.
 
-> [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
+> [!VIDEO https://www.youtube.com/embed/0oZ2vrc1-fc]
 
 The **Multi-Instance Redirection UWP app** template adds `SupportsMultipleInstances` to the package.appxmanifest file as shown above, and also adds a **Program.cs** (or **Program.cpp**, if you are using the C++ version of the template) to your project that contains a `Main()` function. The logic for redirecting activation goes in the `Main` function. The template for **Program.cs** is shown below.
 
@@ -116,13 +116,13 @@ If an instance registered with the key is found, then that instance is activated
 - In-proc background tasks do not support multi-instancing.
 - Background audio tasks do not support multi-instancing.
 - When an app registers a background task, it usually first checks to see if the task is already registered and then either deletes and re-registers it, or does nothing in order to keep the existing registration. This is still the typical behavior with multi-instance apps. However, a multi-instancing app may choose to register a different background task name on a per-instance basis. This will result in multiple registrations for the same trigger, and multiple background task instances will be activated when the trigger fires.
-- App-services launch a separate instance of the app-service background task for every connection. This remains unchanged for multi-instance apps, that is each instance of a multi-instance app will get its own instance of the  app-service background task. 
+- App-services launch a separate instance of the app-service background task for every connection. This remains unchanged for multi-instance apps, that is each instance of a multi-instance app will get its own instance of the  app-service background task.
 
 ## Additional considerations
 
 - Multi-instancing is supported by UWP apps that target desktop and Internet of Things (IoT) projects.
 - To avoid race-conditions and contention issues, multi-instance apps need to take steps to partition/synchronize access to settings, app-local storage, and any other resource (such as user files, a data store, and so on) that can be shared among multiple instances. Standard synchronization mechanisms such as mutexes, semaphores, events, and so on, are available.
-- If the app has `SupportsMultipleInstances` in its Package.appxmanifest file, then its extensions do not need to declare `SupportsMultipleInstances`. 
+- If the app has `SupportsMultipleInstances` in its Package.appxmanifest file, then its extensions do not need to declare `SupportsMultipleInstances`.
 - If you add `SupportsMultipleInstances` to any other extension, apart from background tasks or app-services, and the app that hosts the extension doesn't also declare `SupportsMultipleInstances` in its Package.appxmanifest file, then a schema error is generated.
 - Apps can use the [**ResourceGroup**](./declare-background-tasks-in-the-application-manifest.md) declaration in their manifest to group multiple background tasks into the same host. This conflicts with multi-instancing, where each activation goes into a separate host. Therefore an app cannot declare both `SupportsMultipleInstances` and `ResourceGroup` in their manifest.
 
