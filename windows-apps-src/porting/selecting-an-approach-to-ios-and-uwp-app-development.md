@@ -74,10 +74,6 @@ With an existing iOS app, your options are a little more limited. However, all i
 
     An HTML based game library.
 
--   [Marmalade](http://marmalade-sdk.soft32download.com/)
-
-    A cross-platform SDK.
-
 -   [OpenFL](https://www.openfl.org/)
 
     A cross-platform development tool.
