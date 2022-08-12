@@ -90,7 +90,7 @@ Windows 11 is built on the [Windows 11 design principles](/windows/apps/design
 
 - **Context menu**
 
-  A context menu is a menu that the user invokes with a right-click or tap & hold action to reveal a menu of commands relevant to the context of where the user is interacting. It is a system UI that user expect coherent visuals when they appear. Use ContextMenu provided by the system whenever possible to keep them consistent with the rest of the system.
+  A context menu is a shortcut menu that the user invokes with a right-click or tap & hold action to reveal a menu of commands relevant to the context of the control the user is interacting with. Users expect the appearance and behavior of context menus to be coherent accross Windows. Use platform-provided context menus whenever possible to keep them consistent with the rest of the system.
 
 - **Iconography and typography**
 
@@ -100,17 +100,19 @@ Windows 11 is built on the [Windows 11 design principles](/windows/apps/design
 
 ### Window behavior and style
 
-As your applications run in Window frame, the behavior built into Window is something users would notice if they were not coherent, or features do not work as expected. Consider supporting the following to ensure your users can enjoy your app on Windows. 
+Applications run in a frame provided by Windows, and users expect the built-in Windows look and behaviors to be consistent across app windows. Consider supporting the features listed here to ensure that your app looks and functions as users expect on Windows 11.
 
-- **[Snap layouts](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
+- **[Snap Layout](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
   
-  Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Use the snap layouts menu to test your app in different snap layouts an ensure your app supports different snap sizes (1/2, 1/3, 1/4 screen).
+  Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature to help users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.
   
-  If the snap layouts menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](/windows/apps/desktop/modernize/apply-snap-layout-menu) for some steps you can take to enable it.
+  If the Snap Layout menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](/windows/apps/desktop/modernize/apply-snap-layout-menu) for some steps you can take to enable it.
 
-- **[Title bar integration](/windows/apps/design/basics/titlebar-design)**
-  
-  Use the Windows App SDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar) in WinUI 3, .NET, WinForms, and WPF apps.
+- **[Title bar and caption buttons](/windows/apps/design/basics/titlebar-design)**
+
+  The title bar and caption buttons (minimize, maximize, close) are how users interact with Windows to resize, move, and close app windows. Having a consistent experience will help people use your application smoothly. See [Windows app title bar](/windows/apps/design/basics/titlebar-design) to learn about title bar and caption button design for Windows.  
+
+  You can use the Windows App SDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar) in WinUI 3, .NET, WinForms, and WPF apps.
 
 - **[Rounded corners](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts), borders, and shadow**
   
@@ -118,7 +120,7 @@ As your applications run in Window frame, the behavior built into Window is some
 
 ### Shell integration points
 
-Windows Shell experience are hubs for hundreds of applications that run on users' PCs. When your applications integrate well with Shell, it creates seamless experiences to user's workflow.
+Windows shell integration lets users benefit from your app even when its not running in the foreground or even visible on-screen. When your app integrates well with Windows, it becomes part of the users workflow with other apps and helps create a seamless experience.
 
 - **Toast notifications**
 
@@ -129,7 +131,7 @@ Windows Shell experience are hubs for hundreds of applications that run on users
   - Respond to the user's intent. Selecting a notification should launch your app in the notification's context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
   - Provide a consistent Notification Center experience. Keep Notification Center tidy by clearing out old notifications.
 
-For more information about toast notifications, see [Notifications design basics](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+  For more information about toast notifications, see [Notifications design basics](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
 ## Performance & fundamentals
 
