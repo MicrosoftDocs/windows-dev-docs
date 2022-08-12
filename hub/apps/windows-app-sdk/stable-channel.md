@@ -39,12 +39,12 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 
 #### Bug fixes
 - Fixed regression from 1.0.x causing ListView, TreeView, and other 'List' controls to crash when scrolling with many items. For more information, see [issue 7230](https://github.com/microsoft/microsoft-ui-xaml/issues/7230) on GitHub.
-- Fixed issue causing the splash screen to appear for several seconds due to the DispatcherQueue causing enqueued callbacks to no longer be invoked.
+- Fixed issue with DispatcherQueue causing enqueued callbacks to no longer be invoked.
 - Fixed issue causing an app crash when calling `DeploymentManager.Initialize` multiple times in same app session.
 - Fixed issue causing C# apps to fail to build on Arm64 Visual Studio. For more information, see [issue 7140](https://github.com/microsoft/microsoft-ui-xaml/issues/7140) on GitHub.
 - Fixed intermittent crash in XAML imaging code due to incorrect failure handling.
 - Fixed memory leak issue when attaching an event handler in ItemsRepeater with a parent UserControl. For more information, see [issue 6123](https://github.com/microsoft/microsoft-ui-xaml/issues/6123) on GitHub.
-- Fixed issue causing a build failure in 17.3 when an app project is configured to enable automatic updates of its package when it's sideloaded (i.e. .appinstaller). For more information, see [issue 2773](https://github.com/microsoft/WindowsAppSDK/issues/2773).
+- Fixed issue causing a build failure in Visual Studio 17.3 when an app project is configured to enable automatic updates of its package when it's sideloaded (i.e. .appinstaller). For more information, see [issue 2773](https://github.com/microsoft/WindowsAppSDK/issues/2773).
 - Fixed issue causing Store-distributed packaged apps that call Initialize (necessary e.g. for Push) to call it redundantly as DeploymentManager::GetStatus returned `Package Install Needed` when main and singleton packages are already installed. This caused a perf degradation on app launch.
 - Fixed issue causing an exception in single instance apps when the cleanup event was intended to be ignored if it couldn't be opened. For more information, see the [PR](https://github.com/microsoft/WindowsAppSDK/pull/2658) on GitHub.
 
