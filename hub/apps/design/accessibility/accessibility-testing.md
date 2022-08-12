@@ -20,7 +20,7 @@ The Windows Software Development Kit (SDK) includes several accessibility testin
 
 You can launch the accessibility testing tools either from a Microsoft Visual Studio command prompt or from the Windows SDK tools folder (the bin subdirectory of where the Windows SDK is installed on your development machine).
   
-> [!VIDEO https://www.youtube.com/embed/ce0hKQfY9B8]
+> [!VIDEO https://www.youtube.com/embed/Xlvl91Q3c_8]
   
 ### **AccScope**  
 
