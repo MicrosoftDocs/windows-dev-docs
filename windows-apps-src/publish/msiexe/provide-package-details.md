@@ -12,9 +12,11 @@ ms.localizationpriority: medium
 
 The Packages page of the app submission process is where you provide the packages (MSI/EXE) and associated information for the app that you're submitting. When a customer downloads your app, the Store will automatically provide each customer with the package that works best for their device.
 
-:::image type="content" source="../images/provide-package-details.png" lightbox="../images/provide-package-details.png" alt-text="A screenshot of the Partner Center page where you can provide package details for your app.":::
+:::image type="content" source="../images/msiexe-packages-overview.png" lightbox="../images/msiexe-packages-overview.png" alt-text="A screenshot of the overview of Packages section in Partner Center.":::
 
 You must complete the Packages page for at least one package. To add package, click Add package from Packages page.
+
+:::image type="content" source="../images/msiexe-package-details-overview.png" lightbox="../images/msiexe-package-details-overview.png" alt-text="A screenshot of the Packages section showing the overview of package details.":::
 
 ## Add and edit Package info
 
@@ -23,6 +25,8 @@ To edit Package info, select the Package from the Packages page. You must edit e
 **Package URL**<br>*Required*
 
 You must enter at least one versioned secure URL pointing to app package (MSI/EXE) hosted on your CDN. An example of versioned secure URL is https://www.contoso.com/downloads/1.1/setup.exe. When customer installs your app from the Store, the Store downloads the package from this URL. You need to follow good CDN practices and ensure that this URL is performant, reliable, and available based on your market selection.
+
+:::image type="content" source="../images/msiexe-package-url.png" lightbox="../images/msiexe-package-url.png" alt-text="A screenshot of the Packages section where you can provide your package URL details.":::
 
 If you need to update the package URL, you may use the Update submission option in Partner Center to specify a new package URL.
 
@@ -40,9 +44,13 @@ You must select the architecture of the code contained in the package from one o
 - arm
 - arm64
 
+:::image type="content" source="../images/msiexe-set-architecture.png" lightbox="../images/msiexe-set-architecture.png" alt-text="A screenshot of the Packages section where you can provide your app architecture details.":::
+
 If you have packages compiled in more than 1 architecture, you should add them to the submission.
 
 **Languages**<br>*Required*
+
+:::image type="content" source="../images/msiexe-package-select-languages.png" lightbox="../images/msiexe-package-select-languages.png" alt-text="A screenshot of the Packages section where you can provide the languages your app supports.":::
 
 You can submit apps to the Microsoft Store in over 100 languages. Your app must support at least one of the following languages.
 
@@ -158,15 +166,21 @@ You can submit apps to the Microsoft Store in over 100 languages. Your app must 
 
 Select your app type – (EXE/MSI). If you choose EXE, you are required to provide Installer parameters and details for Installer handling.
 
+:::image type="content" source="../images/msiexe-packages-set-app-type.png" lightbox="../images/msiexe-packages-set-app-type.png" alt-text="A screenshot of the Packages section where you can provide the type (msi/exe) of your app.":::
+
+:::image type="content" source="../images/msiexe-packages-exe-overview.png" lightbox="../images/msiexe-packages-exe-overview.png" alt-text="A screenshot of the Packages section showing the the additional fields required for exe type of apps.":::
+
 **Installer parameters**<br>*Required*
 
 The Store will need to run your installer in silent mode. To support this, you need to provide the required switches, such as /s, specific to installer for your EXE app. This is not required if your installer runs in silent mode by default, without any switches.
+
+:::image type="content" source="../images/msiexe-set-installer-parameters.png" lightbox="../images/msiexe-set-installer-parameters.png" alt-text="A screenshot of the Packages section where you can provide the installer parameters for your app.":::
 
 For MSI aps, the Store uses the default silent switch ‘/qn’ to run your installer in silent mode.
 
 **Installer handling for your EXE app**<br>*Required*
 
-:::image type="content" source="../images/installer-return-code-settings.png" lightbox="../images/installer-return-code-settings.png" alt-text="A screenshot of the section of the Partner Center package details page where you can specify which return codes correspond to which installer outcomes.":::
+:::image type="content" source="../images/msiexe-installer-handling.png" lightbox="../images/msiexe-installer-handling.png" alt-text="A screenshot of the section of the Partner Center package details page where you can specify which return codes correspond to which installer outcomes.":::
 
 EXE apps usually have installers that return custom codes during installation. The Store supports suitable customer facing messages and actions for the custom return codes provided by you.
 
@@ -188,3 +202,6 @@ You can add more than 1 return code for each of the above scenarios depending on
 For scenarios beyond the above list of standard scenarios, customers are directed to your installer return code documentation. For miscellaneous install failure scenarios, you can add your custom return codes along with return code specific documentation URL that Store can point customers to.
 
 We highly recommend this information to be provided for EXE apps so the Store can provide tailored experience to customers. This will also help the Store to treat and report your app installs for EXE apps.
+
+After adding the package, click on Save draft. You will be back on Manage Packages page. In the List of packages, you will see your package has been added. After verifying that your package has been added in the List of packages, click on Save All. You will see a message that your package is uploading and after a successful upload, you will get a message as Saved Successfully.
+
