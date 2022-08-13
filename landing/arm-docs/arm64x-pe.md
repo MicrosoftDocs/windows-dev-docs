@@ -29,11 +29,11 @@ By default, Arm64X binaries appear to be Arm64 binaries. This allows a system ru
 
 ## How does the operating system use Arm64X binaries?
 
-Windows 11 on Arm introduced the ability to run x64 applications on Arm64. However, unlike [x86 emulation](./apps-on-arm-x86-emulation.md), which includes a `sysWOW64` folder, there is no separate folder of pure x64 operating system binaries. With Windows 11 on Arm, both x64 applications and Arm64 applications are able to load binaries and call APIs using the binaries in `system32`. This flexibility is possible because any binaries in `system32` that an app may need to load have been recompiled as Arm64X binaries.
+Windows 11 on Arm introduced the ability to run x64 applications on Arm64. However, unlike [x86 emulation](./apps-on-arm-x86-emulation.md), which includes a `SysWoW64` folder, there is no separate folder of pure x64 operating system binaries. With Windows 11 on Arm, both x64 applications and Arm64 applications are able to load binaries and call APIs using the binaries in `System32`. This flexibility is possible because any binaries in `System32` that an app may need to load have been recompiled as Arm64X binaries.
 
-Both x64 and Arm64 applications can load and interact with the binaries in `system32`, without need for a separate copy of all system binaries like `sysWOW64` for x86.
+Both x64 and Arm64 applications can load and interact with the binaries in `System32`, without need for a separate copy of all system binaries like `SysWoW64` for x86.
 
-![x64 and Arm64 compatible binaries in system32 folders](./images/arm64-x64-compatible-binaries.png)
+![x64 and Arm64 compatible binaries in System32 folders](./images/arm64-x64-compatible-binaries.png)
 
 ## Arm64X for use with middleware or plugins
 
