@@ -2,7 +2,7 @@
 title: Build Windows apps with .NET MAUI
 description: Learn about .NET MAUI, benefits it provides to Windows developers, and how take your Windows apps cross-platform.
 ms.topic: article
-ms.date: 08/04/2022
+ms.date: 08/15/2022
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
