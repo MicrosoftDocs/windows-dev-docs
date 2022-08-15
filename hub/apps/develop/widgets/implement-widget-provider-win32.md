@@ -10,6 +10,10 @@ ms.localizationpriority: medium
 
 # Implement a widget provider in a win32 app
 
+> [!NOTE]
+> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
+> [!IMPORTANT]
+> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 1.
 
 ## Create a new win32 app
 
