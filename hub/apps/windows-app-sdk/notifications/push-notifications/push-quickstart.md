@@ -48,10 +48,15 @@ Login to your Azure account and create a new [**AAD App Registration**](https://
 1. Select *Register*
 1. Take note of your **Application (client) ID**, as this is your **Azure AppId** that you will be using during activation registration and access token request.
 1. Take note of your **Directory (tenant) ID**, as this is your **Azure TenantId** that you will be using when requesting an access token.
+    > [!IMPORTANT]
+    > ![AAD App Registration Tenant](images/push-notification-aad-app-registration-app-id.png)
+    > Take note of your **Application (client) ID** and **Directory (tenant) ID**.
+1. Take note of your **Object ID**, as this is your **Azure ObjectId** that you will be using when requesting a channel request.  Note that this is NOT the Object ID listed on the **Essentials** page. Instead, to find the correct **Object ID**, click on the app name in the **Managed application in local directory** field on the **Essentials** page:
+    > ![Screenshot showing the Managed application in local directory option on the Essentials page](images/push-notification-essentials-ui.png)
+    
+    > ![Screenshot showing the Object ID field](images/push-notification-object-id-field.png)
 
-> [!IMPORTANT]
-> ![AAD App Registration Tenant](images/push-notification-aad-app-registration-app-id.png)
-> Take note of your **Application (client) ID** and **Directory (tenant) ID**.
+    
 
 ### Step 3: Create a secret for your app registration
 
