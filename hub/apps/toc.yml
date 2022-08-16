@@ -294,7 +294,7 @@ items:
             href: windows-dotnet-maui/index.md
           - name: "Build your first .NET MAUI app for Windows"
             href: windows-dotnet-maui/walkthrough-first-app.md
-          - name: "Integrate a .NET MAUI app with the Graph API"
+          - name: "Integrate a .NET MAUI app with the Graph SDK"
             href: windows-dotnet-maui/tutorial-graph-api.md
       - name: App lifecycle and system services 
         items: 

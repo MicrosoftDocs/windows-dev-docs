@@ -62,13 +62,13 @@ Now that you have your first .NET MAUI app running on Windows, let's add some MV
 
 ![CommunityToolkit.MVVM package.](images/hello-maui-mvvm-pkg.png)
 
-3. Add the **CommunityToolkit.MVVM** package (version 8.0.0 or later) to the project by clicking **Install**.
+3. Add the latest stable version of the **CommunityToolkit.MVVM** package (version 8.0.0 or later) to the project by clicking **Install**.
 
 4. Close the **NuGet Package Manager** window after the new package has finished installing.
 
 5. Right-click the project again and select **Add | Class** from the context menu.
 
-6. In the Add New Item window that appears, name the class MainViewModel and click Add:
+6. In the **Add New Item** window that appears, name the class `MainViewModel` and click **Add**:
 
 ![Add MainViewModel class.](images/hello-maui-add-vm.png)
 
@@ -164,7 +164,7 @@ xmlns:local="clr-namespace:MauiOnWindows"
 
 ## Next steps
 
-Learn to build an app that displays active directory data for a user by leveraging the Microsoft Graph API in a [.NET MAUI for Windows tutorial](./tutorial-graph-api.md).
+Learn to build an app that displays [Microsoft Graph](/graph/) data for a user by leveraging the [Graph SDK](/graph/sdks/sdks-overview) in a [.NET MAUI for Windows tutorial](./tutorial-graph-api.md).
 
 ## Related topics
 
