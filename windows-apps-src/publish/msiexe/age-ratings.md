@@ -11,6 +11,8 @@ ms.localizationpriority: medium
 
 The **Age ratings** page of the [app submission process](app-submissions.md) lets you provide information about your app so it can receive the appropriate age and content ratings administered by the [International Age Ratings Coalition (IARC)](https://www.globalratings.com/) rating system. These ratings are about the suitability of the content in the app, rather than the age of the target audience for your app.
 
+:::image type="content" source="../images/msiexe-age-ratings-overview.png" lightbox="../images/msiexe-age-ratings-overview.png" alt-text="A screenshot of the overview of Age ratings section in Partner Center.":::
+
 ## Answering the age ratings questionnaire
 
 The first time you submit an app (or the first time you update an app published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
