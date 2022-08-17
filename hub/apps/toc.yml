@@ -330,6 +330,8 @@ items:
           href: develop/widgets/widget-service-providers.md
         - name: Implement a widget provider in a win32 app
           href: develop/widgets/implement-widget-provider-win32.md
+        - name: Widget provider package manifest XML format
+          href: develop/widgets/widget-provider-manifest.md
       - name: Platform
         items:
         - name: C#/WinRT
