@@ -21,7 +21,11 @@ Building apps for Windows with .NET MAUI provides the following benefits:
 - **Hot Reload**: Save time while debugging with [.NET Hot Reload](/visualstudio/debugger/hot-reload) and [XAML Hot Reload](/dotnet/maui/xaml/hot-reload) support in .NET MAUI. Make edits while the app is running and the changes are automatically applied.
 - **Native APIs**: .NET MAUI provides [cross-platform APIs](/dotnet/maui/platform-integration/) for native features on each platform. For native APIs that are not available in .NET MAUI's cross-platform APIs, you can [invoke platform-specific code](/dotnet/maui/platform-integration/invoke-platform-code).
 
-If you are planning to build a new app for Windows and want to target additional platforms, you should consider using .NET MAUI.
+If you are planning to build a new app for Windows and want to target additional platforms, you should consider using .NET MAUI. If you are only targeting Windows with your app, there are some good reasons to continue using the Windows App SDK:
+
+- **Familiarity**: .NET MAUI XAML and Windows App SDK XAML have some differences. If you are comfortable with XAML in UWP and Windows App SDK, will have a bit of a learning curve with the .NET MAUI controls and XAML syntax.
+- **Native Controls**: .NET MAUI does not currently support using Windows App SDK controls. If you have existing controls from other Windows App SDK projects you intend to re-use or rely on 3rd Party or open source controls, you will need to find alternatives for .NET MAUI projects.
+- **Closer to Windows**: When writing .NET MAUI apps, it outputs a Windows App SDK app, but there is some translation to get from your code to the native Windows app. With Windows App SDK, you are eliminating that translation step and are less likely to encounter issues with styles, API compatibility, or layout.
 
 ## .NET MAUI resources for Windows developers
 
