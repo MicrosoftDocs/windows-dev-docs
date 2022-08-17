@@ -81,7 +81,7 @@ The root element of the widget provider registration information.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Icon**| string | Yes | The package-relative path to an icon image file. This icon is shown in the widget board in the **Add Widgets dialog** | N/A |
+| **Icon**| string | Yes | The package-relative path to an icon image file. This icon is shown in the widget board in the **Add Widgets dialog** and is displayed when grouping multiple widgets from the same widget provider. | N/A |
 
 ![A screenshot of the Add Widget dialog in the widget board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added](images/widget-picker.png)
 
@@ -132,7 +132,7 @@ Specifies theme resources for a widget.
 
 ## Icon
 
-Required. Specifies an icon for the widget.
+Required. Specifies an icon that is displayed in the attribution area of the widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
@@ -144,7 +144,7 @@ Required. Specifies one or more screenshots of the widget.
 
 ## Screenshot
 
-Required. Specifies a screenshot for a widget.
+Required. Specifies a screenshot for a widget. This screenshot is shown in the widget board in the **Add Widgets dialog** when the user is selecting widgets to add to the widget board..
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
