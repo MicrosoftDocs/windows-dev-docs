@@ -36,24 +36,42 @@ Widget providers should include the [uap3:Properties](/uwp/schemas/appxpackage/u
 ## Element hierarchy
 
 WidgetProvider
-> Activation
-> > COM
-> Widgets
-> > Widget
-> > > WidgetCapabilities
-> > > > WidgetCapability
-> > > WidgetThemeResources
-> > > > Icon
-> > > > Screenshots
-> > > > > Screenshot
-> > > > DarkMode
-> > > > > Icon
-> > > > > Screenshots
-> > > > > > Screenshot
-> > > > LightMode
-> > > > > Icon
-> > > > > Screenshots
-> > > > > > Screenshot
+
+&nbsp;&nbsp;Activation
+
+&nbsp;&nbsp;&nbsp;&nbsp;COM
+
+&nbsp;&nbsp;Widgets
+
+&nbsp;&nbsp;&nbsp;&nbsp;Widget
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WidgetCapabilities
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WidgetCapability
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WidgetThemeResources
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshot
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DarkMode
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshot
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LightMode
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshot
 
 
 
@@ -96,7 +114,7 @@ Represents the registration for a single widget.
 
 ## WidgetCapablities
 
-Specifies capabilities for a single widget. This element is optional.
+Optional. Specifies capabilities for a single widget. 
 
 ## WidgetCapability
 
@@ -110,34 +128,36 @@ Specify one **WidgetCapability** element for each size the provider supports. If
 
 ## WidgetThemeResources
 
-TBD
+Specifies theme resources for a widget.
 
 ## Icon
 
-TBD
+Required. Specifies an icon for the widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Source**| string | Yes | TBD package-relative | N/A |
+| **Source**| string | Yes | The package-relative path to an icon image file. | N/A |
 
 ## Screenshots
 
-TBD
+Required. Specifies one or more screenshots of the widget.
 
 ## Screenshot
 
-TBD
+Required. Specifies a screenshot for a widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Source**| string | Yes | TBD package-relative | N/A |
-| **DisplayLabel**| string | No | TBD package-relative | N/A |
+| **Source**| string | Yes | The package-relative path to a screenshot image file. | N/A |
+| **DisplayLabel**| string | The alt-text for the image, for accessibility. | TBD package-relative | N/A |
 
 ## DarkMode
 
-TBD
+Optional. Specifies theme resources for when dark mode is active on the device.
 
 ## LightMode
+
+Optional. Specifies theme resources for when light mode is active on the device.
 
 ## Example
 
