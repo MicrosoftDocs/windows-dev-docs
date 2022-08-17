@@ -107,7 +107,7 @@ Represents the registration for a single widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Name**| string | Yes | A name that identifies the widget. Widget provider implementations use this name to determine or specify which of the app's widgets is being referenced for each operation.  | N/A |
+| **Name**| string | Yes | A name that identifies the widget. Widget provider implementations use this name to determine or specify which of the app's widgets is being referenced for each operation. The name must be unique for all widgets defined within the app manifest file.  | N/A |
 | **DisplayTitle** | string | Yes | The title of the widget that is displayed on the widget board. | N/A |
 | **Description** | string | Yes | Optionally create custom actions with buttons and inputs. | N/A |
 | **AllowMultiple** | boolean | No | Set to true if the widget provider supports multiple widgets. This attribute is optional and the default value is false. | false |
