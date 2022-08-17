@@ -95,7 +95,7 @@ Specifies the [CLSID](/windows/win32/com/com-class-objects-and-clsids) for the C
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **ClassId**| GUID | Yes | TBD P | N/A |
+| **ClassId**| GUID | Yes | The CLSID for the COM server that implements the widget provider. | N/A |
 
 ## Widgets
 
@@ -149,7 +149,7 @@ Required. Specifies a screenshot for a widget.
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
 | **Source**| string | Yes | The package-relative path to a screenshot image file. | N/A |
-| **DisplayLabel**| string | The alt-text for the image, for accessibility. | TBD package-relative | N/A |
+| **DisplayLabel**| string | No | The alt-text for the image, for accessibility. | N/A |
 
 ## DarkMode
 
