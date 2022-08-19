@@ -15,13 +15,13 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 1.
 
-In order to be displayed in the Widget board, apps that support Windows widgets must register their widget provider with the system. For Win32 apps, only packaged apps are currently supported and widget providers specify their registration information in the app package manifest file. This article documents the XML format for widget registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 widget provider.
+In order to be displayed in the Widgets host, apps that support Windows widgets must register their widget provider with the system. For Win32 apps, only packaged apps are currently supported and widget providers specify their registration information in the app package manifest file. This article documents the XML format for widget registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 widget provider.
 
 ## App extension
 
 The app package manifest file supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the [Package manifest schema reference](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).  Widget providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.widgets".
 
-Widget providers should include the [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/elemnt-uap3-properties-manual) as the child of **uap3:AppExtension**. The package manifest schema does not enforce the structure of the **uap3:Properties** element other than requiring well-formed XML. The rest of this article describes the XML format that the Widget board expects in order to successfully register a widget provider.
+Widget providers should include the [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/elemnt-uap3-properties-manual) as the child of **uap3:AppExtension**. The package manifest schema does not enforce the structure of the **uap3:Properties** element other than requiring well-formed XML. The rest of this article describes the XML format that the Widget host expects in order to successfully register a widget provider.
 
 ```xml
 <uap3:Extension Category="windows.appExtension">
@@ -81,9 +81,9 @@ The root element of the widget provider registration information.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Icon**| string | Yes | The package-relative path to an icon image file. This icon is shown in the widget board in the **Add Widgets dialog** and is displayed when grouping multiple widgets from the same widget provider. | N/A |
+| **Icon**| string | Yes | The package-relative path to an icon image file. This icon is shown in the Widgets host in the **Add Widgets dialog** and is displayed when grouping multiple widgets from the same widget provider. | N/A |
 
-![A screenshot of the Add Widget dialog in the widget board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added](images/widget-picker.png)
+![A screenshot of the Add Widget dialog in the Widgets board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added](images/widget-picker.png)
 
 ## Activation
 
@@ -108,7 +108,7 @@ Represents the registration for a single widget.
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
 | **Name**| string | Yes | A name that identifies the widget. Widget provider implementations use this name to determine or specify which of the app's widgets is being referenced for each operation. The name must be unique for all widgets defined within the app manifest file.  | N/A |
-| **DisplayTitle** | string | Yes | The title of the widget that is displayed on the widget board. | N/A |
+| **DisplayTitle** | string | Yes | The title of the widget that is displayed on the Widgets host. | N/A |
 | **Description** | string | Yes | Optionally create custom actions with buttons and inputs. | N/A |
 | **AllowMultiple** | boolean | No | Set to true if the widget provider supports multiple widgets. This attribute is optional and the default value is false. | false |
 
@@ -144,7 +144,7 @@ Required. Specifies one or more screenshots of the widget.
 
 ## Screenshot
 
-Required. Specifies a screenshot for a widget. This screenshot is shown in the widget board in the **Add Widgets dialog** when the user is selecting widgets to add to the widget board..
+Required. Specifies a screenshot for a widget. This screenshot is shown in the Widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the Widgets host.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
