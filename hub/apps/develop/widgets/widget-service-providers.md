@@ -25,7 +25,7 @@ For an overview of the Windows widgets experience and design guidance for creati
 Currently you can implement widget providers either through a Win32 desktop app or a Progressive Web App (PWA). For more information see:
 
 * [Implement a widget provider (Win32 apps)](implement-widget-provider-win32.md)
-* [Implement a widget provider (PWA)](tbd)
+* [Build PWA-driven Widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
 
 
 
