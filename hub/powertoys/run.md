@@ -68,7 +68,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 > Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(`  for the `Time and Date` plugin breaks global calculation queries starting with an opening brace.
 >
 > Currently known conflicting character sequences:
-> - Characters used in paths like `\`, `\\`, `/`, `~`, `%`
+> - Characters used in paths: `\`, `\\`, `/`, `~`, `%`
 > - Characters used in mathematical operations: ".", ",", "+", "-", "("
 > - Names of [mathematical operations](#calculator-plugin).
 
