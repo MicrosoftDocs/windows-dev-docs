@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 06/03/2022
+ms.date: 08/21/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -63,6 +63,14 @@ The plugins can be activated with a direct activation command so that PowerToys 
 
 > [!TIP]
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
+
+> [!IMPORTANT]
+> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(`  for the `Time and Date` plugin breaks global calculation queries starting with an opening brace.
+>
+> Currently known conflicting character sequences:
+> - Characters used in paths like `\`, `\\`, `/`, `~`, `%`
+> - Characters used in mathematical operations: ".", ",", "+", "-", "("
+> - Names of [mathematical operations](#calculator-plugin).
 
 | Plug-in | Direct activation command | Example |
 | :--- | :--- | :--- |
