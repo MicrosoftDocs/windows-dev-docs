@@ -38,7 +38,7 @@ As with **StaticResource**, a **ThemeResource** must not attempt to make a forwa
 
 Attempting to specify a **ThemeResource** to a key that cannot resolve throws a XAML parse exception at run time. Design tools may also offer warnings or errors.
 
-In the Windows Runtime XAML processor implementation, there is no backing class representation for **ThemeResource**. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), for example calling [**Contains**](/uwp/api/windows.ui.xaml.resourcedictionary.contains) or [**TryGetValue**](/uwp/api/windows.ui.xaml.resourcedictionary.trygetvalue).
+In the Windows Runtime XAML processor implementation, there is no backing class representation for **ThemeResource**. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), for example calling **Contains** or **TryGetValue*.
 
 **ThemeResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "{" and "}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
 

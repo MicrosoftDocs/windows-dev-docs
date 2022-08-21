@@ -300,6 +300,8 @@ items:
                 href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
               - name: Power management
                 href: windows-app-sdk/applifecycle/applifecycle-power.md
+              - name: Detect Focus session state
+                href: windows-app-sdk/applifecycle/focus-session.md
       - name: "Manage app windows"
         href: windows-app-sdk/windowing/windowing-overview.md
       - name: Notifications

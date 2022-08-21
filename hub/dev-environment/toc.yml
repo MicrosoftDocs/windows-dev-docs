@@ -27,6 +27,8 @@ items:
             href: ../package-manager/winget/help.md
           - name: import command
             href: ../package-manager/winget/import.md
+          - name: info command
+            href: ../package-manager/winget/info.md
           - name: install command
             href: ../package-manager/winget/install.md
           - name: list command

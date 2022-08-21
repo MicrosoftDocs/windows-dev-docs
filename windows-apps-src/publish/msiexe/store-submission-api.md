@@ -989,7 +989,7 @@ Fetches package details under current draft submission.
 | packageUrl           | String           |             |
 | languages            | Array of strings |             |
 | architectures        | Array of strings | [Neutral, X86, X64, Arm, Arm64] |
-| isSilentInstall      | Boolean          |             |
+| isSilentInstall      | Boolean          | This should be marked as true if your installer runs in silent mode without requiring switches or else false |
 | installerParameters  | String           |             |
 | genericDocUrl        | String           |             |
 | errorDetails         | Array of objects |             |
@@ -1073,7 +1073,7 @@ In the case of Single Package Patch Update API – only fields which are to be u
 | packageUrl           | String           | *Required*  |
 | languages            | Array of strings | *Required*  |
 | architectures        | Array of strings | *Required* Should contain a single architecture - Neutral, X86, X64, Arm, Arm64 |
-| isSilentInstall      | Boolean          | *Required*  |
+| isSilentInstall      | Boolean          | *Required*  This should be marked as true if your installer runs in silent mode without requiring switches or else false|
 | installerParameters  | String           | *Required if isSilentInstall is false* |
 | genericDocUrl        | String           | *Required if packageType is exe* Link to document containing details of custom error codes for the EXE type installer |
 | errorDetails         | Array of Objects | Metadata to hold custom error codes and details for EXE type Installers. |

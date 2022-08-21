@@ -40,11 +40,7 @@ The following WinRT classes are not supported in desktop apps.
 | [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow) | Also see the [Classes that implement IInitializeWithWindow](#classes-that-implement-iinitializewithwindow) section below.<br/><br/>Instead of the [GetKeyState](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [InputKeyboardSource.GetKeyStateForCurrentThread](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread) method provided by WinUI 3 instead.<br/><br/>Instead of the [PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [UIElement.ProtectedCursor](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3 instead. You'll need to have a subclass of [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) to access this property. |
 | [UserActivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the [IUserActivitySourceHostInterop](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop) COM interface instead (in useractivityinterop.h). |
 
-Other WinRT APIs that are not supported in desktop apps.
-
-|  API  |  Alternative APIs |
-|---------|-------------------|
-| [DeviceInformationPairing.PairAsync method](/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.PairAsync) | None |
+For other WinRT APIs that are not supported in desktop apps, see [Unsupported members](#unsupported-members) later in this topic.
 
 ### Classes with an XxxForCurrentView method
 
@@ -118,6 +114,14 @@ The following classes are supported in desktop apps except for the specified eve
 |---------|-------------------|
 | [UISettings](/uwp/api/Windows.UI.ViewManagement.UISettings) | [ColorValuesChanged](/uwp/api/Windows.UI.ViewManagement.UISettings.ColorValuesChanged) |
 | [AccessibilitySettings](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings) | [HighContrastChanged](/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings.HighContrastChanged) |
+
+#### Methods
+
+The following classes are supported in desktop apps except for the specified methods.
+
+|  Class  |  Unsupported methods |
+|---------|-------------------|
+| [DeviceInformationPairing](/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing)  | [PairAsync](/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.PairAsync) |
 
 #### Methods that use the Request naming pattern
 

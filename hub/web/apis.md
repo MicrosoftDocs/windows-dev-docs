@@ -34,7 +34,7 @@ Bing Ads is a pay-per-click (PPC) advertising platform used to display ads based
 - **[Bing Knowledge Widget](https://www.bing.com/widget/knowledge)**<br>
 Enhances your web site with the power of the Bing knowledge repository and provides your users relevant information about the entities detected within the context of your page.
 
-- **[Bing Maps REST Services API](/bingmaps/rest-services/index.md)**<br>
+- **[Bing Maps REST Services API](/bingmaps/rest-services/)**<br>
 Services for performing tasks such as geocoding, reverse-geocoding, routing and static imagery.
 
 - **[Bing Maps Web Control](https://www.bing.com/api/maps/sdkrelease/mapcontrol/isdk#overview)**<br>
@@ -106,5 +106,5 @@ Azure Media Player Video Indexer enables you to extract insights from your video
 - **[VS Code API](https://code.visualstudio.com/api/references/vscode-api)**<br>
 A set of JavaScript APIs that you can invoke in your Visual Studio Code extension. The [Extension API](https://code.visualstudio.com/api) enables customizing and enhancing the extensions built-in to VS Code.
 
-- **[Yammer REST API](https://developer.yammer.com/docs/getting-started)**<br>
+- **[Yammer REST API](/rest/api/yammer/rest-api-rate-limits)**<br>
 Build communities and collaboration in your organization with Yammer. The platform consists of a set of open APIs and tools that enable you to bring Yammer’s social services to your application.

@@ -44,7 +44,8 @@ The options allow you to customize the upgrade experience to meet your needs.
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |  
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |  
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |  
-| **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |  
+| **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |
+| **--purge** | Deletes all files and directories in the package directory (portable) |
 | **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to upgrade to (if supported). |
@@ -75,13 +76,19 @@ The following example shows upgrading all apps
 winget upgrade --all
 ```
 
-## Using list and upgrade
+## Using **upgrade**
 
-It is common to use the [**list**](.\list.md) command to identify apps in need of an update, and then to use **upgrade** to install the latest.
+To identify which apps are in need of an update, simply use **upgrade** without any arguments to show all available upgrades. 
 
-In the example below you will see [**list**](.\list.md) identifies that an update is available for Microsoft.WindowsTerminalPreview, and then the user uses **upgrade** to update the application.
+In the example below, you will see **winget upgrade** shows the user which apps have an available update. From the available updates, the user identifies that an update is available for *JanDeDobbeleer.OhMyPosh* and uses **upgrade** to update the application.
 
-![Animation demonstrating list and upgrade commands](./images/upgrade.gif)
+![Animation demonstrating upgrade command](./images/upgrade.gif)
+
+## Using **list** and **upgrade**
+To search for an available update for a specific app, use to the [**list**](.\list.md) command. Once you have identified that a update is available for your specific app, use **upgrade** to install the latest. 
+
+The example below shows the [**list**](.\list.md) command being used to identify that an update is available for *Microsoft.WindowsTerminalPreview*. The user then uses **upgrade** to update the application.
+![Animation demonstrating upgrade command](./images/listUpgrade.gif)
 
 ## **upgrade** --all
 

@@ -12,9 +12,13 @@ ms.localizationpriority: medium
 
 App properties describe important details about your app including requirements, capabilities, and your contact information.
 
+:::image type="content" source="../images/msiexe-properties-overview.png" lightbox="../images/msiexe-properties-overview.png" alt-text="A screenshot of the overview of Properties section in Partner Center.":::
+
 **Category and Subcategory**<br>*Category is required*
 
 Categories and subcategories help users discover your app, and they help users understand what your app does.
+
+:::image type="content" source="../images/msiexe-set-app-category&subcategory.png" lightbox="../images/msiexe-set-app-category&subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
 
 Choose the category that best describes your app. If that category includes subcategories, select the one that best describes your app. If none of the available subcategories seem to fit, you can leave subcategory blank, or choose a subcategory you think customers who would want your app would be most likely to browse.
 
@@ -52,6 +56,8 @@ To change the category or subcategory of an app that's already in the Store, cre
 
 This section lets you provide info to help customers understand more about your app and how to get support.
 
+:::image type="content" source="../images/msiexe-support-info.png" lightbox="../images/msiexe-support-info.png" alt-text="A screenshot of the Properties section where you can provide support info for your app.":::
+
 **Does this product access, collect or transmit personal information (data that could be used to identity a person)?**<br>*Required*
 
 You are responsible for ensuring your app complies with applicable privacy laws and regulations, and for providing a valid privacy policy URL here if required.
@@ -78,6 +84,8 @@ Enter the URL of the web page where your customers can go for support with your 
 ## Product declarations section
 
 You can check boxes in this section to indicate if any of the declarations apply to your app. This may affect the way your app is displayed, whether it is offered to certain customers, or how customers can use it.
+
+:::image type="content" source="../images/msiexe-product-declarations.png" lightbox="../images/msiexe-product-declarations.png" alt-text="A screenshot of the Properties section where you can provide product declarations for your app.":::
 
 **This app depends on non-Microsoft drivers or NT services.**
 
@@ -108,6 +116,8 @@ If your app supports pen and ink input, you can check this box which makes your 
 
 As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly. Including these notes is particularly important for products that use dependencies on non-Microsoft drivers or NT services and/or that require logging in to an account. If we cannot fully test your submission, it may fail certification.
 
+:::image type="content" source="../images/msiexe-notes-for-certification.png" lightbox="../images/msiexe-notes-for-certification.png" alt-text="A screenshot of the Properties section where you can provide notes for certification for your app.":::
+
 Make sure to include the following (if applicable for your app):
 
 - **Dependency on non-Microsoft drivers or NT services**: If you indicated a dependency in the previous question, describe it here. For each dependency, tell us why your app needs to declare the dependency and how it is used. Be sure to provide as much detail as possible to help us understand why your product needs to declare the dependency.
@@ -136,6 +146,8 @@ Make sure to include the following (if applicable for your app):
 ## System requirements section
 
 **System Requrements** (Touch screen, Keyboard, Mouse, Camera, NFC HCE, NFC Proximity, Bluetooth LE, Telephony, Microphone, Memory, DirectX, Video Memory, Processor, Graphics)
+
+:::image type="content" source="../images/msiexe-system-requirements.png" lightbox="../images/msiexe-system-requirements.png" alt-text="A screenshot of the Properties section where you can provide system requirements for your app.":::
 
 In this section, you have the option to indicate if certain hardware features are required or recommended to run and interact with your app properly.
 

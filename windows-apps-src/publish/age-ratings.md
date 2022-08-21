@@ -29,7 +29,7 @@ The next time you update your app, you’ll see all of the app’s assigned rati
 <span id="boards" />
 
 > [!NOTE]
-> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://www.gamerating.org.tw/company_login.php). 
+> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://www.gamerating.org.tw/Trader).
 
 <span id="appeal" />
 

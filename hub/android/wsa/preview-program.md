@@ -18,7 +18,9 @@ The Windows Subsystem for Android™️ Preview Program allows users to receive 
 
 Preview builds may not always be stable and users may encounter issues that block apps or require workarounds. Visit [Troubleshooting and FAQ for mobile apps on Windows](https://support.microsoft.com/windows/troubleshooting-and-faq-for-mobile-apps-on-windows-d6062afd-98a1-4018-a7c8-6b3b680a2ea5) to find help and information on how to leave feedback using Windows Feedback Hub. Your feedback will be useful in improving the quality of Windows Subsystem for Android™️.
 
-Please note that the Windows Subsystem for Android™ may be substantially modified before it’s public release. Microsoft makes no warranties, express or implied, with respect to the information provided here. Microsoft respects your privacy: [Microsoft Global Data Privacy Notice](https://privacy.microsoft.com/data-privacy-notice).
+Please note that the Windows Subsystem for Android™ may be substantially modified before it’s public release. Microsoft makes no warranties, express or implied, with respect to the information provided here. Microsoft respects your privacy: 
+- [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement)
+- [Microsoft Global Data Privacy Notice](https://privacy.microsoft.com/data-privacy-notice).
 
 
 ## Prerequisites
