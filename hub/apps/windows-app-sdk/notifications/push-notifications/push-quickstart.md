@@ -151,7 +151,7 @@ using namespace Windows::Foundation;
 using namespace winrt::Microsoft::Windows::PushNotifications;
 using namespace winrt::Microsoft::Windows::AppLifecycle;
 
-winrt::guid objectId{ "7edfab6c-25ae-4678-b406-d1848f97919a" }; // Replace this with your own Azure ObjectId
+winrt::guid remoteId{ "7edfab6c-25ae-4678-b406-d1848f97919a" }; // Replace this with your own Azure ObjectId
 
 
 
@@ -191,7 +191,7 @@ int main()
                 {
                     std::cout << "\nThere was an error obtaining the WNS Channel URI" << std::endl;
     
-                    if (objectId == winrt::guid { "00000000-0000-0000-0000-000000000000" })
+                    if (remoteId == winrt::guid { "00000000-0000-0000-0000-000000000000" })
                     {
                         std::cout << "\nThe ObjectID has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup an ObjectID" << std::endl;
                     }
@@ -265,7 +265,7 @@ winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChan
 {
     // To obtain an AAD RemoteIdentifier for your app,
     // follow the instructions on https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app
-    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(objectID);
+    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
 
     // Setup the inprogress event handler
     channelOperation.Progress(
