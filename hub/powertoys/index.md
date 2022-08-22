@@ -18,7 +18,7 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Processor support
 
 - **x64**: Supported
-- **Arm**: Supported
+- **ARM64**: Supported
 
 ## Current PowerToy utilities
 

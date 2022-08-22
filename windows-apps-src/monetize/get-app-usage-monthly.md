@@ -90,49 +90,215 @@ Elements in the *Value* array contain the following values.
 | averageDailyActiveUsers   | double  | The average number of customers using the app on a daily basis.                             |
 | averageDailyActiveDevices | double  | The average number of devices used to interact with your app by all users on a daily basis. |
 
+### Request and Response example
 
-### Response example
+The following code snippets demonstrates some example request and JSON response body for those request.
 
-The following example demonstrates an example JSON response body for this request.
+#### Sample Request 
 
-```http
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagemonthly?applicationId=9NBLGGGZ5QDR
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
 {
-  "Value": [
-    {
-      "date": "2018-06-01",
-      "applicationId": "XXXXXXXXXXXX",
-      "applicationName": "My App",
-      "market": "All",
-      "packageVersion": "All",
-      "deviceType": "All",
-      "subscriptionName": "All",
-      "monthlySessionCount": 582973,
-      "engagementDurationMinutes": 16941418.7,
-      "monthlyActiveUsers": 139604,
-      "monthlyActiveDevices": 132296,
-      "monthlyNewUsers": 88127,
-      "averageDailyActiveUsers": 9099.23,
-      "averageDailyActiveDevices": 8999.0
-    },
-    {
-      "date": "2018-07-01",
-      "applicationId": "XXXXXXXXXXXX",
-      "applicationName": "My App",
-      "market": "All",
-      "packageVersion": "All",
-      "deviceType": "All",
-      "subscriptionName": "All",
-      "monthlySessionCount": 681460,
-      "engagementDurationMinutes": 21656645.3,
-      "monthlyActiveUsers": 130481,
-      "monthlyActiveDevices": 123583,
-      "monthlyNewUsers": 78465,
-      "averageDailyActiveUsers": 8257.55,
-      "averageDailyActiveDevices": 8170.58
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 2
+    "Value": [
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "deviceType": "All",
+            "packageVersion": "All",
+            "market": "All",
+            "engagementDurationMinutes": 2828568.3,
+            "monthlyActiveUsers": 165249,
+            "monthlyActiveDevices": 165753,
+            "monthlyNewUsers": 95787,
+            "monthlySessionCount": 314263,
+            "averageDailyActiveUsers": 192.506111111111,
+            "averageDailyActiveDevices": 191.199722222222
+        }
+    ],
+    "TotalCount": 1
+}
+```
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagemonthly?applicationId=9NBLGGGZ5QDR&startDate=2022-06-01&endDate=2022-07-01&groupby=applicationName,subscriptionName,deviceType,packageVersion,market,date&top=10&skip=0
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+{
+    "Value": [
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "1.0.0.4957",
+            "market": "JP",
+            "engagementDurationMinutes": 0.3,
+            "monthlyActiveUsers": 1,
+            "monthlyActiveDevices": 1,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 1,
+            "averageDailyActiveUsers": 0.03,
+            "averageDailyActiveDevices": 0.03
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "1.0.0.4957",
+            "market": "MX",
+            "engagementDurationMinutes": 2.7,
+            "monthlyActiveUsers": 1,
+            "monthlyActiveDevices": 1,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 1,
+            "averageDailyActiveUsers": 0.03,
+            "averageDailyActiveDevices": 0.03
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "1.0.0.4957",
+            "market": "Unknown",
+            "engagementDurationMinutes": 0.1,
+            "monthlyActiveUsers": 1,
+            "monthlyActiveDevices": 1,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 1,
+            "averageDailyActiveUsers": 0.03,
+            "averageDailyActiveDevices": 0.03
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "1.0.0.4957",
+            "market": "US",
+            "engagementDurationMinutes": 0.2,
+            "monthlyActiveUsers": 1,
+            "monthlyActiveDevices": 1,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 1,
+            "averageDailyActiveUsers": 0.03,
+            "averageDailyActiveDevices": 0.03
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "2.5.2.34894",
+            "market": "AE",
+            "engagementDurationMinutes": 3.2,
+            "monthlyActiveUsers": 2,
+            "monthlyActiveDevices": 2,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 3,
+            "averageDailyActiveUsers": 0.07,
+            "averageDailyActiveDevices": 0.07
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "2.5.2.34894",
+            "market": "AO",
+            "engagementDurationMinutes": 1.2,
+            "monthlyActiveUsers": 1,
+            "monthlyActiveDevices": 1,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 1,
+            "averageDailyActiveUsers": 0.03,
+            "averageDailyActiveDevices": 0.03
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "2.5.2.34894",
+            "market": "AR",
+            "engagementDurationMinutes": 574.7,
+            "monthlyActiveUsers": 39,
+            "monthlyActiveDevices": 39,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 53,
+            "averageDailyActiveUsers": 1.43,
+            "averageDailyActiveDevices": 1.43
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "2.5.2.34894",
+            "market": "AT",
+            "engagementDurationMinutes": 5.3,
+            "monthlyActiveUsers": 4,
+            "monthlyActiveDevices": 4,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 9,
+            "averageDailyActiveUsers": 0.17,
+            "averageDailyActiveDevices": 0.17
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "2.5.2.34894",
+            "market": "AU",
+            "engagementDurationMinutes": 434.7,
+            "monthlyActiveUsers": 22,
+            "monthlyActiveDevices": 22,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 36,
+            "averageDailyActiveUsers": 0.9,
+            "averageDailyActiveDevices": 0.9
+        },
+        {
+            "date": "2022-06-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "subscriptionName": "null",
+            "deviceType": "PC",
+            "packageVersion": "2.5.2.34894",
+            "market": "AZ",
+            "engagementDurationMinutes": 13.5,
+            "monthlyActiveUsers": 1,
+            "monthlyActiveDevices": 1,
+            "monthlyNewUsers": 0,
+            "monthlySessionCount": 1,
+            "averageDailyActiveUsers": 0.03,
+            "averageDailyActiveDevices": 0.03
+        }
+    ],
+    "TotalCount": 10
 }
 ```
 

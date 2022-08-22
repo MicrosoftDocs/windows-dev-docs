@@ -100,35 +100,192 @@ Objects in the *Value* array contain the following values.
 | conversionCount            | number  |   The number of customer conversions.         |         
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappchannelconversions?applicationId=9NBLGGGZ5QDR&startDate=12/19/2019&endDate=12/20/2021&top=10&skip=0
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2016-01-01",
-      "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso Add-On",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso App",
-      "appType": "Add-On",
-      "customCampaignId": "",
-      "referrerUriDomain": "Universal Client Store",
-      "channelType": "Store Traffic",
-      "storeClient": "SFC",
-      "deviceType": "PC",
-      "market": "CN",
-      "clickCount": 1,
-      "conversionCount": 0
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 1
+    "Value": [
+        {
+            "inAppProductId": "9NN2HW33ZB2G",
+            "applicationId": "9NBLGGGZ5QDR",
+            "clickCount": 220636,
+            "conversionCount": 154
+        },
+        {
+            "inAppProductId": "9PN07J0WC18B",
+            "applicationId": "9NBLGGGZ5QDR",
+            "clickCount": 277061,
+            "conversionCount": 187
+        }
+    ],
+    "@nextLink": "",
+    "TotalCount": 2
 }
 ```
 
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappchannelconversions?applicationId=9NBLGGGZ5QDR&startDate=12/19/2021&endDate=12/20/2021&top=10&skip=0&groupby=date,applicationName,inAppProductName,appType,customCampaignId,referrerUriDomain,channelType,storeClient,deviceType,market
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+{
+    "Value": [
+        {
+            "inAppProductId": "9WZDNCRCWW61",
+            "inAppProductName": "SeasonPass0",
+            "appType": "Add-On",
+            "date": "2022-06-21",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "mcg_mahjong_othergames",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "BR",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW5H",
+            "inAppProductName": "OEMFreePurchase",
+            "appType": "Add-On",
+            "date": "2022-07-06",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "mcg_solitaire_othergames",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "AT",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW5Z",
+            "inAppProductName": "Episode1Combo",
+            "appType": "Add-On",
+            "date": "2022-07-09",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "vungle",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "CZ",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW5H",
+            "inAppProductName": "OEMFreePurchase",
+            "appType": "Add-On",
+            "date": "2022-07-09",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "vungle",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "CZ",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW4Z",
+            "inAppProductName": "Episode1Grandfathered",
+            "appType": "Add-On",
+            "date": "2022-07-11",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "|autosuggest",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "ES",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW5W",
+            "inAppProductName": "Episode2Combo",
+            "appType": "Add-On",
+            "date": "2022-07-11",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "vungle",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "CZ",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW4P",
+            "inAppProductName": "SeasonPass24",
+            "appType": "Add-On",
+            "date": "2022-07-12",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "vungle",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "CZ",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW5H",
+            "inAppProductName": "OEMFreePurchase",
+            "appType": "Add-On",
+            "date": "2022-07-13",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "9wzdncrfjbd8",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "CA",
+            "clickCount": 1,
+            "conversionCount": 1
+        },
+        {
+            "inAppProductId": "9WZDNCRCWW61",
+            "inAppProductName": "SeasonPass0",
+            "appType": "Add-On",
+            "date": "2022-07-17",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "scom-web-store",
+            "channelType": "CustomCampaignId",
+            "storeClient": "SFW",
+            "deviceType": "Unknown",
+            "market": "US",
+            "clickCount": 1,
+            "conversionCount": 1
+        }
+    ],
+    "@nextLink": "",
+    "TotalCount": 9
+}
+```
 ## Related topics
 
 * [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)

@@ -14,25 +14,35 @@ The Store listings section of the app submission process is where you provide th
 
 Many of the fields in a Store listing are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the Store listings step to be considered complete is a text description and at least one screenshot.
 
+:::image type="content" source="../images/msiexe-store-listings-overview.png" lightbox="../images/msiexe-store-listings-overview.png" alt-text="A screenshot of the overview of Store listings section in Partner Center.":::
+
 ## Manage Store listing languages
 
 You must complete the Store listing page for at least one language. We recommend providing a Store listing in each language that your packages support, and you  aldo have flexibility to create Store listings in additional languages which are not supported by your packages and not support languages for which you do not wish to provide a Store listing.
 
 To add or remove languages for your Store listings, click Add/remove languages from Manage Store listings page.
 
+:::image type="content" source="../images/msiexe-listings-select-languages.png" lightbox="../images/msiexe-listings-select-languages.png" alt-text="A screenshot of the Store listings section where you can add a language for listing your app in Microsoft Store.":::
+
 When you have finished making your selections, click Save to return to the application overview page.
 
-The Manage Store listings page of the app submission process is where you can also publish your app. By default, we'll publish your submission as soon as it passes certification. As your submission passes certification, you can view certification status on the Application Overview page.
+:::image type="content" source="../images/msiexe-listings-language-added.png" lightbox="../images/msiexe-listings-language-added.png" alt-text="A screenshot of the Store listings section showing a language has been added for listing.":::
 
+The Manage Store listings page of the app submission process is where you can also publish your app. By default, we'll publish your submission as soon as it passes certification. As your submission passes certification, you can view certification status on the Application Overview page.
+  
 ## Add and edit Store listing info
 
 To edit a Store listing, select the language name from the Store listings overview page. You must edit each language separately.
+
+:::image type="content" source="../images/msiexe-listings-language-overview.png" lightbox="../images/msiexe-listings-language-overview.png" alt-text="A screenshot of the Store listings section showing overview of details which need to be filled for Store listings.":::
 
 **Product name**<br>*Required*
 
 Your app's name. Must be a name you've already reserved for your app.
 
 If you need to rename the app after it's already been published, you can select a different reserved name here when you create a new submission, after you've provided URLs to packages that use the new name.
+
+:::image type="content" source="../images/msiexe-description.png" lightbox="../images/msiexe-description.png" alt-text="A screenshot of the Store listings section where you can provide description, product name details for your app listing.":::
 
 > [!NOTE]
 The Product name you select only applies to the Store listing in the language you're working in. It does not impact the name displayed when a customer installs the app; that name comes from the package that gets installed. To avoid confusion, we recommend that each language's package(s) and Store listing use the same name.
@@ -53,6 +63,8 @@ These are short summaries of your app's key features. They are displayed to the 
 > The store automatically displays each feature in a bulleted list. Do not add bullets manually.
 
 **Screenshots**<br>*Required: 1*<br>*Recommended: 4+*<br>*Maximum: 10*
+
+:::image type="content" source="../images/msiexe-screenshots.png" lightbox="../images/msiexe-screenshots.png" alt-text="A screenshot of the Store listings section where you can provide screenshots and app icon for your app listing.":::
 
 See [App screenshots and images](../app-screenshots-and-images.md) for more information.
 
@@ -78,6 +90,8 @@ If no short description is provided, the store will use the first 100 characters
 
 Short descriptions can be up to 1,000 characters, but some store views display only the first 270 characters (along with a link to view the entire short description). For best results, keep your short description under 270 characters.
 
+:::image type="content" source="../images/msiexe-supplemental-fields.png" lightbox="../images/msiexe-supplemental-fields.png" alt-text="A screenshot of the Store listings section where you can provide short decription and other additional system requirements for your app listing.":::
+
 **Additional system requirements**<br>*Character limit: 200 per feature*<br>*Feature limit: 11*
 
 Specify any additional system requirements not listed on the [App properties page](enter-app-properties.md).
@@ -94,6 +108,8 @@ This field is especially important if your app requires hardware that might not 
 Search terms are single words or short phrases that help make your app discoverable in the Store when customers search using those terms. They are not displayed to customers.
 
 When adding search terms, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Only use search terms that are relevant to your app.
+
+:::image type="content" source="../images/msiexe-additional-info.png" lightbox="../images/msiexe-additional-info.png" alt-text="A screenshot of the Store listings section where you can provide additional information like search terms, copyright and trademark info for your app listing.":::
 
 > [!WARNING]
 > In addition to the search term and character limits described above, you cannot use more than 21 unique words across all of your search terms.

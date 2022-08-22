@@ -17,13 +17,11 @@ PowerRename is a bulk renaming tool that enables you to:
 - Check expected rename results in a preview window before finalizing a bulk rename.
 - Undo a rename operation after it is completed.
 
-
 ## Demo
 
 In this demo, all instances of the file name "foo" are replaced with "foobar". Since all of the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command enables the ability to undo the last change.
 
 ![PowerRename Demo.](../images/powerrename-demo.gif)
-
 
 ## PowerRename window
 
@@ -91,7 +89,6 @@ Select between four options to either convert items to be all lowercase, all upp
 
 Appends a numeric suffix to file names that were modified in the operation. For example: `foo.jpg` -> `foo (1).jpg`
 
-
 ## Replace using file creation date and time
 
 The creation date and time attributes of a file can be used in the _Replace with_ text by entering a variable pattern according to the table below. Selecting the tool-tip in the _Replace with_ field allows you to view and select from the supported patterns.
@@ -134,7 +131,6 @@ The value of the renamed file would result in:
 - `Nov-02-20-powertoys.png`
 - `Nov-03-20-powertoys-menu.png`
 
-
 ## Regular Expressions
 
 For most use cases, a simple search and replace is sufficient. There may be occasions, however, in which complicated renaming tasks require more control. [Regular Expressions](https://wikipedia.org/wiki/Regular_expression) can help.
@@ -151,28 +147,30 @@ To use the [Boost library](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/
 
 Simple matching examples
 
-| Search for       | Description                                           |
-| :---             | :---                                                  |
-| `^`              | Match the beginning of the filename (zero size)       |
-| `$`              | Match the end of the filename (zero size)             |
-| `.*`             | Match all the text in the name                        |
-| `^foo`           | Match text that begins with "foo"                     |
-| `bar$`           | Match text that ends with "bar"                       |
-| `^foo.*bar$`     | Match text that begins with "foo" and ends with "bar" |
-| `.+?(?=bar)`     | Match everything up to "bar"                          |
-| `foo[\s\S]*bar`  | Match everything between and including "foo" and "bar"|
+| Search for      | Description                                            |
+|:----------------|:-------------------------------------------------------|
+| `^`             | Match the beginning of the filename (zero size)        |
+| `$`             | Match the end of the filename (zero size)              |
+| `.*`            | Match all the text in the name                         |
+| `^foo`          | Match text that begins with "foo"                      |
+| `bar$`          | Match text that ends with "bar"                        |
+| `^foo.*bar$`    | Match text that begins with "foo" and ends with "bar"  |
+| `.+?(?=bar)`    | Match everything up to "bar"                           |
+| `foo[\s\S]*bar` | Match everything between and including "foo" and "bar" |
 
 Matching and variable examples. Capturing groups are defined in parentheses `()`. To refer to them, use `$` followed by a number: `$1` will refer to the first group, `$2` to the second etc.
 
 _When using the variables, the "Match all occurrences" option must be enabled._
 
-| Search for                 | Replace with | Description |
-| :---                       | :---         | :--- |
-| `(.*).png`                 | `foo_$1.png` | Prepends "foo\_" to the existing file name for PNG files |
-| `(.*).png`                 | `$1_foo.png` | Appends "\_foo" to the existing file name for PNG files |
-| `(.*)`                     | `$1.txt`     | Appends ".txt" extension to existing file |
-| `(^\w+\.$)¦(^\w+$)`        | `$2.txt`     | Appends ".txt" extension to existing file name only if it does not have an extension |
-| `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1`   | Move numbers in the filename: "29-03-2020" becomes "2020-03-29" |
+| Search for                                              | Replace with | Description                                                                          |
+|:--------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------|
+| `(.*).png`                                              | `foo_$1.png` | Prepends "foo\_" to the existing file name for PNG files                             |
+| `(.*).png`                                              | `$1_foo.png` | Appends "\_foo" to the existing file name for PNG files                              |
+| `(.*)`                                                  | `$1.txt`     | Appends ".txt" extension to existing file                                            |
+| `(^\w+\.$)¦(^\w+$)`                                     | `$2.txt`     | Appends ".txt" extension to existing file name only if it does not have an extension |
+| `(\d\d)-(\d\d)-(\d\d\d\d)` or `(\d{2})-(\d{2})-(\d{4})` | `$3-$2-$1`   | Move numbers in the filename: "29-03-2020" becomes "2020-03-29"                      |
+| `^(.{n})(.*)` or `(.*)(.{n})$`                          | `$1foo$2`    | Insert "foo" _n_ characters from the beginning or the end, respectively              |
+| `^.{n}` or `.{n}$`                                      | nothing      | Trim _n_ characters from the beginning or the end, respectively                      |
 
 ### Additional resources for learning regular expressions
 
@@ -181,7 +179,6 @@ There are great examples/cheatsheets available online to help you:
 [Regex tutorial — A quick cheatsheet by examples](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
 
 [ECMAScript Regular Expressions Tutorial](https://o7planning.org/en/12219/ecmascript-regular-expressions-tutorial)
-
 
 ## File List Filters
 
@@ -196,7 +193,6 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
   - Selecting the _Renamed_ header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
 ![PowerToys PowerRename Filter demo.](../images/powerrename-demo2.gif)
-
 
 ## Settings
 

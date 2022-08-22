@@ -1,7 +1,7 @@
 ---
 title: PowerToys FancyZones utility for Windows
 description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 04/27/2022
+ms.date: 08/02/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -9,20 +9,37 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
 
 # FancyZones utility
 
-FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve the speed of your workflow and restore layouts quickly. FancyZones allows you to define a set of window locations for a desktop that are drag targets for windows. When you drag a window into a zone, the window is resized and repositioned to fill that zone.
+FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve the speed of your workflow and restore layouts quickly. FancyZones allows you to define a set of zone locations to be used as targets for windows on your desktop. When you drag a window into a zone, or enter the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
+
+## Snapping to a single zone with the mouse
+
+First, drag the window. By default, you will also need to press and hold the <kbd>Shift</kbd> key (This setting can be disabled via Settings). You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.
 
 ![FancyZones in action screenshot.](../images/pt-fancy-zones2.png)
 
+## Snapping to a single zone with keyboard
 
-## Getting started snapping windows
+You can use <kbd>Win</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones. However, you must first set **Override Windows Snap** to enabled in the FancyZones settings.
+
+![Settings for Snapping to Multiple Zones via Keyboard.](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
+
+## Snapping to multiple zones
+
+A window can be snapped to more than one zone in the following ways.
+
+### Snapping to two zones by edge hovering
 
 If two zones are adjacent, a window can be snapped to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
 
-It's also possible to snap to any number of zones. First, drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
+### Snapping to multiple zones with the mouse + keyboard
+
+You can drag the window until one zone is activated, then press and hold the <kbd>Control</kbd> key while dragging the window to select multiple zones.
 
 ![Two Zones Activation screenshot.](../images/pt-fancyzones-twozones.png)
 
-To snap a window to multiple zones using only the keyboard, first turn on the setting **Override Windows Snap** and select **Move windows based on: Relative position** as shown below. After snapping a window to one zone, use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones.
+### Snapping to multiple zones with only the keyboard
+
+You can use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[arrows]</kbd> to expand the window to multiple zones. However, you must first set **Override Windows Snap** to enabled in the FancyZones settings and select **Move windows based on: Relative position**. 
 
 ![Settings for Snapping to Multiple Zones via Keyboard.](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
@@ -43,8 +60,9 @@ FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd
 
 If you have applications that are elevated (such as Windows Terminal or Task Manager) and want them snapped with FancyZones, run PowerToys in administrator mode. Read [PowerToys and running as administrator](administrator.md) for more information.
 
-
 ## Getting started with the editor
+
+FancyZones includes an editor to give you more control over your window layouts that can be accessed in the PowerToys Settings dashboard. 
 
 ### Launch zones editor
 

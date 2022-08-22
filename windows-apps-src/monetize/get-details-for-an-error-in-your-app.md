@@ -100,33 +100,142 @@ Elements in the *Value* array contain the following values.
 | deviceType      | string  | One of the following strings that specifies the type of the device on which the app was running when the error occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>     |
 | cabDownloadable           | Boolean  | Indicates whether the CAB file is downloadable for this user.   |
 
+> [!NOTE]
+> This method can only retrieve details for errors that occurred in the last 30 days.
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012345-5dbc9-b12f-c124-9d9810f05d8b&startDate=2022-06-30&endDate=2022-07-28&top=10&skip=0
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "applicationId": "9NBLGGGZ5QDR ",
-      "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
-      "failureName": "STOWED_EXCEPTION_System.UriFormatException_exe!ContosoGame.GroupedItems+_ItemView_ItemClick_d__9.MoveNext",
-      "date": "2018-02-05 09:11:25",
-      "cabId": "133637331323",
-      "cabExpirationTime": "2016-12-05 09:11:25",
-      "market": "US",
-      "osBuild": "10.0.10240",
-      "packageVersion": "1.0.2.6",
-      "deviceModel": "Contoso Computer",
-      "osVersion": "Windows 10",
-      "osRelease": "Version 1507",
-      "deviceType": "PC",
-      "cabDownloadable": false
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 1
+    "Value": [
+        {
+            "date": "2022-07-12 00:00:00",
+            "cabExpirationTime": "2022-08-16 01:37:00",
+            "cabDownloadable": false,
+            "applicationId": "9NBLGGGZ5QDR",
+            "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
+            "failureName": "MOAPPLICATION_HANG_cfffffff_Microsoft.Contoso!HANG_QUIESCE",
+            "cabId": "1180087848576586304",
+            "market": "MX",
+            "osBuild": "10.0.19043",
+            "packageVersion": "2.5.2.34894",
+            "deviceModel": "Dell Inc.-Inspiron 15-3567",
+            "osVersion": "Windows 10",
+            "osRelease": "Version 21H1",
+            "osArchitecture": "x64",
+            "deviceType": "PC",
+            "cpuManufacturer": "Intel",
+            "cpuFamilyName": "Core i5",
+            "cpuName": "Intel Core i5-7200U CPU @ 2.50GHz",
+            "praid": "app",
+            "flightRing": "",
+            "sandboxId": "retail"
+        },
+        {
+            "date": "2022-07-13 00:00:00",
+            "cabExpirationTime": "2022-08-17 13:35:53",
+            "cabDownloadable": true,
+            "applicationId": "9NBLGGGZ5QDR",
+            "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
+            "failureName": "MOAPPLICATION_HANG_cfffffff_Microsoft.Contoso!HANG_QUIESCE",
+            "cabId": "2058585545558157474",
+            "market": "RO",
+            "osBuild": "10.0.22622",
+            "packageVersion": "2.5.2.34894",
+            "deviceModel": "Dell Inc.-Vostro 5502",
+            "osVersion": "Windows 11",
+            "osRelease": "External",
+            "osArchitecture": "x64",
+            "deviceType": "PC",
+            "cpuManufacturer": "Intel",
+            "cpuFamilyName": "Core i5",
+            "cpuName": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+            "praid": "app",
+            "flightRing": "external",
+            "sandboxId": "retail"
+        },
+        {
+            "date": "2022-07-14 00:00:00",
+            "cabExpirationTime": "2022-08-18 07:27:06",
+            "cabDownloadable": false,
+            "applicationId": "9NBLGGGZ5QDR",
+            "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
+            "failureName": "MOAPPLICATION_HANG_cfffffff_Microsoft.Contoso!HANG_QUIESCE",
+            "cabId": "1940204079766793391",
+            "market": "IN",
+            "osBuild": "10.0.19044",
+            "packageVersion": "2.5.2.34894",
+            "deviceModel": "Generic Desktop",
+            "osVersion": "Windows 10",
+            "osRelease": "Version 21H2",
+            "osArchitecture": "x64",
+            "deviceType": "PC",
+            "cpuManufacturer": "Intel",
+            "cpuFamilyName": "Pentium",
+            "cpuName": "Intel Pentium CPU G630 @ 2.70GHz",
+            "praid": "app",
+            "flightRing": "",
+            "sandboxId": "retail"
+        },
+        {
+            "date": "2022-07-17 00:00:00",
+            "cabExpirationTime": "2022-08-21 10:04:16",
+            "cabDownloadable": true,
+            "applicationId": "9NBLGGGZ5QDR",
+            "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
+            "failureName": "MOAPPLICATION_HANG_cfffffff_Microsoft.Contoso!HANG_QUIESCE",
+            "cabId": "1197051093472061859",
+            "market": "ES",
+            "osBuild": "10.0.22621",
+            "packageVersion": "2.5.2.34894",
+            "deviceModel": "Microsoft Corporation-Surface Pro 3",
+            "osVersion": "Windows 11",
+            "osRelease": "External",
+            "osArchitecture": "x64",
+            "deviceType": "PC",
+            "cpuManufacturer": "Intel",
+            "cpuFamilyName": "Core i7",
+            "cpuName": "Intel Core i7-4650U CPU @ 1.70GHz",
+            "praid": "app",
+            "flightRing": "external",
+            "sandboxId": "retail"
+        },
+        {
+            "date": "2022-07-20 00:00:00",
+            "cabExpirationTime": "2022-08-24 12:40:05",
+            "cabDownloadable": false,
+            "applicationId": "9NBLGGGZ5QDR",
+            "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
+            "failureName": "MOAPPLICATION_HANG_cfffffff_Microsoft.Contoso!HANG_QUIESCE",
+            "cabId": "1332886311327579782",
+            "market": "RU",
+            "osBuild": "6.3.9600",
+            "packageVersion": "2.5.2.34894",
+            "deviceModel": "ASUSTeK COMPUTER INC.-K75VJ",
+            "osVersion": "Windows 8.1",
+            "osRelease": "RTM",
+            "osArchitecture": "x64",
+            "deviceType": "PC",
+            "cpuManufacturer": "Intel",
+            "cpuFamilyName": "Core i7",
+            "cpuName": "Intel Core i7-3630QM CPU @ 2.40GHz",
+            "praid": "app",
+            "flightRing": "",
+            "sandboxId": ""
+        }
+    ],
+    "TotalCount": 5
 }
 ```
 

@@ -23,18 +23,7 @@ Windows wheel devices, such as the Surface Dial, are a new category of input dev
 > [!IMPORTANT]
 > In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices. 
 
-:::row:::
-   :::column:::
-      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
-
-      *Surface Dial app partners*
-   :::column-end:::
-   :::column:::
-      *Surface Dial for devs*
-   :::column-end:::
-:::row-end:::
-
-With a form factor based on a *rotate* action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while performing a task with their dominant hand (such as inking with a pen). It is not designed for precision pointer input (like touch, pen, or mouse). 
+With a form factor based on a *rotate* action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while performing a task with their dominant hand (such as inking with a pen). It is not designed for precision pointer input (like touch, pen, or mouse).
 
 The Surface Dial also supports both a *press and hold* action and a *click* action. Press and hold has a single function: display a menu of commands. If the menu is active, the rotate and click input is processed by the menu. Otherwise, the input is passed to your app for processing. 
 

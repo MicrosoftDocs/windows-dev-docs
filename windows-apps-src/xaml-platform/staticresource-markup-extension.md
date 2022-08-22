@@ -37,7 +37,7 @@ A **StaticResource** must not attempt to make a forward reference to a resource 
 
 Attempting to specify a **StaticResource** to a key that cannot resolve throws a XAML parse exception at run time. Design tools may also offer warnings or errors.
 
-In the Windows Runtime XAML processor implementation, there is no backing class representation for **StaticResource** functionality. **StaticResource** is exclusively for use in XAML. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), for example calling [**Contains**](/uwp/api/windows.ui.xaml.resourcedictionary.contains) or [**TryGetValue**](/uwp/api/windows.ui.xaml.resourcedictionary.trygetvalue).
+In the Windows Runtime XAML processor implementation, there is no backing class representation for **StaticResource** functionality. **StaticResource** is exclusively for use in XAML. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary), for example calling **Contains** or **TryGetValue**.
 
 [{ThemeResource} markup extension](themeresource-markup-extension.md) is a similar markup extension that references named resources in another location. The difference is that {ThemeResource} markup extension has the ability to return different resources depending on the system theme that's active. For more info see [{ThemeResource} markup extension](themeresource-markup-extension.md).
 

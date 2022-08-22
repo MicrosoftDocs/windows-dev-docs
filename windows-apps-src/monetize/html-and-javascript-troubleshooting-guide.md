@@ -335,9 +335,9 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 ### Ads not refreshing
 
-1.  Check whether the [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
+1.  Check whether the [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled) property of your **AdControl** is set to false. By default, this optional property is set to **true**. When set to **false**, the **Refresh** method must be used to retrieve another ad.
 
-2.  Check calls to the [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Check calls to the [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) method. When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad. When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
 
     This example demonstrates how to create the **div** for the **AdControl**.
 
