@@ -1,7 +1,8 @@
 ---
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Data binding in depth
-description: Learn how to use data binding in Xaml applications
+description: Learn how to use data binding in XAML applications
+
 ms.date: 08/08/2022
 ms.topic: article
 keywords: windows 10, uwp
