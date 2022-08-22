@@ -21,9 +21,9 @@ The following are the maximum number of touch points recommended for each suppor
 
 | Widget size | Maxiumum touchpoints |
 |-------------|----------------------|
-| Small    | 1 |
-| Medium | 3 |
-| Large | 4 |
+| small    | 1 |
+| medium | 3 |
+| large | 4 |
 
 The following navigation elements are not supported in Windows Widgets:
 

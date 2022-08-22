@@ -122,7 +122,7 @@ Specifies a capability for a widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **WidgetSize**| string | Yes | Specifies a supported size for a widget. The value must be one of the following: "Small", "Medium", "Large" | N/A |
+| **WidgetSize**| string | Yes | Specifies a supported size for a widget. The value must be one of the following: "small", "medium", "large" | N/A |
 
 Specify one **WidgetCapability** element for each size the provider supports. If the **WidgetCapabilities** element is omitted, the default behavior is the same as if a single **WidgetCapability** element with the value "Large" is provided. 
 
@@ -189,17 +189,11 @@ The following code example illustrates the usage of the widget package manifest 
             DisplayTitle="Microsoft Weather Widget"
             Description="Weather Widget Description"
             AllowMultiple="True">
-            <!-- WidgetCapabilities is optional in Widget. If not defined, only `<WidgetCapability WidgetSize="Large" />` is included.
-
-                        If we add the support for taskbar in the near future, which will add a new container in AC designer,
-                        WidgetContainerType is going to be added to WidgetCapability for the new container.
-                        For backward compatibility, WidgetContainerType is optional in WidgetCapability. WidgetContainerType is "berlin" by default.
-                        <WidgetCapability WidgetSize="Small" WidgetContainerType="taskbar" />
-                        -->
+            <!-- WidgetCapabilities is optional in Widget. If not defined, only `<WidgetCapability WidgetSize="Large" />` is included.-->
             <WidgetCapabilities>
-              <WidgetCapability WidgetSize="Small" />
-              <WidgetCapability WidgetSize="Medium" />
-              <WidgetCapability WidgetSize="Large" />
+              <WidgetCapability WidgetSize="small" />
+              <WidgetCapability WidgetSize="medium" />
+              <WidgetCapability WidgetSize="large" />
             </WidgetCapabilities>
 
             <WidgetThemeResources>
