@@ -95,32 +95,80 @@ Elements in the *Value* array contain the following values.
 | acquisitionQuantity | number | The number of acquisitions that occurred during the specified aggregation level.    |
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
 
+#### Sample Request 
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR  HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 ```json
 {
-  "Value": [
-    {
-      "date": "2016-02-01",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso Demo",
-      "deviceType": "Phone",
-      "orderName": "",
-      "storeClient": "Windows Phone Store (client)",
-      "osVersion": "Windows Phone 8.1",
-      "market": "IT",
-      "gender": "m",
-      "ageGroup": "0-17",
-      "acquisitionType": "Free",
-      "acquisitionQuantity": 1
-    }
+    "Value": [
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "date": "2022-07-29",
+            "acquisitionQuantity": 7,
+            "purchasePriceUSDAmount": 0.0,
+            "purchasePriceLocalAmount": 0.0,
+            "purchaseTaxUSDAmount": 0.0,
+            "purchaseTaxLocalAmount": 0.0
+        },
   ],
-  "@nextLink": "appacquisitions?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1&orderby=date desc",
-  "TotalCount": 466766
+  "TotalCount": 1,
+  "DataFreshnessTimestamp": "2022-07-29T08:42:00"
 }
 ```
+#### Sample Request 
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=8/1/2021&endDate=12/21/2021&skip=0&filter=market&groupby=date,applicationName,acquisitionType,ageGroup,storeClient,gender,market,osVersion,deviceType  HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+```json
+	{
+    "Value": [
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "acquisitionType": "Free",
+            "storeClient": "Microsoft Store (client)",
+            "gender": "f",
+            "market": "TW",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "date": "2021-08-01",
+            "acquisitionQuantity": 1,
+            "purchasePriceUSDAmount": 0.0,
+            "purchasePriceLocalAmount": 0.0,
+            "purchaseTaxUSDAmount": 0.0,
+            "purchaseTaxLocalAmount": 0.0
+        },
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "acquisitionType": "Free",
+            "storeClient": "Microsoft Store (client)",
+            "gender": "Unknown",
+            "market": "BR",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "date": "2021-08-01",
+            "acquisitionQuantity": 1,
+            "purchasePriceUSDAmount": 0.0,
+            "purchasePriceLocalAmount": 0.0,
+            "purchaseTaxUSDAmount": 0.0,
+            "purchaseTaxLocalAmount": 0.0
+        },
+      ],  
+  "TotalCount": 2,
+  "DataFreshnessTimestamp": "2022-07-29T08:42:00"
+ }
+```
+
 
 ## Related topics
 

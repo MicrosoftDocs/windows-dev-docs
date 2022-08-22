@@ -19,6 +19,9 @@ You can start your submission when your app is complete and ready to publish, or
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store.
 
+> [!NOTE]
+> After submiting an app, the [owner](/windows/uwp/publish/set-custom-permissions-for-account-users) of your developer account is notified of publishing status and required actions through email and the Action Center in Partner Center. For more information about Action Center, see [Action Center Overview](/windows/uwp/publish/set-custom-permissions-for-account-users).
+
 After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on its **Overview** page. You can also [remove an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) if you need to do so (and then make it available again later, if you'd like).
 
 > [!NOTE]

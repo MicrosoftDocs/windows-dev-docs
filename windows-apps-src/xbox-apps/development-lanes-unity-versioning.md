@@ -92,8 +92,6 @@ We're going to want to select a few different files and folders from within the 
 
 And there you go, now your teammates will be in sync with the UWP project you've generated. Now you can feel free to add additional assets, source, and dependencies to your UWP project.
 
-Some more examples of versioning the UWP folder can be found in [these examples](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview).
-
 ## Adding dependencies to your UWP app
 
 Add dependencies to DLLs and WINMDs by putting them in your **Unity Assets** folder under a **Plugins** folder, then select them and set their target platform settings appropriately in the Inspector.

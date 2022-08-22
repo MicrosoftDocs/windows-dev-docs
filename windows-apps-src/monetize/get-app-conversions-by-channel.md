@@ -99,30 +99,100 @@ Objects in the *Value* array contain the following values.
 | conversionCount            | number  |   The number of customer conversions.         |          
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appchannelconversions?applicationId=9NBLGGGZ5QDR&startDate=06/23/2022&endDate=07/21/2022&top=10&skip=0
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2016-01-01",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso App",
-      "appType": "App",
-      "customCampaignId": "",
-      "referrerUriDomain": "Universal Client Store",
-      "channelType": "Store Traffic",
-      "storeClient": "SFC",
-      "deviceType": "PC",
-      "market": "US",
-      "clickCount": 7,
-      "conversionCount": 0
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 1
+    "Value": [
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "clickCount": 3089,
+            "conversionCount": 14
+        }
+    ],
+    "@nextLink": "",
+    "TotalCount": 1
+}
+```
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appchannelconversions?applicationId=9NBLGGGZ5QDR&startDate=06/19/2022&endDate=07/21/2022&skip=0&groupby=date,applicationName,customCampaignId,referrerUriDomain,channelType,storeClient,deviceType,market&filter=market eq 'US'
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+{
+    "Value": [
+        {
+            "date": "2022-06-19",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "",
+            "referrerUriDomain": "Universal Client Store",
+            "channelType": "Store Traffic",
+            "storeClient": "SFC",
+            "deviceType": "PC",
+            "market": "US",
+            "clickCount": 13,
+            "conversionCount": 0
+        },
+        {
+            "date": "2022-06-20",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "",
+            "referrerUriDomain": "Universal Client Store",
+            "channelType": "Store Traffic",
+            "storeClient": "SFC",
+            "deviceType": "PC",
+            "market": "US",
+            "clickCount": 6,
+            "conversionCount": 0
+        },
+        {
+            "date": "2022-06-21",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "",
+            "referrerUriDomain": "Universal Client Store",
+            "channelType": "Store Traffic",
+            "storeClient": "SFC",
+            "deviceType": "PC",
+            "market": "US",
+            "clickCount": 4,
+            "conversionCount": 0
+        },
+        {
+            "date": "2022-06-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "customCampaignId": "",
+            "referrerUriDomain": "Universal Client Store",
+            "channelType": "Store Traffic",
+            "storeClient": "SFC",
+            "deviceType": "PC",
+            "market": "US",
+            "clickCount": 4,
+            "conversionCount": 0
+        },
+    ],
+    "@nextLink": "",
+    "TotalCount": 4
 }
 ```
 

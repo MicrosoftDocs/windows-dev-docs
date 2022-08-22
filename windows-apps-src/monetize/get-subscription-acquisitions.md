@@ -104,68 +104,153 @@ Elements in the *Value* array contain the following values.
 | otherChurnCount | integer | The number of subscriptions that were deactivated during the specified time period for other reasons.        |
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/subscriptions?applicationId=9NBLGGGZ5QDR
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2017-07-08",
-      "subscriptionProductId": "9KDLGHH6R365",
-      "subscriptionProductName": "Contoso App Subscription with One Month Free Trial",
-      "applicationId": "9NBLGGH4R315",
-      "applicationName": "Contoso App",
-      "skuId": "0020",
-      "market": "Unknown",
-      "deviceType": "PC",
-      "currencyCode": "USD",
-      "grossSalesBeforeTax": 0.0,
-      "totalActiveCount": 1,
-      "totalChurnCount": 0,
-      "newCount": 0,
-      "renewCount": 0,
-      "goodStandingActiveCount": 1,
-      "pendingGraceActiveCount": 0,
-      "graceActiveCount": 0,
-      "lockedActiveCount": 0,
-      "billingChurnCount": 0,
-      "nonRenewalChurnCount": 0,
-      "refundChurnCount": 0,
-      "chargebackChurnCount": 0,
-      "earlyChurnCount": 0,
-      "otherChurnCount": 0
-    },
-    {
-      "date": "2017-07-08",
-      "subscriptionProductId": "9JJFDHG4R478",
-      "subscriptionProductName": "Contoso App Monthly Subscription",
-      "applicationId": "9NBLGGH4R315",
-      "applicationName": "Contoso App",
-      "skuId": "0020",
-      "market": "US",
-      "deviceType": "PC",
-      "currencyCode": "USD",
-      "grossSalesBeforeTax": 0.0,
-      "totalActiveCount": 1,
-      "totalChurnCount": 0,
-      "newCount": 0,
-      "renewCount": 0,
-      "goodStandingActiveCount": 1,
-      "pendingGraceActiveCount": 0,
-      "graceActiveCount": 0,
-      "lockedActiveCount": 0,
-      "billingChurnCount": 0,
-      "nonRenewalChurnCount": 0,
-      "refundChurnCount": 0,
-      "chargebackChurnCount": 0,
-      "earlyChurnCount": 0,
-      "otherChurnCount": 0
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 2
+    "Value": [
+        {
+            "date": "2022-04-18",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Windows and Doors",
+            "grossSalesBeforeTax": 3460656.260391250,
+            "totalActiveCount": 20211321,
+            "totalChurnCount": 5605,
+            "newCount": 3810366,
+            "renewCount": 12102044,
+            "goodStandingActiveCount": 17893664,
+            "pendingGraceActiveCount": 2255792,
+            "graceActiveCount": 61833,
+            "lockedActiveCount": 32,
+            "billingChurnCount": 4,
+            "nonRenewalChurnCount": 0,
+            "refundChurnCount": 0,
+            "chargebackChurnCount": 0,
+            "earlyChurnCount": 2717,
+            "otherChurnCount": 2884
+        },
+        {
+            "date": "2022-04-18",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Unknown",
+            "grossSalesBeforeTax": 2342.580615228,
+            "totalActiveCount": 50550,
+            "totalChurnCount": 7,
+            "newCount": 8312,
+            "renewCount": 31446,
+            "goodStandingActiveCount": 44047,
+            "pendingGraceActiveCount": 6503,
+            "graceActiveCount": 0,
+            "lockedActiveCount": 0,
+            "billingChurnCount": 0,
+            "nonRenewalChurnCount": 0,
+            "refundChurnCount": 0,
+            "chargebackChurnCount": 0,
+            "earlyChurnCount": 5,
+            "otherChurnCount": 2
+        }
+    ],
+    "TotalCount": 2
+}
+```
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/subscriptions?applicationId=9NBLGGGZ5QDR&startDate=12/19/2021&endDate=04/20/2022&top=10&skip=0&orderby=date&groupby=date,subscriptionProductName,applicationName,skuId,market,deviceType&aggregationLevel=week
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+{
+    "Value": [
+        {
+            "date": "2022-04-18",
+            "subscriptionProductName": "realms.subscription.monthly.10player.01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Windows and Doors",
+            "skuId": "0100",
+            "market": "IT",
+            "deviceType": "Console-Xbox One",
+            "grossSalesBeforeTax": 0.0,
+            "totalActiveCount": 0,
+            "totalChurnCount": 0,
+            "newCount": 2,
+            "renewCount": 0,
+            "goodStandingActiveCount": 0,
+            "pendingGraceActiveCount": 0,
+            "graceActiveCount": 0,
+            "lockedActiveCount": 0,
+            "billingChurnCount": 0,
+            "nonRenewalChurnCount": 0,
+            "refundChurnCount": 0,
+            "chargebackChurnCount": 0,
+            "earlyChurnCount": 0,
+            "otherChurnCount": 0
+        },
+        {
+            "date": "2022-04-18",
+            "subscriptionProductName": "realms.subscription.monthly.10player.01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Windows and Doors",
+            "skuId": "0100",
+            "market": "NO",
+            "deviceType": "Unknown",
+            "grossSalesBeforeTax": 0.0,
+            "totalActiveCount": 0,
+            "totalChurnCount": 0,
+            "newCount": 0,
+            "renewCount": 13,
+            "goodStandingActiveCount": 0,
+            "pendingGraceActiveCount": 0,
+            "graceActiveCount": 0,
+            "lockedActiveCount": 0,
+            "billingChurnCount": 0,
+            "nonRenewalChurnCount": 0,
+            "refundChurnCount": 0,
+            "chargebackChurnCount": 0,
+            "earlyChurnCount": 0,
+            "otherChurnCount": 0
+        },
+        {
+            "date": "2022-04-18",
+            "subscriptionProductName": "realms.subscription.monthly.10player.02",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Windows and Doors",
+            "skuId": "0100",
+            "market": "CA",
+            "deviceType": "Unknown",
+            "grossSalesBeforeTax": 0.0,
+            "totalActiveCount": 152,
+            "totalChurnCount": 0,
+            "newCount": 0,
+            "renewCount": 270,
+            "goodStandingActiveCount": 133,
+            "pendingGraceActiveCount": 19,
+            "graceActiveCount": 0,
+            "lockedActiveCount": 0,
+            "billingChurnCount": 0,
+            "nonRenewalChurnCount": 0,
+            "refundChurnCount": 0,
+            "chargebackChurnCount": 0,
+            "earlyChurnCount": 0,
+            "otherChurnCount": 0
+        }
+    ],
+    "TotalCount": 3
 }
 ```
 

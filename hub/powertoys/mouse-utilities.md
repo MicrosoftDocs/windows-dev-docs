@@ -11,9 +11,9 @@ no-loc: [PowerToys, Windows]
 
 Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows. Currently, the collection consists of:
 
-- [Find my mouse](Find-my-mouse)
-- [Mouse highlighter](Mouse-highlighter)
-- [Mouse pointer crosshairs](Mouse-pointer-crosshairs)
+- [Find my mouse](#find-my-mouse)
+- [Mouse highlighter](#mouse-highlighter)
+- [Mouse pointer crosshairs](#mouse-pointer-crosshairs)
 
 ## Find my mouse
 

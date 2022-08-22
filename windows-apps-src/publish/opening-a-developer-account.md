@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This article describes how to register for a Windows developer account in [Partner Center](https://partner.microsoft.com/dashboard).
 
 > [!NOTE]
-> When you sign up for a developer account, we'll use the email address you provide in your contact info to send messages related to your account. At times, these may include information about our programs. If you choose to [opt out](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing) of these informational emails, be aware that we'll still send you transactional messages (for example, to let you know that your app has passed certification or that a payment is on the way). These transactional emails are a necessary part of your account, and unless you close your account, you'll continue to receive them.
+> When you sign up for a developer account, we'll use the email address you provide in your contact info to send messages related to your account. At times, these may include information about our programs. If you choose to [opt out](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing) of these informational emails, be aware that we'll still send you transactional messages (for example, to let you know that a payment is on the way). These transactional emails are a necessary part of your account, and unless you close your account, you'll continue to receive them.
 
 ## The account signup process
 

@@ -90,28 +90,149 @@ Elements in the *Value* array contain the following values.
 | successfulInstallCount | number | The number of successful installs that occurred during the specified aggregation level.     |
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId=9WZDNCRFJB4P
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2016-02-01",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso Demo",
-      "packageVersion": "1.0.0.0",
-      "deviceType": "Phone",
-      "market": "IT",
-      "osVersion": "Windows Phone 8.1",
-      "successfulInstallCount": 1
-    }
-  ],
-  "@nextLink": "installs?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1&orderby=date desc",
-  "TotalCount":23012
+    "Value": [
+        {
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "successfulInstallCount": 100053
+        }
+    ],
+    "TotalCount": 1
 }
 ```
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/installs?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=06/19/2022&endDate=07/21/2022&top=10&skip=0&groupby=applicationName,date,deviceType,market,osVersion,packageVersion&orderby=date desc
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+{
+    "Value": [
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "AR",
+            "osVersion": "Windows 10",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "AU",
+            "osVersion": "Windows 10",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "BD",
+            "osVersion": "Windows 10",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "BG",
+            "osVersion": "Windows 11",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "BO",
+            "osVersion": "Windows 10",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "BR",
+            "osVersion": "Windows 10",
+            "successfulInstallCount": 6
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "BR",
+            "osVersion": "Windows 11",
+            "successfulInstallCount": 3
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "CA",
+            "osVersion": "Windows 11",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "CN",
+            "osVersion": "Windows 11",
+            "successfulInstallCount": 1
+        },
+        {
+            "date": "2022-07-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "packageVersion": "2013.1206.10.2936",
+            "deviceType": "PC",
+            "market": "MX",
+            "osVersion": "Windows 10",
+            "successfulInstallCount": 1
+        }
+    ],
+    "TotalCount": 10
+}
+```
+
 
 ## Related topics
 

@@ -79,37 +79,63 @@ Elements in the *Value* array contain the following values.
 | function | string  |  The name of the function that is called in this stack frame. This is available only if your app includes symbols for the executable or library.              |
 | offset     | string  |  The byte offset of the current instruction relative to the start of the function.      |
 
+> [!NOTE]
+> This method can only download the stack trace for an app error that occurred in the last 30 days.
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace?applicationId=9NBLGGGZ5QDR&cabId=1234567890123456789
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "level": "0",
-      "image": "Contoso.ContosoApp",
-      "function": "Contoso.ContosoApp.MainPage.DoWork",
-      "offset": "0x25C"
-    }
-    {
-      "level": "1",
-      "image": "Contoso.ContosoApp",
-      "function": "Contoso.ContosoApp.MainPage.Initialize",
-      "offset": "0x26"
-    }
-    {
-      "level": "2",
-      "image": "Contoso.ContosoApp",
-      "function": "Contoso.ContosoApp.Start",
-      "offset": "0x66"
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 3
+    "Value": [
+        {
+            "level": "0",
+            "image": "Microsoft.Contoso",
+            "function": "HANG_QUIESCE",
+            "offset": "0x0000000000000000",
+            "isBlamedFrame": true
+        },
+        {
+            "level": "1",
+            "image": "unknown.dll",
+            "function": "[.ecxr]",
+            "offset": "0x0000000000000000",
+            "isBlamedFrame": false
+        },
+        {
+            "level": "2",
+            "image": "ntdll.dll",
+            "function": "RtlpHpSegFree",
+            "offset": "0x0000000000000000",
+            "isBlamedFrame": false
+        },
+        {
+            "level": "3",
+            "image": "ntdll.dll",
+            "function": "RtlpHpFreeHeap",
+            "offset": "0x0000000000000000",
+            "isBlamedFrame": false
+        },
+        {
+            "level": "4",
+            "image": "ntdll.dll",
+            "function": "RtlpFreeHeapInternal",
+            "offset": "0x0000000000000000",
+            "isBlamedFrame": false
+        }
+    ],
+    "TotalCount": 5
 }
-
 ```
 
 ## Related topics

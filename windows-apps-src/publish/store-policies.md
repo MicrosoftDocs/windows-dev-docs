@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 06/13/2022
+ms.date: 08/01/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -552,16 +552,19 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 ### Microsoft Store complaint and appeal statistics for FY2022
 
+Numbers as reported on 8/1/2022
+
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
-| App and/or Account Enforcement Action Appeals |      1,978 |
-| Complaints about Technological Issues  |       117 |
+| App and/or Account Enforcement Action Appeals |      2,802 |
+| Complaints about Technological Issues  |       157 |
 | Regulatory Compliance Complaints    |       0 |
-| Questions about certification, policy, submission, and technical help                    |      1,683 |
-| Miscellaneous | 265 |
-| Total Issues                              |      4,043 |
-| Overturned decisions                        |       1,557 |
+| Questions about certification, policy, submission, and technical help                    |      4,051 |
+| Miscellaneous | 486 |
+| Total Issues                              |      7,496 |
+| Overturned decisions                        |       2,106 |
 | Average Processing Time                      | 2.9 days |
+
 
 ### See also
 

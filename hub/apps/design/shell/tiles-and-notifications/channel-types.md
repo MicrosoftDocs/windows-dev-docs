@@ -1,7 +1,7 @@
 ---
 description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
 title: Choosing the right push notification channel type
-ms.date: 09/24/2020
+ms.date: 08/03/2022
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ There are three types of push channels that can be used to send notifications to
 
 [Secondary tile channel](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates to a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
 
-[Alternate channel](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any Windows app, including those which aren't registered in the Store. 
+[Alternate channel](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - **No longer supported** - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any Windows app, including those which aren't registered in the Store. Again, note that the alternate channel is no longer supported.
 
 > [!NOTE]
 > No matter which push channel you use, once your app is running on the device, it will always be able to send local toast, tile, or badge notifications. It can send local notifications from the foreground app processes or from a background task. 

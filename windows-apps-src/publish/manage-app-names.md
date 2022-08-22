@@ -26,6 +26,9 @@ To reserve a new app name, find the text box in the **Reserve more names** secti
 
 For more info about reserving app names, and why a certain name may not be available, see [Create your app by reserving a name](create-your-app-by-reserving-a-name.md).
 
+> [!TIP]
+> If you want to reserve additional names for an app that is already published, click on the published app. You will land on the Application overview page of that app. Click on Update. On the next page, click on Manage app name from the left navigation pane. You can now reserve additional names for your already published app.
+
 ## Delete app names
 
 If you no longer want to use a name you've previously reserved, you can release it by deleting your reservation here. Make sure you're certain before you do so, since this means that the name will immediately become available for someone else to reserve and use.
