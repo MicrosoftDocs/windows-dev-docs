@@ -95,7 +95,7 @@ Now that you have your .NET MAUI app running on Windows and have configured the 
 
 3. Add the latest stable version of the **Azure.Identity** package to the project by clicking **Install**.
 
-4. Next, search for **Microosft.Graph**:
+4. Next, search for **Microsoft.Graph**:
 
 ![Microsoft.Graph package.](images/maui-graph-graphapi-package.png)
 
