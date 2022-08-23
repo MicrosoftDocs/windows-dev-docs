@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 ## Widget states
 
-When a widget is displayed on the Widget Board, there are several different states that it can be in, depending on the current state of the Widget Board and your app, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app while others are built into the Widgets Board. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.
+When a widget is displayed on the Widget Board, there are several different states that it can be in, depending on the current state of the Widget Board and your app, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app while others are built into the Widgets host. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.
 
 ### Default state
 
@@ -91,7 +91,7 @@ The configuration page can only be designed and displayed in medium and large wi
 
 ![A screenshot of a widget in the loading state](./images/widgets-loading-state.png)
 
-The loading state is what the widget displays when data is loading. The title bar area is the only are that does not have to greyscale placeholder UI- this is the only area that will render during this loading time. To give users a preview of what your widget looks like, use geometrical shapes in the content region. Try using fewer, bigger blocks/shapes. This state will be shown while Widgets Board is navigating to widgets’ endpoints. 
+The loading state is what the widget displays when data is loading. The title bar area is the only are that does not have to greyscale placeholder UI- this is the only area that will render during this loading time. To give users a preview of what your widget looks like, use geometrical shapes in the content region. Try using fewer, bigger blocks/shapes. This state will be shown while Widgets host is navigating to widgets’ endpoints. 
 
 Create loading states for all your widget sizes in both themes using TBD.
 
