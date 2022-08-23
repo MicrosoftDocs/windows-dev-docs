@@ -26,7 +26,7 @@ The following features have been added to the Windows Insider Preview builds, av
 
 ![A split button for selecting foreground color](images/split-button-rtb.png)
 
-* NavigationView now supports [Top navigation](/windows/apps/design/controls-and-patterns/navigationview), for cases in which your app has a smaller number of navigation options and require more space for your app's content.
+* NavigationView now supports [Top navigation](/windows/apps/design/controls/navigationview#top-navigation-pane), for cases in which your app has a smaller number of navigation options and require more space for your app's content.
 
 * TreeView has been enhanced to support [data binding, item templates, and drag and drop.](/windows/apps/design/controls/tree-view)
 
@@ -40,7 +40,7 @@ To learn more, see [Apply runtime fixes to an MSIX package by using the Package 
 
 ### Web API extensions
 
-A list of [legacy Microsoft API extensions](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) has been added to the Mozilla Developer Network documentation for cross-browser web development. These API extensions are unique to Internet Explorer or Microsoft Edge, and supplement existing information about compatibility and broswer support in the MDN web docs. Legacy Microsoft [CSS extensions](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) and [JavaScript extensions](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) are also available, and you can find rich web API information from MDN surfaced directly in [Visual Studio Code.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+A list of [legacy Microsoft API extensions](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) has been added to the Mozilla Developer Network documentation for cross-browser web development. These API extensions are unique to Internet Explorer or Microsoft Edge, and supplement existing information about compatibility and broswer support in the MDN web docs. Legacy Microsoft [CSS extensions](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) is also available, and you can find rich web API information from MDN surfaced directly in [Visual Studio Code.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
 ### C++/WinRT Code examples
 
