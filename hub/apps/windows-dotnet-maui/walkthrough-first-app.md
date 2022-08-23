@@ -13,7 +13,7 @@ Get hands-on with .NET MAUI by building your first cross-platform app on Windows
 
 ## Introduction
 
-In this tutorial, you'll learn how to create and run your first .NET MAUI app for Windows in Visual Studio 2022 17.3. We will add some [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) features from the [.NET Community Toolkit](/dotnet/communitytoolkit/introduction) to improve the design the default project.
+In this tutorial, you'll learn how to create and run your first .NET MAUI app for Windows in Visual Studio 2022 (17.3 or later). We will add some [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) features from the [.NET Community Toolkit](/dotnet/communitytoolkit/introduction) to improve the design the default project.
 
 ## Setting up the environment
 
