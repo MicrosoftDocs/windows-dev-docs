@@ -13,7 +13,7 @@ Get hands-on with .NET MAUI by building a cross-platform app on Windows that lev
 
 ## Introduction
 
-In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio 2022 17.3 that loads some user data from [Microsoft Graph](/graph/). We will [authenticate](/graph/authenticationmethods-get-started) a Microsoft account with [Azure Identity](/graph/azuread-identity-access-management-concept-overview). The identity information, in the form of an MSAL token, will be used to authorize the Graph SDK call and get the display name for the authenticated user.
+In this tutorial, you'll learn how to create a .NET MAUI app for Windows in Visual Studio 2022 (17.3 or later) that loads some user data from [Microsoft Graph](/graph/). We will [authenticate](/graph/authenticationmethods-get-started) a Microsoft account with [Azure Identity](/graph/azuread-identity-access-management-concept-overview). The identity information, in the form of an MSAL token, will be used to authorize the Graph SDK call and get the display name for the authenticated user.
 
 ## Setting up the environment
 
