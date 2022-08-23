@@ -18,15 +18,15 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Progressive Web Apps on Windows
 
-[Progressive Web Apps (PWAs)](https://developer.microsoft.com/windows/pwa) are simply web apps that are [progressively enhanced](https://www.wikipedia.org/wiki/Progressive_enhancement) with native app-like features on supporting platforms and browser engines, such as launch-from-homescreen installation, offline support, and push notifications. On Windows 10 with the Microsoft Edge (EdgeHTML) engine, PWAs enjoy the added advantage of running [independently of the browser window as UWP apps.](/microsoft-edge/progressive-web-apps/windows-features)
+[Progressive Web Apps (PWAs)](https://developer.microsoft.com/windows/pwa) are simply web apps that are [progressively enhanced](https://www.wikipedia.org/wiki/Progressive_enhancement) with native app-like features on supporting platforms and browser engines, such as launch-from-homescreen installation, offline support, and push notifications. On Windows 10 with the Microsoft Edge (EdgeHTML) engine, PWAs enjoy the added advantage of running [independently of the browser window as UWP apps.](/microsoft-edge/progressive-web-apps/)
 
 ![An image of PWAs in action](images/progressive-web-apps.jpg)
 
 Check out our PWA guides to:
 
-* [Build a simple web app as a PWA](/microsoft-edge/progressive-web-apps/get-started)
+* [Build a simple web app as a PWA](/microsoft-edge/progressive-web-apps/)
 * [Enhance your PWA with the Windows Runtime](/microsoft-edge/progressive-web-apps/windows-features)
-* [Publish your PWA to the Microsoft Store](/microsoft-edge/progressive-web-apps/microsoft-store)
+* [Publish your PWA to the Microsoft Store](/windows/uwp/publish/app-submissions)
 
 ### Notepad
 
