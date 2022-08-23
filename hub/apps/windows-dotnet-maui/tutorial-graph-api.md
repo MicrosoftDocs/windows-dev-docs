@@ -24,7 +24,7 @@ If you haven't already set up your environment for .NET MAUI development, please
 > [!NOTE]
 > If you are already familiar with setting up a .NET MAUI project, you can skip to the [Register your client in Azure](#register-your-client-in-azure) section.
 
-1. Launch Visual Studio 2022 17.3, and in the start window click **Create a new project** to create a new project:
+1. Launch Visual Studio, and in the start window click **Create a new project** to create a new project:
 
 ![Create a new project.](images/maui-graph-new-project.png)
 
