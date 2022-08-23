@@ -401,15 +401,15 @@ You don't need to provide an implementation for the **UseCustomColorCheckBox** p
 
 ### Binding to Boolean
 
-You might do this in a diagnostic mode.
+You might do this in a diagnostic mode:
 
-\<syntaxhighlight lang="xml">
-\<TextBlock Text="{Binding CanPair}"/>
-\</syntaxhighlight>
+```xaml
+<TextBlock Text="{Binding CanPair}"/>
+```
 
-This shows `true` or `false` in C++/CX, but shows **Windows.Foundation.IReference`1\<Boolean>** in C++/WinRT.
+That displays `true` or `false` in C++/CX; but it displays ```Windows.Foundation.IReference`1<Boolean>``` in C++/WinRT.
 
-Use `x:Bind` when binding to a Boolean.
+Instead, use `x:Bind` when binding to a Boolean.
 
 ```xaml
 <TextBlock Text="{x:Bind CanPair}"/>
