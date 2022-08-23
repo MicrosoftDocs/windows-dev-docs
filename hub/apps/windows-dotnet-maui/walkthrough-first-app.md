@@ -21,7 +21,7 @@ If you haven't already set up your environment for .NET MAUI development, please
 
 ## Creating the .NET MAUI project
 
-1. Launch Visual Studio 2022 17.3, and in the start window click **Create a new project** to create a new project:
+1. Launch Visual Studio, and in the start window click **Create a new project** to create a new project:
 
 ![Create a new project.](images/hello-maui-new-project.png)
 
