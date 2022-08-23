@@ -518,11 +518,11 @@ IsolatedWindowsEnvironmentStartProcessStatus <br> IsolatedWindowsEnvironmentTele
 
 IsolatedWindowsEnvironmentTelemetryParameters.CorrelationId <br> IsolatedWindowsHostMessenger <br> IsolatedWindowsHostMessenger.GetFileId
 
-#### [IsolatedWindowsHostMessenger](/uwp/api/windows.security.isolation.messagereceivedcallback)
+#### [IsolatedWindowsHostMessenger](/uwp/api/windows.security.isolation.isolatedwindowshostmessenger)
 
 IsolatedWindowsHostMessenger.PostMessageToReceiver
 
-#### [MessageReceivedCallback](/uwp/api/windows.security.isolation.windows)
+#### [MessageReceivedCallback](/uwp/api/windows.security.isolation.messagereceivedcallback)
 
 MessageReceivedCallback
 
