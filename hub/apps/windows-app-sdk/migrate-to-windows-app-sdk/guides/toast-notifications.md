@@ -1,5 +1,5 @@
 ---
-title: Toast notifications from UWP to WinUI 3 migration
+title: App notifications from UWP to WinUI 3 migration
 description: This topic contains migration guidance in the toast notifications feature area.
 ms.topic: article
 ms.date: 12/14/2021
@@ -9,9 +9,11 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Toast notifications from UWP to WinUI 3 migration
+# App notifications from UWP to WinUI 3 migration
 
-The only difference when migrating toast notification code from UWP to WinUI 3 is in handling the activation of notifications. Sending and managing toast notifications remains exactly the same.
+The only difference when migrating app notification code from UWP to WinUI 3 is in handling the activation of notifications. Sending and managing toast notifications remains exactly the same.
+
+> [!NOTE] The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 ## Activation differences
 
