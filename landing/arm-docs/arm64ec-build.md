@@ -18,8 +18,12 @@ To get started building your app or project using [Arm64EC](./arm64ec.md), you w
 - The latest [Windows 11 SDK build](https://developer.microsoft.com/windows/downloads/windows-sdk/). If using the Windows 11 SDK version 22000, the updated version on July 29, 2022 includes key fixes for building Arm64EC apps.
 - Visual Studio 2022 version 17.3 or later.
 - Arm64EC tools installed with the Visual Studio Installer.
-
+# To improve comprehension, reorder the list in the order of installation.
+# Visual Studion
+# Windows 11 SDK
+# Arm64ED tools.
 In the Visual Studio Installer, you can add the Arm64EC tools by searching under **Individual components** and selecting the **MSVC v143 - VS 2022 C++ ARM64EC build tools** checkbox.
+# Put this note in the same line as the Arm64EC tool item so the reader doesn't have to hunt for how to install these tools. 
 
   ![Visual Studio Installer Arm64EC checkbox screenshot](./images/arm64ec-vs-installer.png)
 
@@ -28,6 +32,8 @@ Once you have installed the prerequisites and tools, you can target Arm64EC in y
 ## MSBuild Projects
 
 1. With the tools and SDK installed, create a new C++ project or open an existing one.
+# Delete, "With the tools and SDK installed," You already specified in the prerequisites that the tools and SDK 
+# are required. The phrase is redundant.
 
     > [!NOTE]
     > If your project is using a pre-Windows 11 SDK or a version of MSVC older than VS 17.3, you'll need to retarget the solution to use the latest version of each.
