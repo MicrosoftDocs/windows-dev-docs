@@ -15,7 +15,9 @@ To get started building your app or project using [Arm64EC](./arm64ec.md), you w
 
 ## Prerequisites
 
-- The latest [Windows 11 SDK build](https://developer.microsoft.com/windows/downloads/windows-sdk/). If using the Windows 11 SDK version 22000, the updated version on July 29, 2022 includes key fixes for building Arm64EC apps.
+- The latest [Windows 11 SDK build](https://developer.microsoft.com/windows/downloads/windows-sdk/). ~~If using the Windows 11 SDK version 22000, the updated version on July 29, 2022 includes key fixes for building Arm64EC apps.~~ 
+# You don't need to outline the benefits of the latest SDK build. What if the latest build doesn't contain key fixes? You have an additional maintenace issue
+# if the strikethrough text.
 - Visual Studio 2022 version 17.3 or later.
 - Arm64EC tools installed with the Visual Studio Installer.
 
@@ -25,12 +27,25 @@ In the Visual Studio Installer, you can add the Arm64EC tools by searching under
 
 Once you have installed the prerequisites and tools, you can target Arm64EC in your MSBuild and CMake projects.
 
+# Really helpful if you provide an outline of what you are going to accomplish in this Getting Started so the reader has some idea of what to do and the 
+# end result.
+
 ## MSBuild Projects
 
-1. With the tools and SDK installed, create a new C++ project or open an existing one.
-
-    > [!NOTE]
-    > If your project is using a pre-Windows 11 SDK or a version of MSVC older than VS 17.3, you'll need to retarget the solution to use the latest version of each.
+1. ~~With the tools and SDK installed, c~~Create a new C++ project.~~or open an existing one.~~
+# Best to start with a new project to improve the chances of success. If you have the user open an existing project,
+# the existing project might not compile due to errors that have nothing to do with the Arm 64 tools. Or the user
+# might find a bug. Start with the simplest configuration.
+# When I started Create a new project, I had the following choices:
+# - Empty project
+# - Concole App
+# - CMake Project
+# - Windows Desktop Wizard
+# - Windows Desktop Application
+# - Blank Solution
+# Which one should I choose? Provide specific step-by-step insturctions. 
+    ~~> [!NOTE]~~
+    ~~> If your project is using a pre-Windows 11 SDK or a version of MSVC older than VS 17.3, you'll need to retarget the solution to use the latest version of each.~~
 
 2. To add the Arm64EC platform:
     - In the **Build** menu, select **Configuration Manager**.
@@ -41,7 +56,8 @@ Once you have installed the prerequisites and tools, you can target Arm64EC in y
 
     You can choose to leave parts of the solution as x64 as needed. However, the more code built as Arm64EC, the more code that will run with native performance on Windows 11 on Arm. For any external dependencies, ensure that your project links against the x64 or Arm64EC versions of those projects.
 
-3. With the new solution platform in place and selected, select **Build** in Visual Studio to start building Arm64EC binaries.  
+3. With the new solution platform in place and selected, select **Build** in Visual Studio to start building Arm64EC binaries.
+# The Build menu has several items. Which item should I click?
 
 By design, not all projects in an Arm64EC solution need to be targeting Arm64EC as they can target x64 instead. For any such projects that you want to remain as x64, ensure that you configure those projects in the configuration manager to target x64 under the ARM64EC solution build.
 
