@@ -1,7 +1,7 @@
 ---
 title: search Command
 description: Queries the sources for available applications that can be installed
-ms.date: 04/27/2022
+ms.date: 08/24/2022
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -34,7 +34,18 @@ The following arguments are available.
 
 ## Show all
 
-If the search command includes no filters or options, it will display all available applications in the default source. You can also search for all applications in another source if you pass in just the **source** option.
+To show all of the winget packages available, use the command:
+
+`winget search --query ""`
+
+In PowerShell, you will need to escape the quotes, so this command becomes:
+
+```powershell
+winget search -q `"`" 
+```
+
+> [!NOTE]
+> This is a change from previous versions of winget which supported `winget search` with no filters or options displaying all available packages. You can also search for all applications in another source by passing in the **source** option.
 
 ## Search strings
 
