@@ -6881,9 +6881,82 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/porting/ios-to-uwp-root.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/selecting-an-approach-to-ios-and-uwp-app-development.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/android-ios-uwp-map.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-animation.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-choosing-a-programming-language.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-common-controls.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-creating-a-project.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-getting-around-in-visual-studio.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-navigation.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-what-next.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/getting-started-with-uwp-for-ios-developers.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/porting/setting-up-your-mac-with-windows-10.md",
+      "redirect_url": "windows-apps-src/porting/overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/windows-app-sdk/notifications/push/push-quickstart.md",
       "redirect_url": "/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart",
       "redirect_document_id": true
     }
   ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
