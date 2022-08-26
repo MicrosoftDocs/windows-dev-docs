@@ -299,7 +299,7 @@ MainPage::MainPage()
 }
 ```
 
-The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.OneLiner** property.
+The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.OneLineSummary** property.
 
 ```xml
 <Page x:Class="Quickstart.MainPage" ... >
