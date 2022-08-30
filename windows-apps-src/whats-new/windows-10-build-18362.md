@@ -75,7 +75,7 @@ Microsoft Learn provides new hands-on learning and training opportunities to Mic
 
 * If you're interested in Web development, check out [Develop web applications with Visual Studio Code](/learn/modules/develop-web-apps-with-vs-code/) or [Build a simple website](/learn/modules/build-simple-website/).
 
-* Alternately, feel free to browse [all the Windows developer modules on Microsoft Learn](/learn/browse/?products=windows&resource_type=module).
+* Alternately, feel free to browse all the [Learn modules for Windows development](/learn/browse/?products=windows&resource_type=module).
 
 ## Videos
 
