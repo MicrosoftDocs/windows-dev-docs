@@ -129,7 +129,11 @@ The Windows System Commands plugin provides a set of system level actions that c
 
 _*) This command may take some time to provide the results._
 
-### Program parameters
+### Program plugin
+
+The **Program** plugin can launch software applications (such as Win32 or packaged programs). The plugin works by scanning common install locations, like the start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as `.lnk` or `.url`). On occasion, a program may not be found by the program plugin scan and you may want to manually create a shortcut in the directory containing the program you want to access.
+
+#### Program parameters
 
 The Program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 

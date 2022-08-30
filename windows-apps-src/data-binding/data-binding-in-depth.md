@@ -1,7 +1,8 @@
 ---
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Data binding in depth
-description: Learn how to use data binding in Universal Windows Platform (UWP) applications
+description: Learn how to use data binding in XAML applications
+
 ms.date: 08/08/2022
 ms.topic: article
 keywords: windows 10, uwp
@@ -22,7 +23,7 @@ dev_langs:
 > [!NOTE]
 > This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-quickstart.md).
 
-This topic is about data binding in Universal Windows Platform (UWP) applications. The APIs discussed here reside in the [**Windows.UI.Xaml.Data** namespace](/uwp/api/windows.ui.xaml.data).
+This topic is about data binding for the APIs that reside in the [**Windows.UI.Xaml.Data** namespace](/uwp/api/windows.ui.xaml.data).
 
 Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
 

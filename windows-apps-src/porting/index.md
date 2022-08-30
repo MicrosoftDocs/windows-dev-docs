@@ -20,13 +20,10 @@ This porting guide explains the differences between your current app's technolog
 |-------|-------------|
 | [Move from desktop to UWP](desktop-to-uwp-migrate.md) | Choose one of several options to bring UWP experiences into your Win32 and .NET desktop applications. |
 | [Move from Windows Runtime 8.x to UWP](w8x-to-uwp-root.md) | If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10. With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device. |
-| [Windows apps concept mapping for Android and iOS developers](android-ios-uwp-map.md) | If you're a developer with Android or iOS skills or code, and you want to make the move to Windows 10 and the Universal Windows Platform, then this resource has all you need to map platform features—and your knowledge—between the three platforms. |
-| [Move from iOS to UWP](ios-to-uwp-root.md) | Are you an iOS developer, wondering how to make the move to Windows 10 and the UWP? It needn't be as scary as you think. We've got the tools, techniques, and info you need to make great apps that work as well on Windows as they do on your iOS devices: maybe better! |
 | [Move from Windows Phone Silverlight to UWP](wpsl-to-uwp-root.md) | If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10. With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device. |
 | [Convert your web app to a PWA](/microsoft-edge/progressive-web-apps) | You can now convert your web app to a Progressive Web App (PWA) will work on any platform, including UWP! The [PWA Builder tool](https://www.pwabuilder.com) will generate the necessary manifest for you. This replaces the Hosted Web Apps (HWA) bridge. |
 
 ## Related topics
 
 * [Move from WPF and Silverlight to WinRT](/previous-versions/windows/apps/dn263237(v=win.10))
-* [Move from Android to WinRT](/previous-versions/windows/apps/jj945421(v=win.10))
 * [Move from the web to WinRT](/previous-versions/windows/apps/hh465151(v=win.10))

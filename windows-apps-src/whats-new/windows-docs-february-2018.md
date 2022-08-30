@@ -43,7 +43,7 @@ Create and publish subscription add-ons to sell digital products in your apps an
 
 ### Design basics
 
-Our [introduction to UWP app design](/windows/apps/design/basics/design-and-ui-intro) has been enhanced with a slew of new visual examples. The overview of the universal design features in every UWP now highlights how you can put the capabilities of the Fluent Design System into action.
+Our [introduction to UWP app design](/windows/apps/design/basics/) has been enhanced with a slew of new visual examples. The overview of the universal design features in every UWP now highlights how you can put the capabilities of the Fluent Design System into action.
 
 We've added a showcase of common page patterns to our [Content design basics](/windows/apps/design/basics/content-basics), providing a gallery of examples of how your app can display diferent types of content.
 

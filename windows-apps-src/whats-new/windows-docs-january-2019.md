@@ -35,10 +35,6 @@ Windows 10 version 1809 improved support for [MSIX modification packages](/windo
 
 The WPF, Windows Forms, and WinUI UX frameworks are now available for open-source contributions on GitHub. For more information and links, see the [building Windows apps blog](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
 
-### Progressive Web Apps for Xbox
-
-With [Progressive Web Apps for Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations), you can extend a web application and make it available as an Xbox One app via Microsoft Store while still continuing to use your existing frameworks, CDN and server backend. For the most part, you can package your PWA for Xbox One in the same way you would for Windows, however, there are several key differences this guide will walk you through.
-
 ### Windows Machine learning
 
 We've restructured [the landing page for WinML APIs](/windows/ai/api-reference), and added new documentation for WinML custom operator and native APIs.

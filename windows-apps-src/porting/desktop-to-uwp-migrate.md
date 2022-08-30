@@ -215,7 +215,10 @@ To get started with UWP, see [What's a UWP app](../get-started/universal-applica
 
 ### Reach iOS and Android devices
 
-You can reach Android and iOS devices by adding Xamarin projects.  
+You can reach Android and iOS devices by adding Xamarin projects.
+
+> [!NOTE]
+>For new cross-platform projects, please consider using .NET MAUI.
 
 ![An image that shows an Android device and a i O S device displaying Xamarin apps.](images/desktop-to-uwp/xamarin-apps.png)
 
