@@ -44,7 +44,7 @@ productDirectory:
   title: Dive into developing apps for Windows
   items:
   - title: Get started
-    imageSrc: https://docs.microsoft.com/media/common/i_get-started.svg
+    imageSrc: /media/common/i_get-started.svg
     links:
       - url: ./get-started/index.md
         text: Overview of app development options
@@ -55,7 +55,7 @@ productDirectory:
       - url: ./get-started/samples.md
         text: Sample apps for Windows
   - title: Design
-    imageSrc: https://docs.microsoft.com/media/common/i_design.svg
+    imageSrc: /media/common/i_design.svg
     links:
       - url: ./design/index.md
         text: Design and code your app UI
@@ -66,7 +66,7 @@ productDirectory:
       - url: ./design/downloads/index.md
         text: Design toolkits
   - title: Develop
-    imageSrc: https://docs.microsoft.com/media/common/i_code-samples.svg
+    imageSrc: /media/common/i_code-samples.svg
     links:
       - url: ./develop/index.md
         text: Windows development features
@@ -77,7 +77,7 @@ productDirectory:
       - url: ./desktop/modernize/index.md
         text: Modernize your desktop apps
   - title: Deploy
-    imageSrc: https://docs.microsoft.com/media/common/i_deploy.svg
+    imageSrc: /media/common/i_deploy.svg
     links:
       - url: ./package-and-deploy/index.md
         text: Deployment architecture
@@ -92,13 +92,13 @@ tools:
   title: Develop for other Windows device platforms
   items:
     - title: Mixed Reality and HoloLens
-      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-5.svg
+      imageSrc: /media/hubs/windows/win_developer-5.svg
       url: /windows/mixed-reality/
     - title: Windows for IoT
-      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-4.svg
+      imageSrc: /media/hubs/windows/win_developer-4.svg
       url: /windows/iot-core/
     - title: Xbox One
-      imageSrc: https://docs.microsoft.com/media/hubs/windows/win_developer-3.svg
+      imageSrc: /media/hubs/windows/win_developer-3.svg
       url: https://www.xbox.com/developers
 
 additionalContent:

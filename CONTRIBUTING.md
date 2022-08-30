@@ -14,7 +14,7 @@ If you are **not** a Microsoft employee, you can contribute through the [public 
 
 If you're already in the public content repository, start by navigating to the file you want to change. From there, select the pencil icon above the displayed content to begin editing.
 
-Alternately, if you're viewing a page in [docs.microsoft.com](https://docs.microsoft.com), you can select the **Edit** button on the upper-right portion of the page. This will redirect you to the associated source file in the repository.
+Alternately, if you're viewing a published article in [Microsoft Docs](https://docs.microsoft.com), you can select the **Edit** button on the upper-right portion of the page. This will redirect you to the associated source file in the repository.
 
 When you begin editing, GitHub automatically forks the official repo into your personal GitHub account, where you can make your changes. When you're done, submit a pull request back to the **docs** branch.
 
