@@ -1,7 +1,7 @@
 ---
 title: PowerToys Image to Text utility for Windows
 description: Image to Text is a convenient way to copy text from anywhere on your screen.
-ms.date: 04/27/2022
+ms.date: 08/30/2022
 ms.topic: article
 no-loc: [PowerToys, Windows, Image to Text, Win]
 ---
