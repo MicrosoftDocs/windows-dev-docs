@@ -92,6 +92,28 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Image to Text
+
+:::row:::
+    :::column:::
+        [![Image to Text screenshot.](../images/pt-image-to-text.png)](image-to-text.md)
+    :::column-end:::
+    :::column span="2":::
+        [Image to Text](image-to-text.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+    :::column-end:::
+:::row-end:::
+
+### Keyboard Accent
+
+:::row:::
+    :::column:::
+        [![Keyboard Accent screenshot.](../images/pt-keyboard-accent.png)](keyboard-accent.md)
+    :::column-end:::
+    :::column span="2":::
+        [Keyboard Accent](keyboard-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+    :::column-end:::
+:::row-end:::
+
 ### Keyboard Manager
 
 :::row:::
@@ -133,6 +155,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
+    :::column-end:::
+:::row-end:::
+
+### Screen Ruler
+
+:::row:::
+    :::column:::
+        [![Screen Ruler screenshot.](../images/pt-screen-ruler.png)](screen-ruler.md)
+    :::column-end:::
+    :::column span="2":::
+        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> to activate. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
