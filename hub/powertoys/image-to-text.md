@@ -12,11 +12,11 @@ Image to Text is a convenient way to copy text from anywhere on your screen. Thi
 
 ## How to activate
 
-With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>), you'll see an overlay on the screen. Click and hold your primary mouse button and drag to activate your capture.  The text will be saved to your clipboard
+With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>), you'll see an overlay on the screen. Click and hold your primary mouse button and drag to activate your capture. The text will be saved to your clipboard.
 
 ## Adjust while trying to capture
 
-By holding <kbd>shift<kbd>, you will change from adjusting the capture region's size to location. When you release <kbd>shift<kbd>, you will be able to resize again.
+By holding <kbd>shift<kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>shift<kbd>, you will be able to resize again.
 
 ## Things to note
 
