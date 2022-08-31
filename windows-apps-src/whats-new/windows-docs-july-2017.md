@@ -20,7 +20,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, these new effects use depth, perspective, and movement to help users focus on important UI elements.
 
-[Acrylic material](/windows/apps/design/style/acrylic) is a type of brush that creates transparent textures. 
+[Acrylic material](/windows/apps/design/style/acrylic) is a type of brush that creates transparent textures.
 
 ![Acrylic in light theme](images/Acrylic_DarkTheme_Base.png)
 
@@ -28,7 +28,7 @@ The [Parallax effect](/windows/apps/design/motion/parallax) adds three-dimension
 
 ![An example of parallax with a list and background image](images/_Parallax_v2.gif)
 
-[Reveal](/windows/apps/design/style/index) highlights important elements of your app. 
+[Reveal](/windows/apps/design/style/index) highlights important elements of your app.
 
 ![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
@@ -64,7 +64,7 @@ The following new features are now available:
 
 * The [Microsoft Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) now provides a method you can use to [download the CAB file for an error in your app](../monetize/download-the-cab-file-for-an-error-in-your-app.md).
 
-* [Targeted offers](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization. 
+* [Targeted offers](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.
 
 * Your app's Store listing can now include [video trailers](../publish/app-screenshots-and-images.md#trailers).
 
@@ -94,15 +94,15 @@ Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Bui
 
 ### Media Playback
 
-New sections have been added to the basic media playback article, [Play audio and video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). The section [Play spherical video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) shows you how to playback spherically encodeded video, including adjusting the field of view and view orientation for supported formats. The section [Use MediaPlayer in frame server mode](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) shows you how to copy frames from media played back with [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) to a Direct3D surface. This enables scenarios such as applying real-time effects with pixel shaders. The example code shows a quick implementation of a blur effect for video playback using Win2D.
+New sections have been added to the basic media playback article, [Play audio and video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). The section [Play spherical video with MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) shows you how to playback spherically encoded video, including adjusting the field of view and view orientation for supported formats. The section [Use MediaPlayer in frame server mode](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) shows you how to copy frames from media played back with [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) to a Direct3D surface. This enables scenarios such as applying real-time effects with pixel shaders. The example code shows a quick implementation of a blur effect for video playback using Win2D.
 
 ### Media Capture
 
-The article [Process media frames with MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) has been updated to show the usage of the new [Multi​Source​Media​Frame​Reader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) class, which allows you to obtain time-correlated frames from multiple media sources. This is useful if you need to process frames from different sources, such as a depth camera and an color camera, and you need to make sure that the frames from each source were captured close to each other in time. For more information, see [Use MultiSourceMediaFrameReader to get time-corellated frames from multiple sources](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
+The article [Process media frames with MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) has been updated to show the usage of the new [Multi​Source​Media​Frame​Reader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) class, which allows you to obtain time-correlated frames from multiple media sources. This is useful if you need to process frames from different sources, such as a depth camera and an color camera, and you need to make sure that the frames from each source were captured close to each other in time. For more information, see [Use MultiSourceMediaFrameReader to get time-correlated frames from multiple sources](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
 
 ### Scoped Search
 
-A "UWP" scope has been added to the [UWP conceptual](../get-started/universal-application-platform-guide.md) and [API reference](/uwp/api/) documentation on docs.microsoft.com. Unless this scope is deactivated, searches made from within these areas will return UWP docs only.
+A "UWP" scope has been added to the [UWP conceptual](../get-started/universal-application-platform-guide.md) and [API reference](/uwp/api/) documentation on Microsoft Docs. Unless this scope is deactivated, searches made from within these areas will return UWP docs only.
 
 ![Scoped Search](images/scoped-search.png)
 
@@ -116,7 +116,7 @@ Test your Windows app to ensure that it will operate correctly on devices that r
 
 [A mini-app sample that demonstrates audio, ink, and OneDrive data roaming scenarios](https://github.com/Microsoft/Windows-appsample-annotated-audio). This sample records audio while allowing the synchronized capture of ink annotations so that you can later recall what was being discussed at the time a note was taken.
 
-![Screenshot of annoted audio sample](images/Playback.png)  
+![Screenshot of annotated audio sample](images/Playback.png)  
 
 ### Shopping app sample
 
@@ -130,8 +130,6 @@ Test your Windows app to ensure that it will operate correctly on devices that r
 
 Building accessibility into your apps opens them up to a much wider audience. Watch the video, then learn more about [developing apps for accessibility](https://developer.microsoft.com/windows/accessible-apps).
 
-
-
 ### Windows 10 IoT Core
 
-With Windows 10 IoT Core and the Universal Windows Platform, you can quickly protoype and build projects with vision and component connections, such as this Pet Recognition Door. Watch the video, then learn more about how to [get started with Windows 10 IoT Core](https://developer.microsoft.com/windows/iot).
+With Windows 10 IoT Core and the Universal Windows Platform, you can quickly prototype and build projects with vision and component connections, such as this Pet Recognition Door. Watch the video, then learn more about how to [get started with Windows 10 IoT Core](https://developer.microsoft.com/windows/iot).
