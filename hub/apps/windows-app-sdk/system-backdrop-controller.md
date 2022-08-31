@@ -7,6 +7,9 @@ keywords: windows, windows app development, Windows App SDK, Mica
 ms.author: gabbybilka
 author: gabbybilka
 ms.localizationpriority: medium
+dev_langs: 
+- csharp
+- cppwinrt
 ---
 
 # Apply Mica or Acrylic materials in desktop apps for Windows 11
