@@ -1,14 +1,14 @@
 ---
-title: PowerToys Keyboard Accent utility for Windows
-description: Keyboard Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+title: PowerToys Quick Accent utility for Windows
+description: Quick Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
 ms.date: 08/30/2022
 ms.topic: article
 no-loc: [PowerToys, Windows, Keyboard Accent, Win]
 ---
 
-# Keyboard Accent utility
+# Quick Accent utility
 
-Keyboard Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+Quick Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
 
 Please note, this utility is off by default.
 
