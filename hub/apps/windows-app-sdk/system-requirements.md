@@ -39,13 +39,13 @@ The [Windows App SDK](index.md) is a set of developer tools that represent the n
 
 The Windows App SDK has these system requirements:
 
-- Windows 10, version 1809 (build 17763) or later
+- Windows 10, version 1809 (build 17763) or later.
 
-- Visual Studio 2019 version 16.9 or later with the required components (see [Required workloads and components](https://docs.microsoft.com/windows/apps/windows-app-sdk/set-up-your-development-environment?tabs=vs-2022-17-1-a%2Cvs-2022-17-1-b#required-workloads-and-components))
+- Visual Studio 2019 version 16.9 or later with the required components. For more information, see [Required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment?tabs=vs-2022-17-1-a%2Cvs-2022-17-1-b#required-workloads-and-components)
 
-- Windows SDK version 2004 (build 19041) or later, as included with Visual Studio 2019 and Visual Studio 2022 by default
+- Windows SDK version 2004 (build 19041) or later, as included with Visual Studio 2019 and Visual Studio 2022 by default.
 
-- Building .NET apps also requires .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/download)
+- Building .NET apps also requires .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/download).
 
 ### Visual Studio support for WinUI 3 tools
 

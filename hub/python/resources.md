@@ -28,7 +28,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Upcoming Python Events](https://www.python.org/events/python-events): Connect with other Pythonistas and Pythoneers.
 
-- [Books, websites, tutorials on python.org ](https://wiki.python.org/moin/BeginnersGuide/Programmers): Another list of resources for learning Python provided by the user community.
+- [Books, websites, tutorials on python.org](https://wiki.python.org/moin/BeginnersGuide/Programmers): Another list of resources for learning Python provided by the user community.
 
 - [FAQs from Python.org](https://docs.python.org/3/faq/): Covering everything from 'What is Python?' to ['Is there an equivalent of C's "?:" ternary operator?'](https://docs.python.org/3/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator).
 
