@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 06/03/2022
+ms.date: 07/08/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -76,7 +76,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Time and date| `(` | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
-| URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to https://docs.microsoft.com.<br />`mailto:` and `ms-settings:` links are supported. |
+| URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to Microsoft Docs.<br />`mailto:` and `ms-settings:` links are supported. |
 | Visual Studio Code | `{` | `{ powertoys` to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths. |
 | Web search | `??` | `??` to launch your default browser's search page.<br />`?? What is the answer to life` to search with your default browser's search engine. |
 | Windows settings | `$` | `$ Add/Remove Programs` to launch the Windows settings page for managing installed programs.<br />`$ Device:` to list all settings with 'device' in their area/category name.<br />`$ control>system>admin` shows all settings of the path 'Control Panel > System and Security > Administrative Tools'. |
@@ -120,7 +120,11 @@ The Windows System Commands plugin provides a set of system level actions that c
 
 _*) This command may take some time to provide the results._
 
-### Program parameters
+### Program plugin
+
+The **Program** plugin can launch software applications (such as Win32 or packaged programs). The plugin works by scanning common install locations, like the start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as `.lnk` or `.url`). On occasion, a program may not be found by the program plugin scan and you may want to manually create a shortcut in the directory containing the program you want to access.
+
+#### Program parameters
 
 The Program plugin allows for program arguments to be added when launching an application. The program arguments must follow the expected format as defined by the program's command line interface.
 

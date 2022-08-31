@@ -1305,32 +1305,6 @@
           href: ../porting/w8x-to-uwp-case-study-bookstore2.md
         - name: "Case study: QuizGame"
           href: ../porting/w8x-to-uwp-case-study-quizgame.md
-    - name: Windows apps concept mapping for Android and iOS developers
-      href: ../porting/android-ios-uwp-map.md
-    - name: Move from iOS to UWP
-      href: ../porting/ios-to-uwp-root.md
-      items:
-        - name: Selecting an approach to iOS and UWP app development
-          href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
-        - name: Getting started with UWP for iOS developers
-          href: ../porting/getting-started-with-uwp-for-ios-developers.md
-          items:
-            - name: "Getting started: Creating a project"
-              href: ../porting/getting-started-creating-a-project.md
-            - name: "Getting started: Choosing a programming language"
-              href: ../porting/getting-started-choosing-a-programming-language.md
-            - name: "Getting started: Getting around in Visual Studio"
-              href: ../porting/getting-started-getting-around-in-visual-studio.md
-            - name: "Getting started: Common controls"
-              href: ../porting/getting-started-common-controls.md
-            - name: "Getting started: Navigation"
-              href: ../porting/getting-started-navigation.md
-            - name: "Getting started: Animation"
-              href: ../porting/getting-started-animation.md
-            - name: "Getting started: What next?"
-              href: ../porting/getting-started-what-next.md
-        - name: Setting up your Mac with Windows
-          href: ../porting/setting-up-your-mac-with-windows-10.md
     - name: Move from Windows Phone Silverlight to UWP
       href: ../porting/wpsl-to-uwp-root.md
       items:

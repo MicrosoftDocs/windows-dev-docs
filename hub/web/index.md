@@ -26,7 +26,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Download WebView 2](https://developer.microsoft.com/microsoft-edge/webview2/#download-section)
     :::column-end:::
     :::column:::
-        [![Microsoft Edge DevTools icon](../images/microsoftedge-devtools.png)](/microsoft-edge/devtools-guide-chromium/index.md)<br>
+        [![Microsoft Edge DevTools icon](../images/microsoftedge-devtools.png)](/microsoft-edge/devtools-guide-chromium/landing/)<br>
         **[Microsoft Edge DevTools](/microsoft-edge/devtools-guide-chromium/)**<br>
         Microsoft Edge Developer Tools are a set of inspection and debugging tools built directly into the Microsoft Edge browser.
         To open DevTools, with Microsoft Edge in focus:
