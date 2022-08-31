@@ -103,17 +103,6 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Keyboard Accent
-
-:::row:::
-    :::column:::
-        [![Keyboard Accent screenshot.](../images/pt-keyboard-accent.png)](keyboard-accent.md)
-    :::column-end:::
-    :::column span="2":::
-        [Keyboard Accent](keyboard-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
-    :::column-end:::
-:::row-end:::
-
 ### Keyboard Manager
 
 :::row:::
@@ -155,6 +144,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [PowerToys Run](run.md) can help you search and launch your app instantly - just press the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It is open source and modular for additional plugins. Window Walker is now included as well.
+    :::column-end:::
+:::row-end:::
+
+### Quick Accent
+
+:::row:::
+    :::column:::
+        [![Quick Accent screenshot.](../images/pt-keyboard-accent.png)](Quick-accent.md)
+    :::column-end:::
+    :::column span="2":::
+        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
     :::column-end:::
 :::row-end:::
 
