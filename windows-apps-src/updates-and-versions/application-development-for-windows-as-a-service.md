@@ -10,16 +10,10 @@ ms.localizationpriority: medium
 # Application development for Windows as a service
 
 **Applies to**
-<<<<<<< HEAD
--   Windows 11
--   Windows 10
--   Windows 10 Mobile
--   Windows 10 IoT Core 
-=======
+- Windows 11
 - Windows 10
 - Windows 10 Mobile
-- Windows 10 IoT Core 
->>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)
+- Windows 10 IoT Core
 
 In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](/windows/deployment/update/waas-overview). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
 
@@ -29,7 +23,7 @@ Builds distributed as flights provide the Windows engineering team with signific
 
 Although Microsoft releases flight builds to Windows Insiders, Microsoft will publish two types of Windows 10 and Windows 11 releases broadly to the public on an ongoing basis:
 
-**Feature updates** install the latest new features, experiences, and capabilities on devices that are already running Windows 10. Because feature updates contain an entire copy of Windows, they are also what customers use to install Windows 10 on existing devices running Windows 7 or Windows 8.1, and on new devices where no operating system is installed. Microsoft expects to publish updates semi-annually. 
+**Feature updates** install the latest new features, experiences, and capabilities on devices that are already running Windows 10. Because feature updates contain an entire copy of Windows, they are also what customers use to install Windows 10 on existing devices running Windows 7 or Windows 8.1, and on new devices where no operating system is installed. Microsoft expects to publish updates semi-annually.
 
 **Quality updates** deliver security issue resolutions and other important bug fixes. Quality updates will be provided to improve each feature currently in support, on a cadence of one or more times per month. Microsoft will continue publishing quality updates on Update Tuesday (sometimes referred to as Patch Tuesday). Additionally, Microsoft may publish additional quality updates for Windows 10 outside the Update Tuesday process when required to address customer needs.
 
@@ -66,7 +60,8 @@ In the following sections, you will find additional information about the steps 
 We understand that compatibility matters to developers. ISVs and developers want to ensure their apps will run as expected on all supported versions of the Windows OS. Consumers and businesses have a key investment here—they want to ensure that the apps they have paid for will continue to work. We know that compatibility is the primary criteria for purchase decisions. Apps that are well written based on best practices will lead to much less code churn when 
 a new Windows version is released and will reduce fragmentation—these apps have a reduced engineering investment to maintain, and a faster time to market.
 
-In the Windows 7 timeframe, compatibility was very much a reactive approach. In Windows 8, we started looking at this differently, working within Windows to ensure that compatibility was by design rather than an afterthought. 
+In the Windows 7 timeframe, compatibility was very much a reactive approach. In Windows 8, we started looking at this differently, working within Windows to ensure that compatibility was by design rather than an afterthought.
+
 Windows 10 is the most compatible-by-design version of the OS to date. Here are some key ways we accomplished this:
 - **App telemetry**: This helps us understand app popularity in the Windows ecosystem to inform compatibility testing.
 - **ISV partnerships**: Work directly with external partners to provide them with data and help fix issues that our users experience.
@@ -85,11 +80,13 @@ The following sections contain some best practices Microsoft recommends so you c
 The OS version has been incremented with Windows 10. This means that the internal version number has been changed to 10.0. As in the past, we go to great lengths to maintain application and device compatibility after an OS version change. For most app categories (without any kernel dependencies), the change will not negatively impact app functionality, and existing apps will continue to work fine on Windows 10.
 
 The manifestation of this change is app-specific. This means any app that specifically checks for the OS version will get a higher version number, which can lead to one or more of the following situations:
+
 - App installers might not be able to install the app, and apps might not be able to start.
 - Apps might become unstable or crash.
 - Apps might generate error messages, but continue to function properly.
 
 Some apps perform a version check and simply pass a warning to users. However, there are apps that are bound very tightly to a version check (in the drivers, or in kernel mode to avoid detection). In these cases, the app will fail if an incorrect version is found. Rather than a version check, we recommend one of the following approaches:
+
 - If the app is dependent on specific API functionality, ensure you target the correct API version.
 - Ensure you detect the change via APISet or another public API, and do not use the version as a proxy for some feature or fix. If there are breaking changes and a proper check is not exposed, then that is a bug.
 - Ensure the app does NOT check for version in odd ways, such as via the registry, file versions, offsets, kernel mode, drivers, or other means. If the app absolutely needs to check the version, use the GetVersion APIs, which should return the major, minor, and build number.
@@ -108,6 +105,7 @@ We encourage all Win32 app ISVs to develop [Universal Windows Platform (UWP)](ht
 If your Win32 app types do not work with the Centennial model, we highly recommend that you use the right installer and ensure this is fully tested. An installer is your user or customer’s first experience with your app, so ensure that this works well. All too often, this doesn’t work well or it hasn’t been fully tested for all scenarios. The [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) can help you test the install and uninstall of your Win32 app and help you identify use of undocumented APIs, as well as other basic performance-related best-practice issues, before your users do.
 
 **Best practices:**
+
 - Use installers that work for both 32-bit and 64-bit versions of Windows.
 - Design your installers to run on multiple scenarios (user or machine level).
 - Keep all Windows redistributables in the original packaging – if you repackage these, it’s possible that this will break the installer.
@@ -120,6 +118,7 @@ Windows OS flighting refers to the interim builds available to Windows Insiders 
 If your app is in the Store, you can flight your app via the Store, which means that your app will be available for our Windows Insider population to install. Users can install your app and you can receive preliminary feedback on your app before you release it to the general population. The follow sections outline the steps for testing your apps against Windows flighted builds.
 
 ### Step 1: Become a Windows Insider and participate in flighting
+
 As a [Windows Insider,](https://insider.windows.com/) you can help shape the future of Windows—your feedback will help us improve features and functionality in the platform. This is a vibrant community where you can connect with other enthusiasts, join forums, trade advice, and learn about upcoming Insider-only events.
 
 Since you’ll have access to preview builds of Windows 10, Windows 10 Mobile, and the latest Windows SDK and Emulator, you’ll have all the tools at your disposal to develop great apps and explore what's new in the Universal Windows Platform and the Microsoft Store.
@@ -127,6 +126,7 @@ Since you’ll have access to preview builds of Windows 10, Windows 10 Mobile,
 This is also a great opportunity to build great hardware, with preview builds of the hardware development kits so you can develop universal drivers for Windows. The IoT Core Insider Preview is also available on supported IoT development boards, so you can build amazing connected solutions using the Universal Windows Platform.
 
 Before you become a Windows Insider, please note that participation is intended for users who:
+
 - Want to try out software that’s still in development.
 - Want to share feedback about the software and the platform.
 - Don’t mind lots of updates or a UI design that might change significantly over time.
@@ -137,7 +137,7 @@ Before you become a Windows Insider, please note that participation is intended 
 ### Step 2: Test your scenarios
 
 Once you have updated to a flighted build, the following are some sample test cases to help you get started on testing and gathering feedback. For most of these tests, ensure you cover both x86 and AMD64 systems.
-**Clean install test:** On a clean install of Windows 10, ensure your app is fully functional. If your app fails this test and the upgrade test, then it’s likely that the issue is caused by underlying OS changes or bugs in the app. 
+**Clean install test:** On a clean install of Windows 10, ensure your app is fully functional. If your app fails this test and the upgrade test, then it’s likely that the issue is caused by underlying OS changes or bugs in the app.
 If after investigation, the former is the case, be sure to use the Windows Insider program to provide feedback and partner on solutions.
 
 **Upgrade Test:** Check that your app works after upgrading from a down-level version of Windows (i.e. Windows 7 or Windows 8.1) to Windows 10. Your app shouldn’t cause roll backs during upgrade, and should continue to work as expected after upgrade—this is crucial to achieve a seamless upgrade experience.
@@ -145,6 +145,7 @@ If after investigation, the former is the case, be sure to use the Windows Insid
 **Reinstall Test:** Ensure that app functionality can be restored by reinstalling your app after you upgrade the PC to Windows 10 from a down-level OS. If your app didn’t pass the upgrade test and you have not been able to narrow down the cause of these issues, it’s possible that a reinstall can restore lost functionality. A passing reinstall test indicates that parts of the app may not have been migrated to Windows 10.
 
 **OS\\Device Features Test:** Ensure that your app works as expected if your app relies on specific functionality in the OS. Common areas for testing include the following, often against a selection of the commonly used PC models to ensure coverage:
+
 - Audio
 - USB device functionality (keyboard, mouse, memory stick, external hard disk, and so on)
 - Bluetooth
@@ -160,10 +161,6 @@ If after investigation, the former is the case, be sure to use the Windows Insid
 
 Let us know how your app is performing against flighted builds. As you discover issues with your app during testing, please log bugs via the partner portal if you have access, or through your Microsoft representative. We encourage this information so that we can build a quality experience for our users together.
 
-
 ## Related topics
-<<<<<<< HEAD
-[Windows 10 servicing options for updates and upgrades](/windows/manage/introduction-to-windows-10-servicing)
-=======
+
 [Windows 10/11 servicing options for updates and upgrades](/windows/manage/introduction-to-windows-10-servicing)
->>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)

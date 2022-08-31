@@ -458,32 +458,6 @@ When the data arrives on the device, the Windows app model provides more control
 
 ### 6.2 Code samples
 
-<<<<<<< HEAD
--   [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
--   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
--   [Device lockdown with Azure login](https://github.com/microsoft/Windows-universal-samples/tree/main/archived/DeviceLockdownAzureLogin)
--   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
--   [Smart cards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
--   [Web account management](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
-
-### 6.3 API reference
-
--   [**Windows.Security.Authentication.OnlineId**](/uwp/api/Windows.Security.Authentication.OnlineId)
--   [**Windows.Security.Authentication.Web**](/uwp/api/Windows.Security.Authentication.Web)
--   [**Windows.Security.Authentication.Web.Core**](/uwp/api/Windows.Security.Authentication.Web.Core)
--   [**Windows.Security.Authentication.Web.Provider**](/uwp/api/Windows.Security.Authentication.Web.Provider)
--   [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials**](/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials.UI**](/uwp/api/Windows.Security.Credentials.UI)
--   [**Windows.Security.Cryptography**](/uwp/api/Windows.Security.Cryptography)
--   [**Windows.Security.Cryptography.Certificates**](/uwp/api/Windows.Security.Cryptography.Certificates)
--   [**Windows.Security.Cryptography.Core**](/uwp/api/Windows.Security.Cryptography.Core)
--   [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection)
--   [**Windows.Security.ExchangeActiveSyncProvisioning**](/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
--   [**Windows.Security.EnterpriseData**](/uwp/api/Windows.Security.EnterpriseData)
-=======
 - [Credential locker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
 - [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
 - [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
@@ -508,4 +482,3 @@ When the data arrives on the device, the Windows app model provides more control
 - [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection)
 - [**Windows.Security.ExchangeActiveSyncProvisioning**](/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
 - [**Windows.Security.EnterpriseData**](/uwp/api/Windows.Security.EnterpriseData)
->>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)

@@ -1,10 +1,8 @@
 ---
-ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Learn how to include interstitial ads in a UWP app for Windows 10 and Windows 11 using the Microsoft Advertising SDK.
 title: Interstitial ads
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp, ads, advertising, ad control, interstitial
 ms.localizationpriority: medium
 ---
 # Interstitial ads
@@ -12,11 +10,7 @@ ms.localizationpriority: medium
 >[!WARNING]
 > As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-<<<<<<< HEAD
-This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/).
-=======
 This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10 and Windows 11. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
->>>>>>> beef584be (Update Win10 language to Win10 and 11 as appropriate)
 
 <span id="whatareinterstitialads10"/>
 
