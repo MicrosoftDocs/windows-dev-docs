@@ -3,7 +3,7 @@ title: PowerToys Quick Accent utility for Windows
 description: Quick Accent is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
 ms.date: 08/30/2022
 ms.topic: article
-no-loc: [PowerToys, Windows, Keyboard Accent, Win]
+no-loc: [PowerToys, Windows, Quick Accent, Win]
 ---
 
 # Quick Accent utility
