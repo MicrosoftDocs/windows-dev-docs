@@ -128,7 +128,7 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 ### Add services
 
-- Use [cloud services](https://azure.microsoft.com/documentation/services/cloud-services) to sync across devices.
+- Use [Azure Cloud Services](/azure/cloud-services) to sync across devices.
 - Learn how to [connect to web services](/previous-versions/windows/apps/hh761504(v=win.10)) to support your app experience.
 - Include [Push notifications](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) and [in-app purchases](../monetize/enable-in-app-product-purchases.md) in your planning. These features should work across devices.
 

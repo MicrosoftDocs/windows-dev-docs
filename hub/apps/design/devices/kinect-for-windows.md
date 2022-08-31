@@ -25,7 +25,7 @@ Build desktop applications for Windows 10 or sell your Kinect v2 UWP apps in the
     :::column:::
         **Developer content**<br>
         Learn how to implement different Kinect for Windows features and more about tools, like Kinect Studio, that support your development experience.<br>
-        [Tutorials and API documentation](https://docs.microsoft.com/previous-versions/windows/kinect/dn799271(v=ieb.10))<br>
+        [Tutorials and API documentation](/previous-versions/windows/kinect/dn799271(v=ieb.10))<br>
         [Human Interface Guidelines (PDF)](https://download.microsoft.com/download/6/7/6/676611B4-1982-47A4-A42E-4CF84E1095A8/KinectHIG.2.0.pdf)
     :::column-end:::
     :::column:::
@@ -64,7 +64,7 @@ The language packs enable you to add speech recognition to your Kinect for Windo
 
 #### DirectX SDK
 Because the Windows SDK is the primary developer SDK for Windows, DirectX is now included in it. You can now use the Windows SDK to build great games for Windows.<br>
-[Learn more about the DirectX SDK](https://docs.microsoft.com/windows/win32/directx-sdk--august-2009-)
+Learn more about the [DirectX SDK](/windows/win32/directx-sdk--august-2009-).
 
 #### Microsoft Speech Platform SDK 11
 You can use the technologies and tools in the Speech Platform SDK 11 to give applications the ability to recognize spoken words (speech recognition) and to generate synthesized speech (text-to-speech or TTS). Using this SDK, you can give users an effective and natural way to interact with your applications, complementing the use of mice, keyboards, controllers, and gestures.<br>
