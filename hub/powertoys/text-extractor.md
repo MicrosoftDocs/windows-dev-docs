@@ -1,14 +1,14 @@
 ---
-title: PowerToys Image to Text utility for Windows
-description: Image to Text is a convenient way to copy text from anywhere on your screen.
+title: PowerToys Text Extractor utility for Windows
+description: Text Extractor is a convenient way to copy text from anywhere on your screen.
 ms.date: 08/30/2022
 ms.topic: article
-no-loc: [PowerToys, Windows, Image to Text, Win]
+no-loc: [PowerToys, Windows, Text Extractor, Win]
 ---
 
-# Image to Text utility
+# Text Extractor utility
 
-Image to Text is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+Text Extractor is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
 
 ## How to activate
 
