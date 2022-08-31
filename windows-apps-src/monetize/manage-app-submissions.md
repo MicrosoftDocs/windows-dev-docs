@@ -508,7 +508,7 @@ This resource contains additional details about the status of a submission. This
 |-----------------|---------|------|
 |  errors               |    object     |   An array of [status detail resources](#status-detail-object) that contain error details for the submission.    |     
 |  warnings               |   object      | An array of [status detail resources](#status-detail-object) that contain warning details for the submission.      |
-|  certificationReports               |     object    |   An array of [certification report resources](#certification-report-object) that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails.   |  
+|  certificationReports               |     object    |   An array of [certification report resources](#certification-report-resource) that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails.   |  
 
 
 <span id="status-detail-object" />
@@ -576,7 +576,7 @@ This resource has the following values.
 
 </span>
 
-<span>id="certification-report-object"</span>
+<span>id="certification-report-resource"</span>
 
 ### Certification report resource
 
