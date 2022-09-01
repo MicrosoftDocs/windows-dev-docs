@@ -80,7 +80,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
     > [!NOTE]
     > Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the installer in the previous step. To do that, in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Updates**. And if necessary update the reference to the *Microsoft.WindowsAppSDK* NuGet package. You can see which version is installed on the **Installed** tab.
 
-1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
+1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file. Put it inside the **PropertyGroup** element that's already there (for C++, the element will have `Label="Globals"`):
 
    ```xml
    <Project ...>
@@ -93,12 +93,12 @@ Packaging is an important consideration of any Windows App SDK project. You can 
    </Project>
    ```
 
-1. **C++**. In your C++ project (`.vcxproj`) file, set the *AppxPackage* property to *false*:
+1. **C++**. In your C++ project (`.vcxproj`) file, inside the **PropertyGroup** element that's already there, set the *AppxPackage* property to *false*:
 
    ```xml
    <Project ...>
      ...
-     <PropertyGroup>
+     <PropertyGroup Label="Globals">
        ...
        <AppxPackage>false</AppxPackage>
        ...
