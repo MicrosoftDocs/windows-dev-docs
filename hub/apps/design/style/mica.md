@@ -2,7 +2,7 @@
 description: Learn to use Mica and Mica Alt, opaque, dynamic materials that incorporate theme and desktop wallpaper to delight users and create visual hierarchy. 
 title: Mica material
 template: detail.hbs
-ms.date: 08/25/2022
+ms.date: 09/01/2022
 ms.topic: article
 keywords: windows 11
 pm-contact: gabilka

@@ -2,10 +2,10 @@
 title: Using a SystemBackdropController with WinUI 3 XAML 
 description: Sample code for applying Mica in a C++/WinRT application.
 ms.topic: article
-ms.date: 05/03/2022
+ms.date: 09/01/2022
 keywords: windows, windows app development, Windows App SDK, Mica
-ms.author: gabbybilka
-author: gabbybilka
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
 dev_langs: 
 - csharp
