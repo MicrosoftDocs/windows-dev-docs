@@ -25,7 +25,7 @@ To create standalone WinUI 3 components in C# for consumption from both C# and C
 
 Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, making sure to select the C# language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. 
 
-![Blank App Project Template](images/winui-csharp-new-project-uwp.png)
+![Blank App Project Template](images/new-project-packaged-winui3-desktop.png)
 
 ## Add a templated control to your app
 
