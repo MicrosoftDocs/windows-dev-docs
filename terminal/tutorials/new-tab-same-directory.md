@@ -98,6 +98,7 @@ function Invoke-Starship-PreCommand {
   }
   $host.ui.Write($prompt)
 }
+```
 
 ### WSL
 
