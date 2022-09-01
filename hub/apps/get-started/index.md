@@ -49,6 +49,7 @@ For more information about .NET MAUI, see the following links:
 - [.NET MAUI documentation](/dotnet/maui/)
 - [.NET MAUI on GitHub](https://github.com/dotnet/maui)
 - [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
+- [Build Windows apps with .NET MAUI](/windows/apps/windows-dotnet-maui/)
 - [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
 - [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
 - [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
