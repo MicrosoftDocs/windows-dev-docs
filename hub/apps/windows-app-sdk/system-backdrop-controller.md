@@ -151,19 +151,19 @@ The controller reacts to the system Light and Dark themes by default. To overrid
 
 In order to use the backdrop material in your app, the following items are required:
 
-1. **System support**
+- **System support**
 
    The system where the app runs must support the backdrop material. Call the [MicaController.IsSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.issupported) or [DesktopAcrylicController.IsSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller.issupported) method to ensure the backdrop material is supported at runtime.
 
-1. **A valid target**
+- **A valid target**
 
    You must provide a target that implements the [ICompositionSupportsSystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.icompositionsupportssystembackdrop) interface. In a XAML app, the XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) implements this interface and is used as the backdrop target.
 
-1. **A SystemBackdropConfiguration object**
+- **A SystemBackdropConfiguration object**
 
    The [SystemBackdropConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration) provides the system backdrop controller with app-specific policy information to properly configure the system backdrop material.
 
-1. **A DispatcherQueue object**.
+- **A DispatcherQueue object**.
 
    You need an available [Windows.System.DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) on the main XAML thread. See the `WindowsSystemDispatcherQueueHelper` class in the example code, or in the [WinUI 3 Gallery sample](https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11).
 
