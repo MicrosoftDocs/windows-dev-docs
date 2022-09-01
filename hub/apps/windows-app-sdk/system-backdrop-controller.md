@@ -167,16 +167,16 @@ In order to use the backdrop material in your app, the following items are requi
 
    You need an available [Windows.System.DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) on the main XAML thread. See the `WindowsSystemDispatcherQueueHelper` class in the example code, or in the [WinUI 3 Gallery sample](https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11).
 
-## System backdrop materials
-
-## How to use Mica in Windows AppSDK/WinUI 3 apps
+## Example: Use Mica in a Windows AppSDK/WinUI 3 app
 
 This example shows how to set up the Mica backdrop material in a XAML app.
 
 > [!TIP]
-> **C#**: For an example project on GitHub, see [SampleSystemBackdropsWindow in the WinUI3 Gallery](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs).
+>Also, see these example projects on GitHub:
 >
-> **C++/WinRT**: For an example project on GitHub, see [Windows App SDK Mica sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32).
+> **C#**: [SampleSystemBackdropsWindow in the WinUI3 Gallery](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs).
+>
+> **C++/WinRT**: [Windows App SDK Mica sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32).
 
 ```csharp
 using Microsoft.UI.Composition.SystemBackdrops;
@@ -437,3 +437,10 @@ struct MainWindow : MainWindowT<MainWindow>
 };
 ...
 ```
+
+## Related articles
+
+- [Materials in Windows 11](../design/signature-experiences/materials.md)
+- [Mica](../design/style/mica.md)
+- [Acrylic](../design/style/acrylic.md)
+- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md)
