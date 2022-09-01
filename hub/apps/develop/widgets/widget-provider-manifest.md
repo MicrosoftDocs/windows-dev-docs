@@ -174,11 +174,11 @@ The following code example illustrates the usage of the widget package manifest 
     
             
     
-	    <!-- COM and ActivateApplication are supported. User has to use one of them to deliver message to WidgetProvider -->
-	    <Activation>
-		  <!-- Apps exports COM interface which implements WidgetProvider -->
-		  <COM ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
-	    </Activation>
+        <!-- COM and ActivateApplication are supported. User has to use one of them to deliver message to WidgetProvider -->
+        <Activation>
+          <!-- Apps exports COM interface which implements WidgetProvider -->
+          <COM ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
+        </Activation>
         <Widgets>
           <!--
             AllowMultiple is optional, default to False.
