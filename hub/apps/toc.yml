@@ -240,6 +240,8 @@ items:
             href: develop/user-interface.md
           - name: Title bar
             href: develop/title-bar.md
+          - name: Apply Mica or Acrylic
+            href: windows-app-sdk/system-backdrop-controller.md
           - name: "Retrieve a window handle (HWND)"
             href: develop/ui-input/retrieve-hwnd.md
           - name: "Display WinRT UI objects that depend on CoreWindow"
