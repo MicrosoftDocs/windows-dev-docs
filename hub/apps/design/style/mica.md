@@ -32,9 +32,9 @@ _Mica Alt_ is a variant of Mica, with stronger tinting of the user's desktop bac
 
 These images show the difference between Mica and Mica Alt in a title bar with tabs. The first image uses Mica and the second image uses Mica Alt.
 
-:::image type="content" source="images/mica-tabs.png" alt-text="Mica in a title bar with tabs":::
+:::image type="content" source="images/mica-tabs.png" alt-text="Screenshot of Mica in a title bar with tabs.":::
 
-:::image type="content" source="images/mica-alt-tabs.png" alt-text="Mica Alt in a title bar with tabs":::
+:::image type="content" source="images/mica-alt-tabs.png" alt-text="Screenshot of Mica Alt in a title bar with tabs.":::
 
 ## When to use Mica or Mica Alt
 
