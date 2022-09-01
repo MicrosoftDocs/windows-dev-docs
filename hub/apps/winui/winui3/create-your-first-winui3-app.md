@@ -85,7 +85,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
    ```xml
    <Project ...>
      ...
-     <PropertyGroup>
+     <PropertyGroup Label="Globals">
        ...
        <WindowsPackageType>None</WindowsPackageType>
      </PropertyGroup> 
@@ -98,7 +98,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
    ```xml
    <Project ...>
      ...
-     <PropertyGroup>
+     <PropertyGroup Label="Globals">
        ...
        <AppxPackage>false</AppxPackage>
        ...
