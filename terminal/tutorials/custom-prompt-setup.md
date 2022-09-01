@@ -84,6 +84,9 @@ Now, each new PowerShell instance will start by importing Oh My Posh and setting
 > [!NOTE]
 > This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. [Learn more about PowerShell profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
+> [!TIP]
+> Oh My Posh can be configured to restore the current working directory by enabling `osc99` in the General Settings. See the [Oh My Posh docs](https://ohmyposh.dev/docs/configuration/overview#general-settings).  
+
 ## Customize your WSL prompt with Oh My Posh
 
 Oh My Posh now allows you to customize WSL prompts, just like you would a PowerShell prompt using [built-in themes](https://ohmyposh.dev/docs/themes).
