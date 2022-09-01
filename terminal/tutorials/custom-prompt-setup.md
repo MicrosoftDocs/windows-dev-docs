@@ -60,6 +60,7 @@ You will need to agree to the source terms and may run into the instance that mo
 To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
 
 > [!NOTE]
+> If you want to upgrade your installation of Oh My Posh to the latest version in PowerShell, you may want to first remove the OMP module's cached files and uninstall the old module. There are instructions on how to do this in the [Oh My Posh docs](https://ohmyposh.dev/docs/migrating#migration-steps). 
 > If you are more familiar with the [Scoop](https://scoop.sh/) installer or a manual installation method that allows automation, these can also be used for installing on Windows, just follow the instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/installation/windows).
 
 ### Choose and apply a PowerShell prompt theme
