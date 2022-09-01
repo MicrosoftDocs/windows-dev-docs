@@ -23,13 +23,13 @@ To create standalone WinUI 3 components in C# for consumption from both C# and C
 
 ## Create a Blank App (BgLabelControlApp)
 
-Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **Blank App (WinUI in UWP)** project template, making sure to select the C# language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. Set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134). This walkthrough will also work for desktop apps created with the **Blank App, Packaged (WinUI in Desktop)** project template, just make sure to perform all of the steps in the **BgLabelControlApp (Desktop)** project.
+Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, making sure to select the C# language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. 
 
 ![Blank App Project Template](images/winui-csharp-new-project-uwp.png)
 
 ## Add a templated control to your app
 
-To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. 
+To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->WinUI** select the **Custom Control (WinUI 3)** template. Name the new control "BgLabelControl" and click *Add*. 
 
 ## Update the custom control C# file
 
@@ -116,7 +116,7 @@ The **Text** property of the **TextBlock** in the control template is bound to o
 
 ## Add an instance of BgLabelControl to the main UI page
 
-Open `MainPage.xaml`, which contains the XAML markup for our main UI page. Immediately after the **Button** element (inside the **StackPanel**), add the following markup.
+Open `MainWindow.xaml`, which contains the XAML markup for our main UI page. Immediately after the **Button** element (inside the **StackPanel**), add the following markup.
 
 ```xaml
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
