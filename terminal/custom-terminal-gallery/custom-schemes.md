@@ -18,7 +18,7 @@ Copy the JSON from the **"schemes"** section into the correct section in [settin
 Before:
 
 ```json
-"schemes:" [],
+"schemes": [],
 ```
 
 After:
