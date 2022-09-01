@@ -81,7 +81,7 @@ Elements in the Value array contain the following values.
 | applicationName | string | The display name of the game. |
 | deviceType | string | One of the following strings that specifies the type of device that completed the acquisition: <ul><li>"PC"</li><li>"Phone"</li><li>"Console-Xbox One"</li><li>"Console-Xbox Series X"</li><li>"IoT"</li><li>"Server"</li><li>"Tablet"</li><li>"Holographic"</li><li>"Unknown"</li></ul> |
 | storeClient | string | One of the following strings that indicates the version of the Store where the acquisition occurred: <ul><li>"Windows Phone Store (client)"</li><li>"Microsoft Store (client)" (or "Windows Store (client)" if querying for data before March 23, 2018)</li><li>"Microsoft Store (web)" (or "Windows Store (web)" if querying for data before March 23, 2018)</li><li>"Volume purchase by organizations"</li><li>"Other"</li></ul> |
-| osVersion | string | The OS version on which the acquisition occurred. For this method, this value is always "Windows 10". |
+| osVersion | string | The OS version on which the acquisition occurred. For this method, this value is always either **Windows 10** or **Windows 11**". |
 | market | string | The ISO 3166 country code of the market where the acquisition occurred. |
 | gender | string | One of the following strings that specifies the gender of the user who made the acquisition: <ul><li>"m"</li><li>"f"</li><li>"Unknown"</li></ul> |
 | age | string | One of the following strings that indicates the age group of the user who made the acquisition: <ul><li>"less than 13"</li><li>"13-17"</li><li>"18-24"</li><li>"25-34"</li><li>"35-44"</li><li>"44-55"</li><li>"greater than 55"</li><li>"Unknown"</li></ul> |

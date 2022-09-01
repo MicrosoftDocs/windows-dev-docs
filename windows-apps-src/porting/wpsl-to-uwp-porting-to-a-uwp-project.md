@@ -65,7 +65,7 @@ If you want to support both Windows Phone Silverlight and Windows 10 in a sing
 
 ```csharp
 #if WINDOWS_UAP
-    // Code that you want to compile into the Windows 10 app.
+    // Code that you want to compile into the Windows 10/11 app.
 #else
     // Code that you want to compile into the Windows Phone Silverlight app.
 #endif // WINDOWS_UAP
@@ -85,7 +85,7 @@ If so, and if you now want to support Windows 10 in addition, then you can do t
 
 ```csharp
 #if WINDOWS_UAP
-    // Code that you want to compile into the Windows 10 app.
+    // Code that you want to compile into the Windows 10/11 app.
 #else
 #if NETFX_CORE
     // Code that you want to compile into the Windows Runtime 8.x app.

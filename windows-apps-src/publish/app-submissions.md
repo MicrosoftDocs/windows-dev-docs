@@ -11,7 +11,6 @@ ms.localizationpriority: medium
 ---
 # App submissions
 
-
 Once you've [created your app by reserving a name](create-your-app-by-reserving-a-name.md), you can start working on getting it published. The first step is to create a **submission**.
 
 You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
