@@ -42,7 +42,7 @@ Each of the following downloads contain an .msi installer for the Multilingual A
 :::row-end:::
 :::row:::
    :::column span="":::
-      [French](https://go.microsoft.com/fwlink/p/?LinkID=245767&amp;clcid=0x40c)
+      [French](https://go.microsoft.com/fwlink/p/?LinkID=2206712&amp;clcid=0x40c)
    :::column-end:::
    :::column span="":::
       [Russian](https://go.microsoft.com/fwlink/p/?LinkID=245767&amp;clcid=0x419)
@@ -50,7 +50,7 @@ Each of the following downloads contain an .msi installer for the Multilingual A
 :::row-end:::
 :::row:::
    :::column span="":::
-      [German](https://go.microsoft.com/fwlink/p/?LinkID=245767&amp;clcid=0x407)
+      [German](https://go.microsoft.com/fwlink/p/?LinkID=2206559&amp;clcid=0x407)
    :::column-end:::
    :::column span="":::
       [Spanish](https://go.microsoft.com/fwlink/p/?LinkID=245767&amp;clcid=0x40a)
