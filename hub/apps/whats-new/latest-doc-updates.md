@@ -33,7 +33,6 @@ Highlights this month include:
 ## Other new content
 
 * [Develop for Windows using MAUI](/windows/apps/windows-dotnet-maui/)
-* [Use App Craft Analyzer](/windows/apps/desktop/modernize/app-craft-analyzer?branch=pr-en-us-2839)
 * [New WebAuthn API topics](/windows/win32/webauthn/-webauthn-portal)
 * [wldp.h header](/windows/win32/api/wldp/)
 
@@ -53,6 +52,7 @@ Highlights this month include:
 * [Windows Subsystem for Android updates](/windows/android/wsa/)
 * [Windows Package Manager updates](/windows/package-manager/)
 * [PowerToys](/windows/powertoys/install)
+* [Keyboard scan codes updated](/windows/win32/inputdev/about-keyboard-input).
 
 <hr>
 
