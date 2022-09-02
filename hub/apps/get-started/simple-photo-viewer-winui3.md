@@ -9,7 +9,7 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Tutorial&mdash;Create a simple photo viewer with WinUI 3 (C#)
+# Tutorial: Create a simple photo viewer with WinUI 3 (C#)
 
 > [!NOTE]
 > For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](/windows/apps/get-started/).

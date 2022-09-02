@@ -1,5 +1,5 @@
 ---
-title: Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK
+title: Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK
 description: This article shows how to configure an app that's not deployed via MSIX (non-MSIX-packaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs.
 ms.topic: article
 ms.date: 04/26/2022
@@ -9,7 +9,7 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK
+# Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK
 
 This article shows how to configure an app that's not deployed via MSIX (non-MSIX-packaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Non-MSIX-packaged apps include sparse-packaged, or unpackaged, apps.
 

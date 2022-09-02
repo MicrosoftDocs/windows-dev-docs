@@ -7,7 +7,7 @@ keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
 
-# Tutorial&mdash;Create a .NET MAUI app using the Microsoft Graph SDK
+# Tutorial: Create a .NET MAUI app using the Microsoft Graph SDK
 
 Get hands-on with .NET MAUI by building a cross-platform app on Windows that leverages the [Microsoft Graph SDK](/graph/sdks/sdks-overview) to display user data.
 
