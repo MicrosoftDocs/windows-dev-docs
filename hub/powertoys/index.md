@@ -172,10 +172,10 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        [![Text Extractor screenshot.](../images/pt-image-to-text.png)(Text Extractor.md)
+        [![Text Extractor screenshot.](../images/pt-image-to-text.png)](text-extractor.md)
     :::column-end:::
     :::column span="2":::
-        [Text Extractor](Text Extractor.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
     :::column-end:::
 :::row-end:::
 
