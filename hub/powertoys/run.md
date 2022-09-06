@@ -68,6 +68,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | :--- | :--- | :--- |
 | Calculator | `=` | `= 2+2` |
 | File searching | `?` | `? road` to find 'roadmap.txt' |
+| History | `!!` | `!! car` to find any results that have been selected in the past, from any enabled plugin, that matches 'car'. |
 | Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
 | OneNote | `o:` | `o: powertoys` to search your local OneNote notebooks for pages containing "powertoys" |
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
@@ -193,6 +194,17 @@ The Calculator plugin supports the following operations:
 | Hyperbolic Arc Sine | arsinh( x ) | |
 | Hyperbolic Arc Cosine | arcosh( x ) | |
 | Hyperbolic Arc Tangent | artanh( x ) | |
+
+### History plugin
+
+The History plugin allow quick access to previouly selected results from other plugins. You can access and delete them using the direct activation command. 
+To delete them from history, click "Remove this from history" context menu item.
+
+#### History plugin examples
+- If you paste in a URL like `https://github.com/microsoft/PowerToys/pull/123333`, then you can later quickly access this with just `!! 123333` or even `!! 333`. This works just as well for file paths, registry paths and other things where later you can only remember part of the path. Any place you navigate to using PowerToys run can be quickly found in the history.
+- If you recently did some math like `= 1245+6789`, and you need to recall it, it will be in the history and can find it with `!! 678` or even `!! 8034`.
+- If you can't remember what you searched for to find that app/folder/setting, you can just view them all with just `!!`.
+
 
 ### Time and date plugin
 
