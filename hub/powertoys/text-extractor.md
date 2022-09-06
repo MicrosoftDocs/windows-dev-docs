@@ -16,7 +16,7 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## Adjust while trying to capture
 
-By holding <kbd>shift<kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>shift<kbd>, you will be able to resize again.
+By holding <kbd>shift</kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>shift</kbd>, you will be able to resize again.
 
 ## Things to note
 
