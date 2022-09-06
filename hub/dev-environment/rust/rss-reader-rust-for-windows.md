@@ -208,7 +208,7 @@ We did say that Rust for Windows lets you call any Windows API (past, present, a
     fn main() {
         windows::build!(
             ...
-            Windows::Win32::UI::WindowsAndMessaging::MessageBoxA,
+            Windows::Win32::WindowsAndMessaging::MessageBoxA,
         );
     }
     ```
@@ -220,14 +220,14 @@ We did say that Rust for Windows lets you call any Windows API (past, present, a
     use bindings::{ 
         Windows::Foundation::Uri,
         Windows::Web::Syndication::SyndicationClient,
-        Windows::Win32::UI::WindowsAndMessaging::*,
+        Windows::Win32::WindowsAndMessaging::*,
     };
 
     fn main() {
         ...
 
         unsafe {
-            MessageBoxA(None, "Text", "Caption", MB_OK);
+            MessageBoxA(None, "Text", "Caption", MESSAGEBOX_STYLE::MB_OK);
         }
 
         Ok(())
