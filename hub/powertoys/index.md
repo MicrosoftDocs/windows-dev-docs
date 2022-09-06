@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 04/27/2022
+ms.date: 09/06/2022
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -23,7 +23,6 @@ Microsoft PowerToys is a set of utilities for power users to tune and streamline
 ## Current PowerToy utilities
 
 The currently available utilities include:
-
 
 ### Always on Top
 
@@ -125,6 +124,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Quick Accent
+
+:::row:::
+    :::column:::
+        [![Quick Accent screenshot.](../images/pt-keyboard-accent.png)](Quick-accent.md)
+    :::column-end:::
+    :::column span="2":::
+        [Quick Accent](Quick-accent.md) is an alternative way to type accented characters, useful for when a keyboard doesn't support that specific accent with a quick key combo.
+    :::column-end:::
+:::row-end:::
+
 ### PowerToys Run
 
 :::row:::
@@ -136,6 +146,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Screen Ruler
+
+:::row:::
+    :::column:::
+        [![Screen Ruler screenshot.](../images/pt-screen-ruler.png)](screen-ruler.md)
+    :::column-end:::
+    :::column span="2":::
+        [Screen Ruler](screen-ruler.md) allows you to quickly measure pixels on your screen based with image edge detection. Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> to activate. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+    :::column-end:::
+:::row-end:::
+
 ### Shortcut Guide
 
 :::row:::
@@ -144,6 +165,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also change this setting and press and hold <kbd>⊞ Win</kbd>.
+    :::column-end:::
+:::row-end:::
+
+### Text Extractor
+
+:::row:::
+    :::column:::
+        [![Text Extractor screenshot.](../images/pt-image-to-text.png)](text-extractor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
     :::column-end:::
 :::row-end:::
 
