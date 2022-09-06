@@ -19,7 +19,7 @@ This page is targeted at users who are looking for Windows development samples t
 ## Windows App SDK / WinUI 3 samples
 
 
-### Samples by scenario
+#### Samples by scenario
 
 |                                                                              Scenario                                                                              |                                                                  Sample                                                                   |                                                      Documentation                                                      |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------:|
@@ -36,7 +36,7 @@ This page is targeted at users who are looking for Windows development samples t
 |                                                           **Add custom C#/WinRT controls to your app**.                                                            |               [Custom Controls sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/CustomControls)               |        [Author Windows Runtime components with C#/WinRT](/windows/apps/develop/platform/csharp-winrt/authoring)         |
 |                             **Add windowing support to your app** in order to create/hide new windows, customize titlebars, and more.                              |                    [Windowing sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)                     |                    [Manage App Windows](/windows/apps/windows-app-sdk/windowing/windowing-overview)                     |
 
-### Samples by repository
+#### Samples by repository
 
 |                                      Samples repository                                      |                                     Description                                      |
 |:--------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------:|
@@ -47,7 +47,7 @@ This page is targeted at users who are looking for Windows development samples t
 
 ## UWP / WinUI 2 samples
 
-## Samples by scenario
+#### Samples by scenario
 
 |                                                                                               Scenario                                                                                               |                                                           Sample                                                            |                                                                                        Documentation                                                                                         |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -73,7 +73,7 @@ This page is targeted at users who are looking for Windows development samples t
 |                                                    Communicate with another app (or a browser page) via WebSockets, avoiding the overhead of HTTP                                                     |               [WebSocket](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/WebSocket)               |                                                      [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)                                                      |
 
 
-## Samples by repository
+#### Samples by repository
 
 |                                       Samples repository                                        |                        Description                        |
 |:-----------------------------------------------------------------------------------------------:|:---------------------------------------------------------:|
@@ -83,7 +83,7 @@ This page is targeted at users who are looking for Windows development samples t
 
 ## .NET MAUI samples
 
-### Samples by scenario
+#### Samples by scenario
 
 |                                                                          Scenario                                                                           |                                              Sample Name/Link                                               |                                                                                  Documentation                                                                                  |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -94,7 +94,7 @@ This page is targeted at users who are looking for Windows development samples t
 | Use a .NET Shell app to reduce complexity/duplicate code and allow Windows to implement the fundamentals such as URI navigation, integrated search bar, etc. |            [Shell App](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/Shell)             |                                                               [.NET MAUI Shell](/dotnet/maui/fundamentals/shell/)                                                               |
 |                                Use triggers to selectively update (e.g. hide) specific controls when an event or data changes                                |         [Triggers](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/TriggersDemos)         |                                                            [.NET MAUI Triggers](/dotnet/maui/fundamentals/triggers)                                                             |
 
-### Samples by repository
+#### Samples by repository
 
 |                      Samples repository                       |    Description    |
 |:-------------------------------------------------------------:|:-----------------:|
