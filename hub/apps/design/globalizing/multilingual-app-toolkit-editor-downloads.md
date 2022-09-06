@@ -66,8 +66,6 @@ Each of the following downloads contain an .msi installer for the Multilingual A
 
 > [!Important]
 > If using Visual Studio 2017 or later, you should also download and install the [Multilingual App Toolkit 4.0 Extension](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308).
->
-> If using Visual Studio 2015 or Visual Studio 2013, the .msi installers listed here include the Multilingual App Toolkit 4.0 extension.
 
 ## Overview
 
@@ -86,7 +84,6 @@ The Multilingual App Toolkit helps create simpler translation workflows by focus
 > Ensure you have the latest service pack and critical updates for your installed versions of Windows and Visual Studio.
 
 - **Supported operating systems**: Windows 10 or later (x86 and x64)
-- **Required software**: Visual Studio 2013 or later
 - **Disk space requirements**: 0 MB (x86 and x64)
 
 ## Additional info
