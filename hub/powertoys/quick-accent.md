@@ -16,7 +16,7 @@ Please note, this utility is off by default.
 
 Activate by holding the key for the character you want to add an accent to, then press the Activation Key (space key or left and right arrow keys). If you continue to hold, an overlay to select the accented character between multiple characters will appear.
 
-Example: if you want <kbd>à</kbd>, press and hold <kbd>a</kbd> then press <kbd>space</kbd>.  
+For example, if you want <kbd>à</kbd>, press and hold <kbd>a</kbd> then press <kbd>space</kbd>.  
 
 ## Settings
 
