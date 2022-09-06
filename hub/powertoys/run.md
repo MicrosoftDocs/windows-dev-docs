@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 07/08/2022
+ms.date: 08/21/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -64,6 +64,15 @@ The plugins can be activated with a direct activation command so that PowerToys 
 > [!TIP]
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
+> [!IMPORTANT]
+> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(`  for the `Time and Date` plugin breaks global calculation queries starting with an opening brace.
+>
+> Currently known conflicting character sequences:
+>
+> - Characters used in paths like `\`, `\\`, `/`, `~`, `%`.
+> - Characters used in mathematical operations like `.`, `,`, `+`, `-`, `(`.
+> - Names of [mathematical operations](#calculator-plugin).
+
 | Plug-in | Direct activation command | Example |
 | :--- | :--- | :--- |
 | Calculator | `=` | `= 2+2` |
@@ -74,7 +83,7 @@ The plugins can be activated with a direct activation command so that PowerToys 
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
 | Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
-| Time and date| `(` | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
+| Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
 | URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to Microsoft Docs.<br />`mailto:` and `ms-settings:` links are supported. |
@@ -218,10 +227,10 @@ The Time and date plugin provides the current time and date or a custom one in d
 
 Examples:
 
-- `time` or `( time` to show the time.
-- `( 3/27/2022` to show all available formats for a date value.
-- `( calendar week::3/27/2022` to show the calendar week for a date value.
-- `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
+- `time` or `) time` to show the time.
+- `) 3/27/2022` to show all available formats for a date value.
+- `) calendar week::3/27/2022` to show the calendar week for a date value.
+- `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 ### Unit converter plugin
 
