@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run utility for Windows
 description: A quick launcher for power users that contains some additional features without sacrificing performance.
-ms.date: 07/08/2022
+ms.date: 08/21/2022
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -64,16 +64,26 @@ The plugins can be activated with a direct activation command so that PowerToys 
 > [!TIP]
 > You can change them to fit your personal needs in the [plugin manager](#plugin-manager).
 
+> [!IMPORTANT]
+> Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using `(`  for the `Time and Date` plugin breaks global calculation queries starting with an opening brace.
+>
+> Currently known conflicting character sequences:
+>
+> - Characters used in paths like `\`, `\\`, `/`, `~`, `%`.
+> - Characters used in mathematical operations like `.`, `,`, `+`, `-`, `(`.
+> - Names of [mathematical operations](#calculator-plugin).
+
 | Plug-in | Direct activation command | Example |
 | :--- | :--- | :--- |
 | Calculator | `=` | `= 2+2` |
 | File searching | `?` | `? road` to find 'roadmap.txt' |
+| History | `!!` | `!! car` to find any results that have been selected in the past, from any enabled plugin, that matches 'car'. |
 | Installed programs | `.` | `. code` to get Visual Studio Code. (See [Program parameters](#program-parameters) for options on adding parameters to a program's startup.) |
 | OneNote | `o:` | `o: powertoys` to search your local OneNote notebooks for pages containing "powertoys" |
 | Registry keys | `:` | `: hkcu` to search for the 'HKEY_CURRENT_USER' registry key. |
 | Windows services | `!` | `! alg` to search for the 'Application Layer Gateway' service to be started or stopped<br />`!startup:auto` to search all services that start automatically<br />`!status:running` to show all running services |
 | Shell command | `>` | `> ping localhost` to do a ping query. |
-| Time and date| `(` | `( time and date` shows the current time and date in different formats.<br />`( calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
+| Time and date| `)` | `) time and date` shows the current time and date in different formats.<br />`) calendar week::04/01/2022` shows the calendar week for the date '04/01/2022'. |
 | Time zones | `&` | `& Newfoundland` shows the current time in the time zone of Newfoundland. |
 | Unit converter | `%%` | `%% 10 ft in m` to calculate the number of meters in 10 feet. |
 | URI-handler | `//` | `//` to launch your default browser.<br />`// docs.microsoft.com` to have your default browser go to Microsoft Docs.<br />`mailto:` and `ms-settings:` links are supported. |
@@ -194,6 +204,17 @@ The Calculator plugin supports the following operations:
 | Hyperbolic Arc Cosine | arcosh( x ) | |
 | Hyperbolic Arc Tangent | artanh( x ) | |
 
+### History plugin
+
+The History plugin allow quick access to previouly selected results from other plugins. You can access and delete them using the direct activation command. 
+To delete them from history, click "Remove this from history" context menu item.
+
+#### History plugin examples
+- If you paste in a URL like `https://github.com/microsoft/PowerToys/pull/123333`, then you can later quickly access this with just `!! 123333` or even `!! 333`. This works just as well for file paths, registry paths and other things where later you can only remember part of the path. Any place you navigate to using PowerToys run can be quickly found in the history.
+- If you recently did some math like `= 1245+6789`, and you need to recall it, it will be in the history and can find it with `!! 678` or even `!! 8034`.
+- If you can't remember what you searched for to find that app/folder/setting, you can just view them all with just `!!`.
+
+
 ### Time and date plugin
 
 The Time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.
@@ -206,10 +227,10 @@ The Time and date plugin provides the current time and date or a custom one in d
 
 Examples:
 
-- `time` or `( time` to show the time.
-- `( 3/27/2022` to show all available formats for a date value.
-- `( calendar week::3/27/2022` to show the calendar week for a date value.
-- `( unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
+- `time` or `) time` to show the time.
+- `) 3/27/2022` to show all available formats for a date value.
+- `) calendar week::3/27/2022` to show the calendar week for a date value.
+- `) unix epoch::3/27/2022 10:30:45 AM` to convert the given time and date value into a Unix epoch timestamp.
 
 ### Unit converter plugin
 
