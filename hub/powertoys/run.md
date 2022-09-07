@@ -206,12 +206,12 @@ The Calculator plugin supports the following operations:
 
 ### History plugin
 
-The History plugin allow quick access to previouly selected results from other plugins. You can access and delete them using the direct activation command. 
-To delete them from history, click "Remove this from history" context menu item.
+The History plugin allows quick access to previouly selected results from other plugins. You can access and delete them using the direct activation command. 
+To delete them from history, select the "Remove this from history" context menu item.
 
 #### History plugin examples
-- If you paste in a URL like `https://github.com/microsoft/PowerToys/pull/123333`, then you can later quickly access this with just `!! 123333` or even `!! 333`. This works just as well for file paths, registry paths and other things where later you can only remember part of the path. Any place you navigate to using PowerToys run can be quickly found in the history.
-- If you recently did some math like `= 1245+6789`, and you need to recall it, it will be in the history and can find it with `!! 678` or even `!! 8034`.
+- If you paste in a URL like `https://github.com/microsoft/PowerToys/pull/123333`, then you can later quickly access this with just `!! 123333` or even `!! 333`. This works just as well for file paths, registry paths, and other things where later you can only remember part of the path. Any place you navigate to using PowerToys run can be quickly found in the history.
+- If you recently did some math like `= 1245+6789`, and you need to recall it, it will be in the history. You can find it with `!! 678` or even `!! 8034`.
 - If you can't remember what you searched for to find that app/folder/setting, you can just view them all with just `!!`.
 
 
