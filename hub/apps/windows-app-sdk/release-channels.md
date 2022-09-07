@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Windows App SDK's release channels.
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 09/06/2022
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.author: stwhi
 author: stevewhims
@@ -18,7 +18,7 @@ The following table provides an overview of the different release channels. For 
 |         | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                      |
 |---------|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------|
 | **✅**   | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                                   | Yes        | [1.1.4](stable-channel.md#version-114) (08/11/2022)                                                 |
-| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least two previews per stable version                                           | No         | [1.1.0-preview3](preview-channel.md#version-11-preview-3-110-preview3) (05/03/2022)                 |
+| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least two previews per stable version                                           | No         | [1.2.0-preview1](preview-channel.md#version-12-preview-1-120-preview1) (09/06/2022)                 |
 | **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.2.0-experimental1](experimental-channel.md#version-12-experimental-120-experimental1) (08/03/2022) |
 
 ## Features available by release channel

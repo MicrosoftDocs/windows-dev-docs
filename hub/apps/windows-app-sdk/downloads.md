@@ -2,7 +2,7 @@
 title: Downloads for the Windows App SDK 
 description: Downloads for the Windows App SDK, including the VSIX, installer, and MSIX packages 
 ms.topic: article
-ms.date: 05/23/2022
+ms.date: 09/06/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: stwhi
 author: whims
@@ -60,7 +60,8 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 #### Windows App SDK 1.2
 |   | Version | SDK downloads | Runtime&nbsp;downloads |
 |---|---|---|---|
-| **🔄️** | [1.2&nbsp;Experimental](/windows/apps/windows-app-sdk/experimental-channel#version-12-experimental-120-experimental1)<br>08/15/2021<br>[Release&nbsp;notes&nbsp;](experimental-channel.md#version-12-experimental-120-experimental1) | No new Visual Studio extensions. | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/Microsoft.WindowsAppRuntime.Redist.1.2.220727.1-experimental1.zip) |
+| **❇️** | [1.2&nbsp;Preview1](preview-channel.md#version-12-preview-1-120-preview1)<br>09/06/2022<br>[Release&nbsp;notes&nbsp;](preview-channel.md#version-12-preview-1-120-preview1) | No new Visual Studio extensions. | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220902.1-preview1/Microsoft.WindowsAppRuntime.Redist.1.2.220902.1-preview1.zip) |
+| **🔄️** | [1.2.0&nbsp;Experimental](/windows/apps/windows-app-sdk/experimental-channel#version-12-experimental-120-experimental1)<br>08/15/2022<br>[Release&nbsp;notes&nbsp;](experimental-channel.md#version-12-experimental-120-experimental1) | No new Visual Studio extensions. | [Installer&nbsp;(x64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x64.exe)<br>[Installer&nbsp;(x86)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-x86.exe)<br>[Installer&nbsp;(arm64)](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/windowsappruntimeinstall-arm64.exe)<br>[Redistributable](https://aka.ms/windowsappsdk/1.2/1.2.220727.1-experimental1/Microsoft.WindowsAppRuntime.Redist.1.2.220727.1-experimental1.zip) |
 
 
 #### Windows App SDK 1.1
