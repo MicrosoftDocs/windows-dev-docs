@@ -41,7 +41,7 @@ WinUI 3 has been updated with the latest controls, styles, and behaviors from Wi
 
 ### Notifications
 
-**AppNotificationBuilder** introduced as an alternative to XML payload for creating and defining App Notifications.
+[**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) introduced as an alternative to XML payload for creating and defining App Notifications.
 
 For usage information, see the [AppNotificationBuilder spec](https://github.com/microsoft/WindowsAppSDK/blob/release/1.2-preview1/specs/AppNotifications/AppNotificationContentSpec/AppNotificationBuilder-spec.md) on GitHub.
 
@@ -57,9 +57,9 @@ For push notifications, when making a channel request call, apps will need to us
 
 #### Known limitations (Notifications)
 
-- In `AppNotificationScenario`, `Urgent Scenario` is only supported for Windows builds 19041 and later. You can use `AppNotificationBuilder.IsUrgentScenarioSupported` to check whether the feature is available at runtime.
-- In `AppNotificationButton`, `hint-toolTip` and `hint-buttonStyle` are only supported for builds 19041 and later. You can use `AppNotificationButton.IsButtonStyleSupported` and `AppNotificationButton.IsToolTipSupported` to check whether the feature is available at runtime.
-- In `MediaPlayerElement`, when used in XAML markup for an unpackaged app, the Source property cannot be set with an ms-appx or ms-resource URI. As an alternative, set the Source using a file URI, or set from code.
+- In [**AppNotificationScenario**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationscenario), `Urgent` is only supported for Windows builds 19041 and later. You can use [**AppNotificationBuilder.IsUrgentScenarioSupported**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.isurgentscenariosupported) to check whether the feature is available at runtime.
+- In [**AppNotificationButton**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton), `hint-toolTip` and `hint-buttonStyle` are only supported for builds 19041 and later. You can use [**IsButtonStyleSupported**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.isbuttonstylesupported) and [**IsToolTipSupported**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.istooltipsupported) to check whether the feature is available at runtime.
+- In [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement), when used in XAML markup for an unpackaged app, the [**Source**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property cannot be set with an ms-appx or ms-resource URI. As an alternative, set the Source using a file URI, or set from code.
 
 ### Windowing
 
