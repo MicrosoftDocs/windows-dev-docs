@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 05/03/2022
+ms.date: 09/06/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: gabilka
 author: gabbybilka
@@ -19,6 +19,49 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 **Important links**: 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
+
+## Version 1.2 Preview 1 (1.2.0-preview1)
+This is the latest release of the preview channel for version 1.2.
+
+In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
+
+### WinUI 3
+WinUI 3 apps can play audio and video with the **MediaPlayerElement** and **MediaTransportControls** media playback controls. For more info on how and when to use media controls, see [Media players](/windows/apps/design/controls/media-playback).
+
+WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the **InfoBadge** control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/apps/winui/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/apps/winui/winui2/release-notes/winui-2.8).
+
+#### Known issue
+**ListView** styles regressed and changed from WinAppSDK 1.1.
+
+### Notifications
+**AppNotificationBuilder** introduced as an alternative to XML payload for creating and defining App Notifications. For usage information, see the [AppNotificationBuilder spec](https://github.com/microsoft/WindowsAppSDK/blob/release/1.2-preview1/specs/AppNotifications/AppNotificationContentSpec/AppNotificationBuilder-spec.md) on GitHub.
+
+#### Breaking change
+For push notifications, when making a channel request call, apps will need to use the Azure Object ID instead of the Azure App ID. See [Quickstart: Push notification in the Windows App SDK](/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart) for details on finding your Azure Object ID.
+
+#### Fixed issue
+[**PushNotificationManager.IsSupported**](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported) will perform a check for elevated mode. It will return `false` if the app is elevated.
+
+#### Known limitations
+- In `AppNotificationScenario`, `Urgent Scenario` is only supported for Windows builds 19041 and later. You can use `AppNotificationBuilder.IsUrgentScenarioSupported` to check whether the feature is available at runtime.
+- In `AppNotificationButton`, `hint-toolTip` and `hint-buttonStyle` are only supported for builds 19041 and later. You can use `AppNotificationButton.IsButtonStyleSupported` and `AppNotificationButton.IsToolTipSupported` to check whether the feature is available at runtime.
+- In `MediaPlayerElement`, when used in XAML markup for an unpackaged app, the Source property cannot be set with an ms-appx or ms-resource URI. As an alternative, set the Source using a file URI, or set from code. 
+
+### Windowing
+Full title bar customization is now available on Windows 10, version 1809 and later through the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class. You can set [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `true` to extend content into the title bar area, and [**SetDragRectangles**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles#microsoft-ui-windowing-appwindowtitlebar-setdragrectangles(windows-graphics-rectint32())) to define drag regions (in addition to other customization options). 
+
+If you've been using the [**AppWindowTitleBar.IsCustomizationSupported**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) property to check whether you can call the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) APIs, it now returns `true` on supported Windows App SDK Windows 10 versions (1809 and later).
+
+#### Known limitations
+Simple title bar customizations are not supported on Windows 10. These include [**BackgroundColor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.backgroundcolor), [**InactiveBackgroundColor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.inactivebackgroundcolor), [**ForegroundColor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.foregroundcolor), [**InactiveForegroundColor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.inactiveforegroundcolor) and [**IconShowOptions**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iconshowoptions). If you call these properties, they will be ignored silently. All other **AppWindowTitleBar** APIs work in Windows 10, version 1809 and later. For the caption button color APIs (among others) and [**Height**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height), [**ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) must be set to `true`, otherwise they will also be ignored silently.
+
+### Access control
+**GetSecurityDescriptorForAppContainerNames** introduced to ease and streamline named object sharing between packaged processes and general Win32 APIs. This method takes a list of Package Family Names (PFNs) and access masks, and returns a security descriptor. For more information, see the [GetSecurityDescriptorForAppContainerNames spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/GetSecurityDescriptorForAppContainerNames/GetSecurityDescriptorForAppContainerNames.md) on GitHub.
+
+### Other limitations & known issues
+- .NET PublishSingleFile isn't supported.
 
 ## Version 1.1 Preview 3 (1.1.0-preview3)
 This is the latest release of the preview channel for version 1.1. It supports all preview channel features (see [Features available by release channel](release-channels.md#features-available-by-release-channel)).
@@ -104,7 +147,7 @@ In addition to all of the [Preview 1](#version-11-preview-1-110-preview1) featur
 - The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Reference the Windows App SDK framework package at run time](use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initalization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
 
 **Known limitations:**
-- Self-contained deployment is supported only on Windows 10, 1903 and above. 
+- Self-contained deployment is supported only on Windows 10, 1903 and later. 
 
 ### Windowing
 For easier programming access to functionality that's implemented in `USER32.dll` (see [Windows and messages](/windows/win32/api/_winmsg/)), this release surfaces more of that functionality in [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) itself.
@@ -169,7 +212,7 @@ Windows App SDK 1.1 will introduce support for self-contained deployment. Our [D
     </Target>
      ```
 
-- Supported only on Windows 10, 1903 and above
+- Supported only on Windows 10, 1903 and later.
 
 ### Notifications
 Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send Windows notifications.
@@ -367,7 +410,7 @@ The following sections describe new and updated features, limitations, and known
 
 - Controls have been updated to reflect the latest Windows styles from [WinUI 2.6](../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
 - Single-project MSIX is supported.
-- WinUI 3 package can now target build 17763 and above. See [issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921) for more info.
+- WinUI 3 package can now target build 17763 and later. See [issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921) for more info.
 - In-app toolbar is supported. However, the in-app toolbar and existing Hot Reload/Live Visual Tree support require the upcoming Visual Studio 17.0 Preview 5 release, available later in October.
 
 **Bug fixed**: WebView2Runtime text is now localized.
