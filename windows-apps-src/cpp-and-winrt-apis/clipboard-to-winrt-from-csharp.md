@@ -1,7 +1,7 @@
 ---
 title: Porting the Clipboard sample to C++/WinRT from C# (a case study)
 description: This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
-ms.date: 04/13/2020
+ms.date: 09/06/2022
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#, sample, clipboard, case, study
 ms.localizationpriority: medium
@@ -21,8 +21,8 @@ A function *declaration* describes just the function's *signature* (its return t
 
 It's a little different when it comes to types. You *define* a type by providing its name and by (at a minimum) just *declaring* all of its member functions (and other members). That's right, you can *define* a type even if you don't define its member functions.
 
-- Common C++ source code files are `.h` and `.cpp` files. A `.h` file is a *header* file, and it defines one or more types. While you *can* define member functions in a header, that's typically what a `cpp` file is for. So for a hypothetical C++ type **MyClass**, you'd define **MyClass** in `MyClass.h`, and you'd define its member functions in `MyClass.cpp`. For other developers to re-use your classes, you'd share out just the `.h` files and object code. You'd keep your `.cpp` files secret, because the implementation constitutes your intellectual property.
-- Precompiled header (`pch.h`). Typically there's a set of header files that you include in your application, and that set changes only rarely. So rather than processing the contents of that set of headers each time you compile, you can aggregate those headers into one, compile that once, and then use the output of that precompilation step each time you build. You do this via a *precompiled header* file (usually named `pch.h`).
+- Common C++ source code files are `.h` (*dot aitch*) and `.cpp` files. A `.h` file is a *header* file, and it defines one or more types. While you *can* define member functions in a header, that's typically what a `.cpp` file is for. So for a hypothetical C++ type **MyClass**, you'd define **MyClass** in `MyClass.h`, and you'd define its member functions in `MyClass.cpp`. For other developers to re-use your classes, you'd share out just the `.h` files and object code. You'd keep your `.cpp` files secret, because the implementation constitutes your intellectual property.
+- Precompiled header (`pch.h`). Typically there's a set of header files that you include in your application, and you don't change those files very often. So rather than processing the contents of that set of headers each time you compile, you can aggregate those headers into one file, compile that once, and then use the output of that precompilation step each time you build. You do that via a *precompiled header* file (usually named `pch.h`).
 - `.idl` files. These files contain Interface Definition Language (IDL). You can think of IDL as header files for Windows Runtime types. We'll talk more about IDL in the section [IDL for the **MainPage** type](#idl-for-the-mainpage-type).
 
 ## Download and test the Clipboard sample
@@ -36,6 +36,9 @@ Visit the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipbo
 The walkthrough in this topic shows how you can recreate the C++/WinRT version of the Clipboard sample by porting it from the C# source code. That way, you can see how you can port your own C# projects to C++/WinRT.
 
 To get a feel for what the sample does, open the C# solution (`\Clipboard_sample\cs\Clipboard.sln`), change the configuration as appropriate (perhaps to *x64*), build, and run. The sample's own user interface (UI) guides you through its various features, step by step.
+
+> [!TIP]
+> The root folder of the sample that you downloaded might be named `Clipboard` rather than `Clipboard_sample`. But we'll continue to refer to that folder as `Clipboard_sample` to distinguish it from the C++/WinRT version that you'll be creating in a later step.
 
 ## Create a Blank App (C++/WinRT), named Clipboard
 
@@ -56,7 +59,7 @@ For the two versions of the sample to coexist, they need different identifiers. 
 - Inside the **/Package/Applications/Application** element, note the value of the **Id** attribute. This is the *application id*.
 - Inside the **/Package/mp:PhoneIdentity** element, note the value of the **PhoneProductId** attribute. Again, for a newly-created project, this will be set to the same GUID as the package name is set to.
 
-Then copy `Package.appxmanifest` from the C# project to the C++/WinRT project. Finally, you can restore the three values that you noted. Or you can edit the copied values to make them unique and/or appropriate for the application and for your organization (as you ordinarily would for a new project). For example, in this case instead of restoring the value of the package name, we can just change the copied value from *Microsoft.SDKSamples.Clipboard.CS* to *Microsoft.SDKSamples.Clipboard.CppWinRT*. And we can leave the application id set to *App*. As long as either the package name *or* the application id are different, then the two applications will have different Application User Model IDs (AUMIDs).
+Then copy `Package.appxmanifest` from the C# project to the C++/WinRT project. Finally, you can restore the three values that you noted. Or you can edit the copied values to make them unique and/or appropriate for the application and for your organization (as you ordinarily would for a new project). For example, in this case instead of restoring the value of the package name, we can just change the copied value from *Microsoft.SDKSamples.Clipboard.CS* to *Microsoft.SDKSamples.Clipboard.CppWinRT*. And we can leave the application id set to *App*. As long as either the package name *or* the application id are different, then the two applications will have different Application User Model IDs (AUMIDs). And that's what's necessary for two apps to be installed side by side on the same machine.
 
 For the purposes of this walkthrough, it makes sense to make a few other changes in `Package.appxmanifest`. There are three occurrences of the string *Clipboard C# Sample*. Change that to *Clipboard C++/WinRT Sample*.
 
@@ -64,7 +67,7 @@ In the C++/WinRT project, the `Package.appxmanifest` file and the project are no
 
 The C# project references asset files from a shared folder. You can do the same in the C++/WinRT project, or you can copy the files as we'll do in this walkthrough.
 
-Navigate to the `\Clipboard_sample\SharedContent\media` folder. Select the seven files that the C# project includes (`microsoft-sdk.png` through to `windows-sdk.png`), copy them, and paste them into the `\Clipboard\Clipboard\Assets` folder in the new project.
+Navigate to the `\Clipboard_sample\SharedContent\media` folder. Select the seven files that the C# project includes (`microsoft-sdk.png`, `smalltile-sdk.png`, `splash-sdk.png`, `squaretile-sdk.png`, `storelogo-sdk.png`, `tile-sdk.png`, and `windows-sdk.png`), copy them, and paste them into the `\Clipboard\Clipboard\Assets` folder in the new project.
 
 Right-click the `Assets` folder (in Solution Explorer in the C++/WinRT project) > **Add** > **Existing item...** and navigate to `\Clipboard\Clipboard\Assets`. In the file picker, select the seven files and click **Add**.
 
@@ -89,7 +92,7 @@ Having authored IDL source code (within an `.idl` file), you can then compile th
 - To make it easier for you to consume Windows Runtime types (built-in or third party), the C++/WinRT build system uses `.winmd` files to generate wrapper types to represent the projected portions of those Windows Runtime types.
 - To make it easier for you to implement your own Windows Runtime types, the C++/WinRT build system turns your IDL into a `.winmd` file, and then uses that to generate wrappers for your projection, as well as stubs on which to base your implementation (we'll talk more about these stubs later in this topic).
 
-The specific version of IDL that we use with C++/WinRT is [Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro). In the remainder of this section, we'll examine the C# **MainPage** type in some detail. We'll decide which parts of it need to be in the *projection* of the C++/WinRT **MainPage** type (that is, in its callable, or public, surface), and which can be just part of its implementation. That distinction is important because when we come to author our IDL (which we'll do in the section after this one), we'll be defining only the callable parts in there.
+The specific version of IDL that we use with C++/WinRT is [Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro). In the remainder of this section of the topic, we'll examine the C# **MainPage** type in some detail. We'll decide which parts of it need to be in the *projection* of the C++/WinRT **MainPage** type (that is, in its callable, or public, surface), and which can be just part of its implementation. That distinction is important because when we come to author our IDL (which we'll do in the section after this one), we'll be defining only the callable parts in there.
 
 The C# source code files that together implement the **MainPage** type are: `MainPage.xaml` (which we'll port soon, by copying it), `MainPage.xaml.cs`, and `SampleConfiguration.cs`.
 
@@ -100,7 +103,7 @@ The classes in a C# Universal Windows Platform (UWP) application are of course W
 Any XAML page in our project needs to be a Windows Runtime type, so **MainPage** needs to be a Windows Runtime type. In the C++/WinRT project, **MainPage** is already a Windows Runtime type, so we don't need to change that aspect of it. Specifically, it's a *runtime class*.
 
 - For more details about whether or not you should author a runtime class for a given type, see the topic [Author APIs with C++/WinRT](./author-apis.md).
-- In C++/WinRT, the internal implementation of a runtime class, and the projected (public) parts of it, exist in the form of two different classes. These are known as the *implementation type* and the *projected type*. You can learn more about them in the topic mentioned in the bullet-point above, and also in [Consume APIs with C++/WinRT](./consume-apis.md).
+- In C++/WinRT, the internal implementation of a runtime class, and the projected (public) parts of it, exist in the form of two different classes. These are known as the *implementation type* and the *projected type*. You can learn more about them in the topic mentioned in the previous bullet-point, and also in [Consume APIs with C++/WinRT](./consume-apis.md).
 - For more info about the connection between runtime classes and IDL (`.idl` files), you can read and follow along with the topic [XAML controls; bind to a C++/WinRT property](./binding-property.md). That topic walks through the process of authoring a new runtime class, the first step of which is to add a new **Midl File (.idl)** item to the project.
 
 For **MainPage**, we actually have the necessary `MainPage.idl` file already in the C++/WinRT project. That's because the project template created it for us. But later in this walkthrough we'll be adding further `.idl` files to the project.
@@ -152,7 +155,7 @@ ScenarioControl.ItemsSource = itemCollection;
 
 A collection of **Scenario** objects is being assigned to the [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property of a **ListBox** (which is an items control). Since **Scenario** *does* need to interoperate with XAML, it needs to be a Windows Runtime type. So it needs to be defined in IDL. Defining the **Scenario** type in IDL causes the C++/WinRT build system to generate a source code definition of **Scenario** for you in a behind-the-scenes header file (the name and location of which are not important for this walkthrough).
 
-And you'll recall that **MainPage.Scenarios** is a collection of **Scenario** objects, which we've just said need to be in IDL. For that reason, **MainPage.Scenarios** also needs to be declared in the IDL.
+And you'll recall that **MainPage.Scenarios** is a collection of **Scenario** objects, which we've just said need to be in IDL. For that reason, **MainPage.Scenarios** itself also needs to be declared in the IDL.
 
 **NotifyType** is an `enum` declared in C#'s `MainPage.xaml.cs`. Because we pass **NotifyType** to a method belonging to the **MainPage** runtime class, **NotifyType** too needs to be a Windows Runtime type; and it needs to be defined in `MainPage.idl`.
 
@@ -194,7 +197,7 @@ namespace SDKTemplate
 > [!NOTE]
 > For more info about the contents of an `.idl` file in a C++/WinRT project, see [Microsoft Interface Definition Language 3.0](/uwp/midl-3/).
 
-With your own porting work, you may not want nor need to change the namespace name like we did above. We're doing it here only because the default namespace of the C# project that we're porting is **SDKTemplate**; while the name of the project and of the assembly is **Clipboard**.
+With your own porting work, you might not want or need to change the namespace name like we did above. We're doing it here only because the default namespace of the C# project that we're porting is **SDKTemplate**; while the name of the project and of the assembly is **Clipboard**.
 
 But, as we proceed with the port in this walkthrough, we'll be changing every occurrence in source code of the **Clipboard** namespace name to **SDKTemplate**. There's also a place in C++/WinRT project properties where the **Clipboard** namespace name appears, so we'll take the opportunity to change that now.
 
@@ -206,9 +209,9 @@ The topic [XAML controls; bind to a C++/WinRT property](./binding-property.md) i
 
 Each time you add, remove, or change something in your IDL, and build, the build system updates the stub implementations in those stubs files. So each time you change your IDL and build, we recommend that you view those stubs files, copy any changed signatures, and paste them into your project. We'll give more specifics and examples of exactly how to do that in a moment. But the advantage of doing this is to give you an error-free way of knowing at all times what the shape of your implementation type should be, and what the signature of its methods should be.
 
-At this point in the walkthrough, we're done editing the `MainPage.idl` file for the time being, so you should save it now. The project won't build to completion at the moment, but performing a build now is a useful thing to do because it regenerates the stub files for **MainPage**.
+At this point in the walkthrough, we're done editing the `MainPage.idl` file for the time being, so you should save it now. The project won't build to completion at the moment, but performing a build now is a useful thing to do because it regenerates the stub files for **MainPage**. So build the project now, and disregard any build errors.
 
-For this C++/WinRT project, the stub files are generated in the `\Clipboard\Clipboard\Generated Files\sources` folder. You'll find them there after the partial build has completed (again, as expected, the build won't succeed entirely. But the step that we're interested in&mdash;generating stubs&mdash;*will* have succeeded). The files we're interested in are `MainPage.h` and `MainPage.cpp`.
+For this C++/WinRT project, the stub files are generated in the `\Clipboard\Clipboard\Generated Files\sources` folder. You'll find them there after the partial build has come to an end (again, as expected, the build won't succeed entirely. But the step that we're interested in&mdash;generating stubs&mdash;*will* have succeeded). The files we're interested in are `MainPage.h` and `MainPage.cpp`.
 
 In those two stub files, you'll see new stub implementations of the members of **MainPage** that we added to the IDL (**Current** and **FEATURE_NAME**, for example). You'll want to copy those stub implementations into the `MainPage.h` and `MainPage.cpp` files that are already in the project. At the same time, just as we did with the IDL, we'll remove from those existing files the placeholder members of **Mainpage** that the Visual Studio project template gave us (the dummy property named **MyProperty**, and the event handler named **ClickHandler**).
 
@@ -287,7 +290,7 @@ Before building the C++/WinRT project, find any declarations of (and references 
 
 Since we removed the event handler from **MainPage**, also go into `MainPage.xaml` and delete the **Button** element from the markup.
 
-Save all the files. Clean the solution (**Build** > **Clean Clipboard**), and then build it. The build will succeed if the changes you've made so far are valid.
+Save all the files. Clean the solution (**Build** > **Clean Solution**), and then build it. Having followed all of the changes so far, exactly as written, the build is expected to succeed.
 
 ### Implement the **MainPage** members that we declared in IDL
 
@@ -329,7 +332,7 @@ public partial class MainPage : Page
 ...
 ```
 
-Soon, we'll be re-using `MainPage.xaml` in its entirety (by copying it). For now, we'll temporarily add a **TextBlock** element, with the appropriate name, into the `MainPage.xaml` of the C++/WinRT project.
+Soon, we'll be re-using `MainPage.xaml` in its entirety (by copying it). For now (below), we'll temporarily add a **TextBlock** element, with the appropriate name, into the `MainPage.xaml` of the C++/WinRT project.
 
 **FEATURE_NAME** is a static field of **MainPage** (a C# `const` field is essentially static in its behavior), defined in `SampleConfiguration.cs`. For C++/WinRT, instead of a (static) field, we'll make it the C++/WinRT expression of a (static) read-only property. The C++/WinRT way of expressing a property getter is as a function that returns the property value, and takes no parameters (an accessor). So the C# **FEATURE_NAME** static field becomes the C++/WinRT **FEATURE_NAME** static accessor function (in this case, returning the string literal).
 
@@ -374,7 +377,7 @@ namespace winrt::SDKTemplate::implementation
 namespace winrt::SDKTemplate::implementation
 {
     SDKTemplate::MainPage MainPage::current{ nullptr };
-...
+
     MainPage::MainPage()
     {
         InitializeComponent();
@@ -446,7 +449,7 @@ public partial class MainPage : Page
 ...
 ```
 
-From our earlier investigation, we know that this collection of **Scenario** objects is being displayed in a **ListBox**. In C++/WinRT, there are limits to *the kind of collection* that we can assign to the **ItemsSource** property of an items control. The collection must be either a vector or an observable vector, and its elements must be one of the following.
+From our earlier investigation, we know that this collection of **Scenario** objects is being displayed in a **ListBox**. In C++/WinRT, there are limits to *the kind of collection* that we can assign to the **ItemsSource** property of an items control. The collection must be either a vector or an observable vector, and its elements must be one of the following:
 
 - Either runtime classes, or
 - [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable).
@@ -505,7 +508,7 @@ The initialization code you just added references types that aren't yet in the p
 
 #### Add five new blank XAML pages
 
-Add a new **XAML** > **Blank Page (C++/WinRT)** item to the project (be certain that it's the **Blank Page (C++/WinRT)** item template, and not the **Blank Page** one). Name it `CopyText`. The new XAML page is defined within the **SDKTemplate** namespace, which is what we want.
+Add a new **Visual C++** > **Blank Page (C++/WinRT)** item to the project (be certain that it's the **Blank Page (C++/WinRT)** item template, and not the **Blank Page** one). Name it `CopyText`. The new XAML page is defined within the **SDKTemplate** namespace, which is what we want.
 
 Repeat the above process another four times, and named the XAML pages `CopyImage`, `CopyFiles`, `HistoryAndRoaming`, and `OtherScenarios`.
 
@@ -533,7 +536,7 @@ private void UpdateStatus(string strMessage, NotifyType type) { ... }{
 ...
 ```
 
-**NotifyUser** uses the [**Windows.UI.Core.CoreDispatcherPriority**](/uwp/api/windows.ui.core.coredispatcherpriority) enum. In C++/WinRT, whenever you want to use a type from a Windows namespaces, you need to include the corresponding C++/WinRT Windows namespace header file (for more info about that, see [Get started with C++/WinRT](./get-started.md)). In this case, as you'll see in the code listing below, the header is `winrt/Windows.UI.Core.h`, and we'll include it in `pch.h`.
+**NotifyUser** uses the [**Windows.UI.Core.CoreDispatcherPriority**](/uwp/api/windows.ui.core.coredispatcherpriority) enum. In C++/WinRT, whenever you want to use a type from a Windows namespaces, you need to include the corresponding C++/WinRT Windows namespace header file (for more info about that, see [Get started with C++/WinRT](./get-started.md)). In this case, as you'll see in the code listing below, the header is `winrt/Windows.UI.Core.h`, and we'll be including it in `pch.h`.
 
 **UpdateStatus** is private. So we'll make that a private method on our **MainPage** implementation type. **UpdateStatus** isn't meant to be called on the runtime class, so we won't declare it in IDL.
 
@@ -720,7 +723,11 @@ Edit `pch.h`, `SampleConfiguration.h`, and `SampleConfiguration.cpp` to match th
 
 // SampleConfiguration.h
 ...
-static hstring BuildClipboardFormatsOutputString();
+struct SampleState
+{
+    static hstring BuildClipboardFormatsOutputString();
+    ...
+}
 ...
 
 // SampleConfiguration.cpp
@@ -823,7 +830,10 @@ Edit `SampleConfiguration.h` and `SampleConfiguration.cpp` to match the listings
 ```cppwinrt
 // SampleConfiguration.h
 ...
+    static bool EnableClipboardContentChangedNotifications(bool enable);
+    ...
 private:
+    ...
     static event_token clipboardContentChangedToken;
     static event_token activatedToken;
     static void OnClipboardChanged(Windows::Foundation::IInspectable const& sender, Windows::Foundation::IInspectable const& e);
@@ -954,7 +964,7 @@ And, in place of C#'s use of [string interpolation](/dotnet/csharp/language-refe
 
 #### **isApplicationWindowActive**
 
-In C#, **isApplicationWindowActive** is a simple private `bool` field belonging to the **MainPage** class, and it's defined in `SampleConfiguration.cs`. It defaults to `false`. In C++/WinRT, we'll make it a public static field of **SampleState** (for the reasons we've already described) in the `SampleConfiguration.h` and `SampleConfiguration.cpp` files, with the same default.
+In C#, **isApplicationWindowActive** is a simple private `bool` field belonging to the **MainPage** class, and it's defined in `SampleConfiguration.cs`. It defaults to `false`. In C++/WinRT, we'll make it a private static field of **SampleState** (for the reasons we've already described) in the `SampleConfiguration.h` and `SampleConfiguration.cpp` files, with the same default.
 
 We've already seen how to declare, define, and initialize a static field. For a refresher, look back to what we did with the **isClipboardContentChangedEnabled** field, and do the same with **isApplicationWindowActive**.
 
@@ -982,7 +992,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-And here's the equivalent, ported to C++/WinRT. Note that in the C++/WinRT version, the event handler is `public` (as you can see, you declare it *before* the `private:`declarations). This is because an event handler that's registered in XAML markup, like this one is, needs to be `public` in C++/WinRT in order for the XAML markup to access it. If you register an event handler in imperative code (like we did in **MainPage::EnableClipboardContentChangedNotifications** earlier), then the event handler doesn't need to be `public`.
+And here's the equivalent, ported to C++/WinRT. Note that in the C++/WinRT version, the event handler is `public` (as you can see, you declare it *before* the `private:`declarations). This is because an event handler that's registered in XAML markup, like this one is, needs to be `public` in C++/WinRT in order for the XAML markup to access it. On the other hand, if you register an event handler in imperative code (like we did in **MainPage::EnableClipboardContentChangedNotifications** earlier), then the event handler doesn't need to be `public`.
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -1112,6 +1122,8 @@ This is another private event handler belonging to the C# **MainPage** class, an
 
 For this method, we'll need **MainPage::navigating**, which is a private Boolean field, initialized to `false`. And you'll need a **Frame** in `MainPage.xaml`, named *ScenarioFrame*. But, apart from those details, porting this method reveals no new techniques.
 
+If, instead of porting by hand, you're copying code from the C++/WinRT version in the ZIP of the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/) source code that you downloaded, then you'll see a **MainPage::NavigateTo** being used there. For now, just refactor the contents of **NavigateTo** into **ScenarioControl_SelectionChanged**.
+
 #### **UpdateStatus**
 
 We have only a stub so far for **MainPage.UpdateStatus**. Porting its implementation, again, covers largely old ground. One new point to note is that while in C# we can compare a **string** to **String.Empty**, In C++/WinRT we instead call the [**winrt::hstring::empty**](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function) function. Another is that `nullptr` is the standard C++ equivalent of C#'s `null`.
@@ -1136,7 +1148,11 @@ As with asset files, you can choose to reference the same, shared XAML files fro
 
 Navigate to the `\Clipboard_sample\SharedContent\xaml` folder, select and copy `App.xaml` and `MainPage.xaml`, and then paste those two files into the `\Clipboard\Clipboard` folder in your C++/WinRT project, choosing to replace files when prompted.
 
+In the C++/WinRT project in Visual Studio, click **Show All Files** to toggle it on. Now add a new folder, immediately under the project node, and name it `Styles`. In File Explorer, navigate to the `\Clipboard_sample\SharedContent\xaml` folder, select and copy `Styles.xaml`, and paste it into the `\Clipboard\Clipboard\Styles` folder that you just created. Back in Solution Explorer in the C++/WinRT project, right-click the `Styles` folder > **Add** > **Existing item...** and navigate to `\Clipboard\Clipboard\Styles`. In the file picker, select `Styles` and click **Add**.
+
 Add a new folder to the C++/WinRT project, immediately under the project node, and named `Styles`. Navigate to the `\Clipboard_sample\SharedContent\xaml` folder, select and copy `Styles.xaml`, and paste it into the `\Clipboard\Clipboard\Styles` folder in your C++/WinRT project. Right-click the `Styles` folder (in Solution Explorer in the C++/WinRT project) > **Add** > **Existing item...** and navigate to `\Clipboard\Clipboard\Styles`. In the file picker, select `Styles` and click **Add**.
+
+Click **Show All Files** again to toggle it off.
 
 We've now finished porting **MainPage**, and if you've been following along with the steps then your C++/WinRT project will now build and run.
 
@@ -1144,7 +1160,7 @@ We've now finished porting **MainPage**, and if you've been following along with
 
 In addition to the standard `MainPage.xaml` starting point for the UI, the Clipboard sample has five other scenario-specific XAML pages, together with their corresponding code-behind files. We'll be re-using the actual XAML markup of all of these pages, unchanged, in the C++/WinRT version of the project. And we'll look at how to port the code-behind in the next few major sections. But before that, let's talk about IDL.
 
-There's value in consolidating your runtime classes into a single IDL file (see [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)). So next we'll consolidate the contents of `CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl`, and `OtherScenarios.idl` by moving that IDL into a single file named `Project.idl` (and then deleting the original files).
+There's value in consolidating the IDL for your runtime classes into a single IDL file. To learn about that value, see [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl). So next we'll consolidate the contents of `CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl`, and `OtherScenarios.idl` by moving that IDL into a single file named `Project.idl` (and then deleting the original files).
 
 While we're doing that, let's also remove the auto-generated dummy property (`Int32 MyProperty;`, and its implementation) from each of those five XAML page types.
 
@@ -1186,11 +1202,11 @@ namespace SDKTemplate
 }
 ```
 
-As you can see, this is just a copy of the contents of the individual `.idl` files, all inside one namespace, and with `MyProperty` removed from each runtime class.
+As you can see, that's just a copy of the contents of the individual `.idl` files, all inside one namespace, and with `MyProperty` removed from each runtime class.
 
 In Solution Explorer in Visual Studio, multiple-select all of the original IDL files (`CopyFiles.idl`, `CopyImage.idl`, `CopyText.idl`, `HistoryAndRoaming.idl`, and `OtherScenarios.idl`) and **Edit** > **Remove** them (choose **Delete** in the dialog).
 
-Finally&mdash;and to complete the removal of `MyProperty`&mdash;in the `.h` and `.cpp` files for each of the five XAML page types, delete the declarations and definitions of the `int32_t MyProperty()` accessor and `void MyProperty(int32_t)` mutator functions.
+Finally&mdash;and to complete the removal of `MyProperty`&mdash;in the `.h` and `.cpp` files for each of those same five XAML page types, delete the declarations and definitions of the `int32_t MyProperty()` accessor and `void MyProperty(int32_t)` mutator functions.
 
 Incidentally, it's always a good idea to have the name of your XAML files match the name of the class that they represent. For example, if you have `x:Class="MyNamespace.MyPage"` in a XAML markup file, then that file should be named `MyPage.xaml`. While this isn't a technical requirement, not having to juggle different names for the same artifact will make your project more understandable and maintainable, and easier to work with.
 
@@ -1316,7 +1332,7 @@ if (file)
 
 ### Copy the XAML necessary to finish up porting **CopyFiles**
 
-You can now select the entire contents of the `CopyFiles.xaml` file from the C# project, and paste that into the `CopyFiles.xaml` file in the C++/WinRT project (replacing the existing contents of that file in the C++/WinRT project).
+You can now select the entire contents of the `CopyFiles.xaml` file from the `shared` folder of the original sample source code download, and paste that into the `CopyFiles.xaml` file in the C++/WinRT project (replacing the existing contents of that file in the C++/WinRT project).
 
 Finally, edit `CopyFiles.h` and `.cpp` and delete the dummy **ClickHandler** function, since we just overwrote the corresponding XAML markup.
 
@@ -1379,7 +1395,8 @@ You can port `OtherScenarios.xaml` and `OtherScenarios.xaml.cs` using techniques
 
 ## Conclusion
 
-Hopefully this walkthrough has armed you with sufficient porting info and techniques that you can now go ahead and port your own C# applications to C++/WinRT. By way of a refresher, you can continue to refer back to the before (C#) and after (C++/WinRT) versions of the source code in the Cliboard sample, and compare them side by side to see the correspondence.
+Hopefully this walkthrough has armed you with sufficient porting info and techniques that you can now go ahead and port your own C# applications to C++/WinRT. By way of a refresher, you can continue to refer back to the *before* (C#) and *after* (C++/WinRT) versions of the source code in the [Clipboard sample](/samples/microsoft/windows-universal-samples/clipboard/), and compare them side by side to see the correspondence.
 
 ## Related topics
+
 * [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md)
