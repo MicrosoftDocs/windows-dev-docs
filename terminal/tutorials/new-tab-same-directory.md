@@ -102,6 +102,8 @@ function Invoke-Starship-PreCommand {
 
 ### WSL
 
+Windows Subsystem for Linux distributions primarily use BASH as the command line shell.
+
 #### `bash`
 
 Add the following line to the end of your `.bash_profile` config file:
