@@ -128,6 +128,8 @@ items:
             href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
           - name: "Additional migration guidance"
             href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+          - name: "Migrate UWP to Windows App SDK with the .NET Upgrade Assistant"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
       - name: Modernize your desktop apps
         items:
             - name: Overview
