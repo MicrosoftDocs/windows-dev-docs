@@ -11,7 +11,7 @@ ms.date: 10/18/2021
 
 Use the standalone [**Multilingual App Toolkit 4.0 Editor**](use-mat.md) to help you localize your apps with localization file management, translation support, and editing tools.
 
-Each of the following downloads contain an .msi installer for the Multilingual App Toolkit 4.0 Editor (also known as the Multilingual Editor). Select the link for your preffered language.
+Each of the following downloads contain an .msi installer for the Multilingual App Toolkit 4.0 Editor (also known as the Multilingual Editor). Select the link for your preferred language.
 
 - To start the installation immediately, click **Run**.
 - To save the download to your computer for installation at a later time, click **Save**.
@@ -87,4 +87,4 @@ The Multilingual Editor helps create simpler translation workflows by focusing o
 ## Additional info
 
 - You must have an active Internet connection to use the Microsoft Language Portal and Microsoft Translator services.
-- Microsoft Translator requires a subscription key for the Microsoft Translator Text Api.
+- Microsoft Translator requires a subscription key for the Microsoft Translator Text API.
