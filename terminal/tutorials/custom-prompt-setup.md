@@ -57,9 +57,16 @@ You will need to agree to the source terms and may run into the instance that mo
 
 ![Screenshot of winget install oh my posh packages.](../images/oh-my-posh-winget.png)
 
-To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
+To use the Microsoft Store version of Oh My Posh, which will automatically update when new versions are available, use the command:
+
+```powershell
+winget install XP8K0HKJFRXGCK
+```
+
+Enter `oh-my-posh --version` to confirm the version number of your Oh My Posh installation. To ensure you have the latest updates, you can use the following command: `winget upgrade oh-my-posh`.
 
 > [!NOTE]
+> If you want to install the newest version of Oh My Posh in PowerShell, you may want to first remove the OMP module's cached files and uninstall the old module. There are instructions on how to do this in the [Oh My Posh docs](https://ohmyposh.dev/docs/migrating#migration-steps). 
 > If you are more familiar with the [Scoop](https://scoop.sh/) installer or a manual installation method that allows automation, these can also be used for installing on Windows, just follow the instructions in the [Oh My Posh docs](https://ohmyposh.dev/docs/installation/windows).
 
 ### Choose and apply a PowerShell prompt theme
@@ -82,6 +89,9 @@ Now, each new PowerShell instance will start by importing Oh My Posh and setting
 
 > [!NOTE]
 > This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts. [Learn more about PowerShell profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
+
+> [!TIP]
+> Oh My Posh can be configured to restore the current working directory by enabling `osc99` in the General Settings. See the [Oh My Posh docs](https://ohmyposh.dev/docs/configuration/overview#general-settings).  
 
 ## Customize your WSL prompt with Oh My Posh
 

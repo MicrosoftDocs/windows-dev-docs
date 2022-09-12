@@ -98,8 +98,11 @@ function Invoke-Starship-PreCommand {
   }
   $host.ui.Write($prompt)
 }
+```
 
 ### WSL
+
+Windows Subsystem for Linux distributions primarily use BASH as the command line shell.
 
 #### `bash`
 

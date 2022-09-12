@@ -18,11 +18,14 @@ You can use `wt.exe` to open a new instance of Windows Terminal from the command
 
 ## Command line syntax
 
-The `wt` command line accepts two types of values: **options** and **commands**. **Options** are a list of flags and other parameters that can control the behavior of the `wt` command line as a whole. **Commands** provide the action, or list of actions separated by semicolons, that should be implemented. If no command is specified, then the command is assumed to be `new-tab` by default.
+The `wt` command line accepts two types of values: **options** and **commands**. **Options** are a list of flags and other parameters that can control the behavior of the `wt` command line as a whole. **Commands** provide the action, or list of actions separated by semicolons, that should be implemented. If no command is specified, then the command is assumed to be `new-window` by default.
 
 ```cmd
 wt [options] [command ; ]
 ```
+
+> [!NOTE]
+> The behavior of the `wt.exe` command may be affected by the [`windowingBehavior` property](./customize-settings/startup.md#new-instance-behavior). This setting can be adjusted to default between opening a new window or opening a new tab.
 
 To display a help message listing the available command line arguments, enter: `wt -h`, `wt --help`, `wt -?`, or `wt /?`.
 
