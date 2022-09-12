@@ -97,7 +97,7 @@ Register your app to handle notifications, then unregister when your app termina
 In your `App.xaml` file, register for [AppNotificationManager::Default().NotificationInvoked](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked), then call [AppNotificationManager::Default().Register](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register). The order of these calls matters.
 
 > [!IMPORTANT]
-> You must call **AppNotificationManager::Default().Register** before calling [AppInstance.GetCurrent](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getcurrent).
+> You must call **AppNotificationManager::Default().Register** before calling [AppInstance.GetCurrent.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
 
 When your app is terminating, call [AppNotificationManager::Default().Unregister()](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.unregister) to free up the COM server and allow for subsequent invokes to launch a new process.
 
