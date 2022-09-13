@@ -851,6 +851,18 @@ This inserts the content that was copied onto the clipboard.
 { "command": "paste", "keys": "shift+insert" }
 ```
 
+### Expand selection to word ([Preview](https://aka.ms/terminal-preview))
+
+If a selection exists, this expands the selection to fully encompass any words partially selected.
+
+**Command name:** `expandSelectionToWord`
+
+**Default bindings:**
+
+```json
+{ "command": "expandSelectionToWord" }
+```
+
 ### Select all
 
 This selects all of the content in the text buffer.
