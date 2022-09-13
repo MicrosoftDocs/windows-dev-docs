@@ -9,7 +9,7 @@ ms.topic: sample
 
 # Theme gallery ([Preview](https://aka.ms/terminal-preview))
 
-Below are some examples of [Themes](/customize-settings/themes.md).
+Below are some examples of [Themes](./../customize-settings/themes.md).
 
 ## Seamless
 
