@@ -24,6 +24,8 @@
           href: customize-settings/profile-appearance.md
         - name: Profile - Advanced
           href: customize-settings/profile-advanced.md
+        - name: Themes
+          href: customize-settings/themes.md
     - name: Command line arguments
       href: command-line-arguments.md
     - name: Command palette
