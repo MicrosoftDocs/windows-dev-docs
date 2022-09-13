@@ -23,8 +23,8 @@ Push notifications can be broken down into these four separate stages.
 | Stage | UWP | Windows App SDK|
 |--------|-----|----------------|
 | Identity | Partner Center (MSA) | Azure App Registration (AAD) |
-| Channel request | Synchronous| Asynchronous<br/>Azure App Registration Id<br/>Azure Tenant Id<br/>Retry logic built in (up to 5 retries)  |
-| Activation | In-process, PushTrigger\*, COM activation\*  | In-process, COM activation |
+| Channel request | Asynchronous| Asynchronous<br/>Azure App Registration Id<br/>Retry logic built in (up to 5 retries)  |
+| Activation | In-process, PushTrigger\*, COM activation\*  | In-process, COM activation, ShellExecute |
 | Sending push notifications | Uses login.live.com endpoint to receive an access token | Uses the `https://login.microsoftonline.com/{tenantID}/oauth2/token` endpoint for token request |
 
 \* Supported for Windows 10, version 2004 (10.0; Build 19041), and later.
