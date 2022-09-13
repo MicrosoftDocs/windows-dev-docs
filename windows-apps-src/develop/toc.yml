@@ -1330,13 +1330,13 @@
       href: /microsoft-edge/progressive-web-apps
       items:
         - name: Package Windows 7 app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
+          href: https://www.pwabuilder.com/
         - name: Package iOS app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html
+          href: https://www.pwabuilder.com
         - name: Package Android app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
+          href: https://www.pwabuilder.com
         - name: Package MacOS app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
+          href: https://www.pwabuilder.com
 - name: Processes and threading
   items:
     - name: Launching, resuming, and background tasks
