@@ -40,6 +40,8 @@ You can create a selection by using the `selectAll` or `markMode` actions. The `
 | <kbd>Ctrl</kbd> + <kbd>Home</kbd> | Move to the beginning of the buffer |
 | <kbd>Ctrl</kbd> + <kbd>End</kbd> | Move to the end of the buffer |
 
+When in mark mode, you can use <kbd>Tab</kbd> or <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to the next or previous hyperlink in the buffer. Windows Terminal can automatically detect hyperlinks if [`experimental.detectUrls`](/windows/terminal/customize-settings/interaction#automatically-detect-urls-and-make-them-clickable) is enabled.
+
 Regardless of being in mark mode, you can expand an existing selection using the following non-configurable key bindings:
 
 | Key binding | Result |
