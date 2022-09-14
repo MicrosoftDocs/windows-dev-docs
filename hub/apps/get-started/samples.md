@@ -31,9 +31,9 @@ Most of the samples identified in this document contain Solution (`.sln`) files 
 | [Input & Composition Gallery](https://github.com/microsoft/WindowsCompositionSamples) | Showcases a variety of `Microsoft.UI.Composition` and `Microsoft.UI.Input` API calls.                                                                                         |
 
 
-#### Samples by scenario
+#### Samples that demonstrate specific tasks
 
-| Sample                                                                                                                                    | Scenario                                                                                                                                                                                                                                                                                    |
+| Sample                                                                                                                                    | Task                                                                                                                                                                                                                                                                                    |
 |-------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Activation](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Activation)                         | **Handle app activation kinds**. [App activiation APIs](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation) control the way that your app handles activation kinds like `Launch`, `File`, and `Protocol`.                                                              |
 | [App Instancing](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing)                     | **Determine application instancing behavior**. [App instancing APIs](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing) control whether or not users can run multiple instances of your application at the same time.                                                      |
@@ -66,11 +66,11 @@ Most of the samples identified in this document contain Solution (`.sln`) files 
 | [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) | Demonstrates WinRT API usage patterns for UWP.                                                                                                                                |
 
 
-#### Samples by scenario
+#### Samples that demonstrate specific tasks
 
-| Sample                                                                                                                      | Scenario                                                                                                                                                  |
+| Sample                                                                                                                      | Task                                                                                                                                                  |
 |-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [360 Degree Video Playback](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/360VideoPlayback)      | **Playback a 360 degree video** in order to give an immersive/explorative experience to your users.                                                       |
+| [360 Degree Video Playback](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/360VideoPlayback)      | **Play a 360-degree video** in order to give an immersive/explorative experience to your users.                                                       |
 | [Advanced Casting](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/AdvancedCasting)                | **Use advanced casting** to allow your users to share their content on other devices like TVs.                                                            |
 | [Animation Metrics](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/AnimationMetrics)              | **Create Windows-styled designs** via the `AnimationMetrics` API to keep your app consistent with Windows.                                                |
 | [App Window](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/AppWindow)                            | **Create new windows** and control their positioning, size, or Picture-in-Picture mode.                                                                   |
@@ -104,9 +104,9 @@ Most of the samples identified in this document contain Solution (`.sln`) files 
 | [dotnet/maui-samples](https://github.com/dotnet/maui-samples) | .NET MAUI is a cross-platform framework for creating mobile and desktop apps with C# and XAML. Using .NET MAUI, you can develop apps that can run on Android, iOS, iPadOS, macOS, and Windows from a single shared codebase. These are also available in the [Samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui). |
 
 
-#### Samples by scenario
+#### Samples that demonstrate specific tasks
 
-| Sample Name/Link                                                                                            | Scenario                                                                                                                                                                       |
+| Sample Name/Link                                                                                            | Task                                                                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Animations](https://github.com/dotnet/maui-samples/tree/main/6.0/Animations)                               | **Use animations** to bring your app to life.                                                                                                                                  |
 | [Behaviors](https://github.com/dotnet/maui-samples/tree/main/6.0/Fundamentals/BehaviorsDemos)               | **Add functionality without subclassing** using behaviors, instead attaching behavior classes to your controls.                                                                |
