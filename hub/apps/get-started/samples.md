@@ -13,7 +13,11 @@ ms.custom: kr2b-contr-experiment
 
 # Sample applications for Windows development
 
-This page is targeted at users who are looking for Windows development samples that demonstrate specific tasks, features, and API usage patterns. See our [Samples Browser](/samples/browse/) for a more comprehensive overview of Windows development samples. Most of the samples identified in this document contain Solution (`.sln`) files that can be opened in Visual Studio. Refer to each resource's `Readme` for additional instructions.
+This page is targeted at users who are looking for Windows development samples that demonstrate specific tasks, features, and API usage patterns. 
+
+The samples in this document demonstrate features from Windows App SDK / WinUI 3, UWP / WinUI 2, .NET MAUI, and more. See our [Samples Browser](/samples/browse/) for a more extensive samples catalogue. 
+
+Most of the samples identified in this document contain Solution (`.sln`) files that can be opened in Visual Studio. Refer to each resource's `Readme` for additional instructions.
 
 
 ## Windows App SDK / WinUI 3 samples
