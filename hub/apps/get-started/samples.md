@@ -137,5 +137,5 @@ Most of the samples identified in this document contain Solution (`.sln`) files 
 
 ## Next steps
 
-- [Best Practices](best-practices.md)
+- [Windows Application Development - Best Practices](best-practices.md)
 - [Windows Developer FAQ](windows-developer-faq.yml)
