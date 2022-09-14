@@ -35,23 +35,30 @@ Widget providers should include the [uap3:Properties](/uwp/schemas/appxpackage/u
 
 ## Element hierarchy
 
+
 WidgetProvider
+
+&nbsp;&nbsp;ProviderIcons
+
+&nbsp;&nbsp;&nbsp;&nbsp;Icon
 
 &nbsp;&nbsp;Activation
 
-&nbsp;&nbsp;&nbsp;&nbsp;COM
+&nbsp;&nbsp;&nbsp;&nbsp;CreateInstance
 
-&nbsp;&nbsp;Widgets
+&nbsp;&nbsp;Definitions
 
-&nbsp;&nbsp;&nbsp;&nbsp;Widget
+&nbsp;&nbsp;&nbsp;&nbsp;Definition
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WidgetCapabilities
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Capabilities
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WidgetCapability
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Capability
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WidgetThemeResources
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ThemeResources
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icons
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots
 
@@ -59,7 +66,9 @@ WidgetProvider
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DarkMode
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icons
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots
 
@@ -67,13 +76,13 @@ WidgetProvider
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LightMode
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icons
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icon
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshots
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screenshot
-
-
 
 ## WidgetProvider
 
@@ -85,38 +94,42 @@ The root element of the widget provider registration information.
 
 ![A screenshot of the Add Widget dialog in the Widgets board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added](images/widget-picker.png)
 
+## WidgetProviderIcons
+
+Specifies icons representing the widget provider app.
+
 ## Activation
 
 Specifies activation information for the widget provider.
 
-## COM
+## CreateInstance
 
-Specifies the [CLSID](/windows/win32/com/com-class-objects-and-clsids) for the COM server that implements the widget provider.
+Specifies the [CLSID](/windows/win32/com/com-class-objects-and-clsids) for the CreateInstance server that implements the widget provider.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **ClassId**| GUID | Yes | The CLSID for the COM server that implements the widget provider. | N/A |
+| **ClassId**| GUID | Yes | The CLSID for the CreateInstance server that implements the widget provider. | N/A |
 
-## Widgets
+## Definitions
 
 The container element for one or more widget registrations.
 
-## Widget
+## Definition
 
 Represents the registration for a single widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
 | **Name**| string | Yes | A name that identifies the widget. Widget provider implementations use this name to determine or specify which of the app's widgets is being referenced for each operation. The name must be unique for all widgets defined within the app manifest file.  | N/A |
-| **DisplayTitle** | string | Yes | The title of the widget that is displayed on the Widgets host. | N/A |
+| **DisplayName** | string | Yes | The name of the widget that is displayed on the Widgets host. | N/A |
 | **Description** | string | Yes | Optionally create custom actions with buttons and inputs. | N/A |
-| **AllowMultiple** | boolean | No | Set to true if the widget provider supports multiple widgets. This attribute is optional and the default value is false. | false |
+| **AllowMultiple** | boolean | No | Set to true if the widget provider supports multiple widgets. This attribute is optional and the default value is false. | true |
 
-## WidgetCapablities
+## Capablities
 
 Optional. Specifies capabilities for a single widget. 
 
-## WidgetCapability
+## Capability
 
 Specifies a capability for a widget.
 
@@ -124,11 +137,15 @@ Specifies a capability for a widget.
 |---|---|---|---|---|
 | **WidgetSize**| string | Yes | Specifies a supported size for a widget. The value must be one of the following: "small", "medium", "large" | N/A |
 
-Specify one **WidgetCapability** element for each size the provider supports. If the **WidgetCapabilities** element is omitted, the default behavior is the same as if a single **WidgetCapability** element with the value "Large" is provided. 
+Specify one **Capability** element for each size the provider supports. If the **Capabilities** element is omitted, the default behavior is the same as if a single **Capability** element with the value "Large" is provided. 
 
-## WidgetThemeResources
+## ThemeResources
 
 Specifies theme resources for a widget.
+
+## Icons
+
+A container element for one or more **Icon** elements.
 
 ## Icon
 
@@ -136,7 +153,7 @@ Required. Specifies an icon that is displayed in the attribution area of the wid
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Source**| string | Yes | The package-relative path to an icon image file. | N/A |
+| **Path**| string | Yes | The package-relative path to an icon image file. | N/A |
 
 ## Screenshots
 
@@ -148,8 +165,8 @@ Required. Specifies a screenshot for a widget. This screenshot is shown in the W
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Source**| string | Yes | The package-relative path to a screenshot image file. | N/A |
-| **DisplayLabel**| string | No | The alt-text for the image, for accessibility. | N/A |
+| **Path**| string | Yes | The package-relative path to a screenshot image file. | N/A |
+| **DisplayAltText**| string | No | The alt-text for the image, for accessibility. | N/A |
 
 ## DarkMode
 
