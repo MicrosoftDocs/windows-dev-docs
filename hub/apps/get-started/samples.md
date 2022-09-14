@@ -33,7 +33,7 @@ Most of the samples identified in this document contain Solution (`.sln`) files 
 
 #### Samples by scenario
 
-|                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sample  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                             |                                                                              Scenario                                                                              |
+|                                             <div style="width:290px">Sample</div>                                             |                                                                              Scenario                                                                              |
 |:-----------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |             [Activation sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Activation)             |            **Handle app activation kinds**. App activation APIs determine how your app handles activation kinds like `Launch`, `File`, and `Protocol`.             |
 |           [App Instancing sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing)           | **Determine application instancing behavior**. App instancing APIs determine whether or not users can run multiple instances of your application at the same time. |
