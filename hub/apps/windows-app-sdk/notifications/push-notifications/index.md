@@ -35,7 +35,7 @@ Push notifications can be used to enable several distinct features. The content 
 The push notifications support in the Windows App SDK currently has these limitations:
 
 - If your app is published as [*self-contained*](../../../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md) or is running with the elevated (admin) privilege, this feature may not be supported. In your app, use the `winrt::PushNotificationManager::IsSupported()` check as demonstrated in [Quickstart: Push notifications in the Windows App SDK](push-quickstart.md) and implement a custom socket if the feature is unsupported.
-- Microsoft reserves the right to disable or revoke apps from using push notifications
+- Microsoft reserves the right to disable or revoke apps from using push notifications.
 
 ## Next steps
 
