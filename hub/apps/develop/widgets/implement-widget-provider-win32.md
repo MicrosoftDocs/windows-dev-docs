@@ -15,6 +15,12 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 1.
 
+This article walks you through creating a simple widget provider that implements the **IWidgetProvider** interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget (TBD) that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
+
+TBD - Screenshots of the two widgets
+
+This sample code in this article is adapted from the Windows App SDK Sample LINK TBD.
+
 ## Prerequisites
 
 ## Create a new win32 console app
@@ -44,13 +50,13 @@ In the precompiled header file, pch.h, add the following include directives.
 
 ## Add a WidgetProvider class to handle widget operations
 
-In Visual Studio, right-click the ExampleWidgetProvider project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **OK**.
+In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "WidgetProvider" and click **OK**.
 
 
 
 ## Declare a class that implements the IWidgetProvider interface
 
-The **IWidgetProvider** interface defines methods that the widget host will use to initiate operations with the Widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods.
+The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. **UpdateWidget** is a helper method that will send updates from our provider to the widget host.
 
 ```cpp
 // WidgetProvider.h
@@ -64,12 +70,14 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
     void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
     /* IWidgetProvider required functions that need to be implemented */
+
+    void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
 };
 ```
 
 ## Prepare to track active widgets
 
-A widget provider can support a single widget or multiple widgets. When the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has a associated name and a state value that can be used to store custom data. For this example, we'll declare a simple struct to store the ID, name, and data for each active widget. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** declaration.
+A widget provider can support a single widget or multiple widgets. When the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has a associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each active widget. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** declaration.
 
 ```cpp
 // WidgetProvider.h
@@ -92,9 +100,120 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
         static std::unordered_map<winrt::hstring, CompactWidgetInfo> RunningWidgets;
 ```
 
+This example will declare some static strings to define the JSON templates for each widget. These variables should be declared outside of the **WidgetProvider** class definition. For more information on the widget template JSON format, see TBD.
+
+```cpp
+// WidgetProvider.h
+const std::string weatherWidgetTemplate = R"(
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
+    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Redmond, WA",
+            "size": "large",
+            "isSubtle": true,
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Mon, Nov 4, 2019 6:21 PM",
+            "spacing": "none",
+            "wrap": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "size": "small",
+                            "altText": "Mostly cloudy weather"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "46",
+                            "size": "extraLarge",
+                            "spacing": "none",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "°F",
+                            "weight": "bolder",
+                            "spacing": "small",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Hi 50",
+                            "horizontalAlignment": "left",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Lo 41",
+                            "horizontalAlignment": "left",
+                            "spacing": "none",
+                            "wrap": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+})";
+
+const std::string countWidgetTemplate = R"(
+{                                                                     
+    "type": "AdaptiveCard",                                         
+    "body": [                                                         
+        {                                                               
+            "type": "TextBlock",                                    
+            "text": "You have clicked the button ${count} times"    
+        }                                                               
+    ],                                                                  
+    "actions": [                                                      
+        {                                                               
+            "type": "Action.Execute",                               
+            "title": "Increment",                                   
+            "verb": "inc"                                           
+        }                                                               
+    ],                                                                  
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"                                                
+})";
+```
+
 ## Implement the IWidgetProvider methods
 
-In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. There are some helper methods used in these method implementations which will be shown later in this article. Before diving into the interface methods, add the following line to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace.
+In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following line to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace.
 
 ```cpp
 // WidgetProvider.cpp
@@ -106,7 +225,7 @@ namespace winrt
 
 ## CreateWidget
 
-The widget host calls **CreateWidget** when the user has pinned one of your app's widgets to the widget host. First, this method gets the ID and name of the associated widget and adds a new item to the collection of active widgets. Next, we send the initial template and data for the widget. In this example we encapsulate this task in the **UpdateWidget** helper method.
+The widget host calls **CreateWidget** when the user has pinned one of your app's widgets to the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of active widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
 ```cpp
 // WidgetProvider.cpp
@@ -117,15 +236,9 @@ void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
     CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
     RunningWidgets[widgetId] = runningWidgetInfo;
 
-    // Call UpdateWidget() to send data/template to the newly created widget.
-    winrt::WidgetUpdateRequestOptions updateOptions{ widgetId };
-    // !! updateOptions.Template(GetTemplateForWidget(runningWidgetInfo));
-    //updateOptions.Data(GetDataForWidget(runningWidgetInfo));
-    // !!  You can store some custom state in the widget service that you will be able to query at any time.
-    updateOptions.CustomState(winrt::to_hstring(runningWidgetInfo.customState));
-
+    
     // Update the widget
-    // !! UpdateWidget(updateOptions);
+    UpdateWidget(runningWidgetInfo);
 }
 ```
 
@@ -143,7 +256,7 @@ void WidgetProvider::DeleteWidget(winrt::hstring const& widgetId)
 
 ## OnActionInvoked
 
-The widget host calls **OnActionInvoked** when the user interacts with an action you defined in your widget template. The following example shows an action definition from an example widget template. Note that the **verb** feel has the value "inc". The widget provider will use this value to determine what action to take in response to the user interaction.
+The widget host calls **OnActionInvoked** when the user interacts with an action you defined in your widget template. For the counter widget used in this example, an action was declared with a **verb** value of "inc" in the JSON template for the widget. The widget provider code will use this **verb** value to determine what action to take in response to the user interaction.  
 
 ```json
 ...
@@ -156,6 +269,7 @@ The widget host calls **OnActionInvoked** when the user interacts with an action
     ], 
 ...
 ```
+
 In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the **WidgetActionInvokedArgs** passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the **WidgetContext** object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our active widgets map with the specified ID and then update the increment the custom state value. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
 
 ```cpp
@@ -174,18 +288,7 @@ void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvoke
             auto& localWidgetInfo = iter->second;
             // Increment the count
             localWidgetInfo.customState++;
-
-            // Generate template/data you want to send back
-            // !! auto widgetTemplate = GetTemplateForWidget(localWidgetInfo);
-            // !! auto widgetData = GetDataForWidget(localWidgetInfo);
-
-            // Build update options and update the widget
-            winrt::WidgetUpdateRequestOptions updateOptions{ widgetId };
-            // !! updateOptions.Template(widgetTemplate);
-            // !! updateOptions.Data(widgetData);
-            updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
-
-            // !! UpdateWidget(updateOptions);
+            UpdateWidget(localWidgetInfo);
         }
     }
 }
@@ -197,7 +300,7 @@ For information about the **Action.Execute** syntax for Adaptive Cards, see [Act
 
 ## OnWidgetContextChanged
 
-In the current release, **OnWidgetContextChanged** is only called when the user changes the size of a pinned widget.
+In the current release, **OnWidgetContextChanged** is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template to the widget host depending on what size is requested. You can also choose to include the template JSON for all supported widget sizes in a single template. If you send all sizes in a single template, you can use the **OnWidgetContextChanged** for telemetry purposes.
 
 ```cpp
 // WidgetProvider.cpp
@@ -210,38 +313,52 @@ void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs cont
     {
         auto localWidgetInfo = iter->second;
 
-        // Generate template/data you want to send back
-        // !! auto widgetTemplate = GetTemplateForWidget(localWidgetInfo);
-        // !! auto widgetData = GetDataForWidget(localWidgetInfo);
-
-        // We could updat template or data to account for the new size.
-        // Leaving that as exercise for the provider author :)
-
-        // Build update options and update the widget
-        winrt::WidgetUpdateRequestOptions updateOptions{ widgetId };
-        // !! updateOptions.Template(widgetTemplate);
-        // !! updateOptions.Data(widgetData);
-        updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
-
-        // !! UpdateWidget(updateOptions);
+        UpdateWidget(localWidgetInfo);
+    }
+}
     
 ```
 
 ## Update a widget
 
-Create the **UpdateWidget** helper method to update an active widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call **UpdateWidget**, passing in a **WidgetUpdateRequestOptions** object that identifies the widget to be updated and provides the template and data information for the widget.
+Create the **UpdateWidget** helper method to update an active widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
-void WidgetProvider::UpdateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetUpdateRequestOptions const& updateRequestArgs)
+void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
 {
-    winrt::WidgetManager::GetDefault().UpdateWidget(updateRequestArgs);
+    winrt::WidgetUpdateRequestOptions updateOptions{ localWidgetInfo.widgetId };
+
+    winrt::hstring templateJson;
+    if (localWidgetInfo.widgetName == L"Weather_Widget")
+    {
+        templateJson = winrt::to_hstring(weatherWidgetTemplate);
+    }
+    else if (localWidgetInfo.widgetName == L"Counting_Widget")
+    {
+        templateJson = winrt::to_hstring(countWidgetTemplate);
+    }
+
+    winrt::hstring dataJson;
+    if (localWidgetInfo.widgetName == L"Weather_Widget")
+    {
+        L"{}";
+    }
+    else if (localWidgetInfo.widgetName == L"Counting_Widget")
+    {
+        L"{ \"count\": " + winrt::to_hstring(localWidgetInfo.customState) + L" }";
+    }
+
+    updateOptions.Template(templateJson);
+    updateOptions.Data(dataJson);
+    // !!  You can store some custom state in the widget service that you will be able to query at any time.
+    updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
 }
 ```
 
 ## Initialize the list of active widgets on startup
 
-When our widget provider is first initialized, we need to populate our list of active widgets. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call **GetWidgetInfos**, which returns an array of **WidgetInfo** objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. For this example, paste the following code into the constructor for the **WidgetProvider** class.
+When our widget provider is first initialized, we need to populate our list of active widgets. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call **GetWidgetInfos**, which returns an array of **WidgetInfo** objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
 
 ```cpp
 // WidgetProvider.cpp
@@ -276,7 +393,7 @@ WidgetProvider::WidgetProvider()
 
 ## Instantiate the WidgetProvider class from main
 
-AAdd the header that defines the WidgetProvider class to the includes at the top of your app's `main.cpp` file.
+Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file.
 
 ```cpp
 // main.cpp
@@ -435,14 +552,15 @@ Next, add the extension that registers the app as a widget provider. Paste the [
 <Extensions>
 ```
 
-There is a lot of xml in this example. The following section will call out some high-level concepts about the format. For detailed descriptions and format information for all of these elements, see [widget-provider-manifest.md](Widget provider package manifest XML format).
+For detailed descriptions and format information for all of these elements, see [widget-provider-manifest.md](Widget provider package manifest XML format).
 
-- The **uap3:Extension** and [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual) element represents a general extensibility for apps. It's not specific to widget providers. The [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/elemnt-uap3-properties-manual) element doesn't make any restrictions on it's child content, other than requiring well-formed xml. This means that all descendent elements are not validated by the app packaging mechanism and are only validated by the widget host.
-- The **Activation** element is used by the widget host to launch your app. The **ClassId** you specify must match the GUID you specified in the **ComServer** extension.
-- The **WidgetProvider** element contains one **Widget** element for each widget your provider supports.
-- All image URLs are package-relative. (TBD image of "ProviderAssets" folder in VS)
+## Add icons and other images to your packaging project
+
+TBD - Waiting for final decision about the weather widget.
 
 ## Testing your widget provider
+
+TBD
 
 
 
