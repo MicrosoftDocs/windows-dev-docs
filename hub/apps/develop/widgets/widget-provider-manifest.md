@@ -46,6 +46,8 @@ WidgetProvider
 
 &nbsp;&nbsp;&nbsp;&nbsp;CreateInstance
 
+&nbsp;&nbsp;&nbsp;&nbsp;ActivateApplication
+
 &nbsp;&nbsp;Definitions
 
 &nbsp;&nbsp;&nbsp;&nbsp;Definition
@@ -100,15 +102,19 @@ Specifies icons representing the widget provider app.
 
 ## Activation
 
-Specifies activation information for the widget provider.
+Specifies activation information for the widget provider. If both **CreateInstance** and **ActivateApplication** are specified in the manifest, **CreateInstance** takes precedence.
 
 ## CreateInstance
 
-Specifies the [CLSID](/windows/win32/com/com-class-objects-and-clsids) for the CreateInstance server that implements the widget provider.
+**CreateInstance** should be specified for Win32-based widget providers that implement the **IWidgetProvider** interface. The system will activate the interface with a call to [CoCreateInstance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance). The **ClassId** attribute specifies the [CLSID](/windows/win32/com/com-class-objects-and-clsids) for the CreateInstance server that implements the **IWidgetProvider** interface. 
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
 | **ClassId**| GUID | Yes | The CLSID for the CreateInstance server that implements the widget provider. | N/A |
+
+## ActivateApplication
+
+When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings.
 
 ## Definitions
 
@@ -184,62 +190,65 @@ The following code example illustrates the usage of the widget package manifest 
 <uap3:Extension Category="windows.appExtension">
   <uap3:AppExtension Name="com.microsoft.windows.widgets" DisplayName="WidgetTestApp" Id="ContosoWidgetApp" PublicFolder="Public">
     <uap3:Properties>
-      <!--
-        Icon is mandatory, and host uses to group all Widgets in the same Icon in WidgetPicker
-      -->
-      <WidgetProvider Icon="Images\StoreIcon.png">
-    
-            
-    
-        <!-- COM and ActivateApplication are supported. User has to use one of them to deliver message to WidgetProvider -->
+      <WidgetProvider>
+        <ProviderIcons>
+            <Icon Path="Images\StoreIcon.png" />
+        </ProviderIcons>
         <Activation>
-          <!-- Apps exports COM interface which implements WidgetProvider -->
-          <COM ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
+          <!-- App exports COM interface which implements IWidgetProvider -->
+          <CreateInstance ClassId="XXXXXXXX-XXXX-XXXX-XXXX-D3397A3FF15C" />
         </Activation>
-        <Widgets>
-          <!--
-            AllowMultiple is optional, default to False.
-                       Name, WidgetThemeResources, DisplayTitle and Description are mandatory.
-                    -->
-          <Widget
-            Name="Weather_Widget"
-            DisplayTitle="Microsoft Weather Widget"
+        <Definitions>
+          <Definition
+            Id="Weather_Widget"
+            DisplayName="Microsoft Weather Widget"
             Description="Weather Widget Description"
-            AllowMultiple="True">
-            <!-- WidgetCapabilities is optional in Widget. If not defined, only `<WidgetCapability WidgetSize="Large" />` is included.-->
-            <WidgetCapabilities>
-              <WidgetCapability WidgetSize="small" />
-              <WidgetCapability WidgetSize="medium" />
-              <WidgetCapability WidgetSize="large" />
-            </WidgetCapabilities>
+            AllowMultiple="true">
+            <Capabilities>
+              <Capability>
+                 <Size Name="small" />
+              </Capability>
+              <Capability>
+                 <Size Name="medium" />
+              </Capability>
+              <Capability>
+                 <Size Name="large" />
+              </Capability>
+            </Capabilities>
 
-            <WidgetThemeResources>
-              <!-- Icon and Screenshots are mandatory -->
-              <Icon Source="ProviderAssets\icon.png" />
+            <ThemeResources>
+              <Icons>
+                <Icon Path="Assets\icon.png" />
+                <Icon Path="Assets\icon.gif" />
+              </Icons>
               <Screenshots>
-                <!--In <Screenshot>, Source is mandatory, and DisplayLabel is optional -->
-                <Screenshot Source="Asserts\background.png" DisplayLabel="For accessibility"/>
+                <Screenshot Path="Assets\background.png" DisplayAltText ="For accessibility"/>
               </Screenshots>
 
               <!-- DarkMode and LightMode are optional -->
               <DarkMode>
-                <Icon Source="ProviderAssets\dark.png" />
+                <Icons>
+                    <Icon Path="Assets\dark.png" />
+                </Icons>
                 <Screenshots>
-                  <Screenshot Source="Asserts\darkBackground.png" DisplayLabel="For accessibility"/>
+                  <Screenshot Path="Assets\darkBackground.png" DisplayAltText ="For accessibility"/>
                 </Screenshots>
               </DarkMode>
 
               <LightMode>
-                <Icon Source="ProviderAssets\light.png" />
+                <Icons>
+                    <Icon Path="Assets\light.png" />
+                </Icons>
                 <Screenshots>
-                  <Screenshot Source="Asserts\lightBackground.png"/>
+                  <Screenshot Path="Assets\lightBackground.png"/>
                 </Screenshots>
               </LightMode>
-            </WidgetThemeResources>
-          </Widget>
-        </Widgets>
+            </ThemeResources>
+          </Definition>
+        </Definitions>
       </WidgetProvider>
     </uap3:Properties>
   </uap3:AppExtension>
 </uap3:Extension>
+
 ```
