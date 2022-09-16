@@ -100,6 +100,8 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
         static std::unordered_map<winrt::hstring, CompactWidgetInfo> RunningWidgets;
 ```
 
+## Declare widget template JSON strings
+
 This example will declare some static strings to define the JSON templates for each widget. These variables should be declared outside of the **WidgetProvider** class definition. For more information on the widget template JSON format, see TBD.
 
 ```cpp
@@ -321,7 +323,7 @@ void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs cont
 
 ## Update a widget
 
-Create the **UpdateWidget** helper method to update an active widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an active widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
