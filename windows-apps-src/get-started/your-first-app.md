@@ -23,8 +23,8 @@ Use your .NET, WPF, or Silverlight skills to build apps using C# with Extensible
 If you want to learn the basics, or just refresh your memory, try reading these:
 
 * [C# Fundamentals for Absolute Beginners](/shows/CSharp-Fundamentals-for-Absolute-Beginners/?l=Lvld4EQIC_2706218949)
-* [VB Fundamentals for Absolute Beginners](/learn/?l=jqMOvLKbC_9206218965)
-* [Develop Windows 10 applications](/learn/paths/develop-windows10-apps/)
+* [VB Fundamentals for Absolute Beginners](/training/?l=jqMOvLKbC_9206218965)
+* [Develop Windows 10 applications](/training/paths/develop-windows10-apps/)
 
 ## C++/WinRT and XAML
 
@@ -52,7 +52,7 @@ Learn more about C++ here.
 When you're ready to try something a little more fun than "Hello, World!", try out these tutorials.
 
 * [Tutorial: Navigate between two pages](/windows/apps/design/basics/navigate-between-two-pages)
-* [Windows apps on Microsoft Learn](/learn/browse/?products=windows)
+* [Microsoft Learn training resources for Windows apps](/training/browse/?products=windows)
 
 ## See Also
 
