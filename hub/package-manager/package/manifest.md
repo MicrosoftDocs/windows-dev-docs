@@ -29,7 +29,7 @@ After installation, you can run `wingetcreate new` to create a new package and f
 
 ### Using the YAMLCreate.ps1
 
-To help author manifest files, we have provided a YAMLCreate.ps1 powershell script located in the Tools folder on the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs/Tools). You can use the script by cloning the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs) on your PC and running the script directly from the **Tools** folder. The script will prompt you for the URL to the installer, then will prompt you to fill in metadata. Similar to using **WinGetCreate**, this script will offer the option to submit your manifest automatically.
+To help author manifest files, we have provided a YAMLCreate.ps1 powershell script located in the Tools folder on the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs). You can use the script by cloning the repo on your PC and running the script directly from the **Tools** folder. The script will prompt you for the URL to the installer, then will prompt you to fill in metadata. Similar to using **WinGetCreate**, this script will offer the option to submit your manifest automatically.
 
 ## YAML basics
 
