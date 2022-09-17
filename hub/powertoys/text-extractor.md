@@ -20,7 +20,9 @@ By holding <kbd>shift</kbd>, you will change from adjusting the capture region's
 
 ## Things to note
 
-This uses OCR (Optical character recognition) to read the text on the screen.  It may not be perfect so you will have to do a quick proof read of the output.
+1. This uses OCR (Optical character recognition) to read the text on the screen.  
+2. It may not be perfect so you will have to do a quick proof read of the output.
+3. The default langauge the system will use to the langauge your keyboard is set to if it has a OCR langauge pack installed. Depending on what you are trying to extract from the capture, this could lead to some interesting results.
 
 ## Settings
 
