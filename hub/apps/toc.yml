@@ -405,7 +405,7 @@ items:
           - name: Sign your app for Smart App Control compliance
             href: develop/smart-app-control/code-signing-for-smart-app-control.md
           - name: Test your app's signature with Smart App Control
-            href: develop/test-your-app-with-smart-app-control.md
+            href: develop/smart-app-control/test-your-app-with-smart-app-control.md
   - name: Deploy
     items:
       - name: Deployment overview

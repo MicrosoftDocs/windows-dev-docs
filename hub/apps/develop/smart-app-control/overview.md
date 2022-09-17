@@ -33,7 +33,7 @@ In *enforcement mode*, Smart App Control is actively protecting your device. App
 
 ### Is Smart App Control installed on my device?
 
-![A settings window that contains an option to configure Smart App Control settings.](images/settings-smart-app-control.png)
+<!--![A settings window that contains an option to configure Smart App Control settings.](images/settings-smart-app-control.png)-->
 
 Go to **Settings** > **Windows Security** > **App and Browser Control**. If Smart App Control is installed on your system, you will see a section called **Smart App Control**
 
