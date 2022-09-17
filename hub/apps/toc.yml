@@ -398,6 +398,14 @@ items:
                 href: develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
               - name: "Diagnose component errors"
                 href: develop/platform/csharp-winrt/authoring-diagnostics.md
+      - name: Smart App Control
+        items: 
+          - name: Smart App Control
+            href: develop/smart-app-control/overview.md
+          - name: Sign your app for Smart App Control compliance
+            href: develop/smart-app-control/code-signing-for-smart-app-control.md
+          - name: Test your app's signature with Smart App Control
+            href: develop/test-your-app-with-smart-app-control.md
   - name: Deploy
     items:
       - name: Deployment overview
