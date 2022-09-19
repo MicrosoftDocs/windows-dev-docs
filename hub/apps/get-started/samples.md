@@ -102,7 +102,7 @@ Most of the samples identified in this document contain Solution (`.sln`) files 
 | Samples repository                                            | Description                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [dotnet/maui-samples](https://github.com/dotnet/maui-samples) | .NET MAUI is a cross-platform framework for creating mobile and desktop apps with C# and XAML. Using .NET MAUI, you can develop apps that can run on Android, iOS, iPadOS, macOS, and Windows from a single shared codebase. These are also available in the [Samples browser](/samples/browse/?expanded=dotnet&products=dotnet-maui). |
-
+| [.NET Podcast app](https://github.com/microsoft/dotnet-podcasts) | The .NET Podcast app is a sample application showcasing .NET 6, ASP.NET Core, Blazor, .NET MAUI, Azure Container Apps, Orleans, and more. |
 
 #### Samples that demonstrate specific tasks
 
