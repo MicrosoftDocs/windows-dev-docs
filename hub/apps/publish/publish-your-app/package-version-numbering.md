@@ -65,7 +65,7 @@ For .appx packages that target Windows 8 and Windows 8.1, the same rule applie
 Additionally, the version number of Windows 8.1 packages must always be greater than the version numbers of any of your Windows 8 packages for the same app. In other words, the version number of any Windows 8 package that you submit must be lower than the version number of any Windows 8.1 package that you've submitted for the same app.
 
 > [!NOTE]
-> If your app also has Windows 10 packages, the version number of the Windows 10 packages must be higher than those for any of your Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages. For more info, see [Adding packages for Windows 10 to a previously-published app](app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
+> If your app also has Windows 10 packages, the version number of the Windows 10 packages must be higher than those for any of your Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages. For more info, see [Adding packages for Windows 10 to a previously-published app](app-package-management.md#adding-packages-for-windows-10-to-an-existing-app).
 
 Here are some examples of what happens in different version number update scenarios for packages targeting Windows 8 and Windows 8.1.
 

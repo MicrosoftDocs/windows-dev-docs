@@ -40,7 +40,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <h3>Store listing options</h3>
         <p>Provide text and visual assets that make customers eager to try out your app.</p>
         <br>
-        <a href="publish-your-app/create-app-store-listings.md">Store listing overview</a><br/>
+        <a href="publish-your-app/create-app-store-listing.md">Store listing overview</a><br/>
         <a href="publish-your-app/screenshots-and-images.md">Screenshots, images, and trailers</a><br/>
         <a href="publish-your-app/import-and-export-store-listings.md">Manage listings in bulk </a><br/>
     :::column-end:::

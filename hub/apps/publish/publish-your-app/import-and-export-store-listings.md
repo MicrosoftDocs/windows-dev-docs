@@ -50,7 +50,7 @@ Most of the Store listing fields are optional. The **Description** and one scree
 
 For instance, consider the following example:
 
-![Exported listing example](images/listingimport.png)
+![Exported listing example](../images/listingimport.png)
 
 - The text “Default description” will be used for the **Description** field in the en-us and fr-fr listings. However, the **Description** field in the es-es listing would use the text “Spanish description”.
 - For the **ReleaseNotes** field, the text “English release notes” will be used for en-us, and the text “French release notes” will be used for fr-fr. However, no release notes will appear for es-es.

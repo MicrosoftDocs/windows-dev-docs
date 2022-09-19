@@ -14,7 +14,7 @@ zone_pivot_groups: store-installer-packaging
 :::zone-end
 
 :::zone pivot="store-installer-msi-exe"
-[!INCLUDE [name](../../../includes/store/pwa/enter-app-properties.md)]
+[!INCLUDE [name](../../../includes/store/msi/enter-app-properties.md)]
 :::zone-end
 
 :::zone pivot="store-installer-add-on"

@@ -483,7 +483,7 @@ items:
             href: publish/publish-your-app/create-app-store-listing.md
             items:
               - name: Write a great app description
-                href: publish/publish-your-app/write-a-great-app-description.md
+                href: publish/publish-your-app/write-great-app-description.md
               - name: App screenshots, images, and trailers
                 href: publish/publish-your-app/screenshots-and-images.md
               - name: Import and export Store listings

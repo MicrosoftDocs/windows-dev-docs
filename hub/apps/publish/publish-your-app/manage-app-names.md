@@ -11,14 +11,14 @@ zone_pivot_groups: store-installer-packaging
 
 The **Manage app names** page in Partner Center lets you view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. You can find this page in [Partner Center](https://partner.microsoft.com/dashboard) by expanding the **App management** section in the left navigation menu for any of your apps.
 
-:::image type="content" source="images/manage-app-name.png" lightbox="images/manage-app-name.png" alt-text="A screenshot of the Manage app name page on Partner Center.":::
+:::image type="content" source="../images/manage-app-name.png" lightbox="../images/manage-app-name.png" alt-text="A screenshot of the Manage app name page on Partner Center.":::
 
 > [!IMPORTANT]
 > To change or localize your app name, you can reserve an additional name for the app, and you may choose to use it in the published version of your app instead of the one you reserved when you first created your app in Partner Center.
 
 ## Reserve additional names for your app
 
-:::image type="content" source="images/app-name-set-dashboard-name.png" lightbox="images/app-name-set-dashboard-name.png" alt-text="A screenshot of the Manage app name page showing the entry form to reserve a new app name.":::
+:::image type="content" source="../images/app-name-set-dashboard-name.png" lightbox="../images/app-name-set-dashboard-name.png" alt-text="A screenshot of the Manage app name page showing the entry form to reserve a new app name.":::
 
 You can reserve multiple app names to use for the same app. This is especially useful if you are offering your app in multiple languages and want to use different names for different languages. You can also reserve a new name in order to change the name of an app, as described below.
 

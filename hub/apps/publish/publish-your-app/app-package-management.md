@@ -43,7 +43,7 @@ When you publish a submission that removes all of the packages that could run on
 
 Be aware that even if you remove all of the packages that support a certain device family, any existing customers who have already installed the app on that type of device can still use it, and they will get any updates you provide later.
 
-## Adding packages for Windows 10 to a previously-published app
+## Adding packages for Windows 10 to an existing app
 
 If you have an app in the Store that only included packages for Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .msixupload or .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, the UWP package will also be available for new acquisitions by customers on Windows 10.
 
