@@ -69,15 +69,17 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     void DeleteWidget(winrt::hstring const& widgetId);
     void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
     void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
+    void Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
+    void Deactivate(winrt::hstring widgetId);
     /* IWidgetProvider required functions that need to be implemented */
 
     void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
 };
 ```
 
-## Prepare to track active widgets
+## Prepare to track enabled widgets
 
-A widget provider can support a single widget or multiple widgets. When the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has a associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each active widget. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** declaration.
+A widget provider can support a single widget or multiple widgets. Whenever the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has a associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each pinned widget. Widgets also can be in an active state, which is discussed in the [Activate and Deactivate](#activate-and-deactivate) section below, and we will track this state for each widget with a boolean value. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** declaration.
 
 ```cpp
 // WidgetProvider.h
@@ -86,10 +88,11 @@ struct CompactWidgetInfo
     winrt::hstring widgetId;
     winrt::hstring widgetName;
     int customState = 0;
+    bool isActive = false;
 };
 ```
 
-Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for the map that will maintain the list of active widgets, using the widget ID as the key for each entry.
+Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry.
 
 ```cpp
 // WidgetProvider.h
@@ -217,6 +220,9 @@ const std::string countWidgetTemplate = R"(
 
 In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following line to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace.
 
+> [!NOTE]
+> Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
+
 ```cpp
 // WidgetProvider.cpp
 namespace winrt
@@ -227,7 +233,7 @@ namespace winrt
 
 ## CreateWidget
 
-The widget host calls **CreateWidget** when the user has pinned one of your app's widgets to the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of active widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
+The widget host calls **CreateWidget** when the user has pinned one of your app's widgets to the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
 ```cpp
 // WidgetProvider.cpp
@@ -246,7 +252,7 @@ void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
 
 ## DeleteWidget
 
-The widget host calls **DeleteWidget** when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of active widgets so that we don't send any further updates for that widget.
+The widget host calls **DeleteWidget** when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of enabled widgets so that we don't send any further updates for that widget.
 
 ```cpp
 // WidgetProvider.cpp
@@ -272,7 +278,7 @@ The widget host calls **OnActionInvoked** when the user interacts with an action
 ...
 ```
 
-In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the **WidgetActionInvokedArgs** passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the **WidgetContext** object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our active widgets map with the specified ID and then update the increment the custom state value. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
+In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the **WidgetActionInvokedArgs** passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the **WidgetContext** object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our enabled widgets map with the specified ID and then update the increment the custom state value. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
 
 ```cpp
 // WidgetProvider.cpp
@@ -321,9 +327,40 @@ void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs cont
     
 ```
 
+## Activate and Deactivate
+
+The **Activate** method is called to notify the widget provider that the widget host is currently interested in receiving updated content from the provider. For example, it could mean that the user is currently actively viewing the widget host. The **Deactivate** method is called to notify the widget provider that the widget host is no longer requesting content updates. These two methods define a window in which the widget host is most interested in showing the most up-to-date content. Widget providers can send updates to the widget at any time, such as in response to a push notification, but as with any background task, it's important to balance providing up-to-date content with resource concerns like battery life. 
+
+**Activate** and **Deactivate** are called on a per-widget basis. This example tracks the active status of each widget in the **CompactWidgetInfo** helper struct. In the **Activate** method, we call the **UpdateWidget** helper method to update our widget. Note that the time window between **Activate** and **Deactivate** may be small, so it's recommended that you try to make your widget update code path as quick as possible.
+
+```cpp
+void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext)
+{
+    auto widgetId = widgetContext.WidgetId();
+
+    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    {
+        auto localWidgetInfo = iter->second;
+        localWidgetInfo.isActive = true;
+
+        UpdateWidget(localWidgetInfo);
+    }
+}
+void WidgetProvider::Deactivate(winrt::hstring widgetId)
+{
+
+    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    {
+        auto localWidgetInfo = iter->second;
+        localWidgetInfo.isActive = false;
+    }
+}
+```
+
+
 ## Update a widget
 
-Define the **UpdateWidget** helper method to update an active widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an enabled widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
@@ -358,9 +395,9 @@ void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
 }
 ```
 
-## Initialize the list of active widgets on startup
+## Initialize the list of enabled widgets on startup
 
-When our widget provider is first initialized, we need to populate our list of active widgets. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call **GetWidgetInfos**, which returns an array of **WidgetInfo** objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
+When our widget provider is first initialized, we need to populate our list of enabled widgets. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call **GetWidgetInfos**, which returns an array of **WidgetInfo** objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
 
 ```cpp
 // WidgetProvider.cpp
