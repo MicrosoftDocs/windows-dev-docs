@@ -233,7 +233,7 @@ namespace winrt
 
 ## CreateWidget
 
-The widget host calls **CreateWidget** when the user has pinned one of your app's widgets to the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
+The widget host calls **CreateWidget** when the user has enabled one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
 ```cpp
 // WidgetProvider.cpp
