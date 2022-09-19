@@ -9,7 +9,7 @@ zone_pivot_groups: store-installer-packaging
 
 # Import and export Store listings
 
-Instead of [entering info for your Store listings directly in Partner Center](create-app-store-listings.md), you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.
+Instead of [entering info for your Store listings directly in Partner Center](create-app-store-listing.md), you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.
 
 This option is especially useful if you want to create or update Store listings for your product in multiple languages, since you can copy/paste the same info into multiple fields and easily make any changes that should apply to specific languages. However, you can’t use this method to create or update [platform-specific Store listings](create-platform-specific-store-listings.md) for previously-published apps that support older OS versions.
 
@@ -59,7 +59,7 @@ If you don’t want to make any edits to a particular field, you can delete the 
 
 Deleting the info in a field for one language, without removing the entire row, works differently, depending on the field. For fields whose **Type** is **Text**, deleting the info in a field will simply remove that entry from the listing in that language.  However, deleting the info in a field for an image, such as a screenshot or logo, will not have any effect; the previous image will still be used unless you remove it by editing directly in Partner Center. Deleting the info for a trailer field will actually remove that trailer from Partner Center, so be sure you have a copy of any needed files before you do so.
 
-Many of the fields in your exported listings require text entry, such as the ones in the example above, **Description** and **ReleaseNotes**. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see [Create app Store listings](create-app-store-listings.md).
+Many of the fields in your exported listings require text entry, such as the ones in the example above, **Description** and **ReleaseNotes**. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see [Create app Store listings](create-app-store-listing.md).
 
 Providing info for fields that correspond to assets, such as images and trailers, are a bit more complicated. Rather than **Text**, the **Type** for these assets is **Relative path (or URL to file in Partner Center)**.
 
@@ -97,6 +97,6 @@ You can continue to make updates to your listings either by  importing another u
 
 ## Add-ons
 
-For add-ons, importing and exporting Store listings uses the same process described above, except that you'll only see the three fields relevant to [add-on Store listings](create-add-on-store-listings.md): **Description**, **Title**, and **StoreLogo300x300** (referred to as **Icon** in the Store listing page in Partner Center). The **Title** field is required, and the other two fields are optional.
+For add-ons, importing and exporting Store listings uses the same process described above, except that you'll only see the three fields relevant to [add-on Store listings](create-app-store-listing.md): **Description**, **Title**, and **StoreLogo300x300** (referred to as **Icon** in the Store listing page in Partner Center). The **Title** field is required, and the other two fields are optional.
 
 Note that you must import and export Store listings separately for each add-on in your app by navigating to the submission overview page for the add-on.

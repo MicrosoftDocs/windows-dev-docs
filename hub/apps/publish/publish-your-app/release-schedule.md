@@ -9,21 +9,21 @@ zone_pivot_groups: store-installer-packaging
 
 # Configure precise release scheduling
 
-The **Schedule** section on the [Pricing and availability](set-app-pricing-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
+The **Schedule** section on the [Pricing and availability](price-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 
 > [!NOTE]
 > Although this topic refers to apps, release scheduling for add-on submissions uses the same process.
 
-You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 or Windows 11 device.
+You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](/uwp/publish/generate-promotional-codes) and are using a Windows 10 or Windows 11 device.
 
-By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](choose-visibility-options.md#discoverability) section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
+By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](visibility-options.md#discoverability) section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
-Note that you won't be able to configure dates in the **Schedule** section if you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](choose-visibility-options.md#discoverability) section, because your app won't be released to customers, so there is no release date to configure.
+Note that you won't be able to configure dates in the **Schedule** section if you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](visibility-options.md#discoverability) section, because your app won't be released to customers, so there is no release date to configure.
 
 > [!IMPORTANT]
 > The dates you specify in the Schedule section only apply to customers on Windows 10 and Windows 11.
 >
->If your previously-published app supports earlier OS versions, any **Stop acquisition** date you select will not apply to those customers; they will still be able to acquire the app (unless you submit an update with a new selection in the [Visibility](choose-visibility-options.md#discoverability) section, or if you select **Make app unavailable** from the **App overview** page).
+>If your previously-published app supports earlier OS versions, any **Stop acquisition** date you select will not apply to those customers; they will still be able to acquire the app (unless you submit an update with a new selection in the [Visibility](visibility-options.md#discoverability) section, or if you select **Make app unavailable** from the **App overview** page).
 
 ## Base schedule
 
@@ -39,10 +39,11 @@ In the **Release** drop-down, you can set when you want your app to be available
 > After your app has been published and has become available in the Store, you will no longer be able to select a **Release** date (since the app will already have been released).
 
 Here are the options you can configure for a product’s **Release** schedule:
+
 - **as soon as possible**: The product will release as soon as it is certified and published. This is the default option.
 - **at**: The product will release on the date and time that you select. You additionally have two options:
-   - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the app releases at the same time everywhere.
-   - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used. A comprehensive list of time zones is shown further down this page.)
+  - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the app releases at the same time everywhere.
+  - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used. A comprehensive list of time zones is shown further down this page.)
 - **not scheduled**: The app will not be available in the Store. If you choose this option, you can make the app available in the Store later by creating a new submission and choosing one of the other options.
 
 ## Stop acquisition
@@ -51,14 +52,14 @@ In the **Stop acquisition** dropdown, you can set a date and time when you want 
 
 By default, **Stop acquisition** is set to never. To change this, select **at** in the drop-down and specify a date and time, as described above. At the date and time you select, customers will no longer be able to acquire the app.
 
-It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](choose-visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
 > If you select a date to **Stop acquisition**, and later decide you'd like to make the app available again, you can create a new submission and change **Stop acquisition** back to **Never**. The app will become available again after your updated submission is published.
 
 ## Customize the schedule for specific markets
 
-By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](./define-market-selection.md) section, those markets will not be shown.
+By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets](market-selection.md) section, those markets will not be shown.
 
 To add a schedule for one market, select it and click **Save**. You’ll then see the same **Release** and **Stop acquisition** options described above, but the selections you make will only apply to that market.
 
@@ -256,8 +257,8 @@ Below is a table that shows what specific time zones are used in each market, so
 | ROW                                          | (UTC-07:00) Mountain Time (US & Canada)                       |
 | Russia                                       | (UTC+03:00) Moscow, St. Petersburg                            |
 | Rwanda                                       | (UTC+02:00) Harare, Pretoria                                  |
-| SÃ£o TomÃ© and PrÃ­ncipe                    | (UTC+00:00) Monrovia, Reykjavik                               |
-| Saint BarthÃ©lemy                           | (UTC+04:00) Yerevan                                           |
+| SÃ£o TomÃ© and PrÃ­ncipe                      | (UTC+00:00) Monrovia, Reykjavik                               |
+| Saint BarthÃ©lemy                            | (UTC+04:00) Yerevan                                           |
 | Saint Helena, Ascension and Tristan da Cunha | (UTC+00:00) Dublin, Edinburgh, Lisbon, London                 |
 | Saint Kitts and Nevis                        | (UTC-04:00) Atlantic Time (Canada)                            |
 | Saint Lucia                                  | (UTC-04:00) Atlantic Time (Canada)                            |

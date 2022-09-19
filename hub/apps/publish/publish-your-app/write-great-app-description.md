@@ -9,7 +9,7 @@ zone_pivot_groups: store-installer-packaging
 
 # Write a great app description
 
-A great description can make your app stand out in the Microsoft Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-store-listings.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
+A great description can make your app stand out in the Microsoft Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-store-listing.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
 
 Here are some tips for making your app's description the best it can be.
 
@@ -18,7 +18,7 @@ Here are some tips for making your app's description the best it can be.
 - **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
 
     > [!NOTE]
-    > Adding a list of [product features](create-app-store-listings.md#product-features) can also help to quickly show what your app does. This list appears directly below the app description.
+    > Adding a list of [product features](create-app-store-listing.md#product-features) can also help to quickly show what your app does. This list appears directly below the app description.
 
 - **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
 - **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.

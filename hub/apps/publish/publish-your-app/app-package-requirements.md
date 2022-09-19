@@ -13,11 +13,11 @@ Follow these guidelines to prepare your app's packages for submission to the Mic
 
 ## Before you build your app's package for the Microsoft Store
 
-Make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Microsoft Store, it can only be installed and run on computers that have developer licenses.
+Make sure to [test your app with the Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Microsoft Store, it can only be installed and run on computers that have developer licenses.
 
 ## Building the app package using Microsoft Visual Studio
 
-If you're using Microsoft Visual Studio as your development environment, you already have built-in tools that make creating an app package a quick and easy process. For more info, see [Packaging apps](../packaging/index.md).
+If you're using Microsoft Visual Studio as your development environment, you already have built-in tools that make creating an app package a quick and easy process. For more info, see [Packaging apps](/windows/uwp/packaging/).
 
 > [!NOTE]
 > Be sure that all your filenames use ANSI.
@@ -35,7 +35,7 @@ For UWP apps, Visual Studio can generate an app bundle (.msixbundle or .appxbund
 > [!NOTE]
 > One app bundle can contain your packages for all architectures.
 
-With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](../packaging/index.md) and [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
+With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](/windows/uwp/packaging/) and [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 ## Building the app package manually
 
@@ -43,7 +43,7 @@ If you don't use Visual Studio to create your package, you must [create your pac
 
 Be sure to review the [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
 
-Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
+Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](/uwp/publish/view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
 
 > [!NOTE]
 > Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.
@@ -51,7 +51,7 @@ Your manifest must include some specific info about your account and your app. Y
 App bundles (.msixbundle or .appxbundle) use a different manifest. Review the [Bundle manifest](/uwp/schemas/bundlemanifestschema/bundle-manifest) documentation for the details and requirements for app bundle manifests. Note that in a .msixbundle or .appxbundle, the manifest of each included package must use the same elements and attributes, except for the **ProcessorArchitecture** attribute of the [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element.
 
 > [!TIP]
-> Be sure to run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
+> Be sure to run the [Windows App Certification Kit](/uwp/debug-test-perf/windows-app-certification-kit) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
 
 ## Package format requirements
 

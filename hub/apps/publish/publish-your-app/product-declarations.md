@@ -9,13 +9,13 @@ zone_pivot_groups: store-installer-packaging
 
 # Product declarations
 
-The **Product declarations** section of the [Properties](enter-app-properties.md) page of the [submission process](app-submissions.md) helps make sure your app is displayed appropriately and offered to the right set of customers, and helps them understand how they can use your app.
+The **Product declarations** section of the [Properties](enter-app-properties.md) page of the [submission process](create-app-submission.md) helps make sure your app is displayed appropriately and offered to the right set of customers, and helps them understand how they can use your app.
 
 The following sections describe some of the declarations and what you need to consider when determining whether each declaration applies to your app. Note that two of these declarations are checked by default (as described below.) Depending on your product's category, you may also see additional declarations. Be sure to review all of the declarations and ensure they accurately reflect your submission.
 
 ## This app allows users to make purchases, but does not use the Microsoft Store commerce system
 
-For nearly every submission, you should leave this box unchecked, since apps which offer opportunities to purchase items which are or can be consumed or used within your app must use the Microsoft Store in-app purchase API to create and submit the add-ons. Per the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), apps that were created and submitted prior to June 29, 2015, could continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Microsoft Store Policies](store-policies.md#108-financial-transactions). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
+For nearly every submission, you should leave this box unchecked, since apps which offer opportunities to purchase items which are or can be consumed or used within your app must use the Microsoft Store in-app purchase API to create and submit the add-ons. Per the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), apps that were created and submitted prior to June 29, 2015, could continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Microsoft Store Policies](/uwp/publish/store-policies#108-financial-transactions). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
 
 ## This app has been tested to meet accessibility guidelines
 
@@ -31,7 +31,7 @@ You should only check this box if you have done all of the following items:
 
 When you declare your app as accessible, you agree that your app is accessible to all customers, including those with disabilities. For example, this means you have tested the app with high-contrast mode and with a screen reader. You've also verified that the user interface functions correctly with a keyboard, the Magnifier, and other accessibility tools.
 
-For more info, see [Accessibility](/windows/apps/design/accessibility/accessibility), [Accessibility testing](/windows/apps/design/accessibility/accessibility-testing), and [Accessibility in the Store](/windows/apps/design/accessibility/accessibility-in-the-store).
+For more info, see [Accessibility](/design/accessibility/accessibility), [Accessibility testing](/design/accessibility/accessibility-testing), and [Accessibility in the Store](/design/accessibility/accessibility-in-the-store).
 
 > [!IMPORTANT]
 > Don't list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it doesn’t actually support accessibility, you'll probably receive negative feedback from the community.

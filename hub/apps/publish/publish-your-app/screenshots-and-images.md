@@ -13,9 +13,9 @@ Well-designed images are one of the main ways for you to represent your app to p
 
 You can provide [screenshots](#screenshots), [logos](#store-logos), [trailers](#trailers), and other art assets to include in your app's Store listing. Some of these are required, and some are optional (although some of the optional images are important to include for the best Store display).
 
-During the [app submission process](app-submissions.md), you provide these art assets in the [Store listings](create-app-store-listings.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
+During the [app submission process](create-app-submission.md), you provide these art assets in the [Store listings](create-app-store-listing.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
 
-The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](/windows/apps/design/style/app-icons-and-logos).
+The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../../design/style/app-icons-and-logos.md).
 
 ## Screenshots
 
@@ -146,7 +146,7 @@ When providing your trailers, be sure to follow these requirements:
 > [!WARNING]
 > The exception to the requirement to include age ratings in your trailers applies **only** to trailers in the **Microsoft Store** that are shown **on the product page**. Any trailer posted outside of Partner Center, that is not intended for display exclusively on the Microsoft Store's product page **must** display embedded rating information, where required, in accordance with the appropriate rating authority’s guidelines.  
 
-Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](store-policies.md).
+Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](/uwp/publish/store-policies).
 
 There are additional requirements depending on the type of file.
 
@@ -191,7 +191,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](make-your-app-easier-to-promote.md) for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](/uwp/publish/make-your-app-easier-to-promote) for more information.
 
 ### Xbox images
 
@@ -210,7 +210,7 @@ There are 3 different sizes that you can upload:
 
 The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
 
-### Images only for Windows 8.x and/or Windows Phone 8.x 
+### Images only for Windows 8.x and/or Windows Phone 8.x
 
 If your previously-submitted app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x), these images must be provided in order for us to consider featuring your app in promotional layouts (though they don't guarantee that your app will be featured). If your app does not support these earlier OS versions, skip this section. (This section was formerly called **Optional promotional images**.)
 

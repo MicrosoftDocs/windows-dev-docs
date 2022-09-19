@@ -9,7 +9,7 @@ zone_pivot_groups: store-installer-packaging
 
 # Define market selection
 
-The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.
+The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](price-and-availability.md) features per market or per group of markets.
 
 For info to help make your app suitable for customers around the world, see [Guidelines for globalization](/windows/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app) and [Make your app localizable](/windows/apps/design/globalizing/prepare-your-app-for-localization).
 
@@ -39,7 +39,6 @@ You will also see a checkbox that lets you indicate whether to offer your app in
 ## Microsoft Store consumer markets
 
 You can choose to list your app (or add-on) in one or more of the following markets. The markets with an asterisk support the Microsoft Store on Xbox One; you'll see **Xbox** next to their names in the **Market selection** popup window.
-
 
 <table>
 
@@ -411,8 +410,6 @@ Payment methods such as gift cards and mobile operator billing can help increase
 
 The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date. This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.
 
-&nbsp;
-
 | Country/region       | Payment method  | Commerce Expansion Adjustment | Effective date |
 |----------------------|-----------------|-------------------------------|----------------|
 | Argentina            | Gift card       | 2.24%                         | March 2016     |
@@ -721,4 +718,4 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 </table>
 
 > [!NOTE]
-> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](account-types-locations-and-fees.md).
+> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](../partner-center/account-types-locations-and-fees.md).

@@ -24,7 +24,7 @@ You can reserve multiple app names to use for the same app. This is especially u
 
 To reserve a new app name, find the text box in the **Reserve more names** section of the **Manage app names** page. Enter the name you'd like to reserve, then click **Check availability**. If the name is available, click **Reserve product name**. You can reserve multiple app names by repeating these steps, if desired.
 
-For more info about reserving app names, and why a certain name may not be available, see [Create your app by reserving a name](create-your-app-by-reserving-a-name.md).
+For more info about reserving app names, and why a certain name may not be available, see [Create your app by reserving a name](reserve-your-apps-name.md).
 
 > [!TIP]
 > If you want to reserve additional names for an app that is already published, click on the published app. You will land on the Application overview page of that app. Click on Update. On the next page, click on Manage app name from the left navigation pane. You can now reserve additional names for your already published app.
@@ -41,7 +41,7 @@ Note that your app must have at least one reserved name.
 
 If your app is already in the Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app.
 
-To update a Store listing so that it uses the new name, go to the [Store listing page](create-app-store-listings.md) for that language and select the name from the **Product name** dropdown. Be sure to review your description and other parts of the listing for any mentions of the name and make updates if needed.
+To update a Store listing so that it uses the new name, go to the [Store listing page](create-app-store-listing.md) for that language and select the name from the **Product name** dropdown. Be sure to review your description and other parts of the listing for any mentions of the name and make updates if needed.
 
 > [!NOTE]
 > If your app has packages and/or Store listings in multiple languages, you'll need to update the packages and/or Store listings for every language in which the name needs to be updated.

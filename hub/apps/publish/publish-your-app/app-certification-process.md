@@ -9,14 +9,10 @@ zone_pivot_groups: store-installer-packaging
 
 # The app certification process
 
-:::zone pivot="store-installer-msix,store-installer-pwa"
+:::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 [!INCLUDE [name](../../../includes/store/msix/app-certification-process.md)]
 :::zone-end
 
 :::zone pivot="store-installer-msi-exe"
 [!INCLUDE [name](../../../includes/store/msi/app-certification-process.md)]
-:::zone-end
-
-:::zone pivot="store-installer-add-on"
-[!INCLUDE [name](../../../includes/store/add-on/app-certification-process.md)]
 :::zone-end

@@ -450,20 +450,18 @@ items:
             href: publish/publish-your-app/price-and-availability.md
             items:
               - name: Define market selection
-                href: publish/publish-your-app/define-market-selection.md
+                href: publish/publish-your-app/market-selection.md
               - name: Choose visibility options
-                href: publish/publish-your-app/choose-visibility-options.md
+                href: publish/publish-your-app/visibility-options.md
               - name: Configure precise release scheduling
-                href: publish/publish-your-app/configure-precise-release-scheduling.md
+                href: publish/publish-your-app/release-schedule.md
               - name: Set and schedule app pricing
-                href: publish/publish-your-app/set-and-schedule-app-pricing.md
-              - name: Organizational licensing options
-                href: publish/publish-your-app/organizational-licensing.md
+                href: publish/publish-your-app/schedule-pricing-changes.md
           - name: Enter app properties
             href: publish/publish-your-app/enter-app-properties.md
             items:
               - name: Category and subcategory table
-                href: publish/publish-your-app/category-and-subcategory-table.md
+                href: publish/publish-your-app/categories-and-subcategories.md
               - name: Product declarations
                 href: publish/publish-your-app/product-declarations.md
           - name: Age ratings
@@ -472,7 +470,7 @@ items:
             href: publish/publish-your-app/upload-app-packages.md
             items:
               - name: Device family availability
-                href: publish/publish-your-app/device-family-availability.md
+                href: publish/publish-your-app/device-families.md
               - name: App package requirements
                 href: publish/publish-your-app/app-package-requirements.md
               - name: Package version numbering
@@ -480,14 +478,14 @@ items:
               - name: Supported languages
                 href: publish/publish-your-app/supported-languages.md
               - name: Guidance for app package management
-                href: publish/publish-your-app/guidance-for-app-package-management.md
+                href: publish/publish-your-app/app-package-management.md
           - name: Create app Store listings
-            href: publish/publish-your-app/create-app-store-listings.md
+            href: publish/publish-your-app/create-app-store-listing.md
             items:
               - name: Write a great app description
                 href: publish/publish-your-app/write-a-great-app-description.md
               - name: App screenshots, images, and trailers
-                href: publish/publish-your-app/app-screenshots-and-images.md
+                href: publish/publish-your-app/screenshots-and-images.md
               - name: Import and export Store listings
                 href: publish/publish-your-app/import-and-export-store-listings.md
               - name: Create platform-specific Store listings
@@ -498,7 +496,7 @@ items:
               - name: Notes for certification
                 href: publish/publish-your-app/notes-for-certification.md
           - name: The app certification process
-            href: publish/publish-your-app/the-app-certification-process.md
+            href: publish/publish-your-app/app-certification-process.md
             items:
               - name: Resolve submission errors
                 href: publish/publish-your-app/resolve-submission-errors.md

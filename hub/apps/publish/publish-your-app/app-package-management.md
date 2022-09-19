@@ -21,10 +21,10 @@ Generally speaking, later OS versions can run packages that target previous OS v
 
 ## Removing an app from the Store
 
-At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 or Windows 11 device).
+At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](/windows/uwp/publish/generate-promotional-codes) and are using a Windows 10 or Windows 11 device).
 
 > [!IMPORTANT]
-> This option will override any [visibility](choose-visibility-options.md#discoverability) settings that you have selected in your submissions.
+> This option will override any [visibility](visibility-options.md#discoverability) settings that you have selected in your submissions.
 
 This option has the same effect as if you created a submission and chose **Make this product available but not discoverable in the Store** with the **Stop acquisition** option. However, it does not require you to create a new submission.
 
@@ -52,4 +52,4 @@ If you have an app in the Store that only included packages for Windows 8.x and/
 
 Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you have used. For more info, see [Package version numbering](package-version-numbering.md).
 
-For more info about packaging UWP apps for the Store, see [Packaging apps](../packaging/index.md).
+For more info about packaging UWP apps for the Store, see [Packaging apps](/windows/uwp/packaging/).
