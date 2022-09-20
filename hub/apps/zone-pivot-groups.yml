@@ -26,7 +26,7 @@ groups:
   pivots:
     - id: store-installer-msix
       title: MSIX
-    - id: store-installer-msi
+    - id: store-installer-msi-exe
       title: MSI or EXE
     - id: store-installer-pwa
       title: PWA
