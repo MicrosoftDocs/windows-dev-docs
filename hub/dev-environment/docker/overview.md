@@ -28,9 +28,9 @@ Using containers for remote development and deploying applications with the Dock
         Docker orientation and setup docs with step-by-step instructions on how to get started, including a video walk-through.
     :::column-end:::
     :::column:::
-       [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)](/learn/modules/intro-to-docker-containers/)<br>
-        **[MS Learn course: Introduction to Docker containers](/learn/modules/intro-to-docker-containers/)**<br>
-        Microsoft Learn offers a free intro course on Docker containers, in addition to a [variety of courses](/learn/browse/?terms=docker) on get started with Docker and connecting with Azure services.
+       [![Microsoft Learn Docker course screenshot](../../images/docker-learn-course.png)](/training/modules/intro-to-docker-containers/)<br>
+        **[MS Learn course: Introduction to Docker containers](/training/modules/intro-to-docker-containers/)**<br>
+        Microsoft Learn offers a free intro course on Docker containers, in addition to a [variety of courses](/training/browse/?terms=docker) on get started with Docker and connecting with Azure services.
     :::column-end:::
     :::column:::
        [![Docker Desktop WSL2 menu screenshot](../../images/docker-wsl2.png)](/windows/wsl/tutorials/wsl-containers)<br>
@@ -137,7 +137,7 @@ Using containers for remote development and deploying applications with the Dock
     :::column:::
        [![Azure App Service screenshot](../../images/azure-app-service.png)](/azure/app-service)<br>
         **[Azure App Service](/azure/app-service)**<br>
-        Learn how to build and host web apps, mobile back ends, and RESTful APIs in the programming language of your choice without managing infrastructure. Try the [Azure App Service course on MS Learn](/learn/modules/deploy-run-container-app-service) to deploy a web app based on a Docker image and configure continuous deployment.
+        Learn how to build and host web apps, mobile back ends, and RESTful APIs in the programming language of your choice without managing infrastructure. Try the [Azure App Service](/training/modules/deploy-run-container-app-service) Learn module to deploy a web app based on a Docker image and configure continuous deployment.
     :::column-end:::
 :::row-end:::
 
