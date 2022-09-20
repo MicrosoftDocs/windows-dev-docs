@@ -17,7 +17,7 @@ The Windows Developer Documentation is constantly being updated with information
 
 ### Windows development on Microsoft Learn
 
-Microsoft Learn provides new hands-on learning and training opportunities to Microsoft developers. If you're interested in learning how to develop Windows apps, check out [our new learning path](/learn/paths/develop-windows10-apps/) for a thorough introduction to the platform, the tools, and how to write your first few apps.
+Microsoft Learn provides new hands-on learning and training opportunities to Microsoft developers. Check out the [Develop Windows 10 applications](/training/paths/develop-windows10-apps/) learning path for a thorough introduction to the platform, the tools, and how to write your first few apps.
 
 ![Image of the Windows development learning path](images/windows-learn.png)
 

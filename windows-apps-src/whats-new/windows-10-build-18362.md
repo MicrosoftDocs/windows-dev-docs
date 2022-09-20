@@ -69,13 +69,13 @@ MSIX SDK | [Use the MSIX SDK to build a package for cross-platform use](/windows
 
 Microsoft Learn provides new hands-on learning and training opportunities to Microsoft developers.
 
-* If you're interested in learning how to develop Windows apps, check out [our new learning path](/learn/paths/develop-windows10-apps/) for a thorough introduction to the platform, the tools, and how to write your first few apps.
+* Check out the [Develop Windows 10 applications](/training/paths/develop-windows10-apps/) learning path for a thorough introduction to the platform, the tools, and how to write your first few apps.
 
-* Want to learn how to add UI features to your Windows app? Learn how to [Create a UI](/learn/modules/create-ui-for-windows-10-apps/), [add navigation and media to your UI](/learn/modules/enhance-ui-of-windows-10-app/), or [Implement data binding](/learn/modules/implement-data-binding-in-windows-10-app/).
+* Want to learn how to add UI features to your Windows app? Learn how to [Create a UI](/training/modules/create-ui-for-windows-10-apps/), [add navigation and media to your UI](/training/modules/enhance-ui-of-windows-10-app/), or [Implement data binding](/training/modules/implement-data-binding-in-windows-10-app/).
 
-* If you're interested in Web development, check out [Develop web applications with Visual Studio Code](/learn/modules/develop-web-apps-with-vs-code/) or [Build a simple website](/learn/modules/build-simple-website/).
+* If you're interested in Web development, check out [Develop web applications with Visual Studio Code](/training/modules/develop-web-apps-with-vs-code/) or [Build a simple website](/training/modules/build-simple-website/).
 
-* Alternately, feel free to browse all the [Learn modules for Windows development](/learn/browse/?products=windows&resource_type=module).
+* Alternately, feel free to browse all the [Learn modules for Windows development](/training/browse/?products=windows&resource_type=module).
 
 ## Videos
 
