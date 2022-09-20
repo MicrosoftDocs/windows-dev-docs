@@ -268,7 +268,7 @@ The **PushNotificationManager** will attempt to create a Channel URI, retrying a
 winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
 {
     // To obtain an AAD RemoteIdentifier for your app,
-    // follow the instructions on https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app
+    // follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
     auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
 
     // Setup the inprogress event handler

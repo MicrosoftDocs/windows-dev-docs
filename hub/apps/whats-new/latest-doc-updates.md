@@ -16,7 +16,7 @@ Note: For information regarding Windows 11, please see [What's cool for develope
 
 For the latest Windows Developer Documentation news, or to reach out to us with comments and questions, feel free to find us on Twitter, where our handle is [@WindowsDocs](https://twitter.com/windowsdocs).
 
-*Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing to Microsoft docs, please see the [contributor guide](/contribute/).*
+*Many thanks to everyone who has contributed to the documentation. Your corrections and suggestions are very welcome! For information on contributing, please see our [contributor guide](/contribute/).*
 
 Highlights this month include:
 
@@ -44,7 +44,7 @@ Highlights this month include:
 * [Windows on Arm](/windows/arm/overview)
 * [FileOpenPicker Class](/uwp/api/windows.storage.pickers.fileopenpicker?view=winrt-22621)
 * [User Security Attributes](/windows/win32/ad/security-properties)
-* [Getting started with Visual Studio for Windows 10 app development](/learn/modules/get-started-with-visual-studio-for-windows10-app-dev/)
+* [Getting started with Visual Studio for Windows 10 app development](/training/modules/get-started-with-visual-studio-for-windows10-app-dev/)
 
 ## Developer tool updates
 
@@ -125,5 +125,3 @@ The following list of topics have seen significant updates in the past month, as
 <li><a href="/uwp/api/windows.ui.xaml.controls.webview.xyfocusright">Windows.UI.Xaml.Controls.WebView.XYFocusRight</a></li>
 <li><a href="/uwp/api/windows.ui.xaml.controls.webview.xyfocusup">Windows.UI.Xaml.Controls.WebView.XYFocusUp</a></li>
 </ul>
-
-

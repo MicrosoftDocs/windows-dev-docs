@@ -44,7 +44,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 ## Online courses
 
-- [Introduction to Python on Microsoft Learn](/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python](/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
 - [Build an AI web app by using Python and Flask](/learn/modules/python-flask-build-ai-web-app): Use Python, Flask, and Azure Cognitive Services to build a web app that incorporates AI.
 
