@@ -1,10 +1,10 @@
-The **Properties** page of the [app submission process](app-submissions.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
+The **Properties** page of the [app submission process](../../../apps/publish/publish-your-app/create-app-submission.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
 
 ## Category and subcategory
 
 You must indicate the category (and subcategory/genre, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
 
-For more info, see [Category and subcategory table](category-and-subcategory-table.md).
+For more info, see [Category and subcategory table](../../../apps/publish/publish-your-app/categories-and-subcategories.md).
 
 ## Support info
 
@@ -17,12 +17,12 @@ You are responsible for ensuring your app complies with privacy laws and regulat
 In this section, you must indicate whether or not your app accesses, collects, or transmits any [personal information](/legal/windows/agreements/store-policies#105-personal-information). If you answer **Yes**, a privacy policy URL is required. Otherwise, it is optional (though if we determine that your app requires a privacy policy, and you have not provided one, your submission may fail certification).
 
 > [!NOTE]
-> If we detect that your packages declare [capabilities](../packaging/app-capability-declarations.md) that could allow personal information to be accessed, transmitted, or collected, we will mark this question as **Yes**, and you will be required to enter a privacy policy URL.
+> If we detect that your packages declare [capabilities](/uwp/packaging/app-capability-declarations) that could allow personal information to be accessed, transmitted, or collected, we will mark this question as **Yes**, and you will be required to enter a privacy policy URL.
 
 To help you determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies#105-personal-information).
 
 > [!NOTE]
-> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. 
+> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy.
 
 ### Website
 
@@ -58,7 +58,7 @@ If your product does not support any of these display mode options, leave all of
 
 You can check boxes in this section to indicate if any of the declarations apply to your app. This may affect the way your app is displayed, whether it is offered to certain customers, or how customers can use it.
 
-For more info, see [Product declarations](./product-declarations.md).
+For more info, see [Product declarations](../../../apps/publish/publish-your-app/product-declarations.md).
 
 ## System requirements
 
@@ -82,4 +82,4 @@ The behavior for customers will vary depending on the specific requirements and 
 We also recommend adding runtime checks for the specified hardware into your app, since the Store may not always be able to detect that a customer's device is missing the selected feature(s) and they could still be able to download your app even if a warning is displayed. If you want to completely prevent your UWP app from being downloaded on a device which doesn't meet minimum requirements for memory or DirectX level, you can designate the minimum requirements in a [StoreManifest XML file](/uwp/schemas/storemanifest/storemanifestschema2015/schema-root).
 
 > [!TIP]
-> If your product requires additional items that aren't listed in this section in order to run properly, such as 3D printers or USB devices, you can also enter [additional system requirements](create-app-store-listings.md#additional-system-requirements) when you create your Store listing.
+> If your product requires additional items that aren't listed in this section in order to run properly, such as 3D printers or USB devices, you can also enter [additional system requirements](../../../apps/publish/publish-your-app/create-app-store-listing.md#additional-system-requirements) when you create your Store listing.

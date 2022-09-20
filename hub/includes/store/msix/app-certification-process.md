@@ -2,7 +2,7 @@ When you finish creating your app's submission and click **Submit to the Store**
 
 ## Preprocessing
 
-After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see [Resolve submission errors](resolve-submission-errors.md).
+After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see [Resolve submission errors](../../../apps/publish/publish-your-app/resolve-submission-errors.md).
 
 ## Certification
 
@@ -10,18 +10,18 @@ During this phase, several tests are conducted:
 
 - **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
 - **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit it to the Store.)
-  **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](notes-for-certification.md) page.
+  **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](../../../apps/publish/publish-your-app/notes-for-certification.md) page.
 
-After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](store-policies.md) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](/uwp/publish/store-policies) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
 
 ## Release
 
 When your app passes certification, it's ready to move to the **Publishing** process.
 
 - If you've indicated that your submission should be published as soon as possible (the default option), the publishing process will begin right away.
-- If this is the first time you've published the app, and you specified a **Release date** in the [Schedule](configure-precise-release-scheduling.md#release) section, the app will become available according to your **Release date** selections.
-- If you've used [Publishing hold options](manage-submission-options.md#publishing-hold-options) to specify that it should not be released until a certain date, we'll wait until that date to begin the publishing process, unless you select **Change release date**.
-- If you've used [Publishing hold options](manage-submission-options.md#publishing-hold-options) to specify that you want to publish the submission manually, we won't start the publishing process until you select **Publish now** (or select **Change release date** and pick a specific date).
+- If this is the first time you've published the app, and you specified a **Release date** in the [Schedule](../../../apps/publish/publish-your-app/release-schedule.md#release) section, the app will become available according to your **Release date** selections.
+- If you've used [Publishing hold options](../../../apps/publish/publish-your-app/manage-submission-options.md#publishing-hold-options) to specify that it should not be released until a certain date, we'll wait until that date to begin the publishing process, unless you select **Change release date**.
+- If you've used [Publishing hold options](../../../apps/publish/publish-your-app/manage-submission-options.md#publishing-hold-options) to specify that you want to publish the submission manually, we won't start the publishing process until you select **Publish now** (or select **Change release date** and pick a specific date).
 
 ## Publishing
 
@@ -33,7 +33,7 @@ While your app is in the publishing phase, the **Show details** link in the Stat
 
 ## In the Store
 
-After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Discoverability](choose-visibility-options.md#discoverability) option).
+After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Discoverability](../../../apps/publish/publish-your-app/visibility-options.md#discoverability) option).
 
 > [!NOTE]
-> We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
+> We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](/uwp/publish/store-policies). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.

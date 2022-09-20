@@ -2,7 +2,7 @@ When submitting an add-on, the options on the **Properties** page help determine
 
 ## Product type
 
-Your product type is selected when you first [create the add-on](set-your-add-on-product-id.md). The product type you selected is displayed here, but you can't change it.
+Your product type is selected when you first [create the add-on](../../../apps/publish/publish-your-app/create-app-store-listing.md). The product type you selected is displayed here, but you can't change it.
 
 > [!TIP]
 > If you haven't published the add-on, you can delete the submission and start again if you want to choose a different product type.

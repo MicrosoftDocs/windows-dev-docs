@@ -1,18 +1,18 @@
-The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
+The **Store listings** section of the [app submission process](../../../apps/publish/publish-your-app/create-app-submission.md) is where you provide the text and [images](../../../apps/publish/publish-your-app/app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
 
-Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots).
+Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](../../../apps/publish/publish-your-app/screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> You can optionally [import and export Store listings](import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once.
+> You can optionally [import and export Store listings](../../../apps/publish/publish-your-app/import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once.
 
-If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](create-platform-specific-store-listings.md) to show to those customers.
+If your previously-published app supports Windows 8.x and/or Windows Phone 8.x or earlier, you can [create platform-specific Store listings](/uwp/publish/create-platform-specific-store-listings) to show to those customers.
 
 ## Store listing languages
 
 You must complete the **Store listing** page for at least one language. We recommend providing a Store listing in each language that your packages support, but you have flexibility to remove languages for which you don’t wish to provide a Store listing. You can also create Store listings in additional languages which aren’t supported by your packages.
 
 > [!NOTE]
-> If your submission includes packages already, we’ll show the [languages](supported-languages.md) supported in your packages on the submission overview page (unless you remove any of them).
+> If your submission includes packages already, we’ll show the [languages](../../../apps/publish/publish-your-app/supported-languages.md) supported in your packages on the submission overview page (unless you remove any of them).
 
 To add or remove languages for your Store listings, click **Add/remove languages** from the submission overview page. If you‘ve already uploaded packages, you’ll see their languages listed in the **Languages supported by your packages** section. To remove one or more of these languages, click **Remove**. If you later decide to include a language that you previously removed from this section, you can click **Add**.
 
@@ -22,7 +22,7 @@ When you have finished making your selections, click **Save** to return to the s
 
 ## Add and edit Store listing info
 
-To edit a Store listing, select the language name from the submission overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](import-and-export-store-listings.md).
+To edit a Store listing, select the language name from the submission overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](../../../apps/publish/publish-your-app/import-and-export-store-listings.md).
 
 The available fields are described below.
 
@@ -30,7 +30,7 @@ The available fields are described below.
 
 This drop-down box lets you specify which name should be used in the Store listing (if you have reserved more than one name for the app).
 
-If you have uploaded packages in the same language as the Store listing you're working on, the name used in those packages will be selected. If you need to [rename the app](manage-app-names.md#rename-an-app-that-has-already-been-published) after it's already been published, you can select a different reserved name here when you create a new submission, after you've uploaded packages that use the new name.
+If you have uploaded packages in the same language as the Store listing you're working on, the name used in those packages will be selected. If you need to [rename the app](../../../apps/publish/publish-your-app/manage-app-names.md#rename-an-app-that-has-already-been-published) after it's already been published, you can select a different reserved name here when you create a new submission, after you've uploaded packages that use the new name.
 
 If you haven't uploaded packages for the language you're working on, and you've reserved more than one name, you'll need to select one of your reserved app names, since there isn't an associated package in that language from which to pull the name.
 
@@ -41,7 +41,7 @@ If you haven't uploaded packages for the language you're working on, and you've 
 
 The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
 
-For some tips on making your description stand out, see [Write a great app description](write-a-great-app-description.md).
+For some tips on making your description stand out, see [Write a great app description](../../../apps/publish/publish-your-app/write-great-app-description.md).
 
 ## What's new in this version
 
@@ -58,7 +58,7 @@ These are short summaries of your app's key features. They are displayed to the 
 
 One screenshot is required in order to submit your app. We recommend providing at least four screenshots for each device type that your app supports so that people can see how the app will look on their device type.
 
-For more info, see [App screenshots and images](app-screenshots-and-images.md#screenshots).
+For more info, see [App screenshots and images](../../../apps/publish/publish-your-app/screenshots-and-images.md#screenshots).
 
 ## Store logos
 
@@ -67,13 +67,13 @@ Store logos are optional images that you can upload to enhance the way your app 
 > [!IMPORTANT]
 > If your app supports Xbox, or if it supports Windows Phone 8.1 or earlier, you must provide certain images here in order for the listing to appear properly in the Store.
 
-For more info, see [Store logos](app-screenshots-and-images.md#store-logos).
+For more info, see [Store logos](../../../apps/publish/publish-your-app/screenshots-and-images.md#store-logos).
 
 ## Trailers and additional assets
 
 You can submit additional assets for your product, including video trailers and promotional images. These are all optional, but we recommend that you consider uploading as many of them as possible. These images can help give customers a better idea of what your product is and make a more enticing listing.
 
-For more info, see [Trailers and additional assets](app-screenshots-and-images.md#trailers-and-additional-assets).
+For more info, see [Trailers and additional assets](../../../apps/publish/publish-your-app/screenshots-and-images.md#trailers-and-additional-assets).
 
 ## Supplemental fields
 
@@ -107,7 +107,7 @@ For best results, keep your short description under 270 characters. The field ha
 
 ### Additional system requirements
 
-If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later (including Xbox), along with the requirements you indicated on the product's properties page.
+If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](../../../apps/publish/publish-your-app/enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later (including Xbox), along with the requirements you indicated on the product's properties page.
 
 You can enter up to 11 items for both **Minimum hardware** and **Recommended hardware**. These are displayed to the customer as a bulleted list in your Store listing. Keep these brief, with just a few words (and no more than 200 characters) per item.
 
@@ -145,4 +145,4 @@ Enter text here if you want to include a **Developed by** field in your app's St
 This field has a 255 character limit.
 
 > [!NOTE]
-> The **Privacy policy**, **Website**, and **Support contact info** fields are now located on the [Properties](enter-app-properties.md) page.
+> The **Privacy policy**, **Website**, and **Support contact info** fields are now located on the [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md) page.

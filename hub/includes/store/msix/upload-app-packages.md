@@ -3,7 +3,7 @@ The **Packages** page  page of the [app submission process](app-submissions.md) 
 > [!IMPORTANT]
 > You can no longer upload new XAP packages built using the Windows Phone 8.x SDK(s). Apps that are already in Store with XAP packages will continue to work on Windows 10 Mobile devices. For more info, see this [blog post](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
-For details about what a package includes and how it must be structured, see [App package requirements](app-package-requirements.md). You'll also want to learn about [how version numbers impact which packages are delivered to specific customers](package-version-numbering.md) and [how to manage packages for various scenarios](guidance-for-app-package-management.md).
+For details about what a package includes and how it must be structured, see [App package requirements](../../../apps/publish/publish-your-app/app-package-requirements.md). You'll also want to learn about [how version numbers impact which packages are delivered to specific customers](../../../apps/publish/publish-your-app/package-version-numbering.md) and [how to manage packages for various scenarios](../../../apps/publish/publish-your-app/app-package-management.md).
 
 ## Uploading packages to your submission
 
@@ -12,7 +12,7 @@ To upload packages, drag them into the upload field or click to browse your file
 > [!IMPORTANT]
 > For Windows 10, we recommend uploading the .msixupload or .appxupload file here rather than .msix, .appx, .msixbundle, or .appxbundle.  For more info about packaging UWP apps for the Store, see [Packaging a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
-If you have created any [package flights](package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
+If you have created any [package flights](/uwp/publish/package-flights) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
 
 If we detect errors with a package while validating it, we'll display a message to let you know what's wrong. You'll need to remove the package, fix the issue, and then try uploading it again. You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
 
@@ -20,7 +20,7 @@ If we detect errors with a package while validating it, we'll display a message 
 
 After your packages have been successfully uploaded, the **Device family availability** section will display a table that indicates which packages will be offered to specific Windows 10 or Windows 11 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 or Windows 11 device families.
 
-For more info, see [Device family availability](device-family-availability.md).
+For more info, see [Device family availability](../../../apps/publish/publish-your-app/device-families.md).
 
 ## Package details
 
@@ -38,10 +38,10 @@ When we detect that you have redundant packages, we'll provide an option to remo
 
 If your submission is an update to a previously published app, you'll see a checkbox that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. This allows you to choose a percentage of customers who will get the packages from the submission so that you can monitor feedback and analytic data  to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission.
 
-For more info, see [Gradual package rollout](gradual-package-rollout.md).
+For more info, see [Gradual package rollout](/uwp/publish/gradual-package-rollout).
 
 ## Mandatory update
 
 If your submission is an update to a previously published app, you'll see a checkbox that says **Make this update mandatory**. This allows you to set the date and time for a mandatory update, assuming you have used the Windows.Services.Store APIs to allow your app to programmatically check for package updates and download and install the updated packages. Your app must target Windows 10, version 1607 or later in order to use this option.
 
-For more info, see [Download and install package updates for your app](../packaging/self-install-package-updates.md).
+For more info, see [Download and install package updates for your app](/uwp/packaging/self-install-package-updates).

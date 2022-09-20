@@ -17,11 +17,11 @@ You must provide a secure (HTTPS) package URL. Your submission will not proceed 
 The package URL must host your app’s installer packaged as an .exe or .msi file. Your submission will not proceed to the next step if this test has failed.
 
 > [!IMPORTANT]
-> The installer binary on the package URL must not change once it has been submitted. We recommend that you create and submit versioned package URLs (such as https://contoso.com/downloads/1.1/myinstaller.msi). If you need to update the package URL, you may create a new [app submission](app-submissions.md) with a new package URL.
+> The installer binary on the package URL must not change once it has been submitted. We recommend that you create and submit versioned package URLs (such as https://contoso.com/downloads/1.1/myinstaller.msi). If you need to update the package URL, you may create a new [app submission](../../../apps/publish/publish-your-app/app-submissions.md) with a new package URL.
 
 ### Malware test
 
-This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system. 
+This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
 
 We highly recommended that you scan your app with Microsoft Defender or another consumer antivirus software that's compatible with Windows to ensure that it is free from  malware and unwanted apps.
 
@@ -69,7 +69,7 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 - Provide any necessary info required to use your app, such as the username and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
 - Configure your app's installer to provide your app’s information such as ProductName, Publisher Name, Default Language, Version info (as applicable) in places where customers expect to find such information such as ‘Add/Remove Programs’ in Windows. This information is part of your app’s installer package.  See [setting installer properties](/windows/win32/msi/property-reference#product-information-properties) for more details on how to set properties for your Windows installer
 - Include a privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/legal/windows/agreements/store-policies#105-personal-information)..
-- Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](../write-a-great-app-description.md).
+- Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](../../../apps/publish/publish-your-app/write-great-app-description.md).
 - Do not declare your app as accessible unless you have specifically engineered and tested it for accessibility scenarios.
 - Review the [Microsoft Store Policies](/legal/windows/agreements/store-policies) to ensure your app meets all the requirements listed there.
 
