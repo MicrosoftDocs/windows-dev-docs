@@ -22,7 +22,7 @@ By holding <kbd>shift</kbd>, you will change from adjusting the capture region's
 
 1. This uses OCR (Optical character recognition) to read the text on the screen.  
 2. It may not be perfect so you will have to do a quick proof read of the output.
-3. The default language used will be based on your [Windows system language / keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2) (OCR language packs are available for install). Accuracy of results may vary depending on what you are trying to extract from the capture.
+3. The default language used will be based on your [Windows system language / keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2) (OCR language packs are available for install).
 
 ## Settings
 
