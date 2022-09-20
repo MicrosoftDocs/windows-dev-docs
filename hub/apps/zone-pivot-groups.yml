@@ -20,3 +20,15 @@ groups:
       title: C# packaged
     - id: winui3-unpackaged-csharp
       title: C# unpackaged
+- id: store-installer-packaging
+  title: Store application type
+  prompt: "Choose the type of app you want to publish on the Microsoft store:"
+  pivots:
+    - id: store-installer-msix
+      title: MSIX
+    - id: store-installer-msi
+      title: MSI or EXE
+    - id: store-installer-pwa
+      title: PWA
+    - id: store-installer-add-on
+      title: App add-on
