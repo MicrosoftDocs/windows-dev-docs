@@ -253,11 +253,11 @@ Microsoft offers a variety of resources for web developers, including new tools 
         [Install React Native for macOS](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
     :::column-end:::
     :::column:::
-       [![Learn icon](../images/learn-icon.png)](/learn/browse/?terms=web)<br>
-        **[Microsoft Learn courses related to web development](/learn/browse/?terms=web)**<br>
+       [![Learn icon](../images/learn-icon.png)](/training/browse/?terms=web)<br>
+        **[Microsoft Learn courses related to web development](/training/browse/?terms=web)**<br>
         Microsoft Learn offers free online courses to learn a variety of new skills and discover Microsoft products and services with step-by-step guidance.
         <br>
-        [Start Learning](/learn/browse/?terms=web)
+        [Start Learning](/training/browse/?terms=web)
     :::column-end:::
 :::row-end:::
 

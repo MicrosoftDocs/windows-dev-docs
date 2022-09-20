@@ -84,7 +84,7 @@ Build apps that work on all Windows devices, or enhance your existing apps with 
     :::column-end:::
     :::column:::
         <h3>New to development?</h3>
-        <a href="/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a><br/>
+        <a href="/training/browse/?products=windows&resource_type=module">Windows on Microsoft Learn training</a><br/>
     :::column-end:::
     :::column:::
         <h3>Explore related docs</h3>

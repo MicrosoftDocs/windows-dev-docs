@@ -33,7 +33,7 @@ We've listed a few tutorials, course, and code samples below to help you get sta
 
 ## Get started with WSL
 
-* [An introductory to Windows Subsystem for Linux](/learn/modules/get-started-with-windows-subsystem-for-linux/)
+* [An introductory to Windows Subsystem for Linux](/training/modules/get-started-with-windows-subsystem-for-linux/)
 
 ![Filler image](../images/wsl-learn-course.png)
 
@@ -49,10 +49,10 @@ We've listed a few tutorials, course, and code samples below to help you get sta
 
 ## Create a microservice
 
-* [Create and deploy a cloud-native ASP.NET Core microservice](/learn/modules/microservices-aspnet-core/)
+* [Create and deploy a cloud-native ASP.NET Core microservice](/training/modules/microservices-aspnet-core/)
 
 ## Additional resources
 
-* [Explore free online courses on Microsoft Learn](/learn/browse/)
+* [Explore free online courses on Microsoft Learn](/training/browse/)
 
 * [Explore online courses from Pluralsight](https://www.pluralsight.com/browse/software-development)
