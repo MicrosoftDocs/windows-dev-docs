@@ -94,7 +94,7 @@ Interested in learning how performance engineering intersects with sustainabilit
 
 * [Measuring Your Application Power and Carbon Impact](https://devblogs.microsoft.com/sustainable-software/measuring-your-application-power-and-carbon-impact-part-1/)
 
-* [Principles of Sustainable Software Engineering](/learn/modules/sustainable-software-engineering-overview)
+* [Principles of Sustainable Software Engineering](/training/modules/sustainable-software-engineering-overview)
 
 * [Role of Performance Engineering in Designing Carbon Efficient Applications](https://devblogs.microsoft.com/sustainable-software/role-of-performance-engineering-techniques-in-designing-carbon-efficient-applications/)
 

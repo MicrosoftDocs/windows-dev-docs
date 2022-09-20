@@ -80,7 +80,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Try Python (without installing anything) in this intro course
-            url: /learn/modules/intro-to-python/
+            url: /training/modules/intro-to-python/
           - text: Recommended links
             url: resources.md
           - text: Recommended online courses

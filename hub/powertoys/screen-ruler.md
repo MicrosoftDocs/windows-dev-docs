@@ -14,6 +14,14 @@ Screen ruler allows you to quickly measure pixels on your screen based on image 
 
 Just press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and then select which tool you want to measure with. To exit, just hit <kbd>Esc</kbd> or click the toolbar.
 
+## How to use
+
+- Bounds (Dashed square symbol): This is a bounding box.  Click and drag with your mouse.  If you hold <kbd>Shift</kbd>, the box will stay until you cancel the interaction
+- Spacing (+ symbol): This will measure horizontal and vertical spacing at the same time.  Click the symbol and move your mouse to your target location.
+- Horizontal (- symbol): This will measure only horizontal spacing.  Click the symbol and move your mouse to your target location.
+- Vertical (| symbol):This will measure only vertical spacing.  Click the symbol and move your mouse to your target location.
+- Cancel interaction: <kbd>Esc</kbd> or mouse click
+
 ## Settings
 
 From the Settings menu, the following options can be configured:

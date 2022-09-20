@@ -38,7 +38,7 @@ highlightedContent:
      url: ../dev-environment/index.md
    - title: Online training for Windows app developers
      itemType: learn
-     url: /learn/browse/?products=windows
+     url: /training/browse/?products=windows
 
 productDirectory:
   title: Dive into developing apps for Windows

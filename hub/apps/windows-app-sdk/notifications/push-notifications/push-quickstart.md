@@ -129,8 +129,12 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
 
 Update your app's `main()` method to add the following:
 
-1. Register your app to receive push notifications.
-1. Check the source of the activation request. If the activation was triggered from a push notification, respond based on the notification's payload.
+1. Register your app to receive push notifications by calling [PushNotificationManager::Default().Register()](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.register).
+1. Check the source of the activation request by calling [AppInstance::GetCurrent().GetActivatedEventArgs()](). If the activation was triggered from a push notification, respond based on the notification's payload.
+
+> [!IMPORTANT]
+> You must call **PushNotificationManager::Default().Register** before calling [AppInstance.GetCurrent.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
+
 
 The following sample is from the sample packaged app found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/cpp-console-packaged).
 
@@ -264,7 +268,7 @@ The **PushNotificationManager** will attempt to create a Channel URI, retrying a
 winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()
 {
     // To obtain an AAD RemoteIdentifier for your app,
-    // follow the instructions on https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app
+    // follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
     auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
 
     // Setup the inprogress event handler

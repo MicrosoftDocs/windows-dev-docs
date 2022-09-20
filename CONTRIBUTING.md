@@ -14,7 +14,7 @@ If you are **not** a Microsoft employee, you can contribute through the [public 
 
 If you're already in the public content repository, start by navigating to the file you want to change. From there, select the pencil icon above the displayed content to begin editing.
 
-Alternately, if you're viewing a published article in [Microsoft Docs](https://docs.microsoft.com), you can select the **Edit** button on the upper-right portion of the page. This will redirect you to the associated source file in the repository.
+Alternately, if you're viewing a published article on [Microsoft Learn](https://learn.microsoft.com/), you can select the **Edit** button on the upper-right portion of the page. This will redirect you to the associated source file in the repository.
 
 When you begin editing, GitHub automatically forks the official repo into your personal GitHub account, where you can make your changes. When you're done, submit a pull request back to the **docs** branch.
 
@@ -26,21 +26,21 @@ The assigned reviewer(s) may approve or reject the PR, or work with you to make 
 
 ## Internal contributions
 
-If you are a Microsoft employee, you can contribute through the [private content repository](https://github.com/microsoftdocs/windows-uwp-pr). You can find guidance on using this repo in the [Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation on upcoming features must be contributed via the private repository only.
+If you are a Microsoft employee, you can contribute through the [private content repository](https://github.com/microsoftdocs/windows-uwp-pr). You can find guidance on using this repo in the [Windows Authoring Guide](https://review.learn.microsoft.com/windows-authoring-guide/uwp/?branch=main). Documentation on upcoming features must be contributed via the private repository only.
 
 ### Editing a file
 
-As in the public repository, you can make small changes to the private repository in your browser, without needing to create a local clone. You **must** ensure that you are contributing on the correct branch. For more information about creating your personal branch, see [the instructions in the Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master).
+As in the public repository, you can make small changes to the private repository in your browser, without needing to create a local clone. You **must** ensure that you are contributing on the correct branch. For more information about creating your personal branch, see [the instructions in the Windows Authoring Guide](https://review.learn.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=main).
 
 ### Making substantial changes
 
-To make more extensive changes to an existing article, add or change images, or contribute a new article, create a local clone of the private content repo. Fore more information, follow [the instructions in the Windows Authoring Guide](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/).
+To make more extensive changes to an existing article, add or change images, or contribute a new article, create a local clone of the private content repo. Fore more information, follow [the instructions in the Windows Authoring Guide](https://review.learn.microsoft.com/windows-authoring-guide/uwp/conceptual/).
 
 ### Pull requests
 
 When creating a pull request in the internal repo, make sure you're merging your personal branch into the branch it was created from.
 
-After you submit your pull request, it is evaluated with [PR Merger](https://review.docs.microsoft.com/help/contribute/prmerger-overview?branch=master) to ensure it meets our basic standards. If it passes, you can comment `#sign-off` to pass it to member of the UWP documentation team for further review. If it fails, you'll be told what changes to make before you can sign off.
+After you submit your pull request, it is evaluated with [PR Merger](https://review.learn.microsoft.com/help/contribute/prmerger-overview?branch=main) to ensure it meets our basic standards. If it passes, you can comment `#sign-off` to pass it to member of the UWP documentation team for further review. If it fails, you'll be told what changes to make before you can sign off.
 
 The assigned reviewer(s) may approve or reject the PR, or work with you to make further changes. Reviewers will not merge the PR until you have approved it yourself.
 

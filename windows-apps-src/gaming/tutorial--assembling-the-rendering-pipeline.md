@@ -161,21 +161,21 @@ void GameRenderer::Render()
             // 1. Binds one render target atomically to the device.
             // 2. Binds the depth-stencil view, as returned by the GetDepthStencilView method, to the device.
             // For more info, see
-            // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets
+            // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets
 
             d3dContext->OMSetRenderTargets(1, targets, m_deviceResources->GetDepthStencilView());
 
             // Clears the depth stencil view.
             // A depth stencil view contains the format and buffer to hold depth and stencil info.
             // For more info about depth stencil view, go to: 
-            // https://docs.microsoft.com/windows/uwp/graphics-concepts/depth-stencil-view--dsv-
+            // https://learn.microsoft.com/windows/uwp/graphics-concepts/depth-stencil-view--dsv-
             // A depth buffer is used to store depth information to control which areas of 
             // polygons are rendered rather than hidden from view. To learn more about a depth buffer,
-            // go to: https://docs.microsoft.com/windows/uwp/graphics-concepts/depth-buffers
+            // go to: https://learn.microsoft.com/windows/uwp/graphics-concepts/depth-buffers
             // A stencil buffer is used to mask pixels in an image, to produce special effects. 
             // The mask determines whether a pixel is drawn or not,
             // by setting the bit to a 1 or 0. To learn more about a stencil buffer,
-            // go to: https://docs.microsoft.com/windows/uwp/graphics-concepts/stencil-buffers
+            // go to: https://learn.microsoft.com/windows/uwp/graphics-concepts/stencil-buffers
 
             d3dContext->ClearDepthStencilView(m_deviceResources->GetDepthStencilView(), D3D11_CLEAR_DEPTH, 1.0f, 0);
 
@@ -266,17 +266,17 @@ void GameRenderer::Render()
             // Set up the graphics pipeline. This sample uses the same InputLayout and set of
             // constant buffers for all shaders, so they only need to be set once per frame.
             // For more info about the graphics or rendering pipeline, see
-            // https://docs.microsoft.com/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline
+            // https://learn.microsoft.com/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline
 
             // IASetInputLayout binds an input-layout object to the input-assembler (IA) stage. 
             // Input-layout objects describe how vertex buffer data is streamed into the IA pipeline stage.
             // Set up the Direct3D context to use this vertex layout. For more info, see
-            // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout
+            // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout
             d3dContext->IASetInputLayout(m_vertexLayout.get());
 
             // VSSetConstantBuffers sets the constant buffers used by the vertex shader pipeline stage.
             // Set up the Direct3D context to use these constant buffers. For more info, see
-            // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers
+            // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers
 
             ID3D11Buffer* constantBufferNeverChanges{ m_constantBufferNeverChanges.get() };
             d3dContext->VSSetConstantBuffers(0, 1, &constantBufferNeverChanges);
@@ -289,7 +289,7 @@ void GameRenderer::Render()
 
             // Sets the constant buffers used by the pixel shader pipeline stage. 
             // For more info, see
-            // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetconstantbuffers
+            // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetconstantbuffers
 
             d3dContext->PSSetConstantBuffers(2, 1, &constantBufferChangesEveryFrame);
             d3dContext->PSSetConstantBuffers(3, 1, &constantBufferChangesEveryPrim);
@@ -397,17 +397,17 @@ void MeshObject::Render(_In_ ID3D11DeviceContext* context)
 
     // IASetIndexBuffer binds an index buffer to the input-assembler stage.
     // For more info, see
-    // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer.
+    // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer.
     context->IASetIndexBuffer(m_indexBuffer.get(), DXGI_FORMAT_R16_UINT, 0);
 
     // Binds information about the primitive type, and data order that describes input data for the input assembler stage.
     // For more info, see
-    // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology.
+    // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology.
     context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
     // Draw indexed, non-instanced primitives. A draw API submits work to the rendering pipeline.
     // For more info, see
-    // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed.
+    // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed.
     context->DrawIndexed(m_indexCount, 0, 0);
 }
 ```

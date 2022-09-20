@@ -52,6 +52,7 @@ Learn more about C++ here.
 When you're ready to try something a little more fun than "Hello, World!", try out these tutorials.
 
 * [Tutorial: Navigate between two pages](/windows/apps/design/basics/navigate-between-two-pages)
+
 * [Microsoft Learn training resources for Windows apps](/training/browse/?products=windows)
 
 ## See Also

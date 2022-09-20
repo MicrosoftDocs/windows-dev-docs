@@ -31,7 +31,15 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.1
 
-The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.4. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.5. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.1.5
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.1 release.
+
+#### Bug fixes
+- Fixed issue where Acrylic does not work if Mica is enabled. For more information, see [issue 7200](https://github.com/microsoft/microsoft-ui-xaml/issues/7200) on GitHub.
+- Fixed issue causing apps that depend on the WindowsAppRuntime installer (e.g. unpackaged apps) to fail to run on Windows 10 ARM64 machines. For more information, see [issue 2564](https://github.com/microsoft/WindowsAppSDK/issues/2564) on GitHub.
 
 ### Version 1.1.4
 
