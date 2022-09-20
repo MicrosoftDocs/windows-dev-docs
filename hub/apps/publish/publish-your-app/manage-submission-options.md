@@ -9,14 +9,10 @@ zone_pivot_groups: store-installer-packaging
 
 # Manage submission options
 
-:::zone pivot="store-installer-msix,store-installer-pwa"
+:::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 [!INCLUDE [name](../../../includes/store/msix/manage-submission-options.md)]
 :::zone-end
 
 :::zone pivot="store-installer-msi-exe"
 [!INCLUDE [name](../../../includes/store/msi/manage-submission-options.md)]
-:::zone-end
-
-:::zone pivot="store-installer-add-on"
-
 :::zone-end

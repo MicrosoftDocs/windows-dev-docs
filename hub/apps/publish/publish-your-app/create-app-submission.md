@@ -23,22 +23,39 @@ zone_pivot_groups: store-installer-packaging
 > [!NOTE]
 > You must have an active developer account in Partner Center in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
 
-Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
+Once you've [created your app by reserving a name](reserve-your-apps-name.md), you can start working on getting it published. The first step is to create a submission.
 
 You can start your submission when your app is complete and ready to publish, or you can start entering info before you have written a single line of code. Updates you make to your submission are saved, so you can come back and work on it whenever you're ready.
 
 After your app is published, you can publish an updated version by creating another submission in Partner Center. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on its **Overview** page.
+
+:::zone pivot="store-installer-msix,store-installer-pwa,store-installer-msi-exe"
 
 ## App submission checklist
 
 Here are the details that you can provide when creating your app submission, with links to more info.
 
 Items that you are required to provide or specify are noted below. Some areas are optional, or have default values provided that you can change as desired. You don't have to work on these sections in the order listed here.
+:::zone-end
 
-:::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
+:::zone pivot="store-installer-add-on"
+
+## Add-on submission checklist
+
+Here are the details that you can provide when creating your add-on submission, with links to more info.
+
+Items that you are required to provide or specify are noted below. Some areas are optional, or have default values provided that you can change as desired. You don't have to work on these sections in the order listed here.
+
+:::zone-end
+
+:::zone pivot="store-installer-msix,store-installer-pwa"
 [!INCLUDE [name](../../../includes/store/msix/create-app-submission.md)]
 :::zone-end
 
 :::zone pivot="store-installer-msi-exe"
 [!INCLUDE [name](../../../includes/store/msi/create-app-submission.md)]
+:::zone-end
+
+:::zone pivot="store-installer-add-on"
+[!INCLUDE [name](../../../includes/store/add-on/create-app-submission.md)]
 :::zone-end

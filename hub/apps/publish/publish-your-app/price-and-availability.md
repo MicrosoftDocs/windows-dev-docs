@@ -9,10 +9,14 @@ zone_pivot_groups: store-installer-packaging
 
 # Set app pricing and availability
 
-:::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
+:::zone pivot="store-installer-msix,store-installer-pwa"
 [!INCLUDE [name](../../../includes/store/msix/price-and-availability.md)]
 :::zone-end
 
 :::zone pivot="store-installer-msi-exe"
 [!INCLUDE [name](../../../includes/store/msi/price-and-availability.md)]
+:::zone-end
+
+:::zone pivot="store-installer-add-on"
+[!INCLUDE [name](../../../includes/store/add-on/price-and-availability.md)]
 :::zone-end

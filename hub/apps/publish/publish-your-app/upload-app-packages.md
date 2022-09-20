@@ -18,5 +18,5 @@ zone_pivot_groups: store-installer-packaging
 :::zone-end
 
 :::zone pivot="store-installer-add-on"
-
+This section does not apply to app add-ons. Please proceed to [Create app store listings](create-app-store-listing.md)
 :::zone-end

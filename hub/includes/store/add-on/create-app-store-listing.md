@@ -1,49 +1,33 @@
-An add-on must be associated with an app that you've created in [Partner Center](https://partner.microsoft.com/dashboard) (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on your app's **Overview** page or on its **Add-ons** page.
+When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.
 
-After you select **Create a new add-on**, you'll be prompted to specify a product type and assign a product ID for your add-on.
+> [!TIP]
+> You can also [import and export Store listings](import-and-export-store-listings.md) for your add-on if you'd like to enter your listing info offline in a .csv file, rather than providing this info directly in Partner Center. This may be especially convenient when creating listings in many languages. However, you can always enter your info directly in [Partner Center](https://partner.microsoft.com/dashboard) rather than using the import/export feature.
 
-## Product type
 
-First, you'll need to indicate which type of add-on you are offering. This selection refers to how the customer can use your add-on.
+## Store listing languages
 
-> [!NOTE]
-> You won't be able to change the product type after you save this page to create the add-on. If you choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
+Before you can enter Store listing info, you need to specify one or more [languages](supported-languages.md). You must complete the **Store listing** page for at least one language. We recommend creating Store listings for every language your app supports.
 
-<span id="durable" />
+Under the **Store listing** section of your add-on's submission, click **Add/remove languages**, then click **Manage languages** on the next page. Check the boxes for the languages that you’d like to add, then click **Update**. The languages that you’ve selected will be displayed in the **Store listing languages** section of the page.
 
-### Durable
+To remove a language, click **Remove** (or click **Manage languages** and uncheck the box for languages you’d like to remove). 
 
-Select **Durable** as your product type if your add-on is typically purchased only once. These add-ons are often used to unlock additional functionality in an app.
+When you have finished making your selections, click **Save** to return to the submission overview page.
 
-The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You have the option to set the **Product lifetime** to a different duration in the [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md) step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.
+To edit a Store listing, click the language name from the add-on submission overview page. The info you can enter for each language is described below.
 
-### Consumable
+## Title
 
-If the add-on can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** product types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info, see [Enable consumable add-on purchases](/uwp/monetize/enable-consumable-add-on-purchases).
+You must provide a title here, which is the name your customers will see for this add-on. Your title can be up to 100 characters.
 
-There are two types of consumable add-ons:
-- **Developer-managed consumable**: Balance and fulfillment must be managed within your app. Supported on all OS versions.
-- **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you can't submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in Partner Center and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** step of your submission.
+## Description
 
-### Subscription
+If you'd like to display more info than just a title, you can enter up to 200 characters here. This field is optional.
 
-If your want to charge customers on a recurring basis for your add-on, choose **Subscription**.
+## Icon
 
-After a subscription add-on is initially acquired by a customer, they will continue to be charged at recurring intervals in order to keep using the add-on. The customer can cancel the subscription at any time to avoid further charges. You'll need to specify the subscription period, and whether or not to offer a free trial, in the **Properties** step of your submission.
+You also have the option to provide an image that may be displayed to the customer. This icon must be a .png file that measures exactly 300 x 300 pixels.
 
-Subscription add-ons are only supported for customers running Windows 10, version 1607 or later. The parent app must be compiled using Windows 10 SDK version 14393 or later and it must use the in-app purchase API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace. For more info, see [Enable subscription add-ons for your app](/uwp/monetize/enable-subscription-add-ons-for-your-app).
+ 
 
-You must submit the parent product before you can publish subscription add-ons to the Store (though you can create the submission in Partner Center and begin working on it at any time).
-
-## Product ID
-
-Regardless of the product type you choose, you will need to enter a unique product ID for your add-on. This name will be used to identify your add-on in Partner Center, and you can use this identifier to [refer to the add-on in your code](/uwp/monetize/in-app-purchases-and-trials#how-to-use-product-ids-for-add-ons-in-your-code).
-
-Here are a few things to keep in mind when choosing a product ID:
-
-- A product ID must be unique within the parent product.
-- You can’t change or delete an add-on's product ID after it's been published.
-- A product ID can't be more than 100 characters in length.
-- A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
-- Customers won't see the product ID. (Later, you can enter a [title and description](../../../apps/publish/publish-your-app/create-app-store-listing.md) to be displayed to customers.)
-- If your previously-published app supports Windows Phone 8.1 or earlier, you must only use alphanumeric characters, periods, and/or underscores in your product ID. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
+ 
