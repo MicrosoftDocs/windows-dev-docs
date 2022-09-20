@@ -6,7 +6,7 @@ By default, your add-on will be listed in all possible markets, including any fu
 
 However, just as with an app, you have the option to choose the markets in which you'd like to offer your add-on. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed.
 
-For more info and a full list of the available markets, see [Define market selection](./define-market-selection.md).
+For more info and a full list of the available markets, see [Define market selection](../../../apps/publish/publish-your-app/market-selection.md).
 
 ## Visibility
 
@@ -26,7 +26,7 @@ For add-ons that you don't want to make broadly available, select **Hidden in th
 
 By default (unless you have selected one of the **Hidden in the Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
-For more info, see [Configure precise release scheduling](configure-precise-release-scheduling.md).
+For more info, see [Configure precise release scheduling](../../../apps/publish/publish-your-app/release-schedule.md).
 
 ## Pricing
 
@@ -37,8 +37,8 @@ You can also schedule price changes to indicate the date and time at which the a
 > [!TIP]
 > For subscription add-ons, you can't raise the price after you publish the add-on, either by selecting a higher base price in a later submission or by scheduling a price change that increases the price. You can select a lower price using either of these methods, but once the price is lowered you won't be able to raise it higher than that new price. Because of this, it's especially important to be sure you select the appropriate price tier for subscription add-ons.
 
-For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.md).
+For more info, see [Set and schedule app pricing](/uwp/publish/set-and-schedule-app-pricing).
 
 ## Sale pricing
 
-If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](/uwp/publish/put-apps-and-add-ons-on-sale.md).
+If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](/uwp/publish/put-apps-and-add-ons-on-sale).
