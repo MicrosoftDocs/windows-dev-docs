@@ -15,7 +15,7 @@ First, you'll need to indicate which type of add-on you are offering. This selec
 
 Select **Durable** as your product type if your add-on is typically purchased only once. These add-ons are often used to unlock additional functionality in an app.
 
-The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You have the option to set the **Product lifetime** to a different duration in the [Properties](../../../apps/publish/publish-yout-app/enter-app-properties.md) step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.
+The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You have the option to set the **Product lifetime** to a different duration in the [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md) step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.
 
 ### Consumable
 

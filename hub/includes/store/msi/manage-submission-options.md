@@ -15,7 +15,7 @@ You can link directly to your app's listing with a custom badge to let customers
 To create your badge, visit the [Microsoft Store badges](https://developer.microsoft.com/store/badges) page. You'll need to have your app's 12-character Store ID to generate the badge and link.
 
 > [!NOTE]
-> See [App marketing guidelines](../app-marketing-guidelines.md) for info and requirements related to your use of the Microsoft Store badge.
+> See [App marketing guidelines](/uwp/publish/app-marketing-guidelines) for info and requirements related to your use of the Microsoft Store badge.
 
 ### Linking directly to your app in the Microsoft Store
 

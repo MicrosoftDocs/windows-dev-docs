@@ -1,4 +1,4 @@
-The **Store listings** section of the [app submission process](../../../apps/publish/publish-your-app/create-app-submission.md) is where you provide the text and [images](../../../apps/publish/publish-your-app/app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
+The **Store listings** section of the [app submission process](../../../apps/publish/publish-your-app/create-app-submission.md) is where you provide the text and [images](../../../apps/publish/publish-your-app/screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
 
 Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](../../../apps/publish/publish-your-app/screenshots-and-images.md#screenshots).
 

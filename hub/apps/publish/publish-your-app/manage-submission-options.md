@@ -18,5 +18,5 @@ zone_pivot_groups: store-installer-packaging
 :::zone-end
 
 :::zone pivot="store-installer-add-on"
-[!INCLUDE [name](../../../includes/store/add-on/manage-submission-options.md)]
+
 :::zone-end
