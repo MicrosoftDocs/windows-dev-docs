@@ -231,8 +231,6 @@ public static void AddData(string inputText)
         insertCommand.Parameters.AddWithValue("@Entry", inputText);
 
         insertCommand.ExecuteReader();
-
-        db.Close();
     }
 
 }
@@ -263,8 +261,6 @@ public static List<String> GetData()
         {
             entries.Add(query.GetString(0));
         }
-
-        db.Close();
     }
 
     return entries;
