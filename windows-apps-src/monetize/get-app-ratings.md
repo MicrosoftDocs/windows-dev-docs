@@ -63,7 +63,7 @@ For a list of the supported fields, see the following table. String values must 
 | Fields        |  Description        |
 |---------------|-----------------|
 | market | A string that contains the ISO 3166 country code of the market where your app was rated. |
-| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows 11</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | isRevised | Specify <strong>true</strong> to filter for ratings that have been revised; otherwise <strong>false</strong>. |
 
@@ -112,32 +112,213 @@ Elements in the *Value* array contain the following values.
 | fiveStars       | number  | The number of five-star ratings.    |
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
+
+```json
+
+{
+    "Value": [
+        {
+            "date": "2012-09-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "oneStar": 1,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 1,
+            "fiveStars": 3
+        },
+        {
+            "date": "2012-09-02",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "oneStar": 3,
+            "twoStars": 0,
+            "threeStars": 1,
+            "fourStars": 2,
+            "fiveStars": 17
+        },
+        {
+            "date": "2012-09-03",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "oneStar": 1,
+            "twoStars": 1,
+            "threeStars": 1,
+            "fourStars": 5,
+            "fiveStars": 17
+        },
+  ],
+    "TotalCount": 3
+}
+```
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=06/19/2022&endDate=07/20/2022&top=10&skip=0&groupby=date,applicationName,market,osVersion,deviceType,isRevised
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2015-02-13",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso demo",
-      "market": "CN",
-      "osVersion": "8.0.10517.0",
-      "deviceType": "Phone",
-      "isRevised": false,
-      "oneStar": 0,
-      "twoStars": 0,
-      "threeStars": 0,
-      "fourStars": 0,
-      "fiveStars": 2
-    }
-  ],
-  "@nextLink": "ratings?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1",
-  "TotalCount": 15242
+    "Value": [
+        {
+            "date": "2022-06-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "CL",
+            "osVersion": "Windows 11",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-06-22",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "TR",
+            "osVersion": "Windows 11",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-06-29",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "FR",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 1,
+            "fiveStars": 0
+        },
+        {
+            "date": "2022-07-01",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "BR",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-07-04",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "ES",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-07-06",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "ES",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-07-07",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "AE",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "true",
+            "oneStar": 1,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 0
+        },
+        {
+            "date": "2022-07-10",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "BR",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "true",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-07-13",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "EG",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "false",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 0,
+            "fiveStars": 1
+        },
+        {
+            "date": "2022-07-14",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "BR",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": "true",
+            "oneStar": 0,
+            "twoStars": 0,
+            "threeStars": 0,
+            "fourStars": 1,
+            "fiveStars": 0
+        }
+    ],
+    "TotalCount": 10
 }
-
 ```
 
 ## Related topics

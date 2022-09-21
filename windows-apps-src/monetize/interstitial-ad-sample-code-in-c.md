@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 >[!WARNING]
 > As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-This topic provides the complete sample code for a basic C# and XAML Universal Windows Platform (UWP) app that shows an interstitial video ad. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
+This topic provides the complete sample code for a basic C# and XAML Universal Windows Platform (UWP) app that shows an interstitial video ad. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project, see the [advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples).
 
 ## Code example
 
@@ -36,5 +36,5 @@ This sample app uses two buttons to request and then launch an interstitial ad. 
  
 ## Related topics
 
-* [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples)
  

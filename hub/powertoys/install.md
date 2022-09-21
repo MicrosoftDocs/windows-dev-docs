@@ -16,13 +16,13 @@ We recommend installing PowerToys via GitHub or Microsoft Store, but alternative
 
 - Supported Operating Systems:
   - Windows 11 (all versions)
-  - Windows 10 v1903 (18362) or newer
+  - Windows 10 v2004 (19041) or newer
 - System architecture
-  - x64 and arm architecture are currently supported.
+  - x64 and Arm64 architecture are currently supported.
 - Our installer will install the following runtimes:
-  - [.NET 6.0.4 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer) or a newer 6.0.x runtime
-  - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (This will always install the latest version)
-  - The latest stable version of the [Windows App SDK Runtime](/windows/apps/windows-app-sdk/downloads). This will install the latest stable release if it isn't already installed.
+  - [.NET 6.0.8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/6.0#runtime-desktop-6.0.8) or a newer 6.0.x runtime
+  - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
+  - [Microsoft Visual C++ Redistributable](/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022) installer (this will install one of the latest versions available)
 
 To ensure that your machine meets these requirements, check your Windows version and build number by pressing <kbd>⊞ Win</kbd>+<kbd>R</kbd>, then type `winver` and press <kbd>OK</kbd>. Or enter the `ver` command in Windows Command Prompt. You can [update to the latest Windows version](ms-settings:windowsupdate) in the **Windows Settings**.
 
@@ -35,7 +35,7 @@ To install PowerToys using a Windows executable file:
 
 1. Visit the [Microsoft PowerToys GitHub releases page](https://aka.ms/installpowertoys).
 2. Select the **Assets** drop-down menu to display the files for the release.
-3. Select the `PowerToysSetup-0.##.#-x64.exe` file to download the PowerToys executable installer.
+3. Select the `PowerToysSetup-0.##.#-x64.exe` or `PowerToysSetup-0.##.#-arm64.exe` file to download the PowerToys executable installer.
 4. Once downloaded, open the executable file and follow the installation prompts.
 
 ## Install with Microsoft Store

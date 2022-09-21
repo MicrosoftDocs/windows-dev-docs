@@ -1,6 +1,6 @@
 ---
 title: Windows Hello
-description: This article describes the new Windows Hello technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
+description: This article describes the new Windows Hello technology that is shipping as part of the Windows 10/11 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10/11 rollout.
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Windows Hello
 
-This article describes the new Windows Hello technology that ships as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
+This article describes the new Windows Hello technology that ships as part of the Windows 10 and Windows 11 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 and Windows 11 rollout.
 
 Note that this article focuses on app development. For information on the architecture and implementation details of Windows Hello, see the [Windows Hello Guide on TechNet](/windows/keep-secure/microsoft-passport-guide).
 
@@ -45,7 +45,7 @@ Windows Hello replaces passwords with strong two-factor authentication (2FA) by 
 
 ## 2 What is Windows Hello?
 
-Windows Hello is the name Microsoft has given to the new biometric sign-in system built into Windows 10. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. Authentication happens when the user supplies his or her unique biometric identifier to access the device-specific credentials, which means that an attacker who steals the device can’t log on to it unless that attacker has the PIN. The Windows secure credential store protects biometric data on the device. By using Windows Hello to unlock a device, the authorized user gains access to all of his or her Windows experience, apps, data, websites, and services.
+Windows Hello is the name Microsoft has given to the new biometric sign-in system built into Windows 10 and Windows 11. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. Authentication happens when the user supplies his or her unique biometric identifier to access the device-specific credentials, which means that an attacker who steals the device can’t log on to it unless that attacker has the PIN. The Windows secure credential store protects biometric data on the device. By using Windows Hello to unlock a device, the authorized user gains access to all of his or her Windows experience, apps, data, websites, and services.
 
 The Windows Hello authenticator is known as a Hello. A Hello is unique to the combination of an individual device and a specific user. It does not roam across devices, is not shared with a server or calling app, and cannot easily be extracted from a device. If multiple users share a device, each user needs to set up his or her own account. Every account gets a unique Hello for that device. You can think of a Hello as a token you can use to unlock (or release) a stored credential. The Hello itself does not authenticate you to an app or service, but it releases credentials that can. In other words, the Hello is not a user credential but it is a second factor for the authenticating process.
 
@@ -270,7 +270,7 @@ A basic challenge–response flow is shown in this sequence diagram:
 
 Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you look at the [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
 
-In the sample, the reason we convert the ASN.1-encoded blob to a CNG blob is so that it can be used with CNG (/windows/desktop/SecCNG/cng-portal) and the BCrypt API. If you look up the CNG blob, it will point you to the related [BCRYPT_KEY_BLOB structure](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). This API surface can be used for authentication and encryption in Windows applications. ASN.1 is a documented standard for communicating data structures that can be serialized, and it's commonly used in public key cryptography and with certificates. That's why the public key information is returned in this manner. The public key is an RSA key; and that's the algorithm that Windows Hello uses when it signs data.
+In the sample, the reason we convert the ASN.1-encoded blob to a CNG blob is so that it can be used with CNG (/windows/desktop/SecCNG/cng-portal) and the BCrypt API. If you look up the CNG blob, it will point you to the related [BCRYPT_KEY_BLOB structure](/windows/desktop/api/bcrypt/ns-bcrypt-bcrypt_key_blob). This API surface can be used for authentication and encryption in Windows applications. ASN.1 is a documented standard for communicating data structures that can be serialized, and it's commonly used in public key cryptography and with certificates. That's why the public key information is returned in this manner. The public key is an RSA key; and that's the algorithm that Windows Hello uses when it signs data.
 
 Once you have the CNG blob, you need to validate the signed challenge against the public key of the user. Since everyone uses his or her own system or backend technology, there is no generic way to implement this logic. We are using SHA256 as the hash algorithm and Pkcs1 for SignaturePadding, so make sure that’s what you use when you validate the signed response from the client. Again, refer to the sample for a way to do it on your server in .NET 4.6, but in general it will look something like this:
 
@@ -388,11 +388,11 @@ The final step in migrating to a full Windows Hello scenario is disabling the lo
 
 ## 5 Summary
 
-Windows 10 introduces a higher level of security that is also simple to put into practice. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. It can then deliver multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. In addition, a further layer of security is available through the optional use of attestation identity keys and certificates.
+Windows 10 and Windows 11 introduce a higher level of security that is also simple to put into practice. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. It can then deliver multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. In addition, a further layer of security is available through the optional use of attestation identity keys and certificates.
 
-As a developer, you can use this guidance on design and deployment of these technologies to easily add secure authentication to your Windows 10 rollouts to protect apps and backend services. The code required is minimal and easy to understand. Windows 10 does the heavy lifting.
+As a developer, you can use this guidance on design and deployment of these technologies to easily add secure authentication to your Windows 10 and Windows 11 rollouts to protect apps and backend services. The code required is minimal and easy to understand. Windows 10 and Windows 11 do the heavy lifting.
 
-Flexible implementation options allow Windows Hello to replace or work alongside your existing authentication system. The deployment experience is painless and economical. No additional infrastructure is needed to deploy Windows 10 security. With Microsoft Hello built in to the operating system, Windows 10 offers the most secure solution to the authentication problems facing the modern developer.
+Flexible implementation options allow Windows Hello to replace or work alongside your existing authentication system. The deployment experience is painless and economical. No additional infrastructure is needed to deploy Windows 10 and Windows 11 security. With Microsoft Hello built in to the operating system, Windows 10 and Windows 11 offer the most secure solution to the authentication problems facing the modern developer.
 
 Mission accomplished! You just made the Internet a safer place!
 

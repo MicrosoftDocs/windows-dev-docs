@@ -61,7 +61,7 @@ For a list of the supported fields and support operators for each field, see the
 | Fields        | Supported operators   |  Description        |
 |---------------|--------|-----------------|
 | market | eq, ne | A string that contains the ISO 3166 country code of the device market. |
-| osVersion  | eq, ne  | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion  | eq, ne  | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows 11</strong></li><li><strong>Unknown</strong></li></ul>  |
 | deviceType  | eq, ne  | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | isRevised  | eq, ne  | Specify <strong>true</strong> to filter for reviews that have been revised; otherwise <strong>false</strong>.  |
 | packageVersion  | eq, ne  | The version of the app package that was reviewed.  |
@@ -137,41 +137,56 @@ Elements in the *Value* array contain the following values.
 | id | string | The ID of the review (this is a GUID). You can use this ID in the [get response info for app reviews](get-response-info-for-app-reviews.md) and [submit responses to app reviews](submit-responses-to-app-reviews.md) methods. |
 
 
-### Response example
+### Request and Response example
 
-The following example demonstrates an example JSON response body for this request.
+The following code snippets demonstrates some example request and JSON response body for those request.
+
+#### Sample Request 
+
+```syntax
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9WZDNCRFJB4P&top=10&skip=0
+HTTP/1.1
+Authorization: Bearer <your access token>
+```
+#### Sample Response
 
 ```json
 {
-  "Value": [
-    {
-      "date": "2015-07-29",
-      "applicationId": "9NBLGGGZ5QDR",
-      "applicationName": "Contoso demo",
-      "market": "US",
-      "osVersion": "10.0.10240.16410",
-      "deviceType": "PC",
-      "isRevised": true,
-      "packageVersion": "",
-      "deviceModel": "Microsoft Corporation-Virtual Machine",
-      "productFamily": "PC",
-      "deviceRAM": -1,
-      "deviceScreenResolution": "1024 x 768",
-      "deviceStorageCapacity": 51200,
-      "isTouchEnabled": false,
-      "reviewerName": "ALeksandra",
-      "rating": 5,
-      "reviewTitle": "Love it",
-      "reviewText": "Great app for demos and great dev response.",
-      "helpfulCount": 0,
-      "notHelpfulCount": 0,
-      "responseDate": "2015-08-07T01:50:22.9874488Z",
-      "responseText": "1",
-      "id": "6be543ff-1c9c-4534-aced-af8b4fbe0316"
-    }
-  ],
-  "@nextLink": null,
-  "TotalCount": 1
+    "Value": [
+        {
+            "date": "3/5/2021 12:48:33 PM",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "ES",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": false,
+            "packageVersion": "2.5.2.34894",
+            "reviewerName": "Jose Antonio",
+            "rating": 5,
+            "reviewTitle": "Contoso Demo",
+            "reviewText": "Un juego fantastico",
+            "helpfulCount": 3,
+            "notHelpfulCount": 0,
+            "id": "b5e27de9-2334-4849-d17d-4eae3e1e7aa9"
+        },
+        {
+            "date": "1/6/2021 8:41:42 AM",
+            "applicationId": "9NBLGGGZ5QDR",
+            "applicationName": "Contoso Demo",
+            "market": "TR",
+            "osVersion": "Windows 10",
+            "deviceType": "PC",
+            "isRevised": false,
+            "packageVersion": "2.5.2.34894",
+            "reviewerName": "fef",
+            "rating": 5,
+            "helpfulCount": 0,
+            "notHelpfulCount": 0,
+            "id": "f5d2510a-9796-45ee-01e5-6d5cc4550b09"
+        }
+    ],
+    "TotalCount": 2
 }
 ```
 

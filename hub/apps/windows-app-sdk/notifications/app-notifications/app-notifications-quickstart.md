@@ -16,6 +16,9 @@ ms.custom: template-quickstart
 
 In this quickstart, you will create a desktop Windows application that sends and receives local app notifications, also known as toast notifications, using the [Windows App SDK](../../index.md).
 
+> [!IMPORTANT]
+> Notifications for an elevated (admin) app is currently not supported.
+
 ## Prerequisites
 
 - [Set up your development environment](../../set-up-your-development-environment.md)
@@ -75,7 +78,7 @@ If your app is an MSIX-packaged app or Sparse-packaged app:
         <!--Register COM CLSID-->    
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----AppNotificationActivated">
+            <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----AppNotificationActivated:">
               <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" />
             </com:ExeServer>
           </com:ComServer>
@@ -91,9 +94,12 @@ If your app is an MSIX-packaged app or Sparse-packaged app:
 
 Register your app to handle notifications, then unregister when your app terminates.
 
-In your `App.xaml` file, register for `AppNotificationManager::Default().NotificationInvoked`, then call `AppNotificationManager::Default().Register`. Order matters.
+In your `App.xaml` file, register for [AppNotificationManager::Default().NotificationInvoked](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked), then call [AppNotificationManager::Default().Register](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register). The order of these calls matters.
 
-When your app is terminating, call `AppNotificationManager::Default().Unregister()` to free up the COM server and allow for subsequent invokes to launch a new process.
+> [!IMPORTANT]
+> You must call **AppNotificationManager::Default().Register** before calling [AppInstance.GetCurrent.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
+
+When your app is terminating, call [AppNotificationManager::Default().Unregister()](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.unregister) to free up the COM server and allow for subsequent invokes to launch a new process.
 
 #### [C#](#tab/cs)
 

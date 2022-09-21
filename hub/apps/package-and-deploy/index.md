@@ -15,7 +15,7 @@ The topics in this section introduce options and guidance around deploying diffe
 Your first decision will be whether or not to MSIX-package your app.
 
 * **MSIX-packaging**. This is the process of packaging an app using MSIX technology (see [What is MSIX?](/windows/msix/overview)). MSIX-packaging gives your app a *package identity* (see the table below for why that's a benefit).
-* **Sparse-packaging**. A way to opt out of MSIX-packaging (so that your app less restricted) while retaining package identity. For instructions on how to sparse-package your app, see [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+* **Sparse-packaging**. A way to opt out of MSIX-packaging (so that your app less restricted) while retaining package identity. For instructions on how to sparse-package your app, see [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
 * **No packaging**. Another way to opt out of MSIX-packaging (for the reason given above), but without package identity.
 
 > [!IMPORTANT]

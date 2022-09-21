@@ -12,20 +12,24 @@ If you want to submit a software package to the [Windows Package Manager Communi
 
 You may either use the [Windows Package Manager Manifest Creator](https://github.com/microsoft/winget-create), the [YAMLCreate](#using-the-yamlcreateps1) PowerShell script, or you can craft a manifest manually following the instructions below.
 
+> [!NOTE]
+> See the [Manifest FAQ](#manifest-faq) below for more general high-level information explaining manifests, packages, and versions.
+
 ## Options for Manifest Creation
 
 ### Using WinGetCreate Utility
 
-You can install `wingetcreate` utility using the command below.
+You can install the `wingetcreate` utility using the command below.
 
 ```powershell
 winget install wingetcreate
 ```
 
-After installation, you can run `wingetcreate new` to create a new package and fill in the prompts. The last option **WinGetCreate** will offer is for you to submit the manifest to the packages repository. If you choose yes, you will automatically submit your Pull Request (PR) to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs).
+After installation, you can run `wingetcreate new` to create a new package and fill in the prompts. The last option in the **WinGetCreate** prompts is to submit the manifest to the packages repository. If you choose yes, you will automatically submit your Pull Request (PR) to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs).
 
 ### Using the YAMLCreate.ps1
-To help author manifest files, we have provided a YAMLCreate.ps1 powershell script located in the Tools folder on the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs). You can use the script by cloning the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs) on your PC and run the script directly from the **Tools** folder. The script will prompt you for the URL to the installer, then will prompt you to fill in metadata. Like **WinGetCreate**, this script will also offer you to submit your manifest automatically.
+
+To help author manifest files, we have provided a YAMLCreate.ps1 powershell script located in the Tools folder on the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs). You can use the script by cloning the repo on your PC and running the script directly from the **Tools** folder. The script will prompt you for the URL to the installer, then will prompt you to fill in metadata. Similar to using **WinGetCreate**, this script will offer the option to submit your manifest automatically.
 
 ## YAML basics
 
@@ -45,11 +49,11 @@ These conventions are used in this article:
 
 ## Manifest contents
 
-A package manifest must include a set of required items, and can also include further optional items that can help improve the customer experience of installing your software. This section provides brief summaries of the required manifest schema and complete manifest schemas, and examples of each.
+A package manifest consists of required items and optional items that can help improve the customer experience of installing your software. This section provides a brief summary of the required manifest schema and complete manifest schemas with examples of each.
 
 Each field in the manifest file must be Pascal-cased and cannot be duplicated.
 
-For a complete list and descriptions of items in a manifest, see the [manifest specification](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv1.0.md) in the [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) repository.
+For a complete list and descriptions of items in a manifest, see the [manifest specification](https://github.com/microsoft/winget-pkgs/tree/master/doc/manifest/schema) in the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs).
 
 ### Minimal required schema
 
@@ -137,7 +141,7 @@ Publisher: "Microsoft"
 PublisherUrl: "https://www.microsoft.com/"
 PrivacyUrl: "https://privacy.microsoft.com/"
 PackageName: "Windows Terminal"
-PackageUrl: "https://docs.microsoft.com/windows/terminal/"
+PackageUrl: "https://learn.microsoft.com/windows/terminal/"
 License: "MIT"
 LicenseUrl: "https://github.com/microsoft/terminal/blob/master/LICENSE"
 ShortDescription: "The new Windows Terminal, a tabbed command line experience for Windows."
@@ -231,3 +235,19 @@ You can often figure out what silent `Switches` are available for an installer b
 * Package installers in MSI format use [product codes](/windows/win32/msi/product-codes) to uniquely identify applications. The product code for a given version of a package should be included in the manifest to help ensure the best **upgrade** experience.
 * Limit the length of strings in your manifest to 100 characters before a line break.
 * When more than one installer type exists for the specified version of the package, an instance of `InstallerType` can be placed under each of the `Installers`.
+
+## Manifest FAQ
+
+### What is a manifest?
+
+Manifests are YAML files containing metadata used by the Windows Package Manager to install and upgrade software on the Windows operating system. There are thousands of these files partitioned under the [manifests directory in the winget-pkgs repository on GitHub](https://github.com/microsoft/winget-pkgs/tree/master/manifests). The Windows Package Manager directory structure had to be partitioned so you don't have to scroll as much in the site when looking for a manifest.
+
+### What is a package?
+
+Think of a package as an application or a software program. Windows Package Manager uses a "PackageIdentifier" to represent a unique package. These are generally in the form of `Publisher.Package`. Sometimes you might see additional values separated by a second period.
+
+### What is a version?
+
+Package versions are associated with a specific release. In some cases you will see a perfectly formed semantic version numbers and in other cases you might see something different. These may be date driven or they might have other characters with some package-specific meaning. The YAML key for a package version is "PackageVersion".
+
+For more information on understanding the directory structure and creating your first manifest, see [Authoring Manifests](https://github.com/microsoft/winget-pkgs/blob/master/AUTHORING_MANIFESTS.md) in the winget-pkgs repo on GitHub.

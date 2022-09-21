@@ -75,7 +75,7 @@ Elements in the *Value* array contain the following values.
 | deviceType | string | One of the following strings that specifies the type of device that completed the acquisition: <ul><li>**PC**</li><li>**Phone**</li><li>**Console-Xbox One**</li><li>**Console-Xbox Series X**</li><li>**IoT**</li><li>**Server**</li><li>**Tablet**</li><li>**Holographic**</li><li>**Unknown**</li></ul> |
 | gender | string | One of the following strings that specifies the gender of the user who made the acquisition: <ul><li>**m**</li><li>**f**</li><li>**Unknown**</li></ul> |
 | market | string | The ISO 3166 country code of the market where the acquisition occurred. |
-| osVersion | string | The OS version on which the acquisition occurred. For this method, this value is always **Windows 10**. |
+| osVersion | string | The OS version on which the acquisition occurred. For this method, this value is always either **Windows 10** or **Windows 11**. |
 | paymentInstrumentType | string | One of the following strings that indicates the payment instruction used for the acquisition: <ul><li>**Credit Card**</li><li>**Direct Debit Card**</li><li>**Inferred Purchase**</li><li>**MS Balance**</li><li>**Mobile Operator**</li><li>**Online Bank Transfer**</li><li>**PayPal**</li><li>**Split Transaction**</li><li>**Token Redemption**</li><li>**Zero Amount Paid**</li><li>**eWallet**</li><li>**Unknown**</li></ul> |
 | sandboxId | string | The sandbox ID created for the game. This can be the value **RETAIL** or a private sandbox ID. |
 | storeClient | string | One of the following strings that indicates the version of the Store where the acquisition occurred: <ul><li>**Windows Phone Store (client)**</li><li>**Microsoft Store (client)** (or **Windows Store (client)** if querying for data before March 23, 2018) </li><li>**Microsoft Store (web)** (or **Windows Store (web)** if querying for data before March 23, 2018) </li><li>**Volume purchase by organizations**</li><li>**Other**</li></ul> |
@@ -110,7 +110,7 @@ The following example demonstrates an example JSON response body for this reques
             "deviceType": "Phone", 
             "gender": null, 
             "market": "US", 
-            "osVersion": "Windows 10", 
+            "osVersion": "Windows 11", 
             "paymentInstrumentType": null, 
             "sandboxId": "RETAIL", 
             "storeClient": "Microsoft Store (client)", 

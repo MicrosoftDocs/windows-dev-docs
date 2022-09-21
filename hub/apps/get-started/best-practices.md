@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: article
-ms.date: 05/16/2022
+ms.date: 08/11/2022
 ms.author: jken
 author: grantmestrength
 ms.localizationpriority: medium
@@ -30,72 +30,108 @@ Windows 11 marks a visual evolution of the Windows operating system that improve
 
 When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals will create a great lasting impression.
 
-Windows 11 was built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customers' expectations of a great app experience. The following resources will help you incorporate the latest and recommended Windows application UI/UX patterns into your Windows applications.
+Windows 11 is built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles). Following these guidelines as you build your apps will help you meet your customers' expectations of a great app experience. When thinking about incorporating the latest and recommended Windows application UI/UX patterns into your Windows applications, we recommend that you focus on these 5 areas:
 
-### Common controls
+- Layout
+- UI interaction
+- Visual style
+- Window behavior
+- Shell integration points
 
-[WinUI 3](/windows/apps/winui/) provides updated styles and animations for **[common controls](/windows/apps/get-started/make-apps-great-for-windows#4-use-the-latest-common-controls)**. If you aren't using WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.figma.com/community/file/989931624019688277) and [WinUI Gallery](https://aka.ms/xamlcontrolsgallery).
+[WinUI 3](/windows/apps/winui/) provides built-in support for many of these experiences and styles through its **[common controls](/windows/apps/get-started/make-apps-great-for-windows#4-use-the-latest-common-controls)**. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.figma.com/community/file/989931624019688277) and [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
-### Materials: Acrylic and Mica
+### Layout
+
+Windows applications run on a variety of configurations that match users' needs. Test your application's panes and/or pages across a variety of dimensions, devices, window sizes, DPI settings, and scale settings. Your application should work as expected even when resized down to small dimensions.
+
+#### DPI awareness
+  
+WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle per-monitor DPI scaling. Without additional work to support per-monitor DPI scaling for these technologies, applications may appear blurry or incorrectly-sized. See [High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows) for more information.
+
+#### Responsive layout
+  
+Use [responsive design techniques](/windows/apps/design/layout/responsive-design) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](/windows/apps/design/input/guidelines-for-panning) to ensure that users can always access your content, no matter how small the app window gets.
+
+### UI interaction
+
+Windows users can choose from a wide variety of input devices to interact with your application, and Windows has specific system experiences that people are accustomed to using. When your application adheres to these experiences, your users can use your application reliably. When your app doesn't follow these conventions, users may find it confusing or frustrating.
+
+#### On-object commanding
+
+Use [on-object commanding](/windows/apps/design/controls/collection-commanding#creating-context-menus) such as [context menus](/windows/apps/design/controls/menus-and-context-menus), [swipe commands](/windows/apps/design/controls/swipe), and [keyboard shortcuts](/windows/apps/design/input/keyboard-accelerators). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu integration](/windows/apps/get-started/make-apps-great-for-windows#context-menus) guidance. WinUI text controls automatically expose cut/copy/paste commands, but other controls may need extra work to support these commands.
+
+#### Text interaction
+
+Whenever there is text in an application, users expect that they can select and copy it. If the text is editable, they expect that they can cut and paste, as well. By providing consistent shortcuts to users, you let them complete their tasks more efficiently. Ensure that these actions can be performed using keyboard, mouse or trackpad, touch, and pen.
+
+#### Panning & Scrolling
+
+It is uncommon for an application's UI to fit entirely inside a single page that does not need to scroll. Even if there are only a few UI elements, users can freely resize the app Window and cause some UI elements to be hidden. Ensure that your application's UI properly supports scrolling and panning (using keyboard, mouse or trackpad, touch, and pen) to let users access any UI elements that might have moved out of the visible window area.
+
+### Visual style
+
+Windows 11 is built on the [Windows 11 design principles](/windows/apps/design/signature-experiences/design-principles): Effortless, Calm, Personal, Familiar, and Complete + Coherent. We believe experiences that follow these principles bring great user experiences on Windows.
+
+#### Materials: Acrylic and Mica
 
 [Acrylic](/windows/apps/design/style/acrylic) and [Mica](/windows/apps/design/style/mica) are visual [materials](/windows/apps/design/signature-experiences/materials) that give interactive UI controls a distinct "occluded" visual style. Use [Acrylic](/windows/apps/design/style/acrylic) to apply a semi-transparent style to transient surfaces like context menus, flyouts, and other elements that can be light-dismissed. Use [Mica](/windows/apps/design/style/mica) to add a subtle adaptive tint to long-lived UI surfaces like the title bar.
 
 More information about Acrylic and Mica materials can be found in [Things you can do to make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows#5-use-the-latest-design-materials-acrylic-and-mica).
 
-### Dark and Light themes
+#### Dark and Light themes
 
-[Dark and Light themes](/windows/apps/get-started/make-apps-great-for-windows#7-support-dark-and-light-themes) give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes).
+[Dark and Light themes](/windows/apps/get-started/make-apps-great-for-windows#7-support-dark-and-light-themes) give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](/windows/apps/design/style/xaml-theme-resources)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](/windows/apps/desktop/modernize/apply-windows-themes). (The title bar in Win32 apps does not automatically adapt to the Dark theme. Be sure to follow the [title bar guidance](/windows/apps/desktop/modernize/apply-windows-themes#enable-a-dark-mode-title-bar-for-win32-applications) in the article).
 
-### Iconography and typography
+#### Refreshed UI elements
+
+[Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
+
+The visual and behavioral changes are built in to [WinUI 3](/windows/apps/winui/). Use WinUI 3 where you can to take advantage of the work that has already been done. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.figma.com/community/file/989931624019688277) and [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+
+#### Context menu
+
+A context menu is a shortcut menu that the user invokes with a right-click or tap & hold action to reveal a menu of commands relevant to the context of the control the user is interacting with. Users expect the appearance and behavior of context menus to be coherent accross Windows. Use platform-provided context menus whenever possible to keep them consistent with the rest of the system.
+
+#### Iconography and typography
 
 Windows 11 has [updated icons ("Segoe Fluent Icons")](/windows/apps/design/signature-experiences/iconography), improved support for [animated icons](/windows/apps/design/controls/animated-icon), and a [new UI font ("Segoe UI Variable")](/windows/apps/design/signature-experiences/typography). We recommend that you use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
 
 More information about iconography and typography on Windows can be found in [Things you can do to make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows#9-use-beautiful-iconography--typography).
 
-### On-object commanding
+### Window behavior and style
 
-Use [on-object commanding](/windows/apps/design/controls/collection-commanding#creating-context-menus) such as [context menus](/windows/apps/design/controls/menus-and-context-menus), [swipe commands](/windows/apps/design/controls/swipe), and [keyboard shortcuts](/windows/apps/design/input/keyboard-accelerators). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu integration](/windows/apps/get-started/make-apps-great-for-windows#context-menus) guidance. WinUI text controls automatically expose cut/copy/paste commands, but other controls may need extra work to support these commands.
+Applications run in a frame provided by Windows, and users expect the built-in Windows look and behaviors to be consistent across app windows. Consider supporting the features listed here to ensure that your app looks and functions as users expect on Windows 11.
 
-### Geometry and app silhouettes
-
-[Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use. Another feature of [Windows 11 app silhouettes](/windows/apps/design/basics/app-silhouette) is the integration of app and title bar content.
-
-- **[Title bar integration](/windows/apps/design/basics/titlebar-design)**
+#### Snap Layout
   
-  Use the Windows App SDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar) in WinUI 3, .NET, WinForms, and WPF apps.
-
-- **[Rounded corners](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
+Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature to help users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.
   
-  In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](/windows/apps/desktop/modernize/apply-rounded-corners) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
+If the Snap Layout menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](/windows/apps/desktop/modernize/apply-snap-layout-menu) for some steps you can take to enable it.
 
-### **Layout**
+#### Title bar and caption buttons
 
-Test your application's panes and/or pages across a variety of dimensions, devices, window sizes, DPI settings, and scale settings. Your application should work as expected even when resized down to small dimensions.
+The title bar and caption buttons (minimize, maximize, close) are how users interact with Windows to resize, move, and close app windows. Having a consistent experience will help people use your application smoothly. See [Windows app title bar](/windows/apps/design/basics/titlebar-design) to learn about title bar and caption button design for Windows.  
 
-- **Responsive layout**
-  
-  Use [responsive design techniques](/windows/apps/design/layout/responsive-design) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](/windows/apps/design/input/guidelines-for-panning) to ensure that users can always access your content, no matter how small the app window gets.
+You can use the Windows App SDK APIs to [integrate app content with the title bar](/windows/apps/develop/title-bar) in WinUI 3, .NET, WinForms, and WPF apps.
 
-- **[Snap layouts](/windows/apps/get-started/make-apps-great-for-windows#6-use-rounded-corners-for-your-windows-and-support-snap-layouts)**
-  
-  Snap layouts are a new Windows 11 feature to help introduce users to the power of window snapping. Use the snap layouts menu to test your app in different snap layouts an ensure your app supports different snap sizes (1/2, 1/3, 1/4 screen).
-  
-  If the snap layouts menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](/windows/apps/desktop/modernize/apply-snap-layout-menu) for some steps you can take to enable it.
+#### Rounded corners
 
-- **DPI awareness**
-  
-  WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle per-monitor DPI scaling. Without additional work to support per-monitor DPI scaling for these technologies, applications may appear blurry or incorrectly-sized. See [High DPI Desktop Application Development on Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows) for more information.
+In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](/windows/apps/desktop/modernize/apply-rounded-corners) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
 
-### Toast notifications
+### Shell integration points
+
+Windows shell integration lets users benefit from your app even when its not running in the foreground or even visible on-screen. When your app integrates well with Windows, it becomes part of the users workflow with other apps and helps create a seamless experience.
+
+#### Toast notifications
 
 [Toast notifications](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance) are the Windows notifications that appear at the bottom of the user's screen and in the Notification Center.
 
-- Notifications should be personalized, actionable, and useful to your users. Try to give your users what they want, not what you want them to know.
-- Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
-- Respond to the user's intent. Selecting a notification should launch your app in the notification’s context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
-- Provide a consistent Notification Center experience. Keep Notification Center tidy by clearing out old notifications.
+  - Notifications should be personalized, actionable, and useful to your users. Try to give your users what they want, not what you want them to know.
+  - Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.
+  - Respond to the user's intent. Selecting a notification should launch your app in the notification's context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
+  - Provide a consistent Notification Center experience. Keep Notification Center tidy by clearing out old notifications.
 
-For more information about toast notifications, see [Notifications design basics](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
+  For more information about toast notifications, see [Notifications design basics](/windows/apps/design/shell/tiles-and-notifications/toast-ux-guidance).
 
 ## Performance & fundamentals
 
@@ -110,7 +146,7 @@ Following the best practices in this section will help you meet your customers' 
   - Ensure your application does not leak memory.
 
 - [Make efficient use of the disk footprint](../performance/disk-memory.md#efficiently-use-disk-space):
-  - Enable “pay for play” for optional functionality.
+  - Enable "pay for play" for optional functionality.
   - Ensure any caches are sized efficiently.
   - Implement new experiences in a disk-efficient manner.
   - Optimize individual binary sizes where possible.
@@ -143,13 +179,13 @@ For best performance, you should enable your apps to take full advantage of the 
 ### Push notifications
 
 [Push notifications](/windows/apps/windows-app-sdk/notifications/push/index) allow you send information from your cloud service to your app in a performance-optimized way. Push notifications include raw notifications, badge notifications, and toast notifications sent from your cloud service.
-- Use push notifications to wake up the app/client rather than always keeping it running to optimize performance on the user’s device. <!--todo: point to appsdk/winui3 guidance when available -->
+- Use push notifications to wake up the app/client rather than always keeping it running to optimize performance on the user's device. <!--todo: point to appsdk/winui3 guidance when available -->
 - Notification channels are not meant to be used to send advertisements.  
 - Respect `retry-after` headers – this protects our service and ensures notification delivery success.
 - Remove expired/revoked channels from the system. [Windows Notification Service](/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) (WNS) does not process requests for expired/revoked channels.
 - Avoid sudden, large bursts of requests to WNS. This can lead to throttled responses.
 - Utilize the `MS-CV` header. This will help with end-to-end traceability and diagnostics.
-- Have a back-up mechanism for when notifications don’t work. 
+- Have a back-up mechanism for when notifications don't work. 
 - Use [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview) (ANH). ANH gives you access to engagement features like targeting audiences, scheduling notifications, and broadcasting notifications. If you're a Windows-only developer today, using ANH will make it easy for you to transition your notifications infrastructure to other platforms in the future.
 
 ## Application discovery and management

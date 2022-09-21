@@ -93,7 +93,7 @@ React is a library, not a framework, so may require additional tools to create a
 
 Here are a few recommended places to learn React and build sample apps:
 
-- Microsoft Learn: The [React Learning Path](/learn/paths/react/) contains online course modules to help you get started with the basics.
+- The [React learning path](/training/paths/react/) contains online course modules to help you get started with the basics.
 - Build a single-page app (SPA) that runs in the browser (like this [sample web app that retrieves calendar info for a user with the Microsoft Graph API](/graph/tutorials/react))
 - Build a server-rendered app with [Next.js](./nextjs-on-wsl.md) or a static-site-generated app with [Gatsby](./gatsby-on-wsl.md)
 - Create a user interface (UI) for a [native app that runs on Windows, Android, and iOS devices](https://microsoft.github.io/react-native-windows/docs/view-managers) (checkout these [native Windows app samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples) or this [sample native app that retrieves calendar info for a user with the Microsoft Graph API](/graph/tutorials/react-native))

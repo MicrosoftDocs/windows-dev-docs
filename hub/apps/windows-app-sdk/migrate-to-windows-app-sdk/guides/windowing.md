@@ -2,7 +2,7 @@
 title: Windowing functionality migration
 description: This topic contains guidance related to window management, including migrating from UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).
 ms.topic: article
-ms.date: 10/13/2021
+ms.date: 09/02/2022
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
 ms.author: stwhi
 author: stevewhims
@@ -24,6 +24,9 @@ This topic contains guidance related to window management, including migrating f
 The Windows App SDK provides a [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class that's based on the Win32 HWND model. That **AppWindow** class is the Windows App SDK's version of UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) and [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow).
 
 To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK **AppWindow**, see [Manage app windows](../../windowing/windowing-overview.md).
+
+> [!TIP]
+> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI 3 window. In your WinUI 3 app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
 
 ## Window types in UWP versus the Windows App SDK
 

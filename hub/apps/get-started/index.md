@@ -28,13 +28,14 @@ If you have already installed the required developer tools, you are ready to [Cr
 
 ## Cross-platform options
 
-WinUI 3 also serves as the basis for cross-platform technologies that provide great native Windows experiences using a variety of coding languages. These frameworks harness the power of WinUI 3 on Windows, while also enabling execution on other operating systems.
+WinUI also serves as the basis for cross-platform technologies that provide great native Windows experiences using a variety of coding languages. These frameworks harness the power of WinUI on Windows, while also enabling execution on other operating systems.
 
 ### [.NET MAUI](#tab/net-maui)
 
 .NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI 3 and the Windows App SDK so apps get the latest user experience on Windows. This gives your apps access to everything you get with WinUI 3 plus the ability to reach to other platforms.
 
 .NET MAUI for Windows is a great choice if:
+
 - You want to share as much .NET code as possible across mobile and desktop applications.
 - You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.
 - You want to use C# and/or XAML for building cross-platform apps.
@@ -44,15 +45,18 @@ WinUI 3 also serves as the basis for cross-platform technologies that provide gr
 > [Get started with .NET MAUI](/dotnet/maui/get-started/installation)
 
 For more information about .NET MAUI, see the following links:
+
 - [.NET MAUI documentation](/dotnet/maui/)
 - [.NET MAUI on GitHub](https://github.com/dotnet/maui)
 - [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
-- [.NET Conf 2021: Introduction to .NET MAUI](https://www.youtube.com/watch?v=HMYpAw2sl58)
-- [.NET Conf 2021: Building cross-platform native apps with .NET MAUI and Blazor](https://www.youtube.com/watch?v=Dr8L7zXxwLI)
+- [Build Windows apps with .NET MAUI](/windows/apps/windows-dotnet-maui/)
+- [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
+- [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
+- [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
 
 ### [React Native for Windows](#tab/rnw)
 
-[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+[React Native](https://reactnative.dev) is a development platform which allows building cross-platform apps.
 React Native for Windows brings React Native support to the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
@@ -82,7 +86,7 @@ For more information about React Native for Windows, see the following links:
 
 ## Other app types
 
-For more information about the app types you can choose from, see the following tabs. 
+For more information about the app types you can choose from, see the following tabs.
 
 ### [Win32](#tab/cpp-win32)
 

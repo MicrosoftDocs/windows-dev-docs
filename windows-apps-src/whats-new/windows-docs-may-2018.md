@@ -33,7 +33,7 @@ Visual updates and minor changes have been made to the following Fluent Design p
 * [Color](/windows/apps/design/style/color)
 * [Command basics](/windows/apps/design/basics/commanding-basics)
 * [Fluent Design for Windows apps](/windows/apps/fluent-design-system)
-* [Introduction to app design](/windows/apps/design/basics/design-and-ui-intro)
+* [Introduction to app design](/windows/apps/design/basics/)
 * [Navigation basics](/windows/apps/design/basics/navigation-basics)
 * [Responsive design techniques](/windows/apps/design/layout/responsive-design)
 * [Screen sizes and breakpoints](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

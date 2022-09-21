@@ -48,9 +48,15 @@ If you have an existing desktop project in which you want to use the Windows App
     > [!NOTE]
     > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and more) that contain the implementations for specific components in the Windows App SDK. You cannot install these sub-packages individually to reference only certain components in your project. You must install the main Windows App SDK NuGet package, which includes all of the components.
 
-6. **For unpackaged apps only**: Before your unpackaged app can use Windows App SDK APIs and components, your app must call first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more information, see [Load the Windows App SDK runtime](use-windows-app-sdk-run-time.md) and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+6. **For unpackaged apps only**: Before your unpackaged app can use Windows App SDK APIs and components, your app must call first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more information, see [Load the Windows App SDK runtime](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 7. Your app can now use Windows App SDK APIs and components that are available in the release channel you installed. For the list of available features, see [release channels](release-channels.md).
+
+## Further info
+
+If your existing project is a C++ project, and you want to call Windows Runtime APIs in the Windows App SDK, then you'll need to add support for C++/WinRT. See [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Look for info there about the **Microsoft.Windows.CppWinRT NuGet** package. Without that package, your project won't be able to find the namespace header files for Windows Runtime APIs in the Windows App SDK.
+
+If you encounter a "Class not registered" error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview).
 
 ## Related topics
 

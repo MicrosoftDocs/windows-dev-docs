@@ -307,7 +307,7 @@ Text (or typography) is an important aspect of a UWP app and, while porting, you
 
 System TextBlock styles for Windows 10 apps
 
-In a Windows Phone Silverlight app, the default font family is Segoe WP. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your Windows Phone Silverlight text, you can set your own metrics using properties such as [**LineHeight**](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) and [**LineStackingStrategy**](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). For more info, see [Guidelines for fonts](/windows/uwp/controls-and-patterns/fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
+In a Windows Phone Silverlight app, the default font family is Segoe WP. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your Windows Phone Silverlight text, you can set your own metrics using properties such as [**LineHeight**](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) and [**LineStackingStrategy**](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). For more info, see [Guidelines for fonts](/windows/win32/uxguide/vis-fonts) and [Design UWP apps](https://developer.microsoft.com/windows/apps/design).
 
 ## Theme changes
 

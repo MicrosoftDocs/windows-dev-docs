@@ -33,7 +33,7 @@ All options enable the settings that are applicable and applied on Windows Deskt
 
 You can toggle emulation settings by right-clicking the executable and selecting **Properties**.
 
-On Arm, a section titled **Windows 10 on Arm** will be available in the **Compatibility** tab. Click **Change emulation settings** to launch a second window as here.
+On ARM, a section titled **Windows 10 on ARM** or **Windows 11 on ARM** will be available in the **Compatibility** tab. Click **Change emulation settings** to launch a second window as here.
 
 ![Change emulation settings screenshot](images/Capture.png)
 

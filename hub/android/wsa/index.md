@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 05/11/2022
+ms.date: 07/13/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -28,6 +28,10 @@ This guide can help you test and debug your Android app on Windows:
 - Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
 - [Test and debug](#test-and-debug) your app on a Windows 11 device.
 - [Troubleshoot and find answers](#troubleshooting-issues).
+
+## Preview Program
+
+The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](/windows/android/wsa/preview-program).
 
 ## Set up your development environment
 
@@ -142,14 +146,12 @@ You must first enable developer mode in Windows Settings. There are three ways t
 
 To connect to the Windows Subsystem for Android VM for debugging:
 
-1. Get the IP address by opening the Windows Subsystem for Android Settings app. (Use Windows Search to select and launch.)
+1. Launch an Android app that was installed using the Amazon Appstore.
 
-2. The IP address will be displayed under the IP address section. If there is no IP address being displayed, launch an Android app that was installed using the Amazon Appstore, then select **Refresh** on the IP address button in the Settings app.
-
-3. Now that you have the IP address to connect to the Windows Subsystem for Android VM, in your terminal or Powershell, you can connect using adb connect (you must have [adb installed](https://developer.android.com/studio/command-line/adb)):
+2. You can connect using adb connect with the following command (you must have [adb installed](https://developer.android.com/studio/command-line/adb)):
 
     ```powershell
-    adb connect 172.22.137.166
+    adb connect 127.0.0.1:58526
     ```
 
 ### Connect to a test device

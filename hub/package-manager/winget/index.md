@@ -60,6 +60,7 @@ The current preview of the **winget** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
+| [info](info.md) | Displays metadata about the system (version numbers, architecture, log location, etc). Helpful for troubleshooting. |
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
 | [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **winget** tool. |
@@ -95,6 +96,7 @@ The **winget** tool supports the following types of installers:
 * APPX
 * MSIX
 * BURN
+* PORTABLE
 
 ## Scripting winget
 

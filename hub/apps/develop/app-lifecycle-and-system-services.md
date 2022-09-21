@@ -22,7 +22,8 @@ The [Windows App SDK](../windows-app-sdk/index.md) provides the following featur
 |---------|-------------|
 | [App instancing](../windows-app-sdk/applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |
 | [Rich activation](../windows-app-sdk/applifecycle/applifecycle-rich-activation.md) | Receive information about different kinds activations for your app. |
-| [Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Get visibility into how your app affects the device's power state, and enable your app to make intelligent decisions about resource usage. |
+| [Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Get visibility into how your app affects the device's power state, and enable your app to make intelligent decisions about resource usage. 
+| [Restart](../windows-app-sdk/applifecycle/applifecycle-restart.md) |	Programmatically restart your application and set restart options after app termination. |
 
 ## Windows OS features
 

@@ -65,7 +65,7 @@ If you want to support both Windows Phone Silverlight and Windows 10 in a sing
 
 ```csharp
 #if WINDOWS_UAP
-    // Code that you want to compile into the Windows 10 app.
+    // Code that you want to compile into the Windows 10/11 app.
 #else
     // Code that you want to compile into the Windows Phone Silverlight app.
 #endif // WINDOWS_UAP
@@ -85,7 +85,7 @@ If so, and if you now want to support Windows 10 in addition, then you can do t
 
 ```csharp
 #if WINDOWS_UAP
-    // Code that you want to compile into the Windows 10 app.
+    // Code that you want to compile into the Windows 10/11 app.
 #else
 #if NETFX_CORE
     // Code that you want to compile into the Windows Runtime 8.x app.
@@ -137,7 +137,7 @@ Also, see [Detecting the platform your app is running on](wpsl-to-uwp-input-and-
 
 The settings in your project (including any extension SDKs references) determine the API surface area that your app can call. But, your app package manifest is what determines the actual set of devices that your customers can install your app onto from the Store. For more info, see Examples in [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 
-It's worth knowing how to edit the app package manifest, because the topics that follow talk about using it for various declarations, capabilities, and other settings that some features need. You can use the Visual Studio app package manifest editor to edit it. If the **Solution Explorer** is not shown, choose it from the **View** menu. Double-click **Package.appxmanifest**. This opens the manifest editor window. Select the appropriate tab to make changes and then save the changes. You may want to ensure that the **pm:PhoneIdentity** element in the ported app manifest matches what is in the app manifest of the app you're porting (for full details, see the [**pm:PhoneIdentity**](/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity) topic).
+It's worth knowing how to edit the app package manifest, because the topics that follow talk about using it for various declarations, capabilities, and other settings that some features need. You can use the Visual Studio app package manifest editor to edit it. If the **Solution Explorer** is not shown, choose it from the **View** menu. Double-click **Package.appxmanifest**. This opens the manifest editor window. Select the appropriate tab to make changes and then save the changes. You may want to ensure that the **pm:PhoneIdentity** element in the ported app manifest matches what is in the app manifest of the app you're porting (for full details, see the [**pm:PhoneIdentity**](/uwp/schemas/appxpackage/uapmanifestschema/element-mp-phoneidentity) topic).
 
 See [Package manifest schema reference for Windows 10](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 

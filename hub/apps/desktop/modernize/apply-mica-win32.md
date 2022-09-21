@@ -166,7 +166,7 @@ int __stdcall WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ PSTR, _In_ int)
     winrt::init_apartment(winrt::apartment_type::single_threaded);
     // Enable referencing the WindowsAppSDK from an unpackaged app.
     // Remember to have a matching Microsoft.WindowsAppRuntime.Redist installed.
-    // https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/deploy-unpackaged-apps
+    // https://learn.microsoft.com/windows/apps/windows-app-sdk/deploy-unpackaged-apps
     Utilities::WindowsAppSDKBootstrapperContext sdkContext;
     CompositionWindow::RegisterWindowClass();
     // A dispatcher queue is required to be able to create a compositor.

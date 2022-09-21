@@ -258,7 +258,7 @@ IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<S
     auto d3dDevice = m_deviceResources->GetD3DDevice();
 
     // Define D3D11_BUFFER_DESC. See
-    // https://docs.microsoft.com/windows/win32/api/d3d11/ns-d3d11-d3d11_buffer_desc
+    // https://learn.microsoft.com/windows/win32/api/d3d11/ns-d3d11-d3d11_buffer_desc
     D3D11_BUFFER_DESC bd;
     ZeroMemory(&bd, sizeof(bd));
 
@@ -270,7 +270,7 @@ IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<S
     // m_constantBufferChangesEveryFrame, m_constantBufferChangesEveryPrim
     // CreateBuffer is used to create one of these buffers: vertex buffer, index buffer, or 
     // shader-constant buffer. For CreateBuffer API ref info, see
-    // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11device-createbuffer.
+    // https://learn.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11device-createbuffer.
     winrt::check_hresult(
         d3dDevice->CreateBuffer(&bd, nullptr, m_constantBufferNeverChanges.put())
         );
@@ -278,11 +278,11 @@ IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<S
     ...
 
     // Define D3D11_SAMPLER_DESC. For API ref, see
-    // https://docs.microsoft.com/windows/win32/api/d3d11/ns-d3d11-d3d11_sampler_desc.
+    // https://learn.microsoft.com/windows/win32/api/d3d11/ns-d3d11-d3d11_sampler_desc.
     D3D11_SAMPLER_DESC sampDesc;
 
     // ZeroMemory fills a block of memory with zeros. For API ref, see
-    // https://docs.microsoft.com/previous-versions/windows/desktop/legacy/aa366920(v=vs.85).
+    // https://learn.microsoft.com/previous-versions/windows/desktop/legacy/aa366920(v=vs.85).
     ZeroMemory(&sampDesc, sizeof(sampDesc));
 
     sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
@@ -302,7 +302,7 @@ IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<S
     // Load compiled shader objects (VertextShader.cso, VertexShaderFlat.cso, PixelShader.cso, and PixelShaderFlat.cso).
     // The BasicLoader class is used to convert and load common graphics resources, such as meshes, textures, 
     // and various shader objects into the constant buffers. For more info, see
-    // https://docs.microsoft.com/windows/uwp/gaming/complete-code-for-basicloader.
+    // https://learn.microsoft.com/windows/uwp/gaming/complete-code-for-basicloader.
     BasicLoader loader{ d3dDevice };
 
     std::vector<IAsyncAction> tasks;

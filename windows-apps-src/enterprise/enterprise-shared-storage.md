@@ -21,7 +21,7 @@ Enterprise shared storage provides support for the following scenarios.
 
 - You can share data within an instance of an app, between instances of the same app, or even between apps assuming they both have the appropriate capability and certificate.
 - You can store data on the local hard drive in the \Data\SharedData\Enterprise\Persistent folder and it persists even after the device has been reset.
-- Manipulate files, including read, write, and delete of files on a device via Mobile Device Management (MDM) service. For more information on how to use enterprise shared storage through the MDM service, see [EnterpriseExtFileSystem CSP](/windows/client-management/mdm/enterpriseextfilessystem-csp).
+- Manipulate files, including read, write, and delete of files on a device via Mobile Device Management (MDM) service.
 
 ## Access enterprise shared storage
 

@@ -221,18 +221,19 @@ The following example shows the response body for this method.
 
 The *osVersion* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the OS versions of the users to target.
 
-|  Integer value for *osVersion* field  |  Corresponding OS version  |  
-|---------------------------------|---------------------------|
-|     500     |            Windows Phone 7             |
-|     501     |           Windows Phone 7.1             |
-|     502     |           Windows Phone 7.5             |
-|     503     |           Windows Phone 7.8             |
-|     504     |           Windows Phone 8.0             |
-|     505     |           Windows Phone 8.1             |
-|     506     |           Windows 8.0             |
-|     507     |           Windows 8.1             |
-|     508     |           Windows 10             |
-|     509     |           Windows 10 Mobile             |
+| Integer value for *osVersion* field | Corresponding OS version |  
+|-------------------------------------|--------------------------|
+|  500                                | Windows Phone 7          |
+|  501                                | Windows Phone 7.1        |
+|  502                                | Windows Phone 7.5        |
+|  503                                | Windows Phone 7.8        |
+|  504                                | Windows Phone 8.0        |
+|  505                                | Windows Phone 8.1        |
+|  506                                | Windows 8.0              |
+|  507                                | Windows 8.1              |
+|  508                                | Windows 10               |
+|  509                                | Windows 10 Mobile        |
+|  510                                | Windows 11               |
 
 To get the supported values for the *osVersion* field programmatically, you can call the following GET method.  For the ```Authorization``` header, pass your Azure AD access token in the form **Bearer** &lt;*token*&gt;.
 
@@ -271,7 +272,7 @@ The *deviceType* field in the [TargetingProfile](#targeting-profile) object cont
 
 |  Integer value for *deviceType* field  |  Corresponding device type  |  Description  |
 |---------------------------------|---------------------------|---------------------------|
-|     710     |  Windows   |  This represents devices running a desktop version of Windows 10 or Windows 8.x.  |
+|     710     |  Windows   |  This represents devices running a desktop version of Windows 11, Windows 10, or Windows 8.x.  |
 |     711     |  Phone     |  This represents devices running Windows 10 Mobile, Windows Phone 8.x, or Windows Phone 7.x.
 
 To get the supported values for the *deviceType* field programmatically, you can call the following GET method.  For the ```Authorization``` header, pass your Azure AD access token in the form **Bearer** &lt;*token*&gt;.

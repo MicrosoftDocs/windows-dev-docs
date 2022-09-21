@@ -25,7 +25,7 @@ If you just raise an event on a background thread without using one of these opt
 
 All Windows Runtime components and apps are fundamentally COM objects, no matter what language you use to create them. In the Windows API, most of the components are agile COM objects that can communicate equally well with objects on the background thread and on the UI thread. If a COM object can’t be made agile, then it requires helper objects known as proxies and stubs to communicate with other COM objects across the UI thread-background thread boundary. (In COM terms, this is known as communication between thread apartments.)
 
-Most of the objects in the Windows API are either agile or have proxies and stubs built in. However, proxies and stubs can’t be created for generic types such as Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](/uwp/api/windows.foundation.typedeventhandler) because they are not complete types until you provide the type argument. It's only with JavaScript clients that the lack of proxies or stubs becomes an issue, but if you want your component to be usable from JavaScript as well as from C++ or a .NET language, then you must use one of the following three options.
+Most of the objects in the Windows API are either agile or have proxies and stubs built in. However, proxies and stubs can’t be created for generic types such as Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](/uwp/api/windows.foundation.typedeventhandler-2) because they are not complete types until you provide the type argument. It's only with JavaScript clients that the lack of proxies or stubs becomes an issue, but if you want your component to be usable from JavaScript as well as from C++ or a .NET language, then you must use one of the following three options.
 
 ## (Option 1) Raise the event through the CoreDispatcher
 
@@ -71,7 +71,7 @@ public void MakeToastWithDispatcher(string message)
 > [!NOTE]
 > If you're authoring a C# Windows Runtime Component, then the **Windows.Foundation.EventHandler\<Object\>** type is not available; instead, that type is projected to [**System.EventHandler**](/dotnet/api/system.eventhandler), so you should use that instead.
 
-Another way to send an event from a background thread is to use [Windows.Foundation.EventHandler](/uwp/api/windows.foundation.eventhandler)&lt;Object&gt; as the type of the event. Windows provides this concrete instantiation of the generic type and provides a proxy and stub for it. The downside is that the type information of your event args and sender is lost. C++ and .NET clients must know through documentation what type to cast back to when the event is received. JavaScript clients don’t need the original type information. They find the arg properties, based on their names in the metadata.
+Another way to send an event from a background thread is to use [Windows.Foundation.EventHandler](/uwp/api/windows.foundation.eventhandler-1)&lt;Object&gt; as the type of the event. Windows provides this concrete instantiation of the generic type and provides a proxy and stub for it. The downside is that the type information of your event args and sender is lost. C++ and .NET clients must know through documentation what type to cast back to when the event is received. JavaScript clients don’t need the original type information. They find the arg properties, based on their names in the metadata.
 
 This example shows how to use Windows.Foundation.EventHandler&lt;Object&gt; in C#:
 

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 06/09/2022
+ms.date: 08/01/2022
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -10,11 +10,11 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 # Microsoft Store Policies
 
-**Document version: 7.16**
+**Document version: 7.16.1**
 
-**Publish date: June 16, 2022**
+**Publish date: July 18, 2022**
 
-**Effective date: July 16, 2022**
+**Effective date: August 18, 2022**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
@@ -31,7 +31,7 @@ Adhering to these policies should help you make choices that enhance your produc
 
 Your products are crucial to the experience of hundreds of millions of customers. We can’t wait to see what you create and are thrilled to help deliver your products to the world.
 
-If you have feedback on the policies, please let us know by commenting in [our forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). We will consider every comment.
+If you have feedback on the policies, please let us know by commenting in [our forum](/answers/topics/partner-center-general.html). We will consider every comment.
 
 ## Table of Contents
 
@@ -313,7 +313,7 @@ In cases where you determine the pricing for your product or in-app purchases, a
 
 - Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
 
-- Not attempt to profit from open-source or other software that is otherwise generally available for free, nor be priced irrationally high relative to the features and functionality provided by your product.
+- Not be priced irrationally high relative to the features and functionality provided by your product. 
 
 
 ### 10.9 Notifications
@@ -381,6 +381,7 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 
 > [!NOTE]
 > Additional requirements for titles which use Xbox Live on PC/Mobile and/or the Creators program on Xbox consoles are available at https://aka.ms/xboxlivepolicy.
+
 
 
 **10.13.1**
@@ -466,7 +467,7 @@ Metadata and other content you submit to accompany your product may contain only
 
 ### 11.2 Content Including Names, Logos, Original and Third Party
 
-All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law.
+All content in your product and associated metadata must be either originally created by the application provider, appropriately licensed from the third-party rights holder, used as permitted by the rights holder, or used as otherwise permitted by law. Reporting infringement complaints can be done via our online form: [Report intellectual property infringement](https://www.microsoft.com/legal/intellectualproperty/infringement).
 
 ### 11.3 Risk of Harm
 
@@ -549,17 +550,21 @@ If your product is a storefront, or enables access to a storefront, the storefro
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store complaint and appeal statistics for FY2021
+### Microsoft Store complaint and appeal statistics for FY2022
+
+Numbers as reported on 8/1/2022
 
 | Statistic                                             | Count    |
 |----------------------------------------------|----------|
-| Main Complaint Type 1: Certification Results |      145 |
-| Main Complaint Type 2: Account Terminations  |       74 |
-| Main Complaint Type 3: Enforcement Appeal    |       66 |
-| Other Types Of Complaints                    |      144 |
-| Total Complaints                             |      429 |
-| Overturned Complaints                        |       46 |
+| App and/or Account Enforcement Action Appeals |      2,802 |
+| Complaints about Technological Issues  |       157 |
+| Regulatory Compliance Complaints    |       0 |
+| Questions about certification, policy, submission, and technical help                    |      4,051 |
+| Miscellaneous | 486 |
+| Total Issues                              |      7,496 |
+| Overturned decisions                        |       2,106 |
 | Average Processing Time                      | 2.9 days |
+
 
 ### See also
 
