@@ -56,7 +56,7 @@ In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution 
 
 ## Declare a class that implements the IWidgetProvider interface
 
-The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods.
+The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. **UpdateWidget** is a helper method that will send updates from our provider to the widget host.
 
 ```cpp
 // WidgetProvider.h
@@ -66,12 +66,14 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 
     /* IWidgetProvider required functions that need to be implemented */
     void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext WidgetContext);
-	void DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState);
-	void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
-	void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
+    void DeleteWidget(winrt::hstring const& widgetId);
+    void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
+    void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
     void Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
     void Deactivate(winrt::hstring widgetId);
     /* IWidgetProvider required functions that need to be implemented */
+
+    void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
 };
 ```
 
@@ -90,7 +92,7 @@ struct CompactWidgetInfo
 };
 ```
 
-Inside the **WidgetProvider** declaration in WidgetProvider.h, add the helper functions that will communicate with the widget service and a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry. **UpdateWidget** is a helper method that will send updates from our provider to the widget host.
+Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry.
 
 ```cpp
 // WidgetProvider.h
@@ -98,15 +100,6 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 {
 ...
     private:
-    	void RecoverRunningWidgets();
-
-        /* Helper functions to communicate with Widget Service */
-        void RequestDeleteWidget(winrt::hstring const& widgetId);
-        winrt::com_array<winrt::hstring> GetAllWidgetIds();
-        winrt::Microsoft::Windows::Widgets::Providers::WidgetInfo GetWidgetInfo(winrt::hstring const& widgetId);
-        winrt::com_array<winrt::Microsoft::Windows::Widgets::Providers::WidgetInfo> GetAllWidgetInfos();
-        void UpdateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetUpdateRequestOptions const& updateRequestArgs);
-        /* Helper functions to communicate with Widget Service */
         static std::unordered_map<winrt::hstring, CompactWidgetInfo> RunningWidgets;
 ```
 
@@ -209,22 +202,7 @@ const std::string countWidgetTemplate = R"(
         {                                                               
             "type": "TextBlock",                                    
             "text": "You have clicked the button ${count} times"    
-        },
-		{
-			 "text":"Rendering Only if Medium",
-			 "type":"TextBlock",
-			 "$when":"${$host.widgetSize==\"medium\"}"
-		},
-		{
-			 "text":"Rendering Only if Small",
-			 "type":"TextBlock",
-			 "$when":"${$host.widgetSize==\"small\"}"
-		},
-		{
-         "text":"Rendering Only if Large",
-         "type":"TextBlock",
-         "$when":"${$host.widgetSize==\"large\"}"
-		}                                                               
+        }                                                               
     ],                                                                  
     "actions": [                                                      
         {                                                               
@@ -240,7 +218,7 @@ const std::string countWidgetTemplate = R"(
 
 ## Implement the IWidgetProvider methods
 
-In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following lines to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace and access your previously declared map of RunningWidgets.
+In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following line to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace.
 
 > [!NOTE]
 > Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
@@ -250,13 +228,6 @@ In the next few sections, we'll implement the methods of the **IWidgetProvider**
 namespace winrt
 {
     using namespace Microsoft::Windows::Widgets::Providers;
-}
-
-std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWidgets{};
-
-WidgetProvider::WidgetProvider()
-{
-	RecoverRunningWidgets();
 }
 ```
 
@@ -268,20 +239,14 @@ The widget host calls **CreateWidget** when the user has enabled one of your app
 // WidgetProvider.cpp
 void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
 {
-    auto widgetId = widgetContext.Id(); // To save RPC calls
-	auto widgetName = widgetContext.DefinitionId();
-	CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
-	RunningWidgets[widgetId] = runningWidgetInfo;
+    auto widgetId = widgetContext.WidgetId(); // To save RPC calls
+    auto widgetName = widgetContext.WidgetName();
+    CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
+    RunningWidgets[widgetId] = runningWidgetInfo;
 
     
-    // Call UpdateWidget() to send data/template to the newly created widget.
-	winrt::WidgetUpdateRequestOptions updateOptions{ widgetId };
-	updateOptions.Template(GetTemplateForWidget(runningWidgetInfo));
-	updateOptions.Data(GetDataForWidget(runningWidgetInfo));
-	// You can store some custom state in the widget service that you will be able to query at any time.
-	updateOptions.CustomState(winrt::to_hstring(runningWidgetInfo.customState));
-	// Update the widget
-	UpdateWidget(updateOptions);
+    // Update the widget
+    UpdateWidget(runningWidgetInfo);
 }
 ```
 
@@ -319,32 +284,21 @@ In the **OnActionInvoked** method, get the verb value by checking the **Verb** p
 // WidgetProvider.cpp
 void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvokedArgs)
 {
-	auto verb = actionInvokedArgs.Verb();
-	if (verb == L"inc")
-	{
-		auto widgetId = actionInvokedArgs.WidgetContext().Id();
-		// If you need to use some data that was passed in after
-		// Action was invoked, you can get it from the args:
-		auto data = actionInvokedArgs.Data();
-		if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
-		{
-			auto& localWidgetInfo = iter->second;
-			// Increment the count
-			localWidgetInfo.customState++;
-
-			// Generate template/data you want to send back
-			auto widgetTemplate = GetTemplateForWidget(localWidgetInfo);
-			auto widgetData = GetDataForWidget(localWidgetInfo);
-
-			// Build update options and update the widget
-			winrt::WidgetUpdateRequestOptions updateOptions{ widgetId };
-			updateOptions.Template(widgetTemplate);
-			updateOptions.Data(widgetData);
-			updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
-
-			UpdateWidget(updateOptions);
-		}
-	}
+    auto verb = actionInvokedArgs.Verb();
+    if (verb == L"inc")
+    {
+        auto widgetId = actionInvokedArgs.WidgetContext().WidgetId();
+        // If you need to use some data that was passed in after
+        // Action was invoked, you can get it from the args:
+        auto data = actionInvokedArgs.Data();
+        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+        {
+            auto& localWidgetInfo = iter->second;
+            // Increment the count
+            localWidgetInfo.customState++;
+            UpdateWidget(localWidgetInfo);
+        }
+    }
 }
 ```
 
@@ -360,27 +314,15 @@ In the current release, **OnWidgetContextChanged** is only called when the user 
 // WidgetProvider.cpp
 void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs contextChangedArgs)
 {
-	auto widgetContext = contextChangedArgs.WidgetContext();
-	auto widgetId = widgetContext.Id();
-	auto widgetSize = widgetContext.Size();
+    auto widgetContext = contextChangedArgs.WidgetContext();
+    auto widgetId = widgetContext.WidgetId();
+    auto widgetSize = widgetContext.WidgetSize();
+    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    {
+        auto localWidgetInfo = iter->second;
 
-	if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
-	{
-		auto localWidgetInfo = iter->second;
-
-		// Generate template/data you want to send back
-		auto widgetTemplate = GetTemplateForWidget(localWidgetInfo);
-		auto widgetData = GetDataForWidget(localWidgetInfo);
-
-		// Build update options and update the widget - Only if you need to.
-		// All the widgets here support $host.widgetSize
-		winrt::WidgetUpdateRequestOptions updateOptions{ widgetId };
-		updateOptions.Template(widgetTemplate);
-		updateOptions.Data(widgetData);
-		updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
-
-		UpdateWidget(updateOptions);
-	}
+        UpdateWidget(localWidgetInfo);
+    }
 }
     
 ```
@@ -394,7 +336,7 @@ The **Activate** method is called to notify the widget provider that the widget 
 ```cpp
 void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext)
 {
-    auto widgetId = widgetContext.Id();
+    auto widgetId = widgetContext.WidgetId();
 
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
@@ -418,65 +360,39 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
 ## Update a widget
 
-Define the **UpdateWidget** and the other helper methods to update an enabled widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an enabled widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
-winrt::hstring WidgetProvider::GetTemplateForWidget(CompactWidgetInfo const& localWidgetInfo)
+void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
 {
-	if (localWidgetInfo.widgetName == L"Weather_Widget")
-	{
-		return winrt::to_hstring(weatherWidgetTemplate);
-	}
-	else if (localWidgetInfo.widgetName == L"Counting_Widget")
-	{
-		return winrt::to_hstring(countWidgetTemplate);
-	}
-	// You should never get here, but if you do log an error and 
-	// if desired send request to Delete the widget since you don't
-	// seem to support it.
-	return L"";
-}
+    winrt::WidgetUpdateRequestOptions updateOptions{ localWidgetInfo.widgetId };
 
-winrt::hstring WidgetProvider::GetDataForWidget(CompactWidgetInfo const& localWidgetInfo)
-{
-	if (localWidgetInfo.widgetName == L"Counting_Widget")
-	{
-		return L"{ \"count\": " + winrt::to_hstring(localWidgetInfo.customState) + L" }";
-	}
-	else
-	{
-		return L"{}";
-	}
-}
+    winrt::hstring templateJson;
+    if (localWidgetInfo.widgetName == L"Weather_Widget")
+    {
+        templateJson = winrt::to_hstring(weatherWidgetTemplate);
+    }
+    else if (localWidgetInfo.widgetName == L"Counting_Widget")
+    {
+        templateJson = winrt::to_hstring(countWidgetTemplate);
+    }
 
-/* Helper functions to communicate with Widget Service */
-void WidgetProvider::RequestDeleteWidget(winrt::hstring const& widgetId)
-{
-	winrt::WidgetManager::GetDefault().DeleteWidget(widgetId);
-}
+    winrt::hstring dataJson;
+    if (localWidgetInfo.widgetName == L"Weather_Widget")
+    {
+        L"{}";
+    }
+    else if (localWidgetInfo.widgetName == L"Counting_Widget")
+    {
+        L"{ \"count\": " + winrt::to_hstring(localWidgetInfo.customState) + L" }";
+    }
 
-winrt::com_array<winrt::hstring> WidgetProvider::GetAllWidgetIds()
-{
-	return winrt::WidgetManager::GetDefault().GetWidgetIds();
+    updateOptions.Template(templateJson);
+    updateOptions.Data(dataJson);
+    // !!  You can store some custom state in the widget service that you will be able to query at any time.
+    updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
 }
-
-winrt::WidgetInfo WidgetProvider::GetWidgetInfo(winrt::hstring const& widgetId)
-{
-	return winrt::WidgetManager::GetDefault().GetWidgetInfo(widgetId);
-}
-
-winrt::com_array<winrt::WidgetInfo> WidgetProvider::GetAllWidgetInfos()
-{
-	return winrt::WidgetManager::GetDefault().GetWidgetInfos();
-}
-
-void WidgetProvider::UpdateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetUpdateRequestOptions const& updateRequestArgs)
-{
-	winrt::WidgetManager::GetDefault().UpdateWidget(updateRequestArgs);
-}
-/* Helper functions to communicate with Widget Service */
-
 ```
 
 ## Initialize the list of enabled widgets on startup
@@ -488,29 +404,29 @@ When our widget provider is first initialized, we need to populate our list of e
 WidgetProvider::WidgetProvider()
 {
 
-    for (auto widgetInfo : GetAllWidgetInfos())
-	{
-		auto widgetContext = widgetInfo.WidgetContext();
-		auto widgetId = widgetContext.Id();
-		auto widgetName = widgetContext.DefinitionId();
-		auto customState = widgetInfo.CustomState();
-		if (RunningWidgets.find(widgetId) == RunningWidgets.end())
-		{
-			CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName};
-			try
-			{
-				// If we had any save state (in this case we might have some state saved for Counting widget)
-				// convert string to required type if needed.
-				int count = std::stoi(winrt::to_string(customState));
-				runningWidgetInfo.customState = count;
-			}
-			catch (...)
-			{
+    for (auto widgetInfo : winrt::WidgetManager::GetDefault().GetWidgetInfos())
+    {
+        auto widgetContext = widgetInfo.WidgetContext();
+        auto widgetId = widgetContext.WidgetId();
+        auto widgetName = widgetContext.WidgetName();
+        auto customState = widgetInfo.CustomState();
+        if (RunningWidgets.find(widgetId) == RunningWidgets.end())
+        {
+            CompactWidgetInfo runningWidgetInfo{ widgetName, widgetId };
+            try
+            {
+                // If we had any save state (in this case we might have some state saved for Counting widget)
+                // convert string to required type if needed.
+                int count = std::stoi(winrt::to_string(customState));
+                runningWidgetInfo.customState = count;
+            }
+            catch (...)
+            {
 
-			}
-			RunningWidgets[widgetId] = runningWidgetInfo;
-		}
-	}
+            }
+            RunningWidgets[widgetId] = runningWidgetInfo;
+        }
+    }
 }
 ```
 
