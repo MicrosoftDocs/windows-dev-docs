@@ -93,7 +93,7 @@ To start an instance of Windows Terminal and have it execute a command, call `wt
 Here's an example of calling Windows Terminal to pass a [ping](/windows-server/administration/windows-commands/ping) command argument to echo an IP address:
 
 ```powershell
-wt ping docs.microsoft.com
+wt ping learn.microsoft.com
 ```
 
 Here's an example of calling Windows Terminal to open a new tab with a PowerShell command line, confirming to call the [Start-Service](/powershell/module/microsoft.powershell.management/start-service) command, and opening another new tab with Windows Command Prompt open to the `/k` directory:
