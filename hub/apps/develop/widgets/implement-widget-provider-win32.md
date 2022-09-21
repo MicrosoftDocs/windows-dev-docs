@@ -473,16 +473,18 @@ Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and
 // main.cpp
 ...
 // {80F4CB41-5758-4493-9180-4FB8D480E3F5}
-constexpr winrt::guid SAMPLE_PROVIDER_CLSID =
-{ 0x80f4cb41, 0x5758, 0x4493, { 0x91, 0x80, 0x4f, 0xb8, 0xd4, 0x80, 0xe3, 0xf5 } };
+static constexpr GUID widget_provider_clsid
+{
+    0x80f4cb41, 0x5758, 0x4493, { 0x91, 0x80, 0x4f, 0xb8, 0xd4, 0x80, 0xe3, 0xf5 }
+};
 ```
 
 Add the following class factory definition to `main.cpp`. This is boilerplate code that is not specific to widget provider implementations.
 
 ```cpp
 // main.cpp
-template<typename T>
-struct ClassFactory : public winrt::implements<ClassFactory<T>, IClassFactory>
+template <typename T>
+struct SingletonClassFactory : winrt::implements<SingletonClassFactory<T>, IClassFactory>
 {
     STDMETHODIMP CreateInstance(
         ::IUnknown* outer,
@@ -491,6 +493,8 @@ struct ClassFactory : public winrt::implements<ClassFactory<T>, IClassFactory>
     {
         *result = nullptr;
 
+        std::unique_lock lock(mutex);
+
         if (outer)
         {
             return CLASS_E_NOAGGREGATION;
@@ -498,10 +502,10 @@ struct ClassFactory : public winrt::implements<ClassFactory<T>, IClassFactory>
 
         if (!instance)
         {
-            instance = winrt::make_self<T>();
+            instance = winrt::make<WidgetProvider>();
         }
 
-        return instance->QueryInterface(iid, result);
+        return instance.as(iid, result);
     }
 
     STDMETHODIMP LockServer(BOOL) noexcept final
@@ -510,8 +514,32 @@ struct ClassFactory : public winrt::implements<ClassFactory<T>, IClassFactory>
     }
 
 private:
-    winrt::com_ptr<T> instance{ nullptr };
+    T instance{ nullptr };
+    std::mutex mutex;
 };
+
+int main()
+{
+    winrt::init_apartment();
+    wil::unique_com_class_object_cookie widgetProviderFactory;
+    auto factory = winrt::make<SingletonClassFactory<winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>>();
+
+    winrt::check_hresult(CoRegisterClassObject(
+        widget_provider_clsid,
+        factory.get(),
+        CLSCTX_LOCAL_SERVER,
+        REGCLS_MULTIPLEUSE,
+        widgetProviderFactory.put()));
+
+    MSG msg;
+    while (GetMessage(&msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    return 0;
+}
 ```
 
 
