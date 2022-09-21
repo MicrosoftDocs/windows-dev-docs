@@ -620,7 +620,7 @@ The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/u
     </com:Extension>
 </Extensions>
 ```
-
+PENDING CHANGE
 Next, add the extension that registers the app as a widget provider. Paste the [uap3:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual) element in the following code snippet, as a child of the **Extensions** element. Be sure to replace the **ClassId** attribute of the **COM** element with the GUID you used in previous steps.
 
 ```xml
