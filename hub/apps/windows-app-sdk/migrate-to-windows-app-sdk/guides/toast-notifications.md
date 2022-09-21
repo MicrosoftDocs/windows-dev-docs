@@ -17,15 +17,35 @@ The only difference when migrating app notification code from UWP to WinUI 3 is 
 
 ## Activation differences
 
+### [Windows App SDK](#tab/appsdk) 
+
 Category | UWP | WinUI 3
 --|--|--
 Foreground activation entry point | `OnActivated` method inside `App.xaml.cs` is called | Subscribe to `ToastNotificationManagerCompat.OnActivated` event (or COM class for C++)
 Background activation entry point | Handled separately as a background task | Arrives through same `ToastNotificationManagerCompat.OnActivated` event (or COM class for C++)
 Window activation | Your window is automatically brought to foreground when foreground activation occurs | You must bring your window to the foreground if desired
 
+### [Windows Community Toolkit](#tab/toolkit) 
+
+Category | UWP | WinUI 3
+--|--|--
+Foreground activation entry point | `OnActivated` method inside `App.xaml.cs` is called | Subscribe to `ToastNotificationManagerCompat.OnActivated` event (or COM class for C++)
+Background activation entry point | Handled separately as a background task | Arrives through same `ToastNotificationManagerCompat.OnActivated` event (or COM class for C++)
+Window activation | Your window is automatically brought to foreground when foreground activation occurs | You must bring your window to the foreground if desired
+
+---
+
 ## Migration for C# apps
 
 ### Step 1: Install NuGet library
+
+#### [Windows App SDK](#tab/appsdk) 
+
+[!INCLUDE [nuget package](../../../design/shell/tiles-and-notifications/includes/nuget-package.md)]
+
+This package adds the `ToastNotificationManagerCompat` API.
+
+#### [Windows Community Toolkit](#tab/toolkit)
 
 [!INCLUDE [nuget package](../../../design/shell/tiles-and-notifications/includes/nuget-package.md)]
 
