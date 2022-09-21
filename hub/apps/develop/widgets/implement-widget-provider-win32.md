@@ -56,7 +56,7 @@ In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution 
 
 ## Declare a class that implements the IWidgetProvider interface
 
-The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. **UpdateWidget** is a helper method that will send updates from our provider to the widget host.
+The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. 
 
 ```cpp
 // WidgetProvider.h
@@ -73,8 +73,17 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     void Deactivate(winrt::hstring widgetId);
     /* IWidgetProvider required functions that need to be implemented */
 
-    void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
+    
 };
+```
+
+Also, add a private method, **UpdateWidget**, which is a helper method that will send updates from our provider to the widget host.
+
+```cpp
+// WidgetProvider.h
+private: 
+
+void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
 ```
 
 ## Prepare to track enabled widgets
@@ -92,7 +101,7 @@ struct CompactWidgetInfo
 };
 ```
 
-Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry.
+Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for the map that will maintain the list of enabled widgets, using the widget ID as the key for each entry. 
 
 ```cpp
 // WidgetProvider.h
@@ -100,7 +109,10 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 {
 ...
     private:
+        ...
         static std::unordered_map<winrt::hstring, CompactWidgetInfo> RunningWidgets;
+
+        
 ```
 
 ## Declare widget template JSON strings
@@ -202,7 +214,22 @@ const std::string countWidgetTemplate = R"(
         {                                                               
             "type": "TextBlock",                                    
             "text": "You have clicked the button ${count} times"    
-        }                                                               
+        },
+        {
+             "text":"Rendering Only if Medium",
+             "type":"TextBlock",
+             "$when":"${$host.widgetSize==\"medium\"}"
+        },
+        {
+             "text":"Rendering Only if Small",
+             "type":"TextBlock",
+             "$when":"${$host.widgetSize==\"small\"}"
+        },
+        {
+         "text":"Rendering Only if Large",
+         "type":"TextBlock",
+         "$when":"${$host.widgetSize==\"large\"}"
+        }                                                                    
     ],                                                                  
     "actions": [                                                      
         {                                                               
@@ -239,8 +266,8 @@ The widget host calls **CreateWidget** when the user has enabled one of your app
 // WidgetProvider.cpp
 void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
 {
-    auto widgetId = widgetContext.WidgetId(); // To save RPC calls
-    auto widgetName = widgetContext.WidgetName();
+    auto widgetId = widgetContext.Id(); // To save RPC calls
+    auto widgetName = widgetContext.DefinitionId();
     CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
     RunningWidgets[widgetId] = runningWidgetInfo;
 
@@ -256,7 +283,7 @@ The widget host calls **DeleteWidget** when the user has unpinned one of your ap
 
 ```cpp
 // WidgetProvider.cpp
-void WidgetProvider::DeleteWidget(winrt::hstring const& widgetId)
+void WidgetProvider::DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState)
 {
     RunningWidgets.erase(widgetId);
 }
@@ -287,7 +314,7 @@ void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvoke
     auto verb = actionInvokedArgs.Verb();
     if (verb == L"inc")
     {
-        auto widgetId = actionInvokedArgs.WidgetContext().WidgetId();
+        auto widgetId = actionInvokedArgs.WidgetContext().Id();
         // If you need to use some data that was passed in after
         // Action was invoked, you can get it from the args:
         auto data = actionInvokedArgs.Data();
@@ -315,8 +342,8 @@ In the current release, **OnWidgetContextChanged** is only called when the user 
 void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs contextChangedArgs)
 {
     auto widgetContext = contextChangedArgs.WidgetContext();
-    auto widgetId = widgetContext.WidgetId();
-    auto widgetSize = widgetContext.WidgetSize();
+    auto widgetId = widgetContext.Id();
+    auto widgetSize = widgetContext.Size();
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
         auto localWidgetInfo = iter->second;
@@ -336,7 +363,7 @@ The **Activate** method is called to notify the widget provider that the widget 
 ```cpp
 void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext)
 {
-    auto widgetId = widgetContext.WidgetId();
+    auto widgetId = widgetContext.Id();
 
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
@@ -407,8 +434,8 @@ WidgetProvider::WidgetProvider()
     for (auto widgetInfo : winrt::WidgetManager::GetDefault().GetWidgetInfos())
     {
         auto widgetContext = widgetInfo.WidgetContext();
-        auto widgetId = widgetContext.WidgetId();
-        auto widgetName = widgetContext.WidgetName();
+        auto widgetId = widgetContext.Id();
+        auto widgetName = widgetContext.DefinitionId();
         auto customState = widgetInfo.CustomState();
         if (RunningWidgets.find(widgetId) == RunningWidgets.end())
         {
@@ -544,50 +571,76 @@ Next, add the extension that registers the app as a widget provider. Paste the [
 <Extensions>
     ...
     <uap3:Extension Category="windows.appExtension">
-        <uap3:AppExtension Name="com.microsoft.windows.widgets" DisplayName="WidgetProviderSample" Id="ContosoWidgetApp" PublicFolder="Public">
+        <uap3:AppExtension Name="com.microsoft.windows.widgets" DisplayName="WidgetTestApp" Id="ContosoWidgetApp" PublicFolder="Public">
             <uap3:Properties>
-                <WidgetProvider Icon="Images\StoreLogo.png">
+                <WidgetProvider>
+                    <ProviderIcons>
+                        <Icon Path="Images\StoreLogo.png" />
+                    </ProviderIcons>
                     <Activation>
                         <!-- Apps exports COM interface which implements IWidgetProvider -->
-                        <COM ClassId="80F4CB41-5758-4493-9180-4FB8D480E3F5" />
+                        <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
                     </Activation>
-                    <Widgets>
-                        <Widget Name="Weather_Widget"
-                                DisplayTitle="Microsoft Weather Widget"
-                                Description="Weather Widget Description"
-                                AllowMultiple="True">
-                            <WidgetCapabilities>
-                                <WidgetCapability WidgetSize="Small" />
-                                <WidgetCapability WidgetSize="Medium" />
-                                <WidgetCapability WidgetSize="Large" />
-                            </WidgetCapabilities>
-                            <WidgetThemeResources>
-                                <Icon Source="ProviderAssets\Weather_Icon.png" />
+
+                    <TrustedPackageFamilyNames>
+                        <TrustedPackageFamilyName>Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe</TrustedPackageFamilyName>
+                    </TrustedPackageFamilyNames>
+
+                    <Definitions>
+                        <Definition Id="Weather_Widget"
+                            DisplayName="Weather Widget"
+                            Description="Weather Widget Description"
+                            AllowMultiple="true">
+                            <Capabilities>
+                                <Capability>
+                                    <Size Name="small" />
+                                </Capability>
+                                <Capability>
+                                    <Size Name="medium" />
+                                </Capability>
+                                <Capability>
+                                    <Size Name="large" />
+                                </Capability>
+                            </Capabilities>
+                            <ThemeResources>
+                                <Icons>
+                                    <Icon Path="ProviderAssets\Weather_Icon.png" />
+                                </Icons>
                                 <Screenshots>
-                                    <Screenshot Source="ProviderAssets\Weather_Screenshot.png" DisplayLabel="For accessibility" />
+                                    <Screenshot Path="ProviderAssets\Weather_Screenshot.png" DisplayAltText="For accessibility" />
                                 </Screenshots>
                                 <!-- DarkMode and LightMode are optional -->
                                 <DarkMode />
                                 <LightMode />
-                            </WidgetThemeResources>
-                        </Widget>
-                        <Widget Name="Counting_Widget"
-                            DisplayTitle="Microsoft Counting Widget"
-                            Description="Couting Widget Description">
-                        <WidgetCapabilities>
-                            <WidgetCapability WidgetSize="Small" />
-                        </WidgetCapabilities>
-                        <WidgetThemeResources>
-                            <Icon Source="ProviderAssets\Counting_Icon.png" />
-                            <Screenshots>
-                                <Screenshot Source="ProviderAssets\Counting_Screenshot.png" DisplayLabel="For accessibility" />
-                            </Screenshots>
-                        </WidgetThemeResources>
-                    </Widget>
-                </Widgets>
-            </WidgetProvider>
-        </uap3:Properties>
-    </uap3:AppExtension>
+                            </ThemeResources>
+                        </Definition>
+                        <Definition Id="Counting_Widget"
+                                DisplayName="Microsoft Counting Widget"
+                                Description="Couting Widget Description">
+                            <Capabilities>
+                                <Capability>
+                                    <Size Name="small" />
+                                </Capability>
+                            </Capabilities>
+                            <ThemeResources>
+                                <Icons>
+                                    <Icon Path="ProviderAssets\Counting_Icon.png" />
+                                </Icons>
+                                <Screenshots>
+                                    <Screenshot Path="ProviderAssets\Counting_Screenshot.png" DisplayAltText="For accessibility" />
+                                </Screenshots>
+                                <!-- DarkMode and LightMode are optional -->
+                                <DarkMode>
+
+                                </DarkMode>
+                                <LightMode />
+                            </ThemeResources>
+                        </Definition>
+                    </Definitions>
+                </WidgetProvider>
+            </uap3:Properties>
+        </uap3:AppExtension>
+    </uap3:Extension>
 <Extensions>
 ```
 
