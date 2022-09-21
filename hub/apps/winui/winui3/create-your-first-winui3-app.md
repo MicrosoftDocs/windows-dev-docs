@@ -24,7 +24,7 @@ Links to full installation details are in the steps below. We recommend that you
 
 ## Key concepts
 
-Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a non-packaged project. But please come back later to read more about it.
+Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a unpackaged project. But please come back later to read more about it.
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 

@@ -1,6 +1,6 @@
 ---
-description: Learn how to grant identity to non-packaged desktop apps so you can use modern Windows features in those apps.
-title: Grant identity to non-packaged desktop apps
+description: Learn how to grant identity to unpackaged desktop apps so you can use modern Windows features in those apps.
+title: Grant identity to unpackaged desktop apps
 ms.date: 04/23/2020
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
@@ -8,13 +8,13 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-# Grant identity to non-packaged desktop apps
+# Grant identity to unpackaged desktop apps
 
 Many Windows extensibility features require [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the operating system (OS) requires identity so that it can identify the caller of the corresponding API.
 
 In OS releases before Windows 10, version 2004, the only way to grant identity to a desktop app is to [package it in a signed MSIX package](/windows/msix/desktop/desktop-to-uwp-root). For these apps, identity is specified in the package manifest and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
 
-Starting in Windows 10, version 2004, you can grant package identity to desktop apps that are not packaged in an MSIX package by building and registering a *sparse package* with your app. This support enables desktop apps that are not yet able to adopt MSIX packaging for deployment to use Windows 10 extensibility features that require package identity. For more background info, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Starting in Windows 10, version 2004, you can grant package identity to desktop apps that are not packaged in an MSIX package by building and registering a *sparse package* with your app. This support enables desktop apps that are not yet able to adopt MSIX packaging for deployment to use Windows 10 extensibility features that require package identity. For more background info, see [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-unpackaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 To build and register a sparse package that grants package identity to your desktop app, follow these steps.
 
@@ -25,7 +25,7 @@ To build and register a sparse package that grants package identity to your desk
 
 ## Important concepts
 
-The following features enable non-packaged desktop apps to acquire package identity.
+The following features enable unpackaged desktop apps to acquire package identity.
 
 ### Sparse packages
 
@@ -38,7 +38,7 @@ A *sparse package* contains a package manifest but no other app binaries and con
 
 To support sparse packages, the package manifest schema now supports an optional [**uap10:AllowExternalContent**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) element under the [**Properties**](/uwp/schemas/appxpackage/uapmanifestschema/element-properties) element. This allows your package manifest to reference content outside the package, in a specific location on disk.
 
-For example, if you have your existing non-packaged desktop app that installs the app executable and other content in C:\Program Files\MyDesktopApp\, you can create a sparse package that includes the **uap10:AllowExternalContent** element in the manifest. During the install process for your app, or the first time your app runs, you can install the sparse package and declare C:\Program Files\MyDesktopApp\ as the external location your app will use.
+For example, if you have your existing unpackaged desktop app that installs the app executable and other content in C:\Program Files\MyDesktopApp\, you can create a sparse package that includes the **uap10:AllowExternalContent** element in the manifest. During the install process for your app, or the first time your app runs, you can install the sparse package and declare C:\Program Files\MyDesktopApp\ as the external location your app will use.
 
 ## Create a package manifest for the sparse package
 
@@ -182,7 +182,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## Sample
 
-See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a sparse package. More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a sparse package. More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-unpackaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 This sample includes the following:
 
