@@ -1,91 +1,92 @@
 - name: Overview
   href: ../publish/index.md
 - name: Opening a developer account
-  href: ../publish/opening-a-developer-account.md
+  href: /apps/publish/partner-center/opening-a-developer-account
   items:
     - name: Account types, locations, and fees
-      href: ../publish/account-types-locations-and-fees.md
+      href: /apps/publish/partner-center/account-types-locations-and-fees
     - name: Manage account settings and profile info
       href: /partner-center/partner-center-account-setup
     - name: Trademark and copyright protection
-      href: ../publish/trademark-and-copyright-protection.md
+      href: /apps/publish/partner-center/trademark-and-copyright-protection
 - name: Manage account users
-  href: ../publish/manage-account-users.md
+  href: /apps/publish/partner-center/manage-account-users
   items: 
     - name: Associate Azure AD with your Partner Center account
-      href: ../publish/associate-azure-ad-with-partner-center.md
+      href: /apps/publish/partner-center/associate-azure-ad-with-partner-center
     - name: Add users, groups, and Azure AD applications
-      href: ../publish/add-users-groups-and-azure-ad-applications.md
+      href: /apps/publish/partner-center/add-users-groups-and-azure-ad-applications
     - name: Set roles and custom permissions
-      href: ../publish/set-custom-permissions-for-account-users.md
+      href: /apps/publish/partner-center/set-custom-permissions-for-account-users
 - name: Partner Center workspaces
-  href: partner-center-workspaces.md
+  href: /apps/publish/partner-center/partner-center-workspaces
 - name: Publish an MSIX app to the Microsoft Store
+  href: /apps/publish/publish-your-app/overview?pivots=store-installer-msix
   items:
     - name: App submissions
-      href: app-submissions.md
+      href: /apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix
     - name: Create your app by reserving a name
-      href: ../publish/create-your-app-by-reserving-a-name.md
+      href: /apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msix
     - name: Manage app names
-      href: ../publish/manage-app-names.md
+      href: /apps/publish/publish-your-app/manage-app-names?pivots=store-installer-msix
     - name: Set app pricing and availability
-      href: ../publish/set-app-pricing-and-availability.md
+      href: /apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix
       items:
         - name: Define market selection
-          href: ../publish/define-market-selection.md
+          href: /apps/publish/publish-your-app/market-selection?pivots=store-installer-msix
         - name: Choose visibility options
-          href: ../publish/choose-visibility-options.md
+          href: /apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix
         - name: Configure precise release scheduling
-          href: ../publish/configure-precise-release-scheduling.md
+          href: /apps/publish/publish-your-app/release-schedule?pivots=store-installer-msix
         - name: Set and schedule app pricing
-          href: ../publish/set-and-schedule-app-pricing.md
+          href: /apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix
         - name: Organizational licensing options
           href: ../publish/organizational-licensing.md
     - name: Enter app properties
-      href: ../publish/enter-app-properties.md
+      href: /apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix
       items:
         - name: Category and subcategory table
-          href: ../publish/category-and-subcategory-table.md
+          href: /apps/publish/publish-your-app/categories-and-subcategories?pivots=store-installer-msix
         - name: Product declarations
-          href: ../publish/product-declarations.md
+          href: /apps/publish/publish-your-app/product-declarations?pivots=store-installer-msix
     - name: Age ratings
-      href: ../publish/age-ratings.md
+      href: /apps/publish/publish-your-app/Age-ratings?pivots=store-installer-msix
     - name: Upload app packages
-      href: ../publish/upload-app-packages.md
+      href: /apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msix
       items:
         - name: Device family availability
-          href: ../publish/device-family-availability.md
+          href: /apps/publish/publish-your-app/device-families?pivots=store-installer-msix
         - name: App package requirements
-          href: ../publish/app-package-requirements.md
+          href: /apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix
         - name: Package version numbering
-          href: ../publish/package-version-numbering.md
+          href: /apps/publish/publish-your-app/package-version-numbering?pivots=store-installer-msix
         - name: Supported languages
-          href: ../publish/supported-languages.md
+          href: /apps/publish/publish-your-app/supported-languages?pivots=store-installer-msix
         - name: Guidance for app package management
-          href: ../publish/guidance-for-app-package-management.md
+          href: /apps/publish/publish-your-app/app-package-management?pivots=store-installer-msix
     - name: Create app Store listings
-      href: ../publish/create-app-store-listings.md
+      href: /apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix
       items:
         - name: Write a great app description
-          href: ../publish/write-a-great-app-description.md
+          href: /apps/publish/publish-your-app/write-great-app-description?pivots=store-installer-msix
         - name: App screenshots, images, and trailers
-          href: ../publish/app-screenshots-and-images.md
+          href: /apps/publish/publish-your-app/screenshots-and-images?pivots=store-installer-msix
         - name: Import and export Store listings
-          href: ../publish/import-and-export-store-listings.md
+          href: /apps/publish/publish-your-app/import-and-export-store-listings?pivots=store-installer-msix
         - name: Create platform-specific Store listings
-          href: ../publish/create-platform-specific-store-listings.md
+          href: /apps/publish/publish-your-app/create-platform-specific-store-listings?pivots=store-installer-msix
     - name: Manage submission options
-      href: ../publish/manage-submission-options.md
+      href: /apps/publish/publish-your-app/anage-submission-options?pivots=store-installer-msix
       items:
         - name: Notes for certification
-          href: ../publish/notes-for-certification.md
+          href: /apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix
     - name: The app certification process
-      href: ../publish/the-app-certification-process.md
+      href: /apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix
       items:
         - name: Resolve submission errors
-          href: ../publish/resolve-submission-errors.md
+          href: /apps/publish/publish-your-app/resolve-submission-errors?pivots=store-installer-msix
         - name: Avoid common certification failures
-          href: ../publish/avoid-common-certification-failures.md
+          href: /apps/publish/publish-your-app/avoid-common-certification-failures?pivots=store-installer-msix
     - name: Package flights
       href: ../publish/package-flights.md
     - name: Gradual package rollout
@@ -95,28 +96,28 @@
     - name: Distribute LOB apps to enterprises
       href: ../publish/distribute-lob-apps-to-enterprises.md
 - name: Publish an MSI or EXE app to the Microsoft Store
-  href: msiexe/overview.md
+  href: /apps/publish/publish-your-app/overview?pivots=store-installer-msi-exe
   items: 
     - name: Create an app submission for your MSI or EXE app
-      href: msiexe/app-submissions.md
+      href: /apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msi-exe
     - name: Manage app names
-      href: ../publish/manage-app-names.md
+      href: /apps/publish/publish-your-app/manage-app-names?pivots=store-installer-msi-exe
     - name: Create your MSI or EXE app by reserving a new name
-      href: msiexe/create-your-app-by-reserving-a-name.md
+      href: /apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msi-exe
     - name: Set pricing and availability for your MSI or EXE app
-      href: msiexe/set-app-pricing-and-availability.md
+      href: /apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msi-exe
     - name: Specify your MSI or EXE app's properties
-      href: msiexe/enter-app-properties.md
+      href: /apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msi-exe
     - name: Age ratings
-      href: msiexe/age-ratings.md
+      href: /apps/publish/publish-your-app/age-ratings?pivots=store-installer-msi-exe
     - name: Provide package details for your MSI or EXE app
-      href: msiexe/provide-package-details.md
+      href: /apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msi-exe
     - name: Create app Store listings for your MSI or EXE app
-      href: msiexe/create-app-store-listings.md
+      href: /apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msi-exe
     - name: Manage your MSI or EXE app's store listing
-      href: msiexe/manage-submission-options.md
+      href: /apps/publish/publish-your-app/manage-submission-options?pivots=store-installer-msi-exe
     - name: The MSI or EXE app certification process
-      href: msiexe/the-app-certification-process.md
+      href: /apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msi-exe
     - name: Publish update for your EXE or MSI app on the Store
       href: msiexe/update-your-app.md
     - name: Microsoft Store Submission API for MSI or EXE app 
@@ -128,27 +129,27 @@
     - name: Analyze your app's performance
       href: msiexe/analyze-app-performance.md
 - name: Publish your PWA app to the Microsoft Store
-  href: pwa/overview.md
+  href: /apps/publish/publish-your-app/overview?pivots=store-installer-pwa
   items:
     - name: Create your PWA by reserving a name
-      href: pwa/create-your-app-by-reserving-a-name.md
+      href: /apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-pwa
     - name: Manage app names
-      href: ../publish/manage-app-names.md
+      href: /apps/publish/publish-your-app/manage-app-names?pivots=store-installer-pwa
     - name: Turn your website into a high quality PWA
-      href: pwa/turn-your-website-pwa.md
+      href: /apps/publish/publish-your-app/turn-your-website-pwa?pivots=store-installer-pwa
     - name: Publish your PWA to the Microsoft Store
-      href: app-submissions.md
+      href: /apps/publish/publish-your-app/create-app-submission?pivots=store-installer-pwa
 - name: Publish an app add-on to the Microsoft Store
-  href: ../publish/add-on-submissions.md
+  href: /apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on
   items:
     - name: Set your add-on product type and product ID
-      href: ../publish/set-your-add-on-product-id.md
+      href: /apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on
     - name: Enter add-on properties
-      href: ../publish/enter-add-on-properties.md
+      href: /apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on
     - name: Set add-on pricing and availability
-      href: ../publish/set-add-on-pricing-and-availability.md
+      href: /apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on
     - name: Create add-on Store listings
-      href: ../publish/create-add-on-store-listings.md
+      href: /apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on
 - name: In-app ads
   href: ../publish/in-app-ads.md
 - name: App management and services
