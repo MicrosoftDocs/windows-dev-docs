@@ -66,7 +66,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 
     /* IWidgetProvider required functions that need to be implemented */
     void CreateWidget(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext WidgetContext);
-    void DeleteWidget(winrt::hstring const& widgetId);
+    void DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState);
     void OnActionInvoked(winrt::Microsoft::Windows::Widgets::Providers::WidgetActionInvokedArgs actionInvokedArgs);
     void OnWidgetContextChanged(winrt::Microsoft::Windows::Widgets::Providers::WidgetContextChangedArgs contextChangedArgs);
     void Activate(winrt::Microsoft::Windows::Widgets::Providers::WidgetContext widgetContext);
