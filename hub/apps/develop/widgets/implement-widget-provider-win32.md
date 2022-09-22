@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 > [!IMPORTANT]
-> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 1.
+> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 2.
 
 This article walks you through creating a simple widget provider that implements the **IWidgetProvider** interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget (TBD) that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
@@ -22,6 +22,7 @@ TBD - Screenshots of the two widgets
 This sample code in this article is adapted from the Windows App SDK Sample LINK TBD.
 
 ## Prerequisites
+To get started you will need Visual Studio 2017 or later. Make sure you add the workload labeled **Universal Windows Platform development** and add the component for C++ (v143). C++ is found under the Optional dropdown.
 
 ## Create a new win32 console app
 
@@ -41,6 +42,7 @@ In the precompiled header file, pch.h, add the following include directives.
 //pch.h 
 #pragma once
 #include <wil/cppwinrt.h>
+#include <wil/resource.h>
 ...
 #include <winrt/Microsoft.Windows.Widgets.Providers.h>
 ```
@@ -88,7 +90,7 @@ void UpdateWidget(CompactWidgetInfo const& localWidgetInfo);
 
 ## Prepare to track enabled widgets
 
-A widget provider can support a single widget or multiple widgets. Whenever the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has a associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each pinned widget. Widgets also can be in an active state, which is discussed in the [Activate and Deactivate](#activate-and-deactivate) section below, and we will track this state for each widget with a boolean value. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** declaration.
+A widget provider can support a single widget or multiple widgets. Whenever the widget host initiates an operation with the widget provider, it passes an ID to identify the widget associated with the operation. Each widget also has a associated name and a state value that can be used to store custom data. For this example, we'll declare a simple helper structure to store the ID, name, and data for each pinned widget. Widgets also can be in an active state, which is discussed in the [Activate and Deactivate](#activate-and-deactivate) section below, and we will track this state for each widget with a boolean value. Add the following definition to the WidgetProvider.h file, above the **WidgetProvider** struct declaration.
 
 ```cpp
 // WidgetProvider.h
@@ -245,7 +247,7 @@ const std::string countWidgetTemplate = R"(
 
 ## Implement the IWidgetProvider methods
 
-In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following line to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace.
+In the next few sections, we'll implement the methods of the **IWidgetProvider** interface. The helper method **UpdateWidget** that is called in several of these method implementations which will be shown later in this article. Before diving into the interface methods, add the following lines to `WidgetProvider.cpp`, after the include directives, to pull the widget provider APIs into the **winrt** namespace and allow access to the map we declared in the previous step.
 
 > [!NOTE]
 > Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
@@ -256,6 +258,8 @@ namespace winrt
 {
     using namespace Microsoft::Windows::Widgets::Providers;
 }
+
+std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWidgets{};
 ```
 
 ## CreateWidget
@@ -387,7 +391,7 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
 ## Update a widget
 
-Define the **UpdateWidget** helper method to update an enabled widget.  Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **UpdateWidget** to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **WidgetManager::GetDefault().UpdateWidget** to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
@@ -412,13 +416,14 @@ void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
     }
     else if (localWidgetInfo.widgetName == L"Counting_Widget")
     {
-        L"{ \"count\": " + winrt::to_hstring(localWidgetInfo.customState) + L" }";
+        dataJson = L"{ \"count\": " + winrt::to_hstring(localWidgetInfo.customState) + L" }";
     }
 
     updateOptions.Template(templateJson);
     updateOptions.Data(dataJson);
     // !!  You can store some custom state in the widget service that you will be able to query at any time.
     updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
+    winrt::WidgetManager::GetDefault().UpdateWidget(updateOptions);
 }
 ```
 
@@ -459,15 +464,16 @@ WidgetProvider::WidgetProvider()
 
 ## Instantiate the WidgetProvider class from main
 
-Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file.
+Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file. We will also be including **mutex** here.
 
 ```cpp
 // main.cpp
 ...
 #include "WidgetProvider.h"
+#include <mutex>
 ```
 
-Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your widget provider for COM activation. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the option "static const GUID =" and click **Copy** and then paste that into `main.cpp`. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name SAMPLE_PROVIDER_CLSID. Leave the commented version of the GUID because you will need this format later, when packaging your app.
+Next, you will need to create a [CLSID](/windows/win32/com/com-class-objects-and-clsids) that will be used to identify your widget provider for COM activation. Generate a GUID in Visual Studio by going to **Tools->Create GUID**. Select the option "static const GUID =" and click **Copy** and then paste that into `main.cpp`. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name widget_provider_clsid. Leave the commented version of the GUID because you will need this format later, when packaging your app.
 
 ```cpp
 // main.cpp
@@ -550,11 +556,11 @@ In the current release, only packaged apps can be registered as a widget provide
 ### Create an MSIX packaging project 
 
 In **Solution Explorer**, right-click your solution and select **Add->New Project...**. In the **Add a new project** dialog, select the "Windows Application Packaging Project" template and click **Next**. Set the project name to "ExampleWidgetProviderPackage" and click **Create**. When prompted, set the target version to TBD and click **OK**.
-Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click O
+Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click OK.
 
 ### Update the package manifest
 
-In **Solution Explorer** right-click the `Package.appmanifest` file and select **View Code** to open the manifest xml file. Next you need to add some namespace declarations for the app package extensions we will be using. Add the following namespace definitions to the top-level [Package](/uwp/schemas/appxpackage/uapmanifestschema/element-package) element.
+In **Solution Explorer** right-click the `Package.appxmanifest` file and select **View Code** to open the manifest xml file. Next you need to add some namespace declarations for the app package extensions we will be using. Add the following namespace definitions to the top-level [Package](/uwp/schemas/appxpackage/uapmanifestschema/element-package) element.
 
 ```xml
 <!-- Package.appmanifest -->
@@ -565,10 +571,10 @@ In **Solution Explorer** right-click the `Package.appmanifest` file and select *
 ```
 
 
-Inside the **Application** element, create a new empty element named **Extensions**.
+Inside the **Application** element, create a new empty element named **Extensions**. Make sure this comes after the closing tag for **uap:VisualElements**.
 
 ```xml
-<!-- Package.appmanifest -->
+<!-- Package.appxmanifest -->
 <Application>
 ...
     <Extensions>
@@ -580,7 +586,7 @@ Inside the **Application** element, create a new empty element named **Extension
 The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) extension. This registers the entry point of the executable with the OS. This extension is the packaged app equivalent of registering a COM server by setting a registry key, and is not specific to widget providers.Add the following **com:Extension** element as a child of the **Extensions** element. Change the GUID in the **Id** attribute of the **com:Class** element to the GUID you generated in a previous step.
 
 ```xml
-<!-- Package.appmanifest -->
+<!-- Package.appxmanifest -->
 <Extensions>
     <com:Extension Category="windows.comServer">
         <com:ComServer>
@@ -595,7 +601,7 @@ The first extension we need to add is the [ComServer](/uwp/schemas/appxpackage/u
 Next, add the extension that registers the app as a widget provider. Paste the [uap3:Extension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual) element in the following code snippet, as a child of the **Extensions** element. Be sure to replace the **ClassId** attribute of the **COM** element with the GUID you used in previous steps.
 
 ```xml
-<!-- Package.appmanifest -->
+<!-- Package.appxmanifest -->
 <Extensions>
     ...
     <uap3:Extension Category="windows.appExtension">
@@ -607,7 +613,7 @@ Next, add the extension that registers the app as a widget provider. Paste the [
                     </ProviderIcons>
                     <Activation>
                         <!-- Apps exports COM interface which implements IWidgetProvider -->
-                        <CreateInstance ClassId="ECB883FD-3755-4E1C-BECA-D3397A3FF15C" />
+                        <CreateInstance ClassId="80F4CB41-5758-4493-9180-4FB8D480E3F5" />
                     </Activation>
 
                     <TrustedPackageFamilyNames>
@@ -669,18 +675,18 @@ Next, add the extension that registers the app as a widget provider. Paste the [
             </uap3:Properties>
         </uap3:AppExtension>
     </uap3:Extension>
-<Extensions>
+</Extensions>
 ```
 
-For detailed descriptions and format information for all of these elements, see [widget-provider-manifest.md](Widget provider package manifest XML format).
+For detailed descriptions and format information for all of these elements, see [Widget provider package manifest XML format](widget-provider-manifest.md).
 
 ## Add icons and other images to your packaging project
 
-TBD - Waiting for final decision about the weather widget.
+In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and select **Add->New Folder**. Name this folder ProviderAssets as this is what was used in the `Package.appxmanifest` from the previous step. This is where we will store our **Icons** and **Screenshots** for our widgets. Once you add your desired Icons and Screenshots, make sure the image names match what comes after **Path=ProviderAssets\\** in your `Package.appxmanifest` or the widgets will not show up in the widget host.
 
 ## Testing your widget provider
 
-TBD
+In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the widget board. To see the widgets you will need to open the widget board and select **Add widgets** in the top right. Scroll to the bottom of the availble widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widget board and test their functionality.
 
 
 
