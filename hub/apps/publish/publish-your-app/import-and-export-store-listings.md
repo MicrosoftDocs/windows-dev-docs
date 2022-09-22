@@ -9,7 +9,7 @@ zone_pivot_groups: store-installer-packaging
 
 # Import and export store listings
 
-:::zone pivot="store-installer-msix,store-installer-pwa, store-installer-add-on"
+:::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 [!INCLUDE [name](../../../includes/store/msix/import-and-export-store-listings.md)]
 :::zone-end
 

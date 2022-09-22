@@ -19,7 +19,7 @@ After the certification process is complete, you'll get a certification report t
 When your app passes certification, it's ready to move to the **Publishing** process.
 
 - If you've indicated that your submission should be published as soon as possible (the default option), the publishing process will begin right away.
-- If this is the first time you've published the app, and you specified a **Release date** in the [Schedule](../../../apps/publish/publish-your-app/release-schedule.md#release) section, the app will become available according to your **Release date** selections.
+- If this is the first time you've published the app, and you specified a **Release date** in the [Schedule](../../../apps/publish/publish-your-app/release-schedule.md) section, the app will become available according to your **Release date** selections.
 - If you've used [Publishing hold options](../../../apps/publish/publish-your-app/manage-submission-options.md#publishing-hold-options) to specify that it should not be released until a certain date, we'll wait until that date to begin the publishing process, unless you select **Change release date**.
 - If you've used [Publishing hold options](../../../apps/publish/publish-your-app/manage-submission-options.md#publishing-hold-options) to specify that you want to publish the submission manually, we won't start the publishing process until you select **Publish now** (or select **Change release date** and pick a specific date).
 

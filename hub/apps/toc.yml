@@ -442,8 +442,6 @@ items:
             href: publish/publish-your-app/overview.md
           - name: Create your app by reserving a name
             href: publish/publish-your-app/reserve-your-apps-name.md
-          - name: Manage app names
-            href: publish/publish-your-app/manage-app-names.md
           - name: App submissions
             href: publish/publish-your-app/create-app-submission.md
           - name: Set app pricing and availability

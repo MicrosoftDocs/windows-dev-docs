@@ -6,13 +6,13 @@ If you prefer, you can define the specific markets in which you'd like to offer 
 
 By default, all markets are selected. You can unselect individual markets to exclude them, or you can click **Unselect all** and then add individual markets of your choice. You can search for a particular market in the search bar, and you can also change the dropdown from **All markets** to **Xbox markets** if you only want to view the markets in which you can sell Xbox products. Once you’ve finished, click **OK** to save your selections.
 
-:::image type="content" source="images/msiexe-set-app-markets.png" lightbox="images/msiexe-set-app-markets.png" alt-text="A screenshot of the Availability section where you can provide details of the market, you want to make your app available to.":::
+:::image type="content" source="../msi/images/msiexe-set-app-markets.png" lightbox="images/msiexe-set-app-markets.png" alt-text="A screenshot of the Availability section where you can provide details of the market, you want to make your app available to.":::
 
 Note that your selections here apply only to new acquisitions; if someone already has your app in a certain market, and you later remove that market, the people who already have the app in that market can continue to use it, but they won’t get the updates you submit, and no new customers in that market can get your app.
 
 > [!IMPORTANT]
 > It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in Partner Center.
-Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](age-ratings.md) for more info.
+Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](../../../apps/publish/publish-your-app/age-ratings.md) for more info.
 
 > [!NOTE]
 > For previously-published apps that include packages targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8x).
@@ -700,4 +700,4 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 </table>
 
 > [!NOTE]
-> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](../partner-center/account-types-locations-and-fees.md).
+> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](../../../apps/publish/partner-center/account-types-locations-and-fees.md).

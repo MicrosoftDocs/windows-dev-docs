@@ -14,3 +14,7 @@ The **Visibility** section of the [Pricing and availability page](price-and-avai
 :::zone pivot="store-installer-msix,store-installer-pwa,store-installer-add-on"
 [!INCLUDE [name](../../../includes/store/msix/visibility-options.md)]
 :::zone-end
+
+:::zone pivot="store-installer-msi-exe"
+[!INCLUDE [name](../../../includes/store/msi/visibility-options.md)]
+:::zone-end
