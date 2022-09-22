@@ -14,7 +14,7 @@ ms.custom: 19H1
 Although you can use most Windows Runtime (WinRT) APIs (see [Windows UWP namespaces](/uwp/api/)) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in a desktop app, or that have restrictions:
 
 * APIs that have dependencies on user interface (UI) features that were designed for use only in a Universal Windows Platform (UWP) app.
-* APIs that require package identity (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)). Such APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/), or that are sparse-packaged.
+* APIs that require package identity (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)). Such APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/).
 
 This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in a desktop app. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
