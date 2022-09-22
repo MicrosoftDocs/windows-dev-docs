@@ -1,4 +1,4 @@
-Follow these steps to publish your app to the Microsoft Store
+Follow these steps to publish your app to the Microsoft Store:
 
 | Topic                                                                                                     | Description          |
 |-----------------------------------------------------------------------------------------------------------|----------------------|
@@ -10,3 +10,13 @@ Follow these steps to publish your app to the Microsoft Store
 | [Create your app's store listing](../../../apps/publish/publish-your-app/create-app-store-listing.md)    | Create your app's page in the Microsoft Store. |
 | [Manage your app's submission](../../../apps/publish/publish-your-app/manage-submission-options.md)       | Provide details about how you would like Microsoft to process your app submission. |
 | [Get your app certified](../../../apps/publish/publish-your-app/app-certification-process.md)             | Microsoft's app certification process helps ensure only the highest quality apps are published on Windows. |
+
+These additional features are currently only available to MSIX apps.
+
+| Topic                                                                                         | Description |
+|-----------------------------------------------------------------------------------------------|-------------|
+| [Organizational licensing options](/uwp/publish/organizational-licensing)                     | Choose whether and how your app is offered for volume purchases through Microsoft Store for Business and Microsoft Store for Education. |
+| [Package flights](/uwp/publish/package-flights)                                               | You can use package flights to distribute specific packages to a limited group of testers. |
+| [Gradual package rollout](/uwp/publish/gradual-package-rollout)                               | Publish your app to a small percentage of your users to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. |
+| [Beta testing and targeted distribution](/uwp/publish/beta-testing-and-targeted-distribution) | No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. |
+| [Distribute LOB apps to enterprises](/uwp/publish/distribute-lob-apps-to-enterprises)         | Distribute your line of business app to your organization’s users without making it broadly available to the public. |

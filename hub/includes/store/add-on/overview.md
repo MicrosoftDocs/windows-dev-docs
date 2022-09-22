@@ -1,4 +1,4 @@
-Follow these steps to publish your app add-on to the Microsoft Store
+Follow these steps to publish your app add-on to the Microsoft Store:
 
 | Topic                                                                                                        | Description          |
 |--------------------------------------------------------------------------------------------------------------|----------------------|

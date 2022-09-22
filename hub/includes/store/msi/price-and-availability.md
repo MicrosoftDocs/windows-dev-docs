@@ -1,35 +1,29 @@
-The Availability page of the app submission process lets you declare how, when, and where your app will be available to customers, pricing model of your app and whether you'll offer a free trial. Here, we'll walk through the options on this page and what you should consider when entering this information.
+## Markets
 
-:::image type="content" source="images/msiexe-availability-overview.png" lightbox="images/msiexe-availability-overview.png" alt-text="A screenshot of the overview of Availability section in Partner Center page.":::
+The Microsoft Store reaches customers in over 240 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app.
 
-**Markets**<br>*Required*
+For more info, see [Define market selection](../../../apps/publish/publish-your-app/market-selection.md).
 
-:::image type="content" source="images/msiexe-set-app-markets.png" lightbox="images/msiexe-set-app-markets.png" alt-text="A screenshot of the Availability section where you can provide details of the market, you want to make your app available to.":::
+## Visibility
 
-The Microsoft Store is available in over 240 countries and regions around the world.  By default, your app will be available in all markets. If you prefer, you can choose the specific markets in which you'd like to offer your app. Microsoft will automatically offer your app in new markets and regions unless  you opt-out of this functionality here.
+The **Visibility** section allows you to set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 
-It is your responsibility to meet any local legal requirements, even if those requirements are not listed here or in Partner Center.
+For more info, see [Choose visibility options](../../../apps/publish/publish-your-app/visibility-options.md).
 
-Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions.
+## Schedule
 
-> [!NOTE]
-> Market selections apply only to new downloads. Existing users can continue to use your app even if you later disable their market.
+By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the Visibility section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
-**Discoverability**<br>*Required
+For more info, see [Configure precise release scheduling](../../../apps/publish/publish-your-app/release-schedule.md).
+
+## Discoverability
 
 The selections in the Discoverability section indicate how customers can discover and acquire your app.
 
-:::image type="content" source="images/msiexe-set-app-discoverability.png" lightbox="images/msiexe-set-app-discoverability.png" alt-text="A screenshot of the Availability section where you can configure your app's discoverability settings.":::
+### Make this product available and discoverable in the Store
 
-- **Make this product available and discoverable in the Store** - This is the default option. Leave this option selected if you want your app to be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.
-- **Make this product available but not discoverable in the Store** - When you select this option, your app can’t be found in the Store by customers searching or browsing; the only way to get to your app’s listing is by a direct link.
+This is the default option. Leave this option selected if you want your app to be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.
 
-**Pricing**<br>*Required*
+### Make this product available but not discoverable in the Store
 
-If your app pricing is based on one-time payment (collected through in-app purchase), you can choose Paid. You can choose Subscription if your app pricing is based on a recurring fee. Select freemium option if you let users use limited functionality in your app for free and upgrade through in-app purchases.
-
-:::image type="content" source="images/msiexe-set-app-pricing.png" lightbox="images/msiexe-set-app-pricing.png" alt-text="A screenshot of the Availability section where you can configure your app's pricing model.":::
-
-**Free trial**<br>*Selection required for paid and subscription apps only*
-
-Developers who offer paid or subscription apps often allow customers to try out their app for free before paying. By default, free trials are disabled. If you'd like to offer a trial, select the duration you would like to offer from the drop down.
+When you select this option, your app can’t be found in the Store by customers searching or browsing; the only way to get to your app’s listing is by a direct link.

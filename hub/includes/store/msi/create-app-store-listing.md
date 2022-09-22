@@ -56,7 +56,7 @@ These are short summaries of your app's key features. They are displayed to the 
 
 See [App screenshots and images](../../../apps/publish/publish-your-app/screenshots-and-images.md) for more information.
 
-**Store logos**<br>*Required: 1:1 box art*<br>*Recommended: 2:3 poster art*
+**Store logos**<br>*Required: 1:1 box art*<br>*Recommended: 1:1 box art and 2:3 poster art*
 
 Store logos are optional images that you can upload to enhance the way your app is displayed to customers.
 

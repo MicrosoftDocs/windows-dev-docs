@@ -502,6 +502,18 @@ items:
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures
                 href: publish/publish-your-app/avoid-common-certification-failures.md
+          #- name: Additional Microsoft Store features for MSIX apps
+          #  items:
+          #    - name: Organizational licensing options
+          #      href: /uwp/publish/organizational-licensing
+          #    - name: Package flights
+          #      href: /uwp/publish/package-flights
+          #    - name: Gradual package rollout
+          #      href: /uwp/publish/gradual-package-rollout
+          #    - name: Beta testing and targeted distribution
+          #      href: /uwp/publish/beta-testing-and-targeted-distribution
+          #    - name: Distribute LOB apps to enterprises
+          #      href: /uwp/publish/distribute-lob-apps-to-enterprises
   - name: API reference
     href: api-reference/index.md
     items:

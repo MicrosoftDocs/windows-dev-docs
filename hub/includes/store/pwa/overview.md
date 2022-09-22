@@ -1,6 +1,6 @@
-To publish your PWA app, first convert your website into a PWA app. Then you can publish the PWA's MSIX installer in the store
+To publish your PWA app, first convert your website into a PWA app. Then you can publish the PWA's MSIX installer in the store.
 
-Follow these steps to publish your app to the Microsoft Store
+Follow these steps to publish your app to the Microsoft Store:
 
 | Topic                                                                                                     | Description          |
 |-----------------------------------------------------------------------------------------------------------|----------------------|
