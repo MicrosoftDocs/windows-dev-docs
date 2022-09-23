@@ -1,6 +1,6 @@
 ## Discoverability
 
-The **Discoverability** section of the [Pricing and availability page](price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. 
+The **Discoverability** section of the [Pricing and availability page](../../../apps/publish/publish-your-app/price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired.
 
 :::image type="content" source="images/msiexe-set-app-discoverability.png" lightbox="images/msiexe-set-app-discoverability.png" alt-text="A screenshot of the Availability section where you can configure your app's discoverability settings.":::
 

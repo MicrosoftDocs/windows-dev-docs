@@ -6,7 +6,7 @@ App properties describe important details about your app including requirements,
 
 Categories and subcategories help users discover your app, and they help users understand what your app does.
 
-:::image type="content" source="images/msiexe-set-app-category-subcategory.png" lightbox="images/msiexe-set-app-category&subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
+:::image type="content" source="images/msiexe-set-app-category-subcategory.png" lightbox="images/msiexe-set-app-category-subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
 
 Choose the category that best describes your app. If that category includes subcategories, select the one that best describes your app. If none of the available subcategories seem to fit, you can leave subcategory blank, or choose a subcategory you think customers who would want your app would be most likely to browse.
 

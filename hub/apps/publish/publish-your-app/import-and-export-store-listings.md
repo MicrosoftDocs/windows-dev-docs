@@ -13,6 +13,6 @@ zone_pivot_groups: store-installer-packaging
 [!INCLUDE [name](../../../includes/store/msix/import-and-export-store-listings.md)]
 :::zone-end
 
-::zone pivot="store-installer-msi-exe"
+:::zone pivot="store-installer-msi-exe"
 [!INCLUDE [name](../../../includes/store/msi/import-and-export-store-listings.md)]
 :::zone-end
