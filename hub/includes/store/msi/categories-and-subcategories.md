@@ -10,7 +10,7 @@ If you choose **Games** for your category, you are required to select at least o
 > If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission; it must be continue to be published in the **Games** category (although you can change the genre selections in a new submission). Likewise, you can't choose the **Games** category when updating an app that you previously published in a different category.
 For apps which are not games, you must choose one category, and can optionally choose from any subcategories that are available. You can't select more than one subcategory for apps which are not in the **Games** category. Only some categories have subcategories, and you can only use a subcategory if it belongs to the category you selected.
 
-To change the category or subcategory of an app that's already in the Store (except for changing from **Games** to another category or vice versa), [create a new submission](create-app-submission.md) and select the new category or subcategory.
+To change the category or subcategory of an app that's already in the Store (except for changing from **Games** to another category or vice versa), [create a new submission](../../../apps/publish/publish-your-app/create-app-submission.md) and select the new category or subcategory.
 
 ## Categories and subcategories
 
