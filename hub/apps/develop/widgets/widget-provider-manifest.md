@@ -112,7 +112,7 @@ Specifies activation information for the widget provider. If both **CreateInstan
 
 ## ActivateApplication
 
-When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings.
+When **ActivateApplication** is specified, the widget provider is activated via the command line, with the arguments provided as [base64url encoded](https://datatracker.ietf.org/doc/html/rfc4648#section-5) JSON strings. It is recommended that widget providers use the **CreateInstance** activiation type. For information on the **ActivateApplication** command line format, see [Widget provider ActivateApplication protocol](widget-provider-activateapplication-protocol.md).
 
 ## Definitions
 
