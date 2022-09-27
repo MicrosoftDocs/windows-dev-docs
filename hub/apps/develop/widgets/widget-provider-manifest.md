@@ -56,6 +56,8 @@ WidgetProvider
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Capability
 
+&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ThemeResources
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icons
@@ -90,10 +92,6 @@ WidgetProvider
 
 The root element of the widget provider registration information.
 
-| Attribute | Type | Required | Description | Default value |
-|---|---|---|---|---|
-| **Icon**| string | Yes | The package-relative path to an icon image file. This icon is shown in the Widgets host in the **Add Widgets dialog** and is displayed when grouping multiple widgets from the same widget provider. | N/A |
-
 ![A screenshot of the Add Widget dialog in the Widgets board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added](images/widget-picker.png)
 
 ## WidgetProviderIcons
@@ -126,7 +124,7 @@ Represents the registration for a single widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Name**| string | Yes | A name that identifies the widget. Widget provider implementations use this name to determine or specify which of the app's widgets is being referenced for each operation. The name must be unique for all widgets defined within the app manifest file.  | N/A |
+| **Id**| string | Yes | An ID that identifies the widget. Widget provider implementations use this name to determine or specify which of the app's widgets is being referenced for each operation. The name must be unique for all widgets defined within the app manifest file.  | N/A |
 | **DisplayName** | string | Yes | The name of the widget that is displayed on the Widgets host. | N/A |
 | **Description** | string | Yes | Optionally create custom actions with buttons and inputs. | N/A |
 | **AllowMultiple** | boolean | No | Set to true if the widget provider supports multiple widgets. This attribute is optional and the default value is false. | true |
@@ -139,11 +137,13 @@ Optional. Specifies capabilities for a single widget.
 
 Specifies a capability for a widget.
 
+## Size
+
+Specifies supported sizes for the associated widget.
+
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **WidgetSize**| string | Yes | Specifies a supported size for a widget. The value must be one of the following: "small", "medium", "large" | N/A |
-
-Specify one **Capability** element for each size the provider supports. If the **Capabilities** element is omitted, the default behavior is the same as if a single **Capability** element with the value "Large" is provided. 
+| **Name**| string | Yes | Specifies a supported size for a widget. The value must be one of the following: "small", "medium", "large" | N/A |
 
 ## ThemeResources
 
