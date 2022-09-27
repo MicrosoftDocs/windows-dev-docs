@@ -29,33 +29,47 @@ The following navigation elements are not supported in Windows Widgets:
 
 - Pivots will not be supported within widgets
 - L2 Pages will not be supported within widgets
-- Vertical or horizontal scrolling will not be supported within Widgets [TBD - Link to info about carousel]
+- Vertical or horizontal scrolling will not be supported within Widgets
 
 ## Containers
 
-![Four images of widgets that illustrate containers. TBD - what is this image demonstrating?](./images/widgets-containers.png)
+The following images show example uses of container elements in a widget template. The containers group visual elements into columns and rows to create a hierarchical grid structure.
 
-TBD
+![Four images of widgets that illustrate containers. The widgets in the images have elements divided into rows and columns to provide a hierarchical grid structure.](./images/widgets-containers.png)
+
+
 
 ## Image links
 
-![Two images of widgets that illustrate image links. TBD - what is this image demonstrating?](./images/widgets-image-links.png)
+The following images show example uses of image link elements in a widget template. 
+
+![Two images of widgets that illustrate image links. The images are arranged in columns and rows making a grid.](./images/widgets-image-links.png)
 
 ## Pagination
 
-![Four images of widgets that illustrate pagination. TBD - what is this image demonstrating?](./images/widgets-image-links.png)
+The following images show examples of pagination in a widget template. The pagination controls can be aligned horizontally or vertically. Navigation arrows appear in response to a cursor hover. 
 
-TBD
+![This set of two images show horizontal pagination. In the first image, a column of dots is aligned along the right side. One dot is larger to indicate the currently active page. In the second image a cursor mouses over an down-pointing arrow at the bottom of the widget that lets the user move to the next page. There is a matching up-pointing arrow on the top of the widget for navigating to the previous page.](./images/widgets-pagination.png)
+
+![This set of two images show vertical pagination. In the first image, a row of dots is aligned along the bottom. One dot is larger to indicate the currently active page. In the second image a cursor mouses over an right-pointing arrow on the right side of the widget that lets the user move to the next page. There is a matching left-pointing arrow on the left side of the widget for navigating to the previous page.](./images/widgets-pagination-2.png)
+
+![These two images demonstrate how the pagination controls look when the widget has an image background.](./images/widgets-pagination-3.png)
+
+
 
 ## Hyperlinks
 
-![Four images of widgets that illustrate hyperlinks. TBD - what is this image demonstrating?](./images/widgets-image-links.png)
+The following images show example of hyperlinks in a widget template.
 
-TBD
+![Two images of widgets that illustrate hyperlinks. The first image shows a hyperlinked string of text. The text is plain. In the second image, a mouse cursor hovers over the hyperlink, which causes the text to be underlined.](./images/widgets-hyperlinks.png)
+
+![An image showing a hyperlink centered at the bottom of the widget, just above the horizontal row of pagination dots. A red X indicates that the pagination dots and the hyperlink should not be in the same space. On the right another image shows the hyperlink at the bottom, but the pagination dots are in aligned vertically in a column on the right side. A green check indicates that this placement of the two elements is correct.](./images/widgets-hyperlinks-2.png)
+
+
 
 ## Dropdown menus
 
-![Two images of widgets that illustrate dropdown menus. In the left image the dropdown menu is collapsed. In the right image the dropdown is expanded and extends over the border of the widget](./images/widgets-image-links.png)
+![Two images of widgets that illustrate dropdown menus. In the left image the dropdown menu is collapsed. In the right image the dropdown is expanded and extends over the border of the widget](./images/widgets-dropdown-menus.png)
 
 Widgets are able to extend slightly beyond their widget size temporarily if the user is interacting with a menu or dropdown. The menu behavior should be light dismiss and close the menu if a user click outside of the menu / dropdown area.
 

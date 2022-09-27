@@ -11,7 +11,9 @@ ms.localizationpriority: medium
 
 # Widgets overview
 
-Windows Widgets are small UI containers that display text and graphics, associated with an app installed on the device. Installed widgets are displayed in a grid in the Widgets Board a flyout plane that overlays the Windows desktop when the user clicks Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the taps the Widgets icon in the task bar. Widgets help people stay on top of what's important to them by aggregating personalized content and quick actions from the apps they use. They are quickly consumable and actionable. Widgets are not meant to replace apps and websites, but rather provide frictionless access to most-needed information or often-used functionalities that people can read/trigger right away. When designing your widget, consider the kind of value it will bring to your consumers.  
+Windows Widgets are small UI containers that display text and graphics, associated with an app installed on the device. Installed widgets are displayed in a grid in the Widgets Board a flyout plane that overlays the Windows desktop when the user clicks Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the taps the Widgets icon in the task bar. Widgets help people stay on top of what's important to them by aggregating personalized content and quick actions from the apps they use. They are quickly consumable and actionable. Widgets are not meant to replace apps and websites, but rather provide frictionless access to most-needed information or often-used functionalities that people can read/trigger right away. When designing your widget, consider the kind of value it will bring to your consumers. 
+
+:::image type="content" source="images/widgets-hero-image.png" alt-text="Screenshot of the Widgets Board. The board is a rounded rectangle with the time displayed at the top, followed by a search bar. The rest of the board is a grid of rounded rectangles each representing a widget. The individual widgets show top news stories, current weather, current traffic, etc.":::
 
 ## Widgets terminology
 
