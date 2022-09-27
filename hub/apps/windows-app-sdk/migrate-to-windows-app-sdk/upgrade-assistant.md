@@ -298,13 +298,13 @@ Here's the consolidated output from the next few substeps:
             TODO UA307 Default back button in the title bar does not exist in WinUI3 apps.
             The tool has generated a custom back button in the MainWindow.xaml.cs file.
             Feel free to edit its position, behavior and use the custom back button instead.
-            Read: https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
+            Read: https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
 [18:05:45 INF] Diagnostic UA307 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\MainPage.xaml.cs
 [18:05:45 WRN] D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
             TODO UA307 Default back button in the title bar does not exist in WinUI3 apps.
             The tool has generated a custom back button in the MainWindow.xaml.cs file.
             Feel free to edit its position, behavior and use the custom back button instead.
-            Read: https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
+            Read: https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
 [18:05:45 INF] Diagnostic UA307 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
 [18:05:45 INF] Running analyzers on PhotoLab
 [18:05:48 INF] Identified 4 diagnostics in project PhotoLab
@@ -312,7 +312,7 @@ Here's the consolidated output from the next few substeps:
             TODO UA307 Default back button in the title bar does not exist in WinUI3 apps.
             The tool has generated a custom back button in the MainWindow.xaml.cs file.
             Feel free to edit its position, behavior and use the custom back button instead.
-            Read: https://docs.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
+            Read: https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1#restoring-back-button-functionality
 [18:05:48 INF] Diagnostic UA307 fixed in D:\VisualStudioProjects\Windows-appsample-photo-lab-master\PhotoLab\DetailPage.xaml.cs
 [18:05:48 INF] Running analyzers on PhotoLab
 [18:05:51 INF] Identified 3 diagnostics in project PhotoLab
