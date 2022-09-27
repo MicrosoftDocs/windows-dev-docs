@@ -1,13 +1,14 @@
 ---
 title: Use a SQLite database in a UWP app
 description: Learn how to use a SQLite database in a UWP app to store and retrieve data in a light-weight database on the user's device.
-ms.date: 06/26/2020
+ms.date: 09/23/2022
 ms.topic: article
 keywords: windows 10, uwp, SQLite, database
 ms.localizationpriority: medium
 ---
 
 # Use a SQLite database in a UWP app
+
 You can use SQLite to store and retrieve data in a light-weight database on the user's device. This guide shows you how.
 
 ## Some benefits of using SQLite for local storage
@@ -133,30 +134,16 @@ We'll do these things:
 
 ### Prepare the data access class
 
-From your UWP project, add a reference to the **DataAccessLibrary** project in your solution.
-
-![Data access class library](images/ref-class-library.png)
-
-Add the following ``using`` statement to the **App.xaml.cs** and **MainPage.xaml.cs** files in your UWP project.
-
-```csharp
-using DataAccessLibrary;
-```
-
-Open the **DataAccess** class in your **DataAccessLibrary** solution and make that class static.
+Open the `DataAccess` class in your project and make that class static.
 
 >[!NOTE]
 >While our example will place data access code in a static class, it's just a design choice and is completely optional.
 
 ```csharp
-namespace DataAccessLibrary
+public static class DataAccess
 {
-    public static class DataAccess
-    {
 
-    }
 }
-
 ```
 
 Add the following using statements to the top of this file.
@@ -166,10 +153,9 @@ using Microsoft.Data.Sqlite;
 using System.Collections.Generic;
 ```
 
-
 ### Initialize the SQLite database
 
-Add a method to the **DataAccess** class that initializes the SQLite database.
+Add a method to the `DataAccess` class that initializes the SQLite database.
 
 ```csharp
 public async static void InitializeDatabase()
@@ -194,9 +180,9 @@ public async static void InitializeDatabase()
 
 This code creates the SQLite database and stores it in the application's local data store.
 
-In this example, we name the database ``sqlliteSample.db`` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0&preserve-view=true) objects that you instantiate.
+In this example, we name the database `sqlliteSample.db` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0&preserve-view=true) objects that you instantiate.
 
-In the constructor of the **App.xaml.cs** file of your UWP project, call the ``InitializeDatabase`` method of the **DataAccess** class.
+In the constructor of the **App.xaml.cs** file of your UWP project, call the `InitializeDatabase` method of the `DataAccess` class.
 
 ```csharp
 public App()
@@ -205,14 +191,12 @@ public App()
     this.Suspending += OnSuspending;
 
     DataAccess.InitializeDatabase();
-
 }
 ```
 
-
 ### Insert data into the SQLite database
 
-Add a method to the **DataAccess** class that inserts data into the SQLite database. This code uses parameters in the query to prevent SQL injection attacks.
+Add a method to the `DataAccess` class that inserts data into the SQLite database. This code uses parameters in the query to prevent SQL injection attacks.
 
 ```csharp
 public static void AddData(string inputText)
@@ -235,7 +219,6 @@ public static void AddData(string inputText)
 
 }
 ```
-
 
 ### Retrieve data from the SQLite database
 
@@ -267,7 +250,7 @@ public static List<String> GetData()
 }
 ```
 
-The [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_Read) method advances through the rows of returned data. It returns **true** if there are rows left, otherwise it returns **false**.
+The [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_Read) method advances through the rows of returned data. It returns `true` if there are rows left, otherwise it returns `false`.
 
 The [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) and [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choose a method based on what type of data the column contains.
 
@@ -293,9 +276,9 @@ In the **MainPage.xaml** file of the UWP project, add the following XAML.
 </Grid>
 ```
 
-This basic user interface gives the user a ``TextBox`` that they can use to type a string that we'll add to the SQLite database. We'll connect the ``Button`` in this UI to an event handler that will retrieve data from the SQLite database and then show that data in the ``ListView``.
+This basic user interface gives the user a `TextBox` that they can use to type a string that we'll add to the SQLite database. We'll connect the `Button` in this UI to an event handler that will retrieve data from the SQLite database and then show that data in the `ListView`.
 
-In the **MainPage.xaml.cs** file, add the following handler. This is the method that we associated with the ``Click`` event of the ``Button`` in the UI.
+In the **MainPage.xaml.cs** file, add the following handler. This is the method that we associated with the `Click` event of the `Button` in the UI.
 
 ```csharp
 private void AddData(object sender, RoutedEventArgs e)
@@ -310,14 +293,14 @@ That's it. Explore the [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite
 
 ## Next steps
 
-**Connect your app directly to a SQL Server database**
+#### Connect your app directly to a SQL Server database
 
 See [Use a SQL Server database in a UWP app](sql-server-databases.md).
 
-**Share code between different apps across different platforms**
+#### Share code between different apps across different platforms
 
 See [Share code between desktop and UWP](../porting/desktop-to-uwp-migrate.md).
 
-**Add master detail pages with Azure SQL back ends**
+#### Add master detail pages with Azure SQL back ends
 
 See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
