@@ -368,6 +368,8 @@ items:
           href: develop/widgets/implement-widget-provider-win32.md
         - name: Widget provider package manifest XML format
           href: develop/widgets/widget-provider-manifest.md
+        - name: Widget provider ActivateApplication protocol
+          href: develop/widgets/widget-provider-activateapplication-protocol.md
       - name: Platform
         items:
         - name: C#/WinRT
