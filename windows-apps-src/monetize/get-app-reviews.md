@@ -61,7 +61,7 @@ For a list of the supported fields and support operators for each field, see the
 | Fields        | Supported operators   |  Description        |
 |---------------|--------|-----------------|
 | market | eq, ne | A string that contains the ISO 3166 country code of the device market. |
-| osVersion  | eq, ne  | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion  | eq, ne  | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows 11</strong></li><li><strong>Unknown</strong></li></ul>  |
 | deviceType  | eq, ne  | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | isRevised  | eq, ne  | Specify <strong>true</strong> to filter for reviews that have been revised; otherwise <strong>false</strong>.  |
 | packageVersion  | eq, ne  | The version of the app package that was reviewed.  |

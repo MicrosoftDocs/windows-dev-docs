@@ -1,12 +1,11 @@
 ---
-ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Partner Center account.
 title: Manage package flight submissions
 ms.date: 04/16/2018
 ms.topic: article
-keywords: windows 10, uwp, Microsoft Store submission API, flight submissions
 ms.localizationpriority: medium
 ---
+
 # Manage package flight submissions
 
 The Microsoft Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
@@ -75,9 +74,9 @@ To create a submission for a package flight, follow this process.
 
 1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Partner Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
 
-2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+1. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
-3. [Create a package flight submission](create-a-flight-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
+1. [Create a package flight submission](create-a-flight-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions
@@ -88,9 +87,9 @@ To create a submission for a package flight, follow this process.
     > [!NOTE]
     > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob Storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](/azure/storage/common/storage-sas-overview) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](/azure/storage/common/storage-sas-overview).
 
-4. If you are adding new packages for the submission, [prepare the packages](../publish/app-package-requirements.md) and add them to a ZIP archive.
+1. If you are adding new packages for the submission, [prepare the packages](../publish/app-package-requirements.md) and add them to a ZIP archive.
 
-5. Revise the [flight submission](#flight-submission-object) data with any required changes for the new submission, and execute the following method to [update the package flight submission](update-a-flight-submission.md).
+1. Revise the [flight submission](#flight-submission-object) data with any required changes for the new submission, and execute the following method to [update the package flight submission](update-a-flight-submission.md).
 
     ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
@@ -98,13 +97,13 @@ To create a submission for a package flight, follow this process.
       > [!NOTE]
       > If you are adding new packages for the submission, make sure you update the submission data to refer to the name and relative path of these files in the ZIP archive.
 
-4. If you are adding new packages for the submission, upload the ZIP archive to [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
+1. If you are adding new packages for the submission, upload the ZIP archive to [Azure Blob Storage](/azure/storage/storage-introduction#blob-storage) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
 
     * [Azure Storage Client Library for .NET](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage SDK for Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob Storage using the [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob?view=azure-dotnet-legacy) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
+    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob Storage using the [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -113,13 +112,13 @@ To create a submission for a package flight, follow this process.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Commit the package flight submission](commit-a-flight-submission.md) by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account.
+1. [Commit the package flight submission](commit-a-flight-submission.md) by executing the following method. This will alert Partner Center that you are done with your submission and that your updates should now be applied to your account.
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
-6. Check on the commit status by executing the following method to [get the status of the package flight submission](get-status-for-a-flight-submission.md).
+1. Check on the commit status by executing the following method to [get the status of the package flight submission](get-status-for-a-flight-submission.md).
 
     ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
@@ -127,7 +126,7 @@ To create a submission for a package flight, follow this process.
 
     To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
 
-7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting Partner Center.
+1. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting Partner Center.
 
 <span/>
 
@@ -149,7 +148,7 @@ For more information, see our [StoreBroker page on GitHub](https://github.com/Mi
 
 ## Manage a gradual package rollout for a package flight submission
 
-You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
+You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10 and Windows 11. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
 
 To programmatically enable a gradual package rollout for a package flight submission, follow this process using methods in the Microsoft Store submission API:
 
@@ -274,7 +273,6 @@ This resource contains additional details about the status of a submission. This
 |  warnings               |   object      | An array of [status detail resources](#status-detail-object) that contain warning details for the submission.     |
 |  certificationReports               |     object    |   An array of [certification report resources](#certification-report-object) that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails.    |  
 
-
 <span id="status-detail-object" />
 
 ### Status detail resource
@@ -286,7 +284,6 @@ This resource contains additional information about any related errors or warnin
 |  code               |    string     |   A [submission status code](#submission-status-code) that describes the type of error or warning. |  
 |  details               |     string    |  A message with more details about the issue.     |
 
-
 <span id="certification-report-object" />
 
 ### Certification report resource
@@ -297,7 +294,6 @@ This resource provides access to the certification report data for a submission.
 |-----------------|---------|------|
 |     date            |    string     |  The date and time the report was generated, in ISO 8601 format.    |
 |     reportUrl            |    string     |  The URL at which you can access the report.    |
-
 
 <span id="flight-package-object" />
 
@@ -327,18 +323,17 @@ This resource has the following values.
 > [!NOTE]
 > When calling the [update a package flight submission](update-a-flight-submission.md) method, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of this object are required in the request body. The other values are populated by Partner Center.
 
-| Value           | Type    | Description              |
-|-----------------|---------|------|
-| fileName   |   string      |  The name of the package.    |  
-| fileStatus    | string    |  The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  An ID that uniquely identifies the package. This value is used by Partner Center.   |     
-| version    |  string   |  The version of the app package. For more information, see [Package version numbering](../publish/package-version-numbering.md).   |   
-| architecture    |  string   |  The architecture of the app package (for example, Arm).   |     
-| languages    | array    |  An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](../publish/supported-languages.md).    |     
-| capabilities    |  array   |  An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](../packaging/app-capability-declarations.md).   |     
-| minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul>   |    
-
+| Value                 | Type   | Description              |
+|-----------------------|--------|------|
+| fileName              | string | The name of the package.    |  
+| fileStatus            | string | The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul> |  
+| id                    | string | An ID that uniquely identifies the package. This value is used by Partner Center. |
+| version               | string | The version of the app package. For more information, see [Package version numbering](../publish/package-version-numbering.md). |
+| architecture          | string | The architecture of the app package (for example, ARM). |
+| languages             | array  | An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](../publish/supported-languages.md). |
+| capabilities          | array  | An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](../packaging/app-capability-declarations.md). |
+| minimumDirectXVersion | string | The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul> |
+| minimumSystemRam      | string | The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul> |
 
 <span id="package-delivery-options-object" />
 
@@ -363,11 +358,11 @@ This resource contains gradual package rollout and mandatory update settings for
 
 This resource has the following values.
 
-| Value           | Type    | Description        |
-|-----------------|---------|------|
-| packageRollout   |   object      |   A [package rollout resource](#package-rollout-object) that contains gradual package rollout settings for the submission.    |  
-| isMandatoryUpdate    | boolean    |  Indicates whether you want to treat the packages in this submission as mandatory for self-installing app updates. For more information about mandatory packages for self-installing app updates, see [Download and install package updates for your app](../packaging/self-install-package-updates.md).    |  
-| mandatoryUpdateEffectiveDate    |  date   |  The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone.   |        
+| Value                        | Type    | Description |
+|------------------------------|---------|-------------|
+| packageRollout               | object  | A [package rollout resource](#package-rollout-object) that contains gradual package rollout settings for the submission.    |  
+| isMandatoryUpdate            | boolean | Indicates whether you want to treat the packages in this submission as mandatory for self-installing app updates. For more information about mandatory packages for self-installing app updates, see [Download and install package updates for your app](../packaging/self-install-package-updates.md).    |  
+| mandatoryUpdateEffectiveDate | date    | The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone. |
 
 <span id="package-rollout-object" />
 
@@ -375,12 +370,12 @@ This resource has the following values.
 
 This resource contains gradual [package rollout settings](#manage-gradual-package-rollout) for the submission. This resource has the following values.
 
-| Value           | Type    | Description        |
-|-----------------|---------|------|
-| isPackageRollout   |   boolean      |  Indicates whether gradual package rollout is enabled for the submission.    |  
-| packageRolloutPercentage    | float    |  The percentage of users who will receive the packages in the gradual rollout.    |  
-| packageRolloutStatus    |  string   |  One of the following strings that indicates the status of the gradual package rollout: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  The ID of the submission that will be received by customers who do not get the gradual rollout packages.   |          
+| Value                    | Type    | Description |
+|--------------------------|---------|-------------|
+| isPackageRollout         | boolean | Indicates whether gradual package rollout is enabled for the submission. |  
+| packageRolloutPercentage | float   | The percentage of users who will receive the packages in the gradual rollout. |  
+| packageRolloutStatus     | string  | One of the following strings that indicates the status of the gradual package rollout: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul> |  
+| fallbackSubmissionId     | string  | The ID of the submission that will be received by customers who do not get the gradual rollout packages. |
 
 > [!NOTE]
 > The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Partner Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
@@ -397,32 +392,32 @@ These methods use the following enums.
 
 The following codes represent the status of a submission.
 
-| Code           |  Description      |
-|-----------------|---------------|
-|  None            |     No code was specified.         |     
-|      InvalidArchive        |     The ZIP archive containing the package is invalid or has an unrecognized archive format.  |
-| MissingFiles | The ZIP archive does not have all files which were listed in your submission data, or they are in the wrong location in the archive. |
-| PackageValidationFailed | One or more packages in your submission failed to validate. |
-| InvalidParameterValue | One of the parameters in the request body is invalid. |
-| InvalidOperation | The operation you attempted is invalid. |
-| InvalidState | The operation you attempted is not valid for the current state of the package flight. |
-| ResourceNotFound | The specified package flight could not be found. |
-| ServiceError | An internal service error prevented the request from succeeding. Try the request again. |
-| ListingOptOutWarning | The developer removed a listing from a previous submission, or did not include listing information that is supported by the package. |
-| ListingOptInWarning  | The developer added a listing. |
-| UpdateOnlyWarning | The developer is trying to insert something that only has update support. |
-| Other  | The submission is in an unrecognized or uncategorized state. |
+| Code                     | Description |
+|--------------------------|-------------|
+| None                     | No code was specified. |
+| InvalidArchive           | The ZIP archive containing the package is invalid or has an unrecognized archive format.  |
+| MissingFiles             | The ZIP archive does not have all files which were listed in your submission data, or they are in the wrong location in the archive. |
+| PackageValidationFailed  | One or more packages in your submission failed to validate. |
+| InvalidParameterValue    | One of the parameters in the request body is invalid. |
+| InvalidOperation         | The operation you attempted is invalid. |
+| InvalidState             | The operation you attempted is not valid for the current state of the package flight. |
+| ResourceNotFound         | The specified package flight could not be found. |
+| ServiceError             | An internal service error prevented the request from succeeding. Try the request again. |
+| ListingOptOutWarning     | The developer removed a listing from a previous submission, or did not include listing information that is supported by the package. |
+| ListingOptInWarning      | The developer added a listing. |
+| UpdateOnlyWarning        | The developer is trying to insert something that only has update support. |
+| Other                    | The submission is in an unrecognized or uncategorized state. |
 | PackageValidationWarning | The package validation process resulted in a warning. |
 
 <span/>
 
 ## Related topics
 
-* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flights using the Microsoft Store submission API](manage-flights.md)
-* [Get a package flight submission](get-a-flight-submission.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Update a package flight submission](update-a-flight-submission.md)
-* [Commit a package flight submission](commit-a-flight-submission.md)
-* [Delete a package flight submission](delete-a-flight-submission.md)
-* [Get the status of a package flight submission](get-status-for-a-flight-submission.md)
+- [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+- [Manage package flights using the Microsoft Store submission API](manage-flights.md)
+- [Get a package flight submission](get-a-flight-submission.md)
+- [Create a package flight submission](create-a-flight-submission.md)
+- [Update a package flight submission](update-a-flight-submission.md)
+- [Commit a package flight submission](commit-a-flight-submission.md)
+- [Delete a package flight submission](delete-a-flight-submission.md)
+- [Get the status of a package flight submission](get-status-for-a-flight-submission.md)

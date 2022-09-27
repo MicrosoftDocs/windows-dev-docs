@@ -25,6 +25,15 @@ The experimental channel provides releases of the Windows App SDK that include [
 - [Version 1.0 Experimental](#version-10-experimental-100-experimental1)
 - [Version 0.8 Preview](#version-08-preview-080-preview)
 
+## Version 1.2 Experimental (1.2.0-experimental2)
+
+This is the latest release of the experimental channel. It supports all [experimental channel features](release-channels.md#features-available-by-release-channel) and features from [1.2.0-preview 1](preview-channel.md#version-12-preview-1-120-preview1).
+
+To download, retarget your WinAppSDK NuGet version to `1.2.220909.2-experimental2`.
+
+### Fixed issue
+In upcoming Windows Insider Preview builds, applications using Windows App SDK would fail to launch.
+
 ## Version 1.2 Experimental (1.2.0-experimental1)
 
 This is the latest release of the experimental channel. It supports all [experimental channel features](release-channels.md#features-available-by-release-channel).

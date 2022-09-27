@@ -169,8 +169,27 @@ Note that some permissions cannot be set for add-ons. This is either because the
     <tr><td align="left">    <b>Health</b> (including Near Real Time data) </td><td>    Can view the <a href="health-report.md">Health report</a> for the product.    </td><td>    N/A     </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    <b>Customer feedback</b>    </td><td>    Can view the <a href="reviews-report.md">Reviews</a> and <a href="feedback-report.md">Feedback</a> reports for the product.       </td><td>    N/A (to respond to feedback or reviews, the <b>Contact customer</b> permission must be granted)   </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    <b>Xbox analytics</b> </td><td>    Can view the <a href="xbox-analytics-report.md">Xbox analytics report</a> for the product.    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
+    <tr><td align="left">    <b>Real time</b> </td><td>    Can view.    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
     </tbody>
     </table>
+
+### Discs
+
+<table>
+    <thead>
+    <tr class="header">
+    <th align="left">Permission&nbsp;name</th>
+    <th align="left">Read&nbsp;only</th>
+    <th align="left">Read/write</th>
+    <th align="left">Read&nbsp;only&nbsp;(Add&#8209;on) </th>
+    <th align="left">Read&#8209;write&nbsp;(Add&#8209;on)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td align="left">    <b>Disc request</td><td>   N/A  </td><td> Can read and write. </td><td>    N/A       </td><td>    N/A                         </td></tr>
+    <tr><td align="left">    <b>Disc royalties</b> </td><td> N/A </td><td>    Can read and write.       </td><td>    N/A     </td><td>    N/A         </td></tr> </td></tr>
+    </tbody>
+    </table>    
 
 ### Monetization
 
@@ -186,12 +205,27 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </thead>
     <tbody>
     <tr><td align="left">    <b>Promotional codes</b>     </td><td>    Can view <a href="generate-promotional-codes.md">promotional code</a> orders and usage info for the product and its add-ons, and can view usage info.         </td><td>    Can view, manage, and create <a href="generate-promotional-codes.md">promotional code</a> orders for the product and its add-ons, and can view usage info.          </td><td>    N/A (settings for parent product apply to all add-ons)     </td><td>    N/A (settings for parent product apply to all add-ons)     </td></tr>
-    <tr><td align="left">    <b>Targeted offers</b>     </td><td>    Can view <a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product.         </td><td>    Can view, manage and create <a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product.          </td><td>    N/A     </td><td>    N/A      </td></tr>
     <tr><td align="left">    <b>Contact customer</b>  </td><td>    Can view <a href="respond-to-customer-feedback.md">responses to customer feedback</a> and <a href="respond-to-customer-reviews.md">responses to customer reviews</a>, as long as the <b>Customer feedback</b> permission has been granted as well. Can also view <a href="send-push-notifications-to-your-apps-customers.md">targeted notifications</a> that have been created for the product.    </td><td>    Can <a href="respond-to-customer-feedback.md">respond to customer feedback</a> and <a href="respond-to-customer-reviews.md">respond to customer reviews</a>, as long as the <b>Customer feedback</b> permission has been granted as well. Can also <a href="send-push-notifications-to-your-apps-customers.md">create and send targeted notifications</a> for the product.                   </td><td>    N/A         </td><td>    N/A                          </td></tr>
     <tr><td align="left">    <b>Experimentation</b></td><td>    Can view <a href="../monetize/run-app-experiments-with-a-b-testing.md">experiments (A/B testing)</a> and view experimentation data for the product.   </td><td>    Can create, manage, and view <a href="../monetize/run-app-experiments-with-a-b-testing.md">experiments (A/B testing)</a> for the product, and view experimentation data.     </td><td>    N/A  </td><td>    N/A                 </td></tr>
-    <tr><td align="left">    <b>Store sale events</b>&nbsp;*</td><td>    Can view sale event status for the product.   </td><td>    Can add the product to sale events and configure discounts.      </td><td>    Can view sale event status for the product.   </td><td>    Can add the product to sale events and configure discounts.      </td></tr>
     </tbody>
     </table>
+
+### Community Management
+
+<table>
+    <thead>
+    <tr class="header">
+    <th align="left">Permission&nbsp;name</th>
+    <th align="left">Read&nbsp;only</th>
+    <th align="left">Read/write</th>
+    <th align="left">Read&nbsp;only&nbsp;(Add&#8209;on) </th>
+    <th align="left">Read&#8209;write&nbsp;(Add&#8209;on)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td align="left">    <b>Events</td><td>   N/A  </td><td> Can read and write. </td><td>    N/A       </td><td>    N/A                         </td></tr>
+    </tbody>
+    </table>    
 
 ### Publishing 
 
@@ -206,7 +240,6 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>Product Setup</b>  </td><td>    Can view the product setup page of products.     </td><td>    Can view and edit the product setup page of products. </td><td>    Can view the product setup page of add-ons.   </td><td>    Can view and edit the product setup page add-ons.          </td></tr>
     <tr><td align="left">    <b>Pricing and availability</b>  </td><td>    Can view the <a href="set-app-pricing-and-availability.md">Pricing and availability</a> page of products.     </td><td>    Can view and edit the <a href="set-app-pricing-and-availability.md">Pricing and availability</a> page of products. </td><td>    Can view the <a href="set-add-on-pricing-and-availability.md">Pricing and availability</a> page of add-ons.   </td><td>    Can view and edit the <a href="set-add-on-pricing-and-availability.md">Pricing and availability</a> page of add-ons.          </td></tr>
     <tr><td align="left">    <b>Properties</b>   </td><td>    Can view the <a href="enter-app-properties.md">Properties</a> page of products.      </td><td>    Can view and edit the <a href="enter-app-properties.md">Properties</a> page of products.       </td><td>    Can view the <a href="enter-add-on-properties.md">Properties</a> page of add-ons.     </td><td>    Can view and edit the <a href="enter-add-on-properties.md">Properties</a> page of add-ons.               </td></tr>
     <tr><td align="left">    <b>Age ratings</b>    </td><td>    Can view the <a href="age-ratings.md">Age ratings</a> page of products.       </td><td>    Can view and edit the <a href="age-ratings.md">Age ratings</a> page of products.    </td><td>    Can view the Age ratings page of add-ons.          </td><td>     Can view and edit the Age ratings page of add-ons.       </td></tr>
@@ -216,8 +249,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
     <tr><td align="left">    <b>New submission creation</b>       </td><td>    No access is granted if this permission is set to read-only.        </td><td>    Can create new <a href="app-submissions.md">submissions</a> for the product.  </td><td>    No access is granted if this permission is set to read-only.   </td><td>    Can create new <a href="add-on-submissions.md">submissions</a> for the add-on.        </td></tr>
     <tr><td align="left">    <b>New add-ons</b>    </td><td>    No access is granted if this permission is set to read-only. </td><td>    Can <a href="set-your-add-on-product-id.md">create new add-ons</a> for the product. </td><td>    N/A    </td><td>    N/A        </td></tr>
     <tr><td align="left">    <b>Name reservations</b>   </td><td>    Can view the <a href="manage-app-names.md">Manage app names</a> page for the product.</td><td>    Can view and edit the <a href="manage-app-names.md">Manage app names</a> page for the product, including reserving additional names and deleting reserved names. </td><td>   Can view reserved names for the add-on.    </td><td>   Can view and edit reserved names for the add-on.          </td></tr>
-    <tr><td align="left">    <b>Disc request</b>   </td><td>    Can view disc the request page. </td><td>    Can create disc requests. </td><td>   N/A    </td><td>   N/A          </td></tr>
-    <tr><td align="left">    <b>Disc royalties </b>   </td><td>    Can view disc the royalties page.</td><td>    Can create disc royalties. </td><td>   N/A    </td><td>   N/A          </td></tr>
+    <tr><td align="left">    <b>Royalty program publishing </b>   </td><td>    Can view disc the royalties page.</td><td>    Can create disc royalties. </td><td>   N/A    </td><td>   N/A          </td></tr>
     </tbody>
     </table>
 
@@ -234,12 +266,6 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>Relying Parties</b>&nbsp;*</td><td>    Can view the Relying parties page of an account.   </td><td>    Can view and edit the Relying parties page of an account.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Partner Services</b>&nbsp;*</td><td>    Can view the Web services page of an account.  </td><td>    Can view and edit the Web services page of an account.	    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox Test Accounts</b>&nbsp;*</td><td>    Can view the Xbox Test Accounts page of an account.  </td><td>    Can view and edit the Xbox Test Accounts page of an account.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox Test Accounts per Sandbox</b>&nbsp;*</td><td>    Can view the Xbox Test Accounts page for only the specified sandboxes of an account.  </td><td>    Can view and edit the Xbox Test.   <tr><td align="left">    <b>Accounts page for only the specified sandboxes of an account    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox Devices</b>&nbsp;*</td><td>    Can view the Xbox one development consoles page of an account.  </td><td>    Can view and edit the Xbox one development consoles page of an account.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox Devices per Sandbox</b>&nbsp;*</td><td>    Can view the Xbox one development consoles page for only the specified sandboxes of an account.  </td><td>    Can view and edit the Xbox one development consoles page for only the specified sandboxes of an account.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>App Channels</b>&nbsp;*</td><td>    N/A  </td><td>    Can publish promotional video channels to the Xbox console for viewing through OneGuide.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Service Configuration</b>&nbsp;*</td><td>    Can view the Xbox Live Service configuration page of a product.  </td><td>    Can view and edit the Xbox Live Service configuration page of a product.    </td><td>    N/A    </td><td>    N/A                      </td></tr>
     <tr><td align="left">    <b>Tools Access</b>&nbsp;*</td><td>    Can run Xbox Live tools on a product to only view data.  </td><td>    Can run Xbox Live tools on a product to view and edit data.    </td><td>    N/A    </td><td>    N/A                      </td></tr>

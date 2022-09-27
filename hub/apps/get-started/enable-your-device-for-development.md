@@ -26,7 +26,7 @@ When you see this dialog, select `settings for developers` to open the **For dev
 > [!NOTE]
 > You can go to the **For developers** page at any time to enable or disable Developer Mode: simply enter "for developers" into the Cortana search box in the taskbar.
 
-## Active Developer Mode
+## Activate Developer Mode
 
 To enable Developer mode, or access other settings:
 

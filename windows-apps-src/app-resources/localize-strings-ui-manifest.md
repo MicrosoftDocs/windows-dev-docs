@@ -288,26 +288,26 @@ The resources for an app package are managed and accessed through the package's 
 
 A framework package can access its own resources with an absolute resource identifier URI. Also see [URI schemes](uri-schemes.md).
 
-## Loading strings in non-packaged applications
+## Loading strings in unpackaged applications
 
-As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resource Management System.
+As of Windows Version 1903 (May 2019 Update), unpackaged applications can also leverage the Resource Management System.
 
 Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file). You can then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml), [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code), or [load strings from a Class Library or a Windows Runtime Library](#load-strings-from-a-class-library-or-a-windows-runtime-library).
 
-To use resources in non-packaged applications, you should do a few things:
+To use resources in unpackaged applications, you should do a few things:
 
-1. Use [GetForViewIndependentUse](/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) when resolving resources from code as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
+1. Use [GetForViewIndependentUse](/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) when resolving resources from code as there is no *current view* in unpackaged scenarios. The following exception occurs if you call [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in unpackaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
 1. Use [MakePri.exe](./compile-resources-manually-with-makepri.md) to manually generate your app's resources.pri file.
     - Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](./makepri-exe-configuration.md) created by [createconfig](./makepri-exe-command-options.md#createconfig-command), you need to delete the "&lt;packaging&gt;" section manually after it is created.
     - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](./makepri-exe-configuration.md) created by [createconfig](./makepri-exe-command-options.md#createconfig-command) includes all indexers.
     - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
         > [!NOTE]
-        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for non-packaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
+        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for unpackaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for unpackaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
 1. Copy the PRI file to the build output directory of the .exe
 1. Run the .exe 
     > [!NOTE]
-    > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in non-packaged apps. The user preferred language list is only used for UWP apps.
+    > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in unpackaged apps. The user preferred language list is only used for UWP apps.
 
 > [!Important]
 > You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the [MakePri.exe](./compile-resources-manually-with-makepri.md) command and copies the resources.pri output to the .exe directory.

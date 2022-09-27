@@ -16,7 +16,7 @@ A native ad is a component-based ad format where each piece of the ad creative (
 For advertisers, native ads provide high-performing placements, because the ad experience is tightly integrated into the app and users therefore tend to interact more with these types of ads.
 
 > [!NOTE]
-> Native ads are currently supported only for XAML-based UWP apps for Windows 10. Support for UWP apps written using HTML and JavaScript is planned for a future release of the Microsoft Advertising SDK.
+> Native ads are currently supported only for XAML-based UWP apps for Windows 10 and Windows 11. Support for UWP apps written using HTML and JavaScript is planned for a future release of the Microsoft Advertising SDK.
 
 ## Prerequisites
 

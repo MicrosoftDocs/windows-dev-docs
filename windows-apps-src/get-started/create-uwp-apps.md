@@ -41,9 +41,7 @@ If you want a more detailed walkthrough on the basics of coding, the C# language
 * [C# Quickstarts](/dotnet/csharp/quick-starts/)
 * [Get started with Visual Studio](/visualstudio/ide/)
 
-**Tutorials:**
-
-* [Windows on Microsoft Learn](/learn/browse/?products=windows&resource_type=module)
+* [Microsoft Learn training resources for Windows](/training/browse/?products=windows&resource_type=module)
 
 ## Using the docs
 

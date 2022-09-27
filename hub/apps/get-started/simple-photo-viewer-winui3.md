@@ -9,7 +9,7 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Tutorial&mdash;Create a simple photo viewer with WinUI 3 (C#)
+# Tutorial: Create a simple photo viewer with WinUI 3 (C#)
 
 > [!NOTE]
 > For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](/windows/apps/get-started/).
@@ -402,9 +402,9 @@ You might be wondering whether it's best to center the **GridView** itself, or t
 
     Also see [Alignment, margin, padding](/windows/apps/design/layout/alignment-margin-padding).
 
-Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the **GridView**'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the **GridView**, and not to the window. So we need to change the **GridView** back to filling the window. We've demonstrated that instead of centering the **GridView** in the window, we need to center the images in the **GridView**.
+Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the **GridView**'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the **GridView**, and not to the window. So we need to change the **GridView** back to filling the window. We've demonstrated that (instead of centering the **GridView** in the window) we need to center the images in the **GridView**.
 
-1. So let's first remove the **HorizontalAlignment** setting from the previous step.
+3. So now delete the **HorizontalAlignment** attribute that you added in the previous step.
 
 ## Edit the items panel template
 
@@ -434,7 +434,7 @@ Items controls lay out their item containers inside what's known as an *items pa
 
 When you build and run this time, and experiment with adjusting the width of the window, there's an equal amount of the **GridView**'s red background on either side of the images. And because the **GridView** fills the window, the scroll bar aligns nicely with the edge of the window, where users might expect it to be.
 
-1. Now that we're done experiment with layout, remove `Background="Red"` from the **GridView**.
+3. Now that we're done experiment with layout, remove `Background="Red"` from the **GridView**.
 
 ## Replace the placeholder image with a photo
 

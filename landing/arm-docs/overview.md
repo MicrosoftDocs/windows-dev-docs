@@ -122,6 +122,6 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 - [Developer Resources for Windows on Snapdragon by Qualcomm](https://developer.qualcomm.com/hardware/windows-on-snapdragon/developer-resources)
 - [Developer.arm.com: Windows on Arm](https://developer.arm.com/solutions/os/windows-on-arm)
-- [Developer.arm.com: Port applications to Windows on Arm ](https://developer.arm.com/documentation/102341/0400/Overview)
+- [Developer.arm.com: Port applications to Windows on Arm](https://developer.arm.com/documentation/102341/0400/Overview)
 - [Developer.arm.com: Building a Native Windows on Arm App with WinUI 3](https://developer.arm.com/documentation/102767/0100/)
 - [Developer.arm.com: Building libraries for Windows on Arm](https://developer.arm.com/documentation/102528/)

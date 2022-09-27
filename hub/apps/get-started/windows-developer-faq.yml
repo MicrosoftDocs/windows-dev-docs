@@ -147,7 +147,7 @@ sections:
           If you're targeting both Windows and Surface hub, we recommend using UWP.
       - question: How do I build native-feeling progressive web apps (PWAs) on Windows?
         answer: |
-          See [Web development on Windows](/windows/web/) and [Overview of Progressive Web Apps](https://docs.microsoft.com/microsoft-edge/progressive-web-apps-chromium/).
+          See [Web development on Windows](/windows/web/) and [Overview of Progressive Web Apps](/microsoft-edge/progressive-web-apps-chromium/).
   - name: Packaging, deployment, and updates
     questions:
       - question: What's the difference between MSIX-packaged, unpackaged, and sparse-packaged apps?

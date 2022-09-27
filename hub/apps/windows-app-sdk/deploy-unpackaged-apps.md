@@ -89,7 +89,7 @@ WindowsAppRuntimeInstall.exe --force
 
 To see all installer command line options, run `WindowsAppRuntimeInstall --h`.
 
-After the installation is complete, you can run your non-MSIX-packaged app. For an example of how to build and run a non-MSIX-packaged app that uses the Windows App SDK, see [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+After the installation is complete, you can run your non-MSIX-packaged app. For an example of how to build and run a non-MSIX-packaged app that uses the Windows App SDK, see [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 #### Chain the Windows App SDK installer to your app's setup
 
@@ -153,7 +153,7 @@ Non-MSIX-packaged apps must call the Bootstrapper API to use the Windows App SDK
 - Find and load the Windows App SDK framework package to the app's package graph.
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package. The purpose of the DDLM is to prevent servicing of the Windows App SDK framework package while it is in use by a non-MSIX-packaged app. 
 
-The simplest way to load the Windows App SDK runtime for non-MSIX-packaged apps is by setting the `<WindowsPackageType>None</WindowsPackageType>` property in your project file (.csproj or .vcxproj). You may also call the bootstrapper API directly in your app's startup code for more control over the initialization. For more details, see [Use the Windows App SDK runtime](use-windows-app-sdk-run-time.md) and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+The simplest way to load the Windows App SDK runtime for non-MSIX-packaged apps is by setting the `<WindowsPackageType>None</WindowsPackageType>` property in your project file (.csproj or .vcxproj). You may also call the bootstrapper API directly in your app's startup code for more control over the initialization. For more details, see [Use the Windows App SDK runtime](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 Dynamic Dependencies support allows non-MSIX-packaged applications to keep their existing deployment mechanism, such as MSI or any installer, and be able to leverage the Windows App SDK in their application. Dynamic dependencies can be used by both packaged and non-MSIX-packaged apps, although it is primarily intended to be used by non-MSIX-packaged apps.
 
@@ -173,6 +173,6 @@ Along with your app, we recommend that you go ahead and deploy Windows Metadata 
 
 * [Deployment architecture for the Windows App SDK](deployment-architecture.md)
 - [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
-- [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
+- [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
 - [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)

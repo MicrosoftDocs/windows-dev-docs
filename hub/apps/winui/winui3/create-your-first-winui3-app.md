@@ -24,7 +24,7 @@ Links to full installation details are in the steps below. We recommend that you
 
 ## Key concepts
 
-Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a non-packaged project. But please come back later to read more about it.
+Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a unpackaged project. But please come back later to read more about it.
 
 [!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
 
@@ -80,7 +80,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
     > [!NOTE]
     > Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the installer in the previous step. To do that, in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Updates**. And if necessary update the reference to the *Microsoft.WindowsAppSDK* NuGet package. You can see which version is installed on the **Installed** tab.
 
-1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
+1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file. Put it inside the **PropertyGroup** element that's already there (for C++, the element will have `Label="Globals"`):
 
    ```xml
    <Project ...>
@@ -93,12 +93,12 @@ Packaging is an important consideration of any Windows App SDK project. You can 
    </Project>
    ```
 
-1. **C++**. In your C++ project (`.vcxproj`) file, set the *AppxPackage* property to *false*:
+1. **C++**. In your C++ project (`.vcxproj`) file, inside the **PropertyGroup** element that's already there, set the *AppxPackage* property to *false*:
 
    ```xml
    <Project ...>
      ...
-     <PropertyGroup>
+     <PropertyGroup Label="Globals">
        ...
        <AppxPackage>false</AppxPackage>
        ...
@@ -117,7 +117,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 Setting the `<WindowsPackageType>None</WindowsPackageType>` project property causes the *auto-initializer* to locate and load a version of the Windows App SDK version that's most appropriate for your app.
 
-If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
 
 For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper).
 
@@ -169,5 +169,5 @@ To continue your development journey with the Windows App SDK, see [Develop Wind
 * [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist)
 * [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 * [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
-* [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+* [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 * [Develop Windows desktop apps](/windows/apps/develop/)

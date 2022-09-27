@@ -32,7 +32,7 @@ landingContent:
       - linkListType: learn
         links:
           - text: Browse Windows courses on Microsoft Learn
-            url: /learn/browse/?products=windows&resource_type=module
+            url: /training/browse/?products=windows&resource_type=module
           - text: What's a UWP app?
             url: get-started/universal-application-platform-guide.md
 

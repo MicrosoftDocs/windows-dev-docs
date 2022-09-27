@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Activating toast notifications from desktop apps
 
-Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) to obtain package identity, and classic non-packaged desktop apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for desktop apps due to the different activation schemes.
+Desktop apps (including packaged [MSIX](/windows/msix/desktop/source-code-overview) apps, apps that use [sparse packages](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) to obtain package identity, and classic unpackaged desktop apps) can send interactive toast notifications just like Windows apps. However, there are a few different options for desktop apps due to the different activation schemes.
 
 In this article, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...
 

@@ -85,3 +85,6 @@ ipch/
 *.vspx
 *.sap
 .markdownlint.json
+
+# Stop ReadMe file from syncing to maintain separate public and private Readme notes
+README.md

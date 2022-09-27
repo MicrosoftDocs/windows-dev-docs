@@ -181,7 +181,7 @@ A ListViewItemPresenter with an overlaid check box
 
 This table describes the changes to the visual states and visual state groups in the [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) and [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) control templates.
 
-| 8.1                 | Feature state           | Windows 10        | Feature state       |
+| 8.1                 | Feature state           | Windows 10/11     | Feature state       |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
 |                     | Normal                  |                   | Normal              |

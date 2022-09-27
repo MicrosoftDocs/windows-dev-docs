@@ -23,13 +23,13 @@ For full details, see the topics below. They describe and demonstrate how to mig
 
 Take particular note of [What's supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported). That topic describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, then consider waiting to migrate.
 
-## .NET Upgrade Assistant
+## Migrating by using the .NET Upgrade Assistant tool
 
-As a next step in assisting you to migrate your Universal Windows Platform (UWP) apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. A preview is now available&mdash;for more info, see [Migrate UWP apps to Windows App SDK with the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-uwp-framework).
+As a next step in assisting you to migrate your Universal Windows Platform (UWP) apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. A preview is now available&mdash;for more info, see [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md).
 
 Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features.
 
-The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assistant) documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of `UWP`.
+The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assistant) documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of `UWP`. We appreciate it!
 
 ## Topics in this section
 
@@ -43,3 +43,4 @@ The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assi
 | [Case study 1—PhotoLab (C#)](case-study-1.md) | This topic is a case study of taking the C# [UWP PhotoLab sample app](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/), and migrating it to the Windows App SDK. |
 | [Case study 2—Photo Editor (C++/WinRT)](case-study-2.md) | This topic is a case study of taking the C++/WinRT [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/), and migrating it to the Windows App SDK. |
 | [Additional migration guidance](misc-info.md) | This topic contains additional migration guidance not categorized into a feature area in the [feature area guides](guides/feature-area-guides-ovw.md). |
+| [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md) | The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](/windows/apps/winui/) app that uses the Windows App SDK. |

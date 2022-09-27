@@ -128,6 +128,8 @@ items:
             href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
           - name: "Additional migration guidance"
             href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+          - name: "Migrate UWP to Windows App SDK with the .NET Upgrade Assistant"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
       - name: Modernize your desktop apps
         items:
             - name: Overview
@@ -218,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
-            - name: Grant identity to non-packaged desktop apps
+            - name: Grant identity to unpackaged desktop apps
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
       - name: Optimize performance & fundamentals
         items:
@@ -240,6 +242,8 @@ items:
             href: develop/user-interface.md
           - name: Title bar
             href: develop/title-bar.md
+          - name: Apply Mica or Acrylic
+            href: windows-app-sdk/system-backdrop-controller.md
           - name: "Retrieve a window handle (HWND)"
             href: develop/ui-input/retrieve-hwnd.md
           - name: "Display WinRT UI objects that depend on CoreWindow"
@@ -288,6 +292,14 @@ items:
                     href: winui/winui2/release-notes/winui-2.1.md
                   - name: "WinUI 2.0"
                     href: winui/winui2/release-notes/winui-2.0.md
+      - name: .NET MAUI for Windows
+        items:
+          - name: Overview
+            href: windows-dotnet-maui/index.md
+          - name: "Build your first .NET MAUI app for Windows"
+            href: windows-dotnet-maui/walkthrough-first-app.md
+          - name: "Integrate a .NET MAUI app with the Graph SDK"
+            href: windows-dotnet-maui/tutorial-graph-api.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview

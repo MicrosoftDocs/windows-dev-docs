@@ -1,6 +1,6 @@
 ---
 title: Web Account Manager
-description: This article describes how to use the AccountsSettingsPane to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs.
+description: This article describes how to use the AccountsSettingsPane to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10/11 Web Account Manager APIs.
 ms.date: 12/06/2017
 ms.topic: article
 keywords: windows 10, uwp, security
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Web Account Manager
 
-This article describes how to use the **[AccountsSettingsPane](/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 Web Account Manager APIs. You'll learn how to request a user's permission to use their Microsoft account, obtain an access token, and use it to perform basic operations (like get profile data or upload files to their OneDrive account). The steps are similar for getting user permission and access with any identity provider that supports the Web Account Manager.
+This article describes how to use the **[AccountsSettingsPane](/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** to connect your Universal Windows Platform (UWP) app to external identity providers, like Microsoft or Facebook, using the Windows 10 and Windows 11 Web Account Manager APIs. You'll learn how to request a user's permission to use their Microsoft account, obtain an access token, and use it to perform basic operations (like get profile data or upload files to their OneDrive account). The steps are similar for getting user permission and access with any identity provider that supports the Web Account Manager.
 
 > [!NOTE]
 > For a complete code sample, see the [WebAccountManagement sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).

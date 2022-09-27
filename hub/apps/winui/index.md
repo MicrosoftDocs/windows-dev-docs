@@ -19,13 +19,13 @@ The Windows UI Library (WinUI) is a native user experience (UX) framework for bo
 
 By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
 
-With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and Javascript (via [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
+With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and Javascript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
     :::column-end:::
 :::row-end:::
 
 > [!Important]
-> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2](winui2/index.md) and [WinUI 3](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules.
+> At this time, there are two generations of the Windows UI Library (WinUI) under active development: [WinUI 2 for UWP](winui2/index.md) and [WinUI 3 in the Windows App SDK](winui3/index.md). While both can be used in production-ready apps on Windows 10 and later, each have different development targets and release schedules.
 >
 > See [Comparison of WinUI 3 and WinUI 2](#comparison-of-winui-3-and-winui-2).
 
@@ -37,9 +37,9 @@ With support for both desktop and UWP apps, you can build with WinUI from the gr
 
 ## Comparison of WinUI 3 and WinUI 2
 
-The following table highlights some of most significant differences between WinUI 3 and WinUI 2.
+The following table highlights some of most significant differences between WinUI 3 in the Windows App SDK and WinUI 2 for UWP.
 
-| WinUI 3 | WinUI 2 |
+| WinUI 3 in the Windows App SDK | WinUI 2 for UWP |
 |-|-|
 | **[WinUI 3](winui3/index.md)** ships with the [Windows App SDK](../windows-app-sdk/index.md). | **[WinUI 2](winui2/index.md)**, the 2nd generation of WinUI, ships as a standalone [NuGet package](https://www.nuget.org/packages/Microsoft.UI.Xaml/), and is integrated with [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/). |
 | UX stack and control library completely decoupled from the OS and [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/), including the core framework, composition, and input layers of the UX stack. | UX stack and control library tightly coupled to the OS and [Windows 10 and later SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/). |

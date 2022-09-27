@@ -213,4 +213,4 @@ Using the same Hello World! app that you built with React and updated with Visua
 
 - The [official React docs](https://reactjs.org/) offer all of the latest, up-to-date information on React
 - [Microsoft Edge Add-ons for React Developer Tools](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil): Add two tabs to your Microsoft Edge dev tools to help with your React development: Components and Profiler.
-- Microsoft Learn: The [React Learning Path](/learn/paths/react/) contains online course modules to help you get started with the basics.
+- The [React learning path](/training/paths/react/) contains online course modules to help you get started with the basics.
