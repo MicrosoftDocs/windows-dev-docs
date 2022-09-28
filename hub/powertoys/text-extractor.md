@@ -16,7 +16,8 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## How to deactivate
 
-Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard.</br>
+Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard.
+
 You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
 
 ## Adjust while trying to capture
@@ -39,8 +40,9 @@ From the Settings menu, the following options can be configured:
 
 ## Supported languages
 
-Text Extractor can recognize only languages with OCR pack available.</br>
-The list can be obtained via PowerShell by running next commands:
+Text Extractor can only recognize languages that have the OCR pack installed.
+
+The list can be obtained via PowerShell by running following commands:
 ```console
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
@@ -48,9 +50,9 @@ PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLangua
 
 ### OCR packs installation
 
-If language is supported, then OCR language pack is installed along with language via <kbd>Language</kbd>-><kbd>Preferred languages</kbd>-><kbd>Add language menu</kbd> by default.</br>
+For supported languages, the OCR language pack can be installed along with the language via <kbd>Language</kbd>-><kbd>Preferred languages</kbd>-><kbd>Add language menu</kbd>.
 
-It's possible to query all supported languages via PowerShell run as Administrator:
+It's possible to get a list of all supported languages by running this command in PowerShell in Administrator mode:
 ```console
 PS C:\Windows\system32> Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
 ```
@@ -75,14 +77,16 @@ State : NotPresent
 ....
 ```
 
-If language is not available in the output, then it's not supported by OCR.</br>
-If the state is <kbd>NotPresent</kbd>, then it's possible to install OCR pack for the language.</br>
-For example, the next commands install OCR pack for <kbd>en-US</kbd> in PowerShell run as Administrator:
+If a language is not available in the output, then it's not supported by OCR.
+
+If the state is <kbd>NotPresent</kbd>, then it's possible to install OCR pack for the language.
+
+For example, the following commands install the OCR pack for <kbd>en-US</kbd> in PowerShell run as Administrator:
 ```console
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Add-WindowsCapability -Online
 ```
-and these remove:
+These commands remove it:
 ```console
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
@@ -90,6 +94,8 @@ PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
 
 ## Troubleshooting
 
-* "No Possible OCR languages are installed." message </br>
-Message is shown, when there are no available languages for recognition.</br>
-If OCR pack is supported, installed, but still not available and your system drive <kbd>X:</kbd> is different than <kbd>C:</kbd>, then copy <kbd>X:/Windows/OCR</kbd> folder to <kbd>C:/Windows/OCR</kbd> to fix the issue.
+- "No Possible OCR languages are installed." message
+
+This message is shown when there are no available languages for recognition.
+
+If an OCR pack is supported, installed, but still not available and your system drive <kbd>X:</kbd> is different than <kbd>C:</kbd>, then copy <kbd>X:/Windows/OCR</kbd> folder to <kbd>C:/Windows/OCR</kbd> to fix the issue.
