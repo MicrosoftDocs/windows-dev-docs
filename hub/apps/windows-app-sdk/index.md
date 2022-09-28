@@ -76,7 +76,7 @@ Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, versio
 
 ### Faster release cadence
 
-New Windows APIs and features have typically been tied to OS releases that happen on a once or twice a year release cadence. The Windows App SDK will ship updates on a faster cadence, enabling you to get earlier and more rapid access to innovations in the Windows development platform as soon as they are created.
+New Windows APIs and features are usually shipped within major Windows OS updates that release about once a year. Windows App SDK ships about once every six months. This release cadence ensures that you have access to the latest innovations in the Windows development platform.
 
 ## Developer roadmap
 
