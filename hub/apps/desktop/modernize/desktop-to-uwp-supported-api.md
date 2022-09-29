@@ -1,6 +1,6 @@
 ---
-description: This article describes WinRT APIs that aren't supported for use in a desktop app, or that have restrictions.
-title: Windows Runtime APIs not supported in a desktop app
+description: This article describes WinRT APIs that aren't supported for use in desktop apps, or that have restrictions.
+title: Windows Runtime APIs not supported in desktop apps
 ms.date: 09/16/2022
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Windows Runtime APIs not supported in a desktop app
+# Windows Runtime APIs not supported in desktop apps
 
-Although you can use most Windows Runtime (WinRT) APIs (see [Windows UWP namespaces](/uwp/api/)) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in a desktop app, or that have restrictions:
+Although you can use most Windows Runtime (WinRT) APIs (see [Windows UWP namespaces](/uwp/api/)) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in desktop apps, or that have restrictions:
 
 * APIs that have dependencies on user interface (UI) features that were designed for use only in a Universal Windows Platform (UWP) app.
 * APIs that require package identity (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)). Such APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in a desktop app. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
+This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in [WinUI 3](/windows/apps/winui/) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
 > Apps using .NET can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. Those classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md). Note that those classes require the .NET 6 SDK or later.
@@ -25,7 +25,7 @@ This article will be updated as more workarounds and replacements are identified
 
 ## APIs that have dependencies on UWP-only UI features
 
-Some WinRT APIs were designed specifically for UI scenarios in a UWP app. Those APIs do not behave properly in a desktop app due to threading model and other platform differences. Those APIs, and other WinRT APIs that have dependencies on them, aren't supported for use in a desktop app.
+Some WinRT APIs were designed specifically for UI scenarios in a UWP app. Those APIs do not behave properly in desktop apps due to threading model and other platform differences. Those APIs, and other WinRT APIs that have dependencies on them, aren't supported for use in desktop apps.
 
 ### Core unsupported classes
 
@@ -40,16 +40,16 @@ These WinRT classes aren't supported in desktop apps:
 | [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) | Also see the [Classes that implement IInitializeWithWindow](#classes-that-implement-iinitializewithwindow) section below.<br/><br/>Instead of the [**GetKeyState**](/uwp/api/windows.ui.core.corewindow.getkeystate) method, use the [**InputKeyboardSource.GetKeyStateForCurrentThread**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread) method provided by WinUI 3.<br/><br/>Instead of the [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) property, use the [**UIElement.ProtectedCursor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.protectedcursor) property provided by WinUI 3. You'll need to have a subclass of [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) to access that property. |
 | [**UserActivity**](/uwp/api/windows.applicationmodel.useractivities.useractivity) | Use the [**IUserActivitySourceHostInterop**](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop) COM interface instead (in `useractivityinterop.h`). |
 
-For other WinRT APIs that aren't supported in a desktop app, see [Unsupported members](#unsupported-members) later in this topic.
+For other WinRT APIs that aren't supported in desktop apps, see [Unsupported members](#unsupported-members) later in this topic.
 
 ### Classes with an XxxForCurrentView method
 
-Many WinRT classes have a static **GetForCurrentView** or **CreateForCurrentView** method, such as [**UIViewSettings.GetForCurrentView**](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). Those **XxxForCurrentView** methods have an implicit dependency on the [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview) type, which isn't supported in a desktop app. Because **ApplicationView** isn't supported in a desktop app, none of the **XxxForCurrentView** methods are supported either. Some unsupported **XxxForCurrentView** methods not only return `null`, but also throw exceptions.
+Many WinRT classes have a static **GetForCurrentView** or **CreateForCurrentView** method, such as [**UIViewSettings.GetForCurrentView**](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView). Those **XxxForCurrentView** methods have an implicit dependency on the [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview) type, which isn't supported in desktop apps. Because **ApplicationView** isn't supported in desktop apps, none of the **XxxForCurrentView** methods are supported either. Some unsupported **XxxForCurrentView** methods not only return `null`, but also throw exceptions.
 
 > [!NOTE]
-> [**CoreInputView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview) *is* supported in a desktop app, and it *can* be used even without a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow). You can use that method to retrieve a [**CoreInputView**](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread; and if that thread has a foreground window, then that object will produce events.
+> [**CoreInputView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview) *is* supported in desktop apps, and it *can* be used even without a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow). You can use that method to retrieve a [**CoreInputView**](/uwp/api/windows.ui.viewmanagement.core.coreinputview) object on any thread; and if that thread has a foreground window, then that object will produce events.
 
-The following classes *are* supported in a desktop app; but to retrieve an instance of one in a desktop app, you use a mechanism that's different from the **GetForCurrentView** or **CreateForCurrentView** methods. For the classes below that have a COM interface listed as the alternative API, C# developers can also consume those WinRT COM interfaces (see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md)). The list might not be comprehensive.
+The following classes *are* supported in desktop apps; but to retrieve an instance of one in a desktop app, you use a mechanism that's different from the **GetForCurrentView** or **CreateForCurrentView** methods. For the classes below that have a COM interface listed as the alternative API, C# developers can also consume those WinRT COM interfaces (see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md)). The list might not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
@@ -71,7 +71,7 @@ The following classes *are* supported in a desktop app; but to retrieve an insta
 | [**UserActivityRequestManager**](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager) | Use the [**IUserActivityRequestManagerInterop**](/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop) COM interface insead (in `useractivityinterop.h`). |
 | [**UIViewSettings**](/uwp/api/windows.ui.viewmanagement.uiviewsettings) | Use the [**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop) COM interface instead (in `uiviewsettingsinterop.h`). |
 
-The following classes are *not* supported in a desktop app because the APIs don't provide an alternative to their **GetForCurrentView** or **CreateForCurrentView** method. The list might not be comprehensive.
+The following classes are *not* supported in desktop apps because the APIs don't provide an alternative to their **GetForCurrentView** or **CreateForCurrentView** method. The list might not be comprehensive.
 
 |  Class  |  Alternative APIs |
 |---------|-------------------|
@@ -98,17 +98,17 @@ The following classes are *not* supported in a desktop app because the APIs don'
 
 ### Classes that implement IInitializeWithWindow
 
-Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow); typically, to display a UI. Even though **CoreWindow** isn't supported in a desktop app (see [Core unsupported classes](#core-unsupported-classes) above), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
+Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow); typically, to display a UI. Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](#core-unsupported-classes) above), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
 For more info (including a list of affected types), and code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects).
 
 ### Unsupported members
 
-This section lists (or describes, where a comprehensive list isn't possible) specific members of WinRT classes that aren't supported for use in desktop apps. Unless otherwise noted, the rest of the classes apart from these members are supported in a desktop app.
+This section lists (or describes, where a comprehensive list isn't possible) specific members of WinRT classes that aren't supported for use in desktop apps. Unless otherwise noted, the rest of the classes apart from these members are supported in desktop apps.
 
 #### Events
 
-The following classes are supported in a desktop app, except for the specified event(s).
+The following classes are supported in desktop apps, except for the specified event(s).
 
 |  Class  |  Unsupported events |
 |---------|-------------------|
@@ -117,7 +117,7 @@ The following classes are supported in a desktop app, except for the specified e
 
 #### Methods
 
-The following classes are supported in a desktop app, except for the specified method(s).
+The following classes are supported in desktop apps, except for the specified method(s).
 
 |  Class  |  Unsupported methods |
 |---------|-------------------|
@@ -125,7 +125,7 @@ The following classes are supported in a desktop app, except for the specified m
 
 #### Methods that use the Request naming pattern
 
-Methods that follow the **Request** naming pattern&mdash;such as [**AppCapability.RequestAccessAsync**](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.requestaccessasync) and [**StoreContext.RequestPurchaseAsync**](/uwp/api/windows.services.store.storecontext.requestpurchaseasync)&mdash;aren't supported in a desktop app. Internally, these methods use the [**Windows.UI.Popups**](/uwp/api/windows.ui.popups) class. That class requires that the thread have a [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) object, which isn't supported in a desktop app.
+Methods that follow the **Request** naming pattern&mdash;such as [**AppCapability.RequestAccessAsync**](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.requestaccessasync) and [**StoreContext.RequestPurchaseAsync**](/uwp/api/windows.services.store.storecontext.requestpurchaseasync)&mdash;aren't supported in desktop apps. Internally, these methods use the [**Windows.UI.Popups**](/uwp/api/windows.ui.popups) class. That class requires that the thread have a [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) object, which isn't supported in desktop apps.
 
 The full list of methods that follow the **Request** naming pattern is very long, and this article doesn't provide a comprehensive list of those methods.
 
