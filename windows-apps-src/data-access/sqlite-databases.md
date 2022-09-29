@@ -35,7 +35,7 @@ To try it out, see [Getting Started with EF Core](/ef/core/get-started/overview/
 
 ### SQLite library
 
-The [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0&preserve-view=true) library implements the interfaces in the [System.Data.Common](/dotnet/api/system.data.common) namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.
+The [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite) library implements the interfaces in the [System.Data.Common](/dotnet/api/system.data.common) namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.
 
 The rest of this guide helps you to use this library.
 
