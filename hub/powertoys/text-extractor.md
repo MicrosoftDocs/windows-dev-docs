@@ -48,8 +48,6 @@ PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine, Windows.Foundation, Conten
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
 
-### OCR packs installation
-
 For supported languages, the OCR language pack can be installed along with the language via <kbd>Language</kbd>-><kbd>Preferred languages</kbd>-><kbd>Add language menu</kbd>.
 
 It's possible to get a list of all supported languages by running this command in PowerShell in Administrator mode:
