@@ -29,7 +29,7 @@ Windows Widgets are small UI containers that display text and graphics, associat
 
 The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere the Windows Widget design principles to help ensure that the Widget Board provides a consistent and familiar experience for all widgets.
 
-For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](widgets-states-and-ui.mdwidget-states-and-ui.md).
+For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](widgets-states-and-ui.md).
 
 
 ## Widget principles

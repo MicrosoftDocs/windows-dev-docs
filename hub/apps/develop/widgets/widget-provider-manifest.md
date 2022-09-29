@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 > [!IMPORTANT]
-> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 1.
+> The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 2.
 
 In order to be displayed in the Widgets host, apps that support Windows widgets must register their widget provider with the system. For Win32 apps, only packaged apps are currently supported and widget providers specify their registration information in the app package manifest file. This article documents the XML format for widget registration. See the [Example](#example) section for a code listing of an example package manifest for a Win32 widget provider.
 
@@ -56,7 +56,7 @@ WidgetProvider
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Capability
 
-&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ThemeResources
 

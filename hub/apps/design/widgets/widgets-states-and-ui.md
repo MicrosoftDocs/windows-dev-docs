@@ -1,8 +1,8 @@
 ---
-author: drewbat
+author: drewbatgit
 description: Learn about the different states of a widget and the UI components that are built into the Windows widgets experience.
 title: Widget states and built-in UI components
-ms.author: drewbatgit
+ms.author: drewbat
 ms.date: 01/19/2022
 ms.topic: article
 keywords: windows 11, widgets
