@@ -22,12 +22,9 @@ Windows widgets are small UI containers that display text and graphics from an a
 
 For an overview of the Windows widgets experience and design guidance for creating your own widgets, see [Windows widgets](../../design/widgets/).
 
-Currently you can implement widget providers either through a Win32 desktop app or a Progressive Web App (PWA). For more information see:
+Currently you can implement a widget provider using a packaged Win32 desktop app.  Support for Progressive Web App (PWA) is planned for future releases. For more information see:
 
 * [Implement a widget provider (Win32 apps)](implement-widget-provider-win32.md)
-* [Build PWA-driven Widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
-
-
 
 ## Related articles
 

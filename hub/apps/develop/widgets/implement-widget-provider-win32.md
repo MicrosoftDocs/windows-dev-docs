@@ -15,11 +15,11 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 2.
 
-This article walks you through creating a simple widget provider that implements the **IWidgetProvider** interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget (TBD) that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
+This article walks you through creating a simple widget provider that implements the **IWidgetProvider** interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
 TBD - Screenshots of the two widgets
 
-This sample code in this article is adapted from the Windows App SDK Sample LINK TBD.
+This sample code in this article is adapted from the [Windows App SDK Sample](https://github.com/microsoft/WindowsAppSDK-Samples).
 
 ## Prerequisites
 To get started you will need Visual Studio 2017 or later. Make sure you add the workload labeled **Universal Windows Platform development** and add the component for C++ (v143). C++ is found under the Optional dropdown.
@@ -33,8 +33,6 @@ In Visual Studio, create a new project. In the **Create a new project** dialog, 
 TBD
 
 This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
-
-TBD
 
 In the precompiled header file, pch.h, add the following include directives.
 
@@ -119,7 +117,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 
 ## Declare widget template JSON strings
 
-This example will declare some static strings to define the JSON templates for each widget. These variables should be declared outside of the **WidgetProvider** class definition. For more information on the widget template JSON format, see TBD.
+This example will declare some static strings to define the JSON templates for each widget. These variables should be declared outside of the **WidgetProvider** class definition. For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
 
 ```cpp
 // WidgetProvider.h
