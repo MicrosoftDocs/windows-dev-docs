@@ -57,7 +57,7 @@ The Web Content Accessibility Guidelines (WCAG) 2.0 level AA requires a contrast
 
 ![A diagram of a widget with guidelines indicating the margins. Next to this is a diagram of a widget where the area inside the margins is colored blue to show the content area.](./images/widgets-margins.png)
 
-Each widget has a 16px margin around it and a 48px [Attribution area](widgets-states-and-ui.md#attribution-area) in which content cannot be placed. The only component that can live in the right side margin and bottom margin are the pagination dots.
+Each widget has a 16px margin around it and a 48px [Attribution area](widgets-states-and-ui.md#attribution-area) in which content cannot be placed. The only component that can live in the right side margin and bottom margin are the pagination dots. For examples of the positioning of the pagination dots, see the pagination section of [Widget interaction design guidance](../../design/widgets/widgets-interaction-design.md#pagination).
 
 ![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pixel gutters between the rows.](./images/widgets-gutters.png)
 

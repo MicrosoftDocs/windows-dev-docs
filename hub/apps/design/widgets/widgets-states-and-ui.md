@@ -52,12 +52,7 @@ Some widget scenarios may require that the user must sign in or perform other ac
 
 ![A screenshot of a widget in the error state](./images/widgets-error-state.png)
 
-If for some reason, the Widgets Board can't retrieve the layout or data for a widget, it will display an error state. Windows will show the widget header with an error message and a reload button. This message will look the same for every widget.
-  
-There are two main scenarios that will cause the error state to be displayed:
-  
-1. When the Widget Board fails to navigate to the widget’s content (in case of a network issue or the app being down).  
-1. When the widget is not able to receive a valid authentication token. The reload button will initiate the authentication flow again.  
+If for some reason, the Widgets Board can't retrieve the layout or data for a widget, it will display an error state. Windows will show the widget header with an error message and a reload button. This message will look the same for every widget.  
 
 If there is cached content available to be displayed, the widget header will show when data was last refreshed in the following format:
 1. The number of minutes if less than an hour  
@@ -85,15 +80,6 @@ The context menu is displayed when the user clicks on the three-dot icon on the 
 Your widget can have a configuration page to allow users to refine the content they see within the widget, such as picking the current location for a weather widget or picking a team to show for a sports widget. Users can get to this configuration page by clicking **Customize Widget** in the built-in context menu. The configuration state is designed and implemented by the widget provider.
 
 The configuration page can only be designed and displayed in medium and large widget sizes. To give the small widget more space when in configuration mode, the widget can flip to a medium and then back to small once user has finished editing their options. All other size widgets will stay at their original size when in the configuration state
-
-
-### Loading state
-
-![A screenshot of a widget in the loading state](./images/widgets-loading-state.png)
-
-The loading state is what the widget displays when data is loading. The title bar area is the only are that does not have to greyscale placeholder UI- this is the only area that will render during this loading time. To give users a preview of what your widget looks like, use geometrical shapes in the content region. Try using fewer, bigger blocks/shapes. This state will be shown while Widgets host is navigating to widgets’ endpoints. 
-
-Create loading states for all your widget sizes in both themes using TBD.
 
 
 ### Attribution area
