@@ -71,15 +71,16 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ![An image of common UI controls](images/great-apps/controls.png)
 
-### Windows UI Library (WinUI)
+### Desktop apps (Win32)
+- Integrate common controls into your existing Win32 app with [WinUI 3](/windows/apps/winui/winui3) in [Windows App SDK](/windows/apps/windows-app-sdk/) 1.1 or greater. 
+- Use the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*main branch*) to evaluate the controls.
+- Win32 controls that use [UXTheme](/windows/win32/api/uxtheme/) will automatically get a "repaint" of the Light theme for select rejuvenated control visuals. Be sure to test for any issues. For those surfaces that do not get updated automatically, manually update the visuals so that they look coherent with the rest of the update, if possible.
+
+### UWP apps
 
 - If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
 - See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
-- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) to evaluate the controls.
-
-### Desktop apps (Win32)
-
-- Win32 controls that use [UXTheme](/windows/win32/api/uxtheme/) will automatically get a "repaint" of the Light theme for select rejuvenated control visuals. Be sure to test for any issues. For those surfaces that do not get updated automatically, manually update the visuals so that they look coherent with the rest of the update, if possible.
+- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*winui 2 branch*) to evaluate the controls.
 
 ### WebView and other platforms
 
