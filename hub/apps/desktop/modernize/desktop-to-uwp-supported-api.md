@@ -131,7 +131,7 @@ The full list of methods that follow the **Request** naming pattern is very long
 
 ## APIs that require package identity
 
-The following WinRT classes require package identity (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)). These APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/), or that are sparse-packaged. The list might not be comprehensive.
+The following WinRT classes require package identity (see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)). These APIs are supported only in desktop apps that are packaged (that is, that have package identity at runtime). The list might not be comprehensive.
 
 * [**Windows.ApplicationModel.DataTransfer.DataProviderHandler**](/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [**Windows.ApplicationModel.DataTransfer.DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)

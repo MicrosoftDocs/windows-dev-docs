@@ -1,14 +1,14 @@
 ---
-description: Learn how to grant identity to unpackaged desktop apps so you can use modern Windows features in those apps.
-title: Grant identity to unpackaged desktop apps
-ms.date: 04/23/2020
+description: Learn how to grant package identity to an unpackaged app so that you can use modern Windows features in that app.
+title: Grant package identity to an unpackaged app
+ms.date: 09/30/2022
 ms.topic: article
 keywords: windows 10, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-# Grant identity to unpackaged desktop apps
+# Grant package identity to an unpackaged app
 
 Many Windows extensibility features require [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) to be used from non-UWP desktop apps, including background tasks, notifications, live tiles, and share targets. For these scenarios, the operating system (OS) requires identity so that it can identify the caller of the corresponding API.
 

@@ -165,7 +165,7 @@ You can add rich content to notifications. We'll add an inline image and a profi
 [!INCLUDE [images note](includes/images-note.md)]
 
 > [!IMPORTANT]
-> Http images are only supported in UWP/MSIX/sparse apps that have the internet capability in their manifest. desktop non-MSIX/sparse apps do not support http images; you must download the image to your local app data and reference it locally.
+> Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 

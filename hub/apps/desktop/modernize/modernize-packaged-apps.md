@@ -13,7 +13,7 @@ ms.custom: RS5
 If you want to update your desktop app with [modern Windows experiences](index.md), many features are available only in desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity). There are several ways to grant package identity to a desktop app:
 
 * Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
-* If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant identity to unpackaged desktop apps](grant-identity-to-nonpackaged-apps.md).
+* If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant package identity to an unpackaged app](grant-identity-to-nonpackaged-apps.md).
 
 If your desktop app has package identity, you can use the following features in your app.
 
