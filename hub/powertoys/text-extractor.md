@@ -40,24 +40,21 @@ From the Settings menu, the following options can be configured:
 
 ## Supported languages
 
-Text Extractor can only recognize languages that have the OCR pack installed.
+Text Extractor can only recognize languages that have the OCR language pack installed.
 
 The list can be obtained via PowerShell by running following commands:
 ```console
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
+### How to query for OCR language packs
 
-### OCR packs installation
-
-For supported languages, the OCR language pack can be installed along with the language via <kbd>Language</kbd>-><kbd>Preferred languages</kbd>-><kbd>Add language menu</kbd>.
-
-It's possible to get a list of all supported languages by running this command in PowerShell in Administrator mode:
+The next command returns the list (PowerShell run as Administrator):
 ```console
 PS C:\Windows\system32> Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
 ```
 
-Example output:
+An example output:
 ```console
 ....
 Name  : Language.OCR~~~el-GR~0.0.1.0
@@ -79,14 +76,17 @@ State : NotPresent
 
 If a language is not available in the output, then it's not supported by OCR.
 
-If the state is <kbd>NotPresent</kbd>, then it's possible to install OCR pack for the language.
+### How to install an OCR language pack
 
-For example, the following commands install the OCR pack for <kbd>en-US</kbd> in PowerShell run as Administrator:
+The following commands install the OCR pack for <kbd>en-US</kbd>:
 ```console
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Add-WindowsCapability -Online
 ```
-These commands remove it:
+
+### How to remove an OCR language pack
+
+The following commands remove the OCR pack for <kbd>en-US</kbd>:
 ```console
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
@@ -98,4 +98,4 @@ PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
 
 This message is shown when there are no available languages for recognition.
 
-If an OCR pack is supported, installed, but still not available and your system drive <kbd>X:</kbd> is different than <kbd>C:</kbd>, then copy <kbd>X:/Windows/OCR</kbd> folder to <kbd>C:/Windows/OCR</kbd> to fix the issue.
+If an OCR pack is supported and installed, but still is not available and your system drive <kbd>X:</kbd> is different than <kbd>C:</kbd>, then copy <kbd>X:/Windows/OCR</kbd> folder to <kbd>C:/Windows/OCR</kbd> to fix the issue.
