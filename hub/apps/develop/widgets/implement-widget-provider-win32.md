@@ -17,20 +17,23 @@ ms.localizationpriority: medium
 
 This article walks you through creating a simple widget provider that implements the **IWidgetProvider** interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
-TBD - Screenshots of the two widgets
+:::image type="content" source="images/counting-and-weather-widgets.png" alt-text="A counting widget and a weather widget. It shows the counting widget and the weather widget both in small size that will be implemented as part of this tutorial.":::
 
 This sample code in this article is adapted from the [Windows App SDK Sample](https://github.com/microsoft/WindowsAppSDK-Samples).
 
 ## Prerequisites
-To get started you will need Visual Studio 2017 or later. Make sure you add the workload labeled **Universal Windows Platform development** and add the component for C++ (v143). C++ is found under the Optional dropdown.
+- Latest Dev Channel Windows 11 build from the Windows Insider Program (WIP). For more information on WIP self-hosting see [Deeper look at flighting](https://learn.microsoft.com/en-us/windows-insider/flighting).
+- Widget board version 521.20060.1205.0. This will come with the latest Dev Channel WIP build and can be checked by opening the widget board, navigating to the widget picker, and looking at the version number located at the bottom right corner of the picker.
+- Your device must have developer mode enabled. For more information see [Enable your device for development](https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development).
+- Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new win32 console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleWidgetProvider". When prompted, set the target Windows version for the app to TBD.
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleWidgetProvider". When prompted, set the target Windows version for the app to version 1809 or later.
 
 ## Add a reference to the Windows widgets NuGet package
 
-TBD
+This sample uses the latest preview Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". In the version drop-down select **1.2.220909.2-preview2** then click **Install**.
 
 This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
 
@@ -553,7 +556,7 @@ In the current release, only packaged apps can be registered as a widget provide
 
 ### Create an MSIX packaging project 
 
-In **Solution Explorer**, right-click your solution and select **Add->New Project...**. In the **Add a new project** dialog, select the "Windows Application Packaging Project" template and click **Next**. Set the project name to "ExampleWidgetProviderPackage" and click **Create**. When prompted, set the target version to TBD and click **OK**.
+In **Solution Explorer**, right-click your solution and select **Add->New Project...**. In the **Add a new project** dialog, select the "Windows Application Packaging Project" template and click **Next**. Set the project name to "ExampleWidgetProviderPackage" and click **Create**. When prompted, set the target version to version 1809 or later and click **OK**.
 Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click OK.
 
 ### Update the package manifest
