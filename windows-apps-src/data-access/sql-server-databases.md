@@ -1,9 +1,9 @@
 ---
 title: Use a SQL Server database in a UWP app
 description: Learn how to connect a UWP app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 05/05/2022
+ms.date: 10/03/2022
 ms.topic: article
-keywords: windows 10, uwp, SQL Server, database
+keywords: windows 10, windows 11, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
 
@@ -31,8 +31,6 @@ In the **Capabilities** tab, select the **Enterprise Authentication** checkbox i
 
 > [!IMPORTANT]
 > You will also need to select **Internet (Client & Server)**, **Internet (Client)**, and **Private Networks (Client & Server)**, regardless of whether or not you're using Windows Authentication.
-
-<a id="use-data" />
 
 ## Add and retrieve data in a SQL Server database
 
