@@ -84,9 +84,9 @@ The configuration page can only be designed and displayed in medium and large wi
 
 ### Attribution area
 
-![TBD](image tbd)
+![A screenshot of a widget with a red box and label calling out the attribution area at the top of the widget containing the widget name and icon.](./images/widgets-attribution.png)
 
-The attribution area is rendered by the Widget board based on the widget name and icon provided during widget registration. For more information on registering widgets, see [TBD](tbd).
+The attribution area is rendered by the Widget board based on the widget name and icon provided during widget registration. For more information on registering widgets, see [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
 
 
 
