@@ -1,8 +1,8 @@
 ---
 title: Deployment overview
-description: The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to MSIX-package your app.
+description: The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to package your app.
 ms.topic: article
-ms.date: 03/14/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,21 +10,22 @@ ms.localizationpriority: medium
 
 The topics in this section introduce options and guidance around deploying different types of Windows apps.
 
-## Advantages and disadvantages of MSIX-packaging
+## Advantages and disadvantages of packaging your app
 
-Your first decision will be whether or not to MSIX-package your app.
+Your first decision will be whether or not to package your app.
 
-* **MSIX-packaging**. This is the process of packaging an app using MSIX technology (see [What is MSIX?](/windows/msix/overview)). MSIX-packaging gives your app a *package identity* (see the table below for why that's a benefit).
-* **Sparse-packaging**. A way to opt out of MSIX-packaging (so that your app less restricted) while retaining package identity. For instructions on how to sparse-package your app, see [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
-* **No packaging**. Another way to opt out of MSIX-packaging (for the reason given above), but without package identity.
+* **Packaged app**. A packaged app is one that's been packaged using MSIX technology (see [What is MSIX?](/windows/msix/overview)). Importantly, a packaged app has *package identity* at runtime; package identity is needed for certain Windows features (for example, custom context menu extensions).
+  * Very commonly, a packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization.
+  * But you can opt out of those restrictions and still be a packaged app (still benefit from package identity). You do that by building and registering a *package with external location* with your app. See [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+* **Unpackaged app**. Another way to opt out of the restrictions described above is to create an unpackaged app. But be aware that an unpackaged app *doesn't* have package identity at runtime; so it misses out on certain Windows features.
 
 > [!IMPORTANT]
-> We recommend that you *do* MSIX-package your app. It'll be a modern and reliable packaging and deployment experience for your customers. Other ways of deploying your app involve other installation technologies, such as `.exe` or `.msi` files.
+> We recommend that you package your app to run in an app container. It'll be a modern and reliable packaging and deployment experience for your customers. Other ways of deploying your app involve other installation technologies, such as `.exe` or `.msi` files.
 
-| | MSIX-packaging | Sparse-packaging or no packaging |
+| | Packaged to run in an app container | Packaged with external location, or unpackaged |
 | - | - | - |
-| **Advantages** | MSIX-packaging gives your users an easy way to install, uninstall, and update your app. Uninstall is clean&mdash;when your app is uninstalled, the system is restored to the same state it was in before installation&mdash;no artifacts are left behind. MSIX also supports incremental and automatic updates. And the Microsoft Store optimizes for MSIX packages (MSIX can be used in or out of the Store).<br/><br/>MSIX-packaging also gives your app a *package identity*, which is needed for certain Windows features (for example, custom context menu extensions). | If you choose not to go with MSIX-packaging, then your app is unrestricted in terms of the the kind of app it is, the APIs it can call, and its access to the Registry and file system.<br/><br/>Sparse-packaging means that it's still possible to get the same benefits from having package identity that MSIX-packaging gives you.<br/><br/>Your app will typically be installed and updated using `.exe` or `.msi` files; using a custom installer, ClickOnce, or xcopy deployment. |
-| **Disadvantages** | Your app is limited in terms of the kind of app it can be, and the agency it can have within the system. An NT Service isn't possible, for example. Inter-process communication (IPC) options are limited; privileged/elevated access is restricted if you're publishing to the Microsoft Store; file/Registry access are virtualized (but also see [Flexible virtualization](/windows/msix/desktop/flexible-virtualization)). And in some situations enterprise policies can disable MSIX updates by disabling the Microsoft Store. | An app that doesn't use MSIX is at risk of causing stale configuration data and software to accumulate after the app has been uninstalled. That can be an issue for the customer and for the system. |
+| **Advantages** | Gives your users an easy way to install, uninstall, and update your app. Uninstall is clean&mdash;when your app is uninstalled, the system is restored to the same state it was in before installation&mdash;no artifacts are left behind. This kind of app also supports incremental and automatic updates. And the Microsoft Store optimizes for apps of this kind (although they can be used in or out of the Store).<br/><br/>You get the benefits of having package identity. | With these options, your app is unrestricted in terms of the the kind of app it is, the APIs it can call, and its access to the Registry and file system.<br/><br/>Packaging with external location means that you get the benefits of having package identity.<br/><br/>Your app will typically be installed and updated using `.exe` or `.msi` files; using a custom installer, ClickOnce, or xcopy deployment. |
+| **Disadvantages** | Your app is limited in terms of the kind of app it can be, and the agency it can have within the system. For example, an NT Service isn't possible. Inter-process communication (IPC) options are limited; privileged/elevated access is restricted if you're publishing to the Microsoft Store; file/Registry access is virtualized (but also see [Flexible virtualization](/windows/msix/desktop/flexible-virtualization)). And in some situations enterprise policies can disable updates by disabling the Microsoft Store. | With these options, an app that is at risk of causing stale configuration data and software to accumulate after the app has been uninstalled. That can be an issue for the customer and for the system. |
 
 ## Use the Windows App SDK
 

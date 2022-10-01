@@ -145,8 +145,8 @@ For Windows 11, we improved the behavior of the context menu in File Explorer in
 
 If your app defines a context menu extension, the following requirements must be met for the extension to appear in the new Windows 11 context menu. Otherwise, your app's context menu extension will appear in the older context menu available via the **Show more options** item.
 
-- Your context menu extension must be implemented by using the [IExplorerCommand](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [IContextMenu](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
-- Your app must have [package identity](/windows/apps/desktop/modernize/modernize-packaged-apps). To achieve this, you can package your app in an [MSIX package](/windows/msix/), or you can create a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) that grants identity to your app.
+* Your context menu extension must be implemented by using the [**IExplorerCommand**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [**IContextMenu**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
+* Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps) for some options for packaging your app.
 
 #### Share dialog
 
@@ -154,8 +154,8 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 - Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
 - All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - Unpackaged desktop apps can participate as targets in the Share dialog by using a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). For a sample that demonstrates how to do this, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample.
-  - PWAs can participate in the Share dialog if they implement the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)
 

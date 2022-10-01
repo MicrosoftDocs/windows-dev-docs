@@ -10,12 +10,13 @@ ms.custom: RS5
 
 # Features that require package identity
 
-If you want to update your desktop app with [modern Windows experiences](index.md), many features are available only in desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity). There are several ways to grant package identity to a desktop app:
+Some [modern Windows experiences](index.md) are available only to desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. These features include certain Windows Runtime APIs, package extensions, and UWP components.
 
-* Package it in an [MSIX package](/windows/msix/desktop/desktop-to-uwp-root). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
-* If you are unable to adopt MSIX packaging for deploying your desktop app, starting in Windows 10, version 2004, you can grant package identity by creating a *sparse MSIX package* that contains only a package manifest. For more information, see [Grant package identity to an unpackaged app](grant-identity-to-nonpackaged-apps.md).
+* **Packaged app**. A packaged app is one that's been packaged using MSIX technology (see [What is MSIX?](/windows/msix/overview)). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. Importantly, a packaged app has *package identity* at runtime.
+  * Very commonly, a packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization.
+  * But you can opt out of those restrictions and still be a packaged app (still benefit from package identity). You do that by building and registering a *package with external location* with your app. See [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 
-If your desktop app has package identity, you can use the following features in your app.
+If your desktop app has package identity, then you can use the following features in your app.
 
 ## Integrate with package extensions
 
