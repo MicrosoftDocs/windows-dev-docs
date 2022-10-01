@@ -22,13 +22,11 @@ Links to full installation details are in the steps below. We recommend that you
 
 [!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
-## Key concepts
+## Packaged, unpackaged, and packaged with external location
 
-Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a unpackaged project. But please come back later to read more about it.
+Packaging is an important consideration of any Windows App SDK project. For more info about your packaging options, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app).
 
-[!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
-
-## MSIX-packaged: Create a new project for an MSIX-packaged C# or C++ WinUI 3 desktop app
+## Packaged: Create a new project for a packaged C# or C++ WinUI 3 desktop app
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
@@ -54,7 +52,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 1. Build and run your solution on your development computer to confirm that the app runs without errors.
 
-## Non-MSIX-packaged: Create a new project for a non-MSIX-packaged C# or C++ WinUI 3 desktop app
+## Unpackaged: Create a new project for an unpackaged C# or C++ WinUI 3 desktop app
 
 > [!IMPORTANT]
 > Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a non-MSIX-packaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).

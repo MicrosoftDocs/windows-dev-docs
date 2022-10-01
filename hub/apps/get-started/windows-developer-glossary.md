@@ -20,10 +20,10 @@ Describes the management of your application's execution state: not running, run
 Often referred to as “app model”. The combination of deployment, isolation, lifecycle, and presentation components that are unique to a given application development technology. For example: Windows App SDK / WinUI 3 apps run on the Win32 app model, while UWP / WinUI 2 run on the UWP app model.
 
 #### Application packaging
-Describes the manner in which your application is packaged before being distributed and installed by users. Applications can be MSIX-packaged, unpackaged, or sparsely packaged.
+Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
 
 #### Bootstrapper
-A redistributable component providing an API to find and load the Windows App SDK framework package for the calling process. In a sparse-packaged or unpackaged app, you can opt to load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). Also see [Reference the Windows App SDK framework package at run time](/windows/apps/windows-app-sdk/reference-framework-package-run-time).
+A redistributable component providing an API to find and load the Windows App SDK framework package for the calling process. In an app that's packaged with external location, or unpackaged, you can opt to load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). Also see [Reference the Windows App SDK framework package at run time](/windows/apps/windows-app-sdk/reference-framework-package-run-time).
 
 #### C++/WinRT
 C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to modern Windows APIs. [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
@@ -49,23 +49,24 @@ You can use Microsoft Foundation Classes (MFC) to create complex user interfaces
 #### MSIX (Microsoft Installer package format)
 MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is an "MSIX-packaged" app. MSIX-packaged apps can check for updates and can control when updates are applied. [What is MSIX?](/windows/msix/overview).
 
-#### MSIX-packaged app
-Apps that are packaged using MSIX. MSIX-packaged apps give end-users an easy installation, uninstallation, and update experience. These run with package identity, which is needed for certain Windows features (for example, custom context menu extensions). MSIX-packaged apps can be installed through the Microsoft Store or Windows App Installer.
-
 #### Native apps
 Traditionally, "native" refers to applications built without using the .NET runtime. In this case, "native" is synonymous with "unmanaged", and can be used to describe apps that manage their own memory and security concerns. Alternatively, some developers use "native" to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly.
 
 #### .NET MAUI
 .NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [What is .NET MAUI?](/dotnet/maui/what-is-maui).
 
+#### Packaged app
+Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. A packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization. A packaged app has package identity at runtime, which is needed for certain Windows features (for example, custom context menu extensions). See [What's the difference between apps that are packaged, unpackaged, and packaged with external location?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
+
+#### Packaging with external location
+
+Packaging with external location offers a hybrid between packaged and unpackaged apps. A packaged app with external location uses MSIX to package, but it uses a non-MSIX installer. A packaged app with external location has package identity at runtime. You could think of this option as a bring-your-own-installer model. See [What's the difference between apps that are packaged, unpackaged, and packaged with external location?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
+
 #### Project Reunion
 The codename for the Windows App SDK. No longer in use.
 
 #### React Native
 [React Native](https://reactnative.dev/) is a development platform from Meta which allows developers to build fully native cross-platform apps using JavaScript, TypeScript, and React. [React Native for Windows](https://aka.ms/reactnative) brings React Native support to the Windows 10 and Windows 11 SDKs, enabling developers to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
-
-#### Sparse packaging
-Sparse packaging offers a hybrid between MSIX-packaged and unpackaged. Sparse-packaged apps do use MSIX to package, but they use a non-MSIX installer (like unpackaged apps) and they run with package identity (like MSIX-packaged apps). You can think of sparse-packaged apps as apps with “Bring-Your-Own-Installer" (BYOI).
 
 #### Universal Windows Platform (UWP)
 An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver MSIX-packaged apps. UWP apps run in a sandboxed environment and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
@@ -74,7 +75,7 @@ An application development platform and application model that uses Windows Runt
 Apps that aren't managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app. 
 
 #### Unpackaged app
-Apps that don't use MSIX, and are not sparse-packaged. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. These run without package identity. MSIX-packaged, sparse-packaged, and unpackaged apps can be published to the Microsoft Store.
+Unpackaged apps don't use MSIX or an MSIX installer. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. An unpackaged app lacks package identity at runtime. See [What's the difference between apps that are packaged, unpackaged, and packaged with external location?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
 
 #### Visual Studio extension (VSIX)
 Lets you create, package, and deploy Visual Studio extensions. [Get started with the VSIX Project template](/visualstudio/extensibility/getting-started-with-the-vsix-project-template).

@@ -152,13 +152,13 @@ sections:
     questions:
       - question: What's the difference between apps that are packaged, unpackaged, and packaged with external location?
         answer: |
-          Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. A packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization. A packaged app has package identity at runtime.
+          Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. A packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization. A packaged app has package identity at runtime, which is needed for certain Windows features (for example, custom context menu extensions).
           
-          Unpackaged apps don't use MSIX. Instead, they use a non-MSIX installer. An unpackaged app lacks package identity at runtime.
+          Unpackaged apps don't use MSIX or an MSIX installer. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. An unpackaged app lacks package identity at runtime.
           
-          Packaging with external location offers a hybrid between those two approaches. A packaged app with external location uses MSIX to package, but it uses a non-MSIX installer. A packaged app with external location has package identity at runtime.  
+          Packaging with external location offers a hybrid between packaged and unpackaged apps. A packaged app with external location uses MSIX to package, but it uses a non-MSIX installer. A packaged app with external location has package identity at runtime. You could think of this option as a bring-your-own-installer model.  
           
-          Each type of app can be published to the Microsoft Store. We recommend that you package your app to run in an app container to ensure that end-users enjoy a seamless installation and update experience.
+          Each type of app can be published to the Microsoft Store, and installed that way or via Windows App Installer. We recommend that you package your app to run in an app container to ensure that end-users enjoy a seamless installation and update experience.
       - question: Will my WinUI 3 app automatically update for end-users? 
         answer: |
           A Windows App SDK / WinUI 3 app can be delivered through the Store, an .appinstaller file, or in your existing MSI or setup.exe package. The Store and the AppInstaller support automatic updates for end-users who have automatic updating enabled, but your MSI/setup.exe app needs to have its own updater. 
