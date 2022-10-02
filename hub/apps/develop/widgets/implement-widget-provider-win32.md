@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 2.
 
-This article walks you through creating a simple widget provider that implements the **IWidgetProvider** interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
+This article walks you through creating a simple widget provider that implements the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
 :::image type="content" source="images/counting-and-weather-widgets.png" alt-text="A counting widget and a weather widget. It shows the counting widget and the weather widget both in small size that will be implemented as part of this tutorial.":::
 
@@ -59,7 +59,7 @@ In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution 
 
 ## Declare a class that implements the IWidgetProvider interface
 
-The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a struct that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. 
+The **IWidgetProvider** interface defines methods that the widget host will invoke to initiate operations with the widget provider. Replace the empty class definition in the WidgetProvider.h file with the following code. This code declares a structure that implements the **IWidgetProvider** interface and declares prototypes for the interface methods. 
 
 ```cpp
 // WidgetProvider.h
@@ -265,7 +265,7 @@ std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWid
 
 ## CreateWidget
 
-The widget host calls **CreateWidget** when the user has enabled one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
+The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.createwidget) when the user has enabled one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
 ```cpp
 // WidgetProvider.cpp
@@ -284,7 +284,7 @@ void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
 
 ## DeleteWidget
 
-The widget host calls **DeleteWidget** when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of enabled widgets so that we don't send any further updates for that widget.
+The widget host calls [DeleteWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deletewidget) when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of enabled widgets so that we don't send any further updates for that widget.
 
 ```cpp
 // WidgetProvider.cpp
@@ -296,7 +296,7 @@ void WidgetProvider::DeleteWidget(winrt::hstring const& widgetId, winrt::hstring
 
 ## OnActionInvoked
 
-The widget host calls **OnActionInvoked** when the user interacts with an action you defined in your widget template. For the counter widget used in this example, an action was declared with a **verb** value of "inc" in the JSON template for the widget. The widget provider code will use this **verb** value to determine what action to take in response to the user interaction.  
+The widget host calls [OnActionInvoked](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onactioninvoked) when the user interacts with an action you defined in your widget template. For the counter widget used in this example, an action was declared with a **verb** value of "inc" in the JSON template for the widget. The widget provider code will use this **verb** value to determine what action to take in response to the user interaction.  
 
 ```json
 ...
@@ -310,7 +310,7 @@ The widget host calls **OnActionInvoked** when the user interacts with an action
 ...
 ```
 
-In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the **WidgetActionInvokedArgs** passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the **WidgetContext** object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our enabled widgets map with the specified ID and then update the increment the custom state value. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
+In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the [WidgetActionInvokedArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetactioninvokedargs) passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the [WidgetContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext) object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our enabled widgets map with the specified ID and then update the increment the custom state value. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
 
 ```cpp
 // WidgetProvider.cpp
@@ -340,7 +340,7 @@ For information about the **Action.Execute** syntax for Adaptive Cards, see [Act
 
 ## OnWidgetContextChanged
 
-In the current release, **OnWidgetContextChanged** is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template to the widget host depending on what size is requested. You can also choose to include the template JSON for all supported widget sizes in a single template. If you send all sizes in a single template, you can use the **OnWidgetContextChanged** for telemetry purposes.
+In the current release, [OnWidgetContextChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onwidgetcontextchanged) is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template to the widget host depending on what size is requested. You can also choose to include the template JSON for all supported widget sizes in a single template. If you send all sizes in a single template, you can use the **OnWidgetContextChanged** for telemetry purposes.
 
 ```cpp
 // WidgetProvider.cpp
@@ -361,7 +361,7 @@ void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs cont
 
 ## Activate and Deactivate
 
-The **Activate** method is called to notify the widget provider that the widget host is currently interested in receiving updated content from the provider. For example, it could mean that the user is currently actively viewing the widget host. The **Deactivate** method is called to notify the widget provider that the widget host is no longer requesting content updates. These two methods define a window in which the widget host is most interested in showing the most up-to-date content. Widget providers can send updates to the widget at any time, such as in response to a push notification, but as with any background task, it's important to balance providing up-to-date content with resource concerns like battery life. 
+The [Activate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.activate) method is called to notify the widget provider that the widget host is currently interested in receiving updated content from the provider. For example, it could mean that the user is currently actively viewing the widget host. The [Deactivate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deactivate) method is called to notify the widget provider that the widget host is no longer requesting content updates. These two methods define a window in which the widget host is most interested in showing the most up-to-date content. Widget providers can send updates to the widget at any time, such as in response to a push notification, but as with any background task, it's important to balance providing up-to-date content with resource concerns like battery life. 
 
 **Activate** and **Deactivate** are called on a per-widget basis. This example tracks the active status of each widget in the **CompactWidgetInfo** helper struct. In the **Activate** method, we call the **UpdateWidget** helper method to update our widget. Note that the time window between **Activate** and **Deactivate** may be small, so it's recommended that you try to make your widget update code path as quick as possible.
 
@@ -392,7 +392,7 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
 ## Update a widget
 
-Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated and then call **WidgetManager::GetDefault().UpdateWidget** to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated. Call [WidgetManager::GetDefault](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getdefault) to get an instance of the [WidgetManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager) class and then call [UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget) to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
@@ -430,7 +430,7 @@ void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
 
 ## Initialize the list of enabled widgets on startup
 
-When our widget provider is first initialized, we need to populate our list of enabled widgets. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call **GetWidgetInfos**, which returns an array of **WidgetInfo** objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
+When our widget provider is first initialized, we need to populate our list of enabled widgets. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
 
 ```cpp
 // WidgetProvider.cpp
