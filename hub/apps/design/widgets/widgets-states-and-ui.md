@@ -73,13 +73,6 @@ Some UI elements of a widget are built into the widgets experience and, while th
 
 The context menu is displayed when the user clicks on the three-dot icon on the top right. This menu allows users to select their preferred widget size and access the widget's configuration state. Partners will use the same template widget register “powered by ___”. 
 
-### Configuration mode 
-
-![A screenshot of a widget in the configuration state](./images/widgets-configuration-state.png)
-
-Your widget can have a configuration page to allow users to refine the content they see within the widget, such as picking the current location for a weather widget or picking a team to show for a sports widget. Users can get to this configuration page by clicking **Customize Widget** in the built-in context menu. The configuration state is designed and implemented by the widget provider.
-
-The configuration page can only be designed and displayed in medium and large widget sizes. To give the small widget more space when in configuration mode, the widget can flip to a medium and then back to small once user has finished editing their options. All other size widgets will stay at their original size when in the configuration state
 
 
 ### Attribution area
