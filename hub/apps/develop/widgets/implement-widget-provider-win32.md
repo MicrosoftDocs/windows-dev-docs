@@ -553,7 +553,7 @@ int main()
 
 ## Package your widget provider app
 
-In the current release, only packaged apps can be registered as a widget providers. The following steps will take you through the process of packaging your app and updating the app manifest to register your app with the OS as a widget provider.
+In the current release, only packaged apps can be registered as widget providers. The following steps will take you through the process of packaging your app and updating the app manifest to register your app with the OS as a widget provider.
 
 ### Create an MSIX packaging project 
 
