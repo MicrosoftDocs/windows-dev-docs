@@ -437,7 +437,8 @@ When our widget provider is first initialized, it's a good idea to ask **WidgetM
 // WidgetProvider.cpp
 WidgetProvider::WidgetProvider()
 {
-    for (auto widgetInfo : winrt::WidgetManager::GetDefault().GetWidgetInfos())
+    auto runningWidgets = winrt::WidgetManager::GetDefault().GetWidgetInfos();
+    for (auto widgetInfo : runningWidgets )
     {
         auto widgetContext = widgetInfo.WidgetContext();
         auto widgetId = widgetContext.Id();
