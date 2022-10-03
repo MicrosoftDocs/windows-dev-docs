@@ -17,7 +17,6 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 ## How to deactivate
 
 Capture mode is deactivated immediately after text in the selected region is recognized and copied to the clipboard.
-
 You can exit capture mode by pressing <kbd>Esc</kbd> at any moment.
 
 ## Adjust while trying to capture
@@ -42,7 +41,7 @@ From the Settings menu, the following options can be configured:
 
 Text Extractor can only recognize languages that have the OCR language pack installed.
 
-The list can be obtained via PowerShell by running following commands:
+The list can be obtained via PowerShell by running the following commands:
 ```console
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
@@ -78,7 +77,7 @@ If a language is not available in the output, then it's not supported by OCR.
 
 ### How to install an OCR language pack
 
-The following commands install the OCR pack for <kbd>en-US</kbd>:
+The following commands install the OCR pack for "en-US":
 ```console
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Add-WindowsCapability -Online
@@ -86,7 +85,7 @@ PS C:\Windows\system32> $Capability | Add-WindowsCapability -Online
 
 ### How to remove an OCR language pack
 
-The following commands remove the OCR pack for <kbd>en-US</kbd>:
+The following commands remove the OCR pack for "en-US":
 ```console
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
@@ -98,4 +97,4 @@ PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
 
 This message is shown when there are no available languages for recognition.
 
-If an OCR pack is supported and installed, but still is not available and your system drive <kbd>X:</kbd> is different than <kbd>C:</kbd>, then copy <kbd>X:/Windows/OCR</kbd> folder to <kbd>C:/Windows/OCR</kbd> to fix the issue.
+If an OCR pack is supported and installed, but still is not available and your system drive _X:_ is different than "C:", then copy `X:/Windows/OCR` folder to `C:/Windows/OCR` to fix the issue.
