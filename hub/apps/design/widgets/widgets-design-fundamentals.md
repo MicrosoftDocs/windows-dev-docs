@@ -20,7 +20,7 @@ This article provides detailed guidance for designing the UI for a Windows widge
 ![A screenshot showing examples of small, medium, and large sizes for a weather widget.](./images/widgets-sizes-2.png)
 ![A screenshot showing examples of small, medium, and large sizes for a traffic widget.](./images/widgets-sizes-3.png)
 
-Widgets provide three sizes for the user to choose from. It is recommended that you create and consider all 3 sizes and adapt your design specifically for each size. Small and medium sizes provide better discoverability as they get surfaced more often within the dynamic feed. Large sizes are useful for displaying more in-depth information. Supporting multiple sizes allows flexibility in users customizing the widgets they choose to pin to the widget board.  
+Widgets provide three sizes for the user to choose from. It is recommended that you create and consider all 3 sizes and adapt your design specifically for each size. Small and medium sizes provide better discoverability as they get surfaced more often within the dynamic feed. Large sizes are useful for displaying more in-depth information. Supporting multiple sizes allows flexibility in users customizing the widgets they choose to pin to the widgets board.  
 
 
 

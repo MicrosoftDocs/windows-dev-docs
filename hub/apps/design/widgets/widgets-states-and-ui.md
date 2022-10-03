@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 ## Widget states
 
-When a widget is displayed on the Widget Board, there are several different states that it can be in, depending on the current state of the Widget Board and your app, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app while others are built into the Widgets host. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.
+When a widget is displayed on the Widgets Board, there are several different states that it can be in, depending on the current state of the widgets board and your app, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app while others are built into the Widgets host. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.
 
 ### Default state
 
@@ -86,7 +86,7 @@ The configuration page can only be designed and displayed in medium and large wi
 
 ![A screenshot of a widget with a red box and label calling out the attribution area at the top of the widget containing the widget name and icon.](./images/widgets-attribution.png)
 
-The attribution area is rendered by the Widget board based on the widget name and icon provided during widget registration. For more information on registering widgets, see [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
+The attribution area is rendered by the widgets board based on the widget name and icon provided during widget registration. For more information on registering widgets, see [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
 
 
 
