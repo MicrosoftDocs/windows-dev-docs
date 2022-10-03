@@ -231,7 +231,7 @@ The following code example illustrates the usage of the widget package manifest 
               <!-- DarkMode and LightMode are optional -->
               <DarkMode>
                 <Icons>
-                    <Icon Path="Assets\dark.png" />
+                  <Icon Path="Assets\dark.png" />
                 </Icons>
                 <Screenshots>
                   <Screenshot Path="Assets\darkBackground.png" DisplayAltText ="For accessibility"/>
