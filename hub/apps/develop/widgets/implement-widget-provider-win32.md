@@ -373,7 +373,7 @@ void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::Wid
 
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
-        auto localWidgetInfo = iter->second;
+        auto& localWidgetInfo = iter->second;
         localWidgetInfo.isActive = true;
 
         UpdateWidget(localWidgetInfo);
