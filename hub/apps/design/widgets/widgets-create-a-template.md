@@ -83,7 +83,7 @@ Note that the conditional statements aren't being reflected in the preview. This
 
 From the **Container size** dropdown, select "Medium" and note that the preview switches to only show the **TextBlock** for the medium size. The container in the preview also changes size, demonstrating how you can use the preview to make sure that your UI fits within the widget container for each supported size.
 
-## Bind to the data template
+## Bind to the data context
 
 Our example widget will use an custom state property named "count". You can see in the current template that the value for the first **TextBlock** includes the variable reference `$count`. When the widget is running in the Widget Board, the widget provider is responsible for assembling the data template and passing it to the widget host. At design time, you can use the **Sample Data Editor** to prototype your data template and see how different values impact the display of your widget. Replace the empty data template with the following JSON.
 
