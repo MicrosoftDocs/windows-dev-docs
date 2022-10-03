@@ -93,7 +93,7 @@ Our example widget will use a custom state property named "count". You can see i
 
 Note that the preview now inserts the value specified for the *count* property into the text for the first **TextBlock**.
 
-:::image type="content" source="images/widgets-designer-walkthrough-4.png" alt-text="An adaptive card in progress. The first line of text now includes the value 2 from the data template.":::
+:::image type="content" source="images/widgets-designer-walkthrough-4.png" alt-text="An adaptive card in progress. The first line of text now includes the value 2 from the data payload.":::
 
 ## Add a button
 
