@@ -55,7 +55,7 @@ On the **Apps & features** page, search for **reunion** to filter and show insta
 
 ## Related topics
 
-- [Deploy unpackaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Runtime architecture](deployment-architecture.md)
 - [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)

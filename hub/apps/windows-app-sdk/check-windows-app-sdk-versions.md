@@ -149,6 +149,6 @@ Status            : Ok
 ## Related topics
 
 - [Runtime architecture](deployment-architecture.md)
-- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)

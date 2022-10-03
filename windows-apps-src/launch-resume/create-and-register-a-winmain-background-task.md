@@ -4,7 +4,7 @@ description: Create a COM background task that can run in your main process or o
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
 ms.date: 05/16/2022
 ms.topic: article
-keywords: windows 10, desktop bridge, sparse signed packaged, win32, background task
+keywords: windows 10, desktop bridge, signed packaged with external location, win32, background task
 ms.localizationpriority: medium
 dev_langs:
 - csharp
