@@ -24,14 +24,14 @@ Also see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-y
 
 Before configuring your framework-dependent app for deployment, review [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture) to learn more about the dependencies your app takes when it uses the Windows App SDK.
 
-### Packaged app
+### Packaged apps
 
 If you've chosen to go with a framework-dependent packaged app (see [Deployment overview](/windows/apps/package-and-deploy/)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
 
-* [Windows App SDK deployment guide for MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-packaged-apps)
+* [Windows App SDK deployment guide for framework-dependent packaged apps](/windows/apps/windows-app-sdk/deploy-packaged-apps)
 * [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
 
-### Packaged app with external location, or unpackaged app
+### Packaged with external location or unpackaged apps
 
 If you've chosen to go with a framework-dependent packaged app with external location, or a framework-dependent unpackaged app (see [Deployment overview](/windows/apps/package-and-deploy/)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
 
@@ -46,7 +46,7 @@ See [Windows App SDK deployment guide for self-contained apps](./self-contained-
 
 * [Deployment overview](/windows/apps/package-and-deploy/)
 * [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
-* [Windows App SDK deployment guide for MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-packaged-apps)
+* [Windows App SDK deployment guide for framework-dependent packaged apps](/windows/apps/windows-app-sdk/deploy-packaged-apps)
 * [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
 * [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)

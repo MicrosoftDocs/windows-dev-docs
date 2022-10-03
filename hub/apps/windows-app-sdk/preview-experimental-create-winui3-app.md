@@ -350,7 +350,7 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
     > [!div class="button"]
     > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
 
-8. Build and run. For additional deployment information, see the Windows App SDK tutorial for deploying non-MSIX-packaged apps ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)). That tutorial will guide you through using the [bootstrapper API](use-windows-app-sdk-run-time.md) to initialize the Windows App SDK runtime so your app can use Windows App SDK and WinUI 3 APIs. 
+8. Build and run. For additional deployment information, see the Windows App SDK tutorial for deploying packaged with external location and unpackaged apps ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)). That tutorial will guide you through using the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)) to initialize the Windows App SDK runtime so your app can use Windows App SDK and WinUI 3 APIs. 
 
 ### [C++ with 1.0 Preview 3](#tab/cpp-unpackaged)
 
@@ -410,7 +410,7 @@ To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:
     > [!div class="button"]
     > [Download latest installer & MSIX packages](https://aka.ms/windowsappsdk/1.0-preview3/msix-installer)
 
-12. 8. Build and run. For additional deployment information, see the Windows App SDK tutorial for deploying non-MSIX-packaged apps ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)). That tutorial will guide you through using the [bootstrapper API](use-windows-app-sdk-run-time.md) to initialize the Windows App SDK runtime so your app can use Windows App SDK and WinUI 3 APIs. 
+12. 8. Build and run. For additional deployment information, see the Windows App SDK tutorial for deploying packaged with external location and unpackaged apps ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)). That tutorial will guide you through using the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)) to initialize the Windows App SDK runtime so your app can use Windows App SDK and WinUI 3 APIs. 
 
 ---
 

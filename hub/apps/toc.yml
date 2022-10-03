@@ -394,13 +394,13 @@ items:
             items:
               - name: "Deployment architecture and overview"
                 href: windows-app-sdk/deployment-architecture.md
-              - name: "Deployment guide for MSIX-packaged apps"
+              - name: "Deployment guide for packaged apps"
                 href: windows-app-sdk/deploy-packaged-apps.md
-              - name: "Deploying non-MSIX-packaged apps"
+              - name: "Deploying apps packaged with external location or unpackaged"
                 items:
-                  - name: "Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged"
+                  - name: "Deployment guide for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/deploy-unpackaged-apps.md
-                  - name: "Use the Windows App SDK runtime"
+                  - name: "Use the Windows App SDK runtime for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/use-windows-app-sdk-run-time.md
                   - name: "Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md

@@ -13,7 +13,7 @@ The *dynamic dependency API* enables unpackaged apps (that is, apps that don't u
 Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for framework packages. For more information about these types of references, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages). 
 
 > [!NOTE]
-> Unlike other framework packages, you can't use the dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) in your unpackaged app. Instead, you must use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that is designed to take dependencies on the Windows App SDK framework package. For more information, see [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
+> Unlike other framework packages, you can't use the dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) in your unpackaged app. Instead, you must use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that is designed to take dependencies on the Windows App SDK framework package. For more information, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
 
 ## Use the dynamic dependency API
 
@@ -84,4 +84,4 @@ The dynamic dependency API implementation in Windows 11 (in [appmodel.h](/window
 * [MSIX framework packages](framework-packages-overview.md)
 * [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
 * [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
-* [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
+* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)

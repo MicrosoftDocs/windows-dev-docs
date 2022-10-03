@@ -21,7 +21,7 @@ There are two main options to distribute a framework-dependent app:
 | Non-MSIX-packaged | - Must distribute runtime either using the Installer or by installing required MSIX packages directly. <br> - Additional runtime requirements: Must initialize access to the Windows App SDK runtime via the Bootstrap API. | 
 
 For more details on these requirements, see the following articles:
-- [Windows App SDK deployment guide for MSIX-packaged apps](deploy-packaged-apps.md) 
+- [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md) 
 - [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 
 ## Key terms
@@ -34,8 +34,8 @@ The following sections define key terms for Windows App SDK deployment and addit
 | **Framework package** | Contains binaries used at run time by apps (most Windows App SDK features). The framework includes a bootstrapper component that enables apps to automatically install the latest version of the Windows App SDK, which will be updated on a regular release cadence. |
 | **Main package** | Package that contains background tasks to keep track of dynamic dependencies, and enables automatic updates to the Framework package from the Microsoft Store. |
 | **Singleton package** | Contains background tasks, services, app extensions, and other components not included in the Framework package such as Push Notifications. This is generally a single long-running process that is brokered between apps. |
-| **Dynamic Dependency Lifetime Manager (DDLM) package** | Prevents the OS from performing servicing updates to the MSIX packages while a non-MSIX-packaged app is in use. |
-| **Bootstrapper** | An app-local binary used by non-MSIX-packaged apps to locate and load the best Windows App SDK version match as needed by the app.  |
+| **Dynamic Dependency Lifetime Manager (DDLM) package** | Prevents the OS from performing servicing updates to the MSIX packages while a packaged with external location or unpackaged app is in use. |
+| **Bootstrapper** | An app-local binary used by packaged with external location and unpackaged apps to locate and load the best Windows App SDK version match as needed by the app.  |
 | **Provisioning** | The process of installing and registering packages (including files and registry keys) system-wide to eliminate the need for repeated installation by the other users. It can be done either as part of the OS or done during installation of an app. |
 | **Installer** | Refers to the .exe installer which deploys the Framework, Main, Singleton, and DDLM packages. |
 | **MSIX** | Modern installer technology that enables users to safely install an app per user, directly from the Microsoft Store or a web site. On Enterprise or shared PCs, apps can be installed for all users via PowerShell and MDM. |
@@ -64,7 +64,7 @@ The Windows App SDK singleton is needed to enable [push notifications](notificat
 
 ### Bootstrapper
 
-The bootstrapper is a library that must be included with your non-MSIX-packaged app. It provides the bootstrapper API (see [Use the Windows App SDK runtime for non-MSIX-packaged apps](use-windows-app-sdk-run-time.md)), which enables unpackaged apps to perform these important tasks:
+The bootstrapper is a library that must be included with your packaged with external location or unpackaged app. It provides the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)), which enables unpackaged apps to perform these important tasks:
 
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
@@ -90,5 +90,5 @@ There is one DDLM for each version and architecture of the Windows App SDK frame
 
 ## Related topics
 
-* [Windows App SDK deployment guide for MSIX-packaged apps](deploy-packaged-apps.md)
+* [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) 

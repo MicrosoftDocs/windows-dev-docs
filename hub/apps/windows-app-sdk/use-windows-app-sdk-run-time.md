@@ -1,6 +1,6 @@
 ---
-title: Use the Windows App SDK runtime for non-MSIX-packaged apps
-description: If your app doesn't use MSIX for its deployment technology, then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore.
+title: Use the Windows App SDK runtime for apps packaged with external location or unpackaged
+description: If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore.
 ms.topic: article
 ms.date: 04/26/2022
 ms.author: stwhi
@@ -8,12 +8,12 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Use the Windows App SDK runtime for non-MSIX-packaged apps
+# Use the Windows App SDK runtime for apps packaged with external location or unpackaged
 
 > [!NOTE]
-> If your app uses MSIX for its deployment technology, see the [Windows App SDK deployment guide for MSIX-packaged apps](deploy-packaged-apps.md).
+> If your app is installed by using MSIX technology, then see [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md).
 
-If your app doesn't use MSIX for its deployment technology, then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore. Your app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK.
+If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore. Your app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK.
 
 * Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app).
 * If you have advanced needs (such as handling errors by showing your own custom UI or logging, or if you need to load a version of the Windows App SDK that's different from the version you built with), then you can instead call the bootstrapper API explicitly. More info about that in this topic.
@@ -91,7 +91,7 @@ See [Bootstrapper C++ API](/windows/apps/api-reference/bootstrapper-cpp-api/).
 
 ## Declare OS compatibility in your application manifest
 
-To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior (and potential crashes), you can include a side-by-side application manifest with your non-MSIX-packaged app. See [Application manifests](/windows/win32/sbscs/application-manifests) (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build). This might be an issue if you're adding Windows App SDK support to an existing app, rather than creating a new one via a Visual Studio project template.
+To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior (and potential crashes), you can include a side-by-side application manifest with your packaged with external location or unpackaged app. See [Application manifests](/windows/win32/sbscs/application-manifests) (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build). This might be an issue if you're adding Windows App SDK support to an existing app, rather than creating a new one via a Visual Studio project template.
 
 If you don't already have a side-by-side application manifest in your project, then add a new XML file to your project, and name it as recommended in [Application manifests](/windows/win32/sbscs/application-manifests). Add to the file the **compatibility** element and the child elements shown in the following example. These values control the quirks level for the components running in your app's process.
 

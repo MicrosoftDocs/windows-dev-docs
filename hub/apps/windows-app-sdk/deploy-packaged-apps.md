@@ -1,17 +1,17 @@
 ---
-title: Windows App SDK deployment guide for MSIX-packaged apps 
-description: This article provides guidance about deploying framework-dependent MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
+title: Windows App SDK deployment guide for framework-dependent packaged apps
+description: This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 ms.topic: article
-ms.date: 04/04/2022
+ms.date: 10/03/2022
 keywords: windows win32, windows app development, Windows App SDK 
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Windows App SDK deployment guide for framework-dependent MSIX-packaged apps 
+# Windows App SDK deployment guide for framework-dependent packaged apps
 
-This article provides guidance about deploying framework-dependent MSIX-packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
+This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK. The equivalent topic for other packaging options is [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
 
 ## Overview
 
