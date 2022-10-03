@@ -75,7 +75,7 @@ In the Adaptive Cards Template Language, the `$when` property specifies that the
 
 Now the preview should look like the following image:
 
-:::image type="content" source="images/widgets-designer-walkthrough-2.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text specified in the JSON payload show in the previous step. Instead of conditionally hiding elements, all of the elements are visible and overflow the bottom border of the image.":::
+:::image type="content" source="images/widgets-designer-walkthrough-2.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text specified in the JSON payload shown in the previous step. Instead of conditionally hiding elements, all of the elements are visible and overflow the bottom border of the image.":::
 
 Note that the conditional statements aren't being reflected in the preview. This is because the designer isn't simulating the behavior of the widget host. Click the **Preview mode** button at the top of the page to start the simulation. The widget preview now looks like the following image:
 
