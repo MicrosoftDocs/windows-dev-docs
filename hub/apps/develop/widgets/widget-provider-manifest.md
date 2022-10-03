@@ -240,7 +240,7 @@ The following code example illustrates the usage of the widget package manifest 
 
               <LightMode>
                 <Icons>
-                    <Icon Path="Assets\light.png" />
+                  <Icon Path="Assets\light.png" />
                 </Icons>
                 <Screenshots>
                   <Screenshot Path="Assets\lightBackground.png"/>
