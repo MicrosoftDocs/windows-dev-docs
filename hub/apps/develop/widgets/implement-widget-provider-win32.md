@@ -464,7 +464,7 @@ WidgetProvider::WidgetProvider()
 }
 ```
 
-## Instantiate the WidgetProvider class from main
+## Register a class factory that will instantiate WidgetProvider on request
 
 Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file. We will also be including **mutex** here.
 
