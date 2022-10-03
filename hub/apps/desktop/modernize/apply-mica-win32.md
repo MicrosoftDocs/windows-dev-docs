@@ -19,7 +19,7 @@ This article describes how to apply Mica as the base layer of your Win32 app, pr
 To apply Mica to a Win32 app for Windows 11, you need to use the [Windows App SDK](/windows/apps/windows-app-sdk/). You'll need the following:
 
 - Install the  latest [Windows App SDK](/windows/apps/windows-app-sdk/) Visual Studio Extension or Microsoft.WindowsAppSDK NuGet package. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
-- For unpackaged apps, reference the Windows App SDK, install WinRT, and have a matching [Windows App Runtime Redistributable (Microsoft.WindowsAppRuntime.Redist)](/windows/apps/windows-app-sdk/downloads) installed. See [Windows App SDK deployment guide for framework-dependent non-MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps).
+- For unpackaged apps, reference the Windows App SDK, install WinRT, and have a matching [Windows App Runtime Redistributable (Microsoft.WindowsAppRuntime.Redist)](/windows/apps/windows-app-sdk/downloads) installed. See [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps).
 
 ## How to use Mica in Win32 Apps
 

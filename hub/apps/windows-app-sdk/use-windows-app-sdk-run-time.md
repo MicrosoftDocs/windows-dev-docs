@@ -75,7 +75,7 @@ This function also shuts down the Dynamic Dependency Lifetime Manager (DDLM) so 
 
 ## .NET wrapper for the bootstrapper API
 
-Although you can call the C/C++ bootstrapper API directly from .NET apps, that requires the use of [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions) to call the functions. In Windows App SDK 1.0 and later releases, a .NET wrapper for the bootstrapper API is available in the `Microsoft.WindowsAppRuntime.Bootstrap.Net.dll` assembly. That assembly provides an easier and more natural API for .NET developers to access the bootstrapper's functionality. The **Bootstrap** class provides static **Initialize**, **TryInitialize**, and **Shutdown** functions that wrap calls to the [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [**MddBootstrapShutdown**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions for most common scenarios. For an example that demonstrates how to use the .NET wrapper for the bootstrapper API, see the C# instructions in [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+Although you can call the C/C++ bootstrapper API directly from .NET apps, that requires the use of [platform invoke](/dotnet/framework/interop/consuming-unmanaged-dll-functions) to call the functions. In Windows App SDK 1.0 and later releases, a .NET wrapper for the bootstrapper API is available in the `Microsoft.WindowsAppRuntime.Bootstrap.Net.dll` assembly. That assembly provides an easier and more natural API for .NET developers to access the bootstrapper's functionality. The **Bootstrap** class provides static **Initialize**, **TryInitialize**, and **Shutdown** functions that wrap calls to the [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [**MddBootstrapShutdown**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions for most common scenarios. For an example that demonstrates how to use the .NET wrapper for the bootstrapper API, see the C# instructions in [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 For more information about the .NET wrapper for the bootstrapper API, see these resources:
 
@@ -112,8 +112,8 @@ Replace the **Id** attribute of the **maxversiontested** element with the versio
 
 ## Related topics
 
-- [Windows App SDK deployment guide for non-MSIX-packaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
 - [MSIX framework packages and dynamic dependencies](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview)
 - [Runtime architecture for the Windows App SDK](deployment-architecture.md)
-- [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
+- [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)

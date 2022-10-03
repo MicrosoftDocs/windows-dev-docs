@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, other types of apps, unpackaged
 ms.localizationpriority: medium
 ---
+
 # Send a local toast notification from other types of unpackaged apps
 
-If you're developing an app that isn't using MSIX/UWP or sparse signed packages and isn't C# or C++, this is the page for you!
+This topic is for you if you're developing an app that isn't packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)),
+and isn't packaged with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), and isn't C# or C++.
 
-A toast notification is a message that an app can construct and deliver to the user while they are not currently inside your app. This quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification. These quickstart uses local notifications, which are the simplest notification to implement.
+A toast notification is a message that an app can construct and deliver to the user while the user is not currently using your app. This quickstart walks you through the steps to create, deliver, and display a Windows toast notification. These quickstart uses local notifications, which are the simplest notification to implement.
 
 > [!IMPORTANT]
-> If you're writing a C# app, please see the [C# documentation](send-local-toast.md). If you're writing a C++ app, please see the [C++ UWP](send-local-toast-cpp-uwp.md) or [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation.
-
-
+> If you're writing a C# app, then please see the [C# documentation](send-local-toast.md). If you're writing a C++ app, the please see the [C++ UWP](send-local-toast-cpp-uwp.md) or [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation.
 
 ## Step 1: Register your app in the registry
 
@@ -73,8 +73,6 @@ struct callback : winrt::implements<callback, INotificationActivationCallback>
 };
 ```
 
-
-
 ## Step 3: Send a toast
 
 In Windows 10, your toast notification content is described using an adaptive language that allows great flexibility with how your notification looks. See the [toast content documentation](adaptive-interactive-toasts.md) for more information.
@@ -109,11 +107,9 @@ ToastNotification notif{ doc };
 ToastNotificationManager::CreateToastNotifier(L"MyPublisher.MyApp").Show(notif);
 ```
 
-
 ## Step 4: Handling activation
 
 Your COM activator will be activated when your notification is clicked.
-
 
 ## More details
 
