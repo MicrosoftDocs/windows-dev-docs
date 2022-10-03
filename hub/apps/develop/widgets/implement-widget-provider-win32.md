@@ -414,7 +414,7 @@ void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
     winrt::hstring dataJson;
     if (localWidgetInfo.widgetName == L"Weather_Widget")
     {
-        L"{}";
+        dataJson = L"{}";
     }
     else if (localWidgetInfo.widgetName == L"Counting_Widget")
     {
