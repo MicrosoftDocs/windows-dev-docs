@@ -384,7 +384,7 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
-        auto localWidgetInfo = iter->second;
+        auto& localWidgetInfo = iter->second;
         localWidgetInfo.isActive = false;
     }
 }
