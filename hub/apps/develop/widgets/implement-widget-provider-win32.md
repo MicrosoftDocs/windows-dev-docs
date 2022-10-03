@@ -122,7 +122,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 
 ## Declare widget template JSON strings
 
-This example will declare some static strings to define the JSON templates for each widget. These variables should be declared outside of the **WidgetProvider** class definition. For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
+This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the local variables declared outside of the **WidgetProvider** class definition. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](https://learn.microsoft.com/en-us/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
 
 ```cpp
 // WidgetProvider.h
