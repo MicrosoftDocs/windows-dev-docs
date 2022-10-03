@@ -341,7 +341,7 @@ For information about the **Action.Execute** syntax for Adaptive Cards, see [Act
 
 ## OnWidgetContextChanged
 
-In the current release, [OnWidgetContextChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onwidgetcontextchanged) is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template to the widget host depending on what size is requested. You can also choose to include the template JSON for all supported widget sizes in a single template. If you send all sizes in a single template, you can use the **OnWidgetContextChanged** for telemetry purposes.
+In the current release, [OnWidgetContextChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onwidgetcontextchanged) is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template/data to the widget host depending on what size is requested. You can also design the template JSON to support all the available sizes using conditional rendering based on the value of **host.widgetSize**. If you don't need to send a new template or data to account for the size change, you can use the **OnWidgetContextChanged** for telemetry purposes.
 
 ```cpp
 // WidgetProvider.cpp
