@@ -423,7 +423,7 @@ void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
 
     updateOptions.Template(templateJson);
     updateOptions.Data(dataJson);
-    // !!  You can store some custom state in the widget service that you will be able to query at any time.
+    // You can store some custom state in the widget service that you will be able to query at any time.
     updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
     winrt::WidgetManager::GetDefault().UpdateWidget(updateOptions);
 }
