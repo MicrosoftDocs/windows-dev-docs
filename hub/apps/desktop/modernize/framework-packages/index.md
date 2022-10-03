@@ -26,6 +26,6 @@ For a deeper dive on what happens to files and registry entries when you create 
 
 ## Related topics
 
-- [Windows App SDK deployment guide for unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../../windows-app-sdk/deploy-unpackaged-apps.md)
 - [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
 - [MSIX documentation](/windows/msix)

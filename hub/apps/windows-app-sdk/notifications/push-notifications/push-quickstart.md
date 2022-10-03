@@ -72,9 +72,9 @@ Navigate to **Certificates & secrets** and select **New client secret**.
 ### Step 4: Map your app's Package Family Name to its Azure AppId
 
 > [!IMPORTANT]
-> During this phase, if you are an MSIX-packaged app or Sparse-packaged app, the mapping between your app's Package Family Name (PFN) and its Azure AppId must be manually created. In future releases, this functionality will be integrated into the Azure Portal.
+> During this phase, if you're a packaged app (including packaged with external location), then the mapping between your app's Package Family Name (PFN) and its Azure AppId must be manually created. In future releases, this functionality will be integrated into the Azure Portal.
 
-If your app is a packaged Win32 app (MSIX, Sparse Signed Packages), create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line **Windows App SDK Push Notifications Mapping Request** and body **PFN: *your PFN*, AppId: *your AppId***. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
+If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) with subject line **Windows App SDK Push Notifications Mapping Request** and body **PFN: *your PFN*, AppId: *your AppId***. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.
 
 Looking to change your PFN mapping? Simply repeat this step with your latest PFN and Azure AppId.
 
@@ -93,9 +93,9 @@ using namespace winrt::Microsoft::Windows::PushNotifications;
 
 ### Step 2: Add your COM activator to your app's manifest
 
-If your app is unpackaged (not an MSIX-packaged app or Sparse-packaged app), skip to **Step 3: Register for and respond to push notifications on app startup**.
+If your app is unpackaged (that is, it lacks package identity at runtime), then skip to **Step 3: Register for and respond to push notifications on app startup**.
 
-If your app is an MSIX-packaged app or Sparse-packaged app:
+If your app is packaged (including packaged with external location):
 Open your **Package.appxmanifest**. Add the following inside the `<Application>` element. Replace the `Id`, `Executable`, and `DisplayName` values with those specific to your app.
 
 

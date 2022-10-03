@@ -11,19 +11,19 @@ ms.localizationpriority: medium
 
 # Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK 
 
-**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also follow a tutorial ([Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) in which you configure a non-MSIX packaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.
+**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also follow a tutorial ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) in which you configure a non-MSIX packaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.
 
 This article provides a step-by-step tutorial for configuring a non-MSIX packaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
 Before completing this tutorial, we recommend that you review [Runtime architecture](deployment-architecture.md) to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.
 
 > [!NOTE]
->  The dynamic depednencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
+>  The dynamic dependencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See [issue](https://github.com/microsoft/WindowsAppSDK/issues/567) for more details. 
 
 ## Prerequisites
 
 1. [Install tools for the Windows App SDK](set-up-your-development-environment.md).
-2. Ensure all [dependencies for unpackaged apps are installed](deploy-unpackaged-apps.md#prerequisites). The simplest solution is to run the Windows App SDK runtime installer. 
+2. Ensure that all dependencies for the app are installed (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md#prerequisites)). The simplest solution is to run the Windows App SDK runtime installer. 
 
 ## Instructions
 
@@ -380,5 +380,5 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
 
 ## Related topics
 
-- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Runtime architecture](deployment-architecture.md)

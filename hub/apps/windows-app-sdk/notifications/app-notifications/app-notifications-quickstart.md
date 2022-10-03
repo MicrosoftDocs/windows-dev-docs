@@ -45,9 +45,9 @@ using Microsoft.Windows.AppNotifications;
 
 ## Step 2: Update your app's manifest
 
-If your app is unpackaged (not an MSIX-packaged app or Sparse-packaged app), skip to **Step 3: Register to handle an app notification**.
+If your app is unpackaged (that is, it lacks package identity at runtime), then skip to **Step 3: Register to handle an app notification**.
 
-If your app is an MSIX-packaged app or Sparse-packaged app:
+If your app is packaged (including packaged with external location):
 
 1. Open your **Package.appxmanifest**. 
 1. Add `<desktop:Extension>` for `windows.toastNotificationActivation` to declare your COM activator **[CLSID](/uwp/schemas/appxpackage/uapmanifestschema/element-com-exeserver-class)**. You can obtain a CLSID by navigating to **Create GUID** under **Tools** in Visual Studio.
@@ -294,8 +294,7 @@ Now you will display a simple app notification with an `appLogoOverride` image a
 Construct your app notification using an XML string and then call `Show`. For more information on how to construct your app notification using XML, please refer to the **XML** examples at [Toast content](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) and the [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root). 
 
 > [!NOTE]
-> If your app is MSIX-packaged or Sparse-packaged, your app's icon in the notification's upper left corner is sourced from the `package.manifest`. If your app is unpackaged, the icon is sourced by first looking into the shortcut then looking at the resource file in the app process. If all attempts fail, the Windows default app icon is used. The supported icon file types are .jpg, .png, .bmp, and .ico. 
-
+> If your app is packaged (including packaged with external location), then your app's icon in the notification's upper left corner is sourced from the `package.manifest`. If your app is unpackaged, then the icon is sourced by first looking into the shortcut, then looking at the resource file in the app process. If all attempts fail, then the Windows default app icon is used. The supported icon file types are `.jpg`, `.png`, `.bmp`, and `.ico`.
 
 #### [C#](#tab/cs)
 

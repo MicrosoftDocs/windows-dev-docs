@@ -50,6 +50,6 @@ For MSIX-packaged apps that use the [PackageDependency](/uwp/schemas/appxpackage
 
 - [Use the Windows App SDK runtime](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
 - [Use the dynamic dependency API to reference framework packages at run time](use-the-dynamic-dependency-api.md)
-- [Windows App SDK deployment guide for unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../../windows-app-sdk/deploy-unpackaged-apps.md)
 - [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
-- [Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](../../../windows-app-sdk/tutorial-unpackaged-deployment.md)
+- [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../../../windows-app-sdk/tutorial-unpackaged-deployment.md)

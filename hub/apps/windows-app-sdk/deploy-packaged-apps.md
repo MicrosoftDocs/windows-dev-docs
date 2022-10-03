@@ -88,6 +88,6 @@ If you encounter errors that you can't diagnose, [file an issue](https://github.
 ## Related topics
 
 * [Deployment architecture for the Windows App SDK](deployment-architecture.md)
-* [Deploying non-MSIX-packaged apps](deploy-unpackaged-apps.md)
+* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 * [Release channels](release-channels.md)
 * [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
