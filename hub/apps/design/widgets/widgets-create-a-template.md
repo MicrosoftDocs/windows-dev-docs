@@ -17,7 +17,7 @@ The UI and interaction for Windows Widgets are implemented using [Adaptive Cards
 
 The example in this article is a simple counting widget that displays an integer value and allows the user to increment the value by clicking on a button in the widget's UI. This example template uses data binding to automatically update the UI based on the data template.
 
-Apps need to implement a widget provider to generate and update the widget templates and pass them to the widget host. The article [Implement a widget provider in a win32 app](../../develop/widgets/implement-widget-provider-win32.md) provides step-by-step guidance for implementing the widget provider for the counting widget that we will generate in the steps below.
+Apps need to implement a widget provider to generate and update the widget template and/or data and pass them to the widget host. The article [Implement a widget provider in a win32 app](../../develop/widgets/implement-widget-provider-win32.md) provides step-by-step guidance for implementing the widget provider for the counting widget that we will generate in the steps below.
 
 ## The Adaptive Cards Designer
 
