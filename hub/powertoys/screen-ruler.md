@@ -18,13 +18,14 @@ Press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to activate and then sele
 
 - Bounds (Dashed square symbol): This is a bounding box. Click and drag with your mouse. If you hold <kbd>Shift</kbd>, the box(es) will stay in place until you cancel the interaction.
 - Spacing (&#9547;): This will measure horizontal and vertical spacing at the same time.  Click the symbol and move your mouse to your target location.
-- Horizontal (&#9473;): This will measure only horizontal spacing.  Click the symbol and move your mouse to your target location.
-- Vertical (&#9475;): This will measure only vertical spacing.  Click the symbol and move your mouse to your target location.
-- Cancel interaction: <kbd>Esc</kbd>, &#9587; or mouse click.
+- Horizontal (&#9473;): This will measure only horizontal spacing. Click the symbol and move your mouse pointer to your target location.
+- Vertical (&#9475;): This will measure only vertical spacing. Click the symbol and move your mouse pointer to your target location.
+- Cancel interaction: <kbd>Esc</kbd>, &#9587; or mouse click. Upon clicking the primary mouse button, the measurement is copied to the clipboard.
 
 The controls on the toolbar can also be triggered via <kbd>Ctrl</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>/<kbd>4</kbd>.
 
-Scroll up with the mouse wheel to decrease the sensitivity and scroll down to increase the sensitivity for the edge detection.
+> [!TIP]
+> Scroll up with the mouse wheel to increase the threshold for pixel difference by 15 units per wheel tick. Effectively the measuring line can become longer. Scroll down to reverse.
 
 ## Settings
 
