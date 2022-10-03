@@ -56,11 +56,10 @@ Traditionally, "native" refers to applications built without using the .NET runt
 .NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of `Xamarin.Forms` extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. [What is .NET MAUI?](/dotnet/maui/what-is-maui).
 
 #### Packaged app
-Packaged apps use MSIX to give users an easy installation, uninstallation, and update experience. A packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization. A packaged app has package identity at runtime, which is needed for certain Windows features (for example, custom context menu extensions). See [What's the difference between apps that are packaged, unpackaged, and packaged with external location?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
+For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). That topic also explains the advantages and disadvantages of each option.
 
-#### Packaging with external location
-
-Packaging with external location offers a hybrid between packaged and unpackaged apps. A packaged app with external location uses MSIX to package, but it uses a non-MSIX installer. A packaged app with external location has package identity at runtime. You could think of this option as a bring-your-own-installer model. See [What's the difference between apps that are packaged, unpackaged, and packaged with external location?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
+#### Packaged app with external location
+For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). That topic also explains the advantages and disadvantages of each option.
 
 #### Project Reunion
 The codename for the Windows App SDK. No longer in use.
@@ -75,7 +74,7 @@ An application development platform and application model that uses Windows Runt
 Apps that aren't managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app. 
 
 #### Unpackaged app
-Unpackaged apps don't use MSIX or an MSIX installer. They're typically installed and updated through `.exe`, Squirrel, or `.msi` files. An unpackaged app lacks package identity at runtime. See [What's the difference between apps that are packaged, unpackaged, and packaged with external location?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
+For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). That topic also explains the advantages and disadvantages of each option.
 
 #### Visual Studio extension (VSIX)
 Lets you create, package, and deploy Visual Studio extensions. [Get started with the VSIX Project template](/visualstudio/extensibility/getting-started-with-the-vsix-project-template).
