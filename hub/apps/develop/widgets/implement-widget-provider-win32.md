@@ -273,7 +273,7 @@ The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsof
 // WidgetProvider.cpp
 void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
 {
-    auto widgetId = widgetContext.Id(); // To save RPC calls
+    auto widgetId = widgetContext.Id();
     auto widgetName = widgetContext.DefinitionId();
     CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
     RunningWidgets[widgetId] = runningWidgetInfo;
