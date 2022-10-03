@@ -85,7 +85,7 @@ From the **Container size** dropdown, select "Medium" and note that the preview 
 
 ## Bind to the data context
 
-Our example widget will use an custom state property named "count". You can see in the current template that the value for the first **TextBlock** includes the variable reference `$count`. When the widget is running in the Widget Board, the widget provider is responsible for assembling the data template and passing it to the widget host. At design time, you can use the **Sample Data Editor** to prototype your data template and see how different values impact the display of your widget. Replace the empty data template with the following JSON.
+Our example widget will use a custom state property named "count". You can see in the current template that the value for the first **TextBlock** includes the variable reference `$count`. When the widget is running in the Widget Board, the widget provider is responsible for assembling the data payload and passing it to the widget host. At design time, you can use the **Sample Data Editor** to prototype your data payload and see how different values impact the display of your widget. Replace the empty data payload with the following JSON.
 
 ```json
 {"count": "2"}
