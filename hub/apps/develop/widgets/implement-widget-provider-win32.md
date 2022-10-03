@@ -277,7 +277,6 @@ void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
     auto widgetName = widgetContext.DefinitionId();
     CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
     RunningWidgets[widgetId] = runningWidgetInfo;
-
     
     // Update the widget
     UpdateWidget(runningWidgetInfo);
