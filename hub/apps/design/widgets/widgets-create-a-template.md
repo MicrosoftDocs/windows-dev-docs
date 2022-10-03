@@ -97,7 +97,7 @@ Note that the preview now inserts the value specified for the *count* property i
 
 ## Add a button
 
-The next step is to add a button to our widget. In the widget host, when the user clicks the button, the host will make a request to the widget provider. For this example, the widget provider will increment the count value and return an updated data template. Because this operation requires a widget provider, you won't be able to view this behavior in the Adaptive Cards Designer, but you can still use the designer to adjust the layout of your button within your UI.
+The next step is to add a button to our widget. In the widget host, when the user clicks the button, the host will make a request to the widget provider. For this example, the widget provider will increment the count value and return an updated data payload. Because this operation requires a widget provider, you won't be able to view this behavior in the Adaptive Cards Designer, but you can still use the designer to adjust the layout of your button within your UI.
 
 With Adaptive Cards, interactive elements are defined with **action** elements. Add the following block of JSON directly after the **body** element in the card payload editor. Be sure to add a comma after the closing bracket (]) of the body element or the designer will report a formatting error.
 
