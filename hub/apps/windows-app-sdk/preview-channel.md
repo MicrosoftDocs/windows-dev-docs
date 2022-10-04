@@ -50,7 +50,6 @@ Prerequisites for this release include:
 ### Apps developed with .NET
 
 #### Trimming
-
 .NET developers are now able to publish their WinAppSDK apps trimmed. With CsWinRT 2.0, the C#/WinRT projections distributed in WinAppSDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
 
 For more details on how to enable trimming, the limitations of it such as reflection against trimmable types, and on trim warnings, see **[Trim self-contained deployments and executables]**(/dotnet/core/deploying/trimming/trim-self-contained). Developers should thoroughly test their apps after trimming to ensure everything works as expected.
@@ -59,7 +58,7 @@ For more details on how to enable trimming, the limitations of it such as reflec
 With the move to support trimming and .NET 5's end of support, as previously [announced](https://github.com/microsoft/WindowsAppSDK/discussions/2879), WinAppSDK will no longer support .NET 5 and will require a minimum of .NET 6.
 
 ### DisplayInformation
-Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor and control display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
+Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
 
 ### Fixed issues in WinUI 3
 - Acrylic backdrop material via [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController) is now supported in Windows 10 apps. For more information, check out issue [7112](https://github.com/microsoft/microsoft-ui-xaml/issues/7112) on GitHub.
