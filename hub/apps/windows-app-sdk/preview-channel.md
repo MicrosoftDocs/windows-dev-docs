@@ -160,7 +160,7 @@ In addition to all of the [Preview 1](#version-11-preview-1-110-preview1) featur
 
 ### Deployment
 **New features:**
-- MSIX-packaged apps can now force deploy the Windows App SDK runtime packages using the DeploymentManager.Initialize() API.
+- Packaged apps can now force deploy the Windows App SDK runtime packages using the **DeploymentManager.Initialize** API.
 - The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initalization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
 
 **Known limitations:**
@@ -214,7 +214,7 @@ Using Windows App SDK 1.1 Preview 1, apps (including WinUI 3) will be able to ru
 Windows App SDK 1.1 will introduce support for self-contained deployment. Our [Deployment overview](../package-and-deploy/deploy-overview.md) details the differences between framework-dependent and self-contained deployment, and how to get started.
 
 **Known issues:**
-- A C++ app that is MSIX-packaged needs to add the below to the bottom of their project file to workaround a bug in the self-contained `.targets` file that removes framework references to VCLibs:
+- A C++ app that's packaged needs to add the below to the bottom of its project file to work around a bug in the self-contained `.targets` file that removes framework references to VCLibs:
 
     ```xml
     <PropertyGroup>
@@ -241,8 +241,8 @@ Developers of packaged (including packaged with external location) and unpackage
   - Developers can send raw notifications or app notifications from their own cloud service.
 
 **Limitations:**
-- Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
-- Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
+- Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an **IsSupported** API to check for push notifications support.
+- Apps that are unpackaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are unpackaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
 - Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
 - A WinUI 3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
 
@@ -495,7 +495,7 @@ Most of the App Lifecycle features already exist in the UWP platform, and have b
 
 Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK **RegisterForXXXActivation** APIs and must instead register for rich activation via the manifest.
 
-All the constraints for packaged apps also apply to WinUI 3 apps, which are MSIX-packaged, and there are additional considerations as described below.
+All the constraints for packaged apps also apply to WinUI 3 apps that are packaged; and there are additional considerations as described below.
 
 **Important considerations**:
 

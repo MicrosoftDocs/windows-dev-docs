@@ -15,9 +15,9 @@ This topic provides guidance about deploying apps that are packaged with externa
 
 ## Overview
 
-Non-MSIX-packaged app developers are responsible for deploying required Windows App SDK runtime packages to their end users. This can be done either by running the installer or by installing the MSIX packages directly. These options are described in more detail in the [Deploy Windows App SDK runtime](#deploy-windows-app-sdk-runtime) section below.
+Developers of packaged with external location and unpackaged apps are responsible for deploying required Windows App SDK runtime packages to their end users. This can be done either by running the installer or by installing the MSIX packages directly. These options are described in more detail in the [Deploy Windows App SDK runtime](#deploy-windows-app-sdk-runtime) section below.
 
-Non-MSIX-packaged apps also have extra runtime requirements. You must initialize access to the Windows App SDK runtime using the Bootstrapper API. In addition, the Dynamic Dependencies API can be used if your app makes use of other framework packages aside from the Windows App SDK. These requirements are described in more detail in the [Runtime requirements for apps packaged with external location or unpackaged](#runtime-requirements-for-apps-packaged-with-external-location-or-unpackaged) section below.
+Packaged with external location and unpackaged apps also have extra runtime requirements. You must initialize access to the Windows App SDK runtime using the Bootstrapper API. In addition, the Dynamic Dependencies API can be used if your app makes use of other framework packages aside from the Windows App SDK. These requirements are described in more detail in the [Runtime requirements for apps packaged with external location or unpackaged](#runtime-requirements-for-apps-packaged-with-external-location-or-unpackaged) section below.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ Non-MSIX-packaged apps also have extra runtime requirements. You must initialize
 
 ## Deploy Windows App SDK runtime
 
-Non-MSIX-packaged apps have two options to deploy the Windows App SDK runtime:
+Packaged with external location and unpackaged apps have two options to deploy the Windows App SDK runtime:
 
 - **[Option 1: Use the Installer](#option-1-use-the-installer)**: The silent installer distributes all Windows App SDK MSIX packages. A separate installer is available for each of the `X64`,`X86` and `Arm64` architectures.
 - **[Option 2: Install the packages directly](#option-2-deploy-windows-app-sdk-runtime-packages-directly)**: You can have your existing setup or MSI tool carry and install the MSIX packages for the Windows App SDK.
@@ -148,7 +148,7 @@ Apps that are packaged with external location or unpackaged have extra runtime r
 
 ### Use the Windows App SDK runtime
 
-Non-MSIX-packaged apps must call the Bootstrapper API to use the Windows App SDK at run time. This is required before the app can use Windows App SDK features such as WinUI, App Lifecycle, MRT Core, and DWriteCore. A bootstrapper component enables packaged with external location and unpackaged apps to perform these important tasks:
+Packaged with external location and unpackaged apps must call the Bootstrapper API to use the Windows App SDK at run time. This is required before the app can use Windows App SDK features such as WinUI, App Lifecycle, MRT Core, and DWriteCore. A bootstrapper component enables packaged with external location and unpackaged apps to perform these important tasks:
 
 - Find and load the Windows App SDK framework package to the app's package graph.
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package. The purpose of the DDLM is to prevent servicing of the Windows App SDK framework package while it is in use by a packaged with external location or unpackaged app. 

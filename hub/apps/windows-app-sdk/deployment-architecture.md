@@ -17,8 +17,8 @@ There are two main options to distribute a framework-dependent app:
 
 | App&nbsp;deployment method  | Requirements |
 |------------------------|---------|
-| MSIX-packaged | - Must declare dependency on Framework package in the package manifest. <br> - Deployment API is required for Microsoft Store distributed apps and recommended for non-Store distributed apps to ensure runtime dependencies are installed. | 
-| Non-MSIX-packaged | - Must distribute runtime either using the Installer or by installing required MSIX packages directly. <br> - Additional runtime requirements: Must initialize access to the Windows App SDK runtime via the Bootstrap API. | 
+| Packaged | - Must declare dependency on Framework package in the package manifest. <br> - Deployment API is required for Microsoft Store distributed apps and recommended for non-Store distributed apps to ensure runtime dependencies are installed. | 
+| Packaged with external location or unpackaged | - Must distribute runtime either using the Installer or by installing required MSIX packages directly. <br> - Additional runtime requirements: Must initialize access to the Windows App SDK runtime via the Bootstrap API. | 
 
 For more details on these requirements, see the following articles:
 - [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md) 

@@ -34,7 +34,7 @@ Help users transition to your packaged app.
 
 ### Redirect your existing desktop app to your packaged app
 
-When users start your existing unpackaged desktop app, you can configure your MSIX-packaged app to be opened instead. 
+When users start your existing unpackaged desktop app, you can configure your packaged app to be opened instead. 
 
 > [!NOTE]
 > This feature is supported in Windows Insider Preview Build 21313 and later versions.
@@ -85,8 +85,8 @@ In your package manifest, add an [AppExecutionAlias](/uwp/schemas/appxpackage/ua
 
 Users can turn off the redirection and launch your unpackaged app executable via these options:
 
-* They can uninstall the MSIX-packaged version of your app.
-* The user can disable the **AppExecutionAlias** entry for your MSIX-packaged app in the **App execution aliases** page in **Settings**.
+* They can uninstall the packaged version of your app.
+* The user can disable the **AppExecutionAlias** entry for your packaged app in the **App execution aliases** page in **Settings**.
 
 #### XML namespaces
 

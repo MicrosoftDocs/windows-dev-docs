@@ -31,7 +31,7 @@ Each type of app can be published to the Microsoft Store, and installed that way
 
 ## Use the Windows App SDK
 
-After deciding whether or not to MSIX-package your app, you can next decide whether or not to use the [Windows App SDK](/windows/apps/windows-app-sdk/) in your app. See [Windows App SDK deployment overview](deploy-overview.md).
+After deciding whether or not to package your app, you can next decide whether or not to use the [Windows App SDK](/windows/apps/windows-app-sdk/) in your app. See [Windows App SDK deployment overview](deploy-overview.md).
 
 ## Win32 and .NET desktop apps
 

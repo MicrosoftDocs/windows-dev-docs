@@ -17,14 +17,14 @@ This article provides guidance about deploying framework-dependent packaged apps
 
 By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md), your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). You can then build an MSIX package for your app by using the instructions in [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options to [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
-To learn more about the packages your MSIX-packaged app may need when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). These include the *Framework*, *Main*, and *Singleton* packages, which are all signed and published by Microsoft. There are two main requirements for deploying MSIX-packaged apps:
+To learn more about the packages that your packaged app might need when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). These include the *Framework*, *Main*, and *Singleton* packages, which are all signed and published by Microsoft. There are two main requirements for deploying a packaged app:
 
 1. [Deploy the Windows App SDK framework package](#deploy-the-windows-app-sdk-framework-package)
 2. [Call the Deployment API](#call-the-deployment-api)
 
 ## Prerequisites
 
-* For MSIX-packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
+* For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see [C++ Runtime framework packages for Desktop Bridge](/troubleshoot/cpp/c-runtime-packages-desktop-bridge).
 * **C#**. .NET 6 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ## Deploy the Windows App SDK framework package
@@ -58,7 +58,7 @@ When you install a [preview release](preview-channel.md) version of the Windows 
 1. To deploy the Singleton package for features not in the Framework package (e.g., Push Notifications).
 2. To deploy the Main package, which enables automatic updates to the Framework package from the Store.
 
-For MSIX-packaged apps *not* distributed through the Store, the developer is responsible for distributing the Framework package. It is recommended to call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (e.g., Push Notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method). 
+For packaged apps that are *not* distributed through the Store, the developer is responsible for distributing the Framework package. It is recommended to call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (e.g., Push Notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method). 
 
 > [!IMPORTANT]
 > In Windows App SDK version 1.0, only MSIX packaged apps that are full trust or have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the Deployment API to install the main and singleton package dependencies. Support for partial trust packaged apps will be coming in later releases. 

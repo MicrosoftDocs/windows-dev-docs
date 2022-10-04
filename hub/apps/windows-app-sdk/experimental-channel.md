@@ -98,7 +98,7 @@ For more information or to get started developing with WinUI, see:
 
 ### Push notifications (experimental feature)
 
-This release introduces a push notifications API that can be used by MSIX-packaged desktop apps with Azure app registration-based identities. To use this feature, you must [sign up for our private preview](https://aka.ms/windowsappsdk/push-private-preview).
+This release introduces a push notifications API that can be used by packaged desktop apps with Azure app registration-based identities. To use this feature, you must [sign up for our private preview](https://aka.ms/windowsappsdk/push-private-preview).
 
 Important limitations:
 

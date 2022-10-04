@@ -47,7 +47,7 @@ A C/C++ runtime library linkage technique that simplifies deployment. Also refer
 You can use Microsoft Foundation Classes (MFC) to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: [MFC desktop applications](/cpp/mfc/mfc-desktop-applications).
 
 #### MSIX (Microsoft Installer package format)
-MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is an "MSIX-packaged" app. MSIX-packaged apps can check for updates and can control when updates are applied. [What is MSIX?](/windows/msix/overview).
+MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is a *packaged* app. A packaged app can check for updates, and can control when updates are applied. [What is MSIX?](/windows/msix/overview).
 
 #### Native apps
 Traditionally, "native" refers to applications built without using the .NET runtime. In this case, "native" is synonymous with "unmanaged", and can be used to describe apps that manage their own memory and security concerns. Alternatively, some developers use "native" to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly.
@@ -68,7 +68,7 @@ The codename for the Windows App SDK. No longer in use.
 [React Native](https://reactnative.dev/) is a development platform from Meta which allows developers to build fully native cross-platform apps using JavaScript, TypeScript, and React. [React Native for Windows](https://aka.ms/reactnative) brings React Native support to the Windows 10 and Windows 11 SDKs, enabling developers to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 #### Universal Windows Platform (UWP)
-An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver MSIX-packaged apps. UWP apps run in a sandboxed environment and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
+An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver packaged apps. UWP apps run in a sandboxed environment, and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
 
 #### Unmanaged app
 Apps that aren't managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app. 
