@@ -33,7 +33,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windo
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.401, 6.0.304, 6.0.109. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 2.0 or greater."*.
 
 ### Third-party Widgets in Windows
-The Widget Board was first introduced in Windows 11 and was limited to displaying first party Widgets. Widgets are small UI containers that display text and graphics on the Widgets Board, and are associated with an app installed on the device. With Windows App SDK, as third party developers you can now create Widgets for your packaged Win32 apps and test them locally on the Windows 11 Widget Board.
+The Widgets Board was first introduced in Windows 11 and was limited to displaying first party Widgets. Widgets are small UI containers that display text and graphics on the Widgets Board, and are associated with an app installed on the device. With Windows App SDK, as third party developers you can now create Widgets for your packaged Win32 apps and test them locally on the Windows 11 Widgets Board.
 
 For more information about Widgets, check out [Widgets Overview](/windows/apps/design/widgets/).
 
@@ -41,11 +41,11 @@ To get started developing Widgets for your app, check out the [Widget service pr
 
 Prerequisites for this release include:
 - Dev mode enabled on the development machine.
-- On the Dev Channel of the Windows Insider Program (WIP) on the development machine with Widget Board version 521.20060.1205.0 or above.
+- On the Dev Channel of the Windows Insider Program (WIP) on the development machine with Widgets Board version 521.20060.1205.0 or above.
 
 #### Known limitations when developing Widgets
 - Third-party Widgets can only be tested locally on devices enrolled in WIP for this preview release. In Windows App SDK 1.2.0, users on retail versions of Windows can begin acquiring 3P Widgets via Microsoft Store shipped versions of your app.
-- Widgets can only be created for packaged, Win32 apps. Widgets for Progressive Web Apps (PWA) are planned to be supported as part of [Edge 108](/deployedge/microsoft-edge-release-schedule).
+- Widgets can only be created for packaged, Win32 apps. Widgets for Progressive Web Apps (PWA) are planned to be supported as part of [Microsoft Edge 108](/deployedge/microsoft-edge-release-schedule).
 
 ### Apps developed with .NET
 
@@ -58,22 +58,18 @@ For more details on how to enable trimming, the limitations of it such as reflec
 #### .NET 6 requirement
 With the move to support trimming and .NET 5's end of support, as previously [announced](https://github.com/microsoft/WindowsAppSDK/discussions/2879), WinAppSDK will no longer support .NET 5 and will require a minimum of .NET 6.
 
-### 🚧 DisplayInformation
-New to Windows App SDK, [HDR](link-to-info) (High Dynamic Range) applications can now monitor and control display-related information with the [DisplayInformation](link-to-docs) class. Provides events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
-
-### 🚧 New WindowsAppRuntime APIs
-- ReleaseInfo (Microsoft.Windows.ApplicationModel.WindowsAppRuntime)
-- RuntimeInfo (Microsoft.Windows.ApplicationModel.WindowsAppRuntime)
-- VersionInfoContract (Microsoft.Windows.ApplicationModel.WindowsAppRuntime)
+### DisplayInformation
+Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor and control display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
 
 ### Fixed issues in WinUI 3
 - Acrylic backdrop material via [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController) is now supported in Windows 10 apps. For more information, check out issue [7112](https://github.com/microsoft/microsoft-ui-xaml/issues/7112) on GitHub.
-- 🚧 Fixed issue causing App.UnhandledException to fail to be caught by the application. For more information, check out issue [5221](https://github.com/microsoft/microsoft-ui-xaml/issues/5221) on GitHub.
-- Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub. 
+- Fixed issue causing App.UnhandledException to fail to be routed to the application. For more information, check out issue [5221](https://github.com/microsoft/microsoft-ui-xaml/issues/5221) on GitHub.
+- Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
 
 ### Other limitations and known issues
 - Bootstrapper and Undocked RegFree WinRT auto-initializer defaults is (now) only set for projects that produce an executable (OutputType=Exe or WinExe). This prevents adding auto-initializers into class library DLLs and other non-executables by default.
-  - If you need an auto-initializer in a non-executable (e.g. a test DLL loaded by a generic executable that doesn't initialize the Bootstrapper) you can explicitly enable an auto-initializer in your project via <WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize> or <WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>.
+  - If you need an auto-initializer in a non-executable (e.g. a test DLL loaded by a generic executable that doesn't initialize the Bootstrapper) you can explicitly enable an auto-initializer in your project via `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>` or `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
+- The version information APIs (ReleaseInfo and RuntimeInfo) can be called but return version 0 (not the actual version information).
 
 ## Version 1.2 Preview 1 (1.2.0-preview1)
 
