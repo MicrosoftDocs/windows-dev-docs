@@ -43,8 +43,9 @@ For more information about Widgets, check out [Widgets Overview](/windows/apps/d
 To get started developing Widgets for your app, check out the [Widget service providers](/windows/apps/develop/widgets/widget-service-providers) development docs and [Widgets design fundamentals](/windows/apps/design/widgets/widgets-design-fundamentals) for prerequisites, guidance and best practices.
 
 Prerequisites for this release include:
-- Dev mode enabled on the development machine.
-- On the Dev Channel of the Windows Insider Program (WIP) on the development machine with Widgets Board version 521.20060.1205.0 or above.
+
+- Developer mode enabled on the development machine.
+- The development machine is running a version of Windows from the Dev Channel of the Windows Insider Program (WIP) with Widgets Board version 521.20060.1205.0 or above.
 
 #### Known limitations when developing Widgets
 - Third-party Widgets can only be tested locally on devices enrolled in WIP for this preview release. In Windows App SDK 1.2.0, users on retail versions of Windows can begin acquiring 3P Widgets via Microsoft Store shipped versions of your app.
@@ -55,7 +56,7 @@ Prerequisites for this release include:
 #### Trimming
 .NET developers are now able to publish their WinAppSDK apps trimmed. With CsWinRT 2.0, the C#/WinRT projections distributed in WinAppSDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
 
-For more details on how to enable trimming, the limitations of it such as reflection against trimmable types, and on trim warnings, see **[Trim self-contained deployments and executables]**(/dotnet/core/deploying/trimming/trim-self-contained). Developers should thoroughly test their apps after trimming to ensure everything works as expected.
+For more details on how to enable trimming, trimming limitations (such as reflection against trimmable types), and trim warnings, see [Trim self-contained deployments and executables](/dotnet/core/deploying/trimming/trim-self-contained). Developers should thoroughly test their apps after trimming to ensure everything works as expected. For more information, check out issue [2478](https://github.com/microsoft/WindowsAppSDK/issues/2478) on GitHub.
 
 #### .NET 6 requirement
 With the move to support trimming and .NET 5's end of support, as previously [announced](https://github.com/microsoft/WindowsAppSDK/discussions/2879), WinAppSDK will no longer support .NET 5 and will require a minimum of .NET 6.
