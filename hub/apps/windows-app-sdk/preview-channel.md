@@ -66,9 +66,15 @@ Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformati
 - Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
 
 ### Other limitations and known issues
+- Building with [Arm64 Visual Studio](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/)
+is not currently supported.
 - Bootstrapper and Undocked RegFree WinRT auto-initializer defaults is (now) only set for projects that produce an executable (OutputType=Exe or WinExe). This prevents adding auto-initializers into class library DLLs and other non-executables by default.
   - If you need an auto-initializer in a non-executable (e.g. a test DLL loaded by a generic executable that doesn't initialize the Bootstrapper) you can explicitly enable an auto-initializer in your project via `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>` or `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
 - The version information APIs (ReleaseInfo and RuntimeInfo) can be called but return version 0 (not the actual version information).
+- When you reference WinAppSDK 1.2 from a project you might see an error similar to: "_Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194._"
+  - This is likely caused by incompatible references to this package from the app project and from the WinAppSDK package. 
+  - To resolve this you can update the project’s reference to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools, or simply remove it from your project.
+  If you remove it from your project, a compatible version will be implicitly referenced by the WinAppSDK package.
 
 ## Version 1.2 Preview 1 (1.2.0-preview1)
 
