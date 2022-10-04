@@ -30,6 +30,9 @@ In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
 
 > [!NOTE]
+> When you reference WinAppSDK 1.2 from a project you might see an error similar to: "_Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194._" This is caused by incompatible references to this package from the app project and from the WinAppSDK package. To resolve this you can update the project’s reference to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools, or simply remove the reference from your project. If you remove it from your project, a compatible version will be implicitly referenced by the WinAppSDK package.
+
+> [!NOTE]
 > For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.401, 6.0.304, 6.0.109. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 2.0 or greater."*.
 
 ### Third-party Widgets in Windows
@@ -71,10 +74,7 @@ is not currently supported.
 - Bootstrapper and Undocked RegFree WinRT auto-initializer defaults is (now) only set for projects that produce an executable (OutputType=Exe or WinExe). This prevents adding auto-initializers into class library DLLs and other non-executables by default.
   - If you need an auto-initializer in a non-executable (e.g. a test DLL loaded by a generic executable that doesn't initialize the Bootstrapper) you can explicitly enable an auto-initializer in your project via `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>` or `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
 - The version information APIs (ReleaseInfo and RuntimeInfo) can be called but return version 0 (not the actual version information).
-- When you reference WinAppSDK 1.2 from a project you might see an error similar to: "_Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194._"
-  - This is likely caused by incompatible references to this package from the app project and from the WinAppSDK package. 
-  - To resolve this you can update the project’s reference to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools, or simply remove it from your project.
-  If you remove it from your project, a compatible version will be implicitly referenced by the WinAppSDK package.
+
 
 ## Version 1.2 Preview 1 (1.2.0-preview1)
 
