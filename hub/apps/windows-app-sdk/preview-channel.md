@@ -279,7 +279,7 @@ Windows App SDK 1.1 will introduce support for self-contained deployment. Our [D
 - Supported only on Windows 10, 1903 and later.
 
 ### Notifications
-Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send Windows notifications.
+Developers of packaged (including packaged with external location) and unpackaged apps can now send Windows notifications.
 
 **New features:**
 - Support for app notifications for packaged and unpackaged apps. Full details on [GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md)

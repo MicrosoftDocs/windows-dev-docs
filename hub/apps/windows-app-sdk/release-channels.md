@@ -28,7 +28,7 @@ The following table shows which features are currently available in each release
 | Feature | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) |🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
 |-|-|-|-|
 | [MSIX desktop app support](deploy-packaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
-| [Unpackaged desktop app support](deploy-unpackaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
+| [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [WinUI 3](../winui/winui3/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [Text rendering](dwritecore.md) | :heavy_check_mark: Available| :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [Manage resources](mrtcore/mrtcore-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
@@ -38,6 +38,7 @@ The following table shows which features are currently available in each release
 | [Manage app windows](windowing/windowing-overview.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [Push notifications](notifications/push-notifications/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
 | [App notifications](notifications/app-notifications/index.md) | :heavy_check_mark: Available | :heavy_check_mark: Available | :heavy_check_mark: Available |
+| [Windows Widgets](/design/widgets/index.md)   | :x: Not available | :heavy_check_mark: Available | :x: Not available   |
 
 ## Windows App SDK release policy
 

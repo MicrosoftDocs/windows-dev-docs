@@ -46,7 +46,7 @@ For all Windows App SDK downloads, refer to the tables and links below. Dependin
 
 **Runtime downloads**
 
-Unpackaged or sparse-packaged apps that use the Windows App SDK can use the standalone .exe Runtime installer or MSIX packages to deploy the Windows App SDK package dependencies with their app. For setup instructions, see [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md).
+Apps packaged with external location, and unpackaged apps, that use the Windows App SDK can use the standalone `.exe` runtime installer or MSIX packages to deploy the Windows App SDK package dependencies with them. For setup instructions, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | 
 |:------------- |:-------------|

@@ -22,7 +22,7 @@ There are two main options to distribute a framework-dependent app:
 
 For more details on these requirements, see the following articles:
 - [Windows App SDK deployment guide for MSIX-packaged apps](deploy-packaged-apps.md) 
-- [Windows App SDK deployment guide for non-MSIX-packaged apps](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 
 ## Key terms
 
@@ -69,7 +69,7 @@ The bootstrapper is a library that must be included with your non-MSIX-packaged 
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you may [call the bootstrapper API directly in your app's startup code](tutorial-unpackaged-deployment.md) so it can properly initialize the system for the unpackaged app. Your unpackaged app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
 
 The bootstrapper library in the Windows App SDK 1.0 Stable release includes:
 
@@ -91,4 +91,4 @@ There is one DDLM for each version and architecture of the Windows App SDK frame
 ## Related topics
 
 * [Windows App SDK deployment guide for MSIX-packaged apps](deploy-packaged-apps.md)
-* [Windows App SDK deployment guide for non-MSIX-packaged apps](deploy-unpackaged-apps.md) 
+* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) 

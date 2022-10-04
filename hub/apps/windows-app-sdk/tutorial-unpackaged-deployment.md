@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK
+title: Tutorial--Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK
 description: This article shows how to configure an app that's not deployed via MSIX (non-MSIX-packaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs.
 ms.topic: article
 ms.date: 04/26/2022
@@ -9,9 +9,9 @@ author: stevewhims
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK
+# Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK
 
-This article shows how to configure an app that's not deployed via MSIX (non-MSIX-packaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Non-MSIX-packaged apps include sparse-packaged, or unpackaged, apps.
+This article shows how to configure an app that's not installed via MSIX to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
 
 > [!IMPORTANT]
 > Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a non-MSIX-packaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app). Or, if have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
@@ -25,7 +25,7 @@ Before completing this tutorial, we recommend that you review [Runtime architect
 ## Prerequisites
 
 1. [Install tools for the Windows App SDK](set-up-your-development-environment.md#install-visual-studio).
-2. Ensure that all dependencies for non-MSIX-packaged apps are installed (see [Windows App SDK deployment guide for framework-dependent non-MSIX-packaged apps](deploy-unpackaged-apps.md#prerequisites)). An easy way to do that is to run the Windows App SDK runtime installer. 
+2. Ensure that all dependencies for non-MSIX-packaged apps are installed (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md#prerequisites)). An easy way to do that is to run the Windows App SDK runtime installer. 
 
 ## Instructions
 
@@ -208,5 +208,5 @@ Follow these instructions to configure a C++ WinUI 3 project that is non-MSIX-pa
 
 ## Related topics
 
-* [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
+* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 * [Runtime architecture](deployment-architecture.md)
