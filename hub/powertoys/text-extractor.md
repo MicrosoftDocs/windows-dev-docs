@@ -16,13 +16,13 @@ With the activation shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>
 
 ## Adjust while trying to capture
 
-By holding <kbd>shift</kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>shift</kbd>, you will be able to resize again.
+By holding <kbd>Shift</kbd>, you will change from adjusting the capture region's size to moving the capture region. When you release <kbd>Shift</kbd>, you will be able to resize again.
 
-## Things to note
-
-1. This uses OCR (Optical character recognition) to read the text on the screen.  
-2. It may not be perfect so you will have to do a quick proof read of the output.
-3. The default language used will be based on your [Windows system language / keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2) (OCR language packs are available for install).
+> [!IMPORTANT]
+>
+> 1. The produced text may not be perfect, so you have to do a quick proof read of the output.
+> 2. This tool uses OCR (Optical Character Recognition) to read text on the screen.
+> 3. The default language used will be based on your [Windows system language > keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2) (OCR language packs are available for install).
 
 ## Settings
 
@@ -30,4 +30,4 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to turn on or off always on top for that window. |
+| Activation shortcut | The customizable keyboard command to turn on or off this module. |
