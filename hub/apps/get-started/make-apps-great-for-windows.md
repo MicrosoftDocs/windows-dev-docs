@@ -154,7 +154,7 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 - Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
 - All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
   - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)

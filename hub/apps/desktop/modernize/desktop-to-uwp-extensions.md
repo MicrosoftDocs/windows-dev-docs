@@ -17,7 +17,7 @@ For example, use an extension to create a firewall exception; make your app the 
 This topic describes those extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## Transition users to your app
 

@@ -50,7 +50,7 @@ MSIX is a modern Windows app package format that provides a universal packaging 
 
 Packaging your desktop Windows apps in MSIX packages gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models.
 
-For more information, see [Package desktop applications](/windows/msix/desktop/desktop-to-uwp-root) in the MSIX documentation.
+For more information, see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview).
 
 ## Use MSIX framework packages dynamically at run time
 

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Send a local toast notification from Win32 C++ WRL apps
 
-Packaged and unpackaged Win32 apps can send interactive toast notifications just like UWP apps can. That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)); and unpackaged apps (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
+Packaged and unpackaged Win32 apps can send interactive toast notifications just like UWP apps can. That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)); and unpackaged apps (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
 
 However, for an unpackaged Win32 app there are a few special steps. That's due to the different activation schemes, and the lack of package identity at runtime.
 
@@ -85,7 +85,7 @@ Then, you must register with the notification platform. There are different step
 
 ### Packaged
 
-If your app is packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) or packaged with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), or if you support both, then in your **Package.appxmanifest** add:
+If your app is packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) or packaged with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), or if you support both, then in your **Package.appxmanifest** add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**

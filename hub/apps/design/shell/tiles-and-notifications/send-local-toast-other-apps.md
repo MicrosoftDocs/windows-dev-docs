@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 # Send a local toast notification from other types of unpackaged apps
 
 This topic is for you if you're developing an app that isn't packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)),
-and isn't packaged with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), and isn't C# or C++.
+and isn't packaged with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), and isn't C# or C++.
 
 A toast notification is a message that an app can construct and deliver to the user while the user is not currently using your app. This quickstart walks you through the steps to create, deliver, and display a Windows toast notification. These quickstart uses local notifications, which are the simplest notification to implement.
 

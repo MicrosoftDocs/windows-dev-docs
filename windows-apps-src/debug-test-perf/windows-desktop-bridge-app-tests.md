@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Windows Desktop Bridge app tests
 
-[Desktop Bridge Apps](/windows/msix/desktop/desktop-to-uwp-root) are Windows desktop applications converted to Universal Windows Platform (UWP) apps using the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). After conversion, the Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (a .appx or .appxbundle) targeting Windows 10 Desktop.
+Desktop Bridge apps (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)) are Windows desktop apps converted to Universal Windows Platform (UWP) apps by using the [Desktop Bridge](/windows/msix/desktop/source-code-overview). After conversion, the Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (a .appx or .appxbundle) targeting Windows 10 Desktop.
 
 ## Required versus optional tests
 Optional tests for Windows Desktop Bridge apps are informational only and will not be used to evaluate your app during Microsoft Store onboarding. We recommend investigating these test results to produce better quality apps. The overall pass/fail criteria for store onboarding is determined by the required tests and not by these optional tests.

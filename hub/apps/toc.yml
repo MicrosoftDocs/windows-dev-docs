@@ -220,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
-            - name: Grant package identity to an unpackaged app
+            - name: Grant package identity by packaging with external location
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
       - name: Optimize performance & fundamentals
         items:

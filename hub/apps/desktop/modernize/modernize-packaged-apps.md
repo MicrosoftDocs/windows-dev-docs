@@ -12,11 +12,7 @@ ms.custom: RS5
 
 Some [modern Windows experiences](index.md) are available only to desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. These features include certain Windows Runtime APIs, package extensions, and UWP components.
 
-* **Packaged app**. A packaged app is one that's been packaged using MSIX technology (see [What is MSIX?](/windows/msix/overview)). MSIX is a modern app package format that provides a universal packaging experience for all Windows apps, WPF, Windows Forms and Win32 apps. It provides a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. Importantly, a packaged app has *package identity* at runtime.
-  * Very commonly, a packaged app's process runs inside a lightweight app container; and is isolated using file system and registry virtualization.
-  * But you can opt out of those restrictions and still be a packaged app (still benefit from package identity). You do that by building and registering a *package with external location* with your app. See [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
-
-If your desktop app has package identity, then you can use the following features in your app.
+Only packaged apps have package identity at runtime. For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). If your desktop app has package identity, then you can use the following features in your app.
 
 ## Integrate with package extensions
 
