@@ -19,7 +19,7 @@ A widget should be glanceable and focused, and should represent a single aspect 
 
 The following are the maximum number of touch points recommended for each supported widget size.
 
-| Widget size | Maxiumum touchpoints |
+| Widget size | Maximum touchpoints |
 |-------------|----------------------|
 | small    | 1 |
 | medium | 3 |
