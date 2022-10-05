@@ -13,11 +13,11 @@ This article contains the steps required to enable working with a MongoDB databa
 
 ## Set up your solution
 
-To connect your app directly to a MongoDB database, ensure that the minimum version of your project targets the Fall Creators update (Build 16299).  You can find that information in the properties page of your UWP project.
+To connect your app directly to a MongoDB database, ensure that the minimum version of your project targets the Fall Creators update (Build 16299) or newer.  You can find that information in the properties page of your UWP project.
 
 ![Image of the Targeting property pane in VisualStudio showing the target and minimum versions set to the Fall Creators Update](images/min-version-fall-creators.png)
 
-Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command **Install-Package MongoDB.Driver** to install the driver for MongoDB. This will allow you to programmatically access MongoDB databases.
+Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command `Install-Package MongoDB.Driver` to install the NuGet package for the official driver for MongoDB. This will allow you to programmatically access MongoDB databases.
 
 ## Test your connection using sample code
 
@@ -27,7 +27,7 @@ The following sample code gets a collection from a remote MongoDB client, then a
 var client = new MongoClient("mongodb://10.xxx.xx.xxx:xxx");
 IMongoDatabase database = client.GetDatabase("foo");
 IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("bar");
-BsonDocument document = new BsonDocument
+var document = new BsonDocument
 {
      { "name","MongoDB"},
      { "type","Database"},
