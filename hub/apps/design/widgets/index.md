@@ -74,6 +74,9 @@ Content should dynamically refresh based on available context. It is up to date 
 ## In this section
 
 [Widget states and UI](widgets-states-and-ui.md)
+
 [Widget design fundamentals](widgets-design-fundamentals.md)
+
 [Widget interaction design](widgets-interaction-design.md)
+
 [Create a widget template with the Adaptive Card Designer](widgets-create-a-template.md)
