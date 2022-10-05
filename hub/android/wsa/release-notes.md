@@ -13,6 +13,25 @@ ms.date: 04/27/2022
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
+## Build 2208.40000.4.0
+
+September 15, 2022
+
+- Reliability fixes for App Not Responding (ANR) errors
+- Improvements to input compatibility shims
+- Improvements to scrolling (smoothness) in apps
+- Usability Improvements to the Windows Subsystem for Android Settings app
+- Startup performance improvements
+- Fixed crashes when copying and pasting extremely large content
+- UX improvements for the game controls dialog
+- Improvements to networking
+- General graphics improvements
+- Improvements for gamepad when using multiple apps
+- Improved performance of uninstalling apps
+- Fixed video playback issue for apps
+- Updated to Chromium WebView 104
+- Linux kernel security updates
+
 ## Build 2207.40000.8.0
 
 August 31, 2022
