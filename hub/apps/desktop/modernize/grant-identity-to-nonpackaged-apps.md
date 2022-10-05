@@ -153,7 +153,7 @@ The attributes of the **msix** element must match these values in the package ma
 
 To grant package identity to your desktop app, your app must register the package with external location by using the [**AddPackageByUriAsync**](/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) method of the [**PackageManager**](/uwp/api/windows.management.deployment.packagemanager) class. This method is available starting in Windows 10, version 2004. You can add code to your app to register the package with external location when your app is run for the first time, or you can run code to register the package while your desktop app is installed (for example, if you're using MSI to install your desktop app, you can run this code from a custom action).
 
-The following example demonstrates how to register a package with external location. This code creates an [**AddPackageOptions**](/uwp/api/windows.management.deployment.addpackageoptions) object that contains the path to the external location where your package manifest can reference content outside the package. Then, the code passes this object to the **AddPackageByUriAsync**  method to register the package with external location. This method also receives the location of your signed package with external location as a URI. For a more complete example, see the `StartUp.cs` code file in the related [sample](#sample).
+The following example demonstrates how to register a package with external location. This code creates an [**AddPackageOptions**](/uwp/api/windows.management.deployment.addpackageoptions) object that contains the path to the external location where your package manifest can reference content outside the package. Then, the code passes this object to the **AddPackageByUriAsync**  method to register the package with external location. This method also receives the location of your signed package with external location as a URI. For a more complete example, see the `StartUp.cs` code file in the related sample app (see the [Sample app](#sample-app) section in this topic).
 
 ```csharp
 private static bool registerPackageWithExternalLocation(string externalLocation, string pkgPath)
@@ -183,9 +183,9 @@ private static bool registerPackageWithExternalLocation(string externalLocation,
 }
 ```
 
-## Sample
+## Sample app
 
-See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a package with external location. More information about building and running the sample is provided in [this blog post](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-unpackaged-win32-apps/#HBMFEM843XORqOWx.97).
+See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a package with external location. More information about building and running the sample is provided in the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
 
 This sample includes the following:
 
