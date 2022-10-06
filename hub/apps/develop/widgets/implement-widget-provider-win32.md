@@ -562,9 +562,32 @@ In **Solution Explorer**, right-click your solution and select **Add->New Projec
 Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click OK.
 
 
-### Add a reference to the Windows App SDK Nuget package
+### Add a reference to the Windows App SDK 
 
-In a previous step, you added a reference to the Windows App SDK Nuget package to the widget provider project. You must also reference this nuget package in the MSIX packaging project. In **Solution Explorer**, right-click the ExampleWidgetProviderPackage project and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". In the version drop-down select **1.2.220930.4-preview2** then click **Install**.
+You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleWidgetProviderPackage project to open the ExampleWidgetProviderPackage.wapproj file. Add the following xml inside the **Project** element.
+
+```xml
+<!--ExampleWidgetProviderPackage.wapproj-->
+<ItemGroup>
+	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220930.4-preview2">
+		  <IncludeAssets>build</IncludeAssets>
+	  </PackageReference>  
+</ItemGroup>
+```
+
+If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appmanifest file for the ExampleWidgetProviderPackage project.
+
+```xml
+<!--Package.appmanifest-->
+...
+<Dependencies>
+...
+    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.2-preview2" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+...
+</Dependencies>
+...
+```
+
 
 ### Update the package manifest
 
