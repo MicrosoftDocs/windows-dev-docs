@@ -40,8 +40,6 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 | `--window`, `-w` `<window-id>` | Launches the terminal in a specific window. |
-| `--pos` `x,y` | (Only available in [Preview](https://aka.ms/terminal-preview)) Launches the terminal at the specified x and y coordinate on the screen. |
-| `--size` `c,r` | (Only available in [Preview](https://aka.ms/terminal-preview)) Launches the terminal with the specified number of columns and rows. |
 
 ### `New-tab` command
 
