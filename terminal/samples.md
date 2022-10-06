@@ -4,7 +4,7 @@ description: Windows Terminal sample code, including Pixel Shader .hlsl samples,
 author: cinnamon-msft
 ms.author: cinnamon
 ms.date: 11/16/2021
-ms.topic: samples
+ms.topic: sample
 ---
 
 # Windows Terminal sample code
