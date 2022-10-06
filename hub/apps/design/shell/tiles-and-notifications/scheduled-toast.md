@@ -16,7 +16,7 @@ Scheduled toast notifications allow you to schedule a notification to appear at 
 Note that scheduled toast notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be "dropped" as no longer relevant to the user. If you need guaranteed delivery of notifications regardless of how long the computer was off, we recommend using a background task with a time trigger, as illustrated in [this code sample](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off).
 
 > [!IMPORTANT]
-> Desktop applications (both packaged and classic desktop) have slightly different steps for sending notifications and handling activation. Follow along with the instructions below, however replace `ToastNotificationManager` with the `DesktopNotificationManagerCompat` class from the [desktop apps](toast-desktop-apps.md) documentation.
+> Desktop applications (both packaged and unpackaged) have slightly different steps for sending notifications and handling activation. Follow along with the instructions below, however replace `ToastNotificationManager` with the `DesktopNotificationManagerCompat` class from the [desktop apps](toast-desktop-apps.md) documentation.
 
 > **Important APIs**: [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 

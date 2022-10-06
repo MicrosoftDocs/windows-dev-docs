@@ -17,7 +17,7 @@ Many Windows extensibility features&mdash;including background tasks, notificati
 Only packaged apps have package identity at runtime. For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/).
 
 * In Windows 10, version 2004, and earlier the only way to grant package identity to an app is to package it in a signed MSIX package (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). In that case, identity is specified in the package manifest, and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
-* But starting in Windows 10, version 2004, you can grant package identity to an app simply by building and registering a *package with external location* with your app. Doing so turns it into a packaged app; specifically, *a packaged app with external location*. This support enables desktop apps that are not yet able to adopt MSIX packaging for deployment to use Windows extensibility features that require package identity. For more background info, see the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
+* But starting in Windows 10, version 2004, you can grant package identity to an app simply by building and registering a *package with external location* with your app. Doing so turns it into a packaged app; specifically, *a packaged app with external location*. That's because some desktop apps aren't yet ready for all of their content to be present inside an MSIX package. So this support enables such apps to have package identity; thereby being able to use Windows extensibility features that require package identity. For more background info, see the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
 
 To build and register a package with external location (which grants package identity to your app), follow these steps.
 
@@ -32,7 +32,7 @@ The following features enable unpackaged desktop apps to acquire package identit
 
 ### Package with external location
 
-A *package with external location* contains a package manifest, but no other app binaries and content. The manifest of a package with external location can reference files outside the package in a predetermined external location. This support enables apps that are not yet able to adopt MSIX packaging for the entire app to use Windows extensibility features that require package identity.
+A *package with external location* contains a package manifest, but no other app binaries and content. The manifest of a package with external location can reference files outside the package in a predetermined external location. As mentioned above, this support enables apps that aren't yet ready for all of their content to be present inside an MSIX package to use Windows extensibility features that require package identity.
 
 > [!NOTE]
 > A desktop app that uses a package with external location doesn't receive some benefits of being fully deployed via an MSIX package. These benefits include tamper protection, installation in a locked-down location, and full management by the OS at deployment, run time, and uninstall.

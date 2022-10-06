@@ -60,7 +60,7 @@ This is an alternative option if you can't implement a COM activator. However, y
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ❌ | ❌ |
 
-With this option, if you support classic desktop, you are much more limited in the notification templates and activation types that you can use, as seen below.<br/><br/>
+With this option, if you support desktop, then you're much more limited in the notification templates and activation types that you can use, as seen below.<br/><br/>
 
 | Template and activation type | Packaged | Unpackaged |
 | -- | -- | -- |

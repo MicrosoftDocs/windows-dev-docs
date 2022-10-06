@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Use the dynamic dependency API to reference framework packages at run time
 
-The *dynamic dependency API* enables unpackaged apps (that is, apps that don't use MSIX for their deployment technology) to reference and to use framework packages such as [WinUI 2](../../../winui/winui2/index.md) and the DirectX Runtime. For more information about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
+The *dynamic dependency API* enables unpackaged apps to reference and to use framework packages such as [WinUI 2](../../../winui/winui2/index.md) and the DirectX Runtime. For more information about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
 
 Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for framework packages. For more information about these types of references, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages). 
 

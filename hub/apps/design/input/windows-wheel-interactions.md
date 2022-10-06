@@ -706,4 +706,4 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 
-[Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)
+[Windows desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)

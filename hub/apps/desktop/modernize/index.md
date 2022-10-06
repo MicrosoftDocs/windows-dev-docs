@@ -54,7 +54,7 @@ For more information, see [Building an MSIX package from your code](/windows/msi
 
 ## Use MSIX framework packages dynamically at run time
 
-The *dynamic dependencies* feature in the Windows App SDK and in the Windows 11 OS enables your apps to reference MSIX framework packages at run time. This feature is intended to be used primarily by unpackaged desktop apps (that is, apps that do not use MSIX for their deployment technology) to call APIs that are provided by MSIX framework packages.
+The *dynamic dependencies* feature in the Windows App SDK and in the Windows 11 OS enables your apps to reference MSIX framework packages at run time. This feature is intended to be used primarily by unpackaged desktop apps to call APIs that are provided by MSIX framework packages.
 
 For more information, see [Use MSIX framework packages dynamically from your desktop app](framework-packages/index.md).
 

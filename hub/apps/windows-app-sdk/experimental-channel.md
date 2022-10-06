@@ -127,7 +127,7 @@ This release introduces updates to the *dynamic dependencies* feature, including
 
 Important limitations:
 
-- The dynamic dependencies feature is only supported for unpackaged apps (that is, apps that do not use MSIX for their deployment technology).
+- The dynamic dependencies feature is only supported for unpackaged apps.
 - Elevated callers aren't supported.
 
 For more information, see the following articles:
@@ -168,7 +168,7 @@ For more information, see [App instancing](applifecycle/applifecycle-instancing.
 
 ### Deployment for unpackaged apps (experimental feature)
 
-This release introduces new experimental deployment features for unpackaged apps (that is, apps that do not use MSIX for their deployment technology). Unpackaged apps can now dynamically take a dependency on the Windows App SDK runtime packages so you can continue using your existing MSI or setup program for app deployment. This is available through the following features:
+This release introduces new experimental deployment features for unpackaged apps. Unpackaged apps can now dynamically take a dependency on the Windows App SDK runtime packages so you can continue using your existing MSI or setup program for app deployment. This is available through the following features:
 
 - Standalone installer for Windows App SDK.
 - MSIX package bundle that includes dynamic dependencies functionality.
