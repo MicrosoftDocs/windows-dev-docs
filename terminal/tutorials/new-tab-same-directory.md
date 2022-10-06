@@ -148,7 +148,7 @@ For MINGW, Git Bash and Cygwin, you need to modify the `PROMPT_COMMAND` for WSL:
 Add the following line to the end of your `.bashrc` file:
 
 ```bash
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w $PWD`"'
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD"`"'
 ```
 
 > [!NOTE]
