@@ -40,6 +40,8 @@ Below is the full list of supported commands and options for the `wt` command li
 | `--fullscreen`, `-F` | Launches the terminal as full screen. |
 | `--focus`, `-f` | Launches the terminal in the focus mode. Can be combined with `maximized`. |
 | `--window`, `-w` `<window-id>` | Launches the terminal in a specific window. |
+| `--pos` `x,y` | (Only available in [Preview](https://aka.ms/terminal-preview)) Launches the terminal at the specified x and y coordinate on the screen. |
+| `--size` `c,r` | (Only available in [Preview](https://aka.ms/terminal-preview)) Launches the terminal with the specified number of columns and rows. |
 
 ### `New-tab` command
 
@@ -93,7 +95,7 @@ To start an instance of Windows Terminal and have it execute a command, call `wt
 Here's an example of calling Windows Terminal to pass a [ping](/windows-server/administration/windows-commands/ping) command argument to echo an IP address:
 
 ```powershell
-wt ping docs.microsoft.com
+wt ping learn.microsoft.com
 ```
 
 Here's an example of calling Windows Terminal to open a new tab with a PowerShell command line, confirming to call the [Start-Service](/powershell/module/microsoft.powershell.management/start-service) command, and opening another new tab with Windows Command Prompt open to the `/k` directory:

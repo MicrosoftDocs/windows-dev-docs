@@ -143,12 +143,12 @@ This function will be called whenever the current path is changed to confirm the
 
 #### MINGW
 
-For MINGW, Git Bash and Cygwin, you need to modify the `PROMT_COMMAND` for WSL: replace `wslpath` with `cygpath`.
+For MINGW, Git Bash and Cygwin, you need to modify the `PROMPT_COMMAND` for WSL: replace `wslpath` with `cygpath`.
 
 Add the following line to the end of your `.bashrc` file:
 
 ```bash
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w $PWD`"'
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD"`"'
 ```
 
 > [!NOTE]
