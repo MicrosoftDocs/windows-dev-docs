@@ -447,7 +447,7 @@ WidgetProvider::WidgetProvider()
         auto customState = widgetInfo.CustomState();
         if (RunningWidgets.find(widgetId) == RunningWidgets.end())
         {
-            CompactWidgetInfo runningWidgetInfo{ widgetName, widgetId };
+            CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
             try
             {
                 // If we had any save state (in this case we might have some state saved for Counting widget)
@@ -560,6 +560,11 @@ In the current release, only packaged apps can be registered as widget providers
 
 In **Solution Explorer**, right-click your solution and select **Add->New Project...**. In the **Add a new project** dialog, select the "Windows Application Packaging Project" template and click **Next**. Set the project name to "ExampleWidgetProviderPackage" and click **Create**. When prompted, set the target version to version 1809 or later and click **OK**.
 Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click OK.
+
+
+### Add a reference to the Windows App SDK Nuget package
+
+In a previous step, you added a reference to the Windows App SDK Nuget package to the widget provider project. You must also reference this nuget package in the MSIX packaging project. In **Solution Explorer**, right-click the ExampleWidgetProviderPackage project and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". In the version drop-down select **1.2.220930.4-preview2** then click **Install**.
 
 ### Update the package manifest
 
