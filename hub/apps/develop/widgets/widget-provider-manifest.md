@@ -131,7 +131,7 @@ Represents the registration for a single widget.
 
 ## Capablities
 
-Optional. Specifies capabilities for a single widget. 
+Optional. Specifies capabilities for a single widget. If no capabilities are declared, one capability specifying a "large" size is added by default.
 
 ## Capability
 

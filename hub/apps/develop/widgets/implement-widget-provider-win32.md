@@ -447,7 +447,7 @@ WidgetProvider::WidgetProvider()
         auto customState = widgetInfo.CustomState();
         if (RunningWidgets.find(widgetId) == RunningWidgets.end())
         {
-            CompactWidgetInfo runningWidgetInfo{ widgetName, widgetId };
+            CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
             try
             {
                 // If we had any save state (in this case we might have some state saved for Counting widget)
@@ -560,6 +560,34 @@ In the current release, only packaged apps can be registered as widget providers
 
 In **Solution Explorer**, right-click your solution and select **Add->New Project...**. In the **Add a new project** dialog, select the "Windows Application Packaging Project" template and click **Next**. Set the project name to "ExampleWidgetProviderPackage" and click **Create**. When prompted, set the target version to version 1809 or later and click **OK**.
 Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click OK.
+
+
+### Add a reference to the Windows App SDK 
+
+You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleWidgetProviderPackage project to open the ExampleWidgetProviderPackage.wapproj file. Add the following xml inside the **Project** element.
+
+```xml
+<!--ExampleWidgetProviderPackage.wapproj-->
+<ItemGroup>
+	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220930.4-preview2">
+		  <IncludeAssets>build</IncludeAssets>
+	  </PackageReference>  
+</ItemGroup>
+```
+
+If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appmanifest file for the ExampleWidgetProviderPackage project.
+
+```xml
+<!--Package.appmanifest-->
+...
+<Dependencies>
+...
+    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.2-preview2" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+...
+</Dependencies>
+...
+```
+
 
 ### Update the package manifest
 
