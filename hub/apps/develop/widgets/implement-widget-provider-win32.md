@@ -562,7 +562,7 @@ In **Solution Explorer**, right-click your solution and select **Add->New Projec
 Next, right-click the ExampleWidgetProviderPackage project and select **Add->Project reference**. Select the **ExampleWidgetProvider** project and click OK.
 
 
-### Add a reference to the Windows App SDK 
+### Add Windows App SDK package reference to the packaging project
 
 You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleWidgetProviderPackage project to open the ExampleWidgetProviderPackage.wapproj file. Add the following xml inside the **Project** element.
 
@@ -575,10 +575,10 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 </ItemGroup>
 ```
 
-If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appmanifest file for the ExampleWidgetProviderPackage project.
+If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleWidgetProviderPackage project.
 
 ```xml
-<!--Package.appmanifest-->
+<!--Package.appxmanifest-->
 ...
 <Dependencies>
 ...
