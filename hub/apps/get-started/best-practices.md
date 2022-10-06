@@ -38,7 +38,7 @@ Windows 11 is built on the [Windows 11 design principles](/windows/apps/design/s
 - Window behavior
 - Shell integration points
 
-[WinUI 3](/windows/apps/winui/) provides built-in support for many of these experiences and styles through its **[common controls](/windows/apps/get-started/make-apps-great-for-windows#4-use-the-latest-common-controls)**. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.figma.com/community/file/989931624019688277) and [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+[WinUI 3](/windows/apps/winui/) provides built-in support for many of these experiences and styles through its **[common controls](/windows/apps/get-started/make-apps-great-for-windows#4-use-the-latest-common-controls)**. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
 ### Layout
 
@@ -86,7 +86,7 @@ More information about Acrylic and Mica materials can be found in [Things you ca
 
 [Windows 11 geometry](/windows/apps/design/signature-experiences/geometry) has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
 
-The visual and behavioral changes are built in to [WinUI 3](/windows/apps/winui/). Use WinUI 3 where you can to take advantage of the work that has already been done. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.figma.com/community/file/989931624019688277) and [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+The visual and behavioral changes are built in to [WinUI 3](/windows/apps/winui/). Use WinUI 3 where you can to take advantage of the work that has already been done. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
 #### Context menu
 

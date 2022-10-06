@@ -84,7 +84,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ### WebView and other platforms
 
-- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and WinUI 2 Gallery can be used to copy the styles.
+- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and WinUI 2 Gallery can be used to copy the styles.
 
 ## 5. Use the latest design materials (Acrylic and Mica)
 
