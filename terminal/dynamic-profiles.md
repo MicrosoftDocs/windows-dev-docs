@@ -33,7 +33,7 @@ To hide a profile from your terminal dropdown menu, add the `hidden` property to
 To prevent a dynamic profile from being generated, you can add the profile generator to the `disabledProfileSources` array in your global settings. More information on this setting can be found on the [Global settings page](./customize-settings/startup.md#disable-dynamic-profiles).
 
 ```json
-"disabledProfileSources": ["Windows.Terminal.Wsl", "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore"]
+"disabledProfileSources": ["Windows.Terminal.Wsl", "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore", "Windows.Terminal.SSH"]
 ```
 
 ## Add a third party profile
