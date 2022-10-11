@@ -569,9 +569,9 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleWidgetProviderPackage.wapproj-->
 <ItemGroup>
-	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220930.4-preview2">
-		  <IncludeAssets>build</IncludeAssets>
-	  </PackageReference>  
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220930.4-preview2">
+        <IncludeAssets>build</IncludeAssets>
+    </PackageReference>  
 </ItemGroup>
 ```
 
