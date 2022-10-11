@@ -1,5 +1,5 @@
 ---
-title: Widget service providers
+title: Widget providers
 description: Learn how to implement a Windows widget service provider to support your app. 
 ms.topic: article
 ms.date: 07/06/2022
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 
 
-# Widget service providers
+# Widget providers
 
 > [!NOTE]
 > **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 > The self-contained feature described in this topic is available only in Windows App SDK 1.2 Preview 1.
 
 
-Windows widgets are small UI containers that display text and graphics from an app or web service. The Adaptive Cards format used by Windows widgets enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget service provider that responds to requests from the Widgets host and returns JSON strings specifying both the visual template and the associated data for your widget.
+Windows widgets are small UI containers that display text and graphics from an app or web service. The Adaptive Cards format used by Windows widgets enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget provider that responds to requests from the Widgets host and returns JSON strings specifying both the visual template and the associated data for your widget.
 
 For an overview of the Windows widgets experience and design guidance for creating your own widgets, see [Windows widgets](../../design/widgets/).
 
