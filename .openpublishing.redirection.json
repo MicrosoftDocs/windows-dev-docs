@@ -6944,6 +6944,11 @@
       "source_path": "hub/apps/windows-app-sdk/notifications/push/push-quickstart.md",
       "redirect_url": "/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/widgets/widget-service-providers.md",
+      "redirect_url": "/windows/apps/develop/widgets/widget-providers",
+      "redirect_document_id": true
     }
   ]
 }
