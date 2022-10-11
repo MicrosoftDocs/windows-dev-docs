@@ -360,10 +360,10 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
-      - name: Windows widget service providers
+      - name: Windows widget providers
         items:
         - name: Overview
-          href: develop/widgets/widget-service-providers.md
+          href: develop/widgets/widget-providers.md
         - name: Implement a widget provider in a win32 app
           href: develop/widgets/implement-widget-provider-win32.md
         - name: Widget provider package manifest XML format

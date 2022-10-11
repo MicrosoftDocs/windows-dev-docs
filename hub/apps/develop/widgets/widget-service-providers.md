@@ -30,4 +30,4 @@ For API reference documentation for implementing widget providers, see the [Micr
 
 ## Related articles
 
-* [Windows widgets](../../design/widgets/)
+* [Windows widgets](../../design/widgets/index.md)
