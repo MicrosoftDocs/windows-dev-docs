@@ -34,7 +34,7 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 
 In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleWidgetProvider". When prompted, set the target Windows version for the app to version 1809 or later.
 
-## Add a reference to the Windows widgets NuGet package
+## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
 This sample uses the latest preview Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the Include prerelease check box near the top of the window, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". In the version drop-down select **1.2.220930.4-preview2** then click **Install**.
 
@@ -380,9 +380,9 @@ void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::Wid
         UpdateWidget(localWidgetInfo);
     }
 }
+
 void WidgetProvider::Deactivate(winrt::hstring widgetId)
 {
-
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
         auto& localWidgetInfo = iter->second;
@@ -394,7 +394,7 @@ void WidgetProvider::Deactivate(winrt::hstring widgetId)
 
 ## Update a widget
 
-Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompatWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated. Call [WidgetManager::GetDefault](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getdefault) to get an instance of the [WidgetManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager) class and then call [UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget) to send the updated widget data to the widget host.
+Define the **UpdateWidget** helper method to update an enabled widget. In this example, we check the name of the widget in the **CompactWidgetInfo** helper struct passed into the method, and then set the appropriate template and data JSON based on which widget is being updated. A **WidgetUpdateRequestOptions** is initialized with the template, data, and custom state for the widget being updated. Call [WidgetManager::GetDefault](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getdefault) to get an instance of the [WidgetManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager) class and then call [UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget) to send the updated widget data to the widget host.
 
 ```cpp
 // WidgetProvider.cpp
