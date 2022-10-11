@@ -13,7 +13,7 @@ You can help customers discover your app by linking to your app's listing in the
 
 ## Getting the link to your app's Store listing
 
-To get the URL for your app's Store listing, navigate to the app's [Product Identity identity](view-app-identity-details.md) page in the **Product management** section of [Partner Center](https://partner.microsoft.com/). The URL is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+To get the URL for your app's Store listing, navigate to the app's [Product Identity identity](view-app-identity-details.md) page in the **Product management** section of [Partner Center](https://partner.microsoft.com/). The URL is in the format **`https://apps.microsoft.com/store/detail/<your app's Store ID>`**.
 
 When a customer clicks this link, it opens the web-based listing page for your app. From there, customers on Windows devices can launch the Microsoft Store to download and install your app.
 
