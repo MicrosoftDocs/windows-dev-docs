@@ -76,25 +76,25 @@ Authorization: Bearer <your access token>
 
 Elements in the *Value* array contain the following values.
 
-| Value                     | Type    | Description    | UWP Availability| Anaheim based PWA Availability| Xbox Availability|
+| Value                     | Type    | Description    | UWP Availability| Anaheim based PWA Availability| Xbox Availability    |
 |---------------------------|---------|---------------------------------------------------------------------------|---------|---------|---------|
-| date                      | string  | The first date in the date range for the usage data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range.        |Yes|Yes|Yes|
-| applicationId             | string  | The Store ID of the app for which you are retrieving usage data.          |Yes|Yes|Yes|
-| applicationName           | string  | The display name of the app.                                              |Yes|Yes|Yes|
-| deviceType                | string  | One of the following strings that specifies the type of device where usage occurred:<ul><li>**PC**</li><li>**Phone**</li><li>**Console-Xbox One**</li><li>**Console-Xbox Series X**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                         |Yes|Yes|Yes|
-| packageVersion            | string  | The version of the package where usage occurred.                          |Yes|Yes|No|
-| market                    | string  | The ISO 3166 country code of the market where the customer used your app. |Yes|Yes|Yes|
-| subscriptionName          | string  | Indicates if usage was through Xbox Game Pass.                            |Yes|No|No|
-| dailySessionCount         | long    | The number of user sessions on that day.                                  |Yes|Yes|Yes|
-| engagementDurationMinutes | double  | The minutes where users are actively using your app measured by a distinct period of time, starting when the app launches (process start) and ending when it terminates (process end) or after a period of inactivity.             |Yes|Yes|Yes|
-| dailyActiveUsers          | long    | The number of customers using the app that day.                           |Yes|No|Yes|
-| dailyActiveDevices        | long    | The number of daily devices used to interact with your app by all users.  |Yes|Yes|Yes|
+| date                      | string  | The first date in the date range for the usage data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range.        |Yes|Yes|Yes  |
+| applicationId             | string  | The Store ID of the app for which you are retrieving usage data.          |Yes|Yes|Yes  |
+| applicationName           | string  | The display name of the app.                                              |Yes|Yes|Yes  |
+| deviceType                | string  | One of the following strings that specifies the type of device where usage occurred:<ul><li>**PC**</li><li>**Phone**</li><li>**Console-Xbox One**</li><li>**Console-Xbox Series X**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                         |Yes|Yes|Yes    |
+| packageVersion            | string  | The version of the package where usage occurred.                          |Yes|Yes|No   |
+| market                    | string  | The ISO 3166 country code of the market where the customer used your app. |Yes|Yes|Yes  |
+| subscriptionName          | string  | Indicates if usage was through Xbox Game Pass.                            |Yes|No|No    |
+| dailySessionCount         | long    | The number of user sessions on that day.                                  |Yes|Yes|Yes  |
+| engagementDurationMinutes | double  | The minutes where users are actively using your app measured by a distinct period of time, starting when the app launches (process start) and ending when it terminates (process end) or after a period of inactivity.             |Yes|Yes|Yes |
+| dailyActiveUsers          | long    | The number of customers using the app that day.                           |Yes|No|Yes   |
+| dailyActiveDevices        | long    | The number of daily devices used to interact with your app by all users.  |Yes|Yes|Yes  |
 | dailyNewUsers             | long    | The number of customers who used your app for the first time that day.    |Yes|No|Yes|
-| monthlyActiveUsers        | long    | The number of customers using the app that month.                         |Yes|No|Yes|
-| monthlyActiveDevices      | long    | The number of devices running your app for a distinct period of time, starting when the app launches (process start) and ending when it terminates (process end) or after a period of inactivity.                                      |Yes|Yes|Yes|
-| monthlyNewUsers           | long    | The number of customers who used your app for the first time that month.  |Yes|No|Yes|
-| dailyNewDevices           | long    | The number of devices which used the app for the first time that day.  |No|Yes|No|
-| monthlyNewDevices         | long    | The number of devices which used the app for the first time in last 30 days.  |No|Yes|No
+| monthlyActiveUsers        | long    | The number of customers using the app that month.                         |Yes|No|Yes   |
+| monthlyActiveDevices      | long    | The number of devices running your app for a distinct period of time, starting when the app launches (process start) and ending when it terminates (process end) or after a period of inactivity.                                      |Yes|Yes|Yes |
+| monthlyNewUsers           | long    | The number of customers who used your app for the first time that month.  |Yes|No|Yes   |
+| dailyNewDevices           | long    | The number of devices which used the app for the first time that day.  |No|Yes|No   |
+| monthlyNewDevices         | long    | The number of devices which used the app for the first time in last 30 days.  |No|Yes|No    |
 
 > [!NOTE]
 > If a field is not valid for a specific product, then the value to those fields will be sent as 0 or null in the response. Computation of new users and new devices is done with the rolling window of 3 years, i.e., if an user/device doesn’t use the application for 3 years and above, they will be treated as new user/device after 3 years.
