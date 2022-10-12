@@ -1,9 +1,9 @@
 ---
 title: App notifications from UWP to WinUI 3 migration
-description: This topic contains migration guidance in the toast notifications feature area.
+description: This topic contains migration guidance in the app notifications feature area.
 ms.topic: article
 ms.date: 12/14/2021
-keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, uwp
+keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, app notifications, uwp
 ms.author: stwhi
 author: stevewhims
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # App notifications from UWP to WinUI 3 migration
 
-The only difference when migrating app notification code from UWP to WinUI 3 is in handling the activation of notifications. Sending and managing toast notifications remains exactly the same.
+The only difference when migrating app notification code from UWP to WinUI 3 is in handling the activation of notifications. Sending and managing app notifications remains exactly the same.
 
 > [!NOTE] The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
@@ -76,7 +76,7 @@ In your **Package.appxmanifest**, add:
       ...
       <Extensions>
 
-        <!--Specify which CLSID to activate when toast clicked-->
+        <!--Specify which CLSID to activate when app notification clicked-->
         <desktop:Extension Category="windows.toastNotificationActivation">
           <desktop:ToastNotificationActivation ToastActivatorCLSID="replaced-with-your-guid-C173E6ADF0C3" /> 
         </desktop:Extension>
@@ -84,8 +84,8 @@ In your **Package.appxmanifest**, add:
         <!--Register COM CLSID LocalServer32 registry key-->
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:ExeServer Executable="YourProject.exe" Arguments="----AppNotificationActivated:" DisplayName="Toast activator">
-              <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" DisplayName="Toast activator"/>
+            <com:ExeServer Executable="YourProject.exe" Arguments="----AppNotificationActivated:" DisplayName="App notification activator">
+              <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" DisplayName="App notification activator"/>
             </com:ExeServer>
           </com:ComServer>
         </com:Extension>
@@ -149,7 +149,7 @@ In your **Package.appxmanifest**, add:
 1. If the activation kind is **AppNotification** cast the <xref:Microsoft.Windows.AppLifecycle.AppActivationArguments.Data?displayProperty=nameWithType> property to an <xref:Microsoft.Windows.AppNotifications.AppNotificationActivatedEventArgs> and pass it to the `HandleNotification` helper method.
 1. In your **ApplicationManager.NotificationInvoked** handler, call the `HandleNotification` helper method.
 1. Within your `HandleNotification` helper method, be sure to dispatch to the App or Window dispatcher before executing any UI-related code like showing a window or updating UI
-1. **Migrate** your old UWP `OnActivated` code that handled toast activation to your new `HandleNotification` helper method.
+1. **Migrate** your old UWP `OnActivated` code that handled app notification activation to your new `HandleNotification` helper method.
 
 #### Migrated App.xaml.cs
 
@@ -185,7 +185,7 @@ private void LaunchAndBringToForegroundIfNeeded()
         m_window = new MainWindow();
         m_window.Activate();
 
-        // Additionally we show using our helper, since if activated via a toast, it doesn't
+        // Additionally we show using our helper, since if activated via a app notification, it doesn't
         // activate the window correctly
         WindowHelper.ShowWindow(m_window);
     }
@@ -284,7 +284,7 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
     // Register for toast activation. Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
     ToastNotificationManagerCompat.OnActivated += ToastNotificationManagerCompat_OnActivated;
 
-    // If we weren't launched by a toast, launch our window like normal.
+    // If we weren't launched by an app, launch our window like normal.
     // Otherwise if launched by a toast, our OnActivated callback will be triggered
     if (!ToastNotificationManagerCompat.WasCurrentProcessToastActivated())
     {
@@ -375,7 +375,7 @@ private static class WindowHelper
 
 #### [Windows App SDK](#tab/appsdk) 
 
-With Windows App SDK, you can still create app notification content using raw xml, but you can also create app notification content using the new **AppNotificationsBuilder** API instead of using the **ToastContentBuilder** class provided by the Windows Community Toolkit. Send the app notification by calling <xref:Microsoft.Windows.AppNotifications.AppNotificationManager.Show(Microsoft.Windows.AppNotifications.AppNotification)?displayProperty=nameWithType>.  Mixing Windows Community Toolkit and App SDK APIs is not recommended.
+With Windows App SDK, you can still create app notification content using raw xml, but you can also create app notification content using the new **AppNotificationsBuilder** API which replaces the **ToastContentBuilder** class provided by the Windows Community Toolkit. Send the app notification by calling <xref:Microsoft.Windows.AppNotifications.AppNotificationManager.Show(Microsoft.Windows.AppNotifications.AppNotification)?displayProperty=nameWithType>.  Mixing Windows Community Toolkit and App SDK APIs is not recommended.
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
