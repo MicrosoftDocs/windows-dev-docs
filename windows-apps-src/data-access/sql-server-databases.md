@@ -1,9 +1,9 @@
 ---
 title: Use a SQL Server database in a UWP app
 description: Learn how to connect a UWP app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 05/05/2022
+ms.date: 10/03/2022
 ms.topic: article
-keywords: windows 10, uwp, SQL Server, database
+keywords: windows 10, windows 11, uwp, SQL Server, database
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +19,7 @@ The snippets that appear in this guide are based on this more [complete sample](
 
 ## First, set up your solution
 
-To connect your app directly to a SQL Server database, make sure that the minimum version of your project targets the Windows 10 Fall Creators update or newer.  You can find that information in the properties page of your UWP project.
+To connect your app directly to a SQL Server database, make sure that the minimum version of your project targets the Windows 10 Fall Creators update (Build 16299) or newer.  You can find that information in the properties page of your UWP project.
 
 ![Minimum version of the Windows SDK](images/min-version-fall-creators.png)
 
@@ -31,8 +31,6 @@ In the **Capabilities** tab, select the **Enterprise Authentication** checkbox i
 
 > [!IMPORTANT]
 > You will also need to select **Internet (Client & Server)**, **Internet (Client)**, and **Private Networks (Client & Server)**, regardless of whether or not you're using Windows Authentication.
-
-<a id="use-data" />
 
 ## Add and retrieve data in a SQL Server database
 
@@ -48,12 +46,12 @@ In this section,  we'll do these things:
 
 :five: Populate the UI with Products.
 
->[!NOTE]
+> [!NOTE]
 > This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
 
 ### Add a connection string
 
-In the **App.xaml.cs** file, add a property to the ``App`` class, that gives other classes in your solution access to the connection string.
+In the **App.xaml.cs** file, add a property to the `App` class, that gives other classes in your solution access to the connection string.
 
 Our connection string points to the Northwind database in a SQL Server Express instance.
 
@@ -102,7 +100,7 @@ public class Product : INotifyPropertyChanged
 
 ### Retrieve products from the SQL Server database
 
-In the **MainPage.xaml.cs** file of the UWP project, create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of ``Product`` instances.
+In the **MainPage.xaml.cs** file of the UWP project, create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of `Product` instances.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -144,7 +142,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
     }
     catch (Exception eSql)
     {
-        Debug.WriteLine("Exception: " + eSql.Message);
+        Debug.WriteLine($"Exception: {eSql.Message}");
     }
     return null;
 }
@@ -152,9 +150,9 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### Add a basic user interface
 
- Add the following XAML to the **MainPage.xaml** file of the UWP project.
+Add the following XAML to the **MainPage.xaml** file of the UWP project.
 
- This XAML creates a [ListView](/uwp/api/windows.ui.xaml.controls.listview) to show each product that you returned in the previous snippet, and binds the attributes of each row in the [ListView](/uwp/api/windows.ui.xaml.controls.listview) to the properties that we defined in the ``Product`` class.
+This XAML creates a [ListView](/uwp/api/windows.ui.xaml.controls.listview) to show each product that you returned in the previous snippet, and binds the attributes of each row in the [ListView](/uwp/api/windows.ui.xaml.controls.listview) to the properties that we defined in the `Product` class.
 
 ```xml
 <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
@@ -204,7 +202,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### Show products in the ListView
 
-Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) of ``Product`` instances.
+Open the **MainPage.xaml.cs** file, and add code to the constructor of the `MainPage` class that sets the **ItemSource** property of the [ListView](/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) of `Product` instances.
 
 ```csharp
 public MainPage()
@@ -222,7 +220,7 @@ Explore the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace
 
 ## Trouble connecting to your database?
 
-In most cases, some aspect of the SQL Server configuration needs to be changed. If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server. You can do that in the **Computer Management** console.
+In most cases, some aspect of the SQL Server configuration needs to be changed. If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server. You can do that in the **Computer Management** console. (See [Windows Tools/Administrative Tools](/windows/client-management/administrative-tools-in-windows-10#tools) for more information.)
 
 ![Computer Management](images/computer-management.png)
 
