@@ -125,7 +125,7 @@ From an administrative command prompt, you can enable and configure parts of WDP
 
 Below are some common errors that you may encounter when setting up Windows Device Portal.
 
-### WindowsUpdateSearch returns invalid number of updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### WindowsUpdateSearch returns invalid number of updates (0x800f0950)
 
 You may get this error when trying to install the developer packages on a pre-release build of Windows. These Feature-on-Demand (FoD) packages are hosted on Windows Update, and downloading them on pre-release builds requires that you opt into flighting. If your installation is not opted into flighting for the right build and ring combination, the payload will not be downloadable. Double-check the following:
 
