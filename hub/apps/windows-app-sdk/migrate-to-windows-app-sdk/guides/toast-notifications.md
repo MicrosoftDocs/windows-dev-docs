@@ -59,7 +59,7 @@ In your **Package.appxmanifest**, add:
 1. Declaration for **xmlns:desktop**
 1. In the **IgnorableNamespaces** attribute, **com** and **desktop**
 1. **desktop:Extension** for **windows.toastNotificationActivation** to declare your toast activator CLSID (using a new GUID of your choice).
-1. MSIX only: **com:Extension** for the COM activator using the GUID from step #4. Be sure to include the `Arguments="-ToastActivated"` so that you know your launch was from a notification
+1. MSIX only: **com:Extension** for the COM activator using the GUID from step #4. Be sure to include the `Arguments="----AppNotificationActivated:"` so that you know your launch was from a notification
 
 #### [Windows App SDK](#tab/appsdk) 
 
