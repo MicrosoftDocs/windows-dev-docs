@@ -414,7 +414,7 @@ This sets the visibility of the scrollbar.
 
 **Necessity:** Optional
 
-**Accepts:** `"visible"`, `"hidden"`, `"always"`
+**Accepts:** `"visible"`, `"hidden"`
 
 <br />
 
