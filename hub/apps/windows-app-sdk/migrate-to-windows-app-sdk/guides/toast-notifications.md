@@ -144,14 +144,14 @@ In your **Package.appxmanifest**, add:
 
 **In your app's startup code** (typically App.xaml.cs), update your code using the following steps:
 
-1. In **OnLaunched**, get the default instance of the <xref:Microsoft.Windows.AppNotifications.AppNotificationManager> class.
-1. Register for the <xref:Microsoft.Windows.AppNotifications.AppNotificationManager.NotificationInvoked?displayProperty=nameWithType> event
-1. Call <xref:Microsoft.Windows.AppNotifications.AppNotificationManager.Register?displayProperty=nameWithType> to register your app to receive notification events. It is important that your call this method after registering the **NotificationInvoked** handler.
+1. In **OnLaunched**, get the default instance of the [AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) class.
+1. Register for the [AppNotificationManager.NotificationInvoked](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked) event.
+1. Call [Microsoft.Windows.AppNotifications.AppNotificationManager.Register](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register) to register your app to receive notification events. It is important that your call this method after registering the **NotificationInvoked** handler.
 1. Refactor your window launch/activation code into a dedicated `LaunchAndBringToForegroundIfNeeded` helper method, so you can call it from multiple places.
 1. Create a `HandleNotification` helper method, so that it can be called from multiple places.
-1. Call <xref:Microsoft.Windows.AppLifecycle.AppInstance.GetActivatedEventArgs?displayProperty=nameWithType> and check the <xref:Microsoft.Windows.AppLifecycle.AppActivationArguments.Kind?displayProperty=nameWithType> property of the returned object for the value <xref:Microsoft.Windows.AppLifecycle.ExtendedActivationKind.AppNotification?displayProperty=nameWithType>.
+1. Call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) and check the [AppActivationArguments.Kind](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.kind) property of the returned object for the value [ExtendedActivationKind.AppNotification](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind).
 1. If the activation kind is not **AppNotification** call the **LaunchAndBringToForegroundIfNeeded** helper method.
-1. If the activation kind is **AppNotification** cast the <xref:Microsoft.Windows.AppLifecycle.AppActivationArguments.Data?displayProperty=nameWithType> property to an <xref:Microsoft.Windows.AppNotifications.AppNotificationActivatedEventArgs> and pass it to the `HandleNotification` helper method.
+1. If the activation kind is **AppNotification** cast the [AppActivationArguments.Data](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.data) property to an [AppNotificationActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationactivatedeventargs) and pass it to the `HandleNotification` helper method.
 1. In your **ApplicationManager.NotificationInvoked** handler, call the `HandleNotification` helper method.
 1. Within your `HandleNotification` helper method, be sure to dispatch to the App or Window dispatcher before executing any UI-related code like showing a window or updating UI
 1. **Migrate** your old UWP `OnActivated` code that handled app notification activation to your new `HandleNotification` helper method.
@@ -380,7 +380,7 @@ private static class WindowHelper
 
 #### [Windows App SDK](#tab/appsdk) 
 
-With Windows App SDK, you can still create app notification content using raw xml, but you can also create app notification content using the new **AppNotificationsBuilder** API which replaces the **ToastContentBuilder** class provided by the Windows Community Toolkit. Send the app notification by calling <xref:Microsoft.Windows.AppNotifications.AppNotificationManager.Show(Microsoft.Windows.AppNotifications.AppNotification)?displayProperty=nameWithType>.  Mixing Windows Community Toolkit and App SDK APIs is not recommended.
+With Windows App SDK, you can still create app notification content using raw xml, but you can also create app notification content using the new **AppNotificationsBuilder** API which replaces the **ToastContentBuilder** class provided by the Windows Community Toolkit. Send the app notification by calling [AppNotificationManager.Show](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show).  Mixing Windows Community Toolkit and App SDK APIs is not recommended.
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
