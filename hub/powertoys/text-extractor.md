@@ -1,14 +1,14 @@
 ---
 title: PowerToys Text Extractor utility for Windows
 description: Text Extractor is a convenient way to copy text from anywhere on your screen.
-ms.date: 08/30/2022
+ms.date: 10/13/2022
 ms.topic: article
 no-loc: [PowerToys, Windows, Text Extractor, Win]
 ---
 
 # Text Extractor utility
 
-Text Extractor is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+Text Extractor enables you to copy text from anywhere on your screen, including inside images or videos. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
 
 ## How to activate
 
@@ -42,20 +42,26 @@ From the Settings menu, the following options can be configured:
 Text Extractor can only recognize languages that have the OCR language pack installed.
 
 The list can be obtained via PowerShell by running the following commands:
+
 ```powershell
 [Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
+```
+
+```powershell
 [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
+
 ### How to query for OCR language packs
 
-The next command returns the list (PowerShell run as Administrator):
+To return the list of support language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator"), and enter the following command:
+
 ```powershell
 Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
 ```
 
 An example output:
-```console
-....
+
+```powershell
 Name  : Language.OCR~~~el-GR~0.0.1.0
 State : NotPresent
 
@@ -70,30 +76,39 @@ State : NotPresent
 
 Name  : Language.OCR~~~es-MX~0.0.1.0
 State : NotPresent
-....
 ```
 
-If a language is not available in the output, then it's not supported by OCR.
+The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR.
 
 ### How to install an OCR language pack
 
 The following commands install the OCR pack for "en-US":
+
 ```powershell
 $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
+```
+
+```powershell
 $Capability | Add-WindowsCapability -Online
 ```
 
 ### How to remove an OCR language pack
 
 The following commands remove the OCR pack for "en-US":
+
 ```powershell
 $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
+```
+
+```powershell
 $Capability | Remove-WindowsCapability -Online
 ```
 
 ## Troubleshooting
 
-### "No Possible OCR languages are installed." message
+This section will list possible errors and solutions.
+
+### "No Possible OCR languages are installed."
 
 This message is shown when there are no available languages for recognition.
 
