@@ -46,7 +46,7 @@ Window activation | Your window is automatically brought to foreground when fore
 
 #### [Windows App SDK](#tab/appsdk) 
 
-For a WinUI 3 app, you handle activation for notifications by using the [AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) class. This class is provided by the Microsoft.WindowsAppSDK Nuget package, which is included by default in the WinUI 3 VIsual Studio project templates.
+For a WinUI 3 app, you handle activation for notifications by using the [AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) class. This class is provided by the Microsoft.WindowsAppSDK Nuget package, which is included by default in the WinUI 3 Visual Studio project templates.
 
 #### [Windows Community Toolkit](#tab/toolkit)
 
