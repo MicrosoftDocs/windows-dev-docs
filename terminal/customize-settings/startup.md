@@ -204,7 +204,7 @@ This sets which dynamic profile generators are disabled, preventing them from ad
 
 **Necessity:** Optional
 
-**Accepts:** `"Windows.Terminal.Wsl"`, `"Windows.Terminal.Azure"`, and/or `"Windows.Terminal.PowershellCore"` inside an array
+**Accepts:** `"Windows.Terminal.Wsl"`, `"Windows.Terminal.Azure"`, `"Windows.Terminal.PowershellCore"`, and/or `"Windows.Terminal.SSH"` inside an array
 
 **Default value:** `[]`
 
