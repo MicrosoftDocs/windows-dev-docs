@@ -42,14 +42,14 @@ From the Settings menu, the following options can be configured:
 Text Extractor can only recognize languages that have the OCR language pack installed.
 
 The list can be obtained via PowerShell by running the following commands:
-```console
+```powershell
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine, Windows.Foundation, ContentType = WindowsRuntime]
 PS C:\Windows\system32> [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
 ### How to query for OCR language packs
 
 The next command returns the list (PowerShell run as Administrator):
-```console
+```powershell
 PS C:\Windows\system32> Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*' }
 ```
 
@@ -78,7 +78,7 @@ If a language is not available in the output, then it's not supported by OCR.
 ### How to install an OCR language pack
 
 The following commands install the OCR pack for "en-US":
-```console
+```powershell
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Add-WindowsCapability -Online
 ```
@@ -86,14 +86,14 @@ PS C:\Windows\system32> $Capability | Add-WindowsCapability -Online
 ### How to remove an OCR language pack
 
 The following commands remove the OCR pack for "en-US":
-```console
+```powershell
 PS C:\Windows\system32> $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Language.OCR*en-US*' }
 PS C:\Windows\system32> $Capability | Remove-WindowsCapability -Online
 ```
 
 ## Troubleshooting
 
-- "No Possible OCR languages are installed." message
+### "No Possible OCR languages are installed." message
 
 This message is shown when there are no available languages for recognition.
 
