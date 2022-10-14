@@ -29,9 +29,6 @@ Analyze ratings and reviews with the Ratings and reviews report in Partner Cente
 
 The Ratings and Reviews report in Partner Center lets you see how customers rated your app in the Store. You can view this data in Partner Center or download the report to view offline.
 
-> [!TIP]
-> For a quick look at the reviews, ratings, and user feedback for all of your apps, expand Analytics in the left navigation menu and select Ratings and Reviews
-
 ### Apply filters
 
 Near the top of the page, you can select the time period for which you want to show reviews. The default selection is Lifetime, but you can choose to show reviews for Lifetime, Last 24 hours, Last 7 days, Last 1 month, Last 3 months, Last 6 months, or Last 12 months, or for a custom data range that you specify.
@@ -128,9 +125,6 @@ When responding to a customer's review, you must follow these guidelines. These 
 - Don’t promote other apps or services in your response.
 - Your response must be directly related to the specific app and review. Duplicating the same response to a large number of users isn’t allowed if the canned response doesn’t address the same question.
 - Don’t include any profane, aggressive, personal, or malicious comments in your response. Always be polite and keep in mind that happy customers will likely be your app’s biggest promoters.
-
-> [!IMPORTANT]
-> You won’t be able to change the responses you post to the Store (unless the customer revises their original review), so review your response carefully. If a customer revises the original review, your response will be removed from the app's Store listing page. You can make a new reply to the customer's updated review.
 
 Customers can report an inappropriate review response from a developer to Microsoft.  Microsoft retains the right to revoke a developer’s permission to send responses for any reason, including if your responses prompt an unusually high number of inappropriate response reports.
 
