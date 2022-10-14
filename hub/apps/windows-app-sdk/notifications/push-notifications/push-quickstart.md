@@ -113,7 +113,7 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
         <!--Register COM activator-->    
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-              <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----WindowsAppSDKPushServer:">
+              <com:ExeServer Executable="SampleApp\SampleApp.exe" DisplayName="SampleApp" Arguments="----WindowsAppRuntimePushServer:">
                 <com:Class Id="[Your app's Azure AppId]" DisplayName="Windows App SDK Push" />
             </com:ExeServer>
           </com:ComServer>
