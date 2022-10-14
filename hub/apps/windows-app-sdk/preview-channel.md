@@ -21,9 +21,63 @@ The preview channel provides a preview of the next upcoming stable release. Ther
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on preview releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
 
-## Version 1.2 Preview 1 (1.2.0-preview1)
+## Version 1.2 Preview 2 (1.2.0-preview2)
 
 This is the latest release of the preview channel for version 1.2.
+
+In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview2 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
+
+For the updated runtime and MSIX, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
+
+> [!Important]
+> Visual Studio 2019 and .NET 5 is no longer supported for building C# apps (see [Windows App SDK 1.2 moving to C# WinRT 2.0](https://github.com/microsoft/WindowsAppSDK/discussions/2879)). You will need Visual Studio 2022 and one of the following .NET SDK versions: 6.0.401 (or later), 6.0.304, 6.0.109.
+>
+> To update your .NET SDK version, install the latest version of Visual Studio 2022 or visit [.NET Downloads](https://dotnet.microsoft.com/download). When updating your NuGet package without the required .NET SDK version, you will see an error like: *"This version of WindowsAppSDK requires .NET 6+ and WinRT.Runtime.dll version 2.0 or greater."*. To update the project from .NET 5.0 to .NET 6.0, open the project file and change "TargetFramework" to `net6.0` and "Target OS version" to the appropriate value (such as `net6.0-windows10.0.19041.0`).
+
+### Third-party Widgets in Windows
+
+The Widgets Board was first introduced in Windows 11 and was limited to displaying first party Widgets. Widgets are small UI containers that display text and graphics on the Widgets Board, and are associated with an app installed on the device. With Windows App SDK, as third party developers you can now create Widgets for your packaged Win32 apps and test them locally on the Windows 11 Widgets Board.
+
+For more information about Widgets, check out [Widgets Overview](/windows/apps/design/widgets/).
+
+To get started developing Widgets for your app, check out the [Widget service providers](/windows/apps/develop/widgets/widget-service-providers) development docs and [Widgets design fundamentals](/windows/apps/design/widgets/widgets-design-fundamentals) for prerequisites, guidance and best practices.
+
+Prerequisites for this release include:
+
+- Developer mode enabled on the development machine.
+- The development machine is running a version of Windows from the Dev Channel of the Windows Insider Program (WIP) with Widgets Board version 521.20060.1205.0 or above.
+
+#### Known limitations when developing Widgets
+
+- Third-party Widgets can only be tested locally on devices enrolled in WIP for this preview release. In Windows App SDK 1.2.0, users on retail versions of Windows can begin acquiring 3P Widgets via Microsoft Store shipped versions of your app.
+- Widgets can only be created for packaged, Win32 apps. Widgets for Progressive Web Apps (PWA) are planned to be supported as part of [Microsoft Edge 108](/deployedge/microsoft-edge-release-schedule).
+
+### Trimming for apps developed with .NET
+
+.NET developers are now able to publish their WinAppSDK apps trimmed. With CsWinRT 2.0, the C#/WinRT projections distributed in WinAppSDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
+
+For more details on how to enable trimming, trimming limitations (such as reflection against trimmable types), and trim warnings, see [Trim self-contained deployments and executables](/dotnet/core/deploying/trimming/trim-self-contained). Developers should thoroughly test their apps after trimming to ensure everything works as expected. For more information, check out issue [2478](https://github.com/microsoft/WindowsAppSDK/issues/2478) on GitHub.
+
+### DisplayInformation
+Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
+
+### Fixed issues in WinUI 3
+- Acrylic backdrop material via [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController) is now supported in Windows 10 apps. For more information, check out issue [7112](https://github.com/microsoft/microsoft-ui-xaml/issues/7112) on GitHub.
+- Fixed issue causing App.UnhandledException to fail to be routed to the application. For more information, check out issue [5221](https://github.com/microsoft/microsoft-ui-xaml/issues/5221) on GitHub.
+- Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
+
+### Other limitations and known issues
+
+> [!Important]
+> When you reference WinAppSDK 1.2 from a project you might see an error similar to: "_Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194._", which is caused by incompatible references to the package from the app project and the WinAppSDK package. To resolve this you can update the reference in the project to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools, or simply remove the reference from your project. If you remove it from your project, a compatible version will be implicitly referenced by the WinAppSDK package.
+
+- Building with [Arm64 Visual Studio](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/) is not currently supported.
+- Bootstrapper and Undocked RegFree WinRT auto-initializer defaults is (now) only set for projects that produce an executable (OutputType=Exe or WinExe). This prevents adding auto-initializers into class library DLLs and other non-executables by default.
+  - If you need an auto-initializer in a non-executable (e.g. a test DLL loaded by a generic executable that doesn't initialize the Bootstrapper) you can explicitly enable an auto-initializer in your project via `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>` or `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
+- The version information APIs (ReleaseInfo and RuntimeInfo) can be called but return version 0 (not the actual version information).
+
+
+## Version 1.2 Preview 1 (1.2.0-preview1)
 
 In an existing Windows App SDK 1.1 Stable app, you can update your Nuget package to 1.2.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
@@ -93,7 +147,7 @@ In addition to all of the [Preview 2](#version-11-preview-2-110-preview2) featur
 ### WinUI 3
 Mica and Background Acrylic are now available for WinUI 3 applications.
 
-For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3/XamlControlsGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
+For more information about these materials, check out [Materials in Windows 11](/windows/apps/design/signature-experiences/materials). Check out our sample code for applying Mica in C++ applications at [Using a SystemBackdropController with WinUI 3 XAML](system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
 
 ### Notifications
 
@@ -160,8 +214,8 @@ In addition to all of the [Preview 1](#version-11-preview-1-110-preview1) featur
 
 ### Deployment
 **New features:**
-- MSIX-packaged apps can now force deploy the Windows App SDK runtime packages using the DeploymentManager.Initialize() API.
-- The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Reference the Windows App SDK framework package at run time](use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initalization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
+- Packaged apps can now force deploy the Windows App SDK runtime packages using the **DeploymentManager.Initialize** API.
+- The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initalization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
 
 **Known limitations:**
 - Self-contained deployment is supported only on Windows 10, 1903 and later. 
@@ -214,7 +268,7 @@ Using Windows App SDK 1.1 Preview 1, apps (including WinUI 3) will be able to ru
 Windows App SDK 1.1 will introduce support for self-contained deployment. Our [Deployment overview](../package-and-deploy/deploy-overview.md) details the differences between framework-dependent and self-contained deployment, and how to get started.
 
 **Known issues:**
-- A C++ app that is MSIX-packaged needs to add the below to the bottom of their project file to workaround a bug in the self-contained `.targets` file that removes framework references to VCLibs:
+- A C++ app that's packaged needs to add the below to the bottom of its project file to work around a bug in the self-contained `.targets` file that removes framework references to VCLibs:
 
     ```xml
     <PropertyGroup>
@@ -241,8 +295,8 @@ Developers of packaged (including packaged with external location) and unpackage
   - Developers can send raw notifications or app notifications from their own cloud service.
 
 **Limitations:**
-- Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an IsSupported() API to check for push notifications support.
-- Apps that are not MSIX-packaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are not MSIX-packaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
+- Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an **IsSupported** API to check for push notifications support.
+- Apps that are unpackaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are unpackaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
 - Windows App SDK runtime must be installed to support push notifications, see [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) for the installer.
 - A WinUI 3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
 
@@ -480,8 +534,8 @@ For more info, see [Manage app windows](windowing/windowing-overview.md).
 
 **New features**:
 
-- Windows App SDK 1.0 Preview 2 introduces a .NET wrapper for the [bootstrapper API](use-windows-app-sdk-run-time.md). The bootstrapper API is a set of native C/C++ functions that unpackaged apps must use to dynamically take a dependency on the Windows App SDK framework package at run time. The .NET wrapper provides an easier way to call the bootstrapper API from .NET apps, including Windows Forms and WPF apps. The .NET wrapper for the bootstrapper API is available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll assembly, which is local to your app project. For more info about the .NET wrapper, see [.NET wrapper library](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api).
-- Packaged apps can now use the deployment API to get the main and singleton MSIX packages installed on the machine. The main and singleton packages are part of the framework package that is installed with the app, but due to a limitation with the Windows application model, packaged apps will need to take this additional step in order to get those packages installed. For more info about how the deployment API works, see the [deployment guide for packaged apps](deploy-packaged-apps.md).
+- Windows App SDK 1.0 Preview 2 introduces a .NET wrapper for the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)). The bootstrapper API is a set of native C/C++ functions that unpackaged apps must use to dynamically take a dependency on the Windows App SDK framework package at run time. The .NET wrapper provides an easier way to call the bootstrapper API from .NET apps, including Windows Forms and WPF apps. The .NET wrapper for the bootstrapper API is available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll assembly, which is local to your app project. For more info about the .NET wrapper, see [.NET wrapper library](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api).
+- Packaged apps can now use the deployment API to get the main and singleton MSIX packages installed on the machine. The main and singleton packages are part of the framework package that is installed with the app, but due to a limitation with the Windows application model, packaged apps will need to take this additional step in order to get those packages installed. For more info about how the deployment API works, see [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md).
 
 **Important limitations**:
 
@@ -495,7 +549,7 @@ Most of the App Lifecycle features already exist in the UWP platform, and have b
 
 Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK **RegisterForXXXActivation** APIs and must instead register for rich activation via the manifest.
 
-All the constraints for packaged apps also apply to WinUI 3 apps, which are MSIX-packaged, and there are additional considerations as described below.
+All the constraints for packaged apps also apply to WinUI 3 apps that are packaged; and there are additional considerations as described below.
 
 **Important considerations**:
 

@@ -220,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
-            - name: Grant package identity to an unpackaged app
+            - name: Grant package identity by packaging with external location
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
       - name: Optimize performance & fundamentals
         items:
@@ -360,6 +360,16 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Windows widget providers
+        items:
+        - name: Overview
+          href: develop/widgets/widget-providers.md
+        - name: Implement a widget provider in a win32 app
+          href: develop/widgets/implement-widget-provider-win32.md
+        - name: Widget provider package manifest XML format
+          href: develop/widgets/widget-provider-manifest.md
+        - name: Widget provider ActivateApplication protocol
+          href: develop/widgets/widget-provider-activateapplication-protocol.md
       - name: Platform
         items:
         - name: C#/WinRT
@@ -394,13 +404,13 @@ items:
             items:
               - name: "Deployment architecture and overview"
                 href: windows-app-sdk/deployment-architecture.md
-              - name: "Deployment guide for MSIX-packaged apps"
+              - name: "Deployment guide for packaged apps"
                 href: windows-app-sdk/deploy-packaged-apps.md
-              - name: "Deploying non-MSIX-packaged apps"
+              - name: "Deploying apps packaged with external location or unpackaged"
                 items:
-                  - name: "Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged"
+                  - name: "Deployment guide for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/deploy-unpackaged-apps.md
-                  - name: "Use the Windows App SDK runtime"
+                  - name: "Use the Windows App SDK runtime for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/use-windows-app-sdk-run-time.md
                   - name: "Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md

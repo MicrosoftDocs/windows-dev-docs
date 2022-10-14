@@ -29,7 +29,7 @@ There are two different namespaces you can use to add in-app purchases and trial
 * **[Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store)**&nbsp;&nbsp;All versions of Windows 10 and Windows 11 also support an older API for in-app purchases and trials in this namespace. For information about the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 > [!IMPORTANT]
-> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features, and we recommend that you use the **Windows.Services.Store** namespace instead if possible for your app. The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live).
+> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features, and we recommend that you use the **Windows.Services.Store** namespace instead if possible for your app. The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](/windows/msix/desktop/source-code-overview) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live).
 
 <span id="concepts" />
 
@@ -101,7 +101,7 @@ The main entry point to the **Windows.Services.Store** namespace is the [StoreCo
   ```
 
 > [!NOTE]
-> Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) must perform additional steps to configure the [StoreContext](/uwp/api/windows.services.store.storecontext) object before they can use this object. For more information, see [this section](#desktop).
+> Windows desktop applications that use the [Desktop Bridge](/windows/msix/desktop/source-code-overview) must perform additional steps to configure the [StoreContext](/uwp/api/windows.services.store.storecontext) object before they can use this object. For more information, see [this section](#desktop).
 
 After you have a [StoreContext](/uwp/api/windows.services.store.storecontext) object, you can start calling methods of this object to get Store product info for the current app and its add-ons, retrieve license info for the current app and its add-ons, purchase an app or add-on for the current user, and perform other tasks. For more information about common tasks you can perform using this object, see the following articles:
 
@@ -186,7 +186,7 @@ If you implement in-app purchases using the **Windows.Services.Store** namespace
 
 ### Using the StoreContext class with the Desktop Bridge
 
-Desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) can use the [StoreContext](/uwp/api/windows.services.store.storecontext) class to implement in-app purchases and trials. However, if you have a Win32 desktop application or a desktop application that has a window handle (HWND) that is associated with the rendering framework (such as a WPF or Windows App SDK application), your application must configure the **StoreContext** object to specify which application window is the owner window for modal dialogs that are shown by the object.
+Desktop applications that use the [Desktop Bridge](/windows/msix/desktop/source-code-overview) can use the [StoreContext](/uwp/api/windows.services.store.storecontext) class to implement in-app purchases and trials. However, if you have a Win32 desktop application or a desktop application that has a window handle (HWND) that is associated with the rendering framework (such as a WPF or Windows App SDK application), your application must configure the **StoreContext** object to specify which application window is the owner window for modal dialogs that are shown by the object.
 
 Many **StoreContext** members (and members of other related types that are accessed through the **StoreContext** object) display a modal dialog to the user for Store-related operations such as purchasing a product. If a desktop application does not configure the **StoreContext** object to specify the owner window for modal dialogs, this object will return inaccurate data or errors.
 

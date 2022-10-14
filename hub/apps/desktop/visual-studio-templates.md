@@ -96,7 +96,7 @@ The recommended technology is [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). Thi
 
 ### Project templates for C++ desktop apps
 
-To access the C++ project templates for classic desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
+To access the C++ project templates for desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
 
 ![Native C++ app project templates](images/desktop-app-projects-cpp.png)
 

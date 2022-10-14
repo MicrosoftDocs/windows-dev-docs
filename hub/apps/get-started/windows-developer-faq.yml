@@ -106,7 +106,7 @@ sections:
       - question: Can I use WinUI 3 without using Windows App SDK?
         answer: |
           No. WinUI 3 ships as part of the Windows App SDK.
-      - question: Can I use WinUI 3 in unpackaged apps? 
+      - question: Can I use WinUI 3 in an unpackaged app?
         answer: | 
           Yes. All technologies in the Windows App SDK work in unpackaged apps, including WinUI 3.
       - question: What's the difference between XAML Islands and WinUI 3?

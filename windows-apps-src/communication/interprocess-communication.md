@@ -101,7 +101,7 @@ Unpackaged applications and services don't have package identity, so they can't 
 
 [Registry](/windows/win32/sysinfo/registry-functions) usage for IPC is generally discouraged, but it is supported for existing code. Packaged applications can access only registry keys that they have permission to access.
 
-[Desktop applications packaged as MSIX](/windows/msix/desktop/desktop-to-uwp-root) leverage [registry virtualization](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes#registry) such that global registry writes are contained to a private hive within the MSIX package. This enables source code compatibility while minimizing global registry impact, and can be used for IPC between processes in the same package. If you must use the registry, this model is preferred versus manipulating the global registry.
+Commonly, packaged desktop apps (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)) leverage [registry virtualization](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes#registry) such that global registry writes are contained to a private hive within the MSIX package. This enables source code compatibility while minimizing global registry impact, and can be used for IPC between processes in the same package. If you must use the registry, this model is preferred versus manipulating the global registry.
 
 ## RPC
 

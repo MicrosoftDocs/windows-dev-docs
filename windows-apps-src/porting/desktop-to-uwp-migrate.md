@@ -15,7 +15,7 @@ If you have an existing desktop application that was built using the .NET Framew
 
 You can package your desktop application in an MSIX package to get access to many more Windows 10 and Windows 11 features. MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. Packaging your desktop Windows apps in MSIX packages gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models. You can package your application whether you have the source code or if you only have an existing installer file (such as an MSI or App-V installer). After you package your application, you can integrate UWP features such as package extensions and other UWP components.
 
-For more information, see [Build an MSIX package from your code](/windows/msix/desktop/desktop-to-uwp-root) and [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+For more information, see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview) and [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## Use Windows Runtime APIs
 

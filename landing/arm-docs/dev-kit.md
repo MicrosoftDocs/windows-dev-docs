@@ -13,18 +13,7 @@ ms.author: mattwoj
 
 Microsoft has been working hard to enable Windows developers to build Arm64-native apps and tools for Windows on Arm hardware. While there is still lots to be done, there have been some big advances with [ARM64EC](./arm64ec.md) and new developer kits. These kits will enable you to test your apps and find ways to take advantage of the speed and performance improvements possible with Arm64, including steps forward toward better power consumption, battery life, and accelerated AI & ML workloads.
 
-:::row:::
-    :::column:::
-       [![Qualcomm devkit](./images/qualcomm-devkit.png)](https://www.microsoft.com/d/ecs-liva-mini-box-qc710-desktop/8z247h1h3skp?activetab=pivot:overviewtab)<br>
-        **[Qualcomm Mini Box Desktop powered by Snapdragon](https://www.microsoft.com/d/ecs-liva-mini-box-qc710-desktop/8z247h1h3skp?activetab=pivot:overviewtab)**<br>
-        A mini-PC powered by Snapdragon and designed for application development. Learn more about the [Snapdragon Developer Kit on the Qualcomm developer network](https://developer.qualcomm.com/hardware/windows-on-snapdragon/snapdragon-developer-kit).
-    :::column-end:::
-    :::column:::
-       [![New Arm64 Dev Device Placeholder](./images/project-volterra.png)](.)<br>
-        **"Project Volterra" (coming soon!)**<br>
-        The new "Project Volterra" Arm64-powered Windows device is coming soon! Check back for more details.
-    :::column-end:::
-:::row-end:::
+More about "Project Volterra" coming soon. Check back for details.
 
 ## Set up your Windows on Arm device for development
 

@@ -1937,7 +1937,12 @@
     },
     {
       "source_path": "windows-apps-src/design/shell/tiles-and-notifications/app-assets.md",
-      "redirect_url": "/windows/uwp/design/style/app-icons-and-logos",
+      "redirect_url": "/windows/apps/design/style/iconography/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/app-icons-and-logos.md",
+      "redirect_url": "/windows/apps/design/style/iconography/overview",
       "redirect_document_id": true
     },
     {
@@ -6691,11 +6696,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/design/style/app-icons-and-logos.md",
-      "redirect_url": "/windows/apps/design/style/app-icons-and-logos",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/design/style/balancing-style-and-consistency.md",
       "redirect_url": "/windows/apps/design/style/balancing-style-and-consistency",
       "redirect_document_id": false
@@ -7214,6 +7214,11 @@
       "source_path": "windows-apps-src/publish/write-a-great-app-description.md",
       "redirect_url": "/windows/apps/publish/publish-your-app/write-great-app-description?pivots=store-installer-msix",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/widgets/widget-service-providers.md",
+      "redirect_url": "/windows/apps/develop/widgets/widget-providers",
+      "redirect_document_id": true
     }
   ]
 }

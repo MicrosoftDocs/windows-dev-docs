@@ -136,7 +136,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ### Accessing OnLaunched from desktop applications
 
-Desktop apps (like WPF, etc) using the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](/windows/msix/desktop/source-code-overview).
+Desktop apps (like WPF, etc) using the [Desktop Bridge](/windows/msix/desktop/source-code-overview), can use chaseable tiles too! The only difference is accessing the OnLaunched arguments. Note that you first must [package your app with the Desktop Bridge](/windows/msix/desktop/source-code-overview).
 
 > [!IMPORTANT]
 > **Requires October 2018 Update**: To use the `AppInstance.GetActivatedEventArgs()` API, you must target SDK 17763 and be running build 17763 or higher.

@@ -1,6 +1,6 @@
 ---
 title: Pin secondary tiles from desktop apps
-description: A desktop application such as a Windows App SDK (using WinUI 3), Windows Presentation Foundation (WPF), or Windows Forms (WinForms) app can pin a secondary tile by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is formerly known as Desktop Bridge.
+description: A desktop app such as a WinUI 3 app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). This was formerly known as Desktop Bridge.
 label: Pin secondary tiles from desktop apps
 template: detail.hbs
 ms.date: 03/03/2022
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Pin secondary tiles from desktop apps
 
-A desktop application such as a Windows App SDK (using WinUI 3), Windows Presentation Foundation (WPF), or Windows Forms (WinForms) app can pin a secondary tile by using an [MSIX package](https://developer.microsoft.com/windows/bridges/desktop). This is formerly known as Desktop Bridge.
+A desktop app such as a WinUI 3 app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). This was formerly known as Desktop Bridge.
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
@@ -175,5 +175,5 @@ Sending tile or badge notifications is the same as UWP apps. See [Send a local t
 * [Secondary tile sample app](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Secondary tiles overview](secondary-tiles.md)
 * [Pin secondary tiles (UWP)](secondary-tiles-pinning.md)
-* [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
+* [Desktop Bridge](/windows/msix/desktop/source-code-overview)
 * [Desktop Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
