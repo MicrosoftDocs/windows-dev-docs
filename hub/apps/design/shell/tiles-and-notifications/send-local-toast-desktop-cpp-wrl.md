@@ -1,29 +1,29 @@
 ---
+title: Send a local toast notification from a WRL C++ desktop app
+label: Send a local toast notification from a WRL C++ desktop app
 description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
-title: Send a local toast notification from Win32 C++ WRL apps
-label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 10/06/2022
 ms.topic: article
-keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, external location, C++, cpp, cplusplus, WRL
+keywords: windows 11, windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, external location, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ---
 
-# Send a local toast notification from Win32 C++ WRL apps
+# Send a local toast notification from a WRL C++ desktop app
 
-Packaged and unpackaged Win32 apps can send interactive toast notifications just like UWP apps can. That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)); and unpackaged apps (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
+Packaged and unpackaged desktop apps can send interactive toast notifications just like Universal Windows platform (UWP) apps can. That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)); and unpackaged apps (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
 
-However, for an unpackaged Win32 app there are a few special steps. That's due to the different activation schemes, and the lack of package identity at runtime.
+However, for an unpackaged desktop app, there are a few special steps. That's due to the different activation schemes, and the lack of package identity at runtime.
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C#](./send-local-toast.md).
 
-## Step 1: Enable the Windows 10 SDK
+## Step 1: Enable the Windows SDK
 
-If you haven't enabled the Windows 10 SDK for your Win32 app, you must do that first. There are a few key steps...
+If you haven't enabled the Windows SDK for your app, then you must do that first. There are a few key steps.
 
-1. Add `runtimeobject.lib` to **Additional Dependencies**
-2. Target the Windows 10 SDK
+1. Add `runtimeobject.lib` to **Additional Dependencies**.
+2. Target the Windows SDK.
 
 Right click your project and select **Properties**.
 
@@ -85,7 +85,7 @@ Then, you must register with the notification platform. There are different step
 
 ### Packaged
 
-If your app is packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) or packaged with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), or if you support both, then in your **Package.appxmanifest** add:
+If your app is packaged (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) or packaged with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)), or if you support both, then in your **Package.appxmanifest** add:
 
 1. Declaration for **xmlns:com**
 2. Declaration for **xmlns:desktop**
@@ -131,7 +131,7 @@ If your app is packaged (see [Create a new project for a packaged WinUI 3 deskto
 
 If your app is unpackaged (see [Create a new project for an unpackaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)), or if you support both, then you have to declare your Application User Model ID (AUMID) and toast activator CLSID (the GUID from step #4) on your app's shortcut in Start.
 
-Pick a unique AUMID that will identify your Win32 app. This is typically in the form of [CompanyName].[AppName]. But you want to ensure that it's unique across all apps (so feel free to add some digits at the end).
+Pick a unique AUMID that will identify your app. This is typically in the form of [CompanyName].[AppName]. But you want to ensure that it's unique across all apps (so feel free to add some digits at the end).
 
 #### Step 5.1: WiX Installer
 
@@ -180,12 +180,12 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## Step 7: Send a notification
 
-Sending a notification is identical to UWP apps, except that you'll use **DesktopNotificationManagerCompat** to create a **ToastNotifier**. The compat library automatically handles the difference between packaged and unpackaged Win32 apps, so you don't need to fork your code. For an unpackaged app, the compat library caches the AUMID that you provided when you called **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
+Sending a notification is identical to UWP apps, except that you'll use **DesktopNotificationManagerCompat** to create a **ToastNotifier**. The compat library automatically handles the difference between packaged and unpackaged apps, so you don't need to fork your code. For an unpackaged app, the compat library caches the AUMID that you provided when you called **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
 
 Make sure you use the **ToastGeneric** binding as seen below, since the legacy Windows 8.1 toast notification templates won't activate the COM notification activator that you created in step #4.
 
 > [!IMPORTANT]
-> Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged Win32 apps don't support http images; you must download the image to your local app data, and reference it locally.
+> Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.
 
 ```cpp
 // Construct XML
@@ -198,7 +198,7 @@ if (SUCCEEDED(hr))
     // See full code sample to learn how to inject dynamic text, buttons, and more
 
     // Create the notifier
-    // Classic Win32 apps MUST use the compat method to create the notifier
+    // Desktop apps must use the compat method to create the notifier.
     ComPtr<IToastNotifier> notifier;
     hr = DesktopNotificationManagerCompat::CreateToastNotifier(&notifier);
     if (SUCCEEDED(hr))
@@ -216,7 +216,7 @@ if (SUCCEEDED(hr))
 ```
 
 > [!IMPORTANT]
-> Classic Win32 apps cannot use legacy toast templates (like ToastText02). Activation of the legacy templates will fail when the COM CLSID is specified. You must use the Windows 10 ToastGeneric templates as seen above.
+> Desktop apps can't use legacy toast templates (such as ToastText02). Activation of the legacy templates will fail when the COM CLSID is specified. You must use the Windows ToastGeneric templates, as seen above.
 
 ## Step 8: Handling activation
 
@@ -356,11 +356,11 @@ If your app is not running:
 2. **Activate** in your **NotificationActivator** is called
 
 ### Foreground vs background activation
-For Win32 apps, foreground and background activation is handled identically - your COM activator is called. It's up to your app's code to decide whether to show a window or to simply perform some work and then exit. Therefore, specifying an **activationType** of **background** in your toast content doesn't change the behavior.
+For desktop apps, foreground and background activation is handled identically&mdash;your COM activator is called. It's up to your app's code to decide whether to show a window or to simply perform some work and then exit. Therefore, specifying an **activationType** of **background** in your toast content doesn't change the behavior.
 
 ## Step 9: Remove and manage notifications
 
-Removing and managing notifications is identical to UWP apps. However, we recommend you use our compat library to obtain a **DesktopNotificationHistoryCompat** so you don't have to worry about providing the AUMID if you're using classic Win32.
+Removing and managing notifications is identical to UWP apps. However, we recommend you use our compat library to obtain a **DesktopNotificationHistoryCompat** so you don't have to worry about providing the AUMID for a desktop app.
 
 ```cpp
 std::unique_ptr<DesktopNotificationHistoryCompat> history;
@@ -379,13 +379,13 @@ if (SUCCEEDED(hr))
 
 To deploy and debug your packaged app, see [Run, debug, and test a packaged desktop app](/windows/msix/desktop/desktop-to-uwp-debug).
 
-To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
+To deploy and debug your desktop app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
-If your notifications simply fail to appear in your classic Win32 app (and no exceptions are thrown), that likely means the Start shortcut isn't present (install your app via the installer), or the AUMID you used in code doesn't match the AUMID in your Start shortcut.
+If your notifications simply fail to appear in your desktop app (and no exceptions are thrown), that likely means the Start shortcut isn't present (install your app via the installer), or the AUMID you used in code doesn't match the AUMID in your Start shortcut.
 
 If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.
 
-If you've installed both your packaged and unpackaged Win32 app, note that the packaged app will supersede the unpackaged app when handling toast activations. That means that toasts from the unpackaged app will launch the packaged app when clicked. Uninstalling the packaged app will revert activations back to the unpackaged app.
+If you've installed both your packaged and unpackaged desktop app, note that the packaged app will supersede the unpackaged app when handling toast activations. That means that toasts from the unpackaged app will launch the packaged app when clicked. Uninstalling the packaged app will revert activations back to the unpackaged app.
 
 If you receive `HRESULT 0x800401f0 CoInitialize has not been called.`, be sure to call `CoInitialize(nullptr)` in your app before calling the APIs.
 
@@ -395,24 +395,24 @@ If you get numerous `unresolved external symbol` compilation errors, you likely 
 
 ## Handling older versions of Windows
 
-If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows 10 before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
+If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
 
 Windows 8 introduced toast notifications, but used the [legacy toast templates](/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
 
 | OS | ToastGeneric | COM activator | Legacy toast templates |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | Supported | Supported | Supported (but won't activate COM server) |
+| Windows 10 and later | Supported | Supported | Supported (but won't activate COM server) |
 | Windows 8.1 / 8 | N/A | N/A | Supported |
 | Windows 7 and lower | N/A | N/A | N/A |
 
-To check if you're running on Windows 10, include the `<VersionHelpers.h>` header and check the **IsWindows10OrGreater** method. If this returns true, continue calling all the methods described in this documentation! 
+To check whether you're running on Windows 10 or later, include the `<VersionHelpers.h>` header, and check the **IsWindows10OrGreater** method. If that returns `true`, then continue calling all the methods described in this documentation.
 
 ```cpp
 #include <VersionHelpers.h>
 
 if (IsWindows10OrGreater())
 {
-    // Running Windows 10, continue with sending Windows 10 toasts!
+    // Running on Windows 10 or later, continue with sending toasts!
 }
 ```
 
@@ -423,5 +423,5 @@ if (IsWindows10OrGreater())
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Toast notifications from Win32 apps](toast-desktop-apps.md)
+* [Toast notifications from desktop apps](toast-desktop-apps.md)
 * [Toast content documentation](adaptive-interactive-toasts.md)

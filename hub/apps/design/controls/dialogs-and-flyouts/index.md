@@ -62,7 +62,7 @@ Dialogs are frequently used to confirm an action (such as deleting a file) befor
 >
 > - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog), [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
 
-> - If you have the **WinUI 3 Gallery** app installed, click here to open the app and see the [ContentDialog](winui3gallery:/item/ContentDialog) or [Flyout](winui3gallery:/item/Flyout) in action. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winui3).
+> - If you have the **WinUI 3 Gallery** app installed, click here to open the app and see the [ContentDialog](winui3gallery:/item/ContentDialog) or [Flyout](winui3gallery:/item/Flyout) in action. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main).
 
 ## How to create a dialog
 

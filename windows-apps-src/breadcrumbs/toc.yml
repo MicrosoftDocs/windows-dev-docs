@@ -58,8 +58,8 @@
                               tocHref: /windows/uwp/design/globalizing/
                               topicHref: "/windows/uwp/design/globalizing/globalizing-portal"     
                             - name: Guidelines for app help
-                              tocHref: /windows/uwp/design/guidelines-for-app-help/
-                              topicHref: "/windows/uwp/design/guidelines-for-app-help/index"                              
+                              tocHref: /windows/apps/design/in-app-help/guidelines-for-app-help
+                              topicHref: "/windows/apps/design/in-app-help/guidelines-for-app-help"                              
                       - name: Design toolkits
                         tocHref: /windows/uwp/design/downloads/
                         topicHref: "/windows/uwp/design/downloads/index"                       
@@ -104,8 +104,8 @@
                         tocHref: /windows/uwp/graphics/
                         topicHref: "/windows/uwp/graphics/index" 
                       - name: Hosted web apps
-                        tocHref: /windows/uwp/bridges/
-                        topicHref: "/windows/uwphttps://developer.microsoft.com/en-us/windows/bridges/hosted-web-apps" 
+                        tocHref: /microsoft-edge/progressive-web-apps-chromium/
+                        topicHref: "/microsoft-edge/progressive-web-apps-chromium/" 
                       - name: Launching, resuming, and background tasks
                         tocHref: /windows/uwp/launch-resume/
                         topicHref: "/windows/uwp/launch-resume/index"
@@ -134,8 +134,8 @@
                         tocHref: /windows/uwp/threading-async/
                         topicHref: "/windows/uwp/threading-async/index"  
                       - name: Visual layer 
-                        tocHref: /windows/uwp/visual-layer/
-                        topicHref: "/windows/uwp/visual-layer/index"                 
+                        tocHref: /windows/uwp/composition/visual-layer
+                        topicHref: "/windows/uwp/composition/visual-layer"                 
                       - name: Windows Runtime components
                         tocHref: /windows/uwp/winrt-components/
                         topicHref: "/windows/uwp/winrt-components//index"                                            
@@ -146,14 +146,14 @@
                         tocHref: "/windows/uwp/api/"
                         topicHref: "https://learn.microsoft.com/uwp/"         
                       - name: Windows as a service
-                        tocHref: /windows/uwp/application-development-for-windows-as-a-service/
-                        topicHref: "/windows/uwp/application-development-for-windows-as-a-service/index" 
+                        tocHref: /windows/uwp/updates-and-versions/application-development-for-windows-as-a-service
+                        topicHref: "/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service" 
                       - name: Choose a UWP version
-                        tocHref: /windows/uwp/choose-a-uwp-version/
-                        topicHref: "/windows/uwp/choose-a-uwp-version/index"  
+                        tocHref: /windows/uwp/updates-and-versions/choose-a-uwp-version
+                        topicHref: "/windows/uwp/updates-and-versions/choose-a-uwp-version"  
                       - name: Services
-                        tocHref: /windows/uwp/microsoft-services/
-                        topicHref: "/windows/uwp/microsoft-services/index" 
+                        tocHref: /windows/uwp/monetize/using-windows-store-services
+                        topicHref: "/windows/uwp/monetize/using-windows-store-services" 
                 - name: Develop games
                   tocHref: /windows/uwp/gaming/
                   topicHref: "/windows/uwp/gaming/e2e" 
@@ -165,8 +165,8 @@
                         tocHref: /windows/uwp/gaming/
                         topicHref: "/windows/uwp/gaming/index"                    
                       - name: DirectX programming
-                        tocHref: /windows/uwp/directx-programming/
-                        topicHref: "/windows/uwp/directx-programming/index"                 
+                        tocHref: /windows/uwp/gaming/directx-programming
+                        topicHref: "//windows/uwp/gaming/directx-programming"                 
                       - name: Direct3D graphics learning guide
                         tocHref: /windows/uwp/graphics-concepts/
                         topicHref: "/windows/uwp/graphics-concepts/index"   

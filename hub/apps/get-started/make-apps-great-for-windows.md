@@ -61,7 +61,7 @@ Inclusive design creates better products for everyone. To make sure your app is 
 
 Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).
 
-Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibly can reduce the cost of maintaining your app.
+Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
 
 [Accessibility in Windows](/windows/apps/develop/accessibility)
 
@@ -71,19 +71,20 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ![An image of common UI controls](images/great-apps/controls.png)
 
-### Windows UI Library (WinUI)
-
-- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
-- See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
-- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) to evaluate the controls.
-
 ### Desktop apps (Win32)
-
+- Use [WinUI 3](/windows/apps/winui/winui3) in [Windows App SDK](/windows/apps/windows-app-sdk/) 1.1 or greater to create a Win32 application that can leverage the modern common controls. 
+- To evaluate the controls, check out the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*main branch*).
 - Win32 controls that use [UXTheme](/windows/win32/api/uxtheme/) will automatically get a "repaint" of the Light theme for select rejuvenated control visuals. Be sure to test for any issues. For those surfaces that do not get updated automatically, manually update the visuals so that they look coherent with the rest of the update, if possible.
+
+### UWP apps
+
+- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation by default.
+- See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
+- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*winui 2 branch*) to evaluate the controls.
 
 ### WebView and other platforms
 
-- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and WinUI 2 Gallery can be used to copy the styles.
+- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and WinUI 2 Gallery can be used to copy the styles.
 
 ## 5. Use the latest design materials (Acrylic and Mica)
 
@@ -154,7 +155,7 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 - Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
 - All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
   - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)

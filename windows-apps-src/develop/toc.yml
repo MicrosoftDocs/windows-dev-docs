@@ -1327,16 +1327,7 @@
         - name: "Case study: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: Convert your web app to a PWA on Windows
-      href: /microsoft-edge/progressive-web-apps
-      items:
-        - name: Package Windows 7 app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
-        - name: Package iOS app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html
-        - name: Package Android app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
-        - name: Package MacOS app as a PWA
-          href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
+      href: ../publish/pwa/turn-your-website-pwa.md
 - name: Processes and threading
   items:
     - name: Launching, resuming, and background tasks

@@ -72,7 +72,7 @@ The code in these examples assumes:
 * The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
 
 > [!NOTE]
-> If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in these examples to configure the [**StoreContext**](/uwp/api/Windows.Services.Store.StoreContext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
+> If you have a desktop application that uses the [Desktop Bridge](/windows/msix/desktop/source-code-overview), you may need to add additional code not shown in these examples to configure the [**StoreContext**](/uwp/api/Windows.Services.Store.StoreContext) object. For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
 ### Purchase a subscription add-on
 

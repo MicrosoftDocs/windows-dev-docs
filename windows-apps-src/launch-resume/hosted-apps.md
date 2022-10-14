@@ -21,7 +21,7 @@ The hosted apps feature is supported by several elements and attributes in the p
 The *host* is the main executable or runtime process for the hosted app. Currently, the only supported hosts are desktop apps (.NET or C++ desktop) that have *package identity*. There are several ways for a desktop app to have package identity:
 
 * The most common way to grant package identity to a desktop app is by [packaging it in an MSIX package](/windows/msix).
-* In some cases, you may alternatively choose to grant package identity by creating a package with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). This option is useful if you're unable to adopt MSIX for installing your desktop app.
+* In some cases, you may alternatively choose to grant package identity by creating a package with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). This option is useful if you're unable to adopt MSIX for installing your desktop app.
 
 The host is declared in its package manifest by the [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) extension. This extension has an **Id** attribute that must be assigned a value that is also referenced by the package manifest for the hosted app. When the hosted app is activated, the host is launched under the identity of the hosted app and can load content or binaries from the hosted app package.
 

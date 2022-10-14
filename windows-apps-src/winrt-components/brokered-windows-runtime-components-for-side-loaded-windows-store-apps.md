@@ -332,7 +332,7 @@ A normal UWP app project contains no explicit project references because
 the entirety of the Windows Runtime API surface is implicitly included.
 Normally only other inter-project references are made. However, a
 desktop component project has a very special set of references. It
-starts life as a "Classic Desktop\\Class Library" project and therefore
+starts life as a "Desktop\\Class Library" project, and therefore
 is a desktop project. So explicit references to the Windows Runtime API
 (via references to **winmd** files) must be made. Add proper references
 as shown below.

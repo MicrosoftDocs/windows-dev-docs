@@ -17,7 +17,7 @@ For example, use an extension to create a firewall exception; make your app the 
 This topic describes those extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## Transition users to your app
 
@@ -34,7 +34,7 @@ Help users transition to your packaged app.
 
 ### Redirect your existing desktop app to your packaged app
 
-When users start your existing unpackaged desktop app, you can configure your MSIX-packaged app to be opened instead. 
+When users start your existing unpackaged desktop app, you can configure your packaged app to be opened instead. 
 
 > [!NOTE]
 > This feature is supported in Windows Insider Preview Build 21313 and later versions.
@@ -85,8 +85,8 @@ In your package manifest, add an [AppExecutionAlias](/uwp/schemas/appxpackage/ua
 
 Users can turn off the redirection and launch your unpackaged app executable via these options:
 
-* They can uninstall the MSIX-packaged version of your app.
-* The user can disable the **AppExecutionAlias** entry for your MSIX-packaged app in the **App execution aliases** page in **Settings**.
+* They can uninstall the packaged version of your app.
+* The user can disable the **AppExecutionAlias** entry for your packaged app in the **App execution aliases** page in **Settings**.
 
 #### XML namespaces
 

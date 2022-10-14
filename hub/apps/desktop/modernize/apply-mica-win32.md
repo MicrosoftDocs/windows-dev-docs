@@ -41,7 +41,7 @@ This example shows how to do the following to set up an unpackaged app:
 
 - Initialize WinRT.
 - Reference the WindowsAppSDK from an unpackaged app.
-  - See [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more info.
+  - See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more info.
   - See `WindowsAppSDKBootstrapperContext` in [Utilities.h](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/Utilities.h) for example code.
 - Register the window class.
 - Create the Mica dispatcher queue controller

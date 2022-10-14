@@ -89,7 +89,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 
 - **New features**: Support for showing a ContentDialog per window rather than per thread.
 - **Bugs**: For the full list of bugs addressed in this release, see [our GitHub repo](https://aka.ms/winui3/1.0-exp-announcement). 
-- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/Microsoft/WinUI-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+- **Samples**: To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
 For more information or to get started developing with WinUI, see:
 
@@ -98,7 +98,7 @@ For more information or to get started developing with WinUI, see:
 
 ### Push notifications (experimental feature)
 
-This release introduces a push notifications API that can be used by MSIX-packaged desktop apps with Azure app registration-based identities. To use this feature, you must [sign up for our private preview](https://aka.ms/windowsappsdk/push-private-preview).
+This release introduces a push notifications API that can be used by packaged desktop apps with Azure app registration-based identities. To use this feature, you must [sign up for our private preview](https://aka.ms/windowsappsdk/push-private-preview).
 
 Important limitations:
 
@@ -127,13 +127,13 @@ This release introduces updates to the *dynamic dependencies* feature, including
 
 Important limitations:
 
-- The dynamic dependencies feature is only supported for unpackaged apps (that is, apps that do not use MSIX for their deployment technology).
+- The dynamic dependencies feature is only supported for unpackaged apps.
 - Elevated callers aren't supported.
 
 For more information, see the following articles:
 
 - [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/framework-packages-overview.md)
-- [Use the Windows App SDK runtime](use-windows-app-sdk-run-time.md)
+- [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)
 
 ### Other limitations and known issues
 
@@ -168,7 +168,7 @@ For more information, see [App instancing](applifecycle/applifecycle-instancing.
 
 ### Deployment for unpackaged apps (experimental feature)
 
-This release introduces new experimental deployment features for unpackaged apps (that is, apps that do not use MSIX for their deployment technology). Unpackaged apps can now dynamically take a dependency on the Windows App SDK runtime packages so you can continue using your existing MSI or setup program for app deployment. This is available through the following features:
+This release introduces new experimental deployment features for unpackaged apps. Unpackaged apps can now dynamically take a dependency on the Windows App SDK runtime packages so you can continue using your existing MSI or setup program for app deployment. This is available through the following features:
 
 - Standalone installer for Windows App SDK.
 - MSIX package bundle that includes dynamic dependencies functionality.
