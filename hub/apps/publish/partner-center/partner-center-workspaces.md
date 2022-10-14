@@ -46,8 +46,7 @@ The Microsoft Documentation at Publish Windows apps and games | Microsoft Docs i
 ## Create a new product in the new Apps and games workspace
 
 1. Sign in to Partner Center.
-2. Select the Apps and games workspace from the Home page or from the left-navigation menu.
-    !
+1. Select the Apps and games workspace from the Home page or from the left-navigation menu.
     ![Partner Center home page](../images/partner-center-home.png)
 1. On the Apps and games workspace, select + New product, and then select the type of product from the list.
     ![Partner Center Apps and games page](../images/partner-center-apps-games.png)

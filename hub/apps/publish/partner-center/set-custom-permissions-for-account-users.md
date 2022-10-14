@@ -11,33 +11,31 @@ ms.localizationpriority: medium
 
 When you [add users to your Partner Center account](add-users-groups-and-azure-ad-applications.md), you'll need to specify what access they have within the account. You can do this by assigning them [standard roles](#roles) which applies to the entire account, or you can [customize their permissions](#custom) to provide the appropriate level of access. Some of the custom permissions apply to the entire account, and some can be limited to one or more specific products (or granted to all products, if you prefer).
 
-> [!NOTE] 
+> [!NOTE]
 > The same roles and permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
 
-> [!NOTE] 
-> This section is not applicable for the Microsoft Edge program. Microsoft Edge program does not support assigning roles to users. 
+> [!NOTE]
+> This section is not applicable for the Microsoft Edge program. Microsoft Edge program does not support assigning roles to users.
 
+When determining what role or permissions to apply, keep in mind:
 
-When determining what role or permissions to apply, keep in mind: 
--   Users (including groups and Azure AD applications) will be able to access the entire Partner Center account with the permissions associated with their assigned role(s), unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
--   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using custom permissions to grant the access you'd like.
--   A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
+- Users (including groups and Azure AD applications) will be able to access the entire Partner Center account with the permissions associated with their assigned role(s), unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
+- You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using custom permissions to grant the access you'd like.
+- A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
 
 > [!TIP]
 > This topic is specific to the Windows apps developer program in [Partner Center](https://partner.microsoft.com/dashboard). For info about user roles in the Hardware Developer Program, see [Managing User Roles](/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
-
 
 <span id="roles" />
 
 ## Assign roles to account users
 
-By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Partner Center account. Each role has a specific set of permissions in order to perform certain functions within the account. 
+By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Partner Center account. Each role has a specific set of permissions in order to perform certain functions within the account.
 
-Unless you opt to define [custom permissions](#custom) by selecting **Customize permissions**, each user, group, or Azure AD application that you add to an account must be assigned at least one of the following standard roles. 
+Unless you opt to define [custom permissions](#custom) by selecting **Customize permissions**, each user, group, or Azure AD application that you add to an account must be assigned at least one of the following standard roles.
 
 > [!NOTE]
-> The **owner** of the account is the person who first created it with a Microsoft account (and not any user(s) added through Azure AD). This account owner is the only person with complete access to the account, including the ability to delete apps, create and edit all account users, and change all financial and account settings. 
-
+> The **owner** of the account is the person who first created it with a Microsoft account (and not any user(s) added through Azure AD). This account owner is the only person with complete access to the account, including the ability to delete apps, create and edit all account users, and change all financial and account settings.
 
 | Role                 | Description              |
 |----------------------|--------------------------|
@@ -61,19 +59,18 @@ The table below shows some of the specific features available to each of these r
 
 If none of the standard roles are appropriate, or you wish to limit access to specific apps and/or add-ons, you can grant custom permissions to the user by selecting **Customize permissions**, as described below.
 
-
 <span id="custom" />
 
 ## Assign custom permissions to account users
 
-To assign custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account. 
+To assign custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account.
 
-To enable a permission for the user, toggle the box to the appropriate setting. 
+To enable a permission for the user, toggle the box to the appropriate setting.
 
-![Guide to access settings](../images/permission_key.png)
+![Guide to access settings](../images/permission-key.png)
 
 - **No access**: The user will not have the indicated permission.
-- **Read only**: The user will have access to view features related to the indicated area, but will not be able to make changes. 
+- **Read only**: The user will have access to view features related to the indicated area, but will not be able to make changes.
 - **Read/write**: The user will have access to make changes associated with the area, as well as viewing it.
 - **Mixed**: You can’t select this option directly, but the **Mixed** indicator will show if you have allowed a combination of access for that permission. For example, if you grant **Read only** access to **Pricing and availability** for **All products**, but then grant **Read/write** access to **Pricing and availability** for one specific product, the **Pricing and availability** indicator for **All products** will show as Mixed. The same applies if some products have **No access** for a permission, but others have **Read/write** and/or **Read only** access.
 
@@ -149,7 +146,6 @@ Below the **All products** row, you’ll see each product in the account listed 
 Each add-on is listed in a separate row underneath its parent product, along with an **All add-ons** row. Selections made for **All add-ons** will apply to all current add-ons for that product, as well as any future add-ons created for that product.
 
 Note that some permissions cannot be set for add-ons. This is either because they don’t apply to add-ons (for example, the **Customer feedback** permission) or because the permission granted at the parent product level applies to all add-ons for that product (for example, **Promotional codes**). Note, however, that any permission that is available for add-ons must be set separately; add-ons do not inherit selections made for the parent product. For example, if you wish to allow a user to make pricing and availability selections for an add-on, you would need to enable the **Pricing and availability** permission for the add-on (or for **All add-ons**), whether or not you have granted the **Pricing and availability** permission for the parent product. 
-
 
 ### Analytics
 
