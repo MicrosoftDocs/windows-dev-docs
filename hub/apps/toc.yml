@@ -444,6 +444,8 @@ items:
             href: publish/partner-center/add-users-groups-and-azure-ad-applications.md
           - name: Set roles and custom permissions
             href: publish/partner-center/set-custom-permissions-for-account-users.md
+      - name: Manage app name reservations
+        href: publish/partner-center/manage-app-name-reservations.md
       - name: Partner Center workspaces
         href: publish/partner-center/partner-center-workspaces.md
       - name: Publish your app to the Microsoft Store

@@ -28,7 +28,7 @@
     - name: Create your app by reserving a name
       href: /windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msix
     - name: Manage app names
-      href: /windows/apps/publish/publish-your-app/manage-app-names?pivots=store-installer-msix
+      href: /windows/apps/publish/partner-center/manage-app-name-reservations
     - name: Set app pricing and availability
       href: /windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix
       items:
@@ -76,7 +76,7 @@
         - name: Create platform-specific Store listings
           href: /windows/apps/publish/publish-your-app/create-platform-specific-store-listings?pivots=store-installer-msix
     - name: Manage submission options
-      href: /windows/apps/publish/publish-your-app/anage-submission-options?pivots=store-installer-msix
+      href: /windows/apps/publish/publish-your-app/manage-submission-options?pivots=store-installer-msix
       items:
         - name: Notes for certification
           href: /windows/apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix
@@ -101,7 +101,7 @@
     - name: Create an app submission for your MSI or EXE app
       href: /windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msi-exe
     - name: Manage app names
-      href: /windows/apps/publish/publish-your-app/manage-app-names?pivots=store-installer-msi-exe
+      href: /windows/apps/publish/partner-center/manage-app-name-reservations
     - name: Create your MSI or EXE app by reserving a new name
       href: /windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msi-exe
     - name: Set pricing and availability for your MSI or EXE app
@@ -134,7 +134,7 @@
     - name: Create your PWA by reserving a name
       href: /windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-pwa
     - name: Manage app names
-      href: /windows/apps/publish/publish-your-app/manage-app-names?pivots=store-installer-pwa
+      href: /windows/apps/publish/partner-center/manage-app-name-reservations
     - name: Turn your website into a high quality PWA
       href: /windows/apps/publish/publish-your-app/turn-your-website-pwa?pivots=store-installer-pwa
     - name: Publish your PWA to the Microsoft Store
