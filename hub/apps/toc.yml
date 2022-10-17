@@ -472,8 +472,12 @@ items:
             items:
               - name: Category and subcategory table
                 href: publish/publish-your-app/categories-and-subcategories.md
+              - name: Support info
+                href: publish/publish-your-app/support-info.md
               - name: Product declarations
                 href: publish/publish-your-app/product-declarations.md
+              - name: System requirements
+                href: publish/publish-your-app/system-requirements.md
           - name: Age ratings
             href: publish/publish-your-app/age-ratings.md
           - name: Upload app packages
@@ -492,6 +496,10 @@ items:
           - name: Create app Store listings
             href: publish/publish-your-app/create-app-store-listing.md
             items:
+              - name: Add and edit Store listing info
+                href: publish/publish-your-app/add-and-edit-store-listing-info.md
+              - name: Add additional information
+                href: publish/publish-your-app/add-additional-information.md
               - name: Write a great app description
                 href: publish/publish-your-app/write-great-app-description.md
               - name: App screenshots, images, and trailers
@@ -512,18 +520,6 @@ items:
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures
                 href: publish/publish-your-app/avoid-common-certification-failures.md
-          #- name: Additional Microsoft Store features for MSIX apps
-          #  items:
-          #    - name: Organizational licensing options
-          #      href: /uwp/publish/organizational-licensing
-          #    - name: Package flights
-          #      href: /uwp/publish/package-flights
-          #    - name: Gradual package rollout
-          #      href: /uwp/publish/gradual-package-rollout
-          #    - name: Beta testing and targeted distribution
-          #      href: /uwp/publish/beta-testing-and-targeted-distribution
-          #    - name: Distribute LOB apps to enterprises
-          #      href: /uwp/publish/distribute-lob-apps-to-enterprises
   - name: API reference
     href: api-reference/index.md
     items:
