@@ -38,7 +38,7 @@ You can use the package versioning rules to gradually move your customers to a s
 
 If you keep copies of your packages, you'll have the option to roll back your app’s package in the Store to an earlier Windows 10 package if you should discover problems with a release. This is a temporary way to limit the disruption to your customers while you take time to fix the issue.
 
-To do this, create a new [submission](create-app-submission.md). Remove the problematic package and upload the old package that you want to provide in the Store. Customers who have already received the package you are rolling back will still have the problematic package (since your older package will have an earlier version number). But this will stop anyone else from acquiring the problematic package, while allowing the app to still be available in the Store.
+To do this, create a new [submission](../../../apps/publish/publish-your-app/create-app-submission.md). Remove the problematic package and upload the old package that you want to provide in the Store. Customers who have already received the package you are rolling back will still have the problematic package (since your older package will have an earlier version number). But this will stop anyone else from acquiring the problematic package, while allowing the app to still be available in the Store.
 
 To fix the issue for the customers who have already received the problematic package, you can submit a new Windows 10 package that has a higher version number than the bad package as soon as you can. After that submission goes through the certification process, all customers will be updated to the new package, since it will have a higher version number.
 
@@ -54,7 +54,7 @@ For .appx packages that target Windows 8 and Windows 8.1, the same rule applie
 Additionally, the version number of Windows 8.1 packages must always be greater than the version numbers of any of your Windows 8 packages for the same app. In other words, the version number of any Windows 8 package that you submit must be lower than the version number of any Windows 8.1 package that you've submitted for the same app.
 
 > [!NOTE]
-> If your app also has Windows 10 packages, the version number of the Windows 10 packages must be higher than those for any of your Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages. For more info, see [Adding packages for Windows 10 to a previously-published app](app-package-management.md#adding-packages-for-windows10-to-an-existing-app).
+> If your app also has Windows 10 packages, the version number of the Windows 10 packages must be higher than those for any of your Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages. For more info, see [Adding packages for Windows 10 to a previously-published app](../../../apps/publish/publish-your-app/app-package-management.md#adding-packages-for-windows10-to-an-existing-app).
 
 Here are some examples of what happens in different version number update scenarios for packages targeting Windows 8 and Windows 8.1.
 
