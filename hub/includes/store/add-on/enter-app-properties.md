@@ -59,7 +59,7 @@ You have the option to provide up to ten keywords of up to 30 characters each fo
 To query this field, use the [StoreProduct.Keywords](/uwp/api/windows.services.store.storeproduct.Keywords) property in the [Windows.Services.Store namespace](/uwp/api/Windows.Services.Store). (Or, if you're using the [Windows.ApplicationModel.Store namespace](/uwp/api/Windows.ApplicationModel.Store), use the [ProductListing.Keywords](/uwp/api/windows.applicationmodel.store.productlisting.Keywords) property.)
 
 > [!NOTE]
-> Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
+> Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
 
 ### Custom developer data
 
@@ -70,4 +70,4 @@ For example, let’s say you have a game, and you’re selling an add-on which a
 To query this field, use the [StoreSku.CustomDeveloperData](/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) property in the [Windows.Services.Store namespace](/uwp/api/Windows.Services.Store). (Or, if you're using the [Windows.ApplicationModel.Store namespace](/uwp/api/Windows.ApplicationModel.Store), use the [ProductListing.Tag](/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) property.)
 
 > [!NOTE]
-> The **Custom developer data** field is not available for use in packages targeting Windows 8 and Windows 8.1.
+> The **Custom developer data** field is not available for use in packages targeting Windows 8 and Windows 8.1.
