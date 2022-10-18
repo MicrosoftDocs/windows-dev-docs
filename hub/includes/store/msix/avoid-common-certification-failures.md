@@ -13,7 +13,7 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 - [Provide any necessary info](../../../apps/publish/publish-your-app/notes-for-certification.md) required to use your app, such as the user name and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
 
-- Include a [privacy policy URL](../../../apps/publish/publish-your-app/enter-app-properties.md#privacy-policy-url) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/windows/uwp/publish/store-policies.md).
+- Include a [privacy policy URL](../../../apps/publish/publish-your-app/enter-app-properties.md) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](/windows/uwp/publish/store-policies.md).
 
 - Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description](../../../apps/publish/publish-your-app/write-great-app-description.md).
 
