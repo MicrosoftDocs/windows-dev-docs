@@ -184,7 +184,7 @@ To debug an APK using adb:
 
 1. Follow the steps to connect to the Windows Subsystem for Android VM above.
 
-2. Install the APK using the adb install command: `adb install app-debug .apk`
+2. Install the APK using the adb install command: `adb install app-debug.apk`
 
     Expected Output:
 
@@ -220,8 +220,8 @@ The properties for the Windows Subsystem for Android VM are listed below. Hardco
 | Property | Value |
 | --- | --- |
 | Build.MANUFACTURER | Microsoft Corporation |
-| Build.MODEL | Subsystem for Android |
-| Build.VERSION.SDK_INT | 30 |
+| Build.MODEL | Subsystem for Android(TM) |
+| Build.VERSION.SDK_INT | 32 |
 | Build.BOARD | windows |
 
 ## Security
