@@ -28,13 +28,13 @@ Items that you are required to provide or specify are noted below. Some areas ar
 
 :::zone pivot="store-installer-add-on"
 
-## What are Add-ons?
+## What are add-ons?
 
 Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.
 
 Add-ons are published through Partner Center, and require you to have an active developer account. You'll also need to enable the add-ons in your app's code.
 
-An add-on must be associated with an app that you've created in [Partner Center](https://partner.microsoft.com/dashboard) (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on your app's **Overview** page or on its **Add-ons** page.
+An add-on must be associated with an app that you've created in [Partner Center](https://partner.microsoft.com/dashboard) (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on your app's **Overview** page or on its **add-ons** page.
 
 After you select **Create a new add-on**, you'll be prompted to specify a product type and assign a product ID for your add-on.
 
