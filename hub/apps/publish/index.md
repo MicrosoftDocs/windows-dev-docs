@@ -52,7 +52,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3>Payments and reporting</h3>
-        <a href="/partner-center/account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
+        <a href="partner-center/account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
         <a href="/partner-center/marketplace-get-paid">Getting paid</a><br/>
         <a href="/windows/uwp/publish/in-app-ads.md">In-app ads</a><br/>
         <a href="/windows/uwp/publish/analytics.md">Analytic reports</a><br/>

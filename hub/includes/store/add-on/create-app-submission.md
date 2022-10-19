@@ -1,8 +1,69 @@
-An add-on must be associated with an app that you've created in [Partner Center](https://partner.microsoft.com/dashboard) (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on your app's **Overview** page or on its **Add-ons** page.
+## Add-on submission checklist
 
-After you select **Create a new add-on**, you'll be prompted to specify a product type and assign a product ID for your add-on.
+Here's a list of the info that you provide when creating your add-on submission. The items that you are required to provide are noted below. Some of these are optional, or have default values already provided that you can change as desired.
 
-## Product type
+### Create a new add-on page
+
+| Field name                                                     | Notes    |
+|----------------------------------------------------------------|----------|
+| [**Product type**](#product-type) | Required |  
+| [**Product ID**](#product-id)   | Required |
+
+### Properties page
+
+| Field name                | Notes                           |
+|---------------------------|---------------------------------|
+| **Product lifetime**      | Required if the product type is **Durable**. Not applicable to other product types. |
+| **Quantity**              | Required if the product type is **Store-managed consumable**. Not applicable to other product types. |
+| **Subscription period**   | Required if the product type is **Subscription**. Not applicable to other product types. |  
+| **Free trial**            | Required if the product type is **Subscription**. Not applicable to other product types. |
+| **Content type**          | Required                        |
+| **Keywords**              | Optional (up to 10 keywords, 30 character limit each) |
+| **Custom developer data** | Optional (3000 character limit) |
+
+### Pricing and availability page
+
+| Field name        | Notes                         |
+|-------------------|-------------------------------|
+| **Markets**      | Default: All possible markets |
+| **Visibility**   | Default: Available for purchase. May be displayed in your app's listing |
+| **Schedule**     | Default: Release as soon as possible |
+| **Pricing**      | Required                      |
+| **Sale pricing** | Optional                      |
+
+### Store listings
+
+One Store listing required. We recommend providing Store listings for every language your app supports.
+
+| Field name      | Notes                           |
+|-----------------|---------------------------------|
+| **Title**       | Required (100 character limit)  |
+| **Description** | Optional (200 character limit)  |
+| **Icon**        | Optional (.png, 300x300 pixels) |
+
+When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
+
+> [!NOTE]
+> The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](/uwp/monetize/in-app-purchases-and-trials).
+
+## Updating an add-on after publication
+
+You can make changes to a published add-on at any time. Add-on changes are submitted and published independently of your app, so you generally don't need to update the entire app in order to make changes to an add-on such as updating its price or description.
+
+To submit updates, go to the add-on's page in Partner Center and click **Update**. This will create a new submission for the add-on, using the info from your previous submission as a starting point. Make the changes you'd like, and then click **Submit to the Store**.
+
+If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](../../../apps/publish/publish-your-app/price-and-availability.md) option to **Hidden in the Store** with the **Stop acquisition** option. Be sure to update your app's code as needed to also remove references to the add-on (especially if your previously-published app supports Windows 8.1 earlier; this visibility setting won't apply to those customers).
+
+> [!IMPORTANT]
+> If your previously-published app is available to customers on Windows 8.x, you will need to create and publish a new app submission in order to make the add-on updates visible to those customers. Similarly, if you add new add-ons to an app targeting Windows 8.x after the app has been published, you'll need to update your app's code to reference those add-ons, then resubmit the app. Otherwise, the new add-ons won't be visible to customers on Windows 8.x.
+
+## Set your add-on product type and product ID
+
+An add-on must be associated with an app that you've created in Partner Center (even if you haven't submitted it yet). You can find the button to Create a new add-on on your app's Overview page or on its Add-ons page.
+
+After you select Create a new add-on, you'll be prompted to specify a product type and assign a product ID for your add-on.
+
+### Product type
 
 First, you'll need to indicate which type of add-on you are offering. This selection refers to how the customer can use your add-on.
 
@@ -11,13 +72,13 @@ First, you'll need to indicate which type of add-on you are offering. This selec
 
 <span id="durable" />
 
-### Durable
+#### Durable
 
 Select **Durable** as your product type if your add-on is typically purchased only once. These add-ons are often used to unlock additional functionality in an app.
 
 The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You have the option to set the **Product lifetime** to a different duration in the [Properties](../../../apps/publish/publish-your-app/enter-app-properties.md) step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.
 
-### Consumable
+#### Consumable
 
 If the add-on can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** product types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info, see [Enable consumable add-on purchases](/uwp/monetize/enable-consumable-add-on-purchases).
 
@@ -25,7 +86,7 @@ There are two types of consumable add-ons:
 - **Developer-managed consumable**: Balance and fulfillment must be managed within your app. Supported on all OS versions.
 - **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you can't submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in Partner Center and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** step of your submission.
 
-### Subscription
+#### Subscription
 
 If your want to charge customers on a recurring basis for your add-on, choose **Subscription**.
 
@@ -35,7 +96,7 @@ Subscription add-ons are only supported for customers running Windows 10, versio
 
 You must submit the parent product before you can publish subscription add-ons to the Store (though you can create the submission in Partner Center and begin working on it at any time).
 
-## Product ID
+### Product ID
 
 Regardless of the product type you choose, you will need to enter a unique product ID for your add-on. This name will be used to identify your add-on in Partner Center, and you can use this identifier to [refer to the add-on in your code](/uwp/monetize/in-app-purchases-and-trials#how-to-use-product-ids-for-add-ons-in-your-code).
 

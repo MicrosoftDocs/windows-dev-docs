@@ -6,8 +6,6 @@ If you prefer, you can define the specific markets in which you'd like to offer 
 
 By default, all markets are selected. You can unselect individual markets to exclude them, or you can click **Unselect all** and then add individual markets of your choice. You can search for a particular market in the search bar, and you can also change the dropdown from **All markets** to **Xbox markets** if you only want to view the markets in which you can sell Xbox products. Once you’ve finished, click **OK** to save your selections.
 
-:::image type="content" source="../msi/images/msiexe-set-app-markets.png" lightbox="../msi/images/msiexe-set-app-markets.png" alt-text="A screenshot of the Availability section where you can provide details of the market, you want to make your app available to.":::
-
 Note that your selections here apply only to new acquisitions; if someone already has your app in a certain market, and you later remove that market, the people who already have the app in that market can continue to use it, but they won’t get the updates you submit, and no new customers in that market can get your app.
 
 > [!IMPORTANT]
