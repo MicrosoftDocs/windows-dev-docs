@@ -1,5 +1,3 @@
-## Add-on submission checklist
-
 Here's a list of the info that you provide when creating your add-on submission. The items that you are required to provide are noted below. Some of these are optional, or have default values already provided that you can change as desired.
 
 ### Create a new add-on page
