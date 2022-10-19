@@ -4,4 +4,4 @@ If your app pricing is based on one-time payment (collected through in-app purch
 
 **Free trial**<br>*Selection required for paid and subscription apps only*
 
-Developers who offer paid or subscription apps often allow customers to try out their app for free before paying. By default, free trials are disabled. If you'd like to offer a trial, select the duration you would like to offer from the drop down.
+Developers who offer paid or subscription apps often allow customers to try out their app for free before paying. By default, free trials are disabled.

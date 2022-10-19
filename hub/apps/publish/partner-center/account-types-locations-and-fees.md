@@ -14,7 +14,7 @@ The Windows program in [Partner Center](https://partner.microsoft.com/dashboard)
 > [!NOTE]
 > When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. You'll have the option to [add additional users to the account](manage-account-users.md) later.
 
-When you [begin the signup process](https://developer.microsoft.com/store/register) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
+When you [begin the signup process](https://developer.microsoft.com/microsoft-store/register) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, games, add-ins, and services.
 
 Company accounts are intended for organizations and businesses. For company accounts, we require greater [verification](#account-verification) to confirm that you’re authorized to set up the account for your company. Individual accounts are usually appropriate for a single developer working on their own, although you have the option to add additional account users to either type of account.
 
