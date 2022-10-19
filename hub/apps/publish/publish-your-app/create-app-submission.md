@@ -9,7 +9,7 @@ zone_pivot_groups: store-installer-packaging
 # Create an app submission for your app
 
 > [!NOTE]
-> You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store.
+> You must have an active [developer account](https://developer.microsoft.com/microsoft-store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store.
 
 > [!NOTE]
 > After submiting an app, the [owner](/windows/uwp/publish/set-custom-permissions-for-account-users) of your developer account is notified of publishing status and required actions through email and the Action Center in Partner Center. For more information about Action Center, see [Action Center Overview](/windows/uwp/publish/set-custom-permissions-for-account-users).

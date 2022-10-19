@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Publish Windows apps and games
 
-You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. [Sign up today!](https://developer.microsoft.com/store/register)
+You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. [Sign up today!](https://developer.microsoft.com/microsoft-store/register)
 
 <br/>
 

@@ -22,7 +22,7 @@ This article describes how to register for a Windows developer account in [Partn
 > [!NOTE]
 > There is a known issue where users in some locales might be unable to finish completing their registration. Until we can confirm that it is resolved, we recommend that you manually change your browser's locale tag to **en-us** once you begin the sign-up process on partner.microsoft.com.
 
-1. Go to the [registration page](https://developer.microsoft.com/store/register) and select **Sign up**.
+1. Go to the [registration page](https://developer.microsoft.com/microsoft-store/register) and select **Sign up**.
 2. If you're not already signed in with a Microsoft account, sign in now, or create a new Microsoft account. The Microsoft account you use here is what you'll use to sign in to your developer account.
 3. Select the [country/region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) where you live or where your business is located. You won't be able to change this later.
 4. Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account.
