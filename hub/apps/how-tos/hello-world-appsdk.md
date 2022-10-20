@@ -155,12 +155,12 @@ Congratulations! You've build your first Windows App SDK / WinUI 3 app.
 
 ## Recap
 
-Here's what we accomplished in this how-to:
+Here's what you accomplished in this how-to:
 
- 1. You started with Visual Studio's project template.
- 2. You experienced an event handler that bound a `Button` control's `Click` event to a UI update.
- 3. You familiarized yourself with the convention of separating presentation concerns from business logic using XAML markup and C# code-behind files, respectively.
- 4. You reviewed the default WinUI 3 project file structure.
- 5. You modified both the presentation layer (XAML markup) and business logic (C# code-behind) to support a new `TextBlock` control within a `StackPanel`.
- 6. You reviewed reference docs to better understand the `StackPanel` control's properties.
- 7. You updated your app's title bar.
+ 1. You started with Visual Studio's **project template**.
+ 2. You experienced an **event handler** that bound a **`Button` control's** **`Click` event** to a UI update.
+ 3. You familiarized yourself with the **convention of separating presentation concerns** from **business logic** using tightly-coupled **XAML markup files** and **C# code-behind files**, respectively.
+ 4. You reviewed the default WinUI 3 project **file structure**.
+ 5. You modified both the presentation layer (XAML markup) and business logic (code-behind) to support a new **`TextBlock` control** within a `StackPanel`.
+ 6. You reviewed **reference docs** to better understand the **`StackPanel` control's properties**.
+ 7. You updated your app's **title bar**.
