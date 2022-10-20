@@ -1,9 +1,9 @@
 ---
 title: How to build a Hello World app using Windows App SDK
-description: Get started with Windows App SDK by building a simple app that displays "Hello, world". 
+description: Get started with Windows App SDK by building a simple app that displays "Hello, world!". 
 ms.topic: article
-ms.date: 10/01/2021
-keywords: windows app sdk, winappsdk
+ms.date: 10/20/2022
+keywords: windows app sdk, winappsdk, winui3
 ms.author: mikben
 author: matchamatch
 ms.localizationpriority: medium
@@ -16,7 +16,7 @@ In this beginner-oriented how-to, we'll use Visual Studio 2022 and Windows App S
 
 :::image type="content" source="https://i.imgur.com/qcbiNZh.png" alt-text="The 'Hello, world!' app we're building.":::
 
-A sample of the app we're building can be found [on Github](todo).
+The source code for the app we're building in this how-to can be found [on Github](todo).
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ A sample of the app we're building can be found [on Github](todo).
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-<img src='https://i.imgur.com/pmrKFqV.png'>
+:::image type="content" source="https://i.imgur.com/pmrKFqV.png" alt-text="The 'Hello, world!' app we're building.":::
 
 Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` template:
 
