@@ -126,6 +126,12 @@ public sealed partial class MainWindow : Window
     {
         this.InitializeComponent();
     }
+
+    // ↓ you can delete this
+    //private void myButton_Click(object sender, RoutedEventArgs e)
+    //{
+    //    myButton.Content = "Clicked";
+    //}
 }
 ```
 
