@@ -1,0 +1,209 @@
+{
+    "build": {
+        "content": [ {
+            "files": ["**/*.md", "**/**.yml"],
+            "exclude": [
+                "**/obj/**",
+                "whats-new/whats-new-future.md",
+                "**/includes/**"
+            ]
+        } ],
+        "resource": [ {
+            "files": ["**/images/**"],
+            "exclude": ["**/obj/**"]
+        } ],
+        "globalMetadata": {
+            "recommendations": true,
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.prod": "uwp",
+            "ms.technology": "uwp-conceptual-docs",
+            "author": "GrantMeStrength",
+            "ms.author": "jken",
+            "Search.Product": "eADQiWindows 10XVcnh",
+            "uhfHeaderId": "MSDocsHeader-WinDevCenter",
+            "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+            "feedback_system": "GitHub",
+            "feedback_github_repo": "MicrosoftDocs/windows-uwp",
+            "feedback_product_url": "https://docs.microsoft.com/answers/topics/windows-uwp-feedback.html",
+            "extendBreadcrumb": false,
+            "htmlDangerZone":  true,
+            "searchScope": ["UWP"],
+            "_op_documentIdPathDepotMapping": {
+                "./": {
+                    "depot_name": "MSDN.windows-uwp",
+                    "folder_relative_path_in_docset": "./"
+                }
+            }
+        },
+        "fileMetadata": {
+            "titleSuffix": {
+                "app-resources/*.md": "UWP applications",
+                "app-to-app/*.md": "UWP applications",
+                "apps-for-education/*.md": "UWP applications",
+                "audio-video-camera/*.md": "UWP applications",
+                "communication/*.md": "UWP applications",
+                "composition/*.md": "UWP applications",
+                "contacts-and-calendar/*.md": "UWP applications",
+                "cpp-and-winrt-apis/*.md": "UWP applications",
+                "csharp-winrt/*.md": "UWP applications",
+                "data-access/*.md": "UWP applications",
+                "data-binding/*.md": "UWP applications",
+                "debug-test-perf/*.md": "UWP applications",
+                "develop/*.md": "UWP applications",
+                "devices-sensors/*.md": "UWP applications",
+                "dotnet-native/*.md": "UWP applications",
+                "enterprise/*.md": "UWP applications",
+                "files/*.md": "UWP applications",
+                "gaming/*.md": "UWP applications",
+                "get-started/*.md": "UWP applications",
+                "graphics-concepts/*.md": "UWP applications",
+                "launch-resume/*.md": "UWP applications",
+                "maps-and-location/*.md": "UWP applications",
+                "monetize/*.md": "Microsoft Store",
+                "networking/*.md": "UWP applications",
+                "packaging/*.md": "UWP applications",
+                "porting/*.md": "UWP applications",
+                "publish/*.md": "Microsoft Store",
+                "security/*.md": "UWP applications",
+                "threading-async/*.md": "UWP applications",
+                "updates-and-versions/*.md": "UWP applications",
+                "whats-new/*.md": "UWP applications",
+                "winrt-components/*.md": "UWP applications",
+                "xaml-platform/*.md": "UWP applications",
+                "xbox-apps/*.md": "UWP applications"
+            },
+            "ms.technology": {
+                "app-resources/*.md": "data-and-files",
+                "app-to-app/*.md": "communication",
+                "apps-for-education/*.md": "app-types",
+                "audio-video-camera/*.md": "audio-video-and-camera",
+                "communication/*.md": "communication",
+                "composition/*.md": "platform",
+                "contacts-and-calendar/*.md": "people-and-places",
+                "cpp-and-winrt-apis/*.md": "platform",
+                "csharp-winrt/*.md": "platform",
+                "data-access/*.md": "data-and-files",
+                "data-binding/*.md": "data-and-files",
+                "debug-test-perf/*.md": "deployment",
+                "develop/*.md": "develop",
+                "devices-sensors/*.md": "peripherals-sensors-and-power",
+                "dotnet-native/*.md": "platform",
+                "enterprise/*.md": "app-types",
+                "files/*.md": "data-and-files",
+                "gaming/*.md": "games",
+                "get-started/*.md": "get-started",
+                "graphics-concepts/*.md": "platform",
+                "launch-resume/*.md": "processes-and-threading",
+                "maps-and-location/*.md": "people-and-places",
+                "monetize/*.md": "publish",
+                "networking/*.md": "communication",
+                "packaging/*.md": "deployment",
+                "porting/*.md": "porting-apps",
+                "publish/*.md": "publish",
+                "security/*.md": "platform",
+                "threading-async/*.md": "processes-and-threading",
+                "updates-and-versions/*.md": "deployment",
+                "whats-new/*.md": "whats-new",
+                "winrt-components/*.md": "platform",
+                "xaml-platform/*.md": "platform",
+                "xbox-apps/*.md": "games"
+            },
+            "ms.author": {
+                "app-resources/*.md": "aashcraft",
+                "app-to-app/*.md": "aashcraft",
+                "apps-for-education/*.md": "hickeys",
+                "audio-video-camera/*.md": "drewbat",
+                "communication/*.md": "stwhi",
+                "composition/*.md": "jimwalk",
+                "contacts-and-calendar/*.md": "aashcraft",
+                "cpp-and-winrt-apis/*.md": "stwhi",
+                "csharp-winrt/*.md": "stwhi",
+                "data-access/*.md": "aashcraft",
+                "data-binding/*.md": "aashcraft",
+                "debug-test-perf/*.md": "kbridge",
+                "develop/*.md": "jimwalk",
+                "devices-sensors/*.md": "kbridge",
+                "dotnet-native/*.md": "stwhi",
+                "enterprise/*.md": "quradic",
+                "files/*.md": "aashcraft",
+                "gaming/*.md": "stwhi",
+                "get-started/*.md": "quradic",
+                "graphics-concepts/*.md": "stwhi",
+                "launch-resume/*.md": "aashcraft",
+                "maps-and-location/*.md": "hickeys",
+                "monetize/*.md": "hickeys",
+                "monetize/code/*.*": "hickeys",
+                "networking/*.md": "stwhi",
+                "packaging/*.md": "drewbat",
+                "porting/*.md": "hickeys",
+                "publish/*.md": "hickeys",
+                "security/*.md": "aashcraft",
+                "threading-async/*.md": "drewbat",
+                "updates-and-versions/*.md": "hickeys",
+                "whats-new/*.md": "quradic",
+                "winrt-components/*.md": "stwhi",
+                "xaml-platform/*.md": "jimwalk",
+                "xbox-apps/*.md": "kevinasg"
+            },
+            "author": {
+                "app-resources/*.md": "alvinashcraft",
+                "app-to-app/*.md": "alvinashcraft",
+                "apps-for-education/*.md": "hickeys",
+                "audio-video-camera/*.md": "drewbatgit",
+                "composition/*.md": "jwmsft",
+                "communication/*.md": "stevewhims",
+                "contacts-and-calendar/*.md": "alvinashcraft",
+                "cpp-and-winrt-apis/*.md": "stevewhims",
+                "csharp-winrt/*.md": "stevewhims",
+                "data-access/*.md": "alvinashcraft",
+                "data-binding/*.md": "alvinashcraft",
+                "debug-test-perf/*.md": "Karl-Bridge-Microsoft",
+                "develop/*.md": "jwmsft",
+                "devices-sensors/*.md": "Karl-Bridge-Microsoft",
+                "dotnet-native/*.md": "stevewhims",
+                "enterprise/*.md": "QuinnRadich",
+                "files/*.md": "alvinashcraft",
+                "gaming/*.md": "stevewhims",
+                "get-started/*.md": "QuinnRadich",
+                "graphics-concepts/*.md": "stevewhims",
+                "launch-resume/*.md": "alvinashcraft",
+                "maps-and-location/*.md": "hickeys",
+                "monetize/*.md": "hickeys",
+                "monetize/code/*.*": "hickeys",
+                "networking/*.md": "stevewhims",
+                "packaging/*.md": "drewbatgit",
+                "porting/*.md": "hickeys",
+                "publish/*.md": "hickeys",
+                "security/*.md": "alvinashcraft",
+                "threading-async/*.md": "drewbatgit",
+                "updates-and-versions/*.md": "hickeys",
+                "whats-new/*.md": "QuinnRadich",
+                "winrt-components/*.md": "stevewhims",
+                "xaml-platform/*.md": "jwmsft",
+                "xbox-apps/*.md": "m-stahl"
+            },
+            "ms.topic": {
+                "dotnet-native/*.md": "reference"
+            },
+            "feedback_system": {
+                "publish/index.md": "None"
+            }
+        },
+        "externalReference": [ ],
+        "template": "op.html",
+        "dest": "uwp",
+        "rules": {
+           "sensitive-language-sl": {
+               "exclude": [
+                 "devices-sensors/enable-usermode-access.md"
+               ]
+           },
+           "sensitive-language-bl": {
+               "exclude": [
+                 "apps-for-education/take-a-test-api.md"
+               ]
+            }
+         },
+        "markdownEngineName": "markdig"
+    }
+}
