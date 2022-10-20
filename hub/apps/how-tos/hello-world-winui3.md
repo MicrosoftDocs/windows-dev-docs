@@ -141,10 +141,10 @@ If you restart your app, you should see a red `Hello world!`:
 
 ## Update your app's title bar
 
-Add `this.Title = "Hello world!";` to your `App.xaml.cs` code-behind file:
+Add `this.Title = "Hello world!";` to your `MainWindow.xaml.cs` code-behind file:
 
 ```csharp
-public App()
+public MainWindow()
 {
     this.InitializeComponent();
     this.Title = "Hello world!"; // <- this is new
