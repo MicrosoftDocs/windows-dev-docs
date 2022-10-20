@@ -169,7 +169,7 @@ Here's what you accomplished in this how-to:
  4. You reviewed the default WinUI 3 project **file structure**.
  5. You modified both the presentation layer (XAML markup) and business logic (code-behind) to support a new **`TextBlock` control** within a `StackPanel`.
  6. You reviewed **reference docs** to better understand the **`StackPanel` control's properties**.
- 7. You updated your app's **title bar**.
+ 7. You updated your main window's **title bar**.
 
 
 ## FAQ
