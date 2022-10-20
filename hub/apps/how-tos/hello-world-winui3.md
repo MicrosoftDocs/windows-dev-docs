@@ -170,3 +170,9 @@ Here's what you accomplished in this how-to:
  5. You modified both the presentation layer (XAML markup) and business logic (code-behind) to support a new **`TextBlock` control** within a `StackPanel`.
  6. You reviewed **reference docs** to better understand the **`StackPanel` control's properties**.
  7. You updated your app's **title bar**.
+
+
+## FAQ
+
+**Q: What's the difference between a "Packaged" and "Unpackaged" app?**
+TODO
