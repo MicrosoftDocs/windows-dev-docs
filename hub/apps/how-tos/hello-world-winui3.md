@@ -65,7 +65,7 @@ While `MainWindow.xaml.cs` contains our main window's **business logic** concern
 
 :::image type="content" source="https://i.imgur.com/H7Ltii4.png" alt-text="The 'Click Me' button's XML markup, located in your main window's markup file":::
 
-This separation of **business logic** and **presentation** concerns is a WinUI 3 project pattern that lets you quickly bind data and events to your application's UI in a consistent manner.
+This separation of **business logic** and **presentation** concerns lets you bind data and events to your application's UI using a consistent application development pattern.
 
 Let's review your project's file structure before making code changes.
 
