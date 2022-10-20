@@ -144,7 +144,7 @@ If you restart your app, you should see a red `Hello world!`:
 Add `this.Title = "Hello world!";` to your `App.xaml.cs` code-behind file:
 
 ```csharp
-public MainWindow()
+public App()
 {
     this.InitializeComponent();
     this.Title = "Hello world!"; // <- this is new
