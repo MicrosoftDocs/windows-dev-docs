@@ -156,7 +156,7 @@ If you restart your app, you should now see `Hello world!` in both the body and 
 
 :::image type="content" source="https://i.imgur.com/qcbiNZh.png" alt-text="The 'Hello, world!' app we're building.":::
 
-Congratulations! You've build your first Windows App SDK / WinUI 3 app. 
+Congratulations! You've built your first Windows App SDK / WinUI 3 app. 
 
 
 ## Recap
