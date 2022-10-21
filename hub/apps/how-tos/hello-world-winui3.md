@@ -66,7 +66,7 @@ In this case, a [`Button` control](../design/controls/buttons.md#create-a-button
 
 :::image type="content" source="images/hello-world/code-screenshot.png" alt-text="The 'Click Me' button's event handler, located in your main window's code-behind file":::
 
-While `MainWindow.xaml.cs` contains our main window's **business logic** concerns in the form of a code-behind file, it's **presentation** concerns live in `MainWindow.xaml`:
+While `MainWindow.xaml.cs` contains our main window's **business logic** concerns in the form of a code-behind file, its **presentation** concerns live in `MainWindow.xaml`:
 
 :::image type="content" source="images/hello-world/markup-screenshot.png" alt-text="The 'Click Me' button's XML markup, located in your main window's markup file":::
 
