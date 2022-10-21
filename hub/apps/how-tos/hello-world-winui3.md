@@ -20,7 +20,7 @@ The source code for the app we're building in this how-to can be found [on Githu
 
 ## Prerequisites
 
- - [Visual Studio 2022 and Tools for Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/set-up-your-development-environment)
+ - [Visual Studio 2022 and Tools for Windows App SDK](../apps/windows-app-sdk/set-up-your-development-environment)
 
 
 ## Create and run the template project
@@ -57,7 +57,7 @@ Click the `Click Me` button for a demonstration of event binding:
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
-In this case, a [`Button` control](https://learn.microsoft.com/en-us/windows/apps/design/controls/buttons#create-a-button)'s [`Click` event](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click?view=windows-app-sdk-1.1) is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
+In this case, a [`Button` control](../design/controls/buttons#create-a-button)'s [`Click` event](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
 
 :::image type="content" source="images/hello-world/code-screenshot.png" alt-text="The 'Click Me' button's event handler, located in your main window's code-behind file":::
 
@@ -105,7 +105,7 @@ To display "Hello world!" instead of the "Click me" button, navigate to `MainWin
 ```
 
 > [!TIP]
-> You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](https://learn.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel?view=winrt-22621) tell you more about the `StackPanel` control, and how to customize it.
+> You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](https://learn.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel) tell you more about the `StackPanel` control, and how to customize it.
 
 Let's update our `StackPanel` control to display `Hello world!` with red text:
 
