@@ -38,7 +38,7 @@ C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) AP
 An app development feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-run your apps while developing. See [Write and debug running code with Hot Reload](/visualstudio/debugger/hot-reload).
 
 #### Hybrid CRT linkage
-A C/C++ runtime library linkage technique that simplifies deployment. Also referred to simply as *Hybrid CRT*. See [Hybrid C/C++ runtime library linkage (hybrid CRT linkage)](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md#hybrid-cc-runtime-library-linkage-hybrid-crt-linkage).
+A C/C++ runtime library linkage technique that simplifies deployment. Also referred to simply as *Hybrid CRT*. See [Hybrid C/C++ runtime library linkage (hybrid CRT linkage)](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
 
 #### Managed apps
 "Managed" refers to the "managed runtime" of .NET, which provides managed services such as garbage collection and security assurances. If you're building an app with .NET, you're building a managed app.
@@ -111,4 +111,4 @@ XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinFor
 
 ## Related topics
   - [Windows developer FAQ](windows-developer-faq.yml)
-  - [Overview of app development options](./index.md#app-types)
+  - [Overview of app development options](./index.md)
