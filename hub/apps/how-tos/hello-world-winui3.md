@@ -154,7 +154,6 @@ public MainWindow()
     this.InitializeComponent();
     this.Title = "Hello world!"; // <- this is new
 }
-
 ```
 
 If you restart your app, you should now see `Hello world!` in both the body and title bar:
