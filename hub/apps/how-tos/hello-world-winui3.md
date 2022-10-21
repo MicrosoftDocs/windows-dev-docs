@@ -4,7 +4,7 @@ description: Get started with WinUI 3 / Windows App SDK by building a simple Win
 ms.topic: article
 ms.date: 10/20/2022
 keywords: windows app sdk, winappsdk, winui3
-ms.author: mikben
+ms.author: jkendirs
 author: matchamatch
 ms.localizationpriority: medium
 ms.custom: template-quickstart
