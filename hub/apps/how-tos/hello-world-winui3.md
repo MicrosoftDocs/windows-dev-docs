@@ -12,6 +12,9 @@ ms.custom: template-quickstart
 
 # Build a Hello World app using WinUI 3 / Windows App SDK
 
+> [!TIP]
+> This how-to is currently **experimental** and is likely to evolve significantly based on feedback from developers like you. Have a recommendation? [Request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch).
+
 In this beginner-oriented how-to, we'll use Visual Studio 2022 and WinUI 3 / Windows App SDK to build a Windows desktop app that displays "Hello world!" when launched:
 
 :::image type="content" source="images/hello-world/end-result.png" alt-text="The 'Hello world' app we're building.":::
