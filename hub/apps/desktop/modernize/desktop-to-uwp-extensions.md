@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 
 # Integrate your desktop app with Windows using packaging extensions
 
-If your desktop app is packaged (has package identity at runtime), then you can use extensions to integrate your app with Windows by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+If your desktop app is packaged (has package identity at runtime), then you can use extensions to integrate your app with Windows by using predefined [extensions in the package manifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
 For example, use an extension to create a firewall exception; make your app the default application for a file type; or point Start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
 This topic describes those extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](./grant-identity-to-nonpackaged-apps.md)). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
 ## Transition users to your app
 

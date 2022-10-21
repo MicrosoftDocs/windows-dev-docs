@@ -11,15 +11,15 @@ ms.localizationpriority: medium
 
 # Display WinRT UI objects that depend on CoreWindow
 
-Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](/windows/apps/desktop/modernize/desktop-to-uwp-supported-api#core-unsupported-classes)), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
+Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](../../desktop/modernize/desktop-to-uwp-supported-api.md#core-unsupported-classes)), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
-Your desktop app can be [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), or [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. Code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
+Your desktop app can be [Windows UI Library (WinUI) 3](../../winui/winui3/index.md), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), or [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. Code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 ## Set the owner window handle (HWND) for a WinRT UI object
 
 For classes that implement the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface (or the equivalent [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) interface), you can use that interface to set an owner window on the object before you display it. It's a two-step process.
 
-1. Decide which window will be the owner of the UI object that you want to display, and retrieve that window's HWND. For more details and code examples for this step, see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd).
+1. Decide which window will be the owner of the UI object that you want to display, and retrieve that window's HWND. For more details and code examples for this step, see [Retrieve a window handle (HWND)](./retrieve-hwnd.md).
 2. Then call the appropriate interoperatability API (for C# or C++/WinRT) to set an owner window handle (HWND) for the WinRT UI object.
 
 ## For classes that implement IInitializeWithWindow
@@ -54,9 +54,9 @@ The next sections contain code examples to display a [**FolderPicker**](/uwp/api
 ### WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)
 
 > [!NOTE]
-> The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 6 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+> The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 6 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
 
-The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c). Then, to set the owner window for the UI object that you want to display, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+The C# code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](./retrieve-hwnd.md#windows-ui-library-winui-3-by-using-c). Then, to set the owner window for the UI object that you want to display, the code calls the **Initialize** method on the **WinRT.Interop.InitializeWithWindow** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
 
 ```csharp
 // MainWindow.xaml.cs
@@ -76,7 +76,7 @@ private async void ShowFolderPickerAsync(IntPtr hWnd)
 
 ### WinUI 3 with C++
 
-The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd#windows-ui-library-winui-3-by-using-c-1). Then, to set the owner window for the UI object that you want to display, the code calls the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
+The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](./retrieve-hwnd.md#windows-ui-library-winui-3-by-using-c-1). Then, to set the owner window for the UI object that you want to display, the code calls the interoperatability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 ```cppwinrt
 // pch.h
@@ -205,14 +205,14 @@ The [**Windows.Security.Credentials.UI.UserConsentVerifier**](/uwp/api/windows.s
 
 In a desktop app, instead of calling the [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) method:
 
-* **C#**. Call the **RequestVerificationForWindowAsync** method of the **Windows.Security.Credentials.UI.UserConsentVerifierInterop** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+* **C#**. Call the **RequestVerificationForWindowAsync** method of the **Windows.Security.Credentials.UI.UserConsentVerifierInterop** C# interop class. For more info about the C# interop classes, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
 * **C++/WinRT**. Call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow).
 
 For more info, and code examples, see [**UserConsentVerifier**](/uwp/api/windows.security.credentials.ui.userconsentverifier).
 
 ## For classes that implement other interop interfaces
 
-These interfaces have **XxxForWindow** methods, which let you set an owner window handle (HWND). You can use these interfaces directly from C++/WinRT. Versions of the interfaces also exist in the form of C# classes&mdash;for more details, see [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp).
+These interfaces have **XxxForWindow** methods, which let you set an owner window handle (HWND). You can use these interfaces directly from C++/WinRT. Versions of the interfaces also exist in the form of C# classes&mdash;for more details, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
 
 * [**IAccountsSettingsPaneInterop**](/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop)
 * [**IDragDropManagerInterop**](/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop)
@@ -229,9 +229,9 @@ These interfaces have **XxxForWindow** methods, which let you set an owner windo
 
 ## Related topics
 
-* [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
-* [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/)
+* [Retrieve a window handle (HWND)](./retrieve-hwnd.md)
+* [Windows UI Library (WinUI) 3](../../winui/winui3/index.md)
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 * [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
-* [Call interop APIs from a .NET app](/windows/apps/desktop/modernize/winrt-com-interop-csharp)
+* [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
