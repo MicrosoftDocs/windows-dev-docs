@@ -27,7 +27,7 @@ The source code for the app we're building in this how-to can be found [on Githu
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-:::image type="content" source="images/hello-world/new-project.png" alt-text="Create a new project":::
+:::image type="content" source="images/hello-world/create-project.png" alt-text="Create a new project":::
 
 Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` template:
 
