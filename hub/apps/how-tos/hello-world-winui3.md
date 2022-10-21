@@ -20,7 +20,7 @@ The source code for the app we're building in this how-to can be found [on Githu
 
 ## Prerequisites
 
- - [Visual Studio 2022 and Tools for Windows App SDK](../apps/windows-app-sdk/set-up-your-development-environment)
+ - [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment)
 
 
 ## Create and run the template project
