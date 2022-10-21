@@ -26,15 +26,15 @@ The source code for the app we're building in this how-to can be found [on Githu
  - [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
 
-## Create a new project using the WinUI 3 project template
+## Create a new project using the WinUI 3 C# project template
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
 :::image type="content" source="images/hello-world/create-project.png" alt-text="Create a new project":::
 
-Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` template:
+Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template:
 
-:::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 desktop app":::
+:::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
 
 Specify a project name, solution name, and directory. In this example, our `Hello World` project belongs to a `Hello World` solution. Our work will live in `C:\Projects\`:
 
