@@ -26,7 +26,7 @@ The source code for the app we're building in this how-to can be found [on Githu
  - [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
 
-## Create and run the template project
+## Create and run the WinUI 3 project template
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
