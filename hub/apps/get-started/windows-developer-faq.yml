@@ -121,7 +121,7 @@ sections:
           Not yet. This is currently under development.
       - question: Where can I find WinUI 3 samples?
         answer: |
-          See [Sample applications for Windows development](./samples.md#windows-sample-apps-repos). Some notable repositories:
+          See [Sample applications for Windows development](./samples.md). Some notable repositories:
 
           - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets. 
           - [WinUI 3 Demos](https://github.com/microsoft/WinUI-3-Demos): Contains demos used during Microsoft's WinUI 3 presentations. 
@@ -211,4 +211,4 @@ sections:
 additionalContent: |
   ## Related
   - [Windows developer glossary](windows-developer-glossary.md)
-  - [Overview of app development options](./index.md#app-types)
+  - [Overview of app development options](./index.md)
