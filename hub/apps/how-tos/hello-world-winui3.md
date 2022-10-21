@@ -14,7 +14,7 @@ ms.custom: template-quickstart
 
 In this beginner-oriented how-to, we'll use Visual Studio 2022 and Windows App SDK to build a packaged Windows desktop app that displays "Hello world!" when launched:
 
-:::image type="content" source="https://i.imgur.com/qcbiNZh.png" alt-text="The 'Hello world' app we're building.":::
+:::image type="content" source="images/hello-world/end-result.png" alt-text="The 'Hello world' app we're building.":::
 
 The source code for the app we're building in this how-to can be found [on Github](todo).
 
@@ -27,43 +27,43 @@ The source code for the app we're building in this how-to can be found [on Githu
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
-:::image type="content" source="https://i.imgur.com/pmrKFqV.png" alt-text="Create a new project":::
+:::image type="content" source="images/hello-world/new-project.png" alt-text="Create a new project":::
 
 Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` template:
 
-:::image type="content" source="https://i.imgur.com/UUsrQ2m.png" alt-text="Blank, packaged WinUI 3 desktop app":::
+:::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 desktop app":::
 
 Specify a project name, solution name, and directory. In this example, our `Hello World` project belongs to a `Hello World` solution. Our work will live in `C:\Projects\`:
 
-:::image type="content" source="https://i.imgur.com/fMB0iYg.png" alt-text="Specify project details":::
+:::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
 After creating your project, you should see the following default file structure in your Solution Explorer:
 
-:::image type="content" source="https://i.imgur.com/odJqdgj.png" alt-text="Default file structure":::
+:::image type="content" source="images/hello-world/collapsed-file-structure.png" alt-text="Default file structure":::
 
 Click the "Start" button to build and run this templated project:
 
-:::image type="content" source="https://i.imgur.com/iEfukVA.png" alt-text="Build and run your project":::
+:::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
 
 Visual Studio may prompt you to `Enable Developer Mode for Windows`:
 
-:::image type="content" source="https://i.imgur.com/vq4zehs.png" alt-text="Enable Developer Mode":::
+:::image type="content" source="images/hello-world/enable-developer-mode.png" alt-text="Enable Developer Mode":::
 
 With Developer Mode enabled, your `Hello World` project should build and run:
 
-:::image type="content" source="https://i.imgur.com/T6m6SW7.png" alt-text="Templated project built running":::
+:::image type="content" source="images/hello-world/click-me.png" alt-text="Templated project built running":::
 
 Click the `Click Me` button for a demonstration of event binding:
 
-:::image type="content" source="https://i.imgur.com/gPP5o2U.png" alt-text="The 'Click Me' button":::
+:::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
 In this case, a [`Button` control](https://learn.microsoft.com/en-us/windows/apps/design/controls/buttons#create-a-button)'s [`Click` event](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click?view=windows-app-sdk-1.1) is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
 
-:::image type="content" source="https://i.imgur.com/Fho4Fvz.png" alt-text="The 'Click Me' button's event handler, located in your main window's code-behind file":::
+:::image type="content" source="images/hello-world/code-screenshot.png" alt-text="The 'Click Me' button's event handler, located in your main window's code-behind file":::
 
 While `MainWindow.xaml.cs` contains our main window's **business logic** concerns in the form of a code-behind file, it's **presentation** concerns live in `MainWindow.xaml`:
 
-:::image type="content" source="https://i.imgur.com/H7Ltii4.png" alt-text="The 'Click Me' button's XML markup, located in your main window's markup file":::
+:::image type="content" source="images/hello-world/markup-screenshot.png" alt-text="The 'Click Me' button's XML markup, located in your main window's markup file":::
 
 This separation of **business logic** and **presentation** concerns lets you bind data and events to your application's UI using a consistent application development pattern.
 
@@ -73,7 +73,7 @@ Let's review your project's file structure before making code changes.
 
 Our project's file structure currently looks like this:
 
-:::image type="content" source="https://i.imgur.com/QABCt2t.png" alt-text="File structure overview":::
+:::image type="content" source="images/hello-world/expanded-file-structure.png" alt-text="File structure overview":::
 
 Starting from the top and working our way down:
 
@@ -137,7 +137,7 @@ public sealed partial class MainWindow : Window
 
 If you restart your app, you should see a red `Hello world!`:
 
-:::image type="content" source="https://i.imgur.com/gsEaVR9.png" alt-text="A red 'Hello world!'":::
+:::image type="content" source="images/hello-world/red-hello.png" alt-text="A red 'Hello world!'":::
 
 ## Update your app's title bar
 
@@ -154,7 +154,7 @@ public MainWindow()
 
 If you restart your app, you should now see `Hello world!` in both the body and title bar:
 
-:::image type="content" source="https://i.imgur.com/qcbiNZh.png" alt-text="The 'Hello, world!' app we're building.":::
+:::image type="content" source="images/hello-world/red-hello-titled.png" alt-text="The 'Hello, world!' app we're building.":::
 
 Congratulations! You've built your first Windows App SDK / WinUI 3 app. 
 
@@ -174,5 +174,5 @@ Here's what you accomplished in this how-to:
 
 ## FAQ
 
-**Q: What's the difference between a "Packaged" and "Unpackaged" app?**
+**Q: What's the difference between a "Packaged" and "Unpackaged" app?** <br/>
 TODO
