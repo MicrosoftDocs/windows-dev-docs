@@ -12,7 +12,7 @@ ms.custom: template-quickstart
 
 # Build a Hello World app using WinUI 3 / Windows App SDK
 
-In this beginner-oriented how-to, we'll use Visual Studio 2022 and Windows App SDK to build a packaged Windows desktop app that displays "Hello world!" when launched:
+In this beginner-oriented how-to, we'll use Visual Studio 2022 and WinUI 3 / Windows App SDK to build a Windows desktop app that displays "Hello world!" when launched:
 
 :::image type="content" source="images/hello-world/end-result.png" alt-text="The 'Hello world' app we're building.":::
 
@@ -174,6 +174,14 @@ Here's what you accomplished in this how-to:
 
 ## FAQ
 
-**Q: What's the difference between a "Packaged" and "Unpackaged" app?** <br/>
+**Q: What are the other project templates for?** <br/>
+
+TODO
+
+**Q: What does "packaged" mean?** <br/>
+
+TODO
+
+**Q: Why is there a toolbar at the top of my app when I run it from Visual Studio?** <br/>
 
 TODO
