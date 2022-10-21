@@ -1,6 +1,6 @@
 ---
 title: How to build a Hello World app using WinUI 3 / Windows App SDK
-description: Get started with WinUI 3 / Windows App SDK by building a simple app that displays "Hello world!". 
+description: Get started with WinUI 3 / Windows App SDK by building a simple Windows desktop app that displays "Hello world!". 
 ms.topic: article
 ms.date: 10/20/2022
 keywords: windows app sdk, winappsdk, winui3
