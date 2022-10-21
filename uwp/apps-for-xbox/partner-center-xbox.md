@@ -15,7 +15,7 @@ Creating a partner center account is the first step in bringing your app to Xbox
 - Do you or your company have an existing Partner Center account? If so, there is no need to create a new account; you can add new projects to the existing account.
 - Be sure to select the right type of Partner Center account which is “Business Developer Account”.
 - To simplify the verification process, use an email with a corporate domain.
-- To go through the account set-up, please use the following process: [Opening developer account](/windows/uwp/publish/opening-a-developer-account)
+- To go through the account set-up, please use the following process: [Opening developer account](/windows/apps/publish/partner-center/opening-a-developer-account?pivots=store-installer-msix)
 
 ## Common Issues
 
@@ -25,27 +25,27 @@ Creating a partner center account is the first step in bringing your app to Xbox
 
 ### Adding members of the team to the partner center account 
 
-- [Add users, groups, and Azure AD applications to your Partner Center account](/windows/uwp/publish/add-users-groups-and-azure-ad-applications)
+- [Add users, groups, and Azure AD applications to your Partner Center account](/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications)
 
 - Note that this process must be conducted by the individual with administrative privileges. 
 
 ### Partner Center Analytics  
 
-- For App performance inquiries please refer to [Analyze app performance](/windows/uwp/publish/analytics)
+- For App performance inquiries please refer to [Analyze app performance](../publish/analytics.md)
 
 ### Debugging crash rate through Partner Center
 
-- [Health report](/windows/uwp/publish/health-report)
+- [Health report](../publish/health-report.md)
 
 ### Ratings and reviews  
 
 - Add the in-app rating APIs to your application to improve your ratings  
 
-- [Request ratings and reviews for your app](/windows/uwp/monetize/request-ratings-and-reviews)
+- [Request ratings and reviews for your app](../monetize/request-ratings-and-reviews.md)
 
 ### Beta Testing  
 
-[Beta testing and targeted distribution](/windows/uwp/publish/beta-testing-and-targeted-distribution)
+[Beta testing and targeted distribution](../publish/beta-testing-and-targeted-distribution.md)
 
 ## Updating banking info  
 

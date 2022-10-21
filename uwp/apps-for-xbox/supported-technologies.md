@@ -17,7 +17,7 @@ The following streaming formats are supported:
 
 | Format     | Notes |
 |------------|-------------|
-|MPEG-DASH| This is our [recommended](/windows/uwp/audio-video-camera/adaptive-streaming)  streaming format |
+|MPEG-DASH| This is our [recommended](../audio-video-camera/adaptive-streaming.md)  streaming format |
 |HLS|  |
 |Smooth Streaming|Inbox Smooth components work (but not the legacy SDK). Consider switching to DASH if possible. |
 |Custom streams using MSE/EME| MSE is supported via Webview.  |
@@ -57,18 +57,18 @@ NOTE: Several of the samples linked here are part of larger projects with a lot 
 
 >- [Adaptive streaming sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/AdaptiveStreaming)
 
-[Application lifecycle docs](/windows/uwp/launch-resume/app-lifecycle)
+[Application lifecycle docs](../launch-resume/app-lifecycle.md)
 
 [App package manifest docs](/uwp/schemas/appxpackage/appx-package-manifest)
 ###  Media Playback Documentation
-[Media playback docs (for C# and WebView-based applications)](/windows/uwp/audio-video-camera/media-playback)
+[Media playback docs (for C# and WebView-based applications)](../audio-video-camera/media-playback.md)
 
 [Spatial sound docs](/windows/win32/coreaudio/spatial-sound)
 
-[Playready DRM](/windows/uwp/audio-video-camera/playready-client-sdk)
+[Playready DRM](../audio-video-camera/playready-client-sdk.md)
 ### Xbox Documentation
 [Media App for Xbox samples (for JavaScript based applications)](https://github.com/microsoft/Media-App-Samples-for-Xbox)
 
-[UWP development on Xbox docs](/windows/uwp/xbox-apps/)
+[UWP development on Xbox docs](../xbox-apps/index.md)
 
 [TVHelpers libraries (for JavaScript based applications)](https://github.com/Microsoft/TVHelpers)

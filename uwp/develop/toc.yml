@@ -1327,7 +1327,7 @@
         - name: "Case study: Bookstore2"
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: Convert your web app to a PWA on Windows
-      href: ../publish/pwa/turn-your-website-pwa.md
+      href: /windows/apps/publish/publish-your-app/turn-your-website-pwa?pivots=store-installer-pwa
 - name: Processes and threading
   items:
     - name: Launching, resuming, and background tasks

@@ -27,13 +27,13 @@ NOTE: It can be tricky to fully downgrade your development environment after usi
 
 Once you’ve chosen a Visual Studio version, follow these instructions to get it set up: 
 
-[Getting started with UWP app development on Xbox One - UWP application](/windows/uwp/xbox-apps/getting-started)
+[Getting started with UWP app development on Xbox One - UWP application](../xbox-apps/getting-started.md)
 
 ### Deploying your app to Xbox 
 
 Follow these instructions to put your PC and Xbox into developer mode, and pair Visual Studio with your Xbox so that you can deploy your app to it: 
 
-[Getting started with UWP app development on Xbox One - UWP application](/windows/uwp/xbox-apps/getting-started)
+[Getting started with UWP app development on Xbox One - UWP application](../xbox-apps/getting-started.md)
 
 ### Custom build automation 
 
@@ -43,7 +43,7 @@ If you want to use a different application as your main IDE, or if you want to b
 
 You can also use Azure Pipelines to set up automated builds for your application: 
 
-[Set up automated build for your UWP app - UWP application](/windows/uwp/packaging/auto-build-package-uwp-apps)
+[Set up automated build for your UWP app - UWP application](../packaging/auto-build-package-uwp-apps.md)
 
 ### Manual side-loading 
 
@@ -53,5 +53,4 @@ If you want to side-load your application onto your Xbox manually, you will need
 
 Then, you can use the Home tab of the Xbox Device Portal to side-load your app and its dependencies: 
 
-[Device Portal for Xbox - UWP application](/windows/uwp/xbox-apps/device-portal-xbox)
-
+[Device Portal for Xbox - UWP application](../xbox-apps/device-portal-xbox.md)

@@ -116,9 +116,9 @@ The image must define at least one variant without a TargetSize qualifier. It mu
 The package is missing a "resources.pri" file.  | If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file. 
 The "resources.pri" file must contain a resource map with a name that matches the package name {package full name}  | You can get this error if the manifest changed and the name of the resource map in resources.pri no longer matches the package name in the manifest. In the actual message, {package full name} contains the package name that resources.pri must contain. To fix this, you need to rebuild resources.pri and the easiest way to do that is by rebuilding the app's package. 
 The "resources.pri" file must not have AutoMerge enabled.  | MakePRI.exe supports an option called AutoMerge. The default value of AutoMerge is off. When enabled, AutoMerge merges an app's language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through the Microsoft Store. The resources.pri of an app that is distributed through the Microsoft Store must be in the root of the app's package and contain all the language references that the app supports. 
-The string {string} failed the max length restriction of {number} characters.  | Refer to the [App package requirements](../publish/app-package-requirements.md). In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length. 
+The string {string} failed the max length restriction of {number} characters.  | Refer to the [App package requirements](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix). In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length. 
 The string {string} must not have leading/trailing whitespace.  | The schema for the elements in the app manifest don't allow leading or trailing white space characters. In the actual message, {string} is replaced by the string with the error. Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters. 
-The string must be non-empty (greater than zero in length)  | For more info, see [App package requirements](../publish/app-package-requirements.md). 
+The string must be non-empty (greater than zero in length)  | For more info, see [App package requirements](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix). 
 There is no default resource specified in the "resources.pri" file.  | For more info, see the guide on [app resources](/windows/apps/design/app-settings/store-and-retrieve-app-data). In the default build configuration, Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package. Make sure you either include scale-200 image resources or configure your project to include the resources you have. 
 There is no resource value specified in the "resources.pri" file.  | Make sure that the app manifest has valid resources defined in resources.pri. 
 The image file {filename} must be smaller than 204800 bytes.  | Reduce the size of the indicated images. 
@@ -144,7 +144,7 @@ Tests the contents of app manifest to make sure its contents are correct.
 Apps must have a correctly formatted app manifest.
 
 **Test details**  
-Examines the app manifest to verify the contents are correct as described in the [App package requirements](../publish/app-package-requirements.md). The following checks are done in this test:
+Examines the app manifest to verify the contents are correct as described in the [App package requirements](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix). The following checks are done in this test:
 * **File extensions and protocols**  
 Your app may declare the file types that it can be associated with. A declaration of a large number of uncommon file types makes for a poorer user experience. This test limits the number of file extensions that an app can be associated with.
 * **Framework dependency rule**  
@@ -153,7 +153,7 @@ This test enforces the requirement that apps declare appropriate dependencies on
 This test enforces the requirement that Desktop Bridge apps do not communicate outside of the app container to desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) with name equal to `DesktopApplicationPath` will fail this test.  
 
 **Corrective action**  
-Review the app's manifest against the requirements described in the [App package requirements](../publish/app-package-requirements.md).
+Review the app's manifest against the requirements described in the [App package requirements](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix).
 
 
 #### 3.2 Application Count

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Windows App Certification Kit
 
-To get your app [Windows Certified](/windows/win32/win_cert/windows-certification-portal) or prepare it for [publication to the Microsoft Store](../publish/app-submissions.md), you should validate and test it locally first. This topic shows you how to install and run the [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) to ensure your app is safe and efficient.
+To get your app [Windows Certified](/windows/win32/win_cert/windows-certification-portal) or prepare it for [publication to the Microsoft Store](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix), you should validate and test it locally first. This topic shows you how to install and run the [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) to ensure your app is safe and efficient.
 
 ## Prerequisites
 

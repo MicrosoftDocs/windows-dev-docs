@@ -456,7 +456,7 @@ The Microsoft DirectX Graphics Infrastructure (DXGI) provides interoperability a
 
 #### C++
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) is a high-performance, low overhead language that provides the powerful combination of speed, compatibility, and platform access. C++/WinRT makes it easy to use all of the great gaming features in Windows, including DirectX and Xbox Live. You can also reuse existing C++ code and libraries. C++/WinRT creates fast, native code that doesn't incur the overhead of garbage collection, so your game can have great performance and low power consumption, which leads to longer battery life. Use C++/WinRT with DirectX or XAML, or create a game that uses a combination of both.
+[C++/WinRT](../cpp-and-winrt-apis/index.md) is a high-performance, low overhead language that provides the powerful combination of speed, compatibility, and platform access. C++/WinRT makes it easy to use all of the great gaming features in Windows, including DirectX and Xbox Live. You can also reuse existing C++ code and libraries. C++/WinRT creates fast, native code that doesn't incur the overhead of garbage collection, so your game can have great performance and low power consumption, which leads to longer battery life. Use C++/WinRT with DirectX or XAML, or create a game that uses a combination of both.
 
 #### C#
 

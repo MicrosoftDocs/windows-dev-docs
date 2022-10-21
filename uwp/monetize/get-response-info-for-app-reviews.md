@@ -62,7 +62,7 @@ Authorization: Bearer <your access token>
 | Value      | Type   | Description    |  
 |------------|--------|-----------------------|
 | CanRespond      | Boolean  | The value **true** indicates that you can respond to the specified review, or that you have permissions to respond to any review for the specified app. Otherwise, this value is **false**.       |
-| DefaultSupportEmail  | string |  Your app's [support email address](../publish/enter-app-properties.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
+| DefaultSupportEmail  | string |  Your app's [support email address](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
 
  
 ### Response example

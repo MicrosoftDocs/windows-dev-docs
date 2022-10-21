@@ -25,7 +25,7 @@ To follow this walkthrough, you must have a Partner Center account and you must 
 ## Create a project with remote variables in Partner Center
 
 1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard).
-2. If you already have an app in Partner Center that you want to use to create an experiment, select that app in Partner Center. If you do not yet have an app in Partner Center, [create a new app by reserving a name](../publish/create-your-app-by-reserving-a-name.md) and then select that app in Partner Center.
+2. If you already have an app in Partner Center that you want to use to create an experiment, select that app in Partner Center. If you do not yet have an app in Partner Center, [create a new app by reserving a name](/windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msix) and then select that app in Partner Center.
 3. In the navigation pane, click **Services** and then click **Experimentation**.
 4. In the **Projects** section of the next page, click the **New project** button.
 5. In the **New project** page, enter the name **Button Click Experiments** for your new project.

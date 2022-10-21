@@ -48,7 +48,7 @@ For each feature that you want to make available through an in-app product, crea
     * "RainbowThemePack"
 
   > [!NOTE]
-  > The in-app offer token that you use in your code must match the [product ID](../publish/set-your-add-on-product-id.md#product-id) value you specify when you [define the corresponding add-on for your app in Partner Center](../publish/add-on-submissions.md).
+  > The in-app offer token that you use in your code must match the [product ID](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on#product-id) value you specify when you [define the corresponding add-on for your app in Partner Center](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on).
 
 2.  **Code the feature in a conditional block**
 
@@ -74,10 +74,10 @@ This is an easy step: change every reference to [CurrentAppSimulator](/uwp/api/W
 
 ## Step 4: Configure the in-app product offer in the Store
 
-In Partner Center, navigate to your app and [create an add-on](../publish/add-on-submissions.md) that matches your in-app product offer. Define the product ID, type, price, and other properties for your add-on. Make sure that you configure it identically to the configuration you set in WindowsStoreProxy.xml when testing.
+In Partner Center, navigate to your app and [create an add-on](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on) that matches your in-app product offer. Define the product ID, type, price, and other properties for your add-on. Make sure that you configure it identically to the configuration you set in WindowsStoreProxy.xml when testing.
 
   > [!NOTE]
-  > The in-app offer token that you use in your code must match the [product ID](../publish/set-your-add-on-product-id.md#product-id) value you specify for the corresponding add-on in Partner Center.
+  > The in-app offer token that you use in your code must match the [product ID](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on#product-id) value you specify for the corresponding add-on in Partner Center.
 
 ## Remarks
 

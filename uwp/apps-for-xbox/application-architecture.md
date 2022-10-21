@@ -8,17 +8,17 @@ ms.author: HiHaile
 author: Hilina-H
 ---
 # Xbox Media Application Architecture
-All Xbox apps are packaged using the [Universal Windows Platform](/windows/uwp/develop/) but this does not mean that all Xbox applications must be written in XAML and C#. This section will go through several high-level architectural decisions you will need to make before you can start writing your Xbox application.
+All Xbox apps are packaged using the [Universal Windows Platform](../develop/index.md) but this does not mean that all Xbox applications must be written in XAML and C#. This section will go through several high-level architectural decisions you will need to make before you can start writing your Xbox application.
 
 For general guidance on developing UWP applications for Xbox see this documentation:
 
-[UWP on Xbox One - UWP applications](/windows/uwp/xbox-apps/)
+[UWP on Xbox One - UWP applications](../xbox-apps/index.md)
 ### App development models
 In general, there are 2 recommended patterns for writing a media app for Xbox:
 1.	Using a website hosted in a WebView – You write a thin C# application which loads a website in a full-screen [WebView](/Windows.UI.Xaml.Controls.WebView?view=winrt-22000). Most of your app’s UI is written in web technologies like JavaScript and HTML, hosted on a server you manage. (Please note that WebView2 is not yet supported on Xbox.)
 You might choose this option if: You are most comfortable working in web technologies, or you want to rapidly deploy changes to your UI without going through the app store publishing process.
 
-2.	Using the native UWP API – Your app is built in XAML and C#, C++/Cx, or C++/WinRT, using [MediaElement](/windows/apps/design/controls/media-playback) and the [MediaPlayer API](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer) to play content.
+2.	Using the native UWP API – Your app is built in XAML and C#, C++/Cx, or C++/WinRT, using [MediaElement](/windows/apps/design/controls/media-playback) and the [MediaPlayer API](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) to play content.
 You might choose this option if: You are most comfortable working in C#, or you want better performance than you can achieve with web technologies alone.
 
 
@@ -29,7 +29,7 @@ SUAs run in the context of a single Xbox user, storing app data on a user-by-use
 MUAs are run in the context of a generic user account and are not relaunched when the current user account changes. The app data is shared among all users who log into the system.
 
 For more information, read the documentation here:
-[Introduction to multi-user applications - UWP applications](/windows/uwp/xbox-apps/multi-user-applications)
+[Introduction to multi-user applications - UWP applications](../xbox-apps/multi-user-applications.md)
 
 ## Additional features
 This section contains details on several additional features that you may want to consider using in your Xbox media application.
@@ -37,11 +37,11 @@ This section contains details on several additional features that you may want t
 Your app can register to play audio in the background while other apps or games are running on the Xbox.
 
 The documentation on enabling your app to run in the background can be found here:
-[Play media in the background - UWP applications](/windows/uwp/audio-video-camera/background-audio)
+[Play media in the background - UWP applications](../audio-video-camera/background-audio.md)
 
 You will also want to integrate with the System Media Transport Controls, which allow the user to manipulate playback in the Xbox Guide without having to re-launch your app:
 
-[Integrate with the System Media Transport Controls - UWP applications](/windows/uwp/audio-video-camera/integrate-with-systemmediatransportcontrols)
+[Integrate with the System Media Transport Controls - UWP applications](../audio-video-camera/integrate-with-systemmediatransportcontrols.md)
 
 
 ### WebView audio playback
@@ -68,7 +68,7 @@ If you plan to support media remote functionality and use the controls on the me
 ### Request ratings
 There is an API you can call to request users to rate your application. This can help to bolster your ratings:
 
-[Request ratings and reviews for your app - UWP applications](/windows/uwp/monetize/request-ratings-and-reviews)
+[Request ratings and reviews for your app - UWP applications](../monetize/request-ratings-and-reviews.md)
 
 ### Globalization and localization
 If you plan to ship your application in multiple languages or markets, this guidance may be helpful:
@@ -77,4 +77,4 @@ If you plan to ship your application in multiple languages or markets, this guid
 
 If you are building a native application in C++ or C#, you can use a resources file to make the localization process easier:
 
-[Localize strings in your UI and app package manifest - UWP applications](/windows/uwp/app-resources/localize-strings-ui-manifest)
+[Localize strings in your UI and app package manifest - UWP applications](../app-resources/localize-strings-ui-manifest.md)

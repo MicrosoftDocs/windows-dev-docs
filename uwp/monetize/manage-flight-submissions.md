@@ -87,7 +87,7 @@ To create a submission for a package flight, follow this process.
     > [!NOTE]
     > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob Storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](/azure/storage/common/storage-sas-overview) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](/azure/storage/common/storage-sas-overview).
 
-1. If you are adding new packages for the submission, [prepare the packages](../publish/app-package-requirements.md) and add them to a ZIP archive.
+1. If you are adding new packages for the submission, [prepare the packages](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix) and add them to a ZIP archive.
 
 1. Revise the [flight submission](#flight-submission-object) data with any required changes for the new submission, and execute the following method to [update the package flight submission](update-a-flight-submission.md).
 
@@ -259,7 +259,7 @@ This resource has the following values.
 | fileUploadUrl           | string  | The shared access signature (SAS) URI for uploading any packages for the submission. If you are adding new packages for the submission, upload the ZIP archive that contains the packages to this URI. For more information, see [Create a package flight submission](#create-a-package-flight-submission).  |
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
-| notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](../publish/notes-for-certification.md). |
+| notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](/windows/apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix). |
 
 <span id="status-details-object" />
 
@@ -328,9 +328,9 @@ This resource has the following values.
 | fileName              | string | The name of the package.    |  
 | fileStatus            | string | The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul> |  
 | id                    | string | An ID that uniquely identifies the package. This value is used by Partner Center. |
-| version               | string | The version of the app package. For more information, see [Package version numbering](../publish/package-version-numbering.md). |
+| version               | string | The version of the app package. For more information, see [Package version numbering](/windows/apps/publish/publish-your-app/package-version-numbering?pivots=store-installer-msix). |
 | architecture          | string | The architecture of the app package (for example, ARM). |
-| languages             | array  | An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](../publish/supported-languages.md). |
+| languages             | array  | An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](/windows/apps/publish/publish-your-app/supported-languages?pivots=store-installer-msix). |
 | capabilities          | array  | An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](../packaging/app-capability-declarations.md). |
 | minimumDirectXVersion | string | The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul> |
 | minimumSystemRam      | string | The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul> |

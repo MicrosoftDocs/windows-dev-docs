@@ -120,7 +120,7 @@ If you use this code and do not see ads, you can try inserting an attribute of *
 
 3.  In your code, replace the test ad unit values (**applicationId** and **adUnitId**) with the live values you generated in Partner Center.
 
-4.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
+4.  [Submit your app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) to the Store using Partner Center.
 
 5.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.             
 
