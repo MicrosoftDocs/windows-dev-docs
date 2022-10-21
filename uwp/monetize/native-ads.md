@@ -114,7 +114,7 @@ After you confirm that your native ad implementation successfully shows a test a
 
 4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManagerV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) constructor) with the live values you generated in Partner Center.
 
-5.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
+5.  [Submit your app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) to the Store using Partner Center.
 
 6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.
 

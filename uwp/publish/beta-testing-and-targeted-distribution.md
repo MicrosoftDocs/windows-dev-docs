@@ -23,11 +23,11 @@ Whichever method you choose, here are some things to keep in mind as you beta te
 
 ## Private audience
 
-If you want to let testers use your app before it’s available to others, and make sure that no one else can see its listing, use the **Private audience** option under [Visibility](choose-visibility-options.md) (on the **Pricing and availability** page of your submission). This is the only method that lets you distribute your app to testers while completely preventing anyone else from seeing the app’s Store listing, even if they were able to type in its direct link. 
+If you want to let testers use your app before it’s available to others, and make sure that no one else can see its listing, use the **Private audience** option under [Visibility](/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix) (on the **Pricing and availability** page of your submission). This is the only method that lets you distribute your app to testers while completely preventing anyone else from seeing the app’s Store listing, even if they were able to type in its direct link. 
 
 The **Private audience** option can only be used when you have not already published your app to a public audience. You can use this option with apps targeting any OS version, but your testers must be running Windows 10, version 1607 or higher (including Xbox One), and must be signed in with the Microsoft account associated with the email address that you provide.
 
-For more info, see [Private audience](choose-visibility-options.md#audience).
+For more info, see [Private audience](/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix#audience).
 
 
 ## Package flights
@@ -49,7 +49,7 @@ Hiding the app and using promotional codes can be used with apps targeting any O
 
 To use this option:
 
-- In the **Visibility** section of the **Pricing and availability** page, under [Discoverability](choose-visibility-options.md#discoverability), select **Make this product available but not discoverable in the Store**. Choose the option for **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device**. 
+- In the **Visibility** section of the **Pricing and availability** page, under [Discoverability](/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix#discoverability), select **Make this product available but not discoverable in the Store**. Choose the option for **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device**. 
 - After the app passes certification, [generate promotional codes](generate-promotional-codes.md) for the app and distribute them to your testers. You can generate codes that allow up to 1600 redemptions for a single app in a six month period. These codes will give your testers a direct link to the app’s listing, and will allow them to download it for free, even if you have set a price for it when you created your submission.
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 
@@ -59,7 +59,7 @@ To use this option:
 Unlike the options described above, this option works for customers on Windows Phone 8.1 as well as Windows 10 (though not on Windows 8.x). No customers will be able to find the app by searching or browsing the Store, but anyone with the direct link to its Store listing can download it on a device running Windows Phone 8.1 or earlier, or on Windows 10 or Windows 11. Keep in mind that in order for your testers to download the app at no cost, you must set its price to **Free**.
 
 To use this option:
-- In the **Visibility** section of the **Pricing and availability** page, under [Discoverability](choose-visibility-options.md#discoverability), select **Make this product available but not discoverable in the Store**. Choose the option for **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.**.
+- In the **Visibility** section of the **Pricing and availability** page, under [Discoverability](/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix#discoverability), select **Make this product available but not discoverable in the Store**. Choose the option for **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.**.
 - After your product has been published, distribute the link (the **URL** on the [App identity page](view-app-identity-details.md)) to your testers so they can try it out.
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 

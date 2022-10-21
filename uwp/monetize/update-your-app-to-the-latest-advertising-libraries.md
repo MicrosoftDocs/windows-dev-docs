@@ -83,4 +83,4 @@ Remove all existing references to the Microsoft advertising libraries from the p
 
 Test your app to make sure it displays banner ads as expected.
 
-If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in Partner Center to republish your app.
+If the previous version of your app is already available in the Store, [create a new submission](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) for your updated app in Partner Center to republish your app.

@@ -14,7 +14,7 @@ You can promote your app or add-on in the Microsoft Store by putting it on sale 
 > [!NOTE]
 > Sale pricing is not supported for subscription add-ons.
 
-When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see strikethrough pricing indicating that the price has been reduced (as opposed to a [scheduled price change](set-and-schedule-app-pricing.md#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). 
+When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see strikethrough pricing indicating that the price has been reduced (as opposed to a [scheduled price change](/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). 
 
 During the time period that your product is on sale, customers will be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
 
@@ -37,7 +37,7 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
    > [!NOTE]
    > Market selections that you make in the Sale pricing section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets. If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.
 4. Choose one of the following options to specify the type of discount:
-   - **Price**: Use this option to select a lower price tier at which your app will be offered. You can change the currency drop-down to select the price in whichever currency you prefer. (The price will be converted to the corresponding tier for each currency. For more info, see [Pricing](set-app-pricing-and-availability.md).)
+   - **Price**: Use this option to select a lower price tier at which your app will be offered. You can change the currency drop-down to select the price in whichever currency you prefer. (The price will be converted to the corresponding tier for each currency. For more info, see [Pricing](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix).)
    - **Percentage**: Use this option to select the percentage for a discount that will be applied to your app. The same discount percentage is used for all currencies.
 5. In the **Offered to** row, choose from one of the available options, including:
    - **Everyone**: The sale will be offered to all customers.
@@ -77,7 +77,3 @@ After your submission goes through the certification process, the changes will t
 1.  On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.
 2.  Find the sale that you want to cancel and click **Remove**.
 3.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview. As long as the sale hasn't started by the time the new submission completes the certification process, the removed sale won't run at all.
-
-
-
-

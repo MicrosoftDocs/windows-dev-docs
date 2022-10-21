@@ -45,4 +45,4 @@ Your relationship with your customers is your own. Microsoft doesn’t get invol
 
 ## Use customer reviews to improve your app
 
-Listening and responding to your customers is only the beginning. Acting on their feedback is also critical. If you make significant improvements, showcase them in the Store with confidence by [creating a new submission](app-submissions.md) to update your app.
+Listening and responding to your customers is only the beginning. Acting on their feedback is also critical. If you make significant improvements, showcase them in the Store with confidence by [creating a new submission](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) to update your app.

@@ -187,7 +187,7 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## Mandatory package updates
 
-When you create a package submission in Partner Center for an app that targets Windows 10, version 1607 or later, you can [mark the package as mandatory](../publish/upload-app-packages.md#mandatory-update) and the date and time on which it becomes mandatory. When this property is set and your app discovers that the package update is available, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
+When you create a package submission in Partner Center for an app that targets Windows 10, version 1607 or later, you can [mark the package as mandatory](/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msix#mandatory-update) and the date and time on which it becomes mandatory. When this property is set and your app discovers that the package update is available, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
 
 > [!NOTE]
 > The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed. Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.  
@@ -198,7 +198,7 @@ To mark a package submission as mandatory:
 2. Click the name of the submission that contains the package update you want to make mandatory.
 3. Navigate to the **Packages** page for the submission. Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory. This option applies to all UWP packages in the submission.
 
-For more information, see [Upload app packages](../publish/upload-app-packages.md).
+For more information, see [Upload app packages](/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msix).
 
 > [!NOTE]
 > If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.

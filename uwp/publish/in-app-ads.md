@@ -137,7 +137,7 @@ The following table lists the other networks we currently support for each ad ty
 
 ### Supported markets for ad networks
 
-The available ad networks serve ads in all [supported markets](define-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
+The available ad networks serve ads in all [supported markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix#microsoft-store-consumer-markets), with the following exceptions.
 
 |  Ad network  |  Supported markets  |
 |--------------|---------------------|
@@ -150,7 +150,7 @@ The available ad networks serve ads in all [supported markets](define-market-sel
 
 ## COPPA compliance
 
-When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the page if the selected app for the ad unit has at least one submission that has reached the [in the Store](../publish/the-app-certification-process.md#in-the-store) step in the app certification process.
+When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the page if the selected app for the ad unit has at least one submission that has reached the [in the Store](/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix#in-the-store) step in the app certification process.
 
 For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must select **This application is directed at children under the age of 13** in this section if your app is directed at children under the age of 13. If you select this option, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app.
 

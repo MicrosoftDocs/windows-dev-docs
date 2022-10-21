@@ -27,7 +27,7 @@ In this section you'll find details about the info presented in each of the foll
 - [Installs report](#installs-report)
 - [Usage report](#usage-report)
 - [Health report](#health-report)
-- [Ratings & Reviews report](/windows/uwp/publish/msiexe/ratings-reviews-performance)
+- [Ratings & Reviews report](./ratings-reviews-performance.md)
 
 ## Installs report
 

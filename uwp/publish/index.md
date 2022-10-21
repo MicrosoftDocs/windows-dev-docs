@@ -20,9 +20,9 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <h3>App submissions</h3>
         <p>Find out what you need to create a submission and get your app certified.</p>
         <br>
-        <a href="app-submissions.md">MSIX app submission checklist</a><br/>
-        <a href="msiexe/app-submissions.md">MSI or EXE app submission checklist</a><br/>
-        <a href="pwa/overview.md">PWA app submission checklist</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix">MSIX app submission checklist</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msi-exe">MSI or EXE app submission checklist</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/overview?pivots=store-installer-pwa">PWA app submission checklist</a><br/>
         <a href="store-policies.md">Microsoft Store Policies</a><br/>
         <a href="/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a><br/>
         <a href="distribute-lob-apps-to-enterprises.md">LOB distribution</a><br/>
@@ -33,18 +33,18 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <p>Customize your app's availability with per-market pricing and scheduling, visibility options, sale pricing, and more.</p>
         <br>
         <a href="/windows/uwp/publish/define-market-selection">Choose your markets</a><br/>
-        <a href="set-and-schedule-app-pricing.md">Set and schedule pricing </a><br/>
-        <a href="configure-precise-release-scheduling.md">Configure precise release dates</a><br/>
-        <a href="set-app-pricing-and-availability.md">See all availability options</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix">Set and schedule pricing </a><br/>
+        <a href="/windows/apps/publish/publish-your-app/release-schedule?pivots=store-installer-msix">Configure precise release dates</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix">See all availability options</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/biztalk-get-started-scenarios.svg" alt="Store listing illustration" />
         <h3>Store listing options</h3>
         <p>Provide text and visual assets that make customers eager to try out your app.</p>
         <br>
-        <a href="create-app-store-listings.md">Store listing overview</a><br/>
-        <a href="app-screenshots-and-images.md">Screenshots, images, and trailers</a><br/>
-        <a href="import-and-export-store-listings.md">Manage listings in bulk </a><br/>
+        <a href="/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix">Store listing overview</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix">Screenshots, images, and trailers</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/import-and-export-store-listings?pivots=store-installer-msix">Manage listings in bulk </a><br/>
     :::column-end:::
 :::row-end:::
 
@@ -54,7 +54,7 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3>Payments and reporting</h3>
-        <a href="account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
+        <a href="/windows/apps/publish/partner-center/account-types-locations-and-fees">Account types, locations, and fees</a><br/>
         <a href="/partner-center/marketplace-get-paid">Getting paid</a><br/>
         <a href="in-app-ads.md">In-app ads</a><br/>
         <a href="analytics.md">Analytic reports</a><br/>
@@ -82,20 +82,20 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
         <img src="/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
         <h3>Managing account users</h3>
         <a href="/windows/uwp/publish/associate-azure-ad-with-partner-center">Set up Azure AD</a><br/>
-        <a href="add-users-groups-and-azure-ad-applications.md">Add account users</a><br/>
-        <a href="set-custom-permissions-for-account-users.md">Roles and permissions</a><br/>
+        <a href="/windows/apps/publish/partner-center/add-users-groups-and-azure-ad-applications">Add account users</a><br/>
+        <a href="/windows/apps/publish/partner-center/set-custom-permissions-for-account-users">Roles and permissions</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/sql-get-started-download.svg" alt="Shopping cart icon" />
         <h3>Add-ons (in-app products)</h3>
-        <a href="add-on-submissions.md">Add-on submissions</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on">Add-on submissions</a><br/>
         <a href="../monetize/in-app-purchases-and-trials.md">Enable add-ons in your app's code</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/team-services-dev-ops-test.svg" alt="Test icon" />
         <h3>Testing strategies</h3>
         <a href="beta-testing-and-targeted-distribution.md">Beta testing and targeted distribution</a></br/>
-        <a href="choose-visibility-options.md#audience">Private audience</a><br/>
+        <a href="/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix#audience">Private audience</a><br/>
         <a href="package-flights.md">Package flights</a><br/>
         <a href="gradual-package-rollout.md">Gradual rollout</a><br/>
     :::column-end:::
