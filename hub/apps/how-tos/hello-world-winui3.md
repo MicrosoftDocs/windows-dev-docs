@@ -60,7 +60,7 @@ Click the `Click Me` button for a demonstration of event binding:
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
-In this case, a [`Button` control](../design/controls/buttons#create-a-button.md)'s [`Click` event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
+In this case, a [`Button` control](../design/controls/buttons.md#create-a-button)'s [`Click` event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) is bound to the `myButton_Click` event handler located in `MainWindow.xaml.cs`:
 
 :::image type="content" source="images/hello-world/code-screenshot.png" alt-text="The 'Click Me' button's event handler, located in your main window's code-behind file":::
 
