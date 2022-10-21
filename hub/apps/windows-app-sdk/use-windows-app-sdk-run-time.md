@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore. Your app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK.
 
-* Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app).
+* Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
 * If you have advanced needs (such as handling errors by showing your own custom UI or logging, or if you need to load a version of the Windows App SDK that's different from the version you built with), then you can instead call the bootstrapper API explicitly. More info about that in this topic.
 
 Either of those techniques allows an app that doesn't use MSIX to take a dynamic dependency on the Windows App SDK at run time.
