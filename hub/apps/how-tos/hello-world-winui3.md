@@ -70,7 +70,7 @@ While `MainWindow.xaml.cs` contains our main window's **business logic** concern
 
 :::image type="content" source="images/hello-world/markup-screenshot.png" alt-text="The 'Click Me' button's XML markup, located in your main window's markup file":::
 
-This separation of **business logic** and **presentation** concerns lets you bind data and events to your application's UI using a consistent application development pattern.
+This separation of **business logic** and **presentation** concerns lets you bind data and events to and from your application's UI using a consistent application development pattern.
 
 Let's review your project's file structure before making code changes.
 
