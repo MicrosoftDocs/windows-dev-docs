@@ -1731,8 +1731,8 @@ This example shows how to override the theme resources in App.xaml. When you ove
 
 > The `IsTitleBarAutoPaddingEnabled` property requires the [Windows UI Library](/uwp/toolkits/winui/) 2.2 or later.
 
-Some apps choose to [customize their window's title bar](/windows/apps/develop/title-bar), potentially extending their app content into the title bar area. 
-When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](/windows/apps/develop/title-bar#draggable-regions).
+Some apps choose to [customize their window's title bar](../../develop/title-bar.md), potentially extending their app content into the title bar area. 
+When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](../../develop/title-bar.md#draggable-regions).
 
 ![An app extending into the title bar](images/navigation-view-with-titlebar-padding.png)
 
