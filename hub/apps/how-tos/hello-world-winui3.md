@@ -183,7 +183,6 @@ Here's what you accomplished in this how-to:
 
 TODO
 
-
 **Q: What does "packaged" mean?** <br/>
 
 TODO
@@ -191,6 +190,11 @@ TODO
 **Q: Why is there a toolbar at the top of my app when I run it from Visual Studio?** <br/>
 
 TODO
+
+**Q: Can I use VS Code to build WinUI 3 apps?** <br/>
+
+TODO
+
 
 ## Related
 
