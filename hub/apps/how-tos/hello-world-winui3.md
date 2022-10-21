@@ -192,6 +192,9 @@ TODO
 
 TODO
 
-## Next steps
+## Related
 
-TODO (next how-to - build a form with bidirectional data binding)
+ - [Windows developer FAQ](../get-started/windows-developer-faq.yml)
+ - [Windows developer glossary](../get-started/windows-developer-glossary.md)
+ - [Windows development best practices](../get-started/best-practices.md)
+<!-- - [How to build a form with bidirectional data binding](todo) -->
