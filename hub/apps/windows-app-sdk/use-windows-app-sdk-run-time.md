@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore. Your app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK.
 
-* Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app).
+* Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md#non-msix-packaged-create-a-new-project-for-a-non-msix-packaged-c-or-c-winui-3-desktop-app).
 * If you have advanced needs (such as handling errors by showing your own custom UI or logging, or if you need to load a version of the Windows App SDK that's different from the version you built with), then you can instead call the bootstrapper API explicitly. More info about that in this topic.
 
 Either of those techniques allows an app that doesn't use MSIX to take a dynamic dependency on the Windows App SDK at run time.
@@ -63,7 +63,7 @@ The bootstrapper API consists of three C/C++ functions that are declared in the 
 
 This function initializes the calling process to use the version of the Windows App SDK framework package that best matches the criteria that you pass to the function parameters. Typically, that results in referencing the version of the framework package that matches the Windows App SDK NuGet package that's installed. If multiple packages meet the criteria, then the best candidate is selected. This function must be one of the first calls in the app's startup to ensure the bootstrapper component can properly initialize the Windows App SDK and add the run-time reference to the framework package.
 
-The bootstrapper API uses the [Dynamic Dependencies API](/windows/windows-app-sdk/api/win32/_dynamicdependency/) to add the Windows App SDK runtime's framework package to the current process's [package graph](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview#framework-packages-and-the-package-graph) and otherwise enable access to the package.
+The bootstrapper API uses the [Dynamic Dependencies API](/windows/windows-app-sdk/api/win32/_dynamicdependency/) to add the Windows App SDK runtime's framework package to the current process's [package graph](../desktop/modernize/framework-packages/framework-packages-overview.md#framework-packages-and-the-package-graph) and otherwise enable access to the package.
 
 This function also initializes the Dynamic Dependency Lifetime Manager (DDLM). That component provides infrastructure to prevent the OS from servicing the Windows App SDK framework package while it's being used by an unpackaged app.
 
@@ -79,7 +79,7 @@ Although you can call the C/C++ bootstrapper API directly from .NET apps, that r
 
 For more information about the .NET wrapper for the bootstrapper API, see these resources:
 
-- [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/).
+- [Bootstrapper C# APIs](../api-reference/cs-bootstrapper-apis/index.md).
 - [Section 6.1.4](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md#614-microsoftwindowsapplicationmodeldynamicdependency-c) of the dynamic dependencies specification.
 - [Bootstrap.cs](https://github.com/microsoft/WindowsAppSDK/blob/main/dev/Bootstrap/CS/Microsoft.WindowsAppRuntime.Bootstrap.Net/Bootstrap.cs): The open source implementation of the .NET wrapper for the bootstrapper API.
 
@@ -87,7 +87,7 @@ For more information about the .NET wrapper for the bootstrapper API, see these 
 
 A C++ wrapper for the bootstrapper API is available starting in Windows App SDK 1.1.
 
-See [Bootstrapper C++ API](/windows/apps/api-reference/bootstrapper-cpp-api/).
+See [Bootstrapper C++ API](../api-reference/bootstrapper-cpp-api/index.md).
 
 ## Declare OS compatibility in your application manifest
 
@@ -114,6 +114,6 @@ Replace the **Id** attribute of the **maxversiontested** element with the versio
 
 - [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 - [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
-- [MSIX framework packages and dynamic dependencies](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview)
+- [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md)
 - [Runtime architecture for the Windows App SDK](deployment-architecture.md)
 - [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)

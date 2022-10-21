@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 To develop apps for Windows 10 and 11, you'll need *Visual Studio*, the *Windows SDK*, and the *Windows App SDK*. Before installing these tools, make sure your development computer meets the minimum system requirements.
 
-[Install the tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment) to get started.
+[Install the tools for the Windows App SDK](./set-up-your-development-environment.md) to get started.
 
 ## Visual Studio
 
@@ -32,7 +32,7 @@ For the minimum system requirements, see [Windows SDK system requirements](/wind
 
 ## Windows App SDK
 
-The [Windows App SDK](/windows/apps/windows-app-sdk/) is a set of developer tools that represent the next evolution in the Windows app development platform. It provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and it's backward-compatible for Windows 10, version 1809).
+The [Windows App SDK](./index.md) is a set of developer tools that represent the next evolution in the Windows app development platform. It provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and it's backward-compatible for Windows 10, version 1809).
 
 > [!NOTE]
 > The Windows App SDK was previously known by the code name *Project Reunion*. Some SDK assets (such as the VSIX extension and certain NuGet packages) still use this name, but these assets will be renamed in a future release. Some documentation still uses *Project Reunion* when referring to an existing asset or a specified earlier release.
@@ -40,7 +40,7 @@ The [Windows App SDK](/windows/apps/windows-app-sdk/) is a set of developer tool
 The Windows App SDK has the following minimum system requirements:
 
 - Windows 10, version 1809 (build 17763) or later.
-- Visual Studio 2019, version 16.9 or later, with the [required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components).
+- Visual Studio 2019, version 16.9 or later, with the [required workloads and components](./set-up-your-development-environment.md#required-workloads-and-components).
 - Windows SDK, version 2004 (build 19041) or later (included with Visual Studio 2019 and 2022 by default).
 - If you plan to build .NET apps, you'll also need .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/en-us/download)).
 

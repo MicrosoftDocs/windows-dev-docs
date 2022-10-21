@@ -291,7 +291,7 @@ You **MUST** complete **Step 3: Register to handle an app notification** before 
 
 Now you will display a simple app notification with an `appLogoOverride` image and a button. 
 
-Construct your app notification using an XML string and then call `Show`. For more information on how to construct your app notification using XML, please refer to the **XML** examples at [Toast content](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) and the [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root). 
+Construct your app notification using an XML string and then call `Show`. For more information on how to construct your app notification using XML, please refer to the **XML** examples at [Toast content](../../../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) and the [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root). 
 
 > [!NOTE]
 > If your app is packaged (including packaged with external location), then your app's icon in the notification's upper left corner is sourced from the `package.manifest`. If your app is unpackaged, then the icon is sourced by first looking into the shortcut, then looking at the resource file in the app process. If all attempts fail, then the Windows default app icon is used. The supported icon file types are `.jpg`, `.png`, `.bmp`, and `.ico`.

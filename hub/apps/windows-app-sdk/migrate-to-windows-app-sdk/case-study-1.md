@@ -20,10 +20,10 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 
 ## Install tools for the Windows App SDK
 
-To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
+To set up your development computer, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
 
 > [!IMPORTANT]
-> You'll find release notes topics along with the [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
+> You'll find release notes topics along with the [Windows App SDK release channels](../release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
 
 ## Create a new project
 

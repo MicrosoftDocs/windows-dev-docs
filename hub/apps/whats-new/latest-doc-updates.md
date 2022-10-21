@@ -22,28 +22,28 @@ Highlights this month include:
 
 ## Windows App SDK / WinUI
 
-* [Widgets](/windows/apps/design/widgets/)
-* [Version 1.2 Preview 2 (1.2.0-preview2](/windows/apps/windows-app-sdk/preview-channel)
-* [WinUI 2, 3 content reorganized](/windows/apps/winui/)
+* [Widgets](../design/widgets/index.md)
+* [Version 1.2 Preview 2 (1.2.0-preview2](../windows-app-sdk/preview-channel.md)
+* [WinUI 2, 3 content reorganized](../winui/index.md)
 
 
 ## Code sample updates
 
-* [Build your first .NET MAUI app for Windows](/windows/apps/windows-dotnet-maui/walkthrough-first-app)
-* [Tutorial — Create a .NET MAUI app using the Microsoft Graph SDK](/windows/apps/windows-dotnet-maui/tutorial-graph-api)
+* [Build your first .NET MAUI app for Windows](../windows-dotnet-maui/walkthrough-first-app.md)
+* [Tutorial — Create a .NET MAUI app using the Microsoft Graph SDK](../windows-dotnet-maui/tutorial-graph-api.md)
 
 
 ## Other new content
 
-* [Develop for Windows using MAUI](/windows/apps/windows-dotnet-maui/)
+* [Develop for Windows using MAUI](../windows-dotnet-maui/index.md)
 * [New WebAuthn API topics](/windows/win32/webauthn/-webauthn-portal)
 * [wldp.h header](/windows/win32/api/wldp/)
 
 
 ## Updated content
 
-* [Windows Application Development Best Practices](/windows/apps/get-started/best-practices)
-* [Accessibility testing](/windows/apps/design/accessibility/accessibility-testing)
+* [Windows Application Development Best Practices](../get-started/best-practices.md)
+* [Accessibility testing](../design/accessibility/accessibility-testing.md)
 * [Windows on Arm](/windows/arm/overview)
 * [FileOpenPicker Class](/uwp/api/windows.storage.pickers.fileopenpicker?view=winrt-22621)
 * [User Security Attributes](/windows/win32/ad/security-properties)
@@ -52,9 +52,9 @@ Highlights this month include:
 ## Developer tool updates
 
 * [Windows Subsystem for Linux, Enterprise and Security Control Options](/windows/wsl/enterprise)
-* [Windows Subsystem for Android updates](/windows/android/wsa/)
-* [Windows Package Manager updates](/windows/package-manager/)
-* [PowerToys](/windows/powertoys/install)
+* [Windows Subsystem for Android updates](../../android/wsa/index.md)
+* [Windows Package Manager updates](../../package-manager/index.md)
+* [PowerToys](../../powertoys/install.md)
 * [Keyboard scan codes updated](/windows/win32/inputdev/about-keyboard-input).
 
 <hr>

@@ -13,25 +13,25 @@ Windows 11 is now widely available, and is joined by Build 22000 of the Windows 
 
 It is an exciting time for Windows developers, as new tools and frameworks are in active development. They're all designed to bring support for the latest Windows features to the widest possible audience. For example, Win32 developers will appreciate the new Windows App SDK model, and fans of modern user interface design will enjoy working with WinUI. Developers who love C++, can use WinRT/C++ to create apps in familiar ways.
 
-To get started, [install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank), and then learn about the [Windows UI Library](/windows/apps/winui/) and the [Windows App SDK](/windows/apps/windows-app-sdk/).
+To get started, [install the tools and SDK](https://developer.microsoft.com/windows/downloads#_blank), and then learn about the [Windows UI Library](../winui/index.md) and the [Windows App SDK](../windows-app-sdk/index.md).
 
 
 ## Windows App SDK
 
 Feature | Description
 :------ | :------
-Windows Apps SDK | [The Windows App SDK](/windows/apps/windows-app-sdk/) is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and downlevel to Windows 10, version 1809).
-Create a new app with the Windows App SDK | The Windows App SDK includes WinUI 3 project templates that enable you to create apps with an entirely WinUI-based user interface. When you create a project using these templates (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)), the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3.
-Use the Windows App SDK in an existing project | If you have an existing project in which you want to use the Windows App SDK, [you can install the latest version of the Windows App SDK NuGet package in your project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project). Unpackaged apps must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
-Download the Windows App SDK | There are several packages and release channels for the Windows App SDK. The [Download the Windows App SDK page](/windows/apps/windows-app-sdk/downloads) provides guidance on which ones you need, download links, and installation instructions.
+Windows Apps SDK | [The Windows App SDK](../windows-app-sdk/index.md) is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and downlevel to Windows 10, version 1809).
+Create a new app with the Windows App SDK | The Windows App SDK includes WinUI 3 project templates that enable you to create apps with an entirely WinUI-based user interface. When you create a project using these templates (see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)), the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3.
+Use the Windows App SDK in an existing project | If you have an existing project in which you want to use the Windows App SDK, [you can install the latest version of the Windows App SDK NuGet package in your project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md). Unpackaged apps must follow this procedure to use the Windows App SDK, but packaged apps can do this too.
+Download the Windows App SDK | There are several packages and release channels for the Windows App SDK. The [Download the Windows App SDK page](../windows-app-sdk/downloads.md) provides guidance on which ones you need, download links, and installation instructions.
 
 ## Windows UI Library (WinUI)
 
 Feature | Description
 :------ | :------
-WinUI | [WinUI 2.8](/windows/apps/winui/winui2/) and [WinUI 3](/windows/apps/winui/winui3/) are versions of the new Windows UI Library. Which version you use depends on the tools you are using: for example, WinUI 2.8 supports UWP apps. 
-InfoBadge control | An [InfoBadge](/windows/winui/api/microsoft.ui.xaml.controls.infobadge) is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot. InfoBadge is built into [NavigationView](/windows/apps/design/controls/navigationview) but can also be placed as a standalone element in the XAML tree, allowing you to place InfoBadge into any control or piece of UI of your choosing. </br> If you have the [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT) installed, [click here to open the app and see the InfoBadge in action](winui2gallery:/item/InfoBadge).
-ColorPicker control | [The new orientation property of the ColorPicker control](/windows/apps/design/controls/color-picker?#specify-the-layout-direction) allows you to control where the editing controls display relative to the color spectrum.
+WinUI | [WinUI 2.8](../winui/winui2/index.md) and [WinUI 3](../winui/winui3/index.md) are versions of the new Windows UI Library. Which version you use depends on the tools you are using: for example, WinUI 2.8 supports UWP apps. 
+InfoBadge control | An [InfoBadge](/windows/winui/api/microsoft.ui.xaml.controls.infobadge) is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot. InfoBadge is built into [NavigationView](../design/controls/navigationview.md) but can also be placed as a standalone element in the XAML tree, allowing you to place InfoBadge into any control or piece of UI of your choosing. </br> If you have the [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT) installed, [click here to open the app and see the InfoBadge in action](winui2gallery:/item/InfoBadge).
+ColorPicker control | [The new orientation property of the ColorPicker control](../design/controls/color-picker.md#specify-the-layout-direction) allows you to control where the editing controls display relative to the color spectrum.
 
 
 ## Windows features
@@ -47,7 +47,7 @@ DNS application settings | [The DnsGetApplicationSettings function](/windows/win
 DNS custom server | New [DNS_CUSTOM_SERVER structure](/windows/win32/api/windns/ns-windns-dns_custom_server) and [ADDRINFO_DNS_SERVER structure](/windows/win32/api/ws2def/ns-ws2def-addrinfo_dns_server) allow you to configure a custom DNS server.
 Firewall dynamic keywords | [Firewall dynamic keywords](/windows/win32/ics/firewall-dynamic-keywords) allow you to manage dynamic keyword addresses in Microsoft Defender Firewall. A dynamic keyword address is used to create a set of IP addresses to which one or more firewall rules can refer. Dynamic keyword addresses support both IPv4 and IPv6.
 On-Air | [The ShareWindowCommandSource class](/uwp/api/windows.ui.shell.sharewindowcommandsource) provides a framework to communicate with the Windows shell to present a UI that controls window sharing.
-Pen haptics | [Pen haptic feedback](/windows/apps/design/input/pen-haptics), introduced in Windows 11, allows users to feel their pen interacting in a tactile manner with the user interface of an app. [The KnownSimpleHapticsControllerWaveforms class](/uwp/api/windows.devices.haptics.knownsimplehapticscontrollerwaveforms) allows you to configure this experience for your app's users.
+Pen haptics | [Pen haptic feedback](../design/input/pen-haptics.md), introduced in Windows 11, allows users to feel their pen interacting in a tactile manner with the user interface of an app. [The KnownSimpleHapticsControllerWaveforms class](/uwp/api/windows.devices.haptics.knownsimplehapticscontrollerwaveforms) allows you to configure this experience for your app's users.
 WinHttp connection groups | [The WinHttpQueryConnectionGroup function](/windows/win32/api/winhttp/nf-winhttp-winhttpqueryconnectiongroup) allows you to pull the current state of WinHttp's connections.
 VPN foreground activation | New APIs have been added to VPN foreground activation, which is often used to let a user input VPN credentials. See the [VpnForegroundActivationOperation class](/uwp/api/windows.networking.vpn.vpnforegroundactivatedeventargs) and [VpnForegroundActivatedEventArgs](/uwp/api/windows.networking.vpn.vpnforegroundactivatedeventargs) for more information.
 

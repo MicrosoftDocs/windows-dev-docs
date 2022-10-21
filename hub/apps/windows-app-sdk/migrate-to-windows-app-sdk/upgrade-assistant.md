@@ -1,6 +1,6 @@
 ---
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
-description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](/windows/apps/winui/) app that uses the Windows App SDK.
+description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
 ms.topic: article
 ms.date: 09/12/2022
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 
-The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# Universal Windows Platform (UWP) app to a [Windows UI Library (WinUI) 3](/windows/apps/winui/) app that uses the Windows App SDK.
+The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# Universal Windows Platform (UWP) app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
 
 Also see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository. Command-line options for running the tool are documented there.
 
@@ -44,7 +44,7 @@ As it runs, the tool also aims to provide migration guidance in the form of warn
 
 This release of the .NET Upgrade Assistant is currently in preview, and is receiving frequent updates. The tool currently supports only the C# programming language; not C++. And in most cases with this release, your project will require additional effort from you to complete the migration.
 
-The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What is supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported).
+The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What is supported when migrating from UWP to WinUI 3](./what-is-supported.md).
 
 Because of the following limitations of the current release of the .NET Upgrade Assistant, you might choose to wait for a future release before migrating your app:
 
@@ -61,7 +61,7 @@ Where possible, the tool tries to generate a warning; and it intentionally cause
 The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assistant) documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of `UWP`. We appreciate it!
 
 > [!NOTE]
-> For guidance about the migration process&mdash;and the differences between UWP and Windows App SDK features and APIs&mdash;see [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
+> For guidance about the migration process&mdash;and the differences between UWP and Windows App SDK features and APIs&mdash;see [Migrate from UWP to the Windows App SDK](./migrate-to-windows-app-sdk-ovw.md).
 
 > [!TIP]
 > You can see what version of the tool you have by issuing the command `upgrade-assistant --version`.
@@ -77,7 +77,7 @@ Begin by cloning or downloading the PhotoLab sample source code from the link ab
 Be aware that after we've used the tool to automate the migration of the app, additional manual effort will be needed to complete the migration.
 
 > [!NOTE]
-> You can see a case study of the PhotoLab sample being fully migrated manually in [A Windows App SDK migration of the UWP PhotoLab sample app](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1).
+> You can see a case study of the PhotoLab sample being fully migrated manually in [A Windows App SDK migration of the UWP PhotoLab sample app](./case-study-1.md).
 
 ### The analysis stage
 
