@@ -26,7 +26,7 @@ The source code for the app we're building in this how-to can be found [on Githu
  - [Visual Studio 2022 and Tools for Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md)
 
 
-## Create and run the WinUI 3 project template
+## Create a new project using the WinUI 3 project template
 
 Open Visual Studio and create a new project via `File` > `New` > `Project`:
 
@@ -43,6 +43,8 @@ Specify a project name, solution name, and directory. In this example, our `Hell
 After creating your project, you should see the following default file structure in your Solution Explorer:
 
 :::image type="content" source="images/hello-world/collapsed-file-structure.png" alt-text="Default file structure":::
+
+## Build and run your project
 
 Click the "Start" button to build and run this templated project:
 
@@ -130,7 +132,7 @@ public sealed partial class MainWindow : Window
         this.InitializeComponent();
     }
 
-    // ↓ you can delete this
+    // ↓ you can delete this ↓
     //private void myButton_Click(object sender, RoutedEventArgs e)
     //{
     //    myButton.Content = "Clicked";
@@ -146,7 +148,7 @@ If you restart your app, you should see a red `Hello world!`:
 
 Add `this.Title = "Hello world!";` to your `MainWindow.xaml.cs` code-behind file:
 
-```csharp
+```csharp 
 public MainWindow()
 {
     this.InitializeComponent();
@@ -181,6 +183,7 @@ Here's what you accomplished in this how-to:
 
 TODO
 
+
 **Q: What does "packaged" mean?** <br/>
 
 TODO
@@ -188,3 +191,7 @@ TODO
 **Q: Why is there a toolbar at the top of my app when I run it from Visual Studio?** <br/>
 
 TODO
+
+## Next steps
+
+TODO (next how-to - build a form with bidirectional data binding)
