@@ -193,7 +193,7 @@ TODO
 
 **Q: Can I use VS Code to build WinUI 3 apps?** <br/>
 
-Although technically possible, it's not recommended. We recommend using Visual Studio 2019 / 2022 to build desktop apps with WinUI 3 / Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-3-apps) for more information. 
+Although technically possible, we strongly recommend using Visual Studio 2019 / 2022 to build desktop apps with WinUI 3 / Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-3-apps) for more information. 
 
 **Q: Can I use C++ to build WinUI 3 apps?** <br/>
 
