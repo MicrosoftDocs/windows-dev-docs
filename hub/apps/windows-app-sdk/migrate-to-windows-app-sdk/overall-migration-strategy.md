@@ -35,7 +35,7 @@ We'd love to hear your feeback about this migration guide, and about your own mi
 
 ## Why migrate to the Windows App SDK?
 
-The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](../../winui/index.md#windows-ui-3-library), which is developed and designed to delight your users.
+The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](../../winui/index.md), which is developed and designed to delight your users.
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
