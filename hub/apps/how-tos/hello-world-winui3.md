@@ -108,7 +108,7 @@ To display "Hello world!" instead of the "Click me" button, navigate to `MainWin
 ```
 
 > [!TIP]
-> You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](/uwp/api/windows.ui.xaml.controls.stackpanel) tell you more about the `StackPanel` control, and how to customize it.
+> You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](/uwp/api/windows.ui.xaml.controls.stackpanel) tell you more about the `StackPanel` control and how to customize it.
 
 Let's update our `StackPanel` control to display `Hello world!` with red text:
 
