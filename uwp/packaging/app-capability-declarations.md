@@ -256,6 +256,10 @@ To declare a custom capability, modify your [app package manifest](/uwp/schemas/
 > [!NOTE]
 > All **CustomCapability** elements must come after any **Capability** elements and before any [DeviceCapability](#device-capabilities) elements under the **Capabilities** node in the package manifest.
 
+| Capability scenario | Capability usage |
+|---------------------|------------------|
+| **Registering an approved shell extension** | An MSIX-based app using the **desktop7:ApprovedShellExtension** element needs to declare the **Microsoft.classicAppCompatElevated_8wekyb3d8bbwe** custom capability. For more info, see [**desktop7:ApprovedShellExtension**](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop7-approvedshellextension).
+
 ## Related topics
 
 * [Submission options](../publish/manage-submission-options.md)
