@@ -92,7 +92,7 @@ Device capabilities allow your app to access peripheral and internal devices. De
 
 ## Restricted capabilities
 
-If your app declares any restricted capabilities, then you must provide info during the [app submission process](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options?pivots=store-installer-msix#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
+If your app declares any restricted capabilities, then you must provide info during the [app submission process](../publish/app-submissions.md) in order to be approved to publish your app to the Microsoft Store. You provide this info on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page of your submission, explaining how your app uses each restricted capability that it declares.
 
 > [!IMPORTANT]
 > Restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Note that you can sideload apps that declare restricted capabilities without needing to receive any approval. Approval is only required when submitting these apps to the Store.
@@ -119,9 +119,9 @@ To declare a restricted capability, modify your [app package manifest](/uwp/sche
 
 ### Restricted capability approval process
 
-Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard) as part of the [submission process](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix).
+Previously, we required you to contact support to get approval to use a capability. We now allow you to provide this info in [Partner Center](https://partner.microsoft.com/dashboard) as part of the [submission process](../publish/app-submissions.md).
 
-When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options?pivots=store-installer-msix#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
+When you upload packages for your submission, we will detect whether any restricted capabilities are declared. If we do so, you will be required to provide details about how your product uses each capability on the [Submission options](../publish/manage-submission-options.md#restricted-capabilities) page. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability. Note that this may add some additional time for your submission to complete the certification process.
 
 During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).
 
@@ -258,10 +258,19 @@ To declare a custom capability, modify your [app package manifest](/uwp/schemas/
 
 | Capability scenario | Capability usage |
 |---------------------|------------------|
-| **Registering an approved shell extension** | An MSIX-based app using the **desktop7:ApprovedShellExtension** element needs to declare the **Microsoft.classicAppCompatElevated_8wekyb3d8bbwe** custom capability. For more info, see [**desktop7:ApprovedShellExtension**](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop7-approvedshellextension).
+| **App URI handler** | An app can register itself as a handler for a given URI, such that when the user opens a link to the specified URI, the app is launched instead of opening the browser. That requires registration on the local machine, and verification by the target web server. The **Microsoft.delegatedWebFeatures_8wekyb3d8bbwe** custom capability enables an app to host a Progressive Web App (PWA), and to verify that PWA as an app URI handler without referring to the target website for confirmation. |
+| **CoreApplication activation** | An app that declares the **Microsoft.coreAppActivation_8wekyb3d8bbwe** custom capability is CoreApplication-based, but requires to run with full-trust, similar to a Desktop Bridge app. |
+| **Custom install actions** | Enables the app to use custom install/uninstall actions. An app can use custom actions if it has the **customInstallActions** [restricted capability](#restricted-capabilities) AND (it is an MSIXVC Xbox Game Pass app, OR it has the **Microsoft.classicAppInstaller_8wekyb3d8bbwe** custom capability). |
+| **Legacy install behaviors** | The **Microsoft.classicAppCompat_8wekyb3d8bbwe** custom capability protects the case where an app declares a legacy install feature; for example, writing custom COM ProgIds in the Windows Registry. |
+| **Machine-wide install** | Protects the case where an app declares a legacy install feature that's configured for machine-wide/HKLM registration, which requires-elevation. Specifically required for anything in the app's manifest where the app declares `Scope="machine"`.<br/><br/>For example, an MSIX-based app using the **desktop7:ApprovedShellExtension** element needs to set scope to machine, and therefore needs to declare the **Microsoft.classicAppCompatElevated_8wekyb3d8bbwe** custom capability. For more info about that scenario, see [**desktop7:ApprovedShellExtension**](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop7-approvedshellextension). |
+| **Registering an approved shell extension** | See the **Machine-wide install** capability scenario. |
+| **S-mode** | An app that declares the **Microsoft.requiresNonSMode_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows device in S-mode. |
+| **Startup apps** | An app can be set up to start automatically at user login. Normally, the user can enable/disable that behavior for each app. The **Microsoft.nonUserConfigurableStartupTasks_8wekyb3d8bbwe** custom capability configures an app such that the user can't enable/disable its startup behavior. |
+| **Windows core 1** | An app that declares the **Microsoft.deployFullTrustOnHost_8wekyb3d8bbwe** custom capability is fully-trusted to use native Win32 APIs on a Windows core device. |
+| **Windows core 2** | A Desktop Bridge app that declares the **Microsoft.notSupportedInCoreV1_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows core device. |
 
 ## Related topics
 
-* [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options?pivots=store-installer-msix)
+* [Submission options](../publish/manage-submission-options.md)
 * [How to specify capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)
 * [How to specify device capabilities in a package manifest](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)
