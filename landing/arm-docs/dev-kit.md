@@ -134,7 +134,7 @@ Additional developer tools supported by Windows 11 on Arm, include:
 
 ## Support
 
-For hardware or warranty support with your Windows on Arm developer kit, open a support request on the **[Support for business](https://support.serviceshub.microsoft.com/supportforbusiness/onboarding?origin=/supportforbusiness/create)** services hub page.
+For hardware or warranty support with your Windows on Arm developer kit, open a support request on the **[Support for business](https://support.serviceshub.microsoft.com/supportforbusiness/create?sapid=616952e0-c5eb-fa95-eb62-ee5e66edb0b0)** services hub page.
 
 ## FAQs
 
