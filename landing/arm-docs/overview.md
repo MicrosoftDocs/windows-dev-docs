@@ -37,9 +37,6 @@ Developers need Arm devices upon which to build and test Arm-native Windows apps
 
 Microsoft is also working on "Project Volterra" - a new Arm-powered device built by Windows Developers, for Windows developers. "Project Volterra" is built on Qualcomm's Snapdragon Compute Platform and includes a powerful Neural Processing Unit (NPU), aimed to support AI researchers and developers looking to integrate AI into their apps and experiences. More details about "Project Volterra" will be announced soon.
 
-...
-> [!VIDEO https://www.youtube.com/embed/yICVNta8jMU]
-
 ## Arm64EC - Build apps for Windows 11 on Arm
 
 :::row:::
