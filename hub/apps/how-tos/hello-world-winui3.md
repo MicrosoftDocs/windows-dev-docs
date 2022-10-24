@@ -291,15 +291,15 @@ namespace Hello_World
 
 ## FAQ
 
-**Q: What does "packaged" mean?** <br/>
+**Q: What does "packaged" mean?**
 
 Windows apps can be delivered to end-users using a variety of application packaging formats. When working with WinUI 3 / Windows App SDK, **packaged apps** use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture.md) to learn more.
 
-**Q: Can I use VS Code to build WinUI 3 apps?** <br/>
+**Q: Can I use VS Code to build WinUI 3 apps?**
 
 Although technically possible, we strongly recommend using Visual Studio 2019 / 2022 to build desktop apps with WinUI 3 / Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-3-apps) for more information. 
 
-**Q: Can I use C++ to build WinUI 3 apps?** <br/>
+**Q: Can I use C++ to build WinUI 3 apps?**
 
 Yes! If you'd like to see this how-to updated with C++ guidance, [request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch) and we'll make it happen.
 
