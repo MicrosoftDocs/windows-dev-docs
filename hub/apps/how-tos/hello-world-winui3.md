@@ -48,7 +48,7 @@ After creating your project, you should see the following default file structure
 
 ## Build and run your project
 
-Click the "Start" button to build and run this templated project:
+Click the "Start" button to build and run your project:
 
 :::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
 
