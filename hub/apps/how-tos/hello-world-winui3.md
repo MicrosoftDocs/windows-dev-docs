@@ -88,7 +88,7 @@ Starting from the top and working our way down:
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Solution 'Hello World'` | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries.                                                                                       |
 | `Hello World`            | This is a **project file**, a logical container for your app's files.                                                                                                                                                                   |
-| `Dependencies`           | Your app depends on **frameworks** (like [.NET Core](https://learn.microsoft.com/aspnet/core/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
+| `Dependencies`           | Your app depends on **frameworks** (like [.NET](https://learn.microsoft.com/dotnet/fundamentals/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
 | `Properties`             | By convention, WinUI 3 projects tuck publish profiles and launch configuration files into this folder.                                                                                                                                  |
 | `PublishProfiles`        | Your **publish profiles** specify your app's publishing configuration across a variety of platforms.                                                                                                                                    |
 | `launchSettings.json`    | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`.                                                                                                                               |
@@ -112,7 +112,7 @@ To display "Hello world!" instead of the "Click me" button, navigate to `MainWin
 ```
 
 > [!TIP]
-> You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](/uwp/api/windows.ui.xaml.controls.stackpanel) tell you more about the `StackPanel` control and how to customize it.
+> You'll frequently refer to **API reference docs** while building Windows apps. [StackPanel's reference docs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) tell you more about the `StackPanel` control and how to customize it.
 
 Let's update our `StackPanel` control to display `Hello world!` with red text:
 
