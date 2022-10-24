@@ -22,4 +22,4 @@ If you encounter a permission error when you attempt to create a new app in Part
 
 ## Create a new AAD tenant
 
-If the above steps do not resolve the error, create a new AAD tenant and associate it with your Partner Center account. For more information, see [Associate Azure Active Directory with your Partner Center account](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/associate-azure-ad-with-partner-center).
+If the above steps do not resolve the error, create a new AAD tenant and associate it with your Partner Center account. For more information, see [Associate Azure Active Directory with your Partner Center account](associate-azure-ad-with-partner-center).
