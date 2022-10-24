@@ -26,7 +26,7 @@ Check out our PWA guides to:
 
 * [Build a simple web app as a PWA](/microsoft-edge/progressive-web-apps/)
 * [Enhance your PWA with the Windows Runtime](/microsoft-edge/progressive-web-apps/windows-features)
-* [Publish your PWA to the Microsoft Store](/windows/uwp/publish/app-submissions)
+* [Publish your PWA to the Microsoft Store](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix)
 
 ### Notepad
 

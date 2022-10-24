@@ -11,14 +11,14 @@ localizationpriority: high
 # Organizational licensing options
 
 
-You can indicate whether and how your app can be offered for volume purchases through Microsoft Store for Business and Microsoft Store for Education in the **Organizational licensing** section of the [Pricing and availability](set-app-pricing-and-availability.md#organizational-licensing) page of an app submission.
+You can indicate whether and how your app can be offered for volume purchases through Microsoft Store for Business and Microsoft Store for Education in the **Organizational licensing** section of the [Pricing and availability](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix#organizational-licensing) page of an app submission.
 
 Through these settings, you can opt to allow your app to be made available to organizations (business and educational) who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.
 
 You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
 
 > [!NOTE]
-> Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](the-app-certification-process.md).
+> Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix).
 
 > [!IMPORTANT]
 > Submissions that use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) won't be made available to Microsoft Store for Business and Microsoft Store for Education. To make your app available for volume purchases by organizations, you must create and submit your submissions in Partner Center.

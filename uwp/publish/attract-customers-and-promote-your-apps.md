@@ -101,7 +101,7 @@ Native ads enable you to send all the individual components of your ad (such as 
 
 [Create an ad campaign using our REST API](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[Review campaign performance data in the dashboard](/windows/uwp/publish/advertising-performance-report)
+[Review campaign performance data in the dashboard](./advertising-performance-report.md)
 
 [Get campaign performance data using our REST API](../monetize/index.md)
 

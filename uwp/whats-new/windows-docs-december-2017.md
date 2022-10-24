@@ -76,7 +76,7 @@ We've added a new article on [how to construct forms in your apps](/windows/apps
 
 ### Intro to app design
 
-The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. [Our new introduction](/windows/uwp/get-started/) provides an overview of the universal design features that are included in every UWP app, and how you can use the docs to build user interfaces (UI) that scale beautifully across a range of devices.
+The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. [Our new introduction](../get-started/index.md) provides an overview of the universal design features that are included in every UWP app, and how you can use the docs to build user interfaces (UI) that scale beautifully across a range of devices.
 
 
 ### Request ratings and reviews
