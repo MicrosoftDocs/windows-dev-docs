@@ -60,7 +60,7 @@ With Developer Mode enabled, your `Hello World` project should build and run:
 
 :::image type="content" source="images/hello-world/click-me.png" alt-text="Templated project built running":::
 
-Click the `Click Me` button for a demonstration of event [binding](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding):
+Click the `Click Me` button for a demonstration of event [binding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding):
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
@@ -98,7 +98,7 @@ Starting from the top and working our way down:
 | `App.xaml.cs`            | This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your `MainWindow`.                                                                           |
 | `MainWindow.xaml`        | This markup file contains the presentation concerns for your app's main window.                                                                                                                                                         |
 | `MainWindow.xaml.cs`     | This code-behind file contains the business logic concerns associated with your app's main window.                                                                                                                                      |
-| `Package.appxmanifest`   | This [package manifest file](https://learn.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store.                                                                                                               |
+| `Package.appxmanifest`   | This [package manifest file](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store.                                                                                                               |
 
 
 ## Display "Hello world!"
