@@ -19,7 +19,9 @@ In this how-to, we'll use Visual Studio 2022 and WinUI 3 / Windows App SDK to bu
 
 :::image type="content" source="images/hello-world/end-result.png" alt-text="The 'Hello world' app we're building.":::
 
-This how-to is targeted at **beginners** and makes no assumptions about your familiarity with Windows desktop development. The source code for the app we're building in this how-to can be found [on Github](todo).
+This how-to is targeted at **beginners** and makes no assumptions about your familiarity with Windows desktop development. 
+
+<!--todo: The source code for the app we're building in this how-to is available [on Github](https://github.com/microsoft/WindowsAppSDK-Samples).-->
 
 ## Prerequisites
 
@@ -304,6 +306,7 @@ Yes! If you'd like to see this how-to updated with C++ guidance, [Request an upd
 
 ## Related
 
+ - [Sample applications for Windows development](../get-started/samples.md)
  - [Windows developer FAQ](../get-started/windows-developer-faq.yml)
  - [Windows developer glossary](../get-started/windows-developer-glossary.md)
  - [Windows development best practices](../get-started/best-practices.md)
