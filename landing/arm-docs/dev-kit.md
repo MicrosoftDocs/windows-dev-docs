@@ -82,9 +82,9 @@ A fully Arm-native suite of developer tools are available for installing on Wind
 
     Native support for Arm64 is [available in .NET 6](/dotnet/core/install/windows?tabs=net60#arm-based-windows-pcs), along with the [.NET Framework 4.8.1 runtime](https://devblogs.microsoft.com/dotnet/announcing-dotnet-framework-481/) and SDK, but that support has been extended in .NET 7. Read more about [Arm64 performance improvements in .NET 7](https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/).
 
-- **[Visual Studio Code for ARM](https://code.visualstudio.com/download)**
+- **[Visual Studio Code for Arm](https://code.visualstudio.com/download)**
 
-    VS Code has supported an ARM64 architecture since the September 2020 version 1.50 release, including [extensions for Remote Development](https://code.visualstudio.com/docs/remote/remote-overview).
+    VS Code has supported an Arm64 architecture since the September 2020 version 1.50 release, including [extensions for Remote Development](https://code.visualstudio.com/docs/remote/remote-overview).
 
 Bringing together local compute on the CPU, GPU, and NPU and cloud compute with Azure, including:
 
