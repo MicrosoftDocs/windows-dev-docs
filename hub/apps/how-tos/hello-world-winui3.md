@@ -293,7 +293,7 @@ namespace Hello_World
 
 **Q: What does "packaged" mean?** <br/>
 
-Windows apps can be delivered to end-users in a variety of formats. Packaged apps use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture) to learn more.
+Windows apps can be delivered to end-users in a variety of formats. Packaged apps use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture.md) to learn more.
 
 **Q: Can I use VS Code to build WinUI 3 apps?** <br/>
 
