@@ -60,7 +60,7 @@ With Developer Mode enabled, your `Hello World` project should build and run:
 
 :::image type="content" source="images/hello-world/click-me.png" alt-text="Templated project built running":::
 
-Click the `Click Me` button for a demonstration of event [binding](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding?view=windows-app-sdk-1.2):
+Click the `Click Me` button for a demonstration of event [binding](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding):
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
@@ -88,7 +88,7 @@ Starting from the top and working our way down:
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Solution 'Hello World'` | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries.                                                                                       |
 | `Hello World`            | This is a **project file**, a logical container for your app's files.                                                                                                                                                                   |
-| `Dependencies`           | Your app depends on **frameworks** (like [.NET Core](https://learn.microsoft.com/aspnet/core/?view=aspnetcore-6.0) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
+| `Dependencies`           | Your app depends on **frameworks** (like [.NET Core](https://learn.microsoft.com/aspnet/core/) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
 | `Properties`             | By convention, WinUI 3 projects tuck publish profiles and launch configuration files into this folder.                                                                                                                                  |
 | `PublishProfiles`        | Your **publish profiles** specify your app's publishing configuration across a variety of platforms.                                                                                                                                    |
 | `launchSettings.json`    | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`.                                                                                                                               |
