@@ -94,7 +94,7 @@ This release of WinUI 3 is focused on building towards new features for 1.0 stab
 For more information or to get started developing with WinUI, see:
 
 - [Windows UI 3 Library (WinUI)](../winui/index.md)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 
 ### Push notifications (experimental feature)
 

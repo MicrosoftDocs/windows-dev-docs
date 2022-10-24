@@ -45,4 +45,4 @@ When you enable Developer Mode on desktop, a package of features is installed, i
 - **Windows Device Portal**: Device Portal is only enabled (and firewall rules are only configured for it) when the **Enable Device Portal** option is turned on.
 - Installs and configures firewall rules for SSH services that allow remote installation of apps. Enabling **Device Discovery** will turn on the SSH server.
 
-For more information on these features (or if you encounter difficulties in the installation process) check out [Developer Mode features and debugging](/windows/apps/get-started/developer-mode-features-and-debugging).
+For more information on these features (or if you encounter difficulties in the installation process) check out [Developer Mode features and debugging](./developer-mode-features-and-debugging.md).

@@ -13,10 +13,10 @@ ms.custom:
 
 # Install tools for the Windows App SDK
 
-Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](/windows/apps/windows-app-sdk/).
+Configure your development computer by installing the appropriate tools to develop apps for Windows with the [Windows App SDK](./index.md).
 
 > [!NOTE]
-> This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install).
+> This article is for the stable release channel of the Windows App SDK. See [Windows App SDK release channels](./release-channels.md). For other channels, see [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md).
 
 ## Install Visual Studio
 
@@ -120,9 +120,9 @@ Also see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in
 
 ## Related topics
 
-* [Windows App SDK](/windows/apps/windows-app-sdk/)
-* [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels)
-* [Install tools for preview and experimental channels of the Windows App SDK](/windows/apps/windows-app-sdk/preview-experimental-install)
+* [Windows App SDK](./index.md)
+* [Windows App SDK release channels](./release-channels.md)
+* [Install tools for preview and experimental channels of the Windows App SDK](./preview-experimental-install.md)
 * [System requirements for Windows app development](system-requirements.md)
 * [Downloads for the Windows App SDK](downloads.md)
 * [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)

@@ -65,7 +65,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ### Code
 
-1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)).
+1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)).
 
    This method is called from the app's [**OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
 
