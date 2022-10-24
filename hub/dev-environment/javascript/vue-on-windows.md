@@ -58,5 +58,5 @@ To learn more about additional plugins that can be added (such as linting or Apo
 - [Should I install on Windows or Windows Subsystem for Linux (WSL)?](./windows-or-wsl.md)
 - [Install Vue.js on WSL](./vue-on-wsl.md)
 - [Install Nuxt.js](./nuxtjs-on-wsl.md)
-- Microsoft Learn online course: [Take your first steps with Vue.js](/learn/paths/vue-first-steps/)
+- [Take your first steps with Vue.js](/training/paths/vue-first-steps/) learning path
 - Try a [Vue tutorial with VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial)

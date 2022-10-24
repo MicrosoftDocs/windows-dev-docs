@@ -19,7 +19,7 @@ This article describes how to apply Mica as the base layer of your Win32 app, pr
 To apply Mica to a Win32 app for Windows 11, you need to use the [Windows App SDK](/windows/apps/windows-app-sdk/). You'll need the following:
 
 - Install the  latest [Windows App SDK](/windows/apps/windows-app-sdk/) Visual Studio Extension or Microsoft.WindowsAppSDK NuGet package. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads).
-- For unpackaged apps, reference the Windows App SDK, install WinRT, and have a matching [Windows App Runtime Redistributable (Microsoft.WindowsAppRuntime.Redist)](/windows/apps/windows-app-sdk/downloads) installed. See [Windows App SDK deployment guide for framework-dependent non-MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps).
+- For unpackaged apps, reference the Windows App SDK, install WinRT, and have a matching [Windows App Runtime Redistributable (Microsoft.WindowsAppRuntime.Redist)](/windows/apps/windows-app-sdk/downloads) installed. See [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps).
 
 ## How to use Mica in Win32 Apps
 
@@ -41,7 +41,7 @@ This example shows how to do the following to set up an unpackaged app:
 
 - Initialize WinRT.
 - Reference the WindowsAppSDK from an unpackaged app.
-  - See [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more info.
+  - See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more info.
   - See `WindowsAppSDKBootstrapperContext` in [Utilities.h](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/Utilities.h) for example code.
 - Register the window class.
 - Create the Mica dispatcher queue controller
@@ -166,7 +166,7 @@ int __stdcall WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ PSTR, _In_ int)
     winrt::init_apartment(winrt::apartment_type::single_threaded);
     // Enable referencing the WindowsAppSDK from an unpackaged app.
     // Remember to have a matching Microsoft.WindowsAppRuntime.Redist installed.
-    // https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/deploy-unpackaged-apps
+    // https://learn.microsoft.com/windows/apps/windows-app-sdk/deploy-unpackaged-apps
     Utilities::WindowsAppSDKBootstrapperContext sdkContext;
     CompositionWindow::RegisterWindowClass();
     // A dispatcher queue is required to be able to create a compositor.

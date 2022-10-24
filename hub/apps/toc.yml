@@ -36,7 +36,7 @@ items:
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
-        - name: "Tutorial—Create a simple photo viewer with WinUI 3 (C#)"
+        - name: "Tutorial: Create a simple photo viewer with WinUI 3 (C#)"
           href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
@@ -128,6 +128,8 @@ items:
             href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
           - name: "Additional migration guidance"
             href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+          - name: "Migrate UWP to Windows App SDK with the .NET Upgrade Assistant"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
       - name: Modernize your desktop apps
         items:
             - name: Overview
@@ -218,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
-            - name: Grant identity to non-packaged desktop apps
+            - name: Grant package identity by packaging with external location
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
       - name: Optimize performance & fundamentals
         items:
@@ -240,6 +242,8 @@ items:
             href: develop/user-interface.md
           - name: Title bar
             href: develop/title-bar.md
+          - name: Apply Mica or Acrylic
+            href: windows-app-sdk/system-backdrop-controller.md
           - name: "Retrieve a window handle (HWND)"
             href: develop/ui-input/retrieve-hwnd.md
           - name: "Display WinRT UI objects that depend on CoreWindow"
@@ -288,6 +292,14 @@ items:
                     href: winui/winui2/release-notes/winui-2.1.md
                   - name: "WinUI 2.0"
                     href: winui/winui2/release-notes/winui-2.0.md
+      - name: .NET MAUI for Windows
+        items:
+          - name: Overview
+            href: windows-dotnet-maui/index.md
+          - name: "Build your first .NET MAUI app for Windows"
+            href: windows-dotnet-maui/walkthrough-first-app.md
+          - name: "Integrate a .NET MAUI app with the Graph SDK"
+            href: windows-dotnet-maui/tutorial-graph-api.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview
@@ -348,6 +360,16 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Windows widget providers
+        items:
+        - name: Overview
+          href: develop/widgets/widget-providers.md
+        - name: Implement a widget provider in a win32 app
+          href: develop/widgets/implement-widget-provider-win32.md
+        - name: Widget provider package manifest XML format
+          href: develop/widgets/widget-provider-manifest.md
+        - name: Widget provider ActivateApplication protocol
+          href: develop/widgets/widget-provider-activateapplication-protocol.md
       - name: Platform
         items:
         - name: C#/WinRT
@@ -382,15 +404,15 @@ items:
             items:
               - name: "Deployment architecture and overview"
                 href: windows-app-sdk/deployment-architecture.md
-              - name: "Deployment guide for MSIX-packaged apps"
+              - name: "Deployment guide for packaged apps"
                 href: windows-app-sdk/deploy-packaged-apps.md
-              - name: "Deploying non-MSIX-packaged apps"
+              - name: "Deploying apps packaged with external location or unpackaged"
                 items:
-                  - name: "Deployment guide for non-MSIX-packaged apps"
+                  - name: "Deployment guide for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/deploy-unpackaged-apps.md
-                  - name: "Use the Windows App SDK runtime"
+                  - name: "Use the Windows App SDK runtime for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/use-windows-app-sdk-run-time.md
-                  - name: "Tutorial—Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK"
+                  - name: "Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Check for installed versions of the Windows App SDK runtime"
                 href: windows-app-sdk/check-windows-app-sdk-versions.md
@@ -400,6 +422,104 @@ items:
             href: package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
           - name: Set up CI for your WinUI 3 app
             href: package-and-deploy/ci-for-winui3.md
+  - name: Publish
+    items:
+      - name: Overview
+        href: publish/index.md
+      - name: Opening a developer account
+        href: publish/partner-center/opening-a-developer-account.md
+        items:
+          - name: Account types, locations, and fees
+            href: publish/partner-center/account-types-locations-and-fees.md
+          - name: Manage account settings and profile info
+            href: /partner-center/partner-center-account-setup
+          - name: Trademark and copyright protection
+            href: publish/partner-center/trademark-and-copyright-protection.md
+      - name: Manage account users
+        href: publish/partner-center/manage-account-users.md
+        items: 
+          - name: Associate Azure AD with your Partner Center account
+            href: publish/partner-center/associate-azure-ad-with-partner-center.md
+          - name: Add users, groups, and Azure AD applications
+            href: publish/partner-center/add-users-groups-and-azure-ad-applications.md
+          - name: Set roles and custom permissions
+            href: publish/partner-center/set-custom-permissions-for-account-users.md
+      - name: Manage app name reservations
+        href: publish/partner-center/manage-app-name-reservations.md
+      - name: Partner Center workspaces
+        href: publish/partner-center/partner-center-workspaces.md
+      - name: Publish your app to the Microsoft Store
+        items:
+          - name: Publish your app to the Microsoft Store
+            href: publish/publish-your-app/overview.md
+          - name: Create your app by reserving a name
+            href: publish/publish-your-app/reserve-your-apps-name.md
+          - name: App submissions
+            href: publish/publish-your-app/create-app-submission.md
+          - name: Set app pricing and availability
+            href: publish/publish-your-app/price-and-availability.md
+            items:
+              - name: Define market selection
+                href: publish/publish-your-app/market-selection.md
+              - name: Choose visibility options
+                href: publish/publish-your-app/visibility-options.md
+              - name: Configure precise release scheduling
+                href: publish/publish-your-app/release-schedule.md
+              - name: Set and schedule app pricing
+                href: publish/publish-your-app/schedule-pricing-changes.md
+          - name: Enter app properties
+            href: publish/publish-your-app/enter-app-properties.md
+            items:
+              - name: Category and subcategory table
+                href: publish/publish-your-app/categories-and-subcategories.md
+              - name: Support info
+                href: publish/publish-your-app/support-info.md
+              - name: Product declarations
+                href: publish/publish-your-app/product-declarations.md
+              - name: System requirements
+                href: publish/publish-your-app/system-requirements.md
+          - name: Age ratings
+            href: publish/publish-your-app/age-ratings.md
+          - name: Upload app packages
+            href: publish/publish-your-app/upload-app-packages.md
+            items:
+              - name: Device family availability
+                href: publish/publish-your-app/device-families.md
+              - name: App package requirements
+                href: publish/publish-your-app/app-package-requirements.md
+              - name: Package version numbering
+                href: publish/publish-your-app/package-version-numbering.md
+              - name: Supported languages
+                href: publish/publish-your-app/supported-languages.md
+              - name: Guidance for app package management
+                href: publish/publish-your-app/app-package-management.md
+          - name: Create app Store listings
+            href: publish/publish-your-app/create-app-store-listing.md
+            items:
+              - name: Add and edit Store listing info
+                href: publish/publish-your-app/add-and-edit-store-listing-info.md
+              - name: Add additional information
+                href: publish/publish-your-app/add-additional-information.md
+              - name: Write a great app description
+                href: publish/publish-your-app/write-great-app-description.md
+              - name: App screenshots, images, and trailers
+                href: publish/publish-your-app/screenshots-and-images.md
+              - name: Import and export Store listings
+                href: publish/publish-your-app/import-and-export-store-listings.md
+              - name: Create platform-specific Store listings
+                href: publish/publish-your-app/create-platform-specific-store-listings.md
+          - name: Manage submission options
+            href: publish/publish-your-app/manage-submission-options.md
+            items:
+              - name: Notes for certification
+                href: publish/publish-your-app/notes-for-certification.md
+          - name: The app certification process
+            href: publish/publish-your-app/app-certification-process.md
+            items:
+              - name: Resolve submission errors
+                href: publish/publish-your-app/resolve-submission-errors.md
+              - name: Avoid common certification failures
+                href: publish/publish-your-app/avoid-common-certification-failures.md
   - name: API reference
     href: api-reference/index.md
     items:

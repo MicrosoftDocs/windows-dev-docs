@@ -22,13 +22,11 @@ Links to full installation details are in the steps below. We recommend that you
 
 [!INCLUDE [UWP migration guidance](../../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
-## Key concepts
+## Packaged, unpackaged, and packaged with external location
 
-Packaging is an important consideration of any Windows App SDK project. You can skip over this section if you wish, and create a non-packaged project. But please come back later to read more about it.
+Packaging is an important consideration of any Windows App SDK project. For more info about your packaging options, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app).
 
-[!INCLUDE [Packaged apps, Unpackaged apps](../../windows-app-sdk/includes/glossary/packaged-unpackaged-include.md)]
-
-## MSIX-packaged: Create a new project for an MSIX-packaged C# or C++ WinUI 3 desktop app
+## Packaged: Create a new project for a packaged C# or C++ WinUI 3 desktop app
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
@@ -54,14 +52,14 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 1. Build and run your solution on your development computer to confirm that the app runs without errors.
 
-## Non-MSIX-packaged: Create a new project for a non-MSIX-packaged C# or C++ WinUI 3 desktop app
+## Unpackaged: Create a new project for an unpackaged C# or C++ WinUI 3 desktop app
 
 > [!IMPORTANT]
-> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a non-MSIX-packaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
+> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
 
 1. To set up your development computer, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
 
-1. Download and run the latest *installer* for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). That will install the runtime package dependencies required to run and deploy a non-MSIX-packaged app on the target device (see [Windows App SDK deployment guide for unpackaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
+1. Download and run the latest *installer* for the Windows App SDK from [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads). That will install the runtime package dependencies required to run and deploy a packaged with external location or unpackaged app on the target device (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)).
 
 1. **C++**. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) appropriate for the architecture of the target device.
 
@@ -75,12 +73,12 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 1. In the New Project dialog's drop-down filters, select **C#**/**C++**, **Windows**, and **WinUI**, respectively.
 
-1. You need to start with an MSIX-packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**.
+1. You need to start with a packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**.
 
     > [!NOTE]
     > Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the installer in the previous step. To do that, in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Updates**. And if necessary update the reference to the *Microsoft.WindowsAppSDK* NuGet package. You can see which version is installed on the **Installed** tab.
 
-1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
+1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file. Put it inside the **PropertyGroup** element that's already there (for C++, the element will have `Label="Globals"`):
 
    ```xml
    <Project ...>
@@ -88,17 +86,18 @@ Packaging is an important consideration of any Windows App SDK project. You can 
      <PropertyGroup>
        ...
        <WindowsPackageType>None</WindowsPackageType>
+       ...
      </PropertyGroup> 
      ...
    </Project>
    ```
 
-1. **C++**. In your C++ project (`.vcxproj`) file, set the *AppxPackage* property to *false*:
+1. **C++**. In your C++ project (`.vcxproj`) file, inside the **PropertyGroup** element that's already there, set the *AppxPackage* property to *false*:
 
    ```xml
    <Project ...>
      ...
-     <PropertyGroup>
+     <PropertyGroup Label="Globals">
        ...
        <AppxPackage>false</AppxPackage>
        ...
@@ -117,7 +116,7 @@ Packaging is an important consideration of any Windows App SDK project. You can 
 
 Setting the `<WindowsPackageType>None</WindowsPackageType>` project property causes the *auto-initializer* to locate and load a version of the Windows App SDK version that's most appropriate for your app.
 
-If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
 
 For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper).
 
@@ -165,9 +164,9 @@ To continue your development journey with the Windows App SDK, see [Develop Wind
 * [What is MSIX?](/windows/msix/overview)
 * [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
 * [WinUI 3 project templates in Visual Studio](/windows/apps/winui/winui3/winui-project-templates-in-visual-studio)
-* [Windows App SDK deployment guide for framework-dependent non-MSIX-packaged apps](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
+* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/deploy-unpackaged-apps)
 * [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist)
-* [Use the Windows App SDK runtime for non-MSIX-packaged apps](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
+* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 * [Deployment architecture for the Windows App SDK](/windows/apps/windows-app-sdk/deployment-architecture)
-* [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
+* [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment)
 * [Develop Windows desktop apps](/windows/apps/develop/)

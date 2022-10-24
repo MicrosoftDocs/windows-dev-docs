@@ -97,10 +97,16 @@ items:
         href: ../powertoys/mouse-utilities.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
+      - name: Quick Accent
+        href: ../powertoys/quick-accent.md
       - name: PowerToys Run
         href: ../powertoys/run.md
       - name: Shortcut Guide
         href: ../powertoys/shortcut-guide.md
+      - name: Screen Ruler
+        href: ../powertoys/screen-ruler.md
+      - name: Text Extractor
+        href: ../powertoys/text-extractor.md
       - name: Video Conference Mute
         href: ../powertoys/video-conference-mute.md
   - name: Mac to Windows guide

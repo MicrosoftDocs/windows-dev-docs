@@ -110,7 +110,7 @@ This walkthrough requires the following tools and components:
 
 The following steps show how to consume the component created from the previous section from a C++/WinRT Windows App SDK application. Consuming a C#/WinRT component from C++ currently requires using the single-project **Blank App, Packaged (WinUI 3 in Desktop)** template. Note that C# components can also be referenced from C# packaged apps without class registrations.
 
-Consumption from MSIX-packaged apps that use a separate **Windows Application Packaging (WAP)** project is not currently supported. See [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) in the C#/WinRT GitHub repo for the latest updates on supported project configurations.
+Consumption from packaged apps that use a separate **Windows Application Packaging (WAP)** project is not currently supported. See [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) in the C#/WinRT GitHub repo for the latest updates on supported project configurations.
 
 1. Add a new C++ Windows App SDK application project to your solution. Right-click on your solution in Visual Studio, and select **Add** > **New Project**. Select the C++ **Blank App, Packaged (WinUI 3 in Desktop)** template provided by the Windows App SDK. For this walkthrough, we named the app **CppApp**.
 

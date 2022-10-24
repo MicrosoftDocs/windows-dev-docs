@@ -48,7 +48,7 @@ If you have an existing desktop project in which you want to use the Windows App
     > [!NOTE]
     > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and more) that contain the implementations for specific components in the Windows App SDK. You cannot install these sub-packages individually to reference only certain components in your project. You must install the main Windows App SDK NuGet package, which includes all of the components.
 
-6. **For unpackaged apps only**: Before your unpackaged app can use Windows App SDK APIs and components, your app must call first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more information, see [Load the Windows App SDK runtime](use-windows-app-sdk-run-time.md) and [Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+6. **For unpackaged apps only**: Before your unpackaged app can use Windows App SDK APIs and components, your app must call first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more information, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 7. Your app can now use Windows App SDK APIs and components that are available in the release channel you installed. For the list of available features, see [release channels](release-channels.md).
 

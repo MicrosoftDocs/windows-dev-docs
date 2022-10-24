@@ -9,18 +9,14 @@ ms.localizationpriority: medium
 
 # Extend your desktop app with modern UWP components
 
-Some Windows experiences (For example: a touch-enabled UI page) must run inside of a modern app container. If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime components.
+Some Windows experiences (For example, a touch-enabled UI page) must run inside of a modern app container. If you want to add such experiences, then extend your desktop app with UWP projects and Windows Runtime components.
 
 In many cases you can call Windows Runtime APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> The features described in this article require that your desktop app has [package identity](modernize-packaged-apps.md), either by [packaging your desktop app in an MSIX package](/windows/msix/desktop/desktop-to-uwp-root) or by [granting your app identity by using a sparse package](grant-identity-to-nonpackaged-apps.md).
+> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI 3 desktop app](/windows/apps/winui/winui3/create-your-first-winui3-app#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)). Also see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
-If you're ready, let's start.
-
-<a id="setup"></a>
-
-## First, setup your Solution
+## First, set up your solution
 
 Add one or more UWP projects and runtime components to your solution.
 
@@ -93,7 +89,7 @@ This image shows a Windows Forms application that opens a XAML-based modern UI t
 
 To show a XAML-based UI, do these things:
 
-:one: [Setup your Solution](#solution-setup)
+:one: [Set up your solution](#set-up-your-solution)
 
 :two: [Create a XAML UI](#xaml-UI)
 
@@ -103,11 +99,9 @@ To show a XAML-based UI, do these things:
 
 :five: [In the UWP project, show the page that you want](#parse)
 
-<a id="solution-setup"></a>
+### Set up your solution
 
-### Setup your Solution
-
-For general guidance on how to set your solution up, see the [First, setup your Solution](#setup) section at the beginning of this guide.
+For general guidance on how to set up your solution, see the [First, set up your solution](#first-set-up-your-solution) section at the beginning of this guide.
 
 Your solution would look something like this:
 

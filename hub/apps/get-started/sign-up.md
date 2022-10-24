@@ -1,24 +1,21 @@
 ---
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Create a developer account
-description: Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.
-ms.date: 12/08/2020
+description: Register for a developer account to publish apps to the Microsoft Store and participate in other Microsoft programs.
+ms.date: 10/12/2022
 ms.topic: article
 keywords: windows 10, uwp, sign up, developer account
 ms.localizationpriority: medium
 ---
+
 # Create a developer account
 
-Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.
-
-[Sign up now!](https://developer.microsoft.com/store/register)
+[Register now](/microsoft-store/register/) for a developer account so you can publish your apps to the Microsoft Store and participate in other Microsoft programs.
 
 ## Opening your developer account
 
-
-We offer [individual and company accounts in locations around the world](/windows/uwp/publish/account-types-locations-and-fees). Check out our [overview of the sign-up process](/windows/uwp/publish/opening-a-developer-account) to see how it works.
+We offer [individual and company accounts](/windows/uwp/publish/account-types-locations-and-fees) in locations around the world. Check out the [overview of the sign-up process](/windows/uwp/publish/opening-a-developer-account) to see how it works.
 
 ## Have a name for your app?
 
 As soon as you open your developer account, you can [create your app by reserving a name](/windows/uwp/publish/create-your-app-by-reserving-a-name).
-

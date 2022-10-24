@@ -15,12 +15,12 @@ Windows Subsystem for Android™️ enables your Windows 11 device to run Androi
 
 To make your Android app available on Windows 11 devices, you must:
 
-- [Submit your app to the Amazon Appstore](https://developer.amazon.com/docs/app-submission/getting-started.html).
+- [Submit your app to the Amazon Appstore](https://developer.amazon.com/apps-and-games/appstore-on-windows-11).
 
 For more information or support:
 
 - [Sign up for updates to the Amazon Appstore on Windows program](https://m.amazonappservices.com/developer-interest).
-- [Visit the Amazon developer support portal](https://developer.amazon.com/support/) where you can find articles, forums, FAQs, or reach out for direct support via the Appstore "Contact us" page once you set up an Amazon Developer account.
+- [Visit the Amazon developer support portal](https://developer.amazon.com/apps-and-games/appstore-on-windows-11) where you can find articles, forums, FAQs, or reach out for direct support via the Appstore "Contact us" page once you set up an Amazon Developer account.
 
 This guide can help you test and debug your Android app on Windows:
 
@@ -28,6 +28,10 @@ This guide can help you test and debug your Android app on Windows:
 - Handle input compatibility considerations for Windows devices, such as: [keyboard input](#keyboard-input), [mouse input](#mouse-input), and [window management and resizing](#window-management-and-resizing).
 - [Test and debug](#test-and-debug) your app on a Windows 11 device.
 - [Troubleshoot and find answers](#troubleshooting-issues).
+
+## Developer GitHub
+
+Want to learn more about Windows Subsystem for Android roadmap, discuss developer issues and file bugs or feature requests with the subsystem team? Visit the [Windows Subsystem for Android Developers GitHub](https://github.com/microsoft/WSA).
 
 ## Preview Program
 
@@ -39,9 +43,7 @@ To test your Android app in the Windows desktop environment, a bit of set up wil
 
 ### Prerequisites
 
-Windows Subsystem for Android is available for **public preview** on Windows 11.
-
-Your device must meet specific requirements: [Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
+Windows Subsystem for Android is available on Windows 11. Your device must meet specific requirements: [Device requirements](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
 ### Install the Amazon Appstore
 
@@ -55,7 +57,7 @@ The Amazon Appstore and the Windows Subsystem for Android Settings app will then
 ![Screenshot of Microsoft Store page featuring the Get button on the Amazon App Store](../../images/wsa-amazon-appstore-get.png)
 
 > [!NOTE]
-> The Amazon Appstore on Windows (a requirement for running Android apps on Windows 11) is currently only available in the US.
+> The Amazon Appstore on Windows (a requirement for running Android apps on Windows 11) is available in [select regions](https://support.microsoft.com/windows/countries-and-regions-that-support-amazon-appstore-on-windows-d8dd17c7-5994-4187-9527-ddb076f9493e?preview=true).
 
 ## Windows Subsystem for Android™️ Settings app
 
@@ -254,10 +256,7 @@ For further troubleshooting steps relating to the Windows Subsystem for Android 
 
 For any other developer questions and support, use the [Windows Subsystem for Android tag on Microsoft Q&A](/answers/topics/windows-subsystem-for-android.html).
 
-> [!NOTE]
-> Currently in Windows Subsystem for Android, Bluetooth functionality, such as scanning for BLE devices, is not supported.
-
 ## Additional resources
 
-- [Install mobile apps and the Amazon Appstore](https://support.microsoft.com/windows/f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c)
+- [Apps from the Amazon Appstore](https://support.microsoft.com/en-us/windows/apps-from-the-amazon-appstore-abed2335-81bf-490a-92e5-fe01b66e5c48)
 - [Accessibility on Windows Subsystem for Android](https://support.microsoft.com/windows/97b77924-6df9-4597-8394-15b6e34d1658)

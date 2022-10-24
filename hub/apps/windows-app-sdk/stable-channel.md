@@ -31,7 +31,15 @@ The Windows App SDK VSIX and runtime (installer and MSIX packages) are available
 
 ## Version 1.1
 
-The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.4. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+The latest available release of the 1.1.x lineage of the stable channel of the Windows App SDK is version 1.1.5. 1.1.x supports all stable channel features (see the **Features available by release channel** section in [Windows App SDK release channels](/windows/apps/windows-app-sdk/release-channels#features-available-by-release-channel)).
+
+### Version 1.1.5
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.1 release.
+
+#### Bug fixes
+- Fixed issue where Acrylic does not work if Mica is enabled. For more information, see [issue 7200](https://github.com/microsoft/microsoft-ui-xaml/issues/7200) on GitHub.
+- Fixed issue causing apps that depend on the WindowsAppRuntime installer (e.g. unpackaged apps) to fail to run on Windows 10 ARM64 machines. For more information, see [issue 2564](https://github.com/microsoft/WindowsAppSDK/issues/2564) on GitHub.
 
 ### Version 1.1.4
 
@@ -76,7 +84,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 
 - Fixed issue causing apps to sometimes crash during a drag and drop operation. For more information see [issue 7002](https://github.com/microsoft/microsoft-ui-xaml/issues/7002) on GitHub.
 - Fixed issue causing the title bar to disappear when switching AppWindowPresenterKind from FullScreen to Default.
-- Fixed issue where Bootstrapper APIs like `ApiInformation.IsPropertyPresent` and `ApiInformation.IsMethodPresent` would cause unhandled exceptions in apps without MSIX-packaging. For more information see [issue 2382](https://github.com/microsoft/WindowsAppSDK/issues/2382) on GitHub.
+- Fixed issue where Bootstrapper APIs like `ApiInformation.IsPropertyPresent` and `ApiInformation.IsMethodPresent` would cause unhandled exceptions in apps that aren't packaged. For more information see [issue 2382](https://github.com/microsoft/WindowsAppSDK/issues/2382) on GitHub.
 - Fixed issue causing app freeze when maximizing application with pen input.
 
 ### Version 1.1 Stable
@@ -115,10 +123,10 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. This r
 - XAML crashes when a user closes a window while a dialog is open.
 #### Deployment
 **New features:**
-- MSIX-packaged apps can now force deploy the Windows App SDK runtime packages using the [`DeploymentManager.Initialize(DeploymentInitializeOptions) API`](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize#microsoft-windows-applicationmodel-windowsappruntime-deploymentmanager-initialize(microsoft-windows-applicationmodel-windowsappruntime-deploymentinitializeoptions)) or using the --force option with the Windows App Runtime installer.
-- There are additional functional extension categories, UnlockedDEHs, available for MSIX-packaged apps. Check out the [1.1 Preview 3 release notes](preview-channel.md#msix-packaging) for more details. These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
+- Packaged apps can now force deploy the Windows App SDK runtime packages using the [**DeploymentManager.Initialize(DeploymentInitializeOptions) API**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize#microsoft-windows-applicationmodel-windowsappruntime-deploymentmanager-initialize(microsoft-windows-applicationmodel-windowsappruntime-deploymentinitializeoptions)) or using the --force option with the Windows App Runtime installer.
+- There are additional functional extension categories, UnlockedDEHs, available for packaged apps. Check out the [1.1 Preview 3 release notes](preview-channel.md#msix-packaging) for more details. These require the Windows App SDK framework package to be installed. See [Downloads for the Windows App SDK](/windows/apps/windows-app-sdk/downloads) to install the runtime.
 - Self-contained deployment is supported. Check out the [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview) for the differences between framework-dependent and self-contained deployment, and how to get started.
-- The Bootstrapper API required for apps that don't deploy with MSIX include new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/?branch=release-appsdk-1.1-stable) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Reference the Windows App SDK framework package at run time](use-windows-app-sdk-run-time.md).
+- The Bootstrapper API required for apps that don't deploy with MSIX include new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/?branch=release-appsdk-1.1-stable) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md).
 
 **Known limitations:**
 - Running the Windows App Runtime installer (WindowsAppRuntimeInstall.exe) requires sideloading to be enabled. See [issue 2469](https://github.com/microsoft/WindowsAppSDK/issues/2469) on GitHub for more information.
@@ -161,7 +169,7 @@ MRT Core is a streamlined version of the modern Windows [Resource Management Sys
 For more information, see [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview).
 
 #### Notifications
-Developers of MSIX-packaged, sparse-packaged, and unpackaged apps can now send Windows notifications.
+Developers of packaged (including packaged with external location) and unpackaged apps can now send Windows notifications.
 
 **New features:**
 - Support for app notifications for packaged and unpackaged apps.
@@ -299,7 +307,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 **New features and updates**:
  - We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI 2.6](../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
  - Single-project MSIX packaging is supported in WinUI by creating a new application using the “Blank App, Packaged…” template. 
- - We now support deploying WinUI 3 apps without MSIX-packaging on Windows versions 1809 and above. Please view [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for additional information.
+ - We now support deploying WinUI 3 apps that aren't packaged on Windows versions 1809 and above. Please view [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for additional information.
  - WinUI 3 projects can now set their target version down to Windows 10, version 1809. Previously, they could only be set as low as version 1903.
  - In-app toolbar, Hot Reload, & Live Visual Tree for WinUI packaged apps are supported in Visual Studio 2022 Preview 5 and GA.
 
@@ -334,8 +342,8 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
     - The expected error in C# applications is “COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG)). 
     - The expected error in C++/WinRT applications is “winrt::hresult_class_not_registered”. 
 
-- Known issues for **WinUI applications without MSIX-packaging** (unpackaged apps):
-  - Some APIs require package identity and are not supported in unpackaged apps, such as:
+- Known issues for **WinUI 3 apps that aren't packaged** (unpackaged apps):
+  - Some APIs require package identity, and aren't supported in unpackaged apps, such as:
     - [ApplicationData](/uwp/api/Windows.Storage.ApplicationData)
     - [StorageFile.GetFileFromApplicationUriAsync](/uwp/api/Windows.Storage.StorageFile.GetFileFromApplicationUriAsync)
     - [StorageFile.CreateStreamedFileFromUriAsync](/uwp/api/windows.storage.storagefile.createstreamedfilefromuriasync)
@@ -470,9 +478,9 @@ For more information, see [Manage resources with MRT Core](mrtcore/mrtcore-overv
 
 **New Features and updates**
 -  You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md) for instructions.
-- Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md). 
+- Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md). 
 - Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](use-windows-app-sdk-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api). 
-- Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see the [deployment guide for packaged apps](deploy-packaged-apps.md).
+- Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md).
 
 **Important limitations**
 - The .NET wrapper for the bootstrapper API is only intended for use by unpackaged .NET applications to simplify access to the Windows App SDK.
@@ -678,7 +686,7 @@ This release includes many bug fixes and improved stabilization across WinUI 3. 
 
 For more information on WinUI, see [Windows UI 3 Library (WinUI)](../winui/index.md).
 
-To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/Microsoft/WinUI-Gallery/tree/winui3), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main), or download the app [from the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
 
 To get started developing with WinUI, check out the following articles:
 - [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)

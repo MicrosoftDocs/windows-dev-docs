@@ -15,26 +15,26 @@ metadata:
 productDirectory:
   items:
   - title: Application developers
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    imageSrc: /media/logos/logo_Windows.svg
     summary: Design, develop, and deploy applications and other solutions for Windows PCs and other devices.
     url: ./apps/index.yml
   - title: Hardware developers
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    imageSrc: /media/logos/logo_Windows.svg
     summary: Design, develop, and deploy hardware and device drivers for Windows PCs and other devices.
     url: /windows-hardware/drivers/
   - title: Windows client for IT pros
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    imageSrc: /media/logos/logo_Windows.svg
     summary: Evaluate, plan, deploy, secure, and manage devices running Windows 10 and Windows 11.
     url: /windows/resources/
   - title: Windows Server for IT pros
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    imageSrc: /media/logos/logo_Windows.svg
     summary: Build and deploy connected applications, networks, and web services on Windows Server.
     url: /windows-server/
   - title: Windows for IoT
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    imageSrc: /media/logos/logo_Windows.svg
     summary: Create IoT solutions with secure devices that can be quickly provisioned, easily managed, and seamlessly connected to an overall cloud strategy.
     url: /windows/iot/
   - title: Windows Insider Program
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    imageSrc: /media/logos/logo_Windows.svg
     summary: Be the first to see what's next and help shape Windows' future by running Windows 11 and Windows 10 Insider Preview Builds and giving feedback.
     url: /windows-insider/
