@@ -301,7 +301,7 @@ Although technically possible, we strongly recommend using Visual Studio 2019 / 
 
 **Q: Can I use C++ to build WinUI 3 apps?** <br/>
 
-Yes! If you'd like to see this how-to updated with C++ guidance, [Request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch) and we'll make it happen.
+Yes! If you'd like to see this how-to updated with C++ guidance, [request an update on Github](https://github.com/MicrosoftDocs/windows-dev-docs/issues/new?title=Update%20request%3A%20How%20to%20build%20a%20hello%20world%20app&body=%28How%20can%20we%20help%3F%29&assignee=matchamatch) and we'll make it happen.
 
 
 ## Related
