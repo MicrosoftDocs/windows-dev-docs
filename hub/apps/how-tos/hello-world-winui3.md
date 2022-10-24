@@ -36,7 +36,7 @@ Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# 
 
 :::image type="content" source="images/hello-world/vsix.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
 
-Specify a project name, solution name, and directory. In this example, our `Hello World` project belongs to a `Hello World` solution. Our work will live in `C:\Projects\`:
+Specify a project name, solution name, and directory. In this example, our `Hello World` project belongs to a `Hello World` solution, which will live in `C:\Projects\`:
 
 :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
@@ -58,7 +58,7 @@ With Developer Mode enabled, your `Hello World` project should build and run:
 
 :::image type="content" source="images/hello-world/click-me.png" alt-text="Templated project built running":::
 
-Click the `Click Me` button for a demonstration of event binding:
+Click the `Click Me` button for a demonstration of event [binding](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding?view=windows-app-sdk-1.2):
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="The 'Click Me' button":::
 
@@ -86,7 +86,7 @@ Starting from the top and working our way down:
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Solution 'Hello World'` | This is a **solution file**, a logical container for your **projects**. Projects are often apps, but they can also be supporting class libraries.                                                                                       |
 | `Hello World`            | This is a **project file**, a logical container for your app's files.                                                                                                                                                                   |
-| `Dependencies`           | Your app depends on **frameworks** (like .NET Core and the Windows SDK) and **packages** (like Windows App SDK). As you introduce more sophisticated functionality and third-party libraries, additional dependencies will appear here. |
+| `Dependencies`           | Your app depends on **frameworks** (like [.NET Core](https://learn.microsoft.com/aspnet/core/?view=aspnetcore-6.0) and the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)) and **packages** (like [Windows App SDK](https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab)). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here. |
 | `Properties`             | By convention, WinUI 3 projects tuck publish profiles and launch configuration files into this folder.                                                                                                                                  |
 | `PublishProfiles`        | Your **publish profiles** specify your app's publishing configuration across a variety of platforms.                                                                                                                                    |
 | `launchSettings.json`    | This file lets you configure **launch profiles** that can be used when running your app via `dotnet run`.                                                                                                                               |
@@ -96,7 +96,7 @@ Starting from the top and working our way down:
 | `App.xaml.cs`            | This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your `MainWindow`.                                                                           |
 | `MainWindow.xaml`        | This markup file contains the presentation concerns for your app's main window.                                                                                                                                                         |
 | `MainWindow.xaml.cs`     | This code-behind file contains the business logic concerns associated with your app's main window.                                                                                                                                      |
-| `Package.appxmanifest`   | This package manifest file lets you configure the way that your app is packaged and displayed within the Microsoft Store.                                                                                                               |
+| `Package.appxmanifest`   | This [package manifest file](https://learn.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store.                                                                                                               |
 
 
 ## Display "Hello world!"
@@ -160,7 +160,7 @@ If you restart your app, you should now see `Hello world!` in both the body and 
 
 :::image type="content" source="images/hello-world/red-hello-titled.png" alt-text="The 'Hello, world!' app we're building.":::
 
-Congratulations! You've built your first Windows App SDK / WinUI 3 app. 
+Congratulations! You've built your first Windows App SDK / WinUI 3 app.
 
 
 ## Recap
@@ -176,19 +176,122 @@ Here's what you accomplished in this how-to:
  7. You updated your main window's **title bar**.
 
 
+## Full code files
+
+<!--todo: embed from github -->
+
+```xml MainWindow.xaml
+<!-- MainWindow.xaml -->
+<Window
+    x:Class="Hello_World.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Hello_World"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="myText" Text="Hello world!" Foreground="Red"/>
+    </StackPanel>
+</Window>
+```
+
+```csharp MainWindow.xaml.cs
+// MainWindow.xaml.cs
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Navigation;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+
+namespace Hello_World
+{
+    public sealed partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            this.InitializeComponent();
+            this.Title = "Hello world!";
+        }
+    }
+}
+```
+
+```xml App.xaml
+<!-- App.xaml -->
+<Application
+    x:Class="Hello_World.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Hello_World">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Other app resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+```
+
+```csharp App.xaml.cs
+// App.xaml.cs
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml.Shapes;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+
+namespace Hello_World
+{
+    public partial class App : Application
+    {
+        public App()
+        {
+            this.InitializeComponent();
+        }
+
+        protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+        {
+            m_window = new MainWindow();
+            m_window.Activate();
+        }
+
+        private Window m_window;
+    }
+}
+```
+
+
 ## FAQ
-
-**Q: What are the other project templates for?** <br/>
-
-TODO
 
 **Q: What does "packaged" mean?** <br/>
 
-TODO
-
-**Q: Why is there a toolbar at the top of my app when I run it from Visual Studio?** <br/>
-
-TODO
+Windows apps can be delivered to end-users in a variety of formats. Packaged apps use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture) to learn more.
 
 **Q: Can I use VS Code to build WinUI 3 apps?** <br/>
 
