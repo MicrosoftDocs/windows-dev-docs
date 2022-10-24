@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # Implement a trial version of your app
 
-If you [configure your app as a free trial in Partner Center](../publish/set-app-pricing-and-availability.md#free-trial) so that customers can use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
+If you [configure your app as a free trial in Partner Center](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix#free-trial) so that customers can use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
 This article shows how to use members of the [StoreContext](/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](/uwp/api/windows.services.store) namespace to determine if the user has a trial license for your app and be notified if the state of the license changes while your app is running.
 
@@ -51,13 +51,13 @@ For most non-gaming apps, setting an expiration date works well, because users c
     -   Thank them for buying or display a message.
     -   Silently enable the features that are available with a full-license (or disable the trial-only notices).
 
-Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior. For more info about describing your app, see [Create app descriptions](../publish/create-app-store-listings.md).
+Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior. For more info about describing your app, see [Create app descriptions](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix).
 
 ## Prerequisites
 
 This example has the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have created an app in Partner Center that is configured as a [free trial](../publish/set-app-pricing-and-availability.md) with no time limit and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have created an app in Partner Center that is configured as a [free trial](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix) with no time limit and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
 
 The code in this example assumes:
 * The code runs in the context of a [Page](/uwp/api/windows.ui.xaml.controls.page) that contains a [ProgressRing](/uwp/api/windows.ui.xaml.controls.progressring) named ```workingProgressRing``` and a [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

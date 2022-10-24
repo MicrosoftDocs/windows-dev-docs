@@ -20,8 +20,8 @@ For a complete sample application, see the [Store sample](https://github.com/Mic
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](../publish/app-submissions.md) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
-* If you want to get product info for an add-on for the app, you must also [create the add-on in Partner Center](../publish/add-on-submissions.md).
+* You have [created an app submission](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* If you want to get product info for an add-on for the app, you must also [create the add-on in Partner Center](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on).
 
 The code in these examples assume:
 * The code runs in the context of a [Page](/uwp/api/windows.ui.xaml.controls.page) that contains a [ProgressRing](/uwp/api/windows.ui.xaml.controls.progressring) named ```workingProgressRing``` and a [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

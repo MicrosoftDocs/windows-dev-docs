@@ -18,7 +18,7 @@ The Microsoft Store submission API provides methods you can use to manage add-on
 
 ## Methods for managing add-on submissions
 
-Use the following methods to get, create, update, commit, or delete an add-on submission. Before you can use these methods, the add-on must already exist in your Partner Center account. You can create an add-on in Partner Center by [defining its product type and product ID](../publish/set-your-add-on-product-id.md) or by using the Microsoft Store submission API methods in described in [Manage add-ons](manage-add-ons.md).
+Use the following methods to get, create, update, commit, or delete an add-on submission. Before you can use these methods, the add-on must already exist in your Partner Center account. You can create an add-on in Partner Center by [defining its product type and product ID](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on) or by using the Microsoft Store submission API methods in described in [Manage add-ons](manage-add-ons.md).
 
 <table>
 <colgroup>
@@ -88,7 +88,7 @@ To create a submission for an add-on, follow this process.
     > [!NOTE]
     > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob Storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](/azure/storage/common/storage-sas-overview) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](/azure/storage/common/storage-sas-overview).
 
-4. If you are adding new icons for the submission, [prepare the icons](../publish/create-add-on-store-listings.md) and add them to a ZIP archive.
+4. If you are adding new icons for the submission, [prepare the icons](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on) and add them to a ZIP archive.
 
 5. Update the [add-on submission](#add-on-submission-object) data with any required changes for the new submission, and execute the following method to update the submission. For more information, see [Update an add-on submission](update-an-add-on-submission.md).
 
@@ -225,14 +225,14 @@ This resource has the following values.
 | Value      | Type   | Description        |
 |------------|--------|----------------------|
 | id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md), [get all add-ons](get-all-add-ons.md), and [get an add-on](get-an-add-on.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
-| contentType           | string  |  The [type of content](../publish/enter-add-on-properties.md#content-type) that is provided in the add-on. This can be one of the following values: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | An array of strings that contain up to 10 [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on. Your app can query for add-ons using these keywords.   |
+| contentType           | string  |  The [type of content](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#content-type) that is provided in the add-on. This can be one of the following values: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | array  | An array of strings that contain up to 10 [keywords](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#keywords) for the add-on. Your app can query for add-ons using these keywords.   |
 | lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | object  |  A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [listing resource](#listing-object) that contains listing info for the add-on.  |
 | pricing           | object  | A [pricing resource](#pricing-object) that contains pricing info for the add-on.   |
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
-| tag           | string  |  The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) for the add-on (this information was previously called the *tag*).   |
+| tag           | string  |  The [custom developer data](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#custom-developer-data) for the add-on (this information was previously called the *tag*).   |
 | visibility  | string  |  The visibility of the add-on. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | string  |  The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  A [status details resource](#status-details-object) that contains additional details about the status of the submission, including information about any errors. |
@@ -243,7 +243,7 @@ This resource has the following values.
 
 ### Listing resource
 
-This resource contains [listing info for an add-on](../publish/create-add-on-store-listings.md). This resource has the following values.
+This resource contains [listing info for an add-on](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on). This resource has the following values.
 
 | Value           | Type    | Description       |
 |-----------------|---------|------|
@@ -270,9 +270,9 @@ This resource contains pricing info for the add-on. This resource has the follow
 
 | Value           | Type    | Description    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    object     |  A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your add-on in specific markets](../publish/set-add-on-pricing-and-availability.md). Any items in this dictionary override the base price specified by the *priceId* value for the specified market.     |     
+|  marketSpecificPricings               |    object     |  A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your add-on in specific markets](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on). Any items in this dictionary override the base price specified by the *priceId* value for the specified market.     |     
 |  sales               |   array      |  **Deprecated**. An array of [sale resources](#sale-object) that contain sales information for the add-on.     |     
-|  priceId               |   string      |  A [price tier](#price-tiers) that specifies the [base price](../publish/set-add-on-pricing-and-availability.md) for the add-on.    |    
+|  priceId               |   string      |  A [price tier](#price-tiers) that specifies the [base price](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on) for the add-on.    |    
 |  isAdvancedPricingModel               |   boolean      |  If **true**, your developer account has access to the expanded set of price tiers from .99 USD to 1999.99 USD. If **false**, your developer account has access to the original set of price tiers from .99 USD to 999.99 USD. For more information about the different tiers, see [price tiers](#price-tiers).<br/><br/>**Note**&nbsp;&nbsp;This field is read-only.   |
 
 
@@ -295,7 +295,7 @@ This resource has the following values.
 |  basePriceId               |   string      |  The [price tier](#price-tiers) to use for the base price of the sale.    |     
 |  startDate               |   string      |   The start date for the sale in ISO 8601 format.  |     
 |  endDate               |   string      |  The end date for the sale in ISO 8601 format.      |     
-|  marketSpecificPricings               |   object      |   A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your add-on in specific markets](../publish/set-add-on-pricing-and-availability.md). Any items in this dictionary override the base price specified by the *basePriceId* value for the specified market.    |
+|  marketSpecificPricings               |   object      |   A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your add-on in specific markets](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on). Any items in this dictionary override the base price specified by the *basePriceId* value for the specified market.    |
 
 <span id="status-details-object" />
 
@@ -377,4 +377,4 @@ The following values represent the status code of a submission.
 
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Manage add-ons using the Microsoft Store submission API](manage-add-ons.md)
-* [Add-on submissions in Partner Center](../publish/add-on-submissions.md)
+* [Add-on submissions in Partner Center](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on)

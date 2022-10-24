@@ -26,8 +26,8 @@ Each method presents a standard purchase UI to the user and then completes async
 
 This example has the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
-* You have [created an app submission](../publish/app-submissions.md) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
-* If you want to enable in-app purchases for an add-on for the app, you must also [create the add-on in Partner Center](../publish/add-on-submissions.md).
+* You have [created an app submission](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) in Partner Center and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing).
+* If you want to enable in-app purchases for an add-on for the app, you must also [create the add-on in Partner Center](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on).
 
 The code in this example assumes:
 * The code runs in the context of a [Page](/uwp/api/windows.ui.xaml.controls.page) that contains a [ProgressRing](/uwp/api/windows.ui.xaml.controls.progressring) named ```workingProgressRing``` and a [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

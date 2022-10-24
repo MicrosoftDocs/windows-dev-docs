@@ -128,7 +128,7 @@ This walkthrough shows how to use the [AdControl](/uwp/api/microsoft.advertising
 
 4.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Partner Center.
 
-5.  [Submit your app](../publish/app-submissions.md) to the Store using Partner Center.
+5.  [Submit your app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) to the Store using Partner Center.
 
 6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in Partner Center.
 

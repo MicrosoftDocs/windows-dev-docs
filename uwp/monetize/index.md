@@ -24,7 +24,7 @@ For details about the fees charged by the Microsoft Store and how you get paid f
 
 You can charge a price for your app up front. We support a comprehensive range of price tiers, including the option to set per-market prices. You can even schedule a sale to reduce the price of your app for a limited period of time.
 
-[Set app pricing](../publish/set-app-pricing-and-availability.md)
+[Set app pricing](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix)
     :::column-end:::
 :::row-end:::
 

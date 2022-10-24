@@ -44,7 +44,7 @@ UWP apps declare in their manifest the device capabilities they need such as acc
 
 Windows 10 introduced the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows. The UWP core APIs are the same on all Windows devices. If your app only uses the core APIs, it will run on any Windows device no matter whether you are targeting a desktop PC, Xbox, Mixed-reality headset, and so on.
 
-A UWP app written in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
+A UWP app written in [C++/WinRT](../cpp-and-winrt-apis/index.md) has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows devices.
 
 ### Extension SDKs expose the unique capabilities of specific device types
 

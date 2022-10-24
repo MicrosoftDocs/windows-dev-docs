@@ -79,7 +79,7 @@ To create a submission for an app, follow this process.
 
 1. If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
     > [!NOTE]
-    > Make sure the app already has at least one completed submission with the [age ratings](../publish/age-ratings.md) information completed.
+    > Make sure the app already has at least one completed submission with the [age ratings](/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msix) information completed.
 
 2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
@@ -94,7 +94,7 @@ To create a submission for an app, follow this process.
     > [!NOTE]
     > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob Storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](/azure/storage/common/storage-sas-overview) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](/azure/storage/common/storage-sas-overview).
 
-4. If you are adding new packages, listing images, or trailer files for the submission, [prepare the app packages](../publish/app-package-requirements.md) and [prepare the app screenshots, images, and trailers](../publish/app-screenshots-and-images.md). Add all of these files to a ZIP archive.
+4. If you are adding new packages, listing images, or trailer files for the submission, [prepare the app packages](/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix) and [prepare the app screenshots, images, and trailers](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix). Add all of these files to a ZIP archive.
 
 5. Revise the [app submission](#app-submission-object) data with any required changes for the new submission, and execute the following method to [update the app submission](update-an-app-submission.md).
 
@@ -332,28 +332,28 @@ This resource has the following values.
 | Value      | Type   | Description      |
 |------------|--------|-------------------|
 | id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md), [get all apps](get-all-apps.md), and [get an app](get-an-app.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
-| applicationCategory           | string  |   A string that specifies the [category and/or subcategory](../publish/category-and-subcategory-table.md) for your app. Categories and subcategories are combined into a single string with the underscore '_' character, such as **BooksAndReference_EReader**.      |  
+| applicationCategory           | string  |   A string that specifies the [category and/or subcategory](/windows/apps/publish/publish-your-app/categories-and-subcategories?pivots=store-installer-msix) for your app. Categories and subcategories are combined into a single string with the underscore '_' character, such as **BooksAndReference_EReader**.      |  
 | pricing           |  object  | A [pricing resource](#pricing-object) that contains pricing info for the app.        |   
 | visibility           |  string  |  The visibility of the app. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |  
 | listings           |   object  |  A dictionary of key and value pairs, where each key is a country code and each value is a [listing resource](#listing-object) that contains listing info for the app.       |   
-| hardwarePreferences           |  array  |   An array of strings that define the [hardware preferences](../publish/enter-app-properties.md) for your app. This can be one of the following values: <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  boolean  |   Indicates whether Windows can include your app's data in automatic backups to OneDrive. For more information, see [App declarations](../publish/product-declarations.md).   |   
-| canInstallOnRemovableMedia           |  boolean  |   Indicates whether customers can install your app to removable storage. For more information, see [App declarations](../publish/product-declarations.md).     |   
+| hardwarePreferences           |  array  |   An array of strings that define the [hardware preferences](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix) for your app. This can be one of the following values: <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| automaticBackupEnabled           |  boolean  |   Indicates whether Windows can include your app's data in automatic backups to OneDrive. For more information, see [App declarations](/windows/apps/publish/publish-your-app/product-declarations?pivots=store-installer-msix).   |   
+| canInstallOnRemovableMedia           |  boolean  |   Indicates whether customers can install your app to removable storage. For more information, see [App declarations](/windows/apps/publish/publish-your-app/product-declarations?pivots=store-installer-msix).     |   
 | isGameDvrEnabled           |  boolean |   Indicates whether game DVR is enabled for the app.    |   
 | gamingOptions           |  array |   An array that contains one [gaming options resource](#gaming-options-object) that defines game-related settings for the app.     |   
-| hasExternalInAppProducts           |     boolean          |   Indicates whether your app allows users to make purchase outside the Microsoft Store commerce system. For more information, see [App declarations](../publish/product-declarations.md).     |   
-| meetAccessibilityGuidelines           |    boolean           |  Indicates whether your app has been tested to meet accessibility guidelines. For more information, see [App declarations](../publish/product-declarations.md).      |   
-| notesForCertification           |  string  |   Contains [notes for certification](../publish/notes-for-certification.md) for your app.    |    
+| hasExternalInAppProducts           |     boolean          |   Indicates whether your app allows users to make purchase outside the Microsoft Store commerce system. For more information, see [App declarations](/windows/apps/publish/publish-your-app/product-declarations?pivots=store-installer-msix).     |   
+| meetAccessibilityGuidelines           |    boolean           |  Indicates whether your app has been tested to meet accessibility guidelines. For more information, see [App declarations](/windows/apps/publish/publish-your-app/product-declarations?pivots=store-installer-msix).      |   
+| notesForCertification           |  string  |   Contains [notes for certification](/windows/apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix) for your app.    |    
 | status           |   string  |  The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   object  | A [status details resource](#status-details-object) that contains additional details about the status of the submission, including information about any errors.       |    
 | fileUploadUrl           |   string  | The shared access signature (SAS) URI for uploading any packages for the submission. If you are adding new packages, listing images, or trailer files for the submission, upload the ZIP archive that contains the packages and images to this URI. For more information, see [Create an app submission](#create-an-app-submission).       |    
 | applicationPackages           |   array  | An array of [application package resources](#application-package-object) that provide details about each package in the submission. |    
 | packageDeliveryOptions    | object  | A [package delivery options resource](#package-delivery-options-object) that contains gradual package rollout and mandatory update settings for the submission.  |
 | enterpriseLicensing           |  string  |  One of the [enterprise licensing values](#enterprise-licensing) values that indicate the enterprise licensing behavior for the app.  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 and Windows 11 device families](../publish/set-app-pricing-and-availability.md).    |    
-| allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 and Windows 11 device family](../publish/set-app-pricing-and-availability.md) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 and Windows 11 device families](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix).    |    
+| allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 and Windows 11 device family](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
 | friendlyName           |   string  |  The friendly name of the submission, as shown in Partner Center. This value is generated for you when you create the submission.       |  
 | trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
 
@@ -367,9 +367,9 @@ This resource contains pricing info for the app. This resource has the following
 | Value           | Type    | Description        |
 |-----------------|---------|------|
 |  trialPeriod               |    string     |  A string that specifies the trial period for the app. This can be one of the following values: <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
-|  marketSpecificPricings               |    object     |  A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your app in specific markets](../publish/define-market-selection.md). Any items in this dictionary override the base price specified by the *priceId* value for the specified market.      |     
+|  marketSpecificPricings               |    object     |  A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your app in specific markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix). Any items in this dictionary override the base price specified by the *priceId* value for the specified market.      |     
 |  sales               |   array      |  **Deprecated**. An array of [sale resources](#sale-object) that contain sales information for the app.   |     
-|  priceId               |   string      |  A [price tier](#price-tiers) that specifies the [base price](../publish/define-market-selection.md) for the app.   |     
+|  priceId               |   string      |  A [price tier](#price-tiers) that specifies the [base price](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix) for the app.   |     
 |  isAdvancedPricingModel               |   boolean      |  If **true**, your developer account has access to the expanded set of price tiers from .99 USD to 1999.99 USD. If **false**, your developer account has access to the original set of price tiers from .99 USD to 999.99 USD. For more information about the different tiers, see [price tiers](#price-tiers).<br/><br/>**Note**&nbsp;&nbsp;This field is read-only.   |
 
 
@@ -392,7 +392,7 @@ This resource has the following values.
 |  basePriceId               |   string      |  The [price tier](#price-tiers) to use for the base price of the sale.    |     
 |  startDate               |   string      |   The start date for the sale in ISO 8601 format.  |     
 |  endDate               |   string      |  The end date for the sale in ISO 8601 format.      |     
-|  marketSpecificPricings               |   object      |   A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your app in specific markets](../publish/define-market-selection.md). Any items in this dictionary override the base price specified by the *basePriceId* value for the specified market.    |
+|  marketSpecificPricings               |   object      |   A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [price tier](#price-tiers). These items represent the [custom prices for your app in specific markets](/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix). Any items in this dictionary override the base price specified by the *basePriceId* value for the specified market.    |
 
 
 <span id="listing-object" />
@@ -414,18 +414,18 @@ This resource contains base listing info for an app. This resource has the follo
 
 | Value           | Type    | Description       |
 |-----------------|---------|------|
-|  copyrightAndTrademarkInfo                |   string      |  Optional [copyright and/or trademark info](../publish/create-app-store-listings.md).  |
-|  keywords                |  array       |  An array of [keyword](../publish/create-app-store-listings.md) to help your app appear in search results.    |
-|  licenseTerms                |    string     | The optional [license terms](../publish/create-app-store-listings.md) for your app.     |
-|  privacyPolicy                |   string      |   This value is obsolete. To set or change the privacy policy URL for your app, you must do this on the [Properties](../publish/enter-app-properties.md#privacy-policy-url) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.       |
-|  supportContact                |   string      |  This value is obsolete. To set or change the support contact URL or email address for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#support-contact-info) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.        |
-|  websiteUrl                |   string      |  This value is obsolete. To set or change the URL of the web page for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#website) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.      |    
-|  description               |    string     |   The [description](../publish/create-app-store-listings.md) for the app listing.   |     
-|  features               |    array     |  An array of up to 20 strings that list the [features](../publish/create-app-store-listings.md) for your app.     |
-|  releaseNotes               |  string       |  The [release notes](../publish/create-app-store-listings.md) for your app.    |
+|  copyrightAndTrademarkInfo                |   string      |  Optional [copyright and/or trademark info](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix).  |
+|  keywords                |  array       |  An array of [keyword](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix) to help your app appear in search results.    |
+|  licenseTerms                |    string     | The optional [license terms](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix) for your app.     |
+|  privacyPolicy                |   string      |   This value is obsolete. To set or change the privacy policy URL for your app, you must do this on the [Properties](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix#privacy-policy-url) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.       |
+|  supportContact                |   string      |  This value is obsolete. To set or change the support contact URL or email address for your app, you must do this on the  [Properties](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix#support-contact-info) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.        |
+|  websiteUrl                |   string      |  This value is obsolete. To set or change the URL of the web page for your app, you must do this on the  [Properties](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix#website) page in Partner Center. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.      |    
+|  description               |    string     |   The [description](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix) for the app listing.   |     
+|  features               |    array     |  An array of up to 20 strings that list the [features](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix) for your app.     |
+|  releaseNotes               |  string       |  The [release notes](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix) for your app.    |
 |  images               |   array      |  An array of [image and icon](#image-object) resources for the app listing.  |
-|  recommendedHardware               |   array      |  An array of up to 11 strings that list the [recommended hardware configurations](../publish/create-app-store-listings.md#additional-information) for your app.     |
-|  minimumHardware               |     string    |  An array of up to 11 strings that list the [minimum hardware configurations](../publish/create-app-store-listings.md#additional-information) for your app.    |  
+|  recommendedHardware               |   array      |  An array of up to 11 strings that list the [recommended hardware configurations](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix#additional-information) for your app.     |
+|  minimumHardware               |     string    |  An array of up to 11 strings that list the [minimum hardware configurations](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix#additional-information) for your app.    |  
 |  title               |     string    |   The title for the app listing.   |  
 |  shortDescription               |     string    |  Only used for games. This description appears in the **Information** section of the Game Hub on Xbox One, and helps customers understand more about your game.   |  
 |  shortTitle               |     string    |  A shorter version of your product’s name. If provided, this shorter name may appear in various places on Xbox One (during installation, in Achievements, etc.) in place of the full title of your product.    |  
@@ -437,7 +437,7 @@ This resource contains base listing info for an app. This resource has the follo
 
 ### Image resource
 
-This resource contains image and icon data for an app listing. For more information about images and icons for an app listing, see [App screenshots and images](../publish/app-screenshots-and-images.md). This resource has the following values.
+This resource contains image and icon data for an app listing. For more information about images and icons for an app listing, see [App screenshots and images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix). This resource has the following values.
 
 | Value           | Type    | Description           |
 |-----------------|---------|------|
@@ -445,14 +445,14 @@ This resource contains image and icon data for an app listing. For more informat
 |  fileStatus               |   string      |  The status of the image file. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 |  id  |  string  | The ID for the image. This value is supplied by Partner Center.  |
 |  description  |  string  | The description for the image.  |
-|  imageType  |  string  | Indicates the type of the image. The following strings are currently supported. <p/>[Screenshot images](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (use this value for the desktop screenshot)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store logos](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (use this value for the 1:1 300 x 300 pixels logo)</li></ul><p/>[Promotional images](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox images](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optional promotional images](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
+|  imageType  |  string  | Indicates the type of the image. The following strings are currently supported. <p/>[Screenshot images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#screenshots): <ul><li>Screenshot (use this value for the desktop screenshot)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store logos](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (use this value for the 1:1 300 x 300 pixels logo)</li></ul><p/>[Promotional images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optional promotional images](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
 
 <span id="gaming-options-object" />
 
 ### Gaming options resource
 
-This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](../publish/enter-app-properties.md#game-settings) for submissions in Partner Center.
+This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix#game-settings) for submissions in Partner Center.
 
 ```json
 {
@@ -566,9 +566,9 @@ This resource has the following values.
 | fileName   |   string      |  The name of the package.    |  
 | fileStatus    | string    |  The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  An ID that uniquely identifies the package. This value is provided by Partner Center.   |     
-| version    |  string   |  The version of the app package. For more information, see [Package version numbering](../publish/package-version-numbering.md).   |   
+| version    |  string   |  The version of the app package. For more information, see [Package version numbering](/windows/apps/publish/publish-your-app/package-version-numbering?pivots=store-installer-msix).   |   
 | architecture    |  string   |  The architecture of the package (for example, ARM).   |     
-| languages    | array    |  An array of language codes for the languages the app supports. For more information, see [Supported languages](../publish/supported-languages.md).    |     
+| languages    | array    |  An array of language codes for the languages the app supports. For more information, see [Supported languages](/windows/apps/publish/publish-your-app/supported-languages?pivots=store-installer-msix).    |     
 | capabilities    |  array   |  An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](../packaging/app-capability-declarations.md).   |     
 | minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x. For apps that target other OS versions, this value must be present when calling the [update an app submission](update-an-app-submission.md) method but the value you specify is ignored. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | string    |  The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x. For apps that target other OS versions, this value must be present when calling the [update an app submission](update-an-app-submission.md) method but the value you specify is ignored. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul>   |       
@@ -637,7 +637,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 
 ### Trailers resource
 
-This resource represents a video trailer for the app listing. The values in this resource correspond to the [trailers](../publish/app-screenshots-and-images.md#trailers) options for submissions in Partner Center.
+This resource represents a video trailer for the app listing. The values in this resource correspond to the [trailers](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#trailers) options for submissions in Partner Center.
 
 You can add up to 15 trailer resources to the *trailers* array in an [app submission resource](#app-submission-object). To upload trailer video files and thumbnail images for a submission, add these files to the same ZIP archive that contains the packages and listing images for the submission, and then upload this ZIP archive to the shared access signature (SAS) URI for the submission. For more information uploading the ZIP archive to the SAS URI, see [Create an app submission](#create-an-app-submission).
 
@@ -672,7 +672,7 @@ This resource has the following values.
 |  id               |    string     |   The ID for the trailer. This value is provided by Partner Center.   |
 |  videoFileName               |    string     |    The name of the trailer video file in the ZIP archive that contains files for the submission.    |     
 |  videoFileId               |   string      |  The ID for the trailer video file. This value is provided by Partner Center.   |     
-|  trailerAssets               |   object      |  A dictionary of key and value pairs, where each key is a language code and each value is a [trailer assets resource](#trailer-assets-object) that contains additional locale-specific assets for the trailer. For more information about the supported language codes, see [Supported languages](../publish/supported-languages.md).    |     
+|  trailerAssets               |   object      |  A dictionary of key and value pairs, where each key is a language code and each value is a [trailer assets resource](#trailer-assets-object) that contains additional locale-specific assets for the trailer. For more information about the supported language codes, see [Supported languages](/windows/apps/publish/publish-your-app/supported-languages?pivots=store-installer-msix).    |     
 
 > [!NOTE]
 > The *trailers* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *trailers* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
@@ -767,4 +767,4 @@ The following values represent the status code of a submission.
 
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get app data using the Microsoft Store submission API](get-app-data.md)
-* [App submissions in Partner Center](../publish/app-submissions.md)
+* [App submissions in Partner Center](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix)
