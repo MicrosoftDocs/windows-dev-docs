@@ -64,7 +64,7 @@ items:
               href: winui/winui3/winui-project-templates-in-visual-studio.md
   - name: How tos
     items: 
-      - name: Build a Hello World app with WinUI 3
+      - name: Build a Hello World app with C# & WinUI 3
         href: how-tos/hello-world-winui3.md     
   - name: Design
     href: design/toc.yml
