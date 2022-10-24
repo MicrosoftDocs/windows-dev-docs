@@ -40,7 +40,7 @@ In practice, this means that in Dark mode, most of the UI will be dark, and in L
 
 ## Enable support for switching color modes
 
-There are many approaches to implementing Dark mode support in an application. Some apps contain two sets of UIs (one with a light color and one with a dark color). Some Windows UI frameworks, such as [WinUI 3](/windows/apps/winui/winui3/), automatically detect a system's theme and adjust the UI to follow the system theme. To fully support Dark mode, the entirety of an app's surface must follow the dark theme.
+There are many approaches to implementing Dark mode support in an application. Some apps contain two sets of UIs (one with a light color and one with a dark color). Some Windows UI frameworks, such as [WinUI 3](../../winui/winui3/index.md), automatically detect a system's theme and adjust the UI to follow the system theme. To fully support Dark mode, the entirety of an app's surface must follow the dark theme.
 
 There are two main things you can do in your Win32 app to support both Light and Dark themes.
 
@@ -167,7 +167,7 @@ Changing the setting from Dark mode to Light mode will make `isDarkModeRevoker` 
 
 ## Enable a Dark mode title bar for Win32 applications
 
-Windows doesn't know if an application can support Dark mode, so it assumes that it can't for backwards compatibility reasons. Some Windows development frameworks, such as [Windows App SDK](/windows/apps/windows-app-sdk/), support Dark mode natively and change certain UI elements without any additional code. Win32 apps often don't support Dark mode, so Windows gives Win32 apps a light title bar by default.
+Windows doesn't know if an application can support Dark mode, so it assumes that it can't for backwards compatibility reasons. Some Windows development frameworks, such as [Windows App SDK](../../windows-app-sdk/index.md), support Dark mode natively and change certain UI elements without any additional code. Win32 apps often don't support Dark mode, so Windows gives Win32 apps a light title bar by default.
 
 However, for any app that uses the standard Windows title bar, you can enable the dark version of the title bar when the system is in Dark mode. To enable the dark title bar, call a [Desktop Windows Manager](/windows/win32/dwm/dwm-overview) (DWM) function called [DwmSetWindowAttribute](/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute) on your top-level window, using the window attribute [DWMWA_USE_IMMERSIVE_DARK_MODE](/windows/win32/api/dwmapi/ne-dwmapi-dwmwindowattribute). (DWM renders attributes for a window.)
 
@@ -273,6 +273,6 @@ When this code is run, the app title bar should be dark:
 
 ## See also
 
-- [Make your app great on Windows 11](/windows/apps/get-started/make-apps-great-for-windows)
-- [Accessible text requirements](/windows/apps/design/accessibility/accessible-text-requirements)
+- [Make your app great on Windows 11](../../get-started/make-apps-great-for-windows.md)
+- [Accessible text requirements](../../design/accessibility/accessible-text-requirements.md)
 - [Desktop Windows Manager (DWM)](/windows/win32/dwm/dwm-overview)

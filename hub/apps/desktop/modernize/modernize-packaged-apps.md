@@ -12,7 +12,7 @@ ms.custom: RS5
 
 Some [modern Windows experiences](index.md) are available only to desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. These features include certain Windows Runtime APIs, package extensions, and UWP components.
 
-Only packaged apps have package identity at runtime. For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](/windows/apps/package-and-deploy/). If your desktop app has package identity, then you can use the following features in your app.
+Only packaged apps have package identity at runtime. For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../../package-and-deploy/index.md). If your desktop app has package identity, then you can use the following features in your app.
 
 ## Integrate with package extensions
 

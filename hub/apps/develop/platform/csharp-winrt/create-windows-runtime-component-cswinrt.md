@@ -35,7 +35,7 @@ Begin by creating a new project in Visual Studio. Select the **Class Library** p
     </PropertyGroup>
     ```
 
-    To access Windows Runtime types, you need to set a specific Windows SDK version in the TFM. For more details on the supported version, see [.NET 6 and later: Use the TFM option](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-6-use-the-target-framework-moniker-option).
+    To access Windows Runtime types, you need to set a specific Windows SDK version in the TFM. For more details on the supported version, see [.NET 6 and later: Use the TFM option](../../../desktop/modernize/desktop-to-uwp-enhance.md).
 
 2. Install the [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) NuGet package in your project.
 

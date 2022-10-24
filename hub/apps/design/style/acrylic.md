@@ -32,7 +32,7 @@ Acrylic in dark theme
 
 ## Acrylic and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design overview](/windows/apps/fluent-design-system).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design overview](/windows/apps/design/).
 
 ## Examples
 
@@ -237,7 +237,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](/windows/apps/develop/title-bar).
+In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](../../develop/title-bar.md).
 
 ## Do's and don'ts
 * Do use acrylic on transient surfaces.
@@ -259,4 +259,4 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 
 ## Related articles
 
-[Fluent Design overview](/windows/apps/fluent-design-system)
+[Fluent Design overview](/windows/apps/design/)
