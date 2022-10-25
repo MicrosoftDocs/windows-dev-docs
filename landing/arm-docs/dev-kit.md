@@ -1,7 +1,7 @@
 ---
 title: Windows Dev Kit 2023 (Project Volterra)
 description: Powered by Arm64 and running Windows 11, this desktop device enables you to develop Windows apps for Arm, on Arm. Find device specifications, set up instructions, Arm-native developer tools, Support, and FAQs. 
-ms.date: 10/21/2022
+ms.date: 10/24/2022
 ms.topic: article
 ms.prod: windows
 ms.technology: arm
@@ -87,6 +87,10 @@ A fully Arm-native suite of developer tools are available for installing on Wind
     VS Code has supported an Arm64 architecture since the September 2020 version 1.50 release, including [extensions for Remote Development](https://code.visualstudio.com/docs/remote/remote-overview).
 
 Bringing together local compute on the CPU, GPU, and NPU and cloud compute with Azure, including:
+
+- **[ONNX Runtime + Windows Dev Kit 2023 = NPU powered AI](https://onnxruntime.ai/winarm)**
+
+    Unlock the NPU power to accelerate AI/ML workloads using ONNX Runtime with frameworks like PyTorch or TensorFlow - get started with these instructions and tutorials.
 
 - **[Qualcomm Neural Processing SDK for AI](https://developer.qualcomm.com/qualcomm-robotics-rb5-kit/software-reference-manual/machine-learning/snpe)**
 
