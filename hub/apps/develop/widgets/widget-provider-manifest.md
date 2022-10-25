@@ -191,7 +191,7 @@ The following code example illustrates the usage of the widget package manifest 
 
 ```xml
 <uap3:Extension Category="windows.appExtension">
-  <uap3:AppExtension Name="com.microsoft.windows.widgets" DisplayName="WidgetTestApp" Id="ContosoWidgetApp" PublicFolder="Public">
+  <uap3:AppExtension Name="com.microsoft.windows.widgets" DisplayName="Widget Test App" Id="ContosoWidgetApp" PublicFolder="Public">
     <uap3:Properties>
       <WidgetProvider>
         <ProviderIcons>
