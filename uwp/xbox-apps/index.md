@@ -40,4 +40,3 @@ This section includes setup steps, a guide through the authentication process, i
 
 - [Automate launching Windows 10 UWP apps](automate-launching-uwp-apps.md)
 - [CPUSets for game development](cpusets-games.md)
-- [Progressive Web Apps for Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations)
