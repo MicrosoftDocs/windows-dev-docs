@@ -5,12 +5,9 @@ keywords: app lifecycle suspended resume launch activate
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Windows 10 universal Windows platform (UWP) app lifecycle
-
 
 This topic describes the lifecycle of a Universal Windows Platform (UWP) app from the time it is launched until it is closed.
 
@@ -52,7 +49,8 @@ Get the previous state of your app from [LaunchActivatedEventArgs.PreviousExecut
 |**ClosedByUser** | The user closed the app with the system close button, or with Alt+F4. When the user closes the app, it is first suspended and then terminated. | Because the app has essentially gone through the same steps that lead to the Terminated state, handle this the same way you would the Terminated state.|
 |**Running** | The app was already open when the user tried to launch it again. | Nothing. Note that another instance of your app is not launched. The already running instance is simply activated. |
 
-**Note**  *Current user session* is based on Windows logon. As long as the current user hasn't logged off, shut down, or restarted Windows, the current user session persists across events such as lock screen authentication, switch-user, and so on. 
+>[!NOTE]
+>_Current user session_ is based on Windows logon. As long as the current user hasn't logged off, shut down, or restarted Windows, the current user session persists across events such as lock screen authentication, switch-user, and so on.
 
 One important circumstance to be aware of is that if the device has sufficient resources, the operating system will prelaunch frequently used apps that have opted in for that behavior in order to optimize responsiveness. Apps that are prelaunched are launched in the background and then quickly suspended so that when the user switches to them, they can be resumed which is faster than launching the app.
 
@@ -81,7 +79,7 @@ The event data for these methods includes the same  [**PreviousExecutionState**]
 
 **Note** If you log on using the computer's Administrator account, you can't activate UWP apps.
 
-## Running in the background ##
+## Running in the background
 
 Starting with Windows 10, version 1607, apps can run background tasks within the same process as the app itself. Read more about it in [Background activity with the Single Process Model](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99). We won't go into in-process background processing in this article, but how this impacts the app lifecycle is that two new events have been added related to when your app is in the background. They are: [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) and [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground).
 
@@ -89,7 +87,7 @@ These events also reflect whether the user can see your app's UI.
 
 Running in the background is the default state that an application is launched, activated, or resumed into. In this state your application UI is not visible yet.
 
-## Running in the foreground ##
+## Running in the foreground
 
 Running in the foreground means that your app's UI is visible.
 
@@ -123,19 +121,22 @@ After you save your data, if you are over your memory usage limit, then you can 
 
 Be aware that if your app has background activity in progress that it can move from the running in the background state to the running in the foreground state without ever reaching the suspended state.
 
+>[!NOTE]
+>When your app is being closed by the user, it is possible for the **OnSuspending** event to be fired before the **EnteredBackground** event. In some cases, the **EnteredBackground** event may not be fired before the app is terminated. It is important to save your data in the **OnSuspending** event handler.
+
 ### Asynchronous work and Deferrals
 
 If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](/uwp/api/windows.applicationmodel.suspendingoperation.getdeferral) method on the [**EnteredBackgroundEventArgs**](/uwp/api/Windows.ApplicationModel) object that is passed to your event handler to delay suspension until after you call the [**Complete**](/uwp/api/windows.foundation.deferral.complete) method on the returned [**Windows.Foundation.Deferral**](/uwp/api/windows.foundation.deferral) object.
 
-A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*.
+A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's _Complete_ method is called, or the deadline passes-_whichever comes first_.
 
-If you need more time to save your state, investigate ways to save your state in stages before your app enters the background state so that there is less to save in your **EnteredBackground** event handler. Or you may request an [ExtendedExecutionSession](/archive/msdn-magazine/2015/windows-10-special-issue/app-lifecycle-keep-apps-alive-with-background-tasks-and-extended-execution) to get more time. There is no guarantee that the request will be granted, however, so it is best to find ways to minimize the amount of time you need to save your state.
+If you need more time to save your state, investigate ways to save your state in stages before your app enters the background state so that there is less to save in your **OnSuspending** and **EnteredBackground** event handlers. Or you may request an [ExtendedExecutionSession](/archive/msdn-magazine/2015/windows-10-special-issue/app-lifecycle-keep-apps-alive-with-background-tasks-and-extended-execution) to get more time. There is no guarantee that the request will be granted, however, so it is best to find ways to minimize the amount of time you need to save your state.
 
 ## App suspend
 
 When the user minimizes an app Windows waits a few seconds to see whether the user will switch back to it. If they do not switch back within this time window, and no extended execution, background task, or activity sponsored execution is active, Windows suspends the app. An app is also suspended when the lock screen appears as long as no extended execution session, etc. is active in that app.
 
-When an app is suspended, it invokes the [**Application.Suspending**](/uwp/api/windows.ui.xaml.application.suspending) event. Visual Studio's UWP project templates provide a handler for this event called **OnSuspending** in **App.xaml.cs**. Prior to Windows 10, version 1607, you would put the code to save your state here. Now the recommendation is to save your state when you enter the background state, as described above.
+When an app is suspended, it invokes the [**Application.Suspending**](/uwp/api/windows.ui.xaml.application.suspending) event. Visual Studio's UWP project templates provide a handler for this event called **OnSuspending** in **App.xaml.cs**. You should put the code to save your application state here.
 
 You should release exclusive resources and file handles so that other apps can access them while your app is suspended. Examples of exclusive resources include cameras, I/O devices, external devices, and network resources. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app is suspended. When the app is resumed, it should reacquire  its exclusive resources and file handles.
 
@@ -149,7 +150,7 @@ If you need more time, you may request an [ExtendedExecutionSession](/archive/ms
 
 ### App terminate
 
-The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, it will terminate your app. Apps don't receive a notification that they are being terminated, so the only opportunity you have to save your app's data is in your **OnSuspending** event handler, or asynchronously from your **EnteredBackground** handler.
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, it will terminate your app. Apps don't receive a notification that they are being terminated, so the only opportunity you have to save your app's data is in your **OnSuspending** event handler.
 
 When your app determines that it has been activated after being terminated, it should load the application data that it saved so that the app is in the same state it was in before it was terminated. When the user switches back to a suspended app that has been terminated, the app should restore its application data in its [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method. The system doesn't notify an app when it is terminated, so your app must save its application data and release exclusive resources and file handles before it is suspended, and restore them when the app is activated after termination.
 
@@ -201,23 +202,19 @@ The basic code that is relevant to the app lifecycle is provided in the Visual S
 
 ## Key application lifecycle APIs
 
--   [**Windows.ApplicationModel**](/uwp/api/Windows.ApplicationModel) namespace
--   [**Windows.ApplicationModel.Activation**](/uwp/api/Windows.ApplicationModel.Activation) namespace
--   [**Windows.ApplicationModel.Core**](/uwp/api/Windows.ApplicationModel.Core) namespace
--   [**Windows.UI.Xaml.Application**](/uwp/api/Windows.UI.Xaml.Application) class (XAML)
--   [**Windows.UI.Xaml.Window**](/uwp/api/Windows.UI.Xaml.Window) class (XAML)
+- [**Windows.ApplicationModel**](/uwp/api/Windows.ApplicationModel) namespace
+- [**Windows.ApplicationModel.Activation**](/uwp/api/Windows.ApplicationModel.Activation) namespace
+- [**Windows.ApplicationModel.Core**](/uwp/api/Windows.ApplicationModel.Core) namespace
+- [**Windows.UI.Xaml.Application**](/uwp/api/Windows.UI.Xaml.Application) class (XAML)
+- [**Windows.UI.Xaml.Window**](/uwp/api/Windows.UI.Xaml.Window) class (XAML)
 
 ## Related topics
 
-* [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState)
-* [Guidelines for app suspend and resume](./index.md)
-* [Handle app prelaunch](handle-app-prelaunch.md)
-* [Handle app activation](activate-an-app.md)
-* [Handle app suspend](suspend-an-app.md)
-* [Handle app resume](resume-an-app.md)
-* [Background activity with the Single Process Model](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
-* [Play media in the Background](../audio-video-camera/background-audio.md)
-
- 
-
- 
+- [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState)
+- [Guidelines for app suspend and resume](./index.md)
+- [Handle app prelaunch](handle-app-prelaunch.md)
+- [Handle app activation](activate-an-app.md)
+- [Handle app suspend](suspend-an-app.md)
+- [Handle app resume](resume-an-app.md)
+- [Background activity with the Single Process Model](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
+- [Play media in the Background](../audio-video-camera/background-audio.md)
