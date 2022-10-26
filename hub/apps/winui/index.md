@@ -19,7 +19,7 @@ The Windows UI Library (WinUI) is a native user experience (UX) framework for bo
 
 By incorporating the [Fluent Design System](https://www.microsoft.com/design/fluent/#/) into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
 
-With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and Javascript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
+With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and JavaScript (using [React Native for Windows](https://microsoft.github.io/react-native-windows/)).
 
     :::column-end:::
 :::row-end:::

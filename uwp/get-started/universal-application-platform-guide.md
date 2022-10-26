@@ -32,7 +32,7 @@ A UWP app is:
 - Available from the Microsoft Store on all devices (or only those that you specify) that run on Windows 10 or Windows 11. The Microsoft Store provides multiple ways to make money on your app.
 - Able to be installed and uninstalled without risk to the machine or incurring "machine rot".
 - Engaging: use live tiles, push notifications, and user activities that interact with Windows Timeline and Cortana's Pick Up Where I Left Off, to engage users.
-- Programmable in C#, C++, Visual Basic, and Javascript. For UI, use WinUI, XAML, HTML, or DirectX.
+- Programmable in C#, C++, Visual Basic, and JavaScript. For UI, use WinUI, XAML, HTML, or DirectX.
 
 Let's look at these in more detail.
 
