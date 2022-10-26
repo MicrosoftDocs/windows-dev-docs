@@ -62,7 +62,7 @@ The dev kit includes a 90W power supply. Attach the power supply to the back on 
 Use the **mDP port** as your main display for setting up this device. The UEFI output defaults to mDP port.
 
 - If the display is connected to USB-C only, you won't see the UEFI startup screen output when you turn on the device. It takes  ~25 seconds for the display to light up after power button is pressed.
-- If connecting an HDMI monitor to the mDP port, an active mini-DP to HDMI adapter is required. Use the Surface Mini DisplayPort to HDMI 2.0 Adapter provided with your device.
+- If connecting an HDMI monitor to the mDP port, an active mini-DP to HDMI adapter is required.
 - When connecting an external keyboard or mouse, use the USB-A ports, not USB-C. Using USB-C to connect a keyboard or mouse will only work intermittently.
 
 |Ports | Transmission Mode | Max Data Speed | Supported Displays (max resolution) | Comments |
