@@ -18,15 +18,19 @@ For more information about installing and configuring Visual Studio to get acces
 
 ## WinUI templates
 
-The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](/windows/apps/winui/) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
+The [Windows UI Library (WinUI)](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI 3](../winui/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 
 WinUI 3 is available as part of [the Windows App SDK](../windows-app-sdk/index.md). It includes a VSIX package for Visual Studio 2019 (and later) that provides project and item templates that help you get started building apps with a WinUI-based interface.
+
+[Template Studio for WinUI (C#)](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs) is a Visual Studio 2022 extension that accelerates the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
 
 For more information about the available WinUI project and item templates, see [WinUI 3 templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## UWP templates
 
 Visual Studio provides a variety of project templates for building UWP apps with C# or C++. To use these project templates, you must include the **Universal Windows Platform development** workload when you install Visual Studio. For the C++ project templates, you must also include the **C++ (v142) Universal Windows Platforms tools** optional component for the **Universal Windows Platform development** workload.
+
+[Template Studio for UWP](https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForUWP) is a Visual Studio 2022 extension that accelerates the creation of new .NET UWP apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.
 
 ### Project templates for C# and UWP
 
@@ -92,7 +96,7 @@ The recommended technology is [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). Thi
 
 ### Project templates for C++ desktop apps
 
-To access the C++ project templates for classic desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
+To access the C++ project templates for desktop apps when you create a new project in Visual Studio, filter the language to **C++**, the platform to **Windows**, and the project type to **Desktop**.
 
 ![Native C++ app project templates](images/desktop-app-projects-cpp.png)
 
@@ -142,8 +146,8 @@ You can use these project templates to create apps using C# and .NET.
 
 | Template | Description |
 |----------|----------|
-| WPF Application | Creates a [WPF](/dotnet/framework/wpf/) app that targets [.NET 5](/dotnet/core/dotnet-five) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1). For a walkthrough of this project template, see [Create a WPF application](/visualstudio/get-started/csharp/tutorial-wpf). |
+| WPF Application | Creates a [WPF](/dotnet/framework/wpf/) app that targets [.NET 6](/dotnet/core/whats-new/dotnet-6) (or later) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1). For a walkthrough of this project template, see [Create a WPF application](/visualstudio/get-started/csharp/tutorial-wpf). |
 | WPF App (.NET Framework) | Creates a [WPF](/dotnet/framework/wpf/) app that targets the [.NET Framework](/dotnet/framework/). For a walkthrough of this project template, see [Tutorial: Create your first WPF application](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application). |
-| Windows Forms App | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets [.NET 5](/dotnet/core/dotnet-five) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1).  |
+| Windows Forms App | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets [.NET 6](/dotnet/core/whats-new/dotnet-6) (or later) or [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1).  |
 | Windows Forms App (.NET Framework) | Creates a [Windows Forms](/dotnet/framework/winforms/) app that targets the [.NET Framework](/dotnet/framework/). For a walkthrough of this project template, see [Create a Windows Forms app in Visual Studio with C#](/visualstudio/ide/create-csharp-winform-visual-studio). |
 | Windows Application Packaging Project | Creates a project that you can use to build a WPF or Windows Forms app into an [MSIX package](/windows/msix/overview). This provides a modern deployment experience, the ability to integrate with Windows features via package extensions, and much more. For more information, see [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). |

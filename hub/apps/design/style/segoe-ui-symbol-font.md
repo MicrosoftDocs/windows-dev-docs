@@ -59,7 +59,7 @@ You can also use the static resource `SymbolThemeFontFamily` to access **Segoe M
 
 
 ## How do I get this font?
-* On Windows 10: There's nothing you need to do, the font comes with Windows.
+* On Windows: There's nothing you need to do, the font comes with Windows.
 * On a Mac, you need to download and install the font: <a href="https://aka.ms/SegoeFonts">Get the Segoe UI and MDL2 icon fonts</a>
 
 ## Icon list

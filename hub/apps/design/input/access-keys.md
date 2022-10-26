@@ -75,7 +75,7 @@ _Primary access keys in Microsoft Word_
 ![Secondary access keys in Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
 _Secondary access keys in Microsoft Word_
 
-Access keys can be duplicated for elements in different scopes. In the preceding example, “2” is the access key for Undo in the primary scope, and also “Italics” in the secondary scope.
+Access keys can be duplicated for elements in different scopes. In the preceding example, "2" is the access key for Undo in the primary scope, and also "Italics" in the secondary scope.
 
 Here, we show how to define an access key scope.
 
@@ -115,7 +115,7 @@ _CommandBar secondary scope and supported access keys_
 
 ### Windows 10 Creators Update and older
 
-Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn’t support built-in access key scopes.
+Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn't support built-in access key scopes.
 
 The following example shows how to support CommandBar SecondaryCommands with access keys, which are available once a parent command is invoked (similar to the Ribbon in Word).
 
@@ -199,7 +199,7 @@ Access key collisions occur when two or more elements in the same scope have dup
 
 The system resolves duplicate access keys by processing the access key of the first element added to the visual tree, ignoring all others.
 
-When multiple access keys start with the same character (for example, “A”, “A1”, and “AB”), the system processes the single character access key and ignores all others.
+When multiple access keys start with the same character (for example, "A", "A1", and "AB"), the system processes the single character access key and ignores all others.
 
 Avoid collisions by using unique access keys or by scoping commands.
 
@@ -210,16 +210,16 @@ Consider the following when choosing access keys:
 -   Use a single character to minimize keystrokes and support accelerator keys by default (Alt+AccessKey)
 -   Avoid using more than two characters
 -   Avoid access keys collisions
--   Avoid characters that are difficult to differentiate from other characters, such as the letter “I” and the number “1” or the letter “O” and the number “0”
--   Use well-known precedents from other popular apps such as Word (“F” for “File”, “H” for “Home”, and so on)
+-   Avoid characters that are difficult to differentiate from other characters, such as the letter "I" and the number "1" or the letter "O" and the number "0"
+-   Use well-known precedents from other popular apps such as Word ("F" for "File", "H" for "Home", and so on)
 -   Use the first character of the command name, or a character with a close association to the command that helps with recall
-    -   If the first letter is already assigned, use a letter that is as close as possible to the first letter of the command name (“N” for Insert)
-    -   Use a distinctive consonant from the command name (“W” for View)
+    -   If the first letter is already assigned, use a letter that is as close as possible to the first letter of the command name ("N" for Insert)
+    -   Use a distinctive consonant from the command name ("W" for View)
     -   Use a vowel from the command name.
 
 ## Localize access keys
 
-If your app is going to be localized in multiple languages, you should also **consider localizing the access keys**. For example, for “H” for “Home” in en-US and “I” for “Incio” in es-ES.
+If your app is going to be localized in multiple languages, you should also **consider localizing the access keys**. For example, for "H" for "Home" in en-US and "I" for "Incio" in es-ES.
 
 Use the x:Uid extension in markup to apply localized resources as shown here:
 
@@ -256,7 +256,7 @@ However, should you need more control over Key Tip positioning, we recommend the
 
     a.  The Key Tip should be **close** to the element who have the access key (the owner).  
     b.  The Key Tip should **avoid covering enabled elements** that have access keys.   
-    c.  If a Key Tip can’t be placed close to its owner, it should overlap the owner. 
+    c.  If a Key Tip can't be placed close to its owner, it should overlap the owner. 
 
 2.  **Discoverability**: The user can discover the control with the Key Tip quickly.
 
@@ -358,4 +358,4 @@ If you specify the AccessKey property on a UIElement or TextElement control, you
 * [Keyboard accelerators](keyboard-accelerators.md)
 
 **Samples**
-* [XAML Controls Gallery (aka XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)

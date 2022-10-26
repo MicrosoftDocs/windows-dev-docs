@@ -50,10 +50,10 @@ To create a Gatsby.js project:
 
     Open the WSL terminal integrated in VS Code (**View > Terminal**). Make sure that the terminal path is pointed to your project directory (ie. `~/GatsbyProjects/my-gatsby-app$`). Then try running a development instance of your new app using: `gatsby develop`
 
-7. Once your new Gatsby project finishes compiling, your terminal will display that "You can now view gatsby-starter-default in the browser. [http://localhost:8000/](http://localhost:8000/)." Select this localhost link to view your new project built in a web browser.
+7. Once your new Gatsby project finishes compiling, your terminal will display that "You can now view gatsby-starter-default in the browser. `http://localhost:8000/`." Select this localhost link to view your new project built in a web browser.
 
 > [!NOTE]
-> You'll notice that your terminal output also let's you know that you can "View GraphiQL, an in-browser IDE, to explore your site's data and schema: [http://localhost:8000/___graphql](http://localhost:8000/___graphql)." GraphQL consolidates your APIs into a self-documenting IDE (GraphiQL) built into Gatsby. In addition to exploring your site's data and schema, you can perform GraphQL operations such as queries, mutations, and subscriptions. For more info, see [Introducing GraphiQL](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/).
+> You'll notice that your terminal output also let's you know that you can "View GraphiQL, an in-browser IDE, to explore your site's data and schema: `http://localhost:8000/___graphql`." GraphQL consolidates your APIs into a self-documenting IDE (GraphiQL) built into Gatsby. In addition to exploring your site's data and schema, you can perform GraphQL operations such as queries, mutations, and subscriptions. For more info, see [Introducing GraphiQL](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/).
 
 8. Open the `src/pages/index.js` file in your VS Code editor. Find the page title `<h1 >Hi people</h1>` and change it to `<h1 >Hi (Your Name)!</h1>`. With your web browser still open to localhost:8000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.
 

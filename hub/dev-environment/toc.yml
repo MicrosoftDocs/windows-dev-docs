@@ -27,6 +27,8 @@ items:
             href: ../package-manager/winget/help.md
           - name: import command
             href: ../package-manager/winget/import.md
+          - name: info command
+            href: ../package-manager/winget/info.md
           - name: install command
             href: ../package-manager/winget/install.md
           - name: list command
@@ -39,6 +41,8 @@ items:
             href: ../package-manager/winget/show.md
           - name: source command
             href: ../package-manager/winget/source.md
+          - name: tab completion
+            href: ../package-manager/winget/tab-completion.md  
           - name: uninstall command
             href: ../package-manager/winget/uninstall.md
           - name: upgrade command
@@ -62,7 +66,7 @@ items:
           - name: Repository policies
             href: ../package-manager/package/windows-package-manager-policies.md
           - name: Repository policies change history
-            href: ../package-manager/package/windows-package-manager-policies-change-history.md
+            href: ../package-manager/package/windows-package-manager-policies.md
   - name: PowerToys
     items:
       - name: Overview
@@ -93,10 +97,16 @@ items:
         href: ../powertoys/mouse-utilities.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
+      - name: Quick Accent
+        href: ../powertoys/quick-accent.md
       - name: PowerToys Run
         href: ../powertoys/run.md
       - name: Shortcut Guide
         href: ../powertoys/shortcut-guide.md
+      - name: Screen Ruler
+        href: ../powertoys/screen-ruler.md
+      - name: Text Extractor
+        href: ../powertoys/text-extractor.md
       - name: Video Conference Mute
         href: ../powertoys/video-conference-mute.md
   - name: Mac to Windows guide
@@ -166,17 +176,17 @@ items:
         - name: Overview
           href: ../android/overview.md
         - name: Windows Subsystem for Android™️
-          href: ../android/wsa/index.md
-        - name: Release notes for WSA
-          href:  ../android/wsa/release-notes.md
+          items:
+            - name: Overview
+              href: ../android/wsa/index.md
+            - name: Release notes
+              href:  ../android/wsa/release-notes.md
+            - name: Preview program
+              href: ../android/wsa/preview-program.md
         - name: Native Android
           href: ../android/native-android.md
         - name: Cross-platform
           items:
-            - name: Xamarin Native
-              href: ../android/xamarin-android.md
-            - name: Xamarin Forms
-              href: ../android/xamarin-forms.md
             - name: React Native
               href: ../dev-environment/javascript/react-native-for-android.md
             - name: PWA (Ionic, PhoneGap, Cordova)
@@ -210,7 +220,7 @@ items:
         - name: VS Code
           href: https://code.visualstudio.com/docs
         - name: Visual Studio
-          href: /visualstudio/windows/?view=vs-2019
+          href: /visualstudio/windows/
         - name: Azure
           href: /azure/?product=featured
         - name: .NET

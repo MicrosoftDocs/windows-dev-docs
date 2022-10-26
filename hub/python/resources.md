@@ -28,7 +28,7 @@ A list of links that we recommend for Python Developers working on machines runn
 
 - [Upcoming Python Events](https://www.python.org/events/python-events): Connect with other Pythonistas and Pythoneers.
 
-- [Books, websites, tutorials on python.org ](https://wiki.python.org/moin/BeginnersGuide/Programmers): Another list of resources for learning Python provided by the user community.
+- [Books, websites, tutorials on python.org](https://wiki.python.org/moin/BeginnersGuide/Programmers): Another list of resources for learning Python provided by the user community.
 
 - [FAQs from Python.org](https://docs.python.org/3/faq/): Covering everything from 'What is Python?' to ['Is there an equivalent of C's "?:" ternary operator?'](https://docs.python.org/3/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator).
 
@@ -44,7 +44,9 @@ A list of links that we recommend for Python Developers working on machines runn
 
 ## Online courses
 
-- [Introduction to Python on Microsoft Learn](/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python](/training/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+
+- [Build an AI web app by using Python and Flask](/training/modules/python-flask-build-ai-web-app): Use Python, Flask, and Azure Cognitive Services to build a web app that incorporates AI.
 
 - [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 
@@ -63,8 +65,6 @@ A list of links that we recommend for Python Developers working on machines runn
 - [Django web framework docs](https://docs.djangoproject.com/en/2.2/): Tutorials, topic guides, API reference, and how-to guides.
 
 - [Other Python web frameworks](https://wiki.python.org/moin/WebFrameworks): A list of Python web frameworks with brief descriptions from Python.org.
-
-- [Tutorial: Build a Flask app with Azure Cognitive Services](/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis): Build a Flask web app that uses Azure Cognitive Services to translate text, analyze sentiment, and synthesize translated text into speech.
 
 - [Deploy a Python web app to a VM in Azure Stack](/azure-stack/user/azure-stack-dev-start-howto-vm-python): Create a VM to host your Python web app in Azure Stack.
 

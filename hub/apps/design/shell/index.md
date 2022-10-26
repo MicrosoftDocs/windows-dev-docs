@@ -12,7 +12,7 @@ Learn how to use tiles, badges, toasts, and notifications to provide entry point
 
 :::row:::
     :::column:::
-### [Toast notifications](tiles-and-notifications/toast-ux-guidance.md)
+### [Toast notifications](tiles-and-notifications/toast-notifications-overview.md)
 Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.
     :::column-end:::
     :::column:::
@@ -34,7 +34,7 @@ Ask your user to pin your app to the taskbar to make it easier to find.
 
 :::row:::
     :::column:::
-### [Title bar](/windows/apps/develop/title-bar)
+### [Title bar](../../develop/title-bar.md)
 Extend your app content into the title bar and add custom content.
     :::column-end:::
     :::column:::

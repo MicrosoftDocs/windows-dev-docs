@@ -2,7 +2,7 @@
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: article
-ms.date: 03/16/2022
+ms.date: 05/06/2022
 keywords: windows win32, desktop development
 ms.author: jimwalk
 author: jwmsft
@@ -61,9 +61,9 @@ Inclusive design creates better products for everyone. To make sure your app is 
 
 Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).
 
-Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibly can reduce the cost of maintaining your app.
+Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
 
-[Accessibility in Windows](/windows/apps/develop/accessibility)
+[Accessibility in Windows](../develop/accessibility.md)
 
 ## 4. Use the latest common controls
 
@@ -71,19 +71,20 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 ![An image of common UI controls](images/great-apps/controls.png)
 
-### Windows UI Library (WinUI)
-
-- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation "for free".
-- See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
-- Use the [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) to evaluate the controls.
-
 ### Desktop apps (Win32)
-
+- Use [WinUI 3](../winui/winui3/index.md) in [Windows App SDK](../windows-app-sdk/index.md) 1.1 or greater to create a Win32 application that can leverage the modern common controls. 
+- To evaluate the controls, check out the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*main branch*).
 - Win32 controls that use [UXTheme](/windows/win32/api/uxtheme/) will automatically get a "repaint" of the Light theme for select rejuvenated control visuals. Be sure to test for any issues. For those surfaces that do not get updated automatically, manually update the visuals so that they look coherent with the rest of the update, if possible.
+
+### UWP apps
+
+- If your app uses UWP XAML or WinUI, update to use [WinUI 2.6](../winui/winui2/index.md) or greater. WinUI provides new styles for both UWP XAML and WinUI controls, and the default styles have been updated with rejuvenated visuals and animation by default.
+- See the documentation for a [list of supported controls](../design/controls/index.md#alphabetical-index).
+- Use the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) (*winui 2 branch*) to evaluate the controls.
 
 ### WebView and other platforms
 
-- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/figmatoolkit) and XAML Controls Gallery can be used to copy the styles.
+- Individual WebView surfaces need to do work to adopt the style manually. We will not provide centralized styles, but the [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and WinUI 2 Gallery can be used to copy the styles.
 
 ## 5. Use the latest design materials (Acrylic and Mica)
 
@@ -125,7 +126,7 @@ We support Light and Dark themes, which is a great way to let the user express t
 ![A split image of an app in light theme on the left, and dark theme on the right.](images/great-apps/themes.png)
 
 - The color palette of WinUI is being updated to feel lighter (use WinUI 2.6 or greater). If your apps have hardcoded custom colors, you may need to make updates to match the overall color theory, regardless of technology.
-- If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults.
+- If you are using [UXTheme](/windows/win32/api/uxtheme/) based Win32 surfaces, the Light theme will have rejuvenated controls (for example, rounded buttons). You should test your apps to validate that local styling does not override updated global defaults. (For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/apply-windows-themes.md).)
 
 ## 8. Optimize your app's context menu extensions and Share targets
 
@@ -145,8 +146,8 @@ For Windows 11, we improved the behavior of the context menu in File Explorer in
 
 If your app defines a context menu extension, the following requirements must be met for the extension to appear in the new Windows 11 context menu. Otherwise, your app's context menu extension will appear in the older context menu available via the **Show more options** item.
 
-- Your context menu extension must be implemented by using the [IExplorerCommand](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [IContextMenu](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
-- Your app must have [package identity](/windows/apps/desktop/modernize/modernize-packaged-apps). To achieve this, you can package your app in an [MSIX package](/windows/msix/), or you can create a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) that grants identity to your app.
+* Your context menu extension must be implemented by using the [**IExplorerCommand**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [**IContextMenu**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
+* Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md) for some options for packaging your app.
 
 #### Share dialog
 
@@ -154,8 +155,8 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 - Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
 - All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - Unpackaged desktop apps can participate as targets in the Share dialog by using a [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). For a sample that demonstrates how to do this, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample.
-  - PWAs can participate in the Share dialog if they implement the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)
 
@@ -176,7 +177,7 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 
 ## 10. Make use of the innovative features available in Windows
 
-People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also ARM-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
+People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
 - Utilize best practices for Notifications and content sharing - [Notifications (Design basics)](/windows/win32/uxguide/mess-notif).

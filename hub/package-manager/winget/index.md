@@ -1,7 +1,7 @@
 ---
 title: Use the winget tool to install and manage applications
 description: The winget command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 02/22/2022
+ms.date: 04/27/2022
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ The **winget** command line tool enables users to discover, install, upgrade, re
 
 ## Install winget
 
-Windows Package Manager **winget** command-line tool is bundled with Windows 11 by default as the **App Installer**. 
+Windows Package Manager **winget** command-line tool is bundled with Windows 11 and modern versions of Windows 10 by default as the **App Installer**.
 
 If you are running an earlier version of Windows and the App Installer is not installed, you can [get App Installer from the Microsoft Store](https://www.microsoft.com/p/app-installer/9nblggh4nns1#activetab=pivot:overviewtab). If it's already installed, make sure it is updated with the latest version.
 
@@ -60,6 +60,7 @@ The current preview of the **winget** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
+| [info](info.md) | Displays metadata about the system (version numbers, architecture, log location, etc). Helpful for troubleshooting. |
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
 | [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by the **winget** tool. |
@@ -95,6 +96,7 @@ The **winget** tool supports the following types of installers:
 * APPX
 * MSIX
 * BURN
+* PORTABLE
 
 ## Scripting winget
 

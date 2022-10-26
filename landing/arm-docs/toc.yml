@@ -1,0 +1,53 @@
+items:
+- name: Windows App development
+  href: /windows/apps/desktop/
+- name: Windows on Arm
+  items:
+  - name: Overview
+    href: ./overview.md
+  - name: Windows Dev Kit 2023
+    href: ./dev-kit.md
+  - name: Arm64EC for Windows 11 apps
+    items:
+      - name: Arm64EC Overview
+        href: ./arm64ec.md
+      - name: Get started with Arm64EC
+        href: ./arm64ec-build.md
+      - name: Understand Arm64EC ABI
+        href: ./arm64ec-abi.md
+      # - name: Choose Arm64 or Arm64EC ABI
+      #   href: ./arm64-or-arm64ec.md
+      - name: Arm64X PE files
+        items:
+          - name: Overview
+            href: ./arm64x-pe.md
+          - name: Build Arm64X Binaries
+            href: ./arm64x-build.md
+  - name: Arm developer tools
+    items:
+      - name: Visual Studio for Arm
+        href: /visualstudio/install/visual-studio-on-arm-devices
+      - name: Visual Studio Code for Arm64
+        href: https://code.visualstudio.com/download
+      - name: C/C++ extension for VS Code
+        href: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+      - name: Configure C++ MSVC build tools for Arm
+        href: /cpp/build/configuring-programs-for-arm-processors-visual-cpp
+      - name: .NET 7 for Arm
+        href: https://dotnet.microsoft.com/download/dotnet/7.0
+  - name: How x86 emulation works on Arm
+    href: ./apps-on-arm-x86-emulation.md
+  - name: Build Arm64 drivers with the WDK
+    href: /windows-hardware/drivers/develop/building-arm64-drivers/
+  - name: Debug on Arm64
+    href: /windows-hardware/drivers/debugger/debugging-arm64
+  - name: Troubleshooting
+    items:
+      - name: Troubleshoot x86 on Arm
+        href: ./apps-on-arm-troubleshooting-x86.md 
+      - name: Troubleshoot UWP apps on Arm
+        href: ./apps-on-arm-troubleshooting-arm32.md
+      - name: Compatibility Troubleshooter for Arm
+        href: ./apps-on-arm-program-compat-troubleshooter.md
+- name: Set up your dev environment
+  href: /windows/dev-environment/

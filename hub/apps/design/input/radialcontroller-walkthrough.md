@@ -84,13 +84,13 @@ These objects provide the bulk of the wheel device experience for Windows apps.
 | Component | Description |
 | --- | --- |
 | [**RadialController** class](/uwp/api/Windows.UI.Input.RadialController) and related | Represents a wheel input device or accessory such as the Surface Dial. |
-| [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>We do not cover this functionality here, for more information, see the [Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Enables interoperability with a Windows app. |
+| [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>We do not cover this functionality here, for more information, see the [Windows desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Enables interoperability with a Windows app. |
 
 ## Step 1: Run the sample
 
 After you've downloaded the RadialController sample app, verify that it runs:
 1. Open the sample project in Visual Studio .
-2. Set the **Solution Platforms** dropdown to a non-ARM selection.
+2. Set the **Solution Platforms** dropdown to a non-Arm selection.
 3. Press F5 to compile, deploy, and run. 
 
 > [!NOTE]
@@ -637,4 +637,4 @@ Congratulations, you've completed the *Get Started Tutorial: Support the Surface
 
 [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 
-[Windows classic desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)
+[Windows desktop sample](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)

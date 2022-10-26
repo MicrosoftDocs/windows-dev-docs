@@ -8,7 +8,7 @@ ms.date: 11/10/2021
 # Windows UI Library (WinUI) 2
 
 > [!NOTE]
-> For more information on building Windows desktop and UWP apps with the latest version of **WinUI 3**, see [Windows UI Library 3](../index.md).
+> For more information on building Windows desktop apps with the latest version of WinUI, see [Windows UI Library 3](../index.md).
 
 ![WinUI controls](images/winui-hero1.png)
 
@@ -34,12 +34,16 @@ For details on the work planned for the next release and to provide feedback, se
 
 ## Examples
 
-The Xaml Controls Gallery sample app includes interactive demos and sample code for using WinUI controls.
-
-- Install the XAML Controls Gallery app from the [Microsoft Store](
-https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
-
-- Download the [Xaml Controls Gallery project](https://github.com/Microsoft/Xaml-Controls-Gallery) from [GitHub](https://github.com)
+> [!TIP]
+> For more info, design guidance, and code examples, see [Design and code Windows apps](../../design/index.md).
+>
+> The **WinUI 2 Gallery** app includes interactive examples of most WinUI 2 controls, features, and functionality.
+>
+> If the gallery app is installed already, click [**WinUI 2 Gallery**](winui2gallery:) to open it.
+>
+> If not installed, download the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+>
+> You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (select the *winui2* branch).
 
 ## Documentation
 
@@ -63,6 +67,9 @@ For details on the Windows UI Library NuGet packages, see [Windows UI Library Nu
 
 ## See also
 
-- [API docs](/windows/winui/api/)
+- [WinUI 2 API docs](/windows/winui/api/)
 - [Source code](https://aka.ms/winui)
-- [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
+- [Windows App SDK](../../windows-app-sdk/index.md)
+- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
+- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
+- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

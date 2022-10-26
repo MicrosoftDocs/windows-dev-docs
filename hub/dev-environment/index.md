@@ -143,13 +143,13 @@ Windows Subsystem for Linux (WSL) allows developers to run a Linux operating sys
 
 Learn more in the [WSL docs](/windows/wsl).
 
-> [!VIDEO https://docs.microsoft.com/shows/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
+> [!VIDEO https://learn.microsoft.com/shows/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
 You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.
 
 Learn more in the [Windows Terminal docs](/windows/terminal).
 
-> [!VIDEO https://docs.microsoft.com/shows/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
+> [!VIDEO https://learn.microsoft.com/shows/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
 ## Transitioning between Mac and Windows
 
@@ -167,4 +167,4 @@ Check out our [guide to transitioning between between a Mac and Windows](./mac-t
 - [Tips for improving your workflow](./tips.md)
 - [Stories from developers who have switched from Mac to Windows](./dev-stories.md)
 - [Popular tutorials, courses, and code samples](./tutorials.md)
-- [Microsoft's Game Stack documentation](/gaming/)
+- [Microsoft's Game Dev documentation](/gaming/)

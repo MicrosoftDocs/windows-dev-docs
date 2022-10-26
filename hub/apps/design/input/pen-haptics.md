@@ -86,7 +86,7 @@ if (hapticsController == null)
 The [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) retrieved in the preceding example is used in subsequent examples to query haptic capabilities and to send/stop haptic feedback.
 
 > [!NOTE]
-> If you are building apps with the [Windows App SDK Preview 1.0](../../windows-app-sdk/index.md), you can use [PenDevice interop](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop) ([PenDeviceInterop.FromPointerPoint(PointerPoint)](/windows/winui/api/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint)) to access the system [PenDevice](/uwp/api/windows.devices.input.pendevice).
+> If you are building apps with the [Windows App SDK Preview 1.0](../../windows-app-sdk/index.md), you can use [PenDevice interop](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop) ([PenDeviceInterop.FromPointerPoint(PointerPoint)](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint)) to access the system [PenDevice](/uwp/api/windows.devices.input.pendevice).
 >
 > ```csharp
 > private void InputObserver_PointerEntered(PointerInputObserver sender, PointerEventArgs args)

@@ -2,7 +2,7 @@
 title: Build desktop Windows apps with the Windows App SDK 
 description: Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 ms.topic: article
-ms.date: 10/07/2021
+ms.date: 07/29/2022
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 # Windows App SDK
 
 The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
+
+
+> [!VIDEO ff5c6036-2911-4ea8-80da-89befb39267b]
 
 The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements these existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
 
@@ -32,14 +35,15 @@ The following table highlights the development features that are provided by the
 
 | Feature | Description |
 |--|--|
-| [WinUI 3](/windows/apps/winui/) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
+| [WinUI 3](../winui/index.md) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
 | [Render text with DWriteCore](dwritecore.md) | Render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more. |
 | [Manage resources with MRT Core](mrtcore/mrtcore-overview.md) | Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic. |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |
 | [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md) | Process information about different kinds activations for your app. |
 | [App lifecycle: Power management](applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
 | [Manage app windows](windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
-| [Push notifications](notifications/push/index.md) | Send rich notifications to your app using Azure App Registration identities. |
+| [Push notifications](../windows-app-sdk/notifications/push-notifications/index.md) | Send raw notifications and app notifications to your app from the cloud using Azure App Registration identities. |
+| [App notifications](../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md) | Send app notifications to your app locally. |
 | [Deployment](deployment-architecture.md) | Deploy Windows App SDK runtime with your unpackaged and packaged app |
 
 ### Windows App SDK release channels
@@ -72,7 +76,7 @@ Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, versio
 
 ### Faster release cadence
 
-New Windows APIs and features have typically been tied to OS releases that happen on a once or twice a year release cadence. The Windows App SDK will ship updates on a faster cadence, enabling you to get earlier and more rapid access to innovations in the Windows development platform as soon as they are created.
+New Windows APIs and features are usually shipped within major Windows OS updates that release about once a year (often less frequently). Windows App SDK ships new releases about once every six months. This release cadence ensures that you continuously have access to the latest innovations in the Windows development platform.
 
 ## Developer roadmap
 

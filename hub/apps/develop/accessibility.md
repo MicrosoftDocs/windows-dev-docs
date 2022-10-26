@@ -154,7 +154,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 :::row-end:::
 :::row:::
    :::column span="2":::
-      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
+      [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery)
 
       This app demonstrates the various Xaml controls supported in the Fluent Design System.
    :::column-end:::
@@ -166,21 +166,20 @@ Various videos covering how to build accessible Windows applications to general 
 
 :::row:::
    :::column:::
-      **One Dev Minute: Developing apps for accessibility**
+      **Microsoft's Accessibility API**
    :::column-end:::
    :::column:::
       **Introduction to disability and accessibility**
    :::column-end:::
 :::row-end:::
 :::row:::
-
    :::column:::
+      > [!VIDEO https://www.youtube.com/embed/6b0K2883rXA]
    :::column-end:::
    :::column:::
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
 :::row-end:::
-
 :::row:::
 
 
@@ -188,10 +187,10 @@ Various videos covering how to build accessible Windows applications to general 
 :::row-end:::
 :::row:::
    :::column:::
-      **Designing Windows accessibility features**
+      **One Dev Minute: Developing apps for accessibility**
    :::column-end:::
    :::column:::
-      **Windows 10 accessibility features empower everyone**
+      **Windows 11 accessibility features empower everyone**
    :::column-end:::
    :::column:::
       **Making the mouse pointers easier to see**
@@ -199,13 +198,13 @@ Various videos covering how to build accessible Windows applications to general 
 :::row-end:::
 :::row:::
    :::column:::
-      > [!VIDEO https://www.youtube.com/embed/Y_NJbE7wxlk]
+      > [!VIDEO 001a0bd5-c137-4a17-b45f-9f4368bf379d]
    :::column-end:::
    :::column:::
-      > [!VIDEO https://www.youtube.com/embed/BseTf-4q9GA]
+      > [!VIDEO https://www.youtube.com/embed/uDzVBNry31s]
    :::column-end:::
    :::column:::
-      > [!VIDEO https://www.youtube.com/embed/4UzaF7_T3bw]
+      > [!VIDEO https://www.youtube.com/embed/BoME-Wr_jNw]
    :::column-end:::
 :::row-end:::
 

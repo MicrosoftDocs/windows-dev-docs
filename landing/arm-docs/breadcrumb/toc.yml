@@ -6,6 +6,6 @@
     tocHref: /windows/
     topicHref: /windows/
     items:
-      - name: ARM
+      - name: Arm
         tocHref: /windows/arm/
         topicHref: "/windows/arm/index"

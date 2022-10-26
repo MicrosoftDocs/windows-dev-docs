@@ -34,7 +34,7 @@ It is important to test for compatibility problems before the era has changed, a
 
 See [Era Handling for the Japanese Calendar](/windows/desktop/Intl/era-handling-for-the-japanese-calendar) to read more about the format for these registry keys.
 
-On April 1, 2019, the new era name was announced. On April 25, an update with a new registry key for supported Windows versions containing the name was released, allowing you to validate that your application handles it properly. This update is being propagated to supported earlier releases of Windows 10, as well as Windows 8 and 7.
+On April 1, 2019, the new era name was announced. On April 25, an update with a new registry key for supported Windows versions containing the name was released, allowing you to validate that your application handles it properly. This update is being propagated to supported earlier releases of Windows 10, as well as Windows 8 and Windows 7.
 
 You can delete your placeholder registry key once you're finished testing your application. This will ensure it doesn't interfere with the new registry key that will be added when Windows is updated.
 
@@ -58,12 +58,22 @@ Your device should now be configured to use the Japanese calendar, and it will r
 
 ## Adjust your device's clock
 
-To test that your application works with the new era, you must advance your computer's clock to May 1, 2019 or later. The following instructions are for Windows 10, but Windows 8 and 7 should work similarly:
+### On Windows 10
 
 1. Right-click the date and time area in the lower-right corner of the screen.
 2. Select **Adjust date/time**.
 3. In the Settings app, under **Change date and time**, select **Change**.
 4. Change the date to on or after May 1, 2019.
+
+### On Windows 11
+
+1. Right-click the date and time area in the lower-right corner of the screen.
+2. Select **Adjust date/time**.
+3. In the Settings app, under **Set the date and time manually**, select **Change**.
+4. Change the date to on or after May 1, 2019.
+
+> [!NOTE]
+> You may not be able to change the date and time, when "Set time automatically" is "on".
 
 > [!NOTE]
 > You may not be able to change the date based on organization settings; if this is the case, talk to your admin. Alternatively, you can edit your placeholder registry key to have a date that has already passed.

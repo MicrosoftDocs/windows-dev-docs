@@ -120,13 +120,13 @@ The following table summarizes our recommendations for which animation you shoul
 | UI type | Recommended animation |
 |---------|-----------------------|
 | Dialog box | [**FadeInThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Flyout | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Flyout | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation) |
 | Tooltip | [**FadeInThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Context menu | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Command bar | [**EdgeUIThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
-| Task pane or edge-based panel | [**PaneThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
-| Contents of any UI container | [**ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| For controls or if no other animation applies | [**FadeInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Context menu | [**PopInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation) and [**PopOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation) |
+| Command bar | [**EdgeUIThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition) |
+| Task pane or edge-based panel | [**PaneThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.panethemetransition) |
+| Contents of any UI container | [**ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition) |
+| For controls or if no other animation applies | [**FadeInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation) and [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
 
  
 

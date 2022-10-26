@@ -36,10 +36,12 @@ items:
           href: windows-app-sdk/set-up-your-development-environment.md
         - name: "Create your first WinUI 3 project"
           href: winui/winui3/create-your-first-winui3-app.md
-        - name: "Tutorial—Create a simple photo viewer with WinUI 3 (C#)"
-          href: get-started/simple-photo-viewer-winiu3.md
+        - name: "Tutorial: Create a simple photo viewer with WinUI 3 (C#)"
+          href: get-started/simple-photo-viewer-winui3.md
         - name: Sample apps for Windows
           href: get-started/samples.md
+        - name: Windows developer best practices 
+          href: get-started/best-practices.md
         - name: Windows developer FAQ 
           href: get-started/windows-developer-faq.yml
         - name: Windows developer glossary 
@@ -60,6 +62,10 @@ items:
               href: desktop/visual-studio-templates.md
             - name: "WinUI 3 templates in Visual Studio"
               href: winui/winui3/winui-project-templates-in-visual-studio.md
+  - name: How tos
+    items: 
+      - name: Build a Hello World app with C# & WinUI 3
+        href: how-tos/hello-world-winui3.md     
   - name: Design
     href: design/toc.yml
   - name: Develop
@@ -126,6 +132,8 @@ items:
             href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
           - name: "Additional migration guidance"
             href: windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+          - name: "Migrate UWP to Windows App SDK with the .NET Upgrade Assistant"
+            href: windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
       - name: Modernize your desktop apps
         items:
             - name: Overview
@@ -134,17 +142,21 @@ items:
               items:
                   - name: Overview
                     href: get-started/make-apps-great-for-windows.md
-                  - name: Apply rounded corners in Windows 11
+                  - name: Apply rounded corners on Windows 11
                     href: desktop/modernize/apply-rounded-corners.md
+                  - name: Apply Mica on Windows 11
+                    href: desktop/modernize/apply-mica-win32.md
                   - name: Support snap layouts on Windows 11
                     href: desktop/modernize/apply-snap-layout-menu.md
+                  - name: Support Dark and Light themes
+                    href: desktop/modernize/apply-windows-themes.md
             - name: Call Windows Runtime APIs
               items:
                   - name: Overview
                     href: desktop/modernize/desktop-to-uwp-enhance.md
                   - name: APIs not supported in desktop apps
                     href: desktop/modernize/desktop-to-uwp-supported-api.md
-                  - name: Call interop APIs from a .NET 5+ app
+                  - name: Call interop APIs from a .NET app
                     href: desktop/modernize/winrt-com-interop-csharp.md
             - name: Use MSIX framework packages from your desktop app
               items:
@@ -212,9 +224,9 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
-            - name: Grant identity to non-packaged desktop apps
+            - name: Grant package identity by packaging with external location
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-      - name: Optimize your app performance
+      - name: Optimize performance & fundamentals
         items:
           - name: Overview
             href: performance/index.md
@@ -222,12 +234,20 @@ items:
             href: performance/introduction.md
           - name: Choosing performance tools
             href: performance/choose-between-tools.md
+          - name: Improve disk and memory use
+            href: performance/disk-memory.md
+          - name: Improve power consumption
+            href: performance/power.md
+          - name: Improve responsiveness
+            href: performance/responsive.md
       - name: User interface and input
         items:
           - name: Overview
             href: develop/user-interface.md
           - name: Title bar
             href: develop/title-bar.md
+          - name: Apply Mica or Acrylic
+            href: windows-app-sdk/system-backdrop-controller.md
           - name: "Retrieve a window handle (HWND)"
             href: develop/ui-input/retrieve-hwnd.md
           - name: "Display WinRT UI objects that depend on CoreWindow"
@@ -239,7 +259,7 @@ items:
           - name: "Windows UI Library 3"
             href: winui/winui3/index.md
             items:
-              - name: "Build a C# .NET 5 app with WinUI 3 and Win32 interop"
+              - name: "Build a C# .NET app with WinUI 3 and Win32 interop"
                 href: winui/winui3/desktop-winui3-app-with-basic-interop.md
               - name: "Build XAML controls with C++/WinRT"
                 href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
@@ -254,6 +274,36 @@ items:
                 href: winui/winui2/getting-started.md
               - name: "NuGet package list"
                 href: winui/winui2/nuget-packages.md
+              - name: "Release notes"
+                items: 
+                  - name: "Release notes"
+                    href:  winui/winui2/release-notes/index.md
+                  - name: "WinUI 2.8"
+                    href: winui/winui2/release-notes/winui-2.8.md
+                  - name: "WinUI 2.7"
+                    href: winui/winui2/release-notes/winui-2.7.md
+                  - name: "WinUI 2.6"
+                    href: winui/winui2/release-notes/winui-2.6.md
+                  - name: "WinUI 2.5"
+                    href: winui/winui2/release-notes/winui-2.5.md
+                  - name: "WinUI 2.4"
+                    href: winui/winui2/release-notes/winui-2.4.md
+                  - name: "WinUI 2.3"
+                    href: winui/winui2/release-notes/winui-2.3.md
+                  - name: "WinUI 2.2"
+                    href: winui/winui2/release-notes/winui-2.2.md
+                  - name: "WinUI 2.1"
+                    href: winui/winui2/release-notes/winui-2.1.md
+                  - name: "WinUI 2.0"
+                    href: winui/winui2/release-notes/winui-2.0.md
+      - name: .NET MAUI for Windows
+        items:
+          - name: Overview
+            href: windows-dotnet-maui/index.md
+          - name: "Build your first .NET MAUI app for Windows"
+            href: windows-dotnet-maui/walkthrough-first-app.md
+          - name: "Integrate a .NET MAUI app with the Graph SDK"
+            href: windows-dotnet-maui/tutorial-graph-api.md
       - name: App lifecycle and system services 
         items: 
           - name: Overview
@@ -266,16 +316,26 @@ items:
                 href: windows-app-sdk/applifecycle/applifecycle-rich-activation.md
               - name: Power management
                 href: windows-app-sdk/applifecycle/applifecycle-power.md
+              - name: Detect Focus session state
+                href: windows-app-sdk/applifecycle/focus-session.md
       - name: "Manage app windows"
         href: windows-app-sdk/windowing/windowing-overview.md
-      - name: "Push notifications"
+      - name: Notifications
         items:
-          - name: "Overview"
-            href: windows-app-sdk/notifications/push/index.md
-          - name: "Quickstart"
-            href: windows-app-sdk/notifications/push/push-quickstart.md
-          - name: "Troubleshooting"
-            href: windows-app-sdk/notifications/push/troubleshooting.md  
+          - name: "Push notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/push-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/push-notifications/push-quickstart.md
+              - name: "Troubleshooting"
+                href: windows-app-sdk/notifications/push-notifications/troubleshooting.md  
+          - name: "App notifications"
+            items:
+              - name: "Overview"
+                href: windows-app-sdk/notifications/app-notifications/index.md
+              - name: "Quickstart"
+                href: windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md
       - name: Graphics
         items: 
           - name: Overview
@@ -304,6 +364,16 @@ items:
         href: develop/speech.md
       - name: Windows AI and machine learning
         href: /windows/ai/
+      - name: Windows widget providers
+        items:
+        - name: Overview
+          href: develop/widgets/widget-providers.md
+        - name: Implement a widget provider in a win32 app
+          href: develop/widgets/implement-widget-provider-win32.md
+        - name: Widget provider package manifest XML format
+          href: develop/widgets/widget-provider-manifest.md
+        - name: Widget provider ActivateApplication protocol
+          href: develop/widgets/widget-provider-activateapplication-protocol.md
       - name: Platform
         items:
         - name: C#/WinRT
@@ -338,15 +408,15 @@ items:
             items:
               - name: "Deployment architecture and overview"
                 href: windows-app-sdk/deployment-architecture.md
-              - name: "Deployment guide for MSIX-packaged apps"
+              - name: "Deployment guide for packaged apps"
                 href: windows-app-sdk/deploy-packaged-apps.md
-              - name: "Deploying non-MSIX-packaged apps"
+              - name: "Deploying apps packaged with external location or unpackaged"
                 items:
-                  - name: "Deployment guide for non-MSIX-packaged apps"
+                  - name: "Deployment guide for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/deploy-unpackaged-apps.md
-                  - name: "Use the Windows App SDK runtime"
+                  - name: "Use the Windows App SDK runtime for apps packaged with external location or unpackaged"
                     href: windows-app-sdk/use-windows-app-sdk-run-time.md
-                  - name: "Tutorial&mdash;Use the bootstrapper API in a non-MSIX-packaged app that uses the Windows App SDK"
+                  - name: "Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK"
                     href: windows-app-sdk/tutorial-unpackaged-deployment.md
               - name: "Check for installed versions of the Windows App SDK runtime"
                 href: windows-app-sdk/check-windows-app-sdk-versions.md
@@ -356,6 +426,106 @@ items:
             href: package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
           - name: Set up CI for your WinUI 3 app
             href: package-and-deploy/ci-for-winui3.md
+  - name: Publish
+    items:
+      - name: Overview
+        href: publish/index.md
+      - name: Opening a developer account
+        href: publish/partner-center/opening-a-developer-account.md
+        items:
+          - name: Account types, locations, and fees
+            href: publish/partner-center/account-types-locations-and-fees.md
+          - name: Manage account settings and profile info
+            href: /partner-center/partner-center-account-setup
+          - name: Trademark and copyright protection
+            href: publish/partner-center/trademark-and-copyright-protection.md
+      - name: Manage account users
+        href: publish/partner-center/manage-account-users.md
+        items: 
+          - name: Associate Azure AD with your Partner Center account
+            href: publish/partner-center/associate-azure-ad-with-partner-center.md
+          - name: Add users, groups, and Azure AD applications
+            href: publish/partner-center/add-users-groups-and-azure-ad-applications.md
+          - name: Set roles and custom permissions
+            href: publish/partner-center/set-custom-permissions-for-account-users.md
+          - name: Troubleshoot App Creation in Partner Center
+            href: publish/partner-center/troubleshoot-app-creation.md
+      - name: Manage app name reservations
+        href: publish/partner-center/manage-app-name-reservations.md
+      - name: Partner Center workspaces
+        href: publish/partner-center/partner-center-workspaces.md
+      - name: Publish your app to the Microsoft Store
+        items:
+          - name: Publish your app to the Microsoft Store
+            href: publish/publish-your-app/overview.md
+          - name: Create your app by reserving a name
+            href: publish/publish-your-app/reserve-your-apps-name.md
+          - name: App submissions
+            href: publish/publish-your-app/create-app-submission.md
+          - name: Set app pricing and availability
+            href: publish/publish-your-app/price-and-availability.md
+            items:
+              - name: Define market selection
+                href: publish/publish-your-app/market-selection.md
+              - name: Choose visibility options
+                href: publish/publish-your-app/visibility-options.md
+              - name: Configure precise release scheduling
+                href: publish/publish-your-app/release-schedule.md
+              - name: Set and schedule app pricing
+                href: publish/publish-your-app/schedule-pricing-changes.md
+          - name: Enter app properties
+            href: publish/publish-your-app/enter-app-properties.md
+            items:
+              - name: Category and subcategory table
+                href: publish/publish-your-app/categories-and-subcategories.md
+              - name: Support info
+                href: publish/publish-your-app/support-info.md
+              - name: Product declarations
+                href: publish/publish-your-app/product-declarations.md
+              - name: System requirements
+                href: publish/publish-your-app/system-requirements.md
+          - name: Age ratings
+            href: publish/publish-your-app/age-ratings.md
+          - name: Upload app packages
+            href: publish/publish-your-app/upload-app-packages.md
+            items:
+              - name: Device family availability
+                href: publish/publish-your-app/device-families.md
+              - name: App package requirements
+                href: publish/publish-your-app/app-package-requirements.md
+              - name: Package version numbering
+                href: publish/publish-your-app/package-version-numbering.md
+              - name: Supported languages
+                href: publish/publish-your-app/supported-languages.md
+              - name: Guidance for app package management
+                href: publish/publish-your-app/app-package-management.md
+          - name: Create app Store listings
+            href: publish/publish-your-app/create-app-store-listing.md
+            items:
+              - name: Add and edit Store listing info
+                href: publish/publish-your-app/add-and-edit-store-listing-info.md
+              - name: Add additional information
+                href: publish/publish-your-app/add-additional-information.md
+              - name: Write a great app description
+                href: publish/publish-your-app/write-great-app-description.md
+              - name: App screenshots, images, and trailers
+                href: publish/publish-your-app/screenshots-and-images.md
+              - name: Import and export Store listings
+                href: publish/publish-your-app/import-and-export-store-listings.md
+              - name: Create platform-specific Store listings
+                href: publish/publish-your-app/create-platform-specific-store-listings.md
+          - name: Manage submission options
+            href: publish/publish-your-app/manage-submission-options.md
+            items:
+              - name: Notes for certification
+                href: publish/publish-your-app/notes-for-certification.md
+          - name: The app certification process
+            href: publish/publish-your-app/app-certification-process.md
+            items:
+              - name: Resolve submission errors
+                href: publish/publish-your-app/resolve-submission-errors.md
+              - name: Avoid common certification failures
+                href: publish/publish-your-app/avoid-common-certification-failures.md
   - name: API reference
     href: api-reference/index.md
     items:
@@ -363,6 +533,8 @@ items:
         items: 
           - name: WinRT API reference
             href: /uwp/api/
+          - name: WinUI 2 for UWP API reference
+            href: /windows/winui/api/
           - name: Win32 API reference
             href: /windows/win32/api/
       - name: Windows App SDK API reference
@@ -371,9 +543,31 @@ items:
             href: /windows/windows-app-sdk/api/winrt/
           - name: Win32 API reference
             href: /windows/windows-app-sdk/api/win32
+            items: 
+              - name: "Bootstrapper C++ API"
+                href: api-reference/bootstrapper-cpp-api/index.md
+                items: 
+                  - name: "Constants for use with the Bootstrapper C++ API"
+                    href: api-reference/bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md
+                  - name: "Microsoft::Windows::ApplicationModel namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
+                    items: 
+                      - name: "PackageVersion class"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
+                  - name: "Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace"
+                    href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                    items: 
+                      - name: "Initialize function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md
+                      - name: "InitializeFailFast function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
+                      - name: "InitializeNoThrow function"
+                        href: api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
           - name: "Bootstrapper C# APIs"
             href: api-reference/cs-bootstrapper-apis/index.md
             items: 
+              - name: "Constants for use with the Bootstrapper C# APIs"
+                href: api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
               - name: "Microsoft.Windows.ApplicationModel.DynamicDependency namespace"
                 href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
                 items: 
@@ -383,8 +577,6 @@ items:
                     href: api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
           - name: WinUI API reference
             items: 
-              - name: WinRT APIs for WinUI
-                href: /windows/winui/api/
               - name: COM interop APIs for WinUI
                 href: /windows/windows-app-sdk/api/win32/_winuicominterop/
               - name: "Interop C# APIs for WinUI"

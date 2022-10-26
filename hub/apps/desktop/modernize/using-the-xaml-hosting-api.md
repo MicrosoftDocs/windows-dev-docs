@@ -12,7 +12,7 @@ ms.custom: 19H1
 
 # Using the WinRT XAML hosting API in a C++ desktop (Win32) app
 
-Starting in Windows 10, version 1903, non-UWP desktop apps (including C++ desktop (Win32), WPF, and Windows Forms apps) can use the *WinRT XAML hosting API* to host WinRT XAML controls in any UI element that is associated with a window handle (HWND). This API enables non-UWP desktop apps to use the latest Windows 10 UI features that are only available via WinRT XAML controls. For example, non-UWP desktop apps can use this API to host WinRT XAML controls that use the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) and support [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions).
+Starting in Windows 10, version 1903, non-UWP desktop apps (including C++ desktop (Win32), WPF, and Windows Forms apps) can use the *WinRT XAML hosting API* to host WinRT XAML controls in any UI element that is associated with a window handle (HWND). This API enables non-UWP desktop apps to use the latest Windows UI features that are only available via WinRT XAML controls. For example, non-UWP desktop apps can use this API to host WinRT XAML controls that use the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) and support [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions).
 
 The WinRT XAML hosting API provides the foundation for a broader set of controls that we are providing to enable developers to bring Fluent UI to non-UWP desktop apps. This feature is called *XAML Islands*. For an overview of this feature, see [Host WinRT XAML controls in desktop apps (XAML Islands)](xaml-islands.md).
 
@@ -45,7 +45,7 @@ The way you use the WinRT XAML hosting API in your code depends on your app type
 
 The following samples demonstrate how to use the WinRT XAML hosting API in a C++ desktop app:
 
-* [Simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App). This sample demonstrates a basic implementation of hosting a WinRT XAML control in an unpackaged C++ desktop app (that is, an app that is not built into an MSIX package).
+* [Simple XAML Island sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App). This sample demonstrates a basic implementation of hosting a WinRT XAML control in an unpackaged C++ desktop app.
 
 * [XAML Island with custom control sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32). This sample demonstrates a complete implementation of hosting a custom WinRT XAML control in a packaged C++ desktop app, as well as handling other behavior such as keyboard input and focus navigation.
 

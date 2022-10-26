@@ -4,8 +4,8 @@ description: This article provides instructions for verifying the version of the
 ms.topic: article
 ms.date: 05/21/2021
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: zafaraj
-author: zaryaf
+ms.author: stwhi
+author: whims
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ get-appxpackage *reunion*
 
 ```
 
-You should see output similar to the following, which will include the `x64`, `x86`, or `ARM64` versions of the Framework package, Dynamic Dependency Lifetime Manager (DDLM) package, Main package, and Singleton package, depending on your computer and Windows App SDK version.  
+You should see output similar to the following, which will include the `x64`, `x86`, or `Arm64` versions of the Framework package, Dynamic Dependency Lifetime Manager (DDLM) package, Main package, and Singleton package, depending on your computer and Windows App SDK version.  
 
 ```console
 Name              : Microsoft.WindowsAppRuntime.1.0
@@ -149,6 +149,6 @@ Status            : Ok
 ## Related topics
 
 - [Runtime architecture](deployment-architecture.md)
-- [Windows App SDK deployment guide for unpackaged apps](deploy-unpackaged-apps.md)
-- [Windows App SDK deployment guide for packaged apps](deploy-packaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
 - [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)

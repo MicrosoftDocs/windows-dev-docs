@@ -25,7 +25,7 @@
     - name: Overview
       href: basics/index.md
     - name: App Silhouette
-      href: basics/app-silhouette.md  
+      href: basics/app-silhouette.md
     - name: App title bar
       href: basics/titlebar-design.md
     - name: Content basics
@@ -53,12 +53,12 @@
       href: layout/layouts-with-xaml.md
     - name: Show multiple views
       items:
-          - name: Show multiple views
-            href: layout/show-multiple-views.md
-          - name: Use AppWindow
-            href: layout/app-window.md
-          - name: Use ApplicationView
-            href: layout/application-view.md
+        - name: Show multiple views
+          href: layout/show-multiple-views.md
+        - name: Use AppWindow
+          href: layout/app-window.md
+        - name: Use ApplicationView
+          href: layout/application-view.md
     - name: Alignment, margin, and padding
       href: layout/alignment-margin-padding.md
     - name: Panels
@@ -276,9 +276,15 @@
     - name: Icons
       items:
         - name: Overview
-          href: style/icons.md
-        - name: App icons and logos
-          href: style/app-icons-and-logos.md
+          href: style/iconography/overview.md
+        - name: Design guidelines for Windows app icons
+          href: style/iconography/app-icon-design.md
+        - name: Construct your Windows app's icon
+          href: style/iconography/app-icon-construction.md
+        - name: Construction guidelines for Windows 10 icons
+          href: style/iconography/live-tile-icons.md  
+        - name: Create icons using Visual Studio's asset generation tool
+          href: style/iconography/visual-studio-asset-generation.md  
         - name: Segoe MDL2 icons
           href: style/segoe-ui-symbol-font.md
         - name: Segoe Fluent Icons
@@ -441,17 +447,15 @@
           href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
     - name: Misc
       items:
-      - name: Notifications Visualizer
-        href: shell/tiles-and-notifications/notifications-visualizer.md
-      - name: Notification delivery methods
-        href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
-        items:
-          - name: Notification channel types
-            href: shell/tiles-and-notifications/channel-types.md
-          - name: Alternate channels with Webpush and VAPID
-            href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
-          - name: Periodic notifications
-            href: shell/tiles-and-notifications/periodic-notification-overview.md
+        - name: Notifications Visualizer
+          href: shell/tiles-and-notifications/notifications-visualizer.md
+        - name: Notification delivery methods
+          href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
+          items:
+            - name: Notification channel types
+              href: shell/tiles-and-notifications/channel-types.md
+            - name: Periodic notifications
+              href: shell/tiles-and-notifications/periodic-notification-overview.md
 - name: Input and interactions
   items:
     - name: Overview
@@ -571,6 +575,8 @@
   items:
     - name: Overview
       href: devices/index.md
+    - name: Kinect for Windows
+      href: devices/kinect-for-windows.md
     - name: Designing for Xbox and TV
       href: devices/designing-for-tv.md
     - name: Mixed Reality
@@ -641,7 +647,7 @@
           href: globalizing/design-for-bidi-text.md
         - name: Use the Multilingual App Toolkit 4.0
           href: globalizing/use-mat.md
-        - name: Download Multilingual App Toolkit 4.0
+        - name: Multilingual App Toolkit 4.0 Editor
           href: globalizing/multilingual-app-toolkit-editor-downloads.md
         - name: Multilingual App Toolkit 4.0 FAQ & troubleshooting
           href: globalizing/mat-faq-troubleshooting.yml
@@ -659,5 +665,17 @@
           href: in-app-help/in-app-help.md
         - name: External help
           href: in-app-help/external-help.md
+- name: Windows widgets
+  items:
+  - name: Overview
+    href: widgets/index.md
+  - name: Widgets design fundamentals
+    href: widgets/widgets-design-fundamentals.md
+  - name: Widget states and built-in UI components
+    href: widgets/widgets-states-and-ui.md
+  - name: Widget interaction design guidance
+    href: widgets/widgets-interaction-design.md
+  - name: Create a widget template with the Adaptive Card Designer
+    href: widgets/widgets-create-a-template.md
 - name: Design toolkits and samples for Windows apps
   href: downloads/index.md

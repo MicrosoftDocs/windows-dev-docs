@@ -2,25 +2,29 @@
 title: User interface and input
 description: This article provides an index of development features that are related to creating user interfaces for Windows apps.
 ms.topic: article
-ms.date: 10/13/2021
+ms.date: 09/02/2022
 keywords: 
 ---
 
 # User interface and input
 
-When building a modern Windows app, you have a selection of UI frameworks to choose from. UI frameworks provide your app with built in controls, styles, animations, input handling, and more. This article provides an overview of the Windows UI frameworks that are currently maintained by Microsoft and compares their capabilities.
+This article provides an overview of the Windows UI frameworks that are currently maintained by Microsoft and compares their capabilities.
 
-Note that Microsoft produces both UI frameworks and app platforms. App platforms will usually include a UI framework, but some UI frameworks are standalone (i.e. not shipped with an app platform), and some can work on multiple app platforms as well. To learn more about app platforms, see [Choose your app platform](/windows/apps/desktop/#choose-your-app-typechoose-your-app-type).
+Microsoft produces both UI frameworks and app platforms. App platforms typically include a UI framework, while UI frameworks are either standalone (not shipped with an app platform) or can be used with multiple app platforms (see [Choose your app platform](/windows/apps/desktop/#choose-your-app-typechoose-your-app-type)).
+
+The frameworks discussed here include the Windows UI Library (WinUI) for both Windows App SDK (WinUI 3) and UWP (WinUI 2), Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
 
 ## User interface fundamentals
 
-There are five main components that will go into creating a user interface for your Windows app. These components are usually built into each UI framework.
+When building a modern Windows app, you have a selection of UI frameworks to choose from. UI frameworks provide your app with built in controls, styles, animations, input handling, and more.
+
+There are five main components that go into creating a user interface for your Windows app. These components are usually built into each UI framework.
 
 - [Controls](../design/controls/index.md) and [styles](../design/style/index.md)
 
   - A control is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface.
 
-    Here's an example of a Button control that's available in UWP, WinUI 2, and WinUI 3. When you place this control into your app, it automatically recieves the default design that the UI framework provides.
+    Here's an example of a Button control that's available in UWP, WinUI 2, and WinUI 3. When you place this control into your app, it automatically receives the default design that the UI framework provides.
 
     ![WinUI button](images/button.png)
 
@@ -45,7 +49,7 @@ There are five main components that will go into creating a user interface for y
 
 - [Device support](../design/devices/index.md)
 
-    End users access Windows apps on a variety of devices, and UI frameworks may only support certain ones. Some common devices for Windows apps to run on are: 
+    End users access Windows apps on a variety of devices, and UI frameworks may only support certain ones. Some common devices for Windows apps to run on are:
 
   - PCs (often referred to as "desktop", but includes laptops as well)
   - Tablets
@@ -69,28 +73,28 @@ There are five main components that will go into creating a user interface for y
 
 Each UI framework released by Microsoft has unique capabilities, follows different design languages, and provides different experiences to the end user. This section will compare all the main UI frameworks that you'll be choosing from when you begin to build your app.
 
-The table below shows a brief summary of a few main capabilities between these UI frameworks. For more details on each framework, navigate through the tabs further below. 
+The table below shows a brief summary of a few main capabilities between these UI frameworks. For more details on each framework, navigate through the tabs further below.
 
-| Capability   | WinUI 3   | WinUI 2/UWP      | WPF    | WinForms      |
+| Capability   | Windows App SDK (WinUI 3) | WinUI 2 for UWP      | WPF    | WinForms      |
 |--------------|-----------|------------------|--------|---------------|
-| Languages supported   | C#/.NET 5, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 5 and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
+| Languages supported   | C#/.NET 6 and later, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
 | Devices supported   | PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon | All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
 | Inputs supported    | All Windows 10 inputs supported      | All Windows 10 inputs supported   | Mouse and keyboard    | Mouse and keyboard    |
 | Windows OS version supported | Windows 10 version 1809 and higher  | Windows 10 version 1703 and higher    | Windows XP and higher     | Windows XP and higher   |
 | WebView support   | Chromium-based WebView2         | Non-chromium WebView       | WebView2 support coming soon   | WebView2 support coming soon     |
-| Open Source   | Coming soon       | Yes     | Yes (.NET 5 version only)      | Yes (.NET 5 version only)   |
+| Open Source   | Coming soon       | Yes     | Yes (.NET 6 and later only)      | Yes (.NET 6 and later only)   |
 
 For more information about each of these UI frameworks, see the information on the following tabs.
 
-### [WinUI 3](#tab/winui-3)
+### [Windows App SDK (WinUI 3)](#tab/winui-3)
 
-### WinUI 3
+### Windows App SDK (WinUI 3)
 
-For most new Windows apps, we recommend using Windows UI Library (WinUI) 3 to build your user interface. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
+For most new Windows apps, we recommend WinUI with the Windows App SDK (WinUI 3) to build your user interface. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
 
 WinUI 3 is completely decoupled from the Windows OS and ships as a part of the Windows App SDK, which is a set of tools and components that represent the next evolution in the Windows app development platform.
 
-WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](../winui/index.md).
+WinUI 3 is the latest generation of the Windows UI Library. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
 
 #### Key app scenarios enabled by WinUI 3
 
@@ -102,7 +106,7 @@ WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. 
 
 #### Helpful documentation for WinUI 3
 
-- Overview: [Windows UI Library 3](../winui/index.md)
+- Overview: [Windows UI Library (WinUI) 3](../winui/winui3/index.md)
 - Get started: [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
@@ -110,15 +114,15 @@ WinUI 3 is the third generation of the Windows UI Library, preceded by WinUI 2. 
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 3 Controls Gallery app](https://www.microsoft.com/p/winui-3-controls-gallery/9p3jfpwwdzrc)
+- Samples: [WinUI 3 Gallery app](https://www.microsoft.com/store/productId/9P3JFPWWDZRC)
 
-### [WinUI 2](#tab/winui-2)
+### [WinUI 2 for UWP](#tab/winui-2)
 
-### WinUI 2
+### WinUI 2 for UWP
 
-For most UWP apps, we recommend using Windows UI Library (WinUI) 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience. 
+For most UWP apps, we recommend using Windows UI Library (WinUI) 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
 
-WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals. For more information, see [Comparison of WinUI 2 and WinUI 3](../winui/index.md).
+WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
 
 #### Key app scenarios enabled by WinUI 2
 
@@ -137,13 +141,13 @@ WinUI 2 is the second generation of the Windows UI Library, succeeded by WinUI 3
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [XAML Controls Gallery app](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt?rtc=1)
+- Samples: [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
 
 ### [WPF](#tab/wpf)
 
 ### WPF
 
-The Windows Presentation Framework (WPF) is an app model for building desktop apps with .NET 5 or .NET framework.  It's an [open source platform](https://github.com/dotnet/wpf) that is maintained by both the Windows and .NET teams.
+The Windows Presentation Framework (WPF) is an app model for building desktop apps with .NET 6 (and later) or .NET framework. It's an [open source platform](https://github.com/dotnet/wpf) that is maintained by both the Windows and .NET teams.
 
 The UI framework that ships within WPF provides controls, styles, and capabilities that are supported downlevel through Windows XP.
 

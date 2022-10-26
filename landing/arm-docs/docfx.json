@@ -45,7 +45,16 @@
         }
       }
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "ms.prod":
+      {
+        "arm-docs/*.md": "windows"
+      },
+      "ms.technology":
+      {
+        "arm-docs/*.md": "arm"
+      }
+    },
     "template": [],
     "dest": "arm",
     "markdownEngineName": "markdig"

@@ -307,8 +307,10 @@ You can package the app in an [MSIX package](/windows/msix) for deployment. MSIX
 2. In the packaging project, right-click the **Applications** node and choose **Add reference**. In the list of projects, select the check box next to the **MyDesktopWin32App** project and click **OK**.
     ![Reference project](images/xaml-islands/xaml-island-cpp-6.png)
 
+3. For info about distributing/deploying the package, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview). 
+
 > [!NOTE]
-> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
+> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
 
 ### Option 2: Create an application manifest
 
@@ -505,7 +507,7 @@ Finally, you're ready to add code to the **MyDesktopWin32App** project to host t
 
 ## Add a control from the WinUI 2 library to the custom control
 
-Traditionally, WinRT XAML controls have been released as part of the Windows 10 OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
+Traditionally, WinRT XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform. See our [WinUI library roadmap](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) for more details.
 
 This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.
 

@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # features command (winget)
 
-The **features** command of the [winget](index.md) tool displays a list of the experimental features available with your version of the Windows Package Manager.
+The **features** command of the [winget](index.md) tool displays a list of the experimental features available with your version of the Windows Package Manager. Experimental features are only available in preview builds. Instructions for obtaining a preview build can be found in the [GitHub repository](https://github.com/microsoft/winget-cli).
 
 Each feature can be turned on individually by enabling the features through [**settings**](./settings.md).
 

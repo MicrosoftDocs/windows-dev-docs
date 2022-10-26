@@ -326,4 +326,4 @@ A basic text element used on various special templates.
 ## Related topics
 
 * [Quickstart: Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
-* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)
+* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/)

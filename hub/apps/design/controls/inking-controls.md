@@ -5,13 +5,10 @@ label: Inking Controls
 template: detail.hbs
 ms.date: 06/24/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ---
 # Inking controls
-
-
 
 There are two different controls that facilitate inking in Windows apps: [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) and [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
@@ -29,9 +26,6 @@ By default, the InkToolbar includes buttons for drawing, erasing, highlighting, 
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **Important APIs**: [InkCanvas class](/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar class](/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter class](/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
-
-
 ## Is this the right control?
 
 Use the InkCanvas when you need to enable basic inking features in your app without providing any ink settings to the user.
@@ -40,55 +34,10 @@ By default, strokes are rendered as ink when using the pen tip (a black ballpoin
 
 Pair the InkCanvas with an InkToolbar to provide a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip.
 
-> [!NOTE] 
+> [!NOTE]
 > For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying [InkPresenter](/uwp/api/windows.ui.input.inking.inkpresenter) object.
 
-## Examples
-
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong>XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/InkCanvas">open the app and see the InkCanvas in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
-**Microsoft Edge**
-
-Microsoft Edge uses the InkCanvas and InkToolbar for **Web Notes**.  
-![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
-
-**Windows Ink Workspace**
-
-The InkCanvas and InkToolbar are also used for **Snip & Sketch** in the **Windows Ink Workspace**.  
-![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
-
-## Create an InkCanvas and InkToolbar
-
-Adding an InkCanvas to your app requires just one line of markup:
-
-```xaml
-<InkCanvas x:Name="myInkCanvas"/>
-```
-
-> [!NOTE]
-> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in Windows apps"](../input/pen-and-stylus-interactions.md) article.
-
-The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
-
- ```xaml
-<InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}"/>
- ```
-
-This displays the following InkToolbar:
-
-<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
+## Ink toolbar overview
 
 ### Built-in buttons
 
@@ -136,7 +85,7 @@ Depending on your application and the inking functionality required, you can add
 
 Although the InkToolbar can be a top level item, it is typically exposed through an "Inking" button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.
 
-## InkToolbar Interaction
+### InkToolbar Interaction
 
 All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" is displayed on the button to indicate the existence of the flyout.
 
@@ -150,7 +99,7 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 
  For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
-## Do's and don'ts
+## Recommendations
 
 - The InkCanvas, and inking in general, is best experienced through an active pen. However, we recommend supporting inking with mouse and touch (including passive pen) input if required by your app.
 - Use an InkToolbar control with the InkCanvas to provide basic inking features and settings. Both the InkCanvas and InkToolbar can be programmatically customized.
@@ -160,11 +109,49 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 - If using more than one InkCanvas, we recommend using a single InkToolbar to control inking across canvases.
 - For best performance, we recommend altering the default flyout rather than creating a custom one for both default and custom tools.
 
+## Examples
+
+**Microsoft Edge**
+
+Microsoft Edge uses the InkCanvas and InkToolbar for **Web Notes**.  
+![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
+
+**Windows Ink Workspace**
+
+The InkCanvas and InkToolbar are also used for **Snip & Sketch** in the **Windows Ink Workspace**.  
+![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
+
+## Create an InkCanvas and InkToolbar
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [InkCanvas class](/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar class](/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter class](/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
+> - [Open the WinUI 2 Gallery app and see the InkingControls in action](winui2gallery:/item/InkCanvas). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+
+Adding an InkCanvas to your app requires just one line of markup:
+
+```xaml
+<InkCanvas x:Name="myInkCanvas"/>
+```
+
+> [!NOTE]
+> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in Windows apps"](../input/pen-and-stylus-interactions.md) article.
+
+The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
+
+ ```xaml
+<InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}"/>
+ ```
+
+This displays the following InkToolbar:
+
+<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
+
 ## Get the sample code
 
 - [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) - Demonstrates 8 scenarios around the customization and extensibility capabilities of the InkCanvas and InkToolbar controls. Each scenario provides basic guidance on common inking situations and control implementations.
 - [ComplexInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) - Demonstrates more advanced inking scenarios.
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

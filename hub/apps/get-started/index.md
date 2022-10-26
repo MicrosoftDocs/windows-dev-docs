@@ -2,16 +2,24 @@
 description: Learn how to get started building new apps for Windows desktop and modernizing existing apps.
 title: Overview of app development options
 ms.topic: article
-ms.date: 04/22/2022
+ms.date: 10/13/2022
 keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ---
 
 # Overview of app development options
 
-This article contains all the information you need to get started building apps for the Windows desktop environment.
+This article contains the information you need to get started building apps for the Windows desktop environment.
 
-When you want to create a new app for Windows 11 or Windows 10, the first decision you make is what type of app to build. The Windows and .NET development tools in Visual Studio provide several different types of apps you can build, each with their own Visual Studio project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
+![Developer at desk](./images/developer-at-desk.jpg)
+
+Windows gives you huge flexibility when it comes to building apps. From [C++](/windows/uwp/cpp-and-winrt-apis/) and [.NET](/dotnet/) to more up-and-coming tools such as [open source tools on WSL](/windows/wsl/) and [Rust](../../dev-environment/rust/index.yml), there are many different languages and platforms to choose from. It can be quite overwhelming to know where to start.
+
+[Visual Studio](/visualstudio) is the development environment used by most Windows developers and it provides many types of app starting points, each with their own project types and different strengths. Each app type includes an app model that defines the lifecycle of the app, a default UI framework, and access to a comprehensive set APIs for using Windows features.
+
+If your new app is going to run only on Windows, we recommend using the [Windows App SDK](../windows-app-sdk/index.md) and [WinUI 3](../winui/winui3/index.md). If you need your app to run on multiple platforms, we recommend looking at .NET MAUI or React Native for Windows.
+
+
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWQwHD]
 
@@ -28,13 +36,14 @@ If you have already installed the required developer tools, you are ready to [Cr
 
 ## Cross-platform options
 
-WinUI 3 also serves as the basis for cross-platform technologies that provide great native Windows experiences using a variety of coding languages. These frameworks harness the power of WinUI 3 on Windows, while also enabling execution on other operating systems.
+WinUI also serves as the basis for cross-platform technologies that provide great native Windows experiences using a variety of coding languages. These frameworks harness the power of WinUI on Windows, while also enabling execution on other operating systems.
 
 ### [.NET MAUI](#tab/net-maui)
 
 .NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI 3 and the Windows App SDK so apps get the latest user experience on Windows. This gives your apps access to everything you get with WinUI 3 plus the ability to reach to other platforms.
 
 .NET MAUI for Windows is a great choice if:
+
 - You want to share as much .NET code as possible across mobile and desktop applications.
 - You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.
 - You want to use C# and/or XAML for building cross-platform apps.
@@ -44,15 +53,18 @@ WinUI 3 also serves as the basis for cross-platform technologies that provide gr
 > [Get started with .NET MAUI](/dotnet/maui/get-started/installation)
 
 For more information about .NET MAUI, see the following links:
+
 - [.NET MAUI documentation](/dotnet/maui/)
 - [.NET MAUI on GitHub](https://github.com/dotnet/maui)
 - [.NET MAUI Product Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
-- [.NET Conf 2021: Introduction to .NET MAUI](https://www.youtube.com/watch?v=HMYpAw2sl58)
-- [.NET Conf 2021: Building cross-platform native apps with .NET MAUI and Blazor](https://www.youtube.com/watch?v=Dr8L7zXxwLI)
+- [Build Windows apps with .NET MAUI](../windows-dotnet-maui/index.md)
+- [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources/)
+- [Video Series - .NET MAUI for Beginners](/shows/dotnet-maui-for-beginners/)
+- [Build 2022: Build native apps for any device with .NET and Visual Studio](https://www.youtube.com/watch?v=IbwgHJPoE-M)
 
 ### [React Native for Windows](#tab/rnw)
 
-[React Native](https://reactnative.dev) is a development platform from Facebook which allows building cross-platform apps.
+[React Native](https://reactnative.dev) is a development platform which allows building cross-platform apps.
 React Native for Windows brings React Native support to the Windows 10 and Windows 11 SDKs, enabling you to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 With React Native for Windows, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many [community modules](https://reactnative.directory), or if a module does not yet exist, you can easily [write a native module to expose it](https://aka.ms/RNW-NativeModules).
@@ -82,7 +94,7 @@ For more information about React Native for Windows, see the following links:
 
 ## Other app types
 
-For more information about the app types you can choose from, see the following tabs. 
+For more information about the app types you can choose from, see the following tabs.
 
 ### [Win32](#tab/cpp-win32)
 
@@ -132,5 +144,3 @@ UWP is a highly customizable platform that uses XAML markup to separate UI (pres
 > [Get started with UWP](/windows/uwp/get-started/)
 
 You will not have access to the APIs provided by the **Windows App SDK**. To use the Windows App SDK, you will have to migrate your UWP app to WinUI 3. For more information, see [Migrate to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md).
-
----

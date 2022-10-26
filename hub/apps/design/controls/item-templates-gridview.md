@@ -8,7 +8,7 @@ keywords: windows 10, uwp, fluent
 ---
 # Item templates for grid view
 
-This section contains item templates that you can use with a [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) control. Use these templates to get the look of common app types.
+This section contains item templates that you can use with a [**GridView**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView) control. Use these templates to get the look of common app types.
 
 To demonstrate data binding, these templates bind **GridViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
@@ -150,8 +150,8 @@ Use this template to display a media collection with text overlay.
 ```
 
 ## Related articles
-- [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
-- [ListView and GridView sample (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Thumbnail images](/windows/uwp/files/thumbnails)
