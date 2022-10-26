@@ -92,7 +92,7 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 * [Interstitial ads](interstitial-ads.md)
 * [Native ads](native-ads.md)
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
-* [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+* [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
 

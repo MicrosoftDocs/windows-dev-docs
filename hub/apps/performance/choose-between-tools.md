@@ -72,7 +72,7 @@ The tool to choose depends on the performance scenario that you are attempting t
 |[**Code language support considerations**](#code-language-support-considerations)|||
 |Support for C/C++|✔️|✔️|✔️|
 |Support for .NET|✔️|✔️|✔️|
-|Support for Javascript|🆗|🆗|🆗|
+|Support for JavaScript|🆗|🆗|🆗|
 |[**Scenario considerations**](#scenario-considerations)|||
 |Event Tracing for Windows|🆗|✔️|✔️|
 |Composition|❌|✔️|❌|
