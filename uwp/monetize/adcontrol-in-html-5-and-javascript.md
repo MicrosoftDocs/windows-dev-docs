@@ -92,7 +92,7 @@ The following example shows the complete index.html for a simple app.
 </html>
 ```
 
-### Create an AdControl programmatically in Javascript
+### Create an AdControl programmatically in JavaScript
 
 The previous steps show how to declare an **AdControl** in your HTML markup. Alternatively, you can programmatically create an **AdControl** using JavaScript. This example assumes that you are using an existing **div** in your HTML with the ID **myAd**.
 

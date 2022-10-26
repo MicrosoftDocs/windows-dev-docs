@@ -125,7 +125,7 @@ The meaning of the `<uap3:AppExtension>` attributes are as follows:
 
 ## Decide how you will implement the extension.
 
-The Build 2016 session about app extensions demonstrates how to use the public folder that is shared between the host and the extensions. In that example, the extension is implemented by a Javascript file that is stored in the public folder, which the host invokes. That approach has the advantage of being lightweight, does not require compilation, and can support making the default landing page that provides instructions for the extension and a link to the host app's Microsoft Store page. See the [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample) for details. Specifically, see the **InvertImageExtension** project and `InvokeLoad()` in ExtensionManager.cs in the **ExtensibilitySample** project.
+The Build 2016 session about app extensions demonstrates how to use the public folder that is shared between the host and the extensions. In that example, the extension is implemented by a JavaScript file that is stored in the public folder, which the host invokes. That approach has the advantage of being lightweight, does not require compilation, and can support making the default landing page that provides instructions for the extension and a link to the host app's Microsoft Store page. See the [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample) for details. Specifically, see the **InvertImageExtension** project and `InvokeLoad()` in ExtensionManager.cs in the **ExtensibilitySample** project.
 
 In this example, we'll use an app service to implement the extension. App services have the following advantages:
 

@@ -20,7 +20,7 @@ After you finish testing your UWP app and you are ready to submit it to Partner 
 
 For more information about assigning the application ID and ad unit ID values in your app's code, see the following articles:
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
-* [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+* [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Interstitial ads](../monetize/interstitial-ads.md)
 * [Native ads](../monetize/native-ads.md)
 
@@ -59,7 +59,7 @@ To get a live ad unit from Partner Center and use it in your app:
 
 3.  Assign the application ID and ad unit ID values in your app's code. For more information, see the following articles:
     * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
-    * [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+    * [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md)
     * [Interstitial ads](../monetize/interstitial-ads.md)
     * [Native ads](../monetize/native-ads.md)
 
@@ -75,7 +75,7 @@ You can use multiple banner, interstitial, and native ad controls in a single ap
 ## Related topics
 
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
-* [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+* [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Interstitial ads](interstitial-ads.md)
 * [Native ads](native-ads.md)
 
