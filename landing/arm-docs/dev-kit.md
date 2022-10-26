@@ -13,7 +13,7 @@ ms.author: mattwoj
 
 Windows Dev Kit 2023 (code name “Project Volterra”) is the latest Arm device built for Windows developers with a Neural Processing Unit (NPU) that provides best-in-class AI computing capacity, multiple ports, and a stackable design for desktops and rack deployment. Purpose-built with everything you need to develop, debug, and test native Windows apps for Arm.
 
-> [!VIDEO https://www.youtube.com/embed/WMdc5tk_Wp0]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=windows-developer-kit-for-arm]
 
 ## Device specifics
 
