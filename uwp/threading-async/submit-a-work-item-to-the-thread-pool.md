@@ -121,7 +121,8 @@ std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long>(0);
 
 // A reference to the work item is cached so that we can trigger a
 // cancellation when the user presses the Cancel button.
-m_workItem = Windows::System::Threading::ThreadPool::RunAsync([=](Windows::Foundation::IAsyncAction const& workItem)
+m_workItem = Windows::System::Threading::ThreadPool::RunAsync(
+    [=, strongThis = get_strong()](Windows::Foundation::IAsyncAction const& workItem)
 {
     unsigned int progress = 0; // For progress reporting.
     unsigned int primes = 0;   // Number of primes found so far.
@@ -165,15 +166,16 @@ m_workItem = Windows::System::Threading::ThreadPool::RunAsync([=](Windows::Found
 
             if (progress != temp)
             {
-                std::wstringstream updateString;
-                updateString << L"Progress to " << n << L"th prime: " << (10 * progress) << std::endl;
+                std::wstringstream updateStream;
+                updateStream << L"Progress to " << n << L"th prime: " << (10 * progress) << std::endl;
+                std::wstring updateString = updateStream.str();
 
                 // Update the UI thread with the CoreDispatcher.
                 Windows::ApplicationModel::Core::CoreApplication::MainView().CoreWindow().Dispatcher().RunAsync(
                     Windows::UI::Core::CoreDispatcherPriority::High,
-                    Windows::UI::Core::DispatchedHandler([&]()
+                    Windows::UI::Core::DispatchedHandler([=]()
                 {
-                    UpdateUI(updateString.str());
+                    strongThis->UpdateUI(updateString);
                 }));
             }
         }
@@ -298,7 +300,8 @@ asyncAction->Completed = ref new AsyncActionCompletedHandler(
 ```
 
 ```cppwinrt
-m_workItem.Completed([=](Windows::Foundation::IAsyncAction const& asyncInfo, Windows::Foundation::AsyncStatus const& asyncStatus)
+m_workItem.Completed(
+    [=, strongThis = get_strong()](Windows::Foundation::IAsyncAction const& asyncInfo, Windows::Foundation::AsyncStatus const& asyncStatus)
 {
     if (asyncStatus == Windows::Foundation::AsyncStatus::Canceled)
     {
@@ -314,7 +317,7 @@ m_workItem.Completed([=](Windows::Foundation::IAsyncAction const& asyncInfo, Win
         Windows::UI::Core::CoreDispatcherPriority::High,
         Windows::UI::Core::DispatchedHandler([=]()
     {
-        UpdateUI(updateString);
+        strongThis->UpdateUI(updateString);
     }));
 });
 ```
