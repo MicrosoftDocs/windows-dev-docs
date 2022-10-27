@@ -51,6 +51,6 @@ You can build, run, and deploy apps built with stable versions of the Windows Ap
 | | Visual Studio 2019 16.9 | Visual Studio 2019 16.10 | Visual Studio 2019 16.11 Preview | Visual Studio 2022 17.0 Preview |
 |-|-|-|-|-|
 | **Windows App SDK 0.5** | Tools unavailable | Tools available | Tools unavailable | Tools unavailable |
-| **Windows App SDK 0.8** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). *Requires Windows App SDK v0.8.2 or higher*. |
+| **Windows App SDK 0.8** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). *Requires Windows App SDK v0.8.2 or later*. |
 | **Windows App SDK 1.0 Experimental** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview 3). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). |
 | **Windows App SDK 1.0 Preview 2** | Tools unavailable | Tools unavailable | Tools available (starting with Visual Studio 2019 16.11 Preview 3). | Tools available (starting with Visual Studio 2022 17.0 Preview 2). |

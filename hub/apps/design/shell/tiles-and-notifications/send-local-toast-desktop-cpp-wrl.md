@@ -31,7 +31,7 @@ In the top **Configuration** menu, select **All Configurations** so that the fol
 
 Under **Linker -> Input**, add `runtimeobject.lib` to the **Additional Dependencies**.
 
-Then under **General**, make sure that the **Windows SDK Version** is set to something 10.0 or higher (not Windows 8.1).
+Then under **General**, make sure that the **Windows SDK Version** is set to version 10.0 or later.
 
 ## Step 2: Copy compat library code
 
@@ -418,7 +418,7 @@ if (IsWindows10OrGreater())
 
 ## Known issues
 
-**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 and higher.
+**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 or later.
 
 ## Resources
 

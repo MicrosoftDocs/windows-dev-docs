@@ -120,7 +120,7 @@ You can now build and run the project. Each time you click the button, the numbe
 
 ## Application Minimum Version
 
-The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or higher will enable .NET Standard 2.0 and Windows Arm64 processor support.
+The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or later will enable .NET Standard 2.0 and Windows Arm64 processor support.
 
 > [!TIP]
 > We recommend using **Application Minimum** versions lower than 16299 to avoid extra build configuration if .NET Standard 2.0 or Arm64 support is not necessary.

@@ -220,7 +220,7 @@ items:
                   href: desktop/modernize/modernize-wpf-tutorial-2.md
                 - name: "Add a UWP CalendarView control using XAML Islands"
                   href: desktop/modernize/modernize-wpf-tutorial-3.md
-                - name: "Add Windows 10 user activities and notifications"
+                - name: "Add Windows user activities and notifications"
                   href: desktop/modernize/modernize-wpf-tutorial-4.md
                 - name: "Package and deploy with MSIX"
                   href: desktop/modernize/modernize-wpf-tutorial-5.md

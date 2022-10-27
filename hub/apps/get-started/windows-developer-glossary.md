@@ -101,7 +101,7 @@ The Windows SDK is a collection of headers, libraries, metadata, and tools that 
 The Windows UI Library (WinUI) is the modern native user interface (UX) framework for both Windows desktop and UWP applications. [Windows UI Library (WinUI)](../winui/index.md). 
 
 #### WinUI 2
-Windows UI Library (WinUI) 2 is tightly integrated with Windows 10 and later SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](../winui/winui2/index.md).
+Windows UI Library (WinUI) 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [Windows UI Library (WinUI) 2](../winui/winui2/index.md).
 
 #### WinUI 3
 The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. See [Windows UI Library (WinUI) 3](../winui/winui3/index.md).

@@ -727,7 +727,7 @@ For DWriteCore and DirectWrite API reference, see [DWriteCore API Reference](/wi
 
 - Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
 
-- .NET apps must target build 18362 or higher: Your TFM must be set to net6.0-windows10.0.18362 or higher, and your packaging project's must be set to 18362 or higher. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- .NET apps must target build 18362 or later: Your TFM must be set to net6.0-windows10.0.18362 or later, and your packaging project's must be set to 18362 or later. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 - You may encounter a crash when switching frequently between light and dark mode.
 
@@ -771,7 +771,7 @@ This release supports all [stable channel features](release-channels.md#features
 This release has the following limitations and known issues:
 
 - **Desktop apps (C# or C++ desktop)**: This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the [experimental release channel](experimental-channel.md).
-- **.NET apps must target build 18362 or higher**: Your TFM must be set to `net6.0-windows10.0.18362` or higher, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or higher. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
+- **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 [!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
