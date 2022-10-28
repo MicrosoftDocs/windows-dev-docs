@@ -271,6 +271,7 @@ To declare a custom capability, modify your [app package manifest](/uwp/schemas/
 | **Startup apps** | An app can be set up to start automatically at user login. Normally, the user can enable/disable that behavior for each app. The **Microsoft.nonUserConfigurableStartupTasks_8wekyb3d8bbwe** custom capability configures an app such that the user can't enable/disable its startup behavior. |
 | **Windows core 1** | An app that declares the **Microsoft.deployFullTrustOnHost_8wekyb3d8bbwe** custom capability is fully-trusted to use native Win32 APIs on a Windows core device. |
 | **Windows core 2** | A Desktop Bridge app that declares the **Microsoft.notSupportedInCoreV1_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows core device. |
+| **Windows Hello companion device framework** | The functionality related to the **Microsoft.secondaryAuthenticationFactorForLogon_8wekyb3d8bbwe** custom capability is deprecated as of Windows 10, version 2004 (10.0; Build 19041), and we no longer grant this capability to developer accounts. An app that declares this capability can be registered with the companion device framework to enable *Windows unlock* with the app's associated companion device. For more info, see [Windows Unlock with Windows Hello companion (IoT) devices](/windows/uwp/security/companion-device-unlock). |
 
 ## Related topics
 
