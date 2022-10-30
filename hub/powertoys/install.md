@@ -96,7 +96,7 @@ These community-driven alternative install methods are not officially supported 
 
 ### Install with Chocolatey
 
-To install PowerToys using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
+To install [PowerToys](https://community.chocolatey.org/packages/powertoys) using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
 
 ```powershell
 	choco install powertoys
@@ -108,7 +108,7 @@ To upgrade PowerToys, run:
 	choco upgrade powertoys
 ```
 
-If you have issues when installing/upgrading, visit the [PowerToys package on Chocolatey.org](https://chocolatey.org/packages/powertoys) and follow the [Chocolatey triage process](https://chocolatey.org/docs/package-triage-process).
+If you have issues when installing/upgrading, create an issue at the [maintainers GitHub repository](https://github.com/mkevenaar/chocolatey-packages/issues) or follow the [Chocolatey triage process](https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process).
 
 ### Install with Scoop
 
