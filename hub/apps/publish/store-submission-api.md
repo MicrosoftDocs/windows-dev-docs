@@ -79,7 +79,7 @@ For the `tenant_id` value in the POST URI and the `client_id` and `client_secret
 
 After your access token expires, you can refresh it by following the instructions here.
 
-For examples that demonstrate how to obtain an access token by using C# or Node.js, see the [code examples](../../monetize/create-and-manage-submissions-using-windows-store-services.md#code-examples) for Microsoft Store submission API for MSI or EXE app.
+For examples that demonstrate how to obtain an access token by using C# or Node.js, see the [code examples](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#code-examples) for Microsoft Store submission API for MSI or EXE app.
 
 ## Step 3: Use the Microsoft Store submission API
 
