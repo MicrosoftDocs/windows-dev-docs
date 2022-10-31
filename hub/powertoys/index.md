@@ -80,6 +80,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) Hosts File Editor is a convenient way to edit hosts file.
+    :::column-end:::
+:::row-end:::
+
 ### Image Resizer
 
 :::row:::
@@ -176,17 +187,6 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
-    :::column-end:::
-:::row-end:::
-
-### Hosts file editor
-
-:::row:::
-    :::column:::
-        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
-    :::column-end:::
-    :::column span="2":::
-        [Hosts file editor](hosts-file-editor.md) Hosts File Editor is a convenient way to edit hosts file.
     :::column-end:::
 :::row-end:::
 
