@@ -526,8 +526,12 @@ items:
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures
                 href: publish/publish-your-app/avoid-common-certification-failures.md
-      - name: Analyze your MSI or EXE app's performance
+      - name: Additional features for MSI and EXE apps
         items:
+          - name: Publish update for your EXE or MSI app on the Store
+            href: publish//update-your-app.md
+          - name: Microsoft Store Submission API for MSI or EXE app 
+            href: publish/store-submission-api.md
           - name: Ratings, Reviews, and Responses
             href: publish/analyze-msi-exe/ratings-reviews-performance.md
           - name: Analyze your app's performance

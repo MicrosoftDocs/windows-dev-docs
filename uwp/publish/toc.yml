@@ -119,15 +119,15 @@
     - name: The MSI or EXE app certification process
       href: /windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msi-exe
     - name: Publish update for your EXE or MSI app on the Store
-      href: msiexe/update-your-app.md
+      href: /windows/apps/publish/update-your-app
     - name: Microsoft Store Submission API for MSI or EXE app 
-      href: msiexe/store-submission-api.md
+      href: /windows/apps/publish/store-submission-api
 - name: Analyze your MSI or EXE app's performance
   items:
     - name: Ratings, Reviews, and Responses
-      href: msiexe/ratings-reviews-performance.md
+      href: /windows/apps/publish/analyze-msi-exe/ratings-reviews-performance.md
     - name: Analyze your app's performance
-      href: msiexe/analyze-app-performance.md
+      href: /windows/apps/publish/analyze-msi-exe/analyze-app-performance.md
 - name: Publish your PWA app to the Microsoft Store
   href: /windows/apps/publish/publish-your-app/overview?pivots=store-installer-pwa
   items:
@@ -151,88 +151,88 @@
     - name: Create add-on Store listings
       href: /windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on
 - name: In-app ads
-  href: /windows/apps/publish/in-app-ads.md
+  href: /windows/apps/publish/in-app-ads
 - name: App management and services
-  href: /windows/apps/publish/app-management-and-services.md
+  href: /windows/apps/publish/app-management-and-services
   items:
     - name: View app identity details
-      href: /windows/apps/publish/view-app-identity-details.md
+      href: /windows/apps/publish/view-app-identity-details
     - name: Generate preinstall packages for OEMs
-      href: /windows/apps/publish/generate-preinstall-packages-for-oems.md
+      href: /windows/apps/publish/generate-preinstall-packages-for-oems
 - name: Attract and promote
-  href: /windows/apps/publish/attract-customers-and-promote-your-apps.md
+  href: /windows/apps/publish/attract-customers-and-promote-your-apps
   items:
     - name: Generate promotional codes
-      href: /windows/apps/publish/generate-promotional-codes.md
+      href: /windows/apps/publish/generate-promotional-codes
     - name: Create a custom app promotion campaign
-      href: /windows/apps/publish/create-a-custom-app-promotion-campaign.md
+      href: /windows/apps/publish/create-a-custom-app-promotion-campaign
     - name: Put apps and add-ons on sale
-      href: /windows/apps/publish/put-apps-and-add-ons-on-sale.md
+      href: /windows/apps/publish/put-apps-and-add-ons-on-sale
     - name: App marketing guidelines
-      href: /windows/apps/publish/app-marketing-guidelines.md
+      href: /windows/apps/publish/app-marketing-guidelines
     - name: Link to your app
-      href: /windows/apps/publish/link-to-your-app.md
+      href: /windows/apps/publish/link-to-your-app
     - name: Make your app easier to promote
-      href: /windows/apps/publish/make-your-app-easier-to-promote.md
+      href: /windows/apps/publish/make-your-app-easier-to-promote
 - name: Engage with your customers
-  href: /windows/apps/publish/engage-with-your-customers.md
+  href: /windows/apps/publish/engage-with-your-customers
   items:
     - name: Create customer groups
-      href: /windows/apps/publish/create-customer-groups.md
+      href: /windows/apps/publish/create-customer-groups
       items:
         - name: Create customer segments
-          href: /windows/apps/publish/create-customer-segments.md
+          href: /windows/apps/publish/create-customer-segments
         - name: Create known user groups
-          href: /windows/apps/publish/create-known-user-groups.md
+          href: /windows/apps/publish/create-known-user-groups
     - name: Respond to customer reviews
-      href: /windows/apps/publish/respond-to-customer-reviews.md
+      href: /windows/apps/publish/respond-to-customer-reviews
     - name: Respond to customer feedback
-      href: /windows/apps/publish/respond-to-customer-feedback.md
+      href: /windows/apps/publish/respond-to-customer-feedback
     - name: Send notifications to your app's customers
-      href: /windows/apps/publish/send-push-notifications-to-your-apps-customers.md
+      href: /windows/apps/publish/send-push-notifications-to-your-apps-customers
     - name: Use targeted offers
-      href: /windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+      href: /windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversion
 - name: Analyze app performance
-  href: /windows/apps/publish/analytics.md
+  href: /windows/apps/publish/analytics
   items:
     - name: Acquisitions report
-      href: /windows/apps/publish/acquisitions-report.md
+      href: /windows/apps/publish/acquisitions-report
     - name: Add-on acquisitions report
-      href: /windows/apps/publish/add-on-acquisitions-report.md
+      href: /windows/apps/publish/add-on-acquisitions-report
     - name: Usage report
-      href: /windows/apps/publish/usage-report.md
+      href: /windows/apps/publish/usage-report
     - name: Health report
-      href: /windows/apps/publish/health-report.md
+      href: /windows/apps/publish/health-report
     - name: Ratings and reviews in the Microsoft Store
-      href: /windows/apps/publish/ratings-and-reviews.md
+      href: /windows/apps/publish/ratings-and-reviews
     - name: Ratings report
-      href: /windows/apps/publish/ratings-report.md
+      href: /windows/apps/publish/ratings-report
     - name: Reviews report
-      href: /windows/apps/publish/reviews-report.md
+      href: /windows/apps/publish/reviews-report
     - name: Feedback report
-      href: /windows/apps/publish/feedback-report.md
+      href: /windows/apps/publish/feedback-report
     - name: Xbox analytics report
-      href: /windows/apps/publish/xbox-analytics-report.md
+      href: /windows/apps/publish/xbox-analytics-report
     - name: Insights report
-      href: /windows/apps/publish/insights-report.md
+      href: /windows/apps/publish/insights-report
     - name: Advertising performance report
-      href: /windows/apps/publish/advertising-performance-report.md
+      href: /windows/apps/publish/advertising-performance-report
     - name: Download analytics reports
-      href: /windows/apps/publish/download-analytic-reports.md
+      href: /windows/apps/publish/download-analytic-reports
 - name: Store Policies and Code of Conduct
   href: /windows/apps/publish/store-policies-and-code-of-conduct.md
   items:
     - name: Microsoft Store Policies
-      href: /windows/apps/publish/store-policies.md
+      href: store-policies.md
     - name: Store Policies change history
-      href: /windows/apps/publish/store-policies-change-history.md
+      href: store-policies-change-history.md
     - name: App Quality
-      href: /windows/apps/publish/store-app-quality.md
+      href: store-app-quality.md
     - name: Developer Code of Conduct
-      href: /windows/apps/publish/store-developer-code-of-conduct.md
+      href: store-developer-code-of-conduct.md
     - name: Microsoft Store Product Ranking, Placement and Marketing Disclosure Statement
       href: https://aka.ms/disclosurepolicypdf
     - name: Microsoft Store complaint and appeal statistics for FY2022
-      href: /windows/apps/publish/store-policies.md#microsoft-store-complaint-and-appeal-statistics-for-fy2022
+      href: store-policies.md#microsoft-store-complaint-and-appeal-statistics-for-fy2022
     - name: Microsoft Edge Add-ons store developer policies
       href: /microsoft-edge/extensions-chromium/store-policies/developer-policies
