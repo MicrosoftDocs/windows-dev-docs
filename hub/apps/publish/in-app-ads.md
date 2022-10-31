@@ -55,7 +55,7 @@ After you create the new ad unit, it appears in the table of available ad units 
 
 After you create ad units for one or more apps in your account, these ad units appear in a table at the bottom of the **Monetize** &gt; **In-app ads** page. This table displays the **Application ID** and **Ad unit ID** for each ad unit, along with other information. To show ads in your app, you'll need to use these values in your code. For more information, see [Set up ad units in your app](/windows/uwp/monetize/set-up-ad-units-in-your-app).
 
-* If your app shows [banner ads](../monetize/banner-ads.md), assign these values to the [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) properties of your [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) object.
+* If your app shows [banner ads](/windows/uwp/monetize/banner-ads), assign these values to the [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) properties of your [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) object.
 * If your app shows [interstitial ads](/windows/uwp/monetize/interstitial-ads), pass these values to the [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method of your [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) object.
 * If your app shows [native ads](/windows/uwp/monetize/native-ads), pass these values to the **NativeAdsManagerV2** constructor.
   > [!IMPORTANT]
@@ -109,7 +109,7 @@ The following table lists the paid networks we currently support for each ad typ
 |--------------|---------------|---------------------|
 | Oath and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, Oath and AppNexus.<p/>**Note**: Oath and AppNexus is always ranked first in the **Paid ad networks** list for banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
 | AppNexus (direct) | Select this option to serve ads from [AppNexus](https://www.appnexus.com). | Video interstitial, Native  |
-| Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](../monetize/index.md).  |  Banner, Banner interstitial, Native  |
+| Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](/windows/uwp/monetize/index).  |  Banner, Banner interstitial, Native  |
 | MSN Content Recommendations |  Select this option to serve ads from MSN Content Recommendations. |  Banner, Banner interstitial  |
 | Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner, Banner interstitial  |
 | Revcontent |  Select this option to serve ads from [Revcontent](https://www.revcontent.com/). |  Banner, Native  |

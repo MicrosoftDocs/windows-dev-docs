@@ -62,7 +62,7 @@ Use the dashboard to create and send push notifications to segments of your appâ
 
 Run experiments in your apps to measure the effectiveness of feature changes before you enable them for all of your customers.
 
-[Run A/B tests](../monetize/run-app-experiments-with-a-b-testing.md)
+[Run A/B tests](/windows/uwp/monetize/run-app-experiments-with-a-b-testing)
     :::column-end:::
 :::row-end:::
 

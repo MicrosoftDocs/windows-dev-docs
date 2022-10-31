@@ -61,7 +61,7 @@ For more info, see [View app identity details](view-app-identity-details.md).
 
 This is where you can view all of the names that you've reserved for your app. You can reserve additional names here, or delete names you're no longer using.
 
-For more info, see [Manage app names](partner-center/manage-app-names.md).
+For more info, see [Manage app name reservations](partner-center/manage-app-name-reservations.md).
 
 ## Current packages
 

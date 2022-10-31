@@ -52,7 +52,7 @@ To confirm the association, click **Accept**. Your account will then be able to 
 
 ### Submit LOB apps
 
-Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same [certification process](/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix), and must comply with all [Microsoft Store Policies](store-policies.md). There are just a few parts of the process that are different.
+Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same [certification process](/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix), and must comply with all [Microsoft Store Policies](/windows/uwp/publish/store-policies). There are just a few parts of the process that are different.
 
 #### Visibility
 
