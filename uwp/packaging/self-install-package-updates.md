@@ -201,7 +201,7 @@ To mark a package submission as mandatory:
 For more information, see [Upload app packages](/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msix).
 
 > [!NOTE]
-> If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
+> If you create a [package flight](/windows/apps/publish/package-flights), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
 
 ### Code example for mandatory packages
 

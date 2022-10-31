@@ -53,7 +53,7 @@ If you've already explored our learning tracks, or if you're interested in somet
 | **Design and UI** | All information on the visual presentation and UI of your app is contained in this area of the docs. If you're interested on the specifics of the XAML markup language or just want to create a unique look for your docs, start here: </br>   [Design basics for UWP apps](/windows/apps/design/basics/index) |
 | **Develop apps** | If you want detailed information on a specific Windows feature, or are just interested in seeing what you can do with UWP development, check out this area of our docs: </br>   [UWP app features](../develop/index.md). </br> API reference for Windows apps is hosted in a related set of docs, which you can find here: </br>   [Windows UWP namespaces](/uwp/api/) </br>   [File and XML schemas](/uwp/schemas/) |
 | **Develop games** | These docs contain information on how to develop games on Windows or Xbox. This includes setup instructions, developer programs, and instructions for programming with DirectX or Xbox features. </br>   [Getting started with game development](../gaming/getting-started.md) |
-| **Publish** | These docs contain information on how to publish your app to the Windows Store, from app submission to pricing to promotion and customer engagement: </br>   [Publish your app to the Windows Store](../publish/index.md) |
+| **Publish** | These docs contain information on how to publish your app to the Windows Store, from app submission to pricing to promotion and customer engagement: </br>   [Publish your app to the Windows Store](/windows/apps/publish/index) |
 
 ## Other docs
 

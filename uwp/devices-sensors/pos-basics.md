@@ -24,7 +24,7 @@ This section contains topics that are common across all Point of Service device 
 
 | Topic   | Description |
 |:--------|:------------|
-| [Application distribution](../publish/distribute-lob-apps-to-enterprises.md) | Learn about the options for distributing your app to enterprise customers. |
+| [Application distribution](/windows/apps/publish/distribute-lob-apps-to-enterprises) | Learn about the options for distributing your app to enterprise customers. |
 | [Application lifecycle](../launch-resume/app-lifecycle.md) | Learn about the life cycle of a UWP application and what happens when Windows launches, suspends, and resumes your app. |
 | [Application resources](../app-resources/index.md) | Learn how to author, package, and consume your app's string, image, and file resources. |
 | [Data binding](../data-binding/index.md) | Learn how to use data binding to display data in your app's UI. |

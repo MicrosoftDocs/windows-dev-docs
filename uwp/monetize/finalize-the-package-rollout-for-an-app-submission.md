@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Finalize the rollout for an app submission
 
 
-Use this method in the Microsoft Store submission API to [finalize the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for an app submission. For more information about the process of process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).
+Use this method in the Microsoft Store submission API to [finalize the package rollout](/windows/apps/publish/gradual-package-rollout#completing-the-rollout) for an app submission. For more information about the process of process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ To use this method, you need to first do the following:
 * If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 * Create a submission for an app in your Partner Center account. You can do this in Partner Center, or you can do this by using the [create an app submission](create-an-app-submission.md) method.
-* Enable a gradual package rollout for the submission. You can do this [in Partner Center](../publish/gradual-package-rollout.md), or you can do this by [using the Microsoft Store submission API](manage-app-submissions.md#manage-gradual-package-rollout).
+* Enable a gradual package rollout for the submission. You can do this [in Partner Center](/windows/apps/publish/gradual-package-rollout), or you can do this by [using the Microsoft Store submission API](manage-app-submissions.md#manage-gradual-package-rollout).
 
 ## Request
 
@@ -41,7 +41,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the submission with the package rollout you want to finalize. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).  |
+| applicationId | string | Required. The Store ID of the app that contains the submission with the package rollout you want to finalize. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 | submissionId | string | Required. The ID of the submission with the package rollout you want to finalize. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md). For a submission that was created in Partner Center, this ID is also available in the URL for the submission page in Partner Center.  |
 
 
@@ -84,6 +84,6 @@ If the request cannot be successfully completed, the response will contain one o
 
 ## Related topics
 
-* [Gradual package rollout](../publish/gradual-package-rollout.md)
+* [Gradual package rollout](/windows/apps/publish/gradual-package-rollout)
 * [Manage app submissions using the Microsoft Store submission API](manage-app-submissions.md)
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)

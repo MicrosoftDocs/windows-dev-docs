@@ -15,7 +15,7 @@ The Microsoft Store submission API provides methods you can use to manage submis
 > If you use the Microsoft Store submission API to create a submission for an app, be sure to make further changes to the submission only by using the API, rather than Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 > [!IMPORTANT]
-> You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md) or to publish submissions for [LOB apps](../publish/distribute-lob-apps-to-enterprises.md) directly to enterprises. For both of these scenarios, you must use Partner Center to publish the submission.
+> You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](/windows/apps/publish/organizational-licensing) or to publish submissions for [LOB apps](/windows/apps/publish/distribute-lob-apps-to-enterprises) directly to enterprises. For both of these scenarios, you must use Partner Center to publish the submission.
 
 
 <span id="methods-for-app-submissions" />
@@ -139,7 +139,7 @@ To create a submission for an app, follow this process.
 
 ## Methods for managing a gradual package rollout
 
-You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10 and Windows 11. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
+You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10 and Windows 11. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](/windows/apps/publish/gradual-package-rollout).
 
 To programmatically enable a gradual package rollout for an app submission, follow this process using methods in the Microsoft Store submission API:
 
@@ -725,10 +725,10 @@ The following values represent available price tiers in the [pricing resource](#
 
 ### Enterprise licensing values
 
-The following values represent the organizational licensing behavior for the app. For more information about these options, see [Organizational licensing options](../publish/organizational-licensing.md).
+The following values represent the organizational licensing behavior for the app. For more information about these options, see [Organizational licensing options](/windows/apps/publish/organizational-licensing).
 
 > [!NOTE]
-> Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md). To publish submissions to the Microsoft Store for Business and Microsoft Store for Education, you must use Partner Center.
+> Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](/windows/apps/publish/organizational-licensing). To publish submissions to the Microsoft Store for Business and Microsoft Store for Education, you must use Partner Center.
 
 
 | Value           |  Description      |

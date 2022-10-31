@@ -152,7 +152,7 @@ To exclude or limit features in a trial version of your app using the **Windows.
 
 If your app uses APIs in the **Windows.Services.Store** namespace to implement in-app purchase or trial functionality, you must publish your app to the Store and download the app to your development device to use its license for testing. Follow this process to test your code:
 
-1. If your app is not yet published and available in the Store, make sure your app meets the minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements, [submit your app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) in Partner Center, and make sure your app passes the certification process. You can [configure your app so it is not discoverable in the Store](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix) while you test it. Please note the proper configuration of [package flights](../publish/package-flights.md). Incorrectly configured package flights may be not be able to be downloaded.
+1. If your app is not yet published and available in the Store, make sure your app meets the minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements, [submit your app](/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix) in Partner Center, and make sure your app passes the certification process. You can [configure your app so it is not discoverable in the Store](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix) while you test it. Please note the proper configuration of [package flights](/windows/apps/publish/package-flights). Incorrectly configured package flights may be not be able to be downloaded.
 
 2. Next, make sure you have completed the following:
 
@@ -263,7 +263,7 @@ Every app, add-on, or other product in the Store has an associated **Store ID** 
 
 The Store ID of any product in the Store is 12-character alpha-numeric string, such as ```9NBLGGH4R315```. There are several different ways to get the Store ID for a product in the Store:
 
-* For an app, you can get the Store ID on the [App identity page](../publish/view-app-identity-details.md) in Partner Center.
+* For an app, you can get the Store ID on the [App identity page](/windows/apps/publish/view-app-identity-details) in Partner Center.
 * For an add-on, you can get the Store ID on the add-on's overview page in Partner Center.
 * For any product, you can also get the Store ID programmatically by using the [StoreId](/uwp/api/windows.services.store.storeproduct.storeid) property of the [StoreProduct](/uwp/api/windows.services.store.storeproduct) object that represents the product.
 

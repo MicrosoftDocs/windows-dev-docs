@@ -31,11 +31,11 @@ Creating a partner center account is the first step in bringing your app to Xbox
 
 ### Partner Center Analytics  
 
-- For App performance inquiries please refer to [Analyze app performance](../publish/analytics.md)
+- For App performance inquiries please refer to [Analyze app performance](/windows/apps/publish/analytics)
 
 ### Debugging crash rate through Partner Center
 
-- [Health report](../publish/health-report.md)
+- [Health report](/windows/apps/publish/health-report)
 
 ### Ratings and reviews  
 
@@ -45,7 +45,7 @@ Creating a partner center account is the first step in bringing your app to Xbox
 
 ### Beta Testing  
 
-[Beta testing and targeted distribution](../publish/beta-testing-and-targeted-distribution.md)
+[Beta testing and targeted distribution](/windows/apps/publish/beta-testing-and-targeted-distribution)
 
 ## Updating banking info  
 

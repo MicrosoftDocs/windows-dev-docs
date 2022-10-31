@@ -36,7 +36,7 @@ It's best to conduct beta testing as the final stage of testing before you relea
 
 In [Partner Center](https://partner.microsoft.com/dashboard), you can limit distribution of your apps to only your testers, regardless of which operating systems your app targets. There’s no need to create a separate version of your app with a separate name and package identity; you can do your testing, then create a new submission when you’re ready to make the app available to everyone. (Of course, you can create a separate app for testing only if you prefer. If you do, make sure to give it a different name from what you intend as the final, public app name.)
 
-See [Beta testing and targeted distribution](../publish/beta-testing-and-targeted-distribution.md) to learn how to submit your app to the Store for beta testing.
+See [Beta testing and targeted distribution](/windows/apps/publish/beta-testing-and-targeted-distribution) to learn how to submit your app to the Store for beta testing.
 
  
 

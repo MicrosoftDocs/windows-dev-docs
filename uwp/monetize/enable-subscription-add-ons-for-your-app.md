@@ -122,7 +122,7 @@ The following scenarios are not currently supported for subscription add-ons.
 * Selling subscriptions to customers directly via the Store is not supported at this time. Subscriptions are available for in-app purchases of digital products only.
 * Customers cannot switch subscription periods using the [https://account.microsoft.com/services](https://account.microsoft.com/services) page for their Microsoft account. To switch to a different subscription period, customers must cancel their current subscription and then purchase a subscription with a different subscription period from your app.
 * Tier switching is currently not supported for subscription add-ons (for example, switching a customer from a basic subscription to a premium subscription with more features).
-* [Sales](../publish/put-apps-and-add-ons-on-sale.md) and [promotional codes](../publish/generate-promotional-codes.md) are currently not supported for subscription add-ons.
+* [Sales](/windows/apps/publish/put-apps-and-add-ons-on-sale) and [promotional codes](/windows/apps/publish/generate-promotional-codes) are currently not supported for subscription add-ons.
 * Renewing existing subscriptions after setting the visibility of your subscription add-on to **Stop acquisition**. See [Set add-on pricing and availability](/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on) for more details.
 
 ## Related topics

@@ -1427,7 +1427,7 @@ After you've finished development and shipped your game, it's not *game over*. Y
     </tr>
     <tr>
         <td>Learn how your customers are engaging with the Xbox features in your game</td>
-        <td><a href="../publish/xbox-analytics-report.md">Xbox analytics report</a></td>
+        <td><a href="/windows/apps/publish/xbox-analytics-report.md">Xbox analytics report</a></td>
     </tr>
     <tr>
         <td>Responding to customer reviews</td>

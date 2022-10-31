@@ -228,7 +228,7 @@ To learn how to use XAML for laying out the controls your app will use, try the 
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your UWP app](../publish/index.md).
+* [Publishing your UWP app](/windows/apps/publish/index).
 * [How-to articles on developing UWP apps](../develop/index.md)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](universal-application-platform-guide.md)

@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 # Get app acquisition funnel data
 
-Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#acquisition-funnel) in Partner Center.
+Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](/windows/apps/publish/acquisitions-report.md#acquisition-funnel) in Partner Center.
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ The following filter fields are supported. String values must be surrounded by s
 
 | Fields        |  Description        |
 |---------------|-----------------|
-| campaignId | The ID string for a [custom app promotion campaign](../publish/create-a-custom-app-promotion-campaign.md) that is associated with the acquisition. |
+| campaignId | The ID string for a [custom app promotion campaign](/windows/apps/publish/create-a-custom-app-promotion-campaign) that is associated with the acquisition. |
 | market | A string that contains the ISO 3166 country code of the market where the acquisition occurred. |
 | deviceType | One of the following strings that specifies the device type on which the acquisition occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console-Xbox One</strong></li><li><strong>Console-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | ageGroup | One of the following strings that specifies the age group of the user who completed the acquisition:<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 or over</strong></li><li><strong>Unknown</strong></li></ul> |
@@ -89,7 +89,7 @@ Objects in the *Value* array contain the following values.
 
 | Value               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| MetricType                | string | One of the following strings that specifies the [type of funnel data](../publish/acquisitions-report.md#acquisition-funnel) that is included in this object:<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Install</strong></li><li><strong>Usage</strong></li></ul> |
+| MetricType                | string | One of the following strings that specifies the [type of funnel data](/windows/apps/publish/acquisitions-report.md#acquisition-funnel) that is included in this object:<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Install</strong></li><li><strong>Usage</strong></li></ul> |
 | UserCount       | string | The number of users who performed the funnel step specified by the *MetricType* value.             |
 
 
@@ -165,6 +165,6 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Acquisitions report](../publish/acquisitions-report.md)
+* [Acquisitions report](/windows/apps/publish/acquisitions-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)

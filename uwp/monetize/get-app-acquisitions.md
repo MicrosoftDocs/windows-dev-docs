@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Get app acquisitions
 
 
-Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](/windows/apps/publish/acquisitions-report) in Partner Center.
 
 ## Prerequisites
 
@@ -172,7 +172,7 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Acquisitions report](../publish/acquisitions-report.md)
+* [Acquisitions report](/windows/apps/publish/acquisitions-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisition funnel data](get-acquisition-funnel-data.md)
 * [Get app conversions by channel](get-app-conversions-by-channel.md)

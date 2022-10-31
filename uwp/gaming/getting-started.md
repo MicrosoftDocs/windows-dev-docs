@@ -61,7 +61,7 @@ For Windows game development, you may choose to wait till you want access to Par
 
 For Xbox game development, you should sign up for a Partner Center account as it's needed to set up your retail Xbox for development. See [Step 2](#step-2-prepare-your-hardware-for-development) for details.
 
-For more information, see [Publish Windows apps and games](../publish/index.md).
+For more information, see [Publish Windows apps and games](/windows/apps/publish/index).
 
 ## Useful links
 

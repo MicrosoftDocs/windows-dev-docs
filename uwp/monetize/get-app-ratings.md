@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Get app ratings
 
-Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](/windows/apps/publish/reviews-report) in Partner Center.
 
 ## Prerequisites
 
@@ -323,7 +323,7 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Ratings report](../publish/reviews-report.md)
+* [Ratings report](/windows/apps/publish/reviews-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)

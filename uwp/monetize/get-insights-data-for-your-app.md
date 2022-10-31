@@ -9,7 +9,7 @@ ms.custom: RS5
 ---
 # Get insights data
 
-Use this method in the Microsoft Store analytics API to get insights data related to acquisitions, health, and usage metrics for an app during a given date range and other optional filters. This information is also available in the [Insights report](../publish/insights-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get insights data related to acquisitions, health, and usage metrics for an app during a given date range and other optional filters. This information is also available in the [Insights report](/windows/apps/publish/insights-report) in Partner Center.
 
 ## Prerequisites
 
@@ -300,5 +300,5 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Insights report](../publish/insights-report.md)
+* [Insights report](/windows/apps/publish/insights-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
