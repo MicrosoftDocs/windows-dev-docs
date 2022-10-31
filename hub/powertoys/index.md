@@ -179,6 +179,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) Hosts File Editor is a convenient way to edit hosts file.
+    :::column-end:::
+:::row-end:::
+
 ### Video Conference Mute
 
 :::row:::
