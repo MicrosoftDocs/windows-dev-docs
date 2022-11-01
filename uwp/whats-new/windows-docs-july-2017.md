@@ -64,7 +64,7 @@ The following new features are now available:
 
 * The [Microsoft Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) now provides a method you can use to [download the CAB file for an error in your app](../monetize/download-the-cab-file-for-an-error-in-your-app.md).
 
-* [Targeted offers](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.
+* [Targeted offers](/windows/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.
 
 * Your app's Store listing can now include [video trailers](/windows/apps/publish/publish-your-app/app-screenshots-and-images?pivots=store-installer-msix#trailers).
 

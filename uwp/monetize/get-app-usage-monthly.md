@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Get monthly app usage
 
-Use this method in the Microsoft Store analytics API to get aggregate usage data (not including Xbox multiplayer) in JSON format for an application during a given date range (last 90 days only) and other optional filters. This information is also available in the [Usage report](../publish/usage-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get aggregate usage data (not including Xbox multiplayer) in JSON format for an application during a given date range (last 90 days only) and other optional filters. This information is also available in the [Usage report](/windows/apps/publish/usage-report) in Partner Center.
 
 Telemetry for Anaheim based PWA apps is collected at Device level. So metrics related to users will not be available for such products. Please refer to the below Usage values section for more details on the validity of fields.
 

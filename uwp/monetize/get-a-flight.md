@@ -86,8 +86,8 @@ The following example demonstrates the JSON response body for a successful call 
 | friendlyName           | string  | The name of the package flight, as specified by the developer.   |  
 | lastPublishedFlightSubmission       | object | An object that provides information about the last published submission for the package flight. For more information, see the [Submission object](#submission_object) section below.  |
 | pendingFlightSubmission        | object  |  An object that provides information about the current pending submission for the package flight. For more information, see the [Submission object](#submission_object) section below.  |   
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](../publish/package-flights.md).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](../publish/package-flights.md).  |
+| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](/windows/apps/publish/package-flights).   |
+| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](/windows/apps/publish/package-flights).  |
 
 
 <span id="submission_object" />

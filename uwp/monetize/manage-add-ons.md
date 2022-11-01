@@ -125,7 +125,7 @@ This resource has the following values.
 
 | Value | Type | Description |
 |-------|------|-------------|
-| value | object | An object that contains the following values: <ul><li>*id*. The Store ID of the app. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).</li><li>*resourceLocation*. A relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to retrieve the complete data for the app.</li></ul> |
+| value | object | An object that contains the following values: <ul><li>*id*. The Store ID of the app. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).</li><li>*resourceLocation*. A relative path that you can append to the base `https://manage.devcenter.microsoft.com/v1.0/my/` request URI to retrieve the complete data for the app.</li></ul> |
 | totalCount | int | The number of app objects in the *applications* array of the response body. |
 
 <span id="submission-object" />

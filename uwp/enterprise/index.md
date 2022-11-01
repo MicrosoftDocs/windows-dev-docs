@@ -143,7 +143,7 @@ You have options for distributing apps to your organization’s users using MSIX
 | Topic | Description |
 |-------|-------------|
 | [MSIX documentation](/windows/msix/) | MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. |
-| [Distribute LOB apps to enterprises](../publish/distribute-lob-apps-to-enterprises.md) | Learn about the options for distributing line-of-business apps without making the apps broadly available to the public, including App Installer-based deployment, Microsoft Endpoint Configuration Manager and Microsoft Intune, and publishing to the Microsoft Store for Business. |
+| [Distribute LOB apps to enterprises](/windows/apps/publish/distribute-lob-apps-to-enterprises) | Learn about the options for distributing line-of-business apps without making the apps broadly available to the public, including App Installer-based deployment, Microsoft Endpoint Configuration Manager and Microsoft Intune, and publishing to the Microsoft Store for Business. |
 | [Sideload apps](/windows/deploy/sideload-apps-in-windows-10) | When you sideload an app, you deploy a signed app package to a device. You maintain the signing, hosting, and deployment of these apps. The process for sideloading apps is streamlined for Windows.             |
 | [Publish apps to the Microsoft Store](https://developer.microsoft.com/store/publish-apps) | The unified Microsoft Store lets you publish and manage all of your apps for all Windows devices. Customize your app’s availability with per-market pricing, distribution and visibility controls, and other options. |
 

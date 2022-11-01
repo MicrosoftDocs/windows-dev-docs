@@ -18,7 +18,7 @@ The following steps describe the end-to-end process:
 3.  [Call the Microsoft Store reviews API](#call-the-windows-store-reviews-api).
 
 > [!NOTE]
-> In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](../publish/respond-to-customer-reviews.md).
+> In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](/windows/apps/publish/respond-to-customer-reviews).
 
 <span id="prerequisites" />
 
@@ -73,7 +73,7 @@ After you have an Azure AD access token, you are ready to call the Microsoft Sto
 
 The Microsoft Store reviews API contains several methods you can use to determine whether you are allowed to respond to a given review and to submit responses to one or more reviews. Follow this process to use this API:
 
-1. Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+1. Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report\).
 2. Call the [get response info for app reviews](get-response-info-for-app-reviews.md) method to determine whether you are allowed to respond to the reviews. When a customer submits a review, they can choose not to receive responses to their review. You cannot respond to reviews submitted by customers who have chosen not to receive review responses.
 3. Call the [submit responses to app reviews](submit-responses-to-app-reviews.md) method to programmatically respond to the reviews.
 

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Get the stack trace for an error in your app
 
-Use this method in the Microsoft Store analytics API to get the stack trace for an error in your app. This method can only download the stack trace for an app error that occurred in the last 30 days. Stack traces are also available in the **Failures** section of the [Health report](../publish/health-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get the stack trace for an error in your app. This method can only download the stack trace for an app error that occurred in the last 30 days. Stack traces are also available in the **Failures** section of the [Health report](/windows/apps/publish/health-report) in Partner Center.
 
 Before you can use this method, you must first use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve the ID of the CAB file that is associated with the error for which you want to retrieve the stack trace.
 
@@ -43,7 +43,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to get the stack trace. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) in Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| applicationId | string | The Store ID of the app for which you want to get the stack trace. The Store ID is available on the [App identity page](/windows/apps/publish/view-app-identity-details) in Partner Center. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | cabId | string | The unique ID of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method. |  Yes  |
 
  
@@ -140,7 +140,7 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Health report](../publish/health-report.md)
+* [Health report](/windows/apps/publish/health-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get error reporting data](get-error-reporting-data.md)
 * [Get details for an error in your app](get-details-for-an-error-in-your-app.md)

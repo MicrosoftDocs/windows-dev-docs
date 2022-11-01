@@ -88,7 +88,7 @@ sections:
       - question: |
           Can I publish my app?
         answer: |
-          You can [publish apps](../publish/index.md) through Partner Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
+          You can [publish apps](/windows/apps/publish/index) through Partner Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
           
       - question: |
           Can I publish my game?

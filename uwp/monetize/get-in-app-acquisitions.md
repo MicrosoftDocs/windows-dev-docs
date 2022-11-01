@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Get add-on acquisitions
 
-Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](/windows/apps/publish/add-on-acquisitions-report) in Partner Center.
 
 ## Prerequisites
 
@@ -192,7 +192,7 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
+* [Add-on acquisitions report](/windows/apps/publish/add-on-acquisitions-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get add-on conversions by channel](get-add-on-conversions-by-channel.md)
 * [Get app acquisitions](get-app-acquisitions.md)

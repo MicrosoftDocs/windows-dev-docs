@@ -17,7 +17,7 @@ The Microsoft Store submission API provides methods you can use to manage packag
 
 ## Methods for managing package flight submissions
 
-Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in Partner Center. You can create a package flight [in Partner Center](../publish/package-flights.md) or by using the Microsoft Store submission API methods in described in [Manage package flights](manage-flights.md).
+Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in Partner Center. You can create a package flight [in Partner Center](/windows/apps/publish/package-flights) or by using the Microsoft Store submission API methods in described in [Manage package flights](manage-flights.md).
 
 <table>
 <colgroup>
@@ -148,7 +148,7 @@ For more information, see our [StoreBroker page on GitHub](https://github.com/Mi
 
 ## Manage a gradual package rollout for a package flight submission
 
-You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10 and Windows 11. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](../publish/gradual-package-rollout.md).
+You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10 and Windows 11. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in Partner Center, see [this article](/windows/apps/publish/gradual-package-rollout).
 
 To programmatically enable a gradual package rollout for a package flight submission, follow this process using methods in the Microsoft Store submission API:
 

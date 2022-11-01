@@ -38,7 +38,7 @@ and [cost considerations for specific markets](/windows/apps/publish/publish-you
 ### Sale price
 
 One way to promote your game is to reduce its price for a limited time. It's also possible to set the sale price to __Free__ to allow your game to be downloaded without payment.
-You can schedule sale campaigns in advance by setting both the starting date and ending date of the sale. For more info, see [Put apps and add-ons on sale](../publish/put-apps-and-add-ons-on-sale.md).
+You can schedule sale campaigns in advance by setting both the starting date and ending date of the sale. For more info, see [Put apps and add-ons on sale](/windows/apps/publish/put-apps-and-add-ons-on-sale).
 
 ## In-game purchases
 
@@ -151,11 +151,11 @@ Several types of ads can be displayed by using the Microsoft Advertising SDK:
 
 ### Which ads are displayed?
 
-By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [ad mediation](../publish/in-app-ads.md#mediation) guidance.
+By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [ad mediation](/windows/apps/publish/in-app-ads.md#mediation) guidance.
 
 ### Which markets allow ads to be displayed?
 
-For the full list of countries and regions that support ads, see [Supported markets for ad networks](../publish/in-app-ads.md#network-markets).
+For the full list of countries and regions that support ads, see [Supported markets for ad networks](/windows/apps/publish/in-app-ads.md#network-markets).
 
 ### APIs for displaying ads
 
@@ -223,7 +223,7 @@ Choose from several types of campaigns that can help increase your gamer base.
 
 * [Getting paid](/partner-center/marketplace-get-paid)
 * [Account types, locations, and fees](/windows/apps/publish/partner-center/account-types-locations-and-fees)
-* [Analytics](../publish/analytics.md)
+* [Analytics](/windows/apps/publish/analytics)
 * [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
 * [Implement a trial version of your app](../monetize/implement-a-trial-version-of-your-app.md)
 * [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md)
