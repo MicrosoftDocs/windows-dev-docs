@@ -7220,9 +7220,11 @@
       "redirect_url": "/windows/apps/develop/widgets/widget-providers",
       "redirect_document_id": true
     },
-
-
-
+    {
+      "source_path": "landing/arm-docs/dev-kit.md",
+      "redirect_url": "/windows/arm/dev-kit/index",
+      "redirect_document_id": true
+    },
     {
       "source_path": "uwp/publish/msiexe/store-submission-api.md",
       "redirect_url": "/windows/apps/publish/store-submission-api",
