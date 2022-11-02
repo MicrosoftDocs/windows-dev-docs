@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys
 description: Microsoft PowerToys is a set of utilities for customizing Windows. Utilities include ColorPicker, FancyZones, File Explorer Add-ons, Image Resizer, Keyboard Manager, PowerRename, PowerToys Run, a Shortcut Guide and more to come.
-ms.date: 09/06/2022
+ms.date: 11/02/2022
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always on Top]
@@ -79,6 +79,15 @@ The currently available utilities include:
         [File Explorer](file-explorer.md) add-ons enable Preview pane rendering in File Explorer to display SVG icons (.svg), Markdown (.md) and PDF file previews. To enable the Preview pane, select the "View" tab in File Explorer, then select "Preview Pane".
     :::column-end:::
 :::row-end:::
+
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) Hosts File Editor is a convenient way to edit hosts file.
 
 ### File Locksmith
 
