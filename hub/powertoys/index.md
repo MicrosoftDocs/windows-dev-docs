@@ -80,15 +80,6 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Hosts file editor
-
-:::row:::
-    :::column:::
-        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
-    :::column-end:::
-    :::column span="2":::
-        [Hosts file editor](hosts-file-editor.md) Hosts File Editor is a convenient way to edit hosts file.
-
 ### File Locksmith
 
 :::row:::
@@ -97,6 +88,17 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [File Locksmith](file-locksmith.md) is a Windows shell extension for checking which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?** from the menu.
+    :::column-end:::
+:::row-end:::
+
+### Hosts file editor
+
+:::row:::
+    :::column:::
+        [![Hosts file editor screenshot.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+    :::column-end:::
+    :::column span="2":::
+        [Hosts file editor](hosts-file-editor.md) is a convenient way to edit the 'Hosts' file that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks. 
     :::column-end:::
 :::row-end:::
 
