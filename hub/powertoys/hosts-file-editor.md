@@ -14,11 +14,22 @@ The Hosts File Editor provides a convenient way to edit the hosts file configura
 
 This can be useful for scenarios like migrating a website to a new hosting provider or domain name, which may take a 24-48 hour period of downtime. Creating a custom IP address to associate with your domain using the hosts file can enable you to see how it will look on the new server.
 
-## Adding new entry demo
+## Add a new entry
+
+You will first need to ensure that the Hosts File Editor is set to **On** in the PowerToys Settings.
+
+To add a new entry using the Hosts File Editor:
+
+- Enter the IP address
+- Enter the Host name
+- Enter any comments that may be helpful in identifing the purpose of the entry
+- Ensure the Active toggle is enabled and select **Add**
 
 ![PowerToys Hosts File Editor: Add new entry](../images/pt-hosts-file-editor-add-new-entry.gif)
 
-## Filtering entries demo
+## Filter host file entries
+
+To filter host file entries, select the filter icon and then enter characters in either the Address, Hosts, or Comment field to narrow the scope of results.
 
 ![PowerToys Hosts File Editor: Filtering entries](../images/pt-hosts-file-editor-filter.gif)
 
@@ -34,11 +45,11 @@ From the Settings menu, the following options can be configured:
 | :--- | :--- |
 | Launch as administrator | Launch as administrator to be able edit the hosts file. If disabled, then editor is run in read-only mode. Hosts File Editor is started as administrator by default. |
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Warning is enabled by default. |
-| Additional lines position | If `Bottom` is selected, then file header is moved after hosts settings to the bottom. Default value is `Top`.
+| Additional lines position | If `Bottom` is selected, then file header is moved after hosts settings to the bottom. Default value is `Top`. |
 
 ## Troubleshooting
 
-Next error appears if a change is made without administrator permissions:
+A "Failed to save hosts file" error appears if a change is made without administrator permissions:
 
 ![PowerToys Hosts File Editor: Failed to save hosts file](../images/pt-hosts-file-editor-failed-to-save-hosts-file-error.png)
 
