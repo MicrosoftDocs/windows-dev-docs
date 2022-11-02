@@ -80,6 +80,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### File Locksmith
+
+:::row:::
+    :::column:::
+        [![File Locksmith screenshot.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
+    :::column-end:::
+    :::column span="2":::
+        [File Locksmith](file-locksmith.md) is a Windows shell extension for checking which files are in use and by which processes. Right-click on one or more selected files in File Explorer, and then select **What's using this file?** from the menu.
+    :::column-end:::
+:::row-end:::
+
 ### Image Resizer
 
 :::row:::
