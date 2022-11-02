@@ -38,7 +38,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app to retrieve. For more information about the Store ID, see [View app identity details](../publish/view-app-identity-details.md).  |
+| applicationId | string | Required. The Store ID of the app to retrieve. For more information about the Store ID, see [View app identity details](/windows/apps/publish/view-app-identity-details).  |
 
 
 ### Request body

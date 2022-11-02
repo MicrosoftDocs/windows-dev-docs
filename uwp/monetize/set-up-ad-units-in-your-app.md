@@ -16,7 +16,7 @@ Every ad control in your Universal Windows Platform (UWP) app has a correspondin
 
 We provide [test ad unit values](#test-ad-units) that you can use during testing to confirm that your app shows test ads. These test values can only be used in a test version of your app. If you try to use test values in your app after you publish it, your live app not receive ads.
 
-After you finish testing your UWP app and you are ready to submit it to Partner Center, you must [create a live ad unit](#live-ad-units) from the [In-app ads](../publish/in-app-ads.md) page in Partner Center and update your app code to use the application ID and ad unit ID values for this ad unit.
+After you finish testing your UWP app and you are ready to submit it to Partner Center, you must [create a live ad unit](#live-ad-units) from the [In-app ads](/windows/apps/publish/in-app-ads) page in Partner Center and update your app code to use the application ID and ad unit ID values for this ad unit.
 
 For more information about assigning the application ID and ad unit ID values in your app's code, see the following articles:
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
@@ -49,9 +49,9 @@ While you are developing your app, use the test application ID and ad unit ID va
 
 To get a live ad unit from Partner Center and use it in your app:
 
-1.  [Create an ad unit](../publish/in-app-ads.md#create-ad-unit) on the **In-app ads** page in Partner Center. Be sure to specify the correct type of ad unit for the ad control you are using in your app.
+1.  [Create an ad unit](/windows/apps/publish/in-app-ads.md#create-ad-unit) on the **In-app ads** page in Partner Center. Be sure to specify the correct type of ad unit for the ad control you are using in your app.
     > [!NOTE]
-    > You can optionally enable ad mediation for your ad unit by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and ads for Microsoft app promotion campaigns. By default, we automatically choose the ad mediation settings for your app using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports, but you can optionally manually configure your mediation settings.
+    > You can optionally enable ad mediation for your ad unit by configuring the settings in the [Mediation settings](/windows/apps/publish/in-app-ads.md#mediation) section. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and ads for Microsoft app promotion campaigns. By default, we automatically choose the ad mediation settings for your app using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports, but you can optionally manually configure your mediation settings.
 
 2.  After you create the new ad unit, retrieve the **Application ID** and **Ad unit ID** for the ad unit in the table of available ad units in the **Monetize** &gt; **In-app ads** page.
     > [!NOTE]
@@ -67,7 +67,7 @@ To get a live ad unit from Partner Center and use it in your app:
 
 ## Manage ad units for multiple ad controls in your app
 
-You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](/windows/apps/publish/in-app-ads#mediation) and get discrete [reporting data](/windows/apps/publish/advertising-performance-report) for each control. This also enables our services to better optimize the ads we serve to your app.
 
 > [!IMPORTANT]
 > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.

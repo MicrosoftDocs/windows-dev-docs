@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 # Submit responses to reviews
 
 
-Use this method in the Microsoft Store reviews API to programmatically respond to reviews of your app. When you call this method, you must specify the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+Use this method in the Microsoft Store reviews API to programmatically respond to reviews of your app. When you call this method, you must specify the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report).
 
 When a customer submits a review, they can choose not to receive responses to their review. If you try to respond to a review for which the customer chose not to receive responses, the response body of this method will indicate that the response attempt was unsuccessful. Before calling this method, you can optionally determine whether you are allowed to respond to a given review by using the [get response info for app reviews](get-response-info-for-app-reviews.md) method.
 
 > [!NOTE]
-> In addition to using this method to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](../publish/respond-to-customer-reviews.md).
+> In addition to using this method to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](/windows/apps/publish/respond-to-customer-reviews).
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ To use this method, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](respond-to-reviews-using-windows-store-services.md#prerequisites) for the Microsoft Store reviews API.
 * [Obtain an Azure AD access token](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+* Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report).
 
 ## Request
 
@@ -59,9 +59,9 @@ Each object in the *Responses* array contains the following values.
 
 | Value        | Type   | Description           |  Required  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | string |  The Store ID of the app with the review you want to respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of Partner Center. An example Store ID is 9WZDNCRFJ3Q8.   |  Yes  |
-| ReviewId | string |  The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).   |  Yes  |
-| ResponseText | string | The response you want to submit. Your response must follow [these guidelines](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Yes  |
+| ApplicationId | string |  The Store ID of the app with the review you want to respond to. The Store ID is available on the [App identity page](/windows/apps/publish/view-app-identity-details) of Partner Center. An example Store ID is 9WZDNCRFJ3Q8.   |  Yes  |
+| ReviewId | string |  The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](/windows/apps/publish/download-analytic-reports) of the [Reviews report](/windows/apps/publish/reviews-report).   |  Yes  |
+| ResponseText | string | The response you want to submit. Your response must follow [these guidelines](/windows/apps/publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Yes  |
 | SupportEmail | string | Your app's support email address, which the customer can use to contact you directly. This must be a valid email address.     |  Yes  |
 | IsPublic | Boolean |  If you specify **true**, your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. If you specify **false** and the user hasn't opted out of receiving email responses, your response will be sent to the customer via email, and it will not be visible to other customers in your app's Store listing. If you specify **false** and the user has opted out of receiving email responses, an error will be returned.   |  Yes  |
 
@@ -138,7 +138,7 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Respond to customer reviews using Partner Center](../publish/respond-to-customer-reviews.md)
+* [Respond to customer reviews using Partner Center](/windows/apps/publish/respond-to-customer-reviews)
 * [Respond to reviews using Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
 * [Get response info for app reviews](get-response-info-for-app-reviews.md)
 * [Get app reviews](get-app-reviews.md)

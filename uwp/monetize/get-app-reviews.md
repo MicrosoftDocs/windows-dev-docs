@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Get app reviews
 
 
-Use this method in the Microsoft Store analytics API to get review data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in Partner Center.
+Use this method in the Microsoft Store analytics API to get review data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](/windows/apps/publish/reviews-report) in Partner Center.
 
 After you retrieve reviews, you can use the [get response info for app reviews](get-response-info-for-app-reviews.md) and [submit responses to app reviews](submit-responses-to-app-reviews.md) methods in the Microsoft Store reviews API to programmatically respond to reviews.
 
@@ -192,7 +192,7 @@ Authorization: Bearer <your access token>
 
 ## Related topics
 
-* [Reviews report](../publish/reviews-report.md)
+* [Reviews report](/windows/apps/publish/reviews-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get response info for app reviews](get-response-info-for-app-reviews.md)
 * [Submit responses to app reviews](submit-responses-to-app-reviews.md)

@@ -11,9 +11,9 @@ ms.localizationpriority: medium
 Use this method in the Microsoft Store analytics API to get aggregate conversions by channel for an add-on during a given date range and other optional filters.
 
 * A *conversion* means that a customer (signed in with a Microsoft account) has newly obtained a license to your add-on (whether you charged money or you've offered it for free).
-* The *channel* is the method in which a customer arrived at your app's listing page (for example, via the Store or a [custom app promotion campaign](../publish/create-a-custom-app-promotion-campaign.md)).
+* The *channel* is the method in which a customer arrived at your app's listing page (for example, via the Store or a [custom app promotion campaign](/windows/apps/publish/create-a-custom-app-promotion-campaign)).
 
-This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id) in Partner Center.
+This information is also available in the [Add-on acquisitions report](/windows/apps/publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id) in Partner Center.
 
 ## Prerequisites
 
@@ -90,7 +90,7 @@ Objects in the *Value* array contain the following values.
 | applicationId       | string | The  [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you are retrieving conversion data.     |
 | applicationName     | string | The display name of the app for which you are retrieving conversion data.        |
 | appType          | string |  The type of the product for which you are retrieving conversion data. For this method, the only supported value is **Add-On**.            |
-| customCampaignId           | string |  The ID string for a [custom app promotion campaign](../publish/create-a-custom-app-promotion-campaign.md) that is associated with the app.   |
+| customCampaignId           | string |  The ID string for a [custom app promotion campaign](/windows/apps/publish/create-a-custom-app-promotion-campaign) that is associated with the app.   |
 | referrerUriDomain           | string |  Specifies the domain where the app listing with the custom app promotion campaign ID was activated.   |
 | channelType           | string |  One of the following strings that specifies the channel for the conversion:<ul><li><strong>CustomCampaignId</strong></li><li><strong>Store Traffic</strong></li><li><strong>Other</strong></li></ul>    |
 | storeClient         | string | The version of the Store where the conversion occurred. Currently, the only supported value is **SFC**.    |
@@ -288,6 +288,6 @@ Authorization: Bearer <your access token>
 ```
 ## Related topics
 
-* [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
+* [Add-on acquisitions report](/windows/apps/publish/add-on-acquisitions-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)

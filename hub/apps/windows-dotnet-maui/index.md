@@ -2,20 +2,21 @@
 title: Build Windows apps with .NET MAUI
 description: Learn about .NET MAUI, benefits it provides to Windows developers, and how take your Windows apps cross-platform.
 ms.topic: article
-ms.date: 08/15/2022
+ms.date: 11/02/2022
 keywords: windows win32, desktop development, Windows App SDK, .net maui
 ms.localizationpriority: medium
 ---
 
 # Build Windows apps with .NET MAUI
 
-.NET Multi-platform App UI (.NET MAUI) is a cross-platform framework for creating native mobile and desktop apps with C# and XAML. Using [.NET MAUI](/dotnet/maui/), you can develop apps that can run on Windows, Android, iOS, macOS, and Samsung Tizen from a single shared code-base. If you build a Windows app with .NET MAUI, it will use [WinUI 3](../winui/winui3/index.md) as its native platform, and therefore run on Windows 11 and Windows 10 version 1809 or later.
+.NET Multi-platform App UI (.NET MAUI) is a cross-platform framework for creating native mobile and desktop apps with C# and _optionally_ XAML. Using [.NET MAUI](/dotnet/maui/), you can develop apps that can run on Windows, Android, iOS, macOS, and Samsung Tizen from a single shared code-base. If you build a Windows app with .NET MAUI, it will use [WinUI 3](../winui/winui3/index.md) as its native platform, and therefore run on Windows 11 and Windows 10 version 1809 or later.
 
 ## Why use .NET MAUI on Windows?
 
 Building apps for Windows with .NET MAUI provides the following benefits:
 
 - **Native on Windows**: .NET MAUI creates a [WinUI](../winui/winui3/index.md) app when targeting Windows. This means that your .NET MAUI app will provide the same user experience on Windows as your Windows App SDK applications.
+- **User interface in code**: The [.NET MAUI Community Toolkit](/dotnet/communitytoolkit/maui/) includes [C# Markup](/dotnet/communitytoolkit/maui/markup/markup), a set of fluent helper methods for building user interfaces in C# code. This enables a separation of concerns between the UI and the business logic of your app, just as with XAML. C# Markup is available on all platforms supported by .NET MAUI.
 - **Cross-platform**: Take your Windows apps to [all supported platforms](/dotnet/maui/supported-platforms), including Android, iOS, macOS, and Samsung Tizen devices.
 - **Simplicity**: Develop in a [single shared project](/dotnet/maui/fundamentals/single-project) that can target every platform supported by .NET MAUI.
 - **Hot Reload**: Save time while debugging with [.NET Hot Reload](/visualstudio/debugger/hot-reload) and [XAML Hot Reload](/dotnet/maui/xaml/hot-reload) support in .NET MAUI. Make edits while the app is running and the changes are automatically applied.
@@ -57,10 +58,7 @@ To get started with .NET MAUI on Windows, install Visual Studio 2022 version 17.
 - [Download 2022 Professional](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Professional&channel=Release&Version=VS2022&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
 - [Download 2022 Enterprise](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Enterprise&channel=Release&Version=VS2022&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
 
-When installing or modifying Visual Studio, select the **.NET Multi-platform App UI development** workload with the default optional installation options selected.
-
-> [!NOTE]
-> The .NET MAUI templates might not appear in Visual Studio if you also have .NET 7 Preview installed. For more information, see [.NET MAUI templates do not appear in Visual Studio](https://github.com/dotnet/maui/wiki/Known-Issues#net-maui-templates-do-not-appear-in-visual-studio).
+When installing or modifying Visual Studio, select the **.NET Multi-platform App UI development** workload with the default optional installation options selected. For more information about managing workloads in Visual Studio, see [Modify Visual Studio workloads, components, and language packs](/visualstudio/install/modify-visual-studio). If you are using Visual Studio Code and the .NET CLI, you will use the [dotnet workload command](/dotnet/core/tools/dotnet-workload) for workload management.
 
 If you haven't enabled development mode on your PC, see [Enable your device for development](../get-started/enable-your-device-for-development.md). If it isn't enabled, Visual Studio will prompt you to enable development mode when you try to run your first .NET MAUI project on Windows.
 
@@ -75,3 +73,5 @@ Check out a walk-through of [creating your first .NET MAUI app on Windows](./wal
 [.NET MAUI supported platforms](/dotnet/maui/supported-platforms)
 
 [WinUI overview](../winui/winui3/index.md)
+
+[.NET MAUI Community Toolkit documentation](/dotnet/communitytoolkit/maui/)

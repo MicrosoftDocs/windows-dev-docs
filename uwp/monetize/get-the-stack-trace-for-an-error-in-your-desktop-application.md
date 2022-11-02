@@ -106,7 +106,7 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Health report](../publish/health-report.md)
+* [Health report](/windows/apps/publish/health-report)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get error reporting data for your desktop application](get-desktop-application-error-reporting-data.md)
 * [Get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md)

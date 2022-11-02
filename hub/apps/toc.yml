@@ -526,6 +526,87 @@ items:
                 href: publish/publish-your-app/resolve-submission-errors.md
               - name: Avoid common certification failures
                 href: publish/publish-your-app/avoid-common-certification-failures.md
+      - name: Additional features for MSI and EXE apps
+        items:
+          - name: Publish update for your EXE or MSI app on the Store
+            href: publish//update-your-app.md
+          - name: Microsoft Store Submission API for MSI or EXE app 
+            href: publish/store-submission-api.md
+          - name: Ratings, Reviews, and Responses
+            href: publish/analyze-msi-exe/ratings-reviews-performance.md
+          - name: Analyze your app's performance
+            href: publish/analyze-msi-exe/analyze-app-performance.md
+      - name: Additional features for MSIX apps
+        items:
+          - name: In-app ads
+            href: publish/in-app-ads.md
+          - name: App management and services
+            href: publish/app-management-and-services.md
+            items:
+              - name: View app identity details
+                href: publish/view-app-identity-details.md
+              - name: Generate preinstall packages for OEMs
+                href: publish/generate-preinstall-packages-for-oems.md
+          - name: Attract and promote
+            href: publish/attract-customers-and-promote-your-apps.md
+            items:
+              - name: Generate promotional codes
+                href: publish/generate-promotional-codes.md
+              - name: Create a custom app promotion campaign
+                href: publish/create-a-custom-app-promotion-campaign.md
+              - name: Put apps and add-ons on sale
+                href: publish/put-apps-and-add-ons-on-sale.md
+              - name: App marketing guidelines
+                href: publish/app-marketing-guidelines.md
+              - name: Link to your app
+                href: publish/link-to-your-app.md
+              - name: Make your app easier to promote
+                href: publish/make-your-app-easier-to-promote.md
+          - name: Engage with your customers
+            href: publish/engage-with-your-customers.md
+            items:
+              - name: Create customer groups
+                href: publish/create-customer-groups.md
+                items:
+                  - name: Create customer segments
+                    href: publish/create-customer-segments.md
+                  - name: Create known user groups
+                    href: publish/create-known-user-groups.md
+              - name: Respond to customer reviews
+                href: publish/respond-to-customer-reviews.md
+              - name: Respond to customer feedback
+                href: publish/respond-to-customer-feedback.md
+              - name: Send notifications to your app's customers
+                href: publish/send-push-notifications-to-your-apps-customers.md
+              - name: Use targeted offers
+                href: publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+          - name: Analyze app performance
+            href: publish/analytics.md
+            items:
+              - name: Acquisitions report
+                href: publish/acquisitions-report.md
+              - name: Add-on acquisitions report
+                href: publish/add-on-acquisitions-report.md
+              - name: Usage report
+                href: publish/usage-report.md
+              - name: Health report
+                href: publish/health-report.md
+              - name: Ratings and reviews in the Microsoft Store
+                href: publish/ratings-and-reviews.md
+              - name: Ratings report
+                href: publish/ratings-report.md
+              - name: Reviews report
+                href: publish/reviews-report.md
+              - name: Feedback report
+                href: publish/feedback-report.md
+              - name: Xbox analytics report
+                href: publish/xbox-analytics-report.md
+              - name: Insights report
+                href: publish/insights-report.md
+              - name: Advertising performance report
+                href: publish/advertising-performance-report.md
+              - name: Download analytics reports
+                href: publish/download-analytic-reports.md
   - name: API reference
     href: api-reference/index.md
     items:

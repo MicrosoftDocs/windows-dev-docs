@@ -71,5 +71,5 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 | Opacity | (default: 75%) |
 | Center radius | (default: 20px) |
 | Crosshairs thickness | (default: 5px) |
-| Border color | |
-| Border size | in pixels |
+| Border color | The color for the crosshair borders. |
+| Border size | Size of the border, in pixels. |

@@ -38,7 +38,7 @@ The Windows Ink platform can make education apps shine by fitting them with an i
 
 ## Microsoft Store
 
-Education apps are often released under special circumstances to a specific organization. See [Distribute line-of-business apps to enterprises](../publish/distribute-lob-apps-to-enterprises.md) for information on this.
+Education apps are often released under special circumstances to a specific organization. See [Distribute line-of-business apps to enterprises](/windows/apps/publish/distribute-lob-apps-to-enterprises) for information on this.
 
 ## Related Topics
 
