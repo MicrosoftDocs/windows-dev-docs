@@ -1,7 +1,7 @@
 {
   "$schema": "https://whatsnewapi.azurewebsites.net/schema",
   "docSetProductName": "UWP",
-  "rootDirectory": "windows-apps-src/",
+  "rootDirectory": "uwp/",
   "docLinkSettings": {
       "linkFormat": "relative",
       "relativeLinkPrefix": "/windows/"

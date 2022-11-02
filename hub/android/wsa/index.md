@@ -6,7 +6,7 @@ ms.author: mattwoj
 ms.reviewer: mousma
 manager: jken
 ms.topic: article
-ms.date: 07/13/2022
+ms.date: 11/02/2022
 ---
 
 # Windows Subsystem for Android™️
@@ -35,7 +35,7 @@ Want to learn more about Windows Subsystem for Android roadmap, discuss develope
 
 ## Preview Program
 
-The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](/windows/android/wsa/preview-program).
+The Windows Subsystem for Android™️ Preview Program allows users to receive early-preview builds of the Windows Subsystem for Android™ and Amazon Appstore on Windows. For more details, visit the [Preview Program page](./preview-program.md).
 
 ## Set up your development environment
 

@@ -34,7 +34,7 @@ Ask your user to pin your app to the taskbar to make it easier to find.
 
 :::row:::
     :::column:::
-### [Title bar](/windows/apps/develop/title-bar)
+### [Title bar](../../develop/title-bar.md)
 Extend your app content into the title bar and add custom content.
     :::column-end:::
     :::column:::

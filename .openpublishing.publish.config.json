@@ -3,8 +3,8 @@
   "docsets_to_publish": [
     {
       "docset_name": "windows-uwp",
-      "build_source_folder": "windows-apps-src",
-      "build_output_subfolder": "windows-apps-src",
+      "build_source_folder": "uwp",
+      "build_output_subfolder": "uwp",
       "locale": "en-us",
       "xref_query_tags": [
         "/uwp/api",

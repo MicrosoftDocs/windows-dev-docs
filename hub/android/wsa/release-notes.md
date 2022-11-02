@@ -13,6 +13,22 @@ ms.date: 04/27/2022
 
 These release notes are based on updates to the Windows Subsystem for Android™️. For basic information on how to install and run Android™️ apps on Windows, see the Support article: [Installing the Amazon Appstore and Android™️ Apps](https://support.microsoft.com/windows/mobile-apps-and-the-windows-subsystem-for-android-f8d0abb5-44ad-47d8-b9fb-ad6b1459ff6c).
 
+## Build 2209.40000.26.0
+
+October 20, 2022
+
+- Improvements to the Camera HAL
+- Improvements to clipboard stability
+- Improvements to multi-threaded (>8 core) performance
+- Improved security for graphic streaming
+- Reliability improvements for package launches
+- Security updates for ANGLE and GSK
+- Annotated telemetry with package installation sources
+- Window with legal information has been fixed
+- Security updates to the Linux kernel
+- Enhancements to platform stability
+- Updated to Chromium WebView 105
+
 ## Build 2208.40000.4.0
 
 September 15, 2022

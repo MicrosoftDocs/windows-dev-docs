@@ -291,7 +291,7 @@ To create a WinUI 3 application without MSIX packaging, choose from one of the f
 
 To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
-1. Install the [Single-project MSIX Packaging Tools](/windows/apps/windows-app-sdk/single-project-msix#install-the-single-project-msix-packaging-tools).
+1. Install the [Single-project MSIX Packaging Tools](./single-project-msix.md#install-the-single-project-msix-packaging-tools).
 
 2. Install the [Visual Studio 2019 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/csharp) or [Visual Studio 2022 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp), depending on your version of Visual Studio.
 
@@ -356,7 +356,7 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
 To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:
 
-1. Install the [Single-project MSIX Packaging Tools](/windows/apps/windows-app-sdk/single-project-msix#install-the-single-project-msix-packaging-tools).
+1. Install the [Single-project MSIX Packaging Tools](./single-project-msix.md#install-the-single-project-msix-packaging-tools).
 
 2. Install the [Visual Studio 2019 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/cpp) or [Visual Studio 2022 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp), depending on your version of Visual Studio.
 

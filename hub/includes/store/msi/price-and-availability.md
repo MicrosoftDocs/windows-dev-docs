@@ -10,12 +10,6 @@ The **Visibility** section allows you to set restrictions on how your app can be
 
 For more info, see [Choose visibility options](../../../apps/publish/publish-your-app/visibility-options.md).
 
-## Schedule
-
-By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the Visibility section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
-
-For more info, see [Configure precise release scheduling](../../../apps/publish/publish-your-app/release-schedule.md).
-
 ## Discoverability
 
 The selections in the Discoverability section indicate how customers can discover and acquire your app.

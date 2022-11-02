@@ -1,2 +1,2 @@
 > [!IMPORTANT]
-> Package version numbering is not supported for MSI and EXE apps.
+> App package management is not supported for MSI and EXE apps.

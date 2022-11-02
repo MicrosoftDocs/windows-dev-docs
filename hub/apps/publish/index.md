@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Publish Windows apps and games
 
-You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. [Sign up today!](https://developer.microsoft.com/store/register)
+You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish your apps and games to the Microsoft Store. [Sign up today!](https://developer.microsoft.com/microsoft-store/register)
 
 <br/>
 
@@ -52,24 +52,24 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3>Payments and reporting</h3>
-        <a href="/partner-center/account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
+        <a href="partner-center/account-types-locations-and-fees.md">Account types, locations, and fees</a><br/>
         <a href="/partner-center/marketplace-get-paid">Getting paid</a><br/>
-        <a href="/windows/uwp/publish/in-app-ads.md">In-app ads</a><br/>
-        <a href="/windows/uwp/publish/analytics.md">Analytic reports</a><br/>
+        <a href="in-app-ads.md">In-app ads</a><br/>
+        <a href="analytics.md">Analytic reports</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
         <h3>Promote your apps</h3>
         <a href="/windows/uwp/monetize/">Create ad campaigns</a><br/>
-        <a href="/windows/uwp/publish/generate-promotional-codes.md">Generate promotional codes</a><br/>
-        <a href="/windows/uwp/publish/put-apps-and-add-ons-on-sale.md">Offer sale pricing</a><br/>
+        <a href="generate-promotional-codes.md">Generate promotional codes</a><br/>
+        <a href="put-apps-and-add-ons-on-sale.md">Offer sale pricing</a><br/>
     :::column-end:::
     :::column:::
         <img src="/media/illustrations/virtualization-hperv-server-community.svg" alt="Multi-connect icon" />
         <h3>Engage with customers</h3>
-        <a href="/windows/uwp/publish/create-customer-groups.md">Create customer groups</a><br/>
-        <a href="/windows/uwp/publish/send-push-notifications-to-your-apps-customers.md">Send push notifications</a><br/>
-        <a href="/windows/uwp/publish/use-targeted-offers-to-maximize-engagement-and-conversions.md">Create targeted offers</a><br/>
+        <a href="create-customer-groups.md">Create customer groups</a><br/>
+        <a href="send-push-notifications-to-your-apps-customers.md">Send push notifications</a><br/>
+        <a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">Create targeted offers</a><br/>
     :::column-end:::
 :::row-end:::
 
@@ -92,9 +92,9 @@ You can use [Partner Center](https://partner.microsoft.com/dashboard) to publish
     :::column:::
         <img src="/media/illustrations/team-services-dev-ops-test.svg" alt="Test icon" />
         <h3>Testing strategies</h3>
-        <a href="/windows/uwp/publish/beta-testing-and-targeted-distribution.md">Beta testing and targeted distribution</a></br/>
+        <a href="beta-testing-and-targeted-distribution.md">Beta testing and targeted distribution</a></br/>
         <a href="publish-your-app/visibility-options.md#private-audience">Private audience</a><br/>
-        <a href="/windows/uwp/publish/package-flights.md">Package flights</a><br/>
-        <a href="/windows/uwp/publish/gradual-package-rollout.md">Gradual rollout</a><br/>
+        <a href="package-flights.md">Package flights</a><br/>
+        <a href="gradual-package-rollout.md">Gradual rollout</a><br/>
     :::column-end:::
 :::row-end:::

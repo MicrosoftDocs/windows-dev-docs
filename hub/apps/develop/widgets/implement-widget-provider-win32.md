@@ -27,7 +27,7 @@ This sample code in this article is adapted from the [Windows App SDK Sample](ht
 
 - Latest Dev Channel Windows 11 build from the Windows Insider Program (WIP). For more information on WIP self-hosting see [Deeper look at flighting](/windows-insider/flighting).
 - Widgets board version 521.20060.1205.0. This will come with the latest Dev Channel WIP build and can be checked by opening the widgets board, navigating to the widget picker, and looking at the version number located at the bottom right corner of the picker.
-- Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+- Your device must have developer mode enabled. For more information see [Enable your device for development](../../get-started/enable-your-device-for-development.md).
 - Visual Studio 2017 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new win32 console app
@@ -337,7 +337,7 @@ void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvoke
 ```
 
 
-For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design)
+For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](../../design/widgets/widgets-interaction-design.md)
 
 
 ## OnWidgetContextChanged
@@ -718,16 +718,3 @@ In **Solution Explorer**, right-click your **ExampleWidgetProviderPackage** and 
 ## Testing your widget provider
 
 In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the widgets board. To see the widgets you will need to open the widgets board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
-
-
-
-
-
-
-
-
-
-
-
-
-
