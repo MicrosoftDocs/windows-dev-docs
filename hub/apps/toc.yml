@@ -433,15 +433,19 @@ items:
       - name: Opening a developer account
         href: publish/partner-center/opening-a-developer-account.md
         items:
+          - name: Open a developer account in Partner Center
+            href: ../publish/Open- a-developer-account-in-Partner-Center.md
           - name: Account types, locations, and fees
             href: publish/partner-center/account-types-locations-and-fees.md
           - name: Manage account settings and profile info
             href: /partner-center/partner-center-account-setup
+          - name: Close your developer account in Partner Center
+            href: ../publish/Close-your-developer-account-in-Partner-Center.md
           - name: Trademark and copyright protection
             href: publish/partner-center/trademark-and-copyright-protection.md
       - name: Manage account users
         href: publish/partner-center/manage-account-users.md
-        items: 
+        items: ../publish/closing-your-account.md
           - name: Associate Azure AD with your Partner Center account
             href: publish/partner-center/associate-azure-ad-with-partner-center.md
           - name: Add users, groups, and Azure AD applications
