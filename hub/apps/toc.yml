@@ -445,7 +445,7 @@ items:
             href: publish/partner-center/trademark-and-copyright-protection.md
       - name: Manage account users
         href: publish/partner-center/manage-account-users.md
-        items: ../publish/closing-your-account.md
+        items:
           - name: Associate Azure AD with your Partner Center account
             href: publish/partner-center/associate-azure-ad-with-partner-center.md
           - name: Add users, groups, and Azure AD applications
