@@ -23,7 +23,7 @@ The prompt is styled using Oh-My-Posh and is using the `Caskaydia Cove Nerd Font
             {
                 "name" : "Powershell",
                 "source" : "Windows.Terminal.PowershellCore",
-                "acrylicOpacity" : 0.5,
+                "opacity" : 50,
                 "colorScheme" : "One Half Dark",
                 "cursorColor" : "#FFFFFF",
                 "font": 
