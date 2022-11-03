@@ -468,7 +468,7 @@ wt --colorScheme Vintage ; split-pane --colorScheme "Tango Light"
 #### [PowerShell](#tab/powershell)
 
 ```powershell
-wt --colorScheme Vintage ; split-pane --colorScheme "Tango Light"
+wt --colorScheme Vintage `; split-pane --colorScheme "Tango Light"
 ```
 
 #### [Linux](#tab/linux)
