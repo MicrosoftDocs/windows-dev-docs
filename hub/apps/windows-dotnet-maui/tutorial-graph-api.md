@@ -32,9 +32,6 @@ If you haven't already set up your environment for .NET MAUI development, please
 
 ![.NET MAUI App template.](images/maui-graph-select-project.png)
 
-> [!NOTE]
-> The .NET MAUI templates might not appear in Visual Studio if you also have .NET 7 Preview installed. For more information, see [.NET MAUI templates do not appear in Visual Studio](https://github.com/dotnet/maui/wiki/Known-Issues#net-maui-templates-do-not-appear-in-visual-studio).
-
 3. In the **Configure your new project** window, give your project a name, choose a location for it, and click the **Next** button:
 
 ![Name the new project.](images/maui-graph-name-project.png)
