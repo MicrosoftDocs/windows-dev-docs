@@ -90,6 +90,8 @@ namespace MauiMarkupSample
 }
 ```
 
+If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you should have a good idea of what the code above does. The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will a `Name` property for the class with the proper `INotifyPropertyChanged` implementation. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
+
 ## Related topics
 
 [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources)
