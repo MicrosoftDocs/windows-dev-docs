@@ -22,23 +22,47 @@ If you haven't already set up your environment for .NET MAUI development, please
 > [!NOTE]
 > If you are already familiar with setting up a .NET MAUI project, you can skip to the next section.
 
-1. Launch Visual Studio, and in the start window click **Create a new project** to create a new project.
+Launch Visual Studio, and in the start window click **Create a new project** to create a new project.
 
-2. In the **Create a new project** window, select **MAUI** in the All project types drop-down, select the **.NET MAUI App** template, and click the **Next** button:
+In the **Create a new project** window, select **MAUI** in the All project types drop-down, select the **.NET MAUI App** template, and click the **Next** button:
 
 ![.NET MAUI App template.](images/maui-markup-create-project.png)
 
-3. In the **Configure your new project** window, give your project a name, choose a location for it, and click the **Next** button.
+Next, on the **Configure your new project** screen, give your project a name, choose a location for it, and click the **Next** button.
 
-4. In the **Additional information** window, click the **Create** button.
+On the final screen, **Additional information**, click the **Create** button.
 
-5. Wait for the project to be created, and for its dependencies to be restored.
+Wait for the project to be created, and for its dependencies to be restored.
 
-6. In the Visual Studio toolbar, press the **Windows Machine** button to build and run the app. Click the **Click me** button and verify that the button content updates with the number of clicks.
+In the Visual Studio toolbar, press the **Windows Machine** button to build and run the app. Click the **Click me** button and verify that the button content updates with the number of clicks.
 
 Now that you have verified that the .NET MAUI app on Windows is working as expected, we can integrate the MVVM Toolkit and C# Markup packages. In the next section, you'll add these packages to your new project.
 
 ## Add C# Markup from the .NET MAUI Community Toolkit
+
+Now that you have your .NET MAUI app running on Windows, let's add a couple of NuGet packages to the project to integrate with the **MVVM Toolkit** and **C# Markup** from the **.NET MAUI Community Toolkit**.
+
+Right-click the project in **Solution Explorer** and select **Manage NuGet Packages...** from the context menu.
+
+In the **NuGet Package Manager** window, select the **Browse** tab and search for **CommunityToolkit.MVVM**:
+
+![CommunityToolkit.MVVM package.](images/maui-markup-add-mvvm-pkg.png)
+
+Add the latest stable version of the **CommunityToolkit.MVVM** package to the project by clicking **Install**.
+
+Next, search for CommunityToolkit.Maui:
+
+![CommunityToolkit.Maui packages.](images/maui-markup-install-nuget-pkg.png)
+
+Add the latest stable version of the **CommunityToolkit.Maui.Markup** package to the project by clicking **Install**.
+
+Close the **NuGet Package Manager** window after the new packages have finished installing.
+
+We are going to add a simple **Model-View-ViewModel (MVVM)** implementation with the MVVM Toolkit. Let's start by creating a viewmodel to pair with our view (**MainPage**). Right-click the project again and select **Add | Class** from the context menu.
+
+In the **Add New Item** window that appears, name the class **MainViewModel** and click **Add**:
+
+![Adding a MainViewModel class to the project.](images/maui-markup-add-viewmodel-class.png)
 
 ## Related topics
 
