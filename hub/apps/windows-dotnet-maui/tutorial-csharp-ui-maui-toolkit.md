@@ -58,6 +58,8 @@ Add the latest stable version of the **CommunityToolkit.Maui.Markup** package to
 
 Close the **NuGet Package Manager** window after the new packages have finished installing.
 
+## Add a ViewModel to the project
+
 We are going to add a simple **Model-View-ViewModel (MVVM)** implementation with the MVVM Toolkit. Let's start by creating a viewmodel to pair with our view (**MainPage**). Right-click the project again and select **Add | Class** from the context menu.
 
 In the **Add New Item** window that appears, name the class **MainViewModel** and click **Add**:
@@ -90,7 +92,26 @@ namespace MauiMarkupSample
 }
 ```
 
-If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you should have a good idea of what the code above does. The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will a `Name` property for the class with the proper `INotifyPropertyChanged` implementation. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
+If you have completed the [Build your first .NET MAUI app for Windows](walkthrough-first-app.md) tutorial, you will understand what the code above does. The `MainViewModel` class is decorated with the `INotifyPropertyChanged` attribute, which allows the MVVM Toolkit to generate the `INotifyPropertyChanged` implementation for the class. Marking `MainViewModel` as a `partial class` is required for the .NET source generator to work. The `ObservableProperty` attribute on the `name` private field will a `Name` property for the class with the proper `INotifyPropertyChanged` implementation. Adding the `OnNameChanging` and `OnNameChanged` partial methods is optional, but allows you to add custom logic when the `Name` property is changing or has changed.
+
+## Build a UI with C# Markup
+
+When building a UI with C# Markup, the first step is to update the CreateMauiApp() method in MauiProgram.cs. Replace the contents of the method with the following code:
+
+```csharp
+public static MauiApp CreateMauiApp()
+{
+    var builder = MauiApp.CreateBuilder();
+
+    builder
+        .UseMauiApp<App>()
+        .UseMauiCommunityToolkitMarkup();
+
+    return builder.Build();
+}
+```
+
+You will also need to add a new `using` statement to the top of the file: `using CommunityToolkit.Maui.Markup;`. The call to `UseMauiCommunityToolkitMarkup()` will add the C# Markup support to the app, allowing you to construct your UI with C# code instead of XAML.
 
 ## Related topics
 
