@@ -111,7 +111,25 @@ public static MauiApp CreateMauiApp()
 }
 ```
 
-You will also need to add a new `using` statement to the top of the file: `using CommunityToolkit.Maui.Markup;`. The call to `UseMauiCommunityToolkitMarkup()` will add the C# Markup support to the app, allowing you to construct your UI with C# code instead of XAML.
+You also need to add a new `using` statement to the top of the file: `using CommunityToolkit.Maui.Markup;`. The call to `UseMauiCommunityToolkitMarkup()` will add the C# Markup support to the app, allowing you to construct your UI with C# code instead of XAML.
+
+The **MainPage.xaml** file will no longer be used when rendering the UI, so you can remove the contents of the `ContentPage`.
+
+```xaml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMarkupSample.MainPage">
+</ContentPage>
+```
+
+In **MainPage.xaml.cs**, remove the click event handler and add three private members to the class:
+
+```csharp
+private readonly MainViewModel ViewModel = new();
+private enum Row { TextEntry }
+private enum Column { Description, Input }
+```
 
 ## Related topics
 
