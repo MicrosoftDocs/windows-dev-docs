@@ -454,8 +454,8 @@ items:
                         href: publish/partner-center/create-new-azure-ad-tenant.md
                       - name: Remove Azure AD tenant from Partner Center
                         href: publish/partner-center/remove-azure-ad-tenant-associations.md
-          - name: Manage users, groups, and Azure AD applications
-            items:
+            - name: Manage users, groups, and Azure AD applications
+              items:
                      - name: Overview - Users, groups, and Azure AD applications
                        href: publish/partner-center/overview-users-groups-azure-ad-applications.md
                      - name: Manage users in Partner Center account
@@ -464,10 +464,10 @@ items:
                        href: publish/partner-center/manage-groups-in-partner-center.md
                      - name: Manage Azure AD applications in Partner Center account
                        href: publish/partner-center/manage-azure-ad-applications-in-partner-center.md
-          - name: Set roles and custom permissions
-            href: publish/partner-center/set-custom-permissions-for-account-users.md
-          - name: Troubleshoot App Creation in Partner Center
-            href: publish/partner-center/troubleshoot-app-creation.md
+           - name: Set roles and custom permissions
+             href: publish/partner-center/set-custom-permissions-for-account-users.md
+           - name: Troubleshoot App Creation in Partner Center
+             href: publish/partner-center/troubleshoot-app-creation.md
       - name: Manage app name reservations
         href: publish/partner-center/manage-app-name-reservations.md
       - name: Partner Center workspaces
