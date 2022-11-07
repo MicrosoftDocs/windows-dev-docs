@@ -64,6 +64,32 @@ In the **Add New Item** window that appears, name the class **MainViewModel** an
 
 ![Adding a MainViewModel class to the project.](images/maui-markup-add-viewmodel-class.png)
 
+We are going to leverage the power of the MVVM Toolkit in `MainViewModel`. Replace the contents of the class with the following code:
+
+```csharp
+using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel;
+using System.Diagnostics;
+
+namespace MauiMarkupSample
+{
+    [INotifyPropertyChanged]
+    public partial class MainViewModel
+    {
+        [ObservableProperty]
+        private string name;
+        partial void OnNameChanging(string value)
+        {
+            Debug.WriteLine($"Name is about to change to {value}");
+        }
+        partial void OnNameChanged(string value)
+        {
+            Debug.WriteLine($"Name has changed to {value}");
+        }
+    }
+}
+```
+
 ## Related topics
 
 [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources)
