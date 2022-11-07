@@ -7,84 +7,130 @@ ms.date: 09/20/2022
 
 # Test your app's signature with Smart App Control
 
-Before distributing your signed app to users, test your app's signature against Smart App Control. To match the configurations your app will be run in, test your app in a variety of Smart App Control configurations, including both evaluation and enforcement modes.
+Before distributing your signed app to users, test your app's signature against Smart App Control. You can test Smart App Control using audit policies, which will create log entries without actually blocking your app from executing, or test directly against Smart App Control's enforcement mode directly.
 
-## Enable or disable Smart App Control
+## Configure Smart App Control for Testing
 
-### Enable Smart App Control on your device
+### Configure Smart App Control using Windows Settings
 
-Go to **Settings** > **Windows Security** > **App and Browser Control**. 
+Go to **Settings** > **Privacy & Security** > **Windows Security** > **App and Browser Control** > **Smart App Control settings**.
 
-Set Smart App Control to either **On** (enforcement mode) or **Evaluation** (evaluation mode).
+> [!NOTE]
+> Configuring Smart App Control to **Off** or **On** (enforcement) is a one-way operation. This means you cannot change modes using Windows Settings unless the current setting is **Evaluation**. For testing purposes, you can force Smart App Control into another setting [using the registry](#configure-smart-app-control-using-the-registry).
 
-If you cannot select either **On** or **Evaluation**, try [Resetting your device](/windows-hardware/service/desktop/resetting-the-pc).
+If Smart App Control is in Evaluation mode, Smart App Control will evaluate your app's signature, but will not block your app if its signature is invalid. In this mode, you can use [Audit Policies](#audit-policies) to view Smart App Control's output, including errors encountered while checking your app's signature.
 
-### Disable Smart App Control on your device
+Select **On** to put Smart App Control in enforcement mode. In this mode, Smart App Control will prevent your app from running if its signature is invalid.
 
-To disable Smart App Control on your device, go to **Settings** > **Windows Security** > **App and Browser Control**. Select **Off**.
+### Configure Smart App Control using the registry
 
 > [!IMPORTANT]
-> Disabling Smart App Control is a one-way operation. Once disabled, Smart App Control cannot be re-enabled without resetting your device.
+> Controlling Smart App Control can be manually controlled via the registry **for testing purposes only.** Smart App Control's protection may not be reliable.....
 
-## Set Smart App Control's enforcement mode
+Configuring Smart App Control using the Windows registry allows you to force any desired enforcement mode, even if you cannot select that mode using [Windows Settings](#configure-smart-app-control-using-windows-settings). However, modifying Smart App Control in this way may...
 
-Smart App Control starts in evaluation mode.  While Smart App Control is in evaluation mode, it will learn if it can help protect users without causing too much user friction. If Smart App Control determines the user can benefit from its enhanced security, it will automatically be turned on.  Otherwise, it will automatically be turned off.  While in evaluation mode, a user can manually turn on Smart App Control in the Windows Security App. 
+1. Open a command prompt with administrator privileges and execute the command:
 
+    `manage-bde -protectors c: -disable -rebootcount 2`.
 
-### Enforcement mode
+2. Reboot into the boot menu by launching Settings and selecting **Recovery** > **Recovery Options** > **Advanced Startup** > **Restart now**.
 
-Go to **Settings** > **Windows Security** > **App and Browser Control**. Select **On** to put Smart App Control into enforcement mode mode.
+3. From the advanced boot menu, select **Troubleshoot** > **Advanced** > **Command Prompt**. A recovery command prompt will open.
 
-### Evaluation mode
-
-Once Smart App Control is in Enforcement mode, it cannot be reset to evaluation mode from the Settings app. To re-enter evaluation mode, execute the following steps:
-
-1. Open a command prompt with administrator priviliges and execute the command: `manage-bde -protectors c: -disable -rebootcount 2'.
-2. Reboot into the boot menu by launching **Settings** and selecting Recovery > Recovery Options > Advanced Startup > Restart now.
-3. At the advanced boot menu, select Troubleshoot > Advanced > Command Prompt. A recovery command prompt will open.
     > [!NOTE]
-    > The recovery command prompt opens the recovery drive `X:` by default. This does not indicate your system drive has changed. Your system drive is still associated with its usual drive letter (usually `C:`).
+    > The recovery command prompt opens the recovery drive X: by default. This does not indicate your system drive has changed. Your system drive is still associated with its usual drive letter (usually C:).
+
 4. Execute the following commands:
-    - `reg load HKLM\foo c:\windows\system32\config\system`
-    - `reg add hklm\foo\controlset001\control\ci\policy /v VerifiedAndReputablePolicyState /t REG_DWORD /d 2 /f`
-    - `reg add hklm\foo\controlset001\control\ci\protected /v VerifiedAndReputablePolicyStateMinValueSeen /t REG_DWORD /d 2 /f`
-    - `reg unload hklm\foo`
-9. Restart the computer.
 
-If you followed these steps correctly, Smart App Control will be in Evaluation Mode.
+    > [!NOTE]
+    > In the following commands, replace {VALUE} with the value of the mode you want to set.
+    >
+    > | Value | Mode             |
+    > |-------|------------------|
+    > | 0     | Off              |
+    > | 1     | On (Enforcement) |
+    > | 2     | Evaluation       |
 
-### Verify Smart App Control's current mode
+    ```ps
+    reg load HKLM\foo c:\windows\system32\config\system
+    reg add hklm\foo\controlset001\control\ci\policy /v VerifiedAndReputablePolicyState /t REG_DWORD /d {VALUE} /f 
+    reg add hklm\foo\controlset001\control\ci\protected /v VerifiedAndReputablePolicyStateMinValueSeen /t REG_DWORD /d {VALUE} /f
+    reg unload hklm\foo
+    ```
+
+5. Restart the computer.
+
+## Verify Smart App Control's current mode
 
 You can verify Smart App Control's current mode by opening a command prompt and executing the following command:
 
 `citool.exe -lp`
 
-Smart App Control is in **evaluation mode** if the value of `Friendly Name` is `VerifiedAndReputableDesktopEvaluation` and the value of `Is Currently Enforced` is `true'.
+Smart App Control is in evaluation mode if the value of Friendly Name is VerifiedAndReputableDesktopEvaluation and the value of Is Currently Enforced is `true'.
 
-Smart App Control is in **enforcement mode** if the value of `Friendly Name` is `VerifiedAndReputableDesktop` and the value of `Is Currently Enforced` is `true'.
+Smart App Control is in enforcement mode if the value of Friendly Name is VerifiedAndReputableDesktop and the value of Is Currently Enforced is `true'.
 
-## Test your app
+## Configure Smart App Control's audit policy
 
-You should test your app in both evaluation mode and enforcement mode. 
+The default Windows Defender Application Control (WDAC) policy used by Smart App Control in evaluation mode does not log audit events in the CodeIntegrity Operational log. This is to reduce the size of the log on typical consumer devices shipping with Smart App Control in evaluation mode.
 
-> [!NOTE]
-> WHY?
-
-### Testing in enforcement mode
-
-![A screenshot of a dialog indicating that Smart App Control has blocked an app from running](images/smart-app-control-block-toast.png)
-
-When Smart App Control runs in enforcement mode, it will display a [Toast Notification](/windows/apps/design/shell/tiles-and-notifications/toast-notifications-overview) whenever it prevents an app or binary from executing. This makes it easy to test your app; simply attempt to run the app and see if it runs or not.
-
-### Testing in evaluation mode
-
-Smart App Control is silent when running in evaluation mode. To see if your app would have been blocked if Smart App Control were running in enforcement mode, you must review the Smart App Control logs. Smart App Control logs can be found in the Windows Event Viewer, under **Application and Services Logs** > **Microsoft** > **Windows** > **CodeIntegrity** > **Operational**.   
-
-Smart App Control logs evaluation mode events with event ID 3076, and enforcement mode events with event ID 3077.
+For the purposes of evaluating applications against Smart App Control, a developer or system administrator may want to enable audit logs in evaluation mode to see what files would be blocked if the system were in enforcement mode.  
 
 > [!NOTE]
-> The Word doc indicates there's a Partner Center toggle that must be completed before events will be logged. The link in the document did not work for me. Is that something a user will have to do?
+> Audit policies only apply when Smart App Control is running in Evaluation mode. In Enforcement mode, Smart App Control will log events by default.
 
-## Windows Defender and Smart App Control
+A zip file containing two sample policies below can be downloaded [here](aka.ms/sacauditpolicies).
 
-When Smart App Control is turned on or in evaluation mode, the Defender client goes into passive mode in the presence of another anti-virus. Passive mode supports Smart App Control’s reputation retrieval from Microsoft’s Application Intelligence service, but it does not cover active monitoring of the device. Third-party anti-virus is responsible for all active monitoring activities. The performance impact of passive mode on the device is minimal. 
+### Smart App Control audit policy (SmartAppControlAudit.bin)
+
+This is the standard Smart App Control policy, with audit logs enabled in evaluation mode. All binaries and scripts allowed by signature and cloud reputation will pass the policy, just as they would if enforcement mode was enabled. Applications and binaries that would be blocked would log an audit event.
+
+Note that this policy only works with Smart App Control in evaluation mode. It’s still possible for the Smart App Control evaluation model to turn evaluation mode off with this policy is applied, so we recommend testing with one of the other methods below.
+
+When this policy is applied, the output for citool.exe -lp will show VerifiedAndReputableDesktopEvaluationAudit as the policy name.
+
+### Smart App Control audit policy without ISG (SmartAppControlAuditNoISG.bin)
+
+This policy checks binaries and scripts against Smart App Control in evaluation mode, without checking the Intelligent Security Graph. This means that only apps that are properly signed by a trusted certificate will be allowed without audit events. This is useful for developers wanting to verify that their application is signed correctly, especially if publishing through the Windows Store, where a signature from a cert obtained from a trusted Certificate Authority is required.
+
+This policy can be applied even when Smart App Control is set to Off. When this policy is applied, the output for citool.exe -lp will show VerifiedAndReputableDesktopEvaluationAuditNoISG as the policy name.
+
+### Apply an audit policy
+
+[Ensure SAC is in evaluation mode](#configure-smart-app-control-for-testing).
+
+Take ownership of the evaluation mode policy file C:\WINDOWS\System32\CodeIntegrity\CiPolicies\Active\{1283AC0F-FFF1-49AE-ADA1-8A933130CAD6}.cip using the following steps:  
+
+> [!NOTE]
+> Images for this section in .docx were not loading.
+
+1. Right click the file in explorer and select "Properties."
+1. Go to the Security tab, and choose Advanced at the bottom.
+1. Click "Change" in the dialog  
+1. In the popup dialog, enter your user information (e.g. `<PC name>\<username>`) and click OK.
+1. Click OK in the Advanced Security Settings dialog and confirm  
+1. Reopen the file properties Security tab and click "Edit  
+1. Under Administrators, choose all the checkboxes and click OK, and confirm again in the popup dialog  
+
+Now that you have ownership of the policy file, rename the audit policy file you want to apply to {1283AC0F-FFF1-49AE-ADA1-8A933130CAD6}.cip, and replace the original policy file with it.
+
+Run `citool.exe -r` from an admin command prompt to refresh the policy  
+
+### Enabling Smart App Control Audit policy without ISG  
+
+> [!NOTE]
+> Why is this different from applying the other policy?
+
+This policy is for testing applications in evaluation mode against the signing requirement of Smart App Control exclusively, and will not allow any app binaries based on cloud intelligence from the Intelligent Security Graph. 
+
+Ensure that Smart App Control is in evaluation mode or off  
+
+Run "mountvol S: /S" from an admin command prompt  
+
+copy SmartAppControlAuditNoISG.bin to S:\efi\microsoft\boot\cipolicies\active\{5283AC0F-FFF1-49AE-ADA1-8A933130CAD6}.cip  
+
+Run "citool.exe -r" from admin command line to refresh the policy  
+
+### Checking Event Logs  
+
+Smart App Control logs any executable that was (or would have been) blocked into the Code Integrity Event Logs.  You can find those logs by opening the Event Viewer, and then browsing to **Application and Services Logs** > **Microsoft** > **Windows** > **CodeIntegrity** > **Operational**.  
