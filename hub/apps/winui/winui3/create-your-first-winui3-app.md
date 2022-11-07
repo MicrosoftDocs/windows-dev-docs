@@ -75,8 +75,8 @@ Packaging is an important consideration of any Windows App SDK project. For more
 
 1. You need to start with a packaged project in order to use XAML diagnostics. So select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, and click **Next**.
 
-    > [!NOTE]
-    > Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the installer in the previous step. To do that, in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Updates**. And if necessary update the reference to the *Microsoft.WindowsAppSDK* NuGet package. You can see which version is installed on the **Installed** tab.
+    > [!IMPORTANT]
+    > Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the *installer* in step 2. To do that, in Visual Studio, click **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...** > **Updates**. And if necessary update the reference to the *Microsoft.WindowsAppSDK* NuGet package. You can see which version is installed on the **Installed** tab.
 
 1. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file. Put it inside the **PropertyGroup** element that's already there (for C++, the element will have `Label="Globals"`):
 
