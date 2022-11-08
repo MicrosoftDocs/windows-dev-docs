@@ -164,7 +164,7 @@ If you want to grant Partner Center access to a brand new Azure AD application a
 After you add or create an Azure AD application, you can return to the **Users** section and select the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
 
 > [!NOTE]
-> If you intend to use the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.
+> If you intend to use the REST APIs provided by the [Microsoft Store services](/windows/uwp/monetize/using-windows-store-services), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.
 
 <span id="manage-keys" />
 
