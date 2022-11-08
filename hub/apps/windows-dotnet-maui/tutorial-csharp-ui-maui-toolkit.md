@@ -131,6 +131,42 @@ private enum Row { TextEntry }
 private enum Column { Description, Input }
 ```
 
+Because the UI elements are going to be defined in the C# code, the `InitializeComponent()` method will not be needed. Remove the call and replace it with the following code to create the UI:
+
+```csharp
+public MainPage()
+{
+    Content = new Grid
+    {
+        RowDefinitions = Rows.Define(
+            (Row.TextEntry, 36)),
+
+        ColumnDefinitions = Columns.Define(
+            (Column.Description, Star),
+            (Column.Input, Stars(2))),
+
+        Children =
+        {
+            new Label()
+                .Text("Customer name:")
+                .Row(Row.TextEntry).Column(Column.Description),
+
+            new Entry
+            {
+                Keyboard = Keyboard.Numeric,
+                BackgroundColor = Colors.AliceBlue,
+            }.Row(Row.TextEntry).Column(Column.Input)
+                .FontSize(15)
+                .Placeholder("Enter name")
+                .TextColor(Colors.Black)
+                .Height(44)
+                .Margin(6, 6)
+                .Bind(Entry.TextProperty, nameof(ViewModel.Name), BindingMode.TwoWay)
+        }
+    };
+}
+```
+
 ## Related topics
 
 [Resources for learning .NET MAUI](/dotnet/maui/get-started/resources)
